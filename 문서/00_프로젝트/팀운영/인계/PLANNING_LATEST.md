@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-04 — 계속 진행: 세 담당 표적 실행 발주 (기존 QA 반복 금지)
+
+- **메인 #91 [실행 지시](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6623743094)**: Ch1 공식3 PNG vs C3 두 PNG 실제1:1 비교 근거 확인. 현재 Ch3 그림의 눈·원경·수관·오른쪽 수간 지정 ROI만 보완한 **v2 후보2PNG** 제작; 기존v1 바이트 보존. **적 왼쪽/아군 오른쪽(후열 x=.86)** 기준 실제 전투 UI 참고. 새 배경2 아트 USER_REVIEW_PENDING, Unity 본편 적용 금지.
+- **리뉴얼 #90 [실행 지시](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6623743727)**: 숲거미 Attack8 승인00·03·06 바이트KEEP, 01 KEEP_CANDIDATE, **02·04·05·07 네 문제 프레임만** 실제 신규 수정 후보 제작. 10FPS 8장/07→Idle 연결 확인. 새4 미술검토·발고정/실전접점·Unity 검증 미완.
+- **Codex #89 [실행 지시](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6623744401)**: 기존 냉기 VFX3 PNG 승인 유지·Unity99PASS/시각PARTIAL 인정. 40px 바퀴-이펙트 8px 분리/128px 뒤레이어·아래24px/960 상태배지 2행·1680 HUD 경계는 **QA 시험 가정**. 새 아트/정식 상태연결 없이 격리 Unity6000.6.5f1의 최소 화면 A/B만 실제 실행, 결과 기록. 과거12조건·49장/99PASS 전수반복 금지.
+- 이번에는 **새 이슈·대형 정본문서 중복 생성 없이 기존 #89·#90·#91에 실제 수행범위 댓글**만 갱신. 결과물 실제 납품/격리 실행은 각 담당 세션에서 수행해야 하므로 `TASK_ISSUED / NOT_YET_EXECUTED`. 원본 Unity·Save/UserData·승인아트·사용자 미커밋 자료·main 직접 commit/원격 Push/merge는 불변.
+
+---
+
 # PLANNING / 2026-11-04 13:47 — Chapter2 전투배경 실물 감사, Spider Attack8 Motion QA, VFX #89 배치 권고
 
 - [#91 Ch2 실제 로컬 읽기 감사](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6622600289) 접수: Field04~10 배경은 전용 이미지 아닌 기본 `NightSky/DistantField/BattleGround/GoldenHorizon` 컬러 패널, Field11 Main20은 `DeepCore_Ground_Base` 지면512재사용. **Ch2 전용 BattleBG 세트/카탈로그 없음**; 기존 구성 보존·추가 공용BG 신규 제작은 미술 범위 승인 전 HOLD. Ch1 PNG6개(카탈로그 고유4), Ch3 신규 Snowroad/F2 BG2는 파일 후보/미술 검토중. Codex 실제 F: Ch3 ZIP SHA `a8c02e9ab6189a6feb074d3f83c8cd6a8bce61ff1b8de110e7c8216934468eb9` 일치. Ch3 최종 미술·Unity 적용은 미승인.
