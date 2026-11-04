@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-04 — #89·#90 실제 F: ZIP SHA 일치, 사용자 미술 승인 확정·다음 단계 배정
+
+- 바울 대표의 “웹이랑 같다면 둘 다 좋아..” 조건을 Codex가 **실제 Windows F: 두 ZIP 전체 SHA256 1회씩 계산하여 정확 일치**함으로써 충족. [#89 Codex 승인확정](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6621573660) / [#90 Codex 승인확정](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6621574553). **미술 승인 대기 해소**: #89 v2 한기·동상·동결괴사 정지 PNG3, #90 승인 Prepare00·Contact01v2·Recover02v2 키포즈3. 기타 미제작 모션/이펙트에 승인을 확대하지 않는다.
+- #89 F: 실측 ZIP SHA `9c07f5ff782c6e272796c4f003b816a39806ab35248c2353884325ac3c24a1eb` 동일. Codex는 **Unity 6000.6.5f1 격리 시각 Delta QA의 12화면 조건 준비만 완료**했고 `QA_PREPARATION_READY / UNITY_DELTA_QA_NOT_RUN`. 실제 렌더/HUD/설원·암전장 40·128px × 960·1280·1680x720 최소 시험이 다음 Codex 임무. 신규 상태/해제/화로 런타임과 제품 원본 적용 미승인.
+- #90 F: 실측 ZIP SHA `804f8ebf85dbe7f7301cbfdecc6e85adc4e7d8888e23c3ee132bfca95854499b` 동일. 승인 3키포즈는 **바이트 동결**; 리뉴얼 `docs/art-renewal` 담당은 Attack8 8슬롯의 **미제작 5장만 신규 실제 프레임 제작**, 10FPS/우향/PPU256/scale0.7 기존 계약 보존. **Attack8 전체 8프레임 완성·실제 타격 접점·지면고정/미끄러짐·Unity Clip**은 제작/검수 전 NOT_VERIFIED, Shoot8 HOLD.
+- Codex 로컬 인계 `codex/issue89-90-local-zip-review-20261104` commit `a4cd85af`은 **LOCAL_COMMITTED / REMOTE_NOT_PUSHED**, 기존 #88 Stage1 냉기 63PASS·#84 거미 37PASS 등 회귀QA 중복 금지. 원본 Unity/Save/UserData/기존 승인 Owl·SpiderIdle8/Walk8/개인 미커밋 파일 변경·main 직접 commit/Push/merge0.
+- 이전 `USER_CONDITIONAL_ART_APPROVAL / F_DRIVE_V2_SHA_PENDING` 상태는 **2026-11-04 위 Codex 결과로 해소**. 최종 상태는 `USER_ART_APPROVED_SHA_MATCH / VFX_ISOLATED_VISUAL_QA_READY_NOT_RUN / SPIDER_ATTACK8_5_PENDING / NOT_ORIGINAL_APPLIED`.
+
+---
+
 # PLANNING / 2026-11-04 — 바울 대표 #89/#90 웹 비교판 동일 조건부 최종 미술 승인
 
 - 바울 대표 직접 답변 **“웹이랑 같다면 둘 다 좋아..”** → **#89 냉기VFX v2 3종 정지미술 + #90 Organic Spider Attack3 Prepare00 KEEP/Contact01·Recover02 v2 키포즈 미술**을 조건부 승인. **새 v2 ZIP 2종 Windows F: 실제 SHA 일치가 아직 미검증**이므로 우선 `USER_CONDITIONAL_ART_APPROVAL / F_DRIVE_V2_SHA_PENDING`. 위 [#89](https://github.com/HappyPaul812/Project-Limitless/issues/89) SHA `9c07f5ff782c6e272796c4f003b816a39806ab35248c2353884325ac3c24a1eb`, [#90](https://github.com/HappyPaul812/Project-Limitless/issues/90) SHA `804f8ebf85dbe7f7301cbfdecc6e85adc4e7d8888e23c3ee132bfca95854499b`는 Library에서 실물 검증된 정본값. Codex 1회 F: 직접 SHA 대조하여 이슈별 **일치 시 미술승인 확정, 불일치 시 해당 이슈만 HOLD**, 추가 질문 없이 보고.
