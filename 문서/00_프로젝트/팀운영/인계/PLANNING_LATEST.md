@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-04 11:47 — #89 VFX v2 · #90 Spider Attack3 v2 실물 검수
+
+- 바울 대표 로컬 `F:\Downloads\Limitless_Ch3_ColdVFX_Issue89_MinimalFollowup_20261104.zip`, `F:\Downloads\LIMITLESS_SPIDER_ATTACK3_TARGETED_ISSUE90_v2.zip` 전달. **실제 검증한 파일은 ChatGPT 라이브러리 동일 이름 사본**(Windows F: 신규 v2 직접 해시 미검증). #89 ZIP SHA `9c07f5ff782c6e272796c4f003b816a39806ab35248c2353884325ac3c24a1eb` 23entries/CRC PASS/SUMS22/22, #90 ZIP SHA `804f8ebf85dbe7f7301cbfdecc6e85adc4e7d8888e23c3ee132bfca95854499b` 12entries/CRC PASS/SUMS10/10/manifest10/10. 신규 PNG 3+2 모두512² RGBA, 4변 알파접촉0, 담당 #89/#90 보고 일치.
+- 시각적 최소 개선: #89 한기 고리 명암 개선(설원40px 연무 대비 잔여), 동상·동결괴사 40px 실루엣 여전히 실제 Unity+별도 HUD 텍스트 검증 필요. #90 Contact두부/앞다리 및 Recover 복부높이 복귀 개선, 실제 지지발·관절연속/Attack8 중간5장·타깃 접촉 미검증. 현재 **`V2_FILE_TECH_PASS / USER_FINAL_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED`**, 기존 원화/Idle/Walk/Stage1 63PASS/Save 보호.
+- [정식 v2 파일·미술 검수 문서](../../20261104_Issue89_90_TargetedV2_ZipAndArtReview.md) `docs/planning` commit `ae24cef6d139c93bb94e31089879dc77603732c3`. 불필요한 재재작화/대량 Unity QA 권고X; 사용자 시각 승인 후 **VFX 최소 격리 HUD 시야 QA**, Spider는 **3키포즈 사용자 승인 이후** 부족5프레임 제작 승인 게이트. 원격main/Unity원본/Save 변경0.
+
+---
+
 # PLANNING / 2026-11-04 — #89·#90 실제 F: 두 ZIP SHA 확인 후 아트 최소 보완 발주
 
 - 바울 대표 제출 Codex 화면 보고 및 실제 GitHub 코멘트 재확인: [#89 F:원본 검증](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6620211048) / [#90 F:원본 검증](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6620212147). F: ZIP 전체 SHA가 납품 보고와 **정확 일치**. 기존 ChatGPT Library CRC·Manifest·SHA 결과 보호, Unity QA 재실행·파일/Save 변경0. Codex 로컬 문서 commit `fd70f8e8`은 원격 Push되지 않아 GitHub 코멘트로 결과 접수.
