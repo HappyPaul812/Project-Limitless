@@ -1,5 +1,15 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-04 / Issue #91 — Chapter3 전투 배경 v2 표적 보완 실제 PNG 2장 납품
+
+- **최신 [#91 총괄 기획 실제 v2 제작 발주](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6623743094)·[Codex 5장 원본1:1 분석](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6623246887) 반영**, 기존 Ch3 Snowroad/F2 두 배경 v1 전체 SHA 동결, 신규 후보 v2 RGB **1672×941 정확히 2개** 실제 제작. 기존 v1 자체 변경0/전면 재작화0, Ch1 원화 복사·트레이스0.
+- **신규 실제 후보2** `C3_BattleBG_FrostwaySnowroad_v2_TARGETED_CANDIDATE_1672x941.png` SHA **`339beeb80d313c589cf50842fc9f6964049b0752e783d83ac8a7097c768205ab`** / `C3_BattleBG_FirstSnowForest_F2_v2_TARGETED_CANDIDATE_1672x941.png` SHA **`4d57949a1a9d2ae5600d4ba1b95989153fed6a0d8f47f8fc52e6f670a013535a`**. v1 원본 SHA `a5f3bb960b5c5e6fe4140cb2de64e726f4bc7fabb8674f895789fed128adcd25` / `93388ee52fd75da4a82df0b68e03b2083167a25f339d97b41dc71c807125282b` 보호.
+- **정확한 지정 ROI만** Snowroad S1(650,20)-(1320,475) 원경·S2(700,535)-(1180,941) 눈길; F2 F1 좌수관(0,0)-(480,330)/우수관(1240,0)-(1672,340)·F2 우수간(1310,240)-(1640,925)의 질감·명암 세부만 반영. 기존 v1 영역 밖 변경픽셀 **양쪽 모두0**, 원본 구도 유지. v1→v2 변경픽셀 각각455,966 /470,950(전체의28.98% /29.93%). 이미지 새 생성 초안 **전체 교체 금지**를 지켜 원본 v1 위 지정 ROI에서만 세부 질감 변화를 제한.
+- **납품 ZIP** `Limitless_Chapter3_BattleBG_Issue91_v2_TARGETED_20261104.zip`, **7,880,511bytes / 24 entries**, SHA256 **`cccb5b92c6fb319ffb7a2c1da213634db05f99c6150277106732738a20b37181`**, ZIP CRC PASS / SHA256SUMS **23/23 PASS**. **ChatGPT 라이브러리 `/LIMITLESS/Chapter3_Issue91_BattleBG_v2_20261104/` ZIP 실물 업로드 성공**. 사용자 Windows F:\ 직접복사/해시 미확인, GitHub 바이너리 업로드0.
+- **비교:** `Preview/Issue91_v1_v2_TwoScenes_Overview_OFFLINE.png` 두 시안 v1/v2 한눈 비교, 지정 S1/S2/F1L/F1R/F2 전후 **실제 비축소1:1 크롭10PNG** 및 두 지역 별도 1:1 보드, `Preview/Issue91_OfficialSlot_2Scenes_OFFLINE.png` **적 왼쪽·아군 오른쪽** 공식 좌표기준 **가짜 실루엣/UI 도식** (실제 Unity GameView/실 스프라이트 아님). Ch1 5장 원본 실제 비교는 Codex F: 파일에서 이미 수행해 Issue #91에 보고했으나 **이번 아트 ZIP에는 Ch1 PNG 원본이 없으므로 본아트세션의 직접 원본1:1 재확인 PASS 아님**.
+- [**Issue #91 정식 v2 파일·ROI·SHA·QA 보고서**](../../Chapter3_BattleBG_Issue91_v2_TargetedArt_20261104.md) `docs/art-new` 작성 commit **`4222f194cc040dff2422b7c6ef822ed6bdf683ae`**. 현재 `BATTLE_BG_V2_TARGETED_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_VISUAL_REVIEW_PENDING / UNITY_NOT_TESTED / NOT_UNITY_APPLIED`. 바울 대표 시각 승인 후 Codex **격리 Unity6000.6.5f1** 실제 3인·적·BattleUI/3비율 Delta QA, 본편 적용은 별도 승인 필요. 승인 Ch1/2/3 기존BG·Owl/Spider/ColdVFX·Unity원본/Save/UserData/BuildSettings/Packages/main 불변, main Push/merge0.
+
+
 ## 2026-11-04 / Issue #91 — Chapter3 BattleBG 2종 KEEP·동배율 Ch1 시각 검증 게이트
 
 - [#91 기획·Codex 실제 감사](https://github.com/HappyPaul812/Project-Limitless/issues/91) 및 [정식 스타일·전투 가독성 검토 보고](../../Chapter3_BattleBG_Issue91_Style_ReadabilityReview_20261104.md) — `docs/art-new` commit **`d0babe4b7448f2755d263c4822abe139084ec7ae`**. 신규 C3 `Snowroad` SHA **`a5f3bb960b5c5e6fe4140cb2de64e726f4bc7fabb8674f895789fed128adcd25`**, `F2 Forest` SHA **`93388ee52fd75da4a82df0b68e03b2083167a25f339d97b41dc71c807125282b`** 원본 바이트 유지 / 두 후보 `KEEP_CANDIDATE`, 수정 PNG0, 새 ZIP0.
