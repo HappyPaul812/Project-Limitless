@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-04 — 메인·리뉴얼 아트 병렬 발주 #89 / #90
+
+- 바울 대표 “메인 리뉴얼 일 시켜줘.” 지시를 받아 담당별 신규 GitHub 작업 발주: **메인 신규 아트 [#89](https://github.com/HappyPaul812/Project-Limitless/issues/89)**는 Chapter3 냉기3종(VFX 안개/결정/결빙균열) 각각 대표 정지 PNG1개·40/128px 비교판 **총3 시각 파일럿**, **Ch1·2 리뉴얼 [#90](https://github.com/HappyPaul812/Project-Limitless/issues/90)**은 사용자 승인 Organic Spider v5/Idle8/Walk8 보호하면서 **Attack 준비/타격/회수 3키포즈**만 파일럿. Attack8 전량과 Shoot8 제작 아직 승인 안 함.
+- [기획 병렬 발주 기록](../../20261104_MainArt_Renewal_Parallel_Briefs_89_90.md) `docs/planning` commit `94bb465c4d1ce15dc8cfa323ccd73ee09e3b573e`; #88 냉기 기획안과 #60/#63/#84 승인·보류 근거 대조. Owl 원화/Idle8/Attack4, Spider 승인 Walk8 ZIP SHA771bd..., Bee v3 ART_OK_CANDIDATE이나 RIGHTS_HOLD·TARGET_CONTACT_NOT_VERIFIED, 사용자 개인Save/기존 Unity6000.6.5f1·기존 QA 전수보존.
+- 상태 **`ISSUES_CREATED / ART_WORK_NOT_STARTED_OR_UNVERIFIED / USER_VISUAL_REVIEW_PENDING / NO_GAME_APPLY`**. 각 아트 담당이 별도 담당 채팅에서 이슈를 읽고 제작해 `docs/art-new` / `docs/art-renewal`에 문서·인계·이슈댓글·실 SHA를 기록해야 실제 납품. 이슈 생성만으로 다른 담당 세션/Discord 무인 작업이 자동 실행되지는 않음. main 직접 커밋/Push/병합 없음.
+
+---
+
 # PLANNING / 2026-11-04 — Chapter3 냉기 계열 3종 상태이상 VFX 기획안 정식 문서화
 
 - **바울 대표 요청:** 한기·동상·동결괴사 각각의 차별화 VFX를 기획해 GitHub에 문서화. 관련 [Issue #88](https://github.com/HappyPaul812/Project-Limitless/issues/88).
