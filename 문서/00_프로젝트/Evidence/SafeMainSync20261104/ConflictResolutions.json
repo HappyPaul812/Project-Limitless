@@ -1,0 +1,32 @@
+[
+  {
+    "source": "Unity/Client/Assets/ThirdParty/2DPIXX/PilotBee/Original/pilot_bee_attack.png.meta",
+    "preserved_path": "Archive/ExcludedPilotBee/LocalImporterChanges20261104/Unity/Client/Assets/ThirdParty/2DPIXX/PilotBee/Original/pilot_bee_attack.png.meta",
+    "sha256": "47a9f27a93ede3912b54034244503fe76361e3bec1018da937c6a1f22e776f4d",
+    "reason": "Original and expanded working importer metadata preserved separately; outside Unity Assets; no game image or GUID replacement."
+  },
+  {
+    "source": "Unity/Client/Assets/ThirdParty/2DPIXX/PilotBee/Original/pilot_bee_idle.png.meta",
+    "preserved_path": "Archive/ExcludedPilotBee/LocalImporterChanges20261104/Unity/Client/Assets/ThirdParty/2DPIXX/PilotBee/Original/pilot_bee_idle.png.meta",
+    "sha256": "6b31e9e9ee0aa0e367a7d67e3028b595b1ee4ec7ecd6f78d50922aa33c54013d",
+    "reason": "Original and expanded working importer metadata preserved separately; outside Unity Assets; no game image or GUID replacement."
+  },
+  {
+    "source": "Unity/Client/Assets/_Project/Resources/MonsterValidation/PilotBee/grass_slime_comparison.png.meta",
+    "preserved_path": "Archive/ExcludedPilotBee/LocalImporterChanges20261104/Unity/Client/Assets/_Project/Resources/MonsterValidation/PilotBee/grass_slime_comparison.png.meta",
+    "sha256": "b2526371c5f0fa0bf626d498e8a8f1140cea27f0913bb058f465d654668125b5",
+    "reason": "Original and expanded working importer metadata preserved separately; outside Unity Assets; no game image or GUID replacement."
+  },
+  {
+    "source": "Unity/Client/Assets/_Project/Resources/MonsterValidation/PilotBee/pilot_bee_attack.png.meta",
+    "preserved_path": "Archive/ExcludedPilotBee/LocalImporterChanges20261104/Unity/Client/Assets/_Project/Resources/MonsterValidation/PilotBee/pilot_bee_attack.png.meta",
+    "sha256": "27ab3913b65b0b5e2dc91ff10c294e24de7493734407c244d2f15be745f784b9",
+    "reason": "Original and expanded working importer metadata preserved separately; outside Unity Assets; no game image or GUID replacement."
+  },
+  {
+    "source": "Unity/Client/Assets/_Project/Resources/MonsterValidation/PilotBee/pilot_bee_idle.png.meta",
+    "preserved_path": "Archive/ExcludedPilotBee/LocalImporterChanges20261104/Unity/Client/Assets/_Project/Resources/MonsterValidation/PilotBee/pilot_bee_idle.png.meta",
+    "sha256": "e35bda43dc737162b1c79c814130e6923a46db50734a6e86ac7f30e3e66371b0",
+    "reason": "Original and expanded working importer metadata preserved separately; outside Unity Assets; no game image or GUID replacement."
+  }
+]

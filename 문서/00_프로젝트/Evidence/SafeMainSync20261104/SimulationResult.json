@@ -1,0 +1,14 @@
+{
+  "original_858_reproduced": true,
+  "staged_only_identical_approved_Main24": true,
+  "relocated_roots": [
+    "Unity/Client/Assets/ThirdParty/2DPIXX/PilotBee",
+    "Unity/Client/Assets/ThirdParty/2DPIXX/PilotBee.meta",
+    "Unity/Client/Assets/_Project/Resources/MonsterValidation/PilotBee",
+    "Unity/Client/Assets/_Project/Resources/MonsterValidation/PilotBee.meta"
+  ],
+  "target": "97992cdaff69a38b458a715fb4073907fb926d4c",
+  "merge_exit": 0,
+  "simulation_head": "97992cdaff69a38b458a715fb4073907fb926d4c",
+  "original_858_byte_mismatches": []
+}

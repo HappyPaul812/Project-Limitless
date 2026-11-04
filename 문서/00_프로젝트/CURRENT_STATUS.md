@@ -1,3 +1,14 @@
+## 2026-11-04 긴급 로컬 main 동기화 실제 완료
+
+**LOCAL_MAIN_SYNC_SUCCESS / USER_WORK_PRESERVED / REMOTE_NOT_PUSHED**. 이전 HOLD 보고는 아래보다 과거 상태입니다.
+
+- 실제 원본 `F:/study/codex/Project-Limitless` main을634a91d3→**97992cdaff69a38b458a715fb4073907fb926d4c**로 fast-forward 완료(후속마감문서도별도브랜치→FF). 승인통합브랜치 `codex/integrate-20261104-approved` **8768cbac91a291f13769c6bfa18a831673652acb** 유지, 보존/동기화브랜치 `codex/local-main-safe-sync-20261104`.
+- 308/550 전수분류·CSV/JSON,6경로겹침 해결6/HOLD0. Main24는 승인본과 바이트동일, PilotBee 수정meta5는 원래Git버전과 별도로 보존. 나머지302dirty·550untracked 원본유지. 새/미승인 자료 자동채택0.
+- F: 별도백업 `F:/LIMITLESS_Backups/20261104_SafeMainSync_201027`: 고유881개 SHA일치(변경/미추적858+private23), 원본PilotBee21파일 보존이동 SHA일치. source858·private23 바이트불변. 승인PNG37동일/GUID유일.
+- 격리 dirty재현FF 및 실제FF PASS, 신규 Git/파일Delta **16PASS/0FAIL**. Unity6000.6.5f1 고정, 승인8768 대비Unity코드/자산변경0이라 기존60/52·격리BuildSucceeded 재사용, Unity전수QA/Play 재실행0. 기존원본user Scene/Prefab/Packages/BuildSettings/Save보호.
+- #63/#90/#89표시계층/#92파일은 원본main 반영됨. #89자동냉기런타임·미정규칙은완료아님. #91미승인/Shoot8 HOLD·기존시각PARTIAL 유지. 원격Push/merge/main직접commit0. 이 동기화에 추가사용자승인필요0. 남은사용자작업정리/미정기획승인은별도.
+- [상세결과](LocalMain_SafeSync_20261104.md), 근거 `Evidence/SafeMainSync20261104/`. 마지막관련 코드/보존commit97992cda, 최종문서commit은GitHEAD/이슈마감보고참조.
+
 
 GitHub 실제 보고 완료(댓글 API 성공 확인): [#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6628635508), [#89](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6628636928), [#90](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6628638252), [#92](https://github.com/HappyPaul812/Project-Limitless/issues/92#issuecomment-6628639926). 보고 기준 구현 b5a41b3089ed43abd725c836d8934d27cf88ca58 / 문서 aa0e48f7b3c1dd2ee0d39d15a50738463d6a6b1c. 원격 git Push·원본 main 동기화는 수행하지 않았습니다.
 

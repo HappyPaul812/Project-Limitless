@@ -1,0 +1,24 @@
+{
+  "tracked": {
+    "USER_CONFIG_OR_OTHER_PROTECTED": 1,
+    "USER_CODE_SCENE_ASSET_PROTECTED": 47,
+    "UNITY_META_GUID_IMPORTER_PROTECTED": 256,
+    "OTHER_ART_DELIVERY_NOT_AUTO_APPLIED": 2,
+    "OTHER_DOCUMENT_OR_REVIEW_TOOL": 2
+  },
+  "untracked": {
+    "OTHER_ART_DELIVERY_NOT_AUTO_APPLIED": 386,
+    "OTHER_DOCUMENT_OR_REVIEW_TOOL": 73,
+    "GENERATED_CACHE_BUILD_LOG": 19,
+    "UNITY_META_GUID_IMPORTER_PROTECTED": 38,
+    "USER_CODE_SCENE_ASSET_PROTECTED": 20,
+    "PERSONAL_SAVE_PROTECTED": 11,
+    "USER_CONFIG_OR_OTHER_PROTECTED": 3
+  },
+  "path_overlaps": 6,
+  "identical_approved_code": 1,
+  "historical_meta_preserved_both": 5,
+  "unresolved_content_conflicts": 0,
+  "classified": 858,
+  "author_attribution": "unknown; all conservatively protected"
+}

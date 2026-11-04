@@ -1,0 +1,18 @@
+{
+  "classified_308_550": true,
+  "backup_all881_sha": true,
+  "six_overlaps_resolved": true,
+  "simulation_ff_success": true,
+  "actual_main_ff_success": true,
+  "original858_bytes_preserved": true,
+  "untracked550_paths_and_bytes_preserved": true,
+  "private23_preserved": true,
+  "unrelated_tracked_files_preserved": true,
+  "approved37_png_sha": true,
+  "approved37_guid_unique": true,
+  "approved_unity_delta_no_local_drift": true,
+  "no_runtime_delta_since_approved_qa": true,
+  "version6000_6_5f1": true,
+  "old_pilotbee_png_absent_from_Assets": true,
+  "git_index_clean": true
+}
