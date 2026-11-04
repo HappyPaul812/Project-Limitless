@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-04 13:47 — Chapter2 전투배경 실물 감사, Spider Attack8 Motion QA, VFX #89 배치 권고
+
+- [#91 Ch2 실제 로컬 읽기 감사](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6622600289) 접수: Field04~10 배경은 전용 이미지 아닌 기본 `NightSky/DistantField/BattleGround/GoldenHorizon` 컬러 패널, Field11 Main20은 `DeepCore_Ground_Base` 지면512재사용. **Ch2 전용 BattleBG 세트/카탈로그 없음**; 기존 구성 보존·추가 공용BG 신규 제작은 미술 범위 승인 전 HOLD. Ch1 PNG6개(카탈로그 고유4), Ch3 신규 Snowroad/F2 BG2는 파일 후보/미술 검토중. Codex 실제 F: Ch3 ZIP SHA `a8c02e9ab6189a6feb074d3f83c8cd6a8bce61ff1b8de110e7c8216934468eb9` 일치. Ch3 최종 미술·Unity 적용은 미승인.
+- 바울 대표가 보내신 `F:\Downloads\LIMITLESS_ATTACK8_ISSUE90_MOTION_QA_20261104.zip` QA ZIP은 ChatGPT Library 사본 실물 확인: 295072bytes·SHA `045fed92f86b50b2b4ea1eda3b95b397fa1219171c7702846934daa7fa63b2e8`·CRC PASS; 보고서/프레임 CSV·JSON/확대판 직접 검수. **신규 아트가 아니라 모션 QA 보고**. [#90 Renewal 검수](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6622626595) 정확 반영: 승인 00/03/06 바이트 KEEP, 01 KEEP_CANDIDATE, **02 오른 앞다리 변형 / 04 우측 분리31px / 05 왼 지지발 분리17·14·3px + 복귀 이동 최대 / 07 우측 분리7px**만 표적 수정. 공격 표적 접촉/발 Lock/실Unity는 NOT_VERIFIED, Shoot8/Bee RIGHTS_HOLD. 새4장 아직 제작하지 않았으며 8장 일괄재작업 금지.
+- [#89 Codex 레이아웃 제안](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6622602474): 자동99PASS·실제캡처49장 반복 안 함. **40px 바퀴와 VFX 약8px 분리, 128px 캐릭터 뒤/아래24px, 960 상단 상태배지2행·1680 HUD 하단 전장8px 분리** 모두 미구현 가정 제안. 승인 PNG3는 보존, 추가 2~3안 격리 비교/사용자 판정 이후 원본 게임 적용 별도.
+- 총괄 기획 문서 [20261104_Ch2_BattleBG_Audit_Attack8_MotionQA_NextSteps.md](../../20261104_Ch2_BattleBG_Audit_Attack8_MotionQA_NextSteps.md) commit `3dce7c36fd056f6574023a66effd3fd0894095df`; Unity6000.6.5f1/원본Editor·Save/UserData/승인아트/사용자미커밋 변경0·main직접commit/Push/merge0.
+
+---
+
 # PLANNING / 2026-11-04 13:14 — #89 Unity 99PASS·전투배경 #91·거미Attack8 #90 실물 검수
 
 - 바울 대표 화면의 [Codex #89 실Unity VFX보고](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6622135223) 확인: Unity6000.6.5f1, 실제 12조건·카메라 RT49캡처·자동99PASS/0FAIL/컴파일에러0; **VISUAL_PARTIAL**: 40px 휠체어 장식과 한기/동상/동결괴사 혼합, 128px 동상/괴사가 하체 가림, 960 상단배지 과밀. 승인된 PNG3 바이트 보호·원본 미적용. **[#89 기획 후속](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6622459221)** 표시 위치·스케일/상태정보/HUD 레이아웃의 최소 델타 비교만, 완료QA 전수반복·추가 아트 무단 재제작 금지.
