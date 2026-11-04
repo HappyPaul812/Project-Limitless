@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-04 / Issue #89 후속 — 냉기 VFX 한기 설원 대비·동상/동결괴사 40px 표적 보완 v2
+
+- [Issue #89 Codex F: v1 실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6620211048) · [기획 최소 수정 발주](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6620385952)를 반영. 원본 v1 ZIP SHA **`83b4efeee62cdb4cabf7dbcc4d2aea21cbefdb4507e03f53b8c59d8079e9e4ba`** 및 원본 PNG3 SHA 전체 보존. 기존 승인 Owl Idle8/Attack4, NaturalBroken Stump v4, F2·Frostway 아트·냉기 Stage1 63PASS·독립 상태 계약 수정0.
+- **실제 ZIP** `Limitless_Ch3_ColdVFX_Issue89_MinimalFollowup_20261104.zip` **1,434,793 bytes / 23 entries / SHA256 `9c07f5ff782c6e272796c4f003b816a39806ab35248c2353884325ac3c24a1eb`**, CRC PASS, `SHA256SUMS.txt` **22/22 PASS**. 파일 라이브러리 `/LIMITLESS/Chapter3_Issue89_ColdVFX_MinimalFollowup_20261104/`에 ZIP 및 비교판2 **실제 업로드/목록 재조회 성공**. Windows 대표 PC F:\ 자동복사/PC SHA 확인 X, GitHub 바이너리0.
+- **별도 v2_TARGETED_CANDIDATE 실제 512×512 투명RGBA 3장**: 한기 SHA`e50831520d21ca51b51bca0fab030446f5c15f034d699c6ee3fd79304d1691c2`(안개·고리 alpha/경계 RGB 소폭 보강), 동상 SHA`5b8ca776ec14c52fd671117182fa299fed31b8774d85f6843f8f62ec70b96415`(중앙 위 긴 결정 약24px 국소 높이 완화/가장자리 작은 파편 약화), 동결괴사 SHA`59621e0b912e7c30544e559cb99446dcfb7f9c7c8dd1c846a07f32dce2dfd299`(하단 좌우 큰 쐐기 국소 비강체 최대18px 외측 정리·기존 균열 명암 보강). v1 원본3 PNG 변경0. 상태명/아이콘/남은턴·중첩 숫자 PNG 미내장.
+- `Preview/Issue89_v1_v2_128_40_BeforeAfter_OFFLINE.png` **1670×1440**, `Preview/Issue89_v1_v2_Snow_DarkBG_SameScale_OFFLINE.png` **1420×1220**. 원본·후보를 실제 512→128/40 LANCZOS로 각각 축소한 PNG12장 수록; 발표판의 큰40 이미지는 NEAREST 확대 표시만. 밝은 설원/어두운 전장의 동일128 실제 OFFLINE 합성이고 **Unity GameView/40px 전투렌더 검증은 NOT_RUN**. 현재 `TARGETED_ART_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_ART_REVIEW_PENDING / UNITY_NOT_TESTED / NOT_UNITY_APPLIED`. 작은 크기 구분성 완전 해결·ART PASS 선언하지 않음.
+- [**Issue #89 표적 보완 보고 정본**](../../Chapter3_Cold_VFX_Issue89_TargetedFollowup_20261104.md), `docs/art-new` 실제 문서 commit **`1b38ee412a691651660694fa715bdeece0c3b2fc`**. 다음은 바울 대표 실물 비교판 미술 승인 → Codex 격리 Unity6000.6.5f1 HUD 가림·128/40·PPU/Scale/동시 상태 접근성 DeltaQA → 대표 별도 본편 승인. 전체 애니메이션·VFX Particle/Scene/Prefab/Save/UserData/Packages/main 변경0·직접 Push/병합0.
+
+
 ## 2026-11-04 / Issue #89 — Chapter3 한기·동상·동결괴사 VFX 첫 독립 PNG 3종 납품
 
 - [**#89 세 VFX 실제 파일 파일럿·검수 보고서**](../../Chapter3_Cold_VFX_Issue89_ArtPilot_20261104.md) `docs/art-new` 커밋 **`ac1b0618c77d3309f7f56c6fa0b5b46ba99afd64`**. [#88 냉기 VFX 기획](https://github.com/HappyPaul812/Project-Limitless/issues/88)과 기존 3상태/화로/해제 계약 준수, 세 종류의 독립 시각 후보만 제작. 승인 Owl v3 Idle8/Attack4, NaturalBroken Stump v4, F2 승인/후보 원본 및 기존 분리 IceArc 보호.
