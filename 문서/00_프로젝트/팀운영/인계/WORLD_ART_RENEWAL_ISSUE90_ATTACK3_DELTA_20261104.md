@@ -1,3 +1,13 @@
+## 2026-11-04 / Issue #90 / Attack8 신규5 중간 프레임 제출 (현재 최신)
+
+- **정식 실물 보고서:** [Renewal_20261104_Issue90_OrganicSpider_Attack8_5Intermediate_Pilot_Delivery.md](../../Renewal_20261104_Issue90_OrganicSpider_Attack8_5Intermediate_Pilot_Delivery.md) / `docs/art-renewal` **commit `d22bec7e19b0cd986ba46484ba18c7fa111c97c1`**. 근거: [Codex 승인3 SHA확인](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6621574553) 및 [기획 신규5장 발주](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6621779059).
+- **ZIP 실제 납품:** `LIMITLESS_SPIDER_ATTACK8_ISSUE90_20261104.zip`, **5,922,807 bytes / SHA256 `e612a88a6d4c6b4422cc025c0d32fb34e4ffc2f40337ffa909a1885cfae3404` / 23entries / CRC PASS / Manifest21/21 SHA+bytes PASS**. Library `/LIMITLESS_Art_Delivery/`에 ZIP·새5PNG·4×2 Sheet·128/40px 10FPS GIF·512/40 비교판 총11파일 업로드·검증. F: 자동 다운로드·GitHub 바이너리 Push0.
+- **8슬롯 확정은 오프라인 후보 한정:** **00 Prepare 승인 KEEP** SHA `439ef26e4528e9f57877b471f602f9cfaa2f7bcd2a86b2fce991ec2e17ae5bf2`; 01 NEW `5473314b0970a7a8e99f9e39f8e04f1fb7997ab0835ceb48db947071a19a4fe7`; 02 NEW `89fc8493bb7f6602ceb1c24cb03aac9de1806679cd1cc21482568ee43fdf0d81`; **03 Contactv2 승인 KEEP** `0d0e24c2fae579f2f944255fe3bd3841216299b14f439cc3612906269020f697`; 04 NEW `9ec1b98f260fb436b8701f6ecd7cc131946111e81eb6e1302e01c51ec56d347c`; 05 NEW `c3f0f09b46a22fd0a3d3bf50eb878b3e3f29436decf62f4230f95555ca3fabfa`; **06 Recoverv2 승인 KEEP** `0501a452467a07f34688abdfff5ea5ef49b0dfd93e1c99bdc368229986d44096`; 07 NEW `092c1dc5681d5736f7ae810c3fbce529c0922df4d26c74e249b3dbedc06e31d7`. 승인3 파일은 바이트 복사/재인코딩 0.
+- **파일 QA:** 전체8 PNG 512×512 RGBA, 4×2 시트 2048×1024, 각 8슬롯 100ms 10FPS 미리보기, 40px 동배율 시퀀스. PNG8 SHA 모두 별개, 가시 알파 네변 0. 신규5장만 광학흐름 기반 중간 래스터 포즈 변위(명백한 이미지 중복 아님); **개별 8다리 수작업 관절 작화·FootLock·TargetContact·Unity GameView/10FPS 모션 품질은 NOT_VERIFIED**. 특히 02→03/03→04/06→07/07→Idle 연속성은 대표 미술 QA 필요.
+- **보호:** 승인 v5/Idle8/Walk8/3키포즈/Shoot8 미제작, Bee v3 RIGHTS_HOLD, Owl·Ch2공식/펫·기존 Unity·Save/UserData/main 변경0. `ATTACK8_8FILES_OFFLINE_TECH_PASS / NEW5_USER_MOTION_ART_REVIEW_PENDING / ACTUAL_CONTACT_HOLD / NOT_UNITY_APPLIED`. **완성 게임 애니메이션 승인이나 본편 적용을 뜻하지 않음**.
+
+---
+
 ## 2026-11-04 / Issue #90 — Contact01·Recover02 표적 수정 v2 (현재 최신)
 
 - **정식 보고서:** [Renewal_20261104_Issue90_AttackContactRecover_Targeted_v2_Delivery.md](../../Renewal_20261104_Issue90_AttackContactRecover_Targeted_v2_Delivery.md) / `docs/art-renewal` commit **`157b432ac2960250091da350db0c9c0008543aed`**. 근거: [#90 Codex F: 좌표/관절 검증](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6620212147), [기획 최소 보완 지시](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6620386396).
