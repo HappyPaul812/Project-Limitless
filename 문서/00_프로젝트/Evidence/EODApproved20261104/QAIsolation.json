@@ -1,0 +1,9 @@
+{
+  "qa_project": "F:\\study\\codex\\Project-Limitless\\Temp\\EODApproved20261104\\QA\\Client",
+  "product_worktree": "F:\\study\\codex\\Project-Limitless\\Temp\\EODApproved20261104\\Integration",
+  "editor_scripts_excluded": true,
+  "runtime_initializers_removed_in_qa_only": true,
+  "userdata_copied": false,
+  "qa_manifest_source": "known minimal BeeTiming fixture; product Packages untouched",
+  "f2_label_matches_approved_normalized": true
+}

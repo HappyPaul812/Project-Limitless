@@ -1,0 +1,228 @@
+{
+  "assets": [
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issues638992Followup20261104\\63\\Candidates\\VenomBee_IdleFolded_ORIGINAL_v1_238x215_RGBA.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\VenomBee\\IdleFolded.png",
+      "sha256": "044b1bb44b8cc368efb1e254b5309f2c994b2bed7bb5c7f9b52923a6638cc311",
+      "guid": "10defc9465bc4645308cabb1c14e5fe0"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issues638992Followup20261104\\63\\Candidates\\VenomBee_IdleSpread_ORIGINAL_v1_238x215_RGBA.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\VenomBee\\IdleSpread.png",
+      "sha256": "382e742c8df629d995dfbded57200b82712e7350e1b6391cc4036ce72dcc2174",
+      "guid": "06b749648aa8aab4067bae652247152c"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issues638992Followup20261104\\63\\Candidates\\VenomBee_Prepare_ORIGINAL_v1_315x253_RGBA.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\VenomBee\\Prepare.png",
+      "sha256": "c6c3e514e1ce7535de754357bbd27a343dc7a9d396a62c4c2a0ea0c54d6998ce",
+      "guid": "8cd6343551486ff96e5244fb95fdd78e"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\BeeAttackTiming20261103\\QA\\Client\\Assets\\Resources\\BeeV3DeltaInput\\Sting_v3.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\VenomBee\\Sting.png",
+      "sha256": "2850020146718f30ac320cd6bd0c42dcf31332ed2820a718d06bcc76949a2d67",
+      "guid": "2d3f53fffb30b3834ee66e7a02d1aa8c"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\BeeAttackTiming20261103\\QA\\Client\\Assets\\Resources\\BeeV3DeltaInput\\Recover_v3.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\VenomBee\\Recover.png",
+      "sha256": "69d0944b3565fe2e4cc92034e51df2006847103a366db18d21221561fa5a19bb",
+      "guid": "bee5784ade01214844c7a9bb04a6a301"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue84OwlSpiderUnityDelta20261103\\QA\\Client\\Assets\\Issue90Input\\After\\Frame_00.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Attack\\00.png",
+      "sha256": "439ef26e4528e9f57877b471f602f9cfaa2f7bcd2a86b2fce991ec2e17ae5bf2",
+      "guid": "b9f82a5d87642766fb00d2de0b6a43a4"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue84OwlSpiderUnityDelta20261103\\QA\\Client\\Assets\\Issue90Input\\After\\Frame_01.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Attack\\01.png",
+      "sha256": "5473314b0970a7a8e99f9e39f8e04f1fb7997ab0835ceb48db947071a19a4fe7",
+      "guid": "8693c0eaaf114fa3c19421ca22b703be"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue84OwlSpiderUnityDelta20261103\\QA\\Client\\Assets\\Issue90Input\\After\\Frame_02.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Attack\\02.png",
+      "sha256": "85ca201cecb4b51acad26b39f5146fe6637c8408dd08b02eb2723f0c65193622",
+      "guid": "15c3f1729de42679b782bce02b973dd3"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue84OwlSpiderUnityDelta20261103\\QA\\Client\\Assets\\Issue90Input\\After\\Frame_03.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Attack\\03.png",
+      "sha256": "0d0e24c2fae579f2f944255fe3bd3841216299b14f439cc3612906269020f697",
+      "guid": "36a64881c6d5836bb5b284a02cbb990b"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue84OwlSpiderUnityDelta20261103\\QA\\Client\\Assets\\Issue90Input\\After\\Frame_04.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Attack\\04.png",
+      "sha256": "3ccdfa06022ea900c60857211db81042f44489719e6235a886c60d351d5ead7a",
+      "guid": "18b4d334cf3ad33e9247c7e6261965ca"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue84OwlSpiderUnityDelta20261103\\QA\\Client\\Assets\\Issue90Input\\After\\Frame_05.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Attack\\05.png",
+      "sha256": "7ed984d56c41f284ad8fc8646275d674f7a6e533649b41644f0baa5c42d15bde",
+      "guid": "b7565bc9f5e280b5516aac05d5bcd80e"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue84OwlSpiderUnityDelta20261103\\QA\\Client\\Assets\\Issue90Input\\After\\Frame_06.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Attack\\06.png",
+      "sha256": "0501a452467a07f34688abdfff5ea5ef49b0dfd93e1c99bdc368229986d44096",
+      "guid": "5ce31ade68b344fbfc0d1836582517e8"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue84OwlSpiderUnityDelta20261103\\QA\\Client\\Assets\\Issue90Input\\After\\Frame_07.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Attack\\07.png",
+      "sha256": "35af96b928108206488b1b27bdcf607d3f9f890bc0d3b7df2a16d4a932a6955e",
+      "guid": "aba87f699b059737a4b182eb1d19c9a5"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\ArtOwlBeeSpiderReview20261103\\Extracted\\Spider\\Spider\\Idle\\ForestSpider_Idle_00.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Idle\\00.png",
+      "sha256": "c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9",
+      "guid": "34dfe624199cd8166bec71235a3b15a2"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\ArtOwlBeeSpiderReview20261103\\Extracted\\Spider\\Spider\\Idle\\ForestSpider_Idle_01.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Idle\\01.png",
+      "sha256": "6980f07fd2efb9ab06bf152e4228a96cc4351d17445cf3b3ee957d3ccafec24c",
+      "guid": "5f994016c15ba6263e6dc3b42ceebe26"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\ArtOwlBeeSpiderReview20261103\\Extracted\\Spider\\Spider\\Idle\\ForestSpider_Idle_02.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Idle\\02.png",
+      "sha256": "5d375d6a5a9941a9805a8a1d591c747b4e491081c9118fdc1393a9c03b285ec6",
+      "guid": "968064ccc22f4729cdeefec43ba53659"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\ArtOwlBeeSpiderReview20261103\\Extracted\\Spider\\Spider\\Idle\\ForestSpider_Idle_03.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Idle\\03.png",
+      "sha256": "d40c91a7d36e34602a10c86c61f7ab4e1e89efabb3909518b68e7060fbb23754",
+      "guid": "a72cfabf0ffa71d12b469bf7df1a6dca"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\ArtOwlBeeSpiderReview20261103\\Extracted\\Spider\\Spider\\Idle\\ForestSpider_Idle_04.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Idle\\04.png",
+      "sha256": "d9d2f25f1582e41646b3be28489ab8d5bac135bb0d5d8af659ac7013f2faed68",
+      "guid": "289f1a8fadf0ce57e1420df8577a5b26"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\ArtOwlBeeSpiderReview20261103\\Extracted\\Spider\\Spider\\Idle\\ForestSpider_Idle_05.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Idle\\05.png",
+      "sha256": "7d41fbe8e646d1906e81e46d4c1ec41b78346351b3adf913bc9ec73195a832e7",
+      "guid": "0ceef5e9c7156bacfd7c20bfe8d87009"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\ArtOwlBeeSpiderReview20261103\\Extracted\\Spider\\Spider\\Idle\\ForestSpider_Idle_06.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Idle\\06.png",
+      "sha256": "323f9a37c67b31edea1629393e4fe5b6f2ba364c1adc26acdac2ccfaa33e28eb",
+      "guid": "8c9162b5c664d19cd527ed6e773a2122"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\ArtOwlBeeSpiderReview20261103\\Extracted\\Spider\\Spider\\Idle\\ForestSpider_Idle_07.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Idle\\07.png",
+      "sha256": "e17609fe7c80e0686ea5dbb48d7351e25532441119d15e9af8646c0ba07c6962",
+      "guid": "9b6328b95f5263207acf2520a7a1f32c"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue84OwlSpiderUnityDelta20261103\\QA\\Client\\Assets\\Input\\Spider\\Spider_00.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Walk\\00.png",
+      "sha256": "cc1b5670c27bda75ebe5e8dc720cfa893b97016f927e926caa3aa5c7aaa291e6",
+      "guid": "bd7d4a51598748ff270ff7bc27f5aa77"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue84OwlSpiderUnityDelta20261103\\QA\\Client\\Assets\\Input\\Spider\\Spider_01.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Walk\\01.png",
+      "sha256": "550ad6615e5315ee2d4680bf2c885a03abd1b422a5d4fce5074a1ead971f0d64",
+      "guid": "ac081aebc8285060f5d9d4e5a0f24aae"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue84OwlSpiderUnityDelta20261103\\QA\\Client\\Assets\\Input\\Spider\\Spider_02.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Walk\\02.png",
+      "sha256": "c4935be601a362682711fec1824293b57f3215247daca4c62a85ae5b0cae3547",
+      "guid": "0838cc6bae8e4e9fd108724bc121bfa1"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue84OwlSpiderUnityDelta20261103\\QA\\Client\\Assets\\Input\\Spider\\Spider_03.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Walk\\03.png",
+      "sha256": "64a7297d2e43cdde8376e2d99efef97b2468660e2d9d4c9fca2941e0469d83e9",
+      "guid": "f871d1fa1247cf8b49f36b09c5f2a2e8"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue84OwlSpiderUnityDelta20261103\\QA\\Client\\Assets\\Input\\Spider\\Spider_04.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Walk\\04.png",
+      "sha256": "7de4a98be27b2f7f2021b83742e788f0c6f5e7e21474d9ec6fccdac0083df7e9",
+      "guid": "29a0f5d3815d17aca091657a115062cf"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue84OwlSpiderUnityDelta20261103\\QA\\Client\\Assets\\Input\\Spider\\Spider_05.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Walk\\05.png",
+      "sha256": "435ed6e6451a60f42670010b64cf78099ce1170fb925a11cb3e22bcc967b3785",
+      "guid": "0fda2c9c135608eb566959b7730d0f7b"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue84OwlSpiderUnityDelta20261103\\QA\\Client\\Assets\\Input\\Spider\\Spider_06.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Walk\\06.png",
+      "sha256": "29a0ae62f37f2044c8b3dcd206bc3456c2ee141484f79c5bfe224c35566edf49",
+      "guid": "166ac67cfaaae8f260ee0d339270daf6"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue84OwlSpiderUnityDelta20261103\\QA\\Client\\Assets\\Input\\Spider\\Spider_07.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Approved20261104\\Spider\\Walk\\07.png",
+      "sha256": "edf725d87aafafcb81d01f09b121bf1e20a71b4fbfd829dbd1b0b6a3abf1b189",
+      "guid": "dcd922a35428e105957db95658b32c3a"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issues638992Followup20261104\\89\\Icons\\ColdStatus_Chill_128_RGBA_CANDIDATE.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Battle\\Cold\\Icons\\Chill.png",
+      "sha256": "1f3ac724590a2d490cbe4a7cd28856c8ce5d888b130dde46a7d0008e6a3d0a16",
+      "guid": "cce7a79afdb0b81652243233fdcc63f7"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issues638992Followup20261104\\89\\Icons\\ColdStatus_Frostbite_128_RGBA_CANDIDATE.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Battle\\Cold\\Icons\\Frostbite.png",
+      "sha256": "b814b1df3b0a5dbba46205d3b6edf91339cc4f45d118ec19ac53afab43c89a03",
+      "guid": "5af5c906b3456597b8669a51b20ce5eb"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issues638992Followup20261104\\89\\Icons\\ColdStatus_FrostNecrosis_128_RGBA_CANDIDATE.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Battle\\Cold\\Icons\\Necrosis.png",
+      "sha256": "da2f175d50c47961df4c2fe6a227219a594ac9c3b0874c2c50e9edf39644be9d",
+      "guid": "70707db73dd8458fecbd7d9a1d158d97"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Nov04F2Smoke20261104\\QA\\Client\\Assets\\QA89Approved\\VFX_Ch3_Chill_Oneshot_01_v2_TARGETED_CANDIDATE_512_RGBA.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Battle\\Cold\\VFX\\Chill.png",
+      "sha256": "e50831520d21ca51b51bca0fab030446f5c15f034d699c6ee3fd79304d1691c2",
+      "guid": "dada92ca606a8ed6b0ba407d078776f2"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Nov04F2Smoke20261104\\QA\\Client\\Assets\\QA89Approved\\VFX_Ch3_Frostbite_Sustain_01_v2_TARGETED_CANDIDATE_512_RGBA.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Battle\\Cold\\VFX\\Frostbite.png",
+      "sha256": "5b8ca776ec14c52fd671117182fa299fed31b8774d85f6843f8f62ec70b96415",
+      "guid": "00e981997e9615bdd648048fe2df8683"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Nov04F2Smoke20261104\\QA\\Client\\Assets\\QA89Approved\\VFX_Ch3_FrostNecrosis_Stack2_01_v2_TARGETED_CANDIDATE_512_RGBA.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Resources\\Battle\\Cold\\VFX\\Necrosis.png",
+      "sha256": "59621e0b912e7c30544e559cb99446dcfb7f9c7c8dd1c846a07f32dce2dfd299",
+      "guid": "c3f5d4a616cfe25bef66a4f32d3fbaf4"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issues638992Followup20261104\\92\\Candidate\\C2_BattleBG_AshenWasteland_Field05_08_v1_CANDIDATE_1672x941.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Art\\Battle\\Backgrounds\\Chapter2\\AshenWasteland.png",
+      "sha256": "575832c793fa37734f4ec68c6fb7ddc4076a30c787abdd984635da55dbfc1af3",
+      "guid": "467ce82ab0dee8ec411b0aa791b3bda1"
+    },
+    {
+      "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Issues638992Followup20261104\\92\\Candidate\\C2_BattleBG_ObsidianRift_Field09_10_v1_CANDIDATE_1672x941.png",
+      "asset": "Unity\\Client\\Assets\\_Project\\Art\\Battle\\Backgrounds\\Chapter2\\ObsidianRift.png",
+      "sha256": "62d3c4e7bca73a9958f11ac165f196971a162f203bc7686e17b6fee9c5a661f9",
+      "guid": "7d6e8f110c55dd4bd92c9d188b72653f"
+    }
+  ],
+  "note": "source PNG bytes preserved; meta only new deterministic GUIDs",
+  "f2_label_matches_approved_normalized": true
+}

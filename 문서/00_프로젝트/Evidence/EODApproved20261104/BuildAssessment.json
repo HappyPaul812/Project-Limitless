@@ -1,0 +1,11 @@
+{
+  "build_result": "Succeeded",
+  "errors": 0,
+  "warnings": 38,
+  "legacy_art_found": [],
+  "historical_compiled_validator_sources": [
+    "Assets/_Project/Scripts/Validation/PilotBeeComparisonValidation.cs"
+  ],
+  "explanation": "Final detailed clean-cache build succeeded with exit 0; no external PilotBee textures/ZIP/materials packed. Earlier first gate had a false positive on historical compiled validator .cs; incremental build omitted packed asset details and was superseded by this detailed build. Historical validation Scene is not enabled; no license investigation restarted. Original main still retains legacy assets because sync is held.",
+  "approved_png_packed": 37
+}

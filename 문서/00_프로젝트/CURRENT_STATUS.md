@@ -1,3 +1,107 @@
+## 2026-11-04 최종 마감 — 승인 자산 격리 통합, 원본 동기화 보류
+
+- 브랜치 `codex/integrate-20261104-approved`, 구현 `b5a41b3089ed43abd725c836d8934d27cf88ca58`, LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
+- #63 신규5포즈 / #90 Attack8+기승인Idle·Walk / #89 정식아이콘3+B표시계층 / #92 배경2·6필드catalog를 별도 통합본에 연결. 승인 PNG37 SHA 동일. 원본에 실제 적용한 것은 아님.
+- Unity6000.6.5f1 고정, 신규 연결60PASS/0FAIL, 보완 시각한정52PASS/0FAIL(중복 합산 금지). 실제3인 UI의 태온·휠체어 겹침 및 기존 하단안내 겹침으로 VISUAL_PARTIAL. 냉기 규칙·자동 표시 수명 미구현 유지, #91 미승인·Shoot8 HOLD.
+- 원본main634a91d3, tracked dirty308/untracked550 그대로. tracked7374·개인Save/UserData23 해시 변경0. **LOCAL_MAIN_SYNC_HOLD_DIRTY / ORIGINAL_NOT_APPLIED**. 원본 Editor·Scene·Prefab·GUID/meta·BuildSettings·Packages 보호. main 직접commit/Push/병합 없음.
+- 다음 적용 조건: 사용자 변경을 보존한 동기화 경계 정리와 시각 PARTIAL 별도 결정. 오늘 후속 제작/기존 전수 QA 없음. 결과는 `EOD_Approved_LocalIntegration_20261104.md` 및 `Evidence/EODApproved20261104/`에 기록. 아래 과거 pending 기록은 각 당시 상태이며 이번 승인 정본이 우선합니다.
+
+## 2026-11-04 Issue #92 실제ZIP 후속 준비
+
+전체ZIP SHA1회대조일치.실제Ch1 3+Ch2 2를1672×941 1:1비교·5패널화소일치. 세부재질/거리명암방향공유,Ch2저채도/가로암반띠반복차이. 두후보유지/미술검토추천·실Unity가독성미검증. [결과/근거](Issue92_Ch1_Ch2_Actual_Style_Comparison_20261104.md). USER_VISUAL_REVIEW_PENDING/NOT_UNITY_APPLIED·원본/Save/main/Push보호. branch codex/issues63-89-92-followup-20261104·각commit은해당Issue댓글·LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #89 실제ZIP 후속 준비
+
+전체ZIP SHA1회대조일치.정식용아이콘3납품/SHA확인·미술승인대기. B HUD resolver아이콘참조만바꿀신규대표5캡처/Rect·문자Delta계획준비·실행0·50/99보존. [결과/근거](Issue89_OfficialIcons_ApprovalGated_IsolatedQA_Plan_20261104.md). USER_VISUAL_REVIEW_PENDING/NOT_UNITY_APPLIED·원본/Save/main/Push보호. branch codex/issues63-89-92-followup-20261104·각commit은해당Issue댓글·LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #63 실제ZIP 후속 준비
+
+전체ZIP SHA1회대조일치.11/04신규3한벌+승인Sting/Recover v3추천·예전3도신규출처로보존·혼합/재제작0. 신규3미술승인대기·기존15/153미실행. [결과/근거](Issue63_OldNew3Pose_FinalChoice_20261104.md). USER_VISUAL_REVIEW_PENDING/NOT_UNITY_APPLIED·원본/Save/main/Push보호. branch codex/issues63-89-92-followup-20261104·각commit은해당Issue댓글·LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #63 PilotBee 미사용 결정·라이선스 조사 중단
+
+바울대표최종제품PilotBee미사용. BY3/4충돌해결조사중단·과거이력보존,개발선행조건에서제외. 현재Resources2PNG+02_VenomBeeGUID참조잔존으로빌드제외완료아님·최종Player미검사. Prepare/Idle3는외부원본셀직접일치0·실SHA가11/03신규생성/보완납품계보와일치;최신기획의외부계열분류와차이보고(원생성마스터미동봉한계). 승인Sting/Recover·격리15/후보153보존·새Unity/빌드/원본적용0. [출처·빌드제외확인](Issue63_PilotBee_NotForFinal_Exclusion_And_Provenance_20261104.md). 라이선스해결대신최종자산배제확인필요·별도원본적용승인유지. branch codex/issue63-pilotbee-exclusion-audit-20261104·SHA는Issue63댓글·LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #63 승인v3 등록·격리 연결·권리 조사
+
+Sting28500201…/Recover69d0944b… 최종미술승인등록·BYTE_KEEP,Prepare/Idle보호. 지정F:ZIP현재없어기존검수HTML내승인SHA일치PNG바이트복구/대장보존. Unity6000.6.5f1공용재생기/Presenter로키포즈반복10슬롯1회집중15PASS/0FAIL·피해훅.27초02/완료1.01초Idle00복귀·09Recover유지. 후보A153재실행0·기존70/입력5SHA불변. 웹BY3/ZIPBY4충돌실확인·둘다상업조건부허용이나버전/표시미확정RIGHTS_HOLD. 현행GUID외부복사본참조와README미연결서술충돌보고. 원본에는후보A완료대기API미반영·별도통합필요. 실표적침끝/전체작화/별도원본적용승인미완료·NOT_UNITY_APPLIED. [결과·실Unity·권리조사](Issue63_VenomBee_v3_Approved_Connection_And_Rights_20261104.md). 브랜치codex/issue63-v3-approved-connection-rights-20261104·이번SHA는Issue63댓글참조·LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #91 실제Ch1-v2 1:1 최종 비교판
+
+원본Ch1 3+검수완료Ch3v2 2의1672×941패널5/5화소일치·입력전후SHA5/5불변. 비교판1개5144×4400/SHAae44f57176aaf9aac52d169e6e63ef8e2af2a9ff4b3fa8e6833626b77a1b64f3. ZIP중복검수/새Unity/전수QA/새v3없음. 정식적왼쪽·아군오른쪽후열x=.86참조,원본(1391,433)정적가정의오른쪽수피/가지경쟁위험명시. 과거실Unity캡처와OFFLINE도식구분. [비교판·검토](Issue91_Ch1_Ch3v2_Final_1to1_Comparison_20261104.md). USER_VISUAL_REVIEW_PENDING/NOT_UNITY_APPLIED. 브랜치codex/issue91-ch1-v2-final-comparison-20261104·실제SHA는Issue91댓글·LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #91 간편v2 ZIP 실제접수검수
+
+F:/Downloads/ch3_bg_v2_easy.zip 3,944,727bytes/5entries/SHA0843afdbce6c1e6dcb1117240eaafbc33e894f126f9975ba46e18da8f04ef292. CRC/SUMS4/4통과·Manifest없음. 배경1672×941 RGB2장 기존보고v2SHA정확일치·새미술변경없음. v1대비455966/470950화소변경·지정ROI밖0. OFFLINE정식방향모조배치판있음/실Sprite·정식UI검증없음/Ch1-v2직접비교없음. **USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED**,바울대표v2최종미술승인필요. [실제납품검수](Issue91_EasyZip_Actual_Intake_20261104.md). 브랜치codex/issue91-easyzip-intake-20261104·SHA는Issue91댓글참조·LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #90 Attack8 전체8장 최종 미술 승인 확정
+
+바울 대표 직접 확인·“좋아” 승인에 따라 수정본ZIP58c51cb4…의00~07 전체8장 USER_ART_APPROVED. 기존00/03/06·01 BYTE_KEEP 유지,01은이번전체승인에포함. After8 SHA직전검수와불변. Shoot8별도HOLD. 기존16PASS보존·새QA/원본Unity적용0·FootLock/실접촉미검증상태보존. [승인대상8SHA·경계](Issue90_Attack8_Final_User_Art_Approval_20261104.md). 브랜치codex/issue90-attack8-final-art-approved-20261104·이번SHA는Issue90댓글참조. LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #89 B안 대표 시각 마무리
+
+최신기획6624214599확인·기존Unity B실캡처7장만재사용해대표판/설원40px·HUD1:1상세작성. Unity실행0·50/99재검사0·새PASS추가0. 한기2턴/동상2턴/괴사1/3·2/3+KO문자포함식별가능. VFX단독한기대비·소형임시아이콘은미완료 **OFFICIAL_ICON_PENDING / VISUAL_PARTIAL_REMAINS**. 문자유지조건부B원본적용후보,별도승인전ORIGINAL_NOT_APPLIED. 기존101증거/승인3PNG SHA불변·원본Save/main/dirty보호. [대표판·판정](Issue89_B_Visual_Wrapup_20261104.md). 브랜치codex/issue89-b-visual-wrapup-20261104·실제SHA는Issue89결과댓글참조·LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #90 Attack8 수정4장 실제 최종 검수
+
+실제F: ZIP SHA58c51cb4…보고일치. 승인00/03/06·유지후보01 바이트동일,02/04/05/07만수정. Unity6000.6.5f1격리 실제Animator 전후192샘플·180캡처·집중16PASS/0FAIL,10FPS/0.8초/07→승인Idle00확인. 기존270증거불변·기존전수QA미실행. 04→05자세변화·07→Idle실루엣은 **USER_FINAL_ART_APPROVAL_REQUIRED / NOT_UNITY_APPLIED**. FootLock/실표적접촉미검증. [상세·실제캡처](Issue90_Attack8_4Frame_Fix_FinalReview_20261104.md). 원본Unity/Save/main/dirty보호·LOCAL_COMMITTED/REMOTE_NOT_PUSHED,브랜치codex/issue90-attack8-4frame-review-20261104·이번SHA는Issue90댓글참조.
+
+---
+
+## 2026-11-04 Issue #89 실제 표시/HUD A/B 수정·검증
+
+Unity6000.6.5f1격리실행·대표3조건7쌍/14실제A/B캡처. 신규최종고유50PASS/0FAIL(기존99전수미실행). **B추천**:40px가시알파간격8px,128px뒤그리기+24px하향,960상태두행·선언글자8.66→12.12화면px,1680 HUD겹침-30.15→8px. 이름/HP/스킬메뉴Rect유지. 기존Evidence101/승인PNG3 SHA전부불변·원본Unity/Save/main/dirty/Push보호. [실제전후·코드·측정](Issue89_VFX_HUD_Isolated_Layout_AB_Delta_20261104.md). 작은아이콘/한기설원대비·타외형/다인HUD는남은시각판단,USER_LAYOUT_REVIEW_PENDING/NOT_ORIGINAL_APPLIED. 직전06e871f9·이번SHA는Issue89결과댓글참조. LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #91 Ch1·Ch3 원본5장 1:1 비교 완료
+
+실제Forest/Grassland/Catacombs+C3Snowroad/F2 모두1672x941 RGB. 비교판5144x4200에각원본1:1·패널화소5/5·입력SHA전후5/5일치. F:/Downloads/LIMITLESS_Issue91_Ch1_Ch3_1672x941_1to1_Comparison_20261104.png 저장, SHA e10aa647089ee9b665058f3428e589b50dbfbdd97b508bf87ca7f361b42ceee9. Ch1미세재질/명암 대 C3기하평면차이·원경/길/수관/오른쪽수간만좌표후보특정. 정식아군오른쪽/적왼쪽과기존목업반대배치구분. [상세·실비교판](Issue91_Ch1_Ch3_SameScale_ActualPNG_Review_20261104.md). USER_VISUAL_REVIEW_PENDING/NOT_UNITY_APPLIED 유지·원화수정/새BG/Unity/Save/main/Push0. 직전064448a8·이번SHA는Issue91결과댓글참조.
+
+---
+
+## 2026-11-04 Chapter2 배경 읽기 전용 감사·신규 ZIP 일치
+
+#91 C3배경2/#90 Attack8 ZIP F:SHA 각각1회 계산·최신총괄값정확일치. #90 구납품SHA63자오탈자는최신64자와구분기록. 로컬PNG949목록/Scene39/Prefab13/Catalog·GUID감사:Field04~10기본색상전장,Field11심부지면512재사용,Main19Background는월드연출. Ch2전용전투BG세트미발견·신규작화발주아님. #89는40px분리위치/128px뒤레이어·하향/HUD분리3안제안만·99PASS재실행0. 신규BG2/Attack중간5미술승인대기유지. [상세·근거](Chapter2_BattleBackground_ReadonlyAudit_Zip91_90_Vfx89_20261104.md). Unity6000.6.5f1·원본/Save/Editor/dirty보호·제품수정/Push/merge0. 직전관련9c799745·이번SHA는Issue91/90/89댓글참조. LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #89 v2 격리 Unity 시각 Delta 실제 실행
+
+6000.6.5f1·실제PlayMode/Camera/Canvas RT로40/128px×설원/어두운전장×3해상도12조건 캡처완료. 자동99PASS/0FAIL·컴파일/새Runtime오류0(기존Search시작예외1 별도). 실제49PNG·측정·로그 보존. **VISUAL_PARTIAL**:40px 바퀴와혼합/상태구분약함,128px 하체가림,작은상태HUD가독성·기존상세팝업차폐 검토. 얼굴/HP/2x3메뉴는VFX차폐없음. 승인미술유지·원본적용/전수QA0. [상세·실캡처](Issue89_V2_UnityVisualDeltaQA_20261104.md). 다음은부착위치/크기·별도아이콘/HUD가독성판단. 원본main/Save/승인아트/dirty보호. LOCAL_COMMITTED/REMOTE_NOT_PUSHED·직전a4cd85af·최종SHA는Issue89댓글참조.
+
+---
+
+## 2026-11-04 Issue #89·#90 v2 미술 승인 확정
+
+F: v2 ZIP 전체 SHA를 각각1회 계산해 기획 승인값 정확일치. #89 USER_ART_APPROVED_SHA_MATCH, #90 ATTACK3_KEYPOSE_USER_ART_APPROVED_SHA_MATCH. [승인·QA준비·리뉴얼 인계](Issue89_90_V2_ArtApproval_QAPrep_Handoff_20261104.md). #89 격리6000.6.5f1의40/128px·HUD·설원·3화면비12조건 QA 준비서 완료(실행전), #90 승인3키포즈KEEP·미제작중간5장만 제작가능 인계. Unity/본편적용·전체QA반복0, 원본main/Save/승인아트/사용자dirty보호. LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 직전관련fd70f8e8, 이번문서commit은Issue#89/#90결과댓글참조.
+
+---
+
+## 2026-11-04 Issue #89·#90 F: 원본 ZIP 확인 / 미술 승인 대기
+
+두 ZIP 전체 SHA256이 최신 총괄 보고와 정확히 일치합니다. Spider Contact 전후 두부/몸통 높이·앞다리 관절 대응과 Recover 지지발, 한기 설원 대비·동상/동결괴사 40px 실루엣만 최소 보완 후보로 특정했습니다. 실제 프레임 OFFLINE 검토이며 Unity 재검증/제작/본편 적용0·6000.6.5f1 유지·Save/승인아트/main/사용자 dirty 보호. [상세 검수](Issue89_90_FDrive_Zip_VisualReview_20261104.md). 다음은 표적 미술 승인/소량 보완 판단입니다. 마지막 관련 commit은 이번 문서 commit 및 Issue #89/#90 댓글 SHA 참조. LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
+
+---
+
 ## 2026-11-03 Issue #86 — F2 단일등록 완료 / ORIGINAL_LOCAL_SYNC_DONE
 
 관련 QA/보고 `b36a67dc02ac308dfcaa352c5ffce7fef399b324`. [최종 원본 반영·Issue 영수증](Evidence/F2BuildSettingsFinal86_20261103/Receipt.md).

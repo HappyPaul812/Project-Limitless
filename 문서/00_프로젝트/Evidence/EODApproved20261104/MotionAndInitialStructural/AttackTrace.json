@@ -1,0 +1,1660 @@
+{
+    "rows": [
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.0,
+            "hp": 223,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.009999994188547134,
+            "hp": 223,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.01999998837709427,
+            "hp": 223,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.029999978840351105,
+            "hp": 223,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.03999997302889824,
+            "hp": 223,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.049999963492155075,
+            "hp": 223,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.05999996140599251,
+            "hp": 223,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.06999994814395905,
+            "hp": 223,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.07999993860721588,
+            "hp": 223,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.08999994397163391,
+            "hp": 223,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.09999993443489075,
+            "hp": 223,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.10999992489814758,
+            "hp": 223,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.11999991536140442,
+            "hp": 223,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.12999990582466125,
+            "hp": 223,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.1399998962879181,
+            "hp": 223,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.14999988675117493,
+            "hp": 223,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.15999987721443176,
+            "hp": 223,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.1699998825788498,
+            "hp": 223,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.17999987304210663,
+            "hp": 223,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.18999986350536346,
+            "hp": 223,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Prepare",
+            "t": 0.1999998539686203,
+            "hp": 223,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.20999984443187714,
+            "hp": 223,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.21999983489513397,
+            "hp": 223,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.229999840259552,
+            "hp": 223,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.23999981582164764,
+            "hp": 223,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.24999980628490448,
+            "hp": 223,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.2599998414516449,
+            "hp": 223,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.26999983191490173,
+            "hp": 223,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.27999982237815857,
+            "hp": 211,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.2899998128414154,
+            "hp": 211,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.29999980330467224,
+            "hp": 211,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.3099997937679291,
+            "hp": 211,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.3199997842311859,
+            "hp": 211,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.32999977469444275,
+            "hp": 211,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.3399997651576996,
+            "hp": 211,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.3499997556209564,
+            "hp": 211,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.35999974608421326,
+            "hp": 211,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.3699997365474701,
+            "hp": 211,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.3799997568130493,
+            "hp": 211,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.38999974727630615,
+            "hp": 211,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Sting",
+            "t": 0.399999737739563,
+            "hp": 211,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.4099997282028198,
+            "hp": 211,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.41999971866607666,
+            "hp": 211,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.4299997091293335,
+            "hp": 211,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.43999969959259033,
+            "hp": 211,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.44999969005584717,
+            "hp": 211,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.459999680519104,
+            "hp": 211,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.46999967098236084,
+            "hp": 211,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.4799996614456177,
+            "hp": 211,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.4899996519088745,
+            "hp": 211,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.49999964237213135,
+            "hp": 211,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.5099996328353882,
+            "hp": 211,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.519999623298645,
+            "hp": 211,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.5299996137619019,
+            "hp": 211,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.5399996042251587,
+            "hp": 211,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.5499995946884155,
+            "hp": 211,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.5599996447563171,
+            "hp": 211,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.569999635219574,
+            "hp": 211,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.5799996256828308,
+            "hp": 211,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.5899996161460876,
+            "hp": 211,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.5999996066093445,
+            "hp": 211,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.6099995970726013,
+            "hp": 211,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.6199995875358582,
+            "hp": 211,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.629999577999115,
+            "hp": 211,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.6399995684623718,
+            "hp": 211,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.6499995589256287,
+            "hp": 211,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.6599995493888855,
+            "hp": 211,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.6699995398521423,
+            "hp": 211,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.6799995303153992,
+            "hp": 211,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.689999520778656,
+            "hp": 211,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.6999995112419128,
+            "hp": 211,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.7099995017051697,
+            "hp": 211,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.7199994921684265,
+            "hp": 211,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.7299994826316833,
+            "hp": 211,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.7399994730949402,
+            "hp": 211,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.749999463558197,
+            "hp": 211,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.7599994540214539,
+            "hp": 211,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.7699994444847107,
+            "hp": 211,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.7799994349479675,
+            "hp": 211,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.7899994254112244,
+            "hp": 211,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.7999994158744812,
+            "hp": 211,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.8099994659423828,
+            "hp": 211,
+            "index": 8,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.8199994564056396,
+            "hp": 211,
+            "index": 8,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.8299994468688965,
+            "hp": 211,
+            "index": 8,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.8399994373321533,
+            "hp": 211,
+            "index": 8,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.8499994277954102,
+            "hp": 211,
+            "index": 8,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.859999418258667,
+            "hp": 211,
+            "index": 8,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.8699994087219238,
+            "hp": 211,
+            "index": 8,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.8799993991851807,
+            "hp": 211,
+            "index": 8,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.8899993896484375,
+            "hp": 211,
+            "index": 8,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.8999993801116943,
+            "hp": 211,
+            "index": 8,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.9099993705749512,
+            "hp": 211,
+            "index": 9,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.919999361038208,
+            "hp": 211,
+            "index": 9,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.9299993515014648,
+            "hp": 211,
+            "index": 9,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.9399993419647217,
+            "hp": 211,
+            "index": 9,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.9499993324279785,
+            "hp": 211,
+            "index": 9,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.9599993228912354,
+            "hp": 211,
+            "index": 9,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.9699993133544922,
+            "hp": 211,
+            "index": 9,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.979999303817749,
+            "hp": 211,
+            "index": 9,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.9899992942810059,
+            "hp": 211,
+            "index": 9,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "Recover",
+            "t": 0.9999992847442627,
+            "hp": 211,
+            "index": 9,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "63.Bee",
+            "sprite": "IdleFolded",
+            "t": 1.0099992752075195,
+            "hp": 211,
+            "index": 0,
+            "attack": false,
+            "playing": false
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "00",
+            "t": 0.0,
+            "hp": 169,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "00",
+            "t": 0.009999990463256836,
+            "hp": 169,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "00",
+            "t": 0.019999980926513672,
+            "hp": 169,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "00",
+            "t": 0.029999971389770508,
+            "hp": 169,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "00",
+            "t": 0.039999961853027344,
+            "hp": 169,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "00",
+            "t": 0.04999995231628418,
+            "hp": 169,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "00",
+            "t": 0.059999942779541016,
+            "hp": 169,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "00",
+            "t": 0.06999993324279785,
+            "hp": 169,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "00",
+            "t": 0.07999992370605469,
+            "hp": 169,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "00",
+            "t": 0.08999991416931152,
+            "hp": 169,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "00",
+            "t": 0.09999990463256836,
+            "hp": 169,
+            "index": 0,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "01",
+            "t": 0.1099998950958252,
+            "hp": 169,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "01",
+            "t": 0.11999988555908203,
+            "hp": 169,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "01",
+            "t": 0.12999987602233887,
+            "hp": 169,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "01",
+            "t": 0.1399998664855957,
+            "hp": 169,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "01",
+            "t": 0.1499999761581421,
+            "hp": 169,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "01",
+            "t": 0.15999996662139893,
+            "hp": 169,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "01",
+            "t": 0.16999995708465576,
+            "hp": 169,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "01",
+            "t": 0.1799999475479126,
+            "hp": 169,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "01",
+            "t": 0.18999993801116943,
+            "hp": 169,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "01",
+            "t": 0.19999992847442627,
+            "hp": 169,
+            "index": 1,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "02",
+            "t": 0.2099999189376831,
+            "hp": 169,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "02",
+            "t": 0.21999990940093994,
+            "hp": 169,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "02",
+            "t": 0.22999989986419678,
+            "hp": 169,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "02",
+            "t": 0.2399998903274536,
+            "hp": 169,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "02",
+            "t": 0.24999988079071045,
+            "hp": 169,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "02",
+            "t": 0.2599998712539673,
+            "hp": 169,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "02",
+            "t": 0.2699998617172241,
+            "hp": 169,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "02",
+            "t": 0.27999985218048096,
+            "hp": 155,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "02",
+            "t": 0.2899998426437378,
+            "hp": 155,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "02",
+            "t": 0.29999983310699463,
+            "hp": 155,
+            "index": 2,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "03",
+            "t": 0.30999982357025146,
+            "hp": 155,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "03",
+            "t": 0.3199998140335083,
+            "hp": 155,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "03",
+            "t": 0.32999980449676514,
+            "hp": 155,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "03",
+            "t": 0.339999794960022,
+            "hp": 155,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "03",
+            "t": 0.3499997854232788,
+            "hp": 155,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "03",
+            "t": 0.35999977588653564,
+            "hp": 155,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "03",
+            "t": 0.3699997663497925,
+            "hp": 155,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "03",
+            "t": 0.3799997568130493,
+            "hp": 155,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "03",
+            "t": 0.38999974727630615,
+            "hp": 155,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "03",
+            "t": 0.399999737739563,
+            "hp": 155,
+            "index": 3,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "04",
+            "t": 0.4099997282028198,
+            "hp": 155,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "04",
+            "t": 0.41999971866607666,
+            "hp": 155,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "04",
+            "t": 0.4299997091293335,
+            "hp": 155,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "04",
+            "t": 0.43999969959259033,
+            "hp": 155,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "04",
+            "t": 0.44999969005584717,
+            "hp": 155,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "04",
+            "t": 0.459999680519104,
+            "hp": 155,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "04",
+            "t": 0.46999967098236084,
+            "hp": 155,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "04",
+            "t": 0.4799996614456177,
+            "hp": 155,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "04",
+            "t": 0.4899996519088745,
+            "hp": 155,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "04",
+            "t": 0.49999964237213135,
+            "hp": 155,
+            "index": 4,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "05",
+            "t": 0.5099996328353882,
+            "hp": 155,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "05",
+            "t": 0.519999623298645,
+            "hp": 155,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "05",
+            "t": 0.5299996137619019,
+            "hp": 155,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "05",
+            "t": 0.5399996042251587,
+            "hp": 155,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "05",
+            "t": 0.5499995946884155,
+            "hp": 155,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "05",
+            "t": 0.5599995851516724,
+            "hp": 155,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "05",
+            "t": 0.5699995756149292,
+            "hp": 155,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "05",
+            "t": 0.579999566078186,
+            "hp": 155,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "05",
+            "t": 0.5899995565414429,
+            "hp": 155,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "05",
+            "t": 0.5999995470046997,
+            "hp": 155,
+            "index": 5,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "06",
+            "t": 0.6099995374679565,
+            "hp": 155,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "06",
+            "t": 0.6199995279312134,
+            "hp": 155,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "06",
+            "t": 0.6299995183944702,
+            "hp": 155,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "06",
+            "t": 0.6399996280670166,
+            "hp": 155,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "06",
+            "t": 0.6499996185302734,
+            "hp": 155,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "06",
+            "t": 0.6599996089935303,
+            "hp": 155,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "06",
+            "t": 0.6699995994567871,
+            "hp": 155,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "06",
+            "t": 0.679999589920044,
+            "hp": 155,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "06",
+            "t": 0.6899995803833008,
+            "hp": 155,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "06",
+            "t": 0.6999995708465576,
+            "hp": 155,
+            "index": 6,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "07",
+            "t": 0.7099995613098145,
+            "hp": 155,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "07",
+            "t": 0.7199995517730713,
+            "hp": 155,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "07",
+            "t": 0.7299995422363281,
+            "hp": 155,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "07",
+            "t": 0.739999532699585,
+            "hp": 155,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "07",
+            "t": 0.7499995231628418,
+            "hp": 155,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "07",
+            "t": 0.7599995136260986,
+            "hp": 155,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "07",
+            "t": 0.7699995040893555,
+            "hp": 155,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "07",
+            "t": 0.7799994945526123,
+            "hp": 155,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "07",
+            "t": 0.7899994850158691,
+            "hp": 155,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "07",
+            "t": 0.799999475479126,
+            "hp": 155,
+            "index": 7,
+            "attack": true,
+            "playing": true
+        },
+        {
+            "test": "90.Spider",
+            "sprite": "00",
+            "t": 0.8099994659423828,
+            "hp": 155,
+            "index": 0,
+            "attack": false,
+            "playing": false
+        }
+    ]
+}

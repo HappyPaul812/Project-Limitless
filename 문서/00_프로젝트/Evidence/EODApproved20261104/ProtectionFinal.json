@@ -1,0 +1,16 @@
+{
+  "original_head": "634a91d3e4174c87761c0d377cfa5a695ca79e7f",
+  "original_branch": "main",
+  "tracked_snapshot_count": 7374,
+  "tracked_changed_since_preflight": [],
+  "dirty_and_untracked_bytes_changed": [],
+  "private_hash_count": 23,
+  "private_changed_count": 0,
+  "original_status_equal": true,
+  "tracked_dirty": 308,
+  "untracked": 550,
+  "approved_png_count": 37,
+  "approved_png_mismatch": [],
+  "local_main_sync": "LOCAL_MAIN_SYNC_HOLD_DIRTY",
+  "product_scene_prefab_buildsettings_packages_changes": []
+}
