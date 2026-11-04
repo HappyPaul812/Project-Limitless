@@ -1,5 +1,15 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-04 / Chapter3 전투 배경 2종 파일럿 — Chapter1·2 실물 사전 감사 포함
+
+- **사전 조사 (GitHub main 7,600 tree nodes)**: Chapter1 전용 배경 PNG **6종**, 카탈로그 참조 고유 PNG **4종**(Grassland Field01, Forest Field02/03, Silent Catacombs Dungeon01/B2, Silent Warden Boss). 나머지 Toxic Swamp·Ancient Sanctuary는 실 PNG 보유하나 해당 `Chapter1.asset` 연결 미확인. Chapter2 전용 `Art/Battle/Backgrounds/Chapter2`/전용 catalogue **원격 main에서 미발견**; Main20은 `BattleBackgroundCatalog.Find()`에서 기존 `DeepCore_Ground_Base` 지면 Sprite를 재사용. 원격 미발견 ≠ 바울 대표 PC Ch2 별도 파일 부재; `CH2_LOCAL_INVENTORY_NOT_VERIFIED`. Ch1 .meta 확인 PNG 실제 Sprite rect **1672×941**, PPU100/중앙 Pivot(참고치). Ch1·2 원본 재제작·수정0.
+- **신규 C3 배경2** `Candidate/C3_BattleBG_FrostwaySnowroad_v1_CANDIDATE_1672x941.png` **SHA `a5f3bb960b5c5e6fe4140cb2de64e726f4bc7fabb8674f895789fed128adcd25`** / `Candidate/C3_BattleBG_FirstSnowForest_F2_v1_CANDIDATE_1672x941.png` **SHA `93388ee52fd75da4a82df0b68e03b2083167a25f339d97b41dc71c807125282b`**, 두 파일 모두 1672×941 **RGB 불투명 정적 원본**. 신규 독립 프로시저럴 픽셀 파일럿으로 중앙·하단 전투 슬롯 가독성을 고려; Chapter1 실제 그림을 직접 픽셀로 대조한 화풍 PASS나 Ch3 Import/Unity 적용 주장 금지. 심부 냉기/빙하 협곡 추가 후보는 후속 제안이며 **미제작**.
+- **실 납품 ZIP** `Limitless_Chapter3_BattleBackground_2Pilot_20261104.zip` **1,600,528 bytes / 12entries / SHA256 `a8c02e9ab6189a6feb074d3f83c8cd6a8bce61ff1b8de110e7c8216934468eb9`**, CRC PASS / SHA256SUMS11/11 PASS. ChatGPT Library `/LIMITLESS/Chapter3_BattleBackground_20261104/`에 **실제 ZIP 업로드·목록 조회 성공**. 비교판 별도 라이브러리 업로드는 `container_session_expired`로 실패했지만 ZIP `Preview/`에는 비교판+개별 UI 목업 3 PNG 포함. 대표 PC F:\ 복사/해시 미확인, GitHub 바이너리0.
+- **오프라인 검토** `Preview/Chapter3_BattleBG_2Scene_UI_Comparison_OFFLINE.png`은 2개 실제 배경 위 **비공식 아군3·적 실루엣 대용 및 HP/MP 명령 패널**을 같은 크기로 얹은 OFFLINE 비교판. 승인 Owl·정식 캐릭터·UI Sprite를 복사/수정하지 않았음. `Docs/Chapter1_2_BattleBG_Audit.md` 및 CSV, `Docs/DesignNotes.md`, Manifest/QA/SHA 등 ZIP 포함.
+- [**정식 제작·Chapter1·2 재사용 감사 보고**](../../Chapter3_BattleBG_InitialPilot_Audit_20261104.md) `docs/art-new` 보고 commit **`580e55d9ebad719a56bbc15da0215b3224b4cea2`**. 상태 `BATTLE_BG_CANDIDATE / OFFLINE_PNG_QA_PASS / USER_VISUAL_REVIEW_PENDING / UNITY_NOT_VERIFIED / NOT_UNITY_APPLIED`. 현재 기존 승인 Frostway 지면9/환경43, Owl v3 Idle8/Attack4, Spider/Bee, 냉기 VFX 등 모든 기존 자산 보호, Unity Scene/Prefab/Save/UserData/BuildSettings/Packages·main 변경0, main 직접 Push/병합0.
+- **다음** 바울 대표 두 배경 미술·가독성 비교 → 승인 후보 Codex 격리 Unity6000.6.5f1 원본 Battle UI/캐릭터·적 비율/화풍·화면비 DeltaQA → 바울 대표 별도 본편 적용 승인. Chapter2 PC 로컬 원본 목록 read-only Codex 감사 필요.
+
+
 ## 2026-11-04 / Issue #89 후속 — 냉기 VFX 한기 설원 대비·동상/동결괴사 40px 표적 보완 v2
 
 - [Issue #89 Codex F: v1 실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6620211048) · [기획 최소 수정 발주](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6620385952)를 반영. 원본 v1 ZIP SHA **`83b4efeee62cdb4cabf7dbcc4d2aea21cbefdb4507e03f53b8c59d8079e9e4ba`** 및 원본 PNG3 SHA 전체 보존. 기존 승인 Owl Idle8/Attack4, NaturalBroken Stump v4, F2·Frostway 아트·냉기 Stage1 63PASS·독립 상태 계약 수정0.
