@@ -1,3 +1,13 @@
+## 2026-11-04 / Issue #90 — Contact01·Recover02 표적 수정 v2 (현재 최신)
+
+- **정식 보고서:** [Renewal_20261104_Issue90_AttackContactRecover_Targeted_v2_Delivery.md](../../Renewal_20261104_Issue90_AttackContactRecover_Targeted_v2_Delivery.md) / `docs/art-renewal` commit **`157b432ac2960250091da350db0c9c0008543aed`**. 근거: [#90 Codex F: 좌표/관절 검증](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6620212147), [기획 최소 보완 지시](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6620386396).
+- **실 ZIP** `LIMITLESS_SPIDER_ATTACK3_TARGETED_ISSUE90_v2.zip` **1,719,271 bytes / 12 entries / CRC PASS / Manifest 10/10 SHA PASS / ZIP SHA256 `804f8ebf85dbe7f7301cbfdecc6e85adc4e7d8888e23c3ee132bfca95854499b`**. ChatGPT 라이브러리 `/LIMITLESS_Art_Delivery/`에 ZIP·두 PNG·512/128/40 비교판·관절 연결/8슬롯 자료 8파일 업로드 성공. 사용자 F: 자동 저장/원격 바이너리 Push0.
+- **신규 Contact01** 512 RGBA SHA256 `0d0e24c2fae579f2f944255fe3bd3841216299b14f439cc3612906269020f697` (기존 `4a4d4418...` 대비 **RGBA 47,381픽셀 변경**). 두부 각도·복부 높이·오른쪽 전방 어깨/무릎/발끝을 국소 조정. **신규 Recover02** 512 RGBA SHA `0501a452467a07f34688abdfff5ea5ef49b0dfd93e1c99bdc368229986d44096` (기존 `9fad6682...` 대비 **54,747픽셀 변경**), 복부 상단 복귀 높이/두부/지지다리 국소 보정. 2개 모두 가시 알파 네 변 접촉0.
+- **원본 보호:** 기존 Prepare00 SHA `439ef26e4528e9f57877b471f602f9cfaa2f7bcd2a86b2fce991ec2e17ae5bf2`, 승인 v5/Idle00 SHA `c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9`, Walk07 SHA `edf725d87aafafcb81d01f09b121bf1e20a71b4fbfd829dbd1b0b6a3abf1b189`, 기존 ZIP SHA `91411d15...` 그대로 KEEP. 승인 Idle8/Walk8 보호, Owl·Chapter2 공식/펫·Chapter4 메카닉·VenomBee v3 RIGHTS_HOLD·Unity/Save/UserData/`main` 변경0.
+- **정확 판정:** `TWO_NEW_DELTA_PNGS_TECH_PASS / STATIC_SHA_CRC_PASS / PREPARE_KEEP / JOINT_CONTINUITY_ART_REVIEW_PENDING / FOOT_LOCK_NOT_VERIFIED / TARGET_CONTACT_NOT_VERIFIED / USER_VISUAL_REVIEW_PENDING / ATTACK8_5_NOT_PRODUCED / SHOOT8_NOT_STARTED / NOT_UNITY_APPLIED`. 국소 픽셀 리매핑 후보이며 수작업 독립 관절 재작화/실전 접지 PASS가 아님. `10FPS/PPU256/scale0.7`은 기존 계약 참조, Attack8 실제 재생 테스트0. 대표 미술 승인 전 확대 제작/본편 교체 금지.
+
+---
+
 # WORLD_ART_RENEWAL / 2026-11-04 최신 증분 인계 — Issue #90 Organic ForestSpider Attack3
 
 **2026-11-04 최신 증분:** 기존 `WORLD_ART_RENEWAL_LATEST.md`의 102KB 이상 기존 승인·QA 이력은 덮어쓰지 않고 그대로 보호. 이 문서를 Issue #90 후속 인계로 사용하며, 기존 인계 본문의 직접 수정이 완료됐다고 주장하지 않는다.
