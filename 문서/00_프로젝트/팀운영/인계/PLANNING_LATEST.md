@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-04 10:25 — #89 냉기VFX·#90 거미Attack3 실제 라이브러리 ZIP 파일검수
+
+- 바울 대표의 Windows 로컬 경로 `F:\Downloads\LIMITLESS_SPIDER_ATTACK3_ISSUE90.zip`, `F:\Downloads\Limitless_Ch3_ColdVFX_Issue89_Pilot_20261104.zip` 전달 접수. **직접 검사한 것은 ChatGPT Library 동일이름·보고용량 ZIP의 바이트**이고, 사용자 `F:` 드라이브 원본은 `NOT_VERIFIED`. 두 보관 ZIP의 SHA가 [#89](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6619789789)/[#90](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6619839416) 보고값과 일치.
+- #89 VFX ZIP SHA `83b4efeee62cdb4cabf7dbcc4d2aea21cbefdb4507e03f53b8c59d8079e9e4ba`, CRC PASS·SUMS16/16·Manifest15/15, 신규 RGBA512 세 장 alpha변 접촉0. 512/128 형태 구별되나 한기의 **밝은 설원 대비 약함**, 동상/동결괴사 **40px 실루엣의 유사성** 사용자 미술 검토 필요. 
+- #90 Spider Attack3 ZIP SHA `91411d159d401f1772e80e848d78550dd62552f65c1a76d659c15d8b0df44d3e`, CRC PASS·SUMS19/19·Manifest19/19, 신규 RGBA512 세 장 alpha변 접촉0. Prepare/Contact/Recover 공격 의미 명확하나 10FPS 연속 연결의 방향·두부·앞다리/접지 도약이 **미검증**. Attack8 완성3/8, Shoot8 0.
+- [실물 검수·기획 판정 보고](../../20261104_Issue89_90_LibraryZip_ArtReview.md) `docs/planning` commit `6f313419ff83c9e915962ae65410e559aaff836a`. 두 담당의 기존 납품 보고는 유효하나 **ART_FINAL_APPROVAL_PENDING / NOT_UNITY_APPLIED**. 기존 올빼미/Spider v5/Idle/Walk·Bee RIGHTS_HOLD·승인 파일 SHA·개인Save/원본 Unity 유지. 다음 단계는 실루엣·연속성의 최소 시각 검토 후 사용자 승인; Codex는 F: 실제 해시와 필요한 격리 Unity 시야/타이밍만, 과거 QA 전수 반복X.
+
+---
+
 # PLANNING / 2026-11-04 — 냉기 공통 런타임 Stage1 63PASS 접수, Stage2 정책 미승인
 
 - 바울 대표 전달한 Codex 신규 실측 [Issue #88 1단계 완료보고](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6619606069) 확인. Unity **6000.6.5f1** 격리 QA `63 PASS / 0 FAIL`, 컴파일/제품 런타임오류0. 신규 `BattleColdStatusRuntime`, 기존 Battle/Status/HUD의 최소 확장. 한기 2회 차례차단·동상 별도 HP피해 API(수치 없음)·동결괴사3중첩 KO·HUD 준비까지 확인. 기존 #85/#87 QA 중복0, **원본 Unity 적용0, Push0, 개인Save/UserData 보호**. 코드 `05fdf1d4447eb3731cf66024467348bbfd3f4485`, 문서/증거 `a294a66b0307a1c69574e5939d68c0ce3cf524b2`는 **로컬 별도 worktree**에만 존재.
