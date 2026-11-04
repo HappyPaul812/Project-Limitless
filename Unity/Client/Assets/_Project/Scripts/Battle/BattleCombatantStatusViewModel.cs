@@ -22,6 +22,8 @@ namespace ProjectLimitless.Battle
         public string Label { get; }
         public int Count { get; }
         public string DisplayText => Id == "overheat" ? $"과열 {Count}/3" + (Count == 2 ? " 위험" : "")
+            : Id == "cold.necrosis" ? $"동결괴사 {Count}/3" + (Count == 2 ? " KO!" : "")
+            : Id == "cold.chill" || Id == "cold.frostbite" ? $"{Label} {Count}턴"
             : Count > 0 ? $"{Label} {Count}" : Label;
     }
 

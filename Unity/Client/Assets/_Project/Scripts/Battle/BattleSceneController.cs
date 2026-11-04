@@ -477,7 +477,9 @@ namespace ProjectLimitless.Battle
             Image ground = MakeImage(battlefield.transform, "BattleGround", new Color(.055f, .095f, .105f, 1f)); ground.rectTransform.anchorMin = Vector2.zero; ground.rectTransform.anchorMax = new Vector2(1, .42f); ground.rectTransform.offsetMin = Vector2.zero; ground.rectTransform.offsetMax = Vector2.zero;
             Image horizon = MakeImage(battlefield.transform, "GoldenHorizon", new Color(.65f, .5f, .22f, .7f)); horizon.rectTransform.anchorMin = new Vector2(0, .415f); horizon.rectTransform.anchorMax = new Vector2(1, .425f); horizon.rectTransform.offsetMin = Vector2.zero; horizon.rectTransform.offsetMax = Vector2.zero;
             BattleBackgroundCatalog backgrounds = Resources.Load<BattleBackgroundCatalog>("BattleBackgrounds/Chapter1");
-            Sprite backdrop = backgrounds != null ? backgrounds.Find(BattleEncounterContext.FieldSceneName,
+            BattleBackgroundCatalog chapter2 = Resources.Load<BattleBackgroundCatalog>("BattleBackgrounds/Chapter2");
+            Sprite chapter2Backdrop = chapter2 != null ? chapter2.Find(BattleEncounterContext.FieldSceneName, BattleEncounterContext.StableEncounterId) : null;
+            Sprite backdrop = chapter2Backdrop != null ? chapter2Backdrop : backgrounds != null ? backgrounds.Find(BattleEncounterContext.FieldSceneName,
                 BattleEncounterContext.StableEncounterId) : null;
             if (backdrop != null)
             {
@@ -2799,7 +2801,7 @@ namespace ProjectLimitless.Battle
             // 독침벌처럼 Attack 시트를 가진 몬스터만 실제 공격 프레임으로 전환합니다.
             // 피해 계산과 이동 연출은 기존 Presenter가 그대로 담당하므로 독 효과를 미리 만들지 않습니다.
             if (strongVisual) actorView.MonsterAnimation?.PlaySkill();
-            else actorView.MonsterAnimation?.PlayAttack();
+            else if (actorView.MonsterAnimation != null) actorView.MonsterAnimation.PlayAttack(actorView.MonsterAnimation.UsesApprovedAttackTiming);
 
             if (actor.BasicRange == TargetRangeType.RangedPhysical)
             {
@@ -2851,7 +2853,8 @@ namespace ProjectLimitless.Battle
                 battleFont,
                 applyImpact,
                 onImpact,
-                onComplete));
+                onComplete,
+                actorView.MonsterAnimation == null || !actorView.MonsterAnimation.UsesApprovedAttackTiming ? null : (Func<bool>)(() => actorView.MonsterAnimation.IsAttackPlaying)));
         }
         /// <summary>파일명 순서로 추출된 Projectile 프레임을 불러와 공용 Presenter에 전달합니다.</summary>
         private static Sprite[] LoadProjectileFrames(string resourcesPath)
@@ -3244,6 +3247,7 @@ namespace ProjectLimitless.Battle
                 // path.* 상태에는 Game-icons.net TraitIcon을 사용합니다. 아이콘이 없어도 한글 상태명은 남아
                 // 색상이나 그림만으로 전투 정보를 판단하지 않게 합니다.
                 Sprite traitIcon = marker.Id == "overheat" ? Resources.Load<Sprite>("Main18/UI/Status_Overheat")
+                    : BattleApprovedColdAssets.IsCold(marker.Id) ? BattleApprovedColdAssets.Icon(marker.Id)
                     : marker.Id.StartsWith("path.", StringComparison.Ordinal) ? PathPresentationResolver.FindTraitIcon(marker.Id) : null;
                 summaries.Add((iconId, traitIcon, marker.DisplayText));
             }
@@ -3253,6 +3257,7 @@ namespace ProjectLimitless.Battle
                 (BattleUiIconCatalog.GetCooldownIconId(cooldown.RemainingTurns, cooldown.TotalTurns),
                     (Sprite)null, cooldown.DisplayText)));
             RefreshStatusBadges(row, summaries);
+            if (statusModel.Markers.Any(marker => BattleApprovedColdAssets.IsCold(marker.Id))) ApplyApprovedColdRow(row);
         }
 
         /// <summary>

@@ -3,11 +3,27 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11bfa9e4e73d4ce5978021aa82a74fa2, type: 3}
   m_Name: 03_ForestSpider
   m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Monster.MonsterDefinition
   monsterId: forest_spider
   displayName: "\uC232\uAC70\uBBF8"
+  monsterLevel: 3
+  baseExperience: 16
+  currencyReward: 5
+  lootEntries:
+  - itemId: material_forest_spider_silk
+    dropChance: 0.4
+    minCount: 1
+    maxCount: 1
+  maxHp: 80
+  encounterSupportMonster: {fileID: 11400000, guid: b33f06912b2a48d0afcd626d1d88fd30, type: 2}
   fieldMoveSpeed: 0.65
   minimumIdleTime: 0.8
   maximumIdleTime: 1.8
@@ -26,22 +42,49 @@ MonoBehaviour:
   animationFramesPerSecond: 10
   visualScale: 0.7
   sourceFacesRight: 1
-  idleFrameResourcePath: MonsterAnimations/Spider/Idle
-  walkFrameResourcePath: MonsterAnimations/Spider/Walk
-  attackFrameResourcePath: MonsterAnimations/Spider/Attack
+  explicitIdleFrames:
+  - {fileID: 21300000, guid: 34dfe624199cd8166bec71235a3b15a2, type: 3}
+  - {fileID: 21300000, guid: 5f994016c15ba6263e6dc3b42ceebe26, type: 3}
+  - {fileID: 21300000, guid: 968064ccc22f4729cdeefec43ba53659, type: 3}
+  - {fileID: 21300000, guid: a72cfabf0ffa71d12b469bf7df1a6dca, type: 3}
+  - {fileID: 21300000, guid: 289f1a8fadf0ce57e1420df8577a5b26, type: 3}
+  - {fileID: 21300000, guid: 0ceef5e9c7156bacfd7c20bfe8d87009, type: 3}
+  - {fileID: 21300000, guid: 8c9162b5c664d19cd527ed6e773a2122, type: 3}
+  - {fileID: 21300000, guid: 9b6328b95f5263207acf2520a7a1f32c, type: 3}
+  explicitWalkFrames:
+  - {fileID: 21300000, guid: bd7d4a51598748ff270ff7bc27f5aa77, type: 3}
+  - {fileID: 21300000, guid: ac081aebc8285060f5d9d4e5a0f24aae, type: 3}
+  - {fileID: 21300000, guid: 0838cc6bae8e4e9fd108724bc121bfa1, type: 3}
+  - {fileID: 21300000, guid: f871d1fa1247cf8b49f36b09c5f2a2e8, type: 3}
+  - {fileID: 21300000, guid: 29a0f5d3815d17aca091657a115062cf, type: 3}
+  - {fileID: 21300000, guid: 0fda2c9c135608eb566959b7730d0f7b, type: 3}
+  - {fileID: 21300000, guid: 166ac67cfaaae8f260ee0d339270daf6, type: 3}
+  - {fileID: 21300000, guid: dcd922a35428e105957db95658b32c3a, type: 3}
+  explicitAttackFrames:
+  - {fileID: 21300000, guid: b9f82a5d87642766fb00d2de0b6a43a4, type: 3}
+  - {fileID: 21300000, guid: 8693c0eaaf114fa3c19421ca22b703be, type: 3}
+  - {fileID: 21300000, guid: 15c3f1729de42679b782bce02b973dd3, type: 3}
+  - {fileID: 21300000, guid: 36a64881c6d5836bb5b284a02cbb990b, type: 3}
+  - {fileID: 21300000, guid: 18b4d334cf3ad33e9247c7e6261965ca, type: 3}
+  - {fileID: 21300000, guid: b7565bc9f5e280b5516aac05d5bcd80e, type: 3}
+  - {fileID: 21300000, guid: 5ce31ade68b344fbfc0d1836582517e8, type: 3}
+  - {fileID: 21300000, guid: aba87f699b059737a4b182eb1d19c9a5, type: 3}
+  explicitHitFrames: []
+  explicitDefeatFrames: []
+  idleFrameResourcePath:
+  walkFrameResourcePath:
+  attackFrameResourcePath:
   shootFrameResourcePath: MonsterAnimations/Spider/Shoot
   battleAttackPercent: 140
+  battleAgility: 10
+  useDefinitionBattleAgility: 0
   basicAttackPoisonActions: 0
   basicAttackPoisonCooldownActions: 0
+  basicAttackPoison:
+    id: poison
+    displayName: "\uB3C5"
+    damageMode: 0
+    power: 5
+    strength: 5
   directAreaAttackName: "\uB3C5\uC561 \uBD84\uC0AC"
   directAreaAttackDamage: 20
-  monsterLevel: 3
-  baseExperience: 16
-  currencyReward: 5
-  lootEntries:
-  - itemId: material_forest_spider_silk
-    dropChance: 0.4
-    minCount: 1
-    maxCount: 1
-  maxHp: 80
-  encounterSupportMonster: {fileID: 11400000, guid: b33f06912b2a48d0afcd626d1d88fd30, type: 2}

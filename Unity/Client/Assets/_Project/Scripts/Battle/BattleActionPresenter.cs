@@ -183,7 +183,7 @@ namespace ProjectLimitless.Battle
         /// 완료 콜백은 모든 표시 상태가 복구된 뒤 호출되므로 다음 턴 진행 시점으로 사용할 수 있습니다.
         /// </summary>
         public IEnumerator PlayMeleeAttack(RectTransform attacker, RectTransform target, Image targetSprite, Font damageFont,
-            Func<int> applyImpact, Action<int> onImpact, Action onComplete)
+            Func<int> applyImpact, Action<int> onImpact, Action onComplete, Func<bool> isAttackVisualPlaying = null)
         {
             if (attacker == null || target == null || targetSprite == null)
             {
@@ -211,6 +211,9 @@ namespace ProjectLimitless.Battle
             attacker.localPosition = attackerOrigin;
             target.localPosition = targetOrigin;
             targetSprite.color = targetOriginalColor;
+            // 피해는 위에서 한 번만 적용합니다. 선택한 모션의 회수가 끝날 때까지 완료만 보류해
+            // 다음 턴이 Attack 뒷부분을 잘라 버리지 않도록 합니다. 미지정 호출의 시간은 그대로입니다.
+            while (isAttackVisualPlaying != null && isAttackVisualPlaying()) yield return null;
             onComplete?.Invoke();
         }
 

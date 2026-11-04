@@ -24,6 +24,13 @@ namespace ProjectLimitless.World
         FieldMonsterSpawnDefinition spawn;
         bool choosing;
         InputAction interact;
+        RectTransform label;
+        Canvas labelCanvas;
+        RectTransform guidancePanel;
+        UnityEngine.UI.Button[] hudButtons;
+        readonly Vector3[] labelCorners = new Vector3[4];
+        readonly System.Collections.Generic.List<Rect> labelObstacles = new System.Collections.Generic.List<Rect>();
+        const float LabelScreenPadding = 8f;
 
         void Awake()
         {
@@ -38,7 +45,7 @@ namespace ProjectLimitless.World
         }
         void OnEnable()=>interact?.Enable();
         void OnDisable()=>interact?.Disable();
-        void OnDestroy()=>interact?.Dispose();
+        void OnDestroy(){interact?.Dispose();Canvas.willRenderCanvases-=KeepLabelInView;}
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         static void Register() { SceneManager.sceneLoaded -= Install; SceneManager.sceneLoaded += Install; }
@@ -61,6 +68,59 @@ namespace ProjectLimitless.World
             go.GetComponent<RectTransform>().sizeDelta=new Vector2(420,80);
             var text=go.GetComponent<UnityEngine.UI.Text>();text.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");text.fontSize=20;text.color=Color.white;text.alignment=TextAnchor.MiddleCenter;text.raycastTarget=false;text.text="서리올빼미 · 격리 전투 후보\nE/F/클릭 · 한기 HOLD / 보상 없음";
             var outline=go.AddComponent<UnityEngine.UI.Outline>();outline.effectColor=Color.black;outline.effectDistance=new Vector2(2,-2);
+            label=go.GetComponent<RectTransform>();labelCanvas=canvas;
+            // CameraFollow의 LateUpdate 뒤 실제 화면을 기준으로 이 안내 글만 보정합니다.
+            Canvas.willRenderCanvases+=KeepLabelInView;
+        }
+
+        /// <summary>
+        /// 월드 Canvas 자체에는 여유가 있어도 Camera 밖으로 투영되면 글이 잘립니다.
+        /// 조우/이동/Camera는 건드리지 않고, 화면에 걸친 표식의 사각형만 최소 거리로 옮깁니다.
+        /// 완전히 화면 밖인 표식은 기존처럼 숨겨 먼 곳의 안내가 HUD처럼 따라붙지 않게 합니다.
+        /// </summary>
+        void KeepLabelInView()
+        {
+            var camera=Camera.main;if(label==null||camera==null)return;
+            label.localPosition=Vector3.up*1.4f;
+            Rect original=ScreenBounds(label,camera),viewport=camera.pixelRect;
+            labelCanvas.enabled=camera.WorldToScreenPoint(label.position).z>0&&viewport.Overlaps(original);
+            if(!labelCanvas.enabled)return;
+            Rect safe=Rect.MinMaxRect(viewport.xMin+LabelScreenPadding,viewport.yMin+LabelScreenPadding,viewport.xMax-LabelScreenPadding,viewport.yMax-LabelScreenPadding);
+            Rect clamped=new Rect(Mathf.Clamp(original.xMin,safe.xMin,safe.xMax-original.width),Mathf.Clamp(original.yMin,safe.yMin,safe.yMax-original.height),original.width,original.height);
+            if(hudButtons==null)hudButtons=Object.FindObjectsByType<UnityEngine.UI.Button>(FindObjectsSortMode.None);
+            if(guidancePanel==null)guidancePanel=Object.FindAnyObjectByType<Main23GuidanceHud>()?.transform.Find("Main23Guidance/Panel") as RectTransform;
+            labelObstacles.Clear();
+            if(guidancePanel!=null&&guidancePanel.gameObject.activeInHierarchy)labelObstacles.Add(ScreenBounds(guidancePanel,camera));
+            foreach(var button in hudButtons)if(button!=null&&button.isActiveAndEnabled)labelObstacles.Add(ScreenBounds(button.transform as RectTransform,camera));
+            // 화면 안의 원래 위치가 HUD와 겹치지 않으면 그대로 유지합니다.
+            Rect best=clamped;float distance=float.PositiveInfinity;
+            ConsiderLabelRect(clamped,original,safe,ref best,ref distance);
+            foreach(var obstacle in labelObstacles)
+            {
+                ConsiderLabelRect(new Rect(obstacle.xMax+LabelScreenPadding,clamped.y,clamped.width,clamped.height),original,safe,ref best,ref distance);
+                ConsiderLabelRect(new Rect(obstacle.xMin-LabelScreenPadding-clamped.width,clamped.y,clamped.width,clamped.height),original,safe,ref best,ref distance);
+                ConsiderLabelRect(new Rect(clamped.x,obstacle.yMax+LabelScreenPadding,clamped.width,clamped.height),original,safe,ref best,ref distance);
+                ConsiderLabelRect(new Rect(clamped.x,obstacle.yMin-LabelScreenPadding-clamped.height,clamped.width,clamped.height),original,safe,ref best,ref distance);
+            }
+            var projected=camera.WorldToScreenPoint(label.position);var shift=best.position-original.position;
+            label.position=camera.ScreenToWorldPoint(projected+new Vector3(shift.x,shift.y,0));
+        }
+
+        void ConsiderLabelRect(Rect candidate,Rect original,Rect safe,ref Rect best,ref float distance)
+        {
+            if(candidate.xMin<safe.xMin||candidate.yMin<safe.yMin||candidate.xMax>safe.xMax||candidate.yMax>safe.yMax)return;
+            foreach(var obstacle in labelObstacles)if(candidate.Overlaps(obstacle))return;
+            float next=(candidate.position-original.position).sqrMagnitude;
+            if(next<distance){best=candidate;distance=next;}
+        }
+
+        Rect ScreenBounds(RectTransform rect,Camera camera)
+        {
+            rect.GetWorldCorners(labelCorners);var canvas=rect.GetComponentInParent<Canvas>();
+            Camera projection=canvas!=null&&canvas.renderMode==RenderMode.ScreenSpaceOverlay?null:camera;
+            Vector2 min=Vector2.positiveInfinity,max=Vector2.negativeInfinity;
+            foreach(var corner in labelCorners){var point=RectTransformUtility.WorldToScreenPoint(projection,corner);min=Vector2.Min(min,point);max=Vector2.Max(max,point);}
+            return Rect.MinMaxRect(min.x,min.y,max.x,max.y);
         }
         void Update()
         {
