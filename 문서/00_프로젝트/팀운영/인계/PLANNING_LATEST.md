@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-04 — 바울 대표 #89/#90 웹 비교판 동일 조건부 최종 미술 승인
+
+- 바울 대표 직접 답변 **“웹이랑 같다면 둘 다 좋아..”** → **#89 냉기VFX v2 3종 정지미술 + #90 Organic Spider Attack3 Prepare00 KEEP/Contact01·Recover02 v2 키포즈 미술**을 조건부 승인. **새 v2 ZIP 2종 Windows F: 실제 SHA 일치가 아직 미검증**이므로 우선 `USER_CONDITIONAL_ART_APPROVAL / F_DRIVE_V2_SHA_PENDING`. 위 [#89](https://github.com/HappyPaul812/Project-Limitless/issues/89) SHA `9c07f5ff782c6e272796c4f003b816a39806ab35248c2353884325ac3c24a1eb`, [#90](https://github.com/HappyPaul812/Project-Limitless/issues/90) SHA `804f8ebf85dbe7f7301cbfdecc6e85adc4e7d8888e23c3ee132bfca95854499b`는 Library에서 실물 검증된 정본값. Codex 1회 F: 직접 SHA 대조하여 이슈별 **일치 시 미술승인 확정, 불일치 시 해당 이슈만 HOLD**, 추가 질문 없이 보고.
+- [조건부 승인·F: SHA 게이트 공식 문서](../../20261104_Issue89_90_ConditionalUserArtApproval.md) `docs/planning` commit `72205da045070852320fadb4212154297615b84a`. 승인 성공 이후 #89는 격리 Unity6000.6.5f1 40/128px·3비율·밝은 설원·전투 HUD 시각QA만 진행, 실제 상태/해제 런타임·원본 적용 HOLD; #90은 승인 3포즈 KEEP하고 Attack8 중 미제작5개만 별도 Art 후보 제작, Shoot8·실타깃접촉·완성 10FPS/본편 적용 HOLD. **USER_ART_APPROVAL != UNITY_PASS != ORIGINAL_APPLIED**.
+- 원본 Unity/Save/UserData/기존 승인 Owl·Spider Idle/Walk/Stage1 냉기63PASS 등 보호. GitHub `main` 직접커밋, 임의 Push/merge 없음. 다른 담당 채팅과 Codex는 자동 실행되지 않음.
+
+---
+
 # PLANNING / 2026-11-04 11:47 — #89 VFX v2 · #90 Spider Attack3 v2 실물 검수
 
 - 바울 대표 로컬 `F:\Downloads\Limitless_Ch3_ColdVFX_Issue89_MinimalFollowup_20261104.zip`, `F:\Downloads\LIMITLESS_SPIDER_ATTACK3_TARGETED_ISSUE90_v2.zip` 전달. **실제 검증한 파일은 ChatGPT 라이브러리 동일 이름 사본**(Windows F: 신규 v2 직접 해시 미검증). #89 ZIP SHA `9c07f5ff782c6e272796c4f003b816a39806ab35248c2353884325ac3c24a1eb` 23entries/CRC PASS/SUMS22/22, #90 ZIP SHA `804f8ebf85dbe7f7301cbfdecc6e85adc4e7d8888e23c3ee132bfca95854499b` 12entries/CRC PASS/SUMS10/10/manifest10/10. 신규 PNG 3+2 모두512² RGBA, 4변 알파접촉0, 담당 #89/#90 보고 일치.
