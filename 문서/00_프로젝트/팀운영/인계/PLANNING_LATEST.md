@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-04 — #89·#90 실제 F: 두 ZIP SHA 확인 후 아트 최소 보완 발주
+
+- 바울 대표 제출 Codex 화면 보고 및 실제 GitHub 코멘트 재확인: [#89 F:원본 검증](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6620211048) / [#90 F:원본 검증](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6620212147). F: ZIP 전체 SHA가 납품 보고와 **정확 일치**. 기존 ChatGPT Library CRC·Manifest·SHA 결과 보호, Unity QA 재실행·파일/Save 변경0. Codex 로컬 문서 commit `fd70f8e8`은 원격 Push되지 않아 GitHub 코멘트로 결과 접수.
+- 총괄 기획 **메인 아트 표적 보완 발주 [#89 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6620385952)**: 한기 설원 대비(바닥 링·연무 경계만), 동상 **붙는 결정 군집**, 동결괴사 **분리된 검푸른 큰 균열/쐐기**로 40px 상태구별. 512RGBA 신규 후보 필요한 것만, 원본 SHA 그대로 KEEP, 128/40·밝음/어두움 Before/After 판독. 새 전체 애니메이션/Unity 적용 금지.
+- 총괄 기획 **리뉴얼 거미 표적 보완 발주 [#90 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6620386396)**: Prepare00 KEEP, **Contact01 두부·복부 높이·앞다리 관절**, **Recover02 Idle 복귀 높이·지지다리** 국소 수정 후보 최대2PNG. 알파 중심 좌표와 bbox는 *실측 참고*이지 강제 Pivot값이 아님. Attack8 나머지5/Shoot8 신규 제작0. 실제 공격 접점/10FPS 완성 연속성 NOT_VERIFIED.
+- **판정:** `F_DRIVE_ZIP_SHA_MATCH / TARGETED_ART_REVISION_REQUESTED / USER_VISUAL_APPROVAL_PENDING / NOT_UNITY_APPLIED`. 기존 Owl v3/Idle8/Attack4, Spider 승인 v5/Idle8/Walk8, Bee v3 RIGHTS_HOLD, 냉기 Stage1격리63PASS, Unity6000.6.5f1, 원본 Editor/개인Save/main/사용자 미커밋 변경 보호. 메인 `docs/art-new`·리뉴얼 `docs/art-renewal` 각자 결과보고 및 이슈/인계 갱신 후 사용자 시각검토 필요. **이슈 발주 자체로 다른 담당 채팅/PC에서 자동 실행되지 않음**.
+
+---
+
 # PLANNING / 2026-11-04 10:25 — #89 냉기VFX·#90 거미Attack3 실제 라이브러리 ZIP 파일검수
 
 - 바울 대표의 Windows 로컬 경로 `F:\Downloads\LIMITLESS_SPIDER_ATTACK3_ISSUE90.zip`, `F:\Downloads\Limitless_Ch3_ColdVFX_Issue89_Pilot_20261104.zip` 전달 접수. **직접 검사한 것은 ChatGPT Library 동일이름·보고용량 ZIP의 바이트**이고, 사용자 `F:` 드라이브 원본은 `NOT_VERIFIED`. 두 보관 ZIP의 SHA가 [#89](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6619789789)/[#90](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6619839416) 보고값과 일치.
