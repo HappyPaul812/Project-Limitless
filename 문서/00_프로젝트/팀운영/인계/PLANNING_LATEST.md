@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-04 최종 정정 — 로컬 main 안전 동기화 성공
+
+- **이전 2026-11-04 EOD `LOCAL_MAIN_SYNC_HOLD_DIRTY` 상태는 이후 Codex 작업으로 해소됨.** 실제 원본PC **`F:/study/codex/Project-Limitless` 로컬 main HEAD `674e6b0f4a613ad7caaa0ee3a94f3f5f0b3e592d`**, [#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6629260583)·[#89](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6629262549)·[#90](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6629264307)·[#92](https://github.com/HappyPaul812/Project-Limitless/issues/92#issuecomment-6629265940) 최신 Codex 보고에서 교차확인. 기존 승인 통합 `codex/integrate-20261104-approved` HEAD `8768cbac91a291f13769c6bfa18a831673652acb` 보존, main 조상 검증. 로컬 `codex/local-main-safe-sync-20261104` 보존. **원격 Push/병합 없음**.
+- **858개 전수 분류(추적변경308·미추적550), 겹침6/해결6/HOLD0**. 기존 사용자 변경 302개·미추적550개 경로/바이트 유지, 6개 충돌한 파일은 동일승인코드1+PilotBee meta5를 보존하면서 처리. 백업 **`F:/LIMITLESS_Backups/20261104_SafeMainSync_201027`**에 원본858+별도개인23=고유881개, 189,292,519bytes, SHA 전체 재확인. 관련 없는 원본/개인23/승인PNG37/GUID 불변. **Git/파일보호 신규16PASS/0FAIL**, Unity6000.6.5f1 유지. 기존 격리 새연결60PASS와 시각보완52PASS는 **재실행하지 않았으며** 합산금지.
+- **이제 원본 main 파일 반영 완료:** #63 승인 VenomBee5·기존 PilotBee 빌드 입력 배제 경로, #90 승인Spider Attack8·Idle/Walk, #89 냉기 정식아이콘3·B표시 HUD, #92 Ashen/Obsidian 배경2·Field05~10 매핑. 단, 이번 로컬FF 동안 전체 출시 Player 빌드 새로 실행하지 않았으므로 과거 격리 QA만 검증 근거. 기존 **VISUAL_PARTIAL**(태온-휠체어전열 겹침/960 안내/128px VFX가림), **냉기 상태 로직 미확정**, **#91 Ch3 미승인BG 및 Shoot8 HOLD**, Spider/Bee 정밀 접점/FootLock 미검증 유지. 원격 main은 로컬 HEAD와 다름.
+- 다음 일정에는 **사용자 302개 추적변경/550개 미추적 파일을 무단 삭제·정리·커밋하지 말 것**. 버전·개인 Save·승인 아트를 그대로 보호하면서 차기 기획과 작업을 이어간다. 이번 사용자 요청 `LOCAL_MAIN_SYNC_SUCCESS / USER_WORK_PRESERVED / REMOTE_NOT_PUSHED`는 **실제 Codex보고로 확인**했고 ChatGPT가 직접 PC를 조작한 것은 아님.
+
+---
+
 # PLANNING / 2026-11-04 19:58 EOD — 승인 4건 격리 통합 성공, 로컬 main 안전 HOLD
 
 - 바울 대표가 제공한 Codex 최종 보고 및 [#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6628635508) · [#89](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6628636928) · [#90](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6628638252) · [#92](https://github.com/HappyPaul812/Project-Limitless/issues/92#issuecomment-6628639926) 실제 댓글 검증. **Unity6000.6.5f1 격리 통합**: 독침벌 승인5포즈·숲거미Attack8·한기/동상/동결괴사 정식아이콘+승인B안 표시·Ch2 BG Ashen/Obsidian 6필드 매핑. 승인 PNG **37개** SHA 일치, 변경된 핵심 코드 신규QA **60PASS/0FAIL**, 시각 입력 보완QA **52PASS/0FAIL**(중복 있으므로 단순 합산 금지). 격리 QA 빌드 Succeeded, 오류0·경고38.
