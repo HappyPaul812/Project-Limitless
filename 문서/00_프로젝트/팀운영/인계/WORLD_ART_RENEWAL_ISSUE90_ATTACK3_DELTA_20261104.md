@@ -1,3 +1,14 @@
+## 2026-11-04 / Issue #90 — Attack8 02·04·05·07 4프레임 국소보완 납품 (최신 증분)
+
+- [신규 표적수정 실물·SHA 보고](../../Renewal_20261104_Issue90_Attack8_4Frame_TargetedArt_v2_Delivery.md), **`docs/art-renewal` commit `ac917c83544003799cabe97ac6ed4052abee64ec`**. [#90 최신 총괄 4프레임 발주](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6622866401) 및 이전 10FPS QA 기준. **승인 00·03·06과 정상 01 바이트 exact KEEP**. 원본 v5·Idle8·Walk8 재작업0.
+- **최종 통합 ZIP** `LIMITLESS_ATTACK8_ISSUE90_TARGETED_4FRAME_FIX_20261104.zip`: **6,023,162bytes / SHA256 `58c51cb49d63cde4669dc183da8583701e7e0bc9dceae9fae5542a5573f0fc9d` / 26entries / CRC PASS / Manifest 24/24 SHA PASS**. 4개 PNG만의 미니ZIP **796,853bytes / SHA256 `e7dac2ab05ce807aa8a9a1fdb0d82b3125007f3ec8eca9427b8f86d9beac085d`**. 두 ZIP + 4PNG + 128·40px 10FPS GIF + 128px 전후/3x관절 확대판 합계10개 ChatGPT Library `/LIMITLESS_Art_Delivery/` 업로드 확인; 사용자 Windows F: 자동복사 아님.
+- **신규 4 PNG 512 RGBA / 새 SHA/변경 픽셀:** slot02 `85ca201cecb4b51acad26b39f5146fe6637c8408dd08b02eb2723f0c65193622` (14,992px), slot04 `3ccdfa06022ea900c60857211db81042f44489719e6235a886c60d351d5ead7a` (3,587px), slot05 `7ed984d56c41f284ad8fc8646275d674f7a6e533649b41644f0baa5c42d15bde` (44,406px), slot07 `35af96b928108206488b1b27bdcf607d3f9f890bc0d3b7df2a16d4a932a6955e` (10,604px).
+- **표적 델타:** 02 전방 다리/관절 국소 변위; 04 우측 분리 가시알파31px 삭제; 05 좌측 분리 3+14+17=34px 삭제·몸통 복귀 국소 정렬; 07 우측 분리7px 삭제 및 무릎 정렬. 지정 ROI에 작은 분리 가시알파 재검출0. 00·01·03·06 바이트·기존 SHA 전부 동일, 임의 재작화 없음. 4×2 전체8 시트, 512/128/40 비교 및 10FPS 전후8×100ms GIF 포함.
+- **미술 QA 한계:** 04→05 실루엣 IoU 기존 약0.720 → 수정 후 약0.723 (소폭 변화). PNG/SHA/CRC/타이밍 기술 PASS는 **실제 8다리 수작업 관절 IK·지지발 물리 고정·Attack 타깃 접촉 PASS가 아님**. 기법은 기존 이미지의 제한영역 국소 픽셀 리매핑+알파 정리. `USER_FINAL_MOTION_ART_REVIEW_PENDING / FOOT_LOCK_NOT_VERIFIED / UNITY_NOT_TESTED` 유지. 필요시 04→05만 수작업 해부학적 교정.
+- **보호:** Shoot8 미제작, VenomBee v3 RIGHTS_HOLD, 승인 Owl·Ch2 공식 몬스터/펫·Chapter4 메카닉 Spider, Unity 6000.6.5f1 원본/Save/UserData/main 변경0, Push·병합·본편 적용 금지.
+
+---
+
 ## 2026-11-04 / Issue #90 / Attack8 10FPS 오프라인 관절·발접지 미술 검수 (현재 최신)
 
 - **정식 프레임별 검수 보고:** [Renewal_20261104_Issue90_Attack8_10FPS_OpticalFlow_Visual_QA.md](../../Renewal_20261104_Issue90_Attack8_10FPS_OpticalFlow_Visual_QA.md), `docs/art-renewal` commit **`f3694ca0a390153277b6330b6470382dc10b51ca`**. 최신 [#90 총괄 기획 검수](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6622459940)와 실 ZIP 사본 직접 대조. **Attack8 기존 ZIP** `LIMITLESS_SPIDER_ATTACK8_ISSUE90_20261104.zip` **5,922,807bytes/SHA `e612a88a6d4c6b4422cc025c0d32fb34e4ffc2f40337ffa909a1885cfae34041` CRC PASS**. 512 RGBA8·128/40 GIF 각8×100ms 진짜10FPS 확인.
