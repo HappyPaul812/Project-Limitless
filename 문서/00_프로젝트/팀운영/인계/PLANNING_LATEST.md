@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-04 — 냉기 공통 런타임 Stage1 63PASS 접수, Stage2 정책 미승인
+
+- 바울 대표 전달한 Codex 신규 실측 [Issue #88 1단계 완료보고](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6619606069) 확인. Unity **6000.6.5f1** 격리 QA `63 PASS / 0 FAIL`, 컴파일/제품 런타임오류0. 신규 `BattleColdStatusRuntime`, 기존 Battle/Status/HUD의 최소 확장. 한기 2회 차례차단·동상 별도 HP피해 API(수치 없음)·동결괴사3중첩 KO·HUD 준비까지 확인. 기존 #85/#87 QA 중복0, **원본 Unity 적용0, Push0, 개인Save/UserData 보호**. 코드 `05fdf1d4447eb3731cf66024467348bbfd3f4485`, 문서/증거 `a294a66b0307a1c69574e5939d68c0ce3cf524b2`는 **로컬 별도 worktree**에만 존재.
+- **기획 접수·2단계 결정 게이트 문서:** [Chapter3_ColdRuntime_Stage1_Receipt_Stage2_DecisionGate_20261104.md](../../Chapter3_ColdRuntime_Stage1_Receipt_Stage2_DecisionGate_20261104.md), `docs/planning` commit `b51d399abb2b6105425add93140be501b3044337`. 한기 차단 차례의 카운트/재부여·쿨타임 처리, 동상 HP 틱/감쇠·방어, Owl 첫 한기 조건/해제 접근성을 **추천안/미승인**으로 구분. 유저가 확정한 한기2턴·동상·동결괴사3중첩 KO·정화Ⅱ·어묵탕·연고·화로/보스 유효대응 계약은 유지.
+- 메인 아트 [#89 VFX3종](https://github.com/HappyPaul812/Project-Limitless/issues/89), 리뉴얼 [#90 Spider Attack3](https://github.com/HappyPaul812/Project-Limitless/issues/90)는 병렬 발주 상태이며 실제 납품 확인 전 완료 판정 금지. **Stage1 PASS != Original Apply != 정식 Owl 첫 한기전 완성**.
+- 다음: 바울 대표가 세부 규칙/원본 적용 범위 승인 → Codex 기존 Stage1 소스 재활용한 최소 Delta 구현·검증. 기존 63PASS 전수 반복·원본 최신 main 무단변경/원격 Push 금지.
+
+---
+
 # PLANNING / 2026-11-04 — 메인·리뉴얼 아트 병렬 발주 #89 / #90
 
 - 바울 대표 “메인 리뉴얼 일 시켜줘.” 지시를 받아 담당별 신규 GitHub 작업 발주: **메인 신규 아트 [#89](https://github.com/HappyPaul812/Project-Limitless/issues/89)**는 Chapter3 냉기3종(VFX 안개/결정/결빙균열) 각각 대표 정지 PNG1개·40/128px 비교판 **총3 시각 파일럿**, **Ch1·2 리뉴얼 [#90](https://github.com/HappyPaul812/Project-Limitless/issues/90)**은 사용자 승인 Organic Spider v5/Idle8/Walk8 보호하면서 **Attack 준비/타격/회수 3키포즈**만 파일럿. Attack8 전량과 Shoot8 제작 아직 승인 안 함.
