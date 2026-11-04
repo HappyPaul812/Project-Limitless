@@ -1,3 +1,14 @@
+# PLANNING / 2026-11-04 19:58 EOD — 승인 4건 격리 통합 성공, 로컬 main 안전 HOLD
+
+- 바울 대표가 제공한 Codex 최종 보고 및 [#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6628635508) · [#89](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6628636928) · [#90](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6628638252) · [#92](https://github.com/HappyPaul812/Project-Limitless/issues/92#issuecomment-6628639926) 실제 댓글 검증. **Unity6000.6.5f1 격리 통합**: 독침벌 승인5포즈·숲거미Attack8·한기/동상/동결괴사 정식아이콘+승인B안 표시·Ch2 BG Ashen/Obsidian 6필드 매핑. 승인 PNG **37개** SHA 일치, 변경된 핵심 코드 신규QA **60PASS/0FAIL**, 시각 입력 보완QA **52PASS/0FAIL**(중복 있으므로 단순 합산 금지). 격리 QA 빌드 Succeeded, 오류0·경고38.
+- **남은 시각/규칙 과제:** 기존 태온↔휠체어 전열 위치 겹침(960·1280), 960 하단 버튼/스킬 안내 테두리 근접, 냉기 128px 일부 가림·설원 40px 작은 아이콘 단독 접근성 최종PASS 불가, 냉기 재적용/동상피해/해제/화로 미확정; 거미 Shoot8 및 타격 접점·FootLock 미검증. **#91 Ch3 BG는 미술 승인 기록 없으므로 이번 통합 제외**. 이후 결함 표적검증만, 오늘 추가 QA나 재제작은 안함.
+- **통합 브랜치 `codex/integrate-20261104-approved` / 최종 SHA `8768cbac91a291f13769c6bfa18a831673652acb`**; 구현 `b5a41b3089ed43abd725c836d8934d27cf88ca58`, 보고 `aa0e48f7b3c1dd2ee0d39d15a50738463d6a6b1c`. 로컬 worktree `F:/study/codex/Project-Limitless/Temp/EODApproved20261104/Integration`. `CODEX_LATEST`·`CURRENT_STATUS` 실제 **Codex 로컬** 갱신, 원격 commit Push0. 이 보고의 기획 인계는 별도 `docs/planning` 문서 GitHub 커밋임.
+- **원본 적용 / 로컬 main 동기화 HOLD (안전 종료):** `LOCAL_MAIN_SYNC_HOLD_DIRTY`. 원본 main HEAD `634a91d3e4174c87761c0d377cfa5a695ca79e7f`, tracked dirty308·untracked550 그대로. 원본 tracked7374·개인Save/UserData23 바이트 보존, Editor/Scene/Prefab/GUID/meta/BuildSettings/Packages 등 보호. 원본 Unity 및 기존 PilotBee Resources 참조는 **여전히 구상태**임; 격리통합의 PilotBee 바이트0를 원본 Player 제외완료로 옮겨 주장 금지. 원격 main 직접 commit/Push/merge 없고 로컬 main FF도 수행하지 않음.
+- **다음 세션 첫 작업:** 사용자 기존 308/550 dirty를 삭제/초기화하지 말고 안전하게 분류(원본 사용자 변경·생성/캐시·프로젝트로 반영돼야 하는 아트)하여 백업/충돌0을 확보한 뒤 통합 브랜치 내용을 실제 로컬 원본에 안전하게 동기화할지 결정. 어제 QA 전수 재실행 금지. 사용자 오늘 마감 지시 존중하여 추가 실행/무인 예약 없음.
+- 상태 `ART_APPROVAL_DONE / ISOLATED_INTEGRATION_PASS / SOURCE_MAIN_UNTOUCHED / LOCAL_MAIN_SYNC_HOLD_DIRTY / SAFE_STOP`.
+
+---
+
 # PLANNING / 2026-11-04 EOD — 신규 3ZIP 아트 최종 승인 + 안전한 로컬 통합 지시
 
 - 바울 대표 **“다 승인하고 오늘은 여기까지 하자 다 합치고 로컬 동기화 해줘.”**: [#63 독침벌 신규3포즈+기승인 Sting·Recover v3](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6627888182), [#89 냉기 정식 상태아이콘3](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6627893169), [#92 Ch2 전투 배경 Ashen/Obsidian2](https://github.com/HappyPaul812/Project-Limitless/issues/92#issuecomment-6627894117) **사용자 최종 미술 승인**. 각 Codex 실제 F: ZIP 전체 SHA가 납품 기록과 일치. 기존 승인 #90 Spider Attack8 전체8 바이트 동결.
