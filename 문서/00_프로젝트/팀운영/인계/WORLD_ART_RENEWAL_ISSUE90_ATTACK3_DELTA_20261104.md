@@ -1,3 +1,14 @@
+## 2026-11-04 / Issue #90 / Attack8 10FPS 오프라인 관절·발접지 미술 검수 (현재 최신)
+
+- **정식 프레임별 검수 보고:** [Renewal_20261104_Issue90_Attack8_10FPS_OpticalFlow_Visual_QA.md](../../Renewal_20261104_Issue90_Attack8_10FPS_OpticalFlow_Visual_QA.md), `docs/art-renewal` commit **`f3694ca0a390153277b6330b6470382dc10b51ca`**. 최신 [#90 총괄 기획 검수](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6622459940)와 실 ZIP 사본 직접 대조. **Attack8 기존 ZIP** `LIMITLESS_SPIDER_ATTACK8_ISSUE90_20261104.zip` **5,922,807bytes/SHA `e612a88a6d4c6b4422cc025c0d32fb34e4ffc2f40337ffa909a1885cfae34041` CRC PASS**. 512 RGBA8·128/40 GIF 각8×100ms 진짜10FPS 확인.
+- **보호:** 승인 **00 Prepare / 03 Contactv2 / 06 Recoverv2는 BYTE_KEEP**, 원본 Organic v5·Idle8·Walk8·공식 아트·펫·Unity·Save/UserData·main **변경0**. 신규 PNG 생산0, 기존 Attack8 프레임 수정0. Shoot8/Bee 수정0, Bee RIGHTS_HOLD 유지.
+- **프레임 판정:** 신규 **01 Windup `KEEP_CANDIDATE`**. 신규 **02 Lunge `ART_REVISE`**(오른쪽 앞다리 관절 얇아지고 실루엣 10.8% 축소·x502까지 전개). 신규 **04 Recoil `ART_REVISE`**(오른쪽 다리 끝 분리 알파31px x491..496/y278..286). 신규 **05 Return `ART_REVISE_PRIORITY`**(왼쪽 다리 옆 작은 분리 조각 17+14+3px, 04→05 알파실루엣 IoU.720/무게중심 약 +11x,-7y 변화). 신규 **07 IdleBridge `ART_REVISE`**(오른쪽 지지다리 분리 알파7px x459..461/y309..314 및 승인 Idle 복귀 연결 주의).
+- **그림/게임의 구분:** 07→Idle00 오프라인 실루엣 겹침 IoU.752, GIF 자동 루프 07→Attack00 IoU.651이지만 **GIF 루프를 실제 Runtime 전환으로 간주하지 않음**. 위 수치들은 alpha 중심/실루엣이지 발관절·Pivot·지면 접점이 아님. **`FOOT_LOCK_NOT_VERIFIED / TARGET_CONTACT_NOT_VERIFIED / UNITY_RUNTIME_NOT_TESTED`**.
+- **오프라인 검수 증거** `LIMITLESS_ATTACK8_ISSUE90_MOTION_QA_20261104.zip` 295,072bytes/SHA256 `045fed92f86b50b2b4ea1eda3b95b397fa1219171c7702846934daa7fa63b2e8` / CRC PASS; 프레임/부위 확대·10FPS 원본 GIF·SHA/실루엣 CSV/JSON·리뷰문서(새 게임 아트0). 새 4프레임은 **아직 제작한 것이 아니라 수정 대상으로만 지정**.
+- **최종:** `ATTACK8_FILE_TECH_PASS / USER_MOTION_ART_REVIEW_PENDING / KEEP_00_03_06 / NEW01_KEEP_CANDIDATE / REVISE_ONLY_02_04_05_07 / NOT_UNITY_APPLIED`. 승인3장 보존 후 문제가 있는 네 프레임만 부분 재작화→격리 모션 QA→대표 최종 승인이 다음 순서. Attack8 전체 재양산 및 Shoot8/본편 적용 금지.
+
+---
+
 ## 2026-11-04 / Issue #90 / Attack8 신규5 중간 프레임 제출 (현재 최신)
 
 - **정식 실물 보고서:** [Renewal_20261104_Issue90_OrganicSpider_Attack8_5Intermediate_Pilot_Delivery.md](../../Renewal_20261104_Issue90_OrganicSpider_Attack8_5Intermediate_Pilot_Delivery.md) / `docs/art-renewal` **commit `d22bec7e19b0cd986ba46484ba18c7fa111c97c1`**. 근거: [Codex 승인3 SHA확인](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6621574553) 및 [기획 신규5장 발주](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6621779059).
