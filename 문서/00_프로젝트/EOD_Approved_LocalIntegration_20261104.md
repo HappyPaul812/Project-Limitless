@@ -63,3 +63,5 @@ Unity **6000.6.5f1 (3ff58d469c8a)** 직접 batchmode. 버전 변환/업그레이
 상세 BuildReport·승인 SHA 목록·최종 캡처·도구는 아래 Evidence 폴더를 참조합니다. 해당 로컬 커밋은 원격에 없으므로 GitHub blob 링크가 공개되어 있다고 주장하지 않습니다.
 
 최종 상세 격리 빌드: **Succeeded / 오류0 / 경고38 / 승인PNG37개 포함 / PilotBee 외부 아트0 / exit0**. 과거 검증 클래스 C# 이름은 남아 있으나 외부 이미지·ZIP 포함과 구분했습니다. 증분 빌드의 생략된 자산목록을 배제 근거로 쓰지 않았습니다. 최종캡처 SHA는 `Evidence/EODApproved20261104/SHA256.json`에 있습니다.
+
+GitHub 실제 보고 완료(댓글 API 성공 확인): [#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6628635508), [#89](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6628636928), [#90](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6628638252), [#92](https://github.com/HappyPaul812/Project-Limitless/issues/92#issuecomment-6628639926). 보고 기준 구현 b5a41b3089ed43abd725c836d8934d27cf88ca58 / 문서 aa0e48f7b3c1dd2ee0d39d15a50738463d6a6b1c. 원격 git Push·원본 main 동기화는 수행하지 않았습니다.
