@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-04 — Chapter3 냉기 계열 3종 상태이상 VFX 기획안 정식 문서화
+
+- **바울 대표 요청:** 한기·동상·동결괴사 각각의 차별화 VFX를 기획해 GitHub에 문서화. 관련 [Issue #88](https://github.com/HappyPaul812/Project-Limitless/issues/88).
+- **정식 기획 문서:** [Chapter3 냉기계열 상태이상 VFX 기획안](../../../../10_전투/Chapter3_냉기계열_상태이상_VFX_기획안_20261104.md) (`docs/planning` 신규 commit `22ece5ce7d3f92218ce2101c9d94a0581be5b3ea`). 한기=안개·눈송이, 동상=얼음결정·실제 HP틱 피드백, 동결괴사=중첩별 결빙 균열·3중첩 즉시KO 연출. 상태명+아이콘+턴·중첩수 표시, 점멸·시야가림·HUD/입력충돌 금지. 정화Ⅱ·마도사 온기의 불꽃·따끈 어묵탕·해빙 연고·보스 화로 해제 계약 변경0.
+- **기존 정본 유지:** 2026-10-12 [냉기 보스기믹](../../../../10_전투/Chapter3_냉기_보스기믹_20261012.md)의 한기2턴 전체행동불가/동상 행동불가+HP감소/동결괴사1→2→3중첩 즉시KO, F2 Owl 첫 한기 전투. 개별 수치/확률·VFX 규격·실제 Art/Runtime는 TBD. QA 차용 Owl Lv1·HP60·민첩10을 공식화하지 않음.
+- **상태:** `VFX_DIRECTION_ACCEPTED / VISUAL_SPEC_PROPOSAL / ART_NOT_PRODUCED / RUNTIME_NOT_IMPLEMENTED / USER_ART_APPROVAL_PENDING`. 새 문서 작성만 완료, 새 PNG/Particle/Unity 코드·Prefab·Save·개인자료·main 변경/원격 병합 없음. 아트비교판→대표 시각승인→Unity6000.6.5f1 격리QA→별도 승인 적용 순서.
+- **기존 11-04 F2 상태 최신 인지:** #87 표식 수정은 바울 대표 승인 후 원본 워킹파일1개에 적용됨(기존 QA clone 25PASS, 적용 후 최소2PASS), 원본Editor 자연import 대기·원격Push0. 11-04 바울 대표는 F2 기존 환경 재사용 비교판에 “어제 봤는데 괜찮고”라며 시각 수용을 밝혔으나 **원본 F2 Scene 적용/최종 Unity 검증 완료와 분리**한다.
+
+---
+
 # PLANNING / 2026-11-04 — #87 QA Clone36PASS, 다음 F2 시각판단·올빼미 표식 최소 보완
 
 - [Issue #87 실제 PlayMode 스모크](https://github.com/HappyPaul812/Project-Limitless/issues/87#issuecomment-6617542875): Unity6000.6.5f1/rev3ff58d469c8a 동일 원본파일 SHA QA 복제본 신규 **36PASS/제품FAIL0**, Main23→24·북문F2→마을·도보휠체어Collider·Owl Idle8 Attack4 피해1회·HP·승패F2/안전마을·합성SaveContinue·6슬롯·퀘스트 '완료'·26Scene GUID. 초기 QA 코드 모달 owner 인자1 오류는 테스트 코드만 수정 후 미검증 나머지26건 실행; 제품오류0. 원본 Editor 실행중/포커스보호로 `ORIGINAL_EDITOR_NOT_VERIFIED`, 사용자 실제 손/발 입력 및 저시력 시야 NOT_VERIFIED. 원본mainHEAD 634a91d3, 제품4547파일/Save/UserData/index/status 원형보호, 푸시0.
