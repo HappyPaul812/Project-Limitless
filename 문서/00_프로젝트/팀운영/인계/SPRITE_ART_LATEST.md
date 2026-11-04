@@ -1,5 +1,15 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-04 / Issue #89 — Chapter3 한기·동상·동결괴사 VFX 첫 독립 PNG 3종 납품
+
+- [**#89 세 VFX 실제 파일 파일럿·검수 보고서**](../../Chapter3_Cold_VFX_Issue89_ArtPilot_20261104.md) `docs/art-new` 커밋 **`ac1b0618c77d3309f7f56c6fa0b5b46ba99afd64`**. [#88 냉기 VFX 기획](https://github.com/HappyPaul812/Project-Limitless/issues/88)과 기존 3상태/화로/해제 계약 준수, 세 종류의 독립 시각 후보만 제작. 승인 Owl v3 Idle8/Attack4, NaturalBroken Stump v4, F2 승인/후보 원본 및 기존 분리 IceArc 보호.
+- **납품 ZIP 실물** `Limitless_Ch3_ColdVFX_Issue89_Pilot_20261104.zip`, **1,535,561 bytes / 17entries / SHA256 `83b4efeee62cdb4cabf7dbcc4d2aea21cbefdb4507e03f53b8c59d8079e9e4ba`**, ZIP CRC PASS / SHA256SUMS **16/16 PASS**. **ChatGPT 파일 라이브러리 `/LIMITLESS/Chapter3_Issue89_ColdVFX_Pilot_20261104/`에 ZIP+미술 비교판2 실물 등록 및 목록 재조회 성공**. 사용자 PC F:\Downloads 자동저장/PC 해시 미확인, GitHub ZIP/PNG 바이너리 원격 등록0.
+- **신규 독립 512×512 RGBA 정지 PNG3**: `Candidate/VFX_Ch3_Chill_Oneshot_01_CANDIDATE_512_RGBA.png` **SHA `dd7bd4bb...`**(한기/옅은 안개·눈송이), `VFX_Ch3_Frostbite_Sustain_01_CANDIDATE_512_RGBA.png` **SHA `49937d84...`**(동상/붙은 얼음결정·균열), `VFX_Ch3_FrostNecrosis_Stack2_01_CANDIDATE_512_RGBA.png` **SHA `f1e69de2...`**(동결괴사/검푸른 균열·보스 2/3 위험). 파일별 전체 SHA·원본 1254² 생성 아트의 SHA·처리 내역은 ZIP `Manifest.json`에 보존.
+- **실제 128px·40px 축소6 PNG** 및 `Preview/Issue89_ColdVFX_ThreeStates_512_128_40_OFFLINE.png` **1840×1330** 한눈 비교판, `Preview/Issue89_ColdVFX_Snow_DarkBG_SameScale_OFFLINE.png` **1780×1000** 밝은 설원/어두운 전장 **동일128px OFFLINE** 합성 비교. 화면 UI/상태명/아이콘·턴/중첩 숫자는 Sprite 원화에서 분리하여 별도 UI로 계획, 색상만으로 구별 금지·과한 점멸 금지. **실제 Unity GameView/타깃 캐릭터 40px·3화면비 검증은 NOT_TESTED**.
+- **상태 계약:** 한기 2턴 전체 행동불가, 동상 별개 행동불가+HP 감소(틱·수치 TBD), 동결괴사는 보스 별개 1/3·2/3 경고/세 번째 즉시 기존KO. 자동 진화 금지. 상태명·턴·중첩 표시 및 HUD·입력 보호는 향후 Codex 격리 검증 게이트. **PNG 512는 후보 그림의 크기일 뿐 VFX PPU/Pivot/실Scale 공식 확정 아님(`SPEC_PENDING`)**. 애니메이션/시트/Particle/Unity/코드/Save/BuildSettings/Packages 변경0, main 직접 commit/Push/merge0.
+- **현재** `ART_CANDIDATE / OFFLINE_PNG_FILE_QA_PASS / USER_VISUAL_REVIEW_PENDING / UNITY_NOT_TESTED / NOT_UNITY_APPLIED`. 바울 대표 3종 가독성/외형 미술 승인 후 Unity6000.6.5f1 격리 HUD·스케일·가림 DeltaQA → 사용자 별도 본편 승인. 이번 파일 QA를 최종 ART PASS로 기록하지 않음.
+
+
 ## 2026-11-03 / Main24 F2 환경 재사용 격리 **68 PASS/0 FAIL** 인계
 
 - **Codex 실 Unity 6000.6.5f1 Delta** [#83](https://github.com/HappyPaul812/Project-Limitless/issues/83#issuecomment-6603754190) · [#85](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6603755245): `codex/f2-environment-reuse-delta-20261103`, 로컬 SHA **`f6797d7ae8e744f0e22ac760df7778551188bb90`**. GROUND/PATH/TREE placeholder 표시0, 기존 Ground9/F1 WornTrail/F2 P1 눈Overlay·SnowPine·FrostShrub만 격리 조립, 신규 PNG0/불균일 스케일0. 실제 4.5WU 길과 Collider를 보호한 휠체어·도보 통행, 나무8 PPU128·발기준 Sorting 및 관목4 길바깥, 승인 Owl/Stump 그대로. HUD 두 배치 후보 길·Owl 차폐0, 장식나무 배경 일부 가림은 미술 검토.
