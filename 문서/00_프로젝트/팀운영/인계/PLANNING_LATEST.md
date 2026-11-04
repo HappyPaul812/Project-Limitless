@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-04 EOD — 신규 3ZIP 아트 최종 승인 + 안전한 로컬 통합 지시
+
+- 바울 대표 **“다 승인하고 오늘은 여기까지 하자 다 합치고 로컬 동기화 해줘.”**: [#63 독침벌 신규3포즈+기승인 Sting·Recover v3](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6627888182), [#89 냉기 정식 상태아이콘3](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6627893169), [#92 Ch2 전투 배경 Ashen/Obsidian2](https://github.com/HappyPaul812/Project-Limitless/issues/92#issuecomment-6627894117) **사용자 최종 미술 승인**. 각 Codex 실제 F: ZIP 전체 SHA가 납품 기록과 일치. 기존 승인 #90 Spider Attack8 전체8 바이트 동결.
+- [**EOD 로컬 안전 통합 Runbook 정본**](../../20261104_EOD_ThreeApprovals_LocalIntegration_SafeRunbook.md) `docs/planning` commit `1205d7933c065c51b217d0089e86850538bfdbaa`: Unity **6000.6.5f1 고정**, 기존 원본 약308 dirty·개인 Save/UserData·Scene/Prefab/meta/GUID/BuildSettings 보호, 승인 ZIP·작업브랜치/코드 **선별 통합**과 최소 격리 QA, PilotBee Resources/02_VenomBee.asset 구참조 **출시 구성 제거 확인**. `main` 원격Push·직접커밋 금지, 로컬 main FF도 원본 dirty/충돌0일 때만. #91 Ch3 배경 v2와 #88 미확정 냉기 Gameplay 구현은 이번 아트승인을 이유로 무단 적용 금지.
+- **정직한 상태:** `USER_ART_APPROVED_63_89_92 / LOCAL_INTEGRATION_INSTRUCTIONS_READY / LOCAL_PC_NOT_EXECUTED_BY_PLANNING / ACTUAL_SYNC_UNVERIFIED`. GitHub 문서화 자체를 Unity 원본 적용·로컬 동기화 완료로 보고하지 말 것. 실제 PC Codex 실행 이후 브랜치/SHA/적용·HOLD·QA/Save 보호 상태로 마감해야 함.
+
+---
+
 # PLANNING / 2026-11-04 — 계속 진행: 세 담당 표적 실행 발주 (기존 QA 반복 금지)
 
 - **메인 #91 [실행 지시](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6623743094)**: Ch1 공식3 PNG vs C3 두 PNG 실제1:1 비교 근거 확인. 현재 Ch3 그림의 눈·원경·수관·오른쪽 수간 지정 ROI만 보완한 **v2 후보2PNG** 제작; 기존v1 바이트 보존. **적 왼쪽/아군 오른쪽(후열 x=.86)** 기준 실제 전투 UI 참고. 새 배경2 아트 USER_REVIEW_PENDING, Unity 본편 적용 금지.
