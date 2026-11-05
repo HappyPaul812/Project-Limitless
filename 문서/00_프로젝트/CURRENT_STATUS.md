@@ -1,3 +1,17 @@
+## 2026-11-05 Issue #93 P1 3건 수정·로컬 main 반영
+
+**LOCAL_MAIN_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- 숲거미 일반공격은 승인 Attack8, 독액 분사는 구 Shoot 경로가 원인임을 실제 Battle Controller에서 확인. Shoot 경로를 비워 승인 Attack8 공통 사용. 피해·효과 불변, Shoot8 HOLD·승인 PNG 재제작0.
+- 복제 슬롯02·03은 Main11 index2 / 태온·미엘 동행. 비동행 폴 등만 무음 조사 지문, 동행 원문·TTS ID28/28 유지. 현재 목표·거리·순차 완료 보호, 같은 프레임 대화 재입력 차단.
+- B1→Field03·B2→B1 확인형 귀환, E/F·패드A·마우스 버튼. 퀘스트 미완료 귀환·재입장·Continue, 보스/석판/몬스터 대기·Inventory 보호. Scene/Bounds/Spawn 원본 재생성0.
+- Unity6000.6.5f1 숨김 Play Delta **121PASS/0FAIL**, 보완 **37PASS/0FAIL**, 최종 입력 **15PASS/0FAIL**, 정적7PASS/0FAIL. 원본 main 백그라운드 컴파일 완료·신규 타입 로드·C# 오류0도 확인. 중복 합산 금지·기존 전체QA 재실행0. OS 포커스 전환0. 가상 입력/UI callback 검증이며 실제 물리 장치 장시간 플레이는 사용자 확인 사항. 기존 Editor Search 내부 예외는 별도 유지.
+- 사용자 변경302·미추적550 보존, 보호942 SHA변경0(원본Save02/03 포함), 승인Spider24 PNG 변경0. 구 Git Packages 불일치는 사용자 로컬 Packages를 QA 복사본에만 overlay; 원본 패키지/설정 미채택·미수정.
+- 구현 커밋 `6f094a4095e9298d20e879d842f29b02bca6587a` / `codex/fix-20261105-dungeon-spider-dialogue` → 원본 local main FF 완료. main 직접commit·원격Push/병합0. 후속 문서 커밋은 같은 브랜치에서 FF로 전달.
+- 다음 권장: 실제 사용자 플레이에서 귀환 안내 가독성 확인. Shoot8 미승인 유지. [원인·파일·QA·전후 캡처](Issue93_P1_Dungeon_Spider_Dialogue_20261105.md), `Evidence/Issue93_20261105/`.
+
+---
+
 ## 2026-11-04 긴급 로컬 main 동기화 실제 완료
 
 **LOCAL_MAIN_SYNC_SUCCESS / USER_WORK_PRESERVED / REMOTE_NOT_PUSHED**. 이전 HOLD 보고는 아래보다 과거 상태입니다.
