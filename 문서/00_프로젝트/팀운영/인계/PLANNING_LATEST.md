@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-05 20:44 EOD — #93 Main11 음성·Field03 입구 사용자 승인, 마지막 로컬 동기화 지시
+
+- 바울 대표가 복구 Main11 WAV10/정상18보호 및 Field03 입구/계단 가림 보완에 대해 **“잘돼”** 실플레이 수용. [#93 최종 Codex 로컬 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/93#issuecomment-6655732864): 최종 로컬 `main` HEAD **`0fb8b8c4a02a7f21fc5bf78360fb49c371a28558`**, 수정 `codex/fix-20261105-main11-voice-field03-entrance`, Unity **6000.6.5f1**, 실제 재생/입구 QA **65·9·18·19 PASS (각 0FAIL; 중복합산 금지)**, Save01/02/03 복제시험·원본 정상 TTS18·meta/GUID/승인아트/dirty302·untracked550 보호, 원격 Push/merge0. 기존 숲거미 Attack8/던전 중도귀환/파티 필터도 보존.
+- **중요 상태 정정:** 바로 아래에 적힌 15:31 `FIX_REQUESTED_NOT_EXECUTED`는 이후 Codex 실제 작업으로 해결된 **과거 시점 기록**. 11/05 밤의 최신 정본 상태는 `LOCAL_MAIN_0FB8B8_APPLIED / USER_REALPLAY_ACCEPTED / REMOTE_NOT_PUSHED`.
+- 바울 대표 오늘 마감 “지금까지 한 모든 작업들 합치고 로컬 동기화”: [#93 마감 지시](https://github.com/HappyPaul812/Project-Limitless/issues/93#issuecomment-6657174333)에 **실제 로컬 main 포함 여부·각 담당 승인 작업만 통합**을 요청. 이미 로컬 main에 있는 #63/#89/#90/#92/#93 중복 cherry-pick 금지; 미승인 #91 Ch3 BG·Shoot8·미확정 냉기 상태 규칙/시각 PARTIAL 자동 제품 반영 금지. 원본 Save/UserData, tracked dirty302/untracked550, 기존 Packages·Scene/GUID/BuildSettings, 승인 WAV/PNG SHA 보호. 충돌0·ff-only 조건에서만 추가 로컬 main 동기화, 원격 Push/병합 금지. **아직 이번 추가 EOD 감사·동기화 자체는 Codex PC에서 실행됐다는 새 증거 없음**, 별도 실제 마감 보고 이후 완료로 확정할 것.
+- 사용자 오늘 종료: 새 제작/과거 QA 전수반복·무인 자동 실행 하지 않음. CODEX_LATEST/CURRENT_STATUS 업데이트 및 로컬 브랜치·main SHA를 보고해야 다음 세션에서 안전 재개 가능.
+
+---
+
 # PLANNING / 2026-11-05 15:31 — #93 실플레이 재회귀: TTS 음성-자막 시프트 및 Field03 던전입구 캐릭터 가림
 
 - 바울 대표 실제 Unity6000.6.5f1 캡처 3장: Dungeon01 B1 화면 자막 ‘오래된 흔적이지만…’(main11_miel_002)에 실제 음성 ‘뒤쪽을 보세요…’(main11_miel_001 내용), Dungeon01 B2 자막 ‘쓰이지 않은…’(main11_miel_003)에 실제 음성 ‘오래된…’(main11_miel_002 내용). 이전 #93에서 동행 화자만 고친 것은 **이 음성 버그를 해결하지 못함**.
