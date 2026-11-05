@@ -1,0 +1,38 @@
+PASS|Unity pinned
+PASS|approved 8 frames 10FPS
+PASS|PlayAttack approved frame 0
+PASS|PlayAttack approved frame 1
+PASS|PlayAttack approved frame 2
+PASS|PlayAttack approved frame 3
+PASS|PlayAttack approved frame 4
+PASS|PlayAttack approved frame 5
+PASS|PlayAttack approved frame 6
+PASS|PlayAttack approved frame 7
+PASS|PlayAttack 07 to approved Idle00
+PASS|PlayShoot approved frame 0
+PASS|PlayShoot approved frame 1
+PASS|PlayShoot approved frame 2
+PASS|PlayShoot approved frame 3
+PASS|PlayShoot approved frame 4
+PASS|PlayShoot approved frame 5
+PASS|PlayShoot approved frame 6
+PASS|PlayShoot approved frame 7
+PASS|PlayShoot 07 to approved Idle00
+PASS|load Dungeon_01_B2
+PASS|fixture boss defeated investigation incomplete
+PASS|existing monster cooldown seeded
+PASS|A opens without immediate exit
+PASS|transition destination Dungeon_01
+PASS|A confirms and releases modal
+PASS|boss quest tablet preserved B2 to B1
+PASS|monster cooldown preserved B1
+PASS|mouse exit button callback
+PASS|transition destination Field_03
+PASS|boss tablet return does not complete unfinished investigation
+PASS|tablet count unchanged
+PASS|monster cooldown preserved Field03
+PASS|boss state saved
+PASS|load Dungeon_01_B2
+PASS|boss tablet continue and reentry preserved
+PASS|boss barrier restored open
+COMPLETE|extra

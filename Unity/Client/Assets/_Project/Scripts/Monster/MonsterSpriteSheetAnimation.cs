@@ -116,9 +116,13 @@ namespace ProjectLimitless.Monster
 
         public void PlayShoot()
         {
-            if (shootFrames.Length == 0) { PlayAttack(); return; }
-            shooting = true;
+            // Shoot8 승인 전 숲거미는 Definition의 빈 Shoot 경로를 통해 승인 Attack8을 공유합니다.
+            // 광역 피해·효과는 BattleSceneController가 그대로 처리합니다.
             if (defeated) return;
+            if (shootFrames.Length == 0) { PlayAttack(); return; }
+            reacting = false;
+            usingSkill = false;
+            shooting = true;
             attacking = false;
             elapsed = 0f;
             ShowFrame(shootFrames, 0);

@@ -1,0 +1,14 @@
+PASS|Unity pinned
+PASS|clone load 2
+PASS|load Dungeon_01
+PASS|slot2 step1 absent=0
+PASS|slot2 step2 absent=1
+PASS|clone load 3
+PASS|load Dungeon_01
+PASS|slot3 step1 absent=0
+PASS|slot3 step2 absent=1
+PASS|PlayAttack actual frame source
+PASS|PlayShoot actual frame source
+PASS|load Battle
+PASS|load Dungeon_01
+COMPLETE|before

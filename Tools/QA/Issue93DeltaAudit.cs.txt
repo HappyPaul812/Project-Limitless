@@ -1,0 +1,331 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using ProjectLimitless.Core;
+using ProjectLimitless.Battle;
+using ProjectLimitless.Monster;
+using ProjectLimitless.Player;
+using ProjectLimitless.UI;
+using ProjectLimitless.World;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+// Issue93 전용: 원본 Save 대신 복제 폴더를 사용하고 숨겨진 batch Editor에서만 실행합니다.
+[InitializeOnLoad]
+public static class Issue93DeltaAudit
+{
+    const BindingFlags F = BindingFlags.NonPublic|BindingFlags.Public|BindingFlags.Instance|BindingFlags.Static;
+    static IEnumerator routine;
+    static readonly List<string> results = new List<string>();
+    static string Base => Path.GetFullPath(Application.dataPath+"/../../../../Evidence");
+    static string Phase => Environment.GetEnvironmentVariable("ISSUE93_PHASE") ?? "before";
+    static string Root => Path.Combine(Base,Phase);
+    static Issue93DeltaAudit()
+    {
+        EditorApplication.update += Tick;
+        // 새 worktree의 패키지 define 갱신이 Play 중 domain reload를 일으켜도 복제 Save부터 다시 실행합니다.
+        EditorApplication.delayCall += () => { if(Application.isBatchMode && SessionState.GetBool("Issue93",false) && EditorApplication.isPlaying && routine==null) EditorApplication.ExitPlaymode(); };
+        EditorApplication.playModeStateChanged += s => {
+            if (!SessionState.GetBool("Issue93",false)) return;
+            if (s==PlayModeStateChange.EnteredPlayMode) routine=Flatten(Run());
+        };
+    }
+    public static void Launch()
+    {
+        Directory.CreateDirectory(Root);
+        foreach(string file in new[]{"sprite.txt","battle.txt","dialogue.txt","state.txt","exit-colliders.txt"}) File.WriteAllText(Path.Combine(Root,file),string.Empty);
+        SessionState.SetBool("Issue93",true);
+        EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
+        EditorSettings.enterPlayModeOptionsEnabled=true;
+        EditorSettings.enterPlayModeOptions=EnterPlayModeOptions.DisableDomainReload;
+        // 격리 batch 프로세스에서만 Play 중 패키지 define 재갱신에 의한 도메인 교체를 지연합니다.
+        // 변경 코드는 Launch 이전에 컴파일됐으며, 프로세스 종료 시 잠금도 함께 끝납니다.
+        EditorApplication.LockReloadAssemblies();
+        Application.runInBackground=true;
+        EditorApplication.EnterPlaymode();
+    }
+    static void Tick()
+    {
+        if(routine==null)
+        {
+            if(Application.isBatchMode && SessionState.GetBool("Issue93",false) && !EditorApplication.isCompiling && !EditorApplication.isPlayingOrWillChangePlaymode)
+                EditorApplication.EnterPlaymode();
+            return;
+        }
+        try { if(routine.MoveNext())return; Finish(results.Any(x=>x.StartsWith("FAIL|"))?1:0); }
+        catch(Exception e){results.Add("FAIL|"+e);Finish(1);}
+    }
+    static void Finish(int code)
+    {
+        routine=null;File.WriteAllLines(Path.Combine(Root,"checks.txt"),results);
+        SessionState.SetBool("Issue93",false);EditorApplication.Exit(code);
+    }
+    static void Check(bool ok,string text){results.Add((ok?"PASS|":"FAIL|")+text);File.WriteAllLines(Path.Combine(Root,"checks.txt"),results);}
+    static IEnumerator Flatten(IEnumerator r){var s=new Stack<IEnumerator>();s.Push(r);while(s.Count>0){var a=s.Peek();if(!a.MoveNext()){s.Pop();continue;}if(a.Current is IEnumerator n)s.Push(n);else yield return null;}}
+    static IEnumerator Seconds(double seconds){double end=EditorApplication.timeSinceStartup+seconds;while(EditorApplication.timeSinceStartup<end)yield return null;}
+    static IEnumerator Wait(int n=10){for(int i=0;i<n;i++)yield return null;}
+    static IEnumerator Load(string scene){var operation=SceneManager.LoadSceneAsync(scene);while(!operation.isDone)yield return null;yield return Wait(20);Check(SceneManager.GetActiveScene().name==scene,"load "+scene);}
+    static void Capture(string name)
+    {
+        // 공용 기존 캡처기는 Canvas를 camera로 잠시 연결해 RT를 읽습니다. OS/GameView 포커스는 사용하지 않습니다.
+        var camera=Camera.main; if(camera==null)return;
+        var rt=new RenderTexture(1280,720,24);var previous=camera.targetTexture;var active=RenderTexture.active;
+        var canvases=UnityEngine.Object.FindObjectsByType<Canvas>(FindObjectsSortMode.None).Where(c=>c.renderMode==RenderMode.ScreenSpaceOverlay).ToArray();
+        foreach(var c in canvases){c.renderMode=RenderMode.ScreenSpaceCamera;c.worldCamera=camera;c.planeDistance=1;}
+        Canvas.ForceUpdateCanvases();camera.targetTexture=rt;camera.Render();RenderTexture.active=rt;
+        var texture=new Texture2D(1280,720,TextureFormat.RGB24,false);texture.ReadPixels(new Rect(0,0,1280,720),0,0);texture.Apply();
+        File.WriteAllBytes(Path.Combine(Root,name+".png"),texture.EncodeToPNG());
+        foreach(var c in canvases){c.renderMode=RenderMode.ScreenSpaceOverlay;c.worldCamera=null;}
+        camera.targetTexture=previous;RenderTexture.active=active;UnityEngine.Object.Destroy(rt);UnityEngine.Object.Destroy(texture);
+    }
+    static void Place(Vector2 position){var p=UnityEngine.Object.FindAnyObjectByType<PlayerController>();p.transform.position=position;var b=p.GetComponent<Rigidbody2D>();if(b!=null){b.position=position;b.linearVelocity=Vector2.zero;}}
+    static IEnumerator Run()
+    {
+        AudioListener.volume=0;
+        MonsterEncounterService.SuppressForSeconds(3600);
+        var privateRoot=Path.GetFullPath(Application.dataPath+"/../../../../Private");
+        GameSaveService.AuditSaveDirectory=Path.Combine(privateRoot,Phase);Directory.CreateDirectory(GameSaveService.AuditSaveDirectory);
+        UserSettingsService.BeginAudit(GameSaveService.AuditSaveDirectory);
+        foreach(int slot in new[]{2,3}) File.Copy(Path.Combine(privateRoot,$"save_slot_{slot:00}.json"),GameSaveService.GetSaveFilePath(slot),true);
+        Check(Application.unityVersion=="6000.6.5f1","Unity pinned");
+        if(Phase=="extra") { yield return Supplement();results.Add("COMPLETE|extra");yield break; }
+        if(Phase=="input") { yield return ExitInputChecks();results.Add("COMPLETE|input");yield break; }
+        foreach(int slot in new[]{2,3})
+        {
+            Check(GameSaveService.TryLoadSlot(slot,out var data),"clone load "+slot);
+            GameSaveService.RestoreSession(slot,data);
+            yield return Load("Dungeon_01");
+            File.AppendAllText(Path.Combine(Root,"state.txt"),$"slot={slot} party={string.Join(",",CompanionRosterService.ActivePartyCharacterIds)} step={MainQuest11DungeonFlow.CurrentStep}\n");
+            for(int step=1;step<=2;step++)
+            {
+                var lines=MainQuest11Dialogue.Lines(step);
+                var absent=lines.Where(l=>l.SpeakerId.StartsWith("companion_")&&!CompanionRosterService.IsActivePartyMember(l.SpeakerId)).ToArray();
+                Check(Phase=="before" ? (step==1||absent.Length>0) : absent.Length==0,$"slot{slot} step{step} absent={absent.Length}");
+                File.AppendAllText(Path.Combine(Root,"dialogue.txt"),$"slot{slot}/step{step}\n"+string.Join("\n",lines.Select(l=>l.SpeakerId+"|"+l.DialogueId+"|"+l.Message))+"\n");
+                Place(new Vector2(step==1?-10:10,0));
+                DialoguePresenter.Instance.ShowSequence(lines,null);yield return Wait();
+                DialoguePresenter.Instance.AdvanceFromInput();yield return Wait();Capture($"slot{slot}-step{step}");DialoguePresenter.Instance.Hide();yield return Wait();
+            }
+            Place(new Vector2(0,-8.5f));yield return Wait();Capture($"slot{slot}-B1-entrance");
+        }
+        var monster=Resources.Load<MonsterDefinition>("MonsterDefinitions/03_ForestSpider");
+        var go=new GameObject("SpiderAnimationProbe",typeof(RectTransform),typeof(Image),typeof(MonsterSpriteSheetAnimation));
+        var anim=go.GetComponent<MonsterSpriteSheetAnimation>();anim.Configure(go.GetComponent<Image>(),monster);
+        foreach(string action in new[]{"PlayAttack","PlayShoot"})
+        {
+            if(action=="PlayAttack")anim.PlayAttack();else anim.PlayShoot();
+            var sprite=anim.CurrentFrame;var path=AssetDatabase.GetAssetPath(sprite);
+            File.AppendAllText(Path.Combine(Root,"sprite.txt"),action+"|"+sprite.name+"|"+AssetDatabase.AssetPathToGUID(path)+"|"+path+"\n");
+            Check(action=="PlayAttack"||Phase!="before" ? monster.ExplicitAttackFrames.Contains(sprite) : !monster.ExplicitAttackFrames.Contains(sprite),action+" actual frame source");
+            yield return Wait(60);
+        }
+        UnityEngine.Object.Destroy(go);
+        // 실전 Controller의 일반공격/광역공격 경로를 각각 호출해 표시 Sprite와 HP 변화를 기록합니다.
+        BattleEncounterContext.Set(monster,null,null,null,Vector2.zero,Vector2.zero);
+        yield return Load("Battle");yield return Seconds(2.8);
+        var controller=UnityEngine.Object.FindAnyObjectByType<BattleSceneController>();
+        var enemy=((Formation)typeof(BattleSceneController).GetField("enemies",F).GetValue(controller)).Members.First(c=>c.Id.StartsWith("forest_spider"));
+        var views=(IDictionary)typeof(BattleSceneController).GetField("combatantViews",F).GetValue(controller);
+        var view=views[enemy];var battleAnim=(MonsterSpriteSheetAnimation)view.GetType().GetField("MonsterAnimation",F).GetValue(view);
+        foreach(string action in new[]{"PlayBasicAttack","PlayMonsterDirectAreaAttack"})
+        {
+            var method=typeof(BattleSceneController).GetMethod(action,F);
+            if(method==null){File.AppendAllText(Path.Combine(Root,"battle.txt"),"method missing "+action+"\n");continue;}
+            var allies=((Formation)typeof(BattleSceneController).GetField("allies",F).GetValue(controller)).LivingMembers.ToArray();
+            var hp=allies.Select(c=>c.CurrentHp).ToArray();
+            var args=method.GetParameters().Select(p=>p.HasDefaultValue?p.DefaultValue:null).ToArray();
+            args[0]=enemy;args[1]=action=="PlayBasicAttack"?(object)allies[0]:monster;
+            method.Invoke(controller,args);
+            var frame=battleAnim.CurrentFrame;var path=AssetDatabase.GetAssetPath(frame);
+            File.AppendAllText(Path.Combine(Root,"battle.txt"),action+"|"+frame.name+"|"+AssetDatabase.AssetPathToGUID(path)+"|"+path+"\n");
+            Capture(action);yield return Seconds(2.2);
+            File.AppendAllText(Path.Combine(Root,"battle.txt"),"HP deltas="+string.Join(",",allies.Select((c,i)=>hp[i]-c.CurrentHp))+"\n");
+        }
+        yield return Load("Dungeon_01");
+        if(Phase!="before") yield return After();
+        results.Add("COMPLETE|"+Phase);
+    }
+    static string Progress() => JsonUtility.ToJson(QuestService.ExportSaveData())+"|"+string.Join(";",InventoryService.ExportSaveData().Select(x=>x.ItemId+":"+x.Count))+"|"+JsonUtility.ToJson(CompanionRosterService.ExportSaveData());
+    static IEnumerator Arrive(string scene)
+    {
+        int t=0;while(SceneManager.GetActiveScene().name!=scene&&t++<600)yield return null;
+        yield return Wait(20);Check(SceneManager.GetActiveScene().name==scene,"transition destination "+scene);
+    }
+    static void KeyPulse(UnityEngine.InputSystem.Keyboard kb,UnityEngine.InputSystem.Key key)
+    {
+        UnityEngine.InputSystem.InputSystem.QueueStateEvent(kb,new UnityEngine.InputSystem.LowLevel.KeyboardState(key));UnityEngine.InputSystem.InputSystem.Update();
+        UnityEngine.InputSystem.InputSystem.QueueStateEvent(kb,new UnityEngine.InputSystem.LowLevel.KeyboardState());UnityEngine.InputSystem.InputSystem.Update();
+    }
+    static IEnumerator PadPulse(UnityEngine.InputSystem.Gamepad pad)
+    {
+        UnityEngine.InputSystem.InputSystem.QueueStateEvent(pad,new UnityEngine.InputSystem.LowLevel.GamepadState().WithButton(UnityEngine.InputSystem.LowLevel.GamepadButton.South));UnityEngine.InputSystem.InputSystem.Update();
+        yield return Wait(3);
+        UnityEngine.InputSystem.InputSystem.QueueStateEvent(pad,new UnityEngine.InputSystem.LowLevel.GamepadState());UnityEngine.InputSystem.InputSystem.Update();yield return Wait(3);
+    }
+    static IEnumerator Supplement()
+    {
+        var monster=Resources.Load<MonsterDefinition>("MonsterDefinitions/03_ForestSpider");
+        Check(monster.ExplicitAttackFrames.Length==8 && monster.AnimationFramesPerSecond==10,"approved 8 frames 10FPS");
+        var probe=new GameObject("Approved8Probe",typeof(SpriteRenderer),typeof(MonsterSpriteSheetAnimation));
+        var animation=probe.GetComponent<MonsterSpriteSheetAnimation>();animation.Configure(probe.GetComponent<SpriteRenderer>(),monster);
+        foreach(string action in new[]{"PlayAttack","PlayShoot"})
+        {
+            if(action=="PlayAttack")animation.PlayAttack();else animation.PlayShoot();
+            for(int i=0;i<8;i++)
+            {
+                typeof(MonsterSpriteSheetAnimation).GetField("elapsed",F).SetValue(animation,(i+.25f)/10f-Time.unscaledDeltaTime);
+                typeof(MonsterSpriteSheetAnimation).GetMethod("Update",F).Invoke(animation,null);
+                Check(animation.CurrentFrame==monster.ExplicitAttackFrames[i],action+" approved frame "+i);
+                var path=AssetDatabase.GetAssetPath(animation.CurrentFrame);
+                File.AppendAllText(Path.Combine(Root,"sprite.txt"),action+"|"+i+"|"+animation.CurrentFrame.name+"|"+AssetDatabase.AssetPathToGUID(path)+"|"+path+"\n");
+            }
+            typeof(MonsterSpriteSheetAnimation).GetField("elapsed",F).SetValue(animation,.81f-Time.unscaledDeltaTime);
+            typeof(MonsterSpriteSheetAnimation).GetMethod("Update",F).Invoke(animation,null);
+            Check(animation.CurrentFrame==monster.ExplicitIdleFrames[0],action+" 07 to approved Idle00");
+        }
+        UnityEngine.Object.Destroy(probe);
+        var privateRoot=Path.GetFullPath(Application.dataPath+"/../../../../Private");
+        var data=JsonUtility.FromJson<GameSaveData>(File.ReadAllText(Path.Combine(privateRoot,"save_slot_02.json")));
+        var quest=data.QuestProgress.ActiveQuests.First(q=>q.QuestId==MainQuest11DungeonFlow.QuestId);
+        for(int i=0;i<11;i++)quest.Objectives[i].CurrentCount=1;
+        data.HasSavedWorldPosition=false;
+        GameSaveService.RestoreSession(2,data);InventoryService.TryAddItem(MainQuest11DungeonFlow.TabletItemId,1);
+        yield return Load("Dungeon_01_B2");
+        Check(MainQuest11DungeonFlow.BossDefeated&&MainQuest11DungeonFlow.CurrentStep==11,"fixture boss defeated investigation incomplete");
+        string before=Progress();
+        var spawn=Resources.LoadAll<FieldMonsterSpawnDefinition>("MonsterSpawns").First(s=>s.SceneName=="Dungeon_01"&&!s.NonRespawningBoss);
+        MonsterEncounterService.MarkDefeated(spawn);Check(!MonsterEncounterService.IsSpawnAvailable(spawn),"existing monster cooldown seeded");
+        UnityEngine.InputSystem.InputSystem.settings.backgroundBehavior=UnityEngine.InputSystem.InputSettings.BackgroundBehavior.IgnoreFocus;
+        UnityEngine.InputSystem.InputSystem.settings.editorInputBehaviorInPlayMode=UnityEngine.InputSystem.InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
+        var pad=UnityEngine.InputSystem.InputSystem.AddDevice<UnityEngine.InputSystem.Gamepad>();UnityEngine.InputSystem.InputSystem.EnableDevice(pad);pad.MakeCurrent();
+        var exit=UnityEngine.Object.FindAnyObjectByType<DungeonExitInteraction>();Place(exit.transform.position);yield return Wait();
+        yield return PadPulse(pad);Check(DialoguePresenter.Instance.IsOpen&&SceneManager.GetActiveScene().name=="Dungeon_01_B2","A opens without immediate exit");
+        yield return PadPulse(pad);yield return Arrive("Dungeon_01");
+        Check(!WorldModalState.IsOpen,"A confirms and releases modal");
+        Check(Progress()==before&&MainQuest11DungeonFlow.BossDefeated,"boss quest tablet preserved B2 to B1");
+        Check(!MonsterEncounterService.IsSpawnAvailable(spawn),"monster cooldown preserved B1");
+        exit=UnityEngine.Object.FindAnyObjectByType<DungeonExitInteraction>();Place(exit.transform.position);yield return Wait();
+        exit.GetComponentInChildren<Button>().onClick.Invoke();yield return Wait();Check(DialoguePresenter.Instance.IsOpen,"mouse exit button callback");
+        ((Button)typeof(DialoguePresenter).GetField("confirmButton",F).GetValue(DialoguePresenter.Instance)).onClick.Invoke();yield return Arrive("Field_03");
+        Check(Progress()==before&&QuestService.GetState(MainQuest11DungeonFlow.QuestId)!=QuestState.Completed,"boss tablet return does not complete unfinished investigation");
+        Check(InventoryService.GetItemCount(MainQuest11DungeonFlow.TabletItemId)==1,"tablet count unchanged");
+        Check(!MonsterEncounterService.IsSpawnAvailable(spawn),"monster cooldown preserved Field03");
+        Check(GameSaveService.TryLoadSlot(2,out var returned),"boss state saved");GameSaveService.RestoreSession(2,returned);
+        yield return Load("Dungeon_01_B2");
+        Check(MainQuest11DungeonFlow.BossDefeated&&Progress()==before,"boss tablet continue and reentry preserved");
+        Check(!UnityEngine.Object.FindAnyObjectByType<MainQuest11BossBarrier>().GetComponent<Collider2D>().enabled,"boss barrier restored open");
+        Capture("boss-tablet-reentry");UnityEngine.InputSystem.InputSystem.RemoveDevice(pad);
+    }
+    static IEnumerator ExitInputChecks()
+    {
+        UnityEngine.InputSystem.InputSystem.settings.backgroundBehavior=UnityEngine.InputSystem.InputSettings.BackgroundBehavior.IgnoreFocus;
+        UnityEngine.InputSystem.InputSystem.settings.editorInputBehaviorInPlayMode=UnityEngine.InputSystem.InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
+        var kb=UnityEngine.InputSystem.InputSystem.AddDevice<UnityEngine.InputSystem.Keyboard>();UnityEngine.InputSystem.InputSystem.EnableDevice(kb);kb.MakeCurrent();
+        foreach(int slot in new[]{2,3})
+        {
+            var data=JsonUtility.FromJson<GameSaveData>(File.ReadAllText(Path.Combine(Path.GetFullPath(Application.dataPath+"/../../../../Private"),$"save_slot_{slot:00}.json")));
+            GameSaveService.RestoreSession(slot,data);yield return Load("Dungeon_01");string before=Progress();
+            var exit=UnityEngine.Object.FindAnyObjectByType<DungeonExitInteraction>();Place(exit.transform.position);yield return Wait();
+            KeyPulse(kb,UnityEngine.InputSystem.Key.E);Check(DialoguePresenter.Instance.IsOpen,"slot"+slot+" final E opens");
+            ((Button)typeof(DialoguePresenter).GetField("confirmButton",F).GetValue(DialoguePresenter.Instance)).onClick.Invoke();
+            Check(SceneManager.GetActiveScene().name=="Dungeon_01"&&DialoguePresenter.Instance.IsOpen,"opening-frame UI submit blocked");yield return Wait();
+            ((Button)typeof(DialoguePresenter).GetField("cancelButton",F).GetValue(DialoguePresenter.Instance)).Select();
+            KeyPulse(kb,UnityEngine.InputSystem.Key.F);yield return Wait();Check(!DialoguePresenter.Instance.IsOpen&&SceneManager.GetActiveScene().name=="Dungeon_01","F executes selected cancel");
+            KeyPulse(kb,UnityEngine.InputSystem.Key.F);yield return Wait();Check(DialoguePresenter.Instance.IsOpen,"F reopens safely");Capture("slot"+slot+"-final-confirm");
+            KeyPulse(kb,UnityEngine.InputSystem.Key.E);yield return Arrive("Field_03");Check(!WorldModalState.IsOpen&&Progress()==before,"final E confirms and preserves state "+slot);
+        }
+        UnityEngine.InputSystem.InputSystem.RemoveDevice(kb);
+    }
+    static IEnumerator After()
+    {
+        var kb=UnityEngine.InputSystem.InputSystem.AddDevice<UnityEngine.InputSystem.Keyboard>();
+        var pad=UnityEngine.InputSystem.InputSystem.AddDevice<UnityEngine.InputSystem.Gamepad>();
+        UnityEngine.InputSystem.InputSystem.settings.backgroundBehavior=UnityEngine.InputSystem.InputSettings.BackgroundBehavior.IgnoreFocus;
+        UnityEngine.InputSystem.InputSystem.settings.editorInputBehaviorInPlayMode=UnityEngine.InputSystem.InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
+        // 비포커스 Editor에서 생성 직후 비활성화된 가상 키보드도 실제 입력 검사에 참여시킵니다.
+        UnityEngine.InputSystem.InputSystem.EnableDevice(kb);kb.MakeCurrent();
+        UnityEngine.InputSystem.InputSystem.EnableDevice(pad);pad.MakeCurrent();
+        Check(kb.enabled,"virtual keyboard enabled");
+        foreach(int slot in new[]{2,3})
+        {
+            // 각 슬롯을 원래 복제본부터 다시 복원합니다. 앞 검사에서의 전투 HP·임시 저장과 분리합니다.
+            var data=JsonUtility.FromJson<GameSaveData>(File.ReadAllText(Path.Combine(Path.GetFullPath(Application.dataPath+"/../../../../Private"),$"save_slot_{slot:00}.json")));
+            GameSaveService.RestoreSession(slot,data);yield return Load("Dungeon_01");
+            var sites=UnityEngine.Object.FindObjectsByType<MainQuest11Site>(FindObjectsSortMode.None);
+            var east=sites.First(s=>s.TargetId=="dungeon01_main11_east_chamber");
+            var west=sites.First(s=>s.TargetId=="dungeon01_main11_west_ossuary");
+            Place(west.transform.position);yield return Wait();Check(!west.TryInteract(),"slot"+slot+" wrong target blocked");
+            Place(east.transform.position);yield return Wait();
+            DialoguePresenter.Instance.ShowSequence(MainQuest11Dialogue.Lines(2),null);DialoguePresenter.Instance.Hide();
+            Check(!east.TryInteract(),"slot"+slot+" same-frame dialogue reuse blocked");yield return Wait();
+            KeyPulse(kb,UnityEngine.InputSystem.Key.E);yield return Wait();Check(DialoguePresenter.Instance.IsOpen,"slot"+slot+" E opens actual current site");
+            var lines=(DialogueLine[])typeof(DialoguePresenter).GetField("sequenceLines",F).GetValue(DialoguePresenter.Instance);
+            Check(lines.Length==3 && lines.All(l=>!l.SpeakerId.StartsWith("companion_")||CompanionRosterService.IsActivePartyMember(l.SpeakerId)),"slot"+slot+" actual site speakers present");
+            Check(MainQuest11DungeonFlow.CurrentStep==2,"slot"+slot+" no early quest advance");
+            for(int page=0;page<lines.Length;page++){yield return Wait(3);KeyPulse(kb,UnityEngine.InputSystem.Key.F);}
+            yield return Wait();Check(MainQuest11DungeonFlow.CurrentStep==3,"slot"+slot+" F completes once");
+            // 귀환 검사는 미완료 조사 단계2의 원래 복제 진행으로 수행합니다.
+            GameSaveService.RestoreSession(slot,data);yield return Load("Dungeon_01");
+            string before=Progress();
+            var exit=UnityEngine.Object.FindAnyObjectByType<DungeonExitInteraction>();
+            Check(exit!=null,"slot"+slot+" B1 exit installed");
+            Check(UnityEngine.Object.FindAnyObjectByType<WorldBounds2D>()!=null,"B1 bounds present");
+            Check(GameObject.Find("Exit_To_Field03")==null,"automatic exit disabled");
+            Place(new Vector2(0,-8.5f));yield return Wait();Capture("slot"+slot+"-B1-exit-visible");
+            // 입구 Spawn에서 출구까지의 실제 충돌 구간을 cast로 확인합니다.
+            Physics2D.SyncTransforms();
+            var hits=Physics2D.BoxCastAll(new Vector2(0,-8.5f),new Vector2(.45f,.45f),0,Vector2.down,2.1f);
+            var blockers=hits.Where(h=>!h.collider.isTrigger&&h.collider.GetComponentInParent<PlayerController>()==null).ToArray();
+            File.AppendAllText(Path.Combine(Root,"exit-colliders.txt"),"B1 "+string.Join(",",blockers.Select(h=>h.collider.name))+"\n");
+            Check(blockers.Length==0,"B1 entrance to exit clear");
+            Place(exit.transform.position);yield return Wait();
+            KeyPulse(kb,UnityEngine.InputSystem.Key.E);Check(DialoguePresenter.Instance.IsOpen,"E exit confirmation");
+            Check(SceneManager.GetActiveScene().name=="Dungeon_01","opening press did not confirm");
+            yield return Wait();Capture("slot"+slot+"-exit-confirm");
+            ((Button)typeof(DialoguePresenter).GetField("cancelButton",F).GetValue(DialoguePresenter.Instance)).onClick.Invoke();yield return Wait();
+            Check(!WorldModalState.IsOpen&&Progress()==before,"cancel preserves progress");
+            KeyPulse(kb,UnityEngine.InputSystem.Key.F);yield return Wait();
+            Check(DialoguePresenter.Instance.IsOpen,"F opens exit");
+            KeyPulse(kb,UnityEngine.InputSystem.Key.E);yield return Arrive("Field_03");
+            Check(!WorldModalState.IsOpen,"exit releases modal");Check(Progress()==before,"slot"+slot+" B1 return preserves quest inventory party");
+            Check(QuestService.GetState(MainQuest11DungeonFlow.QuestId)!=QuestState.Completed,"unfinished quest stays unfinished");
+            Check(GameSaveService.TryLoadSlot(slot,out var returned)&&returned.CurrentSceneId=="Field_03","return save location");
+            Capture("slot"+slot+"-Field03-return");
+            SceneTransitionService.Load("Dungeon_01","Spawn_From_Field03");yield return Arrive("Dungeon_01");
+            Check(Progress()==before,"reentry progress preserved");yield return Wait(30);Check(SceneManager.GetActiveScene().name=="Dungeon_01","no spawn bounce");
+            // B2 미완료 상태도 같은 출구를 제공하는지 확인합니다. 퀘스트 단계는 변경하지 않습니다.
+            SceneTransitionService.Load("Dungeon_01_B2","Spawn_From_B1_Test");yield return Arrive("Dungeon_01_B2");
+            Check(UnityEngine.Object.FindAnyObjectByType<WorldBounds2D>()!=null,"B2 bounds present");
+            exit=UnityEngine.Object.FindAnyObjectByType<DungeonExitInteraction>();Place(exit.transform.position);yield return Wait();
+            UnityEngine.InputSystem.InputSystem.QueueStateEvent(pad,new UnityEngine.InputSystem.LowLevel.GamepadState().WithButton(UnityEngine.InputSystem.LowLevel.GamepadButton.South));UnityEngine.InputSystem.InputSystem.Update();
+            UnityEngine.InputSystem.InputSystem.QueueStateEvent(pad,new UnityEngine.InputSystem.LowLevel.GamepadState());UnityEngine.InputSystem.InputSystem.Update();
+            yield return Wait();Check(DialoguePresenter.Instance.IsOpen,"pad A opens B2 return");Capture("slot"+slot+"-B2-return-confirm");
+            // 마우스 클릭도 사용하는 Button.onClick 경로를 확인합니다. OS 좌표 입력은 하지 않습니다.
+            ((Button)typeof(DialoguePresenter).GetField("confirmButton",F).GetValue(DialoguePresenter.Instance)).onClick.Invoke();yield return Arrive("Dungeon_01");
+            var p=UnityEngine.Object.FindAnyObjectByType<PlayerController>();Check(Vector2.Distance(p.transform.position,new Vector2(0,6.8f))<1,"B2 return Spawn_From_B2");
+            Check(Progress()==before,"B2 return progress preserved");
+            exit=UnityEngine.Object.FindAnyObjectByType<DungeonExitInteraction>();Place(exit.transform.position);yield return Wait();
+            exit.TryInteract();yield return Wait();
+            ((Button)typeof(DialoguePresenter).GetField("confirmButton",F).GetValue(DialoguePresenter.Instance)).onClick.Invoke();yield return Arrive("Field_03");
+            Check(Progress()==before,"B2 B1 Field03 preserves progress");
+            Check(GameSaveService.TryLoadSlot(slot,out returned),"continue saved return "+slot);GameSaveService.RestoreSession(slot,returned);
+            yield return Load(returned.CurrentSceneId);Check(Progress()==before,"continue quest inventory preserved "+slot);
+        }
+        CompanionRosterService.ImportSaveData(new CompanionRosterSaveData());
+        foreach(int step in new[]{1,2,3,5,6,7,8,10,11})Check(MainQuest11Dialogue.Lines(step).All(l=>!l.SpeakerId.StartsWith("companion_")),"solo dialogue step"+step);
+        Check(MainQuest11Dialogue.AfterBoss.All(l=>!l.SpeakerId.StartsWith("companion_")),"solo after boss");
+        foreach(string id in new[]{CompanionRosterService.PaulId,CompanionRosterService.MielId,CompanionRosterService.TaeonId})
+        {
+            CompanionRosterService.ImportSaveData(new CompanionRosterSaveData { UnlockedCharacterIds=new[]{id},ActivePartyCharacterIds=new[]{id},HasManualComposition=true });
+            foreach(int step in new[]{1,2,3,5,6,7,8,10,11})Check(MainQuest11Dialogue.Lines(step).All(l=>!l.SpeakerId.StartsWith("companion_")||l.SpeakerId==id),"alternate party "+id+" step"+step);
+        }
+        UnityEngine.InputSystem.InputSystem.RemoveDevice(kb);UnityEngine.InputSystem.InputSystem.RemoveDevice(pad);
+    }
+
+}

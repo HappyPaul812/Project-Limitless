@@ -1,0 +1,122 @@
+PASS|Unity pinned
+PASS|clone load 2
+PASS|load Dungeon_01
+PASS|slot2 step1 absent=0
+PASS|slot2 step2 absent=0
+PASS|clone load 3
+PASS|load Dungeon_01
+PASS|slot3 step1 absent=0
+PASS|slot3 step2 absent=0
+PASS|PlayAttack actual frame source
+PASS|PlayShoot actual frame source
+PASS|load Battle
+PASS|load Dungeon_01
+PASS|virtual keyboard enabled
+PASS|load Dungeon_01
+PASS|slot2 wrong target blocked
+PASS|slot2 same-frame dialogue reuse blocked
+PASS|slot2 E opens actual current site
+PASS|slot2 actual site speakers present
+PASS|slot2 no early quest advance
+PASS|slot2 F completes once
+PASS|load Dungeon_01
+PASS|slot2 B1 exit installed
+PASS|B1 bounds present
+PASS|automatic exit disabled
+PASS|B1 entrance to exit clear
+PASS|E exit confirmation
+PASS|opening press did not confirm
+PASS|cancel preserves progress
+PASS|F opens exit
+PASS|transition destination Field_03
+PASS|exit releases modal
+PASS|slot2 B1 return preserves quest inventory party
+PASS|unfinished quest stays unfinished
+PASS|return save location
+PASS|transition destination Dungeon_01
+PASS|reentry progress preserved
+PASS|no spawn bounce
+PASS|transition destination Dungeon_01_B2
+PASS|B2 bounds present
+PASS|pad A opens B2 return
+PASS|transition destination Dungeon_01
+PASS|B2 return Spawn_From_B2
+PASS|B2 return progress preserved
+PASS|transition destination Field_03
+PASS|B2 B1 Field03 preserves progress
+PASS|continue saved return 2
+PASS|load Field_03
+PASS|continue quest inventory preserved 2
+PASS|load Dungeon_01
+PASS|slot3 wrong target blocked
+PASS|slot3 same-frame dialogue reuse blocked
+PASS|slot3 E opens actual current site
+PASS|slot3 actual site speakers present
+PASS|slot3 no early quest advance
+PASS|slot3 F completes once
+PASS|load Dungeon_01
+PASS|slot3 B1 exit installed
+PASS|B1 bounds present
+PASS|automatic exit disabled
+PASS|B1 entrance to exit clear
+PASS|E exit confirmation
+PASS|opening press did not confirm
+PASS|cancel preserves progress
+PASS|F opens exit
+PASS|transition destination Field_03
+PASS|exit releases modal
+PASS|slot3 B1 return preserves quest inventory party
+PASS|unfinished quest stays unfinished
+PASS|return save location
+PASS|transition destination Dungeon_01
+PASS|reentry progress preserved
+PASS|no spawn bounce
+PASS|transition destination Dungeon_01_B2
+PASS|B2 bounds present
+PASS|pad A opens B2 return
+PASS|transition destination Dungeon_01
+PASS|B2 return Spawn_From_B2
+PASS|B2 return progress preserved
+PASS|transition destination Field_03
+PASS|B2 B1 Field03 preserves progress
+PASS|continue saved return 3
+PASS|load Field_03
+PASS|continue quest inventory preserved 3
+PASS|solo dialogue step1
+PASS|solo dialogue step2
+PASS|solo dialogue step3
+PASS|solo dialogue step5
+PASS|solo dialogue step6
+PASS|solo dialogue step7
+PASS|solo dialogue step8
+PASS|solo dialogue step10
+PASS|solo dialogue step11
+PASS|solo after boss
+PASS|alternate party companion_paul step1
+PASS|alternate party companion_paul step2
+PASS|alternate party companion_paul step3
+PASS|alternate party companion_paul step5
+PASS|alternate party companion_paul step6
+PASS|alternate party companion_paul step7
+PASS|alternate party companion_paul step8
+PASS|alternate party companion_paul step10
+PASS|alternate party companion_paul step11
+PASS|alternate party companion_miel step1
+PASS|alternate party companion_miel step2
+PASS|alternate party companion_miel step3
+PASS|alternate party companion_miel step5
+PASS|alternate party companion_miel step6
+PASS|alternate party companion_miel step7
+PASS|alternate party companion_miel step8
+PASS|alternate party companion_miel step10
+PASS|alternate party companion_miel step11
+PASS|alternate party companion_taeon step1
+PASS|alternate party companion_taeon step2
+PASS|alternate party companion_taeon step3
+PASS|alternate party companion_taeon step5
+PASS|alternate party companion_taeon step6
+PASS|alternate party companion_taeon step7
+PASS|alternate party companion_taeon step8
+PASS|alternate party companion_taeon step10
+PASS|alternate party companion_taeon step11
+COMPLETE|after

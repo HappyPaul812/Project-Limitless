@@ -1,0 +1,2 @@
+PlayAttack|00|b9f82a5d87642766fb00d2de0b6a43a4|Assets/_Project/Resources/Approved20261104/Spider/Attack/00.png
+PlayShoot|00|b9f82a5d87642766fb00d2de0b6a43a4|Assets/_Project/Resources/Approved20261104/Spider/Attack/00.png

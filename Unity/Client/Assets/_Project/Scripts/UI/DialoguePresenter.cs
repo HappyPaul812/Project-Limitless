@@ -227,6 +227,8 @@ namespace ProjectLimitless.UI
             Action onConfirmed)
         {
             if (!WorldModalState.TryAcquire(this)) return;
+            // 선택창을 연 E/F/A가 같은 프레임에 확인 버튼까지 누르지 않도록 합니다.
+            inputBlockedFrame = Time.frameCount;
             ClearSequence();
             var line = new DialogueLine(speakerId, speaker, message);
             ApplyPortrait(line.SpeakerId);
@@ -583,10 +585,10 @@ namespace ProjectLimitless.UI
         }
 
         /// <summary>이전 상호작용의 Listener가 다음 선택에서 다시 실행되지 않도록 교체합니다.</summary>
-        private static void ConfigureButton(Button button, string label, UnityEngine.Events.UnityAction action)
+        private void ConfigureButton(Button button, string label, UnityEngine.Events.UnityAction action)
         {
             button.onClick.RemoveAllListeners();
-            button.onClick.AddListener(action);
+            button.onClick.AddListener(() => { if (CanBeginInteractionThisFrame) action(); });
             button.GetComponentInChildren<Text>().text = label;
         }
     }

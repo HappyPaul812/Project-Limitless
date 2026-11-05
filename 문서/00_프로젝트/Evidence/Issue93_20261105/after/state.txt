@@ -1,0 +1,2 @@
+slot=2 party=companion_taeon,companion_miel step=2
+slot=3 party=companion_taeon,companion_miel step=2

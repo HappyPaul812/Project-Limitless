@@ -1,0 +1,16 @@
+PASS|Unity pinned
+PASS|load Dungeon_01
+PASS|slot2 final E opens
+PASS|opening-frame UI submit blocked
+PASS|F executes selected cancel
+PASS|F reopens safely
+PASS|transition destination Field_03
+PASS|final E confirms and preserves state 2
+PASS|load Dungeon_01
+PASS|slot3 final E opens
+PASS|opening-frame UI submit blocked
+PASS|F executes selected cancel
+PASS|F reopens safely
+PASS|transition destination Field_03
+PASS|final E confirms and preserves state 3
+COMPLETE|input

@@ -1,0 +1,16 @@
+slot2/step1
+companion_taeon|main11_taeon_002|석관과 묘표가 남아 있습니다. 실제 안치 공간으로 쓰였던 곳입니다.
+companion_miel|main11_miel_002|오래된 흔적이지만 누군가 머물렀던 자리였겠네요.
+player||서쪽 공간을 기록하겠습니다.
+slot2/step2
+companion_taeon|main11_taeon_003|무너진 돌 사이의 긁힌 자국은 다른 흔적보다 새롭습니다.
+||<지문> 비슷한 선이 반복된다. 뜻은 아직 알 수 없다.
+player||북쪽 장치도 확인해보죠.
+slot3/step1
+companion_taeon|main11_taeon_002|석관과 묘표가 남아 있습니다. 실제 안치 공간으로 쓰였던 곳입니다.
+companion_miel|main11_miel_002|오래된 흔적이지만 누군가 머물렀던 자리였겠네요.
+player||서쪽 공간을 기록하겠습니다.
+slot3/step2
+companion_taeon|main11_taeon_003|무너진 돌 사이의 긁힌 자국은 다른 흔적보다 새롭습니다.
+||<지문> 비슷한 선이 반복된다. 뜻은 아직 알 수 없다.
+player||북쪽 장치도 확인해보죠.

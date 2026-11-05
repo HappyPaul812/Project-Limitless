@@ -1,0 +1,16 @@
+PlayAttack|0|00|b9f82a5d87642766fb00d2de0b6a43a4|Assets/_Project/Resources/Approved20261104/Spider/Attack/00.png
+PlayAttack|1|01|8693c0eaaf114fa3c19421ca22b703be|Assets/_Project/Resources/Approved20261104/Spider/Attack/01.png
+PlayAttack|2|02|15c3f1729de42679b782bce02b973dd3|Assets/_Project/Resources/Approved20261104/Spider/Attack/02.png
+PlayAttack|3|03|36a64881c6d5836bb5b284a02cbb990b|Assets/_Project/Resources/Approved20261104/Spider/Attack/03.png
+PlayAttack|4|04|18b4d334cf3ad33e9247c7e6261965ca|Assets/_Project/Resources/Approved20261104/Spider/Attack/04.png
+PlayAttack|5|05|b7565bc9f5e280b5516aac05d5bcd80e|Assets/_Project/Resources/Approved20261104/Spider/Attack/05.png
+PlayAttack|6|06|5ce31ade68b344fbfc0d1836582517e8|Assets/_Project/Resources/Approved20261104/Spider/Attack/06.png
+PlayAttack|7|07|aba87f699b059737a4b182eb1d19c9a5|Assets/_Project/Resources/Approved20261104/Spider/Attack/07.png
+PlayShoot|0|00|b9f82a5d87642766fb00d2de0b6a43a4|Assets/_Project/Resources/Approved20261104/Spider/Attack/00.png
+PlayShoot|1|01|8693c0eaaf114fa3c19421ca22b703be|Assets/_Project/Resources/Approved20261104/Spider/Attack/01.png
+PlayShoot|2|02|15c3f1729de42679b782bce02b973dd3|Assets/_Project/Resources/Approved20261104/Spider/Attack/02.png
+PlayShoot|3|03|36a64881c6d5836bb5b284a02cbb990b|Assets/_Project/Resources/Approved20261104/Spider/Attack/03.png
+PlayShoot|4|04|18b4d334cf3ad33e9247c7e6261965ca|Assets/_Project/Resources/Approved20261104/Spider/Attack/04.png
+PlayShoot|5|05|b7565bc9f5e280b5516aac05d5bcd80e|Assets/_Project/Resources/Approved20261104/Spider/Attack/05.png
+PlayShoot|6|06|5ce31ade68b344fbfc0d1836582517e8|Assets/_Project/Resources/Approved20261104/Spider/Attack/06.png
+PlayShoot|7|07|aba87f699b059737a4b182eb1d19c9a5|Assets/_Project/Resources/Approved20261104/Spider/Attack/07.png

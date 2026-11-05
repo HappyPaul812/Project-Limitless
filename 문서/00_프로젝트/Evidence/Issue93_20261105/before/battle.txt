@@ -1,0 +1,8 @@
+PlayBasicAttack|00|b9f82a5d87642766fb00d2de0b6a43a4|Assets/_Project/Resources/Approved20261104/Spider/Attack/00.png
+HP deltas=0,0,0
+PlayMonsterDirectAreaAttack|spiderS_000|cb000000000000000000000000000124|Assets/_Project/Resources/MonsterAnimations/Spider/Shoot/spiderS_000.png
+HP deltas=0,0,0
+PlayBasicAttack|00|b9f82a5d87642766fb00d2de0b6a43a4|Assets/_Project/Resources/Approved20261104/Spider/Attack/00.png
+HP deltas=14,0,0
+PlayMonsterDirectAreaAttack|spiderS_000|cb000000000000000000000000000124|Assets/_Project/Resources/MonsterAnimations/Spider/Shoot/spiderS_000.png
+HP deltas=38,40,40

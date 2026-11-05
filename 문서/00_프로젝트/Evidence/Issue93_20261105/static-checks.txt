@@ -1,0 +1,7 @@
+PASS|Dialogue original text+ID 28 preserved
+PASS|Definition only Shoot reference changed
+PASS|Unity/Client/Assets/_Project/Scripts/Battle/BattleSceneController.cs unchanged
+PASS|Unity/Client/Assets/_Project/Scenes/Dungeon_01.unity unchanged
+PASS|Unity/Client/Assets/_Project/Scenes/Dungeon_01_B2.unity unchanged
+PASS|Unity/Client/Assets/_Project/Scripts/World/SceneTransitionService.cs unchanged
+PASS|Original protected files unchanged
