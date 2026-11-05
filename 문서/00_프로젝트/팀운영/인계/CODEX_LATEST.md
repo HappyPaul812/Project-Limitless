@@ -1,3 +1,17 @@
+## 2026-11-05 최종 통합·로컬 동기화·하루 마감
+
+**USER_REALPLAY_ACCEPTED / LOCAL_MAIN_SYNC_SUCCESS / REMOTE_NOT_PUSHED / DAY_CLOSED**.
+
+- 최신 GitHub PLANNING 20:44 및 Issue93 마감 지시6657174333, 신규/리뉴얼 아트·TTS·BGM 인계를 대조했습니다. 기존 승인 #63 Bee5, #89 정식아이콘/B HUD, #90 Spider Attack8/Idle8/Walk8, #92 Ch2 배경은 승인 통합8768cbac→안전동기화674e6b0f를 거쳐 현재 main의 조상입니다. TTS162는 b0a666be로 이미 통합되어 옛 담당 인계의 미반영 표기는 과거 기록입니다.
+- 오늘 Main11 동행 필터·B1/B2 귀환·숲거미 공통공격(6f094a40/706e7010), Main11 WAV10·Field03 입구(71919894/1a233d01/0fb8b8c4)는 이미 main 포함. 대표님 “잘돼” 실플레이 수용을 반영했습니다. **누락된 승인 제품0, 제품 신규 통합0, 중복 적용0**. docs/* 전체 병합 없이 최신 정본의 승인 상태만 대조했습니다.
+- 보류: #91 Ch3 BG v2·Shoot8·미확정 냉기 Runtime·기존 VISUAL_PARTIAL·미승인 BGM/시안. 이번 마감에서 제작/추가 QA/무인 작업을 시작하지 않습니다.
+- 마감 시작 main **0fb8b8c4a02a7f21fc5bf78360fb49c371a28558**. 별도 **codex/eod-safe-sync-20261105** worktree에서 이 마감 기록만 작성하여 충돌0 조건으로 로컬 main ff-only 반영합니다. 최종 문서 포함 SHA는 실제 Git HEAD 및 Issue93 마감 댓글 참조. main 직접 커밋/원격 Push/원격 병합0.
+- Unity **6000.6.5f1 (3ff58d469c8a)** 유지. 제품 변경0이므로 기존 QA65/9/18/19 및121/37/15/7은 재실행하지 않았습니다. 직전 컴파일·실재생·전후 화면 근거는 Issue93 상세보고에 유지합니다. 원본 Editor/Scene/포커스 조작0.
+- 원본 Save01/02/03·UserData·승인 PNG/WAV·사용자 tracked dirty302/untracked550·Packages/Scenes/Prefabs/meta/GUID/BuildSettings 보호. 마감 전후 현재 존재하는 보호996파일 SHA와 원본 git status의 동일성을 확인합니다. 등록 worktree137개·로컬브랜치174개 전체 감사 완료. 이전 보호목록의 원본 Save02/03은 이번 감사 시작부터 원본 경로에 없고, 슬롯01과 기존 검증 복제본은 존재합니다. 원본 복원/삭제는 수행하지 않습니다. 기존 검증 worktree overlay와 사용자 파일은 정리·삭제·커밋하지 않습니다.
+- 오늘 작업 종료. 후속 작업은 새 사용자 지시가 있을 때만 시작합니다.
+
+---
+
 ## 2026-11-05 Issue #93 재발 — Main11 음성·Field03 입구 실제 수정
 
 **LOCAL_MAIN_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
