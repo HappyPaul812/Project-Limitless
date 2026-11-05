@@ -3,6 +3,8 @@ PASS|clone valid 2
 PASS|clone valid 3
 PASS|Unity version
 PASS|load Field_03
+PASS|entrance navigation remains visible at actual distance 3.5m
+PASS|near goal hides at actual entrance distance
 PASS|actual input transition Dungeon_01
 PASS|F entry preserves unfinished quest
 COMPLETE|inputF

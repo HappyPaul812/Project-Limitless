@@ -91,7 +91,12 @@ public static class Issue93VoiceEntranceAudit
         ProjectLimitless.Monster.MonsterEncounterService.SuppressForSeconds(3600);Check(Application.unityVersion=="6000.6.5f1","Unity version");
         if(Phase=="inputF")
         {
-            Restore(2,0);yield return Load("Field_03");Place(new Vector2(.55f,-4.45f));yield return Wait();
+            Restore(2,0);yield return Load("Field_03");
+            var site=UnityEngine.Object.FindObjectsByType<MainQuest10Interactable>().First(x=>x.TargetId==MainQuest10FieldFlow.EntranceId);
+            QuestNavigationTarget.Attach(site.gameObject,QuestService.ActiveMainQuest.CurrentObjective.TargetId,"입구 검증",new Vector3(0,1.4f,0));
+            var navigation=UnityEngine.Object.FindAnyObjectByType<QuestNavigationPresenter>();
+            Place(new Vector2(.55f,-1.35f));yield return Wait();Check(navigation.GetComponent<CanvasGroup>().alpha>0,"entrance navigation remains visible at actual distance 3.5m");
+            Place(new Vector2(.55f,-4.45f));yield return Wait();Check(navigation.GetComponent<CanvasGroup>().alpha==0,"near goal hides at actual entrance distance");
             InputSystem.settings.backgroundBehavior=InputSettings.BackgroundBehavior.IgnoreFocus;InputSystem.settings.editorInputBehaviorInPlayMode=InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
             var keyboard=InputSystem.AddDevice<Keyboard>();InputSystem.EnableDevice(keyboard);keyboard.MakeCurrent();
             InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.F));InputSystem.Update();InputSystem.QueueStateEvent(keyboard,new KeyboardState());InputSystem.Update();

@@ -1,3 +1,17 @@
+## 2026-11-05 Issue #93 재발 — Main11 음성·Field03 입구 실제 수정
+
+**LOCAL_MAIN_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- WAV 실내용 분할 오류 확인: 미엘001~005·폴001/002/003/008/009의 기존 원본 PCM만 복구. 정상18 WAV·원문/TTS ID·기존meta28·카탈로그 유지, TTS 생성/API0. 보스 후001/B1조사002/B2조사003 실제 AudioSource 출력·Unity PCM 재전사 정상 대응.
+- Field03 불투명 Quad와 큰 목표판 가림 제거. 승인 계단 PNG 재사용·지면 표시, 작은 옆 안내, 실제 입구3m 기준 안내 전환(3.5m Navigation 유지). Player Sorting/Scene/Bounds/Spawn/안전지대/Quest 순서 유지.
+- Unity6000.6.5f1 신규 Runtime65PASS/0FAIL, 최종F·거리9PASS/0FAIL, 실제 화면18PASS/0FAIL, 정적19PASS/0FAIL. 중복 합산/기존 전체QA 재실행0. 사용자 명시 허락 후 별도 검증 창에서 도보·휠체어960/1280 전후8장 실제 캡처·창 자동 종료.
+- 원본Save01/02/03 복제 시험. 보호998 중 허용 WAV10만 수정·나머지988 불변, 기존dirty302/untracked550 보호. 숲거미Attack8·B1/B2귀환 유지. 검증 전용 Packages/제품명/설정은 제품에 미포함.
+- 구현71919894d15765c31a6ebb5758d2ade4cb5ba90e는 main FF 완료. 후속 거리 정합·마감은 codex/fix-20261105-main11-voice-field03-entrance에서 커밋→안전FF, 최종 SHA는 Git HEAD/Issue93 마감댓글 참조. main 직접commit·원격Push/병합0.
+- 사용 한도 후 재개에서 완료한 음성·빌드·화면 검사는 반복하지 않았다. 다음 권장: 바울 대표 실플레이 청취·입구 가독성 확인. 새 TTS/아트 제작 불필요.
+- [실제 원인·변경파일·QA·전후 캡처](../../Issue93_Main11Voice_Field03Entrance_20261105.md), Evidence/Issue93VoiceEntrance20261105/.
+
+---
+
 ## 2026-11-05 Issue #93 P1 3건 수정·로컬 main 반영
 
 **LOCAL_MAIN_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
