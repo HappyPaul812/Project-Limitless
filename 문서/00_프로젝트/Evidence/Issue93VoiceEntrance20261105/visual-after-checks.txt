@@ -1,0 +1,19 @@
+PASS|Unity version
+PASS|isolated persistent data product
+PASS|resolution 960 path.hearing
+PASS|entrance active path.hearing
+PASS|native game frame 960 path.hearing
+PASS|nonblack frame 960 path.hearing
+PASS|resolution 960 path.mobility
+PASS|entrance active path.mobility
+PASS|native game frame 960 path.mobility
+PASS|nonblack frame 960 path.mobility
+PASS|resolution 1280 path.hearing
+PASS|entrance active path.hearing
+PASS|native game frame 1280 path.hearing
+PASS|nonblack frame 1280 path.hearing
+PASS|resolution 1280 path.mobility
+PASS|entrance active path.mobility
+PASS|native game frame 1280 path.mobility
+PASS|nonblack frame 1280 path.mobility
+COMPLETE|after-screen

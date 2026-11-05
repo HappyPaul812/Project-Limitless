@@ -1,0 +1,20 @@
+B1-main11-miel002|오래된 흔적이지만 누군가 머물렀던 자리였겠네요.|main11_miel_002|c9bbd0663e3113d4f9edfbaf4fcdecea|Assets/_Project/Audio/Voice/Story/Main11/main11_miel_002.wav
+output_peak=0.4189599
+B2-main11-miel003|쓰이지 않은 안치 공간이 많아요. 위층과는 다르네요.|main11_miel_003|7168a9339849c8241926ccf2e038bff6|Assets/_Project/Audio/Voice/Story/Main11/main11_miel_003.wav
+output_peak=0.05241584
+AfterBoss-main11-miel001|뒤쪽을 보세요. 길이 열린 것 같아요.|main11_miel_001|4b701370c4e311947b84b68f0c5ad304|Assets/_Project/Audio/Voice/Story/Main11/main11_miel_001.wav
+output_peak=0.6330254
+Additional-main11_miel_004|폴, 이쪽 바닥은 괜찮아요?|main11_miel_004|f659e0a2be2748e45b49e47a40f64bf6|Assets/_Project/Audio/Voice/Story/Main11/main11_miel_004.wav
+output_peak=0.3965391
+Additional-main11_miel_005|무리하지 말고 앞쪽을 살펴봐요.|main11_miel_005|3b2e9370358c5734381443c5cc27b202|Assets/_Project/Audio/Voice/Story/Main11/main11_miel_005.wav
+output_peak=0.02155761
+Additional-main11_paul_001|멈췄는데도 주변의 빛은 그대로군요.|main11_paul_001|ab0f9f0a27013654ca507fb17288a7a2|Assets/_Project/Audio/Voice/Story/Main11/main11_paul_001.wav
+output_peak=0.0007768507
+Additional-main11_paul_002|비슷한 선이 반복되네요. 뜻은 아직 알 수 없습니다.|main11_paul_002|06fb285df7653a0419435d900c218239|Assets/_Project/Audio/Voice/Story/Main11/main11_paul_002.wav
+output_peak=0.001704756
+Additional-main11_paul_003|아래로 이어지는 길입니다. 단단한 가장자리를 따라 내려가죠.|main11_paul_003|fc448551a9e1e99449eb24480408148d|Assets/_Project/Audio/Voice/Story/Main11/main11_paul_003.wav
+output_peak=0.01631386
+Additional-main11_paul_008|푸른 흐름은 이 방에서 시작되는 것 같지 않습니다. 더 안쪽에서 들어오는 듯하군요.|main11_paul_008|39d58a63e77b90541a6277af10e7a55c|Assets/_Project/Audio/Voice/Story/Main11/main11_paul_008.wav
+output_peak=0.2242941
+Additional-main11_paul_009|빛이 이 구조물에서 만들어지는 건 아닌 것 같습니다. 아래에서 올라와 틈을 지나갑니다.|main11_paul_009|8779977c5436e1e458b4cdafe960ff53|Assets/_Project/Audio/Voice/Story/Main11/main11_paul_009.wav
+output_peak=0.2293004

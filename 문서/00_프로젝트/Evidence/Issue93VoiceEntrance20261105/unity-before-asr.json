@@ -1,0 +1,122 @@
+{
+  "F:\\study\\codex\\Project-Limitless\\Temp\\Issue93Voice\\Evidence\\before\\main11_miel_001.wav": {
+    "sha256": "80864f84b74805e20bc157c85ecee83fac59b0dc057d548c631077bae8b204b5",
+    "pcm_sha256": "3cfadac51a0d846e5244af2d9684fa6b790020a9fe061429ef155cc5e80605bc",
+    "rate": 24000,
+    "duration": 2.35,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 1.98,
+        "text": " 모두 상태를 확인하고 움직여요.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.54,
+            "word": " 모두"
+          },
+          {
+            "start": 0.54,
+            "end": 1.02,
+            "word": " 상태를"
+          },
+          {
+            "start": 1.02,
+            "end": 1.46,
+            "word": " 확인하고"
+          },
+          {
+            "start": 1.46,
+            "end": 1.98,
+            "word": " 움직여요."
+          }
+        ]
+      }
+    ]
+  },
+  "F:\\study\\codex\\Project-Limitless\\Temp\\Issue93Voice\\Evidence\\before\\main11_miel_002.wav": {
+    "sha256": "921356ac6d7ac0e37f689b3b4386fc8453159c74ef01ace1856a070adacdc984",
+    "pcm_sha256": "86381a1698d4773c2538c30e6eb485657c2d1bb94067f07a232822c91b7e52a5",
+    "rate": 24000,
+    "duration": 3.08,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.62,
+        "text": " 뒤쪽을 보세요. 길이 열린 것 같아요.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.82,
+            "word": " 뒤쪽을"
+          },
+          {
+            "start": 0.82,
+            "end": 1.06,
+            "word": " 보세요."
+          },
+          {
+            "start": 1.54,
+            "end": 1.94,
+            "word": " 길이"
+          },
+          {
+            "start": 1.94,
+            "end": 2.22,
+            "word": " 열린"
+          },
+          {
+            "start": 2.22,
+            "end": 2.34,
+            "word": " 것"
+          },
+          {
+            "start": 2.34,
+            "end": 2.62,
+            "word": " 같아요."
+          }
+        ]
+      }
+    ]
+  },
+  "F:\\study\\codex\\Project-Limitless\\Temp\\Issue93Voice\\Evidence\\before\\main11_miel_003.wav": {
+    "sha256": "a50a6fdf4855fa7104cebe2a043a32a790f48c57e58a193789112447a7cc0ef7",
+    "pcm_sha256": "6ce10924f9f956454ed5b9a3ca8ef341be65d482699642429d0b6b71b26c4033",
+    "rate": 24000,
+    "duration": 4.2,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.7,
+        "text": " 오래된 흔적이지만 누군가 머물렀던 자리였겠네요.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.76,
+            "word": " 오래된"
+          },
+          {
+            "start": 0.76,
+            "end": 1.56,
+            "word": " 흔적이지만"
+          },
+          {
+            "start": 1.56,
+            "end": 2.36,
+            "word": " 누군가"
+          },
+          {
+            "start": 2.36,
+            "end": 3.0,
+            "word": " 머물렀던"
+          },
+          {
+            "start": 3.0,
+            "end": 3.7,
+            "word": " 자리였겠네요."
+          }
+        ]
+      }
+    ]
+  }
+}

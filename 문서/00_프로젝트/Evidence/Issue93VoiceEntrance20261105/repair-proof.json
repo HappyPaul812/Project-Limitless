@@ -1,0 +1,112 @@
+[
+  {
+    "id": "main11_miel_001",
+    "source": "Google TTS/Limitless_TTS_Output_PreSerin/miel/main11_miel_002.wav",
+    "source_sha256": "921356ac6d7ac0e37f689b3b4386fc8453159c74ef01ace1856a070adacdc984",
+    "old_sha256": "80864f84b74805e20bc157c85ecee83fac59b0dc057d548c631077bae8b204b5",
+    "final_sha256": "921356ac6d7ac0e37f689b3b4386fc8453159c74ef01ace1856a070adacdc984",
+    "start_sample": 0,
+    "end_sample": 73920,
+    "pcm_sha256": "86381a1698d4773c2538c30e6eb485657c2d1bb94067f07a232822c91b7e52a5",
+    "method": "EXISTING_WAV_COPY"
+  },
+  {
+    "id": "main11_miel_002",
+    "source": "Google TTS/Limitless_TTS_Output_PreSerin/miel/main11_miel_003.wav",
+    "source_sha256": "a50a6fdf4855fa7104cebe2a043a32a790f48c57e58a193789112447a7cc0ef7",
+    "old_sha256": "921356ac6d7ac0e37f689b3b4386fc8453159c74ef01ace1856a070adacdc984",
+    "final_sha256": "a50a6fdf4855fa7104cebe2a043a32a790f48c57e58a193789112447a7cc0ef7",
+    "start_sample": 0,
+    "end_sample": 100800,
+    "pcm_sha256": "6ce10924f9f956454ed5b9a3ca8ef341be65d482699642429d0b6b71b26c4033",
+    "method": "EXISTING_WAV_COPY"
+  },
+  {
+    "id": "main11_miel_003",
+    "source": "Google TTS/Limitless_TTS_Output_PreSerin/miel/main11_miel_004.wav",
+    "source_sha256": "f9fbeab12d0319eae56b9ad4ac2adde89e5593c422ca03d1a6f6b42d5fd8e1f0",
+    "old_sha256": "a50a6fdf4855fa7104cebe2a043a32a790f48c57e58a193789112447a7cc0ef7",
+    "final_sha256": "f9fbeab12d0319eae56b9ad4ac2adde89e5593c422ca03d1a6f6b42d5fd8e1f0",
+    "start_sample": 0,
+    "end_sample": 126720,
+    "pcm_sha256": "04eddbb1d8ac8c0ffc7b6e23c1c464aae75cde11f28e5c648df517bff558792b",
+    "method": "EXISTING_WAV_COPY"
+  },
+  {
+    "id": "main11_miel_004",
+    "source": "Google TTS/Limitless_TTS_Output_PreSerin/miel/main11_miel_005.wav",
+    "source_sha256": "f80c4b23645bc946486f408c5e66d9d506d7deb161391ea0490074ca76f1bc88",
+    "old_sha256": "f9fbeab12d0319eae56b9ad4ac2adde89e5593c422ca03d1a6f6b42d5fd8e1f0",
+    "final_sha256": "15af20f17383cc66c56f40453f1cea6e46cc0d80e269b9f14c982a547e599af2",
+    "start_sample": 0,
+    "end_sample": 58560,
+    "pcm_sha256": "0f715b102d8df7bda27c77e41928ce6a128920ca1a78c1233fee57d933a94f70",
+    "method": "RAW_PCM_SLICE"
+  },
+  {
+    "id": "main11_miel_005",
+    "source": "Google TTS/Limitless_TTS_Output_PreSerin/miel/main11_miel_005.wav",
+    "source_sha256": "f80c4b23645bc946486f408c5e66d9d506d7deb161391ea0490074ca76f1bc88",
+    "old_sha256": "f80c4b23645bc946486f408c5e66d9d506d7deb161391ea0490074ca76f1bc88",
+    "final_sha256": "6d296ed0fa9c72d410e1e8c030d041fb8deff7e36ba43853424d28f11941c600",
+    "start_sample": 58560,
+    "end_sample": 131280,
+    "pcm_sha256": "8558b9c7fa9477b6c7b5372d9dc429b4217a1f2110fe4d68df6acc481b7e1266",
+    "method": "RAW_PCM_SLICE"
+  },
+  {
+    "id": "main11_paul_001",
+    "source": "Google TTS/Limitless_TTS_Output_PreSerin/paul/paul_main01_12_full.wav",
+    "source_sha256": "8954e98c4379a104d7be76f06e87eace4afbbd0277a3a4a095099001444a7972",
+    "old_sha256": "890ff737a6e4875cbb3144ef7c21a19e95adf888dad4a5dd197bc72ec0cf5d5f",
+    "final_sha256": "1115afe3b0d92c346cbadfe23e1ec3ace7917c1208754473c4e164d740325555",
+    "start_sample": 5917440,
+    "end_sample": 6026400,
+    "pcm_sha256": "851e18e12ad3dab58905f5625a7c9b7aba9f146f0e02683021be1d486ce5d8e3",
+    "method": "RAW_PCM_SLICE"
+  },
+  {
+    "id": "main11_paul_002",
+    "source": "Google TTS/Limitless_TTS_Output_PreSerin/paul/paul_main01_12_full.wav",
+    "source_sha256": "8954e98c4379a104d7be76f06e87eace4afbbd0277a3a4a095099001444a7972",
+    "old_sha256": "14a1fab5295054ec8d3db17095da0180e12f972f395e00a41eba0f3be262f135",
+    "final_sha256": "533fb2fc47202a2005edc4942d79ae61ee3604a82124275c20e1cdc0c9dd8508",
+    "start_sample": 6083280,
+    "end_sample": 6212160,
+    "pcm_sha256": "b5664d8051d19f40f5e5a80fbd834bc8d6389e77c83e268eb4eb2480db9a1833",
+    "method": "RAW_PCM_SLICE"
+  },
+  {
+    "id": "main11_paul_003",
+    "source": "Google TTS/Limitless_TTS_Output_PreSerin/paul/main11_paul_002.wav",
+    "source_sha256": "14a1fab5295054ec8d3db17095da0180e12f972f395e00a41eba0f3be262f135",
+    "old_sha256": "d39e2b559abd6f73c56cb1177ce67e5310bb63486fe6955c8a0f1b2843691d12",
+    "final_sha256": "14a1fab5295054ec8d3db17095da0180e12f972f395e00a41eba0f3be262f135",
+    "start_sample": 0,
+    "end_sample": 138240,
+    "pcm_sha256": "464db55db3763e879222864057bdeddac9ecae9ebb6ef35aa707c926eedbb0ca",
+    "method": "EXISTING_WAV_COPY"
+  },
+  {
+    "id": "main11_paul_008",
+    "source": "Google TTS/Limitless_TTS_Output_PreSerin/paul/main11_paul_009.wav",
+    "source_sha256": "35812b590ef10bd201ddafe707734ec5abb827f25aa67c69107335b74f7c6629",
+    "old_sha256": "8f1497d5013d003cadb21321f54b1c69d4afc4794b76314498306a572855e52b",
+    "final_sha256": "75b7d7f7b21663caf69611d01d8825eadfbec25d465238a06e8801ee87f1cb01",
+    "start_sample": 0,
+    "end_sample": 147360,
+    "pcm_sha256": "373504ff403b935dc98654004e4e06e049ad58321e1f0600b6e0ffbdfd9f4300",
+    "method": "RAW_PCM_SLICE"
+  },
+  {
+    "id": "main11_paul_009",
+    "source": "Google TTS/Limitless_TTS_Output_PreSerin/paul/main11_paul_009.wav",
+    "source_sha256": "35812b590ef10bd201ddafe707734ec5abb827f25aa67c69107335b74f7c6629",
+    "old_sha256": "35812b590ef10bd201ddafe707734ec5abb827f25aa67c69107335b74f7c6629",
+    "final_sha256": "70f37e47aaffb28ff0e1a1d9a48ea60f6b40f06dd498e33e5aa6b6e6187ea136",
+    "start_sample": 180000,
+    "end_sample": 329280,
+    "pcm_sha256": "56fe5d3d6b62e29364c818e02b0dfff8065377d95f4226e893d09aca23a81d66",
+    "method": "RAW_PCM_SLICE"
+  }
+]

@@ -1,0 +1,47 @@
+#if ISSUE93_VISUAL_QA
+using System;
+using System.IO;
+using System.Linq;
+using System.Collections;
+using ProjectLimitless.Core;
+using ProjectLimitless.World;
+using ProjectLimitless.Player;
+using ProjectLimitless.Monster;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+// 검증 빌드에서만 포함합니다. 정식 제품의 런타임 타입이나 Save 경로를 바꾸지 않습니다.
+public sealed class Issue93VisualCapture : MonoBehaviour
+{
+    string root,phase;int failures;
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    static void Install(){if(Environment.GetCommandLineArgs().Any(a=>a.StartsWith("--issue93-root="))){var o=new GameObject("Issue93VisualCapture",typeof(Issue93VisualCapture));DontDestroyOnLoad(o);}}
+    void Start(){var args=Environment.GetCommandLineArgs();root=args.First(a=>a.StartsWith("--issue93-root=")).Substring(15);phase=args.First(a=>a.StartsWith("--phase=")).Substring(8);Directory.CreateDirectory(Path.Combine(root,"Evidence",phase));StartCoroutine(Run());}
+    void Check(bool ok,string text){File.AppendAllText(Path.Combine(root,"Evidence",phase,"visual-checks.txt"),(ok?"PASS|":"FAIL|")+text+"\n");if(!ok)failures++;}
+    IEnumerator Run()
+    {
+        AudioListener.volume=0;MonsterEncounterService.SuppressForSeconds(3600);
+        Check(Application.unityVersion=="6000.6.5f1","Unity version");
+        Check(Application.productName.StartsWith("Issue93VisualQA"),"isolated persistent data product");
+        foreach(int width in new[]{960,1280})foreach(string path in new[]{"path.hearing","path.mobility"})
+        {
+            int slot=path=="path.hearing"?3:1;
+            var data=JsonUtility.FromJson<GameSaveData>(File.ReadAllText(Path.Combine(root,$"Private/save_slot_{slot:00}.json")));
+            data.HasSavedWorldPosition=false;GameSaveService.RestoreSession(slot,data);GameSessionData.SelectPlayerPath(path);
+            var progress=QuestService.ExportSaveData();progress.CompletedQuestIds=progress.CompletedQuestIds.Where(id=>id!=MainQuest10FieldFlow.QuestId&&id!=MainQuest11DungeonFlow.QuestId).ToArray();
+            progress.ActiveQuests=progress.ActiveQuests.Where(q=>q.QuestId!=MainQuest11DungeonFlow.QuestId&&q.QuestId!=MainQuest10FieldFlow.QuestId).ToArray();QuestService.ImportSaveData(progress);QuestService.TryStart(MainQuest10FieldFlow.QuestId);
+            foreach(string target in new[]{MainQuest09FieldFlow.StructureId,MainQuest10FieldFlow.StoneworkId,MainQuest10FieldFlow.SilenceId,MainQuest10FieldFlow.DescentId,MainQuest10FieldFlow.EntranceId,MainQuest10FieldFlow.EntranceId})QuestService.NotifyInteraction(target);
+            var op=SceneManager.LoadSceneAsync("Field_03");while(!op.isDone)yield return null;yield return null;
+            Screen.SetResolution(width,720,FullScreenMode.Windowed);yield return new WaitForSeconds(.5f);
+            var player=FindAnyObjectByType<PlayerController>();var body=player.GetComponent<Rigidbody2D>();body.position=new Vector2(.55f,-4.45f);body.linearVelocity=Vector2.zero;player.transform.position=body.position;
+            yield return new WaitForSeconds(1f);Check(Screen.width==width&&Screen.height==720,"resolution "+width+" "+path);
+            Check(GameObject.Find(MainQuest10FieldFlow.EntranceId)!=null,"entrance active "+path);
+            yield return new WaitForEndOfFrame();
+            var texture=ScreenCapture.CaptureScreenshotAsTexture();
+            Check(texture!=null,"native game frame "+width+" "+path);
+            if(texture!=null){var pixels=texture.GetPixels32();Check(pixels.Count(p=>p.r+p.g+p.b>12)>pixels.Length/3,"nonblack frame "+width+" "+path);File.WriteAllBytes(Path.Combine(root,"Evidence",phase,$"entrance-{path}-{width}.png"),texture.EncodeToPNG());Destroy(texture);}
+        }
+        File.AppendAllText(Path.Combine(root,"Evidence",phase,"visual-checks.txt"),"COMPLETE|"+phase+"\n");Application.Quit(failures==0?0:1);
+    }
+}
+#endif

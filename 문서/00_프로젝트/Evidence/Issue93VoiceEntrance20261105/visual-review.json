@@ -1,0 +1,50 @@
+[
+  {
+    "width": 960,
+    "height": 720,
+    "path": "path.hearing",
+    "before": "before-screen/entrance-path.hearing-960.png",
+    "after": "after-screen/entrance-path.hearing-960.png",
+    "review": "Codex actual-image inspection",
+    "full_body_visible_after": true,
+    "large_goal_plate_near_player_after": false,
+    "approved_stairs_visible": true,
+    "side_controls_visible": true
+  },
+  {
+    "width": 960,
+    "height": 720,
+    "path": "path.mobility",
+    "before": "before-screen/entrance-path.mobility-960.png",
+    "after": "after-screen/entrance-path.mobility-960.png",
+    "review": "Codex actual-image inspection",
+    "full_body_visible_after": true,
+    "large_goal_plate_near_player_after": false,
+    "approved_stairs_visible": true,
+    "side_controls_visible": true
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "path": "path.hearing",
+    "before": "before-screen/entrance-path.hearing-1280.png",
+    "after": "after-screen/entrance-path.hearing-1280.png",
+    "review": "Codex actual-image inspection",
+    "full_body_visible_after": true,
+    "large_goal_plate_near_player_after": false,
+    "approved_stairs_visible": true,
+    "side_controls_visible": true
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "path": "path.mobility",
+    "before": "before-screen/entrance-path.mobility-1280.png",
+    "after": "after-screen/entrance-path.mobility-1280.png",
+    "review": "Codex actual-image inspection",
+    "full_body_visible_after": true,
+    "large_goal_plate_near_player_after": false,
+    "approved_stairs_visible": true,
+    "side_controls_visible": true
+  }
+]

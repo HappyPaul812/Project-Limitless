@@ -1,0 +1,8 @@
+PASS|clone valid 1
+PASS|clone valid 2
+PASS|clone valid 3
+PASS|Unity version
+PASS|load Field_03
+PASS|actual input transition Dungeon_01
+PASS|F entry preserves unfinished quest
+COMPLETE|inputF

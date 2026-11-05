@@ -42,12 +42,27 @@ namespace ProjectLimitless.World
             Mark(stonework.transform, new Vector2(.31f, -.1f), new Vector2(.33f, .18f), new Color(.35f, .39f, .36f));
             Mark(descent.transform, new Vector2(-.28f, .06f), new Vector2(.65f, .2f), new Color(.4f, .43f, .39f));
             Mark(descent.transform, new Vector2(.12f, -.21f), new Vector2(.72f, .17f), new Color(.3f, .34f, .31f));
-            // 완전한 입구는 발견 단계 전에는 비활성화됩니다. 문양은 특정 세력을 암시하지 않는 마모된 선입니다.
-            Mark(entrance.transform, Vector2.zero, new Vector2(1.65f, .83f), new Color(.045f, .065f, .065f));
-            Mark(entrance.transform, new Vector2(-.97f, .22f), new Vector2(.29f, 1.29f), new Color(.45f, .48f, .43f));
-            Mark(entrance.transform, new Vector2(.97f, .22f), new Vector2(.29f, 1.29f), new Color(.45f, .48f, .43f));
-            Mark(entrance.transform, new Vector2(0, .89f), new Vector2(2.14f, .28f), new Color(.4f, .44f, .4f));
-            Mark(entrance.transform, new Vector2(0, -.47f), new Vector2(1.42f, .16f), new Color(.33f, .36f, .33f));
+            BuildEntranceVisual();
+        }
+
+        /// <summary>승인된 지하묘지 계단을 재사용합니다. 대기 위치 앞의 지면에 놓아 몸을 가리는 벽을 만들지 않습니다.</summary>
+        private void BuildEntranceVisual()
+        {
+            var profile = Resources.Load<DungeonEnvironmentDefinition>("DungeonEnvironmentDefinitions/Field03CatacombEntrance");
+            if (profile == null) { Debug.LogWarning("Field03 계단 입구 표시 데이터를 찾지 못했습니다."); return; }
+            foreach (var entry in profile.placements)
+            {
+                if (entry.sprite == null) continue;
+                var visual = new GameObject(entry.anchorName, typeof(SpriteRenderer));
+                visual.transform.SetParent(entrance.transform, false);
+                visual.transform.localPosition = entry.visualOffset;
+                visual.transform.localScale = new Vector3(entry.worldSize.x / entry.sprite.bounds.size.x,
+                    entry.worldSize.y / entry.sprite.bounds.size.y, 1);
+                var renderer = visual.GetComponent<SpriteRenderer>();
+                renderer.sprite = entry.sprite; renderer.color = entry.color;
+                // 입구는 내려가는 지면입니다. 플레이어 Sorting을 올리지 않고 표시 자체를 지면 층에 둡니다.
+                renderer.sortingOrder = -1;
+            }
         }
 
         private void Start()
@@ -113,6 +128,8 @@ namespace ProjectLimitless.World
         private InputAction interact;
         private GameObject marker;
         private static int completedFrame = -1;
+        private Transform markerPlayer;
+        private bool IsEntrance => TargetId == MainQuest10FieldFlow.EntranceId;
         private bool IsCurrent => QuestService.ActiveMainQuest?.Definition.QuestId == MainQuest10FieldFlow.QuestId
             && QuestService.ActiveMainQuest.CurrentObjective?.TargetId == TargetId;
 
@@ -137,7 +154,14 @@ namespace ProjectLimitless.World
         private void Start() => marker = CreateMarker();
         private void Update()
         {
-            if (marker != null) marker.SetActive((IsCurrent || IsCompletedEntrance) && !WorldModalState.IsOpen);
+            if (marker == null) return;
+            if (markerPlayer == null) markerPlayer = FindAnyObjectByType<PlayerController>()?.transform;
+            float distance = markerPlayer == null ? float.PositiveInfinity : Vector2.Distance(markerPlayer.position, transform.position);
+            // 먼 곳은 기존 Navigation HUD가 안내하고, 가까이서는 작은 조작 안내만 계단 옆에 표시합니다.
+            marker.SetActive((IsCurrent || IsCompletedEntrance) && !WorldModalState.IsOpen && (!IsEntrance || distance <= 3f));
+            if (IsEntrance)
+                marker.GetComponentInChildren<Text>().text = "지하묘지 계단 입구\n" +
+                    (distance <= InteractionRadius ? "[E/F · 게임패드 A] " + (IsCompletedEntrance ? "들어가기" : "확인") : "입구 앞으로 이동");
         }
         private bool IsCompletedEntrance => TargetId == MainQuest10FieldFlow.EntranceId
             && QuestService.GetState(MainQuest10FieldFlow.QuestId) == QuestState.Completed;
@@ -182,11 +206,11 @@ namespace ProjectLimitless.World
         {
             var root = new GameObject("QuestMarker", typeof(Canvas), typeof(CanvasScaler));
             root.transform.SetParent(transform, false);
-            root.transform.localPosition = new Vector3(0, 1.5f, 0);
+            root.transform.localPosition = IsEntrance ? new Vector3(2.7f, -.55f, 0) : new Vector3(0, 1.5f, 0);
             root.transform.localScale = Vector3.one * .01f;
             var canvas = root.GetComponent<Canvas>();
             canvas.renderMode = RenderMode.WorldSpace; canvas.sortingOrder = 22;
-            root.GetComponent<RectTransform>().sizeDelta = new Vector2(390, 70);
+            root.GetComponent<RectTransform>().sizeDelta = IsEntrance ? new Vector2(300, 70) : new Vector2(390, 70);
             var textObject = new GameObject("Text", typeof(Text));
             textObject.transform.SetParent(root.transform, false);
             var text = textObject.GetComponent<Text>();

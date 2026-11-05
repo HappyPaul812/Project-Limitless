@@ -1,0 +1,282 @@
+[
+  {
+    "id": "main11_miel_001",
+    "expected": "뒤쪽을 보세요. 길이 열린 것 같아요.",
+    "before_asr": " 모두 상태를 확인하고 움직여요.",
+    "after_asr": " 뒤쪽을 보세요. 길이 열린 것 같아요.",
+    "changed": true,
+    "before_sha256": "80864f84b74805e20bc157c85ecee83fac59b0dc057d548c631077bae8b204b5",
+    "after_sha256": "921356ac6d7ac0e37f689b3b4386fc8453159c74ef01ace1856a070adacdc984",
+    "guid": "4b701370c4e311947b84b68f0c5ad304"
+  },
+  {
+    "id": "main11_miel_002",
+    "expected": "오래된 흔적이지만 누군가 머물렀던 자리였겠네요.",
+    "before_asr": " 뒤쪽을 보세요. 길이 열린 것 같아요.",
+    "after_asr": " 오래된 흔적이지만 누군가 머물렀던 자리였겠네요",
+    "changed": true,
+    "before_sha256": "921356ac6d7ac0e37f689b3b4386fc8453159c74ef01ace1856a070adacdc984",
+    "after_sha256": "a50a6fdf4855fa7104cebe2a043a32a790f48c57e58a193789112447a7cc0ef7",
+    "guid": "c9bbd0663e3113d4f9edfbaf4fcdecea"
+  },
+  {
+    "id": "main11_miel_003",
+    "expected": "쓰이지 않은 안치 공간이 많아요. 위층과는 다르네요.",
+    "before_asr": " 오래된 흔적이지만 누군가 머물렀던 자리였겠네요",
+    "after_asr": " 쓰이지 않은 안치 공간이 많아요. 위층과는 다르네요.",
+    "changed": true,
+    "before_sha256": "a50a6fdf4855fa7104cebe2a043a32a790f48c57e58a193789112447a7cc0ef7",
+    "after_sha256": "f9fbeab12d0319eae56b9ad4ac2adde89e5593c422ca03d1a6f6b42d5fd8e1f0",
+    "guid": "7168a9339849c8241926ccf2e038bff6"
+  },
+  {
+    "id": "main11_miel_004",
+    "expected": "폴, 이쪽 바닥은 괜찮아요?",
+    "before_asr": " 쓰이지 않은 안치 공간이 많아요. 위층과는 다르네요.",
+    "after_asr": " 폴, 이쪽 바닥은 괜찮아요?",
+    "changed": true,
+    "before_sha256": "f9fbeab12d0319eae56b9ad4ac2adde89e5593c422ca03d1a6f6b42d5fd8e1f0",
+    "after_sha256": "15af20f17383cc66c56f40453f1cea6e46cc0d80e269b9f14c982a547e599af2",
+    "guid": "f659e0a2be2748e45b49e47a40f64bf6"
+  },
+  {
+    "id": "main11_miel_005",
+    "expected": "무리하지 말고 앞쪽을 살펴봐요.",
+    "before_asr": " 폴, 이쪽 바닥은 괜찮아요? |  무리하지 말고 앞쪽을 살펴봐요",
+    "after_asr": " 무리하지 말고 앞쪽을 살펴봐요",
+    "changed": true,
+    "before_sha256": "f80c4b23645bc946486f408c5e66d9d506d7deb161391ea0490074ca76f1bc88",
+    "after_sha256": "6d296ed0fa9c72d410e1e8c030d041fb8deff7e36ba43853424d28f11941c600",
+    "guid": "3b2e9370358c5734381443c5cc27b202"
+  },
+  {
+    "id": "main11_miel_006",
+    "expected": "아래쪽은 많이 무너져 있어요.",
+    "before_asr": " 아래쪽은 많이 무너져 있어요",
+    "after_asr": " 아래쪽은 많이 무너져 있어요",
+    "changed": false,
+    "before_sha256": "7b4d4f215d8d2dbb4b7dfdf472484be9944ea625e55d7e34bb0b110b42865b32",
+    "after_sha256": "7b4d4f215d8d2dbb4b7dfdf472484be9944ea625e55d7e34bb0b110b42865b32",
+    "guid": "c4d9cff4a71832442b563acbda4a631e"
+  },
+  {
+    "id": "main11_miel_007",
+    "expected": "밖에서 알아볼 수 있는 사람이 있을지도 몰라요.",
+    "before_asr": " 밖에서 알아볼 수 있는 사람이 있을지도 몰라요.",
+    "after_asr": " 밖에서 알아볼 수 있는 사람이 있을지도 몰라요.",
+    "changed": false,
+    "before_sha256": "88a2c450f573cb7d8ed0243e920501ccbdbbab851cc0c47219a6e138c98fa9a0",
+    "after_sha256": "88a2c450f573cb7d8ed0243e920501ccbdbbab851cc0c47219a6e138c98fa9a0",
+    "guid": "d377c8382a9e491489df67886c4c0cdf"
+  },
+  {
+    "id": "main11_paul_001",
+    "expected": "멈췄는데도 주변의 빛은 그대로군요.",
+    "before_asr": " 흐음",
+    "after_asr": " 멈췄는데도 주변에 비치는 그대로군요",
+    "changed": true,
+    "before_sha256": "890ff737a6e4875cbb3144ef7c21a19e95adf888dad4a5dd197bc72ec0cf5d5f",
+    "after_sha256": "1115afe3b0d92c346cbadfe23e1ec3ace7917c1208754473c4e164d740325555",
+    "guid": "ab0f9f0a27013654ca507fb17288a7a2"
+  },
+  {
+    "id": "main11_paul_002",
+    "expected": "비슷한 선이 반복되네요. 뜻은 아직 알 수 없습니다.",
+    "before_asr": " 아래로 이어지는 길입니다. |  단단한 가장자리를 따라 내려가죠.",
+    "after_asr": " 비슷한 선이 반복되네요. 뜻은 아직 알 수 없습니다.",
+    "changed": true,
+    "before_sha256": "14a1fab5295054ec8d3db17095da0180e12f972f395e00a41eba0f3be262f135",
+    "after_sha256": "533fb2fc47202a2005edc4942d79ae61ee3604a82124275c20e1cdc0c9dd8508",
+    "guid": "06fb285df7653a0419435d900c218239"
+  },
+  {
+    "id": "main11_paul_003",
+    "expected": "아래로 이어지는 길입니다. 단단한 가장자리를 따라 내려가죠.",
+    "before_asr": " 흠...",
+    "after_asr": " 아래로 이어지는 길입니다. |  단단한 가장자리를 따라 내려가죠.",
+    "changed": true,
+    "before_sha256": "d39e2b559abd6f73c56cb1177ce67e5310bb63486fe6955c8a0f1b2843691d12",
+    "after_sha256": "14a1fab5295054ec8d3db17095da0180e12f972f395e00a41eba0f3be262f135",
+    "guid": "fc448551a9e1e99449eb24480408148d"
+  },
+  {
+    "id": "main11_paul_004",
+    "expected": "바닥은 지나갈 수 있습니다. 거친 부분은 표시해두겠습니다.",
+    "before_asr": " 바닥은 지나갈 수 있습니다. |  거친 부분은 표시해두겠습니다.",
+    "after_asr": " 바닥은 지나갈 수 있습니다. |  거친 부분은 표시해두겠습니다.",
+    "changed": false,
+    "before_sha256": "f310ba402a74edbbff343b00a19c0398b91b354dcb532e5575066dbc5a6052f9",
+    "after_sha256": "f310ba402a74edbbff343b00a19c0398b91b354dcb532e5575066dbc5a6052f9",
+    "guid": "ce6795d1d3d454a4e922419728d50e20"
+  },
+  {
+    "id": "main11_paul_005",
+    "expected": "닫힌 묘실인데 안치 흔적은 거의 없습니다. 다른 용도였을 수도 있겠네요.",
+    "before_asr": " 다친 묘실인데 안치 흔적은 거의 없습니다. 다른 용도였을 수도 있겠네요.",
+    "after_asr": " 다친 묘실인데 안치 흔적은 거의 없습니다. 다른 용도였을 수도 있겠네요.",
+    "changed": false,
+    "before_sha256": "d941ae94eb65c81d406141f68dfad6cab40f33ecce4aade8f1b61420dc63c151",
+    "after_sha256": "d941ae94eb65c81d406141f68dfad6cab40f33ecce4aade8f1b61420dc63c151",
+    "guid": "c5befd70fbcaf27499580c0c4193d348"
+  },
+  {
+    "id": "main11_paul_006",
+    "expected": "네. 조금 거칠지만 지나갈 수 있습니다.",
+    "before_asr": " 조금 거칠지만 지나갈 수 있습니다",
+    "after_asr": " 조금 거칠지만 지나갈 수 있습니다",
+    "changed": false,
+    "before_sha256": "6cd602fe6de54605d8e994a2c4de2674ebe9f7a1145825cbbe93f722206b9f53",
+    "after_sha256": "6cd602fe6de54605d8e994a2c4de2674ebe9f7a1145825cbbe93f722206b9f53",
+    "guid": "20c062bec16b763459823676c51d7b94"
+  },
+  {
+    "id": "main11_paul_007",
+    "expected": "용도를 정하기에는 단서가 모자랍니다. 본 것만 기록하죠.",
+    "before_asr": " 용도를 정하기에는 단소가 모자랍니다. 본 것만 기록하죠.",
+    "after_asr": " 용도를 정하기에는 단소가 모자랍니다. 본 것만 기록하죠.",
+    "changed": false,
+    "before_sha256": "556d96726de77620476c40efd9e77eb2b78ff4dd6d401fa2034b748d0eddff8b",
+    "after_sha256": "556d96726de77620476c40efd9e77eb2b78ff4dd6d401fa2034b748d0eddff8b",
+    "guid": "00e49925a29511c4e87c3fef00365ce0"
+  },
+  {
+    "id": "main11_paul_008",
+    "expected": "푸른 흐름은 이 방에서 시작되는 것 같지 않습니다. 더 안쪽에서 들어오는 듯하군요.",
+    "before_asr": " 흐음",
+    "after_asr": " 푸른 흐름은 이 방에서 시작되는 것 같지 않습니다. |  더 안쪽에서 들어오는 듯하군요.",
+    "changed": true,
+    "before_sha256": "8f1497d5013d003cadb21321f54b1c69d4afc4794b76314498306a572855e52b",
+    "after_sha256": "75b7d7f7b21663caf69611d01d8825eadfbec25d465238a06e8801ee87f1cb01",
+    "guid": "39d58a63e77b90541a6277af10e7a55c"
+  },
+  {
+    "id": "main11_paul_009",
+    "expected": "빛이 이 구조물에서 만들어지는 건 아닌 것 같습니다. 아래에서 올라와 틈을 지나갑니다.",
+    "before_asr": " 푸른 흐름은 이 방에서 시작되는 것 같지 않습니다. |  더 안쪽에서 들어오는 듯하군요. |  음... |  빛이 이 구조물에서 만들어지는 건 아닌 것 같습니다. |  아래에서 올라와 틈을 지나갑니다.",
+    "after_asr": " 빛이 이 구조물에서 만들어지는 건 아닌 것 같습니다. |  아래에서 올라와 틈을 지나갑니다.",
+    "changed": true,
+    "before_sha256": "35812b590ef10bd201ddafe707734ec5abb827f25aa67c69107335b74f7c6629",
+    "after_sha256": "70f37e47aaffb28ff0e1a1d9a48ea60f6b40f06dd498e33e5aa6b6e6187ea136",
+    "guid": "8779977c5436e1e458b4cdafe960ff53"
+  },
+  {
+    "id": "main11_paul_010",
+    "expected": "동의합니다. 무너진 지하에서 길을 개척하는 취미는 없거든요.",
+    "before_asr": " 동의합니다. |  무너진 지하에서 길을 개척하는 취미는 없거든요.",
+    "after_asr": " 동의합니다. |  무너진 지하에서 길을 개척하는 취미는 없거든요.",
+    "changed": false,
+    "before_sha256": "f7be831f9d01ab67b42b9c58d1545da647d5b774d466b63c9a76522f84bf2ecb",
+    "after_sha256": "f7be831f9d01ab67b42b9c58d1545da647d5b774d466b63c9a76522f84bf2ecb",
+    "guid": "65e4785eb7ea4ed4fab73dbcb7ef7a9d"
+  },
+  {
+    "id": "main11_paul_011",
+    "expected": "석판은 대부분 부서졌습니다. 글자를 읽기는 어렵겠네요.",
+    "before_asr": " 음, 석판은 대부분 부서졌습니다. 글자를 읽기는 어렵겠네요.",
+    "after_asr": " 음, 석판은 대부분 부서졌습니다. 글자를 읽기는 어렵겠네요.",
+    "changed": false,
+    "before_sha256": "29b529f7404146511942a0a2442edb8d51877f3fd2bc24b7443fbe18deed9ef5",
+    "after_sha256": "29b529f7404146511942a0a2442edb8d51877f3fd2bc24b7443fbe18deed9ef5",
+    "guid": "659db3d1704a78040adacf51dff8816d"
+  },
+  {
+    "id": "main11_taeon_001",
+    "expected": "이 존재가 빛의 근원은 아니었던 것 같습니다.",
+    "before_asr": " 이 존재가 피체 근원은 아니었던 것 같습니다",
+    "after_asr": " 이 존재가 피체 근원은 아니었던 것 같습니다",
+    "changed": false,
+    "before_sha256": "1ff0cbceb7d7c8d46b139150a2557e2ae400b4934b4c55076fad8b7624658da3",
+    "after_sha256": "1ff0cbceb7d7c8d46b139150a2557e2ae400b4934b4c55076fad8b7624658da3",
+    "guid": "7d87148a2d889e34992e0c7e1a7387a5"
+  },
+  {
+    "id": "main11_taeon_002",
+    "expected": "석관과 묘표가 남아 있습니다. 실제 안치 공간으로 쓰였던 곳입니다.",
+    "before_asr": " 석관광 요표가 남아있습니다. |  실제 안치 공간으로 쓰였던 곳입니다.",
+    "after_asr": " 석관광 요표가 남아있습니다. |  실제 안치 공간으로 쓰였던 곳입니다.",
+    "changed": false,
+    "before_sha256": "d6838df2b1acf12670380e87c761836ec8256ba76c3281009522736d092a4fa3",
+    "after_sha256": "d6838df2b1acf12670380e87c761836ec8256ba76c3281009522736d092a4fa3",
+    "guid": "59c2d338c3d9cb94bb80d42664d48a14"
+  },
+  {
+    "id": "main11_taeon_003",
+    "expected": "무너진 돌 사이의 긁힌 자국은 다른 흔적보다 새롭습니다.",
+    "before_asr": " 무너진 돌 사이에 긁힌 자국은 다른 한적보다 새롭습니다",
+    "after_asr": " 무너진 돌 사이에 긁힌 자국은 다른 한적보다 새롭습니다",
+    "changed": false,
+    "before_sha256": "903479e8d74b93343042e319b7fa7e8fae1e7358bb9fc4724a6de43d96f89c76",
+    "after_sha256": "903479e8d74b93343042e319b7fa7e8fae1e7358bb9fc4724a6de43d96f89c76",
+    "guid": "91455b4bc171bcc4c9b0183d942893cd"
+  },
+  {
+    "id": "main11_taeon_004",
+    "expected": "양쪽 구조를 확인했습니다. 이제 이 장치를 움직일 수 있겠습니다.",
+    "before_asr": " 양쪽 구조를 확인했습니다. |  이제 이 장치를 움직일 수 있겠습니다.",
+    "after_asr": " 양쪽 구조를 확인했습니다. |  이제 이 장치를 움직일 수 있겠습니다.",
+    "changed": false,
+    "before_sha256": "4f2ae01cd0a9e5ab860355cb32b2d16b0bb5f35299eb4df574ed33bed61c65a7",
+    "after_sha256": "4f2ae01cd0a9e5ab860355cb32b2d16b0bb5f35299eb4df574ed33bed61c65a7",
+    "guid": "7c477d805c55c6c4f94e54ef0afdfd38"
+  },
+  {
+    "id": "main11_taeon_005",
+    "expected": "돌을 다듬은 방식도 더 정교합니다. 안쪽부터 확인하죠.",
+    "before_asr": " 도를 다듬은 방식도 더 정교합니다. 안쪽부터 확인하죠.",
+    "after_asr": " 도를 다듬은 방식도 더 정교합니다. 안쪽부터 확인하죠.",
+    "changed": false,
+    "before_sha256": "6a87c9cc2bdacd3c63b16d19a17edd34b7500981d57084bcf378f3d8b7c5b169",
+    "after_sha256": "6a87c9cc2bdacd3c63b16d19a17edd34b7500981d57084bcf378f3d8b7c5b169",
+    "guid": "98f06a071471ebd4aa4af8f4b2a5ace5"
+  },
+  {
+    "id": "main11_taeon_006",
+    "expected": "석재의 홈과 문양이 반복됩니다. 의미는 아직 모르겠습니다.",
+    "before_asr": " 석제의 홈과 문양이 반복됩니다. 의미는 아직 모르겠습니다.",
+    "after_asr": " 석제의 홈과 문양이 반복됩니다. 의미는 아직 모르겠습니다.",
+    "changed": false,
+    "before_sha256": "13a044eb21456bda619d04be663ac33f513863ca3246a84350dfcd9e24fce7bf",
+    "after_sha256": "13a044eb21456bda619d04be663ac33f513863ca3246a84350dfcd9e24fce7bf",
+    "guid": "38e54470a5c80bc48adfcb7688a6c4e5"
+  },
+  {
+    "id": "main11_taeon_007",
+    "expected": "방향은 확인했습니다. 근원은 아직 모릅니다.",
+    "before_asr": " 방향은 확인했습니다. |  그 노는 아직 모릅니다.",
+    "after_asr": " 방향은 확인했습니다. |  그 노는 아직 모릅니다.",
+    "changed": false,
+    "before_sha256": "6069581e0d4e07cf8cb9ca1b0686382eaea0ac36378edfa5fa11809ea0c14103",
+    "after_sha256": "6069581e0d4e07cf8cb9ca1b0686382eaea0ac36378edfa5fa11809ea0c14103",
+    "guid": "7a29e55920c6c664d9f2cef26eb2e940"
+  },
+  {
+    "id": "main11_taeon_008",
+    "expected": "그렇다면 지금 보이는 균열로 내려갈 수 있겠습니까?",
+    "before_asr": " 그렇다면 지금 보이는 균열로 내려갈 수 있겠습니까?",
+    "after_asr": " 그렇다면 지금 보이는 균열로 내려갈 수 있겠습니까?",
+    "changed": false,
+    "before_sha256": "ff4d21ae5c1caa63330761fcdc698550353aea50b6e3faaea05748f1ec1bd067",
+    "after_sha256": "ff4d21ae5c1caa63330761fcdc698550353aea50b6e3faaea05748f1ec1bd067",
+    "guid": "467c5d2ebc0b31d429dd1bb284462384"
+  },
+  {
+    "id": "main11_taeon_009",
+    "expected": "지금 억지로 들어가는 건 위험합니다.",
+    "before_asr": " 지금 억지로 들어가는 건 위험합니다.",
+    "after_asr": " 지금 억지로 들어가는 건 위험합니다.",
+    "changed": false,
+    "before_sha256": "0018889691ea2b50d0cff1b85d814fd109f422c0c70cc0fa016df492006d3ddc",
+    "after_sha256": "0018889691ea2b50d0cff1b85d814fd109f422c0c70cc0fa016df492006d3ddc",
+    "guid": "03e3127a965296c43a9d250a35e08578"
+  },
+  {
+    "id": "main11_taeon_010",
+    "expected": "지하묘지에서 본 것과 같은 문양입니다. 가져가는 편이 좋겠습니다.",
+    "before_asr": " 지암유지에서 본 것과 같은 문양입니다 |  가져가는 편이 좋겠습니다",
+    "after_asr": " 지암유지에서 본 것과 같은 문양입니다 |  가져가는 편이 좋겠습니다",
+    "changed": false,
+    "before_sha256": "b79c98ccdddefb6da4885fea7ff5944d78256ff00ea45e41ea7523a459a63651",
+    "after_sha256": "b79c98ccdddefb6da4885fea7ff5944d78256ff00ea45e41ea7523a459a63651",
+    "guid": "5d097a42fb0b84743bd0e2d129aaebd7"
+  }
+]

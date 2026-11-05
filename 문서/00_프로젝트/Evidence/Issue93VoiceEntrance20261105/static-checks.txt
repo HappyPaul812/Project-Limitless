@@ -1,0 +1,19 @@
+PASS|corrected 10 only
+PASS|normal 18 WAV byte preserved
+PASS|all 28 meta GUID/settings preserved (checkout line endings normalized)
+PASS|Unity/Client/Assets/_Project/Resources/Audio/Voice/Story/StoryVoiceCatalog.asset unchanged
+PASS|Unity/Client/Assets/_Project/Scripts/World/MainQuest11DungeonFlow.cs unchanged
+PASS|Unity/Client/Assets/_Project/Scripts/World/DungeonExitInteraction.cs unchanged
+PASS|Unity/Client/Assets/_Project/Resources/MonsterDefinitions/03_ForestSpider.asset unchanged
+PASS|Unity/Client/Assets/_Project/Scenes/Field_03.unity unchanged (checkout line endings normalized)
+PASS|main11_miel_001 expected repaired WAV SHA
+PASS|main11_miel_002 expected repaired WAV SHA
+PASS|main11_miel_003 expected repaired WAV SHA
+PASS|main11_miel_004 expected repaired WAV SHA
+PASS|main11_miel_005 expected repaired WAV SHA
+PASS|main11_paul_001 expected repaired WAV SHA
+PASS|main11_paul_002 expected repaired WAV SHA
+PASS|main11_paul_003 expected repaired WAV SHA
+PASS|main11_paul_008 expected repaired WAV SHA
+PASS|main11_paul_009 expected repaired WAV SHA
+PASS|original protected 998 unchanged before main

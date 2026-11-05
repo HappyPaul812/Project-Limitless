@@ -1,0 +1,134 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
+using System.Reflection;
+using ProjectLimitless.Core;
+using ProjectLimitless.World;
+using ProjectLimitless.Player;
+using ProjectLimitless.UI;
+using ProjectLimitless.Audio;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
+
+// Issue93 후속 검증 전용입니다. 사용자 원본 대신 worktree와 복제 Save만 사용합니다.
+[InitializeOnLoad]
+public static class Issue93VoiceEntranceAudit
+{
+    const BindingFlags F=BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Static|BindingFlags.Instance|BindingFlags.FlattenHierarchy;
+    static string Base=>Path.GetFullPath(Application.dataPath+"/../../../../");
+    static string Phase=>Environment.GetEnvironmentVariable("ISSUE93VOICE_PHASE")??"before";
+    static string Root=>Path.Combine(Base,"Evidence",Phase);
+    static IEnumerator routine;static readonly List<string> checks=new List<string>();
+    static Issue93VoiceEntranceAudit(){EditorApplication.update+=Tick;EditorApplication.playModeStateChanged+=s=>{if(s==PlayModeStateChange.EnteredPlayMode&&SessionState.GetBool("Issue93Voice",false))routine=Flat(Run());};}
+    public static void Launch()
+    {
+        if(!Application.isBatchMode||!File.Exists(Path.Combine(Base,"Private/save_slot_01.json")))throw new Exception("격리 batch와 복제 Save가 필요합니다.");
+        Directory.CreateDirectory(Root);SessionState.SetBool("Issue93Voice",true);
+        EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
+        EditorSettings.enterPlayModeOptionsEnabled=true;EditorSettings.enterPlayModeOptions=EnterPlayModeOptions.DisableDomainReload;
+        EditorApplication.LockReloadAssemblies();Application.runInBackground=true;EditorApplication.EnterPlaymode();
+    }
+    static void Tick(){if(routine==null)return;try{if(routine.MoveNext())return;Finish();}catch(Exception e){checks.Add("FAIL|"+e);Finish();}}
+    static void Finish(){routine=null;File.WriteAllLines(Path.Combine(Root,"checks.txt"),checks);SessionState.SetBool("Issue93Voice",false);EditorApplication.Exit(checks.Any(x=>x.StartsWith("FAIL|"))?1:0);}
+    static void Check(bool ok,string name){checks.Add((ok?"PASS|":"FAIL|")+name);File.WriteAllLines(Path.Combine(Root,"checks.txt"),checks);}
+    static IEnumerator Flat(IEnumerator first){var s=new Stack<IEnumerator>();s.Push(first);while(s.Count>0){var r=s.Peek();if(!r.MoveNext()){s.Pop();continue;}if(r.Current is IEnumerator n)s.Push(n);else yield return null;}}
+    static IEnumerator Wait(double seconds=.2){double end=EditorApplication.timeSinceStartup+seconds;while(EditorApplication.timeSinceStartup<end)yield return null;}
+    static IEnumerator Load(string name){var op=SceneManager.LoadSceneAsync(name);while(!op.isDone)yield return null;yield return Wait(.3);Check(SceneManager.GetActiveScene().name==name,"load "+name);}
+    static GameSaveData Data(int slot)=>JsonUtility.FromJson<GameSaveData>(File.ReadAllText(Path.Combine(Base,$"Private/save_slot_{slot:00}.json")));
+    static void Restore(int slot,int step)
+    {
+        var data=Data(slot);data.HasSavedWorldPosition=false;
+        var quest=data.QuestProgress.ActiveQuests.FirstOrDefault(q=>q.QuestId==MainQuest11DungeonFlow.QuestId);
+        if(quest!=null)for(int i=0;i<quest.Objectives.Length;i++)quest.Objectives[i].CurrentCount=i<step?1:0;
+        GameSaveService.RestoreSession(slot,data);
+        CompanionRosterService.ImportSaveData(new CompanionRosterSaveData{UnlockedCharacterIds=new[]{CompanionRosterService.TaeonId,CompanionRosterService.MielId,CompanionRosterService.PaulId},ActivePartyCharacterIds=new[]{CompanionRosterService.TaeonId,CompanionRosterService.MielId},HasManualComposition=true});
+    }
+    static void Place(Vector2 position){var p=UnityEngine.Object.FindAnyObjectByType<PlayerController>();p.transform.position=position;var b=p.GetComponent<Rigidbody2D>();if(b!=null){b.position=position;b.linearVelocity=Vector2.zero;}}
+    static void Capture(string name)
+    {
+        // 음성 자막 증거는 실제 Scene 카메라 RT이며, 입구 증거는 별도 Native Player의 실제 프레임을 사용합니다.
+        var camera=Camera.main;var rt=new RenderTexture(1280,720,24);var previous=camera.targetTexture;var active=RenderTexture.active;
+        var canvases=UnityEngine.Object.FindObjectsByType<Canvas>().Where(c=>c.renderMode==RenderMode.ScreenSpaceOverlay).ToArray();
+        foreach(var c in canvases){c.renderMode=RenderMode.ScreenSpaceCamera;c.worldCamera=camera;c.planeDistance=1;}
+        Canvas.ForceUpdateCanvases();camera.targetTexture=rt;camera.Render();RenderTexture.active=rt;
+        var texture=new Texture2D(1280,720,TextureFormat.RGB24,false);texture.ReadPixels(new Rect(0,0,1280,720),0,0);texture.Apply();
+        File.WriteAllBytes(Path.Combine(Root,name+".png"),texture.EncodeToPNG());
+        foreach(var c in canvases){c.renderMode=RenderMode.ScreenSpaceOverlay;c.worldCamera=null;}
+        camera.targetTexture=previous;RenderTexture.active=active;UnityEngine.Object.Destroy(rt);UnityEngine.Object.Destroy(texture);
+    }
+    static void WritePcm(string name,AudioClip clip)
+    {
+        var samples=new float[clip.samples*clip.channels];Check(clip.GetData(samples,0),"PCM readable "+name);
+        using(var w=new BinaryWriter(File.Create(Path.Combine(Root,name+".wav"))))
+        {
+            int bytes=samples.Length*2;w.Write(System.Text.Encoding.ASCII.GetBytes("RIFF"));w.Write(36+bytes);w.Write(System.Text.Encoding.ASCII.GetBytes("WAVEfmt "));w.Write(16);w.Write((short)1);w.Write((short)clip.channels);w.Write(clip.frequency);w.Write(clip.frequency*clip.channels*2);w.Write((short)(clip.channels*2));w.Write((short)16);w.Write(System.Text.Encoding.ASCII.GetBytes("data"));w.Write(bytes);foreach(float x in samples)w.Write((short)Mathf.Clamp(Mathf.RoundToInt(x*32768),-32768,32767));
+        }
+    }
+    static IEnumerator Arrive(string scene){double until=EditorApplication.timeSinceStartup+10;while(SceneManager.GetActiveScene().name!=scene&&EditorApplication.timeSinceStartup<until)yield return null;yield return Wait(.4);Check(SceneManager.GetActiveScene().name==scene,"actual input transition "+scene);}
+    static IEnumerator Voice(string name,string id)
+    {
+        var presenter=DialoguePresenter.Instance;var voice=presenter.GetComponent<VoicePlaybackSource>();
+        var lines=(DialogueLine[])typeof(DialoguePresenter).GetField("sequenceLines",F).GetValue(presenter);int page=(int)typeof(DialoguePresenter).GetField("sequencePageIndex",F).GetValue(presenter);
+        var clip=voice.Clip;Check(clip!=null&&clip.name==id&&lines[page].DialogueId==id,"subtitle/catalog/AudioSource id "+name);
+        string path=AssetDatabase.GetAssetPath(clip);File.AppendAllText(Path.Combine(Root,"voices.txt"),name+"|"+lines[page].Message+"|"+id+"|"+AssetDatabase.AssetPathToGUID(path)+"|"+path+"\n");
+        int initial=voice.GetComponent<AudioSource>().timeSamples;float max=0;double end=EditorApplication.timeSinceStartup+.7;
+        while(EditorApplication.timeSinceStartup<end){var output=new float[1024];voice.GetComponent<AudioSource>().GetOutputData(output,0);max=Mathf.Max(max,output.Max(x=>Mathf.Abs(x)));yield return null;}
+        Check(voice.IsPlaying&&voice.GetComponent<AudioSource>().timeSamples>initial,"AudioSource actual playback advances "+name);
+        Check(max>.0001f,"AudioSource output nonzero "+name);File.AppendAllText(Path.Combine(Root,"voices.txt"),"output_peak="+max+"\n");WritePcm(id,clip);Capture(name);presenter.Hide();yield return Wait();
+    }
+    static IEnumerator Run()
+    {
+        GameSaveService.AuditSaveDirectory=Path.Combine(Base,"Private",Phase);Directory.CreateDirectory(GameSaveService.AuditSaveDirectory);UserSettingsService.BeginAudit(GameSaveService.AuditSaveDirectory);
+        File.WriteAllText(UserSettingsService.SettingsFilePath,JsonUtility.ToJson(new UserSettingsData{MuteAll=false,VoiceVolume=100,SfxVolume=0,BgmVolume=0}));AudioListener.volume=1;
+        foreach(int slot in new[]{1,2,3}){File.Copy(Path.Combine(Base,$"Private/save_slot_{slot:00}.json"),GameSaveService.GetSaveFilePath(slot),true);Check(GameSaveService.TryLoadSlot(slot,out var d),"clone valid "+slot);}
+        ProjectLimitless.Monster.MonsterEncounterService.SuppressForSeconds(3600);Check(Application.unityVersion=="6000.6.5f1","Unity version");
+        if(Phase=="inputF")
+        {
+            Restore(2,0);yield return Load("Field_03");Place(new Vector2(.55f,-4.45f));yield return Wait();
+            InputSystem.settings.backgroundBehavior=InputSettings.BackgroundBehavior.IgnoreFocus;InputSystem.settings.editorInputBehaviorInPlayMode=InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
+            var keyboard=InputSystem.AddDevice<Keyboard>();InputSystem.EnableDevice(keyboard);keyboard.MakeCurrent();
+            InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.F));InputSystem.Update();InputSystem.QueueStateEvent(keyboard,new KeyboardState());InputSystem.Update();
+            yield return Arrive("Dungeon_01");Check(MainQuest11DungeonFlow.CurrentStep==0,"F entry preserves unfinished quest");
+            InputSystem.RemoveDevice(keyboard);checks.Add("COMPLETE|inputF");yield break;
+        }
+        Restore(2,1);yield return Load("Dungeon_01");var p=UnityEngine.Object.FindAnyObjectByType<PlayerController>();
+        Place(new Vector2(-10,0));yield return Wait();var west=UnityEngine.Object.FindObjectsByType<MainQuest11Site>().First(s=>s.TargetId=="dungeon01_main11_west_ossuary");west.TryInteract();yield return Wait();DialoguePresenter.Instance.AdvanceFromInput();yield return Voice("B1-main11-miel002","main11_miel_002");
+        Restore(3,5);yield return Load("Dungeon_01_B2");Place(new Vector2(0,-7.3f));yield return Wait();UnityEngine.Object.FindObjectsByType<MainQuest11Site>().First(s=>s.TargetId=="dungeon01_main11_b2_entrance").TryInteract();yield return Voice("B2-main11-miel003","main11_miel_003");
+        Restore(2,10);yield return Load("Dungeon_01_B2");yield return Wait();DialoguePresenter.Instance.AdvanceFromInput();yield return Wait();DialoguePresenter.Instance.AdvanceFromInput();yield return Voice("AfterBoss-main11-miel001","main11_miel_001");
+        CompanionRosterService.ImportSaveData(new CompanionRosterSaveData{UnlockedCharacterIds=new[]{CompanionRosterService.MielId,CompanionRosterService.PaulId},ActivePartyCharacterIds=new[]{CompanionRosterService.MielId,CompanionRosterService.PaulId},HasManualComposition=true});
+        var authored=MainQuest11Dialogue.AfterBoss.Concat(Enumerable.Range(0,13).SelectMany(i=>MainQuest11Dialogue.Lines(i))).Where(l=>!string.IsNullOrEmpty(l.DialogueId)).GroupBy(l=>l.DialogueId).ToDictionary(g=>g.Key,g=>g.First());
+        foreach(string id in new[]{"main11_miel_004","main11_miel_005","main11_paul_001","main11_paul_002","main11_paul_003","main11_paul_008","main11_paul_009"})
+        {DialoguePresenter.Instance.ShowSequence(new[]{authored[id]},null);yield return Voice("Additional-"+id,id);}
+        InputSystem.settings.backgroundBehavior=InputSettings.BackgroundBehavior.IgnoreFocus;InputSystem.settings.editorInputBehaviorInPlayMode=InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
+        var kb=InputSystem.AddDevice<Keyboard>();var pad=InputSystem.AddDevice<Gamepad>();InputSystem.EnableDevice(kb);InputSystem.EnableDevice(pad);kb.MakeCurrent();pad.MakeCurrent();
+        foreach(string path in new[]{"path.hearing","path.mobility"})
+        {
+            Restore(1,0);GameSessionData.SelectPlayerPath(path);
+            var progress=QuestService.ExportSaveData();progress.CompletedQuestIds=progress.CompletedQuestIds.Where(id=>id!=MainQuest10FieldFlow.QuestId&&id!=MainQuest11DungeonFlow.QuestId).ToArray();
+            progress.ActiveQuests=progress.ActiveQuests.Where(q=>q.QuestId!=MainQuest11DungeonFlow.QuestId&&q.QuestId!=MainQuest10FieldFlow.QuestId).ToArray();QuestService.ImportSaveData(progress);QuestService.TryStart(MainQuest10FieldFlow.QuestId);
+            foreach(string target in new[]{MainQuest09FieldFlow.StructureId,MainQuest10FieldFlow.StoneworkId,MainQuest10FieldFlow.SilenceId,MainQuest10FieldFlow.DescentId,MainQuest10FieldFlow.EntranceId,MainQuest10FieldFlow.EntranceId})QuestService.NotifyInteraction(target);
+            yield return Load("Field_03");Place(new Vector2(.55f,-4.45f));yield return Wait(.4);
+            var site=UnityEngine.Object.FindObjectsByType<MainQuest10Interactable>().First(x=>x.TargetId==MainQuest10FieldFlow.EntranceId);
+            Check(site.GetComponentsInChildren<MeshRenderer>().Length==0,"old entrance quads removed "+path);
+            var stairs=site.GetComponentsInChildren<SpriteRenderer>().Single();Check(stairs.sortingOrder<0&&stairs.sprite.name.Contains("Descent_Stairs"),"approved ground stairs "+path);
+            var nav=UnityEngine.Object.FindAnyObjectByType<QuestNavigationPresenter>();Check(nav.GetComponent<CanvasGroup>().alpha==0,"large near goal panel hidden "+path);
+            QuestService.NotifyInteraction(MainQuest10FieldFlow.EntranceId);yield return Wait();
+            if(path=="path.hearing"){InputSystem.QueueStateEvent(kb,new KeyboardState(Key.E));InputSystem.Update();InputSystem.QueueStateEvent(kb,new KeyboardState());InputSystem.Update();}
+            else {InputSystem.QueueStateEvent(pad,new GamepadState().WithButton(GamepadButton.South));InputSystem.Update();InputSystem.QueueStateEvent(pad,new GamepadState());InputSystem.Update();}
+            yield return Arrive("Dungeon_01");
+            var exit=UnityEngine.Object.FindAnyObjectByType<DungeonExitInteraction>();Place(exit.transform.position);yield return Wait();Check(exit.TryInteract(),"existing B1 return interaction "+path);yield return Wait();
+            ((Button)typeof(DialoguePresenter).GetField("confirmButton",F).GetValue(DialoguePresenter.Instance)).onClick.Invoke();yield return Arrive("Field_03");
+            Check(Vector2.Distance(UnityEngine.Object.FindAnyObjectByType<PlayerController>().transform.position,new Vector2(.55f,-2.65f))<.6f,"return spawn preserved "+path);
+            Check(MainQuest11DungeonFlow.CurrentStep==0,"unfinished quest preserved "+path);
+        }
+        InputSystem.RemoveDevice(kb);InputSystem.RemoveDevice(pad);
+        checks.Add("COMPLETE|"+Phase);
+    }
+}

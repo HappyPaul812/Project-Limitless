@@ -1,0 +1,66 @@
+PASS|clone valid 1
+PASS|clone valid 2
+PASS|clone valid 3
+PASS|Unity version
+PASS|load Dungeon_01
+PASS|subtitle/catalog/AudioSource id B1-main11-miel002
+PASS|AudioSource actual playback advances B1-main11-miel002
+PASS|AudioSource output nonzero B1-main11-miel002
+PASS|PCM readable main11_miel_002
+PASS|load Dungeon_01_B2
+PASS|subtitle/catalog/AudioSource id B2-main11-miel003
+PASS|AudioSource actual playback advances B2-main11-miel003
+PASS|AudioSource output nonzero B2-main11-miel003
+PASS|PCM readable main11_miel_003
+PASS|load Dungeon_01_B2
+PASS|subtitle/catalog/AudioSource id AfterBoss-main11-miel001
+PASS|AudioSource actual playback advances AfterBoss-main11-miel001
+PASS|AudioSource output nonzero AfterBoss-main11-miel001
+PASS|PCM readable main11_miel_001
+PASS|subtitle/catalog/AudioSource id Additional-main11_miel_004
+PASS|AudioSource actual playback advances Additional-main11_miel_004
+PASS|AudioSource output nonzero Additional-main11_miel_004
+PASS|PCM readable main11_miel_004
+PASS|subtitle/catalog/AudioSource id Additional-main11_miel_005
+PASS|AudioSource actual playback advances Additional-main11_miel_005
+PASS|AudioSource output nonzero Additional-main11_miel_005
+PASS|PCM readable main11_miel_005
+PASS|subtitle/catalog/AudioSource id Additional-main11_paul_001
+PASS|AudioSource actual playback advances Additional-main11_paul_001
+PASS|AudioSource output nonzero Additional-main11_paul_001
+PASS|PCM readable main11_paul_001
+PASS|subtitle/catalog/AudioSource id Additional-main11_paul_002
+PASS|AudioSource actual playback advances Additional-main11_paul_002
+PASS|AudioSource output nonzero Additional-main11_paul_002
+PASS|PCM readable main11_paul_002
+PASS|subtitle/catalog/AudioSource id Additional-main11_paul_003
+PASS|AudioSource actual playback advances Additional-main11_paul_003
+PASS|AudioSource output nonzero Additional-main11_paul_003
+PASS|PCM readable main11_paul_003
+PASS|subtitle/catalog/AudioSource id Additional-main11_paul_008
+PASS|AudioSource actual playback advances Additional-main11_paul_008
+PASS|AudioSource output nonzero Additional-main11_paul_008
+PASS|PCM readable main11_paul_008
+PASS|subtitle/catalog/AudioSource id Additional-main11_paul_009
+PASS|AudioSource actual playback advances Additional-main11_paul_009
+PASS|AudioSource output nonzero Additional-main11_paul_009
+PASS|PCM readable main11_paul_009
+PASS|load Field_03
+PASS|old entrance quads removed path.hearing
+PASS|approved ground stairs path.hearing
+PASS|large near goal panel hidden path.hearing
+PASS|actual input transition Dungeon_01
+PASS|existing B1 return interaction path.hearing
+PASS|actual input transition Field_03
+PASS|return spawn preserved path.hearing
+PASS|unfinished quest preserved path.hearing
+PASS|load Field_03
+PASS|old entrance quads removed path.mobility
+PASS|approved ground stairs path.mobility
+PASS|large near goal panel hidden path.mobility
+PASS|actual input transition Dungeon_01
+PASS|existing B1 return interaction path.mobility
+PASS|actual input transition Field_03
+PASS|return spawn preserved path.mobility
+PASS|unfinished quest preserved path.mobility
+COMPLETE|after

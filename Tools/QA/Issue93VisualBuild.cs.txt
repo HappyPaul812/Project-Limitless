@@ -1,0 +1,19 @@
+using System;
+using System.IO;
+using System.Linq;
+using UnityEditor;
+using UnityEditor.Build.Reporting;
+public static class Issue93VisualBuild
+{
+    public static void Build()
+    {
+        string phase=Environment.GetEnvironmentVariable("ISSUE93VOICE_PHASE")??"before";
+        string root=Path.GetFullPath(UnityEngine.Application.dataPath+"/../../../../");
+        PlayerSettings.companyName="LIMITLESS_QA";PlayerSettings.productName="Issue93VisualQA20261105";
+        PlayerSettings.SetUseDefaultGraphicsAPIs(BuildTarget.StandaloneWindows64,false);
+        PlayerSettings.SetGraphicsAPIs(BuildTarget.StandaloneWindows64,new[]{UnityEngine.Rendering.GraphicsDeviceType.Direct3D11});
+        var scenes=new[]{"Field_03","Dungeon_01","Dungeon_01_B2","Battle"}.Select(n=>"Assets/_Project/Scenes/"+n+".unity").ToArray();
+        var result=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=scenes,locationPathName=Path.Combine(root,"Build-"+phase,"Issue93VisualQA.exe"),target=BuildTarget.StandaloneWindows64,options=BuildOptions.Development,extraScriptingDefines=new[]{"ISSUE93_VISUAL_QA"}});
+        File.WriteAllText(Path.Combine(root,"Evidence",phase,"build.txt"),result.summary.result+"\nerrors="+result.summary.totalErrors+"\n");EditorApplication.Exit(result.summary.result==BuildResult.Succeeded?0:1);
+    }
+}
