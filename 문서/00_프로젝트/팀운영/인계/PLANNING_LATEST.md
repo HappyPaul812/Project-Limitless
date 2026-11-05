@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-05 14:03 — 사용자 실게임 P1 3건 접수·수정 이슈 #93
+
+- 바울 대표 11/05 Unity6000.6.5f1 `Dungeon_01` 플레이 캡처: ① #90 승인 숲거미Attack8 대신 구형 스프라이트 공격, ② Main11 조사 대사 Miel `main11_miel_002`/Paul `main11_paul_002`가 장면/동행 상태와 불일치, ③ B1/B2 귀환이 불분명하거나 불가능. **[GitHub P1 #93](https://github.com/HappyPaul812/Project-Limitless/issues/93)** 실제 수정 발주.
+- **근거:** 구 GitHub source `03_ForestSpider.asset`에는 Attack8과 별도 구 `MonsterAnimations/Spider/Shoot` 경로, `BattleSceneController.PlayMonsterDirectAreaAttack`은 `PlayShoot` 사용. **숲거미 '독액 분사' vs 일반공격을 각각 재현해 실Sprite 출처 검증 전 원인 확정 금지.** `MainQuest11Dialogue.Lines(1/2)` 두 스크린샷 문구 정확 일치, 현재 파티 최대동료2명인데 세 동료 대사가 고정 출력. `Exit_To_Field03`는 B1 (0,-11.9) 보이지 않는 자동 Trigger, 입장 Spawn (0,-8.5)·B2→B1도 동일 구조. 동행/퀘스트 단계 및 탈출 Collider·WorldBounds 실검증 필요.
+- 기획 정본 [20261105_P1_Dungeon11_Spider_Runtime_Regression.md](../../20261105_P1_Dungeon11_Spider_Runtime_Regression.md) `docs/planning` commit `fce09ce6c36e31695bf4a6652987b18204200c08`. Codex 실제 사용자 로컬 최신 main을 기준으로 변경, **원본 세이브 슬롯02·03은 복제 후 테스트**, 승인Attack8/Idle/Walk·TTS/Quest step 바이트 보호. B1/B2 언제든 명시적 귀환/중도탈출 허용, Quest11 완료를 탈출로 오판 금지. Unity6000.6.5f1, 302 dirty·550 untracked·23 개인 Save 보호, 원격 Push·main 직접 commit 금지.
+- **정직한 상태:** GitHub 이슈/기획 지시만 기록, `P1_LOCAL_FIX_NOT_EXECUTED`. 실제 코드 수정·QA·로컬 main 안전 반영은 별도 PC Codex 실행 후 결과를 보고해야 함.
+
+---
+
 # PLANNING / 2026-11-04 최종 정정 — 로컬 main 안전 동기화 성공
 
 - **이전 2026-11-04 EOD `LOCAL_MAIN_SYNC_HOLD_DIRTY` 상태는 이후 Codex 작업으로 해소됨.** 실제 원본PC **`F:/study/codex/Project-Limitless` 로컬 main HEAD `674e6b0f4a613ad7caaa0ee3a94f3f5f0b3e592d`**, [#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6629260583)·[#89](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6629262549)·[#90](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6629264307)·[#92](https://github.com/HappyPaul812/Project-Limitless/issues/92#issuecomment-6629265940) 최신 Codex 보고에서 교차확인. 기존 승인 통합 `codex/integrate-20261104-approved` HEAD `8768cbac91a291f13769c6bfa18a831673652acb` 보존, main 조상 검증. 로컬 `codex/local-main-safe-sync-20261104` 보존. **원격 Push/병합 없음**.
