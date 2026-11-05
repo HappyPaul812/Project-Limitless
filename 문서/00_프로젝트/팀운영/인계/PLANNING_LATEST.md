@@ -1,3 +1,15 @@
+# PLANNING / 2026-11-05 오후 — Issue #93 실제 로컬 세 버그 수정 및 main 반영 완료
+
+- [Codex Issue #93 최종 결과](https://github.com/HappyPaul812/Project-Limitless/issues/93#issuecomment-6650843746): **로컬 main `706e70102ccc350f49cd881ca128c3afbe5d9d04`로 fast-forward 반영 완료**, 구현 `6f094a4095e9298d20e879d842f29b02bca6587a`, 브랜치 `codex/fix-20261105-dungeon-spider-dialogue`. **원격 GitHub Push/merge 없음**, 따라서 위 로컬 커밋을 원격 파일처럼 취급 금지. Unity **6000.6.5f1** 고정, compile 정상.
+- **숲거미 구 Shoot 아트 버그 수정:** 실제 기본 공격은 승인 Attack8, 특수 '독액 분사'는 구 `MonsterAnimations/Spider/Shoot/spiderS_000.png`가 원인. Shoot 경로 비워 **승인 Attack8 공통 재생**, 8프레임/10FPS/Idle 복귀. 구형 Shoot 실전 노출0, **Shoot8 신규 제작·승인 아님**, 기존 피해/타깃 로직 보존.
+- **Main11 조사 대사 수정:** 원본 슬롯2/3 복제에서 파티는 태온+미엘, Main11 index2. 사용자가 캡처한 **미엘 index1 발언은 정상 동행 대사**, **폴 index2 발언만 비동행 대사**로 확인. 실제 동행하지 않는 인물의 문구는 무음 조사 지문으로 대체, 동행 원문·TTS ID28개 보존. 퀘스트 스텝/저장 손상·랜덤 대사 원인으로 단정하지 않음.
+- **던전 귀환 UX 수정:** B1→Field03, B2→B1에 안내/명시 확인 출구; E/F·게임패드A·마우스 지원. 기존 보이지 않던 자동 전환 Trigger는 런타임 비활성화. 중도 나갔다 재입장할 때 퀘스트·인벤토리·보스/석판 진행 유지, 퀘스트 자동 완료X.
+- **QA:** 신규 Delta **121PASS/0FAIL**, 보완 **37PASS/0FAIL**, 입력 **15PASS/0FAIL**, 정적 **7PASS/0FAIL**(중복 포함, 합산 금지). 기존 QA 전수 재실행하지 않음. 실제 장시간 플레이/물리 장치·가독성은 **USER_REALPLAY_CONFIRM_PENDING**; 보스·석판 일부는 복제 fixture.
+- **보호:** 원본 Save02/03 포함 942개 파일 SHA불변, 미커밋 tracked302/untracked550 보호, 승인 Spider PNG24 변화0, 기존 Packages/.meta/Scene/Editor선택 변경0. 현 시점 **`LOCAL_MAIN_FIX_APPLIED / REMOTE_NOT_PUSHED / USER_REALPLAY_CHECK_PENDING`**. #93은 사용자 실플레이 확인 전까지 추적 대상으로 유지.
+- 다음 단계에서 같은 세 버그 재작업·전체QA 반복 금지. 실제 플레이에서 **숲거미 독액 분사 승인아트**, **파티 없는 캐릭터 발언 미발생**, **B1/B2 출구 안내·실제 귀환** 3가지만 짧게 확인하면 됨.
+
+---
+
 # PLANNING / 2026-11-05 14:03 — 사용자 실게임 P1 3건 접수·수정 이슈 #93
 
 - 바울 대표 11/05 Unity6000.6.5f1 `Dungeon_01` 플레이 캡처: ① #90 승인 숲거미Attack8 대신 구형 스프라이트 공격, ② Main11 조사 대사 Miel `main11_miel_002`/Paul `main11_paul_002`가 장면/동행 상태와 불일치, ③ B1/B2 귀환이 불분명하거나 불가능. **[GitHub P1 #93](https://github.com/HappyPaul812/Project-Limitless/issues/93)** 실제 수정 발주.
