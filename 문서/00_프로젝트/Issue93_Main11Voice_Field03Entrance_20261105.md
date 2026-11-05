@@ -67,3 +67,8 @@ Main11 28개를 대조해 미엘 **001~005**, 폴 **001·002·003·008·009**만
 5시간 사용 한도로 마감이 중단된 뒤 재개 시, 완료한 빌드·음성·화면·입력 검사를 다시 실행하지 않고 결과를 재사용했다. 남은 거리 정합 커밋과 안전FF·문서·Issue 보고만 마감했다. 원본 Editor의 최종 import/컴파일 확인은 별도 후속 상태 조회로 기록한다.
 
 원본·복제 Save와 원본 WAV 백업은 비공개 `Temp/Issue93Voice/Private/`, 실행/캡처/로그는 `Temp/Issue93Voice/`, 공개 가능한 QA 텍스트는 `Evidence/Issue93VoiceEntrance20261105/`에 보존한다. 새 TTS 생성이나 추가 미술 제작은 필요하지 않다.
+
+
+## 최종 로컬 적용 확인
+
+최종 제품·거리 정합 커밋 `1a233d01102b7887656e0219702eb1359a831798`을 로컬 main에 FF 반영했다. 원본 Editor의 background import/compile 완료, C# Console 오류0, 신규 입구 리소스 로드, 미엘001/002/003의 기존 GUID 유지 및 새 Clip 길이3.08/4.20/5.28초를 확인했다. 원본 Scene dirty=false. 최종 문서 커밋도 별도 브랜치→FF로 전달하며 전체 main HEAD는 Issue #93 마감 댓글에 실제 SHA로 보고한다.

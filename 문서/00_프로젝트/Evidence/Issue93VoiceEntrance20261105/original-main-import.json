@@ -1,0 +1,26 @@
+{
+  "code_commit": "1a233d01102b7887656e0219702eb1359a831798",
+  "unity": "6000.6.5f1",
+  "application_data_path": "F:/study/codex/Project-Limitless/Unity/Client/Assets",
+  "compiling": false,
+  "CS_console_errors": 0,
+  "scene_dirty": false,
+  "entrance_resource_loaded": true,
+  "miel_clips": [
+    {
+      "id": "main11_miel_001",
+      "length": 3.08,
+      "guid": "4b701370c4e311947b84b68f0c5ad304"
+    },
+    {
+      "id": "main11_miel_002",
+      "length": 4.2,
+      "guid": "c9bbd0663e3113d4f9edfbaf4fcdecea"
+    },
+    {
+      "id": "main11_miel_003",
+      "length": 5.28,
+      "guid": "7168a9339849c8241926ccf2e038bff6"
+    }
+  ]
+}
