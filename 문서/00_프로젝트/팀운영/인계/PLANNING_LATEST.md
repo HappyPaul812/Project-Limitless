@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-05 15:31 — #93 실플레이 재회귀: TTS 음성-자막 시프트 및 Field03 던전입구 캐릭터 가림
+
+- 바울 대표 실제 Unity6000.6.5f1 캡처 3장: Dungeon01 B1 화면 자막 ‘오래된 흔적이지만…’(main11_miel_002)에 실제 음성 ‘뒤쪽을 보세요…’(main11_miel_001 내용), Dungeon01 B2 자막 ‘쓰이지 않은…’(main11_miel_003)에 실제 음성 ‘오래된…’(main11_miel_002 내용). 이전 #93에서 동행 화자만 고친 것은 **이 음성 버그를 해결하지 못함**.
+- 원격 StoryVoiceCatalog.asset에서 main11_miel_001/002/003은 각 동일명 .wav.meta GUID에 정상 연결. 사용자 로컬 최신 WAV 실제 녹음 내용·Unity AudioSource.clip을 청취/추적해야 함. 자막/TTS ID/대본 변경·일괄 재녹음 금지, 잘못된 음성 내용 또는 연결만 표적 수정. 보스 뒤 001, B1 002, B2 003 실제 오디오 재생 확인.
+- Field03 화면: 거대한 파란 ‘현재목표 침묵의 지하묘지’ 판과 회색 문 아트 때문에 주인공의 상체가 숨고 하단만 돌출됨. 구 원격 MainQuest10FieldFlow 입구 위치 (0.55,-4.85), 불투명 Mark Quads sortingOrder 5와 세계공간 퀘스트 마커 sortingOrder22 확인. 실제 로컬 Sorting/QuestHUD/접근 이동을 조사해 안전한 입구 앞 가시성, 자연스런 문 진입·퇴장, 휠체어·도보 판별 최소 수정. B1/B2 귀환 및 Field03 안전지대·Save/GUID 보호.
+- [#93 실제 재회귀 수정 지시](https://github.com/HappyPaul812/Project-Limitless/issues/93#issuecomment-6651576145). 기존 #93 QA121/37/15PASS는 이 새 음성·입구 시각 문제의 PASS 증거가 아님. 기존 #93 숲거미 Attack8 및 귀환 성공 변경은 보호하고 두 항목만 집중 표적 DeltaQA.
+- 현재: USER_REALPLAY_FAIL_TTS / USER_REALPLAY_FAIL_ENTRANCE_RENDER / FIX_REQUESTED_NOT_EXECUTED. 사용자 F: PC의 실제 로컬 main 수정·안전FF는 Codex가 별도로 실행해야 함. Unity6000.6.5f1 고정, Save01/02/03/사용자 tracked302·untracked550 및 승인아트 보호, 원격 Push/merge 금지.
+
+---
 # PLANNING / 2026-11-05 오후 — Issue #93 실제 로컬 세 버그 수정 및 main 반영 완료
 
 - [Codex Issue #93 최종 결과](https://github.com/HappyPaul812/Project-Limitless/issues/93#issuecomment-6650843746): **로컬 main `706e70102ccc350f49cd881ca128c3afbe5d9d04`로 fast-forward 반영 완료**, 구현 `6f094a4095e9298d20e879d842f29b02bca6587a`, 브랜치 `codex/fix-20261105-dungeon-spider-dialogue`. **원격 GitHub Push/merge 없음**, 따라서 위 로컬 커밋을 원격 파일처럼 취급 금지. Unity **6000.6.5f1** 고정, compile 정상.
