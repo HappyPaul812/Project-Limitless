@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-09 — Issue #94 던전 B1·B2 벽 통과 사용자 플레이 수용 완료
+
+- 바울 대표 실제 플레이 판정 **“잘 고쳐졌어..”**. [#94 최종 사용자 수용 기록](https://github.com/HappyPaul812/Project-Limitless/issues/94#issuecomment-6728213577) 및 [Codex 실제 구현·QA 보고](https://github.com/HappyPaul812/Project-Limitless/issues/94#issuecomment-6728101283) 확인.
+- 승인 바닥 외부에 `Static Rigidbody2D + CompositeCollider2D`로 내부 벽 충돌 구성; 정상 복도/퀘스트 경로, B1↔B2→Field03 귀환, 도보·휠체어 물리 이동 보호. 벽 안 Save 좌표는 비파괴 안전 복구. **Unity6000.6.5f1 표적110PASS/0FAIL**, 기존 완료 QA 반복0. 로컬 main SHA **`6bebbfae6850aa60411feb6bb818523e8ef72397`**, 원격 Push·merge0.
+- **상태:** `USER_REALPLAY_ACCEPTED / LOCAL_MAIN_APPLIED / REMOTE_NOT_PUSHED`; #94 동일 문제 재검증·재작업 발주 금지. 던전 마우스 자동 길찾기(미구현)·기존 Editor Search 예외는 별도 남은 항목으로 오인하지 않음. 2026-11-09 사용자 화면 Codex 주간 한도 **1% 남음** 확인; 지금 추가 Codex 사용 발주 없음.
+
+---
+
 # PLANNING / 2026-11-09 — #94 Dungeon01 B1·B2 내부 벽 통과 P1 실제 수정 발주
 
 - 바울 대표 11/08 실게임 Dungeon01_B2 캡처에서 어두운 비보행 벽/허공 안에 플레이어가 진입한 증상. B1도 동일 가능성 제기. **[신규 P1 Issue #94](https://github.com/HappyPaul812/Project-Limitless/issues/94)**에 B1/B2 전체 내부 벽 Collision 보완, 도보·휠체어·마우스 이동/Save/출입구/Quest 접근성 조건과 로컬 안전 FF 규칙을 기록.
