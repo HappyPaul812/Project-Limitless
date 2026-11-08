@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-09 — #94 Dungeon01 B1·B2 내부 벽 통과 P1 실제 수정 발주
+
+- 바울 대표 11/08 실게임 Dungeon01_B2 캡처에서 어두운 비보행 벽/허공 안에 플레이어가 진입한 증상. B1도 동일 가능성 제기. **[신규 P1 Issue #94](https://github.com/HappyPaul812/Project-Limitless/issues/94)**에 B1/B2 전체 내부 벽 Collision 보완, 도보·휠체어·마우스 이동/Save/출입구/Quest 접근성 조건과 로컬 안전 FF 규칙을 기록.
+- 원격 정적 코드 확인: `PlayerController`는 `Rigidbody2D.MovePosition`으로 움직임. `WorldBounds2D`는 외곽 Collider 네 면만 생성. `DungeonEnvironmentRenderer`는 새 SpriteRenderer만 생성하고 Collider를 만들지 않음. 원격 B1 Scene BoxCollider2D **18개**, B2 **15개**, 둘 다 TilemapCollider2D/PolygonCollider2D/CompositeCollider2D **0개**. 이는 **내부 비보행 공간 충돌 누락 가능성이 높은 정적 근거**, 아직 사용자 최신 로컬 Scene의 충돌 디버그 계측으로 원인 확정하지 않음.
+- **해결 방향:** 기존 승인된 던전 타일·맵/캐릭터 비주얼은 그대로 보존, **승인 바닥/복도/입구와 비보행 벽/허공 사이 실제 물리 경계**를 유효한 정적 Collider로 정확하게 구성. Unity6000.6.5f1, 플레이어 휠체어/도보 콜라이더·물리 레이어 확인, 안전한 Save/Spawn 보정은 실제 필요한 슬롯에만, B1⇄B2 및 B1→Field03 귀환, Main11 조사점/보스방/석판 보호. 이전 #93 TTS·던전 귀환·숲거미 수정 재검사/재작업 금지.
+- 마지막 보고된 로컬 main HEAD `b0ea195fbaa8148146c3fe5d7b5f609385d21a4e`는 **11/05 기준**; 실제 현재 로컬 HEAD·사용자 dirty 상태는 Codex가 직접 확인. `codex/fix-20261109-dungeon-b1-b2-collision` worktree의 수정·표적 QA 후 충돌0/원본보호 시 로컬 main FF, 원격 Push/merge 없음. 변경 파일/새 QA/Save SHA/스크린샷/최종 local main SHA를 #94·CODEX_LATEST·CURRENT_STATUS에 보고해야 완료. **기획 이슈 발주만으로 사용자 PC Unity 실제 수정 완료 아님.**
+
+---
 # PLANNING / 2026-11-05 20:44 EOD — #93 Main11 음성·Field03 입구 사용자 승인, 마지막 로컬 동기화 지시
 
 - 바울 대표가 복구 Main11 WAV10/정상18보호 및 Field03 입구/계단 가림 보완에 대해 **“잘돼”** 실플레이 수용. [#93 최종 Codex 로컬 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/93#issuecomment-6655732864): 최종 로컬 `main` HEAD **`0fb8b8c4a02a7f21fc5bf78360fb49c371a28558`**, 수정 `codex/fix-20261105-main11-voice-field03-entrance`, Unity **6000.6.5f1**, 실제 재생/입구 QA **65·9·18·19 PASS (각 0FAIL; 중복합산 금지)**, Save01/02/03 복제시험·원본 정상 TTS18·meta/GUID/승인아트/dirty302·untracked550 보호, 원격 Push/merge0. 기존 숲거미 Attack8/던전 중도귀환/파티 필터도 보존.
