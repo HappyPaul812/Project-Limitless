@@ -6,7 +6,7 @@
 - Unity6000.6.5f1 실제 Play 표적 **110PASS/0FAIL**. B1 72/B2 56 방향 스트레스 관통0, 각13200점 마스크 일치, 도보·휠체어·가상 키보드/패드/안내 API, 조사·보스문·석판 경로, B1↔B2→Field03, 벽 안 Continue·복구 Save 비덮어쓰기 통과. 기존 Editor Search 내부 예외1은 별도이며 Runtime 프로젝트 오류0. 이전 전체QA 재실행0.
 - 보호995 중994 SHA불변·이미지/음성1369불변·dirty302상태동일·변경경로겹침0. 원본 슬롯01만 계속 실행 중인 게임이 좌표2필드를 자체 자동 저장하며 Codex 원본Save 쓰기0. 슬롯02/03은 시작부터 없고 과거 복제본만 사용했습니다.
 - 제품 로컬 main SHA **5024d2b6ffd1a07f90dbb15cf073eed16bb3630a**, 별도 `codex/fix-20261109-dungeon-b1-b2-collision` 커밋→ff-only 적용 완료. 문서 포함 최종SHA는 실제 Git HEAD·Issue94 댓글·Temp/Issue94/Evidence/local-main-final.json 참조. main 직접commit/원격Push·병합0.
-- 원본 B2 Play/Scene/선택/포커스 무조작. **Unity 새로고침 후 새 Play에서 적용을 확인해 주세요.** 물리 장치 손 플레이는 사용자 수용 확인 사항입니다. B1/B2 기존 마우스 자동 길찾기는 미구현이며 공용 안내 API/마우스 귀환 버튼 검증과 구분합니다.
+- 원본 B2 Play/Scene/선택/포커스 무조작. **새 Play에서 적용을 확인해 주세요.** 물리 장치 손 플레이는 사용자 수용 확인 사항입니다. B1/B2 기존 마우스 자동 길찾기는 미구현이며 공용 안내 API/마우스 귀환 버튼 검증과 구분합니다.
 - [원인·수정·QA·캡처](../../Issue94_DungeonCollision_20261109.md), Evidence/Issue94Collision20261109/. 다음 권장: 새 Play에서 두 층 벽·모서리·목표·귀환 수용 확인.
 
 ---
@@ -725,4 +725,4 @@ LIMITLESS Unity 구현·검증 담당. AGENTS/팀운영 START_HERE·COMMON_RULES
 - `F2_ENCOUNTER_PASS / OWL_BATTLE_RUNTIME_PASS / COLD_STATUS_HOLD / HIT_DEFEAT_GENERIC_FEEDBACK_ONLY / LOCAL_COMMITTED / REMOTE_NOT_PUSHED / NOT_ORIGINAL_APPLIED`.
 - 원본 적용은 바울 대표 별도 승인 전 보류. 정식 ID·밸런스/보상·한기/대응수단·통합 범위 결정이 남습니다.
 
-- 동기화 후 원본 Editor 읽기 조회: Unity6000.6.5f1, Play=false, 기존 Bootstrap Scene dirty=false, compiling=false, C# Console 오류0. 새 DungeonFloorCollision 타입은 아직 미로드이며 external_changes_dirty=true입니다. Codex가 원본 Play/Scene/포커스를 제어하거나 refresh하지 않았습니다. Unity로 돌아가 자연스러운 import/새로고침 후 새 Play에서 확인해야 합니다. 격리 검증 컴파일 완료와 원본 Editor 아직 미import 상태를 구분합니다.
+- 원본 Editor 최종 확인: Play 종료·Scene dirty=false 상태에서 Issue94 스크립트3개/프로필2개만 포커스 없이 ImportAsset한 뒤 컴파일 완료. Unity6000.6.5f1, DungeonFloorCollision 타입 로드=true, compiling=false, C# Console 오류0, external_changes_dirty=false. 원본 Play/Scene/선택/포커스 제어0. 이제 새 Play에서 사용자 수용 확인이 가능합니다.
