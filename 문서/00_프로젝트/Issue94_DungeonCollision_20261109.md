@@ -48,7 +48,7 @@
 - 시작 tracked dirty302, untracked 디렉터리 표기36개(내부 파일 포함 별도 보호). 보호995개 중994개 SHA불변, 이미지/음성1369개 불변, 원본 git status 동일. 슬롯01은 실행 중인 원본 게임이 SavedPositionX/Y만 자체 갱신했습니다. Codex가 원본 슬롯을 쓰거나 과거 백업으로 덮은 횟수0. 원본 슬롯02/03은 시작부터 없었고 기존 #93 복제본만 fixture로 사용했습니다.
 - 변경7경로와 사용자 미커밋/미추적 경로 겹침0, ff-only 사전 게이트 통과. 로컬 main을 b0ea195f→**5024d2b6ffd1a07f90dbb15cf073eed16bb3630a**로 실제 fast-forward했습니다. 기존 #93 숲거미/TTS/Field03/귀환 코드는 변경하지 않았습니다.
 - 제품 파일: DungeonEnvironmentDefinition.cs, DungeonFloorCollision.cs/meta(GUID7b8e12470ec84af9a14cab95e2ed19a2), WorldPositionSaveController.cs, Dungeon01B1Renewal.asset, Dungeon01B2Renewal.asset. 재현 실행기는 Tools/QA/Issue94CollisionAudit.cs.txt입니다. Scene·Prefab·PNG·WAV·기존meta/GUID·Packages·BuildSettings를 제품 커밋에 포함하지 않았습니다.
-- 원본 Unity는 B2 Play 중이므로 강제 refresh/종료/Scene/선택/포커스 조작0. **현재 켜둔 플레이를 종료하고 다시 실행하면 새 충돌이 설치됩니다.** 현재 실행 중인 이전 인스턴스를 수정 완료로 오인하지 않습니다.
+- 원본 Unity는 B2 Play 중이므로 강제 refresh/종료/Scene/선택/포커스 조작0. **Unity 새로고침 후 새 Play에서 새 충돌이 설치됩니다.** 현재 실행 중인 이전 인스턴스를 수정 완료로 오인하지 않습니다.
 - 문서 포함 최종 local main SHA는 자기 참조 commit을 추정하지 않고 `Temp/Issue94/Evidence/local-main-final.json`과 실제 Issue94 댓글에 기록합니다. 원격 Push/병합0, main 직접 커밋0.
 
 ## 실제 렌더 캡처
@@ -61,3 +61,5 @@ Camera.Render→RenderTexture에서 출력한 실제 게임 렌더입니다. OS 
 - 공개 가능한 텍스트 근거: Evidence/Issue94Collision20261109/checks-final.txt, geometry.txt, capture-manifest.json, protection-summary.json. PNG 실물은 로컬에 보존했으며 원격 업로드하지 않았습니다.
 
 다음 권장: 바울 대표가 새 Play에서 B1·B2 벽 접근과 휠체어 모서리·조사·귀환을 짧게 수용 확인. 기존 던전 자동 마우스 길찾기 미구현은 별도 기획/작업이며 이번 충돌 수정으로 추가하지 않았습니다.
+
+- 동기화 후 원본 Editor 읽기 조회: Unity6000.6.5f1, Play=false, 기존 Bootstrap Scene dirty=false, compiling=false, C# Console 오류0. 새 DungeonFloorCollision 타입은 아직 미로드이며 external_changes_dirty=true입니다. Codex가 원본 Play/Scene/포커스를 제어하거나 refresh하지 않았습니다. Unity로 돌아가 자연스러운 import/새로고침 후 새 Play에서 확인해야 합니다. 격리 검증 컴파일 완료와 원본 Editor 아직 미import 상태를 구분합니다.
