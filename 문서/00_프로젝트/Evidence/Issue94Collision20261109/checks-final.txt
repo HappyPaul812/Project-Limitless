@@ -1,0 +1,110 @@
+PASS|Unity binary 6000.6.5f1
+PASS|loaded Dungeon_01
+PASS|Dungeon_01 static composite installed
+PASS|B1 narrow gap serialized geometry (x:11.75, y:2.95, width:1.50, height:0.95)
+PASS|Dungeon_01 actual body/layer/radius=0.5
+PASS|Dungeon_01 before reproduced dark-space penetration (-5.73, -5.82)
+PASS|Dungeon_01 actual appearance appearance.external.v1.hearing.mage.female common grounding radius=0.5
+PASS|Dungeon_01 rendered frame belongs to path.hearing
+PASS|Dungeon_01 path.hearing keyboard west narrowing blocks (-1.50, -6.00)
+PASS|Dungeon_01 path.hearing keyboard diagonal/corner no penetration (3.82, -10.93)
+PASS|Dungeon_01 path.hearing gamepad west narrowing blocks (-1.50, -6.00)
+PASS|Dungeon_01 path.hearing gamepad diagonal/corner no penetration (3.82, -10.93)
+PASS|Dungeon_01 path.hearing guided west narrowing blocks (-1.50, -6.00)
+PASS|Dungeon_01 path.hearing guided diagonal/corner no penetration (3.82, -10.93)
+PASS|Dungeon_01 path.hearing physical quest/exit route (0.00, -5.10) at=(0.00, -6.02)
+PASS|Dungeon_01 path.hearing physical quest/exit route (-10.00, 0.00) at=(-8.92, 0.00)
+PASS|Dungeon_01 path.hearing physical quest/exit route (10.00, 0.00) at=(8.92, 0.00)
+PASS|Dungeon_01 path.hearing physical quest/exit route (0.00, 8.20) at=(1.02, 8.00)
+PASS|Dungeon_01 path.hearing physical quest/exit route (0.00, 6.80) at=(1.00, 7.04)
+PASS|Dungeon_01 path.hearing physical quest/exit route (0.00, -10.60) at=(1.00, -10.48)
+PASS|Dungeon_01 actual appearance appearance.external.v1.mobility.mage.female common grounding radius=0.5
+PASS|Dungeon_01 rendered frame belongs to path.mobility
+PASS|Dungeon_01 path.mobility keyboard west narrowing blocks (-1.50, -6.00)
+PASS|Dungeon_01 path.mobility keyboard diagonal/corner no penetration (3.82, -10.93)
+PASS|Dungeon_01 path.mobility gamepad west narrowing blocks (-1.50, -6.00)
+PASS|Dungeon_01 path.mobility gamepad diagonal/corner no penetration (3.82, -10.93)
+PASS|Dungeon_01 path.mobility guided west narrowing blocks (-1.50, -6.00)
+PASS|Dungeon_01 path.mobility guided diagonal/corner no penetration (3.82, -10.93)
+PASS|Dungeon_01 path.mobility physical quest/exit route (0.00, -5.10) at=(0.00, -6.02)
+PASS|Dungeon_01 path.mobility physical quest/exit route (-10.00, 0.00) at=(-8.92, 0.00)
+PASS|Dungeon_01 path.mobility physical quest/exit route (10.00, 0.00) at=(8.92, 0.00)
+PASS|Dungeon_01 path.mobility physical quest/exit route (0.00, 8.20) at=(1.02, 8.00)
+PASS|Dungeon_01 path.mobility physical quest/exit route (0.00, 6.80) at=(1.00, 7.04)
+PASS|Dungeon_01 path.mobility physical quest/exit route (0.00, -10.60) at=(1.00, -10.48)
+PASS|Dungeon_01 whole-floor eight-direction stress 72 probes violations=0
+PASS|Dungeon_01 full map Physics2D mask 13200 samples mismatch=0
+PASS|Dungeon_01 valid Continue unchanged
+PASS|Dungeon_01 wall Continue nearest safe (-3.99, -4.79)
+PASS|loaded Dungeon_01
+PASS|Dungeon_01 actual saved-wall restoration (-3.99, -4.79)
+PASS|Dungeon_01 recovery does not overwrite clone Save
+PASS|loaded Dungeon_01_B2
+PASS|Dungeon_01_B2 static composite installed
+PASS|Dungeon_01_B2 actual body/layer/radius=0.5
+PASS|Dungeon_01_B2 before reproduced dark-space penetration (-5.99, -5.99)
+PASS|Dungeon_01_B2 actual appearance appearance.external.v1.hearing.mage.female common grounding radius=0.5
+PASS|Dungeon_01_B2 rendered frame belongs to path.hearing
+PASS|Dungeon_01_B2 path.hearing keyboard west narrowing blocks (-2.00, -6.00)
+PASS|Dungeon_01_B2 path.hearing keyboard diagonal/corner no penetration (3.82, -10.93)
+PASS|Dungeon_01_B2 path.hearing gamepad west narrowing blocks (-2.00, -6.00)
+PASS|Dungeon_01_B2 path.hearing gamepad diagonal/corner no penetration (3.82, -10.93)
+PASS|Dungeon_01_B2 path.hearing guided west narrowing blocks (-2.00, -6.00)
+PASS|Dungeon_01_B2 path.hearing guided diagonal/corner no penetration (3.82, -10.93)
+PASS|Dungeon_01_B2 path.hearing physical quest/exit route (0.00, -7.30) at=(0.00, -8.02)
+PASS|Dungeon_01_B2 path.hearing physical quest/exit route (-10.00, -1.00) at=(-8.91, -1.00)
+PASS|Dungeon_01_B2 path.hearing physical quest/exit route (10.00, -1.00) at=(8.93, -1.00)
+PASS|Dungeon_01_B2 path.hearing physical quest/exit route (0.00, 0.00) at=(1.08, 0.00)
+PASS|Dungeon_01_B2 path.hearing physical quest/exit route (0.00, 9.50) at=(1.00, 9.43)
+PASS|Dungeon_01_B2 path.hearing physical quest/exit route (0.00, -10.60) at=(1.00, -10.49)
+PASS|Dungeon_01_B2 actual appearance appearance.external.v1.mobility.mage.female common grounding radius=0.5
+PASS|Dungeon_01_B2 rendered frame belongs to path.mobility
+PASS|Dungeon_01_B2 path.mobility keyboard west narrowing blocks (-2.00, -6.00)
+PASS|Dungeon_01_B2 path.mobility keyboard diagonal/corner no penetration (3.82, -10.93)
+PASS|Dungeon_01_B2 path.mobility gamepad west narrowing blocks (-2.00, -6.00)
+PASS|Dungeon_01_B2 path.mobility gamepad diagonal/corner no penetration (3.82, -10.93)
+PASS|Dungeon_01_B2 path.mobility guided west narrowing blocks (-2.00, -6.00)
+PASS|Dungeon_01_B2 path.mobility guided diagonal/corner no penetration (3.82, -10.93)
+PASS|Dungeon_01_B2 path.mobility physical quest/exit route (0.00, -7.30) at=(0.00, -8.02)
+PASS|Dungeon_01_B2 path.mobility physical quest/exit route (-10.00, -1.00) at=(-8.91, -1.00)
+PASS|Dungeon_01_B2 path.mobility physical quest/exit route (10.00, -1.00) at=(8.93, -1.00)
+PASS|Dungeon_01_B2 path.mobility physical quest/exit route (0.00, 0.00) at=(1.08, 0.00)
+PASS|Dungeon_01_B2 path.mobility physical quest/exit route (0.00, 9.50) at=(1.00, 9.43)
+PASS|Dungeon_01_B2 path.mobility physical quest/exit route (0.00, -10.60) at=(1.00, -10.49)
+PASS|Dungeon_01_B2 whole-floor eight-direction stress 56 probes violations=0
+PASS|Dungeon_01_B2 full map Physics2D mask 13200 samples mismatch=0
+PASS|Dungeon_01_B2 valid Continue unchanged
+PASS|Dungeon_01_B2 wall Continue nearest safe (-3.79, -7.19)
+PASS|loaded Dungeon_01_B2
+PASS|Dungeon_01_B2 actual saved-wall restoration (-3.79, -7.19)
+PASS|Dungeon_01_B2 recovery does not overwrite clone Save
+PASS|loaded Dungeon_01_B2
+PASS|existing current Save01 clone restores to floor
+PASS|loaded Dungeon_01
+PASS|B1 open lower gate reachable
+PASS|B1 actual lower gate interaction
+PASS|actual transition Dungeon_01_B2
+PASS|B2 physical return path
+PASS|return confirmation opens
+PASS|actual transition Dungeon_01
+PASS|Spawn_From_B2 preserved
+PASS|B1 physical Field03 return path
+PASS|return confirmation opens
+PASS|actual transition Field_03
+PASS|loaded Dungeon_01_B2
+PASS|boss-defeated barrier open
+PASS|postboss sealed chamber physical route
+PASS|tablet physical route
+PASS|loaded Dungeon_01
+PASS|B1 rubble/top-wall contact solver depth=-0.005002022 floor=(11.25, 3.40)
+PASS|B1 rubble corner reverse escapes without trapping (7.85, 0.00)
+PASS|B1 return route avoids live monster bodies at=(-1.00, -10.46)
+PASS|return confirmation opens
+PASS|actual transition Field_03
+PASS|loaded Dungeon_01_B2
+PASS|preboss barrier still blocks actual body (2.00, 9.86)
+PASS|loaded Dungeon_01_B2
+PASS|postboss actual body enters sealed chamber via monster detour at=(1.47, 11.00)
+PASS|tablet reachable within actual interaction range at=(1.47, 11.00)
+PASS|runtime project errors=0 known Editor Search=1
+PASS|COMPLETE

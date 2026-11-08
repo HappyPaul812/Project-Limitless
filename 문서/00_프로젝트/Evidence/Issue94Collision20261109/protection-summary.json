@@ -1,0 +1,15 @@
+{
+  "live_original_save_changed_fields": [
+    "SavedPositionX",
+    "SavedPositionY"
+  ],
+  "qa_pass": 110,
+  "qa_fail": 0,
+  "protected_files": 995,
+  "protected_unchanged_excluding_live_save": 994,
+  "media_unchanged": 1369,
+  "dirty_status_identical": true,
+  "overlap": [],
+  "product_commit": "5024d2b6ffd1a07f90dbb15cf073eed16bb3630a",
+  "start_main": "b0ea195fbaa8148146c3fe5d7b5f609385d21a4e"
+}

@@ -1,3 +1,16 @@
+## 2026-11-09 Issue #94 — 던전 B1·B2 실제 내부 벽 충돌 수정
+
+**LOCAL_MAIN_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED / USER_REALPLAY_PENDING**.
+
+- B1·B2 방/복도 바깥 내부 허공 Collider 누락을 수정했습니다. 승인 바닥 합집합의 여집합을 Static CompositeCollider2D로 구성하고, B1 잔해 위 접지보다 좁은 틈1곳을 닫았습니다. PNG·Scene·기존 퀘스트/TTS/숲거미/귀환 보존.
+- Unity6000.6.5f1 실제 Play 표적 **110PASS/0FAIL**. B1 72/B2 56 방향 스트레스 관통0, 각13200점 마스크 일치, 도보·휠체어·가상 키보드/패드/안내 API, 조사·보스문·석판 경로, B1↔B2→Field03, 벽 안 Continue·복구 Save 비덮어쓰기 통과. 기존 Editor Search 내부 예외1은 별도이며 Runtime 프로젝트 오류0. 이전 전체QA 재실행0.
+- 보호995 중994 SHA불변·이미지/음성1369불변·dirty302상태동일·변경경로겹침0. 원본 슬롯01만 계속 실행 중인 게임이 좌표2필드를 자체 자동 저장하며 Codex 원본Save 쓰기0. 슬롯02/03은 시작부터 없고 과거 복제본만 사용했습니다.
+- 제품 로컬 main SHA **5024d2b6ffd1a07f90dbb15cf073eed16bb3630a**, 별도 `codex/fix-20261109-dungeon-b1-b2-collision` 커밋→ff-only 적용 완료. 문서 포함 최종SHA는 실제 Git HEAD·Issue94 댓글·Temp/Issue94/Evidence/local-main-final.json 참조. main 직접commit/원격Push·병합0.
+- 원본 B2 Play/Scene/선택/포커스 무조작. **현재 Play를 종료 후 다시 실행하여 적용을 확인해 주세요.** 물리 장치 손 플레이는 사용자 수용 확인 사항입니다. B1/B2 기존 마우스 자동 길찾기는 미구현이며 공용 안내 API/마우스 귀환 버튼 검증과 구분합니다.
+- [원인·수정·QA·캡처](../../Issue94_DungeonCollision_20261109.md), Evidence/Issue94Collision20261109/. 다음 권장: 새 Play에서 두 층 벽·모서리·목표·귀환 수용 확인.
+
+---
+
 ## 2026-11-05 최종 통합·로컬 동기화·하루 마감
 
 **USER_REALPLAY_ACCEPTED / LOCAL_MAIN_SYNC_SUCCESS / REMOTE_NOT_PUSHED / DAY_CLOSED**.
