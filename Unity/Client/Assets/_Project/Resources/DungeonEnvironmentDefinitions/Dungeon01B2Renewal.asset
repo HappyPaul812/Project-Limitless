@@ -22,6 +22,7 @@ MonoBehaviour:
     visualOffset: {x: 0, y: 0}
     color: {r: 0.4, g: 0.42, b: 0.42, a: 1}
   - anchorName: B2Entrance
+    walkableFloor: 1
     localPosition: {x: 0, y: -9, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: f227cf0517800f7419b4526de799d60f, type: 3}
@@ -57,6 +58,7 @@ MonoBehaviour:
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
   - anchorName: B2SouthPassage
+    walkableFloor: 1
     localPosition: {x: 0, y: -6, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: f227cf0517800f7419b4526de799d60f, type: 3}
@@ -78,6 +80,7 @@ MonoBehaviour:
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
   - anchorName: WestClosedOssuary
+    walkableFloor: 1
     localPosition: {x: -10, y: -1, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: ca08a77a15856c644a248e337b6f80a6, type: 3}
@@ -113,6 +116,7 @@ MonoBehaviour:
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
   - anchorName: EastUnknownRoom
+    walkableFloor: 1
     localPosition: {x: 10, y: -1, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: ca08a77a15856c644a248e337b6f80a6, type: 3}
@@ -148,6 +152,7 @@ MonoBehaviour:
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
   - anchorName: CentralStoneRoom
+    walkableFloor: 1
     localPosition: {x: 0, y: -1, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: ca08a77a15856c644a248e337b6f80a6, type: 3}
@@ -197,6 +202,7 @@ MonoBehaviour:
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
   - anchorName: SealGallery
+    walkableFloor: 1
     localPosition: {x: 0, y: 4.5, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: f227cf0517800f7419b4526de799d60f, type: 3}
@@ -225,6 +231,7 @@ MonoBehaviour:
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
   - anchorName: BossAntechamber
+    walkableFloor: 1
     localPosition: {x: 0, y: 9.5, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: f227cf0517800f7419b4526de799d60f, type: 3}

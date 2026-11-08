@@ -1,0 +1,154 @@
+#if UNITY_EDITOR
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using ProjectLimitless.Core;
+using ProjectLimitless.Player;
+using ProjectLimitless.World;
+using ProjectLimitless.Monster;
+using ProjectLimitless.UI;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
+
+// #94 전용 격리 batch 실행기입니다. 제품 커밋에는 .cs.txt로만 보관합니다.
+[InitializeOnLoad]
+public static class Issue94CollisionAudit
+{
+ const BindingFlags F=BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.Static;
+ static string Root=>Path.GetFullPath(Application.dataPath+"/../../../../Evidence");
+ static string Private=>Path.GetFullPath(Application.dataPath+"/../../../../Private");
+ static readonly List<string> checks=new List<string>();
+ static IEnumerator routine;
+ static Keyboard keyboard; static Gamepad pad;
+ static PlayerController player; static Rigidbody2D body; static CircleCollider2D shape;
+ static bool before;
+ static int runtimeErrors;
+ static int knownEditorErrors;
+ static Issue94CollisionAudit(){EditorApplication.update+=Tick;EditorApplication.playModeStateChanged+=s=>{if(s==PlayModeStateChange.EnteredPlayMode&&SessionState.GetBool("Issue94",false))routine=Flatten(Run());};}
+ public static void Launch(){Directory.CreateDirectory(Root);Application.logMessageReceived+=(message,stack,type)=>{if(type==LogType.Error||type==LogType.Exception||type==LogType.Assert){if(stack.Contains("UnityEditor.Search.SearchDatabase")){knownEditorErrors++;return;}runtimeErrors++;File.AppendAllText(Path.Combine(Root,"runtime-errors.txt"),message+"\n"+stack+"\n");}};SessionState.SetBool("Issue94",true);EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);EditorSettings.enterPlayModeOptionsEnabled=true;EditorSettings.enterPlayModeOptions=EnterPlayModeOptions.DisableDomainReload;EditorApplication.LockReloadAssemblies();Application.runInBackground=true;EditorApplication.EnterPlaymode();}
+ static void Tick(){if(routine==null)return;try{if(routine.MoveNext())return;Finish();}catch(Exception e){Check(false,e.ToString());Finish();}}
+ static void Finish(){routine=null;File.WriteAllLines(Path.Combine(Root,"checks.txt"),checks);SessionState.SetBool("Issue94",false);EditorApplication.Exit(checks.Any(c=>c.StartsWith("FAIL"))?1:0);}
+ static void Check(bool ok,string text){checks.Add((ok?"PASS|":"FAIL|")+text);File.WriteAllLines(Path.Combine(Root,"checks.txt"),checks);}
+ static IEnumerator Flatten(IEnumerator e){var stack=new Stack<IEnumerator>();stack.Push(e);while(stack.Count>0){var a=stack.Peek();if(!a.MoveNext()){stack.Pop();continue;}if(a.Current is IEnumerator child)stack.Push(child);else yield return null;}}
+ static IEnumerator Wait(int n=5){while(n-->0)yield return null;}
+ static IEnumerator Load(string scene){Physics2D.simulationMode=SimulationMode2D.FixedUpdate;var op=SceneManager.LoadSceneAsync(scene);while(!op.isDone)yield return null;yield return Wait(12);player=UnityEngine.Object.FindAnyObjectByType<PlayerController>();body=player.GetComponent<Rigidbody2D>();shape=player.GetComponent<CircleCollider2D>();Physics2D.simulationMode=SimulationMode2D.Script;DialoguePresenter.Instance?.Hide();Check(SceneManager.GetActiveScene().name==scene,"loaded "+scene);}
+ static void Place(Vector2 p){player.SetGuidedMovement(Vector2.zero);body.position=p;body.linearVelocity=Vector2.zero;player.transform.position=p;Physics2D.SyncTransforms();}
+ static bool Clear(Vector2 p,float radius=.51f)=>!Physics2D.OverlapCircleAll(p,radius).Any(c=>c.enabled&&!c.isTrigger&&!c.transform.IsChildOf(player.transform)&&(c.attachedRigidbody==null||c.attachedRigidbody.bodyType==RigidbodyType2D.Static));
+ static bool RouteClear(Vector2 p)=>!Physics2D.OverlapCircleAll(p,.51f).Any(c=>c.enabled&&!c.isTrigger&&!c.transform.IsChildOf(player.transform));
+ static void Input(Vector2 dir,string mode){InputSystem.QueueStateEvent(keyboard,new KeyboardState(mode=="keyboard"?(dir.x<-.1f?new[]{Key.A}:dir.x>.1f?new[]{Key.D}:new Key[0]).Concat(dir.y<-.1f?new[]{Key.S}:dir.y>.1f?new[]{Key.W}:new Key[0]).ToArray():new Key[0]));InputSystem.QueueStateEvent(pad,new GamepadState{leftStick=mode=="gamepad"?dir:Vector2.zero});InputSystem.Update();player.SetGuidedMovement(mode=="guided"?dir:Vector2.zero);typeof(PlayerController).GetMethod("Update",F).Invoke(player,null);}
+ static void Step(Vector2 dir,string mode,float dt=.02f){Input(dir,mode);Time.fixedDeltaTime=dt;typeof(PlayerController).GetMethod("FixedUpdate",F).Invoke(player,null);Physics2D.Simulate(dt);Physics2D.SyncTransforms();}
+ static void Stop(){Input(Vector2.zero,"guided");body.linearVelocity=Vector2.zero;Time.fixedDeltaTime=.02f;}
+ static void Capture(string name,bool debug=false,bool overview=false){
+  var camera=Camera.main;var oldPos=camera.transform.position;float oldSize=camera.orthographicSize;camera.transform.position=overview?new Vector3(0,0,-10):new Vector3(body.position.x,body.position.y,-10);camera.orthographicSize=overview?14:5;
+  var lines=new List<GameObject>();
+  if(debug){foreach(var c in UnityEngine.Object.FindObjectsByType<Collider2D>(FindObjectsSortMode.None).Where(c=>c.enabled&&!c.isTrigger)){
+   var composite=c as CompositeCollider2D;if(c.compositeOperation!=Collider2D.CompositeOperation.None)continue;
+   if(composite!=null){for(int i=0;i<composite.pathCount;i++){var points=new Vector2[composite.GetPathPointCount(i)];composite.GetPath(i,points);Draw(points.Select(p=>c.transform.TransformPoint(p)).ToArray(),Color.green,lines);}}
+   else if(c is BoxCollider2D box){Vector2 h=box.size/2,o=box.offset;Draw(new[]{new Vector2(-h.x,-h.y),new Vector2(h.x,-h.y),new Vector2(h.x,h.y),new Vector2(-h.x,h.y)}.Select(p=>box.transform.TransformPoint(p+o)).ToArray(),Color.yellow,lines);}
+   else if(c is CircleCollider2D circle){Draw(Enumerable.Range(0,48).Select(i=>circle.transform.TransformPoint(circle.offset+new Vector2(Mathf.Cos(i*Mathf.PI/24),Mathf.Sin(i*Mathf.PI/24))*circle.radius)).ToArray(),Color.cyan,lines);}
+  }}
+  var rt=new RenderTexture(1280,720,24);var old=camera.targetTexture;var active=RenderTexture.active;camera.targetTexture=rt;camera.Render();RenderTexture.active=rt;var tex=new Texture2D(1280,720,TextureFormat.RGB24,false);tex.ReadPixels(new Rect(0,0,1280,720),0,0);tex.Apply();File.WriteAllBytes(Path.Combine(Root,name+".png"),tex.EncodeToPNG());camera.targetTexture=old;RenderTexture.active=active;camera.transform.position=oldPos;camera.orthographicSize=oldSize;UnityEngine.Object.DestroyImmediate(rt);UnityEngine.Object.DestroyImmediate(tex);foreach(var go in lines)UnityEngine.Object.DestroyImmediate(go);
+ }
+ static void Draw(Vector3[] points,Color color,List<GameObject> list){var go=new GameObject("QA Collider Debug",typeof(LineRenderer));var line=go.GetComponent<LineRenderer>();line.sharedMaterial=new Material(Shader.Find("Sprites/Default"));line.startColor=line.endColor=color;line.startWidth=line.endWidth=.045f;line.positionCount=points.Length;line.loop=true;line.sortingOrder=200;line.SetPositions(points.Select(p=>new Vector3(p.x,p.y,-.5f)).ToArray());list.Add(go);}
+ static GameSaveData Fixture(int step,string scene,string path="path.hearing"){
+  var d=JsonUtility.FromJson<GameSaveData>(File.ReadAllText(Path.Combine(Private,"Backup/Unity/Client/UserData/Saves/save_slot_01.json")));
+  // 이미 존재하는 이전 #93 복제본에서 Main11 활성 진행만 재사용합니다.
+  d=JsonUtility.FromJson<GameSaveData>(File.ReadAllText(Path.GetFullPath(Private+"/../../Issue93/Private/save_slot_02.json")));
+  var q=d.QuestProgress.ActiveQuests.First(x=>x.QuestId==MainQuest11DungeonFlow.QuestId);for(int i=0;i<q.Objectives.Length;i++)q.Objectives[i].CurrentCount=i<step?1:0;
+  d.CurrentSceneId=scene;d.PathId=path;d.AppearanceId="";d.HasSavedWorldPosition=false;d.SpawnPointId=scene=="Dungeon_01"?"Spawn_From_Field03":"Spawn_From_B1_Test";return d;
+ }
+ static IEnumerator Run(){
+  AudioListener.volume=0;GameSaveService.AuditSaveDirectory=Path.Combine(Private,"RunSaves");Directory.CreateDirectory(GameSaveService.AuditSaveDirectory);UserSettingsService.BeginAudit(GameSaveService.AuditSaveDirectory);MonsterEncounterService.SuppressForSeconds(36000);
+  InputSystem.settings.backgroundBehavior=InputSettings.BackgroundBehavior.IgnoreFocus;InputSystem.settings.editorInputBehaviorInPlayMode=InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
+  keyboard=InputSystem.AddDevice<Keyboard>();pad=InputSystem.AddDevice<Gamepad>();InputSystem.EnableDevice(keyboard);InputSystem.EnableDevice(pad);keyboard.MakeCurrent();pad.MakeCurrent();
+  Check(Application.unityVersion=="6000.6.5f1","Unity binary 6000.6.5f1");
+  if(Environment.GetEnvironmentVariable("ISSUE94_SUPPLEMENT")=="1"){
+   yield return Supplement();Stop();InputSystem.RemoveDevice(keyboard);InputSystem.RemoveDevice(pad);GameSaveService.FinishAudit();Check(runtimeErrors==0,"runtime project errors="+runtimeErrors+" known Editor Search="+knownEditorErrors);Check(true,"COMPLETE supplement");yield break;
+  }
+  foreach(string scene in new[]{"Dungeon_01","Dungeon_01_B2"}){
+   GameSaveService.RestoreSession(2,Fixture(4,scene));yield return Load(scene);
+   var collision=UnityEngine.Object.FindAnyObjectByType<DungeonFloorCollision>();Check(collision!=null&&collision.Solid.pathCount>0,scene+" static composite installed");
+   if(scene=="Dungeon_01")Check(collision.BlockedGaps.Count==1&&Mathf.Abs(collision.BlockedGaps[0].width-1.5f)<.001f,"B1 narrow gap serialized geometry "+string.Join(";",collision.BlockedGaps));
+   Check(body.bodyType==RigidbodyType2D.Dynamic&&!shape.isTrigger&&!Physics2D.GetIgnoreLayerCollision(player.gameObject.layer,collision.gameObject.layer),scene+" actual body/layer/radius="+shape.radius);
+   File.AppendAllText(Path.Combine(Root,"geometry.txt"),scene+" floors="+string.Join(";",collision.Floors)+" paths="+collision.Solid.pathCount+" points="+collision.Solid.pointCount+"\n");
+   // 수정 전은 새 충돌만 비활성화하여 기존 Scene·입력·물리를 같은 조건에서 재현합니다.
+   collision.gameObject.SetActive(false);before=true;Place(new Vector2(0,-6));for(int i=0;i<75;i++)Step(Vector2.left,"keyboard");Stop();Check(body.position.x< -4,scene+" before reproduced dark-space penetration "+body.position);Capture(scene+"-before-game");Capture(scene+"-before-colliders",true,true);
+   collision.gameObject.SetActive(true);before=false;Physics2D.SyncTransforms();
+   foreach(string path in new[]{"path.hearing","path.mobility"}){
+    GameSessionData.SelectPlayerPath(path);player.GetComponent<PlayerPathVisualController>()?.Apply(path);
+    Check(player.GetComponent<PlayerVisualController>().ApplySelectedAppearance()&&Mathf.Abs(shape.radius-.5f)<.001f,scene+" actual appearance "+GameSessionData.SelectedAppearanceId+" common grounding radius="+shape.radius);
+    foreach(var animator in player.GetComponentsInChildren<Animator>()){animator.Rebind();animator.Update(.02f);}yield return Wait(2);
+    var appearance=PlayerAppearanceCatalog.Resolve(GameSessionData.SelectedAppearanceId);Check(player.GetComponentsInChildren<SpriteRenderer>().Any(r=>appearance.frames.Contains(r.sprite)),scene+" rendered frame belongs to "+path);
+    foreach(string mode in new[]{"keyboard","gamepad","guided"}){
+     Place(new Vector2(0,-6));for(int i=0;i<100;i++)Step(Vector2.left,mode);Stop();Check(body.position.x> -2.05f&&body.position.x<-.5f,scene+" "+path+" "+mode+" west narrowing blocks "+body.position);if(mode=="keyboard")Capture(scene+"-"+path+"-wall-contact");
+     Place(new Vector2(0,-6));for(int i=0;i<100;i++)Step(new Vector2(1,-1).normalized,mode);Stop();Check(Clear(body.position,.48f),scene+" "+path+" "+mode+" diagonal/corner no penetration "+body.position);
+    }
+    Place(new Vector2(0,-6));Capture(scene+"-"+path+"-after-game");Capture(scene+"-"+path+"-after-colliders",true,true);
+    yield return Routes(scene,path);
+   }
+   // 전체 바닥 윤곽의 양쪽 방향/대각선 및 낮은 물리 갱신률도 실제 몸체로 표본 검사합니다.
+   int probes=0,fail=0;var rects=collision.Floors;
+   foreach(var rect in rects)foreach(var dir in new[]{Vector2.left,Vector2.right,Vector2.up,Vector2.down,new Vector2(1,1).normalized,new Vector2(-1,1).normalized,new Vector2(1,-1).normalized,new Vector2(-1,-1).normalized}){
+    Vector2 start=rect.center; if(!Clear(start))continue;
+    Place(start);for(int i=0;i<100;i++)Step(dir,"guided",.05f);Stop();if(!Clear(body.position,.47f)||!rects.Any(r=>r.Contains(body.position))){fail++;File.AppendAllText(Path.Combine(Root,"stress-failures.txt"),scene+" start="+start+" dir="+dir+" end="+body.position+"\n");}probes++;
+   }
+   Check(fail==0,scene+" whole-floor eight-direction stress "+probes+" probes violations="+fail);
+   int mismatch=0,samples=0;for(float y=-12.375f;y<12.5f;y+=.25f)for(float x=-16.375f;x<16.5f;x+=.25f){var p=new Vector2(x,y);bool voidCell=!rects.Any(r=>r.Contains(p))||collision.BlockedGaps.Any(r=>r.Contains(p));if(collision.Solid.OverlapPoint(p)!=voidCell)mismatch++;samples++;}
+   Check(mismatch==0,scene+" full map Physics2D mask "+samples+" samples mismatch="+mismatch);
+   var normal=new Vector2(0,-8.5f);Check(collision.TryResolveSavedPosition(shape,normal,out var same)&&same==normal,scene+" valid Continue unchanged");
+   Check(collision.TryResolveSavedPosition(shape,new Vector2(-4,-6),out var safe)&&Clear(safe),scene+" wall Continue nearest safe "+safe);
+   yield return SaveRecovery(scene);
+  }
+  var original=JsonUtility.FromJson<GameSaveData>(File.ReadAllText(Path.Combine(Private,"Backup/Unity/Client/UserData/Saves/save_slot_01.json")));
+  if(DungeonFloorCollision.AppliesTo(original.CurrentSceneId)){
+   GameSaveService.RestoreSession(1,original);yield return Load(original.CurrentSceneId);Check(Clear(body.position,.48f),"existing current Save01 clone restores to floor");
+  }
+  yield return Transitions();yield return Supplement();
+  Stop();InputSystem.RemoveDevice(keyboard);InputSystem.RemoveDevice(pad);GameSaveService.FinishAudit();Check(runtimeErrors==0,"runtime project errors="+runtimeErrors+" known Editor Search="+knownEditorErrors);Check(true,"COMPLETE");
+ }
+ static IEnumerator Routes(string scene,string path){
+  Place(new Vector2(0,-8.5f));
+  var goals=scene=="Dungeon_01"?new[]{new Vector2(0,-5.1f),new Vector2(-10,0),new Vector2(10,0),new Vector2(0,8.2f),new Vector2(0,6.8f),new Vector2(0,-10.6f)}:new[]{new Vector2(0,-7.3f),new Vector2(-10,-1),new Vector2(10,-1),new Vector2(0,0),new Vector2(0,9.5f),new Vector2(0,-10.6f)};
+  foreach(var goal in goals){bool ok=Walk(goal);Check(ok,scene+" "+path+" physical quest/exit route "+goal+" at="+body.position);yield return null;}
+ }
+ static bool Walk(Vector2 goal){
+  var start=Vector2Int.RoundToInt(body.position*2);var open=new Queue<Vector2Int>();var prev=new Dictionary<Vector2Int,Vector2Int>();open.Enqueue(start);prev[start]=start;Vector2Int end=start;bool found=false;
+  while(open.Count>0&&prev.Count<10000){var at=open.Dequeue();if(Vector2.Distance((Vector2)at/2,goal)<1.05f){end=at;found=true;break;}foreach(var d in new[]{Vector2Int.up,Vector2Int.down,Vector2Int.left,Vector2Int.right}){var n=at+d;var p=(Vector2)n/2;if(prev.ContainsKey(n)||Mathf.Abs(p.x)>16||Mathf.Abs(p.y)>12||!RouteClear(p))continue;prev[n]=at;open.Enqueue(n);}}
+  if(!found)return false;var route=new List<Vector2>();while(end!=start){route.Add((Vector2)end/2);end=prev[end];}route.Reverse();
+  foreach(var next in route){if(Vector2.Distance(body.position,goal)<.8f){Stop();return true;}int i=0;while(Vector2.Distance(body.position,next)>.09f&&i++<30)Step((next-body.position).normalized,"guided");if(i>=30){File.AppendAllText(Path.Combine(Root,"route-failures.txt"),SceneManager.GetActiveScene().name+" goal="+goal+" next="+next+" at="+body.position+" lock="+PlayerController.IsMovementLocked+" blockers="+string.Join(",",Physics2D.OverlapCircleAll(body.position,.65f).Select(c=>c.name))+"\n");Stop();return false;}}
+  Stop();return Vector2.Distance(body.position,goal)<1.2f;
+ }
+ static IEnumerator SaveRecovery(string scene){
+  foreach(var old in UnityEngine.Object.FindObjectsByType<WorldPositionSaveController>(FindObjectsSortMode.None))old.enabled=false;
+  var d=Fixture(4,scene);d.HasSavedWorldPosition=true;d.SavedPositionX=-4;d.SavedPositionY=-6;GameSaveService.RestoreSession(2,d);File.WriteAllText(GameSaveService.GetSaveFilePath(2),JsonUtility.ToJson(d));string raw=File.ReadAllText(GameSaveService.GetSaveFilePath(2));
+  yield return Load(scene);Check(Clear(body.position)&&Vector2.Distance(body.position,new Vector2(-4,-6))>.5f,scene+" actual saved-wall restoration "+body.position);
+  typeof(WorldPositionSaveController).GetMethod("SaveNow",F).Invoke(player.GetComponent<WorldPositionSaveController>(),null);Check(File.ReadAllText(GameSaveService.GetSaveFilePath(2))==raw,scene+" recovery does not overwrite clone Save");
+ }
+ static IEnumerator Transitions(){
+  GameSaveService.RestoreSession(2,Fixture(4,"Dungeon_01"));yield return Load("Dungeon_01");Place(new Vector2(0,-8.5f));Check(Walk(new Vector2(0,8.2f)),"B1 open lower gate reachable");yield return Wait();var gate=UnityEngine.Object.FindObjectsByType<MainQuest11Site>(FindObjectsSortMode.None).First(s=>s.TargetId=="dungeon01_main11_lower_gate");Check(gate.TryInteract(),"B1 actual lower gate interaction");yield return Arrival("Dungeon_01_B2");
+  Place(new Vector2(0,-8.5f));Check(Walk(new Vector2(0,-10.6f)),"B2 physical return path");yield return Exit();yield return Arrival("Dungeon_01");Check(Vector2.Distance(body.position,new Vector2(0,6.8f))<.1f,"Spawn_From_B2 preserved");Check(Walk(new Vector2(0,-10.6f)),"B1 physical Field03 return path");yield return Exit();yield return Arrival("Field_03");
+  GameSaveService.RestoreSession(2,Fixture(11,"Dungeon_01_B2"));MonsterEncounterService.MarkDefeated(Resources.LoadAll<FieldMonsterSpawnDefinition>("MonsterSpawns").First(s=>s.SpawnId==MainQuest11DungeonFlow.BossId));yield return Load("Dungeon_01_B2");Check(!UnityEngine.Object.FindAnyObjectByType<MainQuest11BossBarrier>().GetComponent<Collider2D>().enabled,"boss-defeated barrier open");Place(new Vector2(0,-8.5f));Check(Walk(new Vector2(0,11.2f)),"postboss sealed chamber physical route");Check(Walk(new Vector2(1.25f,11.35f)),"tablet physical route");Capture("B2-tablet-after-game");
+ }
+ static IEnumerator Exit(){yield return Wait();var exit=UnityEngine.Object.FindAnyObjectByType<DungeonExitInteraction>();Check(exit.TryInteract(),"return confirmation opens");yield return Wait();var b=(UnityEngine.UI.Button)typeof(DialoguePresenter).GetField("confirmButton",F).GetValue(DialoguePresenter.Instance);b.onClick.Invoke();}
+ static IEnumerator Arrival(string scene){int n=0;while(SceneManager.GetActiveScene().name!=scene&&n++<600)yield return null;yield return Wait(12);player=UnityEngine.Object.FindAnyObjectByType<PlayerController>();body=player.GetComponent<Rigidbody2D>();shape=player.GetComponent<CircleCollider2D>();Physics2D.simulationMode=SimulationMode2D.Script;Check(SceneManager.GetActiveScene().name==scene,"actual transition "+scene);}
+ static IEnumerator Supplement(){
+  GameSaveService.RestoreSession(2,Fixture(4,"Dungeon_01"));yield return Load("Dungeon_01");
+  Place(new Vector2(6,-2));for(int i=0;i<100;i++)Step(new Vector2(1,1).normalized,"guided",.05f);Stop();var at=body.position;
+  float depth=0;foreach(var c in Physics2D.OverlapCircleAll(at,.55f).Where(c=>c.enabled&&!c.isTrigger&&!c.transform.IsChildOf(player.transform)&&(c.attachedRigidbody==null||c.attachedRigidbody.bodyType==RigidbodyType2D.Static))){var d=shape.Distance(c);if(d.isValid)depth=Mathf.Min(depth,d.distance);}
+  var collision=UnityEngine.Object.FindAnyObjectByType<DungeonFloorCollision>();Check(collision.Floors.Any(r=>r.Contains(at))&&depth>-.031f,"B1 rubble/top-wall contact solver depth="+depth+" floor="+at);
+  for(int i=0;i<60;i++)Step(new Vector2(-1,-1).normalized,"guided");Stop();Check(Vector2.Distance(body.position,at)>2,"B1 rubble corner reverse escapes without trapping "+body.position);Capture("B1-corner-escape",true);
+  Place(new Vector2(0,6.8f));Check(Walk(new Vector2(0,-10.6f)),"B1 return route avoids live monster bodies at="+body.position);yield return Exit();yield return Arrival("Field_03");
+  GameSaveService.RestoreSession(2,Fixture(4,"Dungeon_01_B2"));yield return Load("Dungeon_01_B2");Place(new Vector2(2,9));for(int i=0;i<80;i++)Step(Vector2.up,"guided");Stop();Check(body.position.y<10,"preboss barrier still blocks actual body "+body.position);
+  GameSaveService.RestoreSession(2,Fixture(11,"Dungeon_01_B2"));MonsterEncounterService.MarkDefeated(Resources.LoadAll<FieldMonsterSpawnDefinition>("MonsterSpawns").First(s=>s.SpawnId==MainQuest11DungeonFlow.BossId));yield return Load("Dungeon_01_B2");Place(new Vector2(0,-8.5f));
+  Check(Walk(new Vector2(2,11.5f))&&body.position.y>10.6f,"postboss actual body enters sealed chamber via monster detour at="+body.position);
+  Check(Walk(new Vector2(1.25f,11.35f)),"tablet reachable within actual interaction range at="+body.position);Capture("B2-chamber-final",true);
+ }
+}
+#endif
