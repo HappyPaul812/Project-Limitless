@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-11 — Issue #75 F2 눈길 B안 환경 기반 재사용 이식 규모 확인 및 격리 파일럿
+
+- [기획 범위 기록 / Issue #75](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6781472884). 바울 대표 전달 Codex 보고: 모든 F2 관련 PNG/ZIP은 F:\Downloads\Limitless_Sprites에 있음. 원본 World_NorthF2_CANDIDATE.unity에는 GO22/SpriteRenderer14/Collider14, 눈 기반 FirstSnow 및 PathEdge 대상 0.
+- 기존 B Unity fixture F2ReuseCandidate.Install()는 Runtime에서 Ground192/FirstSnow144/Trail Mesh53/Worn12/Root1 = **새 GameObject402**, 원본 placeholder Renderer4 표시 OFF를 통해 별도 F2 환경을 생성하며 B좌표 14개는 그 안에만 존재. 402는 이 특정 재현 방식의 오브젝트 수이지 모든 구현의 논리적 최소가 아님. SnowPine8/FrostShrub4 및 HUD Layout은 추가 선택이며 이식에서 제외, C SnowEdge 신규PNG/배치는 미채택.
+- 사용자가 승인한 B 미술 방향만으로 402 오브젝트 기반 환경 조성/원본 Scene 교체까지 자동 허가된 것은 아님. 기존 14개 위치만 바꾸는 방식은 사전조건 결여로 불가능. 새 이미지 제작 필요0, 기존 Sprite/GUID 교체0, 새로운 FirstSnow 등록/Component가 필요할 경우 신규 GUID 약 2 (실제 구현에 따라 변동). Collider 변화0 설계이지만 실제 본편 충돌 QA 미실행.
+- **기획 선택**: 코덱스는 Unity6000.6.5f1 별도 worktree에 **원본과 완전히 분리된 F2 B 기반 적용 파일럿**을 1회 실시하고, 이미 존재하는 fixture 직접 구성 방식 vs 경량 독립 Builder/Mesh 결합 방식의 실제 수정 범위/유지보수성/개체수/정식 UI/접지/플레이어 경로·sorting을 정량 비교한다. 과거 검증자산·캡처 재사용, 1280 한 해상도와 국소 이동만 새 검증. 새 F2 아트/새 NPC/Ch3 배경·HUD 배치 이식 금지, GameView/회전/Sorting 포함 B 안의 모습 참조. 원본 Unity Scene/Prefab/Save/UserData/사용자 dirty·untracked·기존 공식 GUID/meta·main 원형 유지, remote push/merge 금지.
+- Pilot PASS 이후에야 선택된 정확한 환경 기반 변경파일/Prefab/Script/Resource GUID/Placeholder OFF 범위를 바울 대표에게 별도로 승인받고 로컬 제품 적용. 현재 상태 F2_B_DESIGN_APPROVED / ASSET_LOCATION_CONFIRMED / ORIGINAL_B_TARGETS_ABSENT / REUSE_BASE_EXPANSION_PENDING / PILOT_NEXT / ORIGINAL_PRODUCT_NOT_APPLIED.
+
+---
 # PLANNING / 2026-11-11 — #75 F2 B안 원본 적용 HOLD 진단 및 경로 이동 오해 정정
 
 - Codex [#75 원본 적용 전 사전조건 검사](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6781061760)에서 `World_NorthF2_CANDIDATE.unity` 기존 SpriteRenderer14개는 B의 FirstSnow_*/Snow_PathEdge_REUSE 14개와 **별개**, B 대상0개. 과거 `F2ReuseCandidate.Install()`가 실Scene placeholder를 끄고 별도 `F2_REUSE_REVIEW_ONLY` Ground/FirstSnow/PathMesh/Worn/Pine/Shrub/HUD fixture를 생성한 다음 B를 적용. B의 기준환경 자체가 원본에 없어 14개 위치만 적용 불가능. 기존 B는 회전 변경도 있음. Codex가 Scene/제품0변경 HOLD한 판단이 맞음.
