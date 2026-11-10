@@ -1,5 +1,10 @@
 ## 2026-11-10 EOD — 승인 작업 통합·로컬 안전 동기화 마감
 
+실제 EOD 검증 완료: 원본 main에 e999b4c310b519138cfb3315f1b2d7bd00e54ea0을 FF-only/no-autostash 반영했습니다. 사용자 상태302/550 byte-exact 동일, 보호8244개 SHA 동일, 허용 인계문서2개만 변경, Unity 제품 변경0. Unity6000.6.5f1·Scene·Play·선택·포커스 유지, 컴파일 중 아님·Console 오류0. 최종 완료 기록 commit도 같은 방식으로 반영하며 최종 SHA는 Temp/EOD20261110/Final.json 및 Issue 댓글에 기록합니다.
+
+EOD_20261110_LOCAL_MAIN_SYNC_SUCCESS / USER_WORK_PRESERVED / REMOTE_NOT_PUSHED / DAY_CLOSED
+
+
 - 승인 제품 #96 HP·MP, #97 맹독뱀, #94 던전 충돌, #93 및 앞선 Bee/Spider/펫/Chapter2/TTS는 모두 `ALREADY_IN_LOCAL_MAIN`. 대표 실플레이 수용 반영, 제품 재적용·기존 QA 반복0.
 - 출처 감사 #57의 공식 최종 문서3개만 선별 통합합니다. Chapter1 잔여7종·기본펫3종 `ORIGINAL_CONFIRMED`; 슬라임은 대표 원본 선언으로 마감, 존재하지 않은 ZIP의 픽셀 검증은 `NOT_RUN`입니다.
 - F2 B/C·SnowEdge, NPC OGA06/16, Ch3 BGv2, Shoot8, 미승인 냉기·VISUAL_PARTIAL·Discord는 `HOLD`, 통합 제외.

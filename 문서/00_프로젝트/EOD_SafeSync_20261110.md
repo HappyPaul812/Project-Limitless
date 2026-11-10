@@ -64,3 +64,9 @@ F: 최초 여유 **316,024,184,832bytes**. 원본의 tracked 파일·tracked dir
 반영은 별도 작업브랜치의 문서 commit만 **`git -c merge.autoStash=false merge --ff-only --no-autostash <EOD commit>`**으로 합니다. 원격 Push/Merge와 main 직접 commit은0입니다.
 동기화 후 local main은 **본 EOD 문서 commit과 동일한 SHA**여야 합니다. 자기 commit SHA를 본문 안에 넣어 다시 변경하는 순환을 피하기 위해, 실제 최종 SHA와 변경 전후 검증 값은 **`Temp/EOD20261110/Final.json` 및 관련 Issue 결과 댓글**에 기록합니다. CODEX_LATEST/CURRENT_STATUS도 이 최종 기록을 가리킵니다.
 최종 보호·동기화가 모두 통과한 경우에만 **EOD_20261110_LOCAL_MAIN_SYNC_SUCCESS / USER_WORK_PRESERVED / REMOTE_NOT_PUSHED / DAY_CLOSED**를 보고합니다. 완료 뒤 추가 개발·QA·무인 작업은 시작하지 않습니다.
+
+## 실제 완료 검증
+
+실제 EOD 검증 완료: 원본 main에 e999b4c310b519138cfb3315f1b2d7bd00e54ea0을 FF-only/no-autostash 반영했습니다. 사용자 상태302/550 byte-exact 동일, 보호8244개 SHA 동일, 허용 인계문서2개만 변경, Unity 제품 변경0. Unity6000.6.5f1·Scene·Play·선택·포커스 유지, 컴파일 중 아님·Console 오류0. 최종 완료 기록 commit도 같은 방식으로 반영하며 최종 SHA는 Temp/EOD20261110/Final.json 및 Issue 댓글에 기록합니다.
+
+EOD_20261110_LOCAL_MAIN_SYNC_SUCCESS / USER_WORK_PRESERVED / REMOTE_NOT_PUSHED / DAY_CLOSED
