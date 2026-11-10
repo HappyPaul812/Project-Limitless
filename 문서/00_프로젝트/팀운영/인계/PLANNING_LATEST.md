@@ -1,3 +1,15 @@
+# PLANNING / 2026-11-10 — Issue #96 바울 대표 HP·MP 물약 2종 최종 미술 승인 / Codex 로컬 상점 교체 지시
+
+- **사용자 직접 확인**: 물약 ZIP·64px 밝음/어두움 비교판 시각 검수 후 “좋다고 했는데?”라고 이미 긍정 의사를 전달했음을 재확인. 기획의 중복 승인 요청 정정. **`USER_ART_APPROVED_HP_MP_2`**, 추가 미술 승인 반복 질문 금지.
+- 승인 후보: `F:\Downloads\LIMITLESS_ISSUE96_HP_MP_ORIGINAL_POTIONS_20261110.zip`; Library 실물 ZIP **2,286,596 bytes, SHA256 `d1ce0e1cbbf64b588dd2b905a50cc4ecbc2e9bf2bd06378b58ab1d2cb62d7ead`**, Manifest11/11·CRC PASS. 원본 Windows F: 경로 자체는 Codex 실조회 전까지 미검증.
+- 신규 HP PNG `Candidates/Small_HP_Potion_Original_128_RGBA.png` SHA `675a62927ee6a1321ad552674e931a8f53f88680f8d14de7a0acde7c17497f64`; MP PNG `Candidates/Small_MP_Potion_Original_128_RGBA.png` SHA `39b90dfc0dac057c61ef39adb23d215236bb9ef7abe721c6bce0e713cdfdb64a`. 원본고화질과 Preview는 참고 전용.
+- **Codex 적용 진행 승인**: 로컬 Unity **6000.6.5f1**의 별도 `codex/ch1-shop-potions-original-20261110` worktree에서 실제 게임 UI와 외부 Kenney 원래 참조 및 구매 동작 실조회 → 오리지널 PNG 2개를 독립 신규 Sprite + GUID/meta로 등록 → **시작 마을 NPC 상점 거래창 64px Image 표시만** itemID별 override 적용. 공용 `ItemDefinition`·기존 Kenney 원본 PNG/meta/GUID·다른 인벤토리/전투/타 상점·HP+30/MP+12·가격20/30 및 Save/UserData/사용자 dirty 보존. 예전 참고값 Single/PPU100/Pivot(.5,.5)/Bilinear/Uncompressed 실제 Import 계약과 비교.
+- 기존 쇼핑 UI before/after 실 GameView(오프라인 목업 아님) 64px 해상도별 시각, HP·MP 식별·화풍, 구매/판매·수량·툴팁·입력/이동잠금·가격·효과/Save 영향 0 최소 Delta QA. FAIL/원본 dirty충돌이면 원본을 변경하지 않고 HOLD. 전부 PASS면 승인된 좁은 범위 **원본 로컬 게임 안전 적용**, 재생 후 최소 검증 및 대표 손플레이 위치 보고.
+- 원격 main Push/Merge 금지, main 직접 commit 금지, 조건 충족 시에만 기존 안전 FF 방식으로 원본 로컬 적용. **사용자 미술 승인과 Unity 최종 PASS/제품 적용 완료는 별개**.
+- 현재 사실 상태: `USER_ART_APPROVED_2 / CODEX_LOCAL_IMPLEMENTATION_AUTHORIZED / UNITY_INTEGRATION_NOT_YET_REPORTED / REMOTE_PUSH_NO`. 완료 후 브랜치/SHA/변경파일/승인PNG 해시/Unity Delta QA/원본반영/대표 실플레이 확인법 보고.
+
+---
+
 # PLANNING / 2026-11-10 — Issue #96 신규 소형 HP·MP 물약 2종 라이브러리 실물 검수
 
 - 바울 대표 제공 **`F:\Downloads\LIMITLESS_ISSUE96_HP_MP_ORIGINAL_POTIONS_20261110.zip`**. 사용자 PC의 `F:`에 기획이 직접 접근할 수 없으므로 **동일 이름의 ChatGPT Library ZIP을 별도로 materialize해서 실물 검사**, 실제 F: 파일과 바이트 일치는 Codex 로컬에서 확인 필요.
