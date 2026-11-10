@@ -1,3 +1,14 @@
+# PLANNING / 2026-11-10 — VenomSnake #97 Continuity v2 간편 ZIP 직접 검수 · Attack03 추가 표적 보완 권고
+
+- 바울 대표 전달 Windows 로컬 파일명 `F:\\Downloads\\VenomSnake_Continuity_v2_2POSE_SMALL.zip`과 동일 이름의 ChatGPT Library 파일을 실제 materialize·압축 검사. **F: 로컬 바이트 직접 검증은 아님**. Library 파일 크기 **908,035 bytes**, ZIP SHA256 **`9a6b0315fd66eb8a66992085c4a7bbcfb7558759e00dab9a3de54050efe3cc73`**. 16 entries/CRC PASS, Manifest14/14 SHA·bytes PASS, SHA256SUMS PASS. [리뉴얼 원 보고 #97](https://github.com/HappyPaul812/Project-Limitless/issues/97#issuecomment-6761924550)와 동일 해시.
+- 신규 512 RGBA 수정 후보 **Attack01·Attack03만** 존재함을 확인. 이전 DELVERY_ONLY 8프레임 원본과 대조한 변경 픽셀 Attack01 **118,770**, Attack03 **129,412**; 나머지 Idle4+Attack00/02 6개 기존 원본 SHA와 QA 계약 일치. 두 수정 프레임 네 변 alpha>8 경계 접촉0. 32/40px 및 128px 비교판·8FPS GIF 디코드 120/130/120/130ms PASS. 승인 v3 원화 SHA `7001d199...` 변경 대상 아님.
+- 오프라인 인접 alpha IoU: Attack00→01 **.68984→.74934**, 01→02 **.78288→.79576**, 02→03 **.66340→.72689**, **Attack03→Idle00 .83199→.82008**. 128px 비교에서 v2 Attack03의 목·코일 세로 비율 압축으로 Idle00 복귀가 시각적으로 튈 우려; IoU는 미술 PASS 증거 아님.
+- **기획 판정**: **Attack01 v2 후보 KEEP**, Attack03은 전역 비율 재변형을 반복하기보다 **머리·턱·목 관절과 똬리 접합만 1프레임 국소 수작업/최소보완 후보**로 검토; 기존 원본 및 여타7프레임 보존. Attack02→03→Idle00 양 연결과 128/40/32px 8FPS를 한 판에서 대조. v2 전체 최종 미술 승인0, Unity 적용0.
+- 현행 MonsterDefinition 32×32 cell·4col·4frame·8FPS·`sourceFacesRight:0` 대비 신규 우향/512 후보의 PPU·Pivot·방향·Hit/독 처리 등은 **후속 사용자 모션 승인 후 Codex Unity6000.6.5f1 격리 최소 QA 대상**. 기존 승인·원본 PNG/Scene/Save/UserData·미커밋·other-team 자산보호, 원격 main 변경0. 다음 리뉴얼 순서 #97 표적1프레임 → #96 HP/MP 작은약2 → #95 NPC 기존 후보2 최종 검토.
+- 상태: `ZIP_FILE_TECH_PASS / ATTACK01_V2_KEEP_RECOMMENDED / ATTACK03_TARGETED_FIX_RECOMMENDED / USER_ANIMATION_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED`. 이번 기획 작업은 실제 PC Unity 실행·Codex 로컬 작업 수행이 아님.
+
+---
+
 # PLANNING / 2026-11-10 16:20 — F2 B안 실Unity 추천, VenomSnake Anim8 파일검수 완료
 
 - [#75 Codex B/C 실제 GameView×3해상도 최소 24PASS/0FAIL](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6761307175) → [총괄 기획 판정](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6761582746): **B 기존 FirstSnow 14Renderer 재배치 추천**, C 신규256 SnowEdge는 현 위치에 흰띠·개선미약하여 불필요, 후보 아트만 보존. **B_PLANNING_RECOMMENDED / USER_B_PRODUCT_APPROVAL_PENDING / ORIGINAL_NOT_APPLIED**. 사용자가 B 선택·본편 반영 승인하면 격리 비교 B 좌표만 안전 이식 후 국소 GameView 재확인. 기존68·90·81·24PASS 전수 재실행 금지, Unity6000.6.5f1 및 원본 수정·Save 보호.
