@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-10 / Issue #75 — F2 BendSnow 256px 잔설 경계 1종 게임 규격 후보 실제 납품
+
+- **이번 실제 신규 Sprite 후보 1종만** `Candidate/F2_BendSnow_SnowEdge_256x256_PPU128_CANDIDATE.png` (**256×256 RGBA, SHA256 `c3eeee57c5c5597c2d764fdd831b9d25516df57c1751a6108db9e0fd1ec892c4`**) 제작. 기존 1254×1254 생성 이미지의 잔설만 분리·투명화, **흙길·바위·관목 본체/중복 소품 제외**. 1774×887 이전 사용자 방향수용 원화 SHA `1db66eb4f92931318d5fafd46b2cd337fb9d47033537b428e21c1471d71490dd` 원본 그대로 KEEP.
+- [#75 Codex 실제 F2 RT read-only 인계](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6758024653)에서 R1 screen x180–350/y100–650 눈반복·R2 x480–880/y180–510 길굽음, Ortho5/72px/WU, 실제 F1 WornTrail·F2 FirstSnow 256²/PPU128/Pivot 중앙, Ground9 pivot(0.5,0)를 확인. **이번 후보 256²/PPU128/Pivot중앙/Scale1은 기존 스프라이트 정본과 일치하도록 설계한 신규 Import 제안**, 아직 실제 Unity .meta/Scene 적용 검증은 하지 않음. 기본 통로 4.5WU와 Collider/길 중심선 원형 보호.
+- **오프라인 시각 제안 2안**: (1) 승인 Ground9 + 기존 WornTrail + FirstSnow Overlay의 1.7WU 규칙 반복을 불규칙 미세 재배치 (신규 PNG0안); (2) 기존 재사용+추출한 새 256px 잔설 경계 PNG **1개만** 작은 오버레이로 덧댐. 1280px 기준 A/B/C 동일위치 재구성 비교판 `Preview/F2_BendSnow_BeforeReusePatch_1280_OFFLINE.png` 및 128/40px 실제 축소. **실제 F2 CameraRT 파일 실물을 이 아트 세션에서 확인하지 못했으므로 비교판은 Codex 측정 좌표를 이용한 OFFLINE RECONSTRUCTION이며 Unity Before/After 아님**.
+- **실물 ZIP** `LIMITLESS_Issue75_F2_BendSnow_GameEdge_v1_20261110.zip` **6,169,252bytes / 14entries, SHA256 `c38e97b3856245e474fea61f0b71f584af95618fa864723113041c6b1f7fdf58`**, ZIP CRC PASS / SHA256SUMS 13/13 PASS. ChatGPT Library `/LIMITLESS/Issue75_F2_BendSnow_GameEdge_20261110/` ZIP+비교판 실제 업로드 성공. 대표 PC F:\ 자동 복사/PC SHA 미검증, GitHub 바이너리 업로드0.
+- [**정식 #75 256px 표적 아트·QA·출처 보고서**](../../Chapter3_Main24_F2_Issue75_BendSnow_GameEdge256_Targeted_20261110.md) `docs/art-new` commit **`e581e19521f82a4be5dfc062fac857cc8df6972d`**. 현재 `F2_BEND_SNOW_EDGE256_ART_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_FINAL_ART_REVIEW_PENDING / UNITY_NOT_VERIFIED / NOT_UNITY_APPLIED`. 기존 1774 시안 미술 **방향 긍정 수용은 새 256 후보 미술 최종 승인과 별개**. Ground9/환경43/F1/F2/Owl/Stump/냉기VFX·아이콘/Ch3 BattleBG v2·Unity Scene/Prefab/Save/UserData/Packages/Collider/main 원형 변경0, Unity 실행/대규모QA재실행/직접 main commit/Push/merge0.
+
+
 ## 2026-11-10 / Issue #75 — F2 눈·흙길 굽음 미술 방향 긍정 수용, 게임 Import 검증 별도
 
 - [#75 당일 지시](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6755493865) 기준 첫눈 F2 길 직각 굽음·눈 패치 반복 개선 **신규 투명 콘셉트 PNG 단1개** 실제 제작. 바울 대표 직접 피드백 **“후보가 괜찮네..”** → `USER_ART_DIRECTION_ACCEPTED`, 단 실제 F2 Sprite·타일 적용/PPU 확정·Unity TECH PASS가 아니라 별도 검증 전 후보 유지.
