@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-10 15:06 — F2 #75 B/C 비교 DeltaQA 계획 수용(실행 승인 대기)
+
+- [#75 Codex B/C 최소 DeltaQA 계획](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6759902464) 검토 후 [기획 범위 수용 및 게이트 기록](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6760394480). B=기존 FirstSnow 위치/각도/겹침 재배치, C=동일 B+신규256px SnowEdge 1개, 960/1280/1680 실제 GameView 기본6장, 휠체어 B/C 1280 국소 왕복, R1 눈반복·R2 길굽음, HUD·Stump·Tree/Owl 중복/이음새 검사. 과거68PASS 전수 재실행 금지.
+- **미술·실행·본편 별도 게이트**: #75 GameEdge256은 아직 `USER_FINAL_ART_REVIEW_PENDING`; Codex는 계획만 준비했고 `QA_NOT_RUN`. 사용자 직접 지시가 있을 때만 별도 격리 비교 실행. 기존 원본 main/Save/사용자 Editor 포커스·미커밋 파일 변경 금지, 원본 제품 적용은 실질 B/C 비교 뒤 별도 사용자 결정. B가 충분하면 C를 채택할 이유 없음.
+- 상태 `PLANNING_QA_SCOPE_ACCEPTED / USER_COMPARISON_RUN_PENDING / GAMEEDGE_ART_APPROVAL_PENDING / ORIGINAL_NOT_APPLIED`.
+
+---
+
 # PLANNING / 2026-11-10 오후 — 리뉴얼 우선순위 바로잡음: VenomSnake v3 애니메이션 시트 제작
 
 - 바울 대표 지적 **“NPC 2종도 이미 제작 안 하고 맹독뱀 작업했고 뱀은 애니메이션 시트는 안 만드니?”**. 기획 오류: **맹독뱀 원화 단일포즈 최종 승인!=전투 애니메이션 완성**, 즉시 [신규 Issue #97](https://github.com/HappyPaul812/Project-Limitless/issues/97)을 열어 **기승인 v3 원화로 Idle4+Attack4 실제 8프레임/4×2 SpriteSheet** 제작을 최우선 발주.
