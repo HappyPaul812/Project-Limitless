@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-11 — #75 F2 B안 원본 적용 HOLD 진단 및 경로 이동 오해 정정
+
+- Codex [#75 원본 적용 전 사전조건 검사](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6781061760)에서 `World_NorthF2_CANDIDATE.unity` 기존 SpriteRenderer14개는 B의 FirstSnow_*/Snow_PathEdge_REUSE 14개와 **별개**, B 대상0개. 과거 `F2ReuseCandidate.Install()`가 실Scene placeholder를 끄고 별도 `F2_REUSE_REVIEW_ONLY` Ground/FirstSnow/PathMesh/Worn/Pine/Shrub/HUD fixture를 생성한 다음 B를 적용. B의 기준환경 자체가 원본에 없어 14개 위치만 적용 불가능. 기존 B는 회전 변경도 있음. Codex가 Scene/제품0변경 HOLD한 판단이 맞음.
+- 사용자가 파일들을 `F:\Downloads\Limitless_Sprites`로 옮긴 사실은 이 HOLD의 원인이 아님. 파일 탐색 누락이라면 다른 메시지가 나왔겠지만 보고는 **원본 hierarchy/Renderer 구성 사전조건 실패**. 옮긴 경로는 후속 Codex가 #75 후보 실물 확인시 고려.
+- 기획의 11/11 '기존 Renderer14개만 원본 이식' 승인 안내는 **원본에 실제 해당 Renderers가 있는지 검증되지 않은 잘못된 전제**였음을 인정·정정. 대표의 B 눈길 미술 방향 선택은 유효하나 fixture 기반 전체를 본편으로 이식하려면 **추가 환경 기반 변경 범위 확정 및 별도 승인 필요**.
+- [Issue #75 기획 원인 정정](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6781192239). 다음 Codex는 **읽기 전용** 원본 F2와 fixture 환경 차이 필수/선택/미승인 C 분류, `F:\Downloads\Limitless_Sprites` 실제 파일명 찾기, 최소 안전이식 대안/변경 파일·GUID·Collider 영향·사용자 승인 필요 항목 문서화. Unity 원본 Scene/Prefab/Save/UserData/GUID/meta/사용자 dirty/원격 main 변경0. 기존 전수 QA 재실행 금지.
+- 상태: `B_ART_DIRECTION_APPROVED / ORIGINAL_F2_ENVIRONMENT_MISMATCH / LOCAL_APPLY_HOLD / READ_ONLY_DELTA_REVIEW_NEXT / REMOTE_NOT_PUSHED`.
+
+---
 # PLANNING / 2026-11-11 — Issue #75 F2 첫눈의 숲 B안 사용자 최종 승인
 
 - 바울 대표가 2026-11-11 “어제 본 눈길? 그래.”로 [Issue #75 F2의 기존 FirstSnow 눈 오브젝트 14종 위치조정 B안](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6780879183) 및 로컬 원본 게임 적용 진행을 승인. C안의 별도 SnowEdge 256 신규 그림은 미채택/HOLD, 신규 아트 제작 금지.
