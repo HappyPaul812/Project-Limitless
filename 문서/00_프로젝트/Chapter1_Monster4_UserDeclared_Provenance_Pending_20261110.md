@@ -26,7 +26,7 @@
 2. [`ce32537`](https://github.com/HappyPaul812/Project-Limitless/commit/ce32537ad3d628d735323eed57333580e512b91b) **2026-08-19 16:22 KST**: 슬라임 아트·애니메이션 디렉터리와 `ASSET_REQUIREMENTS.md` 준비. 지침에 “사용자 수동 수정 PNG를 최우선 원본으로 취급.”
 3. [`139fba10`](https://github.com/HappyPaul812/Project-Limitless/commit/139fba10c70292d79145f72524f6867172df4774) **2026-08-19 16:35 KST**: `Unity/Client/Assets/_Project/Art/Monsters/01_GrassSlime/01_GrassSlime_Walk.png` 실제 최초 등록, `.meta`, `GrassSlimeAnimationBuilder.cs`, Animator8 및 MonsterDefinition 연결.
 4. [당시 구현문서 `첫_몬스터_초원_슬라임.md`](https://github.com/HappyPaul812/Project-Limitless/blob/139fba10c70292d79145f72524f6867172df4774/문서/08_몬스터/첫_몬스터_초원_슬라임.md)에 **“사용자가 제공한 4×4 방향별 Sprite 시트”**, **“원본 1254×1254 이미지는 그림 크기를 바꾸지 않고 오른쪽과 아래에 각각 2픽셀의 투명 Padding을 추가하여 1256×1256”** 명시. 314×314 각 셀, 행 Down/Left/Right/Up; Idle4 + Walk4(6FPS).
-5. Codex Issue #57 2026-11-10 실제 스폰/Animator/현행 PNG 해시 확인. **마지막 미완: 실제 PC 현재 PNG의 1254² 상단 좌측 모든 RGBA 픽셀 = Library 원본, 추가 우/하 2px RGBA=0인지 확인**.
+5. Codex Issue #57 2026-11-10 실제 스폰/Animator/현행 PNG 해시 확인. **마지막 미완: 실제 PC 현재 PNG의 1254² 상단 좌측 모든 RGBA 픽셀 = Library 원본, 추가 우/하 2px alpha=0인지 확인**.
 
 ### monster_silent_echo / monster_seal_guardian / monster_silent_warden
 1. Library **2026-09-28 07:47 KST** B2 디자인 설계도; **09:40 KST** 세 최종 시트 원본 보관.
@@ -45,7 +45,7 @@
 ## 4. 재현 가능한 읽기 전용 원본 증거 팩
 
 - 생성 파일명: `LIMITLESS_Ch1_Monster4_Original_Provenance_Evidence_20261110.zip` (이 채팅 샌드박스에서 제작; GitHub 바이너리 Push **없음**).
-- ZIP 크기 **2,765,032 bytes**, SHA256 **`c0e3d7fc791014617cc7c7566f0649162a70a8b723249756bc2ae4a2f1c4829e`**, CRC PASS. 원본4 PNG + `verify_ch1_provenance.py` 읽기전용 검증 스크립트 + `README_4MONSTERS.md`, 총6파일.
+- ZIP 크기 **2,765,032 bytes**, SHA256 **`773893c79511a398a08bd08a3575fd20cca4bd80fcbdb6f9d66a8f8f17103be4`**, CRC PASS. 원본4 PNG + `verify_ch1_provenance.py` 읽기전용 검증 스크립트 + `README_4MONSTERS.md`, 총6파일.
 - 사용자 PC의 ZIP을 Codex가 받아 쓰거나, 원본 파일 4개가 이미 로컬에 있으면 그 SHA를 대조해 복제할 것. 검증 스크립트는 **B2 세 파일 SHA 바이트 동일/슬라임 패딩 RGBA 픽셀 동일**을 실제 로컬에서 확인. `conda activate py3_12` / Pillow.
 - 검증 실패 시 원본변경0·신규 아트0·실제 diff 및 SHA만 보고. 기존 Unity Play QA/Save/원본 Git 변경 필요 없음. `main` 직접 commit/Push/merge 금지.
 - **2026-11-10 이 ChatGPT 작업은 실제 로컬 Unity 파일 접근 없이 Library·GitHub 정본만 확인함**. `LOCAL_SLIME_PIXEL_QA_NOT_RUN`을 PASS로 표현 금지.
