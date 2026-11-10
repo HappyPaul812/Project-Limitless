@@ -1,0 +1,13 @@
+PASS Unity6000.6.5f1
+PASS OpenAndMovementLock
+PASS StarterBuy.Sprite.item_healing_potion_small
+PASS StarterBuy.TintAndAspect.item_healing_potion_small
+PASS StarterBuy.Sprite.item_mana_potion_small
+PASS StarterBuy.TintAndAspect.item_mana_potion_small
+PASS Before.ActualGameViewResolution.960
+PASS Before.NoCameraRTSubstitution.960
+PASS Before.Logical64x64.960
+PASS Before.ActualGameViewResolution.1280
+PASS Before.NoCameraRTSubstitution.1280
+PASS Before.Logical64x64.1280
+PASS BaselineRuntimeErrorsZero

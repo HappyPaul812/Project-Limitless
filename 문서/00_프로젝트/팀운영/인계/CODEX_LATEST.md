@@ -1,3 +1,16 @@
+## 2026-11-10 Issue #96 — 시작마을 HP·MP 오리지널 아이콘 실제 적용
+
+**STARTERVILLAGE_SHOP_POTIONS_ORIGINAL / UNITY_DELTA_QA_PASS / LOCAL_ORIGINAL_APPLIED / USER_REALPLAY_REVIEW_PENDING / REMOTE_NOT_PUSHED**
+
+- 최종 미술 승인 댓글6766154803·PLANNING 확인. 실제 F:/Downloads ZIP SHA d1ce0e1c…62d7ead 일치·CRC/Manifest11 PASS. 승인128² PNG2만 신규 등록(HP675a6292…497f64 / MP39b90dfc…db64a), Preview/고해상도 소스 게임 추가0.
+- 별도 `codex/ch1-shop-potions-original-20261110`, 구현 **`f5f3a07aa4c5b797c417e6bcc80783d8b5501d05`** → 원본 local main ff-only 반영. 신규 PNG2/meta2와 ShopPresenter1만 변경. World_StarterVillage + shop_general_starter_village + HP/MP itemID 조건으로 거래창64² Image만 override. 원화Tint white, 미취득 시 기존표시. Kenney PNG/meta/GUID·공용 ItemDefinition·다른화면/다른상점 불변.
+- Unity6000.6.5f1 실제 GameView Before13 PASS / After46 PASS / 원본 반영파일 동일 격리 재실행46 PASS. 가상 마우스/키보드·구매/판매·수량/가격/설명·HP30/MP12·이동잠금/해제·다른상점/마을밖 조건·Save 안정ID PASS, Runtime Error0. 기존 전체QA 반복0.
+- 원본 Editor 표적Import·컴파일완료·ConsoleError0, 실제독립Sprite/PPU100/Pivot64 확인. 원본Scene/Play/선택/포커스 무조작. 보호5128 중5127 SHA불변·승인 기존코드1변경·신규4파일 추가, 사용자dirty302/untracked550 동일·Save/UserData 보존.
+- [실제캡처·PNG SHA/GUID·QA·보호·확인 방법](../../../../docs/art-renewal/issue96-shop-original-20261110/REPORT.md). 원본 새 Play → 시작마을 잡화 상인 → 물건을 본다. 기술HOLD 없음·대표 손플레이 수용 확인 대기. 문서/최종main SHA는 #96 댓글 및 Temp/Issue96Original/Evidence/FinalResult.json 참조. main직접commit/원격Push·Merge0.
+- Issue57 출처 감사는 별도 `codex/ch1-monster-provenance-final` / `1c8f94c9`에서 마감(잔여7종·펫3종 ORIGINAL_CONFIRMED, 슬라임 pixel NOT_RUN·ZIP대기 해소). F2/NPC 신규 적용0, 기존 승인 아트 보호.
+
+---
+
 ## 2026-11-10 Issue #97 — 승인 맹독뱀8프레임 실제 게임 반영
 
 **VENOMSNAKE_ANIM8 / UNITY_QA_PASS / LOCAL_ORIGINAL_APPLIED / USER_REALPLAY_REVIEW_PENDING / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**

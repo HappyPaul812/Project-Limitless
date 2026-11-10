@@ -1,0 +1,21 @@
+{
+  "version": "6000.6.5f1",
+  "compiledScopeStrings": [
+    "shop_general_starter_village",
+    "World_StarterVillage",
+    "item_healing_potion_small",
+    "item_mana_potion_small",
+    "ItemIcons/StarterVillageShop_MP_Original128",
+    "ItemIcons/StarterVillageShop_HP_Original128"
+  ],
+  "hpIcon": "Assets/_Project/Resources/ItemIcons/HealingPotionSmall.png",
+  "mpIcon": "Assets/_Project/Resources/ItemIcons/ManaPotionSmall.png",
+  "hpAmount": 30,
+  "mpAmount": 12,
+  "hpBuy": 20,
+  "mpBuy": 30,
+  "scene": "F:/study/codex/Project-Limitless/Temp/Main22FirstPlayable20261021/Worktree/Unity/Client/Assets/_Project/Scenes/Bootstrap.unity",
+  "dirty": false,
+  "playing": false,
+  "compiling": false
+}

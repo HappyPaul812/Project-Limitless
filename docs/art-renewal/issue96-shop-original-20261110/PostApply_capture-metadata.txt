@@ -1,0 +1,2 @@
+PostApply|960x720|UnityEditor.GameView.RenderView|batch=True|camera=(-3.17, 0.20, -10.00)|ortho=4.75|screen=960x720|overlayCanvases=8
+PostApply|1280x720|UnityEditor.GameView.RenderView|batch=True|camera=(-1.06, 0.20, -10.00)|ortho=4.75|screen=1280x720|overlayCanvases=8

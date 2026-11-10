@@ -1,0 +1,13 @@
+{
+  "protected": 5128,
+  "changed": 0,
+  "qaPassed": 46,
+  "conflicts": 0,
+  "files": [
+    "Unity/Client/Assets/_Project/Scripts/UI/ShopPresenter.cs",
+    "Unity/Client/Assets/_Project/Resources/ItemIcons/StarterVillageShop_HP_Original128.png",
+    "Unity/Client/Assets/_Project/Resources/ItemIcons/StarterVillageShop_MP_Original128.png",
+    "Unity/Client/Assets/_Project/Resources/ItemIcons/StarterVillageShop_HP_Original128.png.meta",
+    "Unity/Client/Assets/_Project/Resources/ItemIcons/StarterVillageShop_MP_Original128.png.meta"
+  ]
+}

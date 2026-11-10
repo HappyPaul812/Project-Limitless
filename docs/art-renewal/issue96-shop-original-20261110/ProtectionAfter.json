@@ -1,0 +1,16 @@
+{
+  "protected": 5128,
+  "unchanged": 5127,
+  "approvedExistingCodeChanged": 1,
+  "newPNGs": 2,
+  "newMetas": 2,
+  "dirty": 302,
+  "untracked": 550,
+  "saveUserDataUnchanged": true,
+  "checks": {
+    "Before": 13,
+    "After": 46,
+    "PostApply": 46
+  },
+  "productMain": "f5f3a07aa4c5b797c417e6bcc80783d8b5501d05"
+}

@@ -1,3 +1,14 @@
+## 2026-11-10 Issue #96 — 시작마을 물약 오리지널 아이콘 적용 완료
+
+**STARTERVILLAGE_SHOP_POTIONS_ORIGINAL / UNITY_DELTA_QA_PASS / LOCAL_ORIGINAL_APPLIED / USER_REALPLAY_REVIEW_PENDING / REMOTE_NOT_PUSHED**
+
+- 승인된 HP·MP128² PNG2를 독립Sprite/GUID로 등록하고 시작마을 잡화상점 거래창의 두 상품에만 표시했습니다. 씬+상점+아이템ID 제한, 공용 ItemDefinition·Kenney PNG/meta·인벤토리/전투/다른상점 변경0. HP+30/구매20/판매10, MP+12/구매30/판매15 유지.
+- Unity6000.6.5f1 실제 거래창960×720·1280×720 Before13/After46 PASS, 반영원본 동일파일 재실행46 PASS. 가상 마우스·키보드/거래·수량·설명/이동잠금·해제/적용범위·격리Save PASS, Runtime Error0. 기존 전체QA 반복0.
+- 구현 **`f5f3a07aa4c5b797c417e6bcc80783d8b5501d05`**, `codex/ch1-shop-potions-original-20261110` → local main ff-only 적용. 원본Import/컴파일/ConsoleError0, Scene/Play/포커스 보존. 보호5128 중 승인코드1개만 변경·새PNG/meta4개 추가, 사용자dirty302/untracked550·Save/UserData·기존아트·Packages/BuildSettings 보존.
+- [보고·PNG SHA/GUID·교체 전후 실제캡처](../../docs/art-renewal/issue96-shop-original-20261110/REPORT.md). 다음: 원본 새 Play의 시작마을 잡화상인 → 물건을 본다에서 최종 수용 확인. 기술HOLD 없음. 문서 포함 최종main SHA는 #96 댓글/Temp/Issue96Original/Evidence/FinalResult.json 참조. main직접commit·원격Push/Merge0.
+
+---
+
 ## 2026-11-10 Issue #97 — 맹독뱀 승인8프레임 실제 로컬 게임 반영
 
 **VENOMSNAKE_ANIM8 / UNITY_QA_PASS / LOCAL_ORIGINAL_APPLIED / USER_REALPLAY_REVIEW_PENDING / REMOTE_NOT_PUSHED**

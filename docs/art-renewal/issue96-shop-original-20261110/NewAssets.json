@@ -1,0 +1,14 @@
+[
+  {
+    "kind": "HP",
+    "path": "Unity\\Client\\Assets\\_Project\\Resources\\ItemIcons\\StarterVillageShop_HP_Original128.png",
+    "guid": "b9934fac8bf6472992f57b8b1be5944d",
+    "sha256": "675a62927ee6a1321ad552674e931a8f53f88680f8d14de7a0acde7c17497f64"
+  },
+  {
+    "kind": "MP",
+    "path": "Unity\\Client\\Assets\\_Project\\Resources\\ItemIcons\\StarterVillageShop_MP_Original128.png",
+    "guid": "b3bd31231d94467cac840a284036859a",
+    "sha256": "39b90dfc0dac057c61ef39adb23d215236bb9ef7abe721c6bce0e713cdfdb64a"
+  }
+]

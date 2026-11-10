@@ -1,0 +1,26 @@
+{
+  "assets": [
+    {
+      "path": "Assets/_Project/Resources/ItemIcons/StarterVillageShop_HP_Original128.png",
+      "guid": "b9934fac8bf6472992f57b8b1be5944d",
+      "size": "(128.00, 128.00)",
+      "pivot": "(64.00, 64.00)",
+      "ppu": 100,
+      "filter": "Bilinear",
+      "compression": "Uncompressed"
+    },
+    {
+      "path": "Assets/_Project/Resources/ItemIcons/StarterVillageShop_MP_Original128.png",
+      "guid": "b3bd31231d94467cac840a284036859a",
+      "size": "(128.00, 128.00)",
+      "pivot": "(64.00, 64.00)",
+      "ppu": 100,
+      "filter": "Bilinear",
+      "compression": "Uncompressed"
+    }
+  ],
+  "scene": "F:/study/codex/Project-Limitless/Temp/Main22FirstPlayable20261021/Worktree/Unity/Client/Assets/_Project/Scenes/Bootstrap.unity",
+  "dirty": false,
+  "playing": false,
+  "selection": null
+}

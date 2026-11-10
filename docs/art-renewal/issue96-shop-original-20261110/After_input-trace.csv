@@ -1,0 +1,11 @@
+mouse,Item_item_mana_potion_small,(437.00, 400.00),selected=Item_item_mana_potion_small
+mouse,IncreaseQuantityButton,(963.00, 175.00),selected=IncreaseQuantityButton
+mouse,BuyButton,(502.00, 99.00),selected=BuyButton
+mouse,Item_item_mana_potion_small,(437.00, 400.00),selected=Item_item_mana_potion_small
+mouse,BuyButton,(502.00, 99.00),selected=BuyButton
+mouse,SellModeButton,(957.00, 234.00),selected=Item_item_burn_ointment
+mouse,Item_item_healing_potion_small,(437.00, 400.00),selected=Item_item_healing_potion_small
+mouse,SellButton,(502.00, 99.00),selected=Item_item_healing_potion_small
+mouse,Item_item_mana_potion_small,(437.00, 308.00),selected=Item_item_mana_potion_small
+mouse,SellButton,(502.00, 99.00),selected=Item_item_mana_potion_small
+mouse,CloseButton,(902.00, 99.00),selected=null
