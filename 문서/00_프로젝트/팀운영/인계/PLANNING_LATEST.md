@@ -1,3 +1,14 @@
+# PLANNING / 2026-11-10 — Chapter1 UNKNOWN4 최초 원화·게임 스프라이트 제작 계보 실물 추적
+
+- 바울 대표 요청으로 **최초 ChatGPT Library PNG 4장 직접 탐색·물리 materialize·SHA256 계산**, GitHub 최초 Sprite 등록 커밋 및 Codex #57 로컬 활성 Sprite SHA와 교차검증. 기존 UNKNOWN4를 별도 리뉴얼로 재제작 금지.
+- B2 세 몬스터 `monster_silent_echo`, `monster_seal_guardian`, `monster_silent_warden`는 **Library 2026-09-28 09:40 KST 최종 PNG 512×640 RGBA 세 장의 SHA256 = 현재 Unity 실사용 PNG SHA256 정확히 3/3 일치**. 최초 GitHub 등록 [`a393e5c6`](https://github.com/HappyPaul812/Project-Limitless/commit/a393e5c66be04715811bb757686bdb34e591f224), 2026-09-28 12:24 KST; 당시 Slicer 원본변경0 명시. Library `던전 B2 침묵의 파수꾼 설계도.png` 09-28 07:47 KST + `침묵의 수호자 픽셀 스프라이트 시트.png` 08:56 KST 컨셉 이력은 별도(최종시트와 SHA 혼동 금지).
+- `grass_slime`: Library `귀여운 숲 슬라임 16종 스프라이트 시트.png`, **2026-08-19 16:06 KST, 1254×1254 RGBA**, SHA256 `d07ea34216b1e2ff3ecbe1b8afb23d0bada56e5e944109fe8652602a59b21991`. 최초 GitHub [`139fba10`](https://github.com/HappyPaul812/Project-Limitless/commit/139fba10c70292d79145f72524f6867172df4774) **16:35 KST**에 1254 원화 우/하 +2px 투명Padding→1256 애니시트 16프레임 적용 사실을 문서화. 현행 Unity PNG SHA `1c422147f0a8fe7ee234e0ab771ab098ac32c44338d5efecc4f3f08a3174de34`; **2픽셀 편집차 때문에 SHA가 다름**, 실제 활성 PNG 1254² 영역 RGBA 픽셀 일치·추가 우/하 alpha=0 검사만 **LOCAL_PIXEL_CHECK_PENDING**.
+- **원본+읽기전용 확인 팩** `LIMITLESS_Ch1_Monster4_Original_Provenance_Evidence_20261110.zip` (4PNG/검증 Python/README, **6파일 / 2,765,032 bytes / SHA256 `773893c79511a398a08bd08a3575fd20cca4bd80fcbdb6f9d66a8f8f17103be4`**, ZIP CRC PASS) 대화 다운로드로 제공. GitHub 원격 바이너리 업로드0. Codex는 필요시 PC 로컬 `F:\Downloads` 원본이나 해당 ZIP과 현재 활성 이미지 4개를 읽기전용 비교.
+- 상세 기획 [`Chapter1_Monster4_UserDeclared_Provenance_Pending_20261110.md`](../../Chapter1_Monster4_UserDeclared_Provenance_Pending_20261110.md) 최신 commit `096f46a7976926174d93cbaded34fd811ec43c63`, docs/planning. **분류: B2 3종 USER_TEAM_ORIGINAL_SOURCE_SHA_CONFIRMED; slime USER_ORIGIN_SOURCE_FOUND / LOCAL_PIXEL_QA_PENDING; 기본펫 Wolf/Bear/Fox 3/3 ORIGINAL_CONFIRMED; 감사 범위 확정 외부 실사용 몬스터·펫0. 법적 권리 완전보장과 구별**.
+- Save/UserData/원본 Unity/Scene/Prefab/GUID/meta/현재 사용자 상태/로컬 main/원격 main 변경0. 기획 GitHub docs/planning 정본문서만 업데이트. 다음은 Codex **슬라임 변환 pixel diff 1종만 추가**, 이미 확인된 B2 3종/기존 Unity PASS 재검사 금지. PASS 후 Issue #57 분류만 별도 기록. 
+
+---
+
 # PLANNING / 2026-11-10 — Ch1 UNKNOWN 몬스터4 팀 제작 진술·Library 설계도 보강
 
 - 바울 대표의 “UNKNOWN들 우리가 만들건데, 문서화가 안됐구나? UNKNOWN들 니 라이브리리에도 있으니까 시간 날 때 찾아봐” 진술을 **기존 팀 제작·원본 보존을 요청하는 출처 근거**로 정리. 기존 `UNKNOWN` 4종(`grass_slime`, `monster_silent_echo`, `monster_seal_guardian`, `monster_silent_warden`)에 `USER_TEAM_ART_DECLARED` 별도 추가, 직접 최초 원화→현재 Unity PNG SHA 계보 검증 전에는 `ORIGINAL_CONFIRMED`로 승격 금지.
