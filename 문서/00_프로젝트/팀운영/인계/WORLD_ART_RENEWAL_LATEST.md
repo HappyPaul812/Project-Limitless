@@ -1,3 +1,12 @@
+## 2026-11-10 / Issue #97 Attack03 복귀 최종 국소 시도 — **v2 KEEP 권고, 수정 후보 1장 별도 보관** (최신)
+
+- 근거: [#97 최신 총괄 검수 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/97#issuecomment-6762248009) 및 [정식 실물/ZIP 비교 보고서](../../Renewal_20261110_Issue97_Attack03_LocalReturn_FinalReview_KEEP.md). `docs/art-renewal` **보고서 commit `ceded521a7e46f0cb95f09c8dd30933ffff0ef9d`**.
+- **고정 7프레임 보호:** Idle00/01/02/03, Attack00/02, **Attack01v2 KEEP**, 기존 Attack03v2 PNG 또한 원본 그대로. 바울 대표 승인 단일 v3 원화 SHA **`7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0`** 바이트 유지. 기존 Attack03 v2 SHA `4e93ef15bd26b8692f56f93aa97dd01434f3c995156704575c45f28e9da6ad0a`.
+- **신규 후보 1 PNG만** `VenomSnake_Attack03_HeadNeck_LOCAL_REVIEW_v3_512_RGBA.png` SHA **`a21c6a01b5a5facdec35509cd79b12fff5b6b04d686482f45745ab6a7aeab9d9`**. x>185/y<325 머리·목 국소 좌표 조정(최대 +5x,+8y), 하부 똬리 y>=325와 좌측 x<=185 픽셀 exact KEEP. 기존 v2 대비 RGBA 53,820픽셀 차이. 새 대형 독사 생성 이미지와 장식 비교판은 디자인 불일치로 탈락·납품 제외, 전체 새 원화 재작화 없음.
+- **실루엣 IoU 비교:** A02→A03 `0.726891→0.727948`, A03→Idle00 `0.820077→0.820179`. **미세 개선뿐으로 40/32px 자연스러운 모션 개선 입증 불가** → `ATTACK03_V2_KEEP_RECOMMENDED`; 사용자가 새 후보를 분명히 선택하기 전까지 v2 유지. **최종 애니메이션 미술 승인 아직 없음**. 128/40/32 실제 다운샘플 전후 보드, 4프레임 평균8FPS(120/130/120/130ms) Attack/Idle복귀 GIF.
+- **검증 ZIP** `LIMITLESS_VENOMSNAKE_ISSUE97_ATTACK03_LOCAL_REVIEW_20261110.zip` **1,563,927bytes / SHA256 `5bfb44b15b4eb70b5b7285afe9673e3199c6371428dc7bc094442cf376238bda` / 23entries / CRC PASS / Manifest21/21 SHA PASS**. ChatGPT Library **`/LIMITLESS_Art_Delivery/VenomSnake_Issue97_Attack03_FinalReview_20261110/`** 업로드 11항목(Zip/PNG/전후GIF/보드/QA) 확인, Windows F: 자동복사·Github 바이너리 Push0.
+- **다음:** #97 `USER_ANIM_APPROVAL_PENDING / NOT_UNITY_APPLIED`; 기존 32×32/4열/4fr/8FPS/`sourceFacesRight=0`와 우향 후보 PPU/Flip/Idle복귀는 승인 후 Unity6000.6.5f1 격리 QA 대상. `main` 직접 commit/Push/merge·Unity 원본/MonsterDefinition/AI·독/Drop/Save/UserData/기존 공식 아트 수정0. 추가 반복 수정 STOP, 다음 제작 큐 **#96 HP/MP 오리지널 회복약 소형 아이콘2**.
+
 ## 2026-11-10 / Issue #97 — VenomSnake Anim8 **Attack01·Attack03 두 프레임만 연속성 국소 보완 v2** (현재 최신)
 
 - [실물 v2 PNG·10FPS가 아닌 실제 평균8FPS GIF·SHA·CRC 검수 보고서](../../Renewal_20261110_Issue97_VenomSnake_Anim8_MotionContinuity_v2_Review.md), `docs/art-renewal` 실제 commit **`a2963135646ab28da6fe177e57d339f3d6debcd5`**. 근거: [#97 최신 총괄 실물 모션 QA](https://github.com/HappyPaul812/Project-Limitless/issues/97#issuecomment-6761585133). 기존 **바울 대표 승인 v3 원화 SHA `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0` BYTE_KEEP**.
