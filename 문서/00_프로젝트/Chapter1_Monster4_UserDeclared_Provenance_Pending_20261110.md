@@ -1,5 +1,7 @@
 # LIMITLESS / Chapter1 UNKNOWN 4종 오리지널 원본 제작 이력 추적 — 실제 라이브러리 PNG ↔ GitHub ↔ Unity
 
+> **최종 마감 / 2026-11-10 (후속 갱신)**: 아래 본문의 '슬라임 픽셀 검사 대기' 문구는 당시 작업 단계 기록입니다. 이후 [Codex Issue #57 최종 보고](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6765905198)에서 바울 대표가 **실제 사용 중인** `01_GrassSlime_Walk.png`를 보고 **“그래 이거야. 우리가 만든거야”**라고 팀 원본임을 직접 확인했습니다. 따라서 슬라임의 저작 주체 확인 결과 `ORIGINAL_CONFIRMED`로 승격되어 Ch1 잔여 7종 전체 `ORIGINAL_CONFIRMED_7_OF_7`, 기본 펫 3종 `ORIGINAL_CONFIRMED_3_OF_3`입니다. **사용자의 직접 원본 확인과 파일 변환 픽셀 검증은 다릅니다**: 예고했던 Library 원본 1254² ↔ 현행 1256² 1:1 픽셀 비교 및 우·하 투명 2px 전수검사는 실제로 `NOT_RUN`입니다. CODEX `codex/ch1-monster-provenance-final` 마감 문서 **로컬 commit `1c8f94c9c9a3241a651ed46fb0547e2bf7ed67d1`**, 제품/원본 local main 변경 0, GitHub 원격 Push 없음. ZIP은 실물 PC에 없었으므로 **입력 대기 조건 해제**, 재요청·재제작·반복 감사 불필요. Issue #57 `PROVENANCE_AUDIT_CLOSED`. 외부 몬스터·펫 실사용 확정 0(해당 감사 범위)이며 법적 독점 저작권 보증과는 별개입니다.
+
 작성일: **2026-11-10** · 담당: 총괄 기획 · 브랜치: `docs/planning` · 관련 [Issue #57](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6764431147)
 
 > **이번 추적 결론:** 네 종 모두 ChatGPT Library에서 **당시 제작 PNG 원본을 찾았음**. B2 세 종은 원본 라이브러리 PNG SHA256이 Codex가 검증한 **현재 Unity 실사용 Sprite PNG SHA256과 바이트 단위로 완전 동일**. 초원 슬라임은 1254 원본과 등록 커밋 및 1256 패딩 변환 절차를 연결했으며, **현재 Unity 1256 파일의 실제 픽셀 단위 동등성은 사용자 로컬에서 마지막 확인 필요**. 재제작·교체 대상 0.
