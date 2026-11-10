@@ -1,0 +1,24 @@
+PASS ImportedSheetsNoResizeOrClip
+PASS Field_Readability.ActualGameViewResolution.800
+PASS Field_Readability.NoCameraRTSubstitution.800
+PASS ActualFieldReadabilityPixels.32.33672.Resolution=(800, 450)
+PASS Field_Readability.ActualGameViewResolution.960
+PASS Field_Readability.NoCameraRTSubstitution.960
+PASS ActualFieldReadabilityPixels.38.80407.Resolution=(960, 540)
+PASS Battle.ExistingOpeningFinishedBeforeCapture
+PASS Battle.PlayerVisualTransferredByActualEncounterContract
+PASS Battle_VisibleIdle.ActualGameViewResolution.1280
+PASS Battle_VisibleIdle.NoCameraRTSubstitution.1280
+PASS Battle_VisibleAttack.ActualGameViewResolution.1280
+PASS Battle_VisibleAttack.NoCameraRTSubstitution.1280
+PASS ImpactMatchesUnchangedPresenter025ScaledSeconds.actual=0.2789764.startDelta=0.0154775
+PASS ActualVenomAfterImpact
+PASS ActualActionReturnsIdle
+PASS venom_bee.ActualIdlePlayback
+PASS venom_bee.ActualAttackPlayback
+PASS forest_spider.ActualIdlePlayback
+PASS forest_spider.ActualAttackPlayback
+PASS wolf.ApprovedPetRunReferenceAndFPSUnchanged
+PASS bear.ApprovedPetRunReferenceAndFPSUnchanged
+PASS fox.ApprovedPetRunReferenceAndFPSUnchanged
+PASS SupplementRuntimeErrorsZero

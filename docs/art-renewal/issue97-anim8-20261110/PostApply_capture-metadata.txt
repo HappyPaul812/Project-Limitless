@@ -1,0 +1,4 @@
+Field_Readability|800x450|UnityEditor.GameView.RenderView|batch=True|camera=(-1.61, -1.50, -10.00)|ortho=5|screen=800x450|overlayCanvases=7
+Field_Readability|960x540|UnityEditor.GameView.RenderView|batch=True|camera=(-1.61, -1.50, -10.00)|ortho=5|screen=960x540|overlayCanvases=7
+Battle_VisibleIdle|1280x720|UnityEditor.GameView.RenderView|batch=True|camera=(0.00, 0.00, -10.00)|ortho=5|screen=1280x720|overlayCanvases=2
+Battle_VisibleAttack|1280x720|UnityEditor.GameView.RenderView|batch=True|camera=(0.00, 0.00, -10.00)|ortho=5|screen=1280x720|overlayCanvases=2

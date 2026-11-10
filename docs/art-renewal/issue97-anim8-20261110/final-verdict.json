@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "basePassed": 61,
+  "supplementPassed": 24,
+  "runtimeErrors": 0,
+  "supersededHarnessAssertion": "FullChecks_FirstRun BasicAttackImpactPreserved .23 realtime lower bound invalid with RenderView delta; replaced by scaled-time .25s Presenter contract and warm-up yields",
+  "notProductFailure": true
+}

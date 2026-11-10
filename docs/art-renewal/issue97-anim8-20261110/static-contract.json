@@ -1,0 +1,11 @@
+{
+  "nonvisualDefinitionIdentical": true,
+  "definitionMetaGUIDIdentical": true,
+  "sourcePixelEquality": "8/8",
+  "oldWidthWU": 0.71875,
+  "newWidthWU": 0.71859375,
+  "newIdleContactYRangeWU": [
+    -0.49382812500000006,
+    -0.46101562500000004
+  ]
+}

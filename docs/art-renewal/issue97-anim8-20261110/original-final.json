@@ -1,0 +1,17 @@
+{
+  "version": "6000.6.5f1",
+  "frameFactory8": true,
+  "compiledApprovedTimingIds": [
+    "venom_bee",
+    "forest_spider",
+    "venom_snake"
+  ],
+  "fps": 8,
+  "right": true,
+  "scale": 1.05,
+  "scene": "F:/study/codex/Project-Limitless/Temp/Main22FirstPlayable20261021/Worktree/Unity/Client/Assets/_Project/Scenes/Bootstrap.unity",
+  "dirty": false,
+  "playing": false,
+  "compiling": false,
+  "selection": null
+}

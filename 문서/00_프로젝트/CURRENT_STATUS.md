@@ -1,3 +1,15 @@
+## 2026-11-10 Issue #97 — 맹독뱀 승인8프레임 실제 로컬 게임 반영
+
+**VENOMSNAKE_ANIM8 / UNITY_QA_PASS / LOCAL_ORIGINAL_APPLIED / USER_REALPLAY_REVIEW_PENDING / REMOTE_NOT_PUSHED**
+
+- 승인 기본6장+Continuity_v2 Attack01/03를 무손실640셀 4열 시트2개로 연결했습니다. 기존 표시 폭·GUID/meta·비시각 데이터 보존, 뱀의 승인 공격 완료 대기만 추가했습니다. 미채택 Attack03/F2/NPC 적용0.
+- Unity6000.6.5f1 실제 Field_02·Battle 기본61+보완24 PASS. Idle4/Attack4 8FPS·Idle 복귀·방향/접지·32/39px GameView·실제 맹독/쿨다운·Bee/Spider·펫 참조 PASS. 원본 반영 후 동일6파일 복제본 재실행24 PASS, 원본 Import/컴파일/프레임8/ConsoleError0 확인. 원본 Scene/Play/포커스 보존.
+- 구현 **`485a8dffad37c02ffcef67ee9abd4ec92a3bdefe`**, 별도 `codex/venomsnake-anim8-unity-20261110` → 로컬 main ff-only 적용. 보호3921 SHA변경0, 사용자dirty302/untracked550·Save/UserData·승인아트·Packages/BuildSettings 보존. main직접commit/원격Push·Merge0.
+- [상세·최종8장 SHA·GUID·실제캡처5장](../../docs/art-renewal/issue97-anim8-20261110/REPORT.md). 다음: 바울 대표가 원본 새 Play에서 **Field_02 맹독뱀 접촉→Battle** 최종 수용 확인. 기술HOLD 없음. 문서 포함 최종main SHA는 #97 댓글/Temp/Issue97/Evidence/final-result.json 참조.
+- 기존 #75 B/C 원본 미적용 및 HP·MP 상점 아이콘 HOLD는 유지합니다.
+
+---
+
 ## 2026-11-10 — F2·맹독뱀 ZIP 검토 / 시작마을 상점 물약 아이콘 HOLD
 
 **F2_BENDSNOW_REVIEW_DONE / VENOMSNAKE_REVIEW_DONE / STARTERVILLAGE_SHOP_ICON_REPLACEMENT_HOLD / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.

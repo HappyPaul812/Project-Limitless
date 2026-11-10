@@ -1,0 +1,18 @@
+[
+  {
+    "path": "F:/Downloads/Limitless_Sprites/VenomSnake_Anim8_Issue97_DELIVERY_ONLY.zip",
+    "sha256": "07f5922d89078b869b95abcb165a3f66355cc49a9ea63667f631c438bad74256",
+    "entries": 39,
+    "crc": "PASS",
+    "sums": 37,
+    "manifest": 37
+  },
+  {
+    "path": "F:/Downloads/VenomSnake_Continuity_v2_2POSE_SMALL.zip",
+    "sha256": "9a6b0315fd66eb8a66992085c4a7bbcfb7558759e00dab9a3de54050efe3cc73",
+    "entries": 16,
+    "crc": "PASS",
+    "sums": 14,
+    "manifest": 14
+  }
+]

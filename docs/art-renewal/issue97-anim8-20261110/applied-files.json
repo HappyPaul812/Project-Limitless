@@ -1,0 +1,26 @@
+[
+  {
+    "file": "Unity/Client/Assets/_Project/Resources/MonsterAnimations/Snake/VenomSnake_Attack4_Approved97_640cell.png",
+    "sha256": "56a2b17d0110ee22a041acba31424ff35c7f53e5c46c67a41a441eef109c25f5"
+  },
+  {
+    "file": "Unity/Client/Assets/_Project/Resources/MonsterAnimations/Snake/VenomSnake_Attack4_Approved97_640cell.png.meta",
+    "sha256": "86ecbdac9abbc82dc07b908873684f86f313ce52e52c2bf8837a95b4e73dfc6b"
+  },
+  {
+    "file": "Unity/Client/Assets/_Project/Resources/MonsterAnimations/Snake/VenomSnake_Idle4_Approved97_640cell.png",
+    "sha256": "093dd8fe7e3e25d9415737d7c793aad0ab94a07385b034b16cb3d4e7657d7ed4"
+  },
+  {
+    "file": "Unity/Client/Assets/_Project/Resources/MonsterAnimations/Snake/VenomSnake_Idle4_Approved97_640cell.png.meta",
+    "sha256": "6d4effb9fc98c9939761e2718b67d28d2ed3d0dd26117810200872223c4d6f74"
+  },
+  {
+    "file": "Unity/Client/Assets/_Project/Resources/MonsterDefinitions/04_VenomSnake.asset",
+    "sha256": "5a49b6623cc010e6c6dd4fc82fb87d49798146f23dbae282ec3d399c59d4f67f"
+  },
+  {
+    "file": "Unity/Client/Assets/_Project/Scripts/Monster/MonsterSpriteSheetAnimation.cs",
+    "sha256": "8241eb508916820dc32bf7f3933e9142feec41baa39c73ff6338d1395ca2963b"
+  }
+]

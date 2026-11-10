@@ -1,0 +1,122 @@
+[
+  {
+    "zip": "F:/Downloads/Limitless_Sprites/VenomSnake_Anim8_Issue97_DELIVERY_ONLY.zip",
+    "file": "Frames_512/VenomSnake_Attack00_512_RGBA.png",
+    "sha256": "cb485208e5ab663ac7872ae4d496af466bd155684b5ae92651907b665b777d2c",
+    "size": [
+      512,
+      512
+    ],
+    "bbox": [
+      16,
+      39,
+      463,
+      490
+    ]
+  },
+  {
+    "zip": "F:/Downloads/Limitless_Sprites/VenomSnake_Anim8_Issue97_DELIVERY_ONLY.zip",
+    "file": "Frames_512/VenomSnake_Attack02_512_RGBA.png",
+    "sha256": "db3369eb1ba733f25a84fd373e598f5ab6f926c23b09a3e1e7a5dba9ba582efa",
+    "size": [
+      512,
+      512
+    ],
+    "bbox": [
+      16,
+      76,
+      489,
+      487
+    ]
+  },
+  {
+    "zip": "F:/Downloads/Limitless_Sprites/VenomSnake_Anim8_Issue97_DELIVERY_ONLY.zip",
+    "file": "Frames_512/VenomSnake_Idle00_512_RGBA.png",
+    "sha256": "ab03751c9ab91569c56dbb775730829a63e5c7d61f99ce29b349d63e2694fcac",
+    "size": [
+      512,
+      512
+    ],
+    "bbox": [
+      34,
+      40,
+      472,
+      473
+    ]
+  },
+  {
+    "zip": "F:/Downloads/Limitless_Sprites/VenomSnake_Anim8_Issue97_DELIVERY_ONLY.zip",
+    "file": "Frames_512/VenomSnake_Idle01_512_RGBA.png",
+    "sha256": "d60e3f25c6acb2c359e0fa1452489ac731afe32f7e1669f9952c9582272e51da",
+    "size": [
+      512,
+      512
+    ],
+    "bbox": [
+      37,
+      21,
+      473,
+      493
+    ]
+  },
+  {
+    "zip": "F:/Downloads/Limitless_Sprites/VenomSnake_Anim8_Issue97_DELIVERY_ONLY.zip",
+    "file": "Frames_512/VenomSnake_Idle02_512_RGBA.png",
+    "sha256": "710463c54fe6484fc12393fe7f571597ccd38ccfb68e1d17e79508146a1da420",
+    "size": [
+      512,
+      512
+    ],
+    "bbox": [
+      31,
+      31,
+      479,
+      487
+    ]
+  },
+  {
+    "zip": "F:/Downloads/Limitless_Sprites/VenomSnake_Anim8_Issue97_DELIVERY_ONLY.zip",
+    "file": "Frames_512/VenomSnake_Idle03_512_RGBA.png",
+    "sha256": "ffb2cec3a2d7c6327c7f584dd675befcf4052b898cdad4c045331e9bbf976258",
+    "size": [
+      512,
+      512
+    ],
+    "bbox": [
+      42,
+      21,
+      482,
+      479
+    ]
+  },
+  {
+    "zip": "F:/Downloads/VenomSnake_Continuity_v2_2POSE_SMALL.zip",
+    "file": "Candidates_ChangedOnly/VenomSnake_Attack01_Continuity_v2_512_RGBA.png",
+    "sha256": "7caeb3e9f622dc2e5567233ef5c52b7303b6f85dbe8621cb2ff68dc97984db2c",
+    "size": [
+      512,
+      512
+    ],
+    "bbox": [
+      38,
+      10,
+      487,
+      505
+    ]
+  },
+  {
+    "zip": "F:/Downloads/VenomSnake_Continuity_v2_2POSE_SMALL.zip",
+    "file": "Candidates_ChangedOnly/VenomSnake_Attack03_Continuity_v2_512_RGBA.png",
+    "sha256": "4e93ef15bd26b8692f56f93aa97dd01434f3c995156704575c45f28e9da6ad0a",
+    "size": [
+      512,
+      512
+    ],
+    "bbox": [
+      25,
+      66,
+      479,
+      446
+    ]
+  }
+]

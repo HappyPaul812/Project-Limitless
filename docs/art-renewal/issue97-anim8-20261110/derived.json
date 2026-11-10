@@ -1,0 +1,12 @@
+[
+  {
+    "file": "Unity\\Client\\Assets\\_Project\\Resources\\MonsterAnimations\\Snake\\VenomSnake_Idle4_Approved97_640cell.png",
+    "guid": "3c8f42044c3641a39e7ad1bd97cfe032",
+    "sha256": "093dd8fe7e3e25d9415737d7c793aad0ab94a07385b034b16cb3d4e7657d7ed4"
+  },
+  {
+    "file": "Unity\\Client\\Assets\\_Project\\Resources\\MonsterAnimations\\Snake\\VenomSnake_Attack4_Approved97_640cell.png",
+    "guid": "0614bfb33b3840e7ae4ef02a33cb1f5d",
+    "sha256": "56a2b17d0110ee22a041acba31424ff35c7f53e5c46c67a41a441eef109c25f5"
+  }
+]
