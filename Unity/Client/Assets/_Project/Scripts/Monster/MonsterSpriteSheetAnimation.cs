@@ -36,7 +36,9 @@ namespace ProjectLimitless.Monster
 
         // 비활성화/파괴·피격/사망으로 공격이 끝나면 연출 완료 대기도 즉시 풀립니다.
         // 승인 연결 대상만 대기하여 다른 몬스터의 기존 시간을 보존합니다.
-        public bool UsesApprovedAttackTiming => definition != null && (definition.MonsterId == "venom_bee" || definition.MonsterId == "forest_spider");
+        // 승인된 맹독뱀 4프레임도 0.5초를 끝까지 재생한 뒤 Idle로 복귀합니다.
+        // 피해·독 부여 시점은 기존 Presenter가 유지하며, 다른 몬스터의 재생 계약은 바꾸지 않습니다.
+        public bool UsesApprovedAttackTiming => definition != null && (definition.MonsterId == "venom_bee" || definition.MonsterId == "forest_spider" || definition.MonsterId == "venom_snake");
 
         public bool IsAttackPlaying => isActiveAndEnabled && attacking && !defeated;
 

@@ -24,17 +24,17 @@ MonoBehaviour:
   fieldSprite: {fileID: 0}
   fieldAnimatorController: {fileID: 0}
   visualSize: {x: 0.9, y: 0.75}
-  idleSpriteSheet: {fileID: 2800000, guid: 4eebc05f001d494daecb632a39bcfb95, type: 3}
-  idleFrameSize: {x: 32, y: 32}
+  idleSpriteSheet: {fileID: 2800000, guid: 3c8f42044c3641a39e7ad1bd97cfe032, type: 3}
+  idleFrameSize: {x: 640, y: 640}
   idleColumns: 4
   idleFrameCount: 4
-  attackSpriteSheet: {fileID: 2800000, guid: 4eebc05f001d494daecb632a39bcfb95, type: 3}
-  attackFrameSize: {x: 32, y: 32}
+  attackSpriteSheet: {fileID: 2800000, guid: 0614bfb33b3840e7ae4ef02a33cb1f5d, type: 3}
+  attackFrameSize: {x: 640, y: 640}
   attackColumns: 4
   attackFrameCount: 4
   animationFramesPerSecond: 8
-  visualScale: 1
-  sourceFacesRight: 0
+  visualScale: 1.05
+  sourceFacesRight: 1
   battleAttackPercent: 160
   basicAttackPoisonActions: 3
   basicAttackPoisonCooldownActions: 2
