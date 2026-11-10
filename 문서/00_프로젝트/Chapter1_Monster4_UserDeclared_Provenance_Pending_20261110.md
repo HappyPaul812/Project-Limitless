@@ -1,25 +1,53 @@
-# LIMITLESS / Chapter1 기존 몬스터 4종 제작 출처 기록 — 대표 진술·라이브러리 설계도 대조 (2026-11-10)
+# LIMITLESS / Chapter1 UNKNOWN 4종 오리지널 원본 제작 이력 추적 — 실제 라이브러리 PNG ↔ GitHub ↔ Unity
 
-- 발단: [Issue #57 Codex 7몬스터+3기본펫 읽기 전용 감사](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6764431147). 실제 Unity PNG·GUID/fileID·Spawn·SHA 검사 결과 Chapter1 잔여 7종 중 3종 ORIGINAL_CONFIRMED, 4종 UNKNOWN, 기본 펫 Wolf/Bear/Fox 3종 ORIGINAL_CONFIRMED. 현재 실사용 THIRD_PARTY_ACTIVE로 **확정된 종은 0종**. 이는 UNKNOWN 4종의 독자 제작/법적 권리 전체 보증이 아니다.
-- **사용자 2026-11-10 추가 직접 진술**: “UNKNOWN들 우리가 만들건데, 문서화가 안됐구나? UNKNOWN들 니 라이브리리에도 있으니까 시간 날 때 찾아봐.. 몬스터들 펫들 중에는 남의 애셋은 이제 없는거지?” 문맥상 기존 4종을 팀에서 만든 자산으로 지목한 출처 보강 요청. 작성자 의도(과거 직접 제작/협업 제작)는 **USER_STATED_TEAM_ART**로 기록하되, 최초 생성 파일과 현재 Unity PNG 사이의 SHA/수정과정 역추적 전에는 Codex 기술 감사의 **UNKNOWN → ORIGINAL_CONFIRMED 자동 승격 금지**. **신규 제작 필요 확정0, 기존 공식 PNG 보호**.
-- **라이브러리에서 추가 확인**: “던전 B2 침묵의 파수꾼 설계도.png” (Dungeon_01 B2 설계도(안)) 이미지에는 *침묵의 잔영*, *봉인 수호체*, *침묵의 파수꾼* 3종의 콘셉트·전투 128x128 프레임 예시·스펙이 함께 포함됨. 파일은 기존 팀 설계·제작 과정의 **시각적 정황**으로 분류하며, 현행 Unity 3개 스프라이트시트의 **원본 SHA 동일성/출처 선언 증거 자체는 아님**. `Codex_Dungeon01_B2_Implementation_Prompt.txt`에도 세 종 관련 B2 구현 기획 기록 존재(원화 직접 저작 증명 아님). `grass_slime` 최초 독립 디자인 원본 파일 직접 일치 자료는 이번 라이브러리 검색에서 아직 확인 못함.
-- 감사 최신 정본의 나머지 3종 `monster_moss_beetle`, `monster_shade_bat`, `monster_grave_wight`는 [문서/08_몬스터/README.md](https://github.com/HappyPaul812/Project-Limitless/blob/main/문서/08_몬스터/README.md)의 **사용자 직접 제작·수정/내부 공식** 명시 및 현행 SHA 일치로 ORIGINAL_CONFIRMED. Wolf/Bear/Fox는 기존 공식 Run6 v5/v4/v7과 Unity 실사용 SHA 일치 확인. 독침벌·숲거미·맹독뱀은 이후 공식 교체·Local Unity 적용 실적 존재(관련 #63/#90/#93/#97). Chapter2 11~18은 정식 보호자산(기존 #57 범위)이며 전체 외부 자산 저작권 법률 검증과 별개.
+작성일: **2026-11-10** · 담당: 총괄 기획 · 브랜치: `docs/planning` · 관련 [Issue #57](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6764431147)
 
-## 감사상 UNKNOWN4 상세 기록
+> **이번 추적 결론:** 네 종 모두 ChatGPT Library에서 **당시 제작 PNG 원본을 찾았음**. B2 세 종은 원본 라이브러리 PNG SHA256이 Codex가 검증한 **현재 Unity 실사용 Sprite PNG SHA256과 바이트 단위로 완전 동일**. 초원 슬라임은 1254 원본과 등록 커밋 및 1256 패딩 변환 절차를 연결했으며, **현재 Unity 1256 파일의 실제 픽셀 단위 동등성은 사용자 로컬에서 마지막 확인 필요**. 재제작·교체 대상 0.
 
-| ID | 현재 Unity 실사용 PNG | 현재 파일 SHA256 (Codex 감사) | 출처 상태 |
-|---|---|---|---|
-| `grass_slime` | `01_GrassSlime_Walk.png` | `1c422147f0a8fe7ee234e0ab771ab098ac32c44338d5efecc4f3f08a3174de34` | 사용자 팀 제작 진술 / 생성본 1254→1256 padding 기록 / 최초 생성 경로·SHA 대응 미확인 |
-| `monster_silent_echo` | `MonsterSheets/Silent_Echo_128x128_Sprite_Sheet.png` | `1097c2268baca8b51435edb845dcc2f459aee601a799c47c34e17c87a711ddb4` | 사용자 팀 제작 진술 / 라이브러리 B2 설계도 시각정황 / 직접 sprite sheet 원본·SHA 계보 미확인 |
-| `monster_seal_guardian` | `MonsterSheets/Seal_Guardian_128x128_Sprite_Sheet.png` | `8ec559c56d2d814e5acb3dda45c928f1ad06302f7754b43fb5bc96e95e9b02fc` | 사용자 팀 제작 진술 / 라이브러리 B2 설계도 시각정황 / 직접 sprite sheet 원본·SHA 계보 미확인 |
-| `monster_silent_warden` | `MonsterSheets/Silent_Warden_128x128_Sprite_Sheet.png` | `97ef560e9258cbc17345ae51c017e9e113c1d840515e205698214f444a53e656` | 사용자 팀 제작 진술 / 라이브러리 B2 설계도 시각정황 / 직접 sprite sheet 원본·SHA 계보 미확인 |
+## 1. 4종 라이브러리 실물 확인 결과
 
-## 실행 정책
+다음 SHA256은 2026-11-10에 **ChatGPT Library 원본 PNG를 실제 바이트로 materialize하여 해시를 직접 계산**한 값. 보관/업로드 시각은 Library 파일의 등록시각으로, 초기 생성 시작시각과 같다고 단정하지 않음. 한국시각 KST(UTC+9) 표기.
 
-1. **몬스터·펫 외부 실사용 확정 목록: 없음** (`THIRD_PARTY_ACTIVE_CONFIRMED=0` in scoped audit). 외부 사용이 **전혀 없다**는 완전 출처 증명과 구별.
-2. 위 4개 기존 PNG는 **교체·재생성 대상이 아님**. `OWNER_TEAM_CREATED_ASSERTED / ORIGINAL_SHA_LINEAGE_PENDING / CURRENT_GAME_ART_KEEP`. 신규 그림 생성보다 원본 아트 생성 채팅·라이브러리 파일·편집/시트 출력 과정을 추적하여 최종 SHA 계보를 증빙할 것.
-3. 향후 Codex는 **읽기 전용**으로 원본 파일의 최초 작성·편집 경로, 원화 ZIP/개별PNG, SHA, 원본→최종시트 변환/수정기록을 대조한 뒤에만 4개 상태를 승격할 것. 마우스/유니티/Save/UserData와 실제 원본 편집 불필요. 라이브러리 설계도 그림만으로 원본 바이트 동일 주장 금지.
-4. `ThirdParty` 폴더에 **보관만 된** 파일과 실제 런타임 참조는 구분. 기존 다른 비오리지널 자산(NPC/상점 아이콘/VFX)은 이번 몬스터·펫 범위 밖이므로 게임 전체 자산 100% 오리지널이라고 선언 금지.
-5. 이 문서는 `docs/planning`에서 제작 출처 기록을 보강하는 **문서 전용**. Unity Scene/Prefab/MonsterDefinition/아트·GUID/meta/Save/UserData/원본 로컬 main/원격 main 변경 없음.
+| 몬스터 | 라이브러리 원본 PNG 이름 | Library 등록 시각(KST) | 라이브러리 원본 SHA256 | Codex 활성 Unity PNG SHA256 | 동일 여부 |
+|---|---|---|---|---|---|
+| `grass_slime` | `귀여운 숲 슬라임 16종 스프라이트 시트.png` | **2026-08-19 16:06:30** | `d07ea34216b1e2ff3ecbe1b8afb23d0bada56e5e944109fe8652602a59b21991` | `1c422147f0a8fe7ee234e0ab771ab098ac32c44338d5efecc4f3f08a3174de34` | **규격/변환 경로 확인, 픽셀 1:1 실파일 대조 PENDING**. 원본 1254² → 투명 여백 2px 우·하 추가한 현재 1256²; 변환이므로 PNG SHA 불일치 정상 |
+| `monster_silent_echo` | `Silent_Echo_128x128_Sprite_Sheet.png` | **2026-09-28 09:40:31** | `1097c2268baca8b51435edb845dcc2f459aee601a799c47c34e17c87a711ddb4` | **동일 SHA** | **BYTE_EXACT_PASS** |
+| `monster_seal_guardian` | `Seal_Guardian_128x128_Sprite_Sheet.png` | **2026-09-28 09:40:34** | `8ec559c56d2d814e5acb3dda45c928f1ad06302f7754b43fb5bc96e95e9b02fc` | **동일 SHA** | **BYTE_EXACT_PASS** |
+| `monster_silent_warden` | `Silent_Warden_128x128_Sprite_Sheet.png` | **2026-09-28 09:40:36** | `97ef560e9258cbc17345ae51c017e9e113c1d840515e205698214f444a53e656` | **동일 SHA** | **BYTE_EXACT_PASS** |
 
-**현재 판정:** `THIRD_PARTY_ACTIVE_CONFIRMED_0 / CH1_ORIGINAL3_UNKNOWN4 / PET3_ORIGINAL_CONFIRMED / USER_TEAM_ORIGIN_DECLARATION_CAPTURED / 4_PROVENANCE_LINKS_PENDING / REMAKE_NOT_NEEDED`.
+- B2 세 시트 실물: 모두 **512×640 RGBA, 128×128 × 4열×5행**, 4/4/4/2/4 프레임 구조.
+- Slime 원본 실물: **1254×1254 RGBA, 4×4**. 사용자의 원본이 **동일 1254² → 1256² 변환**된 사실은 당시 게임 구현 문서가 기술함.
+- 라이브러리의 추가 시각증거: `던전 B2 침묵의 파수꾼 설계도.png` Library 등록 **2026-09-28 07:47:25 KST** — 침묵의 잔영/봉인 수호체/침묵의 파수꾼의 외형·128px 애니메이션 설계·보스 기획이 담겨 있음. `침묵의 수호자 픽셀 스프라이트 시트.png` **08:56:56 KST**에 보관(1491×1055 RGBA)된 선행 시안도 존재하지만, 이는 **현재 B2 세 장과 SHA 동일한 최종 시트가 아니므로 원본 바이트 증명으로 사용하지 않음**.
+
+## 2. GitHub 최초 등록 커밋 및 생성→게임 연결 경로
+
+### grass_slime
+1. `2026-08-19 16:06 KST` 원본 `귀여운 숲 슬라임 16종 스프라이트 시트.png` Library 보관 (1254² RGBA).
+2. [`ce32537`](https://github.com/HappyPaul812/Project-Limitless/commit/ce32537ad3d628d735323eed57333580e512b91b) **2026-08-19 16:22 KST**: 슬라임 아트·애니메이션 디렉터리와 `ASSET_REQUIREMENTS.md` 준비. 지침에 “사용자 수동 수정 PNG를 최우선 원본으로 취급.”
+3. [`139fba10`](https://github.com/HappyPaul812/Project-Limitless/commit/139fba10c70292d79145f72524f6867172df4774) **2026-08-19 16:35 KST**: `Unity/Client/Assets/_Project/Art/Monsters/01_GrassSlime/01_GrassSlime_Walk.png` 실제 최초 등록, `.meta`, `GrassSlimeAnimationBuilder.cs`, Animator8 및 MonsterDefinition 연결.
+4. [당시 구현문서 `첫_몬스터_초원_슬라임.md`](https://github.com/HappyPaul812/Project-Limitless/blob/139fba10c70292d79145f72524f6867172df4774/문서/08_몬스터/첫_몬스터_초원_슬라임.md)에 **“사용자가 제공한 4×4 방향별 Sprite 시트”**, **“원본 1254×1254 이미지는 그림 크기를 바꾸지 않고 오른쪽과 아래에 각각 2픽셀의 투명 Padding을 추가하여 1256×1256”** 명시. 314×314 각 셀, 행 Down/Left/Right/Up; Idle4 + Walk4(6FPS).
+5. Codex Issue #57 2026-11-10 실제 스폰/Animator/현행 PNG 해시 확인. **마지막 미완: 실제 PC 현재 PNG의 1254² 상단 좌측 모든 RGBA 픽셀 = Library 원본, 추가 우/하 2px RGBA=0인지 확인**.
+
+### monster_silent_echo / monster_seal_guardian / monster_silent_warden
+1. Library **2026-09-28 07:47 KST** B2 디자인 설계도; **09:40 KST** 세 최종 시트 원본 보관.
+2. [`a393e5c6`](https://github.com/HappyPaul812/Project-Limitless/commit/a393e5c66be04715811bb757686bdb34e591f224) **2026-09-28 12:24 KST**: 세 최종 PNG 원본을 `Unity/Client/Assets/_Project/Resources/MonsterSheets/`에 등록, `08_SilentEcho.asset`/`09_SealGuardian.asset`/`10_SilentWarden.asset` 및 `.meta`/몬스터 스폰/씬/에디터 `Dungeon01B2SpriteSlicer.cs` 함께 작성.
+3. `Dungeon01B2SpriteSlicer.cs`는 **사용자 원본 PNG를 변경하지 않고**, Importer의 128×128 Sprite Rect만 등록하도록 코드 주석·실제 구현에 기록.
+4. [`5f122a2`](https://github.com/HappyPaul812/Project-Limitless/commit/5f122a2d1c8b4e659a40ca6de5cbd4340a4d51a1) 당시 CURRENT_STATUS: “최종 PNG 4개를 원본 그대로 등록하고 128×128 Sprite Slice” (세 몬스터+전투 아이콘).
+5. Codex Issue #57 실사용 Resource GUID / explicit Idle·Walk·Attack·Hit·Defeat Sprite 연결 / 현재 PNG SHA 확인. **원본 Library PNG 세 장은 활성 Unity 이미지 SHA와 3/3 모두 동일**.
+
+## 3. 분류 업데이트 / 저작권 설명
+
+- 바울 대표 직접 진술: 네 몬스터가 **우리 팀에서 제작한 것**, 과거 문서화가 누락됐을 수 있다는 취지. 세 B2 개별 PNG는 프로젝트 이전 생성·Library 보관→원본 등록 커밋→현재 Unity **3중 바이트 계보 입증**. **B2 세 종 내부 아트 출처 `USER_TEAM_ORIGINAL_CONFIRMED_WITH_SOURCE_SHA`**로 관리 가능.
+- Slime은 **`USER_SUPPLIED_ORIGIN_FOUND / GIT_TRANSFORM_DOCUMENTED / LOCAL_PIXEL_CONFIRM_PENDING`**. 최초 원화 파일과 당시 편집 방법, 최종 활성 이미지 위치까지 연결됐지만 PNG 포맷·압축 방식 차이와 2픽셀 padding 때문에 직접 SHA 비교는 부적절. 로컬 pixel diff PASS시 **`USER_TEAM_ORIGINAL_TRANSFORM_CONFIRMED`**로 승격.
+- 상기 근거는 **사용자가 제공한 독창적 게임 아트라는 내부 제작 계보** 확인용. 제3자 캐릭터의 모방/권리 침해 없음·독점 라이선스 등의 법적 보증과 구별. 외부 실사용 확정0은 Codex의 **이 감사 범위** 내 결과이며 전체 게임의 NPC/아이콘/VFX까지 포함하지 않음.
+- 리뉴얼/재제작 작업0, 사용자 승인 기존 4종 Sprite 및 GUID/meta 절대 변경 금지. 기본 펫 Wolf/Bear/Fox는 기존 3/3 ORIGINAL_CONFIRMED, 다른 공식 몬스터도 종전 상태 보호.
+
+## 4. 재현 가능한 읽기 전용 원본 증거 팩
+
+- 생성 파일명: `LIMITLESS_Ch1_Monster4_Original_Provenance_Evidence_20261110.zip` (이 채팅 샌드박스에서 제작; GitHub 바이너리 Push **없음**).
+- ZIP 크기 **2,765,032 bytes**, SHA256 **`c0e3d7fc791014617cc7c7566f0649162a70a8b723249756bc2ae4a2f1c4829e`**, CRC PASS. 원본4 PNG + `verify_ch1_provenance.py` 읽기전용 검증 스크립트 + `README_4MONSTERS.md`, 총6파일.
+- 사용자 PC의 ZIP을 Codex가 받아 쓰거나, 원본 파일 4개가 이미 로컬에 있으면 그 SHA를 대조해 복제할 것. 검증 스크립트는 **B2 세 파일 SHA 바이트 동일/슬라임 패딩 RGBA 픽셀 동일**을 실제 로컬에서 확인. `conda activate py3_12` / Pillow.
+- 검증 실패 시 원본변경0·신규 아트0·실제 diff 및 SHA만 보고. 기존 Unity Play QA/Save/원본 Git 변경 필요 없음. `main` 직접 commit/Push/merge 금지.
+- **2026-11-10 이 ChatGPT 작업은 실제 로컬 Unity 파일 접근 없이 Library·GitHub 정본만 확인함**. `LOCAL_SLIME_PIXEL_QA_NOT_RUN`을 PASS로 표현 금지.
+
+**현재 확정 상태:** `ORIGINAL_LIBRARY_SOURCES_FOUND_4_OF_4 / B2_SOURCE_SHA_EXACT_3_OF_3 / SLIME_ORIGIN_GIT_PAD_TRANSFORM_DOCUMENTED / SLIME_LOCAL_PIXEL_CHECK_PENDING / CONFIRMED_EXTERNAL_ACTIVE_0_WITHIN_AUDIT_SCOPE / REMAKE_REQUIRED_0`.
