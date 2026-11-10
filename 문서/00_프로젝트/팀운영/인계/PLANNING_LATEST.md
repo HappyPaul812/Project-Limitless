@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-10 오후 — 리뉴얼 우선순위 바로잡음: VenomSnake v3 애니메이션 시트 제작
+
+- 바울 대표 지적 **“NPC 2종도 이미 제작 안 하고 맹독뱀 작업했고 뱀은 애니메이션 시트는 안 만드니?”**. 기획 오류: **맹독뱀 원화 단일포즈 최종 승인!=전투 애니메이션 완성**, 즉시 [신규 Issue #97](https://github.com/HappyPaul812/Project-Limitless/issues/97)을 열어 **기승인 v3 원화로 Idle4+Attack4 실제 8프레임/4×2 SpriteSheet** 제작을 최우선 발주.
+- GitHub 원격 `04_VenomSnake.asset` 현재 Idle/Attack 모두 동일 GUID 구형 시트, 각각 32×32/4열/4프레임/8FPS. 새로운 시트는 승인 v3 원본 SHA `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0` 보존, 새로운 타격 실루엣/호흡 8프레임 128/40/32 동배율 비교, 사용자 새 애니 미술 승인 후 Unity6000.6.5f1 격리 연결. 게임 씬/MonsterDefinition/AI·독·Save/main 변경0.
+- [#43 맹독뱀 단계 정정](https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6759884999). **#95 NPC**에는 512 마스터 PNG2 리뉴얼 납품 **기록**이 있으나 **실제 게임 NPC 적용·사용자 승인 아님**. 바울 대표의 의도에 따라 추가 NPC 제작/적용을 당장 진행하지 않고 [#95 경계 정정](https://github.com/HappyPaul812/Project-Limitless/issues/95#issuecomment-6759885709). #96 기존 HP/MP 원본 NOT_FOUND이며 128² 오리지널2 제작 대기, [#96 우선순위](https://github.com/HappyPaul812/Project-Limitless/issues/96#issuecomment-6759886339).
+- 리뉴얼 작업 순서 **#97 뱀 애니 실제 시트 → #96 작은 HP/MP 그림 2 → #95 납품된 NPC 두 후보의 사용자 검토·실규격 적용**. 메인 아트 #75 F2 GameEdge는 별도 아트 승인·Unity QA 보류. 이슈 지시로 파일이 자동 제작되었다고 주장하지 않음. Unity6000.6.5f1/Save/UserData/미커밋/승인아트 보호, 담당 `docs/art-renewal`, main 직접커밋·원격Push/merge 금지.
+
+---
+
 # PLANNING / 2026-11-10 13:53 — Snake KEEP 실물·F2 GameEdge v1 검수, HP·MP2 신규 아트 발주, NPC2 기납품 확인
 
 - 바울 대표 전달 F: `LIMITLESS_VENOMSNAKE_ISSUE43_KEEP_NOCHANGE_20261110.zip`, `LIMITLESS_Issue75_F2_BendSnow_GameEdge_v1_20261110.zip`의 **같은 이름 ChatGPT Library 실물 ZIP** 직접 byte/SHA/CRC 열람. Snake ZIP `8c6871ec0cdaa452dd9000b95ac2dfce95c52b798b0925a7e683aa273c47ca80` 13파일, F2 ZIP `c38e97b3856245e474fea61f0b71f584af95618fa864723113041c6b1f7fdf58` 14파일, 담당 #43/#75 정식 보고 SHA 완전일치. 사용자 PC `F:` 자체 hash 직접재검증은 미실행.
