@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-11 / Issue #91 — Chapter3 BattleBG v2 최종 승인용 실제 원본 비교·후열 위험판 2개
+
+- [#91 11월11일 최신 병렬 지시](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6781032360)에 따라 기존 **Snowroad v2** `339beeb80d313c589cf50842fc9f6964049b0752e783d83ac8a7097c768205ab` 및 **F2 FirstSnowForest v2** `4d57949a1a9d2ae5600d4ba1b95989153fed6a0d8f47f8fc52e6f670a013535a` 실제 원본 해시 재확인·바이트 KEEP. **신규 게임배경 PNG0 / v3 제작0 / Unity 적용0**.
+- [Codex #91 Ch1 3종·Ch3 v2 2종 1672×941 실제5패널 1:1 비교](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6624969736) 자료 **중복 재생성 금지 준수**. 기존 F: 파일 `F:/study/codex/Project-Limitless/Temp/Issue91Ch1V2Final20261104/LIMITLESS_Issue91_Ch1_Ch3v2_1672x941_1to1_FinalComparison_20261104.png`, Codex 제공 SHA `ae44f57176aaf9aac52d169e6e63ef8e2af2a9ff4b3fa8e6833626b77a1b64f3`, 실물 본 세션에 없어 **직접 재검증/ZIP 수록 X**. Ch1 Forest/Grassland/Catacombs의 불규칙 미세 재질/국소 명암과 Ch3 v2 구름·설산 큰 면·타원 수관·직선 길 밀도 차이는 이전 Codex 보고 인용.
+- **실제 오프라인 검토판 2개**: `Preview/Issue91_C3_BattleBG_v2_FinalApprovalSummary_OFFLINE.png` (1660×1150, SHA `850dfb1ff7ed886bc9b8a7cb67e6d6b3b6e4c32cbbb6054897c0f0bb13b1fa52`) 두 v2 실제 PNG를 같은 배율로 미술 요약·승인판; `Preview/Issue91_F2_RightRearRisk_OriginalCoordinates_OFFLINE.png` (1770×1240, SHA `bda9ba101c899797c5db7c2db007a968db7dad7544810e852c7c7e15614b19c3`) **오른쪽 수간·밑동 `(1310,240)-(1640,925)`**와 아군 후열 중심 근사 `(1391,433)` 표시. 적 왼쪽/아군 오른쪽 반영. **도식적 후열 점/HP 표시이며 실제 Unity 정식 UI/캐릭터 캡처가 아님**.
+- **실물 ZIP** `LIMITLESS_Issue91_BattleBG_v2_FinalReview_20261111.zip`, **1,729,054bytes / 6entries**, SHA256 `4d0ab744ce4e069c62b7ab720870179c0ccc5918ad0ef70024afe57bafafcd69`, ZIP CRC PASS / SHA256SUMS **5/5 PASS**. ChatGPT 라이브러리 `/LIMITLESS/Issue91_BattleBG_v2_FinalReview_20261111/` ZIP+판2 실제 업로드 성공. GitHub ZIP/PNG바이너리 업로드0, F:\Downloads 사본 SHA 미검증.
+- [**#91 2026-11-11 최종 승인용 미술 보고 정본**](../../Chapter3_BattleBG_Issue91_v2_FinalApprovalReview_20261111.md) `docs/art-new` commit **`b994729ed5afd0af4a5b07ee23f64baf95e59fc7`**. **현재 `BATTLE_BG_V2_KEEP_2 / OFFLINE_ART_REVIEW_READY / USER_VISUAL_REVIEW_PENDING / UNITY_NOT_TESTED / NOT_UNITY_APPLIED`**. Snowroad 원경/눈길, F2 오른쪽 높은 대비는 **실제 가독성 결함 확인 시만 TARGETED_FIX_RECOMMENDED**; 이전 최종 화풍 동등 PASS/실게임 HUD PASS 선언X. 바울 대표 최종 미술 승인 후 별도 Codex 격리 Unity6000.6.5f1 DeltaQA 필요. 기존 Ch1/2/3 PNG·Owl/Spider/냉기 VFX·BattleBackgroundCatalog·Scene/Prefab/Save/UserData/Packages/main 불변, main 직접 commit·Push·merge0.
+
+
 ## 2026-11-10 / Issue #75 — F2 BendSnow 256px 잔설 경계 1종 게임 규격 후보 실제 납품
 
 - **이번 실제 신규 Sprite 후보 1종만** `Candidate/F2_BendSnow_SnowEdge_256x256_PPU128_CANDIDATE.png` (**256×256 RGBA, SHA256 `c3eeee57c5c5597c2d764fdd831b9d25516df57c1751a6108db9e0fd1ec892c4`**) 제작. 기존 1254×1254 생성 이미지의 잔설만 분리·투명화, **흙길·바위·관목 본체/중복 소품 제외**. 1774×887 이전 사용자 방향수용 원화 SHA `1db66eb4f92931318d5fafd46b2cd337fb9d47033537b428e21c1471d71490dd` 원본 그대로 KEEP.
