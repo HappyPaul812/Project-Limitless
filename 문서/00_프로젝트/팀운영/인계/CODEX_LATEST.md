@@ -1,3 +1,17 @@
+## 2026-11-10 — F2·맹독뱀 ZIP 검토 / 시작마을 상점 물약 아이콘 HOLD
+
+**F2_BENDSNOW_REVIEW_DONE / VENOMSNAKE_REVIEW_DONE / STARTERVILLAGE_SHOP_ICON_REPLACEMENT_HOLD / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- F2 ZIP SHA `151094aacd847ee7b4338ca08a827d0edaa21a1122df357379f0bd493afabd8a`, 10entries·CRC·SUMS8/8 PASS. **부분 수정 필요**: 곡선·눈 불규칙성은 개선됐으나 비교판은 생성 콘셉트로 실제 ROI/4.5WU/HUD 증명 아님. 방향 수용 기록 존중·SPEC_PENDING·본편 미적용.
+- 뱀 ZIP SHA `5c708234539a7751c1646508feb5fc66e8a5e11439b222494145e99923980b8b`, 14entries·CRC·SUMS13/13·Manifest12/12 PASS. **단일포즈 승인 상정용 PASS**, v3 원본 SHA동일. 512/128/40 직접 검토·40px 세부 제한·왼쪽alpha25px 유지. 사용자 최종 미술/게임기술 승인 별개. NPC는 뱀 마감 판단 후 다음 업무, 이번 제작0.
+- 바울 대표가 대상은 **월드 소품이 아닌 시작마을 상인 거래창 아이콘**이라고 확정. HP/MP ItemIcons PNG는 Kenney flask_full/flask_half 원본과 SHA 일치. GUID a9ac67de65b88774ea6e90e22805af16 / c062cadfd7ff1b94e8c89e77f74cf048. 공용 ItemDefinition 참조라 직접교체 시 다른상점/전투 영향. 기존 내부 시트는 해독제/절연약 등으로 HP/MP 대체2종 미확인 → **교체HOLD·제품변경0·구현커밋 없음**.
+- Unity6000.6.5f1 실제 상태·의존성50/외부0·Preview Renderer286 확인. 월드 참고 렌더1장 확보(Play/거래창 캡처 아님). 교체 전후/이동/NPC/구매판매 DeltaQA NOT_RUN, 기존 전수QA 재실행0. Console Error0·활성Scene/Play/선택/포커스 변경0. 과거worktree Bootstrap이 활성Scene인 상태도 보존.
+- 원본 dirty302/untracked550 경로 동일·보호3921 SHA변경0, Save/UserData/승인 PNG·WAV/meta/Packages/BuildSettings 보존. 원격Push·병합/main직접commit0. 브랜치 `codex/20261110-main-renewal-prop-batch`, 보고커밋 `f96e49e793d4ad54d560bfe6354807161187e60a`; 로컬main에는 안전한 경우 보고·인계만 FF, 제품 적용HOLD. 최종문서/main SHA는 Git HEAD·#75/#43/#57 결과댓글 참조.
+- 다음: 기존 내부 **HP·MP 회복약2종 원본 경로/역할** 확인 → 시작마을 거래창 한정 연결 → Unity 숨김 Play 표적 전후/거래/이동잠금 QA → 안전FF. 새아트/NPC/뱀모션 제작 금지 유지.
+- 상세: [검토·참조·HOLD 근거](../../Batch_ArtReview_StarterVillageShopIcons_20261110.md), `Evidence/BatchArtShop20261110/`. 로컬 문서 미Push로 원격보고서 미게시, Issue 상태보고와 구분.
+
+---
+
 ## 2026-11-09 Issue #94 — 던전 B1·B2 실제 내부 벽 충돌 수정
 
 **LOCAL_MAIN_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED / USER_REALPLAY_PENDING**.
