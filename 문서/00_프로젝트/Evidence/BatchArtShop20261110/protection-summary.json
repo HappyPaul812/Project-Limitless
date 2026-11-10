@@ -1,0 +1,14 @@
+{
+  "protected_files": 3921,
+  "changed_count": 0,
+  "changed_paths": [],
+  "dirty_tracked_before": 302,
+  "untracked_before": 550,
+  "dirty_paths_same": true,
+  "untracked_paths_same": true,
+  "product_changes": 0,
+  "implementation_commit": null,
+  "replacement_status": "HOLD_NO_SUITABLE_INTERNAL_HP_MP_ASSET",
+  "unity": "6000.6.5f1",
+  "remote_pushed": false
+}

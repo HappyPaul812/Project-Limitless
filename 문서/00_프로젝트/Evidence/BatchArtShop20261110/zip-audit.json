@@ -1,0 +1,122 @@
+{
+  "F2": {
+    "sums": [
+      {
+        "path": "Candidate/F2_SnowPath_BendEdge_ArtApproved_CANDIDATE_1774x887_RGBA.png",
+        "pass": true
+      },
+      {
+        "path": "Docs/DesignNotes.md",
+        "pass": true
+      },
+      {
+        "path": "Docs/SourceDeclaration.md",
+        "pass": true
+      },
+      {
+        "path": "Manifest.json",
+        "pass": true
+      },
+      {
+        "path": "Preview/F2_BendSnow_ConceptComparison_OFFLINE.png",
+        "pass": true
+      },
+      {
+        "path": "Preview/F2_BendSnow_Width128_RatioPreserved.png",
+        "pass": true
+      },
+      {
+        "path": "Preview/F2_BendSnow_Width40_RatioPreserved.png",
+        "pass": true
+      },
+      {
+        "path": "README_KR.md",
+        "pass": true
+      }
+    ],
+    "files": [
+      "Manifest.json",
+      "QA_Result.json",
+      "README_KR.md",
+      "SHA256SUMS.txt",
+      "Candidate\\F2_SnowPath_BendEdge_ArtApproved_CANDIDATE_1774x887_RGBA.png",
+      "Docs\\DesignNotes.md",
+      "Docs\\SourceDeclaration.md",
+      "Preview\\F2_BendSnow_ConceptComparison_OFFLINE.png",
+      "Preview\\F2_BendSnow_Width128_RatioPreserved.png",
+      "Preview\\F2_BendSnow_Width40_RatioPreserved.png"
+    ]
+  },
+  "Snake": {
+    "sums": [
+      {
+        "path": "Candidate/VenomSnake_KeyArt_v3_FINAL_CANDIDATE_SOURCE_KEEP.png",
+        "pass": true
+      },
+      {
+        "path": "DesignNotes.md",
+        "pass": true
+      },
+      {
+        "path": "Evidence/QA_Results.json",
+        "pass": true
+      },
+      {
+        "path": "Evidence/V2_Idle00_REFERENCE_SHA.json",
+        "pass": true
+      },
+      {
+        "path": "Manifest.json",
+        "pass": true
+      },
+      {
+        "path": "Preview/VenomSnake_v3_128px_OFFLINE_RGBA.png",
+        "pass": true
+      },
+      {
+        "path": "Preview/VenomSnake_v3_40px_OFFLINE_RGBA.png",
+        "pass": true
+      },
+      {
+        "path": "Preview/VenomSnake_v3_512px_OFFLINE_RGBA.png",
+        "pass": true
+      },
+      {
+        "path": "README_KO.md",
+        "pass": true
+      },
+      {
+        "path": "Review/VenomSnake_v2_vs_v3_OFFLINE.png",
+        "pass": true
+      },
+      {
+        "path": "Review/VenomSnake_v3_512_128_40_OFFLINE.png",
+        "pass": true
+      },
+      {
+        "path": "Review/VenomSnake_v3_Dark_Light_Forest_128_40_OFFLINE.png",
+        "pass": true
+      },
+      {
+        "path": "SourceDeclaration.md",
+        "pass": true
+      }
+    ],
+    "files": [
+      "DesignNotes.md",
+      "Manifest.json",
+      "README_KO.md",
+      "SHA256SUMS.txt",
+      "SourceDeclaration.md",
+      "Candidate\\VenomSnake_KeyArt_v3_FINAL_CANDIDATE_SOURCE_KEEP.png",
+      "Evidence\\QA_Results.json",
+      "Evidence\\V2_Idle00_REFERENCE_SHA.json",
+      "Preview\\VenomSnake_v3_128px_OFFLINE_RGBA.png",
+      "Preview\\VenomSnake_v3_40px_OFFLINE_RGBA.png",
+      "Preview\\VenomSnake_v3_512px_OFFLINE_RGBA.png",
+      "Review\\VenomSnake_v2_vs_v3_OFFLINE.png",
+      "Review\\VenomSnake_v3_512_128_40_OFFLINE.png",
+      "Review\\VenomSnake_v3_Dark_Light_Forest_128_40_OFFLINE.png"
+    ]
+  }
+}

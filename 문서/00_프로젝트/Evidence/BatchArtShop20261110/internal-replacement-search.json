@@ -1,0 +1,95 @@
+[
+  {
+    "zip": "496_RPG_icons.zip",
+    "matches": [
+      "I_Bottle01.png",
+      "I_Bottle02.png",
+      "I_Bottle03.png",
+      "I_Bottle04.png"
+    ]
+  },
+  {
+    "zip": "fantasy_rpg_icons.zip",
+    "matches": [
+      "icon_potionblue.png",
+      "icon_potionempty.png",
+      "icon_potionred.png"
+    ]
+  },
+  {
+    "zip": "Free_RPG_Starter_Pack.zip",
+    "matches": [
+      "Props_and_Loot/Potion_Shelf_Type_A.png",
+      "Props_and_Loot/Potion_Shelf_Type_B.png",
+      "Props_and_Loot/Potion_Shelf_Type_C.png"
+    ]
+  },
+  {
+    "zip": "game-icons.net.png (1).zip",
+    "matches": [
+      "icons/000000/transparent/1x1/lorc/broken-bottle.png",
+      "icons/000000/transparent/1x1/lorc/fire-bottle.png",
+      "icons/000000/transparent/1x1/delapouite/magic-potion.png",
+      "icons/000000/transparent/1x1/delapouite/bottled-shadow.png",
+      "icons/000000/transparent/1x1/lorc/bottle-vapors.png",
+      "icons/000000/transparent/1x1/lorc/snow-bottle.png",
+      "icons/000000/transparent/1x1/delapouite/bottle-cap.png",
+      "icons/000000/transparent/1x1/delapouite/wine-bottle.png",
+      "icons/000000/transparent/1x1/delapouite/bookshelf.png",
+      "icons/000000/transparent/1x1/caro-asercion/soda-bottle.png",
+      "icons/000000/transparent/1x1/lorc/brandy-bottle.png",
+      "icons/000000/transparent/1x1/delapouite/beer-bottle.png",
+      "icons/000000/transparent/1x1/caro-asercion/round-potion.png",
+      "icons/000000/transparent/1x1/seregacthtuf/sake-bottle.png",
+      "icons/000000/transparent/1x1/starseeker/potion-of-madness.png",
+      "icons/000000/transparent/1x1/lorc/bottled-bolt.png",
+      "icons/000000/transparent/1x1/lorc/heart-bottle.png",
+      "icons/000000/transparent/1x1/lorc/perfume-bottle.png",
+      "icons/000000/transparent/1x1/lorc/poison-bottle.png",
+      "icons/000000/transparent/1x1/lorc/potion-ball.png",
+      "icons/000000/transparent/1x1/lorc/spiral-bottle.png",
+      "icons/000000/transparent/1x1/lorc/square-bottle.png",
+      "icons/000000/transparent/1x1/lorc/standing-potion.png",
+      "icons/000000/transparent/1x1/delapouite/baby-bottle.png",
+      "icons/000000/transparent/1x1/delapouite/water-bottle.png",
+      "icons/000000/transparent/1x1/delapouite/health-potion.png",
+      "icons/000000/transparent/1x1/delapouite/trophies-shelf.png"
+    ]
+  },
+  {
+    "zip": "game-icons.net.png.zip",
+    "matches": [
+      "icons/ffffff/transparent/1x1/lorc/broken-bottle.png",
+      "icons/ffffff/transparent/1x1/lorc/fire-bottle.png",
+      "icons/ffffff/transparent/1x1/delapouite/magic-potion.png",
+      "icons/ffffff/transparent/1x1/delapouite/bottled-shadow.png",
+      "icons/ffffff/transparent/1x1/lorc/bottle-vapors.png",
+      "icons/ffffff/transparent/1x1/lorc/snow-bottle.png",
+      "icons/ffffff/transparent/1x1/delapouite/bottle-cap.png",
+      "icons/ffffff/transparent/1x1/delapouite/wine-bottle.png",
+      "icons/ffffff/transparent/1x1/delapouite/bookshelf.png",
+      "icons/ffffff/transparent/1x1/caro-asercion/soda-bottle.png",
+      "icons/ffffff/transparent/1x1/lorc/brandy-bottle.png",
+      "icons/ffffff/transparent/1x1/delapouite/beer-bottle.png",
+      "icons/ffffff/transparent/1x1/caro-asercion/round-potion.png",
+      "icons/ffffff/transparent/1x1/seregacthtuf/sake-bottle.png",
+      "icons/ffffff/transparent/1x1/starseeker/potion-of-madness.png",
+      "icons/ffffff/transparent/1x1/lorc/bottled-bolt.png",
+      "icons/ffffff/transparent/1x1/lorc/heart-bottle.png",
+      "icons/ffffff/transparent/1x1/lorc/perfume-bottle.png",
+      "icons/ffffff/transparent/1x1/lorc/poison-bottle.png",
+      "icons/ffffff/transparent/1x1/lorc/potion-ball.png",
+      "icons/ffffff/transparent/1x1/lorc/spiral-bottle.png",
+      "icons/ffffff/transparent/1x1/lorc/square-bottle.png",
+      "icons/ffffff/transparent/1x1/lorc/standing-potion.png",
+      "icons/ffffff/transparent/1x1/delapouite/baby-bottle.png",
+      "icons/ffffff/transparent/1x1/delapouite/water-bottle.png",
+      "icons/ffffff/transparent/1x1/delapouite/health-potion.png",
+      "icons/ffffff/transparent/1x1/delapouite/trophies-shelf.png"
+    ]
+  },
+  {
+    "zip": "Limitless_Field09_ObsidianScar_Minimal_Fix_v1.zip",
+    "error": "File is not a zip file"
+  }
+]

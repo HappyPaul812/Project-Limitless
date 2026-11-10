@@ -1,0 +1,72 @@
+[
+  {
+    "path": "Candidate/VenomSnake_KeyArt_v3_FINAL_CANDIDATE_SOURCE_KEEP.png",
+    "bytes": 2285408,
+    "sha256": "7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0"
+  },
+  {
+    "path": "DesignNotes.md",
+    "bytes": 2759,
+    "sha256": "3184957cdfac7aee234cdda776bd9240e5f6a59b9b9b2ded984846f8f4ad2537"
+  },
+  {
+    "path": "Evidence/QA_Results.json",
+    "bytes": 1485,
+    "sha256": "4a42586e7e51c722729fd3be4f83174de2caf84dcf8d1d6e1cb981af9828552d"
+  },
+  {
+    "path": "Evidence/V2_Idle00_REFERENCE_SHA.json",
+    "bytes": 371,
+    "sha256": "9e6d88ba06895dc7b9737325eb477497887ecfed82c32659a167fb23e5836c74"
+  },
+  {
+    "path": "Manifest.json",
+    "bytes": 2159,
+    "sha256": "1d8278cc6a8c082f1ee1b7088fde8149be252bf5ae768e6c03802a752f889d49"
+  },
+  {
+    "path": "Preview/VenomSnake_v3_128px_OFFLINE_RGBA.png",
+    "bytes": 31912,
+    "sha256": "e040ec59dd0b378ef6fdc73be64d82c2ae9ff65bb7c574e2c3b73ea278eb2820"
+  },
+  {
+    "path": "Preview/VenomSnake_v3_40px_OFFLINE_RGBA.png",
+    "bytes": 3980,
+    "sha256": "2f4d0b275b6d09d596ff9f97141b9f19e8e237713114f8ce11d1ed67189888aa"
+  },
+  {
+    "path": "Preview/VenomSnake_v3_512px_OFFLINE_RGBA.png",
+    "bytes": 411309,
+    "sha256": "b7909e0cf1d04e376c732c079c0c1541e1227a37d10d622f789fb96e055878ac"
+  },
+  {
+    "path": "README_KO.md",
+    "bytes": 639,
+    "sha256": "fdf55127ca756fb3c2cdfb2694f421f4d90cbea10d7ce71f35b9ff103ed1dad9"
+  },
+  {
+    "path": "Review/VenomSnake_v2_vs_v3_OFFLINE.png",
+    "bytes": 230135,
+    "sha256": "43d59431d822b7434641bf0325e0404656b13c435922c3b39642ee97f856d791"
+  },
+  {
+    "path": "Review/VenomSnake_v3_512_128_40_OFFLINE.png",
+    "bytes": 476522,
+    "sha256": "75ddf8428c6a52ad9c51a38f0ea54c1db8ad5b9d8381af5c1291cbf47b4ccee0"
+  },
+  {
+    "path": "Review/VenomSnake_v3_Dark_Light_Forest_128_40_OFFLINE.png",
+    "bytes": 183041,
+    "sha256": "a03b2f391722ee632f121401574e30a88ddb82f517536a6e8876daa17a77d12b"
+  },
+  {
+    "path": "SHA256SUMS.txt",
+    "bytes": 1322,
+    "sha256": "a6f78de587f5242384262a775291288a31943f057f14ef4ca0647e9175ac3c11"
+  },
+  {
+    "path": "SourceDeclaration.md",
+    "bytes": 1262,
+    "sha256": "36bebc642d31459e900831b50819d80e5bdb6bf2bceab698509fa3528fbb3155"
+  }
+]

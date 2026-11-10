@@ -1,0 +1,52 @@
+[
+  {
+    "path": "Candidate/F2_SnowPath_BendEdge_ArtApproved_CANDIDATE_1774x887_RGBA.png",
+    "bytes": 1339418,
+    "sha256": "1db66eb4f92931318d5fafd46b2cd337fb9d47033537b428e21c1471d71490dd"
+  },
+  {
+    "path": "Docs/DesignNotes.md",
+    "bytes": 675,
+    "sha256": "413b7bf34368f71ebef4eae7de4b4896d8008767de6668015870f6f827a7e6f4"
+  },
+  {
+    "path": "Docs/SourceDeclaration.md",
+    "bytes": 297,
+    "sha256": "7a5a9b68cb994463445ee167b7e1def60ce36bd1d4f83a3036ac4432b9ab077c"
+  },
+  {
+    "path": "Manifest.json",
+    "bytes": 811,
+    "sha256": "0e8589113ffb1fc8287444fc8838aebc4244de76ca01c3f14aba2ce3061a5983"
+  },
+  {
+    "path": "Preview/F2_BendSnow_ConceptComparison_OFFLINE.png",
+    "bytes": 2214169,
+    "sha256": "849e1266aa359b2730822c531024e098eedc28f107877c69011301136f67203a"
+  },
+  {
+    "path": "Preview/F2_BendSnow_Width128_RatioPreserved.png",
+    "bytes": 12569,
+    "sha256": "b23dc79b603b350898fd59f4d79005459a9b1981e18d934aa02ead68bb8faf45"
+  },
+  {
+    "path": "Preview/F2_BendSnow_Width40_RatioPreserved.png",
+    "bytes": 1827,
+    "sha256": "cb6ffe45ffb648d9cba20b3cd36717a5885bf799385c59ff8789288ae48f70dd"
+  },
+  {
+    "path": "QA_Result.json",
+    "bytes": 245,
+    "sha256": "6506815ecc8276184e7fe6b7a8ee77f52fbaeba7eb488fff418aa064344b5673"
+  },
+  {
+    "path": "README_KR.md",
+    "bytes": 815,
+    "sha256": "4707be33b0dea99b3fc14a1ef5fc893c31d7255b2245803e4e39f125c846cc51"
+  },
+  {
+    "path": "SHA256SUMS.txt",
+    "bytes": 817,
+    "sha256": "6defa147b083677a8eadf40460a59e1d0311bea2406fdfb184840dd04557b3e1"
+  }
+]

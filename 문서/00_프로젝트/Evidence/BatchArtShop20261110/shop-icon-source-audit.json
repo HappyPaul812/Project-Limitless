@@ -1,0 +1,26 @@
+[
+  {
+    "name": "HealingPotionSmall",
+    "path": "Unity/Client/Assets/_Project/Resources/ItemIcons/HealingPotionSmall.png",
+    "guid": "a9ac67de65b88774ea6e90e22805af16",
+    "sha256": "9cc986f90aefa417e174ba2eeeb6f6f82c25e1bb4156b120ae8cdf273d96577f",
+    "source_zip": "kenney_board-game-icons.zip",
+    "source_entry": "PNG/Double (128px)/flask_full.png",
+    "source_hash_exact": true,
+    "serialized_references": [
+      "Unity/Client/Assets/_Project/Resources/ItemDefinitions/HealingPotionSmall.asset"
+    ]
+  },
+  {
+    "name": "ManaPotionSmall",
+    "path": "Unity/Client/Assets/_Project/Resources/ItemIcons/ManaPotionSmall.png",
+    "guid": "c062cadfd7ff1b94e8c89e77f74cf048",
+    "sha256": "cd2331d9e743e29373933ed35fc0594d57e7419d244eb1da65ebdd4b7f529b07",
+    "source_zip": "kenney_board-game-icons.zip",
+    "source_entry": "PNG/Double (128px)/flask_half.png",
+    "source_hash_exact": true,
+    "serialized_references": [
+      "Unity/Client/Assets/_Project/Resources/ItemDefinitions/ManaPotionSmall.asset"
+    ]
+  }
+]
