@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-10 오전 — Codex 리셋 전 아트 두 담당 병렬 업무 발주
+
+- 바울 대표 “코덱스 초기화가 약1시간 반 남아 메인이랑 리뉴얼 먼저 일 시켜줘.” 현재 Codex 사용량 절약: **추가 Unity QA·로컬 동기화·재검증 0**, 오늘은 두 아트 담당 문서/실물 파일럿만 발주.
+- **메인 신규 아트 `docs/art-new`**: [#75 최신 F2 굽음·눈 반복 1구역 표적 미술 작업](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6755493865). 기존 P1/P2 재사용 격리 68PASS 인정, F2 After_Bend_1280의 패치 반복·직각 굽음 2개 ROI만 Before/After 실 아트, 부족이 실증될 때만 투명 잔설/연결 보완 PNG 최대1. 승인 길폭4.5WU·F2 Owl/Stump·Ground9/환경43·기존F2 P1/P2 보호, Unity/정식배치 변경 금지. #91 C3 전투 배경 v2는 사용자의 시각 승인 대기로 무단v3·적용 금지.
+- **리뉴얼 아트 `docs/art-renewal`**: [신규 #95 치유사 OGA06·은행 OGA16 오리지널 정지 2포즈 후보](https://github.com/HappyPaul812/Project-Limitless/issues/95). `VillageNpcAppearanceCatalog` 실사용 stableID 매핑을 바탕으로 2개 신규 PNG만 제작, 128/40 시각 판정판/SHA/Manifest; NPC 초상화·애니/대량12종 금지. 기존 #57 OGA03/OGA09·#60 OGA20 후보 재작업 금지, 이미 승인·적용된 #63 Bee/#90 Spider/#92 Ch2BG/#94 던전 물리 변경보호.
+- **작업 게이트:** 팀별 기존 자기 브랜치 Markdown 보고 commit → 해당 `*_LATEST` 갱신 → Issue 댓글 실제 파일SHA·ZIP/CRC·승인 필요 여부 보고. 사용자 PC 로컬 `main`과 Unity6000.6.5f1/Save/UserData/사용자 미커밋 파일 보호, `main` 직접 commit·원격 Push/merge 금지. **GitHub 발주만 완료, 두 담당 아트 세션의 실제 제작 시작은 지시문 전달 필요**. Codex 초기화 전 신규 Codex 테스트0.
+- 상태 `ART_NEW_F2_BEND_REQUESTED / ART_RENEWAL_NPC2_REQUESTED / RESULTS_NOT_DELIVERED`.
+
+---
+
 # PLANNING / 2026-11-09 — Issue #94 던전 B1·B2 벽 통과 사용자 플레이 수용 완료
 
 - 바울 대표 실제 플레이 판정 **“잘 고쳐졌어..”**. [#94 최종 사용자 수용 기록](https://github.com/HappyPaul812/Project-Limitless/issues/94#issuecomment-6728213577) 및 [Codex 실제 구현·QA 보고](https://github.com/HappyPaul812/Project-Limitless/issues/94#issuecomment-6728101283) 확인.
