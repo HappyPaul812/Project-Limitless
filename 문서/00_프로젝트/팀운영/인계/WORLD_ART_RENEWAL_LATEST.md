@@ -1,3 +1,12 @@
+## 2026-11-10 / Issue #43 / VenomSnake v3 x0 알파·40px 최종 표적 검수 — 원본 KEEP (현재 최신)
+
+- 근거: [Issue #43 최신 총괄 지시](https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6757398584) 및 Codex 단일 포즈 기술·미술 PASS 권고. [정식 NO_CHANGE_NEEDED 보고서](../../Renewal_20261110_Issue43_VenomSnake_v3_Final_Alpha40_QA_KEEP.md) / **docs/art-renewal commit `13dab8f4da1d28be2dd4220580374497b02ab423`**.
+- 기준 원본 v3 **1254×1254 RGBA / 2,285,408 bytes / SHA256 `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0`** 정확한 바이트 보존. 원본 x=0 알파>0 **25픽셀**, 그 값 **모두 1/255**, 알파>1 및 알파>8 **0**이어서 시각적으로 유의한 잔상/잘림 아님. 따라서 **별도 보정 PNG 미제작 · NO_CHANGE_NEEDED**. 40px 우향 머리·벌어진 입/S자 코일 유지, 개별 독니의 뭉침은 소형 축소의 한계로 판단; 전체 재작화/입모양 수정0.
+- 실 ZIP **`LIMITLESS_VENOMSNAKE_ISSUE43_KEEP_NOCHANGE_20261110.zip`**, **3,318,345 bytes**, SHA256 **`8c6871ec0cdaa452dd9000b95ac2dfce95c52b798b0925a7e683aa273c47ca80`**, **13entries/CRC PASS/Manifest11/11 SHA PASS**. v3 PNG 원본·512/128/40 실제 OFFLINE 좌우 동일원본 KEEP vs NO_CHANGE 보드·40px 밝음/어두움/숲·알파진단/QA/DesignNotes/SUMS. 원본처럼 보이게 한 가짜 v4 후보 없음.
+- 파일 7개 ChatGPT Library **`/LIMITLESS_Art_Delivery/VenomSnake_Issue43_FinalKeep_20261110/`** 저장. 사용자 F: 자동 복사 없음, GitHub에 ZIP/PNG Push 없음.
+- **종료:** `VENOM_SNAKE_ART_CANDIDATE_FINALIZED / NO_CHANGE_NEEDED / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`. Codex 후보 PASS는 바울 대표 승인과 별개. 실제 Unity PPU/Runtime 검증0. **Issue #95 OGA06·OGA16 NPC 제작은 바울 대표 뱀 최종 승인 후 다음 턴**, 이번 NPC0. **Issue #96 물약 HP·MP는 Codex 기존 이미지 원본탐색 NOT_FOUND 확정될 때에만 별도 2아이콘 제작**, 현재 제작0.
+- 기존 MonsterDefinition/AI/독/드롭/Spawn/Quest, 승인 아트/Unity6000.6.5f1 원본/Scene/Prefab/Save/UserData 및 main 변경0, main 직접 Push/병합 없음.
+
 ## 2026-11-10 / Chapter1 VenomSnake 단일 포즈 후보 정리 — Issue #43 (현재 최신)
 
 - **실물 원본 v3 확보·SHA 검증:** `VenomSnake_KeyArt_v3.png` **1254×1254 RGBA / 2,285,408bytes / SHA256 `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0`**. 과거 #43 Codex 정적 1포즈 **PASS 권고**(사용자 최종 미술 승인 별개). v3 **원본 바이너리 수정0**. v1 미술 DISCARDED, v2 32×32 20프레임 HOLD/비교 참고만.
