@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-11 — Issue #75 F2 첫눈의 숲 B안 사용자 최종 승인
+
+- 바울 대표가 2026-11-11 “어제 본 눈길? 그래.”로 [Issue #75 F2의 기존 FirstSnow 눈 오브젝트 14종 위치조정 B안](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6780879183) 및 로컬 원본 게임 적용 진행을 승인. C안의 별도 SnowEdge 256 신규 그림은 미채택/HOLD, 신규 아트 제작 금지.
+- 이전 B/C Unity6000.6.5f1 격리 24PASS/0FAIL, 960·1280·1680 실GameView 6장과 휠체어 국소왕복 완료. 이는 B 본편 원본 적용 결과가 아니며 Codex 현행 원본 이식 후 최소 Delta 검증이 별도 필요. 과거24/68/90/81 전수QA 반복 금지.
+- Codex는 과거 검증 브랜치 codex/f2-bc-unity-delta-20261110 (17b045e0) 및 Issue75_F2_BC_UnityDeltaQA_Result_20261110.md, Evidence/F2BCUnity20261110에서 14 Renderer의 실제 B 좌표 diff를 읽고, codex/f2-b-original-apply-20261111 분리 worktree에서 위치만 수정. 기존 Snow road/길·기승인 Stump/Tree/Owl·Collider/Scene/Prefab/Save/UserData/Editor state·사용자 dirty/untracked/GUID/meta 보호. C 시안·#95 NPC·#91 Chapter3 BGv2 및 승인 안 된 작업 병합 금지.
+- 마지막 2026-11-10 EOD local main 보고 7e8c9f1b701b0f817c965bbb82941248181ac588, 실제 로컬 HEAD 실조회 우선. 최소 검증 전부 PASS/충돌0/FF 가능한 경우에만 original local main ff-only/no-autostash 적용; remote push·merge 및 main 직접 commit 금지. 변경 전후 좌표·Renderer14 실목록·3해상도 GameView·국소 물리·보호 SHA·브랜치/commit·local main 결과 보고.
+- 기획은 GitHub 기록만 완료; 로컬 Unity 본편은 Codex가 아직 미수행. 상태 F2_B_USER_SELECTED_AND_LOCAL_APPLY_AUTHORIZED / C_HOLD / CODEX_PENDING / ORIGINAL_NOT_YET_APPLIED / REMOTE_NOT_PUSHED.
+
+---
 # PLANNING / 2026-11-10 EOD — #96 물약 손플레이 수용·전체 승인 작업 로컬 안전 동기화 요청
 
 - 바울 대표가 **시작마을 잡화상점 신규 HP·MP 오리지널 물약 2종 실제 화면을 확인**하며 “잘 되네.. 오늘은 여기까지 하자 지금까지 한 모든 작업 다 합치고 로컬 동기화까지 해줄래?” 요청. [Issue #96 사용자 수용+EOD 의뢰](https://github.com/HappyPaul812/Project-Limitless/issues/96#issuecomment-6766721860). `HP_MP_USER_REALPLAY_ACCEPTED`.
