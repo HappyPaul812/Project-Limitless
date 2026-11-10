@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-10 / Issue #75 — F2 눈·흙길 굽음 미술 방향 긍정 수용, 게임 Import 검증 별도
+
+- [#75 당일 지시](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6755493865) 기준 첫눈 F2 길 직각 굽음·눈 패치 반복 개선 **신규 투명 콘셉트 PNG 단1개** 실제 제작. 바울 대표 직접 피드백 **“후보가 괜찮네..”** → `USER_ART_DIRECTION_ACCEPTED`, 단 실제 F2 Sprite·타일 적용/PPU 확정·Unity TECH PASS가 아니라 별도 검증 전 후보 유지.
+- **실물 ZIP** `LIMITLESS_Issue75_F2_BendSnow_ArtCandidate_20261110.zip` **3,435,324bytes / 10entries**, SHA256 `151094aacd847ee7b4338ca08a827d0edaa21a1122df357379f0bd493afabd8a`, ZIP CRC PASS + SHA256SUMS 8/8 PASS. **신규 PNG** `Candidate/F2_SnowPath_BendEdge_ArtApproved_CANDIDATE_1774x887_RGBA.png` 1774×887 투명 RGBA SHA256 `1db66eb4f92931318d5fafd46b2cd337fb9d47033537b428e21c1471d71490dd`. 크기는 **원화 콘셉트 실측이며 F2 tile 256/PPU/Pivot 확정 아님**. 128×64·40×20 실 종횡비 축소 판, Generated OFFLINE Before/After 목업(1448×1086) SHA `849e1266aa359b2730822c531024e098eedc28f107877c69011301136f67203a` 포함. **실제 Unity F2 RT 비교판이 아님**.
+- **보존·검수**: Ground9/F1 WornTrail/F2 FirstSnow Overlay·P1/P2/Owl Idle8+Attack4·Stump v4·Frostway 환경43·냉기 VFX·상태 아이콘·Chapter3 BattleBG v2 전부 변경0. 1774×887 긴 PNG에는 길·바위·관목/잔설이 같이 있으므로 기존 배치 중복을 피하고 **자동 타일/Collider Import 금지**, 필요할 때 기존 소스 재배치와 가장자리 부분의 스프라이트 분리 여부를 Codex 격리에서만 검토. 기존 **68PASS는 이 시안의 Unity 기술 PASS 아님**, 통행 4.5WU 변경/QA 실행0.
+- **인계 파일** [`Chapter3_Main24_F2_Issue75_BendSnow_ArtCandidate_Review_20261110.md`](../../Chapter3_Main24_F2_Issue75_BendSnow_ArtCandidate_Review_20261110.md), `docs/art-new` 실제 보고 commit **`1d611de992f4a61859ccc336f71e5938a8786918`**. ChatGPT Library `/LIMITLESS/Issue75_F2_BendSnow_20261110/` ZIP 및 비교판 개별 등록 PASS. 원본 게임·main 직접 commit/Push/merge0, ZIP GitHub 바이너리 업로드0. `ART_DIRECTION_USER_ACCEPTED / OFFLINE_FILE_QA_PASS / SPEC_PENDING / F2_REAL_PLACEMENT_NOT_VERIFIED / NOT_UNITY_APPLIED`. 바울 대표 별도 본편 적용 승인 시 Codex 격리 Scene 3비율·실 Collider/휠체어 통행 최소QA 후 판단.
+
+
 ## 2026-11-04 / Issue #89 냉기 정식 상태 HUD 아이콘 독립 PNG 3종 — 실물 납품
 
 - [#89 최신 기획 3종 아이콘 발주](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6624809345) 반영. 승인 **한기/동상/동결괴사 VFX 원본 3 PNG** 및 Codex B안 격리 HUD(40px 알파경계8px, 128px 캐릭터뒤·하향24px, 960 2행, 1680 HUD 경계8px) **바이트·코드 수정0**. 14UI≈12.12px 실표시를 고려해 아이콘 3종을 처음부터 64px 픽셀 도형으로 구성하여 128×128 투명 RGBA 게임용 후보로 출력.
