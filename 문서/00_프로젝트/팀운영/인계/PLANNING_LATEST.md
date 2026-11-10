@@ -1,3 +1,14 @@
+# PLANNING / 2026-11-10 — VenomSnake #97 Attack03 FinalReview 실제 검수 · v2 KEEP, 추가 미술 수정 중단
+
+- 바울 대표 제시 `F:\Downloads\VenomSnake_Attack03_FinalReview_20261110.zip`과 **동일 이름 ChatGPT Library ZIP 실물** 직접 검증. PC `F:` 파일 직접 접근 아님. 검증 ZIP **1,563,927 bytes**, SHA256 **`5bfb44b15b4eb70b5b7285afe9673e3199c6371428dc7bc094442cf376238bda`**, **23 entries/CRC PASS, Manifest21/21 SHA+bytes PASS**. GitHub [리뉴얼 보고 #97](https://github.com/HappyPaul812/Project-Limitless/issues/97#issuecomment-6762700011) 동일.
+- 신규 후보 512 RGBA SHA256 `a21c6a01b5a5facdec35509cd79b12fff5b6b04d686482f45745ab6a7aeab9d9` 와 기존 v2 Attack03 SHA256 `4e93ef15bd26b8692f56f93aa97dd01434f3c995156704575c45f28e9da6ad0a` 실물 픽셀 직접 대조: **53,820픽셀 수정** bbox x188..471, y66..322, x≤185/y≥325 원본 변경0, 네 변 alpha>8 접촉0. 나머지7프레임 사본 미포함, 읽기 전용 참조·원본 보존 보고 확인.
+- 512px·128px·40px BEFORE/LOCAL 비교판 검토. Attack02→03 v2 alpha IoU **0.726891→0.727948**; Attack03→Idle00 **0.820077→0.820179**, 개선 미미. 40px에서 뚜렷한 모션 이득이 없어 새 후보를 채택하지 않는 것이 타당.
+- **기획 결정: Attack01 v2 KEEP, Attack03 v2 KEEP, 새 local-headneck 후보 HOLD/NOT_ADOPTED, 반복 재수정 STOP**. User final overall animation art approval pending. 실제 Unity 미적용, Codex 실게임 적용 지시하지 않았음. 최종 아트 승인 이후에만 Codex가 6000.6.5f1 분리 worktree에서 기존 32×32/4frame/8FPS/sourceFacesRight=0 제품 계약과 신규 우향 자산 PPU/Flip/Pivot/32~40px·독/AI·Idle 복귀 최소 QA 수행하고 제품 적용은 별도 승인.
+- 다음 리뉴얼 아트 작업: **#96 작은 HP/MP 회복약 오리지널 아이콘 2종**(기존 아이템 효과·가격·GUID 보존, 후보 제작만). #95 시작 마을 NPC 기존 PILOT 2종 user art review pending. 원본 Scene/Prefab/Save/UserData/미커밋·main/원격 Push 보호.
+- 상태: `ZIP_TECH_PASS / ATTACK01_V2_KEEP / ATTACK03_V2_KEEP / LOCAL_CANDIDATE_REJECTED / ART_USER_FINAL_APPROVAL_PENDING / UNITY_NOT_APPLIED`.
+
+---
+
 # PLANNING / 2026-11-10 — VenomSnake #97 Continuity v2 간편 ZIP 직접 검수 · Attack03 추가 표적 보완 권고
 
 - 바울 대표 전달 Windows 로컬 파일명 `F:\\Downloads\\VenomSnake_Continuity_v2_2POSE_SMALL.zip`과 동일 이름의 ChatGPT Library 파일을 실제 materialize·압축 검사. **F: 로컬 바이트 직접 검증은 아님**. Library 파일 크기 **908,035 bytes**, ZIP SHA256 **`9a6b0315fd66eb8a66992085c4a7bbcfb7558759e00dab9a3de54050efe3cc73`**. 16 entries/CRC PASS, Manifest14/14 SHA·bytes PASS, SHA256SUMS PASS. [리뉴얼 원 보고 #97](https://github.com/HappyPaul812/Project-Limitless/issues/97#issuecomment-6761924550)와 동일 해시.
