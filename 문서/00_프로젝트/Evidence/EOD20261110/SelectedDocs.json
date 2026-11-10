@@ -1,0 +1,20 @@
+[
+  {
+    "path": "docs/art-renewal/ch1-monster-original-audit-20261110/FINAL_COMPLETION.md",
+    "sourceCommit": "1c8f94c9c9a3241a651ed46fb0547e2bf7ed67d1",
+    "sha256": "0b6911a3b89241a72579b1423696e6ee2cf8646642aec96bc27980397a6f1560",
+    "sourceByteExact": true
+  },
+  {
+    "path": "docs/art-renewal/ch1-monster-original-audit-20261110/Audit10.csv",
+    "sourceCommit": "1c8f94c9c9a3241a651ed46fb0547e2bf7ed67d1",
+    "sha256": "2746604e2e31123ee458f33fc6d4f706a19604d5b11decea0d9db36c66add81d",
+    "sourceByteExact": true
+  },
+  {
+    "path": "docs/art-renewal/ch1-monster-original-audit-20261110/files.json",
+    "sourceCommit": "1c8f94c9c9a3241a651ed46fb0547e2bf7ed67d1",
+    "sha256": "2571e3861f838c47f2a27e569a7fb44e3afc350fa96f47f5ca4ac70c0d1477a7",
+    "sourceByteExact": true
+  }
+]

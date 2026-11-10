@@ -1,3 +1,13 @@
+## 2026-11-10 EOD — 승인 작업 통합·로컬 안전 동기화 마감
+
+- 승인 제품 #96 HP·MP, #97 맹독뱀, #94 던전 충돌, #93 및 앞선 Bee/Spider/펫/Chapter2/TTS는 모두 `ALREADY_IN_LOCAL_MAIN`. 대표 실플레이 수용 반영, 제품 재적용·기존 QA 반복0.
+- 출처 감사 #57의 공식 최종 문서3개만 선별 통합합니다. Chapter1 잔여7종·기본펫3종 `ORIGINAL_CONFIRMED`; 슬라임은 대표 원본 선언으로 마감, 존재하지 않은 ZIP의 픽셀 검증은 `NOT_RUN`입니다.
+- F2 B/C·SnowEdge, NPC OGA06/16, Ch3 BGv2, Shoot8, 미승인 냉기·VISUAL_PARTIAL·Discord는 `HOLD`, 통합 제외.
+- 시작 main `8430f40026ac9258f2ef3323b55dfb4983f872a7`; 작업 브랜치 `codex/eod-safe-sync-20261110`. 문서 전용 commit 후 `--ff-only --no-autostash`로 안전 반영하며 main 직접 commit·원격 Push/Merge0.
+- 원본8246파일/1,210,483,913bytes 백업·SHA 재읽기 PASS. tracked dirty302/untracked550 및 Save/UserData·Unity6000.6.5f1·Editor 상태 보호. 제품 파일 변경0으로 대규모 QA 재실행하지 않습니다.
+- 상세 근거: `문서/00_프로젝트/EOD_SafeSync_20261110.md`. 최종 실제 commit/main SHA와 보호·동기화 결과는 원본 `Temp/EOD20261110/Final.json` 및 관련 Issue 댓글에 기록합니다. 같은 commit 안에 자신의 SHA를 적는 대신 이 완료 영수증으로 확정합니다. 성공 상태는 최종 검증 이후에만 보고합니다.
+- 추가 개발 없이 오늘 작업을 종료합니다. 아래 기록은 당시 이력이며 최신 수용·보류 상태는 이 EOD 기록을 우선합니다.
+
 ## 2026-11-10 Issue #96 — 시작마을 HP·MP 오리지널 아이콘 실제 적용
 
 **STARTERVILLAGE_SHOP_POTIONS_ORIGINAL / UNITY_DELTA_QA_PASS / LOCAL_ORIGINAL_APPLIED / USER_REALPLAY_REVIEW_PENDING / REMOTE_NOT_PUSHED**

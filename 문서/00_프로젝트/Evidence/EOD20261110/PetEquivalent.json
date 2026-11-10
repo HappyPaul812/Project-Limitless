@@ -1,0 +1,23 @@
+[
+  {
+    "approvedCommit": "eb0e932f",
+    "path": "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Wolf_Run6_v5.png",
+    "sha256": "96f09da273c0e438b37ede80a6673c797b7623ed78b8e6e93de77eddb6aa649c",
+    "pngExact": true,
+    "metaGitExact": true
+  },
+  {
+    "approvedCommit": "5b89ac92",
+    "path": "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Bear_Run6_v4.png",
+    "sha256": "47177f72a202039b4a806bf4607e25384cf811d245169235862760152151bcb3",
+    "pngExact": true,
+    "metaGitExact": true
+  },
+  {
+    "approvedCommit": "332d9932",
+    "path": "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Fox_Run6_v7.png",
+    "sha256": "5487868681c3c93278417b754201aff681c2f78317e66774b3404b0629570e8a",
+    "pngExact": true,
+    "metaGitExact": true
+  }
+]

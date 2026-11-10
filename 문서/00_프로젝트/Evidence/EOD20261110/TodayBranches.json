@@ -1,0 +1,56 @@
+[
+  {
+    "branch": "codex/20261110-main-renewal-prop-batch",
+    "sha": "def786a3d28d239ceb0a539b42d77834828a3a8a",
+    "inMain": true,
+    "productFiles": 0
+  },
+  {
+    "branch": "codex/ch1-monster-original-audit-20261110",
+    "sha": "d60e2cc94123c6f2e4f753de6b0aa55526a4e296",
+    "inMain": false,
+    "productFiles": 0
+  },
+  {
+    "branch": "codex/ch1-monster-provenance-final",
+    "sha": "1c8f94c9c9a3241a651ed46fb0547e2bf7ed67d1",
+    "inMain": false,
+    "productFiles": 0
+  },
+  {
+    "branch": "codex/ch1-shop-potion-icons-20261110",
+    "sha": "9794dd588fd63d5ef65f6f603e0d68cc25356e24",
+    "inMain": false,
+    "productFiles": 0
+  },
+  {
+    "branch": "codex/ch1-shop-potions-original-20261110",
+    "sha": "8430f40026ac9258f2ef3323b55dfb4983f872a7",
+    "inMain": true,
+    "productFiles": 0
+  },
+  {
+    "branch": "codex/eod-safe-sync-20261110",
+    "sha": "8430f40026ac9258f2ef3323b55dfb4983f872a7",
+    "inMain": true,
+    "productFiles": 0
+  },
+  {
+    "branch": "codex/f2-bc-unity-delta-20261110",
+    "sha": "17b045e020153658e1e597aa689e076a27c40fa6",
+    "inMain": false,
+    "productFiles": 0
+  },
+  {
+    "branch": "codex/f2-bendsnow-delta-plan-20261110",
+    "sha": "7d68fefc349f5913dd0c3b210ec4d3b31c9e547e",
+    "inMain": false,
+    "productFiles": 0
+  },
+  {
+    "branch": "codex/venomsnake-anim8-unity-20261110",
+    "sha": "4ae186e305d1762d8a08002cf309a5371a7c7e72",
+    "inMain": true,
+    "productFiles": 0
+  }
+]

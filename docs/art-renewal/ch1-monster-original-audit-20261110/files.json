@@ -1,0 +1,207 @@
+[
+  {
+    "id": "grass_slime",
+    "path": "Assets/_Project/Art/Monsters/01_GrassSlime/01_GrassSlime_Walk.png",
+    "sha256": "1c422147f0a8fe7ee234e0ab771ab098ac32c44338d5efecc4f3f08a3174de34",
+    "size": [
+      1256,
+      1256
+    ],
+    "source": null,
+    "sourceSha256": null,
+    "firstCommit": [
+      "139fba10c70292d79145f72524f6867172df4774"
+    ],
+    "matchesFirstIntegration": true,
+    "classification": "ORIGINAL_CONFIRMED",
+    "guid": "a4c90ca490a24b93a71de44a7f1e1762",
+    "resource": "MonsterDefinitions/01_GrassSlime",
+    "frames": "0,0,0,0,0",
+    "fieldScenes": "Field_01",
+    "provenanceBasis": "OWNER_DIRECT_CONFIRMATION_OF_ACTIVE_PNG",
+    "newPixelVerification": "NOT_RUN"
+  },
+  {
+    "id": "monster_moss_beetle",
+    "path": "Assets/_Project/Art/Monsters/05_MossBeetle/Moss_Beetle_Battle_Final.png",
+    "sha256": "a552c64e48614fe0b3cd5ebfe81e2f0425e2ee96383727efd9b44b3f81d7bc3d",
+    "size": [
+      1374,
+      1145
+    ],
+    "source": "F:\\Downloads\\Limitless_Sprites\\Moss_Beetle_Battle_Final.png",
+    "sourceSha256": "a552c64e48614fe0b3cd5ebfe81e2f0425e2ee96383727efd9b44b3f81d7bc3d",
+    "firstCommit": [
+      "1c104921ac492e36ead14b2daddafcf959b9722f"
+    ],
+    "matchesFirstIntegration": true,
+    "classification": "ORIGINAL_CONFIRMED",
+    "guid": "0c036fb870b5385418f2293eb4b9c348",
+    "resource": "MonsterDefinitions/05_MossBeetle",
+    "frames": "6,6,6,4,6",
+    "fieldScenes": "Field_03"
+  },
+  {
+    "id": "monster_shade_bat",
+    "path": "Assets/_Project/Art/Monsters/06_ShadeBat/Shade_Bat_Battle_Final.png",
+    "sha256": "a902c87d3da4d80b5e318d6fb55ab6a21ddc75d1bceef46a0d27b9223f44c221",
+    "size": [
+      1254,
+      1254
+    ],
+    "source": "F:\\Downloads\\Limitless_Sprites\\Shade_Bat_Battle_Final.png",
+    "sourceSha256": "a902c87d3da4d80b5e318d6fb55ab6a21ddc75d1bceef46a0d27b9223f44c221",
+    "firstCommit": [
+      "1c104921ac492e36ead14b2daddafcf959b9722f"
+    ],
+    "matchesFirstIntegration": true,
+    "classification": "ORIGINAL_CONFIRMED",
+    "guid": "69746e837dc89fb46ae720df9e5b09bd",
+    "resource": "MonsterDefinitions/06_ShadeBat",
+    "frames": "6,6,6,6,6",
+    "fieldScenes": "Dungeon_01_B2,Field_03"
+  },
+  {
+    "id": "monster_grave_wight",
+    "path": "Assets/_Project/Art/Monsters/07_GraveWight/Grave_Wight_Battle_Final.png",
+    "sha256": "371c98492bf7da8ad4a58703b934cbf0d58db3dac0aebe136ea0adfcd1cf310c",
+    "size": [
+      1254,
+      1254
+    ],
+    "source": "F:\\Downloads\\Limitless_Sprites\\Grave_Wight_Battle_Final.png",
+    "sourceSha256": "371c98492bf7da8ad4a58703b934cbf0d58db3dac0aebe136ea0adfcd1cf310c",
+    "firstCommit": [
+      "e80943f1cef21e3e660a0da0effbfdc29f725755"
+    ],
+    "matchesFirstIntegration": true,
+    "classification": "ORIGINAL_CONFIRMED",
+    "guid": "dfd1fd40ff1eeda4fb5f2885bd280a76",
+    "resource": "MonsterDefinitions/07_GraveWight",
+    "frames": "6,6,6,6,6",
+    "fieldScenes": "Dungeon_01,Dungeon_01_B2"
+  },
+  {
+    "id": "monster_silent_echo",
+    "path": "Assets/_Project/Resources/MonsterSheets/Silent_Echo_128x128_Sprite_Sheet.png",
+    "sha256": "1097c2268baca8b51435edb845dcc2f459aee601a799c47c34e17c87a711ddb4",
+    "size": [
+      512,
+      640
+    ],
+    "source": "F:\\Downloads\\Limitless_Sprites\\Silent_Echo_128x128_Sprite_Sheet.png",
+    "sourceSha256": "1097c2268baca8b51435edb845dcc2f459aee601a799c47c34e17c87a711ddb4",
+    "firstCommit": [
+      "a393e5c66be04715811bb757686bdb34e591f224"
+    ],
+    "matchesFirstIntegration": true,
+    "classification": "ORIGINAL_CONFIRMED",
+    "guid": "49ca0d7e1f768354d94831cd2c890639",
+    "resource": "MonsterDefinitions/08_SilentEcho",
+    "frames": "4,4,4,2,4",
+    "fieldScenes": "",
+    "provenanceBasis": "PLANNING_LIBRARY_SOURCE_SHA_MATCH_REUSED",
+    "newPixelVerification": "NOT_RUN"
+  },
+  {
+    "id": "monster_seal_guardian",
+    "path": "Assets/_Project/Resources/MonsterSheets/Seal_Guardian_128x128_Sprite_Sheet.png",
+    "sha256": "8ec559c56d2d814e5acb3dda45c928f1ad06302f7754b43fb5bc96e95e9b02fc",
+    "size": [
+      512,
+      640
+    ],
+    "source": "F:\\Downloads\\Limitless_Sprites\\Seal_Guardian_128x128_Sprite_Sheet.png",
+    "sourceSha256": "8ec559c56d2d814e5acb3dda45c928f1ad06302f7754b43fb5bc96e95e9b02fc",
+    "firstCommit": [
+      "a393e5c66be04715811bb757686bdb34e591f224"
+    ],
+    "matchesFirstIntegration": true,
+    "classification": "ORIGINAL_CONFIRMED",
+    "guid": "f0748be40f6acf54cb287b5d4a2021cd",
+    "resource": "MonsterDefinitions/09_SealGuardian",
+    "frames": "4,4,4,2,4",
+    "fieldScenes": "Dungeon_01_B2",
+    "provenanceBasis": "PLANNING_LIBRARY_SOURCE_SHA_MATCH_REUSED",
+    "newPixelVerification": "NOT_RUN"
+  },
+  {
+    "id": "monster_silent_warden",
+    "path": "Assets/_Project/Resources/MonsterSheets/Silent_Warden_128x128_Sprite_Sheet.png",
+    "sha256": "97ef560e9258cbc17345ae51c017e9e113c1d840515e205698214f444a53e656",
+    "size": [
+      512,
+      640
+    ],
+    "source": "F:\\Downloads\\Limitless_Sprites\\Silent_Warden_128x128_Sprite_Sheet.png",
+    "sourceSha256": "97ef560e9258cbc17345ae51c017e9e113c1d840515e205698214f444a53e656",
+    "firstCommit": [
+      "a393e5c66be04715811bb757686bdb34e591f224"
+    ],
+    "matchesFirstIntegration": true,
+    "classification": "ORIGINAL_CONFIRMED",
+    "guid": "26fb6833d7a8924469a20f399d89fbde",
+    "resource": "MonsterDefinitions/10_SilentWarden",
+    "frames": "4,4,4,2,4",
+    "fieldScenes": "Dungeon_01_B2",
+    "provenanceBasis": "PLANNING_LIBRARY_SOURCE_SHA_MATCH_REUSED",
+    "newPixelVerification": "NOT_RUN"
+  },
+  {
+    "id": "wolf",
+    "path": "Assets/_Project/Resources/CompanionAssaultValidation/Wolf_Run6_v5.png",
+    "sha256": "96f09da273c0e438b37ede80a6673c797b7623ed78b8e6e93de77eddb6aa649c",
+    "size": [
+      3072,
+      384
+    ],
+    "source": null,
+    "sourceSha256": null,
+    "firstCommit": [
+      "c2750d1faea7ef9d54df1b4fcd7d6efb2bd49ac8"
+    ],
+    "classification": "ORIGINAL_CONFIRMED",
+    "guid": "bbd96fb9c2c14ed58ad3b59db6994dde",
+    "resource": "CompanionAssaultValidation/Wolf_Run6_v5",
+    "frames": "Run6",
+    "fieldScenes": ""
+  },
+  {
+    "id": "bear",
+    "path": "Assets/_Project/Resources/CompanionAssaultValidation/Bear_Run6_v4.png",
+    "sha256": "47177f72a202039b4a806bf4607e25384cf811d245169235862760152151bcb3",
+    "size": [
+      3072,
+      384
+    ],
+    "source": null,
+    "sourceSha256": null,
+    "firstCommit": [
+      "e2801286ccd26fe2060d9fee658ac272da4b4f2b"
+    ],
+    "classification": "ORIGINAL_CONFIRMED",
+    "guid": "a3ad8767983e4a02a6142bcabedd119f",
+    "resource": "CompanionAssaultValidation/Bear_Run6_v4",
+    "frames": "Run6",
+    "fieldScenes": ""
+  },
+  {
+    "id": "fox",
+    "path": "Assets/_Project/Resources/CompanionAssaultValidation/Fox_Run6_v7.png",
+    "sha256": "5487868681c3c93278417b754201aff681c2f78317e66774b3404b0629570e8a",
+    "size": [
+      3072,
+      384
+    ],
+    "source": null,
+    "sourceSha256": null,
+    "firstCommit": [
+      "e2801286ccd26fe2060d9fee658ac272da4b4f2b"
+    ],
+    "classification": "ORIGINAL_CONFIRMED",
+    "guid": "271ca196c20c4d5f95a812a22063165d",
+    "resource": "CompanionAssaultValidation/Fox_Run6_v7",
+    "frames": "Run6",
+    "fieldScenes": ""
+  }
+]

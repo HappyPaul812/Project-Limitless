@@ -1,0 +1,50 @@
+[
+  {
+    "role": "planning",
+    "file": "PLANNING_LATEST",
+    "sha": "2f43b9b459316b9a7b2b7191529c8b928a3d4fc4",
+    "note": "EOD/latest"
+  },
+  {
+    "role": "codex",
+    "file": "CODEX_LATEST",
+    "sha": "local8430",
+    "note": "current local authoritative"
+  },
+  {
+    "role": "art-renewal",
+    "file": "WORLD_ART_RENEWAL_LATEST",
+    "sha": "d0e2ccc077cfd93d364fc57c4db0c4063b981357",
+    "note": "older pending flags superseded by current approval"
+  },
+  {
+    "role": "art-new",
+    "file": "SPRITE_ART_LATEST",
+    "sha": "f30e2899c55d91970b41f15da970055d5f9455a7",
+    "note": "F2 candidate HOLD"
+  },
+  {
+    "role": "tts",
+    "file": "TTS_LATEST",
+    "sha": "7468f21b53879c1f074d0698dad516a0d0034181",
+    "note": "162 integration already b0a666be; no version downgrade"
+  },
+  {
+    "role": "bgm",
+    "file": "BGM_LATEST",
+    "sha": "37027230283f11071c16078a651623612660260e",
+    "note": "new pilots not approved"
+  },
+  {
+    "role": "sfx",
+    "file": "SFX_LATEST",
+    "sha": null,
+    "note": "NOT_FOUND on role branch/main/local"
+  },
+  {
+    "role": "video",
+    "file": "DEV_VIDEO_LATEST",
+    "sha": null,
+    "note": "NOT_FOUND on role branch/main/local"
+  }
+]
