@@ -154,7 +154,8 @@ namespace ProjectLimitless.UI
                     ? $"{item.DisplayName}  ×{InventoryService.GetItemCount(item.ItemId)}"
                     : item.DisplayName;
                 Button row = CreateButton(itemList, "Item_" + item.ItemId, rowLabel, new Vector2(0f, -index * 92f), new Vector2(430f, 82f));
-                Image icon = CreateImage(row.transform, "Icon", item.Icon, item.IconTint, new Vector2(18f, 9f), new Vector2(64f, 64f));
+                Sprite itemIcon = ResolveShopItemIcon(item, out Color iconTint);
+                Image icon = CreateImage(row.transform, "Icon", itemIcon, iconTint, new Vector2(18f, 9f), new Vector2(64f, 64f));
                 icon.raycastTarget = false;
                 Text label = row.GetComponentInChildren<Text>();
                 RectTransform labelRect = label.rectTransform;
@@ -172,6 +173,28 @@ namespace ProjectLimitless.UI
             focusOrder.Add(decreaseButton); focusOrder.Add(increaseButton); focusOrder.Add(maxButton);
             focusOrder.Add(tradeMode == TradeMode.Buy ? buyButton : sellButton);
             focusOrder.Add(closeButton);
+        }
+
+        /// <summary>
+        /// 시작마을 잡화상 거래 목록에서만 승인 오리지널 물약을 보여 줍니다.
+        /// 공용 아이템 정의와 다른 화면의 아이콘·효과·가격은 그대로 두며, 원화 색을 보존합니다.
+        /// 자산을 찾지 못하면 기존 아이콘으로 표시해 거래 기능을 유지합니다.
+        /// </summary>
+        private Sprite ResolveShopItemIcon(ItemDefinition item, out Color tint)
+        {
+            tint = item.IconTint;
+            if (shop == null || shop.ShopId != "shop_general_starter_village"
+                || UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "World_StarterVillage")
+                return item.Icon;
+
+            string path = item.ItemId == "item_healing_potion_small"
+                ? "ItemIcons/StarterVillageShop_HP_Original128"
+                : item.ItemId == "item_mana_potion_small"
+                    ? "ItemIcons/StarterVillageShop_MP_Original128" : null;
+            Sprite original = path == null ? null : Resources.Load<Sprite>(path);
+            if (original == null) return item.Icon;
+            tint = Color.white;
+            return original;
         }
 
         private void SelectItem(int index)
