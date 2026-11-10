@@ -1,3 +1,14 @@
+# PLANNING / 2026-11-10 EOD — #96 물약 손플레이 수용·전체 승인 작업 로컬 안전 동기화 요청
+
+- 바울 대표가 **시작마을 잡화상점 신규 HP·MP 오리지널 물약 2종 실제 화면을 확인**하며 “잘 되네.. 오늘은 여기까지 하자 지금까지 한 모든 작업 다 합치고 로컬 동기화까지 해줄래?” 요청. [Issue #96 사용자 수용+EOD 의뢰](https://github.com/HappyPaul812/Project-Limitless/issues/96#issuecomment-6766721860). `HP_MP_USER_REALPLAY_ACCEPTED`.
+- [Issue #96 Codex 제품 적용 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/96#issuecomment-6766609236): Unity6000.6.5f1 Delta46PASS/0FAIL + 반영분 동일 바이트 복제 재확인46PASS/0FAIL, 새 원본HP·MP PNG2/meta2+ShopPresenter.cs의 시작마을 상점 64px 전용 override, 공용 ItemDefinition·Kenney기존·타상점/인벤토리/전투·HP+30/MP+12/가격20·30·Save 보호. 기존 local main ff-only 반영 후 최종 보고 `8430f40026ac9258f2ef3323b55dfb4983f872a7`; **오늘 EOD는 이 구현을 중복 적용 금지**. 최근 실제 로컬 main은 코덱스가 시작 시 다시 실확인.
+- [Issue #97](https://github.com/HappyPaul812/Project-Limitless/issues/97#issuecomment-6763843177) VenomSnake Idle4+Attack4 v2, Unity 기본61·보완24·원본반영 복제24PASS, 기존 local main에 이미 FF, 사용자 손플레이 호평. [Issue #57](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6765905198) Ch1 몬스터 출처 7/7 ORIGINAL_CONFIRMED (슬라임 대표 원본 직접 확인, Pixel comparison NOT_RUN), 펫3/3; 제품 변경0·문서 마감 커밋 `1c8f94c9...` 별도 로컬 브랜치이므로 EOD 감사 때 정본과 필요한 문서 차이만 판단. [Issue #94](https://github.com/HappyPaul812/Project-Limitless/issues/94#issuecomment-6728213577) B1/B2 충돌 수정 사용자 승인·제품 이미 반영, [#93](https://github.com/HappyPaul812/Project-Limitless/issues/93#issuecomment-6657392516) 등 이전 사용자 승인 완료본·Bee/Spider/Ch2BG 등 이미 local main 조상.
+- 사용자 확인 없는 **명확한 HOLD**: #75 F2 BendSnow B는 기획 추천/실원본 적용 사용자 승인대기, C 시안 보류; #95 OGA06/OGA16 NPC 시안 아트 사용자 승인대기/게임 스케일 미검증; #91 Ch3 BattleBG v2 시안 user 미술 승인대기; Shoot8, 미확정 냉기 Runtime, 시각 PARTIAL, Discord 자동화 HOLD. **이번 "다 합치고"를 HOLD 제품 자동 적용 허가로 해석하지 않음**. docs/* 전체 자동 merge 금지.
+- **EOD Codex 일회 작업**: 실 local main/status/worktree/branch/승인 근거 먼저 읽기 → 백업 여유 용량 확인 후 보호개인 Save/UserData/미커밋 tracked/untracked 상태·파일별 SHA·Paths 보존 → 별도 `codex/eod-safe-sync-20261110` worktree에서 승인·누락 근거 명확한 파일/정식 문서만 선별; 이미 제품 반영된 커밋/파일 중복 적용0, 미승인 자산0 → 복제 QA/필요 신규 Git Delta만, 과거 46/24/110 등 QA 재실행0 → 충돌0·`--ff-only --no-autostash`로 **로컬 원본 main만 안전 동기화**; 원격 Push/Merge, main 직접 commit, reset-hard/clean/force/stash, 원본 Editor·Scene·포커스 조작 금지. 리뉴얼 아트·기획 문서 원격 브랜치의 사용자 승인·상태 메모는 우선 읽고 미보유 기록만 정책에 맞춰 보존; 대량 통합 금지.
+- Codex 종료 보고: 최종 실 local main SHA/브랜치·커밋, 포함 vs already-in-main vs HOLD, 사용자 dirty/untracked 및 Save path 존재/부재/개인 데이터 보호 evidence(민감정보 본문 원격 비공개), backup, Unity version, 실제 신규 Delta QA 또는 NOT_RUN, 원격 Push0, 종료상태. **현재 상태 `EOD_USER_REQUEST_RECORDED / CODEX_LOCAL_RUN_PENDING / NOT_YET_SYNC_VERIFIED`**. 기획은 Windows 로컬 F: Unity나 git 변경 못했으며 실제 sync 성공 주장 금지. 오늘 신규 아트·기능 주문 없음.
+
+---
+
 # PLANNING / 2026-11-10 — Issue #96 바울 대표 HP·MP 물약 2종 최종 미술 승인 / Codex 로컬 상점 교체 지시
 
 - **사용자 직접 확인**: 물약 ZIP·64px 밝음/어두움 비교판 시각 검수 후 “좋다고 했는데?”라고 이미 긍정 의사를 전달했음을 재확인. 기획의 중복 승인 요청 정정. **`USER_ART_APPROVED_HP_MP_2`**, 추가 미술 승인 반복 질문 금지.
