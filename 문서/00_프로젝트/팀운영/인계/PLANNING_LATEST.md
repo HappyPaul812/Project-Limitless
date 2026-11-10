@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-10 16:20 — F2 B안 실Unity 추천, VenomSnake Anim8 파일검수 완료
+
+- [#75 Codex B/C 실제 GameView×3해상도 최소 24PASS/0FAIL](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6761307175) → [총괄 기획 판정](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6761582746): **B 기존 FirstSnow 14Renderer 재배치 추천**, C 신규256 SnowEdge는 현 위치에 흰띠·개선미약하여 불필요, 후보 아트만 보존. **B_PLANNING_RECOMMENDED / USER_B_PRODUCT_APPROVAL_PENDING / ORIGINAL_NOT_APPLIED**. 사용자가 B 선택·본편 반영 승인하면 격리 비교 B 좌표만 안전 이식 후 국소 GameView 재확인. 기존68·90·81·24PASS 전수 재실행 금지, Unity6000.6.5f1 및 원본 수정·Save 보호.
+- [#97 리뉴얼 신규 Anim8 ZIP](https://github.com/HappyPaul812/Project-Limitless/issues/97#issuecomment-6761154879) ChatGPT Library 동일 이름 사본 실제바이트 확인: DELIVERY_ONLY SHA256 07f5922d89078b869b95abcb165a3f66355cc49a9ea63667f631c438bad74256, 12,586,609 bytes, CRC·Manifest37/37·SUMS37/37 PASS. 512RGBA 개별 Idle4+Attack4, 4×2/별도시트2와 128/40/32 시각판·8FPS 각각120/130/120/130ms GIF 실물 디코드, 기승인 v3 SHA 불변. [기획 판정](https://github.com/HappyPaul812/Project-Limitless/issues/97#issuecomment-6761585133): 디자인 방향은 괜찮으나 독립 생성 8프레임의 **목·턱·똬리 연속성**에 프레임 변화가 커서 실제 8FPS 깜빡임 가능. **FILE_TECH_PASS / ANIMATION_CONTINUITY_REVIEW_PENDING / USER_ANIM_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED**. 기존 04_VenomSnake.asset은 32cell4×4프레임·8FPS·sourceFacesRight:0(신규원화 우향과 차이). 리뉴얼 담당 최소 표적 모션 확인·보완 후 대표 검수, 새 원화 전체 재제작 금지. 사용자는 F: ZIP을 보고했으나 이번 실물 검사는 Library 동일 이름 ZIP; 사용자 PC F: 바이트 재검증 아님.
+- 예정순서: #97 미술모션 최종 확인 → #96 작은 HP/MP 회복약 오리지널2 → #95 기존 마을 NPC 후보2 사용자 승인·실제 게임 규격 확인. Codex는 B 본편 적용 사용자 승인 전 Unity 원본변경 금지, Snake 미술 승인 전 Unity 적용 금지. 기존 미커밋/Save/승인 아트/Packages·GUID·Scene 보호, 원격 main Push0.
+
+---
 # PLANNING / 2026-11-10 15:06 — F2 #75 B/C 비교 DeltaQA 계획 수용(실행 승인 대기)
 
 - [#75 Codex B/C 최소 DeltaQA 계획](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6759902464) 검토 후 [기획 범위 수용 및 게이트 기록](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6760394480). B=기존 FirstSnow 위치/각도/겹침 재배치, C=동일 B+신규256px SnowEdge 1개, 960/1280/1680 실제 GameView 기본6장, 휠체어 B/C 1280 국소 왕복, R1 눈반복·R2 길굽음, HUD·Stump·Tree/Owl 중복/이음새 검사. 과거68PASS 전수 재실행 금지.
