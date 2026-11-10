@@ -1,3 +1,14 @@
+# PLANNING / 2026-11-10 — Issue #96 신규 소형 HP·MP 물약 2종 라이브러리 실물 검수
+
+- 바울 대표 제공 **`F:\Downloads\LIMITLESS_ISSUE96_HP_MP_ORIGINAL_POTIONS_20261110.zip`**. 사용자 PC의 `F:`에 기획이 직접 접근할 수 없으므로 **동일 이름의 ChatGPT Library ZIP을 별도로 materialize해서 실물 검사**, 실제 F: 파일과 바이트 일치는 Codex 로컬에서 확인 필요.
+- Library ZIP **2,286,596 bytes, SHA256 `d1ce0e1cbbf64b588dd2b905a50cc4ecbc2e9bf2bd06378b58ab1d2cb62d7ead`**, 13 entries, ZIP CRC PASS, Manifest **11/11 SHA256·bytes PASS**. [리뉴얼 아트 공식 보고](https://github.com/HappyPaul812/Project-Limitless/issues/96#issuecomment-6764270047)와 동일.
+- **실제 후보 PNG2**: `Candidates/Small_HP_Potion_Original_128_RGBA.png` **128² RGBA**, SHA `675a62927ee6a1321ad552674e931a8f53f88680f8d14de7a0acde7c17497f64`, alpha bbox(19,7)..(108,122), **붉은 둥근 병·코르크·십자 장식**; `Small_MP_Potion_Original_128_RGBA.png` **128² RGBA**, SHA `39b90dfc0dac057c61ef39adb23d215236bb9ef7abe721c6bce0e713cdfdb64a`, bbox(29,7)..(97,122), **파란 가는 병·수정 마개·달 장식**. 원본1254² RGBA 각각 2종 별도 저장; Kenney trace/recolor 미주장.
+- **실제 128/64/40/32 크기 비교판과 밝음/어두움 64px 상점 모의 화면 열어본 기획 시각 판정**: 색뿐 아니라 병 실루엣과 장식으로 구별, 현재 상점 표시 크기64에서 둘 다 읽힘. **기획 미술 채택 추천 / 바울 대표 사용자 최종 미술 승인 아직 대기**. 기존 월드 픽셀 아트보다 신규 원화 광택·세부 묘사가 많아 실제 Unity 상점 UI 조화 여부는 한 차례 표적 GameView 비교 필요. 이 목업은 **OFFLINE**이며 Unity 렌더/제품교체/런타임 QA가 아님.
+- **승인 후** Codex Unity6000.6.5f1 `codex/ch1-shop-potions-original-20261110` 별도 격리에서 시작 마을 **상점 거래창 64px Image에만** 신규 독립 Sprite2 적용, 기존 공용 ItemDefinition PNG/GUID/meta 직접 덮어쓰기 금지; HP+30/가격20, MP+12/가격30 및 구매/판매/수량/툴팁/이동 입력잠금/Save 유지. 실GameView 밝기·고대비·2해상도 비교 및 최소 Delta QA PASS·원본 충돌 없음일 때만 원본 로컬 안전 적용. main 직접커밋·원격 Push/merge 금지.
+- **상태** `ART_FILE_TECH_PASS / PLANNING_VISUAL_RECOMMENDED / USER_FINAL_ART_APPROVAL_PENDING / SHOP_UNITY_NOT_APPLIED`; 이번 기획 행동은 문서/Issue 기록만, 로컬 Unity 조작·기존 제품변경0.
+
+---
+
 # PLANNING / 2026-11-10 — Chapter1 몬스터 제작 출처 감사 최종 마감 (Issue #57)
 
 - [Codex #57 실제 마감 보고](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6765905198) 확인. 바울 대표가 로컬 Unity 실제 `01_GrassSlime_Walk.png`를 보고 **“그래 이거야. 우리가 만든거야”**라고 팀 제작 출처를 직접 확인. `grass_slime` **ORIGINAL_CONFIRMED**. 기존 `moss_beetle`, `shade_bat`, `grave_wight`, B2 `silent_echo`, `seal_guardian`, `silent_warden` 포함 Ch1 잔여 7종 **7/7 ORIGINAL_CONFIRMED**. 기본 펫 Wolf/Bear/Fox **3/3 ORIGINAL_CONFIRMED**, Bee/Spider/VenomSnake 이미 오리지널 현행 교체, Chapter2 공식 몬스터 보존. 감사 범위 **확정 외부 실사용 종 0**.
