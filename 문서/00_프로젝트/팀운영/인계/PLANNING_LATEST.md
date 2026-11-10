@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-10 — Chapter1 몬스터 제작 출처 감사 최종 마감 (Issue #57)
+
+- [Codex #57 실제 마감 보고](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6765905198) 확인. 바울 대표가 로컬 Unity 실제 `01_GrassSlime_Walk.png`를 보고 **“그래 이거야. 우리가 만든거야”**라고 팀 제작 출처를 직접 확인. `grass_slime` **ORIGINAL_CONFIRMED**. 기존 `moss_beetle`, `shade_bat`, `grave_wight`, B2 `silent_echo`, `seal_guardian`, `silent_warden` 포함 Ch1 잔여 7종 **7/7 ORIGINAL_CONFIRMED**. 기본 펫 Wolf/Bear/Fox **3/3 ORIGINAL_CONFIRMED**, Bee/Spider/VenomSnake 이미 오리지널 현행 교체, Chapter2 공식 몬스터 보존. 감사 범위 **확정 외부 실사용 종 0**.
+- 당시 ChatGPT Library 슬라임 1254² → GitHub 이력 1256² 투명 패딩 변환 문서, Library B2 3 PNG 3/3 현재 Unity SHA 바이트 일치. **초원 슬라임 실제 RGBA 픽셀 1:1 대조 및 패딩 alpha 검사는 NOT_RUN**. 출처 확정은 `USER_OWNER_DIRECT_CONFIRMATION`이지 픽셀 PASS라고 주장하지 않음. ZIP 필수 조건 해제, ZIP 추가 요청 금지.
+- Codex 브랜치 `codex/ch1-monster-provenance-final`, 로컬 문서 commit `1c8f94c9c9a3241a651ed46fb0547e2bf7ed67d1`; Unity PNG/GUID/meta/Scene/Prefab/Save/UserData 제품 변경0 / local main 변경0 / 원격 Push 없음.
+- 기획 정본 [Ch1 4종 최초 출처 근거](../../Chapter1_Monster4_UserDeclared_Provenance_Pending_20261110.md) 이력과 최종 마감 상태 갱신 (docs/planning commit `2aeacfd7b67726baf4e60c55e08b5ab0f3aeb836`). **Issue #57 `PROVENANCE_AUDIT_CLOSED`**, 추가 몬스터 아트 재제작/감사 발주0. 다음 리뉴얼 우선순위는 #96 HP·MP 상점 아이콘 2종, #95 NPC 시안 사용자 승인·실게임 스케일 확인이며 이는 별도 범위. 게임 전체의 NPC/VFX/UI까지 100% 오리지널 인증한 것 아님.
+
+---
+
 # PLANNING / 2026-11-10 — Chapter1 UNKNOWN4 최초 원화·게임 스프라이트 제작 계보 실물 추적
 
 - 바울 대표 요청으로 **최초 ChatGPT Library PNG 4장 직접 탐색·물리 materialize·SHA256 계산**, GitHub 최초 Sprite 등록 커밋 및 Codex #57 로컬 활성 Sprite SHA와 교차검증. 기존 UNKNOWN4를 별도 리뉴얼로 재제작 금지.
