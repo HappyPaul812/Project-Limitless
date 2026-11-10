@@ -1,3 +1,13 @@
+## 2026-11-10 / Issue #43 최종 승인 + Issue #95 Eldiran NPC 2종 신규 정지 시안 납품 (최신)
+
+- **바울 대표 최종 승인:** VenomSnake v3 **`USER_ART_APPROVED_AS_IS`**, 원본 1254×1254 RGBA SHA256 `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0` 그대로 고정. [Issue #43 실제 승인 기록](https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6758854877). `NO_CHANGE_NEEDED / NOT_UNITY_APPLIED`. 40px 미세 독니/왼쪽 alpha=1×25 잔여를 알고도 원본 유지. Idle/Attack 양산·Unity 적용 승인 아님.
+- **Issue #95 신규 실물 2종 완료:** [OGA06·OGA16 납품·QA 보고서](../../Renewal_20261110_Issue95_OGA06_OGA16_OriginalStaticNPC2_Pilot_Delivery.md), 브랜치 **`docs/art-renewal`**, 실제 보고서 **commit `d9f60fe39aab52416fc236b222a3527d129a717e`**. **치유사 OGA06** 512 RGBA SHA256 `67aef89677e9b9f174f30b2c2a9e854eaee4e61814774402bd94a18691bd401f`, **은행 안내인 OGA16** 512 RGBA SHA256 `1199c57d3c279b51af83452c8b580814d6456417ea8e3f3b83ea9fdc6c5f8dcd`.
+- **ZIP** `LIMITLESS_ELDIRAN_NPC_OGA06_OGA16_ORIGINAL_PILOTS_20261110.zip` **569,127 bytes / SHA256 `89088854c3965299a206b9123e56c9ae072ced885731083e37a2347413e6c885` / 18 entries / CRC PASS / Manifest 16/16 SHA+bytes PASS**. 신규 독립 SVG2→투명 PNG2, 128·40px 실제 축소, 과거 미승인 OGA03/09 실제 콘셉트 원본 바이트보존과 동512 스타일비교판, 밝음/어두움/마을 비교판, QA/SourceDeclaration/DesignNotes/SUMS 포함.
+- **실물 전달:** ChatGPT Library **`/LIMITLESS_Art_Delivery/Issue95_Eldiran_NPC_20261110/`**에 ZIP + PNG2 + 스타일·크기/배경 비교 3 + 40px2 **8개 파일 저장**. 사용자 PC F: 자동저장·Github 바이너리 Push 없음.
+- **원래 NPC 코드 규격 확인:** `starter-village-healer` → `VillageNpcSprites/Eldiran/OGA06_Healer` (safezone-catacomb-healer/arbel-healer도 재사용), `starter-village-bank` → `VillageNpcSprites/Eldiran/OGA16_Bank` (arbel-pet-management도 재사용). 현행 .meta는 양쪽 **PPU28/하단 Pivot(0.5,0)/Point**, OGA06 GUID `a1060000000000000000000000000003`, OGA16 GUID `a1160000000000000000000000000006`. **실제 원본 PNG 바이너리는 GitHub fetch에서 디코딩 실패** → 기존 PNG 실크기·게임내 동배율 비교 **PENDING**, 512 마스터를 PPU28로 그대로 Import 금지.
+- **상태:** `OGA06_OGA16_2_NEW_ART_PILOTS_FILE_TECH_PASS / USER_ART_REVIEW_PENDING / IMPORT_SIZE_SPEC_PENDING / NOT_UNITY_APPLIED`. 기존 OGA03/09/20 미승인 원화, 공식 몬스터/펫/환경, NPC stable ID/상호작용/Quest/Collider/Prefab/Scene/Save/UserData/원본 Unity 6000.6.5f1/main 모두 변경0. main 직접 commit·Push·merge 금지.
+- **#96 HP/MP 물약:** 과거 원본 좁은 범위 재탐색 **NOT_FOUND 확정 전**, 새 아이콘2 제작하지 않음. 후속은 사용자의 NPC2 미술 결정 뒤 격리 Codex에서 원본 스프라이트 규격 및 실제 표시만 최소 검증(기존 원본/코드 보호).
+
 ## 2026-11-10 / Issue #43 / VenomSnake v3 x0 알파·40px 최종 표적 검수 — 원본 KEEP (현재 최신)
 
 - 근거: [Issue #43 최신 총괄 지시](https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6757398584) 및 Codex 단일 포즈 기술·미술 PASS 권고. [정식 NO_CHANGE_NEEDED 보고서](../../Renewal_20261110_Issue43_VenomSnake_v3_Final_Alpha40_QA_KEEP.md) / **docs/art-renewal commit `13dab8f4da1d28be2dd4220580374497b02ab423`**.
