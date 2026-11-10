@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-10 — 바울 대표 #97 VenomSnake 실게임 적용 진행 승인 · Codex 이관
+
+- 바울 대표 직접 지시: **“맹독벰 다 됐으면 게임에 넣자?”**. 최신 #97 아트 판정에 따라 **8프레임 v2 KEEP 조합의 실제 로컬 게임 적용 진행을 허용**. 신규 Attack03 final local-review 후보 **채택 금지**. 반복 추가 아트 제작 중단.
+- **실제 사용할 PNG 8개**: `F:\Downloads\VenomSnake_Anim8_Issue97_DELIVERY_ONLY.zip`의 `Frames_512/VenomSnake_Idle00~03_512_RGBA.png`, `Frames_512/VenomSnake_Attack00_512_RGBA.png`, `Frames_512/VenomSnake_Attack02_512_RGBA.png`, **`F:\Downloads\VenomSnake_Continuity_v2_2POSE_SMALL.zip`의 `Candidates_ChangedOnly/VenomSnake_Attack01_Continuity_v2_512_RGBA.png`, `VenomSnake_Attack03_Continuity_v2_512_RGBA.png`**. 원 ZIP 먼저 SHA/CRC/manifest 검증, 누락 시 STOP. 참조 ZIP `VenomSnake_Attack03_FinalReview_20261110.zip` 은 아트 비교 전용이며 적용 소스로 사용 금지.
+- 승인된 조합은 Idle4 / Attack4 @ **8 FPS**. 현행 `Unity/Client/Assets/_Project/Resources/MonsterDefinitions/04_VenomSnake.asset` 외형 계약(원격 main 기준 32×32/4 columns/각4/8FPS, `sourceFacesRight:0`, `visualSize:(0.9,0.75)`)이 512 master 및 우향 후보와 달라 **Codex가 로컬 Unity 6000.6.5f1 원본 파일/코드 실조회 후 별도 worktree 기술 교체안/PPU·pivot·scale·flip/안전 remap**.
+- Codex **격리 테스트 → 모든 필수 PASS 시 원본 로컬 적용**. 테스트: importer/sprites, 필드·전투 실표시 32/40px(게임 실제 크기 우선), 공격 후 Idle 복귀, 방향, 독 상태·쿨다운·전투 AI·드롭/경험치·MonsterDefinition 참조 및 Scene GUID/meta 변화 최소 범위. 기존 Save/UserData·미커밋·기승인 다른 자산 보호. 메인 직접 commit/원격 push/merge 금지. 원본 충돌·검증 FAIL이면 원본 건드리지 말고 STOP+증거 보고. 일회성 모든 챕터 대규모 회귀 금지.
+- **현재 사실 상태**: `USER_GAME_INTEGRATION_AUTHORIZED / CODEX_ASSIGNMENT_READY / UNITY_TEST_NOT_YET_RUN / ORIGINAL_NOT_YET_APPLIED`. 실제 Unity 적용 성공을 문서나 Issue에 허위 기재하지 말 것. Codex 작업 후 브랜치·커밋 SHA·검증 통과 수·원본 반영·사용자 실플레이 승인 필요 여부를 보고.
+
+---
+
 # PLANNING / 2026-11-10 — VenomSnake #97 Attack03 FinalReview 실제 검수 · v2 KEEP, 추가 미술 수정 중단
 
 - 바울 대표 제시 `F:\Downloads\VenomSnake_Attack03_FinalReview_20261110.zip`과 **동일 이름 ChatGPT Library ZIP 실물** 직접 검증. PC `F:` 파일 직접 접근 아님. 검증 ZIP **1,563,927 bytes**, SHA256 **`5bfb44b15b4eb70b5b7285afe9673e3199c6371428dc7bc094442cf376238bda`**, **23 entries/CRC PASS, Manifest21/21 SHA+bytes PASS**. GitHub [리뉴얼 보고 #97](https://github.com/HappyPaul812/Project-Limitless/issues/97#issuecomment-6762700011) 동일.
