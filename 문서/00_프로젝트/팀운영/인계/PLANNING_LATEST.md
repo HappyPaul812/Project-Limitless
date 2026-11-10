@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-10 — Ch1 UNKNOWN 몬스터4 팀 제작 진술·Library 설계도 보강
+
+- 바울 대표의 “UNKNOWN들 우리가 만들건데, 문서화가 안됐구나? UNKNOWN들 니 라이브리리에도 있으니까 시간 날 때 찾아봐” 진술을 **기존 팀 제작·원본 보존을 요청하는 출처 근거**로 정리. 기존 `UNKNOWN` 4종(`grass_slime`, `monster_silent_echo`, `monster_seal_guardian`, `monster_silent_warden`)에 `USER_TEAM_ART_DECLARED` 별도 추가, 직접 최초 원화→현재 Unity PNG SHA 계보 검증 전에는 `ORIGINAL_CONFIRMED`로 승격 금지.
+- ChatGPT Library 실제 탐색에서 **“던전 B2 침묵의 파수꾼 설계도.png”**: 침묵의 잔영·봉인 수호체·침묵의 파수꾼 콘셉트/128px 프레임 그림 포함 확인; 현행 시트 SHA 일치의 직접 증거는 아님. 슬라임 원형/1254→1256 원본 계보 미확정.
+- Codex #57 최신 읽기전용 감사: Ch1 잔여 7중 ORIGINAL_CONFIRMED3/UNKNOWN4, 기본펫 Wolf/Bear/Fox 3/3 ORIGINAL_CONFIRMED; **실사용 THIRD_PARTY_ACTIVE로 확정된 몬스터·펫0종**, 그렇다고 게임 전체 외부아트0 종 법적 확정 선언은 불가. Bee/Spider/Snake 공식교체 및 Ch2 기존 공식 자산은 유지.
+- 신규 독립 기획 기록: [Chapter1_Monster4_UserDeclared_Provenance_Pending_20261110.md](../../Chapter1_Monster4_UserDeclared_Provenance_Pending_20261110.md) commit `00317e47e1199c856e1397551cb100d8f5ecda66` (docs/planning). 이미지 재제작/Unity 변경/로컬 main/원격 Push 없음. 다음 근거 확인은 기존 라이브러리 최초 PNG·생성대화·수정체인 및 현재 시트 SHA 대조. 4종 보호·재제작 금지.
+
+---
+
 # PLANNING / 2026-11-10 — 바울 대표 #97 VenomSnake 실게임 적용 진행 승인 · Codex 이관
 
 - 바울 대표 직접 지시: **“맹독벰 다 됐으면 게임에 넣자?”**. 최신 #97 아트 판정에 따라 **8프레임 v2 KEEP 조합의 실제 로컬 게임 적용 진행을 허용**. 신규 Attack03 final local-review 후보 **채택 금지**. 반복 추가 아트 제작 중단.
