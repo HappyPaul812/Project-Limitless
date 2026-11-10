@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-10 정오 — F2 BendSnow·VenomSnake 검수 후속 + HP/MP 물약 출처 재탐색
+
+- 바울 대표 “전에 우리가 만든 거 같은데 챕터2 할 때...? 하여튼 다음 일들 시켜줘.” 기존 기록과 11/10 Codex 보고 #57·#43·#75 대조. **챕터2 직접 제작 7개는 몬스터 잡템(송곳니/깃털/비늘/갑각/열핵 등)**, 내부 `Battle_Item_Icons` 시트는 상태해제약 등. **작은 HP/MP 회복약 2개의 오리지널 전용 원본 제작/납품 근거 아직 미발견**. 현재 `ItemIcons/HealingPotionSmall.png` = Kenney `flask_full`, `ManaPotionSmall.png` = Kenney `flask_half` 바이트 동일, 원본 두 icon+ItemDefinition GUID 매핑은 보존.
+- **Codex 우선 [#96 시작마을 상점 HP/MP 내부 원본 탐색→안전 교체](https://github.com/HappyPaul812/Project-Limitless/issues/96)**: F:/Downloads 및 프로젝트 과거 아트 납품에서 HP/MP용 직접제작 PNG만 *한정* 재탐색, 있으면 출처·SHA·64px 실가독성 확인 후 시작마을 거래창만 국소 격리 연결/QA. 없으면 HOLD 후 리뉴얼 오리지널 HP/MP 작은 약 아이콘 각1 후속 발주. 다른 상태해제약/Chapter2 loot를 바꿔쓰지 말 것. ItemDefinition 공용 icon GUID 변경으로 상점 외 인벤토리/전투 영향 확대 금지. 유니티6000.6.5f1 고정/사용자 Save·dirty 보호/원격Push0.
+- **메인 신규 아트 [#75 보완 지시](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6757397006)**: 기존 1774×887 전시용 후보 ZIP SHA `151094aacd847ee7b4338ca08a827d0edaa21a1122df357379f0bd493afabd8a` 후보 그림 방향 수용, 단 파일이 곧 256 타일/PPU128 실게임용 아트 아님. Codex 별도 [#96] 읽기전용 F2 After_Bend1280 실제 화면좌표/PPU/4.5WU 콜라이더·소품 중복 근거 확보 후 메인에 공유. 메인은 눈 반복/길 굽음 실제 ROI 2개에만 기존 소스 재배치 또는 독립 반투명 잔설/접합 1개 후보, 오프라인 vs Unity 명시. 사용자 최종 미술 승인·Unity 적용 전까지 원본 게임 변경 금지.
+- **리뉴얼 아트 [#43 뱀 마감 보완 지시](https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6757398584)**: v3 원본 SHA `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0`, ZIP SHA `5c708234539a7751c1646508feb5fc66e8a5e11439b222494145e99923980b8b`, Codex PASS→사용자 단일포즈 최종승인 상정. 40px 세부·x0 알파25px 최소 보완 여부 판정, 필요 시 새 독립 보정안1개, 기존 v3 원본 보존. 전 프레임 양산/Unity 적용 금지. [#95 NPC 치유사/은행은 뱀 최종 미술 승인까지 HOLD](https://github.com/HappyPaul812/Project-Limitless/issues/95#issuecomment-6757399964). 신규 HP/MP 아이콘은 #96 탐색 실패 시에만 추가 제작 발주.
+- 이전 QA 재실행 금지, 기존 모든 승인 #63 Bee/#90 Spider/#92 Ch2 BG/#94 던전 Collider·TTS/Save/WAV·기존 승인 환경 보존. `main` 직접 commit/Push/remote merge 금지. `docs/planning`은 결정·이슈 지시만 기록한 상태: 실제 Codex F: 실행·아트 제작·원본 Unity 적용 아직 시작했다는 증거 없음.
+
+---
 # PLANNING / 2026-11-10 오전 — Codex 리셋 전 아트 두 담당 병렬 업무 발주
 
 - 바울 대표 “코덱스 초기화가 약1시간 반 남아 메인이랑 리뉴얼 먼저 일 시켜줘.” 현재 Codex 사용량 절약: **추가 Unity QA·로컬 동기화·재검증 0**, 오늘은 두 아트 담당 문서/실물 파일럿만 발주.
