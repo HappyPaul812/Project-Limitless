@@ -1,3 +1,12 @@
+## 2026-11-10 / Chapter1 VenomSnake 단일 포즈 후보 정리 — Issue #43 (현재 최신)
+
+- **실물 원본 v3 확보·SHA 검증:** `VenomSnake_KeyArt_v3.png` **1254×1254 RGBA / 2,285,408bytes / SHA256 `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0`**. 과거 #43 Codex 정적 1포즈 **PASS 권고**(사용자 최종 미술 승인 별개). v3 **원본 바이너리 수정0**. v1 미술 DISCARDED, v2 32×32 20프레임 HOLD/비교 참고만.
+- [신규 v3 단일 포즈 마감 보고서](../../Renewal_20261110_VenomSnake_v3_SinglePose_Closeout_Issue43.md) / `docs/art-renewal` 실제 보고서 commit **`f8dabb66a787ec6cc4d8dc89c6ecb22291a5ff4c`**. 실물 **`LIMITLESS_VENOMSNAKE_SINGLEPOSE_CLOSEOUT_20261110.zip`** **3,619,505bytes / SHA256 `5c708234539a7751c1646508feb5fc66e8a5e11439b222494145e99923980b8b` / 14 entries / CRC PASS / Manifest 12/12 + SHA256SUMS 13/13 PASS**.
+- **납품 파일:** `Candidate/VenomSnake_KeyArt_v3_FINAL_CANDIDATE_SOURCE_KEEP.png` SHA=원본 v3 SHA (바이트동일). 512/128/40 OFFLINE 투명 축소 PNG·v2 Idle00 실물 32px vs v3 비교판·어둡고 밝은 단색/숲색 가독성 판. ChatGPT Library **`/LIMITLESS_Art_Delivery/VenomSnake_Issue43_20261110/`에 ZIP·PNG·비교판 6파일 저장**. GitHub 바이너리/사용자 F: 자동복사0.
+- **투명 알파 경고:** 원본 x0 경계 알파 25px 유지, 역사 소형 알파군집 548건은 별도 측정기준. 이번 알파>0 8연결 컴포넌트 184개(면적1~4px 176개) 확인. **원본 alpha 수정/재작화 완료라고 주장하지 않음**. v3 입·독니의 강한 위협감은 대표 최종 미술 판단사항. 실제 40px 비늘 디테일은 축소로 제한, Unity 실제 PPU/Runtime 미검증.
+- **이번 턴 NPC OGA06 치유사·OGA16 은행 안내인 신규 제작0.** 다음 턴에는 최소 투자 NPC 2종 착수 가능(뱀 최종 승인·게임적용 자동 승인 의미 아님). Idle/Attack 전체 모션0; VenomBee/Spider/WolfBearFox/공식 Ch2 몬스터·보스·승인 환경·Unity/Scene/Prefab/Quest/Save/UserData/main 변경0, Push·병합·본게임 적용 금지.
+- **상태:** `VENOM_SNAKE_ART_CANDIDATE_FINALIZED / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`.
+
 ## 2026-11-03 / Issue #63 / VenomBee Sting·Recover 2개 신규 원화 후보 실제 납품 — 최신
 
 - [Sting·Recover 2포즈 제작·검수 보고서](../../Renewal_20261103_VenomBee_StingRecover_TwoPose_TargetedArt_Delivery.md), 브랜치 `docs/art-renewal`, commit **`bd8957d584d31aab23de77230c84e387cfed4500`**. [Issue #63 Codex 153 PASS 타이밍](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6599482389) 및 [기획 후보 A 판정](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6599597527) 확인. **후보 A는 격리 코드/타이밍만 PASS, 본편 적용·실타깃 접점·아트 승인 전부 별개**.
