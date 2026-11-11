@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-11 — #88 Stage2 B99PASS 격리기술 접수 및 #57 NPC03/09 다음 작업 배정
+
+- 사용자 “다음으로 가자..”로 이미 승인된 OGA03 잡화상인·OGA09 주민대표 원본 게임 교체 전 **Unity 기술검증**을 다음 최우선으로 배정. 기존 #95 OGA06/16 NPC2는 Unity 및 사용자 실플레이 완료 보호, 재제작/재테스트0. [Issue #57 Codex 발주 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6788321474).
+- **한기 #88 기존 새 격리99PASS/0FAIL 접수**([Codex 기술 결과](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6788194741), [기획 접수](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6788320895)). 턴 경계80 + GameView19, 기존44PASS 미반복. Code `c886e89b44250c1088c49d2bc25170da6e51f429` 및 QA `a0ca3223dece4e8816e91841678897e7d063e02d`; 기존 4파일만 개선, Stage1 포함 7파일 여전히 **격리 worktree**에만 있음. **원본 main 제품 적용0**. VFX 960/1280 offset 표시 PASS, 소유자 인지·태온/휠체어 본체중첩 VISUAL_PARTIAL 유지. 조기해제 복귀보호·올빼미 정식 한기부여 확률/AI/예고/수치·동상피해·보스/해제 아이템 HOLD. 99PASS를 원본 제품/콘텐츠 완성으로 처리하지 않음.
+- **#57 다음 Codex** `codex/ch1-oga03-09-unity-delta-20261111` Unity6000.6.5f1 분리 worktree, 기존 승인 PNG 512RGBA OGA03 SHA `09b2d97643a7aaefd51930eb374c48bf358020f015cc4cce9e7ef4903853151d`, OGA09 SHA `ca0336ab6bbc7aaeb16169037e73ee39ced1b674f48324baeb75b1debfa29fcf` (Library 확인 ZIP SHA `7d5d4ca4def6e21164c2c318480b428c1cc14f708590ec44c4074579fcd058ab`), 실제 Windows 실물 SHA확인. 기존 OGA03/09 월드 Scale·PPU28/Pivot·StableIDs/상점/E·마우스/키보드·주민안내/다른지역/Nameplate·Collider/Quest·Save 보호하며 **격리실GameView와 최소 기능 QA만**. 기존 승인 PNG 재생성0. PASS 후 원본 적용 정확 파일·범위 확정, 제품 로컬 main은 아직 보류. 기존 QA 전수반복0.
+- 원본 local main 최신 확인 `21ecf2129efa9d9467161d972fcb0a676122223c` (로컬 실 HEAD 우선), Save/UserData·tracked dirty302/untracked550·이미 완료 F2B352/95NPC/91BG/96포션/97뱀·승인원본 유지. Codex 5시간 한도 남은26% 사용자 UI 정보에 비추어 **새 1회 최소 범위/기존 증거 재활용**, 다른 무리한 동시 게임 전수QA 금지. GitHub branch docs/planning에만 문서 기록, 원본 Unity/local main/원격 main 변경0.
+
+---
+
 # PLANNING / 2026-11-11 — #88 한기 Stage2 B안 격리 정책 선택 및 4파일 표적 QA 지시
 
 - [Codex Stage2 읽기 전용 검토](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6787685241) 보고 **Unity실행·제품변경0 / Markdown2건 commit `5d19cde44c0781b86299a1531f72078aabca9c9d`** 접수. 기존 첫한기 시험44PASS는 A안(한기시 BeginTurn 조기 반환) 가정이며 방어/맹세/SkillCD·가이아/철벽·독/화상 전체동결을 초래, 정상 FinishCurrentAction 직접호출은 MP회복/도발·감전·침묵 소비 위험.
