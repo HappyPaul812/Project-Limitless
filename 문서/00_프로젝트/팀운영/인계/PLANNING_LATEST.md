@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-11 — #95 NPC·#91 Ch3 전투 배경 본편 적용 및 바울 대표 실게임 검수 수용 마감
+
+- 바울 대표는 Codex 승인 아트4종 로컬 적용 보고를 확인하며 **“실게임 검수도 했어..”**라고 직접 진술. **#95 NPC OGA06·OGA16 2종, #91 Snowroad/F2 전투배경 v2 2종 최종 미술 승인 + 로컬 원본 배포 + 사용자 실플레이 수용 완료**. 4종 재승인/재작화/동일 QA 재실행 금지.
+- Codex [#95 원본 적용 완료](https://github.com/HappyPaul812/Project-Limitless/issues/95#issuecomment-6786778538) / [#91](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6786779546) 기술 근거: 검증 제품 신규10+수정2 총12파일, Unity6000.6.5f1 격리107PASS/0FAIL + 추가 Import7PASS + 원본 Import9PASS, Console error0, FF-only/no-autostash, 원격 Push/Merge0. 최종 로컬 main **21ecf2129efa9d9467161d972fcb0a676122223c**. 기존 Save/UserData·사용자 dirty302/untracked550·F2 B352 및 Ch1/2 보존.
+- 사용자 최종 수용 기획 댓글 [#95](https://github.com/HappyPaul812/Project-Limitless/issues/95#issuecomment-6786869689) / [#91](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6786870219). 사용자가 확인한 실제 게임 검수를 별도 사용자 QA로 기록하되 모든 플랫폼·전투·파티·재사용장소 전수 통과로 과장하지 않음.
+- #75 F2 B352는 별도 로컬 원본 반영 기술37PASS/0FAIL 완료, 마지막 사용자 직접 손플레이 승인 여부는 이후 사용자 명시 보고로만 종결. 새로운 게임 아트 변경은 이 기획 문서 갱신에서 수행하지 않음.
+- 상태: ISSUE95_NPC2_COMPLETE / ISSUE91_CH3_BG2_COMPLETE / USER_REALPLAY_ACCEPTED / REMOTE_NOT_PUSHED / NO_NEW_PRODUCT_CHANGE.
+
+---
 # PLANNING / 2026-11-11 — Issue #95/#91 승인 아트 4종 Unity 격리 검증 107PASS 완료, 원본 미반영
 
 - [Codex #95 실검증 결과](https://github.com/HappyPaul812/Project-Limitless/issues/95#issuecomment-6786284694) 및 [#91 동시 보고](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6786285720) 확인. 4종 사용자 미술 승인 PNG SHA 동일, 격리 Unity **6000.6.5f1, 107 PASS / 0 FAIL** (17 실제 GameView, Runtime·C# 0error). 이전 대화 최초 인상 중 일부 70 PASS 표기는 정확한 수치 **107 PASS로 정정**. 테스트에서 기존 local main **3a44dd0483759dc4921b22a914853395701789d7 unchanged**, 원격 Push/Merge 없음. 원본 제품 업데이트 아직 완료하지 않았으므로 **코덱스 기술 QA 완료와 본편 적용을 구분**.
