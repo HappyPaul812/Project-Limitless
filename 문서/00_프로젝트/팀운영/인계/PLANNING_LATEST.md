@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-11 — 다음 단계: Main24 F2 서리올빼미 첫 한기전 + 냉기 화면 가독성 + NPC03/09 승인판 병렬 착수
+
+- 바울 대표가 #95 OGA06/OGA16 NPC2와 #91 Ch3 BG2 실게임 확인 후 **“그럼 다음으로 가자..”**라고 지시. 최신 로컬 main 마지막 보고 `21ecf2129efa9d9467161d972fcb0a676122223c`(로컬 재조회 우선). #75 F2 B352, #95 NPC2, #91 BG2, #96 HP/MP, #97 VenomSnake와 몬스터/펫 출처감사 이미 완료 또는 별도 사용자 실플레이 대기 상태 보존. 중복 제작·QA·제품 적용 금지.
+- **Codex [#85 차기지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6786952685)**: Chapter3 Main24 F2 FrostOwl 첫 **한기(자기 행동 기회 2회 차단)** 격리 플레이 파일럿. 기존 Owl 조우·Battle/ColdStage1, 승인 VFX3·Icon3 HUD가 실원본에 어디까지 연결됐는지 조사 후 기존 코드 중복금지. #88 공식 한기·동상·동결괴사 분리, 미정 감소시점/재적용/동상Damage/KO간격·Owl 발동률·드롭/경제는 아직 미술/기획 승인 미완. 공식 규칙으로 무단 고정/원본 게임 적용 금지, 격리 테스트 전제로만 비교 후 필요한 승인 게이트 보고. Unity6000.6.5f1·별도 codex/main24-owl-first-chill-isolated-20261111 worktree, 휠체어·3인교착방지·명령잠금·턴복귀·HUD 1차 표적 Delta QA, Save·기승인 씬 보호, remote Push/Merge0.
+- **신규 아트 [#89 지시](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6786953257)**: 승인 냉기 전장 VFX3/정식 상태 Icon3 **6개 원본BYTE_KEEP**. 기존 11/04 VISUAL_PARTIAL 사례(설원40px 형태, 128px 휠체어뒤, 태온 겹침/하단 안내)만 실제 기존 Unity 증거에서 최소 위치/문자 병기·Sorting 개선을 제안, 신규 PNG 재생성0. `docs/art-new` 보고/SPRITE_ART_LATEST/#89, 본편 원본 미적용.
+- **리뉴얼 [#57 지시](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6786953795)**: #95 사용자 확정 NPC06/16 후속 아트 반복금지. 10/23 이미 제작된 **OGA03 잡화상인 + OGA09 주민대표 기존 후보**만 512·128·40px 및 승인 NPC 기준 1장 미술 승인 비교판으로 정리. OGA20 GateGuard 태온 유사성 기존 HOLD 보존, 기타 NPC/기존 몬스터 재제작0. `docs/art-renewal` 인계/Issue 업데이트, Unity 제품 적용/StableID/가게 로직 변경 금지.
+- **업무 분리:** Owl 런타임 Stage2 확정 정책은 바울 대표 승인 필요 (#88 기획 추천값은 미승인). 본 파일럿은 공식 냉기 피해 수치/AI 확률/화로·상점 등의 본편 구현 승인으로 해석 금지. 신규 아트/리뉴얼은 검토 자료만 제작. 완료 보고는 담당 branch+commit SHA+Issue+LATEST+QA+USER_APPROVAL 여부. 기획 GitHub docs/planning 이외 Windows 로컬 Unity/Save/UserData/remote main 변경0.
+- 상태 `MAIN24_OWL_CHILL_ISOLATED_PILOT_REQUESTED / COLD_RULES_STAGE2_USER_APPROVAL_PENDING / ART89_TARGETED_LAYOUT_REVIEW_REQUESTED / RENEWAL_OGA03_09_EXISTING_ART_REVIEW_REQUESTED / LOCAL_ORIGINAL_NO_NEW_CHANGES / REMOTE_NOT_PUSHED`.
+
+---
 # PLANNING / 2026-11-11 — #95 NPC·#91 Ch3 전투 배경 본편 적용 및 바울 대표 실게임 검수 수용 마감
 
 - 바울 대표는 Codex 승인 아트4종 로컬 적용 보고를 확인하며 **“실게임 검수도 했어..”**라고 직접 진술. **#95 NPC OGA06·OGA16 2종, #91 Snowroad/F2 전투배경 v2 2종 최종 미술 승인 + 로컬 원본 배포 + 사용자 실플레이 수용 완료**. 4종 재승인/재작화/동일 QA 재실행 금지.
