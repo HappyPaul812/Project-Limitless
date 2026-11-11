@@ -1,3 +1,14 @@
+# PLANNING / 2026-11-11 — #85 Main24 첫눈의 숲 Owl 한기 패턴 전투당 1회/예고/해제보호 사용자 최종 승인
+
+- 바울 대표가 2026-11-11 “그래”로 앞서 제안한 **서리올빼미 F2 첫 한기 전투 규칙** 승인. [Issue #85 공식 기획 규칙·코덱스 발주](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6791766233). ① 한기 공격 전 명확한 한글·시각 예고 ② 정상 명중 판정의 **유효 적중시에만** 한기2 자기 행동기회 차단 ③ 해당 전투 첫 한기 공격 **최대 1회 시도**, 이후 일반 공격 ④ 자연 만료·허용된 조기 해제 모두 정상 성공행동1회까지 한기 재부여만 차단. 명중 실패시 강제 피격/재시도/불명확한 확률을 새로 만들지 않음. 패턴 1회(기회 보장)와 디버프 무조건 적용은 다르다.
+- 승인된 Owl 전용 Production 동작에는 기존 **local main `4a9b72f88d58c313cee81efc03cb4118354fa38f`**에 이미 적용된 Stage2 B 코어7파일 사용([#88 68PASS 원본 적용](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6791592600)); 기존 격리 99/44 PASS 재실행0. 올빼미의 실제 F2 Encounter·EnemyAction·기존 Hit/Guard·BattleColdStatus API를 먼저 읽어 구조/파일 명세 확인, 무리한 AI 및 명중/확률 변경 금지. 기존 기본OFF는 모든 비Owl·Editor QA arm 경로에 유지, 승인된 F2 Owl 실전에서만 독립 trigger 연결. 기존 UI에 QA 제목·개발용 메시지 노출 금지.
+- **조기해제 보호 정책 신규 승인**: 허용된 한기 제거 API를 정상 호출하면 보호 부여 후 정상 자기 행동1회 완료까지 재부여 거절. 기존 정화Ⅰ이 한기 해제 가능하다는 정본 증거 없음. 정화Ⅱ·어묵탕·화로 향후 기능/아이템은 아직 HOLD이므로 **기존 정화Ⅰ/상점 스킬/아이템 효과 무단 수정 금지**; 해당 경로가 실게임에 미존재면 Editor/격리 TestAPI에서 조기해제 보호만 기술 검증하고 유저 UI에 정화 가능 약속하지 않음.
+- 독/화상/쿨다운/방어 경과·KO는 Stage2 B 기존 원본 보존. VFX/Icon6 원본 BYTE_KEEP; 960·1280 실제 화면에서 명확한 Owl 대상 소유자 식별과 상태명/횟수·일반 HUD 무가림 표적 검증, 기존 태온·휠체어 겹침 VISUAL_PARTIAL 조용히 방치하거나 완료 주장하지 말고 독립 이슈 경계로 유지.
+- 다음 Codex `codex/main24-owl-first-chill-production-20261111` 분리 worktree와 Unity6000.6.5f1 격리에서 한 전투 한기 예고→명중/실패→2차단→복귀→이후 일반공격, 일시 제거·정상행동 보호, 종료·재입장 flag 리셋, 일반Ch1/2·비Owl회귀, 키보드/마우스/휠체어 최소신규 DeltaQA만. 원본 로컬 제품 적용은 실제 manifest/보호 SHA·Git dirty·Scene/Prefab/GUID/meta/Save·원본 Editor 안전·FF 충족하는 승인된 좁은 범위에서만. 범위 확장·기존 충돌·수치 미정이면 HOLD 보고, 원격 Push/Merge 및 main 직접커밋 금지.
+- 상태 `OWL_FIRST_CHILL_RULES_USER_APPROVED / EARLY_REMOVAL_REAPPLY_GUARD_APPROVED / OWL_PRODUCTION_INTEGRATION_PENDING / STAGE2_CORE_LOCAL_APPLIED / CHILL_BOSS_FUTURE_HOLD / REMOTE_NOT_PUSHED`. 이번 기획은 GitHub docs/planning + Issue 기록만, PC 원본 Unity 변경0.
+
+---
+
 # PLANNING / 2026-11-11 — Stage2 B 한기 코어 본편 로컬 적용 성공 / Owl 정식 발동 별도 기획 결정
 
 - [#88 Codex 실제 원본 적용 보고](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6791592600), [#85](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6791601746), [기획 접수](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6791684341) 확인. Unity **6000.6.5f1**, 승인된 누적 한기Stage1+Stage2 B 제품7파일만 로컬 main FF-only 안전 적용. **신규 격리62 + 원본Import6 = 68 assertion PASS/0 FAIL, 원본Console0**. 기존 격리99·첫한기44 PASS 재실행0. 제품SHA 커밋·최종 원본 local main **`4a9b72f88d58c313cee81efc03cb4118354fa38f`**. 보고증거는 별도 브랜치 `fdf247197aa094dd3058007fa400ae5be1a59daa`에만, 원본 main 문서/검사기11개 대량추가0. 원격 Push/Merge0, Save/UserData·tracked dirty302/untracked550 및 기존 F2B352/NPC/전투BG/냉기 Icon3+VFX3 바이트 보존.
