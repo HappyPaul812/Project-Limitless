@@ -476,10 +476,13 @@ namespace ProjectLimitless.Battle
             Image distance = MakeImage(battlefield.transform, "DistantField", new Color(.075f, .13f, .16f, 1f)); distance.rectTransform.anchorMin = new Vector2(0, .3f); distance.rectTransform.anchorMax = new Vector2(1, .55f); distance.rectTransform.offsetMin = Vector2.zero; distance.rectTransform.offsetMax = Vector2.zero;
             Image ground = MakeImage(battlefield.transform, "BattleGround", new Color(.055f, .095f, .105f, 1f)); ground.rectTransform.anchorMin = Vector2.zero; ground.rectTransform.anchorMax = new Vector2(1, .42f); ground.rectTransform.offsetMin = Vector2.zero; ground.rectTransform.offsetMax = Vector2.zero;
             Image horizon = MakeImage(battlefield.transform, "GoldenHorizon", new Color(.65f, .5f, .22f, .7f)); horizon.rectTransform.anchorMin = new Vector2(0, .415f); horizon.rectTransform.anchorMax = new Vector2(1, .425f); horizon.rectTransform.offsetMin = Vector2.zero; horizon.rectTransform.offsetMax = Vector2.zero;
+            // 승인 Chapter3만 독립 Catalog로 먼저 조회하고, 기존 Chapter1/2 우선순위는 그대로 유지합니다.
+            BattleBackgroundCatalog chapter3 = Resources.Load<BattleBackgroundCatalog>("BattleBackgrounds/Chapter3");
+            Sprite chapter3Backdrop = chapter3 != null ? chapter3.Find(BattleEncounterContext.FieldSceneName, BattleEncounterContext.StableEncounterId) : null;
             BattleBackgroundCatalog backgrounds = Resources.Load<BattleBackgroundCatalog>("BattleBackgrounds/Chapter1");
             BattleBackgroundCatalog chapter2 = Resources.Load<BattleBackgroundCatalog>("BattleBackgrounds/Chapter2");
             Sprite chapter2Backdrop = chapter2 != null ? chapter2.Find(BattleEncounterContext.FieldSceneName, BattleEncounterContext.StableEncounterId) : null;
-            Sprite backdrop = chapter2Backdrop != null ? chapter2Backdrop : backgrounds != null ? backgrounds.Find(BattleEncounterContext.FieldSceneName,
+            Sprite backdrop = chapter3Backdrop != null ? chapter3Backdrop : chapter2Backdrop != null ? chapter2Backdrop : backgrounds != null ? backgrounds.Find(BattleEncounterContext.FieldSceneName,
                 BattleEncounterContext.StableEncounterId) : null;
             if (backdrop != null)
             {
