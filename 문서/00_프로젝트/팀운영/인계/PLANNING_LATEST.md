@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-11 — Issue #95/#91 승인 아트 4종 Unity 격리 검증 107PASS 완료, 원본 미반영
+
+- [Codex #95 실검증 결과](https://github.com/HappyPaul812/Project-Limitless/issues/95#issuecomment-6786284694) 및 [#91 동시 보고](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6786285720) 확인. 4종 사용자 미술 승인 PNG SHA 동일, 격리 Unity **6000.6.5f1, 107 PASS / 0 FAIL** (17 실제 GameView, Runtime·C# 0error). 이전 대화 최초 인상 중 일부 70 PASS 표기는 정확한 수치 **107 PASS로 정정**. 테스트에서 기존 local main **3a44dd0483759dc4921b22a914853395701789d7 unchanged**, 원격 Push/Merge 없음. 원본 제품 업데이트 아직 완료하지 않았으므로 **코덱스 기술 QA 완료와 본편 적용을 구분**.
+- 테스트 브랜치 `codex/art95-91-unity-delta-20261111`: 승인 제품 정확 12파일 신규10/수정2 후보, product commit **d40bb17057da555322993c1b1c2fd7944b95bf78**, QA 문서 commit **52490cf4c5d4ca508ac6e6f5c117bdd460e93d1b**; 사용자 dirty302/untracked550/Save/UserData/원본보호5134SHA 변경0.
+- NPC: 승인 OGA06/OGA16 기존 32px/PPU28 월드 높이 1.142857WU 유지, 신규 PPU329/320.25와 하단 pivot 적정 조정; 치유/은행/Field03/Arbel 재사용 및 StableID5/Collider·Nameplate·Sorting PASS, 역할 로직(치유·안내) 유지. Field Sprite 2종이며 대사 Portrait 신규 아님.
+- BG: Snowroad/F2 v2 동일 원본 PNG 1672x941, 실제 아군3+적1·3해상도·후열 HP/상태·Ch1 Field01/Ch2 Field05 기존 배경 전환 PASS. F2 우측 나무에 의한 명확한 가독성 FAIL 없음(시험 편성 한정), 수정v3·나무삭제 불필요. 격리 SearchDatabase 예외 및 MCP Editor 초기화 로그 OPEN은 게임 Runtime/C# QA와 분리, 원본 Console0 미확정.
+- 바울 대표 “드디어 npc들도 얼굴이 생기는구먼~ ㅋㅋ 좋아..ㅋㅋ”라는 **긍정 평가** 확인. 완료 상태 `ART_4_USER_APPROVED / ISOLATED_TECH_107PASS_0FAIL / NPC_AND_BG_PRODUCT_12_FILES_READY / ORIGINAL_NOT_APPLIED / USER_REALPLAY_NOT_YET_DONE`. 신규 4종 원본 제품 배포는 기존 적용범위12파일만 안전 적용, 로컬 안전 FF 전 추가 변경·충돌 검사 필요. 다음 Codex 실행은 전달받은 명시된 제품 적용 지시 범위 내 수행, **검증한 모습과 실제 본편 동일화 후 대표 손플레이 확인**.
+
+---
 # PLANNING / 2026-11-11 — Issue #75 F2 B352 로컬 원본 적용 성공·최종 손플레이 대기
 
 - [Codex Issue #75 적용 완료](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6783671968): 사용자 추가 확대 범위 직접 승인(“어. 승인.”) 후 Unity6000.6.5f1 B352를 본편 로컬 원본에 적용. **신규 Delta QA 37PASS/0FAIL**(Runtime35+Editor2), 3해상도 실제 GameView/마을→F2 SceneTransition/휠체어 굽은 길 왕복/퇴장·재입장 Builder 생성·자원해제/Collider·HUD·나무·그루터기·올빼미 보호. 제품 **5파일만**: F2SnowPathBuilder.cs(+meta), 기존 FirstSnow GroundOverlay PNG(+meta), World_NorthF2_CANDIDATE.unity 연결. 기존 GUID/meta 및 원본 5130 보호파일(변경허용 Scene1 포함), Save/UserData, dirty302/untracked550 보존. 원격 Push/Merge0.
