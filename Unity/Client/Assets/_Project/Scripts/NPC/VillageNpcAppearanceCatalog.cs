@@ -20,7 +20,7 @@ namespace ProjectLimitless.NPC
         private static readonly IReadOnlyDictionary<string, string> ResourcePaths =
             new Dictionary<string, string>
             {
-                ["starter-village-general-shop"] = "VillageNpcSprites/Eldiran/OGA03_GeneralShop",
+                ["starter-village-general-shop"] = "VillageNpcSprites/Eldiran/OGA03_GeneralShop_Original_Approved",
                 ["starter-village-equipment-shop"] = "VillageNpcSprites/Eldiran/OGA17_EquipmentShop",
                 ["starter-village-healer"] = "VillageNpcSprites/Eldiran/OGA06_Healer_Original_Approved",
                 ["starter-village-bank"] = "VillageNpcSprites/Eldiran/OGA16_Bank_Original_Approved",
@@ -31,13 +31,13 @@ namespace ProjectLimitless.NPC
                 ["starter-village-resident-03"] = "VillageNpcSprites/Eldiran/OGA13_Resident03",
                 ["starter-village-resident-04"] = "VillageNpcSprites/Eldiran/OGA19_Resident04",
                 ["starter-village-gate-guard"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard",
-                ["starter-village-main-guide"] = "VillageNpcSprites/Eldiran/OGA09_VillageRepresentative",
-                ["safezone-catacomb-supply"] = "VillageNpcSprites/Eldiran/OGA03_GeneralShop",
+                ["starter-village-main-guide"] = "VillageNpcSprites/Eldiran/OGA09_VillageRepresentative_Original_Approved",
+                ["safezone-catacomb-supply"] = "VillageNpcSprites/Eldiran/OGA03_GeneralShop_Original_Approved",
                 ["safezone-catacomb-party"] = "VillageNpcSprites/Eldiran/OGA10_PartyManager",
                 ["safezone-catacomb-healer"] = "VillageNpcSprites/Eldiran/OGA06_Healer_Original_Approved",
                 ["safezone-catacomb-keeper"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard",
-                ["arbel-leon"] = "VillageNpcSprites/Eldiran/OGA09_VillageRepresentative",
-                ["arbel-shop"] = "VillageNpcSprites/Eldiran/OGA03_GeneralShop",
+                ["arbel-leon"] = "VillageNpcSprites/Eldiran/OGA09_VillageRepresentative_Original_Approved",
+                ["arbel-shop"] = "VillageNpcSprites/Eldiran/OGA03_GeneralShop_Original_Approved",
                 ["arbel-healer"] = "VillageNpcSprites/Eldiran/OGA06_Healer_Original_Approved",
                 ["arbel-party-guide"] = "VillageNpcSprites/Eldiran/OGA10_PartyManager",
                 ["arbel-pet-adoption"] = "VillageNpcSprites/Eldiran/OGA17_EquipmentShop",
