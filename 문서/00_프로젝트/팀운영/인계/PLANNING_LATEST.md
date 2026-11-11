@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-11 — OGA03·OGA09 NPC 2종 바울 대표 최종 미술 승인
+
+- 바울 대표: “코덱스는 시켰고, OGA03·OGA09가 npc지? 그럼 아까 봤는데 좋아..” → 기존 #57의 실제 OGA03 잡화상인·OGA09 주민대표 4인 시각비교를 직접 긍정, **두 NPC의 기존 오리지널 미술 최종 승인**. [Issue #57 공식 기획 승인 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6787576315). 아트 재승인 질문·신규 원화 재제작 금지. OGA03/OGA09는 마을 정지 스프라이트이며 대화 초상화 신규 아님.
+- OGA03 `Eldiran_GeneralShop_Concept_512.png` (512RGBA) SHA256 `09b2d97643a7aaefd51930eb374c48bf358020f015cc4cce9e7ef4903853151d`. OGA09 `Eldiran_VillageRepresentative_Concept_512.png` SHA256 `ca0336ab6bbc7aaeb16169037e73ee39ced1b674f48324baeb75b1debfa29fcf`. 기존 2026-10-23 자산과 11/11 자료 같은 SHA. 검토 ZIP `LIMITLESS_ISSUE57_OGA03_OGA09_FINAL_VISUAL_REVIEW_20261111.zip` Library 검증 606,247bytes/SHA `7d5d4ca4def6e21164c2c318480b428c1cc14f708590ec44c4074579fcd058ab`; 실제 Windows F: 파일은 Codex 재확인 필요.
+- 이 승인 결과는 **`USER_ART_APPROVED_OGA03_09 / UNITY_TECH_QA_PENDING / LOCAL_ORIGINAL_NOT_APPLIED`**. Codex는 다른 작업 중인 #88 Stage2 한기 규칙 검토를 중복 발주 없이 유지하고, NPC 별도 격리 기술QA를 후속 수행: 기존 WorldScale/PPU28/pivot/StableID/상점·주민안내·재사용지역/Collider/입력/Nameplate/Save 보호, 승인 PNG 512px를 PPU28에 그대로 직접 Import하지 말 것. 미술 승인과 제품 실게임 적용 성공/인게임 기술승인을 구별.
+- #95 OGA06/16 + #91 Ch3 BattleBG v2와 #75 F2 B352는 이미 제품 적용 사용자 수용/기술검증 별도 완료 상태 보호, #89 냉기 승인 Icon3/VFX3 원본 보호. 메인 직접커밋/원격Push·Merge 금지, 원본 Unity Save/UserData·미커밋 변경 보호.
+- 본 기획 회차는 `docs/planning` 문서·Issue만 변경, Windows 원본 Unity/로컬 main 미접근·변경0.
+
+---
+
 # PLANNING / 2026-11-11 13:58 KST — Owl 첫 한기44PASS 격리 + #89 no-ZIP 정상이행 + #57 NPC03/09 시각 검수
 
 - 바울 대표가 Codex 서리올빼미 첫 한기 **Unity 격리44PASS/0FAIL** 보고와 신규 아트 파일 `F:\Downloads\Issue89_ColdVisual_TargetedReview_OFFLINE.png`, 리뉴얼 ZIP `F:\Downloads\LIMITLESS_ISSUE57_OGA03_OGA09_FINAL_VISUAL_REVIEW_20261111.zip`을 제출. Windows F: 직접 접근0, 동일 명칭 Library 보관본을 직접 실물검증. **#89는 새 아트 제작이 아닌 비교판PNG1+권고Markdown1이므로 ZIP 없음 정상**.
