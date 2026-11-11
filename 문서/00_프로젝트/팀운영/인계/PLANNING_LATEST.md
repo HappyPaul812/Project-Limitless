@@ -1,3 +1,14 @@
+# PLANNING / 2026-11-11 — OGA03·OGA09 NPC 원본 로컬 적용 성공 / 대표 실플레이 대기
+
+- [Codex #57 실제 원본 적용 보고](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6791085660) 확인. 사용자 승인 OGA03 잡화상인·OGA09 주민대표 512RGBA 원본 2PNG+meta2, `VillageNpcAppearanceCatalog.cs` 5 ID 매핑만 수정하는 **제품5파일**을 Unity6000.6.5f1 로컬 main에 FF-only 적용. 기존 격리46PASS 재반복 없이 추가 격리Import6PASS + 원본Import/컴파일8PASS = **신규14PASS/0FAIL**, 원본 Console0.
+- 원본 main **`21ecf2129efa9d9467161d972fcb0a676122223c` → `548cf1e275684d8c4a647685fb6f08be0c495be7`**. 별도 적용브랜치 `codex/ch1-oga03-09-original-apply-20261111`, 신규 GUID2, 기존 Sprite/GUID/meta·Scene/Prefab·기존 OGA06/16·F2B352·Quest·상점가격·Save/UserData·tracked dirty302/untracked550 보호, 원격 Push/Merge0.
+- Codex 자동 승인 검토에서 **제품 범위 외 보고·증거·검사기11파일 원본 main 추가FF 요청을 거절**, 본편에는 제품5파일만 남음. 이를 실패로 재통합/우회하지 말 것. 문서보고 commit `e2cc1446...`·정정 `e9688d79...`은 **별도 로컬 적용브랜치에만 존재**. 기획 원격 문서에는 결과를 요약할 뿐 원본 local main·remote main에 무조건 문서변경 추가 요구하지 않음.
+- 대표 첫 손플레이 경로: 시작마을 서쪽 상인 좌표 (-5.8,1.2) E→물건을 본다/구매·판매, 중앙 광장 주민대표 (0,1.5) E→안내/Main01. Field03 안전지대/Arbel 역할 재사용은 Codex 검증 근거. **대표가 아직 새 적용본 직접 확인했다는 보고는 없음**: `USER_REALPLAY_PENDING` 유지. QA 이전의 이름표 근접 가림은 기존 한계.
+- 사용자 사용량 화면: 5시간 한도 **100% left**, 주간45% left로 리셋 확인(사용자 제공 스크린샷). 한도11%였을 때 적용 시작해 제품 성공·리셋 시점을 맞춤. 해당 수치는 화면 촬영 시점 스냅샷으로 보존, 지속 실시간 잔량 보장 아님.
+- 현재 상태 `NPC03_09_LOCAL_ORIGINAL_APPLIED / DELTA_14PASS_0FAIL / USER_REALPLAY_PENDING / REMOTE_NOT_PUSHED / STAGE2_B_CHILL_ISOLATED_99PASS_ORIGINAL_NOT_APPLIED`. 이 회차 기획은 docs/planning만 작성, 원본PC Unity 직접 접근0.
+
+---
+
 # PLANNING / 2026-11-11 — #88 Stage2 B99PASS 격리기술 접수 및 #57 NPC03/09 다음 작업 배정
 
 - 사용자 “다음으로 가자..”로 이미 승인된 OGA03 잡화상인·OGA09 주민대표 원본 게임 교체 전 **Unity 기술검증**을 다음 최우선으로 배정. 기존 #95 OGA06/16 NPC2는 Unity 및 사용자 실플레이 완료 보호, 재제작/재테스트0. [Issue #57 Codex 발주 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6788321474).
