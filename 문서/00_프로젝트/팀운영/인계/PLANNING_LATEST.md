@@ -1,3 +1,15 @@
+# PLANNING / 2026-11-11 EOD — 모든 승인 작업 선택적 통합, 로컬 동기화, 원격 main Push 명시 승인
+
+- 바울 대표: **“오늘은 여기까지 하자. 지금까지 한 모든 작업들 다 합치고 로컬 동기화하고 메인 푸시도 해주라.”** → 이번 EOD에서 로컬 게임 안전 통합·원본 local main FF 및 **GitHub `main` 원격 Push 1회 명시 승인**. [Issue #85 EOD 정확 범위·보호·실행 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6793135707). 이번 명시는 기존 기본 Push HOLD의 예외이며 main 직접 commit·force Push/무단 branch policy 우회 승인이 아님.
+- [#85 Codex 실제 제품 보고](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6792344273): F2 Owl 첫 한기 예고→최대 1회 시도→첫 유효 피해·생존 대상 한기2차단→일반공격/재조우 초기화, 자연만료·허용조기제거 후 정상행동1회 재부여보호. Unity6000.6.5f1 **신규81 assertion PASS / 0FAIL** (격리75+원본Import6), 원본 Console0; 기존 99/44/68 재실행0. 제품 **4 C# 파일만** FF-only 적용, **마지막 보고된 local main `469b219ffbdbf4c8e5b51e977bbe2940eb6119a2`**, 원격 main 아직 미Push/미확인. 실제 PC HEAD는 Codex가 재조회할 것. 대표의 **정식 Owl 새 전투 실플레이 수용은 아직 대기**; Push가 실플레이 수용을 뜻하지 않음.
+- 승인제품·서류 포함 범위는 현재 확정 #94 Ch1 던전 Collision, #97 VenomSnake8, #96 HP/MP 2, #75 F2 B352, #95 NPC06/16, #91 Ch3 BG2, #57 NPC03/09+출처감사(Ch1 몬스터7/펫3), #88 한기 Stage2 B 코어, #85 정식 Owl 패턴 및 이미 승인된 오디오/TTS/기획/팀별 결과 문서. 기존 원본 local main에 반영된 제품은 재복사/재QA0, `docs/planning` 등 담당 인계 Markdown에서 누락된 승인 사실만 선별 통합. **docs/* 전체 브랜치 병합·미승인 시안/실험코드 자동 반영 금지**.
+- 제외/보호: #89 VFX 소유자와 태온·휠체어 밀집 `VISUAL_PARTIAL`, 동상 피해·동결괴사 보스/즉사/화로/정화Ⅱ/어묵탕·신규 전리품/상점·OGA20·#75 C SnowEdge/Discord 자동화 HOLD. 기존 미커밋 tracked dirty302/untracked550, Save/UserData/UserSettings/사용자 개인 파일·TTS/API키·로컬 실험 로그·ThirdParty 및 승인 아트 GUID/meta, Unity Editor Scene/Play/포커스 보호.
+- **EOD CodeX 의무**: 실제 local main HEAD/status와 `origin/main` 최신 fetch·조상 확인, 작업공간 백업/해시 보존 → 별도 `codex/eod-approved-main-push-20261111` worktree에서 승인 누락 문서만 추가(commit은 별도 브랜치, main 직접commit X) → Unity 신규 delta만 최소 확인 → origin/main..최종localmain 전체 커밋과 파일 검토(불승인/보안키/Save/크기·권한·license) → local main FF-only/no-autostash → GitHub `git push origin main:main` **force 없이 단1회**; remote divergence/branch protection/검증Fail 시 즉시 HOLD, rebase·branch 보호우회·main 직접commit·reset-hard·clean·무차별stash 금지. Push 성공은 서버 `refs/heads/main` SHA와 local main 동등 확인 후에만 표기.
+- 완료 보고에 로컬 start/end main SHA, 원격 start/end main SHA, 승인된 반영/이미 로컬 포함/HOLD, 파일/문서커밋, Save·dirty/untracked·SHA/Editor 보호, DeltaQA PASS/NOTRUN 근거, Push 실제 성공 여부/remote 원격 조회 및 CI, 원격 Main 사용자권한 승인 범위 준수, 사용자 실플레이 대기 항목을 CODEX_LATEST/CURRENT_STATUS/Issue에 기재. **기획은 GitHub `docs/planning` 인계·Issue만 기록한 것**으로 Windows Unity 원본 동기화 또는 remote main Push 성공을 주장하지 않음.
+- 상태: `EOD_20261111_USER_AUTHORIZED_MAIN_PUSH / CODEX_LOCAL_SYNC_AND_REMOTE_PUSH_PENDING / REMOTE_MAIN_NOT_YET_VERIFIED`.
+
+---
+
 # PLANNING / 2026-11-11 — #85 Main24 첫눈의 숲 Owl 한기 패턴 전투당 1회/예고/해제보호 사용자 최종 승인
 
 - 바울 대표가 2026-11-11 “그래”로 앞서 제안한 **서리올빼미 F2 첫 한기 전투 규칙** 승인. [Issue #85 공식 기획 규칙·코덱스 발주](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6791766233). ① 한기 공격 전 명확한 한글·시각 예고 ② 정상 명중 판정의 **유효 적중시에만** 한기2 자기 행동기회 차단 ③ 해당 전투 첫 한기 공격 **최대 1회 시도**, 이후 일반 공격 ④ 자연 만료·허용된 조기 해제 모두 정상 성공행동1회까지 한기 재부여만 차단. 명중 실패시 강제 피격/재시도/불명확한 확률을 새로 만들지 않음. 패턴 1회(기회 보장)와 디버프 무조건 적용은 다르다.
