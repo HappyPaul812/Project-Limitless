@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-11 — Stage2 B 한기 코어 본편 로컬 적용 성공 / Owl 정식 발동 별도 기획 결정
+
+- [#88 Codex 실제 원본 적용 보고](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6791592600), [#85](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6791601746), [기획 접수](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6791684341) 확인. Unity **6000.6.5f1**, 승인된 누적 한기Stage1+Stage2 B 제품7파일만 로컬 main FF-only 안전 적용. **신규 격리62 + 원본Import6 = 68 assertion PASS/0 FAIL, 원본Console0**. 기존 격리99·첫한기44 PASS 재실행0. 제품SHA 커밋·최종 원본 local main **`4a9b72f88d58c313cee81efc03cb4118354fa38f`**. 보고증거는 별도 브랜치 `fdf247197aa094dd3058007fa400ae5be1a59daa`에만, 원본 main 문서/검사기11개 대량추가0. 원격 Push/Merge0, Save/UserData·tracked dirty302/untracked550 및 기존 F2B352/NPC/전투BG/냉기 Icon3+VFX3 바이트 보존.
+- **한기 전투 핵심 코드 `LOCAL_ORIGINAL_CORE_APPLIED`이나 일반 Owl 자동 한기발동 OFF**. 원본에서 Editor 명시적 QA arm을 실행하지 않으면 실제 F2 Owl EnemyAction 한기0이고 시험 제목 표시0. 이 상태를 `MAIN24_CHILL_REALPLAY_COMPLETE`로 처리하지 않음. Editor 감사에서만 2회차단/정상행동복귀·CD/DoT/KO/키보드/마우스 및 960/1280 GameView 검증. 본편 사용자에게 Editor 암시 테스트 강요 금지.
+- 다음 결정 **Owl 실제 한기 발동 패턴/발동 확률 및 예고(첫 체험공정성)**, 조기해제 후 복귀보호·시연 빈도·전투 후 처리. 기획 권고(대표 아직 미승인)는 첫 F2 전투에서 예고를 통한 **최초 한기1회 체험 후 정상복귀 보장** 방향, 일반 매타격 100% 반복 재동결 불가. 불명확한 Owl EnemyAction 계약과 전투 모델은 새 구현 전에 실제 읽고, 수치/타깃/예고/쿨타임은 임의 결정하지 않음. 기존 Stage2 B 자연만료 정상행동1회 보호는 테스트 PASS. #89 VFX8px 최소간격 PASS vs 소유자 식별·태온/휠체어 밀집 VISUAL_PARTIAL 보류 유지. 동상·동결괴사·아이템·경제/상점·보스 새 효과 HOLD.
+- 상태: `CHILL_STAGE2_B_CORE_LOCAL_APPLIED / NEW_DELTA_68PASS / OWL_PRODUCTION_TRIGGER_OFF / USER_GAME_POLICY_DECISION_PENDING / REMOTE_NOT_PUSHED`. 기획 docs/planning 문서만 기록, 사용자 PC Unity 로컬 작업0.
+
+---
+
 # PLANNING / 2026-11-11 — 한기 Stage2 B 코어 원본 로컬 이식 착수 허가·실전 Owl 발동 미결정 보존
 
 - 바울 대표가 #57 OGA03/09 실플레이 수용 직후 "다음은 Chapter3 서리올빼미의 한기 전투를 본편에 연결하는 작업"에 **“그래.”**라고 승인. [Issue #88 코어 이식 지시](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6791306760). **기검증 Stage2 B99PASS 전투 코어를 본편 원본에 안전하게 연결하는 작업**을 진행하되, 아직 명시되지 않은 Owl 확률/AI/조기해제까지 임의 결정 금지.
