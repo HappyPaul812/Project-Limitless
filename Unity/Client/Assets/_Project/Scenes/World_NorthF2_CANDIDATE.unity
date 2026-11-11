@@ -308,6 +308,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &62728938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 62728940}
+  - component: {fileID: 62728939}
+  m_Layer: 0
+  m_Name: F2_ApprovedSnowPath
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &62728939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62728938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc8e6f8a6804021aa21cf12e31105f3, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::F2SnowPathBuilder
+  groundSprites:
+  - {fileID: 21300000, guid: e8c7a1b608d6a1046865c367b7ee12dc, type: 3}
+  - {fileID: 21300000, guid: da4effd90ba0bed46b6fcd7dc685a28e, type: 3}
+  - {fileID: 21300000, guid: ef6bb0fd17c1355498add4399de11e7e, type: 3}
+  - {fileID: 21300000, guid: aa8e75bf4b08d924c815dd00cef92138, type: 3}
+  - {fileID: 21300000, guid: 718a085ced5ee42438ffe0f45cce7752, type: 3}
+  - {fileID: 21300000, guid: fcb323b0aa897a644b9cd62aa872c165, type: 3}
+  - {fileID: 21300000, guid: 7413288d013afed4683479402efa8caf, type: 3}
+  - {fileID: 21300000, guid: 94601ab3f08d6be489248fb6c662c1e7, type: 3}
+  - {fileID: 21300000, guid: f5db359a061b1734dbd8a007c31555f4, type: 3}
+  firstSnow: {fileID: 21300000, guid: 1f2b49e1abdb4374b2376945c6778c10, type: 3}
+  wornTrail: {fileID: 21300000, guid: b18ba265bb0ca31419f9db0bf6b56367, type: 3}
+--- !u!4 &62728940
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62728938}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &717342523
 GameObject:
   m_ObjectHideFlags: 0
@@ -2565,3 +2621,4 @@ SceneRoots:
   - {fileID: 991456493}
   - {fileID: 1370049659}
   - {fileID: 1334636987}
+  - {fileID: 62728940}
