@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ProjectLimitless.Core;
 using ProjectLimitless.Monster;
+using ProjectLimitless.World;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -63,7 +64,9 @@ namespace ProjectLimitless.Battle
         private readonly Dictionary<Combatant, BattleParticipantSetup> participantSetups = new Dictionary<Combatant, BattleParticipantSetup>();
         private readonly BattleSkillCooldowns skillCooldowns = new BattleSkillCooldowns();
         private readonly BattleFighterResourceRuntime fighterResources = new BattleFighterResourceRuntime();
-        private readonly BattleStatusEffectRuntime statusEffects = new BattleStatusEffectRuntime();
+        // 승인된 F2 Owl 전투만 B 정책을 사용합니다. 다른 전투에는 냉기 부여 정책을 켜지 않습니다.
+        private readonly BattleStatusEffectRuntime statusEffects = new BattleStatusEffectRuntime(
+            Main24FrostOwlCandidate.IsEncounter ? new ColdStatusCandidateRules(ColdReapplicationRule.RejectWhileActive, null, false, true) : null);
         private readonly BattleMonsterAbilityRuntime monsterAbilities = new BattleMonsterAbilityRuntime();
         private readonly BattleDungeonMonsterRuntime dungeonMonsters = new BattleDungeonMonsterRuntime();
         private readonly BattleChapter2MonsterRuntime chapter2Monsters = new BattleChapter2MonsterRuntime();
@@ -143,6 +146,7 @@ namespace ProjectLimitless.Battle
             statusEffects.Chapter2Monsters = chapter2Monsters;
             CreateEventSystem();
             CreateInterface();
+            owlChillProductionEnabled = Main24FrostOwlCandidate.IsEncounter;
             statusEffects.GuardianInterceptionOccurred += OnGuardianInterceptionOccurred;
             turnOrder = new TurnOrderQueue();
             turnOrder.InitializeBattle(AllCombatants);
@@ -155,6 +159,7 @@ namespace ProjectLimitless.Battle
         {
             statusEffects.ClearOverheat();
             statusEffects.ClearColdStatuses();
+            ResetOwlFirstChillPattern();
             dungeonMonsters.Clear();
             statusEffects.GuardianInterceptionOccurred -= OnGuardianInterceptionOccurred;
             if (pathTraits != null) pathTraits.FeedbackOccurred -= OnPathFeedbackOccurred;
@@ -389,7 +394,10 @@ namespace ProjectLimitless.Battle
                 string beastId = sharpshooterBeast ? BeastCompanionService.GetEquippedId(participant.Id) : string.Empty;
                 int participantMaxHp = BeastCompanionService.GetEffectiveMaxHp(participant.MaxHp, beastId);
                 int participantAgility = BeastCompanionService.GetEffectiveAgility(participant.Agility, beastId);
-                Combatant combatant = new Combatant(participant.Id, participant.DisplayName, participant.Side,
+                // 기존 후보 정의의 ID/수치는 유지하고 승인된 실전 Owl 표시 이름만 정리합니다.
+                string participantName = Main24FrostOwlCandidate.IsEncounter && Main24FrostOwlCandidate.IsDefinition(participant.MonsterDefinition)
+                    ? "서리올빼미" : participant.DisplayName;
+                Combatant combatant = new Combatant(participant.Id, participantName, participant.Side,
                     participant.Slot, participantMaxHp, participant.Attack, participantAgility,
                     participant.ActionPriority, participant.BasicRange, participant.IsPlayerControlled, participant.IsBoss,
                     CharacterGrowthCalculator.CalculateDefense(participant.JobId, participantGrowth),
@@ -434,7 +442,7 @@ namespace ProjectLimitless.Battle
             Text title = MakeText(canvasObject.transform, "Title", "전투", font, 31, new Vector2(.5f, .965f), new Vector2(260, 42)); title.color = gold; title.fontStyle = FontStyle.Bold;
             if (ProjectLimitless.World.Main24FrostOwlCandidate.IsEncounter)
             {
-                title.text="서리올빼미 · 격리 기본공격 / 한기 HOLD / 보상 없음";
+                title.text="서리올빼미";
                 title.fontSize=24;title.rectTransform.sizeDelta=new Vector2(1000,42);
             }
             CreateTimeline(canvasObject.transform, font);
@@ -2424,6 +2432,7 @@ namespace ProjectLimitless.Battle
             battleEnded = true;
             statusEffects.ClearOverheat();
             statusEffects.ClearColdStatuses();
+            ResetOwlFirstChillPattern();
             SetCommandButtons(false);
             messageText.text = "도망에 성공했습니다. 조우했던 필드로 복귀합니다.";
             StartCoroutine(ReturnAfterDelay(false));
@@ -2451,6 +2460,8 @@ namespace ProjectLimitless.Battle
             Combatant target = ChooseEnemyTarget(currentActor, targets);
             if (target != null)
             {
+                if (CanUseOwlFirstChill(currentActor))
+                { yield return PlayOwlFirstChillAttack(currentActor, target); yield break; }
                 PlayBasicAttack(currentActor, target);
                 yield break;
             }
@@ -3003,6 +3014,7 @@ namespace ProjectLimitless.Battle
             battleEnded = true;
             statusEffects.ClearOverheat();
             statusEffects.ClearColdStatuses();
+            ResetOwlFirstChillPattern();
             dungeonMonsters.Clear();
             SetCommandButtons(false);
             if (defeatedEncounteredMonster)

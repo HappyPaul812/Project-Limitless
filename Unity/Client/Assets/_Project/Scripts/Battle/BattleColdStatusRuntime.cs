@@ -136,6 +136,10 @@ namespace ProjectLimitless.Battle
         bool RemoveColdState(Dictionary<Combatant,int> states,Combatant target,ColdStatusKind kind)
         {
             if(target==null||!states.Remove(target))return false;
+            // 허용된 제거 API의 조기 해제도 자연 만료와 같은 복귀 보호를 줍니다.
+            // KO/전투 정리/없는 상태 제거에는 보호를 새로 만들지 않고, 이벤트 재진입 전 먼저 등록합니다.
+            if (kind == ColdStatusKind.Chill && target.IsAlive && !clearingColdStatuses && coldRules?.ProtectNaturalChillRecovery == true)
+                chillRecoveryProtection.Add(target);
             ColdStatusChanged?.Invoke(target,kind,ColdStatusChange.Removed,0);return true;
         }
         public void RemoveInvalidColdStates()

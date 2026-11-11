@@ -66,7 +66,7 @@ namespace ProjectLimitless.World
             var go=new GameObject("CandidateLabel",typeof(RectTransform),typeof(Canvas),typeof(UnityEngine.UI.Text));go.transform.SetParent(transform,false);go.transform.localPosition=Vector3.up*1.4f;go.transform.localScale=Vector3.one*.01f;
             var canvas=go.GetComponent<Canvas>();canvas.renderMode=RenderMode.WorldSpace;canvas.overrideSorting=true;canvas.sortingOrder=6000;
             go.GetComponent<RectTransform>().sizeDelta=new Vector2(420,80);
-            var text=go.GetComponent<UnityEngine.UI.Text>();text.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");text.fontSize=20;text.color=Color.white;text.alignment=TextAnchor.MiddleCenter;text.raycastTarget=false;text.text="서리올빼미 · 격리 전투 후보\nE/F/클릭 · 한기 HOLD / 보상 없음";
+            var text=go.GetComponent<UnityEngine.UI.Text>();text.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");text.fontSize=20;text.color=Color.white;text.alignment=TextAnchor.MiddleCenter;text.raycastTarget=false;text.text="서리올빼미\nE/F/클릭 · 한기 공격 1회 / 보상 없음";
             var outline=go.AddComponent<UnityEngine.UI.Outline>();outline.effectColor=Color.black;outline.effectDistance=new Vector2(2,-2);
             label=go.GetComponent<RectTransform>();labelCanvas=canvas;
             // CameraFollow의 LateUpdate 뒤 실제 화면을 기준으로 이 안내 글만 보정합니다.
@@ -133,7 +133,7 @@ namespace ProjectLimitless.World
                 ||DialoguePresenter.Instance!=null&&!DialoguePresenter.Instance.CanBeginInteractionThisFrame
                 ||player==null||Vector2.Distance(player.transform.position,transform.position)>1.8f)return false;
             choosing=true;
-            Main21ChoicePanel.Show("서리올빼미 기본공격 검증 · 수치 임시 / 한기 미적용 / 보상 없음",new[]{"전투 시작","머무른다"},index=>{choosing=false;if(index==0)TryEnter();});return true;
+            Main21ChoicePanel.Show("서리올빼미와 전투합니다.\n한기 공격은 전투당 한 번만 시도합니다. 보상은 없습니다.",new[]{"전투 시작","머무른다"},index=>{choosing=false;if(index==0)TryEnter();});return true;
         }
         public bool TryEnter()
         {

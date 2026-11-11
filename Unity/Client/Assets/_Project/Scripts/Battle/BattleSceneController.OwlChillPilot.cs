@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using ProjectLimitless.Core;
 using ProjectLimitless.World;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace ProjectLimitless.Battle
 {
-    /// <summary>미승인 감소/재적용/AI 정책을 제품 기본값으로 만들지 않는 Main24 격리 연결입니다.</summary>
+    /// <summary>승인된 F2 Owl 1회 한기 패턴과 기존 Editor 감사 경로를 분리하고 B 기회 경과를 연결합니다.</summary>
     public sealed partial class BattleSceneController
     {
         bool owlChillPilotArmed, owlChillPilotApplied;
+        // 사용 기록은 전투 인스턴스에만 둡니다. 명중 실패나 부여 거절도 시도 1회로 끝냅니다.
+        bool owlChillProductionEnabled, owlChillAttempted, owlChillImpactHandled;
+        Combatant owlChillAttacker, owlChillTarget;
         // 기회 번호로 정상/차단 종료를 한 번만 처리합니다. 다른 인물의 완료가 보호를 소비하지 않습니다.
         bool opportunityOpen, activeOpportunityBlocked;
         int activeOpportunityId, endingOpportunityId = -1, completedOpportunityId = -1;
@@ -21,7 +25,7 @@ namespace ProjectLimitless.Battle
         /// <summary>격리 검사기가 실제 F2 후보 전투에서만 명시적으로 켭니다. 원본/일반 전투는 기본 OFF입니다.</summary>
         public bool ConfigureOwlFirstChillPilot()
         {
-            if (!Main24FrostOwlCandidate.IsEncounter || owlChillPilotArmed) return false;
+            if (owlChillProductionEnabled || !Main24FrostOwlCandidate.IsEncounter || owlChillPilotArmed) return false;
             // Stage2 B 격리 기준: 기회 경과와 실제 행동 완료 분리, 자연 만료 뒤 정상 행동 보호.
             if (!statusEffects.ConfigureColdForAudit(new ColdStatusCandidateRules(ColdReapplicationRule.RejectWhileActive, null, false, true))) return false;
             owlChillPilotArmed = true;
@@ -30,11 +34,46 @@ namespace ProjectLimitless.Battle
             return true;
         }
 #endif
+        bool CanUseOwlFirstChill(Combatant actor)
+        {
+            return owlChillProductionEnabled && !owlChillAttempted && actor != null && actor.IsAlive
+                && participantSetups.TryGetValue(actor, out var setup) && Main24FrostOwlCandidate.IsDefinition(setup.MonsterDefinition);
+        }
+        IEnumerator PlayOwlFirstChillAttack(Combatant actor, Combatant target)
+        {
+            // 기존 EnemyAction이 고른 대상과 기존 기본공격 피해 경로를 그대로 사용합니다.
+            // 예고는 시간 제한 없는 기존 선택 UI라 빠른 반응이나 회피 입력을 요구하지 않습니다.
+            owlChillAttempted = true; owlChillAttacker = actor; owlChillTarget = target; owlChillImpactHandled = false;
+            actionPlaying = true; SetCommandButtons(false); SetCancelButtonVisible(false);
+            messageText.text = $"서리올빼미: 한기 공격 예고 · {target.DisplayName} 적중 시 행동 2회 불가";
+            while (WorldModalState.IsOpen && !battleEnded) yield return null;
+            if (battleEnded) yield break;
+            bool acknowledged = false;
+            Main21ChoicePanel.Show($"한기 공격 예고\n{target.DisplayName}: 맞으면 자기 행동 2회 동안 행동할 수 없습니다.",
+                new[] { "확인하고 계속" }, _ => acknowledged = true);
+            while (!acknowledged && !battleEnded) yield return null;
+            if (battleEnded) yield break;
+            if (!actor.IsAlive || !target.IsAlive) { actionPlaying = false; FinishCurrentAction(); yield break; }
+            PlayBasicAttack(actor, target); // 명중/피해/방어/보호자 판정을 새로 만들지 않습니다.
+        }
         void ApplyOwlFirstChillAtImpact(Combatant actor, Combatant target, int damage)
         {
-            // 확률/반복 주기/추가 피해를 만들지 않고 첫 기존 기본공격의 유효 타격에만 연결합니다.
+            if (owlChillProductionEnabled)
+            {
+                if (!owlChillAttempted || owlChillImpactHandled || actor != owlChillAttacker || target != owlChillTarget) return;
+                owlChillImpactHandled = true; // 피해 0/KO/재부여 보호에도 후속 일반공격에서 다시 시도하지 않습니다.
+                if (damage > 0 && target.IsAlive) statusEffects.TryApplyChill(target);
+                return;
+            }
+            // 기존 Editor 감사 arm은 정식 패턴과 분리하고 자동 활성화하지 않습니다.
             if (!owlChillPilotArmed || owlChillPilotApplied || !Main24FrostOwlCandidate.IsEncounter || actor.Side != BattleSide.Enemies || damage <= 0 || !target.IsAlive) return;
             if (statusEffects.TryApplyChill(target)) owlChillPilotApplied = true;
+        }
+        void ResetOwlFirstChillPattern()
+        {
+            owlChillProductionEnabled = false; owlChillAttempted = false; owlChillImpactHandled = false;
+            owlChillAttacker = null; owlChillTarget = null; owlChillPilotArmed = false; owlChillPilotApplied = false;
+            foreach (var effect in owlChillEffects.Values) if (effect != null) effect.gameObject.SetActive(false);
         }
         bool TrySkipOwlChillOpportunity()
         {
@@ -72,10 +111,10 @@ namespace ProjectLimitless.Battle
             StartCoroutine(AdvanceAfterDelay());
         }
         // 해상도 변경에만 가시 알파 간격을 다시 계산합니다. PNG·캐릭터 진형/위치는 바꾸지 않습니다.
-        void LateUpdate(){if(owlChillPilotArmed)SyncOwlChillVfx();}
+        void LateUpdate(){if(owlChillPilotArmed || owlChillProductionEnabled)SyncOwlChillVfx();}
         void SyncOwlChillVfx()
         {
-            if (!owlChillPilotArmed || combatantViews == null) return;
+            if ((!owlChillPilotArmed && !owlChillProductionEnabled) || combatantViews == null) return;
             var size = new Vector2(Screen.width, Screen.height);bool resized = size != owlVfxScreenSize;owlVfxScreenSize = size;
             foreach (var actor in allies.Members)
             {
