@@ -1,0 +1,7 @@
+PASS OGA06.ImportPPUPivot
+PASS OGA16.ImportPPUPivot
+PASS NpcStableId5.ResourceLinks
+PASS Chapter3.SceneKeysAndSprites
+PASS Chapter1And2.ImportReferences
+PASS B352.TypePreserved
+PASS EditMode.CompiledWithoutPlay

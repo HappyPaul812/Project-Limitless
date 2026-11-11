@@ -1,3 +1,14 @@
+## 2026-11-11 Issue95·91 — 승인 아트4종 원본 로컬 적용 완료
+
+**APPROVED_ART_4_LOCAL_ORIGINAL_APPLIED / UNITY_IMPORT_DELTA_QA_PASS / USER_REALPLAY_PENDING / REMOTE_NOT_PUSHED**.
+
+- 바울 대표의12파일 본편 적용 승인에 따라 검증 제품 `d40bb17057da555322993c1b1c2fd7944b95bf78` 그대로 원본에 FF-only/no-autostash 반영. 별도 `codex/art95-91-original-apply-20261111`. 신규10/수정2, 새그림·Scene/Prefab/Collider/기존GUID/meta변경0. OGA06/16 PPU329/320.25·발끝Pivot·StableID5, Snowroad/F2 v2·독립Ch3Catalog 유지.
+- 기존107PASS 재사용/전수재실행0. 추가 격리 Import7PASS/원본 Import·compile·Resources9PASS/Console오류0. Scene·PlayOFF·선택·포커스 보호. F2B352·Ch1/2·Save/UserData·dirty302/untracked550 보존, 보호8294 중 제품코드2만 변경·그외8292SHA동일(완료문서2파일 별도허용).
+- 시작main `3a44dd0483759dc4921b22a914853395701789d7`→제품d40bb170. 완료보고도 작업브랜치에서 commit→FF; 최종SHA는 Issue95/91 완료댓글·Temp/Art95_91Apply20261111/Final.json. main직접commit/원격Push/Merge0.
+- [적용·QA·실플레이 안내](../../Issue95_91_ApprovedArt_OriginalApply_20261111.md). 캡처는 기존107 실제GameView 재사용이며 원본 신규Play촬영 아님. 추가 배포승인 대기 없음. 다음은 바울 대표의 새Play→마을 치유/은행 E·Field03/Arbel 재사용 외형·Chapter3 서릿길/F2 전투 배경 실플레이 수용 확인. 격리 MCP 환경로그 미결은 별도, 원본Console0.
+
+---
+
 ## 2026-11-11 Issue75 — 승인 B352 제품5파일 원본 적용 완료
 
 **F2_B_LOCAL_ORIGINAL_APPLIED / UNITY_DELTA_QA_PASS / USER_REALPLAY_PENDING / REMOTE_NOT_PUSHED**.

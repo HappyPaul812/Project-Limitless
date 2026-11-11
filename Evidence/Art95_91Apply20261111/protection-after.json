@@ -1,0 +1,11 @@
+{
+  "mode": "after",
+  "head": "d40bb17057da555322993c1b1c2fd7944b95bf78",
+  "protectedCount": 8294,
+  "changed": [
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleSceneController.cs",
+    "Unity/Client/Assets/_Project/Scripts/NPC/VillageNpcAppearanceCatalog.cs"
+  ],
+  "unexpected": [],
+  "userStatusByteEqual": true
+}
