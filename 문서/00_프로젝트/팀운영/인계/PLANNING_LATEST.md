@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-11 EOD Clean Release 기술 HOLD — 패키지 호환성·기존 GUID 중복 별도 해결 필요
+
+- [Codex Clean Release 검증 보고](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6794286678): `codex/eod-clean-main-candidate-20261111` 후보 `61fdc6902a6d0c4d109c36b308a3b8889e7aaac7`, remote main 원부모 `bfd281545632877325f5d21e04cefb924042c465`, 승인제품235 파일 SHA일치/누락0, 승인문서41+후보 추가2, 새 Git 객체332개 비전송 대상0. 기존 로컬 main `d360813667d2ee47515067b8dd07c1a599efec15` 변경0, 사용자 Save/UserData·Editor 보호. **원격 Push 미실행**.
+- 새 배포후보 Unity6000.6.5f1 Batch Import/Compile **FAIL**: 오래된 `com.unity.2d.animation` v15.1.0 에디터 API `Button.SetChecked/IsChecked` CS1061 6개. 현재 원격 main manifest/lock도 v15.1.0, ProjectVersion.txt `6000.5.7f1` 기록. Unity 공식 패키지 가이드: **Unity6000.5=2D Animation15.1.0**, **Unity6000.6=16.0.1** (https://docs.unity.com/en-us/engine/6000.6/manual/packages-list/packages-all/pack-safe/com-unity-2d-animation). **버전 불일치 가능성 매우 높지만 실제 candidate16.0.1 수정 PASS 전에는 확정 아님**. Unity6000.6.5f1은 사용자 고정, 6000.5로 본편 downgrade 금지. 다른 2D 종속패키지는 실제 PackageManager resolve로 확인.
+- 기존 remote main부터 있는 투사체 `.meta` 동일 GUID 6건도 별개 이슈. 무차별 GUID 갱신/asset 삭제/Scene·Prefab 참조 수정 금지. 파일·GUID·AssetType·실사용 참조·정본/복제 소유권과 해결 최소 diff를 **읽기전용 감사**해 사용자 승인 재판정.
+- [#85 차기 Codex 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6794407256): Clean 후보 SHA는 그대로 보존, 별도 실험 worktree/브랜치에서 Editor6000.6.5f1에 맞춰 2D Animation **16.0.1 소규모 PackageManager 해상도+최소 compile QA**, 파급 Package/lock·ProjectVersion 변경 명세/Unity Console, Approved 235상품 불변 검사. GUID 6 참조그래프는 읽기 전용. 유의미한 package cascade/Scene 깨짐이면 HOLD. 사용자 dirty/untracked/Save/Editor·원본 localmain/후보원본 ref 불변, 원격 push0. **기술 수정 정식 후보 반영은 보고 후 별도 승인**.
+- 현재 상태: `CLEAN_RELEASE_SAFE_GIT_OBJECTS_PASS / UNITY_COMPILE_TECH_HOLD / ORIGINAL_PROJECTILE_GUID_COLLISION_HOLD / REMOTE_MAIN_UNCHANGED / LOCAL_ORIGINAL_PRESERVED / DAY_NOT_CLOSED`. 서리올빼미 정식 패턴 사용자 실플레이는 아직 미보고.
+
+---
 # PLANNING / 2026-11-11 EOD HOLD — local main 문서통합 성공, 원격 Push 보류, Clean Release 안전 후보 준비 필요
 
 - Codex [#85 2026-11-11 EOD HOLD 보고](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6793708031) 확인. 승인 문서15개 추가 로컬 FF 완료: local main **469b219ffbdbf4c8e5b51e977bbe2940eb6119a2 → d360813667d2ee47515067b8dd07c1a599efec15**. remote main 여전히 **bfd281545632877325f5d21e04cefb924042c465**. Unity6000.6.5f1, Console0, Save/UserData·dirty302/untracked550·approved game·Editor 보호. 실제 Push 명령은 **미실행**이며 서버 거절 아님.
