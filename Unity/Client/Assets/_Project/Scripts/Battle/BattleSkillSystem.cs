@@ -469,7 +469,7 @@ namespace ProjectLimitless.Battle
     }
 
     /// <summary>도발처럼 전투 참가자에게 남는 상태의 적용과 무효 상태 정리를 담당합니다.</summary>
-    public sealed class BattleStatusEffectRuntime
+    public sealed partial class BattleStatusEffectRuntime
     {
         private sealed class BurnState
         {
@@ -762,24 +762,32 @@ namespace ProjectLimitless.Battle
             shockedTargets.Remove(actor);
             silencedTargets.Remove(actor);
 
+            CompleteOpportunityDurations(actor, true);
+        }
+
+        /// <summary>시간형 방어만 자기 기회 끝에 진행합니다. 차단을 감전/침묵 소비나 행동 성공으로 위조하지 않습니다.</summary>
+        public void CompleteOpportunityDurations(Combatant actor, bool performedAction)
+        {
+            if (actor == null) return;
             if (gaiaWalls.TryGetValue(actor, out GaiaWallState gaia))
             {
-                if (gaia.IgnoreCurrentActionCompletion)
+                if (gaia.IgnoreCurrentActionCompletion && performedAction)
                     gaia.IgnoreCurrentActionCompletion = false;
                 else
                 {
-                    // 공격·스킬 등 무엇을 선택했든 마도사 자신의 행동 기회 하나를 마쳤을 때만 2→1→제거합니다.
+                    // 시전한 실제 행동만 제외하고, 다음 정상/차단 자기 기회는 같은 시계로 1회 소비합니다.
+                    gaia.IgnoreCurrentActionCompletion = false;
                     gaia.RemainingActions = Math.Max(0, gaia.RemainingActions - 1);
                     if (gaia.RemainingActions == 0) gaiaWalls.Remove(actor);
                 }
             }
-            CompleteIronWallAction(actor);
+            CompleteIronWallAction(actor, performedAction);
         }
 
-        private void CompleteIronWallAction(Combatant actor)
+        private void CompleteIronWallAction(Combatant actor, bool performedAction)
         {
             if (!ironWalls.TryGetValue(actor, out IronWallState ironWall)) return;
-            if (ironWall.IgnoreCurrentActionCompletion)
+            if (ironWall.IgnoreCurrentActionCompletion && performedAction)
             {
                 ironWall.IgnoreCurrentActionCompletion = false;
                 return;
@@ -787,6 +795,7 @@ namespace ProjectLimitless.Battle
 
             // 전체 라운드가 아니라 수호자 자신의 행동 횟수를 기준으로 해야 파티·적 수가 늘어나도 실제로
             // 두 번의 선택 기회를 같은 보호 아래 사용할 수 있습니다. 다른 참가자의 행동은 이 키를 건드리지 않습니다.
+            ironWall.IgnoreCurrentActionCompletion = false;
             ironWall.RemainingActions = Math.Max(0, ironWall.RemainingActions - 1);
             if (ironWall.RemainingActions == 0) ironWalls.Remove(actor);
         }

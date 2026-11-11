@@ -23,7 +23,8 @@ namespace ProjectLimitless.Battle
         public int Count { get; }
         public string DisplayText => Id == "overheat" ? $"과열 {Count}/3" + (Count == 2 ? " 위험" : "")
             : Id == "cold.necrosis" ? $"동결괴사 {Count}/3" + (Count == 2 ? " KO!" : "")
-            : Id == "cold.chill" || Id == "cold.frostbite" ? $"{Label} {Count}턴"
+            : Id == "cold.chill" ? $"{Label} {Count}회"
+            : Id == "cold.frostbite" ? $"{Label} {Count}턴"
             : Count > 0 ? $"{Label} {Count}" : Label;
     }
 
@@ -123,6 +124,8 @@ namespace ProjectLimitless.Battle
 
             List<BattleStatusMarker> markers = new List<BattleStatusMarker>();
             // 위험 숫자를 앞에 배치해 여러 버프·쿨타임이 있어도 냉각 판단을 놓치지 않게 합니다.
+            int chill = statusEffects?.GetChillRemaining(combatant) ?? 0;
+            if (chill > 0) markers.Add(new BattleStatusMarker("cold.chill", "한기", chill));
             int heat = statusEffects?.GetOverheatStacks(combatant) ?? 0;
             if (heat > 0) markers.Add(new BattleStatusMarker("overheat", "과열", heat));
             // 스킬 차단은 현재 행동자의 선택을 즉시 바꾸므로 다른 요약 상태보다 먼저 보여 줍니다.

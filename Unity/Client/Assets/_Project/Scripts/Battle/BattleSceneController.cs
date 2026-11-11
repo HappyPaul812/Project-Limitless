@@ -154,6 +154,7 @@ namespace ProjectLimitless.Battle
         private void OnDestroy()
         {
             statusEffects.ClearOverheat();
+            statusEffects.ClearColdStatuses();
             dungeonMonsters.Clear();
             statusEffects.GuardianInterceptionOccurred -= OnGuardianInterceptionOccurred;
             if (pathTraits != null) pathTraits.FeedbackOccurred -= OnPathFeedbackOccurred;
@@ -916,17 +917,20 @@ namespace ProjectLimitless.Battle
 
         private void AdvanceTurn()
         {
-            if (battleEnded) return;
+            // 같은 기회에서 취소/재진입으로 큐·쿨다운을 다시 소비하지 않습니다.
+            if (battleEnded || opportunityOpen) return;
             if (enemies.IsDefeated) { EndBattle("승리! 적을 모두 쓰러뜨렸습니다.", true); return; }
             if (allies.IsDefeated) { EndBattle("전투불능. 최근 안전지대로 복귀합니다.", false); return; }
 
             currentActor = turnOrder.TakeNext(AllCombatants);
             if (currentActor == null) return;
+            opportunityOpen = true; activeOpportunityId++; activeOpportunityBlocked = false;
             currentActor.BeginTurn();
             skillCooldowns.BeginActorTurn(currentActor);
             // 수호의 맹세는 수호자가 새 행동을 시작하기 직전에 끝납니다. 사용 행동 종료나 다른 참가자의
             // 차례에는 제거하지 않아 적과 동료가 여러 번 행동해도 약속한 보호 시간을 온전히 보장합니다.
             statusEffects.BeginActorAction(currentActor);
+            if (TrySkipOwlChillOpportunity()) return; // 방어/맹세/CD는 차단 때도 이미 경과했습니다.
             if (!currentActor.IsPlayerControlled) chapter2Monsters.BeginActorAction(currentActor);
             pathTraits.BeginActorAction(currentActor);
             UpdateTimeline();
@@ -948,6 +952,7 @@ namespace ProjectLimitless.Battle
 
         private void BeginAttack()
         {
+            if (statusEffects.IsColdActionBlocked(currentActor)) return;
             if (actionPlaying || currentActor == null || !currentActor.IsPlayerControlled) return;
             Formation opponents = currentActor.Side == BattleSide.Allies ? enemies : allies;
             IReadOnlyList<Combatant> targets = TargetResolver.ResolveHostileTargets(currentActor, opponents, currentActor.BasicRange);
@@ -997,6 +1002,7 @@ namespace ProjectLimitless.Battle
 
         private void ShowSkillMenu()
         {
+            if (statusEffects.IsColdActionBlocked(currentActor)) return;
             if (actionPlaying || currentActor == null || !currentActor.IsPlayerControlled) return;
             // 버튼은 포커스와 클릭을 유지해 차단 이유를 읽을 수 있게 합니다. 실제 행동을 시작하기 전에
             // 여기서 거절하므로 침묵 1회, 턴, MP, 스킬 쿨타임 어느 것도 소비하지 않습니다.
@@ -1021,6 +1027,7 @@ namespace ProjectLimitless.Battle
         /// <summary>공용 Inventory의 현재 수량만 목록에 표시합니다. 선택 단계에서는 아직 행동과 수량을 바꾸지 않습니다.</summary>
         private void ShowItemMenu()
         {
+            if (statusEffects.IsColdActionBlocked(currentActor)) return;
             if (battleEnded || actionPlaying || currentActor == null || !currentActor.IsPlayerControlled) return;
             choosingItem = true;
             SetCommandButtons(false);
@@ -2392,6 +2399,7 @@ namespace ProjectLimitless.Battle
 
         private void Defend()
         {
+            if (statusEffects.IsColdActionBlocked(currentActor)) return;
             if (actionPlaying) return;
             if (statusEffects.HasStrongerSelfDefense(currentActor))
             {
@@ -2409,11 +2417,13 @@ namespace ProjectLimitless.Battle
 
         private void Flee()
         {
+            if (statusEffects.IsColdActionBlocked(currentActor)) return;
             if (actionPlaying) return;
             if (enemies.Members.Any(item => item.IsBoss)) { messageText.text = "보스전에서는 도망칠 수 없습니다."; return; }
             RecordAllyResources();
             battleEnded = true;
             statusEffects.ClearOverheat();
+            statusEffects.ClearColdStatuses();
             SetCommandButtons(false);
             messageText.text = "도망에 성공했습니다. 조우했던 필드로 복귀합니다.";
             StartCoroutine(ReturnAfterDelay(false));
@@ -2786,6 +2796,7 @@ namespace ProjectLimitless.Battle
                             monsterAbilities.StartPoisonInflictionCooldown(actor, poisonCooldown);
                     }
                 }
+                ApplyOwlFirstChillAtImpact(actor, target, damage);
                 if (inflictBurn && damage > 0 && target.IsAlive)
                     statusEffects.ApplyOrRefreshBurn(target,
                         (int)Math.Max(1L, ((long)actor.Attack * 30L + 99L) / 100L), 2);
@@ -2877,6 +2888,9 @@ namespace ProjectLimitless.Battle
 
         private void FinishCurrentAction()
         {
+            if (activeOpportunityBlocked) return;
+            if (!TryStartOpportunityEnd(currentActor)) return;
+            int token = activeOpportunityId;
             // 행동 완료 뒤 기본 명령으로 돌아갈 때 이전 스킬의 Hover/포커스 정보가 되살아나지 않게 합니다.
             // 다음에 사용자가 스킬 메뉴를 다시 열고 버튼에 새로 포커스할 때만 설명이 표시됩니다.
             HideSkillDetailPopup();
@@ -2895,6 +2909,14 @@ namespace ProjectLimitless.Battle
             dungeonMonsters.CompleteActorAction(completedActor);
             dungeonMonsters.RemoveInvalidCombatants(AllCombatants);
             SetCommandButtons(false);
+            PlayOpportunityEndEffects(completedActor, false, token);
+        }
+
+        // 정상/차단이 기존 화상→독→KO 꼬리를 공유하되 행동 성공 부수효과는 위에서만 호출합니다.
+        private void PlayOpportunityEndEffects(Combatant completedActor, bool blocked, int token)
+        {
+            if (battleEnded || token != activeOpportunityId || completedOpportunityId == token || burnOpportunityId == token) return;
+            burnOpportunityId = token;
             // 화상은 "대상 행동 종료 시" 피해이므로 CompleteAction 직후 확인합니다. 작은 불꽃과 피격이
             // 끝나기 전에는 actionPlaying을 유지해 입력과 정보 팝업이 다음 턴보다 먼저 열리지 않게 합니다.
             if (completedActor != null && statusEffects.HasActiveBurn(completedActor) && combatantViews.TryGetValue(completedActor, out CombatantView burnedView))
@@ -2919,12 +2941,12 @@ namespace ProjectLimitless.Battle
                     () =>
                     {
                         RestoreBattleIdle(burnedView);
-                        ContinueEndOfActionEffects(completedActor);
+                        ContinueEndOfOpportunityEffects(completedActor, blocked, token);
                     }));
                 return;
             }
 
-            ContinueEndOfActionEffects(completedActor);
+            ContinueEndOfOpportunityEffects(completedActor, blocked, token);
         }
 
         /// <summary>
@@ -2932,8 +2954,10 @@ namespace ProjectLimitless.Battle
         /// 화상 처리 뒤 이 메서드를 다시 호출하므로 독을 건너뛰지 않으며, 어느 틱에서 전투불능이 되면
         /// RemoveInvalidPersistentEffects가 남은 해로운 상태와 UI를 즉시 지웁니다.
         /// </summary>
-        private void ContinueEndOfActionEffects(Combatant completedActor)
+        private void ContinueEndOfOpportunityEffects(Combatant completedActor, bool blocked, int token)
         {
+            if (battleEnded || token != activeOpportunityId || completedOpportunityId == token || poisonOpportunityId == token) return;
+            poisonOpportunityId = token;
             statusEffects.RemoveInvalidPersistentEffects(AllCombatants);
             if (completedActor != null && statusEffects.HasActivePoison(completedActor) &&
                 combatantViews.TryGetValue(completedActor, out CombatantView poisonedView))
@@ -2961,14 +2985,14 @@ namespace ProjectLimitless.Battle
                         RestoreBattleIdle(poisonedView);
                         actionPlaying = false;
                         RefreshCombatantViews(null);
-                        StartCoroutine(AdvanceAfterDelay());
+                        CompleteOpportunityEnd(completedActor, blocked, token);
                     }));
                 return;
             }
 
             actionPlaying = false;
             RefreshCombatantViews(null);
-            StartCoroutine(AdvanceAfterDelay());
+            CompleteOpportunityEnd(completedActor, blocked, token);
         }
 
         private IEnumerator AdvanceAfterDelay() { yield return new WaitForSeconds(.65f); AdvanceTurn(); }
@@ -2978,6 +3002,7 @@ namespace ProjectLimitless.Battle
             if (battleEnded) return;
             battleEnded = true;
             statusEffects.ClearOverheat();
+            statusEffects.ClearColdStatuses();
             dungeonMonsters.Clear();
             SetCommandButtons(false);
             if (defeatedEncounteredMonster)
@@ -3153,6 +3178,7 @@ namespace ProjectLimitless.Battle
                     bossTelegraphText.gameObject.SetActive(true);
                 }
             }
+            SyncOwlChillVfx();
             RefreshHpRowHighlights(focusedCombatant ?? hoveredCombatant);
             if (!actionPlaying && detailCombatant != null) ShowDetailPopup(detailCombatant);
             if (messageText != null && !string.IsNullOrEmpty(pendingPathFeedback))
@@ -3260,7 +3286,8 @@ namespace ProjectLimitless.Battle
                 (BattleUiIconCatalog.GetCooldownIconId(cooldown.RemainingTurns, cooldown.TotalTurns),
                     (Sprite)null, cooldown.DisplayText)));
             RefreshStatusBadges(row, summaries);
-            if (statusModel.Markers.Any(marker => BattleApprovedColdAssets.IsCold(marker.Id))) ApplyApprovedColdRow(row);
+            // 냉기 만료 뒤에도 이미 확장된 행은 같은 글자 높이를 유지해야 기존 표식이 잘리지 않습니다.
+            if (statusModel.Markers.Any(marker => BattleApprovedColdAssets.IsCold(marker.Id)) || row.Background.rectTransform.sizeDelta.y >= 80) ApplyApprovedColdRow(row);
         }
 
         /// <summary>
@@ -3303,6 +3330,7 @@ namespace ProjectLimitless.Battle
 
         private void SetCommandButtons(bool enabled)
         {
+            enabled = enabled && !statusEffects.IsColdActionBlocked(currentActor);
             // 두 줄 메뉴가 안내/실패 이유를 가리지 않도록 스킬 선택 중에는 안내를 패널 위로 올립니다.
             if (messageText != null)
             {
