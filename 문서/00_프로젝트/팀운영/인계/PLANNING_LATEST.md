@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-11 — 한기 Stage2 B 코어 원본 로컬 이식 착수 허가·실전 Owl 발동 미결정 보존
+
+- 바울 대표가 #57 OGA03/09 실플레이 수용 직후 "다음은 Chapter3 서리올빼미의 한기 전투를 본편에 연결하는 작업"에 **“그래.”**라고 승인. [Issue #88 코어 이식 지시](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6791306760). **기검증 Stage2 B99PASS 전투 코어를 본편 원본에 안전하게 연결하는 작업**을 진행하되, 아직 명시되지 않은 Owl 확률/AI/조기해제까지 임의 결정 금지.
+- 검증 기준 #88 별도 `codex/chill-stage2-b-isolated-20261111` 제품 `c886e89b44250c1088c49d2bc25170da6e51f429` / 문서 `a0ca3223dece4e8816e91841678897e7d063e02d`, Unity6000.6.5f1 격리 **99PASS/0FAIL**(턴경계80+화면19), 이전 Owl 첫한기44PASS 독립. 코어 누적 후보는 **제품7파일(신규 `BattleColdStatusRuntime.cs+.meta`, `BattleSceneController.OwlChillPilot.cs+.meta`, 기존 `BattleSceneController.cs`, `BattleSkillSystem.cs`, `BattleCombatantStatusViewModel.cs` 수정)**; Stage2 B 수정4는 이 집합 내부. 기존 승인 Icon/VFX6 원본 BYTE_KEEP.
+- 제품 범위 **CORE ONLY**: 앞선 격리 코어의 `default OFF` / Editor audit explicit arm만 보존, 일반 F2 Owl에서 무단 100% 한기·임의 발생확률/AI패턴·새 게임 보상/경제·동상 피해/동결괴사/해제상점 **생성/활성 금지**. 코어 이식 성공과 첫 Owl 정식 플레이 가능은 **다른 마일스톤**. 조기 해제 후 재부여 보호/한기 proc 정책 별도 기획 결정, #89 소유자 식별·태온 밀집 VISUAL_PARTIAL.
+- Codex 작업브랜치 `codex/chill-stage2-b-core-original-apply-20261111` 별도 worktree; 기준 마지막 `main 548cf1e275684d8c4a647685fb6f08be0c495be7`(실 PC HEAD/status 우선). 기존 #57 NPC03/09 및 Save/UserData·tracked dirty302/untracked550, NPC95/F2B352/BG91·기승인Cold6원본 보호. `7파일 Delta 제품만` 이식, 문서·증거·검사기11파일 무차별 적용 금지. 새 최소 import/compile/일반전투 회귀, **Editor explicit QA arm** 실제 한기2→1→0·턴진행·CD/DoT/보호·표시960/1280만 보고, 기존 99/44/46 등 대규모 QA 반복0. 충돌0·제품/보호파일 SHA 일치·FF안전시에만 local main FF-only/no-autostash; 원격 Push/Merge와 main 직접commit, reset-hard/clean/force/stash 금지.
+- 현재 판정 **`CHILL_STAGE2_B_CORE_USER_PROCEED_AUTHORIZED / CODEX_ORIGINAL_LOCAL_APPLICATION_PENDING / OWL_PRODUCTION_TRIGGER_UNDECIDED_HOLD / NO_REMOTE_PUSH`**. Codex 성공 보고 전까지 적용 완료 주장 금지. GitHub 기획팀은 원격 docs/planning 기록만 수행.
+
+---
+
 # PLANNING / 2026-11-11 — OGA03·OGA09 시작마을 NPC 사용자 실플레이 승인 마감
 
 - 바울 대표 **“잘 되네.”**로 신규 오리지널 잡화상인 OGA03·주민대표 OGA09의 실제 원본 로컬 Unity 게임 적용 후 시각·기능 확인 수용. [#57 사용자 승인 마감 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6791260745).
