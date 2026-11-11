@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-11 EOD HOLD — local main 문서통합 성공, 원격 Push 보류, Clean Release 안전 후보 준비 필요
+
+- Codex [#85 2026-11-11 EOD HOLD 보고](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6793708031) 확인. 승인 문서15개 추가 로컬 FF 완료: local main **469b219ffbdbf4c8e5b51e977bbe2940eb6119a2 → d360813667d2ee47515067b8dd07c1a599efec15**. remote main 여전히 **bfd281545632877325f5d21e04cefb924042c465**. Unity6000.6.5f1, Console0, Save/UserData·dirty302/untracked550·approved game·Editor 보호. 실제 Push 명령은 **미실행**이며 서버 거절 아님.
+- HOLD 진짜 원인: 원격과 로컬 사이 **67개 Git 과거 커밋 자체**에 원격 비전송 대상 QA 생성 코드·로컬 보관 메타자료가 있어 파일을 HEAD에서 삭제해도 부모의 객체 전송 발생. 무리한 직접 FF push/삭제커밋/강제 force/이력 재작성 금지. 사용자 동의 없는 local main ref교체 금지.
+- [#85 기획 Clean Release 후속 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6793878896): 최신 `origin/main`에서 **별도** `codex/eod-clean-main-candidate-20261111` worktree를 만들고, 기존 승인된 current local main의 최종 상태를 **파일 단위 명시 허용목록**으로 이식해 몇 개의 신규 commit으로 후보 구성. 기존 67개 과거 commit을 merge/cherry-pick하지 않음. 타 팀 docs/* 전체 merge 금지, 기존 개인Save/미커밋파일·QA/Evidence/Temp·개인정보/키·미승인아트 제외. 새 후보의 실제 parent·remote fast-forward 관계, 모든 새 Git 객체와 스냅샷 SHA/메타·승인 PNG/Scenes/Unity6000.6.5f1 최소 Delta 검사 후 **후보 검수 결과만 보고**, 원격 main push 및 기존 local main ref 교체는 아직 금지.
+- 중요 이력 정책: origin/main에서 출발한 clean 후보를 remote main으로 **정상 FF push**하는 것은 원칙적으로 가능하지만 **현 로컬 main에서 clean 후보로 이동하는 것은 비FF**. 로컬 main을 동일 SHA로 정렬하려면 백업/사용자 별도 승인 및 안전한 ref CAS 절차가 필요. 기존 명시 Push 승인 범위가 히스토리 대체나 개인작업 변경까지 허가한 것은 아님. 원격 branch 보호/CI 검증·보안 Secret scan 거절이면 HOLD.
+- User realplay F2 Owl (5.7,-2) 아직 확인 미보고; 지금 마감 원격 Push HOLD와 별개로 `USER_REALPLAY_PENDING`. 기획은 GitHub docs/planning 기록만, PC Unity/로컬 branch/ref/원격main Push 수행0.
+- 상태 `LOCAL_DOC_SYNC_SUCCESS / REMOTE_MAIN_PUSH_HOLD / CLEAN_RELEASE_CANDIDATE_REQUIRED / USER_WORK_PRESERVED / DAY_NOT_CLOSED`.
+
+---
 # PLANNING / 2026-11-11 EOD — 모든 승인 작업 선택적 통합, 로컬 동기화, 원격 main Push 명시 승인
 
 - 바울 대표: **“오늘은 여기까지 하자. 지금까지 한 모든 작업들 다 합치고 로컬 동기화하고 메인 푸시도 해주라.”** → 이번 EOD에서 로컬 게임 안전 통합·원본 local main FF 및 **GitHub `main` 원격 Push 1회 명시 승인**. [Issue #85 EOD 정확 범위·보호·실행 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6793135707). 이번 명시는 기존 기본 Push HOLD의 예외이며 main 직접 commit·force Push/무단 branch policy 우회 승인이 아님.
