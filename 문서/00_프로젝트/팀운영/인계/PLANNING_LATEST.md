@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-11 — OGA03·OGA09 시작마을 NPC 사용자 실플레이 승인 마감
+
+- 바울 대표 **“잘 되네.”**로 신규 오리지널 잡화상인 OGA03·주민대표 OGA09의 실제 원본 로컬 Unity 게임 적용 후 시각·기능 확인 수용. [#57 사용자 승인 마감 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6791260745).
+- [Codex 제품5파일 적용](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6791085660) 근거: 검증 PNG2/meta2+VillageNpcAppearanceCatalog.cs1, 기존 격리46PASS/0FAIL + 추가 원본/격리 Import14PASS/0FAIL, Console0, Unity6000.6.5f1, 원본 local main `548cf1e275684d8c4a647685fb6f08be0c495be7` (최신 보고 기준), FF-only, remote Push/Merge0; Save/UserData·dirty302/untracked550 및 기존 NPC·F2 B352 보호.
+- **최종 상태 `ISSUE57_OGA03_09_USER_REALPLAY_ACCEPTED / LOCAL_ORIGINAL_APPLIED / COMPLETE / REMOTE_NOT_PUSHED`**. 추가 아트 재제작/중복 적용/이전 QA 재실행0. 기존 이름표 근접가림 등 범위 외 한계는 독립 추적. 이번 기획은 docs/planning 기록만 갱신, 원본 Unity 조작0.
+- #88 한기 Stage2 B 격리99PASS 원본 미적용·한기 조기해제/올빼미 정식 발동 규칙 HOLD는 별도 후속으로 유지, 이번 NPC 수용을 다른 이슈의 적용 승인으로 해석하지 않음.
+
+---
+
 # PLANNING / 2026-11-11 — OGA03·OGA09 NPC 원본 로컬 적용 성공 / 대표 실플레이 대기
 
 - [Codex #57 실제 원본 적용 보고](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6791085660) 확인. 사용자 승인 OGA03 잡화상인·OGA09 주민대표 512RGBA 원본 2PNG+meta2, `VillageNpcAppearanceCatalog.cs` 5 ID 매핑만 수정하는 **제품5파일**을 Unity6000.6.5f1 로컬 main에 FF-only 적용. 기존 격리46PASS 재반복 없이 추가 격리Import6PASS + 원본Import/컴파일8PASS = **신규14PASS/0FAIL**, 원본 Console0.
