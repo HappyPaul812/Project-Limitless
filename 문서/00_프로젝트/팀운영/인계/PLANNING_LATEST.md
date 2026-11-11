@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-11 — Issue #75 F2 B352 로컬 원본 적용 성공·최종 손플레이 대기
+
+- [Codex Issue #75 적용 완료](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6783671968): 사용자 추가 확대 범위 직접 승인(“어. 승인.”) 후 Unity6000.6.5f1 B352를 본편 로컬 원본에 적용. **신규 Delta QA 37PASS/0FAIL**(Runtime35+Editor2), 3해상도 실제 GameView/마을→F2 SceneTransition/휠체어 굽은 길 왕복/퇴장·재입장 Builder 생성·자원해제/Collider·HUD·나무·그루터기·올빼미 보호. 제품 **5파일만**: F2SnowPathBuilder.cs(+meta), 기존 FirstSnow GroundOverlay PNG(+meta), World_NorthF2_CANDIDATE.unity 연결. 기존 GUID/meta 및 원본 5130 보호파일(변경허용 Scene1 포함), Save/UserData, dirty302/untracked550 보존. 원격 Push/Merge0.
+- 작업브랜치 codex/f2-b352-original-apply-20261111, 제품 commit c951e0c533ac5e1a12090ea446fb05c8fd91fd61, QA/문서 da34c933dbc889b9926f74a43c08fad2ca260a45, **최종 로컬 main 3a44dd0483759dc4921b22a914853395701789d7**(FF-only). F2 그림 FirstSnow 재사용 SHA 61141ace90d5c64c2277da0cb7e27d9674bce6c05f276fb3b9801cd05ffa272a. 기술 결과 문서 본편에 반영, Unity 원본 Editor에서 Import 및 Console0/Scene·Play·포커스 보존.
+- 이전 격리 B352와 완전 동일화면 주장 금지: Owl Idle 시점 차이 2467px만 있고 그 밖 눈길·HUD·나무·플레이어 구성 동일 보고. 과거 초기 B/C 시안과는 기존 나무/좌하단 HUD 보존 때문에 화면 차이. 남쪽 HUD 일부 가림은 기승인 보호범위의 기존 한계. **사용자 최종 실플레이 확인은 아직 요청/대기**: 새 Play→서릿길 마을 북문→첫눈의 숲 F2→휠체어 굽은길 왕복→마을 복귀→재입장/중복 생성 여부. 개발자가 실제 플레이 확인 완료라고 주장하지 않음.
+- 바울 대표가 **#95 OGA06/16 + #91 C3 Snowroad/F2 v2 아트 승인 후속 Codex 격리검증 지시문을 이미 전달**했다고 보고. **동일 프롬프트 재발송 금지**, 결과 보고를 받으면 우선 검증·원본 적용 별도 승인범위 정리. 두 아트는 사용자 미술 APPROVED이나 현재 제품 Unity 적용 완료 보고 아님. F2의 적용 성공이 이 두 작업의 선행 QA 결과를 의미하지 않음.
+- 이 기획 측은 GitHub 기록만 보완했고 사용자 PC Unity를 직접 조작/재동기화/Push하지 않음. 상태: F2_B352_LOCAL_ORIGINAL_APPLIED / UNITY_DELTA_QA_37PASS / USER_REALPLAY_PENDING / ISSUE95_91_CODEX_QA_IN_FLIGHT / REMOTE_NOT_PUSHED.
+
+---
 # PLANNING / 2026-11-11 — #95 NPC2 + #91 Chapter3 BattleBG2 사용자 조건부 미술 승인 이행
 
 - 바울 대표: “NPC와 전투 배경은 웹에서 보니까 좋네. 똑같으면 승인.” 비교판에서 직접 본 두 NPC와 두 전투 배경 **동일 원본 이미지**를 SHA256 실물 확인하여 **2+2 모두 최종 미술 승인**, 중복 승인 문의 금지. ChatGPT Library 실제 파일을 materialize해 해시 재계산했으며 바울 대표 Windows F: 파일은 직접 읽지 않음. 승인된 것은 원본 캐릭터/배경 그림이고 OFFLINE 비교판 문자/표시박스/다른 NPC는 승인·배포 대상 아님.
