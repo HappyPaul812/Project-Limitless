@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-11 — #88 한기 Stage2 B안 격리 정책 선택 및 4파일 표적 QA 지시
+
+- [Codex Stage2 읽기 전용 검토](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6787685241) 보고 **Unity실행·제품변경0 / Markdown2건 commit `5d19cde44c0781b86299a1531f72078aabca9c9d`** 접수. 기존 첫한기 시험44PASS는 A안(한기시 BeginTurn 조기 반환) 가정이며 방어/맹세/SkillCD·가이아/철벽·독/화상 전체동결을 초래, 정상 FinishCurrentAction 직접호출은 MP회복/도발·감전·침묵 소비 위험.
+- [#88 기획 B 선택](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6787744565): **Stage2 격리 구현의 정책 기본안 B** = 차단된 실제 자기 기회에도 일반 쿨다운/방어/맹세, 철벽/가이아 경과와 기존 화상→독 DoT tick/KO; 반면 실제 성공행동 뒤 MP회복/도발·감전·침묵 소비/성공행동 Path/몬스터 행동완료 기반 Cooldown은 미발생. 한기 차단 기회당 정확1차감; 활성 중 재적용거절; **자연 종료 후 살아 있는 캐릭터가 정상행동 1회를 실제 마칠 때까지 한기 재부여만 막는 보호**. 다른 디버프/공격 면역 아님; 취소·대기·다른행동·KO는 별도 규칙. 조기해제 후 동일보호 여부·동상 피해·올빼미 한기 발생확률/보상/보스/해제 공급 HOLD 유지.
+- 기존 `codex/main24-owl-first-chill-isolated-20261111` 코드 `ff670ce1e78b3aa4336e44c8429e90eb662a10ba` **7파일 격리후보의 기존 C# 4파일만** 수정하여 별도 worktree Unity6000.6.5f1 표적 DeltaQA. 변경파일: BattleSceneController.cs, BattleSceneController.OwlChillPilot.cs, BattleSkillSystem.cs, BattleColdStatusRuntime.cs. 기존44/63/107/37/99/50 전수재실행0. GameView 960/1280에서 승인 Icon/VFX6 byte keep, VFX ActionRoot sibling/offset·짧은 상태문구만 수정 후보, 태온+휠체어 Formation 겹침 HOLD.
+- **본편 원본 적용0**, 후속 사용자 제품 적용 승인 별도, Local Main 마지막 `21ecf2129efa9d9467161d972fcb0a676122223c`(PC 실 HEAD 우선), Save/UserData/dirty302/untracked550, F2 B352·NPC/전투BG 등 모든 승인 제품 보호; main 직접 commit·원격Push/Merge 금지.
+- 상태: `PLANNING_B_STAGE2_ISOLATED_RECOMMENDATION_ADOPTED / CODEX_NEW_DELTA_QA_PENDING / RULES_NOT_ORIGINAL_IMPLEMENTED / USER_FINAL_GAME_APPLY_PENDING`.
+
+---
+
 # PLANNING / 2026-11-11 — OGA03·OGA09 NPC 2종 바울 대표 최종 미술 승인
 
 - 바울 대표: “코덱스는 시켰고, OGA03·OGA09가 npc지? 그럼 아까 봤는데 좋아..” → 기존 #57의 실제 OGA03 잡화상인·OGA09 주민대표 4인 시각비교를 직접 긍정, **두 NPC의 기존 오리지널 미술 최종 승인**. [Issue #57 공식 기획 승인 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6787576315). 아트 재승인 질문·신규 원화 재제작 금지. OGA03/OGA09는 마을 정지 스프라이트이며 대화 초상화 신규 아님.
