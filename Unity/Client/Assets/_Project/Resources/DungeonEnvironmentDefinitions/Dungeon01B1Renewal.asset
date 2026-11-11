@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: Dungeon01B1Renewal
   m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.World.DungeonEnvironmentDefinition
   sceneName: Dungeon_01
+  blockedGaps:
+  - serializedVersion: 2
+    x: 11.75
+    y: 2.95
+    width: 1.5
+    height: 0.95
   placements:
   - anchorName: StoneBase
     localPosition: {x: 0, y: 0, z: 0}
@@ -23,6 +29,7 @@ MonoBehaviour:
     visualOffset: {x: 0, y: 0}
     color: {r: 0.4, g: 0.42, b: 0.42, a: 1}
   - anchorName: EntranceHall
+    walkableFloor: 1
     localPosition: {x: 0, y: -9, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 59950ae2f6dc7a04c96b2465e33c63a3, type: 3}
@@ -63,6 +70,7 @@ MonoBehaviour:
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
   - anchorName: EntrancePassage
+    walkableFloor: 1
     localPosition: {x: 0, y: -6, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 59950ae2f6dc7a04c96b2465e33c63a3, type: 3}
@@ -87,6 +95,7 @@ MonoBehaviour:
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
   - anchorName: CentralGallery
+    walkableFloor: 1
     localPosition: {x: 0, y: -3, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 4d0f10295d6c916488ad81cbf9dd6570, type: 3}
@@ -135,6 +144,7 @@ MonoBehaviour:
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
   - anchorName: WestPassage
+    walkableFloor: 1
     localPosition: {x: -6, y: -2, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 59950ae2f6dc7a04c96b2465e33c63a3, type: 3}
@@ -159,6 +169,7 @@ MonoBehaviour:
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
   - anchorName: WestOssuary
+    walkableFloor: 1
     localPosition: {x: -10, y: 0, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 4d0f10295d6c916488ad81cbf9dd6570, type: 3}
@@ -199,6 +210,7 @@ MonoBehaviour:
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
   - anchorName: EastPassage
+    walkableFloor: 1
     localPosition: {x: 6, y: -2, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 59950ae2f6dc7a04c96b2465e33c63a3, type: 3}
@@ -223,6 +235,7 @@ MonoBehaviour:
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
   - anchorName: EastCollapsedChamber
+    walkableFloor: 1
     localPosition: {x: 10, y: 0, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 6bf93a9227c8de046bee50a5321d167d, type: 3}
@@ -263,6 +276,7 @@ MonoBehaviour:
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
   - anchorName: NorthGallery
+    walkableFloor: 1
     localPosition: {x: 0, y: 3.2, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 59950ae2f6dc7a04c96b2465e33c63a3, type: 3}
@@ -287,6 +301,7 @@ MonoBehaviour:
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
   - anchorName: NorthSealedRoom
+    walkableFloor: 1
     localPosition: {x: 0, y: 9.5, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 4d0f10295d6c916488ad81cbf9dd6570, type: 3}

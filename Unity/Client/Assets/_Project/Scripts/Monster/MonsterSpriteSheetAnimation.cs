@@ -22,6 +22,8 @@ namespace ProjectLimitless.Monster
         private Sprite[] defeatFrames = Array.Empty<Sprite>();
         private float elapsed;
         private bool attacking;
+        // 기본값은 기존 비배속 재생입니다. 전투 타이밍과 동기화가 필요한 호출만 명시적으로 선택합니다.
+        private bool attackUsesBattleTime;
         private bool shooting;
         private bool usingSkill;
         private bool fieldMoving;
@@ -29,6 +31,16 @@ namespace ProjectLimitless.Monster
         private bool defeated;
         // Overlay는 이 프레임을 따라가며 독립 시간축을 만들지 않습니다.
         public Sprite CurrentFrame { get; private set; }
+        // 같은 그림을 유지하는 슬롯도 구분할 수 있는 표시 프레임 번호입니다.
+        public int CurrentFrameIndex { get; private set; }
+
+        // 비활성화/파괴·피격/사망으로 공격이 끝나면 연출 완료 대기도 즉시 풀립니다.
+        // 승인 연결 대상만 대기하여 다른 몬스터의 기존 시간을 보존합니다.
+        // 승인된 맹독뱀 4프레임도 0.5초를 끝까지 재생한 뒤 Idle로 복귀합니다.
+        // 피해·독 부여 시점은 기존 Presenter가 유지하며, 다른 몬스터의 재생 계약은 바꾸지 않습니다.
+        public bool UsesApprovedAttackTiming => definition != null && (definition.MonsterId == "venom_bee" || definition.MonsterId == "forest_spider" || definition.MonsterId == "venom_snake");
+
+        public bool IsAttackPlaying => isActiveAndEnabled && attacking && !defeated;
 
         public void Configure(SpriteRenderer target, MonsterDefinition monster)
         {
@@ -69,13 +81,14 @@ namespace ProjectLimitless.Monster
         /// Battle 기본 공격이 시작될 때 Attack 프레임으로 전환합니다. 공격 연출이 끝나면
         /// StopAttackAndReturnToIdle이 호출되어 같은 Image가 다시 Idle 반복으로 돌아갑니다.
         /// </summary>
-        public void PlayAttack()
+        public void PlayAttack(bool useBattleTime = false)
         {
             if (defeated || attackFrames.Length == 0) return;
             // 피격 직후 자기 턴이 시작되면 Hit 상태를 끝내고 공격 프레임이 우선하게 합니다.
             // 이미 쓰러진 몬스터는 뒤늦은 공격 호출로 마지막 사망 자세가 바뀌지 않도록 위에서 차단합니다.
             reacting = false;
             attacking = true;
+            attackUsesBattleTime = useBattleTime;
             shooting = false;
             usingSkill = false;
             elapsed = 0f;
@@ -105,9 +118,13 @@ namespace ProjectLimitless.Monster
 
         public void PlayShoot()
         {
-            if (shootFrames.Length == 0) { PlayAttack(); return; }
-            shooting = true;
+            // Shoot8 승인 전 숲거미는 Definition의 빈 Shoot 경로를 통해 승인 Attack8을 공유합니다.
+            // 광역 피해·효과는 BattleSceneController가 그대로 처리합니다.
             if (defeated) return;
+            if (shootFrames.Length == 0) { PlayAttack(); return; }
+            reacting = false;
+            usingSkill = false;
+            shooting = true;
             attacking = false;
             elapsed = 0f;
             ShowFrame(shootFrames, 0);
@@ -129,7 +146,10 @@ namespace ProjectLimitless.Monster
                 : fieldMoving && walkFrames.Length > 0 ? walkFrames : idleFrames;
             if (frames.Length == 0) return;
 
-            elapsed += Time.unscaledDeltaTime;
+            // 독침벌 기본 공격은 Presenter의 이동·피해 대기와 같은 Clock을 씁니다.
+            // 일시정지 중 공격만 먼저 끝나거나 배속에서 Sting과 피해가 어긋나지 않게 합니다.
+            // 다른 몬스터/Idle/피격/스킬의 기존 Clock은 그대로 유지합니다.
+            elapsed += attacking && attackUsesBattleTime ? Time.deltaTime : Time.unscaledDeltaTime;
             int frameIndex = Mathf.FloorToInt(elapsed * definition.AnimationFramesPerSecond);
             if ((attacking || shooting || reacting || usingSkill) && frameIndex >= frames.Length)
             {
@@ -151,6 +171,7 @@ namespace ProjectLimitless.Monster
         private void ShowFrame(Sprite[] frames, int index)
         {
             if (frames == null || frames.Length == 0) return;
+            CurrentFrameIndex = index;
             CurrentFrame = frames[index];
             if (fieldRenderer != null) fieldRenderer.sprite = frames[index];
             if (battleImage != null) battleImage.sprite = frames[index];

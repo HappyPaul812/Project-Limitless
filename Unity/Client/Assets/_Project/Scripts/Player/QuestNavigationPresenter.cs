@@ -72,11 +72,16 @@ namespace ProjectLimitless.Player
             if (WorldModalState.IsOpen) { group.alpha = 0f; return; }
 
             bool main09 = Main09QuestGuidance.Applies(tracked);
+            var entranceSite = target.Transform.GetComponentInParent<MainQuest10Interactable>();
+            bool dungeonEntrance = entranceSite?.TargetId == MainQuest10FieldFlow.EntranceId;
             marker.sizeDelta = main09 ? new Vector2(380f, 68f) : new Vector2(270f, 76f);
             markerText.fontSize = main09 ? 18 : 24;
             if (player == null) player = FindAnyObjectByType<PlayerController>()?.transform;
             if (player == null) { group.alpha = 0f; return; }
             PlayerDistance = Vector2.Distance(player.position, target.Transform.position);
+            // 가까운 던전 입구에는 계단 옆의 작은 E/F/A 안내가 있으므로 큰 목표판을 중복해서 덮지 않습니다.
+            // 다른 조사점·화면 밖 방향 안내의 기존 동작은 바꾸지 않습니다.
+            if (dungeonEntrance && Vector2.Distance(player.position, entranceSite.transform.position) <= 3f) { group.alpha = 0f; return; }
             Vector3 screen = camera.WorldToScreenPoint(target.Transform.position);
             bool behind = screen.z < 0f;
             Vector2 center = new Vector2(Screen.width * .5f, Screen.height * .5f);

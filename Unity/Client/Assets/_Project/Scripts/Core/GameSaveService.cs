@@ -41,6 +41,8 @@ namespace ProjectLimitless.Core
         public CompanionRosterSaveData CompanionRoster;
         // Version 1의 옛 JSON에는 없으며 null이면 승리/해금 기록 없이 Wolf를 장착합니다.
         public BeastCompanionSaveData BeastCompanions;
+        // 기존 Version1 JSON에 이 정보가 없으면 무료 기본 3스킬입니다. 빈 6칸은 명시적 해제입니다.
+        public ProjectLimitless.Battle.SkillLoadoutSaveData SkillState;
     }
 
     public enum SaveSlotState { Empty, Valid, Invalid }
@@ -158,6 +160,7 @@ namespace ProjectLimitless.Core
                 ,QuestProgress = QuestService.ExportSaveData()
                 ,CompanionRoster = CompanionRosterService.ExportSaveData()
                 ,BeastCompanions = BeastCompanionService.ExportSaveData()
+                ,SkillState = ProjectLimitless.Battle.SkillLoadoutService.ExportSaveData()
             };
             if (!Validate(data, out string validationError)) { Debug.LogError($"슬롯 {CurrentSlotIndex}을 저장하지 못했습니다: {validationError}"); return false; }
 
@@ -219,6 +222,8 @@ namespace ProjectLimitless.Core
                 GameSessionData.RecordWorldPosition(data.SavedPositionX, data.SavedPositionY);
             else GameSessionData.ClearWorldPosition();
             GameSessionData.SetPendingSpawnPoint(data.SpawnPointId);
+            // 캐릭터/직업/동료와 구버전 해금을 복원한 뒤 UI·첫 전투가 읽기 전에 장착을 복원합니다.
+            ProjectLimitless.Battle.SkillLoadoutService.ImportSaveData(data.SkillState);
         }
 
         /// <summary>현재 월드 좌표를 Session에 기록한 뒤 현재 슬롯에 저장합니다.</summary>

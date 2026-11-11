@@ -62,7 +62,7 @@ namespace ProjectLimitless.UI
             for (int i = 0; i < quests.Length; i++)
             {
                 QuestDefinition quest = quests[i]; bool active = QuestService.GetState(quest.QuestId) == QuestState.Active;
-                string status = !active ? "수락" : QuestService.CanDeliverItems(quest) ? "납품 가능" : "재료 확인";
+                string status = !active ? "수락" : QuestService.CanDeliverItems(quest) ? "완료 가능" : "재료 확인";
                 buttons.Add(MakeButton(box.transform, $"[{status}] {quest.DisplayName}", i,
                     () => { Close(); ShowQuest(npcId, npc, quest); }));
             }
@@ -104,14 +104,14 @@ namespace ProjectLimitless.UI
             if (!QuestService.CanDeliverItems(quest))
             { DialoguePresenter.Instance.Show(npcId, npc.DisplayName, quest.InsufficientDialogue + "\n\n" + progress); return; }
             DialoguePresenter.Instance.ShowConfirmation(npcId, npc.DisplayName,
-                progress + $"\n\n재료를 납품하시겠습니까?\n보상 EXP {quest.Reward.Experience} / 탈렌트 {quest.Reward.Currency}",
-                "납품한다", "아직 보관한다", () =>
+                progress + $"\n\n퀘스트를 완료하시겠습니까?\n보상 EXP {quest.Reward.Experience} / 탈렌트 {quest.Reward.Currency}",
+                "완료", "아직 보관한다", () =>
                 {
                     bool delivered = QuestService.TryDeliverSideQuest(quest.QuestId, npcId);
                     DialoguePresenter.Instance.Hide();
                     DialoguePresenter.Instance.Show(npcId, npc.DisplayName, delivered
                         ? quest.CompletionDialogue + $"\n[의뢰 완료] EXP +{quest.Reward.Experience} / 탈렌트 +{quest.Reward.Currency}"
-                        : "납품을 완료하지 못했습니다. 재료 수량과 보상 수용 상태를 다시 확인해 주세요.");
+                        : "퀘스트를 완료하지 못했습니다. 재료 수량과 보상 수용 상태를 다시 확인해 주세요.");
                 });
         }
 

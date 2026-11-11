@@ -1,3 +1,45 @@
+## EOD 2026-11-11 선별 확정 상태
+
+OGA03/09는 최종 미술·Unity46+Import14·대표실플레이 수용까지 완료(#57 6791260745), OGA06/16도 USER_REALPLAY_ACCEPTED. 아래 예전 승인대기 표기는 해당 작성시점 HISTORY입니다. 승인 원본 SHA2/2와 월드PPU/Pivot은 유지하며 548cf1e2가 현재469b219f의 조상입니다. HP/MP(f5f3a07a), Snake8(485a8dff), Bee/Spider(b5a41b30/ac12abb0)의 승인 제품도 이미 main에 포함되어 재적용0. 신규PNG/시안/OGA20/HOLD 작업 복사0. 원격아트팀 a4639a58의 승인된 최종 미술 보고서만 Markdown으로 선별 보관했습니다.
+
+---
+
+## 2026-11-03 Owl·Spider 최종 미술 승인 / Bee 표적·권리 계약 조사
+
+**Owl Attack4 / Spider Walk8 USER_ART_APPROVED** 확정. #84 기존 Unity37PASS 재사용·재실행0. Owl ZIP d6648b7451dc2184c2187c0b1c2f8e0f52fc800ac6975753d0f6d38f6fbf9192 / Spider ZIP 771bd1813608aa3e350c6124ab0d43293c6d2988b1833014da64484d5272c8da 동결. 기존 Idle·정지원화 보호·추가 재작화 금지. Owl VFX HOLD, Spider 발 접지·미끄러짐 NOT_VERIFIED / WALK_CONTACT_HOLD, Organic Attack8/Shoot8 미제작. 과거 미술 승인 대기는 이번 승인으로 해소됐습니다.
+
+Bee 실제 코드: 적 좌측→아군 우측, 전열/후열·Column별 대상, 명목 .25초 피해(index02@10FPS), 정지거리145 UI. 기본 플레이어와 사각형 사이도 최소31.2 UI 간격이고 ContactFrame/socket 없음. Attack10은 약.61초에 조기 종료될 수 있어 **TARGET_CONTACT_HOLD / MOTION_REVISE_CONTINUE / FULL_COMBAT_READY_NO**. 필요한 보완은 Sting/Recover 두 후보뿐이며 정확 접점·거리/시간 승인 전 계획 문서까지만 진행합니다.
+
+PilotBee 원배포 웹BY3.0 vs 원본 ZIP 내부BY4.0 충돌 재확인. MonsterValidation의 활성2PNG가 Bee 정의에 참조되며 외부 보관 원본과 byte-exact여서 **RIGHTS_HOLD**. ThirdParty 보관 파일 직접참조0과 활성 사본 사용을 구분했습니다. 새 SHA만으로 독립 권리를 확정하지 않습니다.
+
+[승인·좌표·권리 근거](../../OwlSpider_FinalApproval_BeeTarget_RightsContract_20261103.md) / [리뉴얼 최소 지시서](../../VenomBee_Minimal_StingRecover_ArtBrief_20261103.md). branch `codex/bee-target-rights-and-art-approval-20261103`, 출발 c6eab1bb. 문서·조사 JSON/TXT만 변경, 원본 Unity/Save/UserData/Scene/Prefab/BuildSettings/Packages·Discord66·Push/merge0, Unity 실행/기존QA 반복/신규PNG0. NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-03 Owl Attack02 + Spider Edge Fix 독립 읽기 검수
+
+**LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED**. **WALK8_EDGE_FIX_OK_CANDIDATE(외곽한정)**:01/02/06/07실변경·00/03/04/05exactKEEP,지적한26/30/58/26개alpha>0경계접촉모두0/8장전체변0.512/몸통가시ROI보존·일괄축소/확장0·정확10FPS.발끝형태내부복원확인,승인v5/Idle8KEEP.전체지지/스윙·실제바닥고정/미끄러짐은WALK_CONTACT_ART_REVIEW_PENDING/NOT_VERIFIED,AttackShoot·Ch4·Bee변경/재검수0.
+
+[정확SHA·통합보고](../../OwlAttack02_SpiderWalk8EdgeFix_ReadOnly_Review_20261103.md). OFFLINE/Unity아님 비교판 `F:/study/codex/Project-Limitless/Temp/OwlSpiderEdgeReview20261103/Review/index.html` SHA `26aa98c601f8c19ba7916f9b5f1f627fc52483b5700dd3262bec4d9cf881565c`·브라우저34PASS. branch `codex/owl-spider-edge-review-20261103`,출발34f2ad88.원본main/status344(상세858)·28참조SHA/개인Save보호·Unity/기존QA·Bee재검수/원본적용/Push/merge0.
+
+---
+
+## 2026-11-03 Owl Continuity + Spider Walk8 Fix 독립 읽기 검수
+
+**LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED**. SpiderWalk00/04exactKEEP·6수정과정확10FPS확인. **WALK_CONTACT_REVISE / MOTION_REVISE_CONTINUE**:01/02오른쪽x511·06왼쪽x0 불투명발절단(최대255),07왼쪽반투명접촉(최대41)새결함.128/40지지/스윙·발접지계획표는실측아님. 시트수정6셀차이는완전투명RGB뿐/가시동일. 원화v5/Idle00c600cd…·Idle8KEEP, Bee재검수0/AttackShoot·Ch4기계형변경0.
+
+[통합 상세·전체SHA·근거](../../OwlContinuity_SpiderWalk8Fix_ReadOnly_Review_20261103.md). 단일OFFLINE/Unity아님 비교판 `F:/study/codex/Project-Limitless/Temp/OwlSpiderFollowupReview20261103/Review/index.html` SHA `ca98de10c55e0ef0b4601fe44703780ec78ffef8c6dd4a73908c1e9763d02d74` · 브라우저34PASS. branch `codex/owl-spider-followup-review-20261103`, 출발ed95f352. 원본main/status344(상세858)·28참조SHA보호·Unity/Save접근/기존QA·Bee재검수0·Push/merge0. 최종미술승인과실제품적용은별도입니다.
+
+---
+
+## 2026-11-03 Codex 독립 실물 델타 검수 결과 (담당 제작 기록과 구분)
+
+Spider v5/Idle00c600cd… byte KEEP, 새15프레임 확인. Idle호흡 후보/Walk8 지지·스윙/관절 보완으로 MOTION_REVISE_CONTINUE. 8FPS GIF 실120ms=8.333 정정 필요, 시트Idle00 차이는완전투명RGB뿐. Bee 새포즈0/Source_KEEP5 동일, TEST_ONLY보드만추가로 TARGET_CONTRACT_HOLD / RIGHTS_HOLD 유지.
+
+[독립 통합 검수](../../Art_OwlAttack4_BeeTarget_SpiderIdleWalk_Review_20261103.md). 세 ZIP 실물 무결성 확인, 바울 대표 최종 모션미술 승인 대기·Unity실행/본편적용0·기존QA반복0·Push/merge0. 이 기록은 아트 원본이나 담당 원격 문서를 덮어쓰지 않은 로컬 인계입니다.
+
+---
+
 ## 2026-10-23 / Issue #63·#65 Codex 최종 실물 비교판 인계 — 미술 승인 대기 (현재 최신)
 
 - **이번 새 보고서**: [Renewal_VenomBee_Issue65_FinalUnity_Evidence_Handoff_20261023.md](../../Renewal_VenomBee_Issue65_FinalUnity_Evidence_Handoff_20261023.md), `docs/art-renewal` commit **`0b58085a48a43c7481d69d07f949b791ecd27817`**. 기존 [독침벌 PilotBee 원본·라이선스·모션 계약](../../Renewal_VenomBee_Codex64_65_Rights_Comparison_And_MotionContract_20261023.md) 및 v1 원화/ZIP은 **그대로 보존**.

@@ -1,3 +1,349 @@
+## EOD 2026-11-11 — 승인 문서 로컬 통합 / 원격 main Push HOLD
+
+**LOCAL_APPROVED_DOC_SYNC / REMOTE_MAIN_PUSH_HOLD / USER_WORK_PRESERVED / DAY_NOT_CLOSED**.
+
+- 실제시작main469b219ffbdbf4c8e5b51e977bbe2940eb6119a2, origin/main bfd281545632877325f5d21e04cefb924042c465. 원격은조상/로컬67커밋선행. 승인제품anchor11/11이미포함·게임재적용0. 누락승인보고8/최신인계3+EOD보고/CODEX/CURRENT만 별도codex/eod-approved-main-push-20261111에서선별, 문서커밋을로컬FF-only/no-autostash로동기화합니다. 최종main은동기화후본EOD브랜치HEAD이며실제SHA는Issue85/Temp/EODApprovedPush20261111/Final.json에기록합니다.
+- **Push 미실행**: 전체전송이력67커밋/721경로에97992cda의로컬사용자meta보관5개 및미채택PilotBee비교원본·생성검사기포함. 이번제외조건과충돌하며삭제커밋만으로부모이력전송을막을수없습니다. FF-only/강제정리금지조건아래임의이력재구성/범위확대0. REMOTE_MAIN_PUSH_SUCCESS/DAY_CLOSED 선언0.
+- private백업8322/1220459912bytes·원본/백업SHA일치·dirty302/untracked550보호. Unity6000.6.5f1/compileidle/Console0·Scene/Play/선택/포커스보존. 새코드0이므로81/99/68/46전수반복0. 키패턴검출0/50MiB이상0이나모든기밀부재보증아님. 원격protectedfalse/rulesets[]/push권한확인, protection상세API403/우회0.
+- [전체감사/승인대조](EOD_20261111_Integration_PushAudit.md), [전송전체명세](EOD_20261111_PushScope_Manifest.md). OGA03/09/06/16·BG사용자수용, Owl정식81PASS제품469b219f는대표새실플레이 PENDING. VFX소유자/몸체밀집PARTIAL·동상/동결괴사/정화Ⅱ/아이템/Discord/C SnowEdge/OGA20HOLD유지. 추가작업자동시작0.
+
+---
+
+## 2026-11-11 Issue95·91 — 승인 아트4종 원본 로컬 적용 완료
+
+**APPROVED_ART_4_LOCAL_ORIGINAL_APPLIED / UNITY_IMPORT_DELTA_QA_PASS / USER_REALPLAY_PENDING / REMOTE_NOT_PUSHED**.
+
+- 바울 대표의12파일 본편 적용 승인에 따라 검증 제품 `d40bb17057da555322993c1b1c2fd7944b95bf78` 그대로 원본에 FF-only/no-autostash 반영. 별도 `codex/art95-91-original-apply-20261111`. 신규10/수정2, 새그림·Scene/Prefab/Collider/기존GUID/meta변경0. OGA06/16 PPU329/320.25·발끝Pivot·StableID5, Snowroad/F2 v2·독립Ch3Catalog 유지.
+- 기존107PASS 재사용/전수재실행0. 추가 격리 Import7PASS/원본 Import·compile·Resources9PASS/Console오류0. Scene·PlayOFF·선택·포커스 보호. F2B352·Ch1/2·Save/UserData·dirty302/untracked550 보존, 보호8294 중 제품코드2만 변경·그외8292SHA동일(완료문서2파일 별도허용).
+- 시작main `3a44dd0483759dc4921b22a914853395701789d7`→제품d40bb170. 완료보고도 작업브랜치에서 commit→FF; 최종SHA는 Issue95/91 완료댓글·Temp/Art95_91Apply20261111/Final.json. main직접commit/원격Push/Merge0.
+- [적용·QA·실플레이 안내](Issue95_91_ApprovedArt_OriginalApply_20261111.md). 캡처는 기존107 실제GameView 재사용이며 원본 신규Play촬영 아님. 추가 배포승인 대기 없음. 다음은 바울 대표의 새Play→마을 치유/은행 E·Field03/Arbel 재사용 외형·Chapter3 서릿길/F2 전투 배경 실플레이 수용 확인. 격리 MCP 환경로그 미결은 별도, 원본Console0.
+
+---
+
+## 2026-11-11 Issue75 — 승인 B352 원본 로컬 적용 완료
+
+**F2_B_LOCAL_ORIGINAL_APPLIED / UNITY_DELTA_QA_PASS / USER_REALPLAY_PENDING / REMOTE_NOT_PUSHED**.
+
+- 바울 대표의 “어. 승인.”으로 최종5파일 범위 승인. 제품 **c951e0c533ac5e1a12090ea446fb05c8fd91fd61**, 별도 codex/f2-b352-original-apply-20261111. Builder/FirstSnow/meta4신규+F2Scene1수정, 새그림0·기존GUID교체0. 기존 Scene 블록 불변·Root/Builder 연결57줄만 추가.
+- Unity6000.6.5f1 신규 **Runtime35+Scene작성2=37PASS/0FAIL**. 마을→F2 자동Start352·중복방지·3화면비·휠체어왕복·퇴장/재입장/두번째퇴장 자원해제 PASS. 기존24/68/90/81/33 전수 반복0. 게임Runtime/C#오류0, 격리 Search/MCP Editor환경OPEN 별도.
+- 1280 파일럿 대비 Owl 동결프레임 영역2467픽셀차이, 그밖0. Sprite 배치·회전·Sorting 동일. 960/1680 HUD viewport안·길 확인. 기존 나무/Stump/Owl/Collider/HUD 유지·남쪽길 HUD 일부가림 기존한계 유지.
+- 원본 시작main7e8c9f1b→제품/보고da34c933 안전FF 완료. 원본Import/compile·Builder타입·GUID2·PPU128/중앙Pivot·Console0 확인, Scene/Play/선택/포커스 무조작. 보호5130 중 승인Scene1만 변경·나머지5129SHA동일, Save/UserData·dirty302/untracked550 byte-exact 동일. 완료문서까지 FF하며 최종SHA는 Issue75/Temp Final.json 참조.
+- [5파일·실화면·QA·동기화 보고](Issue75_F2_B352_OriginalApply_20261111.md). 다음은 바울 대표의 새Play→기존Main24 서릿길마을 북문→F2 굽은눈길 왕복·퇴장/재입장 실플레이 수용 확인입니다. 추가 원본 적용 승인 대기는 없습니다.
+
+---
+
+## 2026-11-10 EOD — 승인 작업 통합·로컬 안전 동기화 마감
+
+실제 EOD 검증 완료: 원본 main에 e999b4c310b519138cfb3315f1b2d7bd00e54ea0을 FF-only/no-autostash 반영했습니다. 사용자 상태302/550 byte-exact 동일, 보호8244개 SHA 동일, 허용 인계문서2개만 변경, Unity 제품 변경0. Unity6000.6.5f1·Scene·Play·선택·포커스 유지, 컴파일 중 아님·Console 오류0. 최종 완료 기록 commit도 같은 방식으로 반영하며 최종 SHA는 Temp/EOD20261110/Final.json 및 Issue 댓글에 기록합니다.
+
+EOD_20261110_LOCAL_MAIN_SYNC_SUCCESS / USER_WORK_PRESERVED / REMOTE_NOT_PUSHED / DAY_CLOSED
+
+
+- 승인 제품 #96 HP·MP, #97 맹독뱀, #94 던전 충돌, #93 및 앞선 Bee/Spider/펫/Chapter2/TTS는 모두 `ALREADY_IN_LOCAL_MAIN`. 대표 실플레이 수용 반영, 제품 재적용·기존 QA 반복0.
+- 출처 감사 #57의 공식 최종 문서3개만 선별 통합합니다. Chapter1 잔여7종·기본펫3종 `ORIGINAL_CONFIRMED`; 슬라임은 대표 원본 선언으로 마감, 존재하지 않은 ZIP의 픽셀 검증은 `NOT_RUN`입니다.
+- F2 B/C·SnowEdge, NPC OGA06/16, Ch3 BGv2, Shoot8, 미승인 냉기·VISUAL_PARTIAL·Discord는 `HOLD`, 통합 제외.
+- 시작 main `8430f40026ac9258f2ef3323b55dfb4983f872a7`; 작업 브랜치 `codex/eod-safe-sync-20261110`. 문서 전용 commit 후 `--ff-only --no-autostash`로 안전 반영하며 main 직접 commit·원격 Push/Merge0.
+- 원본8246파일/1,210,483,913bytes 백업·SHA 재읽기 PASS. tracked dirty302/untracked550 및 Save/UserData·Unity6000.6.5f1·Editor 상태 보호. 제품 파일 변경0으로 대규모 QA 재실행하지 않습니다.
+- 상세 근거: `문서/00_프로젝트/EOD_SafeSync_20261110.md`. 최종 실제 commit/main SHA와 보호·동기화 결과는 원본 `Temp/EOD20261110/Final.json` 및 관련 Issue 댓글에 기록합니다. 같은 commit 안에 자신의 SHA를 적는 대신 이 완료 영수증으로 확정합니다. 성공 상태는 최종 검증 이후에만 보고합니다.
+- 추가 개발 없이 오늘 작업을 종료합니다. 아래 기록은 당시 이력이며 최신 수용·보류 상태는 이 EOD 기록을 우선합니다.
+
+## 2026-11-10 Issue #96 — 시작마을 물약 오리지널 아이콘 적용 완료
+
+**STARTERVILLAGE_SHOP_POTIONS_ORIGINAL / UNITY_DELTA_QA_PASS / LOCAL_ORIGINAL_APPLIED / USER_REALPLAY_REVIEW_PENDING / REMOTE_NOT_PUSHED**
+
+- 승인된 HP·MP128² PNG2를 독립Sprite/GUID로 등록하고 시작마을 잡화상점 거래창의 두 상품에만 표시했습니다. 씬+상점+아이템ID 제한, 공용 ItemDefinition·Kenney PNG/meta·인벤토리/전투/다른상점 변경0. HP+30/구매20/판매10, MP+12/구매30/판매15 유지.
+- Unity6000.6.5f1 실제 거래창960×720·1280×720 Before13/After46 PASS, 반영원본 동일파일 재실행46 PASS. 가상 마우스·키보드/거래·수량·설명/이동잠금·해제/적용범위·격리Save PASS, Runtime Error0. 기존 전체QA 반복0.
+- 구현 **`f5f3a07aa4c5b797c417e6bcc80783d8b5501d05`**, `codex/ch1-shop-potions-original-20261110` → local main ff-only 적용. 원본Import/컴파일/ConsoleError0, Scene/Play/포커스 보존. 보호5128 중 승인코드1개만 변경·새PNG/meta4개 추가, 사용자dirty302/untracked550·Save/UserData·기존아트·Packages/BuildSettings 보존.
+- [보고·PNG SHA/GUID·교체 전후 실제캡처](../../docs/art-renewal/issue96-shop-original-20261110/REPORT.md). 다음: 원본 새 Play의 시작마을 잡화상인 → 물건을 본다에서 최종 수용 확인. 기술HOLD 없음. 문서 포함 최종main SHA는 #96 댓글/Temp/Issue96Original/Evidence/FinalResult.json 참조. main직접commit·원격Push/Merge0.
+
+---
+
+## 2026-11-10 Issue #97 — 맹독뱀 승인8프레임 실제 로컬 게임 반영
+
+**VENOMSNAKE_ANIM8 / UNITY_QA_PASS / LOCAL_ORIGINAL_APPLIED / USER_REALPLAY_REVIEW_PENDING / REMOTE_NOT_PUSHED**
+
+- 승인 기본6장+Continuity_v2 Attack01/03를 무손실640셀 4열 시트2개로 연결했습니다. 기존 표시 폭·GUID/meta·비시각 데이터 보존, 뱀의 승인 공격 완료 대기만 추가했습니다. 미채택 Attack03/F2/NPC 적용0.
+- Unity6000.6.5f1 실제 Field_02·Battle 기본61+보완24 PASS. Idle4/Attack4 8FPS·Idle 복귀·방향/접지·32/39px GameView·실제 맹독/쿨다운·Bee/Spider·펫 참조 PASS. 원본 반영 후 동일6파일 복제본 재실행24 PASS, 원본 Import/컴파일/프레임8/ConsoleError0 확인. 원본 Scene/Play/포커스 보존.
+- 구현 **`485a8dffad37c02ffcef67ee9abd4ec92a3bdefe`**, 별도 `codex/venomsnake-anim8-unity-20261110` → 로컬 main ff-only 적용. 보호3921 SHA변경0, 사용자dirty302/untracked550·Save/UserData·승인아트·Packages/BuildSettings 보존. main직접commit/원격Push·Merge0.
+- [상세·최종8장 SHA·GUID·실제캡처5장](../../docs/art-renewal/issue97-anim8-20261110/REPORT.md). 다음: 바울 대표가 원본 새 Play에서 **Field_02 맹독뱀 접촉→Battle** 최종 수용 확인. 기술HOLD 없음. 문서 포함 최종main SHA는 #97 댓글/Temp/Issue97/Evidence/final-result.json 참조.
+- 기존 #75 B/C 원본 미적용 및 HP·MP 상점 아이콘 HOLD는 유지합니다.
+
+---
+
+## 2026-11-10 — F2·맹독뱀 ZIP 검토 / 시작마을 상점 물약 아이콘 HOLD
+
+**F2_BENDSNOW_REVIEW_DONE / VENOMSNAKE_REVIEW_DONE / STARTERVILLAGE_SHOP_ICON_REPLACEMENT_HOLD / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- F2 ZIP SHA `151094aacd847ee7b4338ca08a827d0edaa21a1122df357379f0bd493afabd8a`, 10entries·CRC·SUMS8/8 PASS. **부분 수정 필요**: 곡선·눈 불규칙성은 개선됐으나 비교판은 생성 콘셉트로 실제 ROI/4.5WU/HUD 증명 아님. 방향 수용 기록 존중·SPEC_PENDING·본편 미적용.
+- 뱀 ZIP SHA `5c708234539a7751c1646508feb5fc66e8a5e11439b222494145e99923980b8b`, 14entries·CRC·SUMS13/13·Manifest12/12 PASS. **단일포즈 승인 상정용 PASS**, v3 원본 SHA동일. 512/128/40 직접 검토·40px 세부 제한·왼쪽alpha25px 유지. 사용자 최종 미술/게임기술 승인 별개. NPC는 뱀 마감 판단 후 다음 업무, 이번 제작0.
+- 바울 대표가 대상은 **월드 소품이 아닌 시작마을 상인 거래창 아이콘**이라고 확정. HP/MP ItemIcons PNG는 Kenney flask_full/flask_half 원본과 SHA 일치. GUID a9ac67de65b88774ea6e90e22805af16 / c062cadfd7ff1b94e8c89e77f74cf048. 공용 ItemDefinition 참조라 직접교체 시 다른상점/전투 영향. 기존 내부 시트는 해독제/절연약 등으로 HP/MP 대체2종 미확인 → **교체HOLD·제품변경0·구현커밋 없음**.
+- Unity6000.6.5f1 실제 상태·의존성50/외부0·Preview Renderer286 확인. 월드 참고 렌더1장 확보(Play/거래창 캡처 아님). 교체 전후/이동/NPC/구매판매 DeltaQA NOT_RUN, 기존 전수QA 재실행0. Console Error0·활성Scene/Play/선택/포커스 변경0. 과거worktree Bootstrap이 활성Scene인 상태도 보존.
+- 원본 dirty302/untracked550 경로 동일·보호3921 SHA변경0, Save/UserData/승인 PNG·WAV/meta/Packages/BuildSettings 보존. 원격Push·병합/main직접commit0. 브랜치 `codex/20261110-main-renewal-prop-batch`, 보고커밋 `f96e49e793d4ad54d560bfe6354807161187e60a`; 로컬main에는 안전한 경우 보고·인계만 FF, 제품 적용HOLD. 최종문서/main SHA는 Git HEAD·#75/#43/#57 결과댓글 참조.
+- 다음: 기존 내부 **HP·MP 회복약2종 원본 경로/역할** 확인 → 시작마을 거래창 한정 연결 → Unity 숨김 Play 표적 전후/거래/이동잠금 QA → 안전FF. 새아트/NPC/뱀모션 제작 금지 유지.
+- 상세: [검토·참조·HOLD 근거](Batch_ArtReview_StarterVillageShopIcons_20261110.md), `Evidence/BatchArtShop20261110/`. 로컬 문서 미Push로 원격보고서 미게시, Issue 상태보고와 구분.
+
+---
+
+## 2026-11-09 Issue #94 — 던전 B1·B2 실제 내부 벽 충돌 수정
+
+**LOCAL_MAIN_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED / USER_REALPLAY_PENDING**.
+
+- B1·B2 방/복도 바깥 내부 허공 Collider 누락을 수정했습니다. 승인 바닥 합집합의 여집합을 Static CompositeCollider2D로 구성하고, B1 잔해 위 접지보다 좁은 틈1곳을 닫았습니다. PNG·Scene·기존 퀘스트/TTS/숲거미/귀환 보존.
+- Unity6000.6.5f1 실제 Play 표적 **110PASS/0FAIL**. B1 72/B2 56 방향 스트레스 관통0, 각13200점 마스크 일치, 도보·휠체어·가상 키보드/패드/안내 API, 조사·보스문·석판 경로, B1↔B2→Field03, 벽 안 Continue·복구 Save 비덮어쓰기 통과. 기존 Editor Search 내부 예외1은 별도이며 Runtime 프로젝트 오류0. 이전 전체QA 재실행0.
+- 보호995 중994 SHA불변·이미지/음성1369불변·dirty302상태동일·변경경로겹침0. 원본 슬롯01만 계속 실행 중인 게임이 좌표2필드를 자체 자동 저장하며 Codex 원본Save 쓰기0. 슬롯02/03은 시작부터 없고 과거 복제본만 사용했습니다.
+- 제품 로컬 main SHA **5024d2b6ffd1a07f90dbb15cf073eed16bb3630a**, 별도 `codex/fix-20261109-dungeon-b1-b2-collision` 커밋→ff-only 적용 완료. 문서 포함 최종SHA는 실제 Git HEAD·Issue94 댓글·Temp/Issue94/Evidence/local-main-final.json 참조. main 직접commit/원격Push·병합0.
+- 원본 B2 Play/Scene/선택/포커스 무조작. **새 Play에서 적용을 확인해 주세요.** 물리 장치 손 플레이는 사용자 수용 확인 사항입니다. B1/B2 기존 마우스 자동 길찾기는 미구현이며 공용 안내 API/마우스 귀환 버튼 검증과 구분합니다.
+- [원인·수정·QA·캡처](Issue94_DungeonCollision_20261109.md), Evidence/Issue94Collision20261109/. 다음 권장: 새 Play에서 두 층 벽·모서리·목표·귀환 수용 확인.
+
+---
+
+## 2026-11-05 최종 통합·로컬 동기화·하루 마감
+
+**USER_REALPLAY_ACCEPTED / LOCAL_MAIN_SYNC_SUCCESS / REMOTE_NOT_PUSHED / DAY_CLOSED**.
+
+- 최신 GitHub PLANNING 20:44 및 Issue93 마감 지시6657174333, 신규/리뉴얼 아트·TTS·BGM 인계를 대조했습니다. 기존 승인 #63 Bee5, #89 정식아이콘/B HUD, #90 Spider Attack8/Idle8/Walk8, #92 Ch2 배경은 승인 통합8768cbac→안전동기화674e6b0f를 거쳐 현재 main의 조상입니다. TTS162는 b0a666be로 이미 통합되어 옛 담당 인계의 미반영 표기는 과거 기록입니다.
+- 오늘 Main11 동행 필터·B1/B2 귀환·숲거미 공통공격(6f094a40/706e7010), Main11 WAV10·Field03 입구(71919894/1a233d01/0fb8b8c4)는 이미 main 포함. 대표님 “잘돼” 실플레이 수용을 반영했습니다. **누락된 승인 제품0, 제품 신규 통합0, 중복 적용0**. docs/* 전체 병합 없이 최신 정본의 승인 상태만 대조했습니다.
+- 보류: #91 Ch3 BG v2·Shoot8·미확정 냉기 Runtime·기존 VISUAL_PARTIAL·미승인 BGM/시안. 이번 마감에서 제작/추가 QA/무인 작업을 시작하지 않습니다.
+- 마감 시작 main **0fb8b8c4a02a7f21fc5bf78360fb49c371a28558**. 별도 **codex/eod-safe-sync-20261105** worktree에서 이 마감 기록만 작성하여 충돌0 조건으로 로컬 main ff-only 반영합니다. 최종 문서 포함 SHA는 실제 Git HEAD 및 Issue93 마감 댓글 참조. main 직접 커밋/원격 Push/원격 병합0.
+- Unity **6000.6.5f1 (3ff58d469c8a)** 유지. 제품 변경0이므로 기존 QA65/9/18/19 및121/37/15/7은 재실행하지 않았습니다. 직전 컴파일·실재생·전후 화면 근거는 Issue93 상세보고에 유지합니다. 원본 Editor/Scene/포커스 조작0.
+- 원본 Save01/02/03·UserData·승인 PNG/WAV·사용자 tracked dirty302/untracked550·Packages/Scenes/Prefabs/meta/GUID/BuildSettings 보호. 마감 전후 현재 존재하는 보호996파일 SHA와 원본 git status의 동일성을 확인합니다. 등록 worktree137개·로컬브랜치174개 전체 감사 완료. 이전 보호목록의 원본 Save02/03은 이번 감사 시작부터 원본 경로에 없고, 슬롯01과 기존 검증 복제본은 존재합니다. 원본 복원/삭제는 수행하지 않습니다. 기존 검증 worktree overlay와 사용자 파일은 정리·삭제·커밋하지 않습니다.
+- 오늘 작업 종료. 후속 작업은 새 사용자 지시가 있을 때만 시작합니다.
+
+---
+
+## 2026-11-05 Issue #93 재발 — Main11 음성·Field03 입구 실제 수정
+
+**LOCAL_MAIN_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- WAV 실내용 분할 오류 확인: 미엘001~005·폴001/002/003/008/009의 기존 원본 PCM만 복구. 정상18 WAV·원문/TTS ID·기존meta28·카탈로그 유지, TTS 생성/API0. 보스 후001/B1조사002/B2조사003 실제 AudioSource 출력·Unity PCM 재전사 정상 대응.
+- Field03 불투명 Quad와 큰 목표판 가림 제거. 승인 계단 PNG 재사용·지면 표시, 작은 옆 안내, 실제 입구3m 기준 안내 전환(3.5m Navigation 유지). Player Sorting/Scene/Bounds/Spawn/안전지대/Quest 순서 유지.
+- Unity6000.6.5f1 신규 Runtime65PASS/0FAIL, 최종F·거리9PASS/0FAIL, 실제 화면18PASS/0FAIL, 정적19PASS/0FAIL. 중복 합산/기존 전체QA 재실행0. 사용자 명시 허락 후 별도 검증 창에서 도보·휠체어960/1280 전후8장 실제 캡처·창 자동 종료.
+- 원본Save01/02/03 복제 시험. 보호998 중 허용 WAV10만 수정·나머지988 불변, 기존dirty302/untracked550 보호. 숲거미Attack8·B1/B2귀환 유지. 검증 전용 Packages/제품명/설정은 제품에 미포함.
+- 구현71919894d15765c31a6ebb5758d2ade4cb5ba90e는 main FF 완료. 후속 거리 정합·마감은 codex/fix-20261105-main11-voice-field03-entrance에서 커밋→안전FF, 최종 SHA는 Git HEAD/Issue93 마감댓글 참조. main 직접commit·원격Push/병합0.
+- 사용 한도 후 재개에서 완료한 음성·빌드·화면 검사는 반복하지 않았다. 다음 권장: 바울 대표 실플레이 청취·입구 가독성 확인. 새 TTS/아트 제작 불필요.
+- [실제 원인·변경파일·QA·전후 캡처](Issue93_Main11Voice_Field03Entrance_20261105.md), Evidence/Issue93VoiceEntrance20261105/.
+
+- 최종 제품·거리 정합 SHA **1a233d01102b7887656e0219702eb1359a831798** main FF 완료. 원본Editor import/compile 완료·C#오류0·입구리소스/미엘3 Clip 갱신 확인·Scene dirty=false. 문서 포함 최종HEAD는 Issue93 마감 댓글 참조.
+
+---
+
+## 2026-11-05 Issue #93 P1 3건 수정·로컬 main 반영
+
+**LOCAL_MAIN_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- 숲거미 일반공격은 승인 Attack8, 독액 분사는 구 Shoot 경로가 원인임을 실제 Battle Controller에서 확인. Shoot 경로를 비워 승인 Attack8 공통 사용. 피해·효과 불변, Shoot8 HOLD·승인 PNG 재제작0.
+- 복제 슬롯02·03은 Main11 index2 / 태온·미엘 동행. 비동행 폴 등만 무음 조사 지문, 동행 원문·TTS ID28/28 유지. 현재 목표·거리·순차 완료 보호, 같은 프레임 대화 재입력 차단.
+- B1→Field03·B2→B1 확인형 귀환, E/F·패드A·마우스 버튼. 퀘스트 미완료 귀환·재입장·Continue, 보스/석판/몬스터 대기·Inventory 보호. Scene/Bounds/Spawn 원본 재생성0.
+- Unity6000.6.5f1 숨김 Play Delta **121PASS/0FAIL**, 보완 **37PASS/0FAIL**, 최종 입력 **15PASS/0FAIL**, 정적7PASS/0FAIL. 원본 main 백그라운드 컴파일 완료·신규 타입 로드·C# 오류0도 확인. 중복 합산 금지·기존 전체QA 재실행0. OS 포커스 전환0. 가상 입력/UI callback 검증이며 실제 물리 장치 장시간 플레이는 사용자 확인 사항. 기존 Editor Search 내부 예외는 별도 유지.
+- 사용자 변경302·미추적550 보존, 보호942 SHA변경0(원본Save02/03 포함), 승인Spider24 PNG 변경0. 구 Git Packages 불일치는 사용자 로컬 Packages를 QA 복사본에만 overlay; 원본 패키지/설정 미채택·미수정.
+- 구현 커밋 `6f094a4095e9298d20e879d842f29b02bca6587a` / `codex/fix-20261105-dungeon-spider-dialogue` → 원본 local main FF 완료. main 직접commit·원격Push/병합0. 후속 문서 커밋은 같은 브랜치에서 FF로 전달.
+- 다음 권장: 실제 사용자 플레이에서 귀환 안내 가독성 확인. Shoot8 미승인 유지. [원인·파일·QA·전후 캡처](Issue93_P1_Dungeon_Spider_Dialogue_20261105.md), `Evidence/Issue93_20261105/`.
+
+---
+
+## 2026-11-04 긴급 로컬 main 동기화 실제 완료
+
+**LOCAL_MAIN_SYNC_SUCCESS / USER_WORK_PRESERVED / REMOTE_NOT_PUSHED**. 이전 HOLD 보고는 아래보다 과거 상태입니다.
+
+- 실제 원본 `F:/study/codex/Project-Limitless` main을634a91d3→**97992cdaff69a38b458a715fb4073907fb926d4c**로 fast-forward 완료(후속마감문서도별도브랜치→FF). 승인통합브랜치 `codex/integrate-20261104-approved` **8768cbac91a291f13769c6bfa18a831673652acb** 유지, 보존/동기화브랜치 `codex/local-main-safe-sync-20261104`.
+- 308/550 전수분류·CSV/JSON,6경로겹침 해결6/HOLD0. Main24는 승인본과 바이트동일, PilotBee 수정meta5는 원래Git버전과 별도로 보존. 나머지302dirty·550untracked 원본유지. 새/미승인 자료 자동채택0.
+- F: 별도백업 `F:/LIMITLESS_Backups/20261104_SafeMainSync_201027`: 고유881개 SHA일치(변경/미추적858+private23), 원본PilotBee21파일 보존이동 SHA일치. source858·private23 바이트불변. 승인PNG37동일/GUID유일.
+- 격리 dirty재현FF 및 실제FF PASS, 신규 Git/파일Delta **16PASS/0FAIL**. Unity6000.6.5f1 고정, 승인8768 대비Unity코드/자산변경0이라 기존60/52·격리BuildSucceeded 재사용, Unity전수QA/Play 재실행0. 기존원본user Scene/Prefab/Packages/BuildSettings/Save보호.
+- #63/#90/#89표시계층/#92파일은 원본main 반영됨. #89자동냉기런타임·미정규칙은완료아님. #91미승인/Shoot8 HOLD·기존시각PARTIAL 유지. 원격Push/merge/main직접commit0. 이 동기화에 추가사용자승인필요0. 남은사용자작업정리/미정기획승인은별도.
+- [상세결과](LocalMain_SafeSync_20261104.md), 근거 `Evidence/SafeMainSync20261104/`. 마지막관련 코드/보존commit97992cda, 최종문서commit은GitHEAD/이슈마감보고참조.
+
+
+GitHub 실제 보고 완료(댓글 API 성공 확인): [#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6628635508), [#89](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6628636928), [#90](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6628638252), [#92](https://github.com/HappyPaul812/Project-Limitless/issues/92#issuecomment-6628639926). 보고 기준 구현 b5a41b3089ed43abd725c836d8934d27cf88ca58 / 문서 aa0e48f7b3c1dd2ee0d39d15a50738463d6a6b1c. 원격 git Push·원본 main 동기화는 수행하지 않았습니다.
+
+## 2026-11-04 최종 마감 — 승인 자산 격리 통합, 원본 동기화 보류
+
+- 브랜치 `codex/integrate-20261104-approved`, 구현 `b5a41b3089ed43abd725c836d8934d27cf88ca58`, LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
+- #63 신규5포즈 / #90 Attack8+기승인Idle·Walk / #89 정식아이콘3+B표시계층 / #92 배경2·6필드catalog를 별도 통합본에 연결. 승인 PNG37 SHA 동일. 원본에 실제 적용한 것은 아님.
+- Unity6000.6.5f1 고정, 신규 연결60PASS/0FAIL, 보완 시각한정52PASS/0FAIL(중복 합산 금지). 실제3인 UI의 태온·휠체어 겹침 및 기존 하단안내 겹침으로 VISUAL_PARTIAL. 냉기 규칙·자동 표시 수명 미구현 유지, #91 미승인·Shoot8 HOLD.
+- 원본main634a91d3, tracked dirty308/untracked550 그대로. tracked7374·개인Save/UserData23 해시 변경0. **LOCAL_MAIN_SYNC_HOLD_DIRTY / ORIGINAL_NOT_APPLIED**. 원본 Editor·Scene·Prefab·GUID/meta·BuildSettings·Packages 보호. main 직접commit/Push/병합 없음.
+- 다음 적용 조건: 사용자 변경을 보존한 동기화 경계 정리와 시각 PARTIAL 별도 결정. 오늘 후속 제작/기존 전수 QA 없음. 결과는 `EOD_Approved_LocalIntegration_20261104.md` 및 `Evidence/EODApproved20261104/`에 기록. 아래 과거 pending 기록은 각 당시 상태이며 이번 승인 정본이 우선합니다.
+
+## 2026-11-04 Issue #92 실제ZIP 후속 준비
+
+전체ZIP SHA1회대조일치.실제Ch1 3+Ch2 2를1672×941 1:1비교·5패널화소일치. 세부재질/거리명암방향공유,Ch2저채도/가로암반띠반복차이. 두후보유지/미술검토추천·실Unity가독성미검증. [결과/근거](Issue92_Ch1_Ch2_Actual_Style_Comparison_20261104.md). USER_VISUAL_REVIEW_PENDING/NOT_UNITY_APPLIED·원본/Save/main/Push보호. branch codex/issues63-89-92-followup-20261104·각commit은해당Issue댓글·LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #89 실제ZIP 후속 준비
+
+전체ZIP SHA1회대조일치.정식용아이콘3납품/SHA확인·미술승인대기. B HUD resolver아이콘참조만바꿀신규대표5캡처/Rect·문자Delta계획준비·실행0·50/99보존. [결과/근거](Issue89_OfficialIcons_ApprovalGated_IsolatedQA_Plan_20261104.md). USER_VISUAL_REVIEW_PENDING/NOT_UNITY_APPLIED·원본/Save/main/Push보호. branch codex/issues63-89-92-followup-20261104·각commit은해당Issue댓글·LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #63 실제ZIP 후속 준비
+
+전체ZIP SHA1회대조일치.11/04신규3한벌+승인Sting/Recover v3추천·예전3도신규출처로보존·혼합/재제작0. 신규3미술승인대기·기존15/153미실행. [결과/근거](Issue63_OldNew3Pose_FinalChoice_20261104.md). USER_VISUAL_REVIEW_PENDING/NOT_UNITY_APPLIED·원본/Save/main/Push보호. branch codex/issues63-89-92-followup-20261104·각commit은해당Issue댓글·LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #63 PilotBee 미사용 결정·라이선스 조사 중단
+
+바울대표최종제품PilotBee미사용. BY3/4충돌해결조사중단·과거이력보존,개발선행조건에서제외. 현재Resources2PNG+02_VenomBeeGUID참조잔존으로빌드제외완료아님·최종Player미검사. Prepare/Idle3는외부원본셀직접일치0·실SHA가11/03신규생성/보완납품계보와일치;최신기획의외부계열분류와차이보고(원생성마스터미동봉한계). 승인Sting/Recover·격리15/후보153보존·새Unity/빌드/원본적용0. [출처·빌드제외확인](Issue63_PilotBee_NotForFinal_Exclusion_And_Provenance_20261104.md). 라이선스해결대신최종자산배제확인필요·별도원본적용승인유지. branch codex/issue63-pilotbee-exclusion-audit-20261104·SHA는Issue63댓글·LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #63 승인v3 등록·격리 연결·권리 조사
+
+Sting28500201…/Recover69d0944b… 최종미술승인등록·BYTE_KEEP,Prepare/Idle보호. 지정F:ZIP현재없어기존검수HTML내승인SHA일치PNG바이트복구/대장보존. Unity6000.6.5f1공용재생기/Presenter로키포즈반복10슬롯1회집중15PASS/0FAIL·피해훅.27초02/완료1.01초Idle00복귀·09Recover유지. 후보A153재실행0·기존70/입력5SHA불변. 웹BY3/ZIPBY4충돌실확인·둘다상업조건부허용이나버전/표시미확정RIGHTS_HOLD. 현행GUID외부복사본참조와README미연결서술충돌보고. 원본에는후보A완료대기API미반영·별도통합필요. 실표적침끝/전체작화/별도원본적용승인미완료·NOT_UNITY_APPLIED. [결과·실Unity·권리조사](Issue63_VenomBee_v3_Approved_Connection_And_Rights_20261104.md). 브랜치codex/issue63-v3-approved-connection-rights-20261104·이번SHA는Issue63댓글참조·LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #91 실제Ch1-v2 1:1 최종 비교판
+
+원본Ch1 3+검수완료Ch3v2 2의1672×941패널5/5화소일치·입력전후SHA5/5불변. 비교판1개5144×4400/SHAae44f57176aaf9aac52d169e6e63ef8e2af2a9ff4b3fa8e6833626b77a1b64f3. ZIP중복검수/새Unity/전수QA/새v3없음. 정식적왼쪽·아군오른쪽후열x=.86참조,원본(1391,433)정적가정의오른쪽수피/가지경쟁위험명시. 과거실Unity캡처와OFFLINE도식구분. [비교판·검토](Issue91_Ch1_Ch3v2_Final_1to1_Comparison_20261104.md). USER_VISUAL_REVIEW_PENDING/NOT_UNITY_APPLIED. 브랜치codex/issue91-ch1-v2-final-comparison-20261104·실제SHA는Issue91댓글·LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #91 간편v2 ZIP 실제접수검수
+
+F:/Downloads/ch3_bg_v2_easy.zip 3,944,727bytes/5entries/SHA0843afdbce6c1e6dcb1117240eaafbc33e894f126f9975ba46e18da8f04ef292. CRC/SUMS4/4통과·Manifest없음. 배경1672×941 RGB2장 기존보고v2SHA정확일치·새미술변경없음. v1대비455966/470950화소변경·지정ROI밖0. OFFLINE정식방향모조배치판있음/실Sprite·정식UI검증없음/Ch1-v2직접비교없음. **USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED**,바울대표v2최종미술승인필요. [실제납품검수](Issue91_EasyZip_Actual_Intake_20261104.md). 브랜치codex/issue91-easyzip-intake-20261104·SHA는Issue91댓글참조·LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #90 Attack8 전체8장 최종 미술 승인 확정
+
+바울 대표 직접 확인·“좋아” 승인에 따라 수정본ZIP58c51cb4…의00~07 전체8장 USER_ART_APPROVED. 기존00/03/06·01 BYTE_KEEP 유지,01은이번전체승인에포함. After8 SHA직전검수와불변. Shoot8별도HOLD. 기존16PASS보존·새QA/원본Unity적용0·FootLock/실접촉미검증상태보존. [승인대상8SHA·경계](Issue90_Attack8_Final_User_Art_Approval_20261104.md). 브랜치codex/issue90-attack8-final-art-approved-20261104·이번SHA는Issue90댓글참조. LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #89 B안 대표 시각 마무리
+
+최신기획6624214599확인·기존Unity B실캡처7장만재사용해대표판/설원40px·HUD1:1상세작성. Unity실행0·50/99재검사0·새PASS추가0. 한기2턴/동상2턴/괴사1/3·2/3+KO문자포함식별가능. VFX단독한기대비·소형임시아이콘은미완료 **OFFICIAL_ICON_PENDING / VISUAL_PARTIAL_REMAINS**. 문자유지조건부B원본적용후보,별도승인전ORIGINAL_NOT_APPLIED. 기존101증거/승인3PNG SHA불변·원본Save/main/dirty보호. [대표판·판정](Issue89_B_Visual_Wrapup_20261104.md). 브랜치codex/issue89-b-visual-wrapup-20261104·실제SHA는Issue89결과댓글참조·LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #90 Attack8 수정4장 실제 최종 검수
+
+실제F: ZIP SHA58c51cb4…보고일치. 승인00/03/06·유지후보01 바이트동일,02/04/05/07만수정. Unity6000.6.5f1격리 실제Animator 전후192샘플·180캡처·집중16PASS/0FAIL,10FPS/0.8초/07→승인Idle00확인. 기존270증거불변·기존전수QA미실행. 04→05자세변화·07→Idle실루엣은 **USER_FINAL_ART_APPROVAL_REQUIRED / NOT_UNITY_APPLIED**. FootLock/실표적접촉미검증. [상세·실제캡처](Issue90_Attack8_4Frame_Fix_FinalReview_20261104.md). 원본Unity/Save/main/dirty보호·LOCAL_COMMITTED/REMOTE_NOT_PUSHED,브랜치codex/issue90-attack8-4frame-review-20261104·이번SHA는Issue90댓글참조.
+
+---
+
+## 2026-11-04 Issue #89 실제 표시/HUD A/B 수정·검증
+
+Unity6000.6.5f1격리실행·대표3조건7쌍/14실제A/B캡처. 신규최종고유50PASS/0FAIL(기존99전수미실행). **B추천**:40px가시알파간격8px,128px뒤그리기+24px하향,960상태두행·선언글자8.66→12.12화면px,1680 HUD겹침-30.15→8px. 이름/HP/스킬메뉴Rect유지. 기존Evidence101/승인PNG3 SHA전부불변·원본Unity/Save/main/dirty/Push보호. [실제전후·코드·측정](Issue89_VFX_HUD_Isolated_Layout_AB_Delta_20261104.md). 작은아이콘/한기설원대비·타외형/다인HUD는남은시각판단,USER_LAYOUT_REVIEW_PENDING/NOT_ORIGINAL_APPLIED. 직전06e871f9·이번SHA는Issue89결과댓글참조. LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #91 Ch1·Ch3 원본5장 1:1 비교 완료
+
+실제Forest/Grassland/Catacombs+C3Snowroad/F2 모두1672x941 RGB. 비교판5144x4200에각원본1:1·패널화소5/5·입력SHA전후5/5일치. F:/Downloads/LIMITLESS_Issue91_Ch1_Ch3_1672x941_1to1_Comparison_20261104.png 저장, SHA e10aa647089ee9b665058f3428e589b50dbfbdd97b508bf87ca7f361b42ceee9. Ch1미세재질/명암 대 C3기하평면차이·원경/길/수관/오른쪽수간만좌표후보특정. 정식아군오른쪽/적왼쪽과기존목업반대배치구분. [상세·실비교판](Issue91_Ch1_Ch3_SameScale_ActualPNG_Review_20261104.md). USER_VISUAL_REVIEW_PENDING/NOT_UNITY_APPLIED 유지·원화수정/새BG/Unity/Save/main/Push0. 직전064448a8·이번SHA는Issue91결과댓글참조.
+
+---
+
+## 2026-11-04 Chapter2 배경 읽기 전용 감사·신규 ZIP 일치
+
+#91 C3배경2/#90 Attack8 ZIP F:SHA 각각1회 계산·최신총괄값정확일치. #90 구납품SHA63자오탈자는최신64자와구분기록. 로컬PNG949목록/Scene39/Prefab13/Catalog·GUID감사:Field04~10기본색상전장,Field11심부지면512재사용,Main19Background는월드연출. Ch2전용전투BG세트미발견·신규작화발주아님. #89는40px분리위치/128px뒤레이어·하향/HUD분리3안제안만·99PASS재실행0. 신규BG2/Attack중간5미술승인대기유지. [상세·근거](Chapter2_BattleBackground_ReadonlyAudit_Zip91_90_Vfx89_20261104.md). Unity6000.6.5f1·원본/Save/Editor/dirty보호·제품수정/Push/merge0. 직전관련9c799745·이번SHA는Issue91/90/89댓글참조. LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-04 Issue #89 v2 격리 Unity 시각 Delta 실제 실행
+
+6000.6.5f1·실제PlayMode/Camera/Canvas RT로40/128px×설원/어두운전장×3해상도12조건 캡처완료. 자동99PASS/0FAIL·컴파일/새Runtime오류0(기존Search시작예외1 별도). 실제49PNG·측정·로그 보존. **VISUAL_PARTIAL**:40px 바퀴와혼합/상태구분약함,128px 하체가림,작은상태HUD가독성·기존상세팝업차폐 검토. 얼굴/HP/2x3메뉴는VFX차폐없음. 승인미술유지·원본적용/전수QA0. [상세·실캡처](Issue89_V2_UnityVisualDeltaQA_20261104.md). 다음은부착위치/크기·별도아이콘/HUD가독성판단. 원본main/Save/승인아트/dirty보호. LOCAL_COMMITTED/REMOTE_NOT_PUSHED·직전a4cd85af·최종SHA는Issue89댓글참조.
+
+---
+
+## 2026-11-04 Issue #89·#90 v2 미술 승인 확정
+
+F: v2 ZIP 전체 SHA를 각각1회 계산해 기획 승인값 정확일치. #89 USER_ART_APPROVED_SHA_MATCH, #90 ATTACK3_KEYPOSE_USER_ART_APPROVED_SHA_MATCH. [승인·QA준비·리뉴얼 인계](Issue89_90_V2_ArtApproval_QAPrep_Handoff_20261104.md). #89 격리6000.6.5f1의40/128px·HUD·설원·3화면비12조건 QA 준비서 완료(실행전), #90 승인3키포즈KEEP·미제작중간5장만 제작가능 인계. Unity/본편적용·전체QA반복0, 원본main/Save/승인아트/사용자dirty보호. LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 직전관련fd70f8e8, 이번문서commit은Issue#89/#90결과댓글참조.
+
+---
+
+## 2026-11-04 Issue #89·#90 F: 원본 ZIP 확인 / 미술 승인 대기
+
+두 ZIP 전체 SHA256이 최신 총괄 보고와 정확히 일치합니다. Spider Contact 전후 두부/몸통 높이·앞다리 관절 대응과 Recover 지지발, 한기 설원 대비·동상/동결괴사 40px 실루엣만 최소 보완 후보로 특정했습니다. 실제 프레임 OFFLINE 검토이며 Unity 재검증/제작/본편 적용0·6000.6.5f1 유지·Save/승인아트/main/사용자 dirty 보호. [상세 검수](Issue89_90_FDrive_Zip_VisualReview_20261104.md). 다음은 표적 미술 승인/소량 보완 판단입니다. 마지막 관련 commit은 이번 문서 commit 및 Issue #89/#90 댓글 SHA 참조. LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-03 Issue #86 — F2 단일등록 완료 / ORIGINAL_LOCAL_SYNC_DONE
+
+관련 QA/보고 `b36a67dc02ac308dfcaa352c5ffce7fef399b324`. [최종 원본 반영·Issue 영수증](Evidence/F2BuildSettingsFinal86_20261103/Receipt.md).
+
+제품 `35b87d297392ba7d0e02c6657a94741c875abc10` 원본ff반영. 기존25 Scene path/GUID/order/enabled·app-ui·입력설정 원형보존, F2후보1개만추가해26개. Unity6000.6.5f1/rev3ff58d469c8a 신규표적26PASS/0FAIL·자동설정재직렬화0. 원본847보호파일 중846바이트불변·BuildSettings승인3줄만변경·사용자app-ui미커밋diff동일·status343/857/staged0. 버전/Packages수정0·기존44/81/90반복0·개인Save접근/원격Push0. 원본Editor손플레이미검증, 동일설정격리실경로/승패귀환/합성Continue검증PASS. [최종등록보고](F2_BUILDSETTINGS_FINAL_SYNC_20261103.md).
+
+---
+
+## HISTORY — 2026-11-03 Issue #86 승인 파일 로컬 동기화 / F2 등록 전 HOLD
+
+관련 QA/보고 커밋 `11e6c746166ecc967ae78a01b31617ab49251968`. [실제 원본 반영·GitHub 보고 영수증](Evidence/LocalSync86_20261103/Receipt.md).
+
+STAGING_INTEGRATION_PASS / APPROVED_FILES_LOCAL_SYNC_DONE / ORIGINAL_LOCAL_SYNC_HOLD(F2등록) / UNITY_VERSION_6000_6_5F1_CONFIRMED / REMOTE_PUSH_NO. 신규통합Unity44PASS/0FAIL 후 원본main ab47b931→제품ac12abb0645f06fe84d4ae246b584a19d29ebba5 실제ff-only. #46/#73중복0·#80/#83/#85기능/승인Owl·Stump·Spider참조9 통합. 버전HEAD·실파일6000.6.5f1/3ff58d469c8a 정확일치. 사용자847파일바이트보존·개인Save접근0·status858→857은승인버전1개정리뿐. 공식BuildSettings25Scene/app-ui그대로, F2등록26Scene은QA복제본에만: 원본북문→F2완료아님.
+
+Bee/환경재사용68/Writer복구·몬스터기획HOLD보존. 다음은F2후보Scene공식등록한항목검토이며 미승인기능자동활성화0. [전체보고·백업·QA](LOCAL_SYNC_REPORT_20261103.md). 후속문서HEAD/Issue보고는영수증참조.
+
+---
+
+## 2026-11-03 Issue #85 Owl 실제 F2 전투 격리 후보
+
+기존F2 선택형조우→실 Battle UI Idle8/Attack4·8FPS→단발피해/HP·승패→귀환 구현. 신규81PASS/FAIL0(#80기존81/다른QA 재실행0), 합성Save/Continue HP·Main24 보존. 승인12PNG불변·기존수치차용 CANDIDATE/보상0. 한기 COLD_STATUS_HOLD·공용피격/처치표시만 사용. [실제영상·근거·적용조건](Issue85_FrostOwl_F2_ActualBattle_DeltaQA_20261103.md). 다음은 정식 ID/밸런스·한기/대응기획·본편통합 승인. 원본Unity/개인Save/UserData/Scene/Prefab/BuildSettings/Packages·Push/merge0, 실제 관련커밋은 후속영수증 참조.
+
+---
+
+## 2026-11-03 승인 자산 동결·Bee 계약 조사 (제품 미적용)
+
+Owl Attack4·Spider Walk8 USER_ART_APPROVED 확정, #84 Unity37PASS 재사용·재작화/QA 반복0. Spider 실제 발 접지 NOT_VERIFIED, Owl VFX HOLD. Bee 방향/명목피해.25초 확인, 접촉거리145 UI·프레임 동기화 미해결 및 웹BY3/ZIP BY4 충돌로 TARGET_CONTACT_HOLD / RIGHTS_HOLD / FULL_COMBAT_READY_NO. [승인·조사](OwlSpider_FinalApproval_BeeTarget_RightsContract_20261103.md), [최소 지시서](VenomBee_Minimal_StingRecover_ArtBrief_20261103.md) 작성. 제품·개인 Save 변경/Unity 실행/Push0. 다음은 접점·거리/회수종료 계약과 권리 근거 확정입니다. 마지막 관련 커밋은 후속 영수증 참조.
+
+---
+
+## 2026-11-03 Issue #84 애니메이션 기술 Delta — 본편 미적용
+
+Owl Attack4(8FPS/.5초/PPU512/Scale1)와Spider Walk8(10FPS/.8초/PPU256/Scale.7)을독립Unity6000.6.5f1 실제PlayMode Animator로검증 **신규37PASS/FAIL0**. 실제40/128px·순서/전환/루프/경계·속도0/.65/1.3 비교통과. Spider발별접촉계측은없어 **ACTUAL_GROUND_LOCK_NOT_VERIFIED / WALK_CONTACT_HOLD**,대표최종모션미술승인대기. 원본Unity/Save/기존QA·Bee재검수/Push·merge0. 다음은실캡처시각검토·필요한발지지기준/최소접지계측이며본편적용은별도승인. [실영상·설정·오류/보호](Issue84_OwlAttack4_SpiderWalk8_UnityAnimationDelta_20261103.md). branch `codex/owl-spider-unity-animation-delta-20261103`·출발3d61b491(실제검증커밋은CODEX_LATEST후속영수증참조).
+
+---
+
+## 2026-11-03 Main24 F2 첫 왕복 — 격리 구현 완료
+
+북문→첫눈의 숲 짧은 임시 환경→관찰→마을 복귀를 실제 Player/Collider로 연결했습니다. 승인 그루터기1PNG PPU128/Pivot(.5,11/384)/Scale1 배치·줄기충돌/우회·앞뒤Sorting, 도보/휠체어·3비율 Unity RT·가상E/F/마우스·합성 이어하기·6번째 스킬/화폐/거점 보존 **신규90PASS + 정적23PASS**. 기존 전수QA 반복0. 기존 Main24 네 목표ID 보존, Main24는 마지막 대기 목표에서 Active/완료·보상0.
+
+기능 commit `e32d814f7f0dee8622cf386541eab94bf1fc1d69`, branch `codex/main24-f2-first-traversal-20261103`. **NOT_ORIGINAL_APPLIED / REMOTE_NOT_PUSHED / USER_PLAY_REVIEW_PENDING**. 원본main/status344·설정/Scene·Save/UserData보호. 미승인 환경은 PLACEHOLDER, Sign/Fence/Owl/SpiderBee/구매/한기전 제외. BuildSettings F2연결은 QA 복제본에만 존재합니다. 다음은 대표 격리 화면/플레이 검토 후 정식환경·한기전/대응정책 승인, 명시 승인 전 원본 적용0. OS GameView/사람 손플레이는 NOT_VERIFIED. [상세·화면·남은 일](Main24_F2_FirstTraversal_Isolated_Issue83_20261103.md).
+
+---
+
+## 2026-11-03 Issue #82 — 그루터기 독립 Unity21PASS / Spider v5 알파후보 / Bee 모션HOLD
+
+승인그루터기 SHA22f2f581…1PNG만 독립Unity6000.6.5f1 fixture로 Import: PPU128/Scale1·Pivot(0.5,11/384) 후보, alpha/접지·3화면비·Sortingproxy·대안크기 **21PASS/FAIL0**. 실제F2 Scene/길/Collider없어도보·휠체어·실배치 NOT_VERIFIED. 기존ProjectVersion/Packages·게임원본변경0.
+
+spider.zip SHA7f4622af…/13항목, bee.zip SHAa396a2be…/20항목 CRC/경로PASS. 합본Manifest가동봉되어각각미동봉참조16/9개는부분범위; 두ZIP합집합Manifest27/SUMS28PASS. v5c600cd22…RGB262144보존·alpha380감소·실Field03경계비교로 **ALPHA_FINAL_OK_CANDIDATE/최종미술승인대기**. 새32보류. Bee최신3SHA/실픽셀변경확인·Idle2exact, 실제Sting침끝우하향관찰은보고서'좌측'과차이로명시. 실표적·회수연속성 **BEE_MOTION_HOLD/RIGHTS_HOLD**, 전체20/교체0.
+
+단일결과판 `F:/study/codex/Project-Limitless/Temp/Issue82StumpSpiderBee20261103/Review/index.html` SHA `730c8481819d6dcbefdb3b6f772e3f6914d7f37358169f85b11414ba1de4a748`. OFFLINE비교와실제UnityCamera캡처7장구분·브라우저14PASS. [상세보고](Issue82_Stump_UnityDelta_SpiderV5_BeeAttack3_20261103.md). branch `codex/issue82-stump-spider-bee-delta-20261103`·문서3+격리QA스크립트1만로컬commit. 원본main/status344·Main24fd869f60/81·14PASS보존·Save/Unity원본/Discord/포커스/기존전수QA0. **STUMP_USER_APPROVED / STUMP_ISOLATED_UNITY_PASS / SPIDER_ALPHA_CANDIDATE / BEE_MOTION_HOLD / NOT_ORIGINAL_APPLIED / REMOTE_PUSH_NO**.
+
+실제 검증/보고 commit `b50ce140cf155900829bd167aefb6225f806fa9a`. GitHub [#82](https://github.com/HappyPaul812/Project-Limitless/issues/82#issuecomment-6593291711) · [#75](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6593303847) · [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6593304719) · [#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6593305654) · [#81](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6593306460) 결과 댓글 등록 성공. 원격에는 댓글만 게시했고 파일Push/원본적용0. 이 후속 commit은 문서 영수증만 기록합니다.
+
+---
+
+## 2026-11-03 Issue #80 — Main24 비결제 첫 플레이 격리 PASS / 본게임 미적용
+
+- Main23 완료 뒤 기존 마을 표식으로 스킬 기본3무료/최대6칸/전투밖 무료 장착 안내→보급 한기2턴·해제수단 안내→북문 이동·서리올빼미 위험 예고를 구현했습니다. 기존6칸 UI·Save 재사용, 구매/탈렌트차감/소유권 변경/무료 아이템 지급0. 후보 ID 정의는 바울 대표 이번 채팅 허용 근거이며 정식 Story/TTS 잠금과 구분합니다.
+- F2 Scene/첫 전투는 미구현이므로 마지막 목표를 **F2 진입 대기**로 유지합니다. Main24 완료/보상/다음 Quest 해금0. 마을 자유이동·남문F1 왕복·체크포인트·Save/Continue 보존.
+- Unity **6000.6.5f1** 배치 격리 Play Mode **81 PASS/FAIL0**, 신규 정적14PASS/FAIL0·diff공백PASS. E/F/Esc/마우스는 가상입력, 실제6칸 UI 핸들러·휠체어/도보 경로·Continue 검증. Camera+Canvas PNG4장/3화면비 확인. 물리 입력/패드/발·스크린리더/본게임 적용 미검증, 기존 Search 초기화 예외OPEN.
+- 브랜치 `codex/main24-first-playable-no-purchase-20261103`, 제품 commit `70e363bea43d72c7e68abb089952e2d6f6a77a8b`. 로컬 main `ab47b931`, GitHub main `bfd28154` 실측. #70/77/78 미병합, #79 정렬후보/ProjectVersion/Packages/원본Save·아트·TTS·Discord#66/Editor포커스 보존. **FIRST_PLAYABLE_ISOLATED_PASS / MAIN_NOT_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+- 다음: F2 공식Scene·첫 한기전/무자금 해제수단 승인, Owl Attack HOLD 해소, 상품25·가격/효과/ID 별도 승인. 기존85/72/72·Main23 148/136 전수 반복0. [상세 보고](Main24_FirstPlayable_NoPurchase_20261103.md).
+
+- GitHub 보고 실제 등록 완료: [Issue #80 결과 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/80#issuecomment-6590035953). 제품 `70e363be`, QA/문서 `5b02b56e`; 파일 Push 없음. 이 영수증은 문서 후속 commit입니다.
+
+---
+
+## 2026-10-29 Issue #76 — LOCAL_SYNC_DONE (#46·#73만) / #70 HOLD
+
+실제 원본 `F:/study/codex/Project-Limitless`의 main을 ff-only 동기화했습니다. 시작 `bfd281545632877325f5d21e04cefb924042c465` → 제품 `27f7d1db9c3510fd39ca8bc34f09d8b8cb20e9f1`. 통합 브랜치 `codex/local-sync-20261029`, #46 제품 commit `356f9226b8ed83120f828709045d50a5041055a7`, #73 제품 commit `27f7d1db9c3510fd39ca8bc34f09d8b8cb20e9f1`. LOCAL_COMMITTED / REMOTE_NOT_PUSHED. main 신규 commit·Push·PR·원격 병합0.
+
+신규 정적11 + 격리 Unity29 PASS(실제 Continue 포함). #70 경계9개 재현 중 Writer1 최신 진행도가 Writer2에 숨겨지는 문제가 확인되어 HOLD_INTEGRATION·원본 제외했습니다. Version1 Save 유지, 퀘스트 재료·보상·중복방지 불변. BuildSettings25 Scene/GUID와 사용자 app-ui 보존, 원본 사용자 dirty status 동일, 제품 외7085 비개인 tracked SHA 동일. 개인 Save/UserData 열람·SHA·복사·수정0, 기존 worktree/Temp 삭제0, 화면포커스/Discord #66 변경0.
+
+Owl v3 외형·유기형 Spider 디자인 승인 유지, 각각 Attack/왼 앞다리 알파 보완 대기. 메카닉 Spider는 Chapter4 보존, F2/Bee/상품25종·가격·해금·무자금 한기 대응은 미적용·미승인 상태 유지. 다음: Writer 분기 안전성 → 원본 수동 import/지정Unity5.7 미검증 → 미술 국소 보완/상품 결정. 격리 검증 Unity6.5만 PASS, 원본 Editor 실행0·Search 환경 예외 OPEN.
+
+[상세 보고](Local_Integration_And_Original_Sync_Issue76_20261029.md) · [Issue #76](https://github.com/HappyPaul812/Project-Limitless/issues/76)
+
+### Issue #76 GitHub 보고 확인
+
+보고·QA 문서 commit `dd53ec3265cb3b0039c565936b6dbb610fc0a1d4`까지 실제 원본 ff-only 반영 완료. [실제 Issue #76 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/76#issuecomment-6495733874) 등록 성공. #70 HOLD 경계와 #46·#73 동기화도 각 Issue에 보고했습니다. 이 영수증은 별도 문서 커밋으로만 추가하며 제품 HEAD는 `27f7d1db9c3510fd39ca8bc34f09d8b8cb20e9f1` 그대로입니다. 최종 문서 포함 HEAD는 Issue #76 마감 댓글을 따릅니다.
+
+
+---
+
 ## 2026-10-24 EOD 마감 — PR68 MERGED / 원본 동기화 PARTIAL·HOLD
 
 [PR68](https://github.com/HappyPaul812/Project-Limitless/pull/68) 실제 merge **`b0a666be631e87e451d8bc8d6549a6b664b03ee7`**. Main23 KEEP 기능20파일 + TTS162(Unity189파일/140교체22신규) + 재현도구3파일, 정본·인계·QA 근거241파일을 포함한 총453파일 통합 완료. 신규 정적472/격리 Unity25 PASS·compile0/제품runtime오류0, 기존 전수QA 재실행0. 기존 Search예외1/비음성GUID중복/지정Unity6000.5.7 직접검증은 OPEN. 미승인 아트·오디오 적용0, Main24 Save 미구현, Discord #66 MANUAL/HOLD·추론/재시도/설정변경0.
@@ -2032,3 +2378,11 @@ Unity Play Mode에서 월드 안쪽으로 이동 후 5초 자동 저장과 Stop/
 - 009/010 3.849417초 zero/zero 경계 분리·PCM재결합원본100% 동일. 011 선행1.079958초만 줄여 최종2.800042초, 마지막흡기0.19초/강한발화1.21초 남김·원본suffix동일·clipping0. 후보007 3.530초·008 4.810초·009 3.849417초·010 4.400583초.
 - 격리Unity6000.6.5f1 Field02 WheelTracks→Field03 Investigation→DeepZone5+3→실제BootstrapContinue 97PASS/FAIL0. 원본Clip/자막/PCM·미엘·Player무음·Next·SaveQuest보호. 전체PARTIAL: 기존Search startup 예외,007/008 ASR어휘차이,청취승인대기. 원본4,001파일SHA 변경0(B납품시).
 - 청취자료 [후보페이지](Evidence/Main08Taeon00701120261014/index.html), [QA·재개지점](Main08_Taeon007011_Content_Recovery_Candidates_QA_20261014.md). 다음: 바울 대표 개별청취승인 후 해당ID만 별도음성브랜치 연결·회귀QA. 최신확인 main314f7fbb(PR11완료), main직접변경0.
+
+- Issue #84 마지막 검증 커밋: `bde96a92e14c663e33ce7640f98f863d58a0d306`. #84/#74/#60 댓글 보고 완료, 로컬 커밋만 존재하며 원격 Push·본편 적용 없음.
+
+- 승인·Bee 계약 조사 마지막 관련 커밋: `ba8aa9749d37d8861a7cfa340a37fcf81ac9fa26`. #63/#60/#74/#84 실제 댓글 보고 완료·로컬 문서만 커밋·Push/원본 적용 없음.
+
+- Issue #85 마지막 기능 커밋: `61dce08b271bd2e801205a711a8af7d54400c84f`. 실제 댓글6601090552 보고 완료. 원본 적용·Push·병합 없음.
+
+- 원본 Editor 최종 확인: Play 종료·Scene dirty=false 상태에서 Issue94 스크립트3개/프로필2개만 포커스 없이 ImportAsset한 뒤 컴파일 완료. Unity6000.6.5f1, DungeonFloorCollision 타입 로드=true, compiling=false, C# Console 오류0, external_changes_dirty=false. 원본 Play/Scene/선택/포커스 제어0. 이제 새 Play에서 사용자 수용 확인이 가능합니다.

@@ -1,3 +1,71 @@
+# PLANNING / 2026-11-11 EOD HOLD — local main 문서통합 성공, 원격 Push 보류, Clean Release 안전 후보 준비 필요
+
+- Codex [#85 2026-11-11 EOD HOLD 보고](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6793708031) 확인. 승인 문서15개 추가 로컬 FF 완료: local main **469b219ffbdbf4c8e5b51e977bbe2940eb6119a2 → d360813667d2ee47515067b8dd07c1a599efec15**. remote main 여전히 **bfd281545632877325f5d21e04cefb924042c465**. Unity6000.6.5f1, Console0, Save/UserData·dirty302/untracked550·approved game·Editor 보호. 실제 Push 명령은 **미실행**이며 서버 거절 아님.
+- HOLD 진짜 원인: 원격과 로컬 사이 **67개 Git 과거 커밋 자체**에 원격 비전송 대상 QA 생성 코드·로컬 보관 메타자료가 있어 파일을 HEAD에서 삭제해도 부모의 객체 전송 발생. 무리한 직접 FF push/삭제커밋/강제 force/이력 재작성 금지. 사용자 동의 없는 local main ref교체 금지.
+- [#85 기획 Clean Release 후속 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6793878896): 최신 `origin/main`에서 **별도** `codex/eod-clean-main-candidate-20261111` worktree를 만들고, 기존 승인된 current local main의 최종 상태를 **파일 단위 명시 허용목록**으로 이식해 몇 개의 신규 commit으로 후보 구성. 기존 67개 과거 commit을 merge/cherry-pick하지 않음. 타 팀 docs/* 전체 merge 금지, 기존 개인Save/미커밋파일·QA/Evidence/Temp·개인정보/키·미승인아트 제외. 새 후보의 실제 parent·remote fast-forward 관계, 모든 새 Git 객체와 스냅샷 SHA/메타·승인 PNG/Scenes/Unity6000.6.5f1 최소 Delta 검사 후 **후보 검수 결과만 보고**, 원격 main push 및 기존 local main ref 교체는 아직 금지.
+- 중요 이력 정책: origin/main에서 출발한 clean 후보를 remote main으로 **정상 FF push**하는 것은 원칙적으로 가능하지만 **현 로컬 main에서 clean 후보로 이동하는 것은 비FF**. 로컬 main을 동일 SHA로 정렬하려면 백업/사용자 별도 승인 및 안전한 ref CAS 절차가 필요. 기존 명시 Push 승인 범위가 히스토리 대체나 개인작업 변경까지 허가한 것은 아님. 원격 branch 보호/CI 검증·보안 Secret scan 거절이면 HOLD.
+- User realplay F2 Owl (5.7,-2) 아직 확인 미보고; 지금 마감 원격 Push HOLD와 별개로 `USER_REALPLAY_PENDING`. 기획은 GitHub docs/planning 기록만, PC Unity/로컬 branch/ref/원격main Push 수행0.
+- 상태 `LOCAL_DOC_SYNC_SUCCESS / REMOTE_MAIN_PUSH_HOLD / CLEAN_RELEASE_CANDIDATE_REQUIRED / USER_WORK_PRESERVED / DAY_NOT_CLOSED`.
+
+
+---
+
+## EOD 2026-11-11 선별 기획 정본 — Push 안전 감사 HOLD
+
+원격 docs/planning eb88d1fb의 승인 결정5개 절만 선별했습니다. 실제 제품469b219f/원격main bfd28154 유지. 원격Push미실행이며 아래 실행지시는 승인기록입니다.
+
+# PLANNING / 2026-11-11 EOD — 모든 승인 작업 선택적 통합, 로컬 동기화, 원격 main Push 명시 승인
+
+- 바울 대표: **“오늘은 여기까지 하자. 지금까지 한 모든 작업들 다 합치고 로컬 동기화하고 메인 푸시도 해주라.”** → 이번 EOD에서 로컬 게임 안전 통합·원본 local main FF 및 **GitHub `main` 원격 Push 1회 명시 승인**. [Issue #85 EOD 정확 범위·보호·실행 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6793135707). 이번 명시는 기존 기본 Push HOLD의 예외이며 main 직접 commit·force Push/무단 branch policy 우회 승인이 아님.
+- [#85 Codex 실제 제품 보고](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6792344273): F2 Owl 첫 한기 예고→최대 1회 시도→첫 유효 피해·생존 대상 한기2차단→일반공격/재조우 초기화, 자연만료·허용조기제거 후 정상행동1회 재부여보호. Unity6000.6.5f1 **신규81 assertion PASS / 0FAIL** (격리75+원본Import6), 원본 Console0; 기존 99/44/68 재실행0. 제품 **4 C# 파일만** FF-only 적용, **마지막 보고된 local main `469b219ffbdbf4c8e5b51e977bbe2940eb6119a2`**, 원격 main 아직 미Push/미확인. 실제 PC HEAD는 Codex가 재조회할 것. 대표의 **정식 Owl 새 전투 실플레이 수용은 아직 대기**; Push가 실플레이 수용을 뜻하지 않음.
+- 승인제품·서류 포함 범위는 현재 확정 #94 Ch1 던전 Collision, #97 VenomSnake8, #96 HP/MP 2, #75 F2 B352, #95 NPC06/16, #91 Ch3 BG2, #57 NPC03/09+출처감사(Ch1 몬스터7/펫3), #88 한기 Stage2 B 코어, #85 정식 Owl 패턴 및 이미 승인된 오디오/TTS/기획/팀별 결과 문서. 기존 원본 local main에 반영된 제품은 재복사/재QA0, `docs/planning` 등 담당 인계 Markdown에서 누락된 승인 사실만 선별 통합. **docs/* 전체 브랜치 병합·미승인 시안/실험코드 자동 반영 금지**.
+- 제외/보호: #89 VFX 소유자와 태온·휠체어 밀집 `VISUAL_PARTIAL`, 동상 피해·동결괴사 보스/즉사/화로/정화Ⅱ/어묵탕·신규 전리품/상점·OGA20·#75 C SnowEdge/Discord 자동화 HOLD. 기존 미커밋 tracked dirty302/untracked550, Save/UserData/UserSettings/사용자 개인 파일·TTS/API키·로컬 실험 로그·ThirdParty 및 승인 아트 GUID/meta, Unity Editor Scene/Play/포커스 보호.
+- **EOD CodeX 의무**: 실제 local main HEAD/status와 `origin/main` 최신 fetch·조상 확인, 작업공간 백업/해시 보존 → 별도 `codex/eod-approved-main-push-20261111` worktree에서 승인 누락 문서만 추가(commit은 별도 브랜치, main 직접commit X) → Unity 신규 delta만 최소 확인 → origin/main..최종localmain 전체 커밋과 파일 검토(불승인/보안키/Save/크기·권한·license) → local main FF-only/no-autostash → GitHub `git push origin main:main` **force 없이 단1회**; remote divergence/branch protection/검증Fail 시 즉시 HOLD, rebase·branch 보호우회·main 직접commit·reset-hard·clean·무차별stash 금지. Push 성공은 서버 `refs/heads/main` SHA와 local main 동등 확인 후에만 표기.
+- 완료 보고에 로컬 start/end main SHA, 원격 start/end main SHA, 승인된 반영/이미 로컬 포함/HOLD, 파일/문서커밋, Save·dirty/untracked·SHA/Editor 보호, DeltaQA PASS/NOTRUN 근거, Push 실제 성공 여부/remote 원격 조회 및 CI, 원격 Main 사용자권한 승인 범위 준수, 사용자 실플레이 대기 항목을 CODEX_LATEST/CURRENT_STATUS/Issue에 기재. **기획은 GitHub `docs/planning` 인계·Issue만 기록한 것**으로 Windows Unity 원본 동기화 또는 remote main Push 성공을 주장하지 않음.
+- 상태: `EOD_20261111_USER_AUTHORIZED_MAIN_PUSH / CODEX_LOCAL_SYNC_AND_REMOTE_PUSH_PENDING / REMOTE_MAIN_NOT_YET_VERIFIED`.
+
+---
+
+# PLANNING / 2026-11-11 — #85 Main24 첫눈의 숲 Owl 한기 패턴 전투당 1회/예고/해제보호 사용자 최종 승인
+
+- 바울 대표가 2026-11-11 “그래”로 앞서 제안한 **서리올빼미 F2 첫 한기 전투 규칙** 승인. [Issue #85 공식 기획 규칙·코덱스 발주](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6791766233). ① 한기 공격 전 명확한 한글·시각 예고 ② 정상 명중 판정의 **유효 적중시에만** 한기2 자기 행동기회 차단 ③ 해당 전투 첫 한기 공격 **최대 1회 시도**, 이후 일반 공격 ④ 자연 만료·허용된 조기 해제 모두 정상 성공행동1회까지 한기 재부여만 차단. 명중 실패시 강제 피격/재시도/불명확한 확률을 새로 만들지 않음. 패턴 1회(기회 보장)와 디버프 무조건 적용은 다르다.
+- 승인된 Owl 전용 Production 동작에는 기존 **local main `4a9b72f88d58c313cee81efc03cb4118354fa38f`**에 이미 적용된 Stage2 B 코어7파일 사용([#88 68PASS 원본 적용](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6791592600)); 기존 격리 99/44 PASS 재실행0. 올빼미의 실제 F2 Encounter·EnemyAction·기존 Hit/Guard·BattleColdStatus API를 먼저 읽어 구조/파일 명세 확인, 무리한 AI 및 명중/확률 변경 금지. 기존 기본OFF는 모든 비Owl·Editor QA arm 경로에 유지, 승인된 F2 Owl 실전에서만 독립 trigger 연결. 기존 UI에 QA 제목·개발용 메시지 노출 금지.
+- **조기해제 보호 정책 신규 승인**: 허용된 한기 제거 API를 정상 호출하면 보호 부여 후 정상 자기 행동1회 완료까지 재부여 거절. 기존 정화Ⅰ이 한기 해제 가능하다는 정본 증거 없음. 정화Ⅱ·어묵탕·화로 향후 기능/아이템은 아직 HOLD이므로 **기존 정화Ⅰ/상점 스킬/아이템 효과 무단 수정 금지**; 해당 경로가 실게임에 미존재면 Editor/격리 TestAPI에서 조기해제 보호만 기술 검증하고 유저 UI에 정화 가능 약속하지 않음.
+- 독/화상/쿨다운/방어 경과·KO는 Stage2 B 기존 원본 보존. VFX/Icon6 원본 BYTE_KEEP; 960·1280 실제 화면에서 명확한 Owl 대상 소유자 식별과 상태명/횟수·일반 HUD 무가림 표적 검증, 기존 태온·휠체어 겹침 VISUAL_PARTIAL 조용히 방치하거나 완료 주장하지 말고 독립 이슈 경계로 유지.
+- 다음 Codex `codex/main24-owl-first-chill-production-20261111` 분리 worktree와 Unity6000.6.5f1 격리에서 한 전투 한기 예고→명중/실패→2차단→복귀→이후 일반공격, 일시 제거·정상행동 보호, 종료·재입장 flag 리셋, 일반Ch1/2·비Owl회귀, 키보드/마우스/휠체어 최소신규 DeltaQA만. 원본 로컬 제품 적용은 실제 manifest/보호 SHA·Git dirty·Scene/Prefab/GUID/meta/Save·원본 Editor 안전·FF 충족하는 승인된 좁은 범위에서만. 범위 확장·기존 충돌·수치 미정이면 HOLD 보고, 원격 Push/Merge 및 main 직접커밋 금지.
+- 상태 `OWL_FIRST_CHILL_RULES_USER_APPROVED / EARLY_REMOVAL_REAPPLY_GUARD_APPROVED / OWL_PRODUCTION_INTEGRATION_PENDING / STAGE2_CORE_LOCAL_APPLIED / CHILL_BOSS_FUTURE_HOLD / REMOTE_NOT_PUSHED`. 이번 기획은 GitHub docs/planning + Issue 기록만, PC 원본 Unity 변경0.
+
+---
+
+# PLANNING / 2026-11-11 — OGA03·OGA09 시작마을 NPC 사용자 실플레이 승인 마감
+
+- 바울 대표 **“잘 되네.”**로 신규 오리지널 잡화상인 OGA03·주민대표 OGA09의 실제 원본 로컬 Unity 게임 적용 후 시각·기능 확인 수용. [#57 사용자 승인 마감 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6791260745).
+- [Codex 제품5파일 적용](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6791085660) 근거: 검증 PNG2/meta2+VillageNpcAppearanceCatalog.cs1, 기존 격리46PASS/0FAIL + 추가 원본/격리 Import14PASS/0FAIL, Console0, Unity6000.6.5f1, 원본 local main `548cf1e275684d8c4a647685fb6f08be0c495be7` (최신 보고 기준), FF-only, remote Push/Merge0; Save/UserData·dirty302/untracked550 및 기존 NPC·F2 B352 보호.
+- **최종 상태 `ISSUE57_OGA03_09_USER_REALPLAY_ACCEPTED / LOCAL_ORIGINAL_APPLIED / COMPLETE / REMOTE_NOT_PUSHED`**. 추가 아트 재제작/중복 적용/이전 QA 재실행0. 기존 이름표 근접가림 등 범위 외 한계는 독립 추적. 이번 기획은 docs/planning 기록만 갱신, 원본 Unity 조작0.
+- #88 한기 Stage2 B 격리99PASS 원본 미적용·한기 조기해제/올빼미 정식 발동 규칙 HOLD는 별도 후속으로 유지, 이번 NPC 수용을 다른 이슈의 적용 승인으로 해석하지 않음.
+
+---
+
+# PLANNING / 2026-11-11 — #88 한기 Stage2 B안 격리 정책 선택 및 4파일 표적 QA 지시
+
+- [Codex Stage2 읽기 전용 검토](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6787685241) 보고 **Unity실행·제품변경0 / Markdown2건 commit `5d19cde44c0781b86299a1531f72078aabca9c9d`** 접수. 기존 첫한기 시험44PASS는 A안(한기시 BeginTurn 조기 반환) 가정이며 방어/맹세/SkillCD·가이아/철벽·독/화상 전체동결을 초래, 정상 FinishCurrentAction 직접호출은 MP회복/도발·감전·침묵 소비 위험.
+- [#88 기획 B 선택](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6787744565): **Stage2 격리 구현의 정책 기본안 B** = 차단된 실제 자기 기회에도 일반 쿨다운/방어/맹세, 철벽/가이아 경과와 기존 화상→독 DoT tick/KO; 반면 실제 성공행동 뒤 MP회복/도발·감전·침묵 소비/성공행동 Path/몬스터 행동완료 기반 Cooldown은 미발생. 한기 차단 기회당 정확1차감; 활성 중 재적용거절; **자연 종료 후 살아 있는 캐릭터가 정상행동 1회를 실제 마칠 때까지 한기 재부여만 막는 보호**. 다른 디버프/공격 면역 아님; 취소·대기·다른행동·KO는 별도 규칙. 조기해제 후 동일보호 여부·동상 피해·올빼미 한기 발생확률/보상/보스/해제 공급 HOLD 유지.
+- 기존 `codex/main24-owl-first-chill-isolated-20261111` 코드 `ff670ce1e78b3aa4336e44c8429e90eb662a10ba` **7파일 격리후보의 기존 C# 4파일만** 수정하여 별도 worktree Unity6000.6.5f1 표적 DeltaQA. 변경파일: BattleSceneController.cs, BattleSceneController.OwlChillPilot.cs, BattleSkillSystem.cs, BattleColdStatusRuntime.cs. 기존44/63/107/37/99/50 전수재실행0. GameView 960/1280에서 승인 Icon/VFX6 byte keep, VFX ActionRoot sibling/offset·짧은 상태문구만 수정 후보, 태온+휠체어 Formation 겹침 HOLD.
+- **본편 원본 적용0**, 후속 사용자 제품 적용 승인 별도, Local Main 마지막 `21ecf2129efa9d9467161d972fcb0a676122223c`(PC 실 HEAD 우선), Save/UserData/dirty302/untracked550, F2 B352·NPC/전투BG 등 모든 승인 제품 보호; main 직접 commit·원격Push/Merge 금지.
+- 상태: `PLANNING_B_STAGE2_ISOLATED_RECOMMENDATION_ADOPTED / CODEX_NEW_DELTA_QA_PENDING / RULES_NOT_ORIGINAL_IMPLEMENTED / USER_FINAL_GAME_APPLY_PENDING`.
+
+---
+
+# PLANNING / 2026-11-11 — #95 NPC·#91 Ch3 전투 배경 본편 적용 및 바울 대표 실게임 검수 수용 마감
+
+- 바울 대표는 Codex 승인 아트4종 로컬 적용 보고를 확인하며 **“실게임 검수도 했어..”**라고 직접 진술. **#95 NPC OGA06·OGA16 2종, #91 Snowroad/F2 전투배경 v2 2종 최종 미술 승인 + 로컬 원본 배포 + 사용자 실플레이 수용 완료**. 4종 재승인/재작화/동일 QA 재실행 금지.
+- Codex [#95 원본 적용 완료](https://github.com/HappyPaul812/Project-Limitless/issues/95#issuecomment-6786778538) / [#91](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6786779546) 기술 근거: 검증 제품 신규10+수정2 총12파일, Unity6000.6.5f1 격리107PASS/0FAIL + 추가 Import7PASS + 원본 Import9PASS, Console error0, FF-only/no-autostash, 원격 Push/Merge0. 최종 로컬 main **21ecf2129efa9d9467161d972fcb0a676122223c**. 기존 Save/UserData·사용자 dirty302/untracked550·F2 B352 및 Ch1/2 보존.
+- 사용자 최종 수용 기획 댓글 [#95](https://github.com/HappyPaul812/Project-Limitless/issues/95#issuecomment-6786869689) / [#91](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6786870219). 사용자가 확인한 실제 게임 검수를 별도 사용자 QA로 기록하되 모든 플랫폼·전투·파티·재사용장소 전수 통과로 과장하지 않음.
+- #75 F2 B352는 별도 로컬 원본 반영 기술37PASS/0FAIL 완료, 마지막 사용자 직접 손플레이 승인 여부는 이후 사용자 명시 보고로만 종결. 새로운 게임 아트 변경은 이 기획 문서 갱신에서 수행하지 않음.
+- 상태: ISSUE95_NPC2_COMPLETE / ISSUE91_CH3_BG2_COMPLETE / USER_REALPLAY_ACCEPTED / REMOTE_NOT_PUSHED / NO_NEW_PRODUCT_CHANGE.
+
+---
+
 # PLANNING / 2026-10-24 21:30 KST — 바울 대표 EOD 전체 승인분 통합 및 로컬 무손실 동기화 지시
 
 - 사용자 원문 **“지금까지 한 작업들 모두 합치고 로컬 동기화 해줘.”** → 승인·실제 검증 가능한 완료 제품/정본문서만 선별 EOD 통합하고 미술 후보·Discord AI 장애 HOLD를 게임 제품으로 끌어오지 않는 안전 범위로 실행.

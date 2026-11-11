@@ -1,3 +1,57 @@
+## EOD 2026-11-11 선별 확정 상태
+
+#91 Snowroad/F2 v2 승인 원본2종은 d40bb170으로 본편 적용·107+Import16 근거와 대표 수용 기록이 있습니다. #95 NPC06/16 함께 기존 적용 보호. #75 B352 c951e0c5 포함. #85 정식 Owl 한기1회 패턴469b219f/신규81PASS 원본 적용, 대표 새 실플레이는 PENDING. 냉기 VFX/Icon6 원본 KEEP, 소유자 식별/몸체 밀집 PARTIAL 유지. docs/art-new 3644200d를 통째로 합치지 않고 승인 BattleBG 최종 시각보고만 선별했습니다. C SnowEdge/동상/동결괴사/정화Ⅱ/아이템·신규미술 구현0.
+
+---
+
+## 2026-11-03 Owl·Spider 최종 미술 승인 / Bee 표적·권리 계약 조사
+
+**Owl Attack4 / Spider Walk8 USER_ART_APPROVED** 확정. #84 기존 Unity37PASS 재사용·재실행0. Owl ZIP d6648b7451dc2184c2187c0b1c2f8e0f52fc800ac6975753d0f6d38f6fbf9192 / Spider ZIP 771bd1813608aa3e350c6124ab0d43293c6d2988b1833014da64484d5272c8da 동결. 기존 Idle·정지원화 보호·추가 재작화 금지. Owl VFX HOLD, Spider 발 접지·미끄러짐 NOT_VERIFIED / WALK_CONTACT_HOLD, Organic Attack8/Shoot8 미제작. 과거 미술 승인 대기는 이번 승인으로 해소됐습니다.
+
+Bee 실제 코드: 적 좌측→아군 우측, 전열/후열·Column별 대상, 명목 .25초 피해(index02@10FPS), 정지거리145 UI. 기본 플레이어와 사각형 사이도 최소31.2 UI 간격이고 ContactFrame/socket 없음. Attack10은 약.61초에 조기 종료될 수 있어 **TARGET_CONTACT_HOLD / MOTION_REVISE_CONTINUE / FULL_COMBAT_READY_NO**. 필요한 보완은 Sting/Recover 두 후보뿐이며 정확 접점·거리/시간 승인 전 계획 문서까지만 진행합니다.
+
+PilotBee 원배포 웹BY3.0 vs 원본 ZIP 내부BY4.0 충돌 재확인. MonsterValidation의 활성2PNG가 Bee 정의에 참조되며 외부 보관 원본과 byte-exact여서 **RIGHTS_HOLD**. ThirdParty 보관 파일 직접참조0과 활성 사본 사용을 구분했습니다. 새 SHA만으로 독립 권리를 확정하지 않습니다.
+
+[승인·좌표·권리 근거](../../OwlSpider_FinalApproval_BeeTarget_RightsContract_20261103.md) / [리뉴얼 최소 지시서](../../VenomBee_Minimal_StingRecover_ArtBrief_20261103.md). branch `codex/bee-target-rights-and-art-approval-20261103`, 출발 c6eab1bb. 문서·조사 JSON/TXT만 변경, 원본 Unity/Save/UserData/Scene/Prefab/BuildSettings/Packages·Discord66·Push/merge0, Unity 실행/기존QA 반복/신규PNG0. NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED.
+
+---
+
+## 2026-11-03 Owl Attack02 + Spider Edge Fix 독립 읽기 검수
+
+**LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED**. **ATTACK02_CONTINUITY_OK_CANDIDATE**:00/01/03바이트보존·02만새6dcb1799…/126301px변경. y345~511은승인03exact,02→03몸통/꼬리·발/깃질감급전환감소.01→02IoU.4377→.6761,02→03.4415→.8654,40px대비유지·8FPS정확.움직이는주석GIF4단계확인,기존Idle8/분리VFX원형보호·본체재결합0.최종대표모션미술/Unity기술승인아님.
+
+[정확SHA·통합보고](../../OwlAttack02_SpiderWalk8EdgeFix_ReadOnly_Review_20261103.md). OFFLINE/Unity아님 비교판 `F:/study/codex/Project-Limitless/Temp/OwlSpiderEdgeReview20261103/Review/index.html` SHA `26aa98c601f8c19ba7916f9b5f1f627fc52483b5700dd3262bec4d9cf881565c`·브라우저34PASS. branch `codex/owl-spider-edge-review-20261103`,출발34f2ad88.원본main/status344(상세858)·28참조SHA/개인Save보호·Unity/기존QA·Bee재검수/원본적용/Push/merge0.
+
+---
+
+## 2026-11-03 Owl Continuity + Spider Walk8 Fix 독립 읽기 검수
+
+**LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED**. Owl 새Continuity의 얼굴중심복원/큰VFX분리/03=승인Idle00바이트동일을 확인. 하지만00~02몸통/깃털비례·02→03급전환이남아 **DESIGN_CONTINUITY_REVISE**. 본체4GIF 평균8FPS정확·시트RGBA일치/clip0, 별도seamGIF는동일프레임병합으로1프레임/250ms. 분리VFX는계속UNAPPROVED_HOLD. 정상Idle재제작불필요.
+
+[통합 상세·전체SHA·근거](../../OwlContinuity_SpiderWalk8Fix_ReadOnly_Review_20261103.md). 단일OFFLINE/Unity아님 비교판 `F:/study/codex/Project-Limitless/Temp/OwlSpiderFollowupReview20261103/Review/index.html` SHA `ca98de10c55e0ef0b4601fe44703780ec78ffef8c6dd4a73908c1e9763d02d74` · 브라우저34PASS. branch `codex/owl-spider-followup-review-20261103`, 출발ed95f352. 원본main/status344(상세858)·28참조SHA보호·Unity/Save접근/기존QA·Bee재검수0·Push/merge0. 최종미술승인과실제품적용은별도입니다.
+
+---
+
+## 2026-11-03 Codex 독립 실물 델타 검수 결과 (담당 제작 기록과 구분)
+
+Owl Attack4 새4SHA/40px 대비 개선은 확인했으나 ANIM_REVISE_CONTINUE / DESIGN_CONTINUITY_HOLD / VFX_SCOPE_HOLD입니다. 기존 Idle8/81a31cf3 정지원화 보호, 새 냉기궤적은 별도 시각판단 필요. 기존 clip-safe 재작업 불필요.
+
+[독립 통합 검수](../../Art_OwlAttack4_BeeTarget_SpiderIdleWalk_Review_20261103.md). 세 ZIP 실물 무결성 확인, 바울 대표 최종 모션미술 승인 대기·Unity실행/본편적용0·기존QA반복0·Push/merge0. 이 기록은 아트 원본이나 담당 원격 문서를 덮어쓰지 않은 로컬 인계입니다.
+
+---
+
+## 2026-11-03 바울 대표 승인 — F2 자연형 그루터기 v4 USER_APPROVED
+
+`F2_SnowStumpPerch_NaturalBroken_v4_CANDIDATE_320x384_RGBA.png` SHA `22f2f5816b3fd2ffe45234ec807bb3d81a83f87440eb8eb1f338e0dff33404a8`를 이번 채팅 명시 승인으로 **USER_APPROVED / APPROVED_ART_CANDIDATE** 처리했습니다. 기존파일 SHA 재확인·바이트변경0. 예전 Stump v1/v2/v3·FULLREDRAW는 **SUPERSEDED / ARCHIVED_CANDIDATE**로 문서분류하고 삭제/이동하지 않습니다.
+
+승인은 그루터기1PNG에만 해당합니다. Sign/Fence FULLREDRAW는 KEEP_CANDIDATE/미승인 그대로, Spider ALPHA_FINAL_HOLD·Bee MOTION_REVISE/RIGHTS_HOLD 미승인 유지. **UNITY_DELTA_PENDING / NOT_UNITY_APPLIED**. 다음은 별도 격리1PNG 최소 표시·알파·실비율/시야·통행 검증 필요. PPU/Pivot·Collider·휠체어는 SPEC_PENDING/NOT_VERIFIED. F2 미구현맵/전투 신규개발 허가 아님.
+
+[승인 정본·최소Delta 준비](../../F2_NaturalStump_v4_UserApproval_And_UnityDeltaPrep_20261103.md). 브랜치 `codex/f2-natural-stump-approval-20261103`, Markdown5개만로컬반영/Push·main·merge·Unity·Save/UserData변경0. Main24 81/14 및 기존QA 재실행0. 아래 KEEP/승인대기/HOLD는 과거 당시 기록이며 현재 승인 상태는 본 항목을 따릅니다.
+
+승인 문서 commit `fe92433aac1d5768a438f2dd3d5366f480f5cacb` 기준 [Issue #75](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6592422354) · [Issue #81](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6592423200) 실제 USER_APPROVED 보고 등록 성공. 로컬 Markdown만 반영/원격 파일Push0, 본 후속은 영수증 기록입니다.
+
+---
+
 # SPRITE_ART 최신 인계 — 2026-10-12
 
 ## 2026-10-23 Main23 #59 최종 표시 기획 규격 — 80px visible 우선 (82px canvas 과거 후보 대체)

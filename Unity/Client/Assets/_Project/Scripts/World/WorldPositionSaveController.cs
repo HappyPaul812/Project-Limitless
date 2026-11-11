@@ -18,6 +18,7 @@ namespace ProjectLimitless.World
         private float elapsed;
         private WorldBounds2D worldBounds;
         private bool restored;
+        private bool recoveredDungeonPosition;
 
         private void Awake()
         {
@@ -57,6 +58,29 @@ namespace ProjectLimitless.World
                 return;
             }
 
+            // 던전 충돌은 sceneLoaded에서 설치되므로 Awake에서는 복원을 미룹니다.
+            // Player.Awake에서 동적으로 붙은 이 컴포넌트보다 SceneSpawnPoint의 코루틴 Start가
+            // 먼저 실행될 수 있어 유효한 저장 좌표를 확인하는 즉시 Spawn fallback을 해제합니다.
+            // 그렇지 않으면 Spawn의 자동 저장이 복구 전 저장 좌표를 덮어쓰게 됩니다.
+            DungeonFloorCollision dungeon = null;
+            if (DungeonFloorCollision.AppliesTo(scene.name))
+            {
+                GameSessionData.ClearPendingSpawnPoint();
+                foreach (var candidate in FindObjectsByType<DungeonFloorCollision>(FindObjectsSortMode.None))
+                    if (candidate.gameObject.scene == scene) { dungeon = candidate; break; }
+                if (dungeon == null) return;
+            }
+
+            if (dungeon != null)
+            {
+                var shape = GetComponent<Collider2D>();
+                if (shape == null || !dungeon.TryResolveSavedPosition(shape, saved, out var safe)) return;
+                recoveredDungeonPosition = (safe - saved).sqrMagnitude > .000001f;
+                saved = safe;
+                if (recoveredDungeonPosition) GameSessionData.RecordWorldPosition(safe.x, safe.y);
+                // 복구는 메모리의 위치만 바꿉니다. 해당 Scene에서 주기·종료 저장을 생략하여
+                // 벽 안 좌표가 든 원본 슬롯을 복구 자체가 덮어쓰지 않습니다. 정상 출구 저장은 기존 흐름입니다.
+            }
             Rigidbody2D body = GetComponent<Rigidbody2D>();
             if (body != null) { body.position = saved; body.linearVelocity = Vector2.zero; }
             else transform.position = saved;
@@ -67,6 +91,7 @@ namespace ProjectLimitless.World
 
         private void SaveNow()
         {
+            if (recoveredDungeonPosition) return;
             if (worldBounds == null || !gameObject.scene.IsValid()) return;
             Vector2 position = transform.position;
             if (!IsFinite(position) || !worldBounds.Bounds.Contains(new Vector3(position.x, position.y, worldBounds.Bounds.center.z))) return;

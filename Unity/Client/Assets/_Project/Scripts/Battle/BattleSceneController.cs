@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ProjectLimitless.Core;
 using ProjectLimitless.Monster;
+using ProjectLimitless.World;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -63,7 +64,9 @@ namespace ProjectLimitless.Battle
         private readonly Dictionary<Combatant, BattleParticipantSetup> participantSetups = new Dictionary<Combatant, BattleParticipantSetup>();
         private readonly BattleSkillCooldowns skillCooldowns = new BattleSkillCooldowns();
         private readonly BattleFighterResourceRuntime fighterResources = new BattleFighterResourceRuntime();
-        private readonly BattleStatusEffectRuntime statusEffects = new BattleStatusEffectRuntime();
+        // 승인된 F2 Owl 전투만 B 정책을 사용합니다. 다른 전투에는 냉기 부여 정책을 켜지 않습니다.
+        private readonly BattleStatusEffectRuntime statusEffects = new BattleStatusEffectRuntime(
+            Main24FrostOwlCandidate.IsEncounter ? new ColdStatusCandidateRules(ColdReapplicationRule.RejectWhileActive, null, false, true) : null);
         private readonly BattleMonsterAbilityRuntime monsterAbilities = new BattleMonsterAbilityRuntime();
         private readonly BattleDungeonMonsterRuntime dungeonMonsters = new BattleDungeonMonsterRuntime();
         private readonly BattleChapter2MonsterRuntime chapter2Monsters = new BattleChapter2MonsterRuntime();
@@ -143,6 +146,7 @@ namespace ProjectLimitless.Battle
             statusEffects.Chapter2Monsters = chapter2Monsters;
             CreateEventSystem();
             CreateInterface();
+            owlChillProductionEnabled = Main24FrostOwlCandidate.IsEncounter;
             statusEffects.GuardianInterceptionOccurred += OnGuardianInterceptionOccurred;
             turnOrder = new TurnOrderQueue();
             turnOrder.InitializeBattle(AllCombatants);
@@ -154,6 +158,8 @@ namespace ProjectLimitless.Battle
         private void OnDestroy()
         {
             statusEffects.ClearOverheat();
+            statusEffects.ClearColdStatuses();
+            ResetOwlFirstChillPattern();
             dungeonMonsters.Clear();
             statusEffects.GuardianInterceptionOccurred -= OnGuardianInterceptionOccurred;
             if (pathTraits != null) pathTraits.FeedbackOccurred -= OnPathFeedbackOccurred;
@@ -278,7 +284,12 @@ namespace ProjectLimitless.Battle
             MonsterDefinition guardian = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_seal_guardian");
             MonsterDefinition warden = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_silent_warden");
             BattleEncounterSetup setup;
-            if (BattleEncounterContext.StoryEncounterId == BattlePrototypeEncounterFactory.GraveWightOneValidationId
+            if (ProjectLimitless.World.Main24FrostOwlCandidate.IsEncounter)
+                setup = BattlePrototypeEncounterFactory.CreateMain24OwlCandidate(playerName,
+                    GameSessionData.SelectedJobId,GameSessionData.SelectedPlayerPathId,
+                    CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId,growth),playerAttack,agility,
+                    BattleEncounterContext.Monster);
+            else if (BattleEncounterContext.StoryEncounterId == BattlePrototypeEncounterFactory.GraveWightOneValidationId
                 || BattleEncounterContext.StoryEncounterId == BattlePrototypeEncounterFactory.GraveWightTwoValidationId)
                 setup = BattlePrototypeEncounterFactory.CreateGraveWightValidation(
                     playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
@@ -383,7 +394,10 @@ namespace ProjectLimitless.Battle
                 string beastId = sharpshooterBeast ? BeastCompanionService.GetEquippedId(participant.Id) : string.Empty;
                 int participantMaxHp = BeastCompanionService.GetEffectiveMaxHp(participant.MaxHp, beastId);
                 int participantAgility = BeastCompanionService.GetEffectiveAgility(participant.Agility, beastId);
-                Combatant combatant = new Combatant(participant.Id, participant.DisplayName, participant.Side,
+                // 기존 후보 정의의 ID/수치는 유지하고 승인된 실전 Owl 표시 이름만 정리합니다.
+                string participantName = Main24FrostOwlCandidate.IsEncounter && Main24FrostOwlCandidate.IsDefinition(participant.MonsterDefinition)
+                    ? "서리올빼미" : participant.DisplayName;
+                Combatant combatant = new Combatant(participant.Id, participantName, participant.Side,
                     participant.Slot, participantMaxHp, participant.Attack, participantAgility,
                     participant.ActionPriority, participant.BasicRange, participant.IsPlayerControlled, participant.IsBoss,
                     CharacterGrowthCalculator.CalculateDefense(participant.JobId, participantGrowth),
@@ -426,6 +440,11 @@ namespace ProjectLimitless.Battle
             Image background = MakeImage(canvasObject.transform, "Background", navy); Stretch(background.rectTransform);
 
             Text title = MakeText(canvasObject.transform, "Title", "전투", font, 31, new Vector2(.5f, .965f), new Vector2(260, 42)); title.color = gold; title.fontStyle = FontStyle.Bold;
+            if (ProjectLimitless.World.Main24FrostOwlCandidate.IsEncounter)
+            {
+                title.text="서리올빼미";
+                title.fontSize=24;title.rectTransform.sizeDelta=new Vector2(1000,42);
+            }
             CreateTimeline(canvasObject.transform, font);
             Image battlefield = CreateBattlefield(canvasObject.transform);
             battlefieldTransform = battlefield.transform;
@@ -454,12 +473,25 @@ namespace ProjectLimitless.Battle
             // HP 정보는 바로 위의 전용 HUD가 맡습니다. 전장은 HUD 아래와 명령 패널 위에만 배치해
             // 참가자가 6명으로 늘어나도 HP 항목이 Sprite나 도발 표시 위에 그려지지 않게 합니다.
             Image battlefield = MakeImage(parent, "SideViewBattlefield", new Color(.045f, .08f, .12f, 1f)); SetRect(battlefield.rectTransform, new Vector2(.5f, .46f), new Vector2(1180, 320)); AddOutline(battlefield.gameObject, new Color(.28f, .37f, .5f, 1f), 2);
+            if (ProjectLimitless.World.Main24FrostOwlCandidate.IsEncounter)
+            {
+                // 새 후보의4:3 표시에서도 전장 테두리가 잘리지 않게 가로만 부모 폭에 맞춥니다.
+                // 다른 전투의 배치·판정·Sprite 크기는 그대로 두고 이 후보 Canvas에만 적용합니다.
+                battlefield.rectTransform.anchorMin=new Vector2(.04f,.46f);
+                battlefield.rectTransform.anchorMax=new Vector2(.96f,.46f);
+                battlefield.rectTransform.sizeDelta=new Vector2(0,320);
+            }
             Image sky = MakeImage(battlefield.transform, "NightSky", new Color(.055f, .105f, .16f, 1f)); sky.rectTransform.anchorMin = new Vector2(0, .42f); sky.rectTransform.anchorMax = Vector2.one; sky.rectTransform.offsetMin = Vector2.zero; sky.rectTransform.offsetMax = Vector2.zero;
             Image distance = MakeImage(battlefield.transform, "DistantField", new Color(.075f, .13f, .16f, 1f)); distance.rectTransform.anchorMin = new Vector2(0, .3f); distance.rectTransform.anchorMax = new Vector2(1, .55f); distance.rectTransform.offsetMin = Vector2.zero; distance.rectTransform.offsetMax = Vector2.zero;
             Image ground = MakeImage(battlefield.transform, "BattleGround", new Color(.055f, .095f, .105f, 1f)); ground.rectTransform.anchorMin = Vector2.zero; ground.rectTransform.anchorMax = new Vector2(1, .42f); ground.rectTransform.offsetMin = Vector2.zero; ground.rectTransform.offsetMax = Vector2.zero;
             Image horizon = MakeImage(battlefield.transform, "GoldenHorizon", new Color(.65f, .5f, .22f, .7f)); horizon.rectTransform.anchorMin = new Vector2(0, .415f); horizon.rectTransform.anchorMax = new Vector2(1, .425f); horizon.rectTransform.offsetMin = Vector2.zero; horizon.rectTransform.offsetMax = Vector2.zero;
+            // 승인 Chapter3만 독립 Catalog로 먼저 조회하고, 기존 Chapter1/2 우선순위는 그대로 유지합니다.
+            BattleBackgroundCatalog chapter3 = Resources.Load<BattleBackgroundCatalog>("BattleBackgrounds/Chapter3");
+            Sprite chapter3Backdrop = chapter3 != null ? chapter3.Find(BattleEncounterContext.FieldSceneName, BattleEncounterContext.StableEncounterId) : null;
             BattleBackgroundCatalog backgrounds = Resources.Load<BattleBackgroundCatalog>("BattleBackgrounds/Chapter1");
-            Sprite backdrop = backgrounds != null ? backgrounds.Find(BattleEncounterContext.FieldSceneName,
+            BattleBackgroundCatalog chapter2 = Resources.Load<BattleBackgroundCatalog>("BattleBackgrounds/Chapter2");
+            Sprite chapter2Backdrop = chapter2 != null ? chapter2.Find(BattleEncounterContext.FieldSceneName, BattleEncounterContext.StableEncounterId) : null;
+            Sprite backdrop = chapter3Backdrop != null ? chapter3Backdrop : chapter2Backdrop != null ? chapter2Backdrop : backgrounds != null ? backgrounds.Find(BattleEncounterContext.FieldSceneName,
                 BattleEncounterContext.StableEncounterId) : null;
             if (backdrop != null)
             {
@@ -893,17 +925,20 @@ namespace ProjectLimitless.Battle
 
         private void AdvanceTurn()
         {
-            if (battleEnded) return;
+            // 같은 기회에서 취소/재진입으로 큐·쿨다운을 다시 소비하지 않습니다.
+            if (battleEnded || opportunityOpen) return;
             if (enemies.IsDefeated) { EndBattle("승리! 적을 모두 쓰러뜨렸습니다.", true); return; }
             if (allies.IsDefeated) { EndBattle("전투불능. 최근 안전지대로 복귀합니다.", false); return; }
 
             currentActor = turnOrder.TakeNext(AllCombatants);
             if (currentActor == null) return;
+            opportunityOpen = true; activeOpportunityId++; activeOpportunityBlocked = false;
             currentActor.BeginTurn();
             skillCooldowns.BeginActorTurn(currentActor);
             // 수호의 맹세는 수호자가 새 행동을 시작하기 직전에 끝납니다. 사용 행동 종료나 다른 참가자의
             // 차례에는 제거하지 않아 적과 동료가 여러 번 행동해도 약속한 보호 시간을 온전히 보장합니다.
             statusEffects.BeginActorAction(currentActor);
+            if (TrySkipOwlChillOpportunity()) return; // 방어/맹세/CD는 차단 때도 이미 경과했습니다.
             if (!currentActor.IsPlayerControlled) chapter2Monsters.BeginActorAction(currentActor);
             pathTraits.BeginActorAction(currentActor);
             UpdateTimeline();
@@ -925,6 +960,7 @@ namespace ProjectLimitless.Battle
 
         private void BeginAttack()
         {
+            if (statusEffects.IsColdActionBlocked(currentActor)) return;
             if (actionPlaying || currentActor == null || !currentActor.IsPlayerControlled) return;
             Formation opponents = currentActor.Side == BattleSide.Allies ? enemies : allies;
             IReadOnlyList<Combatant> targets = TargetResolver.ResolveHostileTargets(currentActor, opponents, currentActor.BasicRange);
@@ -974,6 +1010,7 @@ namespace ProjectLimitless.Battle
 
         private void ShowSkillMenu()
         {
+            if (statusEffects.IsColdActionBlocked(currentActor)) return;
             if (actionPlaying || currentActor == null || !currentActor.IsPlayerControlled) return;
             // 버튼은 포커스와 클릭을 유지해 차단 이유를 읽을 수 있게 합니다. 실제 행동을 시작하기 전에
             // 여기서 거절하므로 침묵 1회, 턴, MP, 스킬 쿨타임 어느 것도 소비하지 않습니다.
@@ -998,6 +1035,7 @@ namespace ProjectLimitless.Battle
         /// <summary>공용 Inventory의 현재 수량만 목록에 표시합니다. 선택 단계에서는 아직 행동과 수량을 바꾸지 않습니다.</summary>
         private void ShowItemMenu()
         {
+            if (statusEffects.IsColdActionBlocked(currentActor)) return;
             if (battleEnded || actionPlaying || currentActor == null || !currentActor.IsPlayerControlled) return;
             choosingItem = true;
             SetCommandButtons(false);
@@ -2369,6 +2407,7 @@ namespace ProjectLimitless.Battle
 
         private void Defend()
         {
+            if (statusEffects.IsColdActionBlocked(currentActor)) return;
             if (actionPlaying) return;
             if (statusEffects.HasStrongerSelfDefense(currentActor))
             {
@@ -2386,11 +2425,14 @@ namespace ProjectLimitless.Battle
 
         private void Flee()
         {
+            if (statusEffects.IsColdActionBlocked(currentActor)) return;
             if (actionPlaying) return;
             if (enemies.Members.Any(item => item.IsBoss)) { messageText.text = "보스전에서는 도망칠 수 없습니다."; return; }
             RecordAllyResources();
             battleEnded = true;
             statusEffects.ClearOverheat();
+            statusEffects.ClearColdStatuses();
+            ResetOwlFirstChillPattern();
             SetCommandButtons(false);
             messageText.text = "도망에 성공했습니다. 조우했던 필드로 복귀합니다.";
             StartCoroutine(ReturnAfterDelay(false));
@@ -2418,6 +2460,8 @@ namespace ProjectLimitless.Battle
             Combatant target = ChooseEnemyTarget(currentActor, targets);
             if (target != null)
             {
+                if (CanUseOwlFirstChill(currentActor))
+                { yield return PlayOwlFirstChillAttack(currentActor, target); yield break; }
                 PlayBasicAttack(currentActor, target);
                 yield break;
             }
@@ -2763,6 +2807,7 @@ namespace ProjectLimitless.Battle
                             monsterAbilities.StartPoisonInflictionCooldown(actor, poisonCooldown);
                     }
                 }
+                ApplyOwlFirstChillAtImpact(actor, target, damage);
                 if (inflictBurn && damage > 0 && target.IsAlive)
                     statusEffects.ApplyOrRefreshBurn(target,
                         (int)Math.Max(1L, ((long)actor.Attack * 30L + 99L) / 100L), 2);
@@ -2781,7 +2826,7 @@ namespace ProjectLimitless.Battle
             // 독침벌처럼 Attack 시트를 가진 몬스터만 실제 공격 프레임으로 전환합니다.
             // 피해 계산과 이동 연출은 기존 Presenter가 그대로 담당하므로 독 효과를 미리 만들지 않습니다.
             if (strongVisual) actorView.MonsterAnimation?.PlaySkill();
-            else actorView.MonsterAnimation?.PlayAttack();
+            else if (actorView.MonsterAnimation != null) actorView.MonsterAnimation.PlayAttack(actorView.MonsterAnimation.UsesApprovedAttackTiming);
 
             if (actor.BasicRange == TargetRangeType.RangedPhysical)
             {
@@ -2833,7 +2878,8 @@ namespace ProjectLimitless.Battle
                 battleFont,
                 applyImpact,
                 onImpact,
-                onComplete));
+                onComplete,
+                actorView.MonsterAnimation == null || !actorView.MonsterAnimation.UsesApprovedAttackTiming ? null : (Func<bool>)(() => actorView.MonsterAnimation.IsAttackPlaying)));
         }
         /// <summary>파일명 순서로 추출된 Projectile 프레임을 불러와 공용 Presenter에 전달합니다.</summary>
         private static Sprite[] LoadProjectileFrames(string resourcesPath)
@@ -2853,6 +2899,9 @@ namespace ProjectLimitless.Battle
 
         private void FinishCurrentAction()
         {
+            if (activeOpportunityBlocked) return;
+            if (!TryStartOpportunityEnd(currentActor)) return;
+            int token = activeOpportunityId;
             // 행동 완료 뒤 기본 명령으로 돌아갈 때 이전 스킬의 Hover/포커스 정보가 되살아나지 않게 합니다.
             // 다음에 사용자가 스킬 메뉴를 다시 열고 버튼에 새로 포커스할 때만 설명이 표시됩니다.
             HideSkillDetailPopup();
@@ -2871,6 +2920,14 @@ namespace ProjectLimitless.Battle
             dungeonMonsters.CompleteActorAction(completedActor);
             dungeonMonsters.RemoveInvalidCombatants(AllCombatants);
             SetCommandButtons(false);
+            PlayOpportunityEndEffects(completedActor, false, token);
+        }
+
+        // 정상/차단이 기존 화상→독→KO 꼬리를 공유하되 행동 성공 부수효과는 위에서만 호출합니다.
+        private void PlayOpportunityEndEffects(Combatant completedActor, bool blocked, int token)
+        {
+            if (battleEnded || token != activeOpportunityId || completedOpportunityId == token || burnOpportunityId == token) return;
+            burnOpportunityId = token;
             // 화상은 "대상 행동 종료 시" 피해이므로 CompleteAction 직후 확인합니다. 작은 불꽃과 피격이
             // 끝나기 전에는 actionPlaying을 유지해 입력과 정보 팝업이 다음 턴보다 먼저 열리지 않게 합니다.
             if (completedActor != null && statusEffects.HasActiveBurn(completedActor) && combatantViews.TryGetValue(completedActor, out CombatantView burnedView))
@@ -2895,12 +2952,12 @@ namespace ProjectLimitless.Battle
                     () =>
                     {
                         RestoreBattleIdle(burnedView);
-                        ContinueEndOfActionEffects(completedActor);
+                        ContinueEndOfOpportunityEffects(completedActor, blocked, token);
                     }));
                 return;
             }
 
-            ContinueEndOfActionEffects(completedActor);
+            ContinueEndOfOpportunityEffects(completedActor, blocked, token);
         }
 
         /// <summary>
@@ -2908,8 +2965,10 @@ namespace ProjectLimitless.Battle
         /// 화상 처리 뒤 이 메서드를 다시 호출하므로 독을 건너뛰지 않으며, 어느 틱에서 전투불능이 되면
         /// RemoveInvalidPersistentEffects가 남은 해로운 상태와 UI를 즉시 지웁니다.
         /// </summary>
-        private void ContinueEndOfActionEffects(Combatant completedActor)
+        private void ContinueEndOfOpportunityEffects(Combatant completedActor, bool blocked, int token)
         {
+            if (battleEnded || token != activeOpportunityId || completedOpportunityId == token || poisonOpportunityId == token) return;
+            poisonOpportunityId = token;
             statusEffects.RemoveInvalidPersistentEffects(AllCombatants);
             if (completedActor != null && statusEffects.HasActivePoison(completedActor) &&
                 combatantViews.TryGetValue(completedActor, out CombatantView poisonedView))
@@ -2937,14 +2996,14 @@ namespace ProjectLimitless.Battle
                         RestoreBattleIdle(poisonedView);
                         actionPlaying = false;
                         RefreshCombatantViews(null);
-                        StartCoroutine(AdvanceAfterDelay());
+                        CompleteOpportunityEnd(completedActor, blocked, token);
                     }));
                 return;
             }
 
             actionPlaying = false;
             RefreshCombatantViews(null);
-            StartCoroutine(AdvanceAfterDelay());
+            CompleteOpportunityEnd(completedActor, blocked, token);
         }
 
         private IEnumerator AdvanceAfterDelay() { yield return new WaitForSeconds(.65f); AdvanceTurn(); }
@@ -2954,6 +3013,8 @@ namespace ProjectLimitless.Battle
             if (battleEnded) return;
             battleEnded = true;
             statusEffects.ClearOverheat();
+            statusEffects.ClearColdStatuses();
+            ResetOwlFirstChillPattern();
             dungeonMonsters.Clear();
             SetCommandButtons(false);
             if (defeatedEncounteredMonster)
@@ -2967,7 +3028,8 @@ namespace ProjectLimitless.Battle
                 MainQuest07EncounterBridge.NotifyVictory(BattleEncounterContext.StoryEncounterId);
                 // 도망·패배 분기는 여기에 들어오지 않습니다. Chapter 2 검증 편성도 실제 출현한 종의
                 // MonsterDefinition ID를 승리 후에만 기록하며, 분양 목록은 등록된 네 종만 보여 줍니다.
-                BeastCompanionService.RecordVictory(participantSetups
+                if (!ProjectLimitless.World.Main24FrostOwlCandidate.IsEncounter)
+                    BeastCompanionService.RecordVictory(participantSetups
                     .Where(pair => pair.Key.Side == BattleSide.Enemies && pair.Value.MonsterDefinition != null)
                     .Select(pair => pair.Value.MonsterDefinition.MonsterId));
                 RecordAllyResources();
@@ -3128,6 +3190,7 @@ namespace ProjectLimitless.Battle
                     bossTelegraphText.gameObject.SetActive(true);
                 }
             }
+            SyncOwlChillVfx();
             RefreshHpRowHighlights(focusedCombatant ?? hoveredCombatant);
             if (!actionPlaying && detailCombatant != null) ShowDetailPopup(detailCombatant);
             if (messageText != null && !string.IsNullOrEmpty(pendingPathFeedback))
@@ -3225,6 +3288,7 @@ namespace ProjectLimitless.Battle
                 // path.* 상태에는 Game-icons.net TraitIcon을 사용합니다. 아이콘이 없어도 한글 상태명은 남아
                 // 색상이나 그림만으로 전투 정보를 판단하지 않게 합니다.
                 Sprite traitIcon = marker.Id == "overheat" ? Resources.Load<Sprite>("Main18/UI/Status_Overheat")
+                    : BattleApprovedColdAssets.IsCold(marker.Id) ? BattleApprovedColdAssets.Icon(marker.Id)
                     : marker.Id.StartsWith("path.", StringComparison.Ordinal) ? PathPresentationResolver.FindTraitIcon(marker.Id) : null;
                 summaries.Add((iconId, traitIcon, marker.DisplayText));
             }
@@ -3234,6 +3298,8 @@ namespace ProjectLimitless.Battle
                 (BattleUiIconCatalog.GetCooldownIconId(cooldown.RemainingTurns, cooldown.TotalTurns),
                     (Sprite)null, cooldown.DisplayText)));
             RefreshStatusBadges(row, summaries);
+            // 냉기 만료 뒤에도 이미 확장된 행은 같은 글자 높이를 유지해야 기존 표식이 잘리지 않습니다.
+            if (statusModel.Markers.Any(marker => BattleApprovedColdAssets.IsCold(marker.Id)) || row.Background.rectTransform.sizeDelta.y >= 80) ApplyApprovedColdRow(row);
         }
 
         /// <summary>
@@ -3276,6 +3342,7 @@ namespace ProjectLimitless.Battle
 
         private void SetCommandButtons(bool enabled)
         {
+            enabled = enabled && !statusEffects.IsColdActionBlocked(currentActor);
             // 두 줄 메뉴가 안내/실패 이유를 가리지 않도록 스킬 선택 중에는 안내를 패널 위로 올립니다.
             if (messageText != null)
             {

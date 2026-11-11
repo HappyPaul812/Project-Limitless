@@ -54,10 +54,11 @@ public sealed class Main23GuidanceHud : MonoBehaviour
   Button(panel,"Navigate","목표로 이동",new Vector2(205,42),new Vector2(16,50),()=>travel.GoTo(Chapter3Main23Flow.CurrentSite()));
   action=Button(panel,"Interact","조사 / 선택",new Vector2(205,42),new Vector2(238,50),()=>Chapter3Main23Flow.NearestInRange()?.TryInteract());actionText=action.GetComponentInChildren<UnityEngine.UI.Text>();
   Button(panel,"CancelTravel","이동 취소",new Vector2(205,34),new Vector2(238,8),()=>travel.Cancel());
-  Button(panel,"ReturnRoute","마을 출구로 이동",new Vector2(205,34),new Vector2(16,8),()=>travel.GoTo(FindObjectsByType<Main23Site>(FindObjectsSortMode.None).FirstOrDefault(s=>s.SiteKind==Main23Site.Kind.SouthGate||s.SiteKind==Main23Site.Kind.Start)));
+  Button(panel,"ReturnRoute","마을 출구로 이동",new Vector2(205,34),new Vector2(16,8),()=>travel.GoTo(FindObjectsByType<Main23Site>(FindObjectsSortMode.None).FirstOrDefault(s=>s.SiteKind==Main23Site.Kind.SouthGate||s.SiteKind==Main23Site.Kind.Start||s.SiteKind==Main23Site.Kind.F2Return)));
  }
  void Update(){if(group==null)return;bool show=Chapter3Main22Flow.Completed&&!WorldModalState.IsOpen;group.alpha=show?1:0;group.blocksRaycasts=group.interactable=show;if(!show)return;var target=Chapter3Main23Flow.CurrentSite();var p=FindAnyObjectByType<PlayerController>();string direction="";if(target!=null&&p!=null){var diff=target.transform.position-p.transform.position;direction=$"{(diff.y>.5f?"북":diff.y<-.5f?"남":"")}{(diff.x>.5f?"동":diff.x<-.5f?"서":"")}쪽 · {diff.magnitude:0.0}m → {target.DisplayTitle}";}
   text.text=$"Main23 · 따뜻한 땅을 떠난 자들 {(Chapter3Main23Flow.Completed?"완료":$"{Mathf.Max(0,Chapter3Main23Flow.Step+1)}/5")}\n{Chapter3Main23Flow.Hint}\n{direction}\n표식 클릭: 이동·선택 / E·F: 상호작용\nEsc: 이동·창 취소 / 우클릭: 이동 취소";
+  if(Chapter3Main23Flow.Completed)text.text=$"Main24 · 첫눈 아래의 경고{(gameObject.scene.name==Main24F2Traversal.SceneId?" / 임시 환경 검증":"")}\n{Chapter3Main24Flow.Hint}\n{direction}\n표식 클릭: 이동·선택 / E·F: 상호작용\nK: 무료 스킬 장착 / Esc: 취소";
   action.interactable=Chapter3Main23Flow.NearestInRange()!=null;actionText.text=action.interactable?"가까운 표시 조사 / 선택":"표시 가까이 이동하세요";
  }
  static RectTransform Rect(Transform parent,string name,Vector2 size,Vector2 pos){var t=new GameObject(name,typeof(RectTransform)).GetComponent<RectTransform>();t.SetParent(parent,false);t.anchorMin=t.anchorMax=Vector2.zero;t.pivot=Vector2.zero;t.sizeDelta=size;t.anchoredPosition=pos;return t;}

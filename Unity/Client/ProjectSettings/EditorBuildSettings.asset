@@ -80,5 +80,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/World_FrostwayVillage.unity
     guid: 42a253fb196cf584b89d837a04fb56db
+  - enabled: 1
+    path: Assets/_Project/Scenes/World_NorthF2_CANDIDATE.unity
+    guid: bcd0e6f38e69dc141b741fe5247855cf
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

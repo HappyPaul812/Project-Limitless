@@ -78,6 +78,7 @@ namespace ProjectLimitless.Battle
     {
         public const string BattleSceneName = "Battle";
         private static bool transitioning;
+        public static bool IsTransitioning => transitioning;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Initialize()
