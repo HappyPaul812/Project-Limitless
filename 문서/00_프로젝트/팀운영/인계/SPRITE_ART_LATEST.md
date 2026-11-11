@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-11 / Issue #89 — 승인 냉기 VFX·정식 상태 아이콘 6종 KEEP, 시각 PARTIAL 표적 검토
+
+- [**Issue #89 11/11 최종 신규 아트 표적 보고서**](../../Chapter3_Issue89_ColdVisual_Readability_TargetedCloseout_20261111.md) `docs/art-new` commit **`a5bcc299747f683119578bd1a375a084a4075fb6`**. [#89 총괄 기획 최신 지시](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6786953257) 수용. 기존 **사용자 승인 냉기 VFX 3종 + 정식 상태 아이콘 3종 모두 BYTE_KEEP**, 신규 게임용 Sprite/VFX/캔버스/애니 수정0.
+- **승인 SHA 표** VFX Chill v2 `e50831520d21ca51b51bca0fab030446f5c15f034d699c6ee3fd79304d1691c2`; Frostbite v2 `5b8ca776ec14c52fd671117182fa299fed31b8774d85f6843f8f62ec70b96415`; Necrosis v2 `59621e0b912e7c30544e559cb99446dcfb7f9c7c8dd1c846a07f32dce2dfd299`. 기존 Codex 승인 SHA를 재기록, 세 VFX 원본 실파일은 이 세션에 없어 **재해시하지 못함**. 정식 상태 아이콘 Chill `1f3ac724590a2d490cbe4a7cd28856c8ce5d888b130dde46a7d0008e6a3d0a16` / Frostbite `b814b1df3b0a5dbba46205d3b6edf91339cc4f45d118ec19ac53afab43c89a03` / Necrosis `da2f175d50c47961df4c2fe6a227219a594ac9c3b0874c2c50e9edf39644be9d`는 **이번에 실파일 SHA 재검증 3/3 일치**. 승인 아트6 원본 파일 실제 변경0.
+- **실제 유일 신규 이미지: OFFLINE 설명 비교판** `Issue89_ColdVisual_TargetedReview_OFFLINE.png` **1680×1090**, SHA `19d23af2782b2840222db8e391ddb3bc92b64f8e9b0cf4f217b81ec998019bdf`. 승인 아이콘128을 40px 실축소한 밝은설원/어두운HUD 동일크기 비교 + 휠체어/태온·안내 HUD를 추상 그린 B안 수치 도식. Unity 실제 캡처 아닌 **OFFLINE**. 자세한 표적권고 실물 `Issue89_ColdVFX_Readability_TargetedRecommendations_20261111.md` SHA `d9fbd5bfd693e21f6560865830bf9b29c56bedba08a156165744dd38c11f5ec0`. 둘 다 ChatGPT Library `/LIMITLESS/Issue89_ColdVisual_Readability_20261111/` 업로드 성공.
+- [Codex Unity B 레이아웃 7쌍/50PASS](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6624142188)과 [아이콘+B 최종 8장 시각 PARTIAL](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6628636928) **결과만 재사용**. 40px 휠체어/VFX 가시알파 8px, 128px Sprite뒤·24px 하향, 960 상태2행, 1680 HUD경계8px B 기준 KEEP. 남은 설원40px 아이콘 단독 구별·128px 휠체어 뒤 효과 가림·태온/휠체어/좌하단안내 간섭은 **Codex Sorting/오프셋/상태텍스트·HUD 안전영역 TARGETED_LAYOUT_FIX 우선**, 새 스프라이트 제작/원본 재색칠0. 기존 실제 11/04 Unity 캡처는 사용자 PC 로컬에만 있어 **본 세션 원본 이미지 직접 열람 불가**, 화면별 좌표나 새 시각 PASS 추정 금지.
+- **현재 `APPROVED_ART_6_KEEP / OFFLINE_BOARD_ONLY / TARGETED_LAYOUT_FIX_RECOMMENDED / VISUAL_PARTIAL / CURRENT_UNITY_SCREENSHOT_NOT_AVAILABLE / NOT_UNITY_APPLIED_THIS_TURN`**. 승인6 아트 재승인 불필요, 배치/원본 적용은 대표 별도 승인 게이트. 원본 Unity·Scene/Prefab/BattleUI/태온·휠체어·Save/UserData·main 직접 커밋/원격Push/병합0.
+
+
 ## 2026-11-11 / Issue #91 — Chapter3 BattleBG v2 최종 승인용 실제 원본 비교·후열 위험판 2개
 
 - [#91 11월11일 최신 병렬 지시](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6781032360)에 따라 기존 **Snowroad v2** `339beeb80d313c589cf50842fc9f6964049b0752e783d83ac8a7097c768205ab` 및 **F2 FirstSnowForest v2** `4d57949a1a9d2ae5600d4ba1b95989153fed6a0d8f47f8fc52e6f670a013535a` 실제 원본 해시 재확인·바이트 KEEP. **신규 게임배경 PNG0 / v3 제작0 / Unity 적용0**.
