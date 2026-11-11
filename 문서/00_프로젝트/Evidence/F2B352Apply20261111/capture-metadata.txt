@@ -1,0 +1,3 @@
+Applied|1280x720|UnityEditor.GameView.RenderView|batch=True|camera=(2.00, 0.00, -10.00)|ortho=5|player=(2.00, 0.00, 0.00)|screen=1280x720|overlayCanvases=7
+Applied|960x720|UnityEditor.GameView.RenderView|batch=True|camera=(2.00, 0.00, -10.00)|ortho=5|player=(2.00, 0.00, 0.00)|screen=960x720|overlayCanvases=7
+Applied|1680x720|UnityEditor.GameView.RenderView|batch=True|camera=(2.00, 0.00, -10.00)|ortho=5|player=(2.00, 0.00, 0.00)|screen=1680x720|overlayCanvases=7

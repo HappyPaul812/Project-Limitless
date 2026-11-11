@@ -1,3 +1,15 @@
+## 2026-11-11 Issue75 — B352 본편 연결 검증 완료 / 원본 FF 대기
+
+**UNITY_DELTA_QA_PASS / LOCAL_COMMITTED / ORIGINAL_SYNC_PENDING / REMOTE_NOT_PUSHED**.
+
+- 바울 대표의 “어. 승인.”으로 최종5파일 범위 승인. 제품 **c951e0c533ac5e1a12090ea446fb05c8fd91fd61**, 별도 codex/f2-b352-original-apply-20261111. Builder/FirstSnow/meta4신규+F2Scene1수정, 새그림0·기존GUID교체0. 기존 Scene 블록 불변·Root/Builder 연결57줄만 추가.
+- Unity6000.6.5f1 신규 **Runtime35+Scene작성2=37PASS/0FAIL**. 마을→F2 자동Start352·중복방지·3화면비·휠체어왕복·퇴장/재입장/두번째퇴장 자원해제 PASS. 기존24/68/90/81/33 전수 반복0. 게임Runtime/C#오류0, 격리 Search/MCP Editor환경OPEN 별도.
+- 1280 파일럿 대비 Owl 동결프레임 영역2467픽셀차이, 그밖0. Sprite 배치·회전·Sorting 동일. 960/1680 HUD viewport안·길 확인. 기존 나무/Stump/Owl/Collider/HUD 유지·남쪽길 HUD 일부가림 기존한계 유지.
+- 원본 시작main7e8c9f1b, 보호5130파일/649825058bytes 백업·SHA·dirty302/untracked550 동일. 모든 검사PASS로 안전FF 준비완료이며 실제 반영·최종SHA는 후속 완료기록/Issue75/Temp Final.json 참조.
+- [5파일·실화면·QA·동기화 보고](Issue75_F2_B352_OriginalApply_20261111.md). 다음: 안전FF 및 원본 import/compile 확인 후, 바울 대표가 새Play→서릿길마을 북문→F2에서 최종실플레이 확인.
+
+---
+
 ## 2026-11-10 EOD — 승인 작업 통합·로컬 안전 동기화 마감
 
 실제 EOD 검증 완료: 원본 main에 e999b4c310b519138cfb3315f1b2d7bd00e54ea0을 FF-only/no-autostash 반영했습니다. 사용자 상태302/550 byte-exact 동일, 보호8244개 SHA 동일, 허용 인계문서2개만 변경, Unity 제품 변경0. Unity6000.6.5f1·Scene·Play·선택·포커스 유지, 컴파일 중 아님·Console 오류0. 최종 완료 기록 commit도 같은 방식으로 반영하며 최종 SHA는 Temp/EOD20261110/Final.json 및 Issue 댓글에 기록합니다.

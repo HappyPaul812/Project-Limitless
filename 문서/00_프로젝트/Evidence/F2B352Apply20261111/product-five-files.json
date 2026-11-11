@@ -1,0 +1,29 @@
+[
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/World/F2SnowPathBuilder.cs",
+    "bytes": 12598,
+    "sha256": "11d5aa07e9f5c8448267640f709a7c6bd34698b59912ddc7c5b85da1b5ba12c8"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/World/F2SnowPathBuilder.cs.meta",
+    "bytes": 62,
+    "sha256": "4122dc02035acb3579ea41c63efec4a683183cb809b0ed66cfc2d713efa309c0",
+    "guid": "6dc8e6f8a6804021aa21cf12e31105f3"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Resources/F2_FirstSnow_GroundOverlay_v1_CANDIDATE.png",
+    "bytes": 109769,
+    "sha256": "61141ace90d5c64c2277da0cb7e27d9674bce6c05f276fb3b9801cd05ffa272a"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Resources/F2_FirstSnow_GroundOverlay_v1_CANDIDATE.png.meta",
+    "bytes": 4310,
+    "sha256": "abb404ef0d1fe7267032c41687e9f7a3bdceda190a2050b363990c6fa32b070b",
+    "guid": "1f2b49e1abdb4374b2376945c6778c10"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scenes/World_NorthF2_CANDIDATE.unity",
+    "bytes": 73537,
+    "sha256": "b2cea7d31de20dabf5314720262a8978bd78e67723f7660f8a2ad282f3862029"
+  }
+]

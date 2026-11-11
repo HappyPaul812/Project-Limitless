@@ -1,0 +1,77 @@
+[
+  {
+    "file": "Applied_GameView_1280x720.png",
+    "bytes": 1985813,
+    "sha256": "b08c6ae4bd384ad2dff04d16928799c340a3ce8cda85faab9e4bd138ca91db27"
+  },
+  {
+    "file": "Applied_GameView_1680x720.png",
+    "bytes": 2497112,
+    "sha256": "3fdf487cb4563cca8765b9b2b99a0332ec5cfd902dcd1b1ad6c0e4ae228edf3a"
+  },
+  {
+    "file": "Applied_GameView_960x720.png",
+    "bytes": 1479693,
+    "sha256": "977a8f9cb6f989eeec54523d2bc87776fa49a2fa6a13986b521b6c433053ab1f"
+  },
+  {
+    "file": "capture-metadata.txt",
+    "bytes": 466,
+    "sha256": "fbdf9e4214fc63fb85cb071daf98067884997c0181f3b1698525b0c571d2fc10"
+  },
+  {
+    "file": "checks.txt",
+    "bytes": 1212,
+    "sha256": "71c72003e570d9f132b8968ccff2f98944d6d64347ff849cebea3b07492734fb"
+  },
+  {
+    "file": "comparison.json",
+    "bytes": 533,
+    "sha256": "76ff2658a5e4841405525606511742cd340060c8e8683bf9bf5dc2b70f936246"
+  },
+  {
+    "file": "EnvironmentErrors.txt",
+    "bytes": 1044,
+    "sha256": "b6505725227dab536a515bb2e178615d2911372a69b452710f61d877111e620e"
+  },
+  {
+    "file": "Errors.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "file": "hud-layout.txt",
+    "bytes": 410,
+    "sha256": "ee6c295901aa01b2a8b7bd9f94270d96b002422adfa2e8059bc468d0a77e9327"
+  },
+  {
+    "file": "original-editor-before-ff.json",
+    "bytes": 322,
+    "sha256": "cd39d0367078fd519af1b6b0111d34a2b5610a3c0ed9f8357ab9279fc4236c39"
+  },
+  {
+    "file": "physics-trace.csv",
+    "bytes": 1718,
+    "sha256": "f1372634776c9a9b78ff91461b47c83c8d0e7d3be8b1d41bc658481c98af0f95"
+  },
+  {
+    "file": "product-five-files.json",
+    "bytes": 1118,
+    "sha256": "b97d05731728de59173f51420d571ab6c94e68fb7cc1ec454615e622ddf10bf3"
+  },
+  {
+    "file": "scene-authoring.txt",
+    "bytes": 84,
+    "sha256": "7f1307bb4f9ae05e4db4b5c4b1a09da9555d7489145ae42c1bcb4ff949e51c34"
+  },
+  {
+    "file": "sprites.txt",
+    "bytes": 62212,
+    "sha256": "2cd8d50380434894379eb2bb253c964483e2fd39de9525778ae55ff93cb73182"
+  },
+  {
+    "file": "summary.json",
+    "bytes": 581,
+    "sha256": "3f5c7cdd4bfab36723f0d8223dbad66e954c36a4efb193b1271439b22dffc050"
+  }
+]

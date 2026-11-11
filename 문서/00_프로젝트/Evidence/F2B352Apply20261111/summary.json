@@ -1,0 +1,21 @@
+{
+  "status": "UNITY_DELTA_QA_PASS_ORIGINAL_SYNC_PENDING",
+  "runtimePass": 35,
+  "authoringPass": 2,
+  "fail": 0,
+  "productCommit": "c951e0c533ac5e1a12090ea446fb05c8fd91fd61",
+  "productFileCount": 5,
+  "newGUIDs": 2,
+  "newMetaFiles": 2,
+  "originalStartMain": "7e8c9f1b701b0f817c965bbb82941248181ac588",
+  "originalApplied": false,
+  "protectedBackupFiles": 5130,
+  "protectedBackupBytes": 649825058,
+  "approval": "2026-11-11 user chat: 어. 승인.",
+  "unityVersion": "6000.6.5f1",
+  "gameViewSizes": [
+    "960x720",
+    "1280x720",
+    "1680x720"
+  ]
+}

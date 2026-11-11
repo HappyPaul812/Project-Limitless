@@ -1,0 +1,28 @@
+{
+  "differentPixels": 2467,
+  "bbox": [
+    872,
+    469,
+    941,
+    537
+  ],
+  "spriteManifestEqual": true,
+  "sceneExistingBlocksChanged": [
+    "9223372036854775807"
+  ],
+  "newSceneBlocks": [
+    "62728938",
+    "62728939",
+    "62728940"
+  ],
+  "unityRuntimeChecks": 35,
+  "authoringChecks": 2,
+  "owlCanvasScreenBounds": [
+    870,
+    468,
+    943,
+    540
+  ],
+  "owlCanvasSource": "EncounterPosition=(5.7,-2),512px/PPU512/scale1; Camera(2,0)/ortho5/1280x720",
+  "differentPixelsOutsideOwl": 0
+}
