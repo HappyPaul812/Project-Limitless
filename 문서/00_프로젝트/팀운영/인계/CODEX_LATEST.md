@@ -1,3 +1,14 @@
+## EOD 2026-11-11 — 승인 문서 로컬 통합 / 원격 main Push HOLD
+
+**LOCAL_APPROVED_DOC_SYNC / REMOTE_MAIN_PUSH_HOLD / USER_WORK_PRESERVED / DAY_NOT_CLOSED**.
+
+- 실제시작main469b219ffbdbf4c8e5b51e977bbe2940eb6119a2, origin/main bfd281545632877325f5d21e04cefb924042c465. 원격은조상/로컬67커밋선행. 승인제품anchor11/11이미포함·게임재적용0. 누락승인보고8/최신인계3+EOD보고/CODEX/CURRENT만 별도codex/eod-approved-main-push-20261111에서선별, 문서커밋을로컬FF-only/no-autostash로동기화합니다. 최종main은동기화후본EOD브랜치HEAD이며실제SHA는Issue85/Temp/EODApprovedPush20261111/Final.json에기록합니다.
+- **Push 미실행**: 전체전송이력67커밋/721경로에97992cda의로컬사용자meta보관5개 및미채택PilotBee비교원본·생성검사기포함. 이번제외조건과충돌하며삭제커밋만으로부모이력전송을막을수없습니다. FF-only/강제정리금지조건아래임의이력재구성/범위확대0. REMOTE_MAIN_PUSH_SUCCESS/DAY_CLOSED 선언0.
+- private백업8322/1220459912bytes·원본/백업SHA일치·dirty302/untracked550보호. Unity6000.6.5f1/compileidle/Console0·Scene/Play/선택/포커스보존. 새코드0이므로81/99/68/46전수반복0. 키패턴검출0/50MiB이상0이나모든기밀부재보증아님. 원격protectedfalse/rulesets[]/push권한확인, protection상세API403/우회0.
+- [전체감사/승인대조](../../EOD_20261111_Integration_PushAudit.md), [전송전체명세](../../EOD_20261111_PushScope_Manifest.md). OGA03/09/06/16·BG사용자수용, Owl정식81PASS제품469b219f는대표새실플레이 PENDING. VFX소유자/몸체밀집PARTIAL·동상/동결괴사/정화Ⅱ/아이템/Discord/C SnowEdge/OGA20HOLD유지. 추가작업자동시작0.
+
+---
+
 ## 2026-11-11 Issue95·91 — 승인 아트4종 원본 로컬 적용 완료
 
 **APPROVED_ART_4_LOCAL_ORIGINAL_APPLIED / UNITY_IMPORT_DELTA_QA_PASS / USER_REALPLAY_PENDING / REMOTE_NOT_PUSHED**.

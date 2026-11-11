@@ -1,3 +1,9 @@
+## EOD 2026-11-11 선별 확정 상태
+
+OGA03/09는 최종 미술·Unity46+Import14·대표실플레이 수용까지 완료(#57 6791260745), OGA06/16도 USER_REALPLAY_ACCEPTED. 아래 예전 승인대기 표기는 해당 작성시점 HISTORY입니다. 승인 원본 SHA2/2와 월드PPU/Pivot은 유지하며 548cf1e2가 현재469b219f의 조상입니다. HP/MP(f5f3a07a), Snake8(485a8dff), Bee/Spider(b5a41b30/ac12abb0)의 승인 제품도 이미 main에 포함되어 재적용0. 신규PNG/시안/OGA20/HOLD 작업 복사0. 원격아트팀 a4639a58의 승인된 최종 미술 보고서만 Markdown으로 선별 보관했습니다.
+
+---
+
 ## 2026-11-03 Owl·Spider 최종 미술 승인 / Bee 표적·권리 계약 조사
 
 **Owl Attack4 / Spider Walk8 USER_ART_APPROVED** 확정. #84 기존 Unity37PASS 재사용·재실행0. Owl ZIP d6648b7451dc2184c2187c0b1c2f8e0f52fc800ac6975753d0f6d38f6fbf9192 / Spider ZIP 771bd1813608aa3e350c6124ab0d43293c6d2988b1833014da64484d5272c8da 동결. 기존 Idle·정지원화 보호·추가 재작화 금지. Owl VFX HOLD, Spider 발 접지·미끄러짐 NOT_VERIFIED / WALK_CONTACT_HOLD, Organic Attack8/Shoot8 미제작. 과거 미술 승인 대기는 이번 승인으로 해소됐습니다.

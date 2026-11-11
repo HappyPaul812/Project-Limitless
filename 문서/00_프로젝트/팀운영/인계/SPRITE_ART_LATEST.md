@@ -1,3 +1,9 @@
+## EOD 2026-11-11 선별 확정 상태
+
+#91 Snowroad/F2 v2 승인 원본2종은 d40bb170으로 본편 적용·107+Import16 근거와 대표 수용 기록이 있습니다. #95 NPC06/16 함께 기존 적용 보호. #75 B352 c951e0c5 포함. #85 정식 Owl 한기1회 패턴469b219f/신규81PASS 원본 적용, 대표 새 실플레이는 PENDING. 냉기 VFX/Icon6 원본 KEEP, 소유자 식별/몸체 밀집 PARTIAL 유지. docs/art-new 3644200d를 통째로 합치지 않고 승인 BattleBG 최종 시각보고만 선별했습니다. C SnowEdge/동상/동결괴사/정화Ⅱ/아이템·신규미술 구현0.
+
+---
+
 ## 2026-11-03 Owl·Spider 최종 미술 승인 / Bee 표적·권리 계약 조사
 
 **Owl Attack4 / Spider Walk8 USER_ART_APPROVED** 확정. #84 기존 Unity37PASS 재사용·재실행0. Owl ZIP d6648b7451dc2184c2187c0b1c2f8e0f52fc800ac6975753d0f6d38f6fbf9192 / Spider ZIP 771bd1813608aa3e350c6124ab0d43293c6d2988b1833014da64484d5272c8da 동결. 기존 Idle·정지원화 보호·추가 재작화 금지. Owl VFX HOLD, Spider 발 접지·미끄러짐 NOT_VERIFIED / WALK_CONTACT_HOLD, Organic Attack8/Shoot8 미제작. 과거 미술 승인 대기는 이번 승인으로 해소됐습니다.
