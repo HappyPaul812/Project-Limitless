@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-11 EOD — #85 Animation16.0.1 격리 PackageManager 해석 PASS, Lock drift20 및 컴파일 HOLD
+
+- [Codex 사용량 제한 패키지 조사 결과](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6794708108) 확인. 분리 조사 브랜치 `codex/issue85-animation1601-isolated-20261111`, 보고 commit `a66d494103468f93a4bc31cada7871284c03ede6`(문서3만). Unity6000.6.5f1 빈 격리 bootstrap의 Package Manager API에서 승인 후보 직접 dependency53개 + Animation15.1.0→16.0.1 **해석 PASS**. **실제 Unity 프로젝트 compile 실행 전 종료**해 기존 `CS1061`6건 해결은 **NOT_VERIFIED**.
+- 생성된 lock과 기존 clean 후보 lock 차이 **20항목** 중 읽기 전용 대조상 **17은 기존 후보 lock 비정합**, **2는 빈 검증 bootstrap의 기본 builtin**, **1은 Animation 버전 변경**. 2 builtin은 새로운 Animation의 직접 필수 의존성으로 확정하지 않음. 20항목 전체를 승인 패치로 적용 금지. 향후 승인 검토 파일 범위 `Unity/Client/Packages/manifest.json`, `Unity/Client/Packages/packages-lock.json` 두 파일. ProjectVersion 변경 필요성 새 발견0, 기존 Clean 후보 commit SHA는 그대로 보호.
+- **기획 판정:** `PKG_RESOLVE_PASS / LOCK_DRIFT_RECONCILIATION_REQUIRED / CS1061_FIX_NOT_YET_VERIFIED / CLEAN_RELEASE_TECH_HOLD / REMOTE_MAIN_PUSH_HOLD`. 사용자 전달 usage 화면 기준 5시간 남은 15%, 주간 32%; 신규 복잡한 Unity/GUID Codex 작업을 같은 회차에 재시도하지 않고 기존 문서와 원본 작업 보존. 다음은 사용량 여유 때 `기존 lock baseline17 항목 분류→builtin2 제거 여부 판정→정확 Animation 의존성의 최소 manifest/lock 격리 후보→Unity6000.6.5f1 실제 compile` 순서. 실패 시 HOLD/제품원본 적용 금지. 이어서 별도 6개 projectile GUID 참조 그래프 읽기 전용 감사.
+- `Clean Release` 원래 후보 `61fdc6902a6d0c4d109c36b308a3b8889e7aaac7`, 원본 local main `d360813667d2ee47515067b8dd07c1a599efec15`, remote main `bfd281545632877325f5d21e04cefb924042c465` 불변. Save/UserData·사용자 dirty/untracked·Editor 원형 보존; 원격 Push0, main 이동0, GUID 조사0. 기존 #85 Owl 첫한기 실플레이 사용자 수용도 별도 pending.
+- 이 기획 회차는 GitHub `docs/planning` 문서만 기록하며 PC Unity/Save/Git 원본에 손대지 않음.
+
+---
 # PLANNING / 2026-11-11 EOD Clean Release 기술 HOLD — 패키지 호환성·기존 GUID 중복 별도 해결 필요
 
 - [Codex Clean Release 검증 보고](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6794286678): `codex/eod-clean-main-candidate-20261111` 후보 `61fdc6902a6d0c4d109c36b308a3b8889e7aaac7`, remote main 원부모 `bfd281545632877325f5d21e04cefb924042c465`, 승인제품235 파일 SHA일치/누락0, 승인문서41+후보 추가2, 새 Git 객체332개 비전송 대상0. 기존 로컬 main `d360813667d2ee47515067b8dd07c1a599efec15` 변경0, 사용자 Save/UserData·Editor 보호. **원격 Push 미실행**.
