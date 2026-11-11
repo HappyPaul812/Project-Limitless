@@ -1,6 +1,8 @@
 # Issue75 — 승인 B352 본편 연결·Delta QA / 2026-11-11
 
-**UNITY_DELTA_QA_PASS / LOCAL_COMMITTED / ORIGINAL_SYNC_PENDING / REMOTE_NOT_PUSHED**
+**F2_B_LOCAL_ORIGINAL_APPLIED / UNITY_DELTA_QA_PASS / USER_REALPLAY_PENDING / REMOTE_NOT_PUSHED**
+
+원본 로컬 main에 **da34c933dbc889b9926f74a43c08fad2ca260a45**까지 FF-only/no-autostash 반영했습니다. 원본 Unity의 백그라운드 AssetDatabase 갱신·컴파일 후 Builder 타입과 신규 두 GUID, FirstSnow PPU128/중앙Pivot을 확인했고 Console 오류0입니다. 기존 Scene/dirtyfalse/PlayOFF/selectionnull을 유지했습니다. 보호5130개 중 승인 Scene1개만 변경·나머지5129 SHA 동일, 사용자 dirty302/untracked550 status byte-exact 동일, 제품5파일 Git blob 일치입니다. 이 완료 영수증 문서도 작업브랜치에서 commit 후 FF-only로 반영하며, 최종 문서 포함 main SHA는 Issue75 결과댓글과 원본 Temp/F2B352Apply20261111/Final.json에서 확정합니다.
 
 ## 승인과 제품 범위
 
@@ -59,7 +61,7 @@ Save/UserSettings는 격리 Audit 경로를 사용했습니다. 원본 Save는 �
 
 시작 원본 main **7e8c9f1b701b0f817c965bbb82941248181ac588**. 원본 보호5,130파일/649,825,058bytes를 별도 Temp/Backup에 저장·SHA 재읽기 일치 확인했고, FF 직전 전체 SHA와 tracked dirty302/untracked550 status가 동일함을 확인했습니다. 개인 보호 manifest/Save/백업은 commit·GitHub에 올리지 않습니다.
 
-현재 이 보고 commit 시점은 원본 FF 대기입니다. 제품5파일과 관련 보고·상태 문서만 반영하며, 충돌0·HEAD일치 조건에서 `--ff-only --no-autostash`를 사용합니다. 원본 반영 후 자동 Import/컴파일/Console와 Scene·Play·선택을 읽기 전용으로 확인하고 최종 영수증을 추가합니다. 최종 완료 상태와 종료 SHA는 후속 완료 기록·Issue75 결과댓글·원본 Temp/F2B352Apply20261111/Final.json에서 확인합니다.
+제품5파일과 관련 보고·상태 문서만 충돌0·HEAD일치 조건에서 `--ff-only --no-autostash`로 반영했습니다. 원본 Editor가 비활성 상태여서 자동 Import가 보류된 것을 실제 타입/빈 GUID 조회로 확인하고, 포커스 전환 없이 MCP Refresh/컴파일을 요청했습니다. 완료 후 Builder 타입 로드·Script/Snow GUID 일치·PPU128·Pivot(128,128)·Console0·원래 Scene/Play/선택 유지까지 확인했습니다. 원본에서 Play를 새로 시작하거나 F2를 열어 검증하지 않았으며, 원본 적용 제품은 격리37PASS 실행본과 동일합니다. 완료 근거는 original-editor-imported.json 및 original-apply-receipt.json입니다.
 
 원격 Push/Merge·main 직접commit·reset/clean/stash0. 배치 캐시 복제는 완료를 확인한 뒤 실행했고 준비 중 과거 전수 QA 실행0입니다.
 

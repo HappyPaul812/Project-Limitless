@@ -1,5 +1,5 @@
 {
-  "status": "UNITY_DELTA_QA_PASS_ORIGINAL_SYNC_PENDING",
+  "status": "F2_B_LOCAL_ORIGINAL_APPLIED / UNITY_DELTA_QA_PASS / USER_REALPLAY_PENDING",
   "runtimePass": 35,
   "authoringPass": 2,
   "fail": 0,
@@ -8,7 +8,7 @@
   "newGUIDs": 2,
   "newMetaFiles": 2,
   "originalStartMain": "7e8c9f1b701b0f817c965bbb82941248181ac588",
-  "originalApplied": false,
+  "originalApplied": true,
   "protectedBackupFiles": 5130,
   "protectedBackupBytes": 649825058,
   "approval": "2026-11-11 user chat: 어. 승인.",
@@ -17,5 +17,11 @@
     "960x720",
     "1280x720",
     "1680x720"
-  ]
+  ],
+  "mainAfterFirstFF": "da34c933dbc889b9926f74a43c08fad2ca260a45",
+  "unchangedProtectedFiles": 5129,
+  "approvedChangedProtectedFiles": [
+    "Unity/Client/Assets/_Project/Scenes/World_NorthF2_CANDIDATE.unity"
+  ],
+  "originalImportCompileConsolePass": true
 }

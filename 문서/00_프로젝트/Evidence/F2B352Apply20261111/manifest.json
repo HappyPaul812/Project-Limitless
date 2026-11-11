@@ -45,9 +45,19 @@
     "sha256": "ee6c295901aa01b2a8b7bd9f94270d96b002422adfa2e8059bc468d0a77e9327"
   },
   {
+    "file": "original-apply-receipt.json",
+    "bytes": 836,
+    "sha256": "e84b3748e86e3ea254e162721d20410cee3825adab95fc7d3c8453ac3564e5a8"
+  },
+  {
     "file": "original-editor-before-ff.json",
     "bytes": 322,
     "sha256": "cd39d0367078fd519af1b6b0111d34a2b5610a3c0ed9f8357ab9279fc4236c39"
+  },
+  {
+    "file": "original-editor-imported.json",
+    "bytes": 616,
+    "sha256": "f50cce0d1ae171d6900829680524d6696cd851d7377e1b00885d212a7bbc0412"
   },
   {
     "file": "physics-trace.csv",
@@ -71,7 +81,7 @@
   },
   {
     "file": "summary.json",
-    "bytes": 581,
-    "sha256": "3f5c7cdd4bfab36723f0d8223dbad66e954c36a4efb193b1271439b22dffc050"
+    "bytes": 877,
+    "sha256": "f7d059cc1b3125bd88f5649953b7be47f95a6c8238a38e2fd2c03ef3a21a5caa"
   }
 ]

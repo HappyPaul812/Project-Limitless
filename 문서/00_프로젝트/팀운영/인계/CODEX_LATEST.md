@@ -1,11 +1,12 @@
-## 2026-11-11 Issue75 — 승인 B352 제품5파일 / 원본 안전FF 대기
+## 2026-11-11 Issue75 — 승인 B352 제품5파일 원본 적용 완료
 
-**UNITY_DELTA_QA_PASS / LOCAL_COMMITTED / ORIGINAL_SYNC_PENDING / REMOTE_NOT_PUSHED**.
+**F2_B_LOCAL_ORIGINAL_APPLIED / UNITY_DELTA_QA_PASS / USER_REALPLAY_PENDING / REMOTE_NOT_PUSHED**.
 
 - 사용자 최종 승인 “어. 승인.”. 제품commit **c951e0c533ac5e1a12090ea446fb05c8fd91fd61**(정확5파일). 신규 Builder/FirstSnow+meta4·F2Scene1, 기존컴포넌트/블록불변·Root/Builder57줄추가. GUID6dc8e6f8a6804021aa21cf12e31105f3 / 1f2b49e1abdb4374b2376945c6778c10. 새그림·Pine/Shrub/C/HUD이식0.
 - Unity6000.6.5f1 새37PASS/0FAIL: 실제입장자동Start352/중복방지·3화면비·휠체어왕복1회·퇴장/재입장/2차퇴장 소유자원해제. 파일럿33·기존24/68/90/81 전수반복0. Owl그림영역 밖1280픽셀0·배치manifest동일, 기존HUD가림은유지. Runtime/C#오류0·기존Editor환경OPEN분리.
 - [상세·실제GameView·정확5파일](../../Issue75_F2_B352_OriginalApply_20261111.md), Evidence/F2B352Apply20261111. 원본보호5130/649825058bytes 백업·SHA/status302·550 동일. 시작main7e8c9f1b, branch codex/f2-b352-original-apply-20261111.
-- 안전FF 전 상태입니다. 완료 후 원본Import/Console/Scene·Play·선택·보호 재확인 및 후속 완료기록/Issue75에 최종main SHA를 기록합니다. main직접commit/원격Push/Merge0. 이후 바울 대표 새Play→기존Main24 북문→F2 실플레이 확인만 남깁니다.
+- 원본main7e8c9f1b→제품/보고da34c933 FF-only/no-autostash 완료. 포커스 전환 없이 원본Refresh/compile 후 Builder로드·GUID2·PPU128/중앙Pivot·Console0·기존Scene/dirtyfalse/PlayOFF/selectionnull 유지 확인. 보호5130 중 승인Scene1만 변경·나머지5129SHA 동일·status302/550 byte-exact 동일. 완료문서도 작업브랜치commit→FF하며 최종SHA는 Issue75/Temp Final.json 참조.
+- main직접commit/원격Push/Merge0. 추가 적용 승인 대기 없음. 바울 대표 새Play→기존Main24 서릿길마을 북문→F2 굽은길 왕복·퇴장/재입장 실플레이 확인만 남깁니다.
 
 ---
 

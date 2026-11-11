@@ -1,0 +1,21 @@
+{
+  "status": "F2_B_LOCAL_ORIGINAL_APPLIED / UNITY_DELTA_QA_PASS / USER_REALPLAY_PENDING",
+  "originalStartMain": "7e8c9f1b701b0f817c965bbb82941248181ac588",
+  "mainAfterProductFF": "da34c933dbc889b9926f74a43c08fad2ca260a45",
+  "productCommit": "c951e0c533ac5e1a12090ea446fb05c8fd91fd61",
+  "unityRuntimePass": 35,
+  "sceneAuthoringPass": 2,
+  "fail": 0,
+  "protectedFiles": 5130,
+  "unchangedProtectedFiles": 5129,
+  "approvedChangedProtectedFiles": [
+    "Unity/Client/Assets/_Project/Scenes/World_NorthF2_CANDIDATE.unity"
+  ],
+  "userStatusByteEqual": true,
+  "productFiveFilesMatchGit": true,
+  "originalImported": true,
+  "originalConsoleErrors": 0,
+  "originalScenePlaySelectionPreserved": true,
+  "mainSceneSHA256": "b2cea7d31de20dabf5314720262a8978bd78e67723f7660f8a2ad282f3862029",
+  "remotePushed": false
+}
