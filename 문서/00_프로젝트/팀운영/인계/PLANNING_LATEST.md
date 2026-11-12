@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-12 — Push 업무 재개: Clean Release 패키지 호환/투사체 GUID 게이트 후 안전한 원격 main FF
+
+- 바울 대표 11/12 오후 직접 “좋은 오후~ 오늘은 어제 이어서 푸시 작업부터 하자.” → **Push 작업 재개 승인**. [Issue #85 차기 Codex 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6815666478). 기존 게임 콘텐츠 작업 재개 아님, 어제 막힌 Clean Release만 우선. 통과 조건 충족 시 기존 승인대로 **원격 main 일반 FF Push 1회** 허용하되, 로컬 main ref 비FF 교체·이력강제·미승인 패키지 변경 금지.
+- 상태 기준은 Codex 실제 PC 재조회 우선: local main `d360813667d2ee47515067b8dd07c1a599efec15`, origin/main `bfd281545632877325f5d21e04cefb924042c465`, clean release 후보 `61fdc6902a6d0c4d109c36b308a3b8889e7aaac7`, 승인제품235 파일 SHA 동일, Git 신규 객체332개 exclude0. 이전 67개 과거 local-only history 병합/전송 금지.
+- 어제 `com.unity.2d.animation` 16.0.1 PackageManager **API 해석 PASS이지만 Unity6000.6.5f1 실제 CS1061 6건 해결 NOT_VERIFIED**. 기존 lock diff20 = baseline 미정합17 + empty bootstrap 기본 built-in2 + Animation 변경1. 실제 clean 프로젝트 해석 기준으로 17/2 원인·필요성 분리, `Unity/Client/Packages/manifest.json`·`packages-lock.json` 2파일 범위의 최소 패치만 격리 시험, 실제 Import/컴파일 error0 증빙. 새 의존성 변경 확대 필요/기타 제품변경이면 HOLD.
+- 기존 origin/main부터 존재하는 투사체 `.meta` GUID 중복6파일은 참조그래프 읽기전용 조사. Scene/Prefab/Resources 실제 영향·asset 소유 구분; 고위험이면 HOLD/승인요청, baseline 보관본이며 신규 위험 없다는 확인 있으면 독립잔여이슈 추적. 무단 GUID 재발급/기존 asset deletion 금지.
+- Codex `codex/issue85-clean-release-repair-20261112` 별도 worktree → 패키지 최소 Delta compile → GUID read-only → 승인제품235 sha·Git 추가 객체/비밀·Save·미승인 Temp·라이선스·브랜치보호·현재원격fast-forward 전수게이트. 모든 PASS이면 `origin` 원격 `main` 정상 non-force FF Push, 서버 ref 재조회. 실패시 HOLD/Push 미실행. 기존 local main·dirty302/untracked550/Save/UserData·원본 Editor·구 Clean 후보 원형 보존. **remote push 성공 후에도 local main은 clean history와 달라 자동 FF 정렬 불가**, 별도 백업/사용자 승인을 거쳐야 함.
+- Owl 사용자 F2 실플레이 `USER_REALPLAY_PENDING` 유지. 기획은 GitHub docs/planning/Issue만 기록하며 PC local Unity/Git·원격 main Push 직접 수행0. 상태 `PUSH_WORK_RESUMED / TECH_GATES_PENDING / REMOTE_NOT_YET_PUSHED / LOCAL_MAIN_PRESERVED`.
+
+---
 # PLANNING / 2026-11-11 EOD — #85 Animation16.0.1 격리 PackageManager 해석 PASS, Lock drift20 및 컴파일 HOLD
 
 - [Codex 사용량 제한 패키지 조사 결과](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6794708108) 확인. 분리 조사 브랜치 `codex/issue85-animation1601-isolated-20261111`, 보고 commit `a66d494103468f93a4bc31cada7871284c03ede6`(문서3만). Unity6000.6.5f1 빈 격리 bootstrap의 Package Manager API에서 승인 후보 직접 dependency53개 + Animation15.1.0→16.0.1 **해석 PASS**. **실제 Unity 프로젝트 compile 실행 전 종료**해 기존 `CS1061`6건 해결은 **NOT_VERIFIED**.
