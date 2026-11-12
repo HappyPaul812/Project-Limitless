@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-12 저녁 — QA 디스크 관리 규칙 확정 / 코덱스 정리 작업 중단
+
+- 바울 대표가 **격리 프로젝트 복제 최소화·작업 종료 시 재생성 캐시 정리·작업 전후 F: 여유 공간 측정·Discord 전면 보호**를 공식 운영 규칙으로 문서화하라고 요청. 정본: [LIMITLESS_QA_DISK_STORAGE_POLICY_20261112.md](../LIMITLESS_QA_DISK_STORAGE_POLICY_20261112.md), `docs/planning` 문서 커밋 `989e50fb905be5c9212182e079b3a06f920896a9`.
+- 11/12 마지막 정리 보고 **F: 319.848 → 326.250 GB (6.402 GB 회수)**. 사용자 화면 **5시간 잔여75% / 주간 잔여13% / 크레딧0**를 기준으로 **오늘 추가 코덱스 호출·디스크 정리 중단**. 값은 화면 확인 시점 기준이며 자동 실시간 모니터링이 아님.
+- 기존 Unity6000.6.5f1 / Issue #85 Import·Compile HOLD / Discord 보존 / 원격 main Push 금지 / local main·Clean Release·Save·미Push 작업 보호. 새 사용자 승인 없이 QA worktree 전체 삭제·대량 재복제 금지. 향후 새 격리 QA는 기존 환경 재사용과 종료 정리까지 완료 기준으로 관리.
+- 이 회차는 GitHub `docs/planning` 문서화만 수행, 사용자 PC 파일 변경·코덱스 실행·GitHub main Push 모두 **0**.
+
+---
+
 # PLANNING / 2026-11-12 오후 — #85 Clean Release HOLD 실제 보고 접수 및 PSD/GUID 후속 방향
 
 - [Codex 11/12 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6815892799) 검수. 브랜치 `codex/issue85-clean-release-repair-20261112`, 로컬 보고 커밋 `e2718597a28f82adf1d1837cd31a8f7f53ca58fc`. **Push 조건 미충족으로 원격 Push 명령 미실행** 판정이 옳음.
