@@ -1,3 +1,14 @@
+# PLANNING / 2026-11-12 오후 — #85 Clean Release HOLD 실제 보고 접수 및 PSD/GUID 후속 방향
+
+- [Codex 11/12 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6815892799) 검수. 브랜치 `codex/issue85-clean-release-repair-20261112`, 로컬 보고 커밋 `e2718597a28f82adf1d1837cd31a8f7f53ca58fc`. **Push 조건 미충족으로 원격 Push 명령 미실행** 판정이 옳음.
+- Unity **6000.6.5f1** 격리 Batch Import: Animation 15.1.0→16.0.1 변경으로 기존 `SetChecked/IsChecked` CS1061 6건 소멸. 그러나 PSD Importer **14.0.3** 내부 `Toggle.IsHovered` CS1061 1건 신규 발생해 **전체 컴파일 FAIL**. Unity 공식 6000.6 출시 패키지 `com.unity.2d.psdimporter@15.0.1` ([공식 문서](https://docs.unity.com/en-us/engine/6000.6/manual/packages-list/packages-all/pack-safe/com-unity-2d-psdimporter))이므로 **15.0.1은 합리적 격리 시험 후보일 뿐, 해결 PASS 아님**. 패키지 manifest/UPM lock의 기존 17개 baseline 재해석 + Animation1=총18 변경, 불필요한 bootstrap2 불포함. 미승인 연쇄 package diff면 중단.
+- 기존 원격 main부터 같은 GUID를 공유한 BattleProjectiles의 **GoldenArrow1/HealerMagicalProjectile5** 메타6은 서로 다른 실물 PNG이며, 실제 Unity Import에서 중복 경고와 동적 GUID 재지정 발생. `Resources.LoadAll<Sprite>`에 의해 실사용됨. 따라서 보관본으로 제쳐둘 수 없고 **런타임 자산 유실은 아직 NOT_VERIFIED**. GUID 정본 1개를 명시적으로 정한 뒤 나머지 5개만 고유GUID로 변경하는 것은 **미실행 제안**이며 사용자 승인 전 본편 meta 변경/재발급 금지.
+- 승인제품235파일 불변, 신규Git객체341개 제외대상0, 원본8322 파일 SHA 보존, tracked302/untracked550·Save/UserData·Editor 보호. 기존 local main `d360813667d2ee47515067b8dd07c1a599efec15`, 원 clean 후보 `61fdc6902a6d0c4d109c36b308a3b8889e7aaac7`, 원격 main `bfd281545632877325f5d21e04cefb924042c465` 그대로.
+- **차기 권고:** 별도 Codex worktree에서 Animation16.0.1 + PSD Importer15.0.1만 정확한 PackageManager 의존성과 실제 Unity6000.6.5f1 Batch compile/Import로 **격리 시험**, 추가 의존/신규 오류 시 HOLD. GUID6은 정본 소유·참조를 비교표로 작성하고 **5 meta 표적수정 계획만 보고**. 기존 승인 아트/Scene/Save/GUID 본편 원형 보호, 기존 QA 전수 반복 금지. *이 기록은 패키지/GUID 정식 제품 수정 승인도, 원격 Push 승인 조건 충족도 아님*. 실컴파일 PASS 및 GUID 안전 수정 계획에 대한 사용자 후속 승인 후에만 다음 게이트 진행.
+- 상태: `ANIMATION_CS1061_6_RESOLVED_IN_ISOLATION / PSD_IMPORTER_COMPILE_FAIL / PROJECTILE_GUID_RUNTIME_RISK_HOLD / ORIGINAL_PROTECTED / REMOTE_MAIN_PUSH_HOLD / OWL_USER_REALPLAY_PENDING`. 후속 local main 이력 정렬은 여전히 별도 승인 필요. 기획 GitHub 문서만 갱신, 사용자 PC 작업/원격 main Push 실행0.
+
+---
+
 # PLANNING / 2026-11-12 — Push 업무 재개: Clean Release 패키지 호환/투사체 GUID 게이트 후 안전한 원격 main FF
 
 - 바울 대표 11/12 오후 직접 “좋은 오후~ 오늘은 어제 이어서 푸시 작업부터 하자.” → **Push 작업 재개 승인**. [Issue #85 차기 Codex 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6815666478). 기존 게임 콘텐츠 작업 재개 아님, 어제 막힌 Clean Release만 우선. 통과 조건 충족 시 기존 승인대로 **원격 main 일반 FF Push 1회** 허용하되, 로컬 main ref 비FF 교체·이력강제·미승인 패키지 변경 금지.
