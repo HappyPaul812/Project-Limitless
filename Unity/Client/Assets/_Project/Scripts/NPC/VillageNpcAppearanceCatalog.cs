@@ -21,11 +21,11 @@ namespace ProjectLimitless.NPC
             new Dictionary<string, string>
             {
                 ["starter-village-general-shop"] = "VillageNpcSprites/Eldiran/OGA03_GeneralShop_Original_Approved",
-                ["starter-village-equipment-shop"] = "VillageNpcSprites/Eldiran/OGA17_EquipmentShop",
+                ["starter-village-equipment-shop"] = "VillageNpcSprites/Eldiran/OGA17_EquipmentShop_Original_Approved",
                 ["starter-village-healer"] = "VillageNpcSprites/Eldiran/OGA06_Healer_Original_Approved",
                 ["starter-village-bank"] = "VillageNpcSprites/Eldiran/OGA16_Bank_Original_Approved",
                 ["starter-village-party-manager"] = "VillageNpcSprites/Eldiran/OGA10_PartyManager",
-                ["starter-village-training-guide"] = "VillageNpcSprites/Eldiran/OGA02_TrainingGuide",
+                ["starter-village-training-guide"] = "VillageNpcSprites/Eldiran/OGA02_TrainingGuide_Original_Approved",
                 ["starter-village-resident-01"] = "VillageNpcSprites/Eldiran/OGA07_Resident01",
                 ["starter-village-resident-02"] = "VillageNpcSprites/Eldiran/OGA11_Resident02",
                 ["starter-village-resident-03"] = "VillageNpcSprites/Eldiran/OGA13_Resident03",
