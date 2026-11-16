@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-17 / Issue #100 — 설원족제비 Defeat4 패배 애니메이션 후보 납품
+
+- [**11/17 #100 Defeat4 발주**](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6931011521) 및 [**11/16 Hit4 바울 대표 최종 승인**](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6913468404) 확인: **설원족제비 KeyPose·Idle4·Attack4 MouthFix v2·Hit4 4종 모두 USER_ART_APPROVED**. 기존 하단 인계의 `HIT4_USER_ART_REVIEW_PENDING`은 납품 당시 상태일 뿐 현재 유효하지 않음. 기존 승인 4종 실제 SHA 재측정 4/4 일치·바이트 수정0.
+- **이번 새 Sprite 1종** `SnowStoat_M2_Defeat4_2048x512_RGBA_CANDIDATE.png` 2048×512 투명 RGBA/가로4×512셀/우향, SHA256 **`8bc97ce0af5d4896d2259df39972ea018ea1a6e494883349cc3b3065926bfe4f`**. 균형 상실→몸 낮춤→쓰러짐→완전 엎드린 자세 유지. 신규 4포즈 투명 Defeat 원화(2172×724)를 비율 유지 축소·셀 정렬, 기존 네 승인 PNG 직접 재그리기/덮어쓰기 0. 4개 셀 상이, alpha 가장자리0, 마지막은 Hit4와 달리 일어나지 않음.
+- 실물 ZIP **`SnowStoat_Issue100_Defeat4_20261117.zip` 1,454,055bytes / 12entries / SHA256 `34f23d12ee4d4580e72f00ec0deb143b1d5b33aaa6d8d132c6495579961d6ad2`**. CRC PASS, Manifest 내용물 10/10 PASS, SHA256SUMS 내용물+최종 Manifest 11/11 PASS; 자기/순환해시 참조 없음. 512/128/40px 실제 축소 오프라인 비교판 + 비반복 4프레임 GIF 마지막 1.75초 유지 포함. GIF 전반부 프레임 약120ms이며 Unity Animator FPS 검증과 별개. SHA 승인 원본 4종: KeyPose `fd25ef50…`, Idle4 `ee6951b0…`, Attack4 v2 `5175483e…`, Hit4 `dc2c2588…` 정상.
+- [**#100 Defeat4 게임용 시트 제작 보고**](../../Chapter3_SnowStoat_M2_Defeat4_ArtPilot_20261117.md) `docs/art-new` commit **`f70578f9e4fd41c2956413726fe1684f5d4be1fb`**. ZIP/시트/비교판/GIF **ChatGPT Library `/LIMITLESS/Issue100_SnowStoat_Defeat4/` 4개 업로드 성공**. GitHub PNG/ZIP 바이너리 업로드0, 로컬 PC F: 복사0, Unity 실행0.
+- **상태 `FOUR_MOTIONS_PREVIOUS_ART_APPROVED / DEFEAT4_ART_CANDIDATE / USER_DEFEAT4_ART_REVIEW_PENDING / ZIP_CRC_SHA_PASS / UNITY_NOT_APPLIED`**. 대표님 승인 전 펫전용·스탯/MonsterID·Spawn·드롭·Unity 적용0. 기존 Mouse/Owl/환경/보스·Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/main 원형 보호. 원격 main 직접 commit/Push/Merge0.
+
+
 ## 2026-11-16 / Issue #100 — 설원족제비 Hit4 후보 제작 납품
 
 - 바울 대표의 **Attack4 MouthFix v2 미술 승인**이 [#100 기획 최신 기록](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6912398648)으로 확인됨. 기존 KeyPose `fd25ef50528a5f630e44382e3fc40a3df607a267176f758706962a2cbc41e778` / Idle4 `ee6951b0333ba6586b4009ccf51cfd3a397d69f839552fe88a709f9c34bf0633` / Attack4 v2 `5175483e486889736f4f89402ec8a04595491c5c587e51a3f6bbd1365391364a` SHA 실제 불변. 이전 인계의 `USER_V2_ART_APPROVAL_PENDING`은 **그 당시 상태**이며 현재 **3종 승인 완료**.
