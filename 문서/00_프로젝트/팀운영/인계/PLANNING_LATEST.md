@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-16 — 메인 신규 아트 다음 작업: Chapter3 M2 설원족제비 1포즈
+
+- 바울 대표 “메인 쪽 다음 작업 가자 그럼.” → 서리들쥐 A 4모션16프레임 `ART_COMPLETE`를 보호하고, F1~F2의 **두 번째 일반 몬스터 M2 설원족제비(Snow Stoat)** 신규 1포즈 파일럿 발주. 신규 작업 [Issue #100](https://github.com/HappyPaul812/Project-Limitless/issues/100)와 [기획 세부 지시서](../20261116_Chapter3_SnowStoat_OnePose_ArtPilot_Order.md), 문서 commit `6f86289f5af8a9ba2dd33a55d2163a6d0fcfd5a5`.
+- 정본: [북부7종 상세기획](../../../08_몬스터/Chapter3_설빙의폭군_온기의화로_북부몬스터_상세기획_20261014.md) M2; F1/2, 길고 흰 몸·검은 꼬리끝·짧은 다리·전열·단일 물기, 상태이상 없음. 신규 펫 후보 하나이지만 펫 제작/한기 효과/ID·보상·전투수치 미확정. 먼저 승인 서리들쥐/올빼미/Ch2 스타일 비교 가능한 **512² 투명 1포즈 딱1개**와 128/40 축소 검토. 기존 제작 사실 발견 시 재그림0.
+- `docs/art-new` 담당에게 아트 전달 필요. 이슈 등록은 담당 세션 자동 시작이 아님. 사용자 1포즈 최종 미술 승인 전 Idle/Attack/Hit/Defeat나 펫/World/Unity 시스템 제작 금지. Unity6000.6.5f1, Issue85 Package/Import·Push HOLD, 원본/Save/Discord/GUID 보호, 대형QA복제 금지.
+- 기획 자체 GitHub docs/planning 파일·Issue만 변경; 원본 PC Unity/Git local main 조작·원격 main Push0.
+
+---
+
 # PLANNING / 2026-11-16 — 서리들쥐 신규 아트 최종보고 검토 및 마감 접수
 
 - 바울 대표 “메인아트 보고서 확인해” 요청으로 [메인 아트 11/16 실보고](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/Chapter3_FrostFieldMouse_A_FinalArtCloseout_20261116.md)를 직접 확인. `docs/art-new` 문서 `d26f06b966a91dcb03fc352c80dfed96772af81a`, `SPRITE_ART_LATEST` 인계 `e86f4de609a5794790b11278ea2115c4eef802b0`.
