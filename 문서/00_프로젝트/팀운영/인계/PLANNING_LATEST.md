@@ -1,3 +1,15 @@
+# PLANNING / 2026-11-16 EOD 완료 결과 검수 — 로컬 안전 통합·원격 Git 복구브랜치 VERIFIED / 외부 비Git 백업 미완료
+
+- 바울 대표가 **Codex 11/16 EOD 결과 보고 화면** 제출. [Issue #85 Codex EOD 완료 상세 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6914098861)을 확인했으며, 총괄 기획이 GitHub REST ref를 **별도로 재조회**해 **`main=bfd281545632877325f5d21e04cefb924042c465` 유지** 및 **`backup/2026-11-16-safe-checkpoint=9d84b81934a7cff7dcf4bf5083de3f1f45ea7201` 실제 존재·Push 완료** 확인. [복구 브랜치](https://github.com/HappyPaul812/Project-Limitless/tree/backup/2026-11-16-safe-checkpoint).
+- **로컬 main 최종 SHA** `52f84e643d5d860665eadfe1614a30c745209f00`: Codex의 승인 대상 NPC 제품·완료 문서 **26개**의 보호된 통합 후 `FF-only` 동기화 보고. 이 로컬 `main` SHA가 원격 `backup/` SHA나 원격 `main` SHA와 같다는 뜻이 아님. 원격 복구 브랜치는 원격 main/기존 Clean 계보에서 **승인 NPC 제품9경로 + 문서28경로**만 선별한 재구성 계보이며 전체 로컬main 미러/전체 72개 미Push 이력/Release-ready 아님.
+- **원격 보안 게이트:** 신규 Git 객체 **383개(커밋3/tree79/blob301)** 감사 후 일반 Push. 공개 원격에 인증값·Save/개인자료·Discord 파일/미승인 대용량 산출물 넣지 않음. 새 Git 객체 검사와 비교·출처·리스크 검토를 통과했으나 **모든 비밀형태의 절대 부재를 보증한 것은 아님**. 작은 별도 bare Git 저장소 fetch 및 NPC 제품9파일+README 해시검증 보고(다른 물리 PC에서 Unity 재빌드/복구는 미실시).
+- **Issue #85 원격 main Push HOLD 계속 유지:** Unity6000.6.5f1에서 검증된 Release Import·GUID 최종 PASS 부재. **Git에 커밋된 패키지** Animation15.1.0/PSD14.0.3/Tooling3.0.1와 **현재 미커밋 Working Tree** 16.0.1/15.0.1/4.0.1이 다르고, 실사용 projectile 6meta는 **커밋된 tree에 GUID 중복**, working tree에는 고유 GUID6으로 별도 미커밋 상태. 제품 변경·패키지 실험·GUID 강제수정0, User Editor Unity6000.6.5f1 보호. 일부 로컬 Import·컴파일이 정상이었다는 사실이 외부 복구 Release PASS 의미는 아님.
+- **F: 내부 보호/백업:** 기존 사용자 dirty **302 / untracked 550** 보존, local branch210개·remote 없는 커밋 있는 branch171개 / worktree160개(그중 오래된76개 조회 timed out, clean 오판 금지). 보호파일 **8342/8342 SHA 대조**. 로컬 `AllLocalRefs.bundle` 1.48GB/418refs + EOD 문서 bundle 85KB 검증했으나 **동일 F: 드라이브**라 외부 백업이 아님. Downloads 1479개 자료 목록만 정리. **안전한 비공개 외부 저장 장소·암호화/실제 복원 검증 미확보**: 승인 Art ZIP/PNG·TTS·영상·Save/UserData·Discord 설정/키·미커밋/untracked·전체로컬 Git 이력을 다른 PC에서 완전히 복구 가능하다고 주장 금지.
+- **F: 여유공간 감소** 약 `322.47GB→320.99GB` (주로 로컬 Git bundle 생성), 신규 대형 QA Unity 복제/불필요한 정리 없음. 외부 비Git 백업과 오래된76 worktree 안전 상태 확인은 다음 별도 작업 우선순위; 지금은 오늘 종료 지시 따라 **자동 추가 작업0**.
+- **최종 게이트:** `LOCAL_SYNC_DONE / BACKUP_BRANCH_PUSH_DONE / REMOTE_MAIN_PUSH_HOLD / OFFSITE_NON_GIT_BACKUP_INCOMPLETE / DAY_CLOSED`. [복구 관련 기획 계획서](../20261116_EOD_Offsite_Recovery_SafeIntegration.md)의 당시 실행 전 PENDING 상태는 이후 이 최신 Codex 결과로 대체; 브랜치별 역사와 권한을 구분.
+
+---
+
 # PLANNING / 2026-11-16 EOD — SnowStoat Hit4 승인·안전 통합/로컬 동기화/원격 복구 및 조건부 main Push 발주
 
 - 바울 대표 “**승인하고 오늘은 여기까지 하자. 지금까지 한 작업들 다 합치고 로컬 동기화 하고. 가능하면 메인 푸시도 해줘. 로컬 컴이 고장나도 다시 이어할 수 있게.**” → **설원족제비 Hit4 최종 미술 승인** 및 하루 종료/안전 통합·원격 복원 최우선. [#100 승인 증거](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6913468404), [#85 안전 통합/조건부 main Push·복원 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6913469590), [2026-11-16 상세 EOD 복구계약](../20261116_EOD_Offsite_Recovery_SafeIntegration.md), 작성 커밋 `a98d42b78a30f0ac49388325f8cf290738facc00`.
