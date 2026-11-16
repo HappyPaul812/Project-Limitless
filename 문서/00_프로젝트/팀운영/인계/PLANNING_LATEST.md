@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-16 저녁 — 설원족제비 Attack4 MouthFix v2 + NPC101 재포장 ZIP 동시 Codex 최소 검수 발주
+
+- 바울 대표 `F:\Downloads\Stoat_Attack4_MouthFix_v2.zip` 전달. 리뉴얼 담당의 #101 잘못된 금발 이미지 정정 보고 수용 후 **“코덱스 검수나 하자 둘 다”**. [Issue #100 Codex 동시 최소검수 발주](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6911678456), [Issue #101 Codex 동시 최소검수 발주](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6911679237).
+- Stoat 담당 [Attack4 MouthFix v2 보고](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6911522213): v2 PNG SHA `5175483e486889736f4f89402ec8a04595491c5c587e51a3f6bbd1365391364a`; 원본 Attack4 v1 대비 1기준 프레임2 입 ROI 1015px/프레임3 575px만 변화, 프레임1/4 0. 공식 납품 ZIP 이름 `Stoat_Attack4_MouthFix.zip` SHA `76e27b0c8d4fcfab09a11f857235755ce759a97572ae96bbb8641ea990388cb4`/852864bytes이며 **대표 제공 이름에 `_v2` 붙음**. Codex F: 실제 파일/PNG 해시·ROI/입 시각 연속성 확인. 기존 승인 KeyPose·Idle4 변경 금지; Attack4 v2 미술 승인 대기.
+- 리뉴얼 담당 [#101 금발 이미지 오류 감사](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6911482906): 채팅 답변에서 독립 이미지 비교 표시를 잘못 삽입한 표시 오류, 실제 OGA10/07 파일 2장과 무관하다고 보고. **대표의 `F:\Downloads\npc101_fix.zip` 재포장 납품 SHA `ee98f2bde1062193f3b9100d9af67ca3b9fc2f17342c5ee30449193d20b2be3e`/287887bytes**는 예전 v2 납품 ZIP `acbc523c6de831bc0d6b6556c36cd28cce297858218e38ca61e5414387063a64`/695127bytes와 **컨테이너 구성이 달라 해시 불일치해도 즉시 오염 단정하지 말 것**. 내부 v2 PNG2 해시 OGA10 `6be1a2d777a312dedd392b8ad6fbb2ba77b350d46d7bd2113d9d11bf09c7e6f3`, OGA07 `640b82a236afd5ca6025d5eb28970009f40941d39eadedeeeea0e180d5034d28` 확인/원본과 픽셀 비교 및 실제 PNG 비교판 원천 검증.
+- 이번 지시는 **읽기 전용 오프라인 Codex 소량 검수**. 기존 QA·Library 자료 재사용; 새로운 대형 Unity worktree, Unity 실행, 게임 적용, 이미지 재생성, 장비/펫 기능 구현 금지. 원본/Save/UserData/Discord·Unity6000.6.5f1·Issue85 HOLD/원격 main 변경0. 문제 없으면 기술 PASS+사용자 시각 승인 게이트 보존, **자동 승인/적용0**.
+- 이 시점 기획은 GitHub `docs/planning` 지시·인계만 업데이트, PC F: 파일 직접 확인이나 Codex 실제 실행은 하지 않음. Codex 검수 결과·원본 해시는 후속 보고 수령 시 확정.
+
+---
+
 # PLANNING / 2026-11-16 17:11 — SnowStoat Attack4 + NPC101 v2 납품 보고 접수·오역 정정
 
 - 바울 대표가 `F:\Downloads\SnowStoat_Issue100_Attack4.zip` 및 `F:\Downloads\npc101_fix.zip` 경로 전달. GitHub 두 담당의 실제 납품·기술 보고 확인. **F: 실제 ZIP은 이 기획 세션에서 직접 열거나 SHA 재확인하지 못했으므로 `F_DRIVE_BINARY_NOT_DIRECTLY_VERIFIED`**; 담당 납품본과 파일명은 대응 가능하나 바이트 동일성 자동 추정 금지.
