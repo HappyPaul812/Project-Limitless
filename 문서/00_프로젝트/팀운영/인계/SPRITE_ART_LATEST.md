@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-16 / Issue #100 — Attack4 v2 비순환 Manifest·SHA256SUMS 메타데이터 정정 완료
+
+- [**Codex 11/16 실물 최종 감사**](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6911980162): Attack4 v2 **2048×512 RGBA, 프레임01/04 불변, 02/03 입 ROI 통과**, 시각 `PNG_KEEP_RECOMMENDED` / 사용자 v2 최종 미술승인 대기. 기존 ZIP `Stoat_Attack4_MouthFix.zip`에는 Manifest 자기참조와 SHA256SUMS 해시 참조 2건의 **METADATA_FAIL**가 있었지만 PNG/SUMS10 및 CRC 원본 자체는 정상.
+- **원본 payload 9개 모두 새 ZIP과 이전 ZIP 간 byte-exact 9/9 동일**. 승인 KeyPose SHA `fd25ef50528a5f630e44382e3fc40a3df607a267176f758706962a2cbc41e778`, Idle4 SHA `ee6951b0333ba6586b4009ccf51cfd3a397d69f839552fe88a709f9c34bf0633` 다시 실제 로컬 파일 SHA 일치. Attack4 v2 PNG SHA **`5175483e486889736f4f89402ec8a04595491c5c587e51a3f6bbd1365391364a` 변함없음.** 새 그림0/기존 Docs/Preview 변경0.
+- 새 `SnowStoat_Attack4_MetadataFix_20261116.zip` **852,900bytes/11entries**, SHA256 `24ce0b771d4cf68e9758828fb892d9043b20eb51bd27bf826e07dedda0d60dc8`, ZIP CRC PASS. Manifest에는 **payload9만** 파일/크기/해시 기록, `SHA256SUMS.txt`에는 **payload9+최종 Manifest=10개** 기록하여 순환 해시 제거. Manifest **9/9 PASS**, SHA256SUMS **10/10 PASS**. 새 Manifest SHA `6de8db70af3c3839607dc3cc8bb96c37151186ac6665dbe62ae92a3004d46bff`, SUMS SHA `aaa7ffcc6a52886a94d1b6424bccc5661c749b15a79ca1e024220a296fa2318c`.
+- [**Issue #100 메타데이터 단독 수정 공식 보고**](../../Chapter3_SnowStoat_M2_Attack4_v2_MetadataFix_20261116.md), `docs/art-new` commit **`69ccde2ed1fe08c0afaa995a0a0937353209ab84`**. **`METADATA_REPACK_COMPLETE / ATTACK4_V2_PNG_BYTE_KEEP / USER_V2_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED`**. 결과 ZIP+수정 메타데이터만 ChatGPT에서 납품; PC F: 자동 복사0, GitHub PNG ZIP 바이너리업로드0, Unity 6000.6.5f1·Issue85 HOLD·Save/UserData·Discord·기존 승인 아트/main 변경0.
+
+
 ## 2026-11-16 / Issue #100 — Snow Stoat Attack4 입/턱 2·3프레임 표적 보정 v2
 
 - 바울 대표 Attack4 사용 전 미술 검토: **공격 흐름은 유지, 2·3프레임의 입·턱이 어색함**. 기존 [Attack4 v1 원본 보고](../../Chapter3_SnowStoat_M2_Attack4_ArtPilot_20261116.md)의 새 파일만 **v2 입/턱 국소 보정**; 기존 1포즈·Idle4 바이트 보존, Frame01/04 RGBA 변경 **각0픽셀**.
