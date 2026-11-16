@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-16 정오 — #99 NPC OGA02·OGA17 원본 로컬 게임 적용 승인
+
+- 바울 대표 **“게임에 넣자. npc.”** → 기존 OGA02 훈련장 안내인 + OGA17 장비상인 미술 승인에 이어 **실제 로컬 게임 외형 적용을 명시 승인**. [GitHub Issue #99 원본 적용 지시 및 안전 게이트](https://github.com/HappyPaul812/Project-Limitless/issues/99#issuecomment-6906279696).
+- **적용 범위:** `F:\Downloads\LIMITLESS_ISSUE99_OGA02_OGA17_NPC_ORIGINAL_ART_PILOT_20261116.zip`의 기존 승인 PNG2 바이트 고정. OGA02 기존 SHA256 `07bdb6368dcab01c85f551b71bd79ba391a3c3f621355664fc6453cb5da98cdf`, OGA17 `1282d90a7f89924e3efaad40679cbc272193bb9e05397765671549d9de646359`. PC 실제 ZIP/PNG SHA·CRC는 Codex가 새로 검사해야 하며 기획은 F: 직접 열지 않음.
+- **Codex 단일 연속 단계:** 실물 SHA → 기존32px/PPU28 기준 월드 표시 높이·발 접지·StableID/훈련·상점 기능을 보존하는 새 독립 Sprite Import 설정 → 기존 Unity6000.6.5f1 격리 환경 최소 Delta GameView QA → **PASS일 때만 제품 최소 경로를 로컬 원본 적용** 및 원본 Import/컴파일 검증. Issue85 Unity 패키지 오류나 사용자 dirty 충돌 발생하면 HOLD, 강제 적용/재설치/패키지 업그레이드 금지.
+- 기존 OGA03/09/06/16 완료/사용자 실플레이 수용, OGA20 HOLD, 다른 리뉴얼·메인 아트·Save/UserData·Discord/원본 Unity Editor와 Git history 보존. 대규모 신규 워크트리·캐시, 기존 전수 QA 반복 금지. 원격 main Push·병합 금지. **이번 기획 세션은 GitHub 문서/Issue 승인 기록만 수정, 사용자 PC 실제 게임 반영 결과는 `PENDING_CODEX`.**
+
+---
+
 # PLANNING / 2026-11-16 — Issue #99 OGA02·OGA17 NPC 2종 사용자 미술 승인 접수
 
 - 바울 대표가 `F:\Downloads\LIMITLESS_ISSUE99_OGA02_OGA17_NPC_ORIGINAL_ART_PILOT_20261116.zip` 전달 후 “내가 npc는 깜빡하고 말 안했구나... 미안.. 좋아...”라고 두 NPC에 대해 명시적으로 긍정. **OGA02 훈련장 안내인 + OGA17 장비상인 원화 2종 USER_ART_APPROVED**, 미술 재제작/재승인 불필요. 기획 공식 판정 [Issue #99 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/99#issuecomment-6906154651).
