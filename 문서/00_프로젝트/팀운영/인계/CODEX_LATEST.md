@@ -1,3 +1,17 @@
+## 2026-11-16 Issue101 — 승인 OGA10·OGA07 v2 원본 게임 적용
+
+**APPROVED_V2_LOCAL_ORIGINAL_APPLIED / DELTA_53_PASS / ORIGINAL_CONSOLE_ERRORS_0 / USER_REALPLAY_PENDING / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- 이번 바울 대표 최종 미술승인/적용지시를 근거로, `codex/npc101-approved-original-20261116` 제품 `81f8a45df4182ad2aa64a71b5408217616b5b3d0` 5파일만 원본에FF-only/no-autostash 반영. PNG2 원본SHA일치·독립GUID, StableID2개 Resources매핑만 교체. main직접commit/Push/PRMerge0.
+- Unity6000.6.5f1·둘다PPU360.5/Pivot(.4990234375,.08203125)/가시높이1.142857WU.960/1280/1680·발접지·이름표·실제E/패드대화·기존6종/타Scene참조 보존 **53PASS**. 주민1은 기존상시이름표숨김 유지. 파티안내인은 초기진행 동적대사 유지, 게임로직 변경0.
+- 원본 Import/compile/실제Resources·GUID·PPU·Pivot/Console error0. QA의 기존UnityEditor.Search색인오류는별도환경로그(전체QA Console0 주장은아님). Issue85패키지변경0/HOLD유지.
+- 기존4678파일SHA대조에서허용카탈로그만변경, 사용자git상태바이트동일. 승인6NPC/OGA20/Scene/Save/UserData/Discord보호. 기존QA/소형worktree재사용, 복제/대형백업/캐시삭제0. 원본Scene/Play/선택/포커스보존.
+- 바울 대표확인: 시작마을서쪽 파티안내인(-6.4,-2.1), 주민1(-3.2,-1.2). 다음은직접실게임확인, 추가아트재작업자동착수없음. 후속Docs최종SHA는Issue101/Temp/Issue101NPC20261116/Final.json기록.
+
+[적용·검증 상세](../../Issue101_OGA10_OGA07_v2_OriginalApply_20261116.md).
+
+---
+
 ## 2026-11-16 Issue #99 — OGA02·OGA17 승인 원화 로컬 원본 적용
 
 **LOCAL_ORIGINAL_APPLIED / APPEARANCE_DELTA_62_PASS / USER_REALPLAY_PENDING / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
