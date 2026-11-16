@@ -1,3 +1,11 @@
+## 2026-11-17 / Issue #102 사용자 원화 승인 및 향후 시작마을 NPC 외형 다양성 의무화 (현재 최신)
+
+- **사용자 최신 결정:** 바울 대표 직접 피드백 "이번 NPC는 이대로 승인하지만, 다음부터는 서로 다른 느낌을 더 강하게 줘라. 플레이어가 마을 사람들이 다 가족처럼 느끼지 않게 해라." **Issue #102 OGA11 주민2·OGA13 주민3 시안은 `USER_ART_APPROVED_AS_IS`**. 기존512 PNG2 바이트 그대로 보존(OGA11 SHA `5fde2e4cfbcdca2839f7da1071dbbbc4b7f239ee85ab7f7b9985be48a5cb91f9`, OGA13 SHA `0b2b5a1a19965eeff4bbdccff0072d25c7881e6695bdc32b146542311be7f849`). **미술 승인과 Unity/로컬 원본 적용은 별개**: `USER_ART_APPROVED / NOT_UNITY_APPLIED`; Codex 최소 DeltaQA/적용은 별도 승인 필요.
+- **신규 공통 제작 기준:** [`Renewal_StarterVillage_NPC_Visual_Diversity_Rule_20261117.md`](../../Renewal_StarterVillage_NPC_Visual_Diversity_Rule_20261117.md) 문서 `docs/art-renewal` commit **`a05753dd4431c805c086bc06a941f123c178184f`**. 개별 캐릭터의 **얼굴형/턱선·눈매/눈썹·헤어/연령 인상·체형 실루엣·의상 색배합·생활 소품**을 더 벌려 동일 마을 주민이지만 한 가족처럼 보이지 않게. 단, 기존 승인 NPC들과 **픽셀 밀도·시점·명암 톤·발 접지** 및 접근성은 유지.
+- **검수·비교판:** 가장 닮은 승인 인물들과 실물 PNG 동배율 512·128·40px로 비교하고 **얼굴/실루엣/복장·소품 차별화 설명**을 짧게 반드시 작성. 검색·무관 인물 이미지 대용 금지. 기존 승인본 수정0.
+- **담당 행동요령 반영:** `팀운영/담당/WORLD_ART_RENEWAL.md` `docs/art-renewal` commit **`d43eed81e87a96b6cb29f6879461c97284af87cf`**.
+- **보호:** OGA02/03/06/07/09/10/11/13/16/17 승인 자산 원화 재작업0. OGA20 남문경비 태온 유사성 HOLD, 추가 주민/초상화/애니메이션 제작0. Unity6000.6.5f1/Issue85 HOLD/원본 Scene·GUID/meta/Save/UserData/Discord/main 전부 변경0. `docs/art-renewal` 문서화만 수행, main 직접 commit/Push/Merge0.
+
 ## 2026-11-17 / Issue #102 — OGA11 주민2·OGA13 주민3 고유 정지 NPC 2종 신규 납품 (최신)
 
 - **실제 제작 파일:** `OGA11_Resident02_Original_512_RGBA.png` 512×512 RGBA SHA256 **`5fde2e4cfbcdca2839f7da1071dbbbc4b7f239ee85ab7f7b9985be48a5cb91f9`**, `starter-village-resident-02` / `OGA13_Resident03_Original_512_RGBA.png` 512×512 RGBA SHA256 **`0b2b5a1a19965eeff4bbdccff0072d25c7881e6695bdc32b146542311be7f849`**, `starter-village-resident-03`. 신규 정지 원화 정확히2, 추가 NPC/초상화/애니메이션 0. 실제 보이는 높이 약410px·발y470, alpha 가장자리0, 비균등 축척왜곡0. 두 인물 모두 시작마을 생활감; 소품에 별도 직업·퀘스트 신규 계약 없음.
