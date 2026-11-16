@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-16 17:11 — SnowStoat Attack4 + NPC101 v2 납품 보고 접수·오역 정정
+
+- 바울 대표가 `F:\Downloads\SnowStoat_Issue100_Attack4.zip` 및 `F:\Downloads\npc101_fix.zip` 경로 전달. GitHub 두 담당의 실제 납품·기술 보고 확인. **F: 실제 ZIP은 이 기획 세션에서 직접 열거나 SHA 재확인하지 못했으므로 `F_DRIVE_BINARY_NOT_DIRECTLY_VERIFIED`**; 담당 납품본과 파일명은 대응 가능하나 바이트 동일성 자동 추정 금지.
+- [#100 Attack4 제작 보고](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6910828231)와 [기획 접수](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6911048043): 승인 1포즈/Idle4 유지, 신규 2048×512 RGBA 4프레임 공격(준비→물기→스냅→회복), PNG SHA `a5f5856115473329d1b1a00a5db1022f1831ec48955e5e34f29b711dfb12141a`, 납품 ZIP SHA `2683a8bdb84595e648f56914944441b856986efee8647c0d2b92a7e5f9b13daf` 보고. `ATTACK4_ART_CANDIDATE / USER_APPROVAL_PENDING / NOT_UNITY_APPLIED`.
+- [#101 HandFix v2 제작 보고](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6910708912) 및 [기획 오역 정정](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6911040411): NPC OGA10·07 v2 512² RGBA 각각 손 영역 **178px /127px**만 변화, 원본 얼굴·복장·눈/명암 유지. v2 PNG SHA `6be1a2d777a312dedd392b8ad6fbb2ba77b350d46d7bd2113d9d11bf09c7e6f3` 및 `640b82a236afd5ca6025d5eb28970009f40941d39eadedeeeea0e180d5034d28`, 납품 ZIP SHA `acbc523c6de831bc0d6b6556c36cd28cce297858218e38ca61e5414387063a64`. `NPC101_V2_ART_CANDIDATE / USER_APPROVAL_PENDING / NOT_UNITY_APPLIED`.
+- **기획 오역 책임:** 바울 대표의 "NPC는 손 볼게 있으면 손보고"는 **필요한 부분을 손보라는 뜻**인데 과거 기획이 '손가락만'으로 오해하여 담당에게 잘못 전달한 것. 작업 담당 실물 보고 내 '대표 손만 지정' 표현은 원래 사용자 의도 아님. 사용자가 이전 NPC 2종 그림을 좋다고 평가했으므로 무조건 전면 재제작하지 말 것. 필요한 시각 수정만, 승인되면 그대로 게임용 적용 단계.
+- 기존 완료 NPC6, OGA20 HOLD, 설원족제비 1포즈·Idle4, Mouse/Owl/Ch1·2·3 승인 아트/Save/UserData/Discord, Unity6000.6.5f1/Issue85 HOLD/디스크 정리 규칙 유지; 추가 Unity QA/원본 적용·원격 main Push/Merge0. GitHub `docs/planning` 기록만.
+
+---
+
 # PLANNING / 2026-11-16 오후 — SnowStoat Idle4 + Issue101 NPC2 재전달 ZIP 최소 기술검수
 
 - 바울 대표 전달 파일: `F:\Downloads\Limitless_SnowStoat_Idle4_REDELIVERY.zip`, `F:\Downloads\Limitless_NPC_101.zip`. Codex가 **둘 모두 기존 정식 납품본 SHA256 일치·CRC/Manifest 해시 정상·기술 PASS**라고 보고. 로컬 검사문서 커밋 `7878275b`. 이 F: ZIP은 기획 ChatGPT 환경에서 직접 열지 않았으며 **Codex 검사 결과를 접수**한 것임.
