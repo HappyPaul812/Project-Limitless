@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-16 / Issue #100 — Snow Stoat Attack4 입/턱 2·3프레임 표적 보정 v2
+
+- 바울 대표 Attack4 사용 전 미술 검토: **공격 흐름은 유지, 2·3프레임의 입·턱이 어색함**. 기존 [Attack4 v1 원본 보고](../../Chapter3_SnowStoat_M2_Attack4_ArtPilot_20261116.md)의 새 파일만 **v2 입/턱 국소 보정**; 기존 1포즈·Idle4 바이트 보존, Frame01/04 RGBA 변경 **각0픽셀**.
+- 신규 시트 `SnowStoat_M2_Attack4_MouthFix_v2_2048x512_RGBA.png` **2048×512 RGBA / 4셀 512² / 우향**, SHA256 `5175483e486889736f4f89402ec8a04595491c5c587e51a3f6bbd1365391364a`. 프레임02 **1,015픽셀** 좌표 bbox `[449,307)-(490,345)`, 프레임03 **575픽셀** bbox `[456,312)-(494,340)`만 바뀌고 **허용 입영역 밖0**. 원본 Attack4 SHA `a5f5856115473329d1b1a00a5db1022f1831ec48955e5e34f29b711dfb12141a` 보호.
+- 실제 ZIP `Stoat_Attack4_MouthFix.zip` **852,864bytes/11entries**, SHA256 `76e27b0c8d4fcfab09a11f857235755ce759a97572ae96bbb8641ea990388cb4`, CRC PASS/내부 SHA256SUMS **10/10 PASS**. 전후 프레임2·3 확대/512·128·40px 실축소·8FPS 오프라인 참고 프리뷰 포함. **ChatGPT Library `/LIMITLESS/Issue100_SnowStoat_Attack4/` ZIP+시트+전후판 업로드 성공**, Windows F: 직접복사/게임 Import0.
+- [**#100 입 타겟 수정 공식 보고**](../../Chapter3_SnowStoat_M2_Attack4_Mouth_TargetedFix_v2_20261116.md) `docs/art-new` commit **`1aaf6feda6fab0837c5ce41cba9e4549e010dfa4`**. **`KEYPOSE_APPROVED / IDLE4_APPROVED / ATTACK4_V2_USER_REVIEW_PENDING / NOT_UNITY_APPLIED`**. 승인 전 Hit·Defeat 제작0. 기존 Mouse/Owl/환경/보스·Unity6000.6.5f1/Save/UserData/Discord/Issue85 HOLD/main 보호.
+
+
 ## 2026-11-16 / Issue #100 — 설원족제비 Idle4 승인 후 Attack4 신규 미술 후보 납품
 
 - **바울 대표 1포즈 승인 + Idle4 승인 확정.** 기존 1포즈 SHA `fd25ef50528a5f630e44382e3fc40a3df607a267176f758706962a2cbc41e778` 및 Idle4 SHA `ee6951b0333ba6586b4009ccf51cfd3a397d69f839552fe88a709f9c34bf0633` 원본 바이트 변경0. 아래 11/16 과거 `USER_IDLE_ART_REVIEW_PENDING`은 제작 당시 이력이며 **현재 Idle4는 승인 완료**.
