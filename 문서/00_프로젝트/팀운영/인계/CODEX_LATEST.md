@@ -1,3 +1,17 @@
+## 2026-11-16 Issue #99 — OGA02·OGA17 승인 원화 로컬 원본 적용
+
+**LOCAL_ORIGINAL_APPLIED / APPEARANCE_DELTA_62_PASS / USER_REALPLAY_PENDING / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- 사용자 최종 적용 승인에 따라 `codex/ch1-oga02-17-original-apply-20261116` 제품 `7b84fa76e8948bb09febdf688898cdaa1ef231c8`의 5파일만 로컬 main에 FF-only/no-autostash 동기화. main 직접 커밋·Push·병합 커밋 없음.
+- Unity 6000.6.5f1 고정. 승인 PNG 원본 SHA 동일. OGA02 PPU357.875/Pivot(.5,.083984375), OGA17 PPU358.75/Pivot(.4990234375,.08203125), alpha≥8 가시 높이 각각1.142857WU.
+- 재사용 QA 960/1280/1680×720·발 접지·이름표/Collider·기존 안내 대화·키보드/패드·잡화점 실제 마우스 구매/판매·가격·Scene 재진입 62PASS. **장비상인 거래는 기존 미구현(N/A); 훈련장은 기존 안내 대화만 유지.** 월드 NPC 마우스 직접 대화도 기존 미지원. 기능 추가 없음.
+- 원본 Import·compile idle·Resources/GUID/StableID 연결 확인, Console error0. 기존4674파일 대조에서 허용된 카탈로그만 변경, 사용자 git status 바이트 동일. OGA03/06/09/16·HOLD OGA20·기존 OGA17 Arbel 참조·Scene/가격/Save/UserData/Discord 보존. 원본 Scene/Play/선택/포커스 조작 없음.
+- 대표 확인: 시작 마을 동쪽 훈련장 관리인(6.4,-2.1), 장비상인(5.8,1.2). E/F 또는 패드 A로 기존 안내 확인. 장비 거래 신규 구현으로 오해하지 않을 것.
+
+[적용·검증 상세](../../Issue99_OGA02_OGA17_OriginalApply_20261116.md).
+
+---
+
 ## EOD 2026-11-11 — 승인 문서 로컬 통합 / 원격 main Push HOLD
 
 **LOCAL_APPROVED_DOC_SYNC / REMOTE_MAIN_PUSH_HOLD / USER_WORK_PRESERVED / DAY_NOT_CLOSED**.
