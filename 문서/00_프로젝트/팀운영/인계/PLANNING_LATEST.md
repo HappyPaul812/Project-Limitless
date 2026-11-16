@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-16 저녁 — Codex 최종 오프라인 결과: Stoat Attack4 v2 PARTIAL(메타만), NPC101 v2 PASS
+
+- 바울 대표 Codex 결과 화면 확인 및 GitHub [#100 실측](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6911980162)·[#101 실측](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6911981684) 대조. 신규아트 Stoat MouthFix v2 **IMAGE_TECH_PASS / PNG_KEEP / MANIFEST_METADATA_FAIL(2항목) / USER_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED**. 이미지 원본 SHA `5175483e486889736f4f89402ec8a04595491c5c587e51a3f6bbd1365391364a`, ZIP SHA `76e27b0c8d4fcfab09a11f857235755ce759a97572ae96bbb8641ea990388cb4`; ZIP CRC·SUMS10/10 PASS. Manifest 자신 항목 expected3347bytes vs actual3644bytes/SHA 불일치 및 SHA256SUMS expected vs actual 해시 불일치로 **11항목 중2 FAIL**. 그림 재제작 금지, **Manifest의 자기/순환참조 제거·SUMS 비순환 해시 목록으로 재패키징만** 담당에게 후속 요청. [#100 기획 결정](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6912055109).
+- NPC101 OGA10·OGA07 손보정 v2 **실물 F: SHA·픽셀 검사 PASS / BINARIES_CLEAN / WRONG_PREVIEW_ONLY / KEEP_RECOMMENDED / USER_FINAL_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED**. SHA OGA10 `6be1a2d777a312dedd392b8ad6fbb2ba77b350d46d7bd2113d9d11bf09c7e6f3`, OGA07 `640b82a236afd5ca6025d5eb28970009f40941d39eadedeeeea0e180d5034d28`; 원본 대비178/127픽셀만 변경, 손 외 0, 금발 이물 캐릭터 ZIP 내 없음. 불필요한 재작화/계속 손보정 중단. [#101 기획 결정](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6912055996).
+- 두 결과 공통: **Unity 미실행·원본 게임 미적용·PNG 재제작0**, 기존 worktree 재사용, Codex 로컬 문서 커밋 `e4bde19fb8585a3d9673af2bb3cb666a02b162fb`, REMOTE_NOT_PUSHED. 기존 NPC6·OGA20 HOLD/KeyPose·Idle4·Mouse/Owl 등 공식아트·Save/UserData·Discord·Issue85 HOLD/Unity6000.6.5f1 보호. 새 Unity QA·대형 프로젝트 복제/원격 main Push·merge 금지.
+- 다음 결재: Stoat v2 시각 승인 및 NPC v2 최종 미술 승인 여부 사용자 확인 후 각 단계 진행; 메타데이터 정리는 **메인 아트 담당의 파일 재패키징만**, Codex 재검사 필요하면 새 PNG 작업 없이 소량 해시/CRC만.
+
+---
+
 # PLANNING / 2026-11-16 저녁 — 설원족제비 Attack4 MouthFix v2 + NPC101 재포장 ZIP 동시 Codex 최소 검수 발주
 
 - 바울 대표 `F:\Downloads\Stoat_Attack4_MouthFix_v2.zip` 전달. 리뉴얼 담당의 #101 잘못된 금발 이미지 정정 보고 수용 후 **“코덱스 검수나 하자 둘 다”**. [Issue #100 Codex 동시 최소검수 발주](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6911678456), [Issue #101 Codex 동시 최소검수 발주](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6911679237).
