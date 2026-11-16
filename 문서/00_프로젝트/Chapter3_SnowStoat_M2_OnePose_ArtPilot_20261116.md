@@ -1,5 +1,7 @@
 # LIMITLESS / 신규 아트 / Chapter3 M2 설원족제비(Snow Stoat) 1포즈 파일럿 — 2026-11-16
 
+> **2026-11-16 후속 대표 승인:** 바울 대표가 원화를 보고 **“족제비 보니까 좋구만...”**이라고 평한 것을 직접 사용자 시각 승인으로 기록합니다. 이 문서의 초기 `USER_ART_REVIEW_PENDING` 문구는 **당시 납품 이력**입니다. 현재 **1포즈는 `KEYPOSE_USER_APPROVED`**이고, [별도 Idle4 제작 보고](Chapter3_SnowStoat_M2_Idle4_ArtPilot_20261116.md)의 **Idle4는 새 미술 검토 대기**입니다. 승인된 1포즈 PNG 바이트 변경0·게임 반영0.
+
 **담당:** 메인 신규 아트 `docs/art-new` · **Issue:** [#100](https://github.com/HappyPaul812/Project-Limitless/issues/100)
 
 **결론:** `ONE_POSE_CANDIDATE_CREATED / USER_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / SAME_SCALE_REFERENCE_PARTIAL / UNITY_NOT_RUN / NOT_ORIGINAL_APPLIED`.
