@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-16 — NPC OGA10·OGA07 로컬 적용 완료 / 설원족제비 Hit4 후보 접수
+
+- 바울 대표 Codex 결과 화면: **OGA10 파티관리인·OGA07 주민1 v2 로컬 원본 게임 적용**, Unity **6000.6.5f1**, 표적 Delta **53/53 PASS**, 원본 Import·compile·Resources 정상, 원본 Console error0 (기존 Editor Search 색인 오류는 별도 환경로그). [Issue #101 Codex 근거](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6913091059). `APPROVED_V2_LOCAL_ORIGINAL_APPLIED / USER_REALPLAY_PENDING / REMOTE_NOT_PUSHED`.
+- 제품 새 PNG2 + 각.meta2 + `VillageNpcAppearanceCatalog.cs` 외형 경로 총 **5파일**만 변경. OGA10 SHA `6be1a2d777a312dedd392b8ad6fbb2ba77b350d46d7bd2113d9d11bf09c7e6f3`, GUID `012b7ee363574fe3900bbd56a472b984`; OGA07 SHA `640b82a236afd5ca6025d5eb28970009f40941d39eadedeeeea0e180d5034d28`, GUID `d3efb2534cda4b699e8f0ba236325209`. 두 PNG 공통 **PPU360.5 / normalized Pivot(.4990234375,.08203125)**, 보이는 높이1.142857WU. 보호된 기존6NPC·OGA20 HOLD·Save/UserData·Discord·기존 Scene/Quest·다른 OGA10 참조 불변.
+- 제품 커밋 `81f8a45df4182ad2aa64a71b5408217616b5b3d0` / 브랜치 `codex/npc101-approved-original-20261116`; 보고·인계 포함 로컬 원본 FF-only 최종 SHA `977f3b6c83793c50d03f44c851d6205d2fe7b2f5`; 원격 Push 없음. 대표 확인 시작마을 광장 서쪽 파티안내인 **(-6.4,-2.1)**, 주민1 **(-3.2,-1.2)**; 주민1 상시 Nameplate 숨김 기존 정책.
+- 바울 대표 `F:\Downloads\SnowStoat_Issue100_Hit4_20261116.zip` 전달 및 “히트가 뭐야? 몬스터가 맞으면 나오는거 맞아?” 질의: **Hit = 비치명타를 포함한 공격 피격 반응**, 전투 HP0이면 Defeat와 구분. 보고상 신규 Hit4 **2048×512 RGBA, 4프레임 (움찔→몸통 후퇴→회복→승인 KeyPose)**, PNG SHA `dc2c2588b4ec3d06766ab042c4297898aebca4f907593a5820ce8cbad2f6aab5`; ZIP **1156630bytes/12entries**, SHA `e058e9610ec90cf9c2f7e8b0f48b5cde42a70fe7319f861d5c53d1736ecaadfc`, 담당 CRC PASS/Manifest10/10/SUMS11/11. [Issue #100 납품보고](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6913048734). **`HIT4_ART_CANDIDATE / USER_HIT4_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED`**. 기획 세션에서 바울 대표 PC F: 실물 ZIP 직접 검사하지 않았음.
+- 승인 KeyPose·Idle4·Attack4 v2 보존, Defeat4 제작·새 펫 스킬/정식 MonsterID/Spawn·Unity 적용 무승인. #85 HOLD·원격 main Push/merge 및 새 대형 QA·Discord 작업 변경0. 이번 기획은 GitHub `docs/planning` 문서만 갱신.
+
+---
+
 # PLANNING / 2026-11-16 저녁 — Snow Stoat Attack4 v2 바울 대표 최종 미술 승인 / Hit4 발주
 
 - 바울 대표가 설원족제비 Attack4 v2 메타데이터 수정본에 대해 **“승인.”**이라고 명시. 최신 바로 전 결재 대상은 **Attack4 v2**이므로 `KEYPOSE_USER_APPROVED / IDLE4_USER_APPROVED / ATTACK4_V2_USER_ART_APPROVED / ART_BYTES_KEEP / UNITY_NOT_APPLIED` 확정. [Issue #100 최종 미술 승인 및 Hit4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6912398648).
