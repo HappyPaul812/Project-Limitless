@@ -1,3 +1,43 @@
+## 2026-11-17 Issue102 — 승인 OGA11·OGA13 로컬 원본 적용
+
+**USER_ART_APPROVED / LOCAL_ORIGINAL_WORKING_TREE_APPLIED / DELTA_53_PASS / ORIGINAL_IMPORT_COMPILE_PASS / ORIGINAL_CONSOLE_ERRORS_0 / USER_REALPLAY_PENDING / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- 승인NPC2 PNG원본SHA보존·독립GUID2·시작마을StableID외형매핑2줄만 교체(제품5파일). OGA11 PPU358.75/Pivot(.4990234375,.080078125), OGA13 PPU360.5/Pivot(.5,.080078125), 가시높이1.142857WU. 기존8/OGA20HOLD/Arbel기존OGA11·Scene/대화/Collider/Nameplate/Save/Discord보호.
+- Unity6000.6.5f1 기존QA재사용53PASS·960/1280/1680/발접지/주민이름표숨김/실제E·패드대화/재진입 PASS. 원본숨김Batch Import·compile·Resources/GUID/PPU/Pivot PASS·Console오류0(경고104). 격리기존Search시작예외별도, Issue85HOLD유지. 창/포커스조작0.
+- 제품 `b7ace6b7f7958b4d74457f4c31db01e667b28856` / codex/npc102-approved-original-20261117. 원본은검증제품5파일 **working tree적용**, mainHEAD52f84e64유지·Merge/Push0. 기존dirty보호위해원본main에제품commit합류를주장하지않음. 완료문서3개만후속Docscommit, 최종SHA는Issue102댓글/Temp/Issue102NPC20261117/Final.json.
+- 확인: 남동주민2(3.2,-2.6), 서쪽주민3(-7.2,0). 일반주민상시이름표숨김정상·E/패드A기존대화. 다음은대표새Play확인; Defeat4승인/Unity적용확대0.
+
+[적용·검증 상세](../../Issue102_OGA11_OGA13_OriginalApply_20261117.md).
+
+---
+
+## 2026-11-17 Issue102·100 — NPC2·SnowStoat Defeat4 오프라인 검수
+
+**FILE_TECH_PASS(각 ZIP) / NPC_STYLE_REVIEW_PENDING / DEFEAT4_ART_REVIEW_PENDING / USER_ART_APPROVAL_PENDING / UNITY_NOT_RUN / GAME_NOT_APPLIED / REMOTE_NOT_PUSHED**.
+
+- NPC102 ZIP c6e2268f…/1436792bytes·CRC/Manifest11/SUMS12 PASS. OGA11/13 512²투명RGBA2장·직접128/40프리뷰4개 픽셀동일·승인NPC8실물SHA동일·비교판10종 라벨/실물일치. 후보 구별가능, 화풍은 OGA07/10에 가깝고 최종승인대기.
+- Defeat4 ZIP34f23d12…/1454055bytes·CRC/Manifest10/SUMS11 PASS·메타순환0. 시트8bc97ce0…2048×512/4셀·분리4셀동일·낮아짐→엎드림→마지막유지/회복0. 128/40보이는RGBA·알파직접축소동일(완전투명RGB차이별도), GIF원본MEDIANCUT변환4/4동일·비반복120/120/120/1750ms. 승인KeyPose/Idle4/Attack4v2/Hit4실물SHA4/4보호.
+- Unity6000.6.5f1·Issue85HOLD·Save/UserData/Discord/승인원본보호. Import/게임적용/Assets수정/Push/Merge0. 기존 소형 문서worktree재사용, codex/art100-102-offline-review-20261117에 문서3개만 로컬commit. 최종SHA/보호대조는Issue100/102댓글·Temp/Art100_102Offline20261117/Final.json. 다음은대표최종미술승인, 적용자동착수0.
+
+[실물·SHA·검수 상세](../../Issue100_102_Offline_DeliveryReview_20261117.md).
+
+---
+
+> 최종확인: 백업8342 SHA PASS·bundle verify0·PNG6동일·기존비보고status동일. 마지막관련commit `e0ac9a1f16aeb9f44c32b2f6ed4aab48089ed702`. F: 321531150336bytes. 외부백업/Unity표적QA HOLD.
+
+## 2026-11-17 Issue85 — 기존 수정 진단·외부 백업 BLOCKED
+
+**OFFSITE_BACKUP_BLOCKED_NO_DESTINATION / STATIC_PASS / UNITY_QA_NOT_RUN_HOLD / REMOTE_NOT_PUSHED**.
+
+- 내부 NVMe/SATA2개·C/D/E/F Fixed만 확인, 승인된 PC 밖 비공개 목적지 미확인. 임의 업로드/암호생성0. 어제 bundle/8342 보호목록 재사용; SHA·보호·실제 F:와 마지막 commit은 Temp/Issue85Resume20261117/Final.json 및 Issue85 댓글에 기록.
+- Git15.1.0/14.0.3/3.0.1·GUID6중복과 원본16.0.1/15.0.1/4.0.1·GUID6고유를 분리. 현재 Assets GUID 중복0. 기존 변경을 재수정/제품커밋하지 않음. 전체 manifest/lock에는 세 패키지 외 기존 차이도 있음.
+- 원본Tooling4 오류대상8파일 읽기 성공. 기존격리Tooling3은 열거되나 일반 긴 경로8파일 읽기 실패. 원인/Import 예외 해소 미확정. A/B 안전조건 중 외부 백업 미충족으로 Import/컴파일/GoldenArrow8·Healer5 실제 로드 NOT_RUN/HOLD. 현재 Unity 프로세스/연결Editor없음·live Console미검증, Editor실행/포커스조작0.
+- 원본main52f84e64 유지·Save/UserData/Discord/승인아트/기존dirty보호. 76오래된worktree NOT_VERIFIED 유지. 기존 소형 문서worktree 재사용, 별도 codex/issue85-existing-fix-audit-20261117 문서만 로컬 commit·Push0. 다음: 승인 외부 암호화 복구수단 확보 후 표적QA 게이트 결정.
+
+[상세 진단](../../Issue85_ExistingFix_OffsiteAudit_20261117.md).
+
+---
+
 ## EOD 2026-11-16 — 안전 통합·원격 부분 복구 / 오늘 개발 종료
 
 **LOCAL_APPROVED_DOC_SYNC / BACKUP_BRANCH_PUSH_DONE / REMOTE_MAIN_PUSH_HOLD / OFFSITE_ASSET_BACKUP_INCOMPLETE / DAY_CLOSED**.
