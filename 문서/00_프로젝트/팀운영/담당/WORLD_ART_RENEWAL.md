@@ -42,3 +42,11 @@
 - 실제 결과 [2026-10-29 두 몬스터 통합 제작/검수 보고](../../Renewal_20261029_ForestSpider_VenomBee_Joint_Offline_Art_Delivery.md): forest_spider 신규 512 RGBA 디자인1포즈·128/40 프리뷰 **DESIGN_REVISE**, 전체 애니메이션0; VenomBee 기존 오리지널1포즈로부터 우향 Idle10+Attack10 개별 PNG/시트/GIF **20개 바이트별 고유 파일 생성**, 그러나 변형 기초 동작이라 실제 날개·다리/독침의 독립 작화가 부족하고 **MOTION_ART_REVISE**. 둘 다 원본 게임 교체 **HOLD**.
 - **이 최신 지시는 Unity/Scene/Prefab/기존 GUID/meta/Save/UserData/독·드롭·AI·Spawn 또는 main 변경 허가가 아님.** 실전 동작 검증과 바울 대표 미술 승인, Codex 격리 QA 후 본편 교체 별도 결재. PilotBee CC BY3/4 충돌은 미해결 유지.
 - 보고서/인계/Issue #60·#63에 실제 ZIP/PNG SHA와 오프라인·Unity 미검증을 구분해 후임이 정확히 인수한다. 일반 NPC 최소투자 원칙 계속 유지.
+
+
+## 2026-11-17 / 신규 시작마을 NPC 외형 다양성 필수 규칙
+
+- **바울 대표 최신 결정:** 2026-11-17 Issue #102 OGA11·OGA13은 기존 후보 그대로 **`USER_ART_APPROVED_AS_IS`**. 승인 NPC 원본 재제작·디자인 변경 금지. 본편 Unity 적용까지 승인한 것은 아님(`NOT_UNITY_APPLIED`).
+- 앞으로 신규 시작마을 NPC는 **화풍·픽셀 밀도·시점·명암·발 접지는 일관되게 유지**하되, **얼굴형·눈매/눈썹·헤어스타일·체형/실루엣·색 배합/의상·역할별 소품**에서 기존 NPC와 차이를 크게 둡니다. 플레이어에게 **한 마을 주민이지 한 가족처럼 보이지 않도록** 합니다.
+- 작업 전 기승인 PNG를 실물 기준으로 대조하고 가장 닮은 NPC와 구별되는 특징을 적어도 얼굴·실루엣·의상/소품 중 여러 차원에서 설명합니다. 512/128/40 **실제 원본 기반 비교판**에서 ‘어떤 NPC와 무엇이 다른가’를 함께 설명합니다. 색상만으로 식별을 맡기지 않습니다.
+- **정본:** [2026-11-17 시작마을 NPC 외형 다양성 공통 제작 규칙](../../Renewal_StarterVillage_NPC_Visual_Diversity_Rule_20261117.md) 참조. 기존 승인품 소급 수정0. NPC 초상화·애니메이션 금지, 사용자 미술 승인 전 Unity 적용 금지. OGA20 경비 태온 유사성 HOLD 유지. `docs/art-renewal`만 문서화하며 main 직접 Commit/Push/Merge 금지.
