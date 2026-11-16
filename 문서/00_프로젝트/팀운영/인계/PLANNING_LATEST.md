@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-16 저녁 — Snow Stoat Attack4 v2 바울 대표 최종 미술 승인 / Hit4 발주
+
+- 바울 대표가 설원족제비 Attack4 v2 메타데이터 수정본에 대해 **“승인.”**이라고 명시. 최신 바로 전 결재 대상은 **Attack4 v2**이므로 `KEYPOSE_USER_APPROVED / IDLE4_USER_APPROVED / ATTACK4_V2_USER_ART_APPROVED / ART_BYTES_KEEP / UNITY_NOT_APPLIED` 확정. [Issue #100 최종 미술 승인 및 Hit4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6912398648).
+- 승인 실물: `SnowStoat_M2_Attack4_MouthFix_v2_2048x512_RGBA.png` SHA256 `5175483e486889736f4f89402ec8a04595491c5c587e51a3f6bbd1365391364a`; 2048×512 RGBA/4셀. 메타 정정 후 공식 ZIP `SnowStoat_Attack4_MetadataFix_20261116.zip` SHA256 `24ce0b771d4cf68e9758828fb892d9043b20eb51bd27bf826e07dedda0d60dc8` (담당 검증 CRC PASS·Manifest9/9·SUMS10/10). 1포즈/Idle4/Attack4 v2 재제작·수정 금지.
+- **메인 신규아트 다음 범위는 Hit4 1시트 파일럿만**, 2048×512 RGBA·4×512. 피격 움찔→후퇴→회복에 집중, 실물512/128/40 비교 및 GIF·비순환 Manifest/SUMS/CRC; 사용자 Hit4 최종 미술 승인 대기. Defeat4/Run·펫 시스템·MonsterID/Spawn/스탯/드롭/Unity Import 자동 시작 금지.
+- **#101 OGA10/OGA07 NPC v2는 별도 건**: Codex 기술 PASS·KEEP 권고이나 사용자의 **최종 미술 승인/게임 적용 승인 아직 별도 미접수**. “승인”을 이 건까지 확대하지 않음.
+- Unity6000.6.5f1, #85 Package/Push HOLD, 승인 공식아트/Save/UserData/Discord/원격 main 유지. 이 기획 세션은 `docs/planning` 인계 및 Issue만 기록, 로컬 PC Unity 조작·실제 Hit4 제작/적용 없음.
+
+---
+
 # PLANNING / 2026-11-16 18:17 — 설원족제비 Attack4 v2 메타데이터 수정 납품 접수
 
 - 바울 대표가 `F:\Downloads\SnowStoat_Attack4_MetadataFix_20261116.zip` 전달. [#100 메인아트 공식 수정 납품 보고](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6912297538)와 [신규아트 인계](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/팀운영/인계/SPRITE_ART_LATEST.md) 확인.
