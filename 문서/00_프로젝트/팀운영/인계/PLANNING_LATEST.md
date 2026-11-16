@@ -1,3 +1,14 @@
+# PLANNING / 2026-11-16 EOD — SnowStoat Hit4 승인·안전 통합/로컬 동기화/원격 복구 및 조건부 main Push 발주
+
+- 바울 대표 “**승인하고 오늘은 여기까지 하자. 지금까지 한 작업들 다 합치고 로컬 동기화 하고. 가능하면 메인 푸시도 해줘. 로컬 컴이 고장나도 다시 이어할 수 있게.**” → **설원족제비 Hit4 최종 미술 승인** 및 하루 종료/안전 통합·원격 복원 최우선. [#100 승인 증거](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6913468404), [#85 안전 통합/조건부 main Push·복원 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6913469590), [2026-11-16 상세 EOD 복구계약](../20261116_EOD_Offsite_Recovery_SafeIntegration.md), 작성 커밋 `a98d42b78a30f0ac49388325f8cf290738facc00`.
+- **SnowStoat KeyPose·Idle4·Attack4 v2·Hit4 4종 중 4개 아트 승인**, Hit4 PNG SHA `dc2c2588b4ec3d06766ab042c4297898aebca4f907593a5820ce8cbad2f6aab5`, ZIP SHA `e058e9610ec90cf9c2f7e8b0f48b5cde42a70fe7319f861d5c53d1736ecaadfc`. **Unity 미적용/Defeat4 미제작**; 오늘 추가 제작/적용하지 않는다.
+- #101 NPC OGA10/07 승인 원화 **로컬 원본 적용 완료**(Codex 53/53 PASS, 원본 local main 최종 `977f3b6c83793c50d03f44c851d6205d2fe7b2f5`, REMOTE_NOT_PUSHED). #99 NPC OGA02/17도 로컬 적용 완료(62/62). 사용자 실플레이 확인은 아직 안 됨. 기존 승인 NPC6 및 OGA20 HOLD/Save/UserData/Discord 보호.
+- **최신 GitHub 원격 main `bfd281545632877325f5d21e04cefb924042c465` / remote ProjectVersion.txt `6000.5.7f1`**, 실제 Unity Editor **6000.6.5f1**. #85 2D Tooling Import USS/UXML 예외 및 BattleProjectiles GUID6 충돌 **HOLD**. 기술 PASS 없이 Release/main Push 금지; 바울 대표의 새 요청은 **안전 조건 통과 시에만 main 일반 non-force Push 허용**. 우선 승인·비밀감사된 커밋을 별도 remote `backup/2026-11-16-safe-checkpoint` 같은 ref로 보존, 공개 저장소에 Discord keys·Save/개인자료·미승인/대형 임시 파일 Push 금지. git 밖 ZIP/PNG/영상/비밀/dirty는 PC와 분리된 암호화 저장소가 있어야 전체 복원 가능.
+- **실행 책임:** GitHub에 기획 인계/Issue/복구계약은 실제 저장. PC F: 직접 접근 불가로 **Codex 통합·로컬 sync·remote main Push·remote backup branch Push·Non-Git offsite data 백업은 이 기획 세션에서 실행하지 않음**. 정확한 `PENDING_LOCAL_CODEX` 및 `REMOTE_MAIN_PUSH_NOT_DONE` 기록. Codex 작업 실행 후 원격 ref 실제 SHA와 보호 감사 수치를 근거로 결과 판정해야 함.
+- **오늘 종료:** 안전 백업/조건부 통합 외 추가 신규 아트/기획·Unity QA 시작 금지, 불확실하면 STOP/HOLD 및 복원 범위 보고.
+
+---
+
 # PLANNING / 2026-11-16 — NPC OGA10·OGA07 로컬 적용 완료 / 설원족제비 Hit4 후보 접수
 
 - 바울 대표 Codex 결과 화면: **OGA10 파티관리인·OGA07 주민1 v2 로컬 원본 게임 적용**, Unity **6000.6.5f1**, 표적 Delta **53/53 PASS**, 원본 Import·compile·Resources 정상, 원본 Console error0 (기존 Editor Search 색인 오류는 별도 환경로그). [Issue #101 Codex 근거](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6913091059). `APPROVED_V2_LOCAL_ORIGINAL_APPLIED / USER_REALPLAY_PENDING / REMOTE_NOT_PUSHED`.
