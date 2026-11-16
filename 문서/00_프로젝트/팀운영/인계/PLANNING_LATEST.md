@@ -1,3 +1,11 @@
+## 2026-11-16 EOD 승인·복구
+
+미술 승인 Stoat4모션/게임미적용. NPC8종 실제로컬적용, 서리들쥐 아트마감. Issue85 Import예외/GUID충돌 HOLD·원격main Push보류. 복구checkpoint는릴리스아님.
+
+원격복구/비Git누락/로컬최종SHA는 [EOD 결과](../../EOD_20261116_SafeIntegration_Recovery.md) 참조. 오늘개발종료·추가작업자동시작금지.
+
+---
+
 ## EOD 2026-11-11 선별 기획 정본 — Push 안전 감사 HOLD
 
 원격 docs/planning eb88d1fb의 승인 결정5개 절만 선별했습니다. 실제 제품469b219f/원격main bfd28154 유지. 원격Push미실행이며 아래 실행지시는 승인기록입니다.

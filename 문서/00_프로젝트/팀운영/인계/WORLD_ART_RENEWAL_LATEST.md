@@ -1,3 +1,11 @@
+## 2026-11-16 리뉴얼 적용 마감
+
+OGA02/17 Delta62PASS·OGA10/07v2 Delta53PASS 로컬적용. 승인NPC8종보존·OGA20HOLD. 다른Scene기존OGA10/17참조유지. PNG재작업0.
+
+원격복구/비Git누락/로컬최종SHA는 [EOD 결과](../../EOD_20261116_SafeIntegration_Recovery.md) 참조. 오늘개발종료·추가작업자동시작금지.
+
+---
+
 ## EOD 2026-11-11 선별 확정 상태
 
 OGA03/09는 최종 미술·Unity46+Import14·대표실플레이 수용까지 완료(#57 6791260745), OGA06/16도 USER_REALPLAY_ACCEPTED. 아래 예전 승인대기 표기는 해당 작성시점 HISTORY입니다. 승인 원본 SHA2/2와 월드PPU/Pivot은 유지하며 548cf1e2가 현재469b219f의 조상입니다. HP/MP(f5f3a07a), Snake8(485a8dff), Bee/Spider(b5a41b30/ac12abb0)의 승인 제품도 이미 main에 포함되어 재적용0. 신규PNG/시안/OGA20/HOLD 작업 복사0. 원격아트팀 a4639a58의 승인된 최종 미술 보고서만 Markdown으로 선별 보관했습니다.

@@ -1,3 +1,17 @@
+## EOD 2026-11-16 — 안전 통합·원격 부분 복구 / 오늘 개발 종료
+
+**LOCAL_APPROVED_DOC_SYNC / BACKUP_BRANCH_PUSH_DONE / REMOTE_MAIN_PUSH_HOLD / OFFSITE_ASSET_BACKUP_INCOMPLETE / DAY_CLOSED**.
+
+- 원본시작main977f3b6c, 별도codex/eod-safe-integration-20261116에서완료Markdown19+담당인계3/EOD/CODEX/CURRENT만선별하여FF-only동기화. NPC02/17·10/07이미적용보존, StoatKeyPose/Idle4/Attack4v2/Hit4미술승인·Unity미적용,Defeat4미제작. 제품/패키지/GUID수정0.
+- **원격backup/2026-11-16-safe-checkpoint=9d84b81934a7cff7dcf4bf5083de3f1f45ea7201 일반Push성공**. 신규383객체전수범위/비밀패턴/금지자료/제외이력0. 빈소형bareGit에HTTPS재fetch하여NPC9파일/README바이트확인. Clean계보선별복구본/릴리스아님/원본main전체미러아님.
+- 원격main=bfd281545632877325f5d21e04cefb924042c465 유지·Push미실행. Issue85 Import예외/Git트리GUID6중복HOLD유지, 현재원본dirty의package/GUID수정과구분. 원본6000.6.5f1/compileidle/기존QA재사용. 기존미커밋package16.0.1/15.0.1/Tooling4.0.1을임의커밋하지않음.
+- 원본dirty302/untracked550·8342파일보호,기존backup8315재사용+delta27만복사/SHA일치. 210branch중미Push171·160worktree목록(81status확인/76timeout/3기존경로불가)·비GitDownloads1479파일목록. Save/UserData/아트/TTS/영상/Discord파일변경0. **비공개외부저장소미확인/비Git오프사이트미완료**. F:백업과로컬bundle은PC고장전체복구아님.
+- 최종로컬SHA/서버SHA/F:여유/로컬bundle결과는Issue85및Temp/EOD20261116/Final.json. 다음은사용자재개지시후외부암호화복구/Issue85별도검증, **오늘추가작업자동시작금지**.
+
+[EOD 전체 결과](../../EOD_20261116_SafeIntegration_Recovery.md).
+
+---
+
 ## 2026-11-16 Issue101 — 승인 OGA10·OGA07 v2 원본 게임 적용
 
 **APPROVED_V2_LOCAL_ORIGINAL_APPLIED / DELTA_53_PASS / ORIGINAL_CONSOLE_ERRORS_0 / USER_REALPLAY_PENDING / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
