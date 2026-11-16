@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-16 오후 — SnowStoat Idle4 + Issue101 NPC2 재전달 ZIP 최소 기술검수
+
+- 바울 대표 전달 파일: `F:\Downloads\Limitless_SnowStoat_Idle4_REDELIVERY.zip`, `F:\Downloads\Limitless_NPC_101.zip`. Codex가 **둘 모두 기존 정식 납품본 SHA256 일치·CRC/Manifest 해시 정상·기술 PASS**라고 보고. 로컬 검사문서 커밋 `7878275b`. 이 F: ZIP은 기획 ChatGPT 환경에서 직접 열지 않았으며 **Codex 검사 결과를 접수**한 것임.
+- [신규 #100 Idle4 기존 납품 보고](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6906336530): 2048×512 RGBA 가로4 ×512², 승인 KeyPose=Frame00, 발 영역 변화0·꼬리 연결 유지. 원본 ZIP 정본 `SnowStoat_Issue100_Idle4.zip` SHA `fa850041d0ed88d30a9e23a7b60e4345f22e2c12b4d01875042fb755970b734d` (재전달 파일명은 별개). **`IDLE4_FILE_TECH_PASS / USER_IDLE_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`**. 1포즈만 이전 사용자 미술 승인; Idle4 시각 승인은 이번 Codex 기술 PASS로 대체하지 않음.
+- [리뉴얼 #101 납품 보고](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6909823447): OGA10 파티관리인 SHA `7a53cbb71544b69e996a06c7b576c9498d0565cc701a9123a6ad9485cd1d18a1`, OGA07 주민1 SHA `940aa98590333b1423ed5f49101c9cf5a146a0079c8e354fc33e0ce943dff798`, 원본 ZIP 정본 SHA `0ec80e1fa546f1ce9cde560bea34f07b3359a0678565d72daec3f711bc232ca5`. Codex는 둘 512²RGBA·투명 외곽과 128/40 축소 일치 기술 PASS 보고. **신규 NPC는 기존 6종보다 눈/음영이 세밀하며, 40px OGA10 세 사람 표식과 작은 소품 가독성 한계**가 명시되어 사용자 미술·화풍 최종 검토 요구. **`NPC101_FILE_TECH_PASS / ART_STYLE_REVIEW_REQUIRED / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`**.
+- 확인 결과는 기존 보고서 재사용이며 Unity 실행·새 Project 복제·원본 게임 변경·PNG 수정·원격 Push/Merge 0. 기존 6 NPC/OGA20 HOLD/Save/UserData/Discord/Unity6000.6.5f1/Issue85 HOLD 보호. 승인을 받으면 메인 아트는 설원족제비 Attack/Hit/Defeat 다음 단계, 리뉴얼은 #101 NPC 2종 후속 Codex 최소 Unity DeltaQA 별도 적용 승인 게이트.
+- 기획 측에서는 라이브러리의 참고 이미지 몇 장을 열람했으나 **재전달 ZIP 최종 PNG 원본과 byte-exact 일치 여부를 확인하지 못했으므로 새 독립 미술 승인으로 표시하지 않음**.
+
+---
+
 # PLANNING / 2026-11-16 오후 — 리뉴얼 신규 NPC OGA10 파티관리인·OGA07 주민1 2종 발주
 
 - 바울 대표: **“리뉴얼 다음 일 시켜줘..”** → **Chapter1 시작마을 OGA10 파티관리인 + OGA07 주민1** 각각 독립 512×512 투명 정지 1포즈 **총 신규2종 아트 파일럿**. 정본 [Issue #101](https://github.com/HappyPaul812/Project-Limitless/issues/101) 및 [기획 제작 계약](../20261116_Renewal_OGA10_OGA07_NPC_TwoPilot_Order.md), `docs/planning` commit `27f654200fcd30718d5a6607a18c0304a03c7374`.
