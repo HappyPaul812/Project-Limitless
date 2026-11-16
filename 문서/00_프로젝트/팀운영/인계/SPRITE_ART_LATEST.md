@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-16 / Issue #100 — 설원족제비 Idle4 승인 후 Attack4 신규 미술 후보 납품
+
+- **바울 대표 1포즈 승인 + Idle4 승인 확정.** 기존 1포즈 SHA `fd25ef50528a5f630e44382e3fc40a3df607a267176f758706962a2cbc41e778` 및 Idle4 SHA `ee6951b0333ba6586b4009ccf51cfd3a397d69f839552fe88a709f9c34bf0633` 원본 바이트 변경0. 아래 11/16 과거 `USER_IDLE_ART_REVIEW_PENDING`은 제작 당시 이력이며 **현재 Idle4는 승인 완료**.
+- **신규 Attack4 시트1장**: `Sprite/SnowStoat_M2_Attack4_2048x512_RGBA_CANDIDATE.png` / 2048×512 RGBA / 가로4×512셀 / 우향 / SHA256 `a5f5856115473329d1b1a00a5db1022f1831ec48955e5e34f29b711dfb12141a`. 동작 00 예비 → 01 입벌림 → 02 단일 물기 → 03 복귀. 기존 승인 1포즈·Idle4 실제 투명 원본 바탕에서 머리·목과 입을 표적 보정했으며 과거 비규격 RGB 생성 결과는 게임용 PNG에 사용하지 않음. 4프레임 상이, 알파 경계0, 발 접지 원본과 y396~511 RGBA 변경0 PASS.
+- **실물 ZIP** `SnowStoat_Issue100_Attack4.zip` 1,092,522bytes / entries12 / SHA256 `2683a8bdb84595e648f56914944441b856986efee8647c0d2b92a7e5f9b13daf`; ZIP CRC PASS / SHA256SUMS 11/11 PASS / 512·128·40px OFFLINE 비교 / 8FPS 검토 GIF / Manifest·출처·QA 노트. 이 대화 파일로 제공, GitHub PNG 저장/Windows F:\ 직접 복사/Unity 실행0.
+- [**#100 Attack4 공식 미술 보고**](../../Chapter3_SnowStoat_M2_Attack4_ArtPilot_20261116.md) `docs/art-new` commit `5f9ec474e7c97e51477b84201378c740f2ceb596`. **현재 `KEYPOSE_APPROVED / IDLE4_APPROVED / ATTACK4_USER_ART_REVIEW_PENDING / OFFLINE_FILE_TECH_PASS / NOT_UNITY_APPLIED`.** Hit/Defeat/펫/MonsterID·EXP·드롭 자동 개발0; 서리들쥐·서리올빼미·환경·보스·Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/main 보호.
+
+
 ## 2026-11-16 / Issue #100 — 설원족제비 1포즈 대표 승인 → Idle4 아트 후보 납품
 
 - 바울 대표 **“족제비 보니까 좋구만...”** → [기존 M2 1포즈](../../Chapter3_SnowStoat_M2_OnePose_ArtPilot_20261116.md) `KEYPOSE_USER_ART_APPROVED` 확정. 첫 공식 원화 승인 SHA256 `fd25ef50528a5f630e44382e3fc40a3df607a267176f758706962a2cbc41e778` 변경0.
