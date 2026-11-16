@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-16 / Issue #100 — 설원족제비 Hit4 후보 제작 납품
+
+- 바울 대표의 **Attack4 MouthFix v2 미술 승인**이 [#100 기획 최신 기록](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6912398648)으로 확인됨. 기존 KeyPose `fd25ef50528a5f630e44382e3fc40a3df607a267176f758706962a2cbc41e778` / Idle4 `ee6951b0333ba6586b4009ccf51cfd3a397d69f839552fe88a709f9c34bf0633` / Attack4 v2 `5175483e486889736f4f89402ec8a04595491c5c587e51a3f6bbd1365391364a` SHA 실제 불변. 이전 인계의 `USER_V2_ART_APPROVAL_PENDING`은 **그 당시 상태**이며 현재 **3종 승인 완료**.
+- **신규 Hit4 PNG 한 장만** `Sprite/SnowStoat_M2_Hit4_2048x512_RGBA_CANDIDATE.png` / 2048×512 RGBA, 가로4개×512² 우향. SHA256 `dc2c2588b4ec3d06766ab042c4297898aebca4f907593a5820ce8cbad2f6aab5`. 00 움찔/고개 반동→01 살짝 후퇴·압축→02 회복→03 **승인 KeyPose/Idle00 픽셀 동일**. 기존 승인 원화 RGBA 기반 국소 변형만 사용, 이미지 생성 비규격 2172×724 시안 **최종 납품 사용0**. 모든 프레임 Ground row y425..511 및 캔버스 외곽 원본 보호, 프레임 구별·알파 PASS.
+- ZIP `SnowStoat_Issue100_Hit4_20261116.zip` **1,156,630bytes/12entries**, SHA256 `e058e9610ec90cf9c2f7e8b0f48b5cde42a70fe7319f861d5c53d1736ecaadfc` **CRC PASS/Manifest 10/10/SHA256SUMS 11/11**, 순환 참조0. 512·128·40 실제 축소 OFFLINE 비교, 검토 GIF 8FPS, Frame4개 QA/출처 문서 수록. **ChatGPT Library `/LIMITLESS/Issue100_SnowStoat_Hit4/`** ZIP·SpritePNG·비교판·GIF 등록. Windows F: 로컬 자동복사0, Unity/게임 정식 적용0.
+- [**Hit4 공식 제작 보고**](../../Chapter3_SnowStoat_M2_Hit4_ArtPilot_20261116.md) `docs/art-new` commit `97f6ba8be3ccf63374fc47f0c0ef952d3c6ec63f`. **`KEYPOSE_APPROVED / IDLE4_APPROVED / ATTACK4_V2_APPROVED / HIT4_USER_ART_REVIEW_PENDING / ZIP_CRC_SHA_PASS / UNITY_NOT_APPLIED`**. 사용자 승인 전 Defeat4·펫/수치/드롭/MonsterID/스폰/Unity 작업 금지, Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/기존 공식 아트/main 보호.
+
+
 ## 2026-11-16 / Issue #100 — Attack4 v2 비순환 Manifest·SHA256SUMS 메타데이터 정정 완료
 
 - [**Codex 11/16 실물 최종 감사**](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6911980162): Attack4 v2 **2048×512 RGBA, 프레임01/04 불변, 02/03 입 ROI 통과**, 시각 `PNG_KEEP_RECOMMENDED` / 사용자 v2 최종 미술승인 대기. 기존 ZIP `Stoat_Attack4_MouthFix.zip`에는 Manifest 자기참조와 SHA256SUMS 해시 참조 2건의 **METADATA_FAIL**가 있었지만 PNG/SUMS10 및 CRC 원본 자체는 정상.
