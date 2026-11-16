@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-16 오전 — 서리들쥐 미술 마감·리뉴얼 NPC02/17 신규 2종 병렬 발주
+
+- 바울 대표 “메인 아트는 들쥐? 완성을, 리뉴얼은 계속 npc 작업 맡겨줘.” → [기획 정본](../20261116_Parallel_Art_MouseCloseout_NPC02_17.md) `docs/planning` commit `16e21eac1ee05161f2c25948c69d6afc138a6ca1`.
+- 신규 아트 [Issue #30 마감 발주](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-6904538244): **Mouse Idle4/Attack4/Hit4/Defeat4 이미 승인, Unity 40PASS 연결**. 승인 원본 재제작 금지. 1포즈/4모션·실물 SHA Final Closeout과 F1/Monster ID/Spawn/보상 실제 상태 분리 보고. 부재가 증명된 별도 추가 Sprite만 사용자 승인 전 견적, 기본 신규이미지0.
+- 리뉴얼 [Issue #99 신규 발주](https://github.com/HappyPaul812/Project-Limitless/issues/99): **OGA02 훈련장 안내인 + OGA17 장비상인** 신규 정지 NPC 각1 포즈(총2). 기존 4종 **OGA03/09/06/16 사용자 미술승인·로컬 원본 적용·실플레이 확인** 보호. OGA20 남문경비 태온 유사 HOLD 유지. NPC 초상화·애니·전체 일괄제작 금지. 기존 게임 stableID/Quest/Collider/Save 등 유지.
+- 각각 `docs/art-new`, `docs/art-renewal` 인계/보고 및 SHA·실물 PNG·미술 승인·Unity 적용 구별. 이슈 등록은 아트 세션 자동 실행이 아니므로 담당 세션으로 전달할 프롬프트 제공.
+- 기존 Unity **6000.6.5f1**, Issue #85 Package/Import 및 Clean Release HOLD; 11/12 디스크 관리 규칙 준수(중복 대형 QA/격리 프로젝트 금지, Discord 전면 보호). 오늘 기획 GitHub 문서·Issue 외 사용자 PC Unity·Save/Git local main·원격 main Push/병합0.
+
+---
+
 # PLANNING / 2026-11-12 저녁 — QA 디스크 관리 규칙 확정 / 코덱스 정리 작업 중단
 
 - 바울 대표가 **격리 프로젝트 복제 최소화·작업 종료 시 재생성 캐시 정리·작업 전후 F: 여유 공간 측정·Discord 전면 보호**를 공식 운영 규칙으로 문서화하라고 요청. 정본: [LIMITLESS_QA_DISK_STORAGE_POLICY_20261112.md](../LIMITLESS_QA_DISK_STORAGE_POLICY_20261112.md), `docs/planning` 문서 커밋 `989e50fb905be5c9212182e079b3a06f920896a9`.
