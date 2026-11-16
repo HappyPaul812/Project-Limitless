@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-16 오후 — 리뉴얼 신규 NPC OGA10 파티관리인·OGA07 주민1 2종 발주
+
+- 바울 대표: **“리뉴얼 다음 일 시켜줘..”** → **Chapter1 시작마을 OGA10 파티관리인 + OGA07 주민1** 각각 독립 512×512 투명 정지 1포즈 **총 신규2종 아트 파일럿**. 정본 [Issue #101](https://github.com/HappyPaul812/Project-Limitless/issues/101) 및 [기획 제작 계약](../20261116_Renewal_OGA10_OGA07_NPC_TwoPilot_Order.md), `docs/planning` commit `27f654200fcd30718d5a6607a18c0304a03c7374`.
+- OGA10 기존 `starter-village-party-manager` / `VillageNpcSprites/Eldiran/OGA10_PartyManager`, OGA07 기존 `starter-village-resident-01` / `VillageNpcSprites/Eldiran/OGA07_Resident01`. 기승인 오리지널 실물 확인되면 중복 신규제작 금지. 새 직업·NPC 서사·파티 기능 추가 X. NPC 정지/초상화 없음, 애니 전프레임 일괄 제작 X.
+- 기존 승인·원본로컬 적용 완료 OGA03/09/06/16/02/17 6종 변경 금지. [#99](https://github.com/HappyPaul812/Project-Limitless/issues/99#issuecomment-6906678804) OGA02/17 Unity62PASS/Console0/로컬FF 완료, **사용자 실플레이는 PENDING**이며 이번 별도 아트 병렬 진행과 혼동 금지. OGA20 남문경비 태온 유사 HOLD, OGA11/13/19 이번 제작 대상 아님.
+- `docs/art-renewal` 담당은 512·128·40 실축소 및 기승인 원본 동일배율 시각 QA, PNG·ZIP/SHA/출처 실제 납품, 인계·이슈 보고. 원화 사용자 미술 승인 전 Unity/원본 제품 교체 X. Unity6000.6.5f1, Issue85 Push HOLD, Discord/Save/UserData 보호, 대형 QA 복제 금지.
+- 이번 총괄 기획은 GitHub `docs/planning` 문서와 Issue만 작성. 실제 이미지 출력/사용자 PC 변경·remote main Push/merge 0.
+
+---
+
 # PLANNING / 2026-11-16 오후 — Issue #99 OGA02·OGA17 게임 원본 로컬 적용 완료 보고 검토
 
 - 바울 대표가 Codex 최종 완료 화면 제출. [#99 Codex 실제 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/99#issuecomment-6906678804)를 대조하여 **`OGA02_OGA17_LOCAL_ORIGINAL_APPLIED / APPEARANCE_DELTA_62_PASS / ORIGINAL_IMPORT_COMPILE_RESOURCES_PASS / CONSOLE_ERRORS_0 / USER_REALPLAY_PENDING / REMOTE_NOT_PUSHED`** 접수.
