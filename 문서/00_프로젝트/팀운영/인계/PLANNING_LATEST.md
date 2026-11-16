@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-16 — 서리들쥐 신규 아트 최종보고 검토 및 마감 접수
+
+- 바울 대표 “메인아트 보고서 확인해” 요청으로 [메인 아트 11/16 실보고](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/Chapter3_FrostFieldMouse_A_FinalArtCloseout_20261116.md)를 직접 확인. `docs/art-new` 문서 `d26f06b966a91dcb03fc352c80dfed96772af81a`, `SPRITE_ART_LATEST` 인계 `e86f4de609a5794790b11278ea2115c4eef802b0`.
+- **기획 미술 마감 판정:** `FROST_FIELD_MOUSE_ART_COMPLETE / USER_ART_APPROVED / 4_MOTIONS_16_FRAMES_KEEP / NO_NEW_ART`. 기존 Idle/Attack/Hit/Defeat 각4, field Idle00, 10/21 Unity 외형40PASS 및 Main22 격리136PASS 근거 재사용. 11/16 새 Unity Play/PNG 재SHA 실행0; 승인 PNG 변경·미술 재승인 금지.
+- **게임 후속은 미완료:** 외형 `MonsterVisuals/FrostFieldMouse.asset` `monsterId` 공란, Main22 `prototype_main22_frost_field_mouse` ID/지정조우 연결은 실제 존재, 별도 정식 일반 MonsterDefinitions/Spawn·수치·EXP/골드·전리품 확정 전. Main22 미구현이라고 주장하지 말 것. 원본 최신 실플레이/Save는 미검증이므로 기획과 Codex가 별도 승인 계약 후 진행.
+- [Issue #30 최종 기획 접수 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-6905357705). 리뉴얼 NPC OGA02/17 신규제작 #99는 독립 진행. Unity6000.6.5f1, Issue85 HOLD/디스크 규칙/Discord 보호, 게임 원본과 GitHub main Push/merge 변경0.
+
+---
+
 # PLANNING / 2026-11-16 오전 — 서리들쥐 미술 마감·리뉴얼 NPC02/17 신규 2종 병렬 발주
 
 - 바울 대표 “메인 아트는 들쥐? 완성을, 리뉴얼은 계속 npc 작업 맡겨줘.” → [기획 정본](../20261116_Parallel_Art_MouseCloseout_NPC02_17.md) `docs/planning` commit `16e21eac1ee05161f2c25948c69d6afc138a6ca1`.
