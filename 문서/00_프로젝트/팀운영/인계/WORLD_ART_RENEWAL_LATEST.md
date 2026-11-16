@@ -1,3 +1,11 @@
+## 2026-11-16 / Issue #101 손 전용 최소 보정 v2 — OGA10·OGA07 수정 파일 납품 (현재 최신)
+
+- **바울 대표 요청:** 원래 OGA10 파티 관리인·OGA07 시작마을 주민1 디자인/복장/얼굴/색감 유지하고 **손의 손가락·주먹 마디만 최소 보완**. 기존 #101 원본 v1 파일 삭제·덮어쓰기0.
+- **수정 512×512 RGBA 2장:** `OGA10_PartyManager_HandFix_v2_512_RGBA.png` SHA256 **`6be1a2d777a312dedd392b8ad6fbb2ba77b350d46d7bd2113d9d11bf09c7e6f3`**, 기존 178px(0.0679%)만 변경. `OGA07_Resident01_HandFix_v2_512_RGBA.png` SHA256 **`640b82a236afd5ca6025d5eb28970009f40941d39eadedeeeea0e180d5034d28`**, 기존 127px(0.0484%)만 변경. 두 원화 모두 **손 허용 영역 밖 픽셀 차이0, alpha 캔버스 경계 접촉0**. 전신 재생성 출력은 실제 수정본에 사용하지 않고 기존 원화에 국소 손 표현만 편집. 최종 변경은 전체 실루엣/의상/안면 포함 전부 보호.
+- **납품 ZIP** `Limitless_NPC_101_HandFix_v2.zip`, 실제 ChatGPT 작업컨테이너 `/mnt/data/Limitless_NPC_101_HandFix_v2.zip` (사용자 F: 자동복사·GitHub 바이너리 Push0). **695127 bytes, ZIP SHA256 `acbc523c6de831bc0d6b6556c36cd28cce297858218e38ca61e5414387063a64`, 13 entries, CRC PASS, Manifest11/11 PASS**. 마스터2, 개별 실제 크기128/40 PNG4, 손 국소 전후512 보드1, 실제 128/40 비교판1, SourceDeclaration/README/QA/Manifest/SHA256SUMS 5 포함.
+- **정식 제작/검수 보고:** [Renewal_20261116_Issue101_OGA10_OGA07_HandOnly_TargetedFix_v2.md](../../Renewal_20261116_Issue101_OGA10_OGA07_HandOnly_TargetedFix_v2.md), `docs/art-renewal`, 실제 report commit **`14abb647411ebf460503287d6bd93eca33a6f36f`**. 원본 6종 OGA02/03/06/09/16/17 `BYTE_KEEP`/로컬 반영 KEEP; OGA20 태온 유사성 HOLD; 기타 주민, 초상화, 애니메이션 추가0.
+- **다음 게이트:** `HAND_ONLY_V2_TARGETED / FILE_TECH_PASS / USER_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED`. 바울 대표 시각 승인 전 Unity6000.6.5f1·Scene·NPC IDs·Save/UserData·Discord·기존 메타·main 변경0, Issue85 HOLD/기존 대형 QA 복제 금지. 승인 후 Codex만 32px/PPU28/월드 발접지·이름표 최소 Delta QA 수행. 512마스터 PPU28 그대로 Import 금지.
+
 ## 2026-11-16 / Issue #101 — OGA10 파티 관리인·OGA07 주민1 신규 오리지널 정지 NPC 2종 실제 파일 납품 (현재 최신)
 
 - **실제 미술 파일럿 2장 제출 완료**: `OGA10_PartyManager_Original_512_RGBA.png` / `starter-village-party-manager` / SHA256 `7a53cbb71544b69e996a06c7b576c9498d0565cc701a9123a6ad9485cd1d18a1`; `OGA07_Resident01_Original_512_RGBA.png` / `starter-village-resident-01` / SHA256 `940aa98590333b1423ed5f49101c9cf5a146a0079c8e354fc33e0ce943dff798`. 각각 512×512 투명 RGBA 한 포즈/alpha 외곽 침범0. 이번 신규 마스터 정확히2장, 초상화·애니메이션0.
