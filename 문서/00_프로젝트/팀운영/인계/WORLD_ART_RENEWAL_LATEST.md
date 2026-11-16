@@ -1,3 +1,12 @@
+## 2026-11-16 / Issue #101 — OGA10 파티 관리인·OGA07 주민1 신규 오리지널 정지 NPC 2종 실제 파일 납품 (현재 최신)
+
+- **실제 미술 파일럿 2장 제출 완료**: `OGA10_PartyManager_Original_512_RGBA.png` / `starter-village-party-manager` / SHA256 `7a53cbb71544b69e996a06c7b576c9498d0565cc701a9123a6ad9485cd1d18a1`; `OGA07_Resident01_Original_512_RGBA.png` / `starter-village-resident-01` / SHA256 `940aa98590333b1423ed5f49101c9cf5a146a0079c8e354fc33e0ce943dff798`. 각각 512×512 투명 RGBA 한 포즈/alpha 외곽 침범0. 이번 신규 마스터 정확히2장, 초상화·애니메이션0.
+- **중복 방지:** [#101](https://github.com/HappyPaul812/Project-Limitless/issues/101), 기획 `20261116_Renewal_OGA10_OGA07_NPC_TwoPilot_Order.md`, 기존 #57/#95/#99, ChatGPT Library `/LIMITLESS_Art_Delivery` 목록에서 기승인 OGA10/07 오리지널 자산을 확인하지 못해 신규 제작. 사용자 PC F: 전수부재 검증은 아님.
+- **납품 ZIP** `LIMITLESS_ISSUE101_OGA10_OGA07_NPC_ORIGINAL_ART_PILOT_20261116.zip`, 모델 작업 컨테이너 `/mnt/data/` 산출물, **1,188,626 bytes / ZIP SHA256 `0ec80e1fa546f1ce9cde560bea34f07b3359a0678565d72daec3f711bc232ca5` / 13 entries / CRC PASS / Manifest11/11 PASS**. 마스터2, 각각128/40 프리뷰4, 승인 NPC6와 신규2 512/128/40 동배율 오프라인 비교판2, 선언·QA·Manifest·SHA256SUMS 포함. 사용자 F: 복사/원격 GitHub PNG·ZIP 업로드0.
+- **상세 정식 보고:** [Renewal_20261116_Issue101_OGA10_OGA07_OriginalNPC2_ArtPilot.md](../../Renewal_20261116_Issue101_OGA10_OGA07_OriginalNPC2_ArtPilot.md), `docs/art-renewal` 실제 보고서 commit `98fd4b210515199af2e78c00fbdb09bd6276a646`. 최신 6종 실물은 읽기전용·바이트 보호. 기존 #99 OGA02/17 승인·로컬적용 62PASS 유지(사용자 최신 실플레이 수용은 별도 PENDING), OGA03/09/06/16 완료 유지. OGA20 남문경비 유사성 HOLD, 다른 OGA11/13/19 미제작.
+- **미술 검토:** 기존 NPC의 단순한 눈/평탄한 명암 대비 신규 후보는 눈/피부 음영이 더 세밀해 `ART_STYLE_REVIEW_REQUIRED`; 40px의 소품 세부 가독성과 시각적 일치 여부는 바울 대표 승인 대기. GIF/Animation/Unity GameView·본편 PPU 측정0. `USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`. Codex는 승인 전 Import 금지, 승인 후 기존 PPU28/32px/월드높이/접지·이름표 최소검수. 512마스터 PPU28 직접 Import 금지.
+- **보호:** 기존 6NPC/원본 Unity6000.6.5f1/Scene·Quest·StableID·GUID/meta/Save/UserData/Discord·Ch1/2 공식 몬스터·펫·환경/main 변경0. 대형 QA 복제0, main 직접 Commit/Push/Merge0.
+
 ## 2026-11-16 / Issue #99 — OGA02 훈련장 안내인·OGA17 장비상인 신규 오리지널 정지 NPC 2종 파일 납품 (최신)
 
 - **근거:** [Issue #99 신규 제작 발주](https://github.com/HappyPaul812/Project-Limitless/issues/99), [기획 공통 계약](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261116_Parallel_Art_MouseCloseout_NPC02_17.md). 기존 기승인 오리지널 후보 OGA02/17 재사용 근거가 #99/#57/#95 및 접근 가능한 Library 검색에서 확인되지 않아 신규 **정확히 NPC 2종 각 정지 1포즈** 제작. 사용자 Windows F: 전체 파일 전수 감사 완료 주장 금지.
