@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-16 / Issue #100 — 설원족제비 1포즈 대표 승인 → Idle4 아트 후보 납품
+
+- 바울 대표 **“족제비 보니까 좋구만...”** → [기존 M2 1포즈](../../Chapter3_SnowStoat_M2_OnePose_ArtPilot_20261116.md) `KEYPOSE_USER_ART_APPROVED` 확정. 첫 공식 원화 승인 SHA256 `fd25ef50528a5f630e44382e3fc40a3df607a267176f758706962a2cbc41e778` 변경0.
+- **Idle4 Sprite Sheet 2048×512 RGBA / 4×512셀 / 우향** 신규 후보1종 `SnowStoat_M2_Idle4_2048x512_RGBA_CANDIDATE.png` SHA256 `ee6951b0333ba6586b4009ccf51cfd3a397d69f839552fe88a709f9c34bf0633`. **Frame00은 승인 KeyPose와 픽셀 동일**, Frame01~03은 흉곽·목·꼬리끝 미세한 호흡/안정 움직임. 4프레임 실제 서로 다르고 바닥 접지 변경0. 다른 방향·Attack/Hit/Defeat/Pet 작업0.
+- **ZIP `SnowStoat_Issue100_Idle4.zip` / 904,015bytes / 12entries SHA256 `fa850041d0ed88d30a9e23a7b60e4345f22e2c12b4d01875042fb755970b734d`**. 실제 CRC PASS / SHA256SUMS 11/11 PASS; 512·128·40px 오프라인 비교 + 8FPS 확인용 GIF 포함, Unity QA 아님. 기존 Mouse/Owl/Chapter2/환경/보스 및 Unity6000.6.5f1/Save/UserData/Discord/Issue85 HOLD/main 원본 불변.
+- [**Idle4 제작/검증 보고**](../../Chapter3_SnowStoat_M2_Idle4_ArtPilot_20261116.md), `docs/art-new` commit **`5d6eb35984c2940f5623ac462a94f19777d485f7`**. `IDLE4_ART_CANDIDATE / USER_IDLE_ART_REVIEW_PENDING / UNITY_NOT_APPLIED`. 승인 전 Game Import·Attack/Hit/Defeat 전개 불가. ChatGPT 대화에 파일 제공; GitHub PNG 업로드/PC F: 자동 복사0.
+
+
 ## 2026-11-16 / Issue #100 — 설원족제비 Snow Stoat M2 1포즈 최초 아트 후보
 
 - 신규 M2 1포즈 **512×512 RGBA 투명 PNG 딱1개**(신규 애니메이션0) 실제 납품. `Candidate/SnowStoat_M2_KeyPose_512_RGBA_CANDIDATE.png` SHA256 `fd25ef50528a5f630e44382e3fc40a3df607a267176f758706962a2cbc41e778`. 기존 Github/Library에서 M2 완성 원화 미발견, Windows F: 로컬 전수 감사 미실행.
