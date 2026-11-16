@@ -1,3 +1,10 @@
+## 2026-11-16 / Issue #101 — 잘못 표시된 금발 비교 이미지 진상 확인 / 실물 PNG PASS (현재 최신)
+
+- **바울 대표의 지적:** v2 보고 화면에 OGA10·OGA07이 아닌 금발 여성 이미지 노출. 이전 응답에서 **실제 PNG를 사용하지 않은 이미지 검색형 화면**을 넣어 출처 불명 무관 이미지를 표시한 답변 오류로 정정. 실물 ZIP 속 대상 PNG에서 금발 제3인물 파일은 발견되지 않음. 금발 이미지의 정확한 서비스 출처/파일명은 확인 불가. 이전 비교 이미지 **검증 증거로 사용 금지**.
+- **실제 파일 직접 검증:** 현재 모델 실행환경 `/mnt/data/npc101_fix.zip`, SHA256 `ee98f2bde1062193f3b9100d9af67ca3b9fc2f17342c5ee30449193d20b2be3e`, 287887 bytes, 2PNG, ZIP CRC PASS. ZIP 안 `OGA10.png` SHA `6be1a2d777a312dedd392b8ad6fbb2ba77b350d46d7bd2113d9d11bf09c7e6f3`, `OGA07.png` SHA `640b82a236afd5ca6025d5eb28970009f40941d39eadedeeeea0e180d5034d28`. 기존 v2 후보 파일과 내용 바이트 일치. 원본 v1 각각 SHA `7a53cbb71544b69e996a06c7b576c9498d0565cc701a9123a6ad9485cd1d18a1`, `940aa98590333b1423ed5f49101c9cf5a146a0079c8e354fc33e0ce943dff798`. 동일512×512 RGBA 좌표 비교 결과 OGA10 손178px·OGA07 손127px만 변화 / 손 허용 영역 밖 변화0.
+- **검증용 정확 비교판:** `/mnt/data/Issue101_Actual_PNG_Verified_20261116/Actual_PNG_Original_vs_v2_512_128_40.png` SHA256 `412f87683ce62ccac49103bd466b6280836ea233ff2bce24fc15a1bdbc4ad817`. 원본과 v2 512·128·40 **실제 PNG만 직접 읽어** 작성; 생성·검색 인물 이미지 사용0. 증거 ZIP `/mnt/data/npc101_verified_actual_pngs.zip` SHA `4c19c12c27cd387c2443e3179bef0788e3aef3fb94fea12fdb6d6ee12a5b8646`, CRC PASS. F: 로컬 파일은 본 도구로 읽지 못하므로 **Windows `F:\Downloads\npc101_fix.zip` 사본 직접검증은 하지 못함**.
+- **상세 보고:** [Renewal_20261116_Issue101_Wrong_Image_Identity_Audit.md](../../Renewal_20261116_Issue101_Wrong_Image_Identity_Audit.md), `docs/art-renewal` 보고서 커밋 `07f14ec9f4287dedad30cb07078e1fba85aa281c`. 원본/보정 v2 기존 파일 수정0, OGA02/03/06/09/16/17 보호, OGA20 HOLD, Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/main 변경0. **`FILES_OK / WRONG_DISPLAY_CORRECTED / ART_REVIEW_PENDING / NOT_UNITY_APPLIED`**.
+
 ## 2026-11-16 / Issue #101 손 전용 최소 보정 v2 — OGA10·OGA07 수정 파일 납품 (현재 최신)
 
 - **바울 대표 요청:** 원래 OGA10 파티 관리인·OGA07 시작마을 주민1 디자인/복장/얼굴/색감 유지하고 **손의 손가락·주먹 마디만 최소 보완**. 기존 #101 원본 v1 파일 삭제·덮어쓰기0.
