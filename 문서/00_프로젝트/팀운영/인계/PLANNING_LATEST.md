@@ -1,3 +1,15 @@
+# PLANNING / 2026-11-17 오전 — 11/16 EOD 인계 재개 / 복구·Issue85 진단 / 신규 Defeat4·NPC102 병렬
+
+- 바울 대표 “굿모닝~ 오늘도 열심히 해보자, 어제 이어서 하자” → 11/16 종료 이후 첫 업무 재개. GitHub 확인: `origin/main=bfd281545632877325f5d21e04cefb924042c465`, `backup/2026-11-16-safe-checkpoint=9d84b81934a7cff7dcf4bf5083de3f1f45ea7201`. 로컬 원본 main `52f84e643d5d860665eadfe1614a30c745209f00`은 전일 Codex EOD 보고이며 원격과 같다고 주장하지 않는다.
+- **Codex 우선:** [Issue #85 재개 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6931010623). F: 내부 Git bundle 1.48GB·8342 보호 SHA·Downloads1479 목록 등을 재사용해 실제 **PC 밖의 검증된 비공개 암호화 저장소** 확인 및 가능 범위 증분 백업. 확인되지 않은 외부 위치/암호 없으면 `OFFSITE_BACKUP_BLOCKED_NO_DESTINATION`; 공개 GitHub에 민감자료 업로드 금지.
+- **Issue #85 재진단:** Git 커밋 Packages `Animation15.1.0/PSD14.0.3/Tooling3.0.1`, working tree `16.0.1/15.0.1/4.0.1` 및 원본 투사체6meta는 working tree에서 각 고유 GUID로 알려짐. 과거 Tooling3 USS/UXML8경로12회 예외·중복GUID6 HOLD를 인지하고 새로 덮어고치지 말 것. 변경 diff/기존 Library·로그 읽기조사 후 기존 격리환경 재사용 가능할 때만 **Unity6000.6.5f1 표적 Import/compile·GoldenArrow8/Healer5 Resources 로드 1회 조건부**. 제품 원본 커밋·main Push·원본 dirty/untracked 조작 금지. 결과 후 최소 적용 결정을 따로.
+- **메인 신규아트:** [#100 Defeat4 1시트 발주](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6931011521). SnowStoat KeyPose/Idle4/Attack4v2/Hit4 모두 사용자 미술 승인(원본 byte KEEP), Defeat4만 2048×512 RGBA/가로4. Hit는 회복, Defeat는 쓰러진 자세 유지. 512/128/40px·비루프 GIF 및 비순환 Manifest/SUMS CRC. 아직 Unity·MonsterID/Spawn·펫 개발X. `docs/art-new` 사용자 Defeat4 최종 검토 대기.
+- **리뉴얼 아트:** [새 Issue #102](https://github.com/HappyPaul812/Project-Limitless/issues/102)로 OGA11 주민2·OGA13 주민3 각각512² RGBA 정지 1포즈2종. 기존 8NPC 승인/원본로컬 적용 보호, OGA20 남문경비 HOLD. 기존 납품 확인 후 미제작만. `docs/art-renewal` 사용자 미술승인 전 Unity 적용X.
+- **공통 규칙:** 단일 목적 소량 아트, 이전 PASS 재검사·대형 Unity QA/project 복제 최소화, 디스크 여유 전후 보고, Discord/Save/UserData/승인아트·미Push/미커밋/미추적 전체 보호. Unity버전 **6000.6.5f1** 혼동 금지. main 직접 commit/Push/merge·force/reset/clean 금지. 이번 기획 세션은 GitHub 발주/문서화만 수행했으며 사용자 PC에 Codex·아트 세션이 자동 실행된 것은 아님.
+- **다음 정리:** Codex 실제 보고를 받은 뒤 외부 백업 범위/Issue85 패키지·GUID 표적 PASS 여부를 판정하고, 메인 Defeat4·리뉴얼 NPC102 실물은 사용자 최종 미술승인 후 다음 단계로 전달.
+
+---
+
 # PLANNING / 2026-11-16 EOD 완료 결과 검수 — 로컬 안전 통합·원격 Git 복구브랜치 VERIFIED / 외부 비Git 백업 미완료
 
 - 바울 대표가 **Codex 11/16 EOD 결과 보고 화면** 제출. [Issue #85 Codex EOD 완료 상세 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6914098861)을 확인했으며, 총괄 기획이 GitHub REST ref를 **별도로 재조회**해 **`main=bfd281545632877325f5d21e04cefb924042c465` 유지** 및 **`backup/2026-11-16-safe-checkpoint=9d84b81934a7cff7dcf4bf5083de3f1f45ea7201` 실제 존재·Push 완료** 확인. [복구 브랜치](https://github.com/HappyPaul812/Project-Limitless/tree/backup/2026-11-16-safe-checkpoint).
