@@ -1,3 +1,15 @@
+# PLANNING / 2026-11-16 오후 — Issue #99 OGA02·OGA17 게임 원본 로컬 적용 완료 보고 검토
+
+- 바울 대표가 Codex 최종 완료 화면 제출. [#99 Codex 실제 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/99#issuecomment-6906678804)를 대조하여 **`OGA02_OGA17_LOCAL_ORIGINAL_APPLIED / APPEARANCE_DELTA_62_PASS / ORIGINAL_IMPORT_COMPILE_RESOURCES_PASS / CONSOLE_ERRORS_0 / USER_REALPLAY_PENDING / REMOTE_NOT_PUSHED`** 접수.
+- **신규 PNG+meta 4개 + 기존 `VillageNpcAppearanceCatalog.cs` 외형 리소스 경로 1개, 제품 총5파일만 변경**. 승인 원본 PNG SHA 재검사 두 종 일치. OGA02 GUID `203587cfe9b34e5c9c7bbfc55117bf1f` / PPU357.875 / normalized Pivot(0.5,0.083984375), OGA17 GUID `5b473af875ba45b586eae7d500dbe10e` / PPU358.75 / Pivot(0.4990234375,0.08203125). 둘 다 알파 가시 높이 기존1.142857WU 유지, 기존 PNG/GUID/meta 바이트 불변.
+- **제품 커밋** `7b84fa76e8948bb09febdf688898cdaa1ef231c8`; 브랜치 `codex/ch1-oga02-17-original-apply-20261116`; 로컬 원본 `main` FF-only/no-autostash 동기화 후 최종 문서 포함 `669adc275fc173f3292b2f714710434ce9895509`; **원격 Push 없음**. Unity **6000.6.5f1**, 표적 QA **62/62 PASS**, 로컬 원본 Import/compile/Resources 연결 PASS/Console error0, #85 Package 수정0.
+- **범위/남은 기능 분리:** OGA02는 원래 훈련 안내만, OGA17은 원래 장비상인 안내 대사만 지원. **별도 훈련 메뉴와 장비 구매·판매는 기존 미구현**(`NOT_IMPLEMENTED_BASELINE`, QA NOT_RUN); 잡화점 거래 QA 성공을 장비 거래 완료로 잘못 기재하지 않는다. 이번은 NPC 외형 교체 완료이지 관련 신규 게임 기능 구현 아님.
+- **원본 보호**: 승인 OGA03/06/09/16, HOLD OGA20, 다른 Scene/Quest/가격/Collider, Save/UserData·Discord·사용자 dirty/untracked 유지, 원본Editor Scene/Play/포커스 미변경. 기존 격리 QA환경 재사용·프로젝트 전체 복제0. Codex 보고 F: 여유 bytes **324418146304→322490466304** (감소 1,927,680,000 bytes ≈1.93 GB); 디스크 자원운영 규칙상 QA 캐시·Import 증가량 모니터링, 안전 근거 없는 삭제 금지.
+- **바울 대표 최종 실플레이 수용은 아직 미접수.** 확인 위치: 시작마을 동쪽 훈련장 관리인 (6.4,-2.1), 장비상인 (5.8,1.2). 새 전체 QA/기존 NPC 재작업 불필요. 실제 확인 후 `USER_REALPLAY_ACCEPTED`만 별도 기록.
+- 이번 기획은 GitHub `docs/planning` 인계 기록만 갱신하고 사용자 PC 로컬 Unity·게임·Save 및 원격 main을 건드리지 않음.
+
+---
+
 # PLANNING / 2026-11-16 정오 — #99 NPC OGA02·OGA17 원본 로컬 게임 적용 승인
 
 - 바울 대표 **“게임에 넣자. npc.”** → 기존 OGA02 훈련장 안내인 + OGA17 장비상인 미술 승인에 이어 **실제 로컬 게임 외형 적용을 명시 승인**. [GitHub Issue #99 원본 적용 지시 및 안전 게이트](https://github.com/HappyPaul812/Project-Limitless/issues/99#issuecomment-6906279696).
