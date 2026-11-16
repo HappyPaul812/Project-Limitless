@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-16 18:17 — 설원족제비 Attack4 v2 메타데이터 수정 납품 접수
+
+- 바울 대표가 `F:\Downloads\SnowStoat_Attack4_MetadataFix_20261116.zip` 전달. [#100 메인아트 공식 수정 납품 보고](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6912297538)와 [신규아트 인계](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/팀운영/인계/SPRITE_ART_LATEST.md) 확인.
+- 납품 보고상 새 ZIP **852900bytes/11entries**, SHA256 `24ce0b771d4cf68e9758828fb892d9043b20eb51bd27bf826e07dedda0d60dc8`, CRC PASS / Manifest payload **9/9 PASS** / SUMS payload9+Manifest **10/10 PASS**. Manifest 자기참조 및 SUMS 순환참조 제거, 이전 ZIP 대비 **payload 9개 byte exact KEEP**, 변경 ZIP 멤버는 `Manifest.json`, `SHA256SUMS.txt` 두 개만.
+- 공격 PNG 기존 승인검수 v2 SHA256 `5175483e486889736f4f89402ec8a04595491c5c587e51a3f6bbd1365391364a` 유지. 기존 승인 KeyPose `fd25ef50528a5f630e44382e3fc40a3df607a267176f758706962a2cbc41e778`, Idle4 `ee6951b0333ba6586b4009ccf51cfd3a397d69f839552fe88a709f9c34bf0633` 보호. 그림 재제작 필요0, 기존 Codex v2 PNG KEEP 권고 재사용.
+- **정확한 판정:** `METADATA_FIXED_PER_ART_REPORT / PACKAGED_TECH_PASS_PER_ART_REPORT / ATTACK4_V2_IMAGE_KEEP_RECOMMENDED / USER_FINAL_VISUAL_APPROVAL_PENDING / UNITY_NOT_APPLIED`. 기획 세션은 **F: 로컬 파일 실물 해시를 직접 측정하지 않음**. 새 코덱스 전수 QA·게임 적용·Hit/Defeat 제작을 자동 지시하지 않음. 실제 F: ZIP 확인은 필요 시 기존 Codex worktree에서 소량 CRC/SUMS만.
+- 리뉴얼 #101 NPC10/07 v2 실물 Codex 검증 PASS/KEEP 권고 상태 별개. 기존 승인 NPC6·OGA20 HOLD/Save/UserData·Discord/Unity6000.6.5f1/Issue85 HOLD 유지; remote main Push·Merge 금지. 이번 총괄 기획은 `docs/planning` 인계만 문서화.
+
+---
+
 # PLANNING / 2026-11-16 저녁 — Codex 최종 오프라인 결과: Stoat Attack4 v2 PARTIAL(메타만), NPC101 v2 PASS
 
 - 바울 대표 Codex 결과 화면 확인 및 GitHub [#100 실측](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6911980162)·[#101 실측](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6911981684) 대조. 신규아트 Stoat MouthFix v2 **IMAGE_TECH_PASS / PNG_KEEP / MANIFEST_METADATA_FAIL(2항목) / USER_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED**. 이미지 원본 SHA `5175483e486889736f4f89402ec8a04595491c5c587e51a3f6bbd1365391364a`, ZIP SHA `76e27b0c8d4fcfab09a11f857235755ce759a97572ae96bbb8641ea990388cb4`; ZIP CRC·SUMS10/10 PASS. Manifest 자신 항목 expected3347bytes vs actual3644bytes/SHA 불일치 및 SHA256SUMS expected vs actual 해시 불일치로 **11항목 중2 FAIL**. 그림 재제작 금지, **Manifest의 자기/순환참조 제거·SUMS 비순환 해시 목록으로 재패키징만** 담당에게 후속 요청. [#100 기획 결정](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6912055109).
