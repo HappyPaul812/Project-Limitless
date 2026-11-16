@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-17 오전 — Codex Issue #100·#102 실제 ZIP 오프라인 기술 PASS 접수
+
+- 바울 대표 Codex 검수 화면 전달. [#102 NPC 실제 검사](https://github.com/HappyPaul812/Project-Limitless/issues/102#issuecomment-6932056730), [#100 SnowStoat Defeat4 실제 검사](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6932058502)를 직접 확인. **두 ZIP 모두 FILE_TECH_PASS / 미술 승인 별도 대기 / Unity 미적용**. 검사 브랜치 `codex/art100-102-offline-review-20261117`, 로컬 보고 커밋 `7dc8b5fedfdad7449370c220297d88ee2cb443f9`, REMOTE_NOT_PUSHED.
+- **NPC102** 실물 `F:\Downloads\Limitless_NPC_102.zip` ZIP SHA256 `c6e2268f817df91447f462ad7b7f30de3710fcc2abb168556884f7136c285b95` (13members)·CRC/Manifest11/11·SUMS12/12 PASS, 512×512 RGBA PNG OGA11 주민2 SHA `5fde2e4cfbcdca2839f7da1071dbbbc4b7f239ee85ab7f7b9985be48a5cb91f9`, OGA13 주민3 SHA `0b2b5a1a19965eeff4bbdccff0072d25c7881e6695bdc32b146542311be7f849`. 128/40 축소 판독·상대 화풍 큰 이탈0·기존8종 SHA 보존, **완전 화풍일치 확정은 아님**, `STYLE_REVIEW_PENDING / USER_ART_APPROVAL_PENDING`.
+- **SnowStoat Defeat4** 실물 ZIP `F:\Downloads\SnowStoat_Issue100_Defeat4_20261117.zip` SHA256 `34f23d12ee4d4580e72f00ec0deb143b1d5b33aaa6d8d132c6495579961d6ad2` (12members), CRC/Manifest10/10·SUMS11/11 PASS, PNG `SnowStoat_M2_Defeat4_2048x512_RGBA_CANDIDATE.png` SHA `8bc97ce0af5d4896d2259df39972ea018ea1a6e494883349cc3b3065926bfe4f`. 2048×512 RGBA/4프레임, 00 긴장(균형상실 표현 약함)→01 낮춤→02 엎드림→03 완전히 쓰러진 자세 유지. 재기립0, 128px 움직임 읽힘, 40px 눈/자세 세부 한계. 4프레임 GIF의 마지막 1750ms 비루프, 비교 근거 PASS. `DEFEAT4_ART_REVIEW_PENDING / USER_ART_APPROVAL_PENDING`. 기존 KeyPose·Idle4·Attack4v2·Hit4 SHA 4/4 동일.
+- **Codex 작업범위 준수** Unity 실행·Import·원본적용·Assets/Guid/PNG 수정0, Issue85 HOLD, Save/UserData/Discord/dirty/untracked 보호, 승인 NPC8/기존 아트 보존. 소량 오프라인 검수에서 기술 HOLD0. 사용자 최종 미술 승인 전 NPC102 Unity 적용 및 Defeat4 공식 마감/Unity 적용을 자동 지시하지 않는다. 추가 동일 기술QA 반복 불필요. 서리족제비 F0의 초기 균형상실 가독성과 NPC 기존8과의 화풍은 사용자 512/128/40 실제 그림 확인 후 결재.
+- Issue85 기존 11/17 감사 보고 별도: 비공개 외부 백업 목적지 없음 `BLOCKED`, 내부8342 SHA PASS·Tooling4 파일 읽기 확인, Unity 표적 QA NOT_RUN/HOLD, Product commit/Push0. 외부 백업 위치 확보 우선.
+
+---
+
 # PLANNING / 2026-11-17 오전 — 11/16 EOD 인계 재개 / 복구·Issue85 진단 / 신규 Defeat4·NPC102 병렬
 
 - 바울 대표 “굿모닝~ 오늘도 열심히 해보자, 어제 이어서 하자” → 11/16 종료 이후 첫 업무 재개. GitHub 확인: `origin/main=bfd281545632877325f5d21e04cefb924042c465`, `backup/2026-11-16-safe-checkpoint=9d84b81934a7cff7dcf4bf5083de3f1f45ea7201`. 로컬 원본 main `52f84e643d5d860665eadfe1614a30c745209f00`은 전일 Codex EOD 보고이며 원격과 같다고 주장하지 않는다.
