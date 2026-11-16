@@ -1,3 +1,11 @@
+## 2026-11-16 신규 아트 마감
+
+Stoat KeyPose/Idle4/Attack4v2/Hit4 최종미술승인, Unity미적용. Defeat4미제작/후속자동착수금지. 서리들쥐 승인4모션 KEEP, 기존 QA 재사용.
+
+원격복구/비Git누락/로컬최종SHA는 [EOD 결과](../../EOD_20261116_SafeIntegration_Recovery.md) 참조. 오늘개발종료·추가작업자동시작금지.
+
+---
+
 ## EOD 2026-11-11 선별 확정 상태
 
 #91 Snowroad/F2 v2 승인 원본2종은 d40bb170으로 본편 적용·107+Import16 근거와 대표 수용 기록이 있습니다. #95 NPC06/16 함께 기존 적용 보호. #75 B352 c951e0c5 포함. #85 정식 Owl 한기1회 패턴469b219f/신규81PASS 원본 적용, 대표 새 실플레이는 PENDING. 냉기 VFX/Icon6 원본 KEEP, 소유자 식별/몸체 밀집 PARTIAL 유지. docs/art-new 3644200d를 통째로 합치지 않고 승인 BattleBG 최종 시각보고만 선별했습니다. C SnowEdge/동상/동결괴사/정화Ⅱ/아이템·신규미술 구현0.
