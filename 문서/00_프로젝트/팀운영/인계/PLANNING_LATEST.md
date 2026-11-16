@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-16 — Issue #99 OGA02·OGA17 NPC 2종 사용자 미술 승인 접수
+
+- 바울 대표가 `F:\Downloads\LIMITLESS_ISSUE99_OGA02_OGA17_NPC_ORIGINAL_ART_PILOT_20261116.zip` 전달 후 “내가 npc는 깜빡하고 말 안했구나... 미안.. 좋아...”라고 두 NPC에 대해 명시적으로 긍정. **OGA02 훈련장 안내인 + OGA17 장비상인 원화 2종 USER_ART_APPROVED**, 미술 재제작/재승인 불필요. 기획 공식 판정 [Issue #99 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/99#issuecomment-6906154651).
+- 실물 정본은 [#99 리뉴얼 납품](https://github.com/HappyPaul812/Project-Limitless/issues/99#issuecomment-6905457126) 그대로: OGA02 SHA256 `07bdb6368dcab01c85f551b71bd79ba391a3c3f621355664fc6453cb5da98cdf`; OGA17 SHA256 `1282d90a7f89924e3efaad40679cbc272193bb9e05397765671549d9de646359`, 각각512²RGBA. ZIP SHA256 `f10cb1f417f6bc03c64a05028f9549eacc23276e148c81136d5d922b2b4f1bdd`. 기획은 F: 실물 재해시하지 않았고 기존 납품 QA 수치를 재사용.
+- **아트 승인 ≠ Unity 적용 승인**. 다음 게이트는 Codex가 Windows ZIP 해시 검증→기존32px/PPU28 원본 마을 NPC와 같은 보이는 높이/발접지·Nameplate·Collider/StableID·훈련·장비상점 상호작용에 대한 **최소 격리 Delta QA**; 새 512 마스터를 PPU28로 바로 Import 금지. 실제 게임 제품 반영은 후속 별도 승인 필요.
+- OGA03/09/06/16 이미 완료/사용자 실플레이 수용 → 재수정 금지. OGA20 태온 유사성 HOLD 유지. Unity6000.6.5f1, #85 Import/Push HOLD, Save/UserData/Discord 보호, main Push·Merge0. 이번 회차 GitHub 기획 문서/댓글만 변경.
+
+---
+
 # PLANNING / 2026-11-16 — 메인 신규 아트 다음 작업: Chapter3 M2 설원족제비 1포즈
 
 - 바울 대표 “메인 쪽 다음 작업 가자 그럼.” → 서리들쥐 A 4모션16프레임 `ART_COMPLETE`를 보호하고, F1~F2의 **두 번째 일반 몬스터 M2 설원족제비(Snow Stoat)** 신규 1포즈 파일럿 발주. 신규 작업 [Issue #100](https://github.com/HappyPaul812/Project-Limitless/issues/100)와 [기획 세부 지시서](../20261116_Chapter3_SnowStoat_OnePose_ArtPilot_Order.md), 문서 commit `6f86289f5af8a9ba2dd33a55d2163a6d0fcfd5a5`.
