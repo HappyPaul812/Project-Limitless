@@ -1,3 +1,12 @@
+## 2026-11-17 / Issue #102 — OGA11 주민2·OGA13 주민3 고유 정지 NPC 2종 신규 납품 (최신)
+
+- **실제 제작 파일:** `OGA11_Resident02_Original_512_RGBA.png` 512×512 RGBA SHA256 **`5fde2e4cfbcdca2839f7da1071dbbbc4b7f239ee85ab7f7b9985be48a5cb91f9`**, `starter-village-resident-02` / `OGA13_Resident03_Original_512_RGBA.png` 512×512 RGBA SHA256 **`0b2b5a1a19965eeff4bbdccff0072d25c7881e6695bdc32b146542311be7f849`**, `starter-village-resident-03`. 신규 정지 원화 정확히2, 추가 NPC/초상화/애니메이션 0. 실제 보이는 높이 약410px·발y470, alpha 가장자리0, 비균등 축척왜곡0. 두 인물 모두 시작마을 생활감; 소품에 별도 직업·퀘스트 신규 계약 없음.
+- **중복 조사:** GitHub [#102](https://github.com/HappyPaul812/Project-Limitless/issues/102)/이전 #101·담당 인계·GitHub 코드 검색/접근 가능한 Library에서 OGA11·OGA13 승인 고유 원화 없음을 확인한 범위에서 신규 제작. **F: 로컬 전수 미확인**, 이 범위를 넘어 기존 파일 부재 확정 금지.
+- **실물 비교판 2종:** 승인 NPC **OGA02/03/06/07/09/10/16/17** 8명 원본 SHA 검증 후 읽기 전용으로 사용. 실제 512px 원본 10명 동비율 보드 `Issue102_10NPC_512_Master_ActualScale_OFFLINE.png` SHA `115f94686e551def405a59919b86a308fbc275f6bde441d21587120e32d791f9`, 진짜 128·40 크기 보드 `Issue102_10NPC_128_40_ActualScale_OFFLINE.png` SHA `915a578eba42cb3141c4312d47cf16486033fd769e45e47eb46b6a96bdaee709`. 검색형 타인 이미지 대용0. 기존8 PNG BYTE_KEEP; 원본 화풍 중 OGA07/10과 근접하지만 타 승인 캐릭터보다 명암·눈 세밀함은 **USER_ART_STYLE_REVIEW_PENDING**.
+- **실제 납품:** `/mnt/data/Limitless_NPC_102.zip`, **1,436,792bytes / SHA256 `c6e2268f817df91447f462ad7b7f30de3710fcc2abb168556884f7136c285b95` / 13entries / ZIP CRC PASS / Manifest 11/11 SHA·bytes PASS**. 원화2, 128/40 축소4, 비교판2, 선언/README/QA/Manifest/SUMS5. 다운로드 문제 대비 `/mnt/data/Limitless_NPC_102_2PNG.zip` SHA `99446dbd018c5b82eb4b20d4ecfd7e8f5ce90d87663b6294d2ba4928e659d650`, 289,061bytes, 2PNG/CRC PASS. 모델 컨테이너 파일이며 Windows F: 복사 또는 GitHub 바이너리 Push 수행0.
+- **보고서:** [Renewal_20261117_Issue102_OGA11_OGA13_OriginalNPC2_ArtPilot.md](../../Renewal_20261117_Issue102_OGA11_OGA13_OriginalNPC2_ArtPilot.md), 담당 `docs/art-renewal`, 실제 report commit **`bfb34f6a4b11d3904f68446fc7adc589a2c09870`**. `NEW_2_STILL_ART_MASTERS_DELIVERED / FILE_QA_PASS / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`.
+- **보호·다음:** 원본 Unity6000.6.5f1/Issue85 HOLD/Scene·Prefab·Quest·StableID·GUID/meta·Save/UserData·Discord/main 변경0, OGA20 경비 태온 유사성 HOLD, OGA19 제외. 바울 대표 미술 승인 후에만 Codex가 32px/PPU28·발접지/이름표 최소 Delta QA 수행. main 직접 Commit/Push/Merge0.
+
 ## 2026-11-16 / Issue #101 — 잘못 표시된 금발 비교 이미지 진상 확인 / 실물 PNG PASS (현재 최신)
 
 - **바울 대표의 지적:** v2 보고 화면에 OGA10·OGA07이 아닌 금발 여성 이미지 노출. 이전 응답에서 **실제 PNG를 사용하지 않은 이미지 검색형 화면**을 넣어 출처 불명 무관 이미지를 표시한 답변 오류로 정정. 실물 ZIP 속 대상 PNG에서 금발 제3인물 파일은 발견되지 않음. 금발 이미지의 정확한 서비스 출처/파일명은 확인 불가. 이전 비교 이미지 **검증 증거로 사용 금지**.
