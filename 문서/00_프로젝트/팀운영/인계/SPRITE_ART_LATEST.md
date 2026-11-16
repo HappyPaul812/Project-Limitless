@@ -1,5 +1,12 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-16 / Issue #100 — 설원족제비 Snow Stoat M2 1포즈 최초 아트 후보
+
+- 신규 M2 1포즈 **512×512 RGBA 투명 PNG 딱1개**(신규 애니메이션0) 실제 납품. `Candidate/SnowStoat_M2_KeyPose_512_RGBA_CANDIDATE.png` SHA256 `fd25ef50528a5f630e44382e3fc40a3df607a267176f758706962a2cbc41e778`. 기존 Github/Library에서 M2 완성 원화 미발견, Windows F: 로컬 전수 감사 미실행.
+- ZIP `LIMITLESS_Issue100_SnowStoat_OnePose_20261116.zip` 594,427 bytes / 8 entries SHA256 `d18910b3ed611e127d43a64369bdf0f888e3efc175cc6bcbf7127f4c82221272`; 실제 ZIP CRC PASS, 내부 SHA256SUMS 7/7 PASS, 512/128/40 실축소 오프라인 프리뷰. Library 기존 FrostOwl v3 Attack00 PNG 실물과 동일 캔버스 실비교만 PASS(최신 Owl/실런타임 비율 아님), Mouse/Wolf/Fox 직접 화풍 비교 NOT_VERIFIED.
+- [**#100 공식 제작 보고**](../../Chapter3_SnowStoat_M2_OnePose_ArtPilot_20261116.md) `docs/art-new` GitHub 문서 저장. 상태 `ONE_POSE_CANDIDATE / USER_ART_APPROVAL_PENDING / OFFLINE_QA_PASS / UNITY_NOT_RUN / GAME_NOT_APPLIED`. 대표님 승인 전 Idle/Attack/Hit/Defeat/Run/펫 시트·수치/능력0, 기존 승인 Mouse/Owl/Wolf/Fox/환경·보스와 Unity6000.6.5f1/Save/UserData/Discord/Issue85 HOLD/main 보호. ChatGPT 대화 파일로 PNG/ZIP 제공, GitHub 원격 바이너리 업로드0.
+
+
 ## 2026-11-16 / Issue #30 — FrostFieldMouse A 서리들쥐 승인 아트 4모션16프레임 최종 마감
 
 - **최종 신규 아트 판정: `ART_COMPLETE / USER_ART_APPROVED / KEEP_4_MOTIONS_16_FRAMES / NO_NEW_ART`**. [#30 11/16 총괄 마감 지시](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-6904538244)와 [11/16 기획 정본](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261116_Parallel_Art_MouseCloseout_NPC02_17.md), `main`에 실존하는 아트4 PNG+meta 및 `MonsterVisuals/FrostFieldMouse.asset`(4×4개 explicit Sprite fileID)·Main22 코드/Quest/Spawn을 조회. 이전 [Mouse 공식 외형 적용 실제40PASS](https://github.com/HappyPaul812/Project-Limitless/blob/main/문서/00_프로젝트/Chapter3_FrostFieldMouse_Fix_v2_Official_Apply_QA_20261021.md)와 [Main22 격리 첫플레이 136PASS](https://github.com/HappyPaul812/Project-Limitless/blob/main/문서/00_프로젝트/Chapter3_Main22_FirstPlayable_Implementation_QA_20261021.md) 재사용, 재실행/대규모 worktree복제0. 승인 미술 1포즈 독립 SHA `0516914ddad36af5854065d66d01b9664329aa89eea8b394480eed6af92e32c2`(기존 QA 정본).
