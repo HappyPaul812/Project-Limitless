@@ -1,3 +1,11 @@
+## 2026-11-17 / Issue #107 — Main04 부상 여행자 임포트용 원화 PNG 실물 납품 (현재 최신)
+
+- **바울 대표 명시 요구:** 보여주는 원화가 아닌 **게임에 넣을 수 있는 실제 PNG** 요청. 신규 **`Main04_WoundedTraveler.png`** 512×512 투명 RGBA 정지 1포즈 제작 완료, SHA256 **`2687c1c62e5bd20e6e0fb16c3428225aa28fc156c80a5c08b6af2350d9e9715d`**. 원본 별도 그림에서 비율 유지 축소·투명 정렬: 최종 alpha bbox (106,122,406,470), 정지 앉은 자세, 기준 접지 y470. 캐릭터1인 추가, Main07 미제작.
+- **퀘스트 실제 설정:** Main04 「세 사람」 Field_01의 미엘 옆 부상 여행자. 공식 `MainQuest04FieldFlow.CreateWoundedTraveler`은 현재 기승인 `OGA07_Resident01` PNG를 임시 재사용함. 이번 후보는 OGA07과 외형·실루엣·옷을 구분한 단독 PNG이며 **OG A07/미엘/태온 자산 변경0**. 붕대의 위치는 아트 제안이지 정식 부상 부위 확정이 아님.
+- **실물 직접 다운로드:** `/mnt/data/Main04_WoundedTraveler.png`; **한 PNG ZIP** `/mnt/data/Main04_Traveler_PNG.zip` **165562 bytes / SHA256 `a72c51245e126313d1e75442adbf42ddfd6f7c21af86d909306179e4732d663e` / CRC PASS**. **전체 검수 ZIP** `/mnt/data/Limitless_Main04_Traveler.zip` **650099 bytes / SHA256 `286fe97b6f68f44f45d22a6a4940b9e5b84fc09d8b53d7d9333211e3bc4311a3` / 9파일/CRC PASS**. 128/40 실물 축소2, 실제 OGA07/OGA11 vs 여행자512/128/40 비교판 `Main04_Actual_512_128_40_Comparison.png` SHA `75155f718905fd7dc16a9441bb0e90d49f08a835dbf5aa42295657d258e03bd7`, SourceDeclaration/Manifest/SUMS/QA 포함.
+- **라이브러리:** `/LIMITLESS_Art_Delivery/Issue107_Main04_WoundedTraveler_20261117/`에 실제 PNG·ZIP2·비교판1 총4파일 업로드 성공. Windows F: 자동복사/Unity 게임 적용 없음. GitHub 정식 보고: [`Renewal_20261117_Issue107_Main04_WoundedTraveler_StillArt_Pilot.md`](../../Renewal_20261117_Issue107_Main04_WoundedTraveler_StillArt_Pilot.md), `docs/art-renewal` commit **`0eeb97487054901ff1283d069f0f44e2ad73f79c`**.
+- **게이트:** `MASTER_PNG_READY / FILE_TECH_PASS / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED / GAMEVIEW_NOT_VERIFIED`. 실제 Unity PPU/Pivot, Miel scene-relative height, `StoryLabel` Y1.15 및 정렬/월드크기는 검증 전. 대표 미술 승인 후 Codex가 Main04 임시 OGA07 **참조만** 바꾸어 최소 DeltaQA/권한검증 진행. 기존승인 NPC12/Quest/씬·원본 Unity6000.6.5f1·Issue85 HOLD·Save/UserData·Discord/main 보호. 직접 main commit/Push/Merge0.
+
 ## 2026-11-17 / 바울 대표 퀘스트 NPC 부상·회복 상태 시각 표현 지침 신규 확정 (현재 최신)
 
 - **바울 대표 직접 확정:** “시작마을 일반 주민 정리가 끝났으니, 이제 퀘스트에 등장하는 NPC는 다친 설정이라면 그 상태가 외형에 자연스럽게 반영되어야 한다.” 앞으로 Chapter1·2 **퀘스트 등장 NPC 신규 제작**에서 **기획 문서에 확정된 부상/회복 사유**가 외형에서 자연스럽게 읽히도록 한다. **퀘스트에 없는 부상·장애·원인/직업/서사 임의 생성 금지**.
