@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-17 — 이름표 155PASS, 얼음갑충 1포즈·리뉴얼 NPC104/105 미술 시각 수용
+
+- 바울 대표가 [Codex Issue106 보고](https://github.com/HappyPaul812/Project-Limitless/issues/106#issuecomment-6934444417)와 “**메인 얼음벌레 이뻐. 포즈니까 다운은 안받아도 되지? 그리고 리뉴얼도 좋네, F:\Downloads\Limitless_NPC_104_105.zip**”라고 전달. **이름표 문제 실제 원본 working tree 코드 적용**, Nameplate Y1.02→1.37, 공용 기능 NPC E안내1.48→1.87·표식 활성시2.48, Resident 상시 숨김 그대로, **최종 Delta155PASS/0FAIL·원본 컴파일 PASS/Console errors0**. 변경파일 `VillageNpcAppearanceCatalog.cs`, `NpcInteractionPrompt.cs` 2개. 로컬 Codex 제품 SHA `4f62cce85c05ccf1b7de5f3f5ef0aae3c9620ebf`·최종보고 `207c191d64e36c7c0f9ffe3ca26ce98b60d74b5e`, mainHEAD `52f84e64` 유지/remote Push0. **사용자 새 Play에서 머리/이름표/E 실제 확인 PENDING**.
+- [#103 M4 얼음갑충](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6934713199): **KeyPose 512² RGBA 사용자 시각 승인** (“이뻐”). 공식 PNG `IceBeetle_M4_KeyPose_512_RGBA_CANDIDATE.png` SHA256 `b7ff0592226c2a1f28270053cf03483b6051c69edb412b59a7965ccf8699b3ad`, ZIP `IceBeetle_Issue103_OnePose.zip` SHA256 `ca56030e22d581ef58bafe51b66cc9181478dfa8343f16f33155aeda8f14323a` (담당 보고). **ChatGPT Library `/LIMITLESS/Issue103_IceBeetle_OnePose/` 보관**, 당장 F: ZIP 다운로드하지 않아도 다음 아트 담당이 Library 원본으로 Idle4 소량 제작 가능. 단 **GitHub 바이너리 원화 미업로드·PC 밖 복원백업 미확보**, 출시·안전복원 전 공식 PNG/ZIP 별도 저장·해시 검증 필요. 키포즈 재그리기/수정 금지; 아직 Unity 미적용.
+- [#104 OGA19](https://github.com/HappyPaul812/Project-Limitless/issues/104#issuecomment-6934714159)·[#105 OGA20](https://github.com/HappyPaul812/Project-Limitless/issues/105#issuecomment-6934715031): 바울 대표 “리뉴얼도 좋네” **두 신규 정지 디자인 시각 수용**. 납품 전체 ZIP `F:\Downloads\Limitless_NPC_104_105.zip` 담당 SHA `807f7d6bb3c29f8846c08d5c7e985244b009ebc6b1bea4a1181c641ed3d9351e`. OGA19 PNG SHA `d0ec6f5712ea9d7d6cada6335742986613b2d4149b1f4b75c662b0a3e22a1028`, OGA20 PNG SHA `19efaea3859246a41d9bd3cb1880744f3b0802b9c51ec22f0937a6794e201ef9`. **Codex가 사용자 실제 F: ZIP CRC/SHA 검증 전**; 아트 담당도 공식 태온 이미지 실물 대조를 하지 못해 **OGA20 `TAEON_VISUAL_NOT_VERIFIED`**, 구형 닮은 시안 HOLD 그대로. Codex에서 태온 공식 실물 비교·기존 OGA20 Sprite3지역 공유(시작마을 남문·카타콤 keeper·아르벨 portal keeper) 영향 확인, #106 이름표Y1.37/E프롬프트·주민 이름표 숨김 보존하여 부분 DeltaQA PASS 시에만 안전한 로컬 원본 작업트리 적용. Issue85 HOLD·Save/UserData/Discord 기존 승인NPC10 원형 보호, 원격 main Push/Merge 없음.
+- 다음 아트: #103 승인 1포즈 원본 바이트를 그대로 참조하여 Idle4 후보1시트만 별도 제작(아트 담당이 Library에서 정확 SHA 검증해야 함). 여기서는 Unity 원본 조작·아트 PNG 생성·Codex 직접 실행하지 않았음.
+
+---
+
 # PLANNING / 2026-11-17 오전 — OGA20 남문 경비 새 원화 재개 및 NPC 얼굴 이름표 위치 최소 상향
 
 - 바울 대표: **“남문 경비병도 아직 안만들었네? 리뉴얼 지시문 다시 주고, 이제 npc들 얼굴이 생겼으니까 이름표 좀만 위로 올리고... 얼굴이 이름표에 가려진다.”**
