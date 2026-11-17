@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-17 / Issue #103 — 얼음갑충 KeyPose 승인 → Idle4 후보 납품
+
+- 바울 대표 **M4 Ice Beetle 512px 1포즈 미술 승인** 확정. ChatGPT Library `/LIMITLESS/Issue103_IceBeetle_OnePose/IceBeetle_M4_KeyPose_512_RGBA_CANDIDATE.png` 실물 회수; 원본 SHA256 **`b7ff0592226c2a1f28270053cf03483b6051c69edb412b59a7965ccf8699b3ad`** 일치. 기존 KeyPose PNG 수정/재생성0.
+- **신규 Idle4 한 시트** `Sprite/IceBeetle_M4_Idle4_2048x512_RGBA_CANDIDATE.png`, 2048×512 RGBA/가로4×512셀/우향, **SHA256 `bd06c6d9a901d4c3550882ad4ce061629195b60e75f04636ec4814ebb0967793`**, 801,439bytes. **Frame00은 승인 KeyPose RGBA 픽셀 완전 동일**. Frame01·02·03은 갑각 상부만 아주 미세하게 침강/회복, **하부 y397..511 발·다리 원본 RGBA 4/4 보존**, 원본 색·형태 유지. 4프레임 상이/각 셀 알파 바깥0. 이전 비규격 생성 시트는 **최종 게임용 PNG에 사용하지 않음**.
+- 실제 최종 시트에서 생성한 128px/40px RGBA 축소 비교판·OFFLINE 눈/어두운 배경 리뷰 이미지·125ms×4의 8FPS 4프레임 GIF. `IceBeetle_Issue103_Idle4_20261117.zip` **3,010,425bytes/12entries/SHA256 `8a9ecec00a98cb094e155aa31f7e737190358d9481ad333d2371e8013281ea87`**. ZIP CRC **PASS**, Manifest payload **10/10**, SHA256SUMS payload10+Manifest1 **11/11** PASS; Manifest 자신 및 SUMS에 대한 순환 SHA 참조 없음.
+- [**M4 Idle4 공식 제작 보고**](../../Chapter3_IceBeetle_M4_Idle4_ArtPilot_20261117.md), `docs/art-new` commit **`f131fb4192c195e711da9d0f5526bf397e6758bc`**. ZIP/시트/비교판/GIF 4종 **ChatGPT Library `/LIMITLESS/Issue103_IceBeetle_Idle4/` 실제 저장** 및 채팅 제공. GitHub 바이너리 업로드0, Windows F: 직접 복사0.
+- 상태 **`KEYPOSE_USER_APPROVED / IDLE4_USER_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED`**. 사용자 Idle4 승인 전 Attack·Hit·Defeat·몬스터 스탯·드롭·펫·Unity 작업0. Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/기존 승인 Monster·환경·보스/main 보호, 대형 QA복제/main 직접 commit·원격 Push·Merge0.
+
+
 ## 2026-11-17 / Issue #103 — M4 얼음갑충 Ice Beetle 신규 오리지널 1포즈 후보 납품
 
 - [**#103 F3~F4 얼음갑충 신규 1포즈 발주**](https://github.com/HappyPaul812/Project-Limitless/issues/103) / 북부 몬스터 7종 정본 확인. GitHub 코드검색 `IceBeetle`·`얼음갑충`, 기존 인계 및 ChatGPT Library 검색에서 **기존 승인 M4 원화 납품 미발견**. 사용자 Windows F: 전수 검색 미실행이므로 `LOCAL_NOT_AUDITED`.
