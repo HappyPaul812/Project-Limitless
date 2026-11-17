@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-17 — 얼음갑충 Attack4·Main07 부상자 최종 미술 승인 / 후속 3건
+
+- 대표가 두 원화 승인 요청에 '어. 승인,' 답변. **Attack4 및 Main07 USER_ART_APPROVED**, 재작업 없음, 아직 Unity 미적용.
+- [#103 승인·Hit4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6938653973): KeyPose·Idle4·Attack4 승인 바이트 보호. 2048×512 RGBA 4프레임 Hit4만 제작. 피격 반동→회복, 갑각·발 접지 유지. Defeat4/Unity/스탯·스폰 금지.
+- [#108 승인·로컬 적용 발주](https://github.com/HappyPaul812/Project-Limitless/issues/108#issuecomment-6938654608): Main07 WoundedTravelerVisual 기존 임시 OGA07 참조만 전용 PNG로 교체, F:/Downloads/Limitless_Main07_Traveler.zip. Main04 화면 가림 개선 교훈 적용, 960/1280/1680 HUD ON·얼굴/안내·미엘/폴 상대 체격/접지·기존 퀘스트 흐름 최소 DeltaQA PASS 시 로컬 원본 작업트리 적용. Main04·기존 NPC12·공용 UI 보호.
+- 다음 순서 조사: Main08 신규 인물 없음, Main09 폴 기존, Main10~11 조사/전투와 기존 인물, Main12 기존 잡화상인, Main13 세린 공식 유지. [#109 Main13 레온 신규 발주](https://github.com/HappyPaul812/Project-Limitless/issues/109). 정본 Chapter2_도입부_Main12_14.md 목표6 meet_arbel_warden, arbel-leon. 원격 main VillageNpcAppearanceCatalog.cs는 레온에 OGA09_VillageRepresentative를 공유. **기승인 레온 독립 원화/공식 초상화 먼저 확인, 없다면 512 RGBA 1포즈만 제작**. 기존 주민 대표와 얼굴/체형/의상 구별, 공식 초상화 있을 시 일치, 부상 설정 임의 추가 금지. 최신 로컬 구현은 Codex 확인 필요.
+- 세 업무 병렬 발주 및 GitHub 기록만 수행, 실제 생성/로컬 적용 미실행. Unity6000.6.5f1, #85 HOLD, Save/UserData/Discord 및 기승인 원본·dirty/untracked 보호, main 직접 commit/Push/Merge 금지.
+
+---
+
 # PLANNING / 2026-11-17 — Main04 화면 가림 해소·로컬 적용 / Attack4 및 Main07 기술 PASS
 
 - 대표 제출 Codex 화면 2장과 [#107 원본 적용 보고](https://github.com/HappyPaul812/Project-Limitless/issues/107#issuecomment-6938131437), [#103 실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6938132684), [#108 실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/108#issuecomment-6938133891) 확인.
