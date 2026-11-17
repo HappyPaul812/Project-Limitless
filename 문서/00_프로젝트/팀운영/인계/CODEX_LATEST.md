@@ -1,3 +1,17 @@
+## 2026-11-17 Issue111 — 잔여 NPC 승인 원화 재연결 / 단색 주민 조사
+
+**LOCAL_ORIGINAL_WORKING_TREE_APPLIED / DELTA160PASS_0FAIL / ORIGINAL_ERRORS0 / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- 레온#109 완료 후 Catalog 두 경로만 수정: Arbel 분양담당→승인OGA17, 서쪽주민→승인OGA11. Main21 완료 카타콤·시작마을 PetAdoption fallback도 같은 승인OGA17 실물 확인. PNG/meta/GUID/PPU/Pivot 변경0·외부PNG삭제0.
+- 기존QA6000.6.5f1 재사용·960/1280/1680 렌더·E/패드A/주민대화/분양 확인·실제100탈렌트결제/합성Save/ESC·B닫기 및 기타NPC속성 보존160PASS. 원본 compileFalse·오류0/경고42·Bootstrap/PlayFalse/dirtyFalse/포커스유지. 3지역×2상태56런타임NPC 중legacy렌더0·외부PNG12보관(게임전체전수아님). Frostway 공통fallback정적영향은같음/실물QA범위밖.
+- Arbel(1.5,-1.5) VillageNpc는 초기 VillageNpcPlaceholder 프리팹 잔존·role/StableID없음·일반 인사대사·PlaceholderVisual의 노란1×1런타임Sprite. 외부PNG아님·삭제/역할추가0·향후정리기획미결.
+- 레온/NPC12/Main04·07/#106/Save/UserData/Discord/기존dirty 및 #85HOLD보호·대형복제/Push/Merge0. 제품 `e4478f57f2e60a94d32a07b79d00b6fed1cf975e` / codex/issue111-residual-npc-20261117, rootmain52f84e64유지. 8356파일최종보호대조·문서SHA는Temp/Issue111Residual20261117/Final.json·Issue111댓글.
+- 대표 확인:Arbel(5,-3)/(-5,2), Main21완료Field03(-2.05,-3.55),시작마을(-5.8,-3.6). 새Play실제수용확인대기.
+
+[상세 보고](../../Issue111_ResidualNpc_ApprovedReferences_20261117.md).
+
+---
+
 ## 2026-11-17 Issue109 — 승인 레온 전용 외형 원본 적용 / #110 보존
 
 **USER_ART_APPROVED / PORTRAIT_OUT_OF_SCOPE / LOCAL_ORIGINAL_WORKING_TREE_APPLIED / DELTA178PASS_0FAIL / ORIGINAL_ERRORS0 / ISSUE110_ALREADY_DONE_NOT_REPEATED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
