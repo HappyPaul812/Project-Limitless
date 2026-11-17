@@ -53,6 +53,30 @@ namespace ProjectLimitless.NPC
             }
         }
 
+        // 대상이 그대로여도 퀘스트 표식은 바뀔 수 있어, 안내가 보이는 프레임에만 위치를 맞춥니다.
+        private void LateUpdate()
+        {
+            if (promptRoot == null || !promptRoot.activeSelf) return;
+
+            // 일반 주민과 별도 연출 NPC는 기존 높이를 유지합니다.
+            Transform nameplate = transform.Find("Label");
+            bool raisedNameplate = nameplate != null && nameplate.gameObject.activeSelf
+                && nameplate.Find("NameShadow") != null;
+            float promptY = raisedNameplate ? 1.87f : 1.48f;
+
+            // 기존 표식의 위치·표시 조건을 바꾸지 않고 안내 상자만 그 위로 피합니다.
+            Transform marker = transform.Find("QuestMarker");
+            if (raisedNameplate && marker != null && marker.gameObject.activeSelf)
+            {
+                float markerTop = marker.localPosition.y
+                    + marker.GetComponent<RectTransform>().rect.height * marker.localScale.y * 0.5f;
+                float promptHalfHeight = promptRoot.GetComponent<RectTransform>().rect.height
+                    * promptRoot.transform.localScale.y * 0.5f;
+                promptY = Mathf.Max(promptY, markerTop + 0.04f + promptHalfHeight);
+            }
+            promptRoot.transform.localPosition = new Vector3(0f, promptY, 0f);
+        }
+
         /// <summary>NPC의 자식으로 배경과 글자가 포함된 World Space Canvas를 만듭니다.</summary>
         private void CreatePrompt()
         {

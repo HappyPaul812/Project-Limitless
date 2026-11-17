@@ -12,7 +12,8 @@ namespace ProjectLimitless.NPC
         private const int NameplateFontSize = 40;
         private const float NameplateCharacterSize = 0.075f;
         private const float LongNameplateCharacterSize = 0.065f;
-        private static readonly Vector3 NameplateOffset = new Vector3(0f, 1.02f, 0f);
+        // 승인 원화의 머리 위에 글자와 그림자 하단이 작은 간격을 두도록 배치합니다.
+        private static readonly Vector3 NameplateOffset = new Vector3(0f, 1.37f, 0f);
         private static readonly Vector3 NameplateShadowOffset = new Vector3(0.018f, -0.018f, 0f);
 
         // 표시 이름은 번역이나 기획 과정에서 바뀔 수 있으므로 외형 선택에 사용하지 않습니다.
