@@ -1,3 +1,15 @@
+## 2026-11-17 Issue103·107 — Idle4·Main04여행자 오프라인 검수
+
+**BOTH_FILE_TECH_PASS / IDLE4_ART_REVIEW_PENDING / TRAVELER_USER_ART_APPROVAL_PENDING / UNITY_NOT_IMPORTED / NOT_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- 얼음갑충ZIP8a9ecec0…3010425bytes/12파일·CRC/Manifest10/SUMS11 PASS. 2048×512RGBA4셀·독립승인KeyPose와Frame00RGBA/QA00파일바이트동일·하부y397~5114셀동일. 미세갑각움직임/접지안정·특별이상프레임없음.128/40보이는RGBA·알파직접축소동일, GIF원본양자화4/4동일·반복·실제120ms(약8.33FPS,8FPS표기주의).
+- 여행자ZIP286fe97b…650099bytes/9파일·CRC/Manifest7/SUMS8 PASS.512²투명RGBA1·128/40전RGBA직접축소동일·실제OGA07legacy32/승인OGA07/새여행자분리비교. 앉은자세·팔붕대·여행장비로주민구별/고어0·40px부상세부약함. 새부상캐논확정0·사용자승인필요.
+- Unity/원본게임/Scene/GUID/Import/Save/Discord변경0·Unity6000.6.5f1/Issue85HOLD유지. 문서3개만로컬commit·codex/art103-107-offline-review-20261117, 최종SHA/보호대조는Issue103/107댓글·Temp/Art103107Offline20261117/Final.json. 다음:두대상각각미술승인후별도최소UnityQA/적용지시,자동착수0.
+
+[대상별파일·미술검토 상세](../../Issue103_107_Offline_FileArtReview_20261117.md).
+
+---
+
 ## 2026-11-17 Issue104·105 — 주민4·독립 남문경비 검증·원본 적용
 
 **FILE_TECH_PASS / TAEON_DIRECT_COMPARE_DISTINCT / BOTH_LOCAL_WORKING_TREE_APPLIED / DELTA118PASS_0FAIL / ORIGINAL_IMPORT_COMPILE_CONSOLE0 / USER_REALPLAY_PENDING / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
