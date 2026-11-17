@@ -93,7 +93,9 @@ namespace ProjectLimitless.Player
             IsTargetOnScreen = onScreen;
             // 발밑 링은 목적지 중심을 보존하고 두 줄 안내는 아래로 띄워 대상을 가리지 않습니다.
             Vector2 position = onScreen ? (Vector2)screen + (main09 ? Vector2.down * 88f : Vector2.zero) : ClampToEdge(center, direction, halfSize);
-            if (main09 && onScreen) position = PlaceMain09Label(camera, screen, halfSize);
+            // Main04 치료 장면도 같은 빈 공간 선택을 사용하되 실제 목표 Transform/거리/StableID는 유지합니다.
+            if ((main09 || tracked?.Definition.QuestId == MainQuest04FieldFlow.QuestId) && onScreen)
+                position = PlaceMain09Label(camera, screen, halfSize);
             position = AvoidExperienceHud(position, halfSize);
             marker.position = position;
             float distance = PlayerDistance;
@@ -124,18 +126,21 @@ namespace ProjectLimitless.Player
                 if (sprite.GetComponentInParent<PlayerController>() == null
                     && sprite.GetComponentInParent<NpcController>() == null
                     && sprite.GetComponentInParent<MonsterFieldController>() == null
-                    && sprite.GetComponent<MainQuest09Interactable>() == null) continue;
+                    && sprite.GetComponent<MainQuest09Interactable>() == null
+                    && sprite.gameObject.name != "Main04_WoundedTraveler") continue;
                 Vector2 min = camera.WorldToScreenPoint(sprite.bounds.min), max = camera.WorldToScreenPoint(sprite.bounds.max);
                 occupied.Add(Rect.MinMaxRect(min.x - 8, min.y - 8, max.x + 8, max.y + 24));
             }
             Vector2 best = point; float bestArea = float.MaxValue;
-            foreach (Vector2 offset in new[] { new Vector2(0, -94), new Vector2(-halfSize.x - 72, -94),
+            foreach (Vector2 offset in new[] { new Vector2(0, -94), new Vector2(-halfSize.x - (tracked?.Definition.QuestId == MainQuest04FieldFlow.QuestId ? 260f : 72f), -94),
                 new Vector2(halfSize.x + 72, -94), new Vector2(0, 132), new Vector2(-halfSize.x - 72, 100),
                 new Vector2(halfSize.x + 72, 100), new Vector2(-halfSize.x - 72, 0), new Vector2(halfSize.x + 72, 0) })
             {
                 Vector2 candidate = point + offset;
                 candidate.x = Mathf.Clamp(candidate.x, halfSize.x, Screen.width - halfSize.x);
-                candidate.y = Mathf.Clamp(candidate.y, halfSize.y, Screen.height - halfSize.y);
+                // Main04의 목표 갱신 토스트와 상단 고정 HUD 아래에서만 빈 공간을 고릅니다.
+                float topInset = tracked?.Definition.QuestId == MainQuest04FieldFlow.QuestId ? 114f : 0f;
+                candidate.y = Mathf.Clamp(candidate.y, halfSize.y, Screen.height - halfSize.y - topInset);
                 candidate = AvoidExperienceHud(candidate, halfSize);
                 Rect area = new Rect(candidate - halfSize, halfSize * 2); float overlap = 0;
                 foreach (Rect actor in occupied)

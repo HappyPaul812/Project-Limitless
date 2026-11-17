@@ -46,7 +46,8 @@ namespace ProjectLimitless.World
             CreateLocation(root.transform, "Main07ReturnToMiel", ReturnToMielId, WoundedPosition);
             CreateSite(root.transform, "Main07Miel", MielMeetingId, WoundedPosition + new Vector2(-.8f, 0f), "◆ 미엘");
             CreateSite(root.transform, "Main07PaulFarewell", PaulFarewellId, WoundedPosition + new Vector2(.8f, 0f), "◆ 폴");
-            CreateStoryVisual(root.transform, "WoundedTravelerVisual", "VillageNpcSprites/Eldiran/OGA07_Resident01", null, WoundedPosition);
+            // 승인된 앉은 여행자 전용 Sprite만 교체합니다. 위치·진행 상태·접지는 기존 흐름과 독립된 Import 설정으로 보존합니다.
+            CreateStoryVisual(root.transform, "WoundedTravelerVisual", "VillageNpcSprites/Eldiran/Main07_WoundedTraveler_Approved", null, WoundedPosition);
             CreateStoryVisual(root.transform, "PaulOfficialFieldVisual", "BattleCharacters/Paul/Paul_Battle_Final", "Paul_Idle_00", PaulPosition);
             root.AddComponent<MainQuest07Coordinator>();
         }
@@ -90,8 +91,24 @@ namespace ProjectLimitless.World
         }
     }
 
+    [DefaultExecutionOrder(100)]
     public sealed class MainQuest07Coordinator : MonoBehaviour
     {
+        // 공용 목표판 계산 다음 Main07에서만 큰 판을 왼쪽 빈 공간으로 옮깁니다.
+        // 실제 목표 Transform·거리·화면 밖 방향·상호작용 상태는 바꾸지 않습니다.
+        private void LateUpdate()
+        {
+            if (QuestService.ActiveMainQuest?.Definition.QuestId != MainQuest07FieldFlow.QuestId) return;
+            QuestNavigationPresenter navigation = Object.FindAnyObjectByType<QuestNavigationPresenter>();
+            if (navigation == null || !navigation.HasTarget || !navigation.IsTargetOnScreen) return;
+            RectTransform panel = navigation.GetComponent<RectTransform>();
+            Vector3 position = panel.position;
+            Vector2 half = panel.rect.size * .5f;
+            position.x = Mathf.Clamp(position.x - panel.rect.width - 16f, half.x + 16f, Screen.width - half.x - 16f);
+            position.y = Mathf.Clamp(position.y, half.y + 16f, Screen.height - 114f - half.y - 16f);
+            panel.position = position;
+        }
+
         private void OnEnable() { QuestService.Changed += Refresh; Refresh(); }
         private void OnDisable() => QuestService.Changed -= Refresh;
         private void Refresh()

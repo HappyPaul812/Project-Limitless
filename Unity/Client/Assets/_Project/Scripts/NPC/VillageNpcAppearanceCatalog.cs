@@ -12,7 +12,8 @@ namespace ProjectLimitless.NPC
         private const int NameplateFontSize = 40;
         private const float NameplateCharacterSize = 0.075f;
         private const float LongNameplateCharacterSize = 0.065f;
-        private static readonly Vector3 NameplateOffset = new Vector3(0f, 1.02f, 0f);
+        // 승인 원화의 머리 위에 글자와 그림자 하단이 작은 간격을 두도록 배치합니다.
+        private static readonly Vector3 NameplateOffset = new Vector3(0f, 1.37f, 0f);
         private static readonly Vector3 NameplateShadowOffset = new Vector3(0.018f, -0.018f, 0f);
 
         // 표시 이름은 번역이나 기획 과정에서 바뀔 수 있으므로 외형 선택에 사용하지 않습니다.
@@ -27,23 +28,23 @@ namespace ProjectLimitless.NPC
                 ["starter-village-party-manager"] = "VillageNpcSprites/Eldiran/OGA10_PartyManager_HandFix_v2_Approved",
                 ["starter-village-training-guide"] = "VillageNpcSprites/Eldiran/OGA02_TrainingGuide_Original_Approved",
                 ["starter-village-resident-01"] = "VillageNpcSprites/Eldiran/OGA07_Resident01_HandFix_v2_Approved",
-                ["starter-village-resident-02"] = "VillageNpcSprites/Eldiran/OGA11_Resident02",
-                ["starter-village-resident-03"] = "VillageNpcSprites/Eldiran/OGA13_Resident03",
-                ["starter-village-resident-04"] = "VillageNpcSprites/Eldiran/OGA19_Resident04",
-                ["starter-village-gate-guard"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard",
+                ["starter-village-resident-02"] = "VillageNpcSprites/Eldiran/OGA11_Resident02_Original_Approved",
+                ["starter-village-resident-03"] = "VillageNpcSprites/Eldiran/OGA13_Resident03_Original_Approved",
+                ["starter-village-resident-04"] = "VillageNpcSprites/Eldiran/OGA19_Resident04_Original_Approved",
+                ["starter-village-gate-guard"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard_Distinct_Approved",
                 ["starter-village-main-guide"] = "VillageNpcSprites/Eldiran/OGA09_VillageRepresentative_Original_Approved",
                 ["safezone-catacomb-supply"] = "VillageNpcSprites/Eldiran/OGA03_GeneralShop_Original_Approved",
-                ["safezone-catacomb-party"] = "VillageNpcSprites/Eldiran/OGA10_PartyManager",
+                ["safezone-catacomb-party"] = "VillageNpcSprites/Eldiran/OGA10_PartyManager_HandFix_v2_Approved",
                 ["safezone-catacomb-healer"] = "VillageNpcSprites/Eldiran/OGA06_Healer_Original_Approved",
-                ["safezone-catacomb-keeper"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard",
-                ["arbel-leon"] = "VillageNpcSprites/Eldiran/OGA09_VillageRepresentative_Original_Approved",
+                ["safezone-catacomb-keeper"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard_Distinct_Approved",
+                ["arbel-leon"] = "VillageNpcSprites/Eldiran/Main13_Leon_Approved",
                 ["arbel-shop"] = "VillageNpcSprites/Eldiran/OGA03_GeneralShop_Original_Approved",
                 ["arbel-healer"] = "VillageNpcSprites/Eldiran/OGA06_Healer_Original_Approved",
-                ["arbel-party-guide"] = "VillageNpcSprites/Eldiran/OGA10_PartyManager",
-                ["arbel-pet-adoption"] = "VillageNpcSprites/Eldiran/OGA17_EquipmentShop",
+                ["arbel-party-guide"] = "VillageNpcSprites/Eldiran/OGA10_PartyManager_HandFix_v2_Approved",
+                ["arbel-pet-adoption"] = "VillageNpcSprites/Eldiran/OGA17_EquipmentShop_Original_Approved",
                 ["arbel-pet-management"] = "VillageNpcSprites/Eldiran/OGA16_Bank_Original_Approved",
-                ["arbel-resident-west"] = "VillageNpcSprites/Eldiran/OGA11_Resident02",
-                ["arbel-portal-keeper"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard",
+                ["arbel-resident-west"] = "VillageNpcSprites/Eldiran/OGA11_Resident02_Original_Approved",
+                ["arbel-portal-keeper"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard_Distinct_Approved",
             };
 
         public static bool Apply(
@@ -76,6 +77,10 @@ namespace ProjectLimitless.NPC
             renderer.sprite = sprite;
             renderer.color = Color.white;
             renderer.sortingOrder = NpcSortingOrder;
+
+            // 레온을 추적할 때 큰 목표판이 E 안내를 덮지 않도록 해당 인물에만 화면 배치를 보완합니다.
+            if (stableNpcId == "arbel-leon" && npc.GetComponent<ArbelLeonGuideClearance>() == null)
+                npc.AddComponent<ArbelLeonGuideClearance>();
 
             // 원본 픽셀은 확대 저장하지 않습니다. PPU로 체격을 정하고 Transform은 1로 유지해 Collider 크기를 보호합니다.
             npc.transform.localScale = Vector3.one;
@@ -158,4 +163,23 @@ namespace ProjectLimitless.NPC
             shadow.GetComponent<MeshRenderer>().sortingOrder = NameplateSortingOrder - 1;
         }
     }
+
+    /// <summary>레온의 목표판만 옆으로 분리합니다. 실제 목표 위치와 다른 NPC의 안내 정책은 유지합니다.</summary>
+    [DefaultExecutionOrder(110)]
+    public sealed class ArbelLeonGuideClearance : MonoBehaviour
+    {
+        private void LateUpdate()
+        {
+            if (QuestService.GetTrackedQuest()?.CurrentObjective?.TargetId != "arbel-leon") return;
+            var navigation = Object.FindAnyObjectByType<ProjectLimitless.Player.QuestNavigationPresenter>();
+            if (navigation == null || !navigation.HasTarget || !navigation.IsTargetOnScreen) return;
+            RectTransform panel = navigation.GetComponent<RectTransform>();
+            Vector3 position = panel.position;
+            Vector2 half = panel.rect.size * .5f;
+            position.x = Mathf.Clamp(position.x + panel.rect.width + 16f, half.x + 16f, Screen.width - half.x - 16f);
+            position.y = Mathf.Clamp(position.y, half.y + 16f, Screen.height - 114f - half.y - 16f);
+            panel.position = position;
+        }
+    }
+
 }

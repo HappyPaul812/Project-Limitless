@@ -1,3 +1,17 @@
+## 2026-11-17 Issue112 — Codex Windows 실물 검수
+
+**ART_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_ART_REVIEW_PENDING / UNITY_NOT_APPLIED**.
+
+- 최신원격112납품·SPRITE_ART/PLANNING/공통규칙 확인. Library저장성공은담당기록확인/이번도구직접열람불가. 현재원본Assets·인계범위 기존승인M5미발견,새후보로검수.
+- F:/Downloads/BlizzardWisp_Issue112_OnePose.zip 798,663bytes/8파일/SHA53b21965bd0513a42bb04ebefd78572554a7e9803106e56f8573b36da7150ede·CRC/Manifest6/SUMS7/비순환PASS. PNG217,196bytes/512RGBA/0c72c3f8fc80c9e74bf648236a0ff1746ef344ef71f03b4c005c38db59915586·bbox36,8,475,464·외곽alpha0·128/40전RGBA직접축소일치.
+- 512/128/40실물·순백/어두운40px에서윤곽/핵식별PASS의견. 비인간형자연정령·추상우향·별도배경/대형VFX없음. 원본M1/M3와승인M2/M4실물읽기비교 추가:청백색윤곽/명암대체로호환. 우향추상성/국소핵발광강도는대표미술판단. KEEP검토권고·사용자승인필요YES·HOLD강제결함미발견.
+- 비교판 Temp/Issue112WispReview20261117/M1_M5_White40_Comparison.png 및납품512/128/40판. 같은캔버스오프라인이며Unity월드크기/실제맵QA아님. 추가모션·Unity실행/Import·적용/Spawn/스탯/전투/펫0·원화재생성0·Save/UserData/Discord/#85HOLD·기존승인자산보호.
+- docs/art-new업무의로컬검수기록:codex/issue112-wisp-offline-20261117·제품commit없음·문서SHA는Final.json/Issue112댓글. 원격Push/Merge/main직접commit0. 전체PC/Library실물전수확인주장0.
+
+[상세 검수](../../Issue112_BlizzardWisp_OfflineTechnicalReview_20261117.md).
+
+---
+
 ## 2026-11-16 신규 아트 마감
 
 Stoat KeyPose/Idle4/Attack4v2/Hit4 최종미술승인, Unity미적용. Defeat4미제작/후속자동착수금지. 서리들쥐 승인4모션 KEEP, 기존 QA 재사용.

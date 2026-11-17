@@ -1,24 +1,209 @@
-## 2026-11-16 복구 체크포인트 / 릴리스 HOLD
+## 2026-11-17 대표 결정 — 펫분양 최종승인 / 얼음갑충 게임적용 승인·등록데이터 막힘
 
-# 2026-11-16 승인 제품 복구 체크포인트
+- **#113 USER_ART_APPROVED / UNITY_NOT_APPLIED**: 이번대표직접승인반영·기존ZIP/CRC/Manifest7/SUMS8재확인. 문서/리뉴얼인계만갱신·Arbel(5,-3)기존승인OGA17유지·OGA16/레온/NPC/Placeholder변경0.
+- **#103 ART_APPROVED / GAME_APPLY_USER_AUTHORIZED / BLOCKED_MISSING_REGISTRATION_DATA / NOT_APPLIED**: 이전미승인제한을막힘원인으로삼지않음. 실제원본Definition21종M4일치0·IceBeetle자산0·M4F3/F4씬/조우등록없음·수치/승인된재사용대상없음. 이번새스탯금지와기존전투보존을지키며실제연결할대상없어제품변경전중단. 기본값/다른갑충수치임의복사/기존몬스터대체안함. 후속은등록수치또는재사용대상·배치/조우계약확정필요.
+- 승인5종SHA불변·DefeatZIP c04ad4e6…CRC/Manifest10/SUMS11재확인,동일재생코드·시트의기존격리44PASS재사용(반복QA0). Idle반복/AttackHit복귀/Defeat최종유지근거유지,실제M4전투QA미검증. 원본6000.6.5f1 compileFalse/오류0/경고42·Bootstrap/PlayFalse/dirtyFalse/포커스null.
+- **#112 USER_ART_REVIEW_PENDING / UNITY_NOT_APPLIED** 유지·추가작업0. 제품commit없음·문서5개만·codex/icebeetle-apply-pet113-approved-20261117·실제SHA/보호8356대조는Final.json/Issue103·113댓글. Save/UserData/Discord/#85HOLD/승인원본/dirty보호·main직접commit/Push/Merge0.
 
-**RECOVERY_CHECKPOINT_ONLY / NOT_RELEASE_READY / ISSUE85_IMPORT_GUID_HOLD / NON_GIT_OFFSITE_INCOMPLETE**.
+[실제 결과와 막힘 상세](../../Issue103_GameApplyAttempt_113_Approval_20261117.md).
 
-기존 공개전송 감사 통과 Clean 계보61fdc690에 오늘 승인된 NPC4종 PNG/meta와 카탈로그, 실제 QA/기획/아트/영상 Markdown만 선별 보관합니다. 원본 local main의 제외아카이브 포함72커밋 이력과 모든 사용자 미커밋/미추적은 이 브랜치에 들어있지 않습니다. 기존 이력/refs 재작성0. 복구본 구성 후 실제 Push·재조회 결과는 Issue85 EOD 댓글에서 확인해야 합니다. 이 문서 자체는 Push 성공을 미리 주장하지 않습니다.
+---
 
-## 포함과 보류
+## 2026-11-17 Issue103 — Defeat4 승인 실물·5종 재생 검수 / M4 계약 HOLD
 
-- 기존Clean 승인제품235파일/승인삭제21 재사용, 기존main에서 오늘 승인 NPC02/17·10/07v2 제품9경로 선별. 원본 커밋7b84fa76/81f8a45d에 대응하는 **파일 blob을 동일하게** 보관하며 부모이력을 공개전송하지 않습니다. TTS162 및 기존 승인몬스터/환경/코드는 Clean 계보의 검증선별본으로 유지합니다.
-- Unity버전6000.6.5f1, 하지만 Clean 계보의 기존 Animation/PSD Importer 호환성 문제·2D Tooling Import 예외·BattleProjectiles GUID6중복은 **해결하지 않았습니다**. 기존 #85 격리 수정 후보598ce8ea는 원본에 적용하지 않았으며 이 복구본의package2파일도 임의교체0. **새 PC에서 바로 정상빌드/실행되는 릴리스가 아닙니다.**
-- KeyPose/Idle4/Attack4v2/Hit4는 모두 미술승인·Unity미적용. 해당 F: ZIP/PNG는 이 체크포인트에 추가하지 않았습니다. Defeat4미제작/HOLD작업 보호, 오늘 신규기능 착수0.
-- 비Git 아트ZIP/영상/TTS원본/Save/Discord/인증/사용자dirty·untracked 및 다른 미Push브랜치 전부는 여기서 복원되지 않습니다. 비공개외부저장소·암호키·다른기기복원 확인 미확보. **PC고장 전체복구 완료가 아닙니다**. 동일F:에만남긴 보존본은 오프사이트가 아닙니다.
+**ART_APPROVED / UNITY_NOT_APPLIED(CONTRACT_HOLD) / ISOLATED_PREVIEW44PASS / PRODUCTION_QA_PARTIAL / REMOTE_NOT_PUSHED**.
 
-## 복구 방법
+- 최신기획17468d79·Issue103 최종승인 확인. Defeat ZIPc04ad4e6…/3,134,616bytes·CRC/Manifest10/SUMS11 PASS, PNG9cd3fd4c…/2048×512RGBA·912,389bytes·4셀QA/축소본일치·GIF비루프160/190/220/1600ms. 기존KeyPose/Idle/Attack/Hit 승인SHA 모두일치·원본수정0.
+- 원본Resources MonsterDefinition21종 중 M4일치0·IceBeetle자산검색0. 기존4종도게임미적용. 기획의 계약없으면격리미리보기만 조건에따라 새ID/스탯/Spawn/제품PNG/meta/클립/컨트롤러/전투/펫 추가0, 원본적용0·제품commit없음.
+- 기존QA Unity6000.6.5f1 숨김 재사용·기존재생기 SpriteRenderer+UIImage 44PASS: Idle반복/Attack·Hit복귀/Defeat4셀·최종1.6초유지·공격피격부활방지. 미리보기PPU512/Pivot256,48은임시이며제품확정아님. 런타임오류0/격리Search색인예외1별도·기존compilerwarning701행/신규probe경고0. 원본compileFalse/오류0/경고42·Bootstrap/PlayFalse/dirtyFalse유지.
+- 다음:기존계약부재보고후 M4 등록/적용계약 별도확정 필요. 실제전투QA/필드크기미검증·미적용을완료로표기하지않음. 보호8356대조·Save/UserData/Discord/NPC12/레온/Main04·07/Placeholder/#85HOLD유지·Push/Merge0. 브랜치codex/issue103-defeat113-review-20261117·문서SHA는Final.json/Issue댓글.
+- 확인:게임좌표없음, 실제Unity캡처 Temp/Issue103Defeat113Review20261117/IceBeetle_ActualUnityPreview.png 및납품GIF.
 
-새기기에서 GitHub 저장소를 clone한 뒤 backup/2026-11-16-safe-checkpoint를 별도 작업브랜치로 checkout합니다. 이 브랜치의 승인제품을 보존하고 Issue85의 패키지/Import/GUID 승인·표적검증부터 재개해야 합니다. 기존Dirty/Save/Discord를 이 브랜치에서 되살릴 수 있다고 오해하지 마세요. 원본main을 reset/force로 이 브랜치에 정렬하지 않습니다.
+[상세 보고](../../Issue103_Defeat4_Approved_IsolatedPreview_ContractHold_20261117.md).
 
-로컬보고: EOD_20261116_SafeIntegration_Recovery.md. 최종상태는 GitHub Issue85 EOD 댓글을 확인합니다. 오늘개발종료, 추가작업자동시작금지.
+---
 
+## 2026-11-17 Issue111 — 잔여 NPC 승인 원화 재연결 / 단색 주민 조사
+
+**LOCAL_ORIGINAL_WORKING_TREE_APPLIED / DELTA160PASS_0FAIL / ORIGINAL_ERRORS0 / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- 레온#109 완료 후 Catalog 두 경로만 수정: Arbel 분양담당→승인OGA17, 서쪽주민→승인OGA11. Main21 완료 카타콤·시작마을 PetAdoption fallback도 같은 승인OGA17 실물 확인. PNG/meta/GUID/PPU/Pivot 변경0·외부PNG삭제0.
+- 기존QA6000.6.5f1 재사용·960/1280/1680 렌더·E/패드A/주민대화/분양 확인·실제100탈렌트결제/합성Save/ESC·B닫기 및 기타NPC속성 보존160PASS. 원본 compileFalse·오류0/경고42·Bootstrap/PlayFalse/dirtyFalse/포커스유지. 3지역×2상태56런타임NPC 중legacy렌더0·외부PNG12보관(게임전체전수아님). Frostway 공통fallback정적영향은같음/실물QA범위밖.
+- Arbel(1.5,-1.5) VillageNpc는 초기 VillageNpcPlaceholder 프리팹 잔존·role/StableID없음·일반 인사대사·PlaceholderVisual의 노란1×1런타임Sprite. 외부PNG아님·삭제/역할추가0·향후정리기획미결.
+- 레온/NPC12/Main04·07/#106/Save/UserData/Discord/기존dirty 및 #85HOLD보호·대형복제/Push/Merge0. 제품 `e4478f57f2e60a94d32a07b79d00b6fed1cf975e` / codex/issue111-residual-npc-20261117, rootmain52f84e64유지. 8356파일최종보호대조·문서SHA는Temp/Issue111Residual20261117/Final.json·Issue111댓글.
+- 대표 확인:Arbel(5,-3)/(-5,2), Main21완료Field03(-2.05,-3.55),시작마을(-5.8,-3.6). 새Play실제수용확인대기.
+
+[상세 보고](../../Issue111_ResidualNpc_ApprovedReferences_20261117.md).
+
+---
+
+## 2026-11-17 Issue109 — 승인 레온 전용 외형 원본 적용 / #110 보존
+
+**USER_ART_APPROVED / PORTRAIT_OUT_OF_SCOPE / LOCAL_ORIGINAL_WORKING_TREE_APPLIED / DELTA178PASS_0FAIL / ORIGINAL_ERRORS0 / ISSUE110_ALREADY_DONE_NOT_REPEATED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- Leon ZIPdfaaf5fe…CRC/SHA재확인·기존오프라인PASS재사용. PNGff7cfd08…/GUIDed9108a8402b48d3a8ae5c2b9b4a8769/PPU360.5/Pivot(.5,.083984375)=(256,43),가시높이1.142857WU·발접지0. arbel-leon만전용Main13_Leon_Approved로교체·OGA09/기타참조/좌표(0,3)/대사/Quest데이터불변·초상화0.
+- 큰목표판-E중첩재현후레온전용후처리만추가:추적target arbel-leon/화면안때오른쪽286px·상단114px피함. 공용이름표1.37/Resident숨김/E1.48/표식1.92및공용navigation/Main04/07변경0. 제품3파일(신규PNG/meta+Catalog)만원본적용.
+- 기존QA6000.6.5f1·178PASS·3해상도HUD ON9화면·모든역할NPC불투명픽셀과큰판겹침0/E상자분리·실제E/패드A·Main13최종대화완료/Main14시작·보고진행/합성Save재진입PASS. 레온분기표적검증이며전체여정/전투전수아님. 원본Import/Resources/compileFalse/초상화NONE·오류0·경고104.
+- #110제품6c81a03d…/85PASS완료재확인,두파티맵/Scene실물유지·반복수정0. Main04/07/NPC12/Save/Discord/dirty·Issue85HOLD보호. 제품`c00fbb63c65c67d36a2cd59736f6822c1f3368c3`/codex/issue109-leon-approved-20261117·rootmain52f84e64유지·Push/Merge0. 최종DocsSHA/8354대조는Issue109/110댓글·Temp/Issue109LeonApply20261117/Final.json. 확인:Arbel레온(0,3),대표새Play수용대기.
+
+[상세 적용·검증 보고](../../Issue109_Leon_Approved_OriginalApply_20261117.md).
+
+---
+
+## 2026-11-17 Issue110 — 카타콤·아르벨 파티 안내인 외형 참조 수정
+
+**LOCAL_ORIGINAL_WORKING_TREE_APPLIED / TWO_MAPPING_ONLY / DELTA85PASS_0FAIL / ORIGINAL_ERRORS0 / OTHER_LEGACY_REPORTED_NOT_CHANGED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- safezone-catacomb-party/arbel-party-guide 두경로만기승인OGA10_PartyManager_HandFix_v2_Approved로수정. PNG6be1a2d7…/GUID012b7ee363574fe3900bbd56a472b984/PPU360.5/Pivot255.5,42 원본불변. 카탈로그2줄외매핑/이름표1.37/E정책·NPC위치/대화/편성기능·PNG/meta/GUID변경0.
+- 기존QA/6000.6.5f1·85PASS·960/1280/1680/접지/이름표/실제E·패드A·편성취소/전후열확정/합성Save/재진입PASS. 원본두맵/Resources/compileFalse/오류0·경고42. 보호8354대조최종은Final.json.
+- 실제잔여외부:Arbel펫분양OGA17/서쪽주민OGA11,Main21후카타콤·시작마을동적펫분양도OGA17fallback. 나머지기본기능NPC승인원화·세린공식Sprite. Arbel(1.5,-1.5)마을주민은외부PNG아닌활성1×1단색placeholder. 모두보고만·미변경. 구형PNG12종중관찰3Scene/2상태실사용2종·미표시보관10종(전프로젝트미사용입증아님/삭제0).
+- 제품`6c81a03d229f0075b39dcbfa07656182e7f6bae5`/codex/issue110-party-appearance-20261117·rootmain52f84e64유지·Push/Merge0. Main04/07/NPC12/Save/Discord/dirty·Issue85HOLD보호. 확인:Field03(2.85,-2.55)/Arbel(-3,-2)파티안내인,옆에서E/A. 다음은대표새Play수용·나머지잔여는별도지시.
+
+[상세 수정·잔여 감사](../../Issue110_PartyGuide_LegacyReferenceFix_20261117.md).
+
+---
+
+## 2026-11-17 Issue103 Hit4·Issue109 레온 — 오프라인 검수
+
+**BOTH_FILE_TECH_PASS / HIT4_ART_REVIEW_PENDING / LEON_USER_ART_APPROVAL_PENDING / BOTH_NOT_APPLIED / UNITY_NOT_IMPORTED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- Hit4 ZIP982328b9…3131456bytes/12파일·CRC/Manifest10/SUMS11 PASS.2048×512RGBA·4셀·분리QA동일·하단y430..511RGBA4/4승인원본동일·마지막KeyPose/QA파일바이트동일.처음3셀은승인Idle/Attack어느셀과도전RGBA동일하지않음. GIF실제90/160/110/190ms·550ms반복/직접축소·비교판PASS.피격→움츠림→복귀/파손·과장점프·새VFX발견0·40px세부약함·최종미술승인필요.
+- Leon ZIPdfaaf5fe…732482bytes/9파일·CRC/Manifest7/SUMS8 PASS.512RGBA/직접128·40/실제OGA09·승인OGA20·Main07비교판PASS.묶은머리/수염/적갈어깨천/청록복/장화·주머니로OGA09와구별·책임자/실용복읽힘·부상0.세밀한명암의화풍조화는대표승인필요. 현재로컬Portrait정의7/관련Assets파일명/정본에서레온전용공식초상화미발견(일치NOT_VERIFIED),전PC/모든브랜치조사아님.
+- 게임코드/Assets/GUID/Unity도구/Import/Save/Discord변경0·Main04/07/NPC12/승인원본·Issue85HOLD보호. codex/art103-hit109-leon-review-20261117 문서3개만로컬commit·최종SHA/8354보호대조는Issue103/109댓글·Temp/Art103Hit109Leon20261117/Final.json. 다음:각각미술승인후별도최소QA/적용지시,자동적용0.
+
+[대상별 상세 검수](../../Issue103_Hit4_Issue109_Leon_OfflineReview_20261117.md).
+
+---
+
+## 2026-11-17 Issue108 — Main07 승인 여행자 원본 적용
+
+**USER_ART_APPROVED / LOCAL_ORIGINAL_WORKING_TREE_APPLIED / DELTA134PASS_0FAIL / ORIGINAL_ERRORS0 / MIEL_REFERENCE_ONLY / USER_REALPLAY_PENDING / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- 승인ZIPb943fb91…CRC/SHA재확인·기존오프라인PASS재사용. PNG90c727b9…/GUID2cf0a7d9462740c58756aca0f18f3391/PPU430/Pivot(.498046875,.08984375)=(255,46),가시높이.8WU·접지0. 기존(4.4,.2)/scale1/sorting8/white유지. 제품3파일(새PNG/meta+Main07Flow)만원본적용.
+- Main07전용큰목표판만왼쪽286px분리/상단114px회피·실제목표/거리/방향유지. Main04/공용navigation/#106/NPC12변경0. 실제폴1.044WU대비앉은높이76.6%. **현재Main07미엘필드Sprite없음**:기존상호작용/대사유지,공식미엘같은.72축척QA참고비교만하고새미엘배치0.
+- 기존QA/6000.6.5f1·134PASS·8목표/E/F/A/Story전투진입·도망재도전/승리결과처리복귀/재회/작별/완료숨김/합성Save읽기·재진입PASS. 승리는QA결과처리호출(전체플레이아님).3해상도4단계HUD ON12렌더·통상1.1WU거리범위얼굴/안내겹침검사,임의중첩좌표전체보장아님. 원본Import/compile/Resources·오류0·경고104.
+- 제품`f1b0fc9258003d3c12e9c1f1bd830dda84f51b21` /codex/main07-traveler-approved-20261117·rootmain52f84e64유지·Push/Merge0. 최종DocsSHA/보호8352대조는Issue108/Temp/Issue108Apply20261117/Final.json. 확인:Field_02바퀴자국조사후여행자(4.4,.2),폴(6.5,-2.35)→복귀(5.2,.2). 다음은대표실제Play수용·미엘실Sprite추가는별도범위.
+
+[상세 적용·검증 보고](../../Issue108_Main07_Traveler_OriginalApply_20261117.md).
+
+---
+
+## 2026-11-17 Main04 가림 수정·원본 적용 + Attack103/Main07_108 오프라인 검수
+
+**MAIN04_LOCAL_ORIGINAL_APPLIED / DELTA65+59PASS / ORIGINAL_ERRORS0 / ATTACK4_FILE_TECH_PASS_ART_PENDING_NOT_APPLIED / MAIN07_FILE_TECH_PASS_USER_ART_PENDING_NOT_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- Main04 만남Y5.5→3.4·여행자(8.15,5.15)→(8.85,3.05)·전용LabelY1.15→1.65. 미엘전용 E1.48/54→1.66/40·표식1.92/50→2.08/36. 현장근처만Bounds내120px프레이밍·Main04파란목표판기존빈공간선택재사용. #106공용1.37/E·공용Camera/원본Scene/글자색크기불변.
+- 제품4파일(새PNG/meta+Main04Flow+QuestNavigationPresenter)만원본working tree적용. PNG2687c1c6…GUIDf325180de4944364a0dd74c1a814d6df/PPU360/Pivot(.5,.08203125).65기능(승리는QA결과처리호출)·59최종화면표적PASS·3해상도/4방향/실불투명픽셀과글자·파란판겹침0. 원본실제Import/compile/Resources/Console오류0·경고104. 대표새Play수용대기.
+- Attack4 ZIPebb41720…12파일CRC/Manifest10/SUMS11 PASS·2048×512RGBA·하단접지4/4동일·마지막KeyPose전픽셀동일(첫장준비자세차이).GIF180/110/130/180ms·축소/보드직접원본일치. 최종미술승인필요·미적용.
+- Main07 ZIPb943fb91…9파일CRC/Manifest7/SUMS8 PASS·512RGBA/직접128/40/실제비교판PASS. 회색앞머리/자주외투/바닥지지·다리붕대로Main04·주민구별/고어0·동일인캐논확정0. 최종미술승인필요·미적용.
+- Main07/승인NPC12/Save/Discord/dirty·Issue85HOLD보호. rootmain52f84e64유지·제품`3f66fdb25d9445738f8b484d065d92d84e462442`/codex/main04-layout-art103-108-20261117·Push/Merge0. 최종DocsSHA/보호대조는Issue103/107/108댓글·Temp/Main04Fix_Art10310820261117/Final.json. 확인:Field_01 미엘(7.55,3.5)/여행자(8.85,3.05),Main04진행중.
+
+[상세 적용·검수 보고](../../Main04_LayoutFix_Attack103_Main07_108_Review_20261117.md).
+
+---
+
+## 2026-11-17 Issue107 — 승인 Main04 여행자 조건부 적용 검증 HOLD
+
+**USER_ART_APPROVED / FILE_TECH_PASS / FUNCTIONAL44PASS / VISUAL_DELTA_FAIL / ORIGINAL_NOT_APPLIED / REMOTE_NOT_PUSHED**.
+
+- ZIP286fe97b…/PNG2687c1c6… 재확인·승인 유지. 전용512RGBA 후보 GUIDf325180de4944364a0dd74c1a814d6df·PPU360/Pivot(.5,.08203125)·앉은가시높이.966667WU, 접지0·기존LabelY1.15/tint.82/sorting7/위치 유지. 원본 제품3파일 미적용, 후보Temp/격리QA에만 보존.
+- 기존QA/6000.6.5f1·기능44PASS·실제E/전투진입/도망재도전/승리결과처리복귀/완료후숨김검사, 오류0. 승리는QA의기존EndBattle(true)결과처리호출이며전체전투플레이아님. 최종PPU360/3해상도추가표적렌더PASS와시각합격은구분.
+- **시각FAIL:**960/1280/1680 기존OGA07에서도현재목표/F10상단HUD가미엘얼굴·여행자이름표가림;HUD숨김진단에서도이웃미엘/StoryLabel간섭. PASS조건미충족으로원본적용HOLD. 기존Scene/Camera/Bounds원본-QASHA동일. 공용HUD/배치임의변경0.
+- Main07/승인NPC12/Save/Discord/dirty·Issue85HOLD보호. 원본Bootstrap/PlayOFF/compileFalse/오류0·파일변경0. rootmain52f84e64유지. codex/main04-traveler-approved-20261117 문서만로컬commit·최종SHA는Issue107/Temp/Issue107Apply20261117/Final.json. 다음:Main04한정가림해소범위결정→동일DeltaQA→PASS후원본반영. 미술재승인불필요.
+
+[상세 검증·HOLD 근거](../../Issue107_Main04_Traveler_ConditionalApply_HOLD_20261117.md).
+
+---
+
+## 2026-11-17 Issue103·107 — Idle4·Main04여행자 오프라인 검수
+
+**BOTH_FILE_TECH_PASS / IDLE4_ART_REVIEW_PENDING / TRAVELER_USER_ART_APPROVAL_PENDING / UNITY_NOT_IMPORTED / NOT_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- 얼음갑충ZIP8a9ecec0…3010425bytes/12파일·CRC/Manifest10/SUMS11 PASS. 2048×512RGBA4셀·독립승인KeyPose와Frame00RGBA/QA00파일바이트동일·하부y397~5114셀동일. 미세갑각움직임/접지안정·특별이상프레임없음.128/40보이는RGBA·알파직접축소동일, GIF원본양자화4/4동일·반복·실제120ms(약8.33FPS,8FPS표기주의).
+- 여행자ZIP286fe97b…650099bytes/9파일·CRC/Manifest7/SUMS8 PASS.512²투명RGBA1·128/40전RGBA직접축소동일·실제OGA07legacy32/승인OGA07/새여행자분리비교. 앉은자세·팔붕대·여행장비로주민구별/고어0·40px부상세부약함. 새부상캐논확정0·사용자승인필요.
+- Unity/원본게임/Scene/GUID/Import/Save/Discord변경0·Unity6000.6.5f1/Issue85HOLD유지. 문서3개만로컬commit·codex/art103-107-offline-review-20261117, 최종SHA/보호대조는Issue103/107댓글·Temp/Art103107Offline20261117/Final.json. 다음:두대상각각미술승인후별도최소UnityQA/적용지시,자동착수0.
+
+[대상별파일·미술검토 상세](../../Issue103_107_Offline_FileArtReview_20261117.md).
+
+---
+
+## 2026-11-17 Issue104·105 — 주민4·독립 남문경비 검증·원본 적용
+
+**FILE_TECH_PASS / TAEON_DIRECT_COMPARE_DISTINCT / BOTH_LOCAL_WORKING_TREE_APPLIED / DELTA118PASS_0FAIL / ORIGINAL_IMPORT_COMPILE_CONSOLE0 / USER_REALPLAY_PENDING / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- ZIP807f7d6b…/2166760bytes·CRC/Manifest12/SUMS13 PASS. PNG2 512²투명RGBA·실제128/40일치. OGA19기존주민구별, 새OGA20을공식태온초상화/실제필드용Idle00Sprite와직접비교해강한동일인/가족유사성발견0. 구형닮은OGA20시안HOLD별도보존.
+- 신규PNG2/meta2+Catalog4매핑줄(제품5파일)만. 둘다PPU367.5/Pivot(.4990234375,.076171875)·가시높이1.142857WU. OGA20남문/카타콤/ArbelPortal3공유외형검증. 기존StableID/역할/대화/Collider/Scene/승인NPC10·태온원본/Saves/Discord보호.
+- Unity6000.6.5f1기존QA재사용118PASS·960/1280/1680/발접지/실제E·패드·재진입PASS. 원본MCPImport·Resources/GUID/PPU/Pivot·compile완료/Console오류0(경고42). #106이름표Y1.37/E코드SHA불변·주민4/Portal숨김정상. 기존격리Search예외별도·Issue85HOLD유지.
+- 제품 `a0d5674bc83ddae5223cc4c62f23b2889876f2ed` / `codex/npc104-105-approved-original-20261117`. 원본working tree적용·main52f84e64유지·Merge/Push0. 최종DocsSHA는Issue104/105댓글·Temp/Issue104105NPC20261117/Final.json. 확인: 주민4(7.2,0),남문(2.4,-5.1),Field03감시인(2.85,-4.55),ArbelPortal(-7,-3). 다음은대표새Play수용.
+
+[태온비교·제품5파일·실제QA 상세](../../Issue104_105_OGA19_OGA20_OriginalApply_20261117.md).
+
+---
+
+## 2026-11-17 Issue106 — NPC 이름표·승인된 E안내 상향 적용
+
+**LOCAL_ORIGINAL_WORKING_TREE_APPLIED / DELTA155PASS_0FAIL / ORIGINAL_COMPILE_CONSOLE0 / USER_REALPLAY_PENDING / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- NameplateY1.02→1.37(+.35). 실제alpha상단/글자·그림자bounds기준+.15/.20은미해소, 최종머리간격.0416~.0639WU. E상자충돌을보고한후대표가“E 안내 상향도 허용하고 검증 계속”추가승인. 표시이름표NPC E1.48→1.87, 기존Quest표식활성시안내만표식위(현재2.48). 주민/별도NPC E1.48유지·퀘스트표식원본변경0.
+- 기존QA3지역/960·1280·1680·17이름표/30전후실제렌더·155PASS. 얼굴/E/표식분리·잘림·이름표상호겹침0·도보/휠체어E·패드A·주민숨김/NPC102매핑보존. 격리기존Search환경예외별도·Issue85HOLD유지.
+- 원본MCP표적Import·실제Offset1.37/컴파일완료/Console오류0(경고42). Bootstrap/PlayOFF/dirtyFalse/선택·포커스보존. 카탈로그Y+설명주석/NpcInteractionPrompt2코드만원본working tree적용·보호8346중그외8344SHA동일. PNG/meta/GUID/PPU/Pivot/Collider/매핑/Save/Discord보호.
+- 제품 `4f62cce85c05ccf1b7de5f3f5ef0aae3c9620ebf` / `codex/ch1-npc-nameplate-clearance-20261117`. main52f84e64그대로·Merge/Push0. 최종DocsSHA는Issue106댓글/Temp/Issue106Nameplate20261117/Final.json. 확인: 은행(4.4,2), 훈련장(6.4,-2.1), 대표(0,1.5) 새Play. 다음은대표실게임확인.
+
+[실측·전후·최종검증 상세](../../Issue106_NpcNameplate_Clearance_20261117.md).
+
+---
+
+## 2026-11-17 Issue102 — 승인 OGA11·OGA13 로컬 원본 적용
+
+**USER_ART_APPROVED / LOCAL_ORIGINAL_WORKING_TREE_APPLIED / DELTA_53_PASS / ORIGINAL_IMPORT_COMPILE_PASS / ORIGINAL_CONSOLE_ERRORS_0 / USER_REALPLAY_PENDING / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- 승인NPC2 PNG원본SHA보존·독립GUID2·시작마을StableID외형매핑2줄만 교체(제품5파일). OGA11 PPU358.75/Pivot(.4990234375,.080078125), OGA13 PPU360.5/Pivot(.5,.080078125), 가시높이1.142857WU. 기존8/OGA20HOLD/Arbel기존OGA11·Scene/대화/Collider/Nameplate/Save/Discord보호.
+- Unity6000.6.5f1 기존QA재사용53PASS·960/1280/1680/발접지/주민이름표숨김/실제E·패드대화/재진입 PASS. 원본숨김Batch Import·compile·Resources/GUID/PPU/Pivot PASS·Console오류0(경고104). 격리기존Search시작예외별도, Issue85HOLD유지. 창/포커스조작0.
+- 제품 `b7ace6b7f7958b4d74457f4c31db01e667b28856` / codex/npc102-approved-original-20261117. 원본은검증제품5파일 **working tree적용**, mainHEAD52f84e64유지·Merge/Push0. 기존dirty보호위해원본main에제품commit합류를주장하지않음. 완료문서3개만후속Docscommit, 최종SHA는Issue102댓글/Temp/Issue102NPC20261117/Final.json.
+- 확인: 남동주민2(3.2,-2.6), 서쪽주민3(-7.2,0). 일반주민상시이름표숨김정상·E/패드A기존대화. 다음은대표새Play확인; Defeat4승인/Unity적용확대0.
+
+[적용·검증 상세](../../Issue102_OGA11_OGA13_OriginalApply_20261117.md).
+
+---
+
+## 2026-11-17 Issue102·100 — NPC2·SnowStoat Defeat4 오프라인 검수
+
+**FILE_TECH_PASS(각 ZIP) / NPC_STYLE_REVIEW_PENDING / DEFEAT4_ART_REVIEW_PENDING / USER_ART_APPROVAL_PENDING / UNITY_NOT_RUN / GAME_NOT_APPLIED / REMOTE_NOT_PUSHED**.
+
+- NPC102 ZIP c6e2268f…/1436792bytes·CRC/Manifest11/SUMS12 PASS. OGA11/13 512²투명RGBA2장·직접128/40프리뷰4개 픽셀동일·승인NPC8실물SHA동일·비교판10종 라벨/실물일치. 후보 구별가능, 화풍은 OGA07/10에 가깝고 최종승인대기.
+- Defeat4 ZIP34f23d12…/1454055bytes·CRC/Manifest10/SUMS11 PASS·메타순환0. 시트8bc97ce0…2048×512/4셀·분리4셀동일·낮아짐→엎드림→마지막유지/회복0. 128/40보이는RGBA·알파직접축소동일(완전투명RGB차이별도), GIF원본MEDIANCUT변환4/4동일·비반복120/120/120/1750ms. 승인KeyPose/Idle4/Attack4v2/Hit4실물SHA4/4보호.
+- Unity6000.6.5f1·Issue85HOLD·Save/UserData/Discord/승인원본보호. Import/게임적용/Assets수정/Push/Merge0. 기존 소형 문서worktree재사용, codex/art100-102-offline-review-20261117에 문서3개만 로컬commit. 최종SHA/보호대조는Issue100/102댓글·Temp/Art100_102Offline20261117/Final.json. 다음은대표최종미술승인, 적용자동착수0.
+
+[실물·SHA·검수 상세](../../Issue100_102_Offline_DeliveryReview_20261117.md).
+
+---
+
+> 최종확인: 백업8342 SHA PASS·bundle verify0·PNG6동일·기존비보고status동일. 마지막관련commit `e0ac9a1f16aeb9f44c32b2f6ed4aab48089ed702`. F: 321531150336bytes. 외부백업/Unity표적QA HOLD.
+
+## 2026-11-17 Issue85 — 기존 수정 진단·외부 백업 BLOCKED
+
+**OFFSITE_BACKUP_BLOCKED_NO_DESTINATION / STATIC_PASS / UNITY_QA_NOT_RUN_HOLD / REMOTE_NOT_PUSHED**.
+
+- 내부 NVMe/SATA2개·C/D/E/F Fixed만 확인, 승인된 PC 밖 비공개 목적지 미확인. 임의 업로드/암호생성0. 어제 bundle/8342 보호목록 재사용; SHA·보호·실제 F:와 마지막 commit은 Temp/Issue85Resume20261117/Final.json 및 Issue85 댓글에 기록.
+- Git15.1.0/14.0.3/3.0.1·GUID6중복과 원본16.0.1/15.0.1/4.0.1·GUID6고유를 분리. 현재 Assets GUID 중복0. 기존 변경을 재수정/제품커밋하지 않음. 전체 manifest/lock에는 세 패키지 외 기존 차이도 있음.
+- 원본Tooling4 오류대상8파일 읽기 성공. 기존격리Tooling3은 열거되나 일반 긴 경로8파일 읽기 실패. 원인/Import 예외 해소 미확정. A/B 안전조건 중 외부 백업 미충족으로 Import/컴파일/GoldenArrow8·Healer5 실제 로드 NOT_RUN/HOLD. 현재 Unity 프로세스/연결Editor없음·live Console미검증, Editor실행/포커스조작0.
+- 원본main52f84e64 유지·Save/UserData/Discord/승인아트/기존dirty보호. 76오래된worktree NOT_VERIFIED 유지. 기존 소형 문서worktree 재사용, 별도 codex/issue85-existing-fix-audit-20261117 문서만 로컬 commit·Push0. 다음: 승인 외부 암호화 복구수단 확보 후 표적QA 게이트 결정.
+
+[상세 진단](../../Issue85_ExistingFix_OffsiteAudit_20261117.md).
+
+---
+
+## EOD 2026-11-16 — 안전 통합·원격 부분 복구 / 오늘 개발 종료
+
+**LOCAL_APPROVED_DOC_SYNC / BACKUP_BRANCH_PUSH_DONE / REMOTE_MAIN_PUSH_HOLD / OFFSITE_ASSET_BACKUP_INCOMPLETE / DAY_CLOSED**.
+
+- 원본시작main977f3b6c, 별도codex/eod-safe-integration-20261116에서완료Markdown19+담당인계3/EOD/CODEX/CURRENT만선별하여FF-only동기화. NPC02/17·10/07이미적용보존, StoatKeyPose/Idle4/Attack4v2/Hit4미술승인·Unity미적용,Defeat4미제작. 제품/패키지/GUID수정0.
+- **원격backup/2026-11-16-safe-checkpoint=9d84b81934a7cff7dcf4bf5083de3f1f45ea7201 일반Push성공**. 신규383객체전수범위/비밀패턴/금지자료/제외이력0. 빈소형bareGit에HTTPS재fetch하여NPC9파일/README바이트확인. Clean계보선별복구본/릴리스아님/원본main전체미러아님.
+- 원격main=bfd281545632877325f5d21e04cefb924042c465 유지·Push미실행. Issue85 Import예외/Git트리GUID6중복HOLD유지, 현재원본dirty의package/GUID수정과구분. 원본6000.6.5f1/compileidle/기존QA재사용. 기존미커밋package16.0.1/15.0.1/Tooling4.0.1을임의커밋하지않음.
+- 원본dirty302/untracked550·8342파일보호,기존backup8315재사용+delta27만복사/SHA일치. 210branch중미Push171·160worktree목록(81status확인/76timeout/3기존경로불가)·비GitDownloads1479파일목록. Save/UserData/아트/TTS/영상/Discord파일변경0. **비공개외부저장소미확인/비Git오프사이트미완료**. F:백업과로컬bundle은PC고장전체복구아님.
+- 최종로컬SHA/서버SHA/F:여유/로컬bundle결과는Issue85및Temp/EOD20261116/Final.json. 다음은사용자재개지시후외부암호화복구/Issue85별도검증, **오늘추가작업자동시작금지**.
+
+[EOD 전체 결과](../../EOD_20261116_SafeIntegration_Recovery.md).
 
 ---
 
