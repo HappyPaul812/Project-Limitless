@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-17 / Issue #103 — M4 얼음갑충 Ice Beetle 신규 오리지널 1포즈 후보 납품
+
+- [**#103 F3~F4 얼음갑충 신규 1포즈 발주**](https://github.com/HappyPaul812/Project-Limitless/issues/103) / 북부 몬스터 7종 정본 확인. GitHub 코드검색 `IceBeetle`·`얼음갑충`, 기존 인계 및 ChatGPT Library 검색에서 **기존 승인 M4 원화 납품 미발견**. 사용자 Windows F: 전수 검색 미실행이므로 `LOCAL_NOT_AUDITED`.
+- **신규 게임용 Sprite 1포즈만** `Candidate/IceBeetle_M4_KeyPose_512_RGBA_CANDIDATE.png`, **512×512 RGBA 투명 / 우향 3/4 / SHA256 `b7ff0592226c2a1f28270053cf03483b6051c69edb412b59a7965ccf8699b3ad`**, 241,066bytes. 청록 얼음 갑각, 낮고 둥글넓은 체형, 짧은 다리, 각진 얼음 분절, 어두운 윤곽, 매우 희미한 금빛 온기 흔적. 신규 생성 원화1254를 비율 유지 게임 512 캔버스 정규화, 승인 Ch2 화열딱정벌레 팔레트 단순 변환/기존 원본 수정0.
+- **실제 512/128/40 px 축소 PNG + 밝은 설원/어두운 필드 OFFLINE 검토판**. 원격 `main` 공식 [Ember Beetle Sprite Sheet](https://github.com/HappyPaul812/Project-Limitless/blob/main/Unity/Client/Assets/_Project/Art/Monsters/14_EmberBeetle/Ember_Beetle_Sprite_Sheet.png) Git blob SHA1 `fe701ce82ccd1bd0bec9cfcfb208e43c0872f3da` 경로 존재 확인하였으나 이 세션 원본 PNG 바이너리 미획득으로 **실물 공식 Ch2 1:1 아트 나란히 비교 `NOT_VERIFIED`**, 추정 판독 PASS 금지. 비교검증 상태판은 실물 두 스프라이트 합성이라고 주장하지 않음.
+- ZIP **`IceBeetle_Issue103_OnePose.zip` / 830,282bytes / 8entries / SHA256 `ca56030e22d581ef58bafe51b66cc9181478dfa8343f16f33155aeda8f14323a`**. CRC PASS, **Manifest 6/6·SHA256SUMS 7/7 PASS**, 이전 문제였던 자기/순환 참조 없음. `SourceDeclaration_And_QA.md` 포함. 실파일 ZIP/PNG/보드는 **ChatGPT Library `/LIMITLESS/Issue103_IceBeetle_OnePose/`에 저장**.
+- [**M4 얼음갑충 제작 보고**](../../Chapter3_IceBeetle_M4_OnePose_ArtPilot_20261117.md) `docs/art-new` commit **`4a712d11d4902060db2e396004b634a3d335fceb`**. 상태 `M4_ONE_POSE_ART_CANDIDATE / USER_ART_REVIEW_PENDING / OFFLINE_QA_PASS / EMBER_SOURCE_ACTUAL_NOT_VERIFIED / UNITY_NOT_APPLIED`. 대표 승인 전 Idle/Attack/Hit/Defeat/Pet/MonsterID/전투 수치·Drop/Unity0. 승인 Mouse/Stoat/Owl/Ch2/환경/보스 및 Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/main 보호, main 직접 commit/Push/Merge0.
+
+
 ## 2026-11-17 / Issue #100 — 설원족제비 Defeat4 패배 애니메이션 후보 납품
 
 - [**11/17 #100 Defeat4 발주**](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6931011521) 및 [**11/16 Hit4 바울 대표 최종 승인**](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6913468404) 확인: **설원족제비 KeyPose·Idle4·Attack4 MouthFix v2·Hit4 4종 모두 USER_ART_APPROVED**. 기존 하단 인계의 `HIT4_USER_ART_REVIEW_PENDING`은 납품 당시 상태일 뿐 현재 유효하지 않음. 기존 승인 4종 실제 SHA 재측정 4/4 일치·바이트 수정0.
