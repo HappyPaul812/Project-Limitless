@@ -1,3 +1,14 @@
+# PLANNING / 2026-11-17 — 카타콤/아르벨 파티 안내인 외부 원화 잔존 발견·수정 발주 및 신규 아트 검수
+
+- 대표 실제 플레이 피드백: '챕터 1의 던전 앞 npc중에 파티 안내인 우리꺼 아니다?' [#101 원본 적용 보고](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6913091059)에서 starter-village-party-manager만 승인 OGA10으로 변경했으며 safezone-catacomb-party/arbel-party-guide는 legacy OGA10 유지 명시. 원격 main 코드도 공유 경로 확인. 현재 로컬 실물은 Codex 재확인 필요.
+- [#110](https://github.com/HappyPaul812/Project-Limitless/issues/110) 두 파티 안내인 승인 OGA10 경로 조건부 교체 및 기타 실사용 외부 NPC 읽기 감사 발주. 기존 원화 재제작 금지, 다른 지역 NPC 무단 일괄 변경 금지. 별개 인물 고유 디자인은 별도 미술 발주. 기존 NPC12·Main04/07·#106 이름표·상호작용 보존.
+- [#108 Main07 원본 적용](https://github.com/HappyPaul812/Project-Limitless/issues/108#issuecomment-6938996850): 134 PASS/0 FAIL, PPU430/Pivot(255,46)px, GUID 2cf0a7d9462740c58756aca0f18f3391, 제품 f1b0fc9258003d3c12e9c1f1bd830dda84f51b21, 원본 working tree만 적용. 미엘 필드 Sprite 미존재로 참고 체격 비교만, 1.1WU 통상접근 범위 QA, 사용자 실플레이 대기.
+- [#103 Hit4 실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6940004708): FILE_TECH_PASS / ART_REVIEW_PENDING / NOT_APPLIED. ZIP SHA 982328b9a96f13330b8cdf9d8be6433abd9907fa1b1826dbec0ec352bc6bee55, PNG SHA cf1dd6c78ffeffd12f8d026dda7ae362e09ffd0a7a3dee536d86569df4f51a3c. 마지막 KeyPose 일치, 접지 유지, 이상 프레임 없음. KEEP 권고, 사용자 승인 전 Defeat4 발주 금지.
+- [#109 레온 실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/109#issuecomment-6940006218): FILE_TECH_PASS / USER_ART_APPROVAL_PENDING / NOT_APPLIED. PNG SHA ff7cfd081e7727a7ab228bae0a5ece879727b98594514c932d4a616396bc8fdc, ZIP SHA dfaaf5fe453dadeaa268a24edbdcefafb6a9b0266db4c6e6251131b741d6504a. OGA09와 구별, 세밀한 명암·치비 비율 조화는 사용자 판단 필요. 공식 레온 초상화 미발견(대조 미검증). 사용자 최종 승인 전 적용 금지.
+- GitHub 발주/기획 기록만 완료, 로컬 작업 자동실행 없음. Unity6000.6.5f1/#85 HOLD/Save/Discord/기존 원본과 dirty/untracked 보호, main 직접 commit/Push/Merge 금지.
+
+---
+
 # PLANNING / 2026-11-17 — 얼음갑충 Attack4·Main07 부상자 최종 미술 승인 / 후속 3건
 
 - 대표가 두 원화 승인 요청에 '어. 승인,' 답변. **Attack4 및 Main07 USER_ART_APPROVED**, 재작업 없음, 아직 Unity 미적용.
