@@ -30,13 +30,13 @@ namespace ProjectLimitless.NPC
                 ["starter-village-resident-01"] = "VillageNpcSprites/Eldiran/OGA07_Resident01_HandFix_v2_Approved",
                 ["starter-village-resident-02"] = "VillageNpcSprites/Eldiran/OGA11_Resident02_Original_Approved",
                 ["starter-village-resident-03"] = "VillageNpcSprites/Eldiran/OGA13_Resident03_Original_Approved",
-                ["starter-village-resident-04"] = "VillageNpcSprites/Eldiran/OGA19_Resident04",
-                ["starter-village-gate-guard"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard",
+                ["starter-village-resident-04"] = "VillageNpcSprites/Eldiran/OGA19_Resident04_Original_Approved",
+                ["starter-village-gate-guard"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard_Distinct_Approved",
                 ["starter-village-main-guide"] = "VillageNpcSprites/Eldiran/OGA09_VillageRepresentative_Original_Approved",
                 ["safezone-catacomb-supply"] = "VillageNpcSprites/Eldiran/OGA03_GeneralShop_Original_Approved",
                 ["safezone-catacomb-party"] = "VillageNpcSprites/Eldiran/OGA10_PartyManager",
                 ["safezone-catacomb-healer"] = "VillageNpcSprites/Eldiran/OGA06_Healer_Original_Approved",
-                ["safezone-catacomb-keeper"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard",
+                ["safezone-catacomb-keeper"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard_Distinct_Approved",
                 ["arbel-leon"] = "VillageNpcSprites/Eldiran/OGA09_VillageRepresentative_Original_Approved",
                 ["arbel-shop"] = "VillageNpcSprites/Eldiran/OGA03_GeneralShop_Original_Approved",
                 ["arbel-healer"] = "VillageNpcSprites/Eldiran/OGA06_Healer_Original_Approved",
@@ -44,7 +44,7 @@ namespace ProjectLimitless.NPC
                 ["arbel-pet-adoption"] = "VillageNpcSprites/Eldiran/OGA17_EquipmentShop",
                 ["arbel-pet-management"] = "VillageNpcSprites/Eldiran/OGA16_Bank_Original_Approved",
                 ["arbel-resident-west"] = "VillageNpcSprites/Eldiran/OGA11_Resident02",
-                ["arbel-portal-keeper"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard",
+                ["arbel-portal-keeper"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard_Distinct_Approved",
             };
 
         public static bool Apply(
