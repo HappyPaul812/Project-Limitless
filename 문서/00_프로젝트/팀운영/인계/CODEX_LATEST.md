@@ -1,3 +1,16 @@
+## 2026-11-17 Issue108 — Main07 승인 여행자 원본 적용
+
+**USER_ART_APPROVED / LOCAL_ORIGINAL_WORKING_TREE_APPLIED / DELTA134PASS_0FAIL / ORIGINAL_ERRORS0 / MIEL_REFERENCE_ONLY / USER_REALPLAY_PENDING / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- 승인ZIPb943fb91…CRC/SHA재확인·기존오프라인PASS재사용. PNG90c727b9…/GUID2cf0a7d9462740c58756aca0f18f3391/PPU430/Pivot(.498046875,.08984375)=(255,46),가시높이.8WU·접지0. 기존(4.4,.2)/scale1/sorting8/white유지. 제품3파일(새PNG/meta+Main07Flow)만원본적용.
+- Main07전용큰목표판만왼쪽286px분리/상단114px회피·실제목표/거리/방향유지. Main04/공용navigation/#106/NPC12변경0. 실제폴1.044WU대비앉은높이76.6%. **현재Main07미엘필드Sprite없음**:기존상호작용/대사유지,공식미엘같은.72축척QA참고비교만하고새미엘배치0.
+- 기존QA/6000.6.5f1·134PASS·8목표/E/F/A/Story전투진입·도망재도전/승리결과처리복귀/재회/작별/완료숨김/합성Save읽기·재진입PASS. 승리는QA결과처리호출(전체플레이아님).3해상도4단계HUD ON12렌더·통상1.1WU거리범위얼굴/안내겹침검사,임의중첩좌표전체보장아님. 원본Import/compile/Resources·오류0·경고104.
+- 제품`f1b0fc9258003d3c12e9c1f1bd830dda84f51b21` /codex/main07-traveler-approved-20261117·rootmain52f84e64유지·Push/Merge0. 최종DocsSHA/보호8352대조는Issue108/Temp/Issue108Apply20261117/Final.json. 확인:Field_02바퀴자국조사후여행자(4.4,.2),폴(6.5,-2.35)→복귀(5.2,.2). 다음은대표실제Play수용·미엘실Sprite추가는별도범위.
+
+[상세 적용·검증 보고](../../Issue108_Main07_Traveler_OriginalApply_20261117.md).
+
+---
+
 ## 2026-11-17 Main04 가림 수정·원본 적용 + Attack103/Main07_108 오프라인 검수
 
 **MAIN04_LOCAL_ORIGINAL_APPLIED / DELTA65+59PASS / ORIGINAL_ERRORS0 / ATTACK4_FILE_TECH_PASS_ART_PENDING_NOT_APPLIED / MAIN07_FILE_TECH_PASS_USER_ART_PENDING_NOT_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
