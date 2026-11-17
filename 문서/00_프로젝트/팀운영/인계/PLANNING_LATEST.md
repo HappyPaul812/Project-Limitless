@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-17 — Codex 한도 보류 중 두 아트 독립 병렬 발주
+
+- 대표 “그래.”로 두 아트 다음 작업 진행 동의. [#112 M5 눈보라 정령](https://github.com/HappyPaul812/Project-Limitless/issues/112) 신규 512 RGBA 우향 1포즈 후보만. 정본 M5 F4~5 후열 자연 정령, 은백 소용돌이/어두운 푸른 핵, 비인간형. 기존 실물/승인 원화 선확인 후 없을 때만 제작, 512/128/40 비교·ZIP QA·사용자 승인. M4 전체 미술 승인 보호, 모션/Unity/스탯/Spawn/펫 금지.
+- Main14~21 스토리 정본 조회상 레온 이후 미제작 일반 퀘스트 NPC 명확히 확인되지 않음(원격 문서 범위, 로컬 전수 아님). [#113 펫 분양 담당](https://github.com/HappyPaul812/Project-Limitless/issues/113) 기존 arbel-pet-adoption 역할의 독립 512 RGBA 정지 1포즈 후보 발주. #111 승인 OGA17 적용은 완료 유지; 외부 참조 제거 반복이 아니라 장비상인/펫 관리인 외형 구별 목적. 기존 원화 선확인 및 중복 금지, 초상화/애니메이션/새 캐논/Unity 적용 금지. Arbel 단색 Placeholder 처리 미결 유지.
+- 서로 독립, Codex 추가 호출0. 실제 아트 제작 및 사용자 전달은 아직 별도. Unity6000.6.5f1/#85 HOLD/Save/Discord/승인 자산 보호, main 직접 commit/Push/Merge0.
+
+---
+
 # PLANNING / 2026-11-17 — 얼음갑충 Defeat4 최종 미술 승인 / 전체 모션 적용 준비
 
 - 바울 대표 직접 답변 “어 승인.”으로 [Defeat4 기획 실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6941389577) 최종 미술 승인. **KEYPOSE_IDLE4_ATTACK4_HIT4_DEFEAT4_USER_ART_APPROVED / UNITY_NOT_APPLIED**. Defeat4 PNG SHA256 9cd3fd4c1925f9953830d9d857b96f11f8bb754dc7b57fe34640936f4cb1c5fb, ZIP SHA256 c04ad4e6528f3ea9aa36971b8ef9ce033711d2e96ba0d13589f3adb0fb676bbc. 기존 4종 승인 파일 포함 원본 픽셀 보호, 재제작 금지.
