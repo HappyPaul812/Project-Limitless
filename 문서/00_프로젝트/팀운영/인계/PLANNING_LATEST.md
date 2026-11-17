@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-17 — IceBeetle Idle4·Main04 여행자 사용자 승인 및 후속 3건 발주
+
+- 바울 대표가 두 원화 최종 승인 권고와 후속 단계에 '그래.'라고 답변. **IceBeetle Idle4 및 Main04 부상 여행자 USER_ART_APPROVED**. 원본 PNG 추가 재작업 없음. 두 건 모두 아직 Unity 미적용.
+- [#103 승인·Attack4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6936952632): 승인 KeyPose 및 Idle4 바이트 보존, 2048x512 RGBA Attack4 1시트만 제작. 갑각 밀치기 동작 후보(준비→짧은 밀치기→정점→회복), 512/128/40 비교와 GIF 실제 재생간격 표기·비순환 Manifest/SUMS/CRC. Hit/Defeat/Unity/정식 스탯·스킬·Spawn 금지.
+- [#107 승인·Codex 조건부 적용 발주](https://github.com/HappyPaul812/Project-Limitless/issues/107#issuecomment-6936953484): F:/Downloads/Limitless_Main04_Traveler.zip, PNG SHA 2687c1c62e5bd20e6e0fb16c3428225aa28fc156c80a5c08b6af2350d9e9715d. Main04 전용 독립 Sprite, legacy32px OGA07 참조만 교체. 맞춤 PPU/Pivot 및 미엘과의 상대 체격, 앉은 자세, sorting/tint, StoryLabel 얼굴 비가림, 퀘스트 회귀 확인. 최소 DeltaQA PASS 시 로컬 원본 작업트리만 안전 적용. 기존 원본/Save/Discord/미커밋 보호.
+- [#108 Main07 리뉴얼 신규 발주](https://github.com/HappyPaul812/Project-Limitless/issues/108): Field02 WoundedTravelerVisual(4.4,0.2), 미엘이 치료하느라 전투 제외되는 숲길 부상자. Main04와 동일인이라는 확정 근거는 아직 없음. **별개 디자인 후보로 진행하되 캐논 동일인 여부를 확정하지 않는다**. 기존 승인 원화 또는 동일인 근거 발견 시 중복 제작 중단. 없으면 512 RGBA 정지 1포즈, Main04·주민과 다른 인상, 치료/휴식 상태, 부상 상세 임의 설정 금지.
+- 세 업무 독립 병렬. GitHub 발주·문서화만 수행, 실제 아트 생성 및 Codex 로컬 적용은 각 담당에게 전달 후 실행해야 함. Unity6000.6.5f1, Issue85 HOLD, Save/UserData/Discord·기존 승인 원화 및 작업 보존, main 직접 commit/Push/Merge 금지.
+
+---
+
 # PLANNING / 2026-11-17 — IceBeetle Idle4 및 Main04 여행자 오프라인 기술검수 PASS
 
 - 바울 대표 Codex 검수 화면 및 [#103 실제 F: 검수](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6936676152), [#107 실제 F: 검수](https://github.com/HappyPaul812/Project-Limitless/issues/107#issuecomment-6936677447) 대조 확인. 두 건 FILE_TECH_PASS / USER_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED. 검사 브랜치 codex/art103-107-offline-review-20261117, 로컬 보고 커밋 29d324990ca7845d733b2d88bb7bf5c5089a403e, 원격 Push 없음.
