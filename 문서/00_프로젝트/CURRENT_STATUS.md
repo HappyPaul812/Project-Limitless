@@ -1,3 +1,17 @@
+## 2026-11-17 Main04 가림 수정·원본 적용 + Attack103/Main07_108 오프라인 검수
+
+**MAIN04_LOCAL_ORIGINAL_APPLIED / DELTA65+59PASS / ORIGINAL_ERRORS0 / ATTACK4_FILE_TECH_PASS_ART_PENDING_NOT_APPLIED / MAIN07_FILE_TECH_PASS_USER_ART_PENDING_NOT_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- Main04 만남Y5.5→3.4·여행자(8.15,5.15)→(8.85,3.05)·전용LabelY1.15→1.65. 미엘전용 E1.48/54→1.66/40·표식1.92/50→2.08/36. 현장근처만Bounds내120px프레이밍·Main04파란목표판기존빈공간선택재사용. #106공용1.37/E·공용Camera/원본Scene/글자색크기불변.
+- 제품4파일(새PNG/meta+Main04Flow+QuestNavigationPresenter)만원본working tree적용. PNG2687c1c6…GUIDf325180de4944364a0dd74c1a814d6df/PPU360/Pivot(.5,.08203125).65기능(승리는QA결과처리호출)·59최종화면표적PASS·3해상도/4방향/실불투명픽셀과글자·파란판겹침0. 원본실제Import/compile/Resources/Console오류0·경고104. 대표새Play수용대기.
+- Attack4 ZIPebb41720…12파일CRC/Manifest10/SUMS11 PASS·2048×512RGBA·하단접지4/4동일·마지막KeyPose전픽셀동일(첫장준비자세차이).GIF180/110/130/180ms·축소/보드직접원본일치. 최종미술승인필요·미적용.
+- Main07 ZIPb943fb91…9파일CRC/Manifest7/SUMS8 PASS·512RGBA/직접128/40/실제비교판PASS. 회색앞머리/자주외투/바닥지지·다리붕대로Main04·주민구별/고어0·동일인캐논확정0. 최종미술승인필요·미적용.
+- Main07/승인NPC12/Save/Discord/dirty·Issue85HOLD보호. rootmain52f84e64유지·제품`3f66fdb25d9445738f8b484d065d92d84e462442`/codex/main04-layout-art103-108-20261117·Push/Merge0. 최종DocsSHA/보호대조는Issue103/107/108댓글·Temp/Main04Fix_Art10310820261117/Final.json. 확인:Field_01 미엘(7.55,3.5)/여행자(8.85,3.05),Main04진행중.
+
+[상세 적용·검수 보고](Main04_LayoutFix_Attack103_Main07_108_Review_20261117.md).
+
+---
+
 ## 2026-11-17 Issue107 — 승인 Main04 여행자 조건부 적용 검증 HOLD
 
 **USER_ART_APPROVED / FILE_TECH_PASS / FUNCTIONAL44PASS / VISUAL_DELTA_FAIL / ORIGINAL_NOT_APPLIED / REMOTE_NOT_PUSHED**.
