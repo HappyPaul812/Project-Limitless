@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-17 — #111 원본 적용 확인 / 얼음갑충 Defeat4 기획 실물 검수 / Codex 한도 절약
+
+- [#109 레온 최종 적용](https://github.com/HappyPaul812/Project-Limitless/issues/109#issuecomment-6940954919) 178PASS/0FAIL, [#110 파티 안내인](https://github.com/HappyPaul812/Project-Limitless/issues/110#issuecomment-6940956185) 85PASS 기존 완료 유지. [#111 실제 적용 보고](https://github.com/HappyPaul812/Project-Limitless/issues/111#issuecomment-6941300553) 160PASS/0FAIL, 원본 working tree 적용 및 Unity6000.6.5f1 compile 정상/Console 오류0. 제품 e4478f57f2e60a94d32a07b79d00b6fed1cf975e, 문서 cf4638841adad39b8eaa0a9fbba4178bad90a972, LOCAL_COMMITTED/REMOTE_NOT_PUSHED. 3지역×BASE/Main21완료 56 NPC 기록에서 legacy 렌더0, 외부PNG12 보관 유지; 전 게임 전체 제거 판정 아님. Arbel(1.5,-1.5) 단색 주민은 외부PNG가 아닌 초기 Placeholder 잔존(VillageNpcRole/StableID 없음), 처리 미결. 새 원화/삭제/역할 부여는 별도 결정.
+- #103 Defeat4: 대표 제공 F:/Downloads/IceBeetle_Issue103_Defeat4_20261117.zip 경로와 동일명 Library 실제 ZIP 3,134,616bytes를 기획이 자체 열어 직접 검수. ZIP SHA c04ad4e6528f3ea9aa36971b8ef9ce033711d2e96ba0d13589f3adb0fb676bbc, CRC PASS, Manifest10/10 및 SUMS11/11 실제 재검증. PNG SHA 9cd3fd4c1925f9953830d9d857b96f11f8bb754dc7b57fe34640936f4cb1c5fb, 2048×512 RGBA, 4셀 개별 QA PNG 픽셀 일치. 실제 GIF 비루프 160/190/220/1600ms. Hit4 라이브러리 승인 PNG SHA cf1dd6c78ffeffd12f8d026dda7ae362e09ffd0a7a3dee536d86569df4f51a3c 일치; 마지막 Hit bbox (29,125,484,464) vs 첫 Defeat (28,126,483,464), 전 패배 프레임 하단 y464 일치. 직접 시각 비교상 갑각 디테일 일부 차이 있으나 외형 연속성과 다리 접힘/점진적 낮아짐 양호, 3~4번 변화 작지만 마지막 정지 유지 목적에 부합. KEEP/USER_FINAL_ART_APPROVAL_PENDING/UNITY_NOT_APPLIED. Windows F: 실물 및 실제 Unity 미검증.
+- 대표 한도 캡처 5시간 5%/초기화 1h13m, 주간59%. 지금 추가 Codex 요청 보류 권고; 승인 후 한도 초기화 시 기존 KeyPose/Idle4/Attack4/Hit4/Defeat4 전체를 묶어 필요한 최소 검증 발주. #85 HOLD, Save/UserData/Discord/승인자산 보호. 원격 main과 PC HEAD/Unity 버전 차이는 실제 확인 후 동기화, 임의 버전 변경/Push/Merge 금지. 이번 기획은 Library 오프라인 QA 및 GitHub 기록만 실시, 최종 사용자 승인 아님.
+
+---
+
 # PLANNING / 2026-11-17 — 파티 안내인 85PASS 적용 / 레온 진행 중 / 잔여 legacy NPC 2종 순차 정리
 
 - [#110 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/110#issuecomment-6940618986): safezone-catacomb-party/arbel-party-guide 매핑2줄 승인 OGA10으로 교체, Delta85PASS/0FAIL, 원본 compile errors0/warnings42, 원본 working tree 적용. PNG/meta/GUID 변경0. 제품 6c81a03d229f0075b39dcbfa07656182e7f6bae5, 보고 78c330d6843e11a537abfed9ce72e452d210b344. 확인 위치 Field03(2.85,-2.55), Arbel(-3,-2). 실제 사용자 Play 확인 별도.
