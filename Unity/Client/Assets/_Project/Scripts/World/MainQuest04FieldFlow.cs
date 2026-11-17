@@ -21,7 +21,8 @@ namespace ProjectLimitless.World
         public const string MeetingLocationId = "field01_main04_miel_meeting";
         public const string EncounterId = "field01_main04_three_people_encounter";
         public const string NextQuestId = "main_05_return_of_three";
-        public static readonly Vector2 MeetingPosition = new Vector2(7.2f, 5.5f);
+        // 상단 고정 HUD 아래에 치료 장면과 안내가 함께 들어오도록 Main04 만남 영역만 내립니다.
+        public static readonly Vector2 MeetingPosition = new Vector2(7.2f, 3.4f);
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Initialize()
@@ -78,9 +79,10 @@ namespace ProjectLimitless.World
             // 미엘은 구조를 기다리는 대상이 아니라, 도착 전부터 다른 사람을 치료하며 자기 역할을 수행합니다.
             GameObject traveler = new GameObject("Main04_WoundedTraveler");
             traveler.transform.SetParent(parent, false);
-            traveler.transform.position = MeetingPosition + new Vector2(.95f, -.35f);
+            traveler.transform.position = MeetingPosition + new Vector2(1.65f, -.35f);
             SpriteRenderer renderer = traveler.AddComponent<SpriteRenderer>();
-            renderer.sprite = Resources.Load<Sprite>("VillageNpcSprites/Eldiran/OGA07_Resident01");
+            // 승인된 앉은 여행자 전용 외형만 사용합니다. 발 접지와 체격은 이 Sprite의 PPU/Pivot로 맞춥니다.
+            renderer.sprite = Resources.Load<Sprite>("VillageNpcSprites/Eldiran/Main04_WoundedTraveler_Approved");
             renderer.sortingOrder = 7;
             renderer.color = new Color(.82f, .82f, .82f, 1f);
             CreateLabel(traveler.transform, "부상당한 여행자");
@@ -90,7 +92,8 @@ namespace ProjectLimitless.World
         {
             GameObject canvasObject = new GameObject("StoryLabel", typeof(Canvas), typeof(CanvasScaler));
             canvasObject.transform.SetParent(parent, false);
-            canvasObject.transform.localPosition = new Vector3(0f, 1.15f, 0f);
+            // 이웃 미엘의 옆머리와 치료받는 인물의 이름이 겹치지 않도록 이 장면의 레이블만 띄웁니다.
+            canvasObject.transform.localPosition = new Vector3(0f, 1.65f, 0f);
             canvasObject.transform.localScale = Vector3.one * .01f;
             Canvas canvas = canvasObject.GetComponent<Canvas>();
             canvas.renderMode = RenderMode.WorldSpace;
@@ -161,8 +164,41 @@ namespace ProjectLimitless.World
     }
 
     /// <summary>미엘의 두 대화와 재도전 가능한 Main 04 Story Encounter 진입을 처리합니다.</summary>
+    [DefaultExecutionOrder(100)]
     public sealed class MainQuest04MielActor : MonoBehaviour
     {
+        // 공용 NPC 위치 정책은 유지하고 Main04의 실제 미엘 Sprite 위 안내 두 상자만 분리합니다.
+        // 공용 프롬프트 LateUpdate 다음에 적용해 퀘스트 단계가 바뀌어도 같은 간격을 유지합니다.
+        private void LateUpdate()
+        {
+            FitStoryGuide("InteractionPrompt", 1.66f, 40f);
+            FitStoryGuide("QuestMarker", 2.08f, 36f);
+
+            // 넓은 화면에서 카메라가 가까운 플레이어만 따라가면 상단 HUD에 안내가 걸립니다.
+            // Main04 현장 근처에서만 필요한 만큼 위로 프레이밍하고 기존 World Bounds 안에 제한합니다.
+            Camera camera = Camera.main;
+            PlayerController player = UnityEngine.Object.FindAnyObjectByType<PlayerController>();
+            WorldBounds2D bounds = UnityEngine.Object.FindAnyObjectByType<WorldBounds2D>();
+            if (camera == null || !camera.orthographic || player == null || bounds == null
+                || Vector2.Distance(player.transform.position, transform.position) > 3f) return;
+            float halfHeight = camera.orthographicSize;
+            float safeTop = halfHeight * (1f - 2f * 120f / Screen.height);
+            float requiredY = transform.position.y + 2.26f - safeTop;
+            Vector3 position = camera.transform.position;
+            position.y = Mathf.Clamp(Mathf.Max(position.y, requiredY),
+                bounds.Bounds.min.y + halfHeight, bounds.Bounds.max.y - halfHeight);
+            camera.transform.position = position;
+        }
+
+        private void FitStoryGuide(string childName, float y, float height)
+        {
+            Transform guide = transform.Find(childName);
+            if (guide == null) return;
+            guide.localPosition = new Vector3(0f, y, 0f);
+            RectTransform rect = guide.GetComponent<RectTransform>();
+            rect.sizeDelta = new Vector2(rect.sizeDelta.x, height);
+        }
+
         public bool TryInteract(Transform player, float breakDistance)
         {
             QuestRuntimeState quest = QuestService.ActiveMainQuest;
