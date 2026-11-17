@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-17 오전 — OGA20 남문 경비 새 원화 재개 및 NPC 얼굴 이름표 위치 최소 상향
+
+- 바울 대표: **“남문 경비병도 아직 안만들었네? 리뉴얼 지시문 다시 주고, 이제 npc들 얼굴이 생겼으니까 이름표 좀만 위로 올리고... 얼굴이 이름표에 가려진다.”**
+- **리뉴얼 두 대상:** 기존 [#104 OGA19 주민4](https://github.com/HappyPaul812/Project-Limitless/issues/104)와 신규 [#105 OGA20 남문경비 태온 유사성 해소용 새로운 1포즈](https://github.com/HappyPaul812/Project-Limitless/issues/105). [#104 변경범위 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/104#issuecomment-6933831678). 과거 #60 OGA20 시안은 태온 닮음으로 **HOLD**이며 새 **미술 파일럿 재개는 허용**하나 구형 시안 승인이나 원본게임 적용은 아니다. 둘 모두 기승인 원화/기존 비교판 조사 → 실제 미제작분에 한해 **512×512 RGBA 정지1포즈씩**. 새 스타일 규칙 '같은 마을, 다른 가족/인물상' 적용. OGA20 경비는 **태온과 얼굴·헤어/체형·갑옷·색/소품 비교** 필수. 기존 승인 NPC10종·StableID/대사/Scene/Save/Discord 원형 보호. 아트 승인 전 Unity 적용 금지.
+- **별도 Codex 이름표 UX 개선:** [Issue #106](https://github.com/HappyPaul812/Project-Limitless/issues/106). GitHub `main`의 실제 코드 `Unity/Client/Assets/_Project/Scripts/NPC/VillageNpcAppearanceCatalog.cs`에서 `NameplateOffset=(0,1.02,0)`, `ConfigureNameplate`의 `Label.localPosition`에 그대로 적용하며 중앙 앵커. 기존 원화가 크므로 머리/모자를 가릴 여지가 실제로 있음. **local 현재 제품 코드 우선**, 시작마을 기능 NPC/대표의 상시 이름표를 **최소 +약0.1~0.2WU** 정도 상향하는 표적 후보에서 시작하되 최종 수치는 실제 Sprite/Label bounds와 960/1280/1680×720 최소 DeltaQA로 결정. 이름표 크기·대사·상호작용/Resident 상시 숨김·검은 그림자·Sprite/PPU/Pivot/Collider·다른 맵/UI 보호. 특히 최근 #102 `VillageNpcAppearanceCatalog` 원본 working-tree **NPC 매핑 변경2줄** 덮어쓰기 금지. #85 Package/GUID HOLD·Unity6000.6.5f1 고정. Delta PASS일 때만 원본 working tree 코드 최소변경; 원격 main Push/Merge 금지.
+- OGA20 외형 리소스는 시작마을 `starter-village-gate-guard`뿐 아니라 **safezone-catacomb-keeper, arbel-portal-keeper**에도 공유되므로 최종 Unity 적용 전 다른 지역 회귀 확인. `StarterVillageHubInstaller`에서 남문경비 실제 위치 **(2.4,-5.1)**; 아트와 라벨 문제는 독립 발주.
+- **이번 기획 직접 완료:** GitHub #104 갱신 댓글/#105·#106 신규 이슈/`docs/planning` 인계. 로컬 PC Unity·아트 파일의 실제 생성, 표시 위치 변경 및 Codex QA는 아직 실행되지 않음. 다음 답변에는 리뉴얼 담당 지시문과 Codex 지시문을 별도 복붙 제공.
+
+---
+
 # PLANNING / 2026-11-17 오전 — 설원족제비 아직 Unity 미적용 / 리뉴얼 OGA19 주민4 발주
 
 - 바울 대표 “**족제비는 게임에 넣었어? 리뉴얼도 일 시키고**” → Issue #100 최신 납품/오프라인 Codex 기록상 **설원족제비 M2 KeyPose·Idle4·Attack4v2·Hit4·Defeat4 다섯 아트 사용자 미술 승인, Unity 본편 `NOT_APPLIED`**. 독립 Game Import/Animator/전투 연결/정식 MonsterID·Spawn은 아직 완료 증거 없음. 이전 서리들쥐 기존 게임 적용과 혼동 금지. 아트 승인만으로 자동 게임 적용·펫 기능·스탯 확정 금지. 명시 적용 지시를 받으면 Codex가 ZIP 실측→기존 적 visual 구조/전투와의 최소 DeltaQA→조건부 로컬 적용. Unity6000.6.5f1/#85 HOLD/Save/Discord 보호.
