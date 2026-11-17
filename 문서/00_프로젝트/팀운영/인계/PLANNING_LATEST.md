@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-17 — 얼음갑충 Defeat4 최종 미술 승인 / 전체 모션 적용 준비
+
+- 바울 대표 직접 답변 “어 승인.”으로 [Defeat4 기획 실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6941389577) 최종 미술 승인. **KEYPOSE_IDLE4_ATTACK4_HIT4_DEFEAT4_USER_ART_APPROVED / UNITY_NOT_APPLIED**. Defeat4 PNG SHA256 9cd3fd4c1925f9953830d9d857b96f11f8bb754dc7b57fe34640936f4cb1c5fb, ZIP SHA256 c04ad4e6528f3ea9aa36971b8ef9ce033711d2e96ba0d13589f3adb0fb676bbc. 기존 4종 승인 파일 포함 원본 픽셀 보호, 재제작 금지.
+- Codex 캡처 기준 5시간 한도 5%, 초기화 후 한 번에 전체 모션 대상 최소 QA/적용 준비. Windows F: 승인 ZIP 5종 실물 해시 비교, Unity6000.6.5f1 실제 버전 일치 확인. 기존 M4 등록·전투 계약 재확인, Idle 반복/Attack·Hit·Defeat 비루프 및 마지막 패배 자세 유지, 기존 전투 타이밍·피해 판정 보존. M4 기존 등록 또는 승인된 적용 계약이 없으면 격리 미리보기만 검증하고 제품 등록/Spawn/스탯·펫 등 새 기능은 임의 추가 금지. 실제 적용 결과 별도 보고. 기존 NPC 적용분·Save/UserData/Discord/#85 HOLD·승인 자산·dirty/untracked 보호, main 직접 commit/Push/Merge 금지. 아직 Codex 실제 실행 없음. 작업 지시문은 초기화 후 대표가 전달하는 방식.
+
+---
+
 # PLANNING / 2026-11-17 — #111 원본 적용 확인 / 얼음갑충 Defeat4 기획 실물 검수 / Codex 한도 절약
 
 - [#109 레온 최종 적용](https://github.com/HappyPaul812/Project-Limitless/issues/109#issuecomment-6940954919) 178PASS/0FAIL, [#110 파티 안내인](https://github.com/HappyPaul812/Project-Limitless/issues/110#issuecomment-6940956185) 85PASS 기존 완료 유지. [#111 실제 적용 보고](https://github.com/HappyPaul812/Project-Limitless/issues/111#issuecomment-6941300553) 160PASS/0FAIL, 원본 working tree 적용 및 Unity6000.6.5f1 compile 정상/Console 오류0. 제품 e4478f57f2e60a94d32a07b79d00b6fed1cf975e, 문서 cf4638841adad39b8eaa0a9fbba4178bad90a972, LOCAL_COMMITTED/REMOTE_NOT_PUSHED. 3지역×BASE/Main21완료 56 NPC 기록에서 legacy 렌더0, 외부PNG12 보관 유지; 전 게임 전체 제거 판정 아님. Arbel(1.5,-1.5) 단색 주민은 외부PNG가 아닌 초기 Placeholder 잔존(VillageNpcRole/StableID 없음), 처리 미결. 새 원화/삭제/역할 부여는 별도 결정.
