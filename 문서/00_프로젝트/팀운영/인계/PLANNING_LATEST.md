@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-17 오전 — #102 NPC 원본 로컬 적용 53PASS 및 메인 아트 M4 얼음갑충 1포즈 발주
+
+- 바울 대표 #102 Codex 완료 보고 화면 접수. [실제 #102 완료 근거](https://github.com/HappyPaul812/Project-Limitless/issues/102#issuecomment-6932597021): 승인 **OGA11 주민2·OGA13 주민3** PNG2+.meta2+`VillageNpcAppearanceCatalog.cs` 2매핑(총5파일) 원본 **작업 트리 적용 완료**, Unity **6000.6.5f1** 기존 QA 재사용 **53PASS/0FAIL**, 원본 Import/compile/Resources PASS·Console errors0(기존 경고104) / Save·Discord·기존8NPC 보호. **원본 main HEAD는 `52f84e643d5d860665eadfe1614a30c745209f00` 그대로**이며 제품은 원본 working tree 반영 상태, **main commit/remote Push/merge 미완**. 로컬 Codex 제품 commit `b7ace6b7f7958b4d74457f4c31db01e667b28856`, 보고 `7b987a11bd62f4fb238e64ccc0e569e52b0de34a`. 사용자 원본 실플레이 수용 PENDING. 다음 통합 시 안전 경계 재검토.
+- 바울 대표 “**메인 다음 작업 뭐야?**” → [신규 Issue #103 M4 얼음갑충 1포즈 발주](https://github.com/HappyPaul812/Project-Limitless/issues/103). 북부7종 정본 M4는 **F3~F4 전열 방어형 얼음갑충**: 청록색 넓은 얼음 갑각·짧은 다리·낮은 몸, 희미한 금빛 옛 온기 흔적 가능, Chapter2 화열딱정벌레와 확실히 독립된 디자인. **512×512 투명 RGBA 정지 KeyPose 1장** + 512·128·40 직접 축소·동배율 기존 승인 몬스터 비교, ZIP/SHA·비순환 Manifest/SUMS/CRC. 기존 제작 유무 다시 확인. 정확 몹 수치·드롭/ID/Spawn/펫/Skill은 TBD, Unity 적용X; 사용자 미술 승인 뒤 후속 Idle4 검토.
+- M1 서리들쥐 4모션 미술 마감, M2 설원족제비 KeyPose·Idle4·Attack4v2·Hit4·Defeat4 5종 사용자 승인·Unity 미적용, M3 서리올빼미 KeyPose·Idle8·Attack4 승인 및 F2 진행 계약 존재(후속 Hit/Defeat 완료 확인되지 않아 자동 완료 선언X). 기존 승인 PNG·F2 환경/기존 보스 보호.
+- 11/17 외부 백업 목적지 **BLOCKED**, Issue85 Tooling4 미커밋 패키지/GUID6 원본 검토 완료, Unity 표적 QA 미실행 HOLD. UserData/Save/Discord 보존, remote main Push·merge 금지. 이번 기획 업데이트는 `docs/planning` 문서/Issue 생성만; 실제 코덱스 PC 작업·미술 자동 생성 없음.
+
+---
+
 # PLANNING / 2026-11-17 오전 — Codex Issue #100·#102 실제 ZIP 오프라인 기술 PASS 접수
 
 - 바울 대표 Codex 검수 화면 전달. [#102 NPC 실제 검사](https://github.com/HappyPaul812/Project-Limitless/issues/102#issuecomment-6932056730), [#100 SnowStoat Defeat4 실제 검사](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6932058502)를 직접 확인. **두 ZIP 모두 FILE_TECH_PASS / 미술 승인 별도 대기 / Unity 미적용**. 검사 브랜치 `codex/art100-102-offline-review-20261117`, 로컬 보고 커밋 `7dc8b5fedfdad7449370c220297d88ee2cb443f9`, REMOTE_NOT_PUSHED.
