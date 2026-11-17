@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-17 오전 — 설원족제비 아직 Unity 미적용 / 리뉴얼 OGA19 주민4 발주
+
+- 바울 대표 “**족제비는 게임에 넣었어? 리뉴얼도 일 시키고**” → Issue #100 최신 납품/오프라인 Codex 기록상 **설원족제비 M2 KeyPose·Idle4·Attack4v2·Hit4·Defeat4 다섯 아트 사용자 미술 승인, Unity 본편 `NOT_APPLIED`**. 독립 Game Import/Animator/전투 연결/정식 MonsterID·Spawn은 아직 완료 증거 없음. 이전 서리들쥐 기존 게임 적용과 혼동 금지. 아트 승인만으로 자동 게임 적용·펫 기능·스탯 확정 금지. 명시 적용 지시를 받으면 Codex가 ZIP 실측→기존 적 visual 구조/전투와의 최소 DeltaQA→조건부 로컬 적용. Unity6000.6.5f1/#85 HOLD/Save/Discord 보호.
+- **리뉴얼 발주 완료:** [Issue #104 OGA19 주민4 1포즈](https://github.com/HappyPaul812/Project-Limitless/issues/104). 기존 StableID `starter-village-resident-04`/Resources `VillageNpcSprites/Eldiran/OGA19_Resident04`. 이번에는 **오직 OGA19 512×512 RGBA 정지 1포즈**, 먼저 기승인 원화 중복 확인. 기존 승인·원본 적용된 **10종 OGA02/03/06/07/09/10/11/13/16/17 바이트 원형 보호**. OGA20 남문경비 태온 유사성 HOLD 유지.
+- **대표 공통 피드백**: “다음부터는 서로 다른 느낌으로, 마을 사람들이 한 가족처럼 보이지 않게.” 기존 10 NPC와 같은 픽셀 밀도/시점/접지 유지하되, **얼굴형·눈매·머리·체형·의상 색면·생활소품**은 확실히 차별화. [외형 다양성 규칙](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Renewal_StarterVillage_NPC_Visual_Diversity_Rule_20261117.md) 적용, 가장 비슷한 승인 원화2~3개와 512/128/40 직접 PNG 비교 필수. 초상화/애니/Unity 적용은 대표 승인 전 금지.
+- #102 OGA11·OGA13 원본 worktree 5파일 적용 53PASS/0FAIL, **main HEAD는 아직 원본 52f84e64로 unchanged**, 로컬 별도 commit만. #85 Unity package/GUID 및 PC 밖 외부 백업 여전히 HOLD. 원격 main Push/merge 금지.
+- 이번 기획은 GitHub `docs/planning` 인계·Issue #104 발주만 했으며 실제 PC/Unity/아트 파일 제작 실행0.
+
+---
+
 # PLANNING / 2026-11-17 오전 — #102 NPC 원본 로컬 적용 53PASS 및 메인 아트 M4 얼음갑충 1포즈 발주
 
 - 바울 대표 #102 Codex 완료 보고 화면 접수. [실제 #102 완료 근거](https://github.com/HappyPaul812/Project-Limitless/issues/102#issuecomment-6932597021): 승인 **OGA11 주민2·OGA13 주민3** PNG2+.meta2+`VillageNpcAppearanceCatalog.cs` 2매핑(총5파일) 원본 **작업 트리 적용 완료**, Unity **6000.6.5f1** 기존 QA 재사용 **53PASS/0FAIL**, 원본 Import/compile/Resources PASS·Console errors0(기존 경고104) / Save·Discord·기존8NPC 보호. **원본 main HEAD는 `52f84e643d5d860665eadfe1614a30c745209f00` 그대로**이며 제품은 원본 working tree 반영 상태, **main commit/remote Push/merge 미완**. 로컬 Codex 제품 commit `b7ace6b7f7958b4d74457f4c31db01e667b28856`, 보고 `7b987a11bd62f4fb238e64ccc0e569e52b0de34a`. 사용자 원본 실플레이 수용 PENDING. 다음 통합 시 안전 경계 재검토.
