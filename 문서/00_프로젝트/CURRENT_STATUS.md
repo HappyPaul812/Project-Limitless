@@ -1,3 +1,17 @@
+## 2026-11-17 Issue103 — Defeat4 승인 실물·5종 재생 검수 / M4 계약 HOLD
+
+**ART_APPROVED / UNITY_NOT_APPLIED(CONTRACT_HOLD) / ISOLATED_PREVIEW44PASS / PRODUCTION_QA_PARTIAL / REMOTE_NOT_PUSHED**.
+
+- 최신기획17468d79·Issue103 최종승인 확인. Defeat ZIPc04ad4e6…/3,134,616bytes·CRC/Manifest10/SUMS11 PASS, PNG9cd3fd4c…/2048×512RGBA·912,389bytes·4셀QA/축소본일치·GIF비루프160/190/220/1600ms. 기존KeyPose/Idle/Attack/Hit 승인SHA 모두일치·원본수정0.
+- 원본Resources MonsterDefinition21종 중 M4일치0·IceBeetle자산검색0. 기존4종도게임미적용. 기획의 계약없으면격리미리보기만 조건에따라 새ID/스탯/Spawn/제품PNG/meta/클립/컨트롤러/전투/펫 추가0, 원본적용0·제품commit없음.
+- 기존QA Unity6000.6.5f1 숨김 재사용·기존재생기 SpriteRenderer+UIImage 44PASS: Idle반복/Attack·Hit복귀/Defeat4셀·최종1.6초유지·공격피격부활방지. 미리보기PPU512/Pivot256,48은임시이며제품확정아님. 런타임오류0/격리Search색인예외1별도·기존compilerwarning701행/신규probe경고0. 원본compileFalse/오류0/경고42·Bootstrap/PlayFalse/dirtyFalse유지.
+- 다음:기존계약부재보고후 M4 등록/적용계약 별도확정 필요. 실제전투QA/필드크기미검증·미적용을완료로표기하지않음. 보호8356대조·Save/UserData/Discord/NPC12/레온/Main04·07/Placeholder/#85HOLD유지·Push/Merge0. 브랜치codex/issue103-defeat113-review-20261117·문서SHA는Final.json/Issue댓글.
+- 확인:게임좌표없음, 실제Unity캡처 Temp/Issue103Defeat113Review20261117/IceBeetle_ActualUnityPreview.png 및납품GIF.
+
+[상세 보고](Issue103_Defeat4_Approved_IsolatedPreview_ContractHold_20261117.md).
+
+---
+
 ## 2026-11-17 Issue111 — 잔여 NPC 승인 원화 재연결 / 단색 주민 조사
 
 **LOCAL_ORIGINAL_WORKING_TREE_APPLIED / DELTA160PASS_0FAIL / ORIGINAL_ERRORS0 / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
