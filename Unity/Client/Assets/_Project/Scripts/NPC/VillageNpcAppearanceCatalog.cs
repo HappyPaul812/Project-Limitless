@@ -41,9 +41,9 @@ namespace ProjectLimitless.NPC
                 ["arbel-shop"] = "VillageNpcSprites/Eldiran/OGA03_GeneralShop_Original_Approved",
                 ["arbel-healer"] = "VillageNpcSprites/Eldiran/OGA06_Healer_Original_Approved",
                 ["arbel-party-guide"] = "VillageNpcSprites/Eldiran/OGA10_PartyManager_HandFix_v2_Approved",
-                ["arbel-pet-adoption"] = "VillageNpcSprites/Eldiran/OGA17_EquipmentShop",
+                ["arbel-pet-adoption"] = "VillageNpcSprites/Eldiran/OGA17_EquipmentShop_Original_Approved",
                 ["arbel-pet-management"] = "VillageNpcSprites/Eldiran/OGA16_Bank_Original_Approved",
-                ["arbel-resident-west"] = "VillageNpcSprites/Eldiran/OGA11_Resident02",
+                ["arbel-resident-west"] = "VillageNpcSprites/Eldiran/OGA11_Resident02_Original_Approved",
                 ["arbel-portal-keeper"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard_Distinct_Approved",
             };
 
