@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-17 / Issue #112 — 얼음갑충 최종 승인·눈보라 정령 M5 1포즈 후보 납품
+
+- [#103 얼음갑충 최종 승인](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6941419315) 확인. **KeyPose·Idle4·Attack4·Hit4·Defeat4 USER_ART_APPROVED / UNITY_NOT_APPLIED**, 5종 재제작 금지. 기존 Defeat4 대기 표기는 당시 납품 기록이며 최신 승인으로 대체됨.
+- [#112 M5 발주](https://github.com/HappyPaul812/Project-Limitless/issues/112) 및 북부 몬스터 상세기획 확인. GitHub BlizzardWisp/Library/인계 조회에서 기존 승인 또는 완성 M5 원화 미발견. Windows F: 전수 검색 미실행.
+- 신규 **Blizzard Wisp KeyPose 한 장** `Candidate/BlizzardWisp_M5_KeyPose_512_RGBA_CANDIDATE.png`, 512×512 투명 RGBA, 217,196bytes, SHA256 **`0c72c3f8fc80c9e74bf648236a0ff1746ef344ef71f03b4c005c38db59915586`**. 은백색 바람·눈 소용돌이, 어두운 푸른 핵, 우향 비대칭 흐름, 소량의 분리 얼음 결정. 인간형/유령 얼굴/팔다리0. 신규 생성 원화 알파 정리/비율 유지 정규화, alpha bbox [36,8,475,464], 경계 alpha0.
+- 최종 PNG 실제 512/128/40px 비교판, 기존 승인 M2 설원족제비·M4 얼음갑충 원본 SHA 일치 확인 후 256/40 동일 캔버스 비교판. 전체 북부 및 Unity 런타임 상대 크기/PPU 검증 아님. ZIP `BlizzardWisp_Issue112_OnePose.zip` 798,663bytes/8entries, SHA256 **`53b21965bd0513a42bb04ebefd78572554a7e9803106e56f8573b36da7150ede`**. CRC PASS/Manifest 6/6/SUMS 7/7/순환참조0. SourceDeclaration 포함. Library `/LIMITLESS/Issue112_BlizzardWisp_OnePose/` ZIP·PNG·비교판2 저장 성공.
+- [**M5 1포즈 제작·검증 보고**](../../Chapter3_BlizzardWisp_M5_OnePose_ArtPilot_20261117.md), `docs/art-new` commit **`47b427e81d5f95b367d7c80f9c0a101818c6729c`**. 상태 **`M4_ART_APPROVED / M5_KEYPOSE_CANDIDATE / USER_M5_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED`**. 사용자 승인 전 M5 애니메이션/Unity/기원·정식 스킬/수치/전리품/Spawn/펫 구현0. Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/기존 승인 원본/main 보호. Codex 미호출, GitHub 바이너리 업로드·Windows 복사·main 직접 commit/Push/Merge0.
+
+
 ## 2026-11-17 / Issue #103 — 얼음갑충 Hit4 승인 → Defeat4 후보 납품
 
 - [#103 Hit4 최종 미술 승인 및 Defeat4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6940446478) 확인. **KeyPose·Idle4·Attack4·Hit4 USER_ART_APPROVED**. 실제 승인 PNG 원본 4종 작업 전후 SHA256 모두 일치, 원본 수정0. KeyPose `b7ff0592226c2a1f28270053cf03483b6051c69edb412b59a7965ccf8699b3ad`, Idle4 `bd06c6d9a901d4c3550882ad4ce061629195b60e75f04636ec4814ebb0967793`, Attack4 `d8dab5e411f7eeb0aa73b1e412b8d820ecfeb38d514c60cf5fef7eb29af4b236`, Hit4 `cf1dd6c78ffeffd12f8d026dda7ae362e09ffd0a7a3dee536d86569df4f51a3c`.
