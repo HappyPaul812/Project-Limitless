@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-17 / Issue #103 — 얼음갑충 Attack4 승인 → Hit4 후보 납품
+
+- [#103 Attack4 최종 승인 및 Hit4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6938653973) 확인. **KeyPose·Idle4·Attack4 USER_ART_APPROVED**. Library 실물 원본 3종 SHA256 작업 전후 일치: KeyPose `b7ff0592226c2a1f28270053cf03483b6051c69edb412b59a7965ccf8699b3ad`, Idle4 `bd06c6d9a901d4c3550882ad4ce061629195b60e75f04636ec4814ebb0967793`, Attack4 `d8dab5e411f7eeb0aa73b1e412b8d820ecfeb38d514c60cf5fef7eb29af4b236`. 원본 수정0.
+- 신규 **Hit4 한 시트** `Sprite/IceBeetle_M4_Hit4_2048x512_RGBA_CANDIDATE.png`, 2048×512 RGBA/가로4×512셀/우향, 893,849bytes, SHA256 **`cf1dd6c78ffeffd12f8d026dda7ae362e09ffd0a7a3dee536d86569df4f51a3c`**. 승인 KeyPose 기반 피격 반동→갑각 움츠림→회복→대기. 하부 y430..511 RGBA 4/4 원본 동일, Frame03 전체 KeyPose 동일(분리 QA PNG 바이트 동일), 알파 경계0, 4셀 상이/분리 QA 일치. 앞선 생성 시안 및 Attack4 동작 재사용0; 보간으로 일부 픽셀 변화 가능.
+- 512/128/40px 실제 최종 시트 축소 비교판 및 GIF. 실제 디코드 간격 **90/160/110/190ms, 총550ms 반복**(가변 간격). ZIP `IceBeetle_Issue103_Hit4_20261117.zip` 3,131,456bytes/12 entries, SHA256 **`982328b9a96f13330b8cdf9d8be6433abd9907fa1b1826dbec0ec352bc6bee55`**. ZIP CRC PASS, Manifest 10/10, SHA256SUMS 11/11 PASS, 비순환. Library `/LIMITLESS/Issue103_IceBeetle_Hit4/` ZIP·PNG·비교판·GIF 업로드 실완료.
+- [**Hit4 제작·검증 보고**](../../Chapter3_IceBeetle_M4_Hit4_ArtPilot_20261117.md), `docs/art-new` commit **`9d4646f8edc5cd5e6cd899776ca85458897c827c`**. 상태 **`KEYPOSE_IDLE4_ATTACK4_APPROVED / USER_HIT4_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED`**. 사용자 미술 승인 필요 YES (Hit4). Defeat4·펫·수치·스킬·드롭·MonsterID/Spawn·Unity 작업0. Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/기존 승인 자산/main 보호. GitHub 바이너리 업로드·Windows 복사·대형 QA 복제·main 직접 commit/Push/Merge0.
+
+
 ## 2026-11-17 / Issue #103 — 얼음갑충 Idle4 승인 → Attack4 후보 납품
 
 - [#103 Idle4 최종 승인 및 Attack4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6936952632) 확인. **KeyPose·Idle4 USER_ART_APPROVED**. Library 실물 두 원본 SHA256 `b7ff0592226c2a1f28270053cf03483b6051c69edb412b59a7965ccf8699b3ad`, `bd06c6d9a901d4c3550882ad4ce061629195b60e75f04636ec4814ebb0967793` 작업 전후 동일, 원본 수정0. 이전 Idle4 검토 GIF 실제 간격은 [Codex 검수](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6936676152) 기준 **120ms×4(480ms 주기, 약8.33FPS)**로 표기 정정만; 승인 ZIP/PNG 수정0.
