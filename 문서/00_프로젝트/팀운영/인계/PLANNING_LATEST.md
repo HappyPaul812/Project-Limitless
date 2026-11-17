@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-17 — 일일 마감 / 승인분 통합 및 로컬 동기화 발주
+
+- 대표 “오늘은 여기까지 하자. 어제처럼 해줘.” → [EOD #114](https://github.com/HappyPaul812/Project-Limitless/issues/114) 승인분 통합·원본 local 동기화·안전한 비-main 복구 브랜치 보존 발주. 기획 실제 GitHub 발주, Codex 실행 결과 아직 없음. 11/16 복구 기준 9d84b81934a7c… 실제 로컬/원격 ref부터 확인. main 직접 commit/Push/Merge 금지, 원격 main과 로컬 Unity 버전 차이 주의(실제6000.6.5f1 유지), Save/UserData/Discord/#85 HOLD/dirty/untracked/개인 비Git 보존.
+- 오늘 실제 로컬 적용: 시작마을 주민·남문경비/공용 이름표·E 안내, Main04/07 부상 여행자, 레온, 카타콤·아르벨 파티안내인, 잔여 외부 NPC 참조 수정. 관련 #102/104~111 최신 보고와 실제 파일 대조 후 같은 Catalog 등의 누적 변경 보존. 기존 QA 재사용, 통합 delta만 확인.
+- [얼음갑충](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6943910391) 전체 미술 및 게임 적용 승인, 44PASS 격리 QA, 실제 M4 등록/스탯/조우/예정 F3·F4 Scene 부재 → NOT_APPLIED, 임의 기준/신규 등록 금지. 내일 기획에서 등록·밸런스·첫 배치 계약 우선 정리 후 Codex 재발주. [펫 분양 담당](https://github.com/HappyPaul812/Project-Limitless/issues/113#issuecomment-6943908814) 최종 미술 승인, 게임 미적용 유지(다음 실제 적용 지시 별도). [눈보라 정령](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-6943599943) 파일 기술 PASS/미술 승인 대기. 설원족제비 Defeat4 최신 확인 댓글상 승인 대기(#100, 이후 승인 있으면 실제 기록 대조). 단색 임시 주민 처리 미결. 오늘 마감 중 새 제작·새 기능·미적용 자산 제품 반영 금지.
+- 보고는 사람이 알아보기 쉽게 **작업·몬스터·NPC 이름 우선**, 이슈 번호는 지시문/링크/기술 문서에서 보조 표기. 별도 실물 검사·동기화·원격 push 성공 주장 금지. 원격 보존·local HEAD·비Git 외부백업 각각 결과 분리.
+
+---
+
 # PLANNING / 2026-11-17 — Codex 한도 보류 중 두 아트 독립 병렬 발주
 
 - 대표 “그래.”로 두 아트 다음 작업 진행 동의. [#112 M5 눈보라 정령](https://github.com/HappyPaul812/Project-Limitless/issues/112) 신규 512 RGBA 우향 1포즈 후보만. 정본 M5 F4~5 후열 자연 정령, 은백 소용돌이/어두운 푸른 핵, 비인간형. 기존 실물/승인 원화 선확인 후 없을 때만 제작, 512/128/40 비교·ZIP QA·사용자 승인. M4 전체 미술 승인 보호, 모션/Unity/스탯/Spawn/펫 금지.
