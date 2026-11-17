@@ -1,3 +1,13 @@
+## 2026-11-17 일일 마감 — 승인분 보존·복구
+
+신규아트최신a9128414보고7건통합. 얼음갑충5종미술/게임적용승인이나등록데이터부재로미적용·44PASS재사용,눈보라정령기술PASS/최종미술승인대기,설원족제비Defeat기술PASS/미술승인대기.
+
+복구1차c23a98fe GitHub수신57경로검증·원본로컬FF진행중. 원격main변경0·Unity6000.6.5f1/#85HOLD/Save/UserData/Discord/dirty보호. 오늘추가개발0,최종결과Issue114/EOD보고우선.
+
+[EOD 상세](../../EOD_20261117_SafeIntegration_Recovery.md).
+
+---
+
 ## 2026-11-17 Issue112 — Codex Windows 실물 검수
 
 **ART_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_ART_REVIEW_PENDING / UNITY_NOT_APPLIED**.

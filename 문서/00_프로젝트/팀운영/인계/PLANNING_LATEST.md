@@ -1,3 +1,13 @@
+## 2026-11-17 일일 마감 — 승인분 보존·복구
+
+기획080fc05d마감지시확인·현재승인NPC12/Main04·07/레온/이름표·안내/파티·잔여참조누적적용보존. 얼음갑충등록데이터부재·펫분양독립원화승인·눈보라미승인모두게임미적용. 족제비Defeat승인대기·Placeholder미결·#85HOLD유지.
+
+복구1차c23a98fe GitHub수신57경로검증·원본로컬FF진행중. 원격main변경0·Unity6000.6.5f1/#85HOLD/Save/UserData/Discord/dirty보호. 오늘추가개발0,최종결과Issue114/EOD보고우선.
+
+[EOD 상세](../../EOD_20261117_SafeIntegration_Recovery.md).
+
+---
+
 ## 2026-11-16 EOD 승인·복구
 
 미술 승인 Stoat4모션/게임미적용. NPC8종 실제로컬적용, 서리들쥐 아트마감. Issue85 Import예외/GUID충돌 HOLD·원격main Push보류. 복구checkpoint는릴리스아님.

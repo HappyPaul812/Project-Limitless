@@ -1,3 +1,16 @@
+## 2026-11-17 일일 마감 — 원본 승인분 보존·복구 원격 검증
+
+**APPROVED_PRODUCTS_PRESERVED / REMOTE_RECOVERY_PUSH_VERIFIED / LOCAL_SYNC_PENDING / NON_GIT_OFFSITE_INCOMPLETE / DAY_CLOSING**.
+
+- 승인제품누적19경로 원본blob동일·NPC12/이름표Y1.37·E/Main04·07/레온/파티/잔여참조보존. 오늘새기능/미적용아트적용/반복QA0. 담당보고15/Codex기록통합·과거HOLD와최종적용구분.
+- 얼음갑충전체미술/게임적용승인이나등록데이터없어미적용·기존44PASS재사용. 펫분양독립원화최종승인/게임미적용,눈보라미술미승인/미적용,족제비Defeat미술승인대기,Placeholder미결·#85HOLD유지.
+- 복구backup/2026-11-17-safe-checkpoint=1차c23a98fee363ac38dca669b802c49ccc54ecb014 일반Push성공·별도bareGit57경로SHA재수신검증. 원격mainbfd28154유지·main직접commit/Push/Merge0·Clean계보선별/개인키·Save등업로드0.
+- 현재8394파일/약1.223GB 보호·어제사본재사용+69파일3.1MB증분. 비Git외부백업미완·로컬사본은오프사이트아님. Unity6000.6.5f1 compileFalse/오류0/경고42·Scene/Play/포커스유지. 원본로컬FF및마감문서최종복구반영은진행중,결과Issue114/Final.json.
+
+[상세 마감](../../EOD_20261117_SafeIntegration_Recovery.md).
+
+---
+
 ## 2026-11-17 대표 결정 — 펫분양 최종승인 / 얼음갑충 게임적용 승인·등록데이터 막힘
 
 - **#113 USER_ART_APPROVED / UNITY_NOT_APPLIED**: 이번대표직접승인반영·기존ZIP/CRC/Manifest7/SUMS8재확인. 문서/리뉴얼인계만갱신·Arbel(5,-3)기존승인OGA17유지·OGA16/레온/NPC/Placeholder변경0.
