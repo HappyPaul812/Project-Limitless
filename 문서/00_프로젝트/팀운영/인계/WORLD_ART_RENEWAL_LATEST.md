@@ -1,3 +1,12 @@
+## 2026-11-17 / Issue #109 — Main13 레온 정지 원화 납품 / Main07 최종 미술 승인 (현재 최신)
+
+- **대표 확정:** Main07 숲길 부상자 미술 최종 승인, SHA256 `90c727b95bee6b2586333d44ebb05b8077664a7e5877084cbbe4a1010676b432` BYTE_KEEP. 실제 Unity 적용은 이번 작업에서 검증하지 않음.
+- **Main13 레온:** [Issue #109](https://github.com/HappyPaul812/Project-Limitless/issues/109), Main12~14 스토리 정본, 원격 main NPC 외형 카탈로그 확인. `arbel-leon`은 현재 OGA09 시작마을 주민대표 Sprite 공유. main 재귀 트리 7600개(truncated=false), 담당 인계·Library에서 레온 전용 승인 원화/공식 초상화 발견되지 않아 후보 **1명만** 제작. 사용자 로컬 및 다른 브랜치 전수 조사 아님.
+- **원화:** `Main13_Leon.png`, 512×512 투명 RGBA 정지 1포즈, 155385 bytes, SHA256 `ff7cfd081e7727a7ab228bae0a5ece879727b98594514c932d4a616396bc8fdc`, alpha>8 bbox(158,57,354,469), 외곽 접촉0. 묶은 머리·수염·적갈색 어깨천·청록 실용복·가죽 허리 주머니. OGA09 은회색 머리·푸른 옷·지팡이와 구별, 부상/신상/퀘스트 설정 추가 없음. 공식 레온 초상화 미발견으로 일치 여부 미검증, 기존 평면 화풍 대비 신규 명암이 세밀하여 사용자 미술 검토 필요.
+- **실제 비교판:** `Main13_Leon_Comparison.png` SHA256 `f9019d550ee702121356e343d84dad0a6ce1cbb7864d801b9083f037cba55b7c`, OGA09·OGA20 후보·승인 Main07·레온 실물의 512/128/40 비교. 검색 이미지 대용0, 원본 보호. Unity 화면 아님.
+- **납품:** `/mnt/data/Limitless_Main13_Leon.zip` 732482 bytes, SHA256 `dfaaf5fe453dadeaa268a24edbdcefafb6a9b0266db4c6e6251131b741d6504a`, 9파일 CRC PASS/Manifest7/7/SUMS8/8 PASS. `/mnt/data/Main13_Leon_PNG.zip` 154865 bytes, SHA256 `8564b42547848f24117da7518b889f703aa8de02811c96577b1ae77ea9d6759d`, PNG1·CRC PASS. Library `/LIMITLESS_Art_Delivery/Issue109_Main13_Leon_20261117/`에 PNG·ZIP2·비교판 총4파일 저장 성공. F: 자동복사 없음.
+- **정식 보고:** [Renewal_20261117_Issue109_Main13_Leon_StillArt_Pilot.md](../../Renewal_20261117_Issue109_Main13_Leon_StillArt_Pilot.md), `docs/art-renewal` commit `9dbd604880a1deda66a28e0f0888fa581f70a0bf`. **FILE_TECH_PASS / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED**. 미술 승인 후에만 Codex의 arbel-leon 독립 매핑·PPU/Pivot/실게임 배치 최소 QA 검토. 기존 OGA09 및 NPC·Main04/07·세린 원화 보호. Unity6000.6.5f1·Issue85 HOLD·Save/UserData·Discord 보호. 초상화/애니메이션/Unity 적용·main 직접 Commit/Push/Merge0.
+
 ## 2026-11-17 / Issue #108 — Main07 숲길 부상 여행자 정지 원화 납품 / Main04 미술 승인 (현재 최신)
 
 - **바울 대표 결정:** Main04 부상 여행자 최종 미술 승인, `Main04_WoundedTraveler.png` SHA256 `2687c1c62e5bd20e6e0fb16c3428225aa28fc156c80a5c08b6af2350d9e9715d` BYTE_KEEP. 본 작업에서 Main04 Unity 적용 여부는 확정하지 않음.
