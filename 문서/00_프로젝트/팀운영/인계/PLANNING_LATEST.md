@@ -1,3 +1,14 @@
+# PLANNING / 2026-11-17 — Main04 화면 가림 해소·로컬 적용 / Attack4 및 Main07 기술 PASS
+
+- 대표 제출 Codex 화면 2장과 [#107 원본 적용 보고](https://github.com/HappyPaul812/Project-Limitless/issues/107#issuecomment-6938131437), [#103 실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6938132684), [#108 실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/108#issuecomment-6938133891) 확인.
+- **#107 Main04 승인 여행자 LOCAL_ORIGINAL_WORKING_TREE_APPLIED / USER_REALPLAY_PENDING**. 제품 4파일 MainQuest04FieldFlow.cs, QuestNavigationPresenter.cs, 전용 PNG+meta. 새 PNG SHA256 2687c1c62e5bd20e6e0fb16c3428225aa28fc156c80a5c08b6af2350d9e9715d, GUID f325180de4944364a0dd74c1a814d6df, PPU360/Pivot(.5,.08203125), tint.82/sorting7 유지. Meeting Y5.5→3.4, 미엘(7.55,3.5), 여행자(8.85,3.05), StoryLabel Y1.15→1.65, 미엘 전용 E Y1.48→1.66, 표식1.92→2.08. Main04 한정 카메라/목표판 배치 보완; 공용 #106 이름표·CameraFollow·Scene Asset 불변.
+- 기능65 PASS + 별도 최종 화면59 PASS, 정상 HUD ON 960/1280/1680×4방향 및 얼굴/이름표/목표판 비가림. 승리는 QA EndBattle(true) 결과 호출 검증이며 실제 전체 3대3 승리 플레이는 아님. 원본 Import/compile PASS, Console errors0/warnings104, QA의 기존 Search 초기화 예외 별도. 실제 사용자 Play 확인은 남아 있음.
+- **#103 IceBeetle Attack4 FILE_TECH_PASS / USER_ART_APPROVAL_PENDING / NOT_APPLIED**. ZIP SHA ebb4172037c7b7e74115be0aaf38e70dc9c58b6e928549934415e290d682f997, PNG SHA d8dab5e411f7eeb0aa73b1e412b8d820ecfeb38d514c60cf5fef7eb29af4b236, CRC/Manifest10/10/SUMS11/11 PASS, 2048x512 RGBA 4셀. 첫 프레임은 준비 자세, 마지막은 승인 KeyPose 전픽셀 동일. 발 접지 y430..511 불변, 정점 오른쪽7px 여백·클리핑0, 실제 GIF 180/110/130/180ms(총600ms) 가변. 준비→갑각 밀치기→정점→회복, 이상 프레임 없음. KEEP 권고, 승인 전 Hit4 제작/Unity 적용 금지.
+- **#108 Main07 숲길 부상자 FILE_TECH_PASS / USER_ART_APPROVAL_PENDING / NOT_APPLIED**. ZIP SHA b943fb9198f02da7a6df90853457e1bac2b74d916c356b2faab6bac8089db6bd, PNG SHA 90c727b95bee6b2586333d44ebb05b8077664a7e5877084cbbe4a1010676b432, CRC/Manifest7/7/SUMS8/8 PASS, 512x512 RGBA. 회색 앞머리·자주 외투·다리 붕대·한손으로 바닥 지지하는 자세. Main04 및 기존 주민과 구별, 고어 없음. KEEP 권고, 캐논 상세/동일인 관계 미확정. 승인 후 Main07만 독립 Sprite 참조 교체 및 #107 가림 방지 교훈 재사용하여 실제 상대 체격/접지/HUD/퀘스트 안내 최소 DeltaQA.
+- Codex 브랜치 codex/main04-layout-art103-108-20261117, 제품 커밋 3f66fdb25d9445738f8b484d065d92d84e462442, 보고 cf1122569f0aeda216a3c0841e2e8d9fff5c3764. main HEAD52f84e64 유지, 원격 Push/Merge 없음. 기존 보호8350파일/주민12/Save/Discord 유지, Unity6000.6.5f1/#85 HOLD. 기획은 보고 검토 및 문서화만 수행, 실제 아트 직접 시각검사·로컬 실행 없음. 두 신규 아트 미술 승인은 별도 대기.
+
+---
+
 # PLANNING / 2026-11-17 — IceBeetle Idle4·Main04 여행자 사용자 승인 및 후속 3건 발주
 
 - 바울 대표가 두 원화 최종 승인 권고와 후속 단계에 '그래.'라고 답변. **IceBeetle Idle4 및 Main04 부상 여행자 USER_ART_APPROVED**. 원본 PNG 추가 재작업 없음. 두 건 모두 아직 Unity 미적용.
