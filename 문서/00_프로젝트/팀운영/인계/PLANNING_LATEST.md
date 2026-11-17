@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-17 — 얼음갑충 Hit4·레온 최종 승인 / NPC 초상화 범위 제외
+
+- 대표 직접 결정: “레온 초상화까지 할려면 챕터1 도 해야 되니까 초상화는 빼, 둘 다 승인하고”. Hit4 및 Main13 레온 정지 원화 USER_ART_APPROVED, Unity 미적용. 일반·퀘스트 NPC 리뉴얼은 정지 원화 중심, 신규 초상화 제외. 기존 공식 주요 인물 초상화는 삭제·수정하지 않는다. 레온 초상화 미발견은 적용 차단 조건 아님.
+- [#103 승인 및 Defeat4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6940446478): 승인 KeyPose·Idle4·Attack4·Hit4 보호, 다음 Defeat4 2048x512 RGBA 4프레임만 제작, 최종 패배 자세 유지/비루프 검토 GIF. Unity 적용·펫/스탯·Spawn은 별도.
+- [#109 승인 및 레온 적용 발주](https://github.com/HappyPaul812/Project-Limitless/issues/109#issuecomment-6940447233): F:/Downloads/Limitless_Main13_Leon.zip 승인 원본 해시 유지, arbel-leon 전용 Sprite+meta 및 매핑만 변경. OGA09 공유자 보호, 기존 이름표/안내·대화·퀘스트 최소 DeltaQA. #110 두 파티 안내인 작업과 동일 카탈로그 충돌이 없도록 단일 순차 작업으로 병행 업무 조정, #110 결과가 이미 있는 경우 중복 적용 금지. 원본 working tree만 조건부 적용.
+- 리뉴얼 다음 NPC는 #110의 실사용 외부 NPC 감사 결과를 활용해 퀘스트 순서와 실제 잔여 자산을 기준으로 발주. 불필요한 중복 원화·초상화 제작 금지.
+- Unity6000.6.5f1, #85 HOLD, Save/UserData/Discord/승인원본 및 dirty/untracked 보호, main 직접 commit/Push/Merge 금지. GitHub 발주·문서화만 실행, 실제 제작/Unity 적용은 별도.
+
+---
+
 # PLANNING / 2026-11-17 — 카타콤/아르벨 파티 안내인 외부 원화 잔존 발견·수정 발주 및 신규 아트 검수
 
 - 대표 실제 플레이 피드백: '챕터 1의 던전 앞 npc중에 파티 안내인 우리꺼 아니다?' [#101 원본 적용 보고](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6913091059)에서 starter-village-party-manager만 승인 OGA10으로 변경했으며 safezone-catacomb-party/arbel-party-guide는 legacy OGA10 유지 명시. 원격 main 코드도 공유 경로 확인. 현재 로컬 실물은 Codex 재확인 필요.
