@@ -1,3 +1,17 @@
+## 2026-11-17 Issue113 — Codex Windows 실물 오프라인 기술 검수
+
+**ART_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_ART_REVIEW_PENDING / UNITY_NOT_APPLIED**.
+
+- 원격docs/art-renewal최신113납품·기획확인후 F:/Downloads/Limitless_PetAdoption_113.zip 실검. ZIP722,753bytes/SHA b99c853fb4c92f8f8f1a7b6ef10c6c0b83a18d2759f565b5387e20d309bdc307·CRC/Manifest7/SUMS8 PASS. PNG134,346bytes/512RGBA/d64c342bd4bd8953bafce1feb8949d3cb5ce1a4b67ecf88cda3a6757beb4e47d·alpha>8 bbox155,59,357,471·외곽0·투명80.87%.
+- 128/40 축소본실제원본전RGBA일치·납품512/128/40비교판확인. 현재원본승인OGA17/16/레온과추가비교판 Temp/Issue103Defeat113Review20261117/Pet113_ActualComparison.png 생성·모두오프라인. 후보체급가안PPU360.5/Pivot256,41은수학검토만/제품설정아님.
+- 고글공구OGA17·안경장부OGA16과머리/올리브복장/환영팔로구분.40px돌봄소품은잘안읽힘·기존평면화풍보다세밀한명암은미술판단필요. 분양전용기승인원본미발견(원본Assets/인계범위,전체PC전수아님).
+- 원격main의legacy설명과달리현재로컬은#111승인OGA17/16_Original_Approved유지·레온승인원본적용완료. 후보UnityImport(격리포함)/PNGmetaGUID/카탈로그/Scene/Prefab/런타임적용0. 제품commit없음·사용자미술승인필요YES. Placeholder/레온/Main04·07/NPC12/Save/UserData/Discord/#85HOLD보호·대형복제/main직접commit/Push/Merge0.
+- 브랜치codex/issue103-defeat113-review-20261117·문서SHA는Final.json/Issue113댓글. 대표확인은오프라인비교판,게임Arbel(5,-3)은기존OGA17계속사용. 승인후에만별도최소게임QA.
+
+[상세 검수 보고](../../Issue113_PetAdoption_OfflineTechnicalReview_20261117.md).
+
+---
+
 ## 2026-11-16 리뉴얼 적용 마감
 
 OGA02/17 Delta62PASS·OGA10/07v2 Delta53PASS 로컬적용. 승인NPC8종보존·OGA20HOLD. 다른Scene기존OGA10/17참조유지. PNG재작업0.
