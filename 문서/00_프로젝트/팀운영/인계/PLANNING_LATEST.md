@@ -2,7 +2,7 @@
 
 기획080fc05d마감지시확인·현재승인NPC12/Main04·07/레온/이름표·안내/파티·잔여참조누적적용보존. 얼음갑충등록데이터부재·펫분양독립원화승인·눈보라미승인모두게임미적용. 족제비Defeat승인대기·Placeholder미결·#85HOLD유지.
 
-복구1차c23a98fe GitHub수신57경로검증·원본로컬FF진행중. 원격main변경0·Unity6000.6.5f1/#85HOLD/Save/UserData/Discord/dirty보호. 오늘추가개발0,최종결과Issue114/EOD보고우선.
+복구1차c23a98fe GitHub수신57경로검증·원본로컬FF완료. 원격main변경0·Unity6000.6.5f1/#85HOLD/Save/UserData/Discord/dirty보호. 오늘추가개발0,최종결과Issue114/EOD보고우선.
 
 [EOD 상세](../../EOD_20261117_SafeIntegration_Recovery.md).
 

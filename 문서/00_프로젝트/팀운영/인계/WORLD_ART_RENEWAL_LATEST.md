@@ -2,7 +2,7 @@
 
 리뉴얼최신221ec3dc보고8건통합. 주민2/3/4·독립경비/여행자Main04·07/레온·파티/잔여참조최종원본적용보존. 펫분양독립원화USER_ART_APPROVED/UNITY_NOT_APPLIED,기존OGA17계속사용·Placeholder변경0.
 
-복구1차c23a98fe GitHub수신57경로검증·원본로컬FF진행중. 원격main변경0·Unity6000.6.5f1/#85HOLD/Save/UserData/Discord/dirty보호. 오늘추가개발0,최종결과Issue114/EOD보고우선.
+복구1차c23a98fe GitHub수신57경로검증·원본로컬FF완료. 원격main변경0·Unity6000.6.5f1/#85HOLD/Save/UserData/Discord/dirty보호. 오늘추가개발0,최종결과Issue114/EOD보고우선.
 
 [EOD 상세](../../EOD_20261117_SafeIntegration_Recovery.md).
 

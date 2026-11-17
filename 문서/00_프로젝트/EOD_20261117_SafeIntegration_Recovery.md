@@ -1,6 +1,6 @@
 # 2026-11-17 일일 마감 — 승인분 통합·복구 브랜치 보존
 
-**APPROVED_PRODUCTS_PRESERVED / REMOTE_RECOVERY_PUSH_VERIFIED / LOCAL_SYNC_PENDING / REMOTE_MAIN_UNCHANGED / NON_GIT_OFFSITE_INCOMPLETE / NO_NEW_DEVELOPMENT**
+**APPROVED_PRODUCTS_PRESERVED / REMOTE_RECOVERY_PUSH_VERIFIED / LOCAL_FF_SYNC_COMPLETE / REMOTE_MAIN_UNCHANGED / NON_GIT_OFFSITE_INCOMPLETE / NO_NEW_DEVELOPMENT**
 
 ## 실제 보존·통합 범위
 
@@ -37,13 +37,13 @@ TTS최신92feffbd(10/24)·BGM e44aee0e(10/20)·SFX/영상73c37bf0(10/13) 브랜�
 - 원격main **bfd281545632877325f5d21e04cefb924042c465** 그대로. main직접commit/Push/Merge/force0. 복구브랜치는RECOVERY_ONLY/NOT_RELEASE_READY.
 - origin/main밖전송객체457개(commit4/tree95/blob358), blob29,858,971bytes 전체감사. 토큰/개인키/인증리터럴0,금지Payload경로0,50MiB이상0,LFS포인터0,제외blob/원본main보관이력혼입0,허용외역사경로0,기존승인제품269검사불일치0. 원격복구후기존선별문서도함께보관.
 - 별도 HTTPS bareGit·로컬alternates없음·체크아웃없음으로원격수신,선별57경로(제품19포함) SHA256일치. 검증Git약2.1MB. 다른물리PC실행/완전프로젝트Import/빌드시험은아닙니다.
-- 마감최종문서는후속복구커밋에반영할예정이며 최종서버ref/SHA·원본localHEAD·문서SHA는 Issue114 실제결과/Temp/EOD20261117/Final.json을확인합니다. 자체본문에미확정SHA를성공으로적지않습니다.
+- 마감최종문서의후속복구반영도같은명시선별·감사범위에서수행하며 최종서버ref/SHA·원본localHEAD·문서SHA는 Issue114 실제결과/Temp/EOD20261117/Final.json을확인합니다. 자체본문에미확정SHA를성공으로적지않습니다.
 
 ## 원본 보호·복구 한계
 
-원본시작HEAD52f84e643d5d860665eadfe1614a30c745209f00, 모든기존파일8394개/1,222,709,791bytes 보호스냅샷. 어제RestorePlan8342사본재사용·현재8394파일모두보존사본SHA확인, 달라진69파일3,107,192bytes만새로복사. 기존백업/Library/Temp삭제0·대형프로젝트복제0.
+원본시작HEAD52f84e643d5d860665eadfe1614a30c745209f00 → 1차FF e8ae0c377459e9f67aed828847725ce8a899d466 완료. 허용57경로인덱스만정확한대상blob으로준비한후FF-only/no-autostash,제품19원본바이트/허용외인덱스·Git상태동일보존. 최종마감commit도같은가드로FF하며최종원본SHA는Issue114/Final.json.  모든기존파일8394개/1,222,709,791bytes 보호스냅샷. 어제RestorePlan8342사본재사용·현재8394파일모두보존사본SHA확인, 달라진69파일3,107,192bytes만새로복사. 기존백업/Library/Temp삭제0·대형프로젝트복제0.
 
-AllLocalRefs.bundle(어제1,478,789,320bytes/418refs) 재사용하며오늘변경refs는소형증분bundle로별도보존/검증할예정. 전체bundle·사용자미커밋/개인파일·Save/UserData/Discord/키·미적용아트ZIP/영상은공개Push금지. 다른worktree를재순회하거나stash/reset/clean하지않았으며어제미확인76worktree범위는여전히미검증입니다.
+AllLocalRefs.bundle(어제1,478,789,320bytes/418refs) 재사용, 오늘변경refs 소형TodayLocalRefs.bundle 1,648,342bytes/SHA256 8065cf4825c6177f867d0947451a0f5cb8f49bd5741beee020418bd030b838ac·29heads·verify0. 최종마감문서/복구ref는추가소형bundle에보존하며최종결과는Final.json. 전체bundle·사용자미커밋/개인파일·Save/UserData/Discord/키·미적용아트ZIP/영상은공개Push금지. 다른worktree를재순회하거나stash/reset/clean하지않았으며어제미확인76worktree범위는여전히미검증입니다.
 
 연결디스크는내부IDE/SCSI2개이며USB외장저장소미발견. 승인된비공개외부저장·암호화키·외부복원확인없음. F: 로컬증분사본/로컬bundle과GitHub선별제품복구는PC전체자료의외부백업완료가아닙니다. 비Git오프사이트 **INCOMPLETE/NO_VERIFIED_PRIVATE_DESTINATION** 유지. Downloads비Git자료/개인파일/음성·영상원본·다른worktree미커밋은복구ref에서자동복원되지않습니다.
 
