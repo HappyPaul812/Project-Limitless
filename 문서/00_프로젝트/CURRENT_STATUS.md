@@ -1,3 +1,16 @@
+## 2026-11-17 Issue104·105 — 주민4·독립 남문경비 검증·원본 적용
+
+**FILE_TECH_PASS / TAEON_DIRECT_COMPARE_DISTINCT / BOTH_LOCAL_WORKING_TREE_APPLIED / DELTA118PASS_0FAIL / ORIGINAL_IMPORT_COMPILE_CONSOLE0 / USER_REALPLAY_PENDING / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- ZIP807f7d6b…/2166760bytes·CRC/Manifest12/SUMS13 PASS. PNG2 512²투명RGBA·실제128/40일치. OGA19기존주민구별, 새OGA20을공식태온초상화/실제필드용Idle00Sprite와직접비교해강한동일인/가족유사성발견0. 구형닮은OGA20시안HOLD별도보존.
+- 신규PNG2/meta2+Catalog4매핑줄(제품5파일)만. 둘다PPU367.5/Pivot(.4990234375,.076171875)·가시높이1.142857WU. OGA20남문/카타콤/ArbelPortal3공유외형검증. 기존StableID/역할/대화/Collider/Scene/승인NPC10·태온원본/Saves/Discord보호.
+- Unity6000.6.5f1기존QA재사용118PASS·960/1280/1680/발접지/실제E·패드·재진입PASS. 원본MCPImport·Resources/GUID/PPU/Pivot·compile완료/Console오류0(경고42). #106이름표Y1.37/E코드SHA불변·주민4/Portal숨김정상. 기존격리Search예외별도·Issue85HOLD유지.
+- 제품 `a0d5674bc83ddae5223cc4c62f23b2889876f2ed` / `codex/npc104-105-approved-original-20261117`. 원본working tree적용·main52f84e64유지·Merge/Push0. 최종DocsSHA는Issue104/105댓글·Temp/Issue104105NPC20261117/Final.json. 확인: 주민4(7.2,0),남문(2.4,-5.1),Field03감시인(2.85,-4.55),ArbelPortal(-7,-3). 다음은대표새Play수용.
+
+[태온비교·제품5파일·실제QA 상세](Issue104_105_OGA19_OGA20_OriginalApply_20261117.md).
+
+---
+
 ## 2026-11-17 Issue106 — NPC 이름표·승인된 E안내 상향 적용
 
 **LOCAL_ORIGINAL_WORKING_TREE_APPLIED / DELTA155PASS_0FAIL / ORIGINAL_COMPILE_CONSOLE0 / USER_REALPLAY_PENDING / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
