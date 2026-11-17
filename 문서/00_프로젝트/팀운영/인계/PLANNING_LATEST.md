@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-17 — 메인 퀘스트 순서대로 리뉴얼 NPC 제작
+
+- 바울 대표 결정: **“퀘스트 순서대로 npc 만들어줘.”** 이미 승인·적용한 시작마을 일반 NPC를 재제작하지 않고, 실제 스토리·퀘스트 자료가 뒷받침하는 최초 미제작 퀘스트 등장인물부터 1종씩 제작한다.
+- [메인 스토리와 퀘스트 설계](https://github.com/HappyPaul812/Project-Limitless/blob/main/문서/03_스토리/메인_스토리와_퀘스트_설계.md), [Main04 실제 설치 코드](https://github.com/HappyPaul812/Project-Limitless/blob/main/Unity/Client/Assets/_Project/Scripts/World/MainQuest04FieldFlow.cs), [Main07 실제 설치 코드](https://github.com/HappyPaul812/Project-Limitless/blob/main/Unity/Client/Assets/_Project/Scripts/World/MainQuest07FieldFlow.cs)를 확인했다. Main01 = 승인 주민대표/남문경비, Main02 = 신규 NPC 없음, Main03 = 기존 태온, **첫 제작 대상 Main04 「세 사람」 부상당한 여행자**.
+- Main04 Field01 미엘이 습격당한 여행자를 치료 중이고 대사 “조금만 참으세요. 출혈은 멎었습니다.”가 확인된다. 실제 CreateWoundedTraveler에서 **OGA07_Resident01 스프라이트를 임시 재사용**하고, 위치(8.15,5.15), 그림 sorting7, tint.82, **별도 WorldSpace StoryLabel Y1.15**를 사용한다. 이 레이블은 최근 #106 일반 NPC 이름표 Y1.37 코드와 별개다.
+- [Issue #107 첫 제작 발주](https://github.com/HappyPaul812/Project-Limitless/issues/107): 512x512 RGBA 투명 정지 1포즈, 부상·응급처치/회복 상황 자연스럽게 표현. 기존 OGA07와 다른 인상, 기존 미엘·태온 원본·시점·화풍 유지. **부상 부위·이름·직업·성별·영구장애 등 미확정 캐논 임의 추가 금지**, 피·고어·비참함 과장 금지. 실제 PNG 기반 512/128/40 비교판 및 출처/Manifest/SUMS/CRC. 미술 승인 전 Unity 원본 적용 금지.
+- 다음 퀘스트 **Main07**에도 Field02 위치(4.4,0.2) 부상당한 여행자 시각 객체가 있고 현재 OGA07를 재사용한다. **Main04·Main07이 동일 인물이라고 확정된 스토리 근거는 확인되지 않아**, Main04 제작 이후 이름/Identity·원문 대조로 재사용 가능 여부 결정. Main05·06 기존 동료와 흔적 중심으로 신규 인물 필요 없음. 사이드 퀘스트는 선행/실제 startNpcId·turnInNpcId 검증 뒤 별도 분류.
+- 인계는 docs/planning만 변경; 리뉴얼 담당 docs/art-renewal 제작과 Codex Unity DeltaQA는 별도 실제 수행 필요. Unity6000.6.5f1, #85 HOLD, Save/UserData·Discord·기승인 NPC12·미커밋·미추적·Scene/Quest 보호. main 직접 commit/Push/Merge 없음.
+
+---
 # PLANNING / 2026-11-17 — 이름표 155PASS, 얼음갑충 1포즈·리뉴얼 NPC104/105 미술 시각 수용
 
 - 바울 대표가 [Codex Issue106 보고](https://github.com/HappyPaul812/Project-Limitless/issues/106#issuecomment-6934444417)와 “**메인 얼음벌레 이뻐. 포즈니까 다운은 안받아도 되지? 그리고 리뉴얼도 좋네, F:\Downloads\Limitless_NPC_104_105.zip**”라고 전달. **이름표 문제 실제 원본 working tree 코드 적용**, Nameplate Y1.02→1.37, 공용 기능 NPC E안내1.48→1.87·표식 활성시2.48, Resident 상시 숨김 그대로, **최종 Delta155PASS/0FAIL·원본 컴파일 PASS/Console errors0**. 변경파일 `VillageNpcAppearanceCatalog.cs`, `NpcInteractionPrompt.cs` 2개. 로컬 Codex 제품 SHA `4f62cce85c05ccf1b7de5f3f5ef0aae3c9620ebf`·최종보고 `207c191d64e36c7c0f9ffe3ca26ce98b60d74b5e`, mainHEAD `52f84e64` 유지/remote Push0. **사용자 새 Play에서 머리/이름표/E 실제 확인 PENDING**.
