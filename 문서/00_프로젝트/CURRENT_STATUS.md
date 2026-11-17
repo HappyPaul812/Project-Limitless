@@ -1,3 +1,14 @@
+## 2026-11-17 대표 결정 — 펫분양 최종승인 / 얼음갑충 게임적용 승인·등록데이터 막힘
+
+- **#113 USER_ART_APPROVED / UNITY_NOT_APPLIED**: 이번대표직접승인반영·기존ZIP/CRC/Manifest7/SUMS8재확인. 문서/리뉴얼인계만갱신·Arbel(5,-3)기존승인OGA17유지·OGA16/레온/NPC/Placeholder변경0.
+- **#103 ART_APPROVED / GAME_APPLY_USER_AUTHORIZED / BLOCKED_MISSING_REGISTRATION_DATA / NOT_APPLIED**: 이전미승인제한을막힘원인으로삼지않음. 실제원본Definition21종M4일치0·IceBeetle자산0·M4F3/F4씬/조우등록없음·수치/승인된재사용대상없음. 이번새스탯금지와기존전투보존을지키며실제연결할대상없어제품변경전중단. 기본값/다른갑충수치임의복사/기존몬스터대체안함. 후속은등록수치또는재사용대상·배치/조우계약확정필요.
+- 승인5종SHA불변·DefeatZIP c04ad4e6…CRC/Manifest10/SUMS11재확인,동일재생코드·시트의기존격리44PASS재사용(반복QA0). Idle반복/AttackHit복귀/Defeat최종유지근거유지,실제M4전투QA미검증. 원본6000.6.5f1 compileFalse/오류0/경고42·Bootstrap/PlayFalse/dirtyFalse/포커스null.
+- **#112 USER_ART_REVIEW_PENDING / UNITY_NOT_APPLIED** 유지·추가작업0. 제품commit없음·문서5개만·codex/icebeetle-apply-pet113-approved-20261117·실제SHA/보호8356대조는Final.json/Issue103·113댓글. Save/UserData/Discord/#85HOLD/승인원본/dirty보호·main직접commit/Push/Merge0.
+
+[실제 결과와 막힘 상세](Issue103_GameApplyAttempt_113_Approval_20261117.md).
+
+---
+
 ## 2026-11-17 Issue103 — Defeat4 승인 실물·5종 재생 검수 / M4 계약 HOLD
 
 **ART_APPROVED / UNITY_NOT_APPLIED(CONTRACT_HOLD) / ISOLATED_PREVIEW44PASS / PRODUCTION_QA_PARTIAL / REMOTE_NOT_PUSHED**.
