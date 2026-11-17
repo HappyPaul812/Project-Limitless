@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-17 — IceBeetle Idle4 및 Main04 여행자 오프라인 기술검수 PASS
+
+- 바울 대표 Codex 검수 화면 및 [#103 실제 F: 검수](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6936676152), [#107 실제 F: 검수](https://github.com/HappyPaul812/Project-Limitless/issues/107#issuecomment-6936677447) 대조 확인. 두 건 FILE_TECH_PASS / USER_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED. 검사 브랜치 codex/art103-107-offline-review-20261117, 로컬 보고 커밋 29d324990ca7845d733b2d88bb7bf5c5089a403e, 원격 Push 없음.
+- #103 얼음갑충 Idle4 ZIP SHA256 8a9ecec00a98cb094e155aa31f7e737190358d9481ad333d2371e8013281ea87, PNG SHA256 bd06c6d9a901d4c3550882ad4ce061629195b60e75f04636ec4814ebb0967793. Manifest10/10·SUMS11/11·CRC PASS, 2048x512 RGBA 4셀. Frame00 독립 승인 KeyPose 픽셀 동일, 발 y397~511 RGBA 동일. 2~4프레임 갑각 미세운동 정상, 이상 프레임 없음. GIF 실제 120ms/frame(약8.33FPS)와 문서125ms/8FPS 차이는 검토자료 타이밍 표기 한계이며 게임용 PNG 결함 아님. 정확한 8FPS 증명으로 쓰지 않고 다음 문서 갱신 때 표기만 정정 권고. 같은 ZIP/PNG 재작업·재검사 불필요.
+- #107 Main04 부상 여행자 ZIP SHA256 286fe97b6f68f44f45d22a6a4940b9e5b84fc09d8b53d7d9333211e3bc4311a3, PNG SHA256 2687c1c62e5bd20e6e0fb16c3428225aa28fc156c80a5c08b6af2350d9e9715d. Manifest7/7·SUMS8/8·CRC PASS, 512x512 RGBA, 앉은 자세·팔 붕대·여행장비/피로 표현 자연스러움, 고어 없음. 실제 Main04 참조는 legacy32px OGA07, 기존 승인 512px 주민용 OGA07과 별개. 두 파일을 구분하고 실제 장면 참조만 교체. 미술 승인 후 별도 최소 QA에서 맞춤 PPU/Pivot, 미엘과 크기·접지, 기존 tint.82/sorting7/독립 StoryLabel Y1.15 얼굴 비가림 검증. Main07 동일인 미확정 유지.
+- 앞서 제출된 #104/#105 로컬 적용 결과 화면: OGA19/OGA20 원본 working tree 적용, Delta118PASS/0FAIL, Console errors0, 기존 NPC10·이름표Y1.37/E안내/주민숨김 보존. 공식 태온 초상화·Sprite 직접 대조에서 강한 유사성 없음. OGA20 남문/카타콤/아르벨 포탈 관리자 반영. 두 신규 PPU367.5, Pivot(.4990234375,.076171875). Codex 제품 커밋 a0d5674bc83ddae5223cc4c62f23b2889876f2ed, main HEAD 유지/Push/Merge 없음. 시작마을 NPC12 제품 적용 보고 완료(사용자 직접 플레이 확인은 별도).
+- 기존 원본 보호 목록8350개 대조, Unity 실행/Import/적용/GUID 수정/Push/Merge0, #85 HOLD, Unity6000.6.5f1, Save/UserData/Discord 보호. 기획 판단은 Codex 실물 보고 기반이며 기획 세션에서 PNG를 직접 시각 검토한 것이 아님. 두 후보 모두 KEEP 권고, 사용자 미술 승인 전 얼음갑충 Attack4 및 여행자 제품 적용을 자동 발주하지 않는다.
+
+---
+
 # PLANNING / 2026-11-17 — 메인 퀘스트 순서대로 리뉴얼 NPC 제작
 
 - 바울 대표 결정: **“퀘스트 순서대로 npc 만들어줘.”** 이미 승인·적용한 시작마을 일반 NPC를 재제작하지 않고, 실제 스토리·퀘스트 자료가 뒷받침하는 최초 미제작 퀘스트 등장인물부터 1종씩 제작한다.
