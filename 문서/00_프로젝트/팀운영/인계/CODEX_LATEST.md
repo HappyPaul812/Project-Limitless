@@ -1,3 +1,16 @@
+## 2026-11-17 Issue107 — 승인 Main04 여행자 조건부 적용 검증 HOLD
+
+**USER_ART_APPROVED / FILE_TECH_PASS / FUNCTIONAL44PASS / VISUAL_DELTA_FAIL / ORIGINAL_NOT_APPLIED / REMOTE_NOT_PUSHED**.
+
+- ZIP286fe97b…/PNG2687c1c6… 재확인·승인 유지. 전용512RGBA 후보 GUIDf325180de4944364a0dd74c1a814d6df·PPU360/Pivot(.5,.08203125)·앉은가시높이.966667WU, 접지0·기존LabelY1.15/tint.82/sorting7/위치 유지. 원본 제품3파일 미적용, 후보Temp/격리QA에만 보존.
+- 기존QA/6000.6.5f1·기능44PASS·실제E/전투진입/도망재도전/승리결과처리복귀/완료후숨김검사, 오류0. 승리는QA의기존EndBattle(true)결과처리호출이며전체전투플레이아님. 최종PPU360/3해상도추가표적렌더PASS와시각합격은구분.
+- **시각FAIL:**960/1280/1680 기존OGA07에서도현재목표/F10상단HUD가미엘얼굴·여행자이름표가림;HUD숨김진단에서도이웃미엘/StoryLabel간섭. PASS조건미충족으로원본적용HOLD. 기존Scene/Camera/Bounds원본-QASHA동일. 공용HUD/배치임의변경0.
+- Main07/승인NPC12/Save/Discord/dirty·Issue85HOLD보호. 원본Bootstrap/PlayOFF/compileFalse/오류0·파일변경0. rootmain52f84e64유지. codex/main04-traveler-approved-20261117 문서만로컬commit·최종SHA는Issue107/Temp/Issue107Apply20261117/Final.json. 다음:Main04한정가림해소범위결정→동일DeltaQA→PASS후원본반영. 미술재승인불필요.
+
+[상세 검증·HOLD 근거](../../Issue107_Main04_Traveler_ConditionalApply_HOLD_20261117.md).
+
+---
+
 ## 2026-11-17 Issue103·107 — Idle4·Main04여행자 오프라인 검수
 
 **BOTH_FILE_TECH_PASS / IDLE4_ART_REVIEW_PENDING / TRAVELER_USER_ART_APPROVAL_PENDING / UNITY_NOT_IMPORTED / NOT_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
