@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-17 / Issue #103 — 얼음갑충 Idle4 승인 → Attack4 후보 납품
+
+- [#103 Idle4 최종 승인 및 Attack4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6936952632) 확인. **KeyPose·Idle4 USER_ART_APPROVED**. Library 실물 두 원본 SHA256 `b7ff0592226c2a1f28270053cf03483b6051c69edb412b59a7965ccf8699b3ad`, `bd06c6d9a901d4c3550882ad4ce061629195b60e75f04636ec4814ebb0967793` 작업 전후 동일, 원본 수정0. 이전 Idle4 검토 GIF 실제 간격은 [Codex 검수](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6936676152) 기준 **120ms×4(480ms 주기, 약8.33FPS)**로 표기 정정만; 승인 ZIP/PNG 수정0.
+- **Attack4 신규 한 시트** `Sprite/IceBeetle_M4_Attack4_2048x512_RGBA_CANDIDATE.png`, 2048×512 RGBA/4×512 가로/우향, 616,816bytes, SHA256 **`d8dab5e411f7eeb0aa73b1e412b8d820ecfeb38d514c60cf5fef7eb29af4b236`**. 승인 원화 기반 상부 갑각 후방 준비→전방 밀치기→정점→회복, 하부 접지 y430..511 원본 픽셀 4/4 동일, Frame03 KeyPose 픽셀 동일, 알파 외곽0·4프레임 상이·분리 QA PNG 일치. 정점 오른쪽 가시 여백 7px, Unity PPU/Animator/런타임 미검증. 생성된 별도 시안은 납품에 사용0.
+- **실제 PNG 직접 축소 512/128/40판**·검토 GIF 디코드 실제 지연 **180/110/130/180ms, 총600ms 반복**(고정 FPS 아님). ZIP `IceBeetle_Issue103_Attack4_20261117.zip`, 2,669,553bytes/12 entries, SHA256 **`ebb4172037c7b7e74115be0aaf38e70dc9c58b6e928549934415e290d682f997`**. CRC PASS, Manifest 10/10, SUMS 11/11, 자기/순환참조0. Library `/LIMITLESS/Issue103_IceBeetle_Attack4/`에 ZIP·PNG·보드·GIF 저장 완료.
+- [**Attack4 제작·검증 보고**](../../Chapter3_IceBeetle_M4_Attack4_ArtPilot_20261117.md) `docs/art-new` commit **`8999ad39ffc5cd59d5fe28b71ca55a78dc0300a7`**. **`KEYPOSE_IDLE4_APPROVED / USER_ATTACK4_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED`**. Hit·Defeat·펫·수치·드롭·Unity 작업0. 기존 승인 원본/Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/main 보호. GitHub 바이너리 업로드·Windows 복사·main 직접 commit/Push/Merge0.
+
+
 ## 2026-11-17 / Issue #103 — 얼음갑충 KeyPose 승인 → Idle4 후보 납품
 
 - 바울 대표 **M4 Ice Beetle 512px 1포즈 미술 승인** 확정. ChatGPT Library `/LIMITLESS/Issue103_IceBeetle_OnePose/IceBeetle_M4_KeyPose_512_RGBA_CANDIDATE.png` 실물 회수; 원본 SHA256 **`b7ff0592226c2a1f28270053cf03483b6051c69edb412b59a7965ccf8699b3ad`** 일치. 기존 KeyPose PNG 수정/재생성0.
