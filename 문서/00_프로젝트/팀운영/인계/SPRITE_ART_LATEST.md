@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-17 / Issue #103 — 얼음갑충 Hit4 승인 → Defeat4 후보 납품
+
+- [#103 Hit4 최종 미술 승인 및 Defeat4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6940446478) 확인. **KeyPose·Idle4·Attack4·Hit4 USER_ART_APPROVED**. 실제 승인 PNG 원본 4종 작업 전후 SHA256 모두 일치, 원본 수정0. KeyPose `b7ff0592226c2a1f28270053cf03483b6051c69edb412b59a7965ccf8699b3ad`, Idle4 `bd06c6d9a901d4c3550882ad4ce061629195b60e75f04636ec4814ebb0967793`, Attack4 `d8dab5e411f7eeb0aa73b1e412b8d820ecfeb38d514c60cf5fef7eb29af4b236`, Hit4 `cf1dd6c78ffeffd12f8d026dda7ae362e09ffd0a7a3dee536d86569df4f51a3c`.
+- 신규 **Defeat4 한 시트** `Sprite/IceBeetle_M4_Defeat4_2048x512_RGBA_CANDIDATE.png` 2048×512 RGBA/가로4×512셀/우향, 912,389bytes, SHA256 **`9cd3fd4c1925f9953830d9d857b96f11f8bb754dc7b57fe34640936f4cb1c5fb`**. 새 생성 패배 포즈의 연결 알파 영역을 추출·동일비율 축소·공통 하단 y464 정렬. 힘 빠짐→다리 접힘→쓰러짐→패배 자세 유지. 폭발/갑각 파괴/VFX0. 4셀 상이, 셀 경계 alpha0, 분리 QA 4장 일치. 새 포즈는 승인 KeyPose 픽셀 직접 변형이 아니므로 세부 묘사 차이가 있을 수 있고 사용자 시각 검토 필요.
+- 최종 시트 직접 제작 512/128/40px 비교판 및 비루프 GIF. 실제 디코드 간격 **160/190/220/1600ms**, 총2170ms, loop 확장 없음, 마지막 자세 1600ms 유지. ZIP `IceBeetle_Issue103_Defeat4_20261117.zip` 3,134,616bytes/12 entries, SHA256 **`c04ad4e6528f3ea9aa36971b8ef9ce033711d2e96ba0d13589f3adb0fb676bbc`**, CRC PASS/Manifest 10/10/SUMS 11/11, 자기·순환참조0. Library `/LIMITLESS/Issue103_IceBeetle_Defeat4/` ZIP·PNG·비교판·GIF 저장 성공.
+- [**Defeat4 제작·검증 보고**](../../Chapter3_IceBeetle_M4_Defeat4_ArtPilot_20261117.md), `docs/art-new` commit **`4ddac78c1b14884ffce02a78bf3b8f018e860563`**. 상태 **`KEYPOSE_IDLE4_ATTACK4_HIT4_APPROVED / USER_DEFEAT4_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED`**. 미술 승인 필요 YES(Defeat4). Unity/MonsterID/Spawn/수치/펫 구현0. Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/기존 승인 자산/main 보호. GitHub 이미지 바이너리 업로드·Windows F: 복사·대형 QA 복제·main 직접 commit/Push/Merge0.
+
+
 ## 2026-11-17 / Issue #103 — 얼음갑충 Attack4 승인 → Hit4 후보 납품
 
 - [#103 Attack4 최종 승인 및 Hit4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6938653973) 확인. **KeyPose·Idle4·Attack4 USER_ART_APPROVED**. Library 실물 원본 3종 SHA256 작업 전후 일치: KeyPose `b7ff0592226c2a1f28270053cf03483b6051c69edb412b59a7965ccf8699b3ad`, Idle4 `bd06c6d9a901d4c3550882ad4ce061629195b60e75f04636ec4814ebb0967793`, Attack4 `d8dab5e411f7eeb0aa73b1e412b8d820ecfeb38d514c60cf5fef7eb29af4b236`. 원본 수정0.
