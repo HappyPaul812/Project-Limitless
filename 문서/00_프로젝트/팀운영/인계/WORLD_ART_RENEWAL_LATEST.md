@@ -1,3 +1,13 @@
+## 2026-11-17 일일 마감 — 승인분 보존·복구
+
+리뉴얼최신221ec3dc보고8건통합. 주민2/3/4·독립경비/여행자Main04·07/레온·파티/잔여참조최종원본적용보존. 펫분양독립원화USER_ART_APPROVED/UNITY_NOT_APPLIED,기존OGA17계속사용·Placeholder변경0.
+
+복구1차c23a98fe GitHub수신57경로검증·원본로컬FF완료. 원격main변경0·Unity6000.6.5f1/#85HOLD/Save/UserData/Discord/dirty보호. 오늘추가개발0,최종결과Issue114/EOD보고우선.
+
+[EOD 상세](../../EOD_20261117_SafeIntegration_Recovery.md).
+
+---
+
 ## 2026-11-17 Issue113 — 펫 분양 담당 최종 승인 / 게임 미적용 유지
 
 **USER_ART_APPROVED / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED / REMOTE_NOT_PUSHED**.
