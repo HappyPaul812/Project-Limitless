@@ -1,3 +1,15 @@
+## 2026-11-17 Issue113 — 펫 분양 담당 최종 승인 / 게임 미적용 유지
+
+**USER_ART_APPROVED / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED / REMOTE_NOT_PUSHED**.
+
+- 바울 대표 직접 지시 ‘펫 분양 담당 NPC 아트는 승인’으로 최종 승인 확정. ZIPb99c853f…/PNGd64c342b… 동결, 기존 오프라인PASS재사용 및 이번 SHA/CRC/Manifest7/SUMS8 재확인. 원화재작업0.
+- 이번에는 승인 반영만. 원본·격리UnityImport/적용·카탈로그/Scene/Prefab/런타임 변경0. Arbel(5,-3)은 #111 승인OGA17 계속 사용. 장비상인/OGA16관리인/레온/NPC12/Placeholder/Save/UserData/Discord/#85HOLD보호.
+- 이전 미술검토대기는 이번 승인으로 해소됐지만 실제크기·PPU/Pivot/라벨/업무UI/fallback 게임DeltaQA 및 제품적용은 별도 작업입니다. 제품commit없음, 로컬브랜치codex/icebeetle-apply-pet113-approved-20261117·문서SHA는Final.json/Issue113댓글. main직접commit/Push/Merge0.
+
+[승인 및 기존 기술검수](../../Issue113_PetAdoption_OfflineTechnicalReview_20261117.md).
+
+---
+
 ## 2026-11-17 Issue113 — Codex Windows 실물 오프라인 기술 검수
 
 **ART_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_ART_REVIEW_PENDING / UNITY_NOT_APPLIED**.

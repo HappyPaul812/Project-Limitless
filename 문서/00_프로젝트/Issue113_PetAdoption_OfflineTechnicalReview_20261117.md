@@ -1,3 +1,15 @@
+## 2026-11-17 바울 대표 최종 미술 승인 반영
+
+**USER_ART_APPROVED / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED**.
+
+이번 대표 직접 지시 ‘펫 분양 담당 NPC 아트는 승인’을 최종 미술 승인으로 기록합니다. 기존 ZIP b99c853fb4c92f8f8f1a7b6ef10c6c0b83a18d2759f565b5387e20d309bdc307 및 PNG d64c342bd4bd8953bafce1feb8949d3cb5ce1a4b67ecf88cda3a6757beb4e47d 승인, 기존 기술 검수 재사용·입력ZIP SHA/CRC/Manifest/SUMS 재확인 PASS. 이번에는 승인 기록만이며 원본 및 격리 Unity 적용/Import·카탈로그·Prefab·Scene·런타임 변경0. Arbel(5,-3) 분양 담당은 기존 승인OGA17을 유지합니다. OGA17 장비상인/OGA16 펫관리인/레온/NPC/Placeholder 보호. 이전 USER_ART_REVIEW_PENDING은 아래 검수 당시의 이력이며 이번 승인으로 대체됩니다. PPU/Pivot 가안은 게임적용 승인 또는 최종 설정을 뜻하지 않습니다.
+
+브랜치 codex/icebeetle-apply-pet113-approved-20261117, 제품commit없음/문서만. 실제 문서SHA는 Temp/Issue103Game113Approval20261117/Final.json 및 Issue113댓글. REMOTE_NOT_PUSHED.
+
+---
+
+이하 기존 오프라인 검수 당시 기록입니다.
+
 # Issue113 — 펫 분양 담당 후보 오프라인 기술 검수
 
 **ART_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_ART_REVIEW_PENDING / UNITY_NOT_APPLIED**
