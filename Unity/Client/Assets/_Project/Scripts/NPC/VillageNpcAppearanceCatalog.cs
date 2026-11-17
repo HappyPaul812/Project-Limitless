@@ -37,7 +37,7 @@ namespace ProjectLimitless.NPC
                 ["safezone-catacomb-party"] = "VillageNpcSprites/Eldiran/OGA10_PartyManager_HandFix_v2_Approved",
                 ["safezone-catacomb-healer"] = "VillageNpcSprites/Eldiran/OGA06_Healer_Original_Approved",
                 ["safezone-catacomb-keeper"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard_Distinct_Approved",
-                ["arbel-leon"] = "VillageNpcSprites/Eldiran/OGA09_VillageRepresentative_Original_Approved",
+                ["arbel-leon"] = "VillageNpcSprites/Eldiran/Main13_Leon_Approved",
                 ["arbel-shop"] = "VillageNpcSprites/Eldiran/OGA03_GeneralShop_Original_Approved",
                 ["arbel-healer"] = "VillageNpcSprites/Eldiran/OGA06_Healer_Original_Approved",
                 ["arbel-party-guide"] = "VillageNpcSprites/Eldiran/OGA10_PartyManager_HandFix_v2_Approved",
@@ -77,6 +77,10 @@ namespace ProjectLimitless.NPC
             renderer.sprite = sprite;
             renderer.color = Color.white;
             renderer.sortingOrder = NpcSortingOrder;
+
+            // 레온을 추적할 때 큰 목표판이 E 안내를 덮지 않도록 해당 인물에만 화면 배치를 보완합니다.
+            if (stableNpcId == "arbel-leon" && npc.GetComponent<ArbelLeonGuideClearance>() == null)
+                npc.AddComponent<ArbelLeonGuideClearance>();
 
             // 원본 픽셀은 확대 저장하지 않습니다. PPU로 체격을 정하고 Transform은 1로 유지해 Collider 크기를 보호합니다.
             npc.transform.localScale = Vector3.one;
@@ -159,4 +163,23 @@ namespace ProjectLimitless.NPC
             shadow.GetComponent<MeshRenderer>().sortingOrder = NameplateSortingOrder - 1;
         }
     }
+
+    /// <summary>레온의 목표판만 옆으로 분리합니다. 실제 목표 위치와 다른 NPC의 안내 정책은 유지합니다.</summary>
+    [DefaultExecutionOrder(110)]
+    public sealed class ArbelLeonGuideClearance : MonoBehaviour
+    {
+        private void LateUpdate()
+        {
+            if (QuestService.GetTrackedQuest()?.CurrentObjective?.TargetId != "arbel-leon") return;
+            var navigation = Object.FindAnyObjectByType<ProjectLimitless.Player.QuestNavigationPresenter>();
+            if (navigation == null || !navigation.HasTarget || !navigation.IsTargetOnScreen) return;
+            RectTransform panel = navigation.GetComponent<RectTransform>();
+            Vector3 position = panel.position;
+            Vector2 half = panel.rect.size * .5f;
+            position.x = Mathf.Clamp(position.x + panel.rect.width + 16f, half.x + 16f, Screen.width - half.x - 16f);
+            position.y = Mathf.Clamp(position.y, half.y + 16f, Screen.height - 114f - half.y - 16f);
+            panel.position = position;
+        }
+    }
+
 }
