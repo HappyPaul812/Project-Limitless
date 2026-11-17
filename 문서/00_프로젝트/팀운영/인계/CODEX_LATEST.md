@@ -1,3 +1,15 @@
+## 2026-11-17 Issue103 Hit4·Issue109 레온 — 오프라인 검수
+
+**BOTH_FILE_TECH_PASS / HIT4_ART_REVIEW_PENDING / LEON_USER_ART_APPROVAL_PENDING / BOTH_NOT_APPLIED / UNITY_NOT_IMPORTED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- Hit4 ZIP982328b9…3131456bytes/12파일·CRC/Manifest10/SUMS11 PASS.2048×512RGBA·4셀·분리QA동일·하단y430..511RGBA4/4승인원본동일·마지막KeyPose/QA파일바이트동일.처음3셀은승인Idle/Attack어느셀과도전RGBA동일하지않음. GIF실제90/160/110/190ms·550ms반복/직접축소·비교판PASS.피격→움츠림→복귀/파손·과장점프·새VFX발견0·40px세부약함·최종미술승인필요.
+- Leon ZIPdfaaf5fe…732482bytes/9파일·CRC/Manifest7/SUMS8 PASS.512RGBA/직접128·40/실제OGA09·승인OGA20·Main07비교판PASS.묶은머리/수염/적갈어깨천/청록복/장화·주머니로OGA09와구별·책임자/실용복읽힘·부상0.세밀한명암의화풍조화는대표승인필요. 현재로컬Portrait정의7/관련Assets파일명/정본에서레온전용공식초상화미발견(일치NOT_VERIFIED),전PC/모든브랜치조사아님.
+- 게임코드/Assets/GUID/Unity도구/Import/Save/Discord변경0·Main04/07/NPC12/승인원본·Issue85HOLD보호. codex/art103-hit109-leon-review-20261117 문서3개만로컬commit·최종SHA/8354보호대조는Issue103/109댓글·Temp/Art103Hit109Leon20261117/Final.json. 다음:각각미술승인후별도최소QA/적용지시,자동적용0.
+
+[대상별 상세 검수](../../Issue103_Hit4_Issue109_Leon_OfflineReview_20261117.md).
+
+---
+
 ## 2026-11-17 Issue108 — Main07 승인 여행자 원본 적용
 
 **USER_ART_APPROVED / LOCAL_ORIGINAL_WORKING_TREE_APPLIED / DELTA134PASS_0FAIL / ORIGINAL_ERRORS0 / MIEL_REFERENCE_ONLY / USER_REALPLAY_PENDING / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
