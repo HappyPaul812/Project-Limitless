@@ -1,3 +1,12 @@
+## 2026-11-17 / Issue #113 — 아르벨 펫 분양 담당 독립 정지 원화 납품 (현재 최신)
+
+- **현재 매핑 확인:** arbel-pet-adoption → OGA17_EquipmentShop, arbel-pet-management → OGA16_Bank. [#113](https://github.com/HappyPaul812/Project-Limitless/issues/113), 최신 인계 및 접근 가능한 Library에서 분양 담당 독립 기승인 원화 미발견. Windows 및 모든 브랜치 전수검사 아님.
+- **신규 실제 원화:** `Arbel_PetAdoption.png` 512×512 투명 RGBA 정지 1포즈, 134346 bytes, SHA256 `d64c342bd4bd8953bafce1feb8949d3cb5ce1a4b67ecf88cda3a6757beb4e47d`, alpha>8 bbox (155,59,357,471), 외곽 알파 접촉0. 최초 AI 시안에서 고립 외부 알파 제거·비율 유지 축소·접지 정렬. 올리브/크림 실용복, 묶은 머리·천 리본, 친근한 표정·환영 손짓, 돌봄 주머니/빗/줄고리. OGA17 공구/고글, OGA16 장부/안경과 구별. 별도 동물, 신상·서사 추가0.
+- **실물 비교판:** OGA17/OGA16/OGA03 및 최근 레온 후보와 신규 원화 512/128/40px 오프라인 직접 비교, SHA256 `8e7c89198f096844131c1558282ab216f7ce63a9afa26e1ccc189c1ae860b53a`. 기존 원본 불변, 기존 평면 화풍보다 세밀한 명암 및 소품 수는 미술 검토 필요. 레온 승인은 본 작업에서 확정하지 않음.
+- **검수 ZIP:** `/mnt/data/Limitless_PetAdoption_113.zip` 722753 bytes / SHA256 `b99c853fb4c92f8f8f1a7b6ef10c6c0b83a18d2759f565b5387e20d309bdc307` / 9 entries CRC PASS, Manifest7/7, SUMS8/8 PASS. PNG 전용 `/mnt/data/PetAdoption_113_PNG.zip` 133365 bytes / SHA256 `55be5daee8f224391878e5f404e9f8b11030b6c495405d059654a72dcb2175a1` / CRC PASS. 사용자 F: 자동 복사 아님.
+- **정식 보고:** [Renewal_20261117_Issue113_Arbel_PetAdoption_StillArt_Pilot.md](../../Renewal_20261117_Issue113_Arbel_PetAdoption_StillArt_Pilot.md), `docs/art-renewal` commit `3357555aea9adb64820cb0e365b402e2333aed8a`. **FILE_TECH_PASS / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED**.
+- 기존 승인 NPC/레온/Main04/07 및 Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord·기존 역할 및 Placeholder 보호. 초상화·애니메이션·Unity/Codex 적용0, main 직접 commit/Push/Merge0. 승인 후 별도 Codex 최소 QA에서 arbel-pet-adoption과 후속 서비스 fallback 범위, 실제 크기·PPU·접지·라벨 확인.
+
 ## 2026-11-17 / Issue #109 — Main13 레온 정지 원화 납품 / Main07 최종 미술 승인 (현재 최신)
 
 - **대표 확정:** Main07 숲길 부상자 미술 최종 승인, SHA256 `90c727b95bee6b2586333d44ebb05b8077664a7e5877084cbbe4a1010676b432` BYTE_KEEP. 실제 Unity 적용은 이번 작업에서 검증하지 않음.
