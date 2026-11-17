@@ -1,3 +1,16 @@
+## 2026-11-17 Issue106 — NPC 이름표·승인된 E안내 상향 적용
+
+**LOCAL_ORIGINAL_WORKING_TREE_APPLIED / DELTA155PASS_0FAIL / ORIGINAL_COMPILE_CONSOLE0 / USER_REALPLAY_PENDING / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- NameplateY1.02→1.37(+.35). 실제alpha상단/글자·그림자bounds기준+.15/.20은미해소, 최종머리간격.0416~.0639WU. E상자충돌을보고한후대표가“E 안내 상향도 허용하고 검증 계속”추가승인. 표시이름표NPC E1.48→1.87, 기존Quest표식활성시안내만표식위(현재2.48). 주민/별도NPC E1.48유지·퀘스트표식원본변경0.
+- 기존QA3지역/960·1280·1680·17이름표/30전후실제렌더·155PASS. 얼굴/E/표식분리·잘림·이름표상호겹침0·도보/휠체어E·패드A·주민숨김/NPC102매핑보존. 격리기존Search환경예외별도·Issue85HOLD유지.
+- 원본MCP표적Import·실제Offset1.37/컴파일완료/Console오류0(경고42). Bootstrap/PlayOFF/dirtyFalse/선택·포커스보존. 카탈로그Y+설명주석/NpcInteractionPrompt2코드만원본working tree적용·보호8346중그외8344SHA동일. PNG/meta/GUID/PPU/Pivot/Collider/매핑/Save/Discord보호.
+- 제품 `4f62cce85c05ccf1b7de5f3f5ef0aae3c9620ebf` / `codex/ch1-npc-nameplate-clearance-20261117`. main52f84e64그대로·Merge/Push0. 최종DocsSHA는Issue106댓글/Temp/Issue106Nameplate20261117/Final.json. 확인: 은행(4.4,2), 훈련장(6.4,-2.1), 대표(0,1.5) 새Play. 다음은대표실게임확인.
+
+[실측·전후·최종검증 상세](../../Issue106_NpcNameplate_Clearance_20261117.md).
+
+---
+
 ## 2026-11-17 Issue102 — 승인 OGA11·OGA13 로컬 원본 적용
 
 **USER_ART_APPROVED / LOCAL_ORIGINAL_WORKING_TREE_APPLIED / DELTA_53_PASS / ORIGINAL_IMPORT_COMPILE_PASS / ORIGINAL_CONSOLE_ERRORS_0 / USER_REALPLAY_PENDING / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
