@@ -1,3 +1,12 @@
+## 2026-11-17 / Issue #108 — Main07 숲길 부상 여행자 정지 원화 납품 / Main04 미술 승인 (현재 최신)
+
+- **바울 대표 결정:** Main04 부상 여행자 최종 미술 승인, `Main04_WoundedTraveler.png` SHA256 `2687c1c62e5bd20e6e0fb16c3428225aa28fc156c80a5c08b6af2350d9e9715d` BYTE_KEEP. 본 작업에서 Main04 Unity 적용 여부는 확정하지 않음.
+- **Main07:** [Issue #108](https://github.com/HappyPaul812/Project-Limitless/issues/108), 스토리 공식 Main07 및 `MainQuest07FieldFlow.cs`에서 Field_02 임시 OGA07 참조, 미엘 부상자 돌봄 확인. Main04와 동일인 공식 명시·기승인 Main07 전용 원화는 확인되지 않아 **별도 외형 후보1명만** 제작. 동일 여부·부상 부위·신상 캐논 미확정, Windows F: 전수 미조사.
+- **실물** `Main07_WoundedTraveler.png` **512×512 transparent RGBA**, 164593 bytes, SHA256 **`90c727b95bee6b2586333d44ebb05b8077664a7e5877084cbbe4a1010676b432`**. alpha>8 bbox (96,122,414,466), 캔버스 변 접촉0. 회색 앞머리/좁은 눈매/자주색 여행복, 앉아 한 손을 지지·다리 붕대로 Main04 녹색 외투/팔 붕대와 구별. 부상 부위 시각 제안이며 공식 설정 아님.
+- **실제 비교:** Main04 승인 PNG·OGA07·OGA11 원본 직접 사용, 512 동일 캔버스/128·40 LANCZOS 실축소. `Main07_Actual_512_128_40_Comparison.png` SHA256 `0bf98062bcac3b044a50ff558df890df902729ac63eb9e696baf681fa0114d25`. 원본 변경0, 무관 이미지 대용0, Unity 미검증.
+- **검수 ZIP** `/mnt/data/Limitless_Main07_Traveler.zip` 815952 bytes / SHA256 `b943fb9198f02da7a6df90853457e1bac2b74d916c356b2faab6bac8089db6bd` / 9 files / CRC PASS / Manifest7/7·SUMS8/8 PASS. PNG만 `/mnt/data/Main07_Traveler_PNG.zip` 163802 bytes / SHA256 `64906abbb46200338bb8cf81ea7635c553dfdbf56e4887a64085a25c5da137da` / CRC PASS. Library `/LIMITLESS_Art_Delivery/Issue108_Main07_WoundedTraveler_20261117/` 실제 PNG·ZIP2·비교판 저장 완료.
+- **정식 보고:** [Renewal_20261117_Issue108_Main07_WoundedTraveler_StillArt_Pilot.md](../../Renewal_20261117_Issue108_Main07_WoundedTraveler_StillArt_Pilot.md), `docs/art-renewal` commit `bbda25a9143d611ae817a636ddc5641d12609adc`. `FILE_TECH_PASS / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`. 사용자 승인 후 Codex 최소 참조 교체 및 미엘과 월드배율·Pivot·PPU·접지·UI 검사. 기존 승인 원화·Unity6000.6.5f1·Issue85 HOLD·Save/UserData·Discord 보호, 초상화/애니메이션/Unity 적용0, main 직접 commit/Push/Merge0.
+
 ## 2026-11-17 / Issue #107 — Main04 부상 여행자 임포트용 원화 PNG 실물 납품 (현재 최신)
 
 - **바울 대표 명시 요구:** 보여주는 원화가 아닌 **게임에 넣을 수 있는 실제 PNG** 요청. 신규 **`Main04_WoundedTraveler.png`** 512×512 투명 RGBA 정지 1포즈 제작 완료, SHA256 **`2687c1c62e5bd20e6e0fb16c3428225aa28fc156c80a5c08b6af2350d9e9715d`**. 원본 별도 그림에서 비율 유지 축소·투명 정렬: 최종 alpha bbox (106,122,406,470), 정지 앉은 자세, 기준 접지 y470. 캐릭터1인 추가, Main07 미제작.
