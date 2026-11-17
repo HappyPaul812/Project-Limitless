@@ -1,3 +1,16 @@
+## 2026-11-17 Issue110 — 카타콤·아르벨 파티 안내인 외형 참조 수정
+
+**LOCAL_ORIGINAL_WORKING_TREE_APPLIED / TWO_MAPPING_ONLY / DELTA85PASS_0FAIL / ORIGINAL_ERRORS0 / OTHER_LEGACY_REPORTED_NOT_CHANGED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- safezone-catacomb-party/arbel-party-guide 두경로만기승인OGA10_PartyManager_HandFix_v2_Approved로수정. PNG6be1a2d7…/GUID012b7ee363574fe3900bbd56a472b984/PPU360.5/Pivot255.5,42 원본불변. 카탈로그2줄외매핑/이름표1.37/E정책·NPC위치/대화/편성기능·PNG/meta/GUID변경0.
+- 기존QA/6000.6.5f1·85PASS·960/1280/1680/접지/이름표/실제E·패드A·편성취소/전후열확정/합성Save/재진입PASS. 원본두맵/Resources/compileFalse/오류0·경고42. 보호8354대조최종은Final.json.
+- 실제잔여외부:Arbel펫분양OGA17/서쪽주민OGA11,Main21후카타콤·시작마을동적펫분양도OGA17fallback. 나머지기본기능NPC승인원화·세린공식Sprite. Arbel(1.5,-1.5)마을주민은외부PNG아닌활성1×1단색placeholder. 모두보고만·미변경. 구형PNG12종중관찰3Scene/2상태실사용2종·미표시보관10종(전프로젝트미사용입증아님/삭제0).
+- 제품`6c81a03d229f0075b39dcbfa07656182e7f6bae5`/codex/issue110-party-appearance-20261117·rootmain52f84e64유지·Push/Merge0. Main04/07/NPC12/Save/Discord/dirty·Issue85HOLD보호. 확인:Field03(2.85,-2.55)/Arbel(-3,-2)파티안내인,옆에서E/A. 다음은대표새Play수용·나머지잔여는별도지시.
+
+[상세 수정·잔여 감사](../../Issue110_PartyGuide_LegacyReferenceFix_20261117.md).
+
+---
+
 ## 2026-11-17 Issue103 Hit4·Issue109 레온 — 오프라인 검수
 
 **BOTH_FILE_TECH_PASS / HIT4_ART_REVIEW_PENDING / LEON_USER_ART_APPROVAL_PENDING / BOTH_NOT_APPLIED / UNITY_NOT_IMPORTED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
