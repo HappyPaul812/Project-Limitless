@@ -1,3 +1,16 @@
+## 2026-11-17 Issue109 — 승인 레온 전용 외형 원본 적용 / #110 보존
+
+**USER_ART_APPROVED / PORTRAIT_OUT_OF_SCOPE / LOCAL_ORIGINAL_WORKING_TREE_APPLIED / DELTA178PASS_0FAIL / ORIGINAL_ERRORS0 / ISSUE110_ALREADY_DONE_NOT_REPEATED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+
+- Leon ZIPdfaaf5fe…CRC/SHA재확인·기존오프라인PASS재사용. PNGff7cfd08…/GUIDed9108a8402b48d3a8ae5c2b9b4a8769/PPU360.5/Pivot(.5,.083984375)=(256,43),가시높이1.142857WU·발접지0. arbel-leon만전용Main13_Leon_Approved로교체·OGA09/기타참조/좌표(0,3)/대사/Quest데이터불변·초상화0.
+- 큰목표판-E중첩재현후레온전용후처리만추가:추적target arbel-leon/화면안때오른쪽286px·상단114px피함. 공용이름표1.37/Resident숨김/E1.48/표식1.92및공용navigation/Main04/07변경0. 제품3파일(신규PNG/meta+Catalog)만원본적용.
+- 기존QA6000.6.5f1·178PASS·3해상도HUD ON9화면·모든역할NPC불투명픽셀과큰판겹침0/E상자분리·실제E/패드A·Main13최종대화완료/Main14시작·보고진행/합성Save재진입PASS. 레온분기표적검증이며전체여정/전투전수아님. 원본Import/Resources/compileFalse/초상화NONE·오류0·경고104.
+- #110제품6c81a03d…/85PASS완료재확인,두파티맵/Scene실물유지·반복수정0. Main04/07/NPC12/Save/Discord/dirty·Issue85HOLD보호. 제품`c00fbb63c65c67d36a2cd59736f6822c1f3368c3`/codex/issue109-leon-approved-20261117·rootmain52f84e64유지·Push/Merge0. 최종DocsSHA/8354대조는Issue109/110댓글·Temp/Issue109LeonApply20261117/Final.json. 확인:Arbel레온(0,3),대표새Play수용대기.
+
+[상세 적용·검증 보고](Issue109_Leon_Approved_OriginalApply_20261117.md).
+
+---
+
 ## 2026-11-17 Issue110 — 카타콤·아르벨 파티 안내인 외형 참조 수정
 
 **LOCAL_ORIGINAL_WORKING_TREE_APPLIED / TWO_MAPPING_ONLY / DELTA85PASS_0FAIL / ORIGINAL_ERRORS0 / OTHER_LEGACY_REPORTED_NOT_CHANGED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
