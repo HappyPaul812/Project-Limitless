@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-17 — 파티 안내인 85PASS 적용 / 레온 진행 중 / 잔여 legacy NPC 2종 순차 정리
+
+- [#110 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/110#issuecomment-6940618986): safezone-catacomb-party/arbel-party-guide 매핑2줄 승인 OGA10으로 교체, Delta85PASS/0FAIL, 원본 compile errors0/warnings42, 원본 working tree 적용. PNG/meta/GUID 변경0. 제품 6c81a03d229f0075b39dcbfa07656182e7f6bae5, 보고 78c330d6843e11a537abfed9ce72e452d210b344. 확인 위치 Field03(2.85,-2.55), Arbel(-3,-2). 실제 사용자 Play 확인 별도.
+- #110 실제 3Scene/BASE 및 Main21 완료 상태 감사: 구형 PNG 12종 중 실사용2종(OGA17·OGA11), NPC 미표시10종. 실사용 대상 arbel-pet-adoption, arbel-resident-west 및 Main21 후 카타콤/시작마을 펫분양 fallback 2명(총4참조). 전 프로젝트 미사용·삭제 판정 아님.
+- 레온 #109 적용 지시문은 대표가 이미 전달, 결과 미접수. [#111 후속 발주](https://github.com/HappyPaul812/Project-Limitless/issues/111): 레온 완료 후에만 동일 카탈로그 순차 작업. 기존 승인 OGA17/OGA11 원화 재사용하여 해당 legacy 직접 매핑 및 펫분양 fallback 제거, 최소 Delta QA 후 원본 working tree 적용. 역할별 새 독립 원화는 별도 판단. 중복 재제작 금지.
+- 별도 Arbel (1.5,-1.5) NO_ROLE:VillageNpc 단색 PlaceholderVisual 실제 활성 발견. #111에서는 역할/생성 경로/ID/의도 읽기 조사만, 임의 삭제/새 역할/아트 생성 금지. 결과 후 필요 작업 발주. 신규 초상화 제외 유지.
+- Unity6000.6.5f1, #85 HOLD, Save/UserData/Discord/기존 작품 보호, no Push/Merge/main 직접 commit/대형 QA 복제. 이번 기획은 GitHub 발주·기록만 완료, #111 실제 실행 전.
+
+---
+
 # PLANNING / 2026-11-17 — 얼음갑충 Hit4·레온 최종 승인 / NPC 초상화 범위 제외
 
 - 대표 직접 결정: “레온 초상화까지 할려면 챕터1 도 해야 되니까 초상화는 빼, 둘 다 승인하고”. Hit4 및 Main13 레온 정지 원화 USER_ART_APPROVED, Unity 미적용. 일반·퀘스트 NPC 리뉴얼은 정지 원화 중심, 신규 초상화 제외. 기존 공식 주요 인물 초상화는 삭제·수정하지 않는다. 레온 초상화 미발견은 적용 차단 조건 아님.
