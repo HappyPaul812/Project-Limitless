@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-17 — 일일 마감 완료 확인 / 11월 18일 모바일 기획 재개
+
+- [Codex 최종 마감](https://github.com/HappyPaul812/Project-Limitless/issues/114#issuecomment-6946090923) 확인: 승인 제품19경로·담당보고15건 통합, 원본 FF-only 완료 local main 455e2fd13c59c92277bae21a8b1264ee79682a8b. [복구 브랜치](https://github.com/HappyPaul812/Project-Limitless/tree/backup/2026-11-17-safe-checkpoint) 서버 ba59838bf923832362f3b1fccf4897864cc678fa, 독립 수신58경로 SHA256 일치. 원격 main bfd281545632877325f5d21e04cefb924042c465 불변. Unity6000.6.5f1/오류0·경고42, 기존 사용자자료·Save/UserData·Discord/#85 HOLD 보존. 비Git 자료 PC 밖 암호화 백업은 미완, 로컬 증분/230브랜치 bundle 커버 확인. F: 299.17GiB 여유. 기획은 Codex 실제 보고 확인, 독립 로컬 실행 없음.
+- 대표 11/18 휴대폰 접속 시 재개 예정: **얼음갑충 능력치와 등장 위치부터 기획**. 모바일에서 이해/결정하기 쉽게 몬스터 이름 기준으로 진행. 기존 상세기획 F3 눈 덮인 고갯길~F4 백색 침엽림, 전열 방어형의 공식 방향과 기존 몬스터 실수치/경험치·보상 곡선 대조 후 레벨·HP/공격/민첩·방어 패턴·전리품·조우 편성 및 첫 배치의 후보 제시. 사용자 결정 전 수치 확정·Unity 적용 금지. F3/F4 실제 Scene 미구현 및 M4 등록 없음 명시, 임의 기존 몬스터 대체 금지. M4 아트/게임 적용 승인 유지, 실제 미적용. 펫 분양 담당 신규 원화 미적용 및 눈보라 정령 미술 승인 대기 유지. 대표 재접속 전 추가 개발·자동 실행 없음.
+
+---
+
 # PLANNING / 2026-11-17 — 일일 마감 / 승인분 통합 및 로컬 동기화 발주
 
 - 대표 “오늘은 여기까지 하자. 어제처럼 해줘.” → [EOD #114](https://github.com/HappyPaul812/Project-Limitless/issues/114) 승인분 통합·원본 local 동기화·안전한 비-main 복구 브랜치 보존 발주. 기획 실제 GitHub 발주, Codex 실행 결과 아직 없음. 11/16 복구 기준 9d84b81934a7c… 실제 로컬/원격 ref부터 확인. main 직접 commit/Push/Merge 금지, 원격 main과 로컬 Unity 버전 차이 주의(실제6000.6.5f1 유지), Save/UserData/Discord/#85 HOLD/dirty/untracked/개인 비Git 보존.
