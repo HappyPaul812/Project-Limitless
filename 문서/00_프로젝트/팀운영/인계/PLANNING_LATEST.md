@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-18 — 북부 7종 통합 기획 승인 / 잡템 6종 경제 제안
+
+- 대표 “승인할게..전리품 드롭률과 판매 가격도 기획해봐.” 직전 7종 능력치·전투·배치/보스/냉기 및 펫4종(서리들쥐 포함) 기획 승인. 기존 100탈렌트/승리 해금 유지. 실제 구현 및 밸런스 검증 별도.
+- [통합 기획 정본](https://github.com/HappyPaul812/Project-Limitless/commit/5a80b543589dc420cf25a270a163708e266affc1) 7절 신규 잡템 제안: 서리 묻은 털뭉치 50%/8, 설원 솜털 50%/9, 서리깃 45%/10, 빙갑 조각 45%/12, 눈폭풍 결정 45%/14, 마력차단 결정 100%/22(단회 엘리트), 보스 일반 Loot 없음. 확률/판매가 아직 사용자 승인 대기. 기존 Ch2 확률45~50/엘리트60%, 가격6~10/15 기준. 기존 승리 후 개체별 독립 1개 roll, Stack99, 상점 구매 불가/판매 가능, 재판매/Quest·경제 실제 검증 별도. 신규 아이콘 6종 128 RGBA 후속 별도 발주. 비반복 엘리트 재스폰/중복 금지 및 필수 수집 아이템으로 강제하지 않음.
+- Unity/Codex/제품/원격 main 변경 없음, #85 HOLD 유지. 스킬·소모품 가격 및 실제 Save 잔고는 미검증.
+
+---
+
 # PLANNING / 2026-11-18 — Chapter3 북부 몬스터 7종 통합 전투 기획
 
 - 대표 전체 몬스터 기획 요청. [통합 전투 밸런스 7종](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/08_몬스터/Chapter3_북부몬스터7종_전투밸런스_20261118.md) 작성 commit f431807f1b3c2d5b62e769ba054bcd519ef2b4f8 / [검토 Issue](https://github.com/HappyPaul812/Project-Limitless/issues/115). DESIGN_PROPOSAL/USER_REVIEW_PENDING/RUNTIME_NOT_IMPLEMENTED.
