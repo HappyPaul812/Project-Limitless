@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-18 — 스킬25종/상점/냉기약 통합 제안
+
+- 대표 “계속 기획해봐.” [신규 통합안](https://github.com/HappyPaul812/Project-Limitless/commit/c202209c1a939cff4aa94a2b5c164b6ed17dc609) 작성. 10/13 5직업 기승인 상세 방향 및 기존 배율/쿨/MP 후보 그대로, 25종 전체 가격/해금 및 상호작용 정리. 신규40/강화30/부활50/온기의 불꽃20, Main24 서릿길 마을 첫 안내 시 25종 판매(캐릭터 직업별 필터), 추가 레벨 제한 없음, 캐릭터별 구매/기본3무료/강화 자동대체/6슬롯·전투밖 무료. Chapter3 완료 후 전역 확대 유지.
+- 신규 해제 아이템: 따끈 어묵탕 한기만20/판매10, 해빙 연고 동상만40/판매20, Stack99/성공 행동1+1개/무효0. 최초 F2 전 어묵탕2, F4 전 연고2 일회성 공급 후보. 기존 회복/냉각약 등 유지, 정화II 과열/한기/동상 추가, 괴사는 화로 전용. F2 최초 서리올빼미 최대1회 예고/복귀보호 승인 보존, 일반전 반복과 구분. 실측 무자금·패배 재대응 확인 필요.
+- 수호자 감전/엄호/맹세, 균열+사냥 표식(큰 효과만), 맹공 2타, 씨앗 재적용/부활 턴큐 등 최소 상세 제안. **DETAIL_AND_ECONOMY_USER_REVIEW_PENDING / NOT_IMPLEMENTED**. 기존 직업1차 승인 존중, 실제 MP/피해/재화/Save Writer 안전계약·IDs·밸런스 QA/구현 승인 별도. Unity/Codex/main/아트 수정 없음.
+
+---
+
 # PLANNING / 2026-11-18 — 설원족제비 승인 누락 정정 및 스킬 상세 재확인
 
 - 이전 대화 11/17 대표 설원족제비 Defeat4 ‘좋고’ 최종 승인 확인. [Codex 실물 검수 PASS](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6932058502), [누락 정정](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6977474496), [현황 문서](https://github.com/HappyPaul812/Project-Limitless/commit/16e9eb715f9e9c1eb3b5add430edd8654c07db52). 기존 EOD/아트 대기 표기는 누락된 과거 상태. KeyPose/Idle4/Attack4 v2/Hit4/Defeat4 미술 승인 완료, 기술 오프라인 PASS, Unity NOT_APPLIED. 신규 재작화/재승인 요청/동일 검수 반복 금지.
