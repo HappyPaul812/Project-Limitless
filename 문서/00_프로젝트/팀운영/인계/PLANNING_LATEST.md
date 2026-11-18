@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-18 — 설원족제비 승인 누락 정정 및 스킬 상세 재확인
+
+- 이전 대화 11/17 대표 설원족제비 Defeat4 ‘좋고’ 최종 승인 확인. [Codex 실물 검수 PASS](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6932058502), [누락 정정](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6977474496), [현황 문서](https://github.com/HappyPaul812/Project-Limitless/commit/16e9eb715f9e9c1eb3b5add430edd8654c07db52). 기존 EOD/아트 대기 표기는 누락된 과거 상태. KeyPose/Idle4/Attack4 v2/Hit4/Defeat4 미술 승인 완료, 기술 오프라인 PASS, Unity NOT_APPLIED. 신규 재작화/재승인 요청/동일 검수 반복 금지.
+- 10/13 직업별 5개 상세 기획 문서 전부 재확인: 신규10/강화15의 방향은 이미 대표 1차 승인, 구체 배율·쿨·MP와 가격/해금·연산 계약 최종 기술 검증/구현 승인만 남음. [상품25 카탈로그](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/Main24_SkillShop_Catalog25_PriceAndUnlock_Proposal_20261029.md) 가격 신규40/강화30/부활50/온기의 불꽃20 미승인 제안. 기존 직업 상세 수치 무단 변경 금지. 이번 실제 Unity/Save/main 변경 없음.
+
+---
+
 # PLANNING / 2026-11-18 — Chapter4 폴의 고향·부모의 사랑과 독립 / 빛과 마법·마법 기계
 
 - 대표 직접 결정: Chapter4는 폴의 고향, 부모의 사랑 및 장애인의 독립·자기결정권 서사. Chapter3 종료 후 온기의 화로 제작자가 폴의 고향 대마법사이자 폴의 스승임을 조사로 발견하는 시작. 시작 마을 귀환 후 동쪽으로 계속 이동, Chapter3 완료 스킬 상인 전역 확대 기존 정본과 연결. 환경 콘셉트 빛/마법/마법으로 움직이는 기계.
