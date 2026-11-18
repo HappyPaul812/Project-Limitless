@@ -1,3 +1,9 @@
+# PLANNING / 2026-11-18 — Chapter3 서브퀘스트 6종 제안
+
+- 대표 “서브 퀘스트도.” 기존 마을 초안 3종 보존 + 후반 3종, [통합 제안](https://github.com/HappyPaul812/Project-Limitless/commit/a6df081eaea9a6c2ad7c5e4ba9ed9273c9211982) 기록. 얼어붙지 않은 길(90/30), 돌아오지 않는 발자국(95/35), 따뜻한 한 잔(105/40), 눈길의 보강판(120/45), 눈보라 속의 길잡이(135/50), 잠든 수호체의 기록(145/55). 합계 EXP690/T255. 일반 잡템6개 사용(판매가65), 단회 마력차단 결정 비소모. 선택형/기존 수집·완료 UI·보상 중복 방지 보존, 메인 필수X/정식 NPC·ID·위치·승리기록 실측 필요. USER_APPROVAL_PENDING / NOT_IMPLEMENTED. 다음 Main24~29 상세/보상 및 Ch4 연결 별도. Unity/Codex/main 변경 없음.
+
+---
+
 # PLANNING / 2026-11-18 — 스킬25종·상점·냉기 해제 아이템 기획 승인
 
 - 대표 직전 통합안 “승인.” [승인 정본](https://github.com/HappyPaul812/Project-Limitless/commit/1ce1044ef9b75c0fa41975a2a30e04de52076f95). 25종 효과·쿨/MP 초도 기준, 일반 신규40/강화30/부활50/온기의 불꽃20, 서릿길 마을 Main24 첫 안내부터 판매(추가 레벨 제한 없음), 영입 동료별 구매, 강화 자동대체/전투 밖 무료 장착6 유지. 따끈 어묵탕20/10·해빙 연고40/20, 각각 첫 F2/F4 전2개 일회 지급, 해제 범위 및 기존 규칙 유지. **USER_DESIGN_APPROVED / IMPLEMENTATION_AND_BALANCE_QA_PENDING**.
