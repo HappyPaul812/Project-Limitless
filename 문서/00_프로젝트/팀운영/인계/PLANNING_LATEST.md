@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-18 — Chapter4 폴의 고향·부모의 사랑과 독립 / 빛과 마법·마법 기계
+
+- 대표 직접 결정: Chapter4는 폴의 고향, 부모의 사랑 및 장애인의 독립·자기결정권 서사. Chapter3 종료 후 온기의 화로 제작자가 폴의 고향 대마법사이자 폴의 스승임을 조사로 발견하는 시작. 시작 마을 귀환 후 동쪽으로 계속 이동, Chapter3 완료 스킬 상인 전역 확대 기존 정본과 연결. 환경 콘셉트 빛/마법/마법으로 움직이는 기계.
+- [Chapter4 초기 방향](https://github.com/HappyPaul812/Project-Limitless/commit/1e312c6191363793faff44ec51f152b47a0ff27d), [장비·제작 방향 갱신](https://github.com/HappyPaul812/Project-Limitless/commit/0e83332069ceb3d7bfb3637f6bce145d3a385d64). 신규 시스템 **장비 장착 + 몬스터 잡템 활용 아이템 제작** 확정 방향; 기존 잡템 판매/드롭 유지. 제작 성공100%/고정 레시피/공방/재료 재획득·대체 등 상세 제안. 앞선 제작 제외 기획 폐기. 개인 의료/가족 정보 공개문서에 기록하지 않음.
+- 기존 폴 캐릭터/미엘 Slow Burn·하렌 형제애 결말/화로 기능 보호. 독립은 도움 거부나 장애 치료/극복 증명이 아니라 자기 선택과 지원 활용. 부모와 스승 이름·과거·정식 대사·적/보스·Scene/Quest·장비 레시피 가격 미정. Chapter3 우선 진행, 신규 Unity/Codex/아트/TTS/제품/main 변경 없음, #85 HOLD 유지.
+
+---
+
 # PLANNING / 2026-11-18 — Chapter3 전리품 승인 / Chapter4 장비 도입 방향
 
 - 대표 전리품 승인. [Chapter3 통합 정본](https://github.com/HappyPaul812/Project-Limitless/commit/6a8e85c8e8bf74383b137347af9ba1ceb68f24c2) 7종/펫4종/잡템6종 드롭률·가격 기획 승인 완료. 신규 아이콘 및 실제 적용/QA 별도.
