@@ -1,3 +1,11 @@
+# CODEX / 2026-11-19 마감
+
+[이틀 승인 작업 통합 및 복구 보고](../../EOD_20261119_SafeIntegration_Recovery.md)
+
+아르벨 NPC 4종과 불씨망령 적용·검증, 눈보라 정령 등록 준비 및 승인 전리품 보존. Unity 6000.6.5f1, #85 HOLD 및 #118 실제 보스전 미검증 상태 유지. 마지막 제품 9324b658, 검증 보고 67c9c3c7. 원본·복구 검증의 최종 SHA와 결과는 [Issue #121](https://github.com/HappyPaul812/Project-Limitless/issues/121)에서 확인합니다. 오늘 개발 종료.
+
+---
+
 ## 2026-11-19 · 눈보라 정령 승인 모션 적용 준비 (#112)
 
 - 승인 KeyPose, Idle8 v2, Attack4, Hit4, Defeat4 게임용 기준 자산 정리. Unity 6000.6.5f1 격리 임포트·Sprite 연결·세 비루프 클립 샘플링 PASS. 기존 Idle과 프리팹 유지.
@@ -59,19 +67,6 @@
 - 제품 커밋 `44d4ab5449131ca51876791f5ca3879aaaaf7a5d`, 로컬 `codex/issue118-chapter3-balance`, 원격 Push 미실행.
 
 [상세 적용·검증 기록](../../Chapter3_Art_Apply_20261119.md)
-
-## 2026-11-19 · #116/#117 실물 검수 및 #118 후속
-
-- 지정 ZIP 두 건의 납품 SHA 일치, 독립 PNG 7종 기술 PASS. Chapter2 승인 7종 및 #113/OGA16/OGA17/레온 동일 크기 비교판은 Temp/Issue116_117_118에 보관. 대표 미술 승인 대기 / 게임 미적용.
-- Unity 6000.6.5f1 라이선스는 제한 환경의 클라이언트 IPC 실패를 확인했고 일반 실행 환경에서 성공. 이후 배치 시작 지연으로 새 Unity 실행 전투 미검증. 기존 올빼미 증거 재사용.
-- 합성 Lv19~21 폭군 36조건 모델과 Main25~27 EXP 비교. +3500/+3500/+4000은 선택전 0회에서 종료 Lv22~23. 기획 승인 필요.
-- [후속 검수 보고서](../../Issue116_117_118_Art_And_Balance_Followup_20261119.md). 로컬 codex/issue118-chapter3-balance, 원격 Push 미실행.
-
-## 2026-11-19 · Issue #118 Chapter 3 밸런스 PARTIAL
-
-- 합성 31/56/81전 종료 Lv18~19/19~21/20~22. 로컬 C# 성장 함수 실행, 첫 한기 기존 격리 Unity 실측 재사용. 신규 Unity 실행 Licensing 초기화 실패. F3~5/폭군/화로/스킬25/펫4 실제 연결 및 3인 조합 실측 미검증.
-- Main22~24 로컬 0EXP/0T와 승인 보상 차이 및 후보 대사 ID 기록. 원본 게임·Save/UserData 미접근·변경 없음. 메인 진행 EXP 보강 또는 낮은 레벨에서 보스 플레이 검증을 비교하고, 변경 전 승인 필요.
-- [검증표·권고안](../../Issue118_Chapter3_Balance_QA_20261119.md) · [Issue #118](https://github.com/HappyPaul812/Project-Limitless/issues/118). 로컬 보고 브랜치 codex/issue118-chapter3-balance. 원격 Push 미실행.
 
 ## 2026-11-17 일일 마감 — 원본 승인분 보존·복구 원격 검증
 

@@ -1,3 +1,11 @@
+# 2026-11-19 마감
+
+[이틀 승인 작업 통합 및 복구 보고](EOD_20261119_SafeIntegration_Recovery.md)
+
+아르벨 NPC 4종과 불씨망령 적용·검증, 눈보라 정령 등록 준비 및 승인 전리품 보존. Unity 6000.6.5f1, #85 HOLD 및 #118 실제 보스전 미검증 상태 유지. 마지막 제품 9324b658, 검증 보고 67c9c3c7. 원본·복구 검증의 최종 SHA와 결과는 [Issue #121](https://github.com/HappyPaul812/Project-Limitless/issues/121)에서 확인합니다. 오늘 개발 종료.
+
+---
+
 ## 2026-11-19 · 눈보라 정령 승인 모션 적용 준비 (#112)
 
 - 승인 KeyPose, Idle8 v2, Attack4, Hit4, Defeat4 게임용 기준 자산 정리. Unity 6000.6.5f1 격리 임포트·Sprite 연결·세 비루프 클립 샘플링 PASS. 기존 Idle과 프리팹 유지.

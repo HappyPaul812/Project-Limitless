@@ -1,90 +1,384 @@
-## 2026-11-17 일일 마감 — 승인분 보존·복구
-
-신규아트최신a9128414보고7건통합. 얼음갑충5종미술/게임적용승인이나등록데이터부재로미적용·44PASS재사용,눈보라정령기술PASS/최종미술승인대기,설원족제비Defeat기술PASS/미술승인대기.
-
-복구1차c23a98fe GitHub수신57경로검증·원본로컬FF완료. 원격main변경0·Unity6000.6.5f1/#85HOLD/Save/UserData/Discord/dirty보호. 오늘추가개발0,최종결과Issue114/EOD보고우선.
-
-[EOD 상세](../../EOD_20261117_SafeIntegration_Recovery.md).
-
----
-
-## 2026-11-17 Issue112 — Codex Windows 실물 검수
-
-**ART_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_ART_REVIEW_PENDING / UNITY_NOT_APPLIED**.
-
-- 최신원격112납품·SPRITE_ART/PLANNING/공통규칙 확인. Library저장성공은담당기록확인/이번도구직접열람불가. 현재원본Assets·인계범위 기존승인M5미발견,새후보로검수.
-- F:/Downloads/BlizzardWisp_Issue112_OnePose.zip 798,663bytes/8파일/SHA53b21965bd0513a42bb04ebefd78572554a7e9803106e56f8573b36da7150ede·CRC/Manifest6/SUMS7/비순환PASS. PNG217,196bytes/512RGBA/0c72c3f8fc80c9e74bf648236a0ff1746ef344ef71f03b4c005c38db59915586·bbox36,8,475,464·외곽alpha0·128/40전RGBA직접축소일치.
-- 512/128/40실물·순백/어두운40px에서윤곽/핵식별PASS의견. 비인간형자연정령·추상우향·별도배경/대형VFX없음. 원본M1/M3와승인M2/M4실물읽기비교 추가:청백색윤곽/명암대체로호환. 우향추상성/국소핵발광강도는대표미술판단. KEEP검토권고·사용자승인필요YES·HOLD강제결함미발견.
-- 비교판 Temp/Issue112WispReview20261117/M1_M5_White40_Comparison.png 및납품512/128/40판. 같은캔버스오프라인이며Unity월드크기/실제맵QA아님. 추가모션·Unity실행/Import·적용/Spawn/스탯/전투/펫0·원화재생성0·Save/UserData/Discord/#85HOLD·기존승인자산보호.
-- docs/art-new업무의로컬검수기록:codex/issue112-wisp-offline-20261117·제품commit없음·문서SHA는Final.json/Issue112댓글. 원격Push/Merge/main직접commit0. 전체PC/Library실물전수확인주장0.
-
-[상세 검수](../../Issue112_BlizzardWisp_OfflineTechnicalReview_20261117.md).
-
----
-
-## 2026-11-16 신규 아트 마감
-
-Stoat KeyPose/Idle4/Attack4v2/Hit4 최종미술승인, Unity미적용. Defeat4미제작/후속자동착수금지. 서리들쥐 승인4모션 KEEP, 기존 QA 재사용.
-
-원격복구/비Git누락/로컬최종SHA는 [EOD 결과](../../EOD_20261116_SafeIntegration_Recovery.md) 참조. 오늘개발종료·추가작업자동시작금지.
-
----
-
-## EOD 2026-11-11 선별 확정 상태
-
-#91 Snowroad/F2 v2 승인 원본2종은 d40bb170으로 본편 적용·107+Import16 근거와 대표 수용 기록이 있습니다. #95 NPC06/16 함께 기존 적용 보호. #75 B352 c951e0c5 포함. #85 정식 Owl 한기1회 패턴469b219f/신규81PASS 원본 적용, 대표 새 실플레이는 PENDING. 냉기 VFX/Icon6 원본 KEEP, 소유자 식별/몸체 밀집 PARTIAL 유지. docs/art-new 3644200d를 통째로 합치지 않고 승인 BattleBG 최종 시각보고만 선별했습니다. C SnowEdge/동상/동결괴사/정화Ⅱ/아이템·신규미술 구현0.
-
----
-
-## 2026-11-03 Owl·Spider 최종 미술 승인 / Bee 표적·권리 계약 조사
-
-**Owl Attack4 / Spider Walk8 USER_ART_APPROVED** 확정. #84 기존 Unity37PASS 재사용·재실행0. Owl ZIP d6648b7451dc2184c2187c0b1c2f8e0f52fc800ac6975753d0f6d38f6fbf9192 / Spider ZIP 771bd1813608aa3e350c6124ab0d43293c6d2988b1833014da64484d5272c8da 동결. 기존 Idle·정지원화 보호·추가 재작화 금지. Owl VFX HOLD, Spider 발 접지·미끄러짐 NOT_VERIFIED / WALK_CONTACT_HOLD, Organic Attack8/Shoot8 미제작. 과거 미술 승인 대기는 이번 승인으로 해소됐습니다.
-
-Bee 실제 코드: 적 좌측→아군 우측, 전열/후열·Column별 대상, 명목 .25초 피해(index02@10FPS), 정지거리145 UI. 기본 플레이어와 사각형 사이도 최소31.2 UI 간격이고 ContactFrame/socket 없음. Attack10은 약.61초에 조기 종료될 수 있어 **TARGET_CONTACT_HOLD / MOTION_REVISE_CONTINUE / FULL_COMBAT_READY_NO**. 필요한 보완은 Sting/Recover 두 후보뿐이며 정확 접점·거리/시간 승인 전 계획 문서까지만 진행합니다.
-
-PilotBee 원배포 웹BY3.0 vs 원본 ZIP 내부BY4.0 충돌 재확인. MonsterValidation의 활성2PNG가 Bee 정의에 참조되며 외부 보관 원본과 byte-exact여서 **RIGHTS_HOLD**. ThirdParty 보관 파일 직접참조0과 활성 사본 사용을 구분했습니다. 새 SHA만으로 독립 권리를 확정하지 않습니다.
-
-[승인·좌표·권리 근거](../../OwlSpider_FinalApproval_BeeTarget_RightsContract_20261103.md) / [리뉴얼 최소 지시서](../../VenomBee_Minimal_StingRecover_ArtBrief_20261103.md). branch `codex/bee-target-rights-and-art-approval-20261103`, 출발 c6eab1bb. 문서·조사 JSON/TXT만 변경, 원본 Unity/Save/UserData/Scene/Prefab/BuildSettings/Packages·Discord66·Push/merge0, Unity 실행/기존QA 반복/신규PNG0. NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED.
-
----
-
-## 2026-11-03 Owl Attack02 + Spider Edge Fix 독립 읽기 검수
-
-**LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED**. **ATTACK02_CONTINUITY_OK_CANDIDATE**:00/01/03바이트보존·02만새6dcb1799…/126301px변경. y345~511은승인03exact,02→03몸통/꼬리·발/깃질감급전환감소.01→02IoU.4377→.6761,02→03.4415→.8654,40px대비유지·8FPS정확.움직이는주석GIF4단계확인,기존Idle8/분리VFX원형보호·본체재결합0.최종대표모션미술/Unity기술승인아님.
-
-[정확SHA·통합보고](../../OwlAttack02_SpiderWalk8EdgeFix_ReadOnly_Review_20261103.md). OFFLINE/Unity아님 비교판 `F:/study/codex/Project-Limitless/Temp/OwlSpiderEdgeReview20261103/Review/index.html` SHA `26aa98c601f8c19ba7916f9b5f1f627fc52483b5700dd3262bec4d9cf881565c`·브라우저34PASS. branch `codex/owl-spider-edge-review-20261103`,출발34f2ad88.원본main/status344(상세858)·28참조SHA/개인Save보호·Unity/기존QA·Bee재검수/원본적용/Push/merge0.
-
----
-
-## 2026-11-03 Owl Continuity + Spider Walk8 Fix 독립 읽기 검수
-
-**LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED**. Owl 새Continuity의 얼굴중심복원/큰VFX분리/03=승인Idle00바이트동일을 확인. 하지만00~02몸통/깃털비례·02→03급전환이남아 **DESIGN_CONTINUITY_REVISE**. 본체4GIF 평균8FPS정확·시트RGBA일치/clip0, 별도seamGIF는동일프레임병합으로1프레임/250ms. 분리VFX는계속UNAPPROVED_HOLD. 정상Idle재제작불필요.
-
-[통합 상세·전체SHA·근거](../../OwlContinuity_SpiderWalk8Fix_ReadOnly_Review_20261103.md). 단일OFFLINE/Unity아님 비교판 `F:/study/codex/Project-Limitless/Temp/OwlSpiderFollowupReview20261103/Review/index.html` SHA `ca98de10c55e0ef0b4601fe44703780ec78ffef8c6dd4a73908c1e9763d02d74` · 브라우저34PASS. branch `codex/owl-spider-followup-review-20261103`, 출발ed95f352. 원본main/status344(상세858)·28참조SHA보호·Unity/Save접근/기존QA·Bee재검수0·Push/merge0. 최종미술승인과실제품적용은별도입니다.
-
----
-
-## 2026-11-03 Codex 독립 실물 델타 검수 결과 (담당 제작 기록과 구분)
-
-Owl Attack4 새4SHA/40px 대비 개선은 확인했으나 ANIM_REVISE_CONTINUE / DESIGN_CONTINUITY_HOLD / VFX_SCOPE_HOLD입니다. 기존 Idle8/81a31cf3 정지원화 보호, 새 냉기궤적은 별도 시각판단 필요. 기존 clip-safe 재작업 불필요.
-
-[독립 통합 검수](../../Art_OwlAttack4_BeeTarget_SpiderIdleWalk_Review_20261103.md). 세 ZIP 실물 무결성 확인, 바울 대표 최종 모션미술 승인 대기·Unity실행/본편적용0·기존QA반복0·Push/merge0. 이 기록은 아트 원본이나 담당 원격 문서를 덮어쓰지 않은 로컬 인계입니다.
-
----
-
-## 2026-11-03 바울 대표 승인 — F2 자연형 그루터기 v4 USER_APPROVED
-
-`F2_SnowStumpPerch_NaturalBroken_v4_CANDIDATE_320x384_RGBA.png` SHA `22f2f5816b3fd2ffe45234ec807bb3d81a83f87440eb8eb1f338e0dff33404a8`를 이번 채팅 명시 승인으로 **USER_APPROVED / APPROVED_ART_CANDIDATE** 처리했습니다. 기존파일 SHA 재확인·바이트변경0. 예전 Stump v1/v2/v3·FULLREDRAW는 **SUPERSEDED / ARCHIVED_CANDIDATE**로 문서분류하고 삭제/이동하지 않습니다.
-
-승인은 그루터기1PNG에만 해당합니다. Sign/Fence FULLREDRAW는 KEEP_CANDIDATE/미승인 그대로, Spider ALPHA_FINAL_HOLD·Bee MOTION_REVISE/RIGHTS_HOLD 미승인 유지. **UNITY_DELTA_PENDING / NOT_UNITY_APPLIED**. 다음은 별도 격리1PNG 최소 표시·알파·실비율/시야·통행 검증 필요. PPU/Pivot·Collider·휠체어는 SPEC_PENDING/NOT_VERIFIED. F2 미구현맵/전투 신규개발 허가 아님.
-
-[승인 정본·최소Delta 준비](../../F2_NaturalStump_v4_UserApproval_And_UnityDeltaPrep_20261103.md). 브랜치 `codex/f2-natural-stump-approval-20261103`, Markdown5개만로컬반영/Push·main·merge·Unity·Save/UserData변경0. Main24 81/14 및 기존QA 재실행0. 아래 KEEP/승인대기/HOLD는 과거 당시 기록이며 현재 승인 상태는 본 항목을 따릅니다.
-
-승인 문서 commit `fe92433aac1d5768a438f2dd3d5366f480f5cacb` 기준 [Issue #75](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6592422354) · [Issue #81](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6592423200) 실제 USER_APPROVED 보고 등록 성공. 로컬 Markdown만 반영/원격 파일Push0, 본 후속은 영수증 기록입니다.
-
----
-
 # SPRITE_ART 최신 인계 — 2026-10-12
+
+## 2026-11-19 / Issue #112 — Hit4 최종 승인 및 눈보라 정령 Defeat4 후보 납품
+
+- [Hit4 최종 승인 및 Defeat4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7004512175) 확인. KeyPose·Idle8 v1/v2·Attack4·Hit4 PNG 5종 실제 SHA256 작업 전후 일치, 원본 수정0. Hit4 SHA256 `2e07e2178f48bf0dcd6367a73a9f9c4af5311073df2dc2c9a7e33e139b311de1`. 기존 Hit4 승인 대기 표기는 과거 이력.
+- 신규 **`BlizzardWisp_M5_Defeat4_2048x512_RGBA_CANDIDATE.png`** 2048×512 RGBA/4×512셀, 677,357bytes, SHA256 **`5f4c5942895035b23d824707a7e4e534c20c323b4a3aa82bc5cd824735d23299`**. 핵 약화→눈바람 풀림/파편 분산→붕괴→전투불능. 신규 2172×724 패배 시안에서 4셀 분리·알파 정리·동일 배율0.85 축소·공통 하단 y464 정렬. 기존 원화의 직접 변형이 아니므로 세부 묘사 차이 가능. 4셀 상이·경계 alpha0·분리 PNG 일치. 전체 평면회전·외부 자산·별도 VFX0.
+- 실제 512/128/40 비교판·비루프 GIF. 디코드 4프레임 160/190/230/1600ms=2180ms, 마지막 자세 1.6초 유지. ZIP `BlizzardWisp_Issue112_Defeat4.zip` 2,562,804bytes/13entries, SHA256 **`006f1d72bf7b536ced44ea8998abd8402d63950e78c0862a1cab4a91dba28a91`**. CRC PASS/Manifest11/11/SUMS12/12, 비순환. Library `/LIMITLESS/Issue112_BlizzardWisp_Defeat4/` ZIP·PNG·GIF·비교판2 저장.
+- [**Defeat4 제작 보고**](../../Chapter3_BlizzardWisp_M5_Defeat4_ArtPilot_20261119.md), `docs/art-new` commit `50a46aeb5fe45ab21a0bbc3a1933224d96ff510f`. **HIT4_USER_APPROVED / DEFEAT4_ART_CANDIDATE / USER_DEFEAT4_ART_REVIEW_PENDING / DEFEAT4_UNITY_NOT_APPLIED**. 이번 Unity 실행·적용 및 전투·스킬·VFX·드롭·펫 변경0. 기존 Idle8 v2 로컬 적용 이력 보존, 정식 M5 등록/실전 조우 별도. Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/승인 원본 보호. main 직접 commit/Push/Merge0.
+
+
+## 2026-11-19 / Issue #112 — Attack4 최종 승인 및 눈보라 정령 Hit4 후보 납품
+
+- 대표 직접 지시로 **Attack4 최종 미술 승인** 확정. [직전 기술 검수](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7003359918) 유지. 기존 KeyPose·Idle8 v1·Idle8 v2·Attack4 PNG 실제 Library 회수 후 SHA256 작업 전후 모두 일치, 원본 수정0. 승인 Attack4 SHA256 `f8ca104d24c2826c4a757c5dd3ad80e30e29b222cbdcd6e38c4eaa4b051a9934`. 아래 Attack4 승인 대기 표기는 과거 이력.
+- 신규 **`BlizzardWisp_M5_Hit4_2048x512_RGBA_CANDIDATE.png`** 2048×512 RGBA/4×512셀, 836,115bytes, SHA256 **`2e07e2178f48bf0dcd6367a73a9f9c4af5311073df2dc2c9a7e33e139b311de1`**. 승인 Idle8 v2 위상6/7/0/1(0-based) 기반 핵 반동→눈바람 국소 수축→회복→대기. 마지막 셀은 승인 v2 위상1 전RGBA 동일. 국소 역좌표 변형, 전체 평면회전/외부 자산/별도 VFX/붕괴0. 4셀 상이, 경계 alpha0, 분리 PNG 일치. 미술 최종 검토 필요.
+- 실제 512/128/40 비교판·비루프 GIF, 디코드 4프레임 90/130/110/190ms=520ms. ZIP `BlizzardWisp_Issue112_Hit4.zip` 3,231,506bytes/13entries SHA256 **`be090af54ba2e4699b72b4325e876d2248c79b2cb1a0ca6800bb890b34625a8c`**. CRC PASS, Manifest11/11, SUMS12/12, 비순환. Library `/LIMITLESS/Issue112_BlizzardWisp_Hit4/` ZIP/PNG/GIF/비교판2 저장 및 ZIP 재회수 byte-identical/CRC PASS.
+- [**Hit4 제작 보고**](../../Chapter3_BlizzardWisp_M5_Hit4_ArtPilot_20261119.md) `docs/art-new` commit `e3bb235004849e13ef4ecb28af2065706df4ebf2`. **ATTACK4_USER_APPROVED / HIT4_ART_CANDIDATE / USER_HIT4_ART_REVIEW_PENDING / HIT4_UNITY_NOT_APPLIED**. Defeat4 미제작. 기존 Idle8 v2 로컬 Unity 적용 이력 보존, 이번 Unity/전투/스킬/펫/드롭 변경0. #85 HOLD/Save/UserData/Discord/승인 원본 보호, main 직접 commit/Push/Merge0.
+
+
+## 2026-11-19 / Issue #112 — Idle8 v2 최종 승인 및 눈보라 정령 Attack4 후보 납품
+
+- [Idle8 v2 최종 승인·Attack4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7002458727) 확인. 기존 KeyPose·v1·v2 PNG와 v1/v2 ZIP 작업 전후 SHA256 동일. 승인 v2 PNG `ba6a7bddcd37bdf7fe78939862e93a50828561a08564756572d0bba19f51692a` 보존. [Codex 기존 로컬 적용](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7002165110) Idle8 v2 8셀/0.96초 클립/Controller/시각 Prefab 검증 PASS, REMOTE_NOT_PUSHED, 정식 조우 및 실전 미검증. 이번 공격 작업에서는 Unity 변경0.
+- 신규 **`BlizzardWisp_M5_Attack4_2048x512_RGBA_CANDIDATE.png`** 2048×512 RGBA, 가로4×512셀, 788,615bytes, SHA256 **`f8ca104d24c2826c4a757c5dd3ad80e30e29b222cbdcd6e38c4eaa4b051a9934`**. 승인 v2 실제 위상0/2/4/6 기반 국소 압축·우향 눈바람띠 방출·잔류·복귀, 마지막 셀은 v2 위상6과 동일. 전체 원화 평면 회전0, 별도 VFX/외부 자산0. 개별 QA 셀4와 시트 일치, 경계 alpha0. 생성 시안은 최종 납품에 미사용. 2D 변형 기반이며 공격감은 사용자 검토 필요.
+- 실제 512/128/40 비교판 및 비루프 GIF, 재개봉 4프레임 실제 지연 **200/120/180/320ms=820ms**. ZIP `BlizzardWisp_Issue112_Attack4.zip` 2,896,857bytes/13entries SHA256 **`a3f919971890686617e8335e65749f1c05dc71394a5b3f11d9234b8b589d792f`**, CRC PASS/Manifest11/11/SUMS12/12, 비순환. Library `/LIMITLESS/Issue112_BlizzardWisp_Attack4/` ZIP·PNG·GIF·비교판2 저장.
+- [**Attack4 제작 보고**](../../Chapter3_BlizzardWisp_M5_Attack4_ArtPilot_20261119.md) `docs/art-new` commit `4d79482932cc6f169c0c948ef725ddaebac74254`. **IDLE8_V2_KEEP / ATTACK4_ART_CANDIDATE / USER_ATTACK4_ART_REVIEW_PENDING / ATTACK4_UNITY_NOT_APPLIED**. Hit4·Defeat4 순차 승인 전 착수0. 기존 승인 자산/#85 HOLD/Save/UserData/Discord 보호, 신규 Unity 적용·스킬·판정·VFX·수치·드롭 변경0. 불씨망령 HOLD, main 직접 commit/Push/Merge0.
+
+
+## 2026-11-19 / Issue #112 — 눈보라 정령 Idle8 v2 본체 눈바람 회전 보완
+
+- [v1 기술 PASS·회전감 보완 지시](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-6999769300) 확인. 기존 KeyPose·Idle8 v1 PNG·v1 ZIP 작업 전후 SHA256 동일, 원본 수정0. v1은 유지, 신규 v2 별도 후보.
+- **`BlizzardWisp_M5_Idle8_v2_4096x512_RGBA_CANDIDATE.png`** 4096×512 RGBA, 가로8×512셀, 1,678,792bytes, SHA256 **`ba6a7bddcd37bdf7fe78939862e93a50828561a08564756572d0bba19f51692a`**. 원본 본체의 비강체 각도·반경 진행파 및 이동 명암 융선으로 은백색 띠 순환 표현 강화. 기존 v1 얼음 조각12개 중심 경로 재사용, 개별 회전·전후 합성, 핵 위치 안정, 미세 부유. 전체 원화 단순 평면 회전0. 8셀 상이/경계알파0/개별 QA 프레임 일치. v2 첫 프레임은 KeyPose와 픽셀 동일하지 않지만 기존 원본 변경0. 2D 근사·사용자 미술 검토 필요.
+- 실제 512/128/40 비교판, v2 단독 및 실제 v1·v2 시트 나란히 비교 GIF. 각 GIF 재개봉 **120ms×8=960ms/주기**, loop=0. ZIP `BlizzardWisp_Issue112_Idle8_v2.zip` 6,528,393bytes/18entries, SHA256 **`8be07f1984d77065743ff587fb2319e3225f1003e1d8201169974cb9dc413f9c`**, CRC PASS/Manifest16/16/SUMS17/17, 비순환. Library `/LIMITLESS/Issue112_BlizzardWisp_Idle8_v2/` ZIP·PNG·GIF2·보드 저장 성공.
+- [**v2 보완 제작·검증 보고**](../../Chapter3_BlizzardWisp_M5_Idle8_v2_Targeted_20261119.md), `docs/art-new` commit **`c628173c77a8728ce4d62ae5c606914d9bc26230`**. **KEYPOSE_KEEP / IDLE8_V1_KEEP / IDLE8_V2_ART_CANDIDATE / USER_V2_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED**. Attack/Hit/Defeat·Unity·전투/펫/드롭 변경0. #85 HOLD·기존 승인 자산·Save/UserData·Discord 보호. 불씨망령 HOLD. main 직접 commit·Push·Merge0.
+
+
+## 2026-11-19 / Issue #112 — 눈보라 정령 Idle8 후보 납품 및 #116 전리품 최종 승인 반영
+
+- [#116 전리품6종 최종 승인](https://github.com/HappyPaul812/Project-Limitless/issues/116#issuecomment-6997032271) 확인. **ART_USER_APPROVED_6_OF_6 / UNITY_NOT_APPLIED**. 기존 ZIP SHA `8d7ff5e8c3c16aebe9d2992ace2326002e8e72946d62c1b0faad37a251acb54c`, 재제작0. [Codex 기록](https://github.com/HappyPaul812/Project-Limitless/issues/116#issuecomment-6997270316) 기준 로컬 적용 준비 보관, Item/드롭 연결0/6. 아래 이전 승인 대기 표기는 납품 당시 이력.
+- [정령계 공통 아트모션 운영 기준](https://github.com/HappyPaul812/Project-Limitless/commit/98ef6141c5160bfa68cce516017c5938e21f0a46) 및 [#112 회전 Idle8 발주](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-6997033601) 확인. KeyPose SHA256 `0c72c3f8fc80c9e74bf648236a0ff1746ef344ef71f03b4c005c38db59915586` 실제 회수·작업 전후 일치, 원본 수정0.
+- 신규 **`Sprite/BlizzardWisp_M5_Idle8_4096x512_RGBA_CANDIDATE.png`** 4096×512 RGBA, 가로8×512셀, 1,605,449bytes, SHA256 **`28a8ae1d325617431ed3c2441467c235c323ce229fe91fa5190018ac8bde1cd7`**. Frame00 원화 전RGBA 동일, 8프레임 상이, 각 셀 경계 alpha0. 원본 본체와 얼음 조각12개를 분리, 핵 주위 눈바람의 국소 각도/반경 주기 변형 및 얼음 조각 공전, 전후 합성, 최대 약3px 부유. 전체 원화 평면 회전0. 2D 근사이며 자연스러운 회전감·루프는 사용자 미술 검토 필요. 별도 생성 시안 납품 사용0.
+- 실제 512/128/40px 비교판·간략 보드·축소 스트립, 검토 GIF 디코드8프레임 제작 이미지 일치, **120ms×8=960ms/주기**, loop=0. ZIP `BlizzardWisp_Issue112_Idle8.zip` 6,121,505bytes/17entries, SHA256 **`a4db522ec21d96edd7718655bb5889f32d9d25c5cfe79c0c44dbbf729428e58d`**. CRC PASS/Manifest15/15/SUMS16/16, 비순환. Library `/LIMITLESS/Issue112_BlizzardWisp_Idle8/` ZIP·PNG·GIF·비교판2 저장 완료.
+- [**Idle8 제작·검증 보고**](../../Chapter3_BlizzardWisp_M5_Idle8_ArtPilot_20261119.md), `docs/art-new` commit **`9574c44583f2f6eb219f900fcb65e77140918cef`**. **KEYPOSE_KEEP / IDLE8_ART_CANDIDATE / USER_IDLE8_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED**. Attack/Hit/Defeat·Unity·스탯/드롭/펫/ItemId 변경0. Ch2 불씨망령은 NPC 리뉴얼 전체 완료 후 별도 발주까지 HOLD. Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/승인 자산 보호, main 직접 commit·Push·Merge0.
+
+
+## 2026-11-19 / Issue #116 — Chapter3 전리품 6종 아이콘 후보 납품
+
+- [#116 전리품 발주](https://github.com/HappyPaul812/Project-Limitless/issues/116) 및 [기획 정본](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/08_몬스터/Chapter3_북부몬스터7종_전투밸런스_20261118.md) 확인. 기존 완료 Ch3 세트는 조회 범위에서 미발견(Windows F: 전수 미검증). 생성된 6개 시안 재사용, 중복 재생성0.
+- 신규 **독립 128×128 투명 RGBA PNG 6종**: 서리 묻은 털뭉치, 설원 솜털, 서리깃, 빙갑 조각, 눈폭풍 결정, 마력차단 결정. Ch2 실물 PNG 열풍 깃털·화열 갑각·잔불 파편 3종의 SHA 기존 문서와 일치 확인. 64px 격자/17 가시색/어두운 윤곽/2배 nearest 정규화, 128/40 실축소 및 Ch2 실물 3종 비교판. 신규 내부 묘사가 더 복잡하므로 화풍 일치 최종 시각 승인 필요. Ch2 7종 전수 및 실제 UI 미검증. 기존 PNG 변경0.
+- ZIP `Chapter3_Loot_Issue116.zip` **175,145bytes/12entries**, SHA256 `8d7ff5e8c3c16aebe9d2992ace2326002e8e72946d62c1b0faad37a251acb54c`. PNG 6/6 규격·테두리 투명 PASS, CRC PASS, Manifest 10/10, SUMS 11/11, 비순환. SourceDeclaration 포함. Library `/LIMITLESS/Issue116_Chapter3_Loot/` ZIP·PNG6·비교판2 저장 및 ZIP 재회수 byte-exact/CRC PASS.
+- [**전리품 6종 제작 보고 및 개별 PNG SHA**](../../Chapter3_Loot_Icons_Issue116_20261119.md) `docs/art-new` commit `b92b91b6b96e726dcd3aed85a389b5a15ee90b2b`. **ART_CANDIDATE_6_OF_6 / USER_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED**. #112 눈보라 정령 추가 모션 미진행. 기존 승인 원본·#85 HOLD·Unity6000.6.5f1·Save/UserData·Discord 보호. ItemId/드롭/판매가/펫/Unity 적용0. main 직접 commit·Push·Merge0.
+
+
+## 2026-11-17 / Issue #112 — 얼음갑충 최종 승인·눈보라 정령 M5 1포즈 후보 납품
+
+- [#103 얼음갑충 최종 승인](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6941419315) 확인. **KeyPose·Idle4·Attack4·Hit4·Defeat4 USER_ART_APPROVED / UNITY_NOT_APPLIED**, 5종 재제작 금지. 기존 Defeat4 대기 표기는 당시 납품 기록이며 최신 승인으로 대체됨.
+- [#112 M5 발주](https://github.com/HappyPaul812/Project-Limitless/issues/112) 및 북부 몬스터 상세기획 확인. GitHub BlizzardWisp/Library/인계 조회에서 기존 승인 또는 완성 M5 원화 미발견. Windows F: 전수 검색 미실행.
+- 신규 **Blizzard Wisp KeyPose 한 장** `Candidate/BlizzardWisp_M5_KeyPose_512_RGBA_CANDIDATE.png`, 512×512 투명 RGBA, 217,196bytes, SHA256 **`0c72c3f8fc80c9e74bf648236a0ff1746ef344ef71f03b4c005c38db59915586`**. 은백색 바람·눈 소용돌이, 어두운 푸른 핵, 우향 비대칭 흐름, 소량의 분리 얼음 결정. 인간형/유령 얼굴/팔다리0. 신규 생성 원화 알파 정리/비율 유지 정규화, alpha bbox [36,8,475,464], 경계 alpha0.
+- 최종 PNG 실제 512/128/40px 비교판, 기존 승인 M2 설원족제비·M4 얼음갑충 원본 SHA 일치 확인 후 256/40 동일 캔버스 비교판. 전체 북부 및 Unity 런타임 상대 크기/PPU 검증 아님. ZIP `BlizzardWisp_Issue112_OnePose.zip` 798,663bytes/8entries, SHA256 **`53b21965bd0513a42bb04ebefd78572554a7e9803106e56f8573b36da7150ede`**. CRC PASS/Manifest 6/6/SUMS 7/7/순환참조0. SourceDeclaration 포함. Library `/LIMITLESS/Issue112_BlizzardWisp_OnePose/` ZIP·PNG·비교판2 저장 성공.
+- [**M5 1포즈 제작·검증 보고**](../../Chapter3_BlizzardWisp_M5_OnePose_ArtPilot_20261117.md), `docs/art-new` commit **`47b427e81d5f95b367d7c80f9c0a101818c6729c`**. 상태 **`M4_ART_APPROVED / M5_KEYPOSE_CANDIDATE / USER_M5_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED`**. 사용자 승인 전 M5 애니메이션/Unity/기원·정식 스킬/수치/전리품/Spawn/펫 구현0. Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/기존 승인 원본/main 보호. Codex 미호출, GitHub 바이너리 업로드·Windows 복사·main 직접 commit/Push/Merge0.
+
+
+## 2026-11-17 / Issue #103 — 얼음갑충 Hit4 승인 → Defeat4 후보 납품
+
+- [#103 Hit4 최종 미술 승인 및 Defeat4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6940446478) 확인. **KeyPose·Idle4·Attack4·Hit4 USER_ART_APPROVED**. 실제 승인 PNG 원본 4종 작업 전후 SHA256 모두 일치, 원본 수정0. KeyPose `b7ff0592226c2a1f28270053cf03483b6051c69edb412b59a7965ccf8699b3ad`, Idle4 `bd06c6d9a901d4c3550882ad4ce061629195b60e75f04636ec4814ebb0967793`, Attack4 `d8dab5e411f7eeb0aa73b1e412b8d820ecfeb38d514c60cf5fef7eb29af4b236`, Hit4 `cf1dd6c78ffeffd12f8d026dda7ae362e09ffd0a7a3dee536d86569df4f51a3c`.
+- 신규 **Defeat4 한 시트** `Sprite/IceBeetle_M4_Defeat4_2048x512_RGBA_CANDIDATE.png` 2048×512 RGBA/가로4×512셀/우향, 912,389bytes, SHA256 **`9cd3fd4c1925f9953830d9d857b96f11f8bb754dc7b57fe34640936f4cb1c5fb`**. 새 생성 패배 포즈의 연결 알파 영역을 추출·동일비율 축소·공통 하단 y464 정렬. 힘 빠짐→다리 접힘→쓰러짐→패배 자세 유지. 폭발/갑각 파괴/VFX0. 4셀 상이, 셀 경계 alpha0, 분리 QA 4장 일치. 새 포즈는 승인 KeyPose 픽셀 직접 변형이 아니므로 세부 묘사 차이가 있을 수 있고 사용자 시각 검토 필요.
+- 최종 시트 직접 제작 512/128/40px 비교판 및 비루프 GIF. 실제 디코드 간격 **160/190/220/1600ms**, 총2170ms, loop 확장 없음, 마지막 자세 1600ms 유지. ZIP `IceBeetle_Issue103_Defeat4_20261117.zip` 3,134,616bytes/12 entries, SHA256 **`c04ad4e6528f3ea9aa36971b8ef9ce033711d2e96ba0d13589f3adb0fb676bbc`**, CRC PASS/Manifest 10/10/SUMS 11/11, 자기·순환참조0. Library `/LIMITLESS/Issue103_IceBeetle_Defeat4/` ZIP·PNG·비교판·GIF 저장 성공.
+- [**Defeat4 제작·검증 보고**](../../Chapter3_IceBeetle_M4_Defeat4_ArtPilot_20261117.md), `docs/art-new` commit **`4ddac78c1b14884ffce02a78bf3b8f018e860563`**. 상태 **`KEYPOSE_IDLE4_ATTACK4_HIT4_APPROVED / USER_DEFEAT4_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED`**. 미술 승인 필요 YES(Defeat4). Unity/MonsterID/Spawn/수치/펫 구현0. Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/기존 승인 자산/main 보호. GitHub 이미지 바이너리 업로드·Windows F: 복사·대형 QA 복제·main 직접 commit/Push/Merge0.
+
+
+## 2026-11-17 / Issue #103 — 얼음갑충 Attack4 승인 → Hit4 후보 납품
+
+- [#103 Attack4 최종 승인 및 Hit4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6938653973) 확인. **KeyPose·Idle4·Attack4 USER_ART_APPROVED**. Library 실물 원본 3종 SHA256 작업 전후 일치: KeyPose `b7ff0592226c2a1f28270053cf03483b6051c69edb412b59a7965ccf8699b3ad`, Idle4 `bd06c6d9a901d4c3550882ad4ce061629195b60e75f04636ec4814ebb0967793`, Attack4 `d8dab5e411f7eeb0aa73b1e412b8d820ecfeb38d514c60cf5fef7eb29af4b236`. 원본 수정0.
+- 신규 **Hit4 한 시트** `Sprite/IceBeetle_M4_Hit4_2048x512_RGBA_CANDIDATE.png`, 2048×512 RGBA/가로4×512셀/우향, 893,849bytes, SHA256 **`cf1dd6c78ffeffd12f8d026dda7ae362e09ffd0a7a3dee536d86569df4f51a3c`**. 승인 KeyPose 기반 피격 반동→갑각 움츠림→회복→대기. 하부 y430..511 RGBA 4/4 원본 동일, Frame03 전체 KeyPose 동일(분리 QA PNG 바이트 동일), 알파 경계0, 4셀 상이/분리 QA 일치. 앞선 생성 시안 및 Attack4 동작 재사용0; 보간으로 일부 픽셀 변화 가능.
+- 512/128/40px 실제 최종 시트 축소 비교판 및 GIF. 실제 디코드 간격 **90/160/110/190ms, 총550ms 반복**(가변 간격). ZIP `IceBeetle_Issue103_Hit4_20261117.zip` 3,131,456bytes/12 entries, SHA256 **`982328b9a96f13330b8cdf9d8be6433abd9907fa1b1826dbec0ec352bc6bee55`**. ZIP CRC PASS, Manifest 10/10, SHA256SUMS 11/11 PASS, 비순환. Library `/LIMITLESS/Issue103_IceBeetle_Hit4/` ZIP·PNG·비교판·GIF 업로드 실완료.
+- [**Hit4 제작·검증 보고**](../../Chapter3_IceBeetle_M4_Hit4_ArtPilot_20261117.md), `docs/art-new` commit **`9d4646f8edc5cd5e6cd899776ca85458897c827c`**. 상태 **`KEYPOSE_IDLE4_ATTACK4_APPROVED / USER_HIT4_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED`**. 사용자 미술 승인 필요 YES (Hit4). Defeat4·펫·수치·스킬·드롭·MonsterID/Spawn·Unity 작업0. Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/기존 승인 자산/main 보호. GitHub 바이너리 업로드·Windows 복사·대형 QA 복제·main 직접 commit/Push/Merge0.
+
+
+## 2026-11-17 / Issue #103 — 얼음갑충 Idle4 승인 → Attack4 후보 납품
+
+- [#103 Idle4 최종 승인 및 Attack4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6936952632) 확인. **KeyPose·Idle4 USER_ART_APPROVED**. Library 실물 두 원본 SHA256 `b7ff0592226c2a1f28270053cf03483b6051c69edb412b59a7965ccf8699b3ad`, `bd06c6d9a901d4c3550882ad4ce061629195b60e75f04636ec4814ebb0967793` 작업 전후 동일, 원본 수정0. 이전 Idle4 검토 GIF 실제 간격은 [Codex 검수](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6936676152) 기준 **120ms×4(480ms 주기, 약8.33FPS)**로 표기 정정만; 승인 ZIP/PNG 수정0.
+- **Attack4 신규 한 시트** `Sprite/IceBeetle_M4_Attack4_2048x512_RGBA_CANDIDATE.png`, 2048×512 RGBA/4×512 가로/우향, 616,816bytes, SHA256 **`d8dab5e411f7eeb0aa73b1e412b8d820ecfeb38d514c60cf5fef7eb29af4b236`**. 승인 원화 기반 상부 갑각 후방 준비→전방 밀치기→정점→회복, 하부 접지 y430..511 원본 픽셀 4/4 동일, Frame03 KeyPose 픽셀 동일, 알파 외곽0·4프레임 상이·분리 QA PNG 일치. 정점 오른쪽 가시 여백 7px, Unity PPU/Animator/런타임 미검증. 생성된 별도 시안은 납품에 사용0.
+- **실제 PNG 직접 축소 512/128/40판**·검토 GIF 디코드 실제 지연 **180/110/130/180ms, 총600ms 반복**(고정 FPS 아님). ZIP `IceBeetle_Issue103_Attack4_20261117.zip`, 2,669,553bytes/12 entries, SHA256 **`ebb4172037c7b7e74115be0aaf38e70dc9c58b6e928549934415e290d682f997`**. CRC PASS, Manifest 10/10, SUMS 11/11, 자기/순환참조0. Library `/LIMITLESS/Issue103_IceBeetle_Attack4/`에 ZIP·PNG·보드·GIF 저장 완료.
+- [**Attack4 제작·검증 보고**](../../Chapter3_IceBeetle_M4_Attack4_ArtPilot_20261117.md) `docs/art-new` commit **`8999ad39ffc5cd59d5fe28b71ca55a78dc0300a7`**. **`KEYPOSE_IDLE4_APPROVED / USER_ATTACK4_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED`**. Hit·Defeat·펫·수치·드롭·Unity 작업0. 기존 승인 원본/Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/main 보호. GitHub 바이너리 업로드·Windows 복사·main 직접 commit/Push/Merge0.
+
+
+## 2026-11-17 / Issue #103 — 얼음갑충 KeyPose 승인 → Idle4 후보 납품
+
+- 바울 대표 **M4 Ice Beetle 512px 1포즈 미술 승인** 확정. ChatGPT Library `/LIMITLESS/Issue103_IceBeetle_OnePose/IceBeetle_M4_KeyPose_512_RGBA_CANDIDATE.png` 실물 회수; 원본 SHA256 **`b7ff0592226c2a1f28270053cf03483b6051c69edb412b59a7965ccf8699b3ad`** 일치. 기존 KeyPose PNG 수정/재생성0.
+- **신규 Idle4 한 시트** `Sprite/IceBeetle_M4_Idle4_2048x512_RGBA_CANDIDATE.png`, 2048×512 RGBA/가로4×512셀/우향, **SHA256 `bd06c6d9a901d4c3550882ad4ce061629195b60e75f04636ec4814ebb0967793`**, 801,439bytes. **Frame00은 승인 KeyPose RGBA 픽셀 완전 동일**. Frame01·02·03은 갑각 상부만 아주 미세하게 침강/회복, **하부 y397..511 발·다리 원본 RGBA 4/4 보존**, 원본 색·형태 유지. 4프레임 상이/각 셀 알파 바깥0. 이전 비규격 생성 시트는 **최종 게임용 PNG에 사용하지 않음**.
+- 실제 최종 시트에서 생성한 128px/40px RGBA 축소 비교판·OFFLINE 눈/어두운 배경 리뷰 이미지·125ms×4의 8FPS 4프레임 GIF. `IceBeetle_Issue103_Idle4_20261117.zip` **3,010,425bytes/12entries/SHA256 `8a9ecec00a98cb094e155aa31f7e737190358d9481ad333d2371e8013281ea87`**. ZIP CRC **PASS**, Manifest payload **10/10**, SHA256SUMS payload10+Manifest1 **11/11** PASS; Manifest 자신 및 SUMS에 대한 순환 SHA 참조 없음.
+- [**M4 Idle4 공식 제작 보고**](../../Chapter3_IceBeetle_M4_Idle4_ArtPilot_20261117.md), `docs/art-new` commit **`f131fb4192c195e711da9d0f5526bf397e6758bc`**. ZIP/시트/비교판/GIF 4종 **ChatGPT Library `/LIMITLESS/Issue103_IceBeetle_Idle4/` 실제 저장** 및 채팅 제공. GitHub 바이너리 업로드0, Windows F: 직접 복사0.
+- 상태 **`KEYPOSE_USER_APPROVED / IDLE4_USER_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED`**. 사용자 Idle4 승인 전 Attack·Hit·Defeat·몬스터 스탯·드롭·펫·Unity 작업0. Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/기존 승인 Monster·환경·보스/main 보호, 대형 QA복제/main 직접 commit·원격 Push·Merge0.
+
+
+## 2026-11-17 / Issue #103 — M4 얼음갑충 Ice Beetle 신규 오리지널 1포즈 후보 납품
+
+- [**#103 F3~F4 얼음갑충 신규 1포즈 발주**](https://github.com/HappyPaul812/Project-Limitless/issues/103) / 북부 몬스터 7종 정본 확인. GitHub 코드검색 `IceBeetle`·`얼음갑충`, 기존 인계 및 ChatGPT Library 검색에서 **기존 승인 M4 원화 납품 미발견**. 사용자 Windows F: 전수 검색 미실행이므로 `LOCAL_NOT_AUDITED`.
+- **신규 게임용 Sprite 1포즈만** `Candidate/IceBeetle_M4_KeyPose_512_RGBA_CANDIDATE.png`, **512×512 RGBA 투명 / 우향 3/4 / SHA256 `b7ff0592226c2a1f28270053cf03483b6051c69edb412b59a7965ccf8699b3ad`**, 241,066bytes. 청록 얼음 갑각, 낮고 둥글넓은 체형, 짧은 다리, 각진 얼음 분절, 어두운 윤곽, 매우 희미한 금빛 온기 흔적. 신규 생성 원화1254를 비율 유지 게임 512 캔버스 정규화, 승인 Ch2 화열딱정벌레 팔레트 단순 변환/기존 원본 수정0.
+- **실제 512/128/40 px 축소 PNG + 밝은 설원/어두운 필드 OFFLINE 검토판**. 원격 `main` 공식 [Ember Beetle Sprite Sheet](https://github.com/HappyPaul812/Project-Limitless/blob/main/Unity/Client/Assets/_Project/Art/Monsters/14_EmberBeetle/Ember_Beetle_Sprite_Sheet.png) Git blob SHA1 `fe701ce82ccd1bd0bec9cfcfb208e43c0872f3da` 경로 존재 확인하였으나 이 세션 원본 PNG 바이너리 미획득으로 **실물 공식 Ch2 1:1 아트 나란히 비교 `NOT_VERIFIED`**, 추정 판독 PASS 금지. 비교검증 상태판은 실물 두 스프라이트 합성이라고 주장하지 않음.
+- ZIP **`IceBeetle_Issue103_OnePose.zip` / 830,282bytes / 8entries / SHA256 `ca56030e22d581ef58bafe51b66cc9181478dfa8343f16f33155aeda8f14323a`**. CRC PASS, **Manifest 6/6·SHA256SUMS 7/7 PASS**, 이전 문제였던 자기/순환 참조 없음. `SourceDeclaration_And_QA.md` 포함. 실파일 ZIP/PNG/보드는 **ChatGPT Library `/LIMITLESS/Issue103_IceBeetle_OnePose/`에 저장**.
+- [**M4 얼음갑충 제작 보고**](../../Chapter3_IceBeetle_M4_OnePose_ArtPilot_20261117.md) `docs/art-new` commit **`4a712d11d4902060db2e396004b634a3d335fceb`**. 상태 `M4_ONE_POSE_ART_CANDIDATE / USER_ART_REVIEW_PENDING / OFFLINE_QA_PASS / EMBER_SOURCE_ACTUAL_NOT_VERIFIED / UNITY_NOT_APPLIED`. 대표 승인 전 Idle/Attack/Hit/Defeat/Pet/MonsterID/전투 수치·Drop/Unity0. 승인 Mouse/Stoat/Owl/Ch2/환경/보스 및 Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/main 보호, main 직접 commit/Push/Merge0.
+
+
+## 2026-11-17 / Issue #100 — 설원족제비 Defeat4 패배 애니메이션 후보 납품
+
+- [**11/17 #100 Defeat4 발주**](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6931011521) 및 [**11/16 Hit4 바울 대표 최종 승인**](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6913468404) 확인: **설원족제비 KeyPose·Idle4·Attack4 MouthFix v2·Hit4 4종 모두 USER_ART_APPROVED**. 기존 하단 인계의 `HIT4_USER_ART_REVIEW_PENDING`은 납품 당시 상태일 뿐 현재 유효하지 않음. 기존 승인 4종 실제 SHA 재측정 4/4 일치·바이트 수정0.
+- **이번 새 Sprite 1종** `SnowStoat_M2_Defeat4_2048x512_RGBA_CANDIDATE.png` 2048×512 투명 RGBA/가로4×512셀/우향, SHA256 **`8bc97ce0af5d4896d2259df39972ea018ea1a6e494883349cc3b3065926bfe4f`**. 균형 상실→몸 낮춤→쓰러짐→완전 엎드린 자세 유지. 신규 4포즈 투명 Defeat 원화(2172×724)를 비율 유지 축소·셀 정렬, 기존 네 승인 PNG 직접 재그리기/덮어쓰기 0. 4개 셀 상이, alpha 가장자리0, 마지막은 Hit4와 달리 일어나지 않음.
+- 실물 ZIP **`SnowStoat_Issue100_Defeat4_20261117.zip` 1,454,055bytes / 12entries / SHA256 `34f23d12ee4d4580e72f00ec0deb143b1d5b33aaa6d8d132c6495579961d6ad2`**. CRC PASS, Manifest 내용물 10/10 PASS, SHA256SUMS 내용물+최종 Manifest 11/11 PASS; 자기/순환해시 참조 없음. 512/128/40px 실제 축소 오프라인 비교판 + 비반복 4프레임 GIF 마지막 1.75초 유지 포함. GIF 전반부 프레임 약120ms이며 Unity Animator FPS 검증과 별개. SHA 승인 원본 4종: KeyPose `fd25ef50…`, Idle4 `ee6951b0…`, Attack4 v2 `5175483e…`, Hit4 `dc2c2588…` 정상.
+- [**#100 Defeat4 게임용 시트 제작 보고**](../../Chapter3_SnowStoat_M2_Defeat4_ArtPilot_20261117.md) `docs/art-new` commit **`f70578f9e4fd41c2956413726fe1684f5d4be1fb`**. ZIP/시트/비교판/GIF **ChatGPT Library `/LIMITLESS/Issue100_SnowStoat_Defeat4/` 4개 업로드 성공**. GitHub PNG/ZIP 바이너리 업로드0, 로컬 PC F: 복사0, Unity 실행0.
+- **상태 `FOUR_MOTIONS_PREVIOUS_ART_APPROVED / DEFEAT4_ART_CANDIDATE / USER_DEFEAT4_ART_REVIEW_PENDING / ZIP_CRC_SHA_PASS / UNITY_NOT_APPLIED`**. 대표님 승인 전 펫전용·스탯/MonsterID·Spawn·드롭·Unity 적용0. 기존 Mouse/Owl/환경/보스·Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/main 원형 보호. 원격 main 직접 commit/Push/Merge0.
+
+
+## 2026-11-16 / Issue #100 — 설원족제비 Hit4 후보 제작 납품
+
+- 바울 대표의 **Attack4 MouthFix v2 미술 승인**이 [#100 기획 최신 기록](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6912398648)으로 확인됨. 기존 KeyPose `fd25ef50528a5f630e44382e3fc40a3df607a267176f758706962a2cbc41e778` / Idle4 `ee6951b0333ba6586b4009ccf51cfd3a397d69f839552fe88a709f9c34bf0633` / Attack4 v2 `5175483e486889736f4f89402ec8a04595491c5c587e51a3f6bbd1365391364a` SHA 실제 불변. 이전 인계의 `USER_V2_ART_APPROVAL_PENDING`은 **그 당시 상태**이며 현재 **3종 승인 완료**.
+- **신규 Hit4 PNG 한 장만** `Sprite/SnowStoat_M2_Hit4_2048x512_RGBA_CANDIDATE.png` / 2048×512 RGBA, 가로4개×512² 우향. SHA256 `dc2c2588b4ec3d06766ab042c4297898aebca4f907593a5820ce8cbad2f6aab5`. 00 움찔/고개 반동→01 살짝 후퇴·압축→02 회복→03 **승인 KeyPose/Idle00 픽셀 동일**. 기존 승인 원화 RGBA 기반 국소 변형만 사용, 이미지 생성 비규격 2172×724 시안 **최종 납품 사용0**. 모든 프레임 Ground row y425..511 및 캔버스 외곽 원본 보호, 프레임 구별·알파 PASS.
+- ZIP `SnowStoat_Issue100_Hit4_20261116.zip` **1,156,630bytes/12entries**, SHA256 `e058e9610ec90cf9c2f7e8b0f48b5cde42a70fe7319f861d5c53d1736ecaadfc` **CRC PASS/Manifest 10/10/SHA256SUMS 11/11**, 순환 참조0. 512·128·40 실제 축소 OFFLINE 비교, 검토 GIF 8FPS, Frame4개 QA/출처 문서 수록. **ChatGPT Library `/LIMITLESS/Issue100_SnowStoat_Hit4/`** ZIP·SpritePNG·비교판·GIF 등록. Windows F: 로컬 자동복사0, Unity/게임 정식 적용0.
+- [**Hit4 공식 제작 보고**](../../Chapter3_SnowStoat_M2_Hit4_ArtPilot_20261116.md) `docs/art-new` commit `97f6ba8be3ccf63374fc47f0c0ef952d3c6ec63f`. **`KEYPOSE_APPROVED / IDLE4_APPROVED / ATTACK4_V2_APPROVED / HIT4_USER_ART_REVIEW_PENDING / ZIP_CRC_SHA_PASS / UNITY_NOT_APPLIED`**. 사용자 승인 전 Defeat4·펫/수치/드롭/MonsterID/스폰/Unity 작업 금지, Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/기존 공식 아트/main 보호.
+
+
+## 2026-11-16 / Issue #100 — Attack4 v2 비순환 Manifest·SHA256SUMS 메타데이터 정정 완료
+
+- [**Codex 11/16 실물 최종 감사**](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6911980162): Attack4 v2 **2048×512 RGBA, 프레임01/04 불변, 02/03 입 ROI 통과**, 시각 `PNG_KEEP_RECOMMENDED` / 사용자 v2 최종 미술승인 대기. 기존 ZIP `Stoat_Attack4_MouthFix.zip`에는 Manifest 자기참조와 SHA256SUMS 해시 참조 2건의 **METADATA_FAIL**가 있었지만 PNG/SUMS10 및 CRC 원본 자체는 정상.
+- **원본 payload 9개 모두 새 ZIP과 이전 ZIP 간 byte-exact 9/9 동일**. 승인 KeyPose SHA `fd25ef50528a5f630e44382e3fc40a3df607a267176f758706962a2cbc41e778`, Idle4 SHA `ee6951b0333ba6586b4009ccf51cfd3a397d69f839552fe88a709f9c34bf0633` 다시 실제 로컬 파일 SHA 일치. Attack4 v2 PNG SHA **`5175483e486889736f4f89402ec8a04595491c5c587e51a3f6bbd1365391364a` 변함없음.** 새 그림0/기존 Docs/Preview 변경0.
+- 새 `SnowStoat_Attack4_MetadataFix_20261116.zip` **852,900bytes/11entries**, SHA256 `24ce0b771d4cf68e9758828fb892d9043b20eb51bd27bf826e07dedda0d60dc8`, ZIP CRC PASS. Manifest에는 **payload9만** 파일/크기/해시 기록, `SHA256SUMS.txt`에는 **payload9+최종 Manifest=10개** 기록하여 순환 해시 제거. Manifest **9/9 PASS**, SHA256SUMS **10/10 PASS**. 새 Manifest SHA `6de8db70af3c3839607dc3cc8bb96c37151186ac6665dbe62ae92a3004d46bff`, SUMS SHA `aaa7ffcc6a52886a94d1b6424bccc5661c749b15a79ca1e024220a296fa2318c`.
+- [**Issue #100 메타데이터 단독 수정 공식 보고**](../../Chapter3_SnowStoat_M2_Attack4_v2_MetadataFix_20261116.md), `docs/art-new` commit **`69ccde2ed1fe08c0afaa995a0a0937353209ab84`**. **`METADATA_REPACK_COMPLETE / ATTACK4_V2_PNG_BYTE_KEEP / USER_V2_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED`**. 결과 ZIP+수정 메타데이터만 ChatGPT에서 납품; PC F: 자동 복사0, GitHub PNG ZIP 바이너리업로드0, Unity 6000.6.5f1·Issue85 HOLD·Save/UserData·Discord·기존 승인 아트/main 변경0.
+
+
+## 2026-11-16 / Issue #100 — Snow Stoat Attack4 입/턱 2·3프레임 표적 보정 v2
+
+- 바울 대표 Attack4 사용 전 미술 검토: **공격 흐름은 유지, 2·3프레임의 입·턱이 어색함**. 기존 [Attack4 v1 원본 보고](../../Chapter3_SnowStoat_M2_Attack4_ArtPilot_20261116.md)의 새 파일만 **v2 입/턱 국소 보정**; 기존 1포즈·Idle4 바이트 보존, Frame01/04 RGBA 변경 **각0픽셀**.
+- 신규 시트 `SnowStoat_M2_Attack4_MouthFix_v2_2048x512_RGBA.png` **2048×512 RGBA / 4셀 512² / 우향**, SHA256 `5175483e486889736f4f89402ec8a04595491c5c587e51a3f6bbd1365391364a`. 프레임02 **1,015픽셀** 좌표 bbox `[449,307)-(490,345)`, 프레임03 **575픽셀** bbox `[456,312)-(494,340)`만 바뀌고 **허용 입영역 밖0**. 원본 Attack4 SHA `a5f5856115473329d1b1a00a5db1022f1831ec48955e5e34f29b711dfb12141a` 보호.
+- 실제 ZIP `Stoat_Attack4_MouthFix.zip` **852,864bytes/11entries**, SHA256 `76e27b0c8d4fcfab09a11f857235755ce759a97572ae96bbb8641ea990388cb4`, CRC PASS/내부 SHA256SUMS **10/10 PASS**. 전후 프레임2·3 확대/512·128·40px 실축소·8FPS 오프라인 참고 프리뷰 포함. **ChatGPT Library `/LIMITLESS/Issue100_SnowStoat_Attack4/` ZIP+시트+전후판 업로드 성공**, Windows F: 직접복사/게임 Import0.
+- [**#100 입 타겟 수정 공식 보고**](../../Chapter3_SnowStoat_M2_Attack4_Mouth_TargetedFix_v2_20261116.md) `docs/art-new` commit **`1aaf6feda6fab0837c5ce41cba9e4549e010dfa4`**. **`KEYPOSE_APPROVED / IDLE4_APPROVED / ATTACK4_V2_USER_REVIEW_PENDING / NOT_UNITY_APPLIED`**. 승인 전 Hit·Defeat 제작0. 기존 Mouse/Owl/환경/보스·Unity6000.6.5f1/Save/UserData/Discord/Issue85 HOLD/main 보호.
+
+
+## 2026-11-16 / Issue #100 — 설원족제비 Idle4 승인 후 Attack4 신규 미술 후보 납품
+
+- **바울 대표 1포즈 승인 + Idle4 승인 확정.** 기존 1포즈 SHA `fd25ef50528a5f630e44382e3fc40a3df607a267176f758706962a2cbc41e778` 및 Idle4 SHA `ee6951b0333ba6586b4009ccf51cfd3a397d69f839552fe88a709f9c34bf0633` 원본 바이트 변경0. 아래 11/16 과거 `USER_IDLE_ART_REVIEW_PENDING`은 제작 당시 이력이며 **현재 Idle4는 승인 완료**.
+- **신규 Attack4 시트1장**: `Sprite/SnowStoat_M2_Attack4_2048x512_RGBA_CANDIDATE.png` / 2048×512 RGBA / 가로4×512셀 / 우향 / SHA256 `a5f5856115473329d1b1a00a5db1022f1831ec48955e5e34f29b711dfb12141a`. 동작 00 예비 → 01 입벌림 → 02 단일 물기 → 03 복귀. 기존 승인 1포즈·Idle4 실제 투명 원본 바탕에서 머리·목과 입을 표적 보정했으며 과거 비규격 RGB 생성 결과는 게임용 PNG에 사용하지 않음. 4프레임 상이, 알파 경계0, 발 접지 원본과 y396~511 RGBA 변경0 PASS.
+- **실물 ZIP** `SnowStoat_Issue100_Attack4.zip` 1,092,522bytes / entries12 / SHA256 `2683a8bdb84595e648f56914944441b856986efee8647c0d2b92a7e5f9b13daf`; ZIP CRC PASS / SHA256SUMS 11/11 PASS / 512·128·40px OFFLINE 비교 / 8FPS 검토 GIF / Manifest·출처·QA 노트. 이 대화 파일로 제공, GitHub PNG 저장/Windows F:\ 직접 복사/Unity 실행0.
+- [**#100 Attack4 공식 미술 보고**](../../Chapter3_SnowStoat_M2_Attack4_ArtPilot_20261116.md) `docs/art-new` commit `5f9ec474e7c97e51477b84201378c740f2ceb596`. **현재 `KEYPOSE_APPROVED / IDLE4_APPROVED / ATTACK4_USER_ART_REVIEW_PENDING / OFFLINE_FILE_TECH_PASS / NOT_UNITY_APPLIED`.** Hit/Defeat/펫/MonsterID·EXP·드롭 자동 개발0; 서리들쥐·서리올빼미·환경·보스·Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/main 보호.
+
+
+## 2026-11-16 / Issue #100 — 설원족제비 1포즈 대표 승인 → Idle4 아트 후보 납품
+
+- 바울 대표 **“족제비 보니까 좋구만...”** → [기존 M2 1포즈](../../Chapter3_SnowStoat_M2_OnePose_ArtPilot_20261116.md) `KEYPOSE_USER_ART_APPROVED` 확정. 첫 공식 원화 승인 SHA256 `fd25ef50528a5f630e44382e3fc40a3df607a267176f758706962a2cbc41e778` 변경0.
+- **Idle4 Sprite Sheet 2048×512 RGBA / 4×512셀 / 우향** 신규 후보1종 `SnowStoat_M2_Idle4_2048x512_RGBA_CANDIDATE.png` SHA256 `ee6951b0333ba6586b4009ccf51cfd3a397d69f839552fe88a709f9c34bf0633`. **Frame00은 승인 KeyPose와 픽셀 동일**, Frame01~03은 흉곽·목·꼬리끝 미세한 호흡/안정 움직임. 4프레임 실제 서로 다르고 바닥 접지 변경0. 다른 방향·Attack/Hit/Defeat/Pet 작업0.
+- **ZIP `SnowStoat_Issue100_Idle4.zip` / 904,015bytes / 12entries SHA256 `fa850041d0ed88d30a9e23a7b60e4345f22e2c12b4d01875042fb755970b734d`**. 실제 CRC PASS / SHA256SUMS 11/11 PASS; 512·128·40px 오프라인 비교 + 8FPS 확인용 GIF 포함, Unity QA 아님. 기존 Mouse/Owl/Chapter2/환경/보스 및 Unity6000.6.5f1/Save/UserData/Discord/Issue85 HOLD/main 원본 불변.
+- [**Idle4 제작/검증 보고**](../../Chapter3_SnowStoat_M2_Idle4_ArtPilot_20261116.md), `docs/art-new` commit **`5d6eb35984c2940f5623ac462a94f19777d485f7`**. `IDLE4_ART_CANDIDATE / USER_IDLE_ART_REVIEW_PENDING / UNITY_NOT_APPLIED`. 승인 전 Game Import·Attack/Hit/Defeat 전개 불가. ChatGPT 대화에 파일 제공; GitHub PNG 업로드/PC F: 자동 복사0.
+
+
+## 2026-11-16 / Issue #100 — 설원족제비 Snow Stoat M2 1포즈 최초 아트 후보
+
+- 신규 M2 1포즈 **512×512 RGBA 투명 PNG 딱1개**(신규 애니메이션0) 실제 납품. `Candidate/SnowStoat_M2_KeyPose_512_RGBA_CANDIDATE.png` SHA256 `fd25ef50528a5f630e44382e3fc40a3df607a267176f758706962a2cbc41e778`. 기존 Github/Library에서 M2 완성 원화 미발견, Windows F: 로컬 전수 감사 미실행.
+- ZIP `LIMITLESS_Issue100_SnowStoat_OnePose_20261116.zip` 594,427 bytes / 8 entries SHA256 `d18910b3ed611e127d43a64369bdf0f888e3efc175cc6bcbf7127f4c82221272`; 실제 ZIP CRC PASS, 내부 SHA256SUMS 7/7 PASS, 512/128/40 실축소 오프라인 프리뷰. Library 기존 FrostOwl v3 Attack00 PNG 실물과 동일 캔버스 실비교만 PASS(최신 Owl/실런타임 비율 아님), Mouse/Wolf/Fox 직접 화풍 비교 NOT_VERIFIED.
+- [**#100 공식 제작 보고**](../../Chapter3_SnowStoat_M2_OnePose_ArtPilot_20261116.md) `docs/art-new` GitHub 문서 저장. 상태 `ONE_POSE_CANDIDATE / USER_ART_APPROVAL_PENDING / OFFLINE_QA_PASS / UNITY_NOT_RUN / GAME_NOT_APPLIED`. 대표님 승인 전 Idle/Attack/Hit/Defeat/Run/펫 시트·수치/능력0, 기존 승인 Mouse/Owl/Wolf/Fox/환경·보스와 Unity6000.6.5f1/Save/UserData/Discord/Issue85 HOLD/main 보호. ChatGPT 대화 파일로 PNG/ZIP 제공, GitHub 원격 바이너리 업로드0.
+
+
+## 2026-11-16 / Issue #30 — FrostFieldMouse A 서리들쥐 승인 아트 4모션16프레임 최종 마감
+
+- **최종 신규 아트 판정: `ART_COMPLETE / USER_ART_APPROVED / KEEP_4_MOTIONS_16_FRAMES / NO_NEW_ART`**. [#30 11/16 총괄 마감 지시](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-6904538244)와 [11/16 기획 정본](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261116_Parallel_Art_MouseCloseout_NPC02_17.md), `main`에 실존하는 아트4 PNG+meta 및 `MonsterVisuals/FrostFieldMouse.asset`(4×4개 explicit Sprite fileID)·Main22 코드/Quest/Spawn을 조회. 이전 [Mouse 공식 외형 적용 실제40PASS](https://github.com/HappyPaul812/Project-Limitless/blob/main/문서/00_프로젝트/Chapter3_FrostFieldMouse_Fix_v2_Official_Apply_QA_20261021.md)와 [Main22 격리 첫플레이 136PASS](https://github.com/HappyPaul812/Project-Limitless/blob/main/문서/00_프로젝트/Chapter3_Main22_FirstPlayable_Implementation_QA_20261021.md) 재사용, 재실행/대규모 worktree복제0. 승인 미술 1포즈 독립 SHA `0516914ddad36af5854065d66d01b9664329aa89eea8b394480eed6af92e32c2`(기존 QA 정본).
+- **2048×512 RGBA / 4×512셀, 8FPS, PPU512, Pivot(0.5,0), 우향/Scale1**: Idle4 SHA `5afebfa1f95ca5673162513fdea63b025546aa836550c0ceb17f0334659988f2`; Attack4 `c83e35b5aebbce908b6025d5a071fafc463cfe301763f68806ecddb8bd4f576b`; Hit4 `695ed7db1f794c3f71df1b058eb5e91f01de7ecb125369264f3624b36c9fd3c2`; Defeat4 `3f6a52039b766c57a5367c7145e0234b68ac0a552940de1e88ffe8f2404f3395`. 이는 **기존 납품·Codex 승인 원본 SHA256 기록**, 현재 main PNG4 실존/Git blob+meta+16 GUID 설정 직접 조회. 바이너리 원문 다운로드가 불가하여 **이번에 새 SHA256 재계산 PASS를 주장하지 않음**, 기존 PNG 변경0.
+- **필드 Idle00 실제 정의 재사용**: `MonsterVisuals/FrostFieldMouse.asset`의 `fieldSprite` GUID `6dd66eaa0fa89ad4387b49463367ff15` / fileID `-1481457045`; `explicitWalkFrames: []`(별도 보행 애니 필수 미확정). Main22 `World_NorthF1`의 `Main22_Encounter.asset`은 `spawnId: northf1_main22_mouse`, `Chapter3Main22Flow.cs`에 Mouse 위치(0,4)/SpriteRenderer·Battle 연결, Quest에 1기 지정 승리 목표가 원격 main 정적 소스로 존재. 기존 격리 Main22 136PASS·바울 대표 "잘된다" 기록은 이전 실제 플레이 근거이며 **11/16 로컬 Unity 다시 실행/Save 검증0**.
+- **게임플레이와 미술 분리:** `MonsterVisuals/FrostFieldMouse.asset`의 `monsterId`는 **빈값**; Main22 `StoryEncounterReturns/Main22_MousePrototype.asset`에 `prototype_main22_frost_field_mouse` ID, 지정 `spawnId`만 존재. `MonsterDefinitions` 정식 등록·독립 상시 Spawn/EXP/Drop/밸런스는 미확정(프로토타입 Lv1/HP60/EXP0/보상0/lootEntries[]). **Codex·기획 별도 후속**, 기존 Main22 지정조우 구현을 미구현이라 오표기하거나 정식 전체 밸런스 완료라 주장하지 않음.
+- [**Issue #30 2026-11-16 최종 마감 보고서**](../../Chapter3_FrostFieldMouse_A_FinalArtCloseout_20261116.md) `docs/art-new` 작성 commit **`d26f06b966a91dcb03fc352c80dfed96772af81a`**. 미술 추가 제작·재승인 필요0. Unity6000.6.5f1·F1/F2·Owl·설빙의 폭군·냉기VFX/상태아이콘·Save/UserData/Discord/main 무변경, 원격 main 직접커밋/Push/Merge0. `ART_COMPLETE / GAMEPLAY_FINALIZATION_PENDING / MAIN22_LATEST_LOCAL_RUNTIME_NOT_RETESTED`.
+
+
+## 2026-11-11 / Issue #89 — 승인 냉기 VFX·정식 상태 아이콘 6종 KEEP, 시각 PARTIAL 표적 검토
+
+- [**Issue #89 11/11 최종 신규 아트 표적 보고서**](../../Chapter3_Issue89_ColdVisual_Readability_TargetedCloseout_20261111.md) `docs/art-new` commit **`a5bcc299747f683119578bd1a375a084a4075fb6`**. [#89 총괄 기획 최신 지시](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6786953257) 수용. 기존 **사용자 승인 냉기 VFX 3종 + 정식 상태 아이콘 3종 모두 BYTE_KEEP**, 신규 게임용 Sprite/VFX/캔버스/애니 수정0.
+- **승인 SHA 표** VFX Chill v2 `e50831520d21ca51b51bca0fab030446f5c15f034d699c6ee3fd79304d1691c2`; Frostbite v2 `5b8ca776ec14c52fd671117182fa299fed31b8774d85f6843f8f62ec70b96415`; Necrosis v2 `59621e0b912e7c30544e559cb99446dcfb7f9c7c8dd1c846a07f32dce2dfd299`. 기존 Codex 승인 SHA를 재기록, 세 VFX 원본 실파일은 이 세션에 없어 **재해시하지 못함**. 정식 상태 아이콘 Chill `1f3ac724590a2d490cbe4a7cd28856c8ce5d888b130dde46a7d0008e6a3d0a16` / Frostbite `b814b1df3b0a5dbba46205d3b6edf91339cc4f45d118ec19ac53afab43c89a03` / Necrosis `da2f175d50c47961df4c2fe6a227219a594ac9c3b0874c2c50e9edf39644be9d`는 **이번에 실파일 SHA 재검증 3/3 일치**. 승인 아트6 원본 파일 실제 변경0.
+- **실제 유일 신규 이미지: OFFLINE 설명 비교판** `Issue89_ColdVisual_TargetedReview_OFFLINE.png` **1680×1090**, SHA `19d23af2782b2840222db8e391ddb3bc92b64f8e9b0cf4f217b81ec998019bdf`. 승인 아이콘128을 40px 실축소한 밝은설원/어두운HUD 동일크기 비교 + 휠체어/태온·안내 HUD를 추상 그린 B안 수치 도식. Unity 실제 캡처 아닌 **OFFLINE**. 자세한 표적권고 실물 `Issue89_ColdVFX_Readability_TargetedRecommendations_20261111.md` SHA `d9fbd5bfd693e21f6560865830bf9b29c56bedba08a156165744dd38c11f5ec0`. 둘 다 ChatGPT Library `/LIMITLESS/Issue89_ColdVisual_Readability_20261111/` 업로드 성공.
+- [Codex Unity B 레이아웃 7쌍/50PASS](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6624142188)과 [아이콘+B 최종 8장 시각 PARTIAL](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6628636928) **결과만 재사용**. 40px 휠체어/VFX 가시알파 8px, 128px Sprite뒤·24px 하향, 960 상태2행, 1680 HUD경계8px B 기준 KEEP. 남은 설원40px 아이콘 단독 구별·128px 휠체어 뒤 효과 가림·태온/휠체어/좌하단안내 간섭은 **Codex Sorting/오프셋/상태텍스트·HUD 안전영역 TARGETED_LAYOUT_FIX 우선**, 새 스프라이트 제작/원본 재색칠0. 기존 실제 11/04 Unity 캡처는 사용자 PC 로컬에만 있어 **본 세션 원본 이미지 직접 열람 불가**, 화면별 좌표나 새 시각 PASS 추정 금지.
+- **현재 `APPROVED_ART_6_KEEP / OFFLINE_BOARD_ONLY / TARGETED_LAYOUT_FIX_RECOMMENDED / VISUAL_PARTIAL / CURRENT_UNITY_SCREENSHOT_NOT_AVAILABLE / NOT_UNITY_APPLIED_THIS_TURN`**. 승인6 아트 재승인 불필요, 배치/원본 적용은 대표 별도 승인 게이트. 원본 Unity·Scene/Prefab/BattleUI/태온·휠체어·Save/UserData·main 직접 커밋/원격Push/병합0.
+
+
+## 2026-11-11 / Issue #91 — Chapter3 BattleBG v2 최종 승인용 실제 원본 비교·후열 위험판 2개
+
+- [#91 11월11일 최신 병렬 지시](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6781032360)에 따라 기존 **Snowroad v2** `339beeb80d313c589cf50842fc9f6964049b0752e783d83ac8a7097c768205ab` 및 **F2 FirstSnowForest v2** `4d57949a1a9d2ae5600d4ba1b95989153fed6a0d8f47f8fc52e6f670a013535a` 실제 원본 해시 재확인·바이트 KEEP. **신규 게임배경 PNG0 / v3 제작0 / Unity 적용0**.
+- [Codex #91 Ch1 3종·Ch3 v2 2종 1672×941 실제5패널 1:1 비교](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6624969736) 자료 **중복 재생성 금지 준수**. 기존 F: 파일 `F:/study/codex/Project-Limitless/Temp/Issue91Ch1V2Final20261104/LIMITLESS_Issue91_Ch1_Ch3v2_1672x941_1to1_FinalComparison_20261104.png`, Codex 제공 SHA `ae44f57176aaf9aac52d169e6e63ef8e2af2a9ff4b3fa8e6833626b77a1b64f3`, 실물 본 세션에 없어 **직접 재검증/ZIP 수록 X**. Ch1 Forest/Grassland/Catacombs의 불규칙 미세 재질/국소 명암과 Ch3 v2 구름·설산 큰 면·타원 수관·직선 길 밀도 차이는 이전 Codex 보고 인용.
+- **실제 오프라인 검토판 2개**: `Preview/Issue91_C3_BattleBG_v2_FinalApprovalSummary_OFFLINE.png` (1660×1150, SHA `850dfb1ff7ed886bc9b8a7cb67e6d6b3b6e4c32cbbb6054897c0f0bb13b1fa52`) 두 v2 실제 PNG를 같은 배율로 미술 요약·승인판; `Preview/Issue91_F2_RightRearRisk_OriginalCoordinates_OFFLINE.png` (1770×1240, SHA `bda9ba101c899797c5db7c2db007a968db7dad7544810e852c7c7e15614b19c3`) **오른쪽 수간·밑동 `(1310,240)-(1640,925)`**와 아군 후열 중심 근사 `(1391,433)` 표시. 적 왼쪽/아군 오른쪽 반영. **도식적 후열 점/HP 표시이며 실제 Unity 정식 UI/캐릭터 캡처가 아님**.
+- **실물 ZIP** `LIMITLESS_Issue91_BattleBG_v2_FinalReview_20261111.zip`, **1,729,054bytes / 6entries**, SHA256 `4d0ab744ce4e069c62b7ab720870179c0ccc5918ad0ef70024afe57bafafcd69`, ZIP CRC PASS / SHA256SUMS **5/5 PASS**. ChatGPT 라이브러리 `/LIMITLESS/Issue91_BattleBG_v2_FinalReview_20261111/` ZIP+판2 실제 업로드 성공. GitHub ZIP/PNG바이너리 업로드0, F:\Downloads 사본 SHA 미검증.
+- [**#91 2026-11-11 최종 승인용 미술 보고 정본**](../../Chapter3_BattleBG_Issue91_v2_FinalApprovalReview_20261111.md) `docs/art-new` commit **`b994729ed5afd0af4a5b07ee23f64baf95e59fc7`**. **현재 `BATTLE_BG_V2_KEEP_2 / OFFLINE_ART_REVIEW_READY / USER_VISUAL_REVIEW_PENDING / UNITY_NOT_TESTED / NOT_UNITY_APPLIED`**. Snowroad 원경/눈길, F2 오른쪽 높은 대비는 **실제 가독성 결함 확인 시만 TARGETED_FIX_RECOMMENDED**; 이전 최종 화풍 동등 PASS/실게임 HUD PASS 선언X. 바울 대표 최종 미술 승인 후 별도 Codex 격리 Unity6000.6.5f1 DeltaQA 필요. 기존 Ch1/2/3 PNG·Owl/Spider/냉기 VFX·BattleBackgroundCatalog·Scene/Prefab/Save/UserData/Packages/main 불변, main 직접 commit·Push·merge0.
+
+
+## 2026-11-10 / Issue #75 — F2 BendSnow 256px 잔설 경계 1종 게임 규격 후보 실제 납품
+
+- **이번 실제 신규 Sprite 후보 1종만** `Candidate/F2_BendSnow_SnowEdge_256x256_PPU128_CANDIDATE.png` (**256×256 RGBA, SHA256 `c3eeee57c5c5597c2d764fdd831b9d25516df57c1751a6108db9e0fd1ec892c4`**) 제작. 기존 1254×1254 생성 이미지의 잔설만 분리·투명화, **흙길·바위·관목 본체/중복 소품 제외**. 1774×887 이전 사용자 방향수용 원화 SHA `1db66eb4f92931318d5fafd46b2cd337fb9d47033537b428e21c1471d71490dd` 원본 그대로 KEEP.
+- [#75 Codex 실제 F2 RT read-only 인계](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6758024653)에서 R1 screen x180–350/y100–650 눈반복·R2 x480–880/y180–510 길굽음, Ortho5/72px/WU, 실제 F1 WornTrail·F2 FirstSnow 256²/PPU128/Pivot 중앙, Ground9 pivot(0.5,0)를 확인. **이번 후보 256²/PPU128/Pivot중앙/Scale1은 기존 스프라이트 정본과 일치하도록 설계한 신규 Import 제안**, 아직 실제 Unity .meta/Scene 적용 검증은 하지 않음. 기본 통로 4.5WU와 Collider/길 중심선 원형 보호.
+- **오프라인 시각 제안 2안**: (1) 승인 Ground9 + 기존 WornTrail + FirstSnow Overlay의 1.7WU 규칙 반복을 불규칙 미세 재배치 (신규 PNG0안); (2) 기존 재사용+추출한 새 256px 잔설 경계 PNG **1개만** 작은 오버레이로 덧댐. 1280px 기준 A/B/C 동일위치 재구성 비교판 `Preview/F2_BendSnow_BeforeReusePatch_1280_OFFLINE.png` 및 128/40px 실제 축소. **실제 F2 CameraRT 파일 실물을 이 아트 세션에서 확인하지 못했으므로 비교판은 Codex 측정 좌표를 이용한 OFFLINE RECONSTRUCTION이며 Unity Before/After 아님**.
+- **실물 ZIP** `LIMITLESS_Issue75_F2_BendSnow_GameEdge_v1_20261110.zip` **6,169,252bytes / 14entries, SHA256 `c38e97b3856245e474fea61f0b71f584af95618fa864723113041c6b1f7fdf58`**, ZIP CRC PASS / SHA256SUMS 13/13 PASS. ChatGPT Library `/LIMITLESS/Issue75_F2_BendSnow_GameEdge_20261110/` ZIP+비교판 실제 업로드 성공. 대표 PC F:\ 자동 복사/PC SHA 미검증, GitHub 바이너리 업로드0.
+- [**정식 #75 256px 표적 아트·QA·출처 보고서**](../../Chapter3_Main24_F2_Issue75_BendSnow_GameEdge256_Targeted_20261110.md) `docs/art-new` commit **`e581e19521f82a4be5dfc062fac857cc8df6972d`**. 현재 `F2_BEND_SNOW_EDGE256_ART_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_FINAL_ART_REVIEW_PENDING / UNITY_NOT_VERIFIED / NOT_UNITY_APPLIED`. 기존 1774 시안 미술 **방향 긍정 수용은 새 256 후보 미술 최종 승인과 별개**. Ground9/환경43/F1/F2/Owl/Stump/냉기VFX·아이콘/Ch3 BattleBG v2·Unity Scene/Prefab/Save/UserData/Packages/Collider/main 원형 변경0, Unity 실행/대규모QA재실행/직접 main commit/Push/merge0.
+
+
+## 2026-11-10 / Issue #75 — F2 눈·흙길 굽음 미술 방향 긍정 수용, 게임 Import 검증 별도
+
+- [#75 당일 지시](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6755493865) 기준 첫눈 F2 길 직각 굽음·눈 패치 반복 개선 **신규 투명 콘셉트 PNG 단1개** 실제 제작. 바울 대표 직접 피드백 **“후보가 괜찮네..”** → `USER_ART_DIRECTION_ACCEPTED`, 단 실제 F2 Sprite·타일 적용/PPU 확정·Unity TECH PASS가 아니라 별도 검증 전 후보 유지.
+- **실물 ZIP** `LIMITLESS_Issue75_F2_BendSnow_ArtCandidate_20261110.zip` **3,435,324bytes / 10entries**, SHA256 `151094aacd847ee7b4338ca08a827d0edaa21a1122df357379f0bd493afabd8a`, ZIP CRC PASS + SHA256SUMS 8/8 PASS. **신규 PNG** `Candidate/F2_SnowPath_BendEdge_ArtApproved_CANDIDATE_1774x887_RGBA.png` 1774×887 투명 RGBA SHA256 `1db66eb4f92931318d5fafd46b2cd337fb9d47033537b428e21c1471d71490dd`. 크기는 **원화 콘셉트 실측이며 F2 tile 256/PPU/Pivot 확정 아님**. 128×64·40×20 실 종횡비 축소 판, Generated OFFLINE Before/After 목업(1448×1086) SHA `849e1266aa359b2730822c531024e098eedc28f107877c69011301136f67203a` 포함. **실제 Unity F2 RT 비교판이 아님**.
+- **보존·검수**: Ground9/F1 WornTrail/F2 FirstSnow Overlay·P1/P2/Owl Idle8+Attack4·Stump v4·Frostway 환경43·냉기 VFX·상태 아이콘·Chapter3 BattleBG v2 전부 변경0. 1774×887 긴 PNG에는 길·바위·관목/잔설이 같이 있으므로 기존 배치 중복을 피하고 **자동 타일/Collider Import 금지**, 필요할 때 기존 소스 재배치와 가장자리 부분의 스프라이트 분리 여부를 Codex 격리에서만 검토. 기존 **68PASS는 이 시안의 Unity 기술 PASS 아님**, 통행 4.5WU 변경/QA 실행0.
+- **인계 파일** [`Chapter3_Main24_F2_Issue75_BendSnow_ArtCandidate_Review_20261110.md`](../../Chapter3_Main24_F2_Issue75_BendSnow_ArtCandidate_Review_20261110.md), `docs/art-new` 실제 보고 commit **`1d611de992f4a61859ccc336f71e5938a8786918`**. ChatGPT Library `/LIMITLESS/Issue75_F2_BendSnow_20261110/` ZIP 및 비교판 개별 등록 PASS. 원본 게임·main 직접 commit/Push/merge0, ZIP GitHub 바이너리 업로드0. `ART_DIRECTION_USER_ACCEPTED / OFFLINE_FILE_QA_PASS / SPEC_PENDING / F2_REAL_PLACEMENT_NOT_VERIFIED / NOT_UNITY_APPLIED`. 바울 대표 별도 본편 적용 승인 시 Codex 격리 Scene 3비율·실 Collider/휠체어 통행 최소QA 후 판단.
+
+
+## 2026-11-04 / Issue #89 냉기 정식 상태 HUD 아이콘 독립 PNG 3종 — 실물 납품
+
+- [#89 최신 기획 3종 아이콘 발주](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6624809345) 반영. 승인 **한기/동상/동결괴사 VFX 원본 3 PNG** 및 Codex B안 격리 HUD(40px 알파경계8px, 128px 캐릭터뒤·하향24px, 960 2행, 1680 HUD 경계8px) **바이트·코드 수정0**. 14UI≈12.12px 실표시를 고려해 아이콘 3종을 처음부터 64px 픽셀 도형으로 구성하여 128×128 투명 RGBA 게임용 후보로 출력.
+- **신규 후보 3** `Icons/ColdStatus_Chill_128_RGBA_CANDIDATE.png` SHA `1f3ac724590a2d490cbe4a7cd28856c8ce5d888b130dde46a7d0008e6a3d0a16`(육방 눈송이+흐름), `Icons/ColdStatus_Frostbite_128_RGBA_CANDIDATE.png` SHA `b814b1df3b0a5dbba46205d3b6edf91339cc4f45d118ec19ac53afab43c89a03`(붙은 세 얼음기둥), `Icons/ColdStatus_FrostNecrosis_128_RGBA_CANDIDATE.png` SHA `da2f175d50c47961df4c2fe6a227219a594ac9c3b0874c2c50e9edf39644be9d`(갈라진 검푸른 얼음/균열). **64px 보조3 + 실제 12/14/20/40px 축소12 PNG**. 상태명/남은턴/괴사중첩·KO 문자 PNG 비합성.
+- **실물 ZIP** `LIMITLESS_Cold_Status_Icons_3_GameReady_20261104.zip` **165,753bytes / 25entries**, SHA256 `f758b59b73847f18c13e0d48aafee2f58eac33802ec597a1c739078335b2baa3`, ZIP CRC PASS·SHA256SUMS 24/24 PASS. 실제 라이브러리 `/LIMITLESS/Chapter3_Issue89_ColdStatusIcons_20261104/`에 업로드 확인. `Preview/ColdStatus_12_14_20_40_HUD_Sizes_OFFLINE.png`, `Preview/ColdStatus_Snow_DarkHUD_SameSize_OFFLINE.png`, `Preview/ColdStatus_14px_GrayscaleShape_OFFLINE.png` 비교판 제공. 게임 내 14UI 실인식·B HUD Unity 검사 **NOT_RUN**, 사용자의 F:\Downloads 직접복사·해시 미확인, GitHub 바이너리 업로드0.
+- [**정식 #89 PNG/QA/SHA 보고서**](../../Chapter3_Issue89_ColdStatusIcons_3_GameReady_20261104.md) `docs/art-new` commit **`c2125d5258dcce8cc1eac81e76453e2e6e015c52`**. 상태 `OFFICIAL_ICON_ART_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_ICON_ART_REVIEW_PENDING / UNITY_NOT_TESTED / NOT_ORIGINAL_APPLIED`. 승인시 Codex 격리B 실제 상태Badge만 신규 icon으로 교체한 DeltaQA 후 대표 별도 본편 승인. VFX원본/Owl/Spider/BG/F2/Scene/Prefab/Save/UserData/main 변경·Push/병합0.
+
+## 2026-11-04 / Issue #91 — Chapter3 전투 배경 v2 표적 보완 실제 PNG 2장 납품
+
+- **최신 [#91 총괄 기획 실제 v2 제작 발주](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6623743094)·[Codex 5장 원본1:1 분석](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6623246887) 반영**, 기존 Ch3 Snowroad/F2 두 배경 v1 전체 SHA 동결, 신규 후보 v2 RGB **1672×941 정확히 2개** 실제 제작. 기존 v1 자체 변경0/전면 재작화0, Ch1 원화 복사·트레이스0.
+- **신규 실제 후보2** `C3_BattleBG_FrostwaySnowroad_v2_TARGETED_CANDIDATE_1672x941.png` SHA **`339beeb80d313c589cf50842fc9f6964049b0752e783d83ac8a7097c768205ab`** / `C3_BattleBG_FirstSnowForest_F2_v2_TARGETED_CANDIDATE_1672x941.png` SHA **`4d57949a1a9d2ae5600d4ba1b95989153fed6a0d8f47f8fc52e6f670a013535a`**. v1 원본 SHA `a5f3bb960b5c5e6fe4140cb2de64e726f4bc7fabb8674f895789fed128adcd25` / `93388ee52fd75da4a82df0b68e03b2083167a25f339d97b41dc71c807125282b` 보호.
+- **정확한 지정 ROI만** Snowroad S1(650,20)-(1320,475) 원경·S2(700,535)-(1180,941) 눈길; F2 F1 좌수관(0,0)-(480,330)/우수관(1240,0)-(1672,340)·F2 우수간(1310,240)-(1640,925)의 질감·명암 세부만 반영. 기존 v1 영역 밖 변경픽셀 **양쪽 모두0**, 원본 구도 유지. v1→v2 변경픽셀 각각455,966 /470,950(전체의28.98% /29.93%). 이미지 새 생성 초안 **전체 교체 금지**를 지켜 원본 v1 위 지정 ROI에서만 세부 질감 변화를 제한.
+- **납품 ZIP** `Limitless_Chapter3_BattleBG_Issue91_v2_TARGETED_20261104.zip`, **7,880,511bytes / 24 entries**, SHA256 **`cccb5b92c6fb319ffb7a2c1da213634db05f99c6150277106732738a20b37181`**, ZIP CRC PASS / SHA256SUMS **23/23 PASS**. **ChatGPT 라이브러리 `/LIMITLESS/Chapter3_Issue91_BattleBG_v2_20261104/` ZIP 실물 업로드 성공**. 사용자 Windows F:\ 직접복사/해시 미확인, GitHub 바이너리 업로드0.
+- **비교:** `Preview/Issue91_v1_v2_TwoScenes_Overview_OFFLINE.png` 두 시안 v1/v2 한눈 비교, 지정 S1/S2/F1L/F1R/F2 전후 **실제 비축소1:1 크롭10PNG** 및 두 지역 별도 1:1 보드, `Preview/Issue91_OfficialSlot_2Scenes_OFFLINE.png` **적 왼쪽·아군 오른쪽** 공식 좌표기준 **가짜 실루엣/UI 도식** (실제 Unity GameView/실 스프라이트 아님). Ch1 5장 원본 실제 비교는 Codex F: 파일에서 이미 수행해 Issue #91에 보고했으나 **이번 아트 ZIP에는 Ch1 PNG 원본이 없으므로 본아트세션의 직접 원본1:1 재확인 PASS 아님**.
+- [**Issue #91 정식 v2 파일·ROI·SHA·QA 보고서**](../../Chapter3_BattleBG_Issue91_v2_TargetedArt_20261104.md) `docs/art-new` 작성 commit **`4222f194cc040dff2422b7c6ef822ed6bdf683ae`**. 현재 `BATTLE_BG_V2_TARGETED_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_VISUAL_REVIEW_PENDING / UNITY_NOT_TESTED / NOT_UNITY_APPLIED`. 바울 대표 시각 승인 후 Codex **격리 Unity6000.6.5f1** 실제 3인·적·BattleUI/3비율 Delta QA, 본편 적용은 별도 승인 필요. 승인 Ch1/2/3 기존BG·Owl/Spider/ColdVFX·Unity원본/Save/UserData/BuildSettings/Packages/main 불변, main Push/merge0.
+
+
+## 2026-11-04 / Issue #91 — Chapter3 BattleBG 2종 KEEP·동배율 Ch1 시각 검증 게이트
+
+- [#91 기획·Codex 실제 감사](https://github.com/HappyPaul812/Project-Limitless/issues/91) 및 [정식 스타일·전투 가독성 검토 보고](../../Chapter3_BattleBG_Issue91_Style_ReadabilityReview_20261104.md) — `docs/art-new` commit **`d0babe4b7448f2755d263c4822abe139084ec7ae`**. 신규 C3 `Snowroad` SHA **`a5f3bb960b5c5e6fe4140cb2de64e726f4bc7fabb8674f895789fed128adcd25`**, `F2 Forest` SHA **`93388ee52fd75da4a82df0b68e03b2083167a25f339d97b41dc71c807125282b`** 원본 바이트 유지 / 두 후보 `KEEP_CANDIDATE`, 수정 PNG0, 새 ZIP0.
+- **검수 정확성:** C3 신규2 원본 이미지 직접 시각 판독 및 로컬 SHA 재확인, 기존 OFFLINE 대체 UI/아군3·적1 실루엣 목업 확인. Snowroad 큰 타원 구름/설산 면/일직선 길 경계·균일한 설원, F2 전경 타원 수관·굵은 수간/좌측 아군 모형 간섭·평평한 접지 영역을 **표적 확인 후보**로 지정. PNG 원본 신규2 평균 BT709 명도 **166.2 / 128.5**로 서로 다름. **실제 Chapter1 원본 PNG 화소 수급 실패**라서 Ch1 vs C3 동일1672×941 시각 화풍/입자·명암 비교 **NOT_VERIFIED**. Ch1 .meta 스펙 일치만으로 화풍 PASS 주장 금지. 실제 Unity 정식 BattleUI·캐릭터/적·3해상도 접근성 검증0.
+- **Codex 로컬 Ch1/2 감사 수용** [#91 검수댓글](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6622600289): Ch1 PNG6 보유/카탈로그 고유4 연결, Toxic Swamp·Ancient Sanctuary 미연결. Ch2 Field04~10은 배경PNG가 아니라 기본 색상전장 패널, Main20/Field11만 기존 `DeepCore_Ground_Base` 512² PPU128 재사용; Field10 `BurningPulse_DistantFlameSilhouette`는 **월드 배경**, Battle Catalog 아님. F: 신규 C3 ZIP SHA `a8c02e9ab6189a6feb074d3f83c8cd6a8bce61ff1b8de110e7c8216934468eb9` 확인. Codex 로컬 브랜치 `codex/chapter2-battle-background-audit-20261104` commit `064448a8b52d92f1c506dd2b37c713814be4eb9d`, 원격 Push 없음.
+- **유지 상태:** `BATTLE_BG_CANDIDATE / KEEP_CANDIDATE_2 / TARGETED_STYLE_REVIEW_ONLY / CH1_STYLE_PARITY_NOT_VERIFIED / OFFLINE_MOCKUP_ONLY / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED`. 기존 Ch1 6 PNG/Ch2 지면/Ch3 2 후보·승인 Owl/Spider/VFX/환경 및 Unity·Scene·Prefab·Save/UserData·BattleUI/Packages/main 변경0, main Push/병합0.
+- **다음 게이트:** Ch1 원본 Forest/Grassland/Catacombs 실제 이미지 실물과 C3 2후보를 **정확히 동일 1672×941 1:1** 정리한 비교판을 만들되 PNG 바이트 변경금지 → 바울 대표 미술 결정 → 승인이 나면 Codex Unity6000.6.5f1 격리 실제 3인·적·BattleUI/화면비 최소QA → 본게임 적용은 별도 승인. 증거 없는 전면 재작업은 하지 않음.
+
+
+## 2026-11-04 / Chapter3 전투 배경 2종 파일럿 — Chapter1·2 실물 사전 감사 포함
+
+- **사전 조사 (GitHub main 7,600 tree nodes)**: Chapter1 전용 배경 PNG **6종**, 카탈로그 참조 고유 PNG **4종**(Grassland Field01, Forest Field02/03, Silent Catacombs Dungeon01/B2, Silent Warden Boss). 나머지 Toxic Swamp·Ancient Sanctuary는 실 PNG 보유하나 해당 `Chapter1.asset` 연결 미확인. Chapter2 전용 `Art/Battle/Backgrounds/Chapter2`/전용 catalogue **원격 main에서 미발견**; Main20은 `BattleBackgroundCatalog.Find()`에서 기존 `DeepCore_Ground_Base` 지면 Sprite를 재사용. 원격 미발견 ≠ 바울 대표 PC Ch2 별도 파일 부재; `CH2_LOCAL_INVENTORY_NOT_VERIFIED`. Ch1 .meta 확인 PNG 실제 Sprite rect **1672×941**, PPU100/중앙 Pivot(참고치). Ch1·2 원본 재제작·수정0.
+- **신규 C3 배경2** `Candidate/C3_BattleBG_FrostwaySnowroad_v1_CANDIDATE_1672x941.png` **SHA `a5f3bb960b5c5e6fe4140cb2de64e726f4bc7fabb8674f895789fed128adcd25`** / `Candidate/C3_BattleBG_FirstSnowForest_F2_v1_CANDIDATE_1672x941.png` **SHA `93388ee52fd75da4a82df0b68e03b2083167a25f339d97b41dc71c807125282b`**, 두 파일 모두 1672×941 **RGB 불투명 정적 원본**. 신규 독립 프로시저럴 픽셀 파일럿으로 중앙·하단 전투 슬롯 가독성을 고려; Chapter1 실제 그림을 직접 픽셀로 대조한 화풍 PASS나 Ch3 Import/Unity 적용 주장 금지. 심부 냉기/빙하 협곡 추가 후보는 후속 제안이며 **미제작**.
+- **실 납품 ZIP** `Limitless_Chapter3_BattleBackground_2Pilot_20261104.zip` **1,600,528 bytes / 12entries / SHA256 `a8c02e9ab6189a6feb074d3f83c8cd6a8bce61ff1b8de110e7c8216934468eb9`**, CRC PASS / SHA256SUMS11/11 PASS. ChatGPT Library `/LIMITLESS/Chapter3_BattleBackground_20261104/`에 **실제 ZIP 업로드·목록 조회 성공**. 비교판 별도 라이브러리 업로드는 `container_session_expired`로 실패했지만 ZIP `Preview/`에는 비교판+개별 UI 목업 3 PNG 포함. 대표 PC F:\ 복사/해시 미확인, GitHub 바이너리0.
+- **오프라인 검토** `Preview/Chapter3_BattleBG_2Scene_UI_Comparison_OFFLINE.png`은 2개 실제 배경 위 **비공식 아군3·적 실루엣 대용 및 HP/MP 명령 패널**을 같은 크기로 얹은 OFFLINE 비교판. 승인 Owl·정식 캐릭터·UI Sprite를 복사/수정하지 않았음. `Docs/Chapter1_2_BattleBG_Audit.md` 및 CSV, `Docs/DesignNotes.md`, Manifest/QA/SHA 등 ZIP 포함.
+- [**정식 제작·Chapter1·2 재사용 감사 보고**](../../Chapter3_BattleBG_InitialPilot_Audit_20261104.md) `docs/art-new` 보고 commit **`580e55d9ebad719a56bbc15da0215b3224b4cea2`**. 상태 `BATTLE_BG_CANDIDATE / OFFLINE_PNG_QA_PASS / USER_VISUAL_REVIEW_PENDING / UNITY_NOT_VERIFIED / NOT_UNITY_APPLIED`. 현재 기존 승인 Frostway 지면9/환경43, Owl v3 Idle8/Attack4, Spider/Bee, 냉기 VFX 등 모든 기존 자산 보호, Unity Scene/Prefab/Save/UserData/BuildSettings/Packages·main 변경0, main 직접 Push/병합0.
+- **다음** 바울 대표 두 배경 미술·가독성 비교 → 승인 후보 Codex 격리 Unity6000.6.5f1 원본 Battle UI/캐릭터·적 비율/화풍·화면비 DeltaQA → 바울 대표 별도 본편 적용 승인. Chapter2 PC 로컬 원본 목록 read-only Codex 감사 필요.
+
+
+## 2026-11-04 / Issue #89 후속 — 냉기 VFX 한기 설원 대비·동상/동결괴사 40px 표적 보완 v2
+
+- [Issue #89 Codex F: v1 실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6620211048) · [기획 최소 수정 발주](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6620385952)를 반영. 원본 v1 ZIP SHA **`83b4efeee62cdb4cabf7dbcc4d2aea21cbefdb4507e03f53b8c59d8079e9e4ba`** 및 원본 PNG3 SHA 전체 보존. 기존 승인 Owl Idle8/Attack4, NaturalBroken Stump v4, F2·Frostway 아트·냉기 Stage1 63PASS·독립 상태 계약 수정0.
+- **실제 ZIP** `Limitless_Ch3_ColdVFX_Issue89_MinimalFollowup_20261104.zip` **1,434,793 bytes / 23 entries / SHA256 `9c07f5ff782c6e272796c4f003b816a39806ab35248c2353884325ac3c24a1eb`**, CRC PASS, `SHA256SUMS.txt` **22/22 PASS**. 파일 라이브러리 `/LIMITLESS/Chapter3_Issue89_ColdVFX_MinimalFollowup_20261104/`에 ZIP 및 비교판2 **실제 업로드/목록 재조회 성공**. Windows 대표 PC F:\ 자동복사/PC SHA 확인 X, GitHub 바이너리0.
+- **별도 v2_TARGETED_CANDIDATE 실제 512×512 투명RGBA 3장**: 한기 SHA`e50831520d21ca51b51bca0fab030446f5c15f034d699c6ee3fd79304d1691c2`(안개·고리 alpha/경계 RGB 소폭 보강), 동상 SHA`5b8ca776ec14c52fd671117182fa299fed31b8774d85f6843f8f62ec70b96415`(중앙 위 긴 결정 약24px 국소 높이 완화/가장자리 작은 파편 약화), 동결괴사 SHA`59621e0b912e7c30544e559cb99446dcfb7f9c7c8dd1c846a07f32dce2dfd299`(하단 좌우 큰 쐐기 국소 비강체 최대18px 외측 정리·기존 균열 명암 보강). v1 원본3 PNG 변경0. 상태명/아이콘/남은턴·중첩 숫자 PNG 미내장.
+- `Preview/Issue89_v1_v2_128_40_BeforeAfter_OFFLINE.png` **1670×1440**, `Preview/Issue89_v1_v2_Snow_DarkBG_SameScale_OFFLINE.png` **1420×1220**. 원본·후보를 실제 512→128/40 LANCZOS로 각각 축소한 PNG12장 수록; 발표판의 큰40 이미지는 NEAREST 확대 표시만. 밝은 설원/어두운 전장의 동일128 실제 OFFLINE 합성이고 **Unity GameView/40px 전투렌더 검증은 NOT_RUN**. 현재 `TARGETED_ART_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_ART_REVIEW_PENDING / UNITY_NOT_TESTED / NOT_UNITY_APPLIED`. 작은 크기 구분성 완전 해결·ART PASS 선언하지 않음.
+- [**Issue #89 표적 보완 보고 정본**](../../Chapter3_Cold_VFX_Issue89_TargetedFollowup_20261104.md), `docs/art-new` 실제 문서 commit **`1b38ee412a691651660694fa715bdeece0c3b2fc`**. 다음은 바울 대표 실물 비교판 미술 승인 → Codex 격리 Unity6000.6.5f1 HUD 가림·128/40·PPU/Scale/동시 상태 접근성 DeltaQA → 대표 별도 본편 승인. 전체 애니메이션·VFX Particle/Scene/Prefab/Save/UserData/Packages/main 변경0·직접 Push/병합0.
+
+
+## 2026-11-04 / Issue #89 — Chapter3 한기·동상·동결괴사 VFX 첫 독립 PNG 3종 납품
+
+- [**#89 세 VFX 실제 파일 파일럿·검수 보고서**](../../Chapter3_Cold_VFX_Issue89_ArtPilot_20261104.md) `docs/art-new` 커밋 **`ac1b0618c77d3309f7f56c6fa0b5b46ba99afd64`**. [#88 냉기 VFX 기획](https://github.com/HappyPaul812/Project-Limitless/issues/88)과 기존 3상태/화로/해제 계약 준수, 세 종류의 독립 시각 후보만 제작. 승인 Owl v3 Idle8/Attack4, NaturalBroken Stump v4, F2 승인/후보 원본 및 기존 분리 IceArc 보호.
+- **납품 ZIP 실물** `Limitless_Ch3_ColdVFX_Issue89_Pilot_20261104.zip`, **1,535,561 bytes / 17entries / SHA256 `83b4efeee62cdb4cabf7dbcc4d2aea21cbefdb4507e03f53b8c59d8079e9e4ba`**, ZIP CRC PASS / SHA256SUMS **16/16 PASS**. **ChatGPT 파일 라이브러리 `/LIMITLESS/Chapter3_Issue89_ColdVFX_Pilot_20261104/`에 ZIP+미술 비교판2 실물 등록 및 목록 재조회 성공**. 사용자 PC F:\Downloads 자동저장/PC 해시 미확인, GitHub ZIP/PNG 바이너리 원격 등록0.
+- **신규 독립 512×512 RGBA 정지 PNG3**: `Candidate/VFX_Ch3_Chill_Oneshot_01_CANDIDATE_512_RGBA.png` **SHA `dd7bd4bb...`**(한기/옅은 안개·눈송이), `VFX_Ch3_Frostbite_Sustain_01_CANDIDATE_512_RGBA.png` **SHA `49937d84...`**(동상/붙은 얼음결정·균열), `VFX_Ch3_FrostNecrosis_Stack2_01_CANDIDATE_512_RGBA.png` **SHA `f1e69de2...`**(동결괴사/검푸른 균열·보스 2/3 위험). 파일별 전체 SHA·원본 1254² 생성 아트의 SHA·처리 내역은 ZIP `Manifest.json`에 보존.
+- **실제 128px·40px 축소6 PNG** 및 `Preview/Issue89_ColdVFX_ThreeStates_512_128_40_OFFLINE.png` **1840×1330** 한눈 비교판, `Preview/Issue89_ColdVFX_Snow_DarkBG_SameScale_OFFLINE.png` **1780×1000** 밝은 설원/어두운 전장 **동일128px OFFLINE** 합성 비교. 화면 UI/상태명/아이콘·턴/중첩 숫자는 Sprite 원화에서 분리하여 별도 UI로 계획, 색상만으로 구별 금지·과한 점멸 금지. **실제 Unity GameView/타깃 캐릭터 40px·3화면비 검증은 NOT_TESTED**.
+- **상태 계약:** 한기 2턴 전체 행동불가, 동상 별개 행동불가+HP 감소(틱·수치 TBD), 동결괴사는 보스 별개 1/3·2/3 경고/세 번째 즉시 기존KO. 자동 진화 금지. 상태명·턴·중첩 표시 및 HUD·입력 보호는 향후 Codex 격리 검증 게이트. **PNG 512는 후보 그림의 크기일 뿐 VFX PPU/Pivot/실Scale 공식 확정 아님(`SPEC_PENDING`)**. 애니메이션/시트/Particle/Unity/코드/Save/BuildSettings/Packages 변경0, main 직접 commit/Push/merge0.
+- **현재** `ART_CANDIDATE / OFFLINE_PNG_FILE_QA_PASS / USER_VISUAL_REVIEW_PENDING / UNITY_NOT_TESTED / NOT_UNITY_APPLIED`. 바울 대표 3종 가독성/외형 미술 승인 후 Unity6000.6.5f1 격리 HUD·스케일·가림 DeltaQA → 사용자 별도 본편 승인. 이번 파일 QA를 최종 ART PASS로 기록하지 않음.
+
+
+## 2026-11-03 / Main24 F2 환경 재사용 격리 **68 PASS/0 FAIL** 인계
+
+- **Codex 실 Unity 6000.6.5f1 Delta** [#83](https://github.com/HappyPaul812/Project-Limitless/issues/83#issuecomment-6603754190) · [#85](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6603755245): `codex/f2-environment-reuse-delta-20261103`, 로컬 SHA **`f6797d7ae8e744f0e22ac760df7778551188bb90`**. GROUND/PATH/TREE placeholder 표시0, 기존 Ground9/F1 WornTrail/F2 P1 눈Overlay·SnowPine·FrostShrub만 격리 조립, 신규 PNG0/불균일 스케일0. 실제 4.5WU 길과 Collider를 보호한 휠체어·도보 통행, 나무8 PPU128·발기준 Sorting 및 관목4 길바깥, 승인 Owl/Stump 그대로. HUD 두 배치 후보 길·Owl 차폐0, 장식나무 배경 일부 가림은 미술 검토.
+- **결과:** 68 PASS/0 FAIL, Runtime오류0, 기존 #83 90/#85 81/저장 QA 전수 재실행0. South/Bend/North × 960/1280/1680 **실제 카메라 RT18장/9쌍** 정확 동좌표 비교(ortho5). `F:/study/codex/Project-Limitless/Temp/F2EnvironmentReuse20261103/Review/index.html`, HTML SHA `577ee06e630fe613f1930e8f79aee65faa7d5e9c733f4e35695b2feafafee325`. **Codex만 RT 실물 확인, 본 아트 채팅은 보고만 접수**; OS GameView/사람 입력·원본 제품 적용 미실시.
+- **남은 바울 대표 미술 판단:** `After_Bend_1280` 기준 눈 패치 반복 `x180..350/y100..650`, 굽음 질감 `x480..880/y180..510`, 우상단 HUD 뒤 장식나무 `x964..1268/y90..326`. 신규 PNG 필요 확정0, 기존 배치·UV/밀도/접합만 검토 → 화면 아트 선택 후 Codex 격리 Delta 조정. Sign/Fence FULLREDRAW `KEEP_CANDIDATE / USER_ART_REVIEW_PENDING`, 분리 냉기 VFX `HOLD`, 기존 승인 Owl Idle8/Attack4·NaturalBroken Stump v4·Frostway Ground9/Environment43 보호. 원본 Unity/Save/UserData/Scene/Prefab/BuildSettings/main 변경0·Push/병합0.
+- [**F2 환경 재사용 감사 및 68PASS 근거 최신 정본**](../../Chapter3_Main24_F2_Environment_ReuseGap_Audit_20261103.md), `docs/art-new` 내용 보강 commit **`9ad4c5b02d8fa7e06bd09ed1201d116ddad9143e`**. 상태 `F2_ISOLATED_REUSE_TECH_PASS_68 / ART_SNOW_PATH_HUD_REVIEW_PENDING / NEW_PNG_0 / NOT_ORIGINAL_APPLIED`. 기존 결과를 환경 미술 최종 승인으로 확대 해석하지 않는다.
+
+
+## 2026-11-03 / Main24 F2 실제 RT 감사 접수 — 기존 재사용 가능·신규 환경 PNG 확정 0종
+
+- **Codex 실제 카메라 RT 열람 근거** [#83](https://github.com/HappyPaul812/Project-Limitless/issues/83#issuecomment-6602568367) · [#85](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6602569428): `codex/f2-environment-readonly-audit-20261103` **로컬 commit `b70b14175b67dc8490ea8efc3bccf94eb1c22126`**. Codex가 #83 960/1280/1680 실제 Unity Camera RT, #85 F2 접근/귀환 RT를 **읽기 전용**으로 확인. 아트 세션은 원본 RT 이미지 실물 미수령·GitHub 기술보고를 접수한 것이지 직접 Unity GameView 확인이 아님.
+- **현장 확인 결과:** F2에는 `PLACEHOLDER_GROUND / PATH / TREE` 3종이 실제 남아 있고, 흙길 굽음이 인공적인 직각·나무 접지 그림자 약함·**하단 HUD가 남쪽 통행 길 일부 가림**. 그루터기 NaturalBroken v4는 지면 접지·전후 Sorting 기존 RT 확인. 3비율 길 경계 식별·플레이어 크기 유지, 도보/휠체어 물리 통행은 기존 #83 90 PASS 재사용이며 신규 교체후 QA 아님.
+- **최종 아트 제작 판정:** `NEW_PNG_REQUIRED=0`, `REUSE_OK`: 승인 Frostway Earth/ThinFrost/Gravel 9종 **256²**, NorthF1 WornTrail overlay **256²**, F2 P1 FirstSnow GroundOverlay **256²** / SnowPine **256×320** / FrostShrub **256×160** 기존 후보. 기존 F2 P1의 사용자 미술승인·Unity 적용이 완료됐다는 의미는 아님. 기존 소스로 가능한 배치 최우선; 직각 연결부를 늘리거나 나무를 왜곡해 억지로 맞추지 않는다. 교체후 눈 반복·곡선 seam·나무 Pivot/Sorting·HUD/Collider 길 경계·색감 동등 배율 `NOT_VERIFIED`.
+- **보호:** Owl v3 Idle8/Attack4 사용자 최종 미술승인·#85 격리 전투81PASS, NaturalBroken Stump v4 승인, #83 F2 왕복90PASS, 9지면/43환경, 기존 F1/P1/P2·Spider/Bee·Save/UserData·Scene/Prefab/BuildSettings·Packages/main 불변. Sign/Fence FULLREDRAW는 `KEEP_CANDIDATE / USER_ART_REVIEW_PENDING`; 냉기 VFX `HOLD`. 신규 아트0, Unity 실행0, 원본/main Push/merge0.
+- [**F2 재사용·부족 감사 최신 정본**](../../Chapter3_Main24_F2_Environment_ReuseGap_Audit_20261103.md) `docs/art-new` 현장 감사 접수 commit **`5def6fbbd68920bbe055ad1972fc7969cfbd8214`**. 현재 `F2_RT_AUDIT_REPORTED / REUSE_OK / NEW_GAME_PNG_0 / F2_VISUAL_DELTA_AFTER_REPLACEMENT_NOT_VERIFIED / NOT_UNITY_APPLIED`. 다음은 Codex가 별도 격리 장면에서 기존 참조 스프라이트만 이용해 동일 화면비 Delta 배치·HUD 겹침·길/휠체어 가시성 검토 후 남은 실결함을 증빙하는 작업, 바울 대표 별도 본편 승인 전 공식 교체 금지.
+
+
+## 2026-11-03 Main24 F2 / #75 환경 아트 마감 **재사용 우선·실제 캡처 대기** / 신규 Sprite0
+
+- [#75 최신 기획 후속](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6601880656) + [#83 실제 F2 이동 검수](https://github.com/HappyPaul812/Project-Limitless/issues/83#issuecomment-6594041936) + [#85 실제 Owl 전투 검수](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6601090552)를 최신 현황으로 우선. 기존 SPRITE_ART_LATEST 아래 과거 `Owl Attack ART_HOLD`·Stump `USER_REVIEW_PENDING` 내용은 **이력**이며 **현재는 Owl v3/Idle8/Attack4 USER_ART_APPROVED**, NaturalBroken Stump v4 `USER_ART_APPROVED`. Owl 기본 전투 #85 격리 Unity81 PASS, #83 F2 왕복90 PASS / 정적23 PASS, 실제 제품 원본 미적용.
+- **환경 결손 근거 차이:** #83 격리 World_NorthF2_CANDIDATE에 `PLACEHOLDER_GROUND/PATH/TREE` ValidationOnly 3종 배치. F2 경로4.5WU 물리/휠체어/3화면비 카메라 PASS. 그러나 #85 전투81PASS가 **이 3종을 공식 환경 PNG로 교체했다는 증거는 아님**. Codex 실제 Camera/RT PNG+전투 영상은 바울 대표 F:\study\codex\... 로컬만 보고돼 이 세션에서는 실물 파일 열람 못 함; `GAMEVIEW_IMG_NOT_RECEIVED / CODEX_UNITY_TEXT_EVIDENCE_ONLY`. 실제 접합·폭·시야차폐를 추정해 **새 게임용 환경 PNG0**으로 결정. 기존 소스 재사용 근거와 결손9항목 CSV 및 기존 아트 OFFLINE 비교판 제작.
+- **재사용 우선:** 공식 Frostway Ground9·환경43·NorthF1 EarthToFrost v3/Path_WornTrail v2, F2 P1 `GroundOverlay` SHA`61141ace...` / `SnowPine` SHA`738827ff...` / `FrostShrub` SHA`ba66a675...`; F2 P2 나뭇가지/약한 눈발 및 승인 v4 Stump SHA`22f2f5816b3fd2ffe45234ec807bb3d81a83f87440eb8eb1f338e0dff33404a8` **바이트 보호**. 확인된 NorthF1·Frostway 지면/길·관목 메타 PPU=128, Ground/F1Path/관목 용도별 Pivot 다름; F2 신규 PPU/Pivot `SPEC_PENDING`. F2 확정 Unity 원본 아닌 오프라인 비교는 실 GameView로 취급금지.
+- **Sign/Fence FULLREDRAW KEEP_CANDIDATE**: Sign SHA`864e964ee4cc3868bd315af2249fe92d04e888937ae66f963232636cda8e4488`, Fence SHA`49c2969b8607d91b6bf15cb0e4485bcc3f25379669064b025d63b099c9c62e8c`. 기존 v3와 함께 각각 원본 실제128·40px 축소 비교만 수행. 바울 대표 USER_ART_APPROVAL_PENDING → 공식 Sprite 교체/재제작/씬 배치0. 한기 상태 `COLD_STATUS_HOLD` 및 분리 VFX `UNAPPROVED_HOLD`, 신규 이펙트 제작0.
+- **증거 ZIP 실물** `Limitless_Main24_F2_Environment_ReuseAudit_20261103.zip` **1,465,842 bytes / 16entries / SHA256 `1df607fc10be70a1815ec5b643e5fc23be948a67c322d5bed7ec877dd10a175d`**, CRC PASS / SHA256SUMS15/15 PASS. `Preview/F2_ExistingReuse_GapAudit_OFFLINE.png` 2080×1430, `Preview/F2_SignFence_Before_FULLREDRAW_128_40_OFFLINE.png` 2030×1500, 파생128/40 8PNG 및 `Docs/F2_GapMatrix_20261103.csv`, source SHA inventory, Codex 실제 캡처 요청 지시문/Manifest 포함. 원본 후보 Sprite 수정0, **새 게임용 PNG0**. 파일 경로 `/mnt/data/Limitless_Main24_F2_Environment_ReuseAudit_20261103.zip`; **ChatGPT Library 업로드는 `container_session_expired`로 실패 — 업로드 완료라고 표시 금지**. GitHub에는 보고서만 커밋, 바이너리 미등록.
+- [F2 환경 재사용·미확정 갭 정식 보고](../../Chapter3_Main24_F2_Environment_ReuseGap_Audit_20261103.md) `docs/art-new` 보고커밋 **`3621b636d493cd3d7571e6eb87f21c18e35d4c5f`**. `AUDIT_DONE / F2_GAMEVIEW_IMG_PENDING / USER_SIGN_FENCE_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`. 다음 Codex 읽기전용 현장 확인(실F2 RT/게임 화면/Renderer ref와 placeholder 여전히 사용 여부)→기존 자산 우선 재사용→입증된 실제 결손 최대 2종만 후속 아트 제작 별도 승인. Main24 기존 #83 90PASS/#85 81PASS 재검수0, Unity/Scene/Save/UserData/BuildSettings/Packages·원본main 직접 commit/Push/merge0.
+
+
+## 2026-11-03 / Issue #74 — Owl Attack02→03 연결 **Attack02 단일 프레임** 표적 수정 납품
+
+- [#74 최신 Codex 본문·기획 지시](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6595843983) 및 [이전 Codex 통합 검수](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6595705479): 이전 Attack02의 몸통/발/꼬리/날개↔Attack03 변경이 급격하므로 단일 프레임만 수정. 이전 `02` SHA `a7273d0d3c0b20d2a005b90f158906aa9760ef551dbba11aa3e80c5e692b9851`는 과거 HOLD/Archive, 이번 **새 `02` SHA `6dcb1799e0970cd08ceadc111e7e2645f21eb973ae75f9b859c2ce356d07e936`는 ART_CANDIDATE**.
+- **방법/KEEP:** 승인 `Attack03`=`Idle00`=`FrostOwl v3` SHA `81a31cf37cb834799ab5c9428da612ab13a5a496025805685daefed7b5d3c467` 바이트 그대로. Attack00 `b6029c30...`, Attack01 `a98aab1c...` byte exact, 기존 Idle8 바이트 미변경. 새 02는 승인 03을 근거로 **몸통·발·꼬리·얼굴 중심을 고정**하고 바깥 날개 끝만 비강체 공간 변형하여 중간 각도 형성. 기존02 대비 RGBA 차이126,301px이므로 작은 픽셀 보완으로 과장하지 않되 **수정 원본 게임 PNG는 정확히 1개**. 승인03과 신규02의 하단 y345..511 픽셀 배열 정확히 동일. 전체 512² RGBA/8FPS PPU512·중앙Pivot·Scale1 Import계약.
+- **오프라인 인접 실루엣 IoU (alpha>8):** 01→02 기존0.4377→신0.6761, 02→03 기존0.4415→신0.8654. 03→Idle00 완전 일치. 수치는 정량 참고이며 **최종 모션 미술/Unity 기술 PASS 아님**. Attack4 네 프레임 alpha>8 가장자리 접촉0, 시트4셀 exact. GIF 본편 공격 4프레임 120/130/120/130ms = **평균8FPS**, 별도 `Attack01_02_03_Idle00_TRUE_SEQUENCE_8FPS.gif`는 4단계 마커가 이동하는 **실4프레임 검토본**, 지난 단일정지 SEAM GIF와 구분.
+- **실물** `Limitless_FrostOwl_Attack02_Continuity_20261103.zip` **3,992,293 bytes / 20 entries / SHA256 `d6648b7451dc2184c2187c0b1c2f8e0f52fc800ac6975753d0f6d38f6fbf9192`**, ZIP CRC PASS 및 SHA256SUMS19/19 PASS. **ChatGPT Library `/LIMITLESS/Main24_Issue74_Owl_Attack02_20261103/` ZIP+128/40 한장 비교 PNG 업로드 성공**. PC F:\ 사용자 복사본 QA 미확인·GitHub binary 미업로드.
+- **기존 미승인 분리 냉기 VFX**는 지난 Continuity ZIP `VFX_UNAPPROVED_HOLD` SHA `46215c1c...` **그대로 보존/이번 ZIP에는 미동봉**. Attack01 본체에 이펙트 재결합0. 이전 승인 F2 Stump·KEEP Sign/Fence/Monster/Pet/Spider/Bee 및 Main24 #83 통합90PASS/23PASS, Main23 43+지면9, Scene/Prefab/Save/UserData/BuildSettings/MonsterDefinition 원본 변경0.
+- [**정식 단일 Attack02 QA 보고**](../../Chapter3_Main24_Issue74_Owl_Attack02to03_TargetedContinuity_20261103.md) `docs/art-new` 보고 커밋 **`4ccb55b91440efdbb46c313f57588d510c074dda`**. 상태 **`ATTACK02_TARGETED_REVISED_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_MOTION_ART_REVIEW_PENDING / UNITY_NOT_VERIFIED / NOT_UNITY_APPLIED`**. 바울 대표 미술 검토→(승인 시) Codex 격리 Unity Attack02 및 01→02→03→Idle00만 DeltaQA→사용자 별도 본게임 적용 승인. main 직접 commit/Push/merge 금지.
+
+
+## 2026-11-03 Main24 / Issue #74 — Frost Owl v3 Attack4 얼굴 연속성·복귀·VFX 분리 후보 실물 납품
+
+- **Codex #74 최신 통합 판정** [실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6594778265) + [기획 최종지시](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6594916733) 반영. 이전 Attack4 네포즈의 날개 모음→확장→후속 대비는 유지하되, 승인 v3 정지 원화의 얼굴·머리깃 중심 RGB를 00~02에 국소 복원. **Attack03은 승인 v3/Idle00과 파일 바이트·SHA exact 동일** → 03→Idle00 경계 픽셀 점프0. 기존 승인 v3 원화·Idle8 원본 **변경0**; Idle8 SHA8개 Manifest 인계. **날개/몸통 전체 v3 원화와 완전 동일함은 미술 검토 전 미확정**, `DESIGN_CONTINUITY_USER_REVIEW_PENDING`.
+- **실제 납품** `Limitless_FrostOwl_Attack4_Continuity_20261103.zip` **4,623,041 bytes / 22 entries / SHA256 `dd50da39530380047c8d4a6dd728d624ff828fc2dde089abc708be0558bc6856`**, ZIP CRC PASS + SHA256SUMS21/21 PASS. `Candidate/Attack/` 512×512 RGBA 변경 Attack 4 PNG(SHA: 00 `b6029c30...`, 01 `a98aab1c...`, 02 `a7273d0d...`, 03 `81a31cf3...`)와 `Candidate/Sheet/` **2048×512 4×1**(시트셀 RGBA4/4 exact), 8FPS4 GIF(120/130/120/130ms), 128px·40px 실파일 파생8, 기존/신규 원페이지·03→Idle00 동일 픽셀 비교·Manifest/QA·SHA. **ChatGPT Library `/LIMITLESS/Main24_Issue74_Owl_Continuity_20261103/`에 ZIP+비교 PNG 업로드 성공**, 사용자 PC F: 자동복사 해시 미확인, GitHub 바이너리 업로드0.
+- Attack01에 기생한 추가 냉기궤적·입자는 **Attack 본체 PNG에서 제외**하고 `VFX_UNAPPROVED_HOLD/FrostOwl_IceArc_Detached_VFX_HOLD_512_RGBA.png`만 **미승인 참고 후보**로 따로 보관. 기존 승인 정지 v3의 원래 작은 냉기 디테일은 그대로 보호. VFX 사용/스폰/Unity 적용0.
+- **정식 제작·검수 보고** [`Chapter3_Main24_Issue74_FrostOwl_Attack4_ContinuityFix_20261103.md`](../../Chapter3_Main24_Issue74_FrostOwl_Attack4_ContinuityFix_20261103.md), `docs/art-new` 보고 commit **`fa080e64bf00c7b94dd78e3405b9a075567927e9`**. `OFFLINE_FILE_QA_PASS / USER_MOTION_ART_REVIEW_PENDING / UNITY_ANIMATION_NOT_VERIFIED / NOT_UNITY_APPLIED`. PPU512·중앙Pivot·scale1·8FPS Manifest Import 계약, Unity .meta/게임 본편 적용 X.
+- **보호**: 기존 Idle8+정적v3·F2 Stump(승인)·Sign/Fence KEEP_CANDIDATE·Main24 #83 왕복 90PASS/23PASS, Main23/F1·공식 43/9·Monster/Pet·Bee/Spider·Save/UserData/Scene/Prefab/BuildSettings 모두 변경0; main 직접 commit/Push/merge0. **다음:** 바울 대표 새 Attack4 미술 직접 검토→(승인 시) Codex 격리 Unity Attack4만 8FPS/clip/가독성/연결 DeltaQA→별도 본편 승인. 본 결과를 `ANIM_ART_PASS`라고 미리 기재하지 않음.
+
+
+## 2026-11-03 Main24 F2 / #74 Frost Owl v3 Attack4 새 포즈 실 PNG·8FPS 시안 전달
+
+- [#74 최신 모션 재작화 지시](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6593592716), [#83 F2 탐험과 전투 분리](https://github.com/HappyPaul812/Project-Limitless/issues/83). 승인 정적 v3/Idle00 SHA **`81a31cf37cb834799ab5c9428da612ab13a5a496025805685daefed7b5d3c467`** 그대로 보호; 기존 Idle8과 과거 Attack4 바이트 수정0. 기존 북문↔F2 격리 탐험 81PASS/정적14PASS 보존, 새 Owl 전투 적용0.
+- **새 Attack 후보4** `Candidate/Attack/FrostOwl_v3_Attack_00~03_512_RGBA_CANDIDATE.png`, 모두 **512² RGBA**, 각각 준비(날개/몸통 수축)→발동(확장)→후속(날개 낮춤)→복귀의 상이한 포즈. 개별 SHA `f6274c6c...`, `1915cfd6...`, `79e23861...`, `187829c7...`는 상세 보고서/Manifest 전문 참조. 이전 원본 이미지의 단순 이동이 아닌 신규 그림 출력이며, 기존 정지/Idle 일괄축소는 하지 않음. alpha>8 기준 4면 접촉 모두0.
+- **실물 ZIP** `Limitless_FrostOwl_Attack4_Review_20261103.zip`, **3,153,329 bytes / 18 entries / SHA256 `5ba6ecffad2e3ccf5a07c0fda00041073f1db6938a439fdeea170eae9abf250b`**, CRC PASS·SHA256SUMS17/17 PASS. **ChatGPT 라이브러리 `/LIMITLESS/Main24_Issue74_Owl_Attack4_20261103/` 업로드 성공**. PNG4, 2048×512 4×1 sheet, 8FPS GIF1(120/130ms 교대, 500ms/4프레임), 기존↔신규 단일 보드 1800×1190과 128/40 실축소PNG8, Manifest+README 포함. Windows F:\ 사용자PC 수령/해시 미확인, GitHub 바이너리 없음.
+- **미술 리스크 반드시 보존**: 신규 이미지에는 기존 v3보다 세밀한 깃털과 **통합 냉기 궤적/입자**가 있어 동일 고유디자인·VFX 비추가를 확정하기 어렵다. `ATTACK4_POSE_ART_CANDIDATE / VFX_SCOPE_ART_REVIEW / USER_MOTION_ART_REVIEW_PENDING`이며 **`ANIM_ART_PASS` 아님**. 실제 Unity Attack 기술검증0, PPU512/중앙Pivot/Scale1은 Manifest import 계약. [#74 신규 실물 QA 보고](../../Chapter3_Main24_FrostOwl_v3_Attack4_MotionReview_Issue74_20261103.md) `docs/art-new` commit **`38a53da7f7edc9001ad9f7c3569df96ce87e3acb`**.
+- 기존 Stump 자연형 승인/격리 검수, Sign/Fence FULLREDRAW KEEP_CANDIDATE, Owl 디자인/Idle8, F2 P1/P2·Ch1·2 리뉴얼·Save/UserData/MonsterDefinition/Scene/Prefab/BuildSettings/Unity 원본 변경0. 바울 대표 미술 판정 후 Codex 격리 최소 모션DeltaQA → 별도 본편 적용 승인. `NOT_UNITY_APPLIED / NO_MAIN_PUSH_OR_MERGE`.
+
+
+## 2026-11-03 Main24 F2 / Issue #81·#75 — 자연적으로 부러진 그루터기 후보 1 PNG 납품
+
+- **최신 Codex #81 델타 검수** [실물 판정](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6590636705), [기획 지시](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6590736542): Sign FULLREDRAW SHA`864e964e...`, Fence FULLREDRAW SHA`49c2969b...`는 **KEEP_CANDIDATE 원본 보호**, 사용자 시각선택 및 공식 Sprite 교체 금지. Stump v3 국소 SHA`eb32bf20...` 및 과거 full redraw SHA`251fad7f...`는 원판/직선지주로 **ART_HOLD** 유지. 기존 Main24 **81PASS/정적14PASS 보존**.
+- **신규 제작 1개만**: `Candidate/F2_SnowStumpPerch_NaturalBroken_v4_CANDIDATE_320x384_RGBA.png` **320×384 투명 RGBA**, SHA256 **`22f2f5816b3fd2ffe45234ec807bb3d81a83f87440eb8eb1f338e0dff33404a8`**. 불규칙 부러진 수피·굽은 눈나뭇가지로 기존 작은 둥근 원판/곧은 지주 제거. 신규 자연형 1종은 **ART_CANDIDATE**이지 기존 국소본 픽셀 변경이 아닌 독립 생성 시안.
+- **실물 ZIP** `Limitless_F2_Stump_Natural_Issue81_20261103.zip`, SHA256 **`890013d4885319e1dc8a5a7f4ac2771c485b7ed2664617882cf535e6b48b70b5`**, **820,391 bytes / 6entries**, ZIP CRC PASS / SUMS5/5 PASS. ChatGPT 파일 라이브러리 `/LIMITLESS/Main24_Issue81_Stump_Natural_20261103/`에 ZIP **업로드 성공**. 개인 PC F:\ 직접 복사/해시 미확인, GitHub 바이너리 없음.
+- **오프라인 비교** `Preview/Issue81_Stump_Natural_OnePage_Compare_OFFLINE.png`(1410×1080, v3/HOLD vs 구대안/HOLD vs 새 자연형/CANDIDATE 및 각각 실제 PNG 128/40 폭 축소); `Preview/F2_Environment_Style_Wayfinding_Mockup_OFFLINE.png` (1440×650) 기존 F2 P1 소나무/관목·KEEP Sign/Fence 대안과 자연형 신규를 모의 배치한 색감/길의 외형 참고판. **Unity GameView/휠체어·Collider PASS가 아님**. 기존 후보·타일 전체 양산0, Owl/Attack ART_HOLD 유지·F2 나뭇가지/눈발/P1·승인43/지면9/F1/공식Monster/펫/SpiderBee/Unity/Save/UserData/BuildSettings 변경0.
+- [Issue #81 제작/보존·QA 정식 보고](../../Chapter3_Main24_Issue81_F2_NaturalBrokenStump_Candidate_20261103.md) `docs/art-new` 실제 보고 commit **`861bd63c8d0c680f86a589d5006a8619d6d31445`**. 현재 `OFFLINE_PNG_QA_PASS / USER_ART_REVIEW_PENDING / PPU_PIVOT_COLLIDER_NOT_VERIFIED / NOT_UNITY_APPLIED`. 바울 대표의 신규 그루터기 최종 미술 승인 후 Codex 격리 새1 PNG DeltaQA/휠체어 통행·게임 크기 확인, 별도 본게임 적용 승인. `main` 직접 commit/Push/merge 금지.
+
+
+## 2026-11-03 Main24 F2 / Issue #75 — 최소 국소 보완3 + 독립 신규 디자인 레퍼런스3 / 라이브러리 납품
+
+- **완료 실물 ZIP** `Limitless_F2_MinimalFollowup_20261103.zip` SHA256 **`310d1755b14ab67f744eea420dd1f8e6c41e397fb8689ea2f07b4d7981323a28`**, **1,604,092 bytes / 14 files**, CRC PASS / SHA256SUMS 13/13 PASS. 과거 대화 sandbox 다운로드가 반복 실패하여 **ChatGPT 파일 라이브러리 `/LIMITLESS/Main24_F2_Minimal_20261103/` 실제 업로드 성공**. PC `F:\Downloads` 자동 복사/PC SHA 확인 아님, GitHub PNG ZIP binary 업로드0.
+- **소스 원본 보호한 실제 국소 후보**: `Candidate/F2_FirstSnowTrailSign_v3_CANDIDATE.png` 288×384 RGBA SHA `70b8ed868d61b1abc37d8f775116613ea45352b80fd53fa0cacf7d29a61ce37c` (메움 자국 RGB1,512pix, alpha0 변경/화살표 KEEP), `Candidate/F2_SnowStumpPerch_v3_CANDIDATE.png` 320×384 RGBA SHA `eb32bf200da3f08023f0f83b32df9a2f75b9357fa8ffc1f2647b116a5f5b60b8` (오른쪽 횃대 상단1795pix만), `Candidate/F2_PathEdge_LowFence_v3_CANDIDATE.png` 256×192 RGBA SHA `3aa0a8081ff1a58a4ab7157a974a550fc0b6c57a8263e1a81774b0027edadd6e` (하단 접지 alpha13,146pix 감소/RGB0 변경). 기존 v2 바이트 그대로 보존. 실제 F2 길/휠체어/PPU·Pivot/Sorting·Collider NOT_TESTED.
+- **별도 `Reference_Alternative_Concept/` 아래 이미지3종은 새로 그린 전체 콘셉트**로서 바울 대표가 좋게 평가한 외형을 별도 용도 납품. **기존 v2→v3 국소 편집과 동일하지 않으며 공식 교체/본게임 적용 후보로 오인하면 안 됨.** 한 장 전후 보드 `Preview/F2_Minimal_OnePage_BeforeAfter_OFFLINE.png`에 원본 v2 / 국소수정 v3 / 신규 전체 콘셉트를 좌중우 3열로 분리, 각 128/40 축소 판과 승인 Owl v3 가독성 참고판 포함.
+- **[상세 산출·보존·SHA 보고서](../../Chapter3_Main24_F2_MinimalFollowup_ArtCandidate_Delivery_20261103.md)** `docs/art-new` 커밋 **`4d1409adafaee3503d5d8fa4f5442952409c7cdb`**. `ART_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`. 상용 자산 승격0. 기존 나뭇가지/눈발 KEEP·F2 P1·Owl v3 정적 SHA `81a31cf3...`/Attack ART_HOLD·Main23 43/지면9/F1/공식 Monster/Pet/Spider/Bee·Quest/Save/UserData/Scene/meta/BuildSettings 변경0, main 직접 commit/Push/merge0.
+- **다음 게이트**: 바울 대표 원페이지의 국소수정 v3 / 새 레퍼런스 시안 미술 방향을 비교하여 수용 여부 판단 → 승인받은 최소 후보만 Codex 격리 Unity에서 실제 F2 3화면비/길/휠체어·겹침 DeltaQA → 사용자 별도 본편 적용 승인. Owl Attack 모션은 이번 범위에서 수정0/HOLD 유지.
+
+
+## 2026-10-29 Main24 최종 표적 보완 — #74 Owl Idle02/Attack02 + #75 F2 표지판/횃대
+
+- **최신 Codex 3ZIP 통합 검수 [#74](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6492706191)** 및 후속 [#74 기획](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6493035987), [#75 기획](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6493037627) 반영. **기존 승인 FrostOwl v3 static 원화 SHA`81a31cf3...` 및 정상 프레임10 전부 바이트 동일**. 본 아트 세션은 새 Unity 런타임 검증하지 않음.
+- **Owl 실제 수정**: `Idle02`/ `Attack02` 512² RGBA **두 파일만** 상단 왼쪽 날개 원형 복구(승인 v3 기반 정상 Idle01 끝깃 참조); 기존 alpha 상단 접촉 Idle7/Attack28→현재 둘 다 **0**(상단 가시 y10), 변경 영역 Idle x22..216/y0..166, Attack x22..217/y0..168. 나머지10 프레임 원본 PNG SHA/바이트 동일. 새 Idle8/Attack4 시트 2048×1024/2048×512, 8FPS(120/130ms 평균125ms) GIF4(수정2+전후2), 원페이지512/128/40 비교. **`Limitless_FrostOwl_v3_TargetedFrames_20261029.zip` 11,486,616 bytes / 21 entries / ZIP SHA `d42d4e7e24607e759dfc8de04b807ec8e6a04fc117abbb2a4aa87b27be0b5c1d` / CRC+SHA256SUMS20/20 PASS.** 현재 Attack 준비→발동→복귀 자세 대비·깃 이음새는 바울 대표 미술 검토 `ATTACK_ART_HOLD`, 실제 새12프레임 Unity 미검증. [Owl 정식 상세 QA](../../Chapter3_Main24_Issue74_FrostOwl_v3_Animation_TargetedClipFix_20261029.md) `docs/art-new` commit **`74e1cf47abb62334ec04df5fd08fad9307191446`**.
+- **F2 P2 실제 수정**: `F2_FirstSnowTrailSign_v2_CANDIDATE.png` 288×384 RGBA 가상 글자만 국소 제거, 원래 화살표 방향보존, SHA `987b2d8e597d8d77feeb5c75910c5d1b0a0a18d08cbddbc760bc24187fba39ae`; `F2_SnowStumpPerch_v2_CANDIDATE.png` 320×384 RGBA 인공 횃대 원판만 나이테·수피 있는 목재 단면으로 국소 교체, SHA `cef5ca388730c7e86242997401616afbc925fd42d270158bc2ce6b878400a71d`. **원본 나뭇가지 SHA `b05856...` 및 약한 눈발 `3a57f2...` KEEP** / P1 및 LowFence v2 ART_HOLD 변경0. **`F2_P2_Targeted_Sign_Stump_20261029.zip` 463,633 bytes / 5 entries / SHA `436e5e839b86f66ec09c882852fcae28ab47aacc4eef11b254139d90192810f8` / CRC·SHA256SUMS4/4 PASS**. 원페이지 전후 오프라인 비교판+Manifest 포함. 표지판 메움 질감·횃대 자연스러움 사용자 미술 HOLD, 신규 F2 PPU/Pivot·실동선 `SPEC_PENDING/NOT_RUN`. [F2 정식 상세 QA](../../Chapter3_Main24_Issue75_F2_P2_SignStump_TargetedFix_20261029.md) `docs/art-new` commit **`bd2013ca6b66370ef5c62cd4161ade396eb7122b`**.
+- 두 ZIP은 **본 ChatGPT 대화 /mnt/data 실제 납품**. GitHub는 Markdown만 커밋, PNG/GIF/ZIP 바이너리 원격 등록0; 대표 PC `F:\Downloads` 수령·실복사본 SHA 검증 전. **보호**: 승인 서리올빼미 원화 v1/v2/v3, Main23 환경43/지면9, F1·서리들쥐·Wolf/Bear/Fox·Ch1/2 리뉴얼Spider/Bee, Orna visible80/canvas84.63, Residence/Inn KEEP·HOLD, Main24 Quest/Save/UserData/MonsterDefinition/Scene/Unity/.meta 원본 변경0. `main` 직접 commit/Push/merge0.
+- **상태** `ART_CANDIDATES_DELIVERED / OFFLINE_FILE_QA_PASS / USER_FINAL_MOTION_AND_ENV_ART_REVIEW_PENDING / UNITY_DELTA_QA_REQUIRED / NOT_UNITY_APPLIED`. 대표 검토→Codex가 Owl 두 수정 프레임 및 F2 두 소품만 격리 Unity PPU/Pivot/가독성/통행 DeltaQA→별도 본편 승인. Hit/Defeat/Spawn/VFX0.
+
+
+## 2026-10-29 Main24 / #74 승인 Frost Owl v3 Idle8·Attack4 실물 애니메이션 파일럿
+
+- **바울 대표 v3 외형 승인/원본 동결**, Codex 기존 v3 정적 1포즈 6000.6.5f1 격리 Unity TECH PASS. 원본 PNG v3 SHA `81a31cf37cb834799ab5c9428da612ab13a5a496025805685daefed7b5d3c467` 바이트 그대로 보호. **지금 새로 제작한 모션12장에 그 기존 Unity TECH PASS를 확대 적용하지 않음**.
+- **실물 ZIP** `Limitless_FrostOwl_v3_Idle8_Attack4_8FPS.zip` **8,282,224 bytes / 24 entries / SHA256 `0caeeef60f325e1c7b76516b9596daad16f73466b4401968e81fa088101c4eb9`**, CRC PASS / SUMS23/23 PASS. `Frames/Idle/` **8개** / `Frames/Attack/` **4개** 모두512² RGBA SHA 고유; Idle00 승인 v3 원본 PNG와 바이트 동일. 시트 Idle 2048×1024, Attack 2048×512, 128/40 실축소 비교4, 8FPS GIF2 실제 주기 평균125ms(120/130ms 교차) 포함. PPU512 / Pivot(0.5,0.5) / Scale1.0은 **Unity Import 계약**이며 실제 새 Sprite.meta 생성/본편 적용0. 외형 재작화 아닌 v3 날개 외단·몸통 부유·꼬리 구역별 픽셀 변위/리샘플 모션.
+- **[제작/검수 정식 보고서](../../Chapter3_Main24_Issue74_FrostOwl_v3_Idle8_Attack4_AnimationPilot_20261029.md)** `docs/art-new` commit `815fc67d6e3dc037aa2400d56a200d9ba586a8ed`. `ART_ANIMATION_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_MOTION_ART_REVIEW_PENDING / ANIMATION_UNITY_NOT_VERIFIED / NOT_UNITY_APPLIED`. 바울 대표 모션 미술 승인 별도 필요; 기존 v3 외형 재승인 불필요. Hit/Defeat/Spawn/SkillVFX/BattleEffect0, MonsterDefinition/Save/Scene/Unity 본편0, main 직접 Push/병합0.
+
+## 2026-10-29 Main24 / #75 F2 첫눈의 숲 P2 환경 4종 독립 실 PNG 파일럿
+
+- P2 신규 후보4: `Candidate/F2_FallenSnowBranch_v1_CANDIDATE.png` **384×320**, `F2_SnowStumpPerch_v1_CANDIDATE.png` **320×384**, `F2_FirstSnowTrailSign_v1_CANDIDATE.png` **288×384**, `F2_GentleFirstSnow_Overlay_v1_CANDIDATE.png` **512×512**. 전부 투명 RGBA, 각각 단독 PNG; 바울 대표 미술 검토 전 후보만. 기존 F2 P1 셋 KEEP_CANDIDATE·울타리 v2 ART_HOLD·Owl v1/v2/v3 바이트 동결.
+- **ZIP** `F2_P2_Environment_4Assets_20261029.zip` 640,244 bytes / 9 entries, SHA256 `d749d7fd2937849326e9ecc3ca9f9e83f5646447e27d21fd1c3206ea0f650088`, CRC PASS / SUMS8/8 PASS. Preview 한장4종 및 실제128·40 종횡비 보존 축소. 포인트: 바닥길 바깥 낮은 눈나뭇가지·눈그루터기/빈횃대·화살표 표지판·정적 저불투명 눈발, 별도 Monster Spawn/Quest/ParticleSystem0. 미확정 가상 표지판 문양/눈접지 가장자리 정리는 최종 미술판정 **HOLD**.
+- **[P2 제작/검수 정식 보고서](../../Chapter3_Main24_Issue75_F2_P2_Environment4_ArtPilot_20261029.md)** `docs/art-new` commit `dbcc3796f01e01ce0a6f7d1db25163a5c82c259b`. 신규 PPU/Pivot/Sorting/Footprint·길·휠체어통행·실Unity QA `SPEC_PENDING / NOT_RUN`. 상태 `P2_ART_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`.
+- **공통 보호/전달**: 본 ChatGPT 대화에서 ZIP2 각각 독립 납품, GitHub PNG/ZIP binary0, 사용자 PC F:\ 복사확인 전. 기존 Main23 환경43/지면9, F1·서리들쥐·Monster/펫·Ch1·2 리뉴얼숲거미/독침벌·Orna visible80·Residence/Inn KEEP/HOLD·Quest/Save/UserData/Scene/.meta·Main24 기능 변경0. 사용자 미술 승인 후 Codex 격리 최소 QA → 별도 Unity 본편 적용 승인. main 무단 적용·Push·병합0.
+
+
+## 2026-10-29 Main24 F2 / Issue #74 후속 — 울타리 접지 v2 + Owl v3 표적 보완 파일 2개
+
+- **최신 기준**: [#74 Codex 통합 QA](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6488218748) 및 [기획 표적 발주](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6488506287). GroundOverlay·SnowPine·FrostShrub **3종 KEEP_CANDIDATE/원본 SHA 동결**. PathEdge v1과 Owl v1/v2도 원본 바이트 보존. 기존43 환경/승인지면9/F1/공식 몬스터·펫/Ch1·2 리뉴얼 원본, 오르나 visible80/Residence·Inn KEEP 등 변경0.
+- **새 2PNG만 실물 납품:** `Candidate/Environment/F2_PathEdge_LowFence_v2_CANDIDATE.png` **256×192 RGBA**, SHA `5a79c4ab41e5700dcaac1a68a0929323f10adf0643b7042bf0d3021ee26788ff` (울타리 윗부분 y<94 변경0, 바닥 접지 부분 alpha 변경 11,089px); `Candidate/Monster/FrostOwl_KeyPose_512_v3_CANDIDATE.png` **512×512 RGBA**, SHA `81a31cf37cb834799ab5c9428da612ab13a5a496025805685daefed7b5d3c467` (**Owl v2 alpha 262144px exact 동일**, RGB 얼굴/꼬리 지정 영역 내 25,114px만 차이, 영역 밖0).
+- **납품 ZIP** `Limitless_F2_Issue74_Followup.zip`, **1,560,774 bytes / 9 entries**, SHA256 `eee82ef0d9e0c8092f27258404aa12e1b917af68521128a6283b4ee5a3fba3a4`, ZIP CRC PASS, **SHA256SUMS 8/8 PASS**. 새 PNG2 + 오프라인 비교판3(`Issue74_Followup_OnePage_Review_OFFLINE.png`, `Fence_v1_vs_v2_256_128_40_OFFLINE.png`, `FrostOwl_v1_v2_v3_512_128_40_OFFLINE.png`) + Manifest·QA JSON·README·SHA 목록. ChatGPT 대화 파일 아티팩트로 제공; Windows F:\ 자동 배치/실복사본 hash 미확인, **GitHub PNG/ZIP 바이너리 미업로드**.
+- **판정**: `ART_CANDIDATE / OFFLINE_PNG_QA_PASS / USER_FINAL_ART_REVIEW_PENDING / UNITY_NOT_VERIFIED / NOT_UNITY_APPLIED`. 바울 대표에게 기존 울타리 대비 접지/올빼미 40px 실제 축소를 시각 승인받기 전 미술 PASS 주장 금지. F2 PPU·Pivot·Footprint·Sorting·길/휠체어 Collider·동일 Unity 몬스터비율 **SPEC_PENDING/NOT_TESTED**. 맵 타일 대량 생산·Idle/Attack·게임 본편 적용0, main 직접 Commit/Push/Merge0.
+- **[새 Issue #74 표적 QA 보고](../../Chapter3_Main24_Issue74_F2_PathEdgeOwl_TargetedFollowup_QA_20261029.md)** `docs/art-new` 실제 보고 커밋 **`a734c1459f49acd3ae076559cd6e2fa8d3a66593`**. 다음: 바울 대표 두 시안 최종 미술 판정 → 승인 시 Codex 격리 Unity 두 파일만 최소 QA → 별도 정식 적용 승인. 원본 자동 교체 금지.
+
+
+## 2026-10-29 Chapter3 Main24 / Issue #74 — 첫눈의 숲 환경 RGBA 4종 + 서리올빼미 v2 **실물 납품**
+
+- **실제 신규 PNG 후보5**: `Candidate/Environment/` 첫눈 지면 오버레이 **256×256**, 눈 소나무 **256×320**, 낮은 울타리 **256×192**, 낮은 서리 관목 **256×160**, `Candidate/Monster/FrostOwl_KeyPose_512_v2_CANDIDATE.png` **512×512**. 전부 **RGBA·투명 알파·bbox 검증 PASS**. 원본은 비파괴로 두고 ImageGen 아트 소품 분리·배경 마스킹, Owl 원화의 얼굴·꼬리 명암 표적 보완, 알파 exact unchanged; 실물 각 SHA와 정확한 상대경로는 아래 QA 보고.
+- **납품 ZIP** `Limitless_Main24_F2_Issue74_v2.zip`, 실제 SHA256 **`892345e78b83f09c932f4f1e2eeb2bf311c331c7490b325bda04fbdbaee54c4e`**, **1,897,130 bytes / 15 entries** / ZIP CRC PASS·SHA256SUMS14/14 PASS. ChatGPT 대화 다운로드로 전달, Windows F:\ 저장 직접 확인X / GitHub 바이너리 업로드X. `Preview/Issue74_OnePage_Review_OFFLINE.png` 2050×1260 원페이지, Owl v1-v2 **512/128/40** 실제 파일 축소4 + 환경4, 승인 Frostway 지면3 실물 vs 새 F2 overlay 오프라인 합성 비교 포함.
+- **Owl v1 보호**: 기승인 전 원본 `FrostOwl_KeyPose_512_CANDIDATE.png` SHA **`f60c41cfdc6f3d1bc1b05b62a2281d5f607dec322b9c5c4c3090cac725c09ab1`** 재확인, byte modification0. v2 SHA `91d3e638a94e873064a2ed06ead333535865301691a77952c4ffa81f376b5000`, 512² RGBA/alpha bbox(19,19)-(499,481) same/alpha pixel exact same. 40px 얼굴 가독성은 사용자 미술 판단 후 추가 조정 가능, Idle/Attack/VFX/Spawn/전투 생성0.
+- **PPU/피벗 원격 메타 근거**: 기존 NorthF1 Transition/Path/Prop FrostShrub/Waymarker, 승인 Frostway Ground의 importer `PPU=128` 확인. Pivot은 ground(0.5,0), shrub(0.5,0.0546875), Path(0.5,0.5) 등 서로 달라 **이번 신규 후보별 import Pivot/Footprint/실 WU는 `SPEC_PENDING`**. 새 .meta/Collider/Unity Scene/본편 생성0, 길·휠체어 폭과 타일 접합은 `NOT_TESTED`; 현재 검수는 **OFFLINE RGBA/CRC/SHA**까지만.
+- **기존 보호**: Main23 승인43/승인지면9, F1·서리들쥐·Wolf/Bear/Fox, Ch1·2 리뉴얼 숲거미·독침벌, 공식 몬스터·오르나 alpha-visible80px/canvas84.63px, 북서 Residence/Inn KEEP 및 미승인3모듈+신간판 HOLD, Save/Quest/Scene/GUID/Open16 그대로. 기존 #71 F2/올빼미v1 원본 ZIP·콘셉트 변경0; 맵 타일 양산0.
+- **[Issue #74 상세 제작·검수 보고서](../../Chapter3_Main24_Issue74_F2_Environment4_FrostOwl_v2_ArtPilot_QA_20261029.md)** `docs/art-new` 보고 커밋 `943d90eefcc3201d12cb0d7ed68eb513a31733f5`. **`ART_CANDIDATE / OFFLINE_PNG_QA_PASS / USER_ART_REVIEW_PENDING / UNITY_SCALE_NOT_VERIFIED / NOT_UNITY_APPLIED`**, 바울 대표 최종 미술 승인 필요. 다음: 시안 5종 검토→Codex 격리 Unity PPU/Pivot·3비율/휠체어 경로/공식 Ch2 동일배율 QA→별도 본게임 적용 승인. `main` 직접 commit/Push/merge0.
+
+
+## 2026-10-28 Chapter3 Main24 / Issue #71 — F2 첫눈의 숲·서리올빼미 1포즈 파일럿 **실물 납품**
+
+- **실물** `Limitless_Chapter3_Main24_F2_FirstSnowForest_FrostOwl_ArtPilot_v1_20261028.zip`, **SHA256 `e8b268617cc096ecb1f920c1f913a787ddbc234e247843d4e9a546fa12b09a53`**, 8,429,257 bytes/14 entries, ZIP CRC PASS / SHA256SUMS13/13 PASS. ChatGPT 생성 파일 다운로드로 납품. **사용자 F:\ PC 자동 저장 확인 아님, GitHub 바이너리 업로드0**.
+- **F2 환경**: 1448×1086 RGB 1장 콘셉트(`Concept/F2/FirstSnowForest_Environment_Concept_OFFLINE.png`, SHA `85928588798a1c3296546c94446f2d06872e2c3805ddf60c118e80167841075b`), 승인 Earth/ThinFrost/Gravel 실제 PNG 색·질감 vs 첫눈 F2 콘셉트 오프라인 비교(`Preview/F1ApprovedGround_vs_F2_FirstSnow_StyleCompare_OFFLINE.png`, 1600×850/SHA `cd94068a...`), 환경 신규 필요 자산 **8종 목록 CSV**. 경로는 중앙 흙·자갈·통행 형태로 명료하게 표현하되 실제 통행폭/PPU/Collider 확인 `TBD`. **환경 개별 타일 PNG0 / 맵 타일 대량 생산0**.
+- **서리올빼미**: 신규 독립 1포즈 `Candidate/Monster/FrostOwl_KeyPose_512_CANDIDATE.png`, **512×512 투명 RGBA**, SHA256 `f60c41cfdc6f3d1bc1b05b62a2281d5f607dec322b9c5c4c3090cac725c09ab1`; 실제 동일 512 파일에서 축소한128/40 PNG 및 보기판(`Preview/FrostOwl_512_128_40_ActualPNG_Readability_OFFLINE.png`, SHA `2a57f219...`). 청회색 큰 날개·또렷한 얼굴/꼬리·어두운 윤곽, 서리 기운 연출로 F2 첫 한기 사용 몬스터 표현. **Idle/Attack/Hit/Defeat 0**, 전투 상태·VFX·몬스터 공식 ID·스폰 변경0.
+- **Chapter2 스타일**: 이전 `필드09 몬스터 아트 프리뷰 보드.png`의 **기존 공식 5종 표시 부분**으로 비교판(`Preview/FrostOwl_vs_Chapter2_OfficialFive_PreviewReference_OFFLINE.png`, SHA `3828f3af...`). 원본 Chapter2 각 Sprite Sheet를 개별 추출해 동PPU Unity 검증한 것은 아님. F1 GameView 원본도 직접 열지 않음. **비교판은 전부 OFFLINE**.
+- **상세 보고서** [`Chapter3_Main24_Issue71_FirstSnowForest_FrostOwl_ArtPilot_v1_20261028.md`](../../Chapter3_Main24_Issue71_FirstSnowForest_FrostOwl_ArtPilot_v1_20261028.md) / `docs/art-new` **커밋 `694f6c751cc7580520994c86fb23c1532032cdc8`**.
+- **기존 KEEP/HOLD**: Main23 환경43·승인지면9·F1·서리들쥐·Wolf/Bear/Fox·공식몬스터/NPC/Save/Quest/Scene/GUID 불변. 오르나 **visible80px / canvas84.63px** 기획안, 기존 Residence·Inn 내장 간판 KEEP, 신 RoofGable/Trim/EntryDoor 및 Inn 단독 간판 HOLD. **최종 `ART_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`; 제품/main 직접 적용·Push·Merge0.** 다음은 대표님 시각 검토 후 Codex 별도 격리 화면 QA.
+
 
 ## 2026-10-23 Main23 #59 최종 표시 기획 규격 — 80px visible 우선 (82px canvas 과거 후보 대체)
 
@@ -348,248 +642,3 @@ Owl Attack4 새4SHA/40px 대비 개선은 확인했으나 ANIM_REVISE_CONTINUE /
 - **OPEN16 해결0/미해결16**: Codex가 CSV·좌표JSON 로컬 확보 보고만 공유. 원문 16행은 아트 담당 읽기 불가. 파일/좌표/심각도를 추정해 다른 자산 수정하지 않음.
 - [제작·오프라인 QA 정본](../../Chapter3_Main23_FrostwayVillage_GameArt_VariantTiles_v8_Art_QA_20261022.md) **`docs/art-new` commit `391bb582dec0680858e56f8d009b2e595322559a`**. 현 상태 `OFFLINE_QA_PASS / CODEX_V8_DELTA_QA_PENDING / USER_ART_APPROVAL_PENDING / VILLAGE_ART_HOLD`. **main 직접 commit/push/merge 0**, 본게임 Unity Scene/Save/UserData 및 F1/Wolf/Bear/Fox 등 승인자산 변경0.
 - 다음: v7·v8 ZIP SHA 확인 → Codex 격리 실제 Unity 16:9/4:3/21:9 **5×5/8×8 동일 Tile ID·카메라 동배율** 시각/통행 DeltaQA → 바울 대표 최종 미술 승인. OPEN16 CSV 원문 공유 후 관련 항목만 후속 결정. 세션 포화 전에 문서 우선 최신화.
-
-
----
-
-## EOD 2026-10-24: previous main history retained
-
-## 2026-10-22 EOD 마감 — PR54 병합·원본 SYNC_COMPLETE 확인
-
-[PR54](https://github.com/HappyPaul812/Project-Limitless/pull/54) merge `e2801286ccd26fe2060d9fee658ac272da4b4f2b`: 승인 Bear v4·Fox v7 공유 코드 양쪽 보존6파일 + 마을 최종승인9 Sprite/Tile 신규등록39파일 = 제품45파일, 담당 문서·근거152파일, 총197파일 통합. 신규 정적10/격리Unity15 PASS, 기존154/162/Wolf/Main22 전체QA 재실행0.
-
-실제 GitHub main=origin/main=원본local main=e2801286, index=HEAD/staged0 확인. 백업912파일190,738,290bytes SHA불일치0, 보호7179파일 중 승인문서6개 외 변경0. Save/UserData/개인설정/Editor·미커밋 작업 보존. 이미 원본적용 Bear/Fox6파일 재작성0. dirty310→308/untracked554→550은 승인6경로 Git 편입이며 그 밖 상태 동일. 원본Editor/Play/포커스0, 자연Import·손플레이는 미검증.
-
-이 문서는 PR54 완료 시점 스냅샷입니다. 문서 후속PR 이후 최종3자 SHA는 로컬 `Temp/EOD20261022/OriginalLocalSync_Proof.json` 및 Issue #53 완료기록을 정본으로 확인합니다. 마지막 관련 제품통합 commit e2801286. 추가제품 변경0.
-
-OPEN16 미해결16 유지, Main23 전체·Main24 Save #46 HOLD. 미승인TTS READY104/152·Main21 KEEP WAV7·미완BGM/SFX 게임 적용0. 다음은 별도 승인 후 해당 범위만 진행합니다. 기존 승인기능 재구현·전체QA 반복 금지.
-
-## HISTORY — EOD 실행 전 기록 보존
-
-## 2026-10-22 EOD 승인분 통합 — 신규 delta PASS / PR·원본 동기화 대기
-
-Issue #53: Bear Run6 v4 + Fox Run6 v7 공유 펫 정의를 모두 보존하고 승인 제품6파일을 선별했습니다. 기존154/162 전수QA 재실행0, 원본 이미 적용된 파일 재복사0. 마을 최종승인9 PNG는 별도 FrostwayVillageV10 Sprite9/Tile9 및 meta39파일로 등록, 기존49/Scene/Sorting/통행 변경0. 제품 총45파일. 격리 Unity15 PASS/0FAIL, 신규 정적10 PASS. 기존 Wolf/Main22/F1/서리들쥐 재검수0.
-
-담당 문서는 오늘 변경분만 파일별 병합·고유 HISTORY 보존. TTS READY104/152는 청취승인이 아니며 Main21 KEEP WAV7 및 미완 BGM/SFX 제품 적용0. OPEN16 미해결16, Main23 전체·Main24 Save #46 HOLD.
-
-원본912파일190,738,290bytes SHA백업, 총7179 SHA 보호. 원본Editor/Play/포커스0. 브랜치 codex/eod-integration-20261022. 마지막 승인 제품 commit cad73927(선행 Bear 9cf0e569). 최종 PR/merge/동기화 증거는 후속 마감 기록으로 확정합니다.
-
-## HISTORY — 실행 전 기존 기록
-
-## 2026-10-22 Main23 서릿길 마을 v9 — 새 01 포함 family 9종 비파괴 대체 파일럿
-
-- **사용자 최신 발주**: Codex v8 실제 기술PASS/미술 Earth·ThinFrost·Gravel 모두 HOLD. 02·03만 반복 수정하는 방향 중단. 기존 공식43 PNG 원본 보존 상태로 **family별 새 01/02/03 전9개 `Candidate/Tiles/` 독립 후보**. 원본 v8 ZIP 실물 SHA `6a9fa1c3c0c1ffef3ac43d3541a28bbc0a16310d2e0f8c267ec7177d731d712f` 확인.
-- **v9 납품 실물**: `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_VariantTiles_v9.zip` / SHA256 `afea1ed0b357a5bdce9e962c7969b81b77d29e1ed11b7b9dc170d57747fbeb79` / 21,738,388bytes / 73 entries. 오프라인 QA: 원본 게임 PNG49 byte/SHA 모두 보존(승인43 포함); 새 후보9 전부256 RGBA/opaque; 54 ordered seam delta0; ZIP CRC·SHA256SUMS72/72 PASS. v8↔v9 동일 타일ID/128px 셀 5×5/8×8 비교6, **Unity GameView 아님**.
-- **01 고정 원인**: v8만의 큰 01 돌/풀과 신02/03 가는 입자 차이가 사각 구획의 유력 원인. v9 전3종 질감·모티프를 한꺼번에 교체한 후보에서 개선 가능성을 시각 비교하지만 01 단독의 인과 검증은 아니다. **Gravel 등의 미세 반복/그리드 잔존·ThinFrost 표현**은 바울 대표 미술 검토 및 Codex 실제 Unity 검사 필요.
-- **OPEN16**: Codex CSV/XY 원문 art-new에 아직 미전달. 미해결16/완화0/해결0, 원본문제와 무관한 자산 수정0. 공식 SkillShop·RoofGable·StonePath·43게임PNG·v8 variant6 및 F1/Wolf/Bear/Fox/Mouse·Unity/Save/원본 PC파일 보호.
-- **GitHub 보고**: [v9 제작·QA](../../Chapter3_Main23_FrostwayVillage_GameArt_VariantTiles_v9_Art_QA_20261022.md), `docs/art-new` 보고 커밋 `134271fbc83c6d0a79e465c4ac0388a5a004b077`. ZIP/PNG는 대화 다운로드로 납품, GitHub 바이너리 업로드0. v9는 **CANDIDATE / OFFLINE_QA_PASS / USER_ART_APPROVAL_PENDING / NO_UNITY_APPLY**.
-- **다음**: 바울 대표 9개 PNG 및 5×5/8×8 동일배치 전후 미술 검토 → (별도 승인/지시 시) Codex 격리 Unity DeltaQA 및 OPEN16 원문 전달 → 최종 미술 승인 후에만 공식 타일 반영 검토. `main` 직접 commit/Push/merge 금지.
-
-## 2026-10-22 Main23 서릿길 마을 VariantTiles v6 — 지면별 02·03 6종 신규
-
-- 바울 대표 명시 발주: 단일 Base를 계속 수술하는 방식 대신 Earth·ThinFrost·Gravel 각각 **01 보존 + 02·03 신규**. 사용자 ZIP v5 실제 SHA `1affc1a4c23f3bcc6a9e9e18924b08bce3134eab065d8362757725f96e7f71b4` 입력 검증.
-- 실물 납품 `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_VariantTiles_v6.zip`, **SHA256 `519ed96fa6157b7de451830412d6e881b633241b0f8cc459d186465765a4ea7e`**, **17,658,178bytes / 71 entries**. 실제 ZIP은 ChatGPT 대화 다운로드 첨부; GitHub에는 문서만 커밋하고 바이너리/Unity로 자동 복사하지 않음.
-- 게임 PNG **기존 43/43 byte-identical SHA 유지 + 신규6 = 49**. 신규 `Tiles/Frostway_Ground_Earth_02/03.png`, `Tiles/Frostway_Ground_ThinFrost_02/03.png`, `Tiles/Frostway_Ground_Gravel_02/03.png`; 모두 256×256 RGBA, 완전 불투명. 새 아트는 원본 특징 돌/풀/서리 실루엣의 **비왜곡 국소 패치 교환**으로 원본 팔레트·접지 질감 유지, 01 3종 원형.
-- 01/02/03 타일 각각 외곽12px 원본 완전 보존. 동일 지면 family 내부 3×3 ordered 이웃쌍 × 세로·가로 모두 max RGBA edge delta **0**. 독립 시트 PNG/ZIP CRC/70 SHA 목록 검증 PASS.
-- **3×3·5×5** 01 단독 비교와 신규 01/02/03 **혼합 오프라인 Preview**, 5×5 모든 수평/수직 같은 variant 이웃 **0쌍**으로 구성, 실제 Unity TileGrid/화면/통행 검증은 아직 수행하지 않음. 공통 배경 질감 일부 주기성은 남아 **미술 ART_HOLD 유지** 및 대표 최종 승인 대기. `Frostway_Path_Stone_01`과 SkillShop·Roof Gable 기존 승인 수정·문·지붕·포탈 등 모든 기존 43 원본 PNG byte 보존.
-- **OPEN16**: Codex가 이전 CSV/좌표JSON 실물을 로컬 확보했다는 Issue #45 최신 보고 확인. 그러나 **행별 원문 파일·좌표·재현조건은 현재 아트 세션 및 공개 Issue에서 열람 불가**. v6는 신규변형6만 제작해 기존 원본 OPEN16 **해결0 / 현재16**. 행별 근거가 없으므로 타일 관련 항목과의 정확한 매핑·타 담당 기존 PASS 항목 수정 금지. 증거 문서 공유 후 후속 선별수정.
-- 제작·QA 상세 [Chapter3_Main23_FrostwayVillage_GameArt_VariantTiles_v6_Art_QA_20261022.md](../../Chapter3_Main23_FrostwayVillage_GameArt_VariantTiles_v6_Art_QA_20261022.md), 커밋 `baeaee947f44233a4e50e6456dc3725c4f7e958d`.
-- **후임**: Issue #45, docs/planning 최신 정본 → ZIP 실제 readback SHA 확인 → Codex 격리 5×5 01/02/03 섞은 실제 Unity 3비율·통행 DeltaQA → 대표 미술 승인 판단. 본게임 Main23/원본 Unity/Save/UserData/F1/승인 Wolf/Bear/Fox/main 변경 금지. `main` 직접 Commit·Push·Merge 금지.
-
-## 2026-10-22 Main23 Frostway GameArt v7 — 기존43 보호, 변형02/03 모티프 재설계
-
-- 바울 대표 v7 별도 승인 발주와 Issue #45 최신 Codex v6 격리 검수: 43PNG+신규6 ZIP 기술 PASS·Unity 3화면비/통행6/6 PASS이지만 Earth/ThinFrost/Gravel 01/02/03 혼합 5×5 모티프 유사성으로 미술 HOLD. 개별 OPEN16 원본 CSV/좌표JSON은 Codex 로컬 회수 보고만 존재, art-new가 직접 열람할 원문 없음.
-- 소스 ZIP `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_VariantTiles_v6.zip` SHA `519ed96fa6157b7de451830412d6e881b633241b0f8cc459d186465765a4ea7e`. 최종 v7 실물 ZIP `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_VariantTiles_v7.zip`, **SHA256 `d499f08481751c0fcda3298bbd37513466168b73105dd224b2cb767651bb691c`**, 30,503,515 bytes / ZIP 멤버 **88**, CRC·내부 SHA256SUMS 87/87 PASS.
-- **43 PNG 기존 v6 바이너리 43/43 완전 동일** (01 타일3·SkillShop/Gable/StonePath/포탈 등). **02·03 변형6 PNG만 변경**, 파일명 그대로. 256×256 RGBA/alpha255. 다른 PNG나 자동 배치·Overlay 추가 없음.
-- 변형 미술 방향: 원본 미세 입자의 **공간 주파수/색 범위**를 참조한 새 독립 바탕 질감과 서로 다른 **각진 파쇄암·토양 미세균열·서리결정 띠·비대칭 자갈 퇴적/풀 실루엣** 사용. 같은 원본 대형 돌/풀 픽셀패치 위치만 바꾸는 v6 방법에서 전환.
-- **오프라인 QA**: 동일 지형 내 01/02/03 가로9/세로9 이웃조합(18/family) 모든 max edge RGBA delta **0**; v6/v7 동일 Tile ID 랜덤배치 **3×3(원본256/cell)·5×5·8×8(표시128/cell)** 전후 비교, 01 단독 반복/실제 셀 접합/모티프 중심2× 확대, SHA/Pillow PNG PASS. v6 대비 변형 SSIM 크게 감소. **주의**: 01은 기존 미술 보존 때문에 v7 02/03과 질감이 차이나 큰 사각 구획이 느껴질 수 있음. 실제 Unity 시각 반복/타일 그리드 은폐 **미술 승인 미완**.
-- GitHub [제작·QA 문서](../../Chapter3_Main23_FrostwayVillage_GameArt_VariantTiles_v7_Art_QA_20261022.md), 커밋 `e641438cf2010164c2ec83298bab7e5709504004`. **실제 PNG/ZIP은 ChatGPT 현재 대화 다운로드 첨부만**, GitHub에 바이너리를 올리지 않음.
-- **OPEN16 해결0/미해결16**: 로컬 Codex가 원본 CSV/좌표 JSON 확보했지만 파일별 16행 원문이 art-new에게 공유되지 않음. 현재 원본 43 자산 모두 보존했으므로 OPEN16이 사라졌다고 주장 금지. 다음 세션/담당은 Codex 증거 전달→기획/아트 항목 분류→근거에 따라 해당 자산만 추가 수정.
-- **후속:** Codex 격리 Unity 16:9/4:3/21:9 실제 TileGrid에 v7 5×5/8×8 설정·통행 proxy/접합/격자 판단 후 대표 미술 승인. v7 상태 `CANDIDATES_DELIVERED / OFFLINE_QA_PASS / ART_HOLD_REVIEW_PENDING / NOT_INTEGRATED`. 본게임 Main23, 승인 F1/Wolf, Bear/Fox/다른 챕터, Save/UserData 변경 없음. `main` 직접 commit/push/merge 금지.
-
-## 2026-10-22 Main23 Frostway VariantTiles v8 — texture harmonization
-
-- **2026-10-22 15:08 KST 지시**, Codex v7 실Unity 5×5/8×8/3화면비·통행 기술 PASS지만 Earth/ThinFrost/Gravel 01·02/03 미세입자/중간 명암·지면 바탕 질감 차이로 **ART_HOLD**. 01/기존43 PNG 바이너리 보호한 채 **변형 02·03 여섯장만 질감 정합**, 추가 돌·풀·서리 모티프/타일 자동배치 생성 금지.
-- 소스 v7 ZIP `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_VariantTiles_v7.zip` 실제 SHA256 `d499f08481751c0fcda3298bbd37513466168b73105dd224b2cb767651bb691c`.
-- 실제 v8 ZIP `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_VariantTiles_v8.zip` SHA256 **`6a9fa1c3c0c1ffef3ac43d3541a28bbc0a16310d2e0f8c267ec7177d731d712f`**, 40,921,124 bytes, **98 entries**, 내부 `SHA256SUMS.txt` 97/97 + ZIP CRC PASS. **게임 PNG49 = 수정6 + 원본 byte-identical43**. 실제 ZIP은 ChatGPT 대화 다운로드 첨부에 있으며 GitHub에는 바이너리 등록하지 않음.
-- 수정 정확6: `Tiles/Frostway_Ground_Earth_02/03.png`, `ThinFrost_02/03.png`, `Gravel_02/03.png`. 256×256 RGBA alpha 그대로. **새 모티프 없이 v7의 형상/위치를 보존**하며 Gaussian 대역별 미세/중간·저중주파 대비와 바탕 명암을 소스01과 조화 (1.1/3.9/11.8px). 01 각3·StonePath·SkillShop/Gable·Portal/건물 등 기존43 파일 **바이트 동일**.
-- 3 family 각 01→02→03 ordered 조합 **54 seam 사례 edge RGBA maxdiff0**. 3×3 원본256/cell, 5×5·8×8 128/cell 동배치 v7-v8 오프라인 비교, 01 8×8 단독 및 1:1 모티프/사각 구획 검사. **실제 Unity GameView 아님.** 통계거리 Earth 02 6.96→1.06 /03 7.21→1.05; ThinFrost02 5.74→1.13 /03 6.05→1.17; Gravel02 6.77→0.91 /03 6.65→0.76. 이 숫자는 **입자/명암 통계 정합**이지 미술 PASS 자동 판정 아님.
-- **남는 위험:** 01의 큰 풀·돌 실루엣과 02/03 작은 모티프 체급은 유지되어 큰 구획이 남을 수 있음. 01 변경 금지 때문에 완전 해결이 어려우면 Codex가 신규 얇은 Overlay/비정규 변형 배치의 **명세·Sorting/PPU/타일 경계·랜덤 정책**을 먼저 확정한 후 시안 검토. v8에서 새 Overlay PNG/TileGrid 임의 구현하지 않음.
-- **OPEN16 해결0/미해결16**: Codex가 CSV·좌표JSON 로컬 확보 보고만 공유. 원문 16행은 아트 담당 읽기 불가. 파일/좌표/심각도를 추정해 다른 자산 수정하지 않음.
-- [제작·오프라인 QA 정본](../../Chapter3_Main23_FrostwayVillage_GameArt_VariantTiles_v8_Art_QA_20261022.md) **`docs/art-new` commit `391bb582dec0680858e56f8d009b2e595322559a`**. 현 상태 `OFFLINE_QA_PASS / CODEX_V8_DELTA_QA_PENDING / USER_ART_APPROVAL_PENDING / VILLAGE_ART_HOLD`. **main 직접 commit/push/merge 0**, 본게임 Unity Scene/Save/UserData 및 F1/Wolf/Bear/Fox 등 승인자산 변경0.
-- 다음: v7·v8 ZIP SHA 확인 → Codex 격리 실제 Unity 16:9/4:3/21:9 **5×5/8×8 동일 Tile ID·카메라 동배율** 시각/통행 DeltaQA → 바울 대표 최종 미술 승인. OPEN16 CSV 원문 공유 후 관련 항목만 후속 결정. 세션 포화 전에 문서 우선 최신화.
-
-## HISTORY — 기존 main·담당 고유 기록 보존
-
-## 2026-10-21 Chapter3 Main22 첫 플레이 F1 환경 6종 시각 검토
-
-- **기획 우선순위 재잠금:** 서리들쥐 A Combat Fix v2는 바울 대표 **미술 승인 완료**, Codex **23PASS/0FAIL** Delta QA. 실제 게임 몬스터 연결 완료 보고는 별도 대기. **Main22 F1 첫 플레이**가 최우선, 설빙의 폭군 B 후반 보스 애니메이션/마을 NPC/F2~F5는 보류. 서리폭군은 잘못된 표기, 공식 보스 이름은 **설빙의 폭군**.
-- 실물 기준 `Limitless_Chapter3_ArtNew_F1_Frostway_Pilot_v1.zip` 중 **F1 PNG6** 모두 실제 열어 확인. 각 256×256 RGBA; 원본 PNG 바이트를 원본 ZIP과 SHA 대조, 6/6 완전 동일. Chapter2 공식 `DeepCore_Ground_Base.png`, `DeepCore_Cliff_Boundary.png` 2종 참조로 질감·명도만 비교(서로 다른 바이옴/다른 소스 크기).
-- 원본 미술 진단: 흙·잔디 평면적, 서리가 지나치게 전면 회색, 전환부 점무늬가 소재보다 노이즈, **길 오버레이 통로 가독성 부족**. 관목/표지판은 이번 수정 대상 제외해 보존. 6종 모두 **F1 사용자 미술 최종 승인 전: HOLD**.
-- 새 **3종 표적 수정 샘플**(흙 지면/절제된 얇은 서리/전환부 오버레이)은 별도 후보 PNG로 제작, 기존 6개를 전혀 덮어쓰지 않음. 128px 전후 비교/오프라인 길 연결 시안/Chapter2 공식 아트 참조/2×2 기본 지면 Seam QA 포함. 후보 미술완성도 PASS나 Unity GameView 주장 금지.
-- 실제 ChatGPT 다운로드 ZIP: **`Limitless_Chapter3_NorthF1_ArtReview_Samples_v1.zip`**, SHA256 **`dd9963d2a2ce442ad12ecccc8c3ae74edbfb7421eb838003d21ae2df767bd086`**, 약 1.15MB, 원본6+수정후보3+Preview4+QA3+Manifest1+SHA 목록1 = 18파일. GitHub에는 바이너리 미등록, 해당 대화에서 받는 실물임.
-- 제작·원본 SHA·검증·한계 문서 [Chapter3_F1_Original6_ArtReview_TargetedGroundSamples_20261021.md](../../Chapter3_F1_Original6_ArtReview_TargetedGroundSamples_20261021.md), 커밋 **`929eff1f668cbcbea1fdd97475aef75741a10bfd`**.
-- **승인/기술 게이트:** 대표가 초기 서리 밀도/흙 질감/전환부 시안을 검토해 준 뒤 좁고 불명확한 길의 **최소 수정** 범위를 확정; Codex의 진짜 F1 PPU/Pivot/TileGrid/Collider와 휠체어 통로 조사 및 실제 Unity F1 구현/Play Mode는 이후 단계. 이번에는 2×2 Seam·PNG RGBA·ZIP CRC 등 오프라인 QA만. `main`/Unity/Save/GUID/Monster 승인원본 및 다른 담당 Chapter1·2 리뉴얼 수정0.
-- 새 세션 재개 시 가장 먼저 Issue #30 및 `docs/planning/문서/00_프로젝트/Chapter3_20261021_F1_Main22_FirstPlayable_Priority_And_BossDefer.md`를 다시 읽고 F1 3종 후보 미술 의견 확인할 것. 설빙의 폭군 전투 애니메이션 선행 제작 금지.
-
-## 2026-10-21 F1 환경 미술 HOLD — 신규 6종 개선 v2 실물 납품
-
-- [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 및 최신 기획/코덱스 F1 미술 HOLD에 대응. F1 **흙/얇은 서리/단방향 전환/흙길/서리 관목/길 표지판** 각각 신규 후보 1종씩 **256×256 RGBA PNG6** 제작. 이전 F1 원본6 바이트 유지, 기존 지면 시안3 별도 보존. Main22 우선, 마을·F2~F5·설빙의 폭군·신규 전투 아트 제작 안 함.
-- 실물 ZIP: `Limitless_Chapter3_NorthF1_Environment_6_ArtImprovement_v2.zip`, **SHA256 `8158f501763b525022b8b9fc1645fe2b0a5c0bc8bf9f73aabcb02024c3a3235c`**, 3,897,421 bytes, 내부23파일 (후보6·원본6·Preview4·반복QA4·JSON1·Manifest1·SHA목록1). ChatGPT 대화 다운로드 첨부; GitHub에는 **PNG/ZIP 바이너리를 올리지 않음**.
-- **QA 오프라인 PASS**: 파일 디코딩/규격6, 원본6 바이트 SHA 일치, Ground/ThinFrost 첫/끝 변두리 X/Y 픽셀 일치, Ground2의 2×2 및 3×3 반복 QA, ZIP CRC. `Preview/F1_Earth_Frost_Path_Composite_OFFLINE.png`은 Unity 화면이 아니라 PIL 합성.
-- **미술 승인 대기**: 그림은 1254 고해상도 원화에 기반한 256 후보이므로 수동 픽셀 마감/실 게임 적용 보장 아님. 큰 반복무늬는 3×3에 보일 수 있음. 단방향 오버레이·보행 통로의 실제 통행 폭/PPU/Collider/TileGrid·GameView는 Codex 실측 대기. **USER_ART_REVIEW_PENDING / NOT_UNITY_INTEGRATED**.
-- [제작·QA 보고](../../Chapter3_NorthF1_Environment_6_ArtImprovement_v2_QA_20261021.md), `docs/art-new` commit `4821d6fec8180a266a1580dc4eb175f6b6145474`. **main 직접 커밋/Push·병합 없음**.
-- 후임: 새 ZIP의 실물 6 PNG/비교판을 확인해 대표 미술 판단 먼저 받기 → 필요 시 그 지적 파일만 표적 수정 → Codex 기술 계약/Play Mode F1 검증 후 Unity 통합 요청. 기존 공식 캐릭터·서리들쥐 전투·설빙의 폭군·Chapter1/2 리뉴얼 보호.
-
-## 2026-10-21 북부 F1 v2 부분 합격 → 3종만 v3 표적 보완
-
-- Issue #30의 Codex v2 격리 QA: **기술 PASS / 미술 3 PASS, 2 HOLD, 1 FAIL**. 대표님 지시대로 KEEP 3 **흙 지면/흙길/서리 관목**의 바이트·SHA 절대 보존, Thin Frost/Transition/Waymarker **3종만** v3 PNG 보완.
-- 실제 납품: **`Limitless_Chapter3_NorthF1_Environment_6_TargetedFix_v3.zip`**, SHA256 **`488a65c051d1d017787771e0169124e47437b472911caa9949fdd59e55079054`**, 5,524,917 bytes, **20파일**. `Art/` 후보6 PNG는 모두 256×256 RGBA, PASS v2 PNG 3개는 각각 SHA `ccf2c22e90bee292ecf2d0d030dad53e0032457272ebb94fccdf6491fabcf8b9`, `e78b41d48707dfce6a79dd4e826f864c5c2608b45a0f457af414ee9768a20175`, `6c83c88881e7f89245ed580d50424b2671629ad9491da93f247aab99bfe4746e`로 완전 동일.
-- 수정 v3 SHA: Thin Frost `12fe03d156944e1b72aec4e807770ee8016c61fe1de5804366819e716b97c30c`, Transition `93126dd1cda0f3b97823ae4756344600ed7f6af619eb42013d1ec45a4933c4d1`, Waymarker `6e55b64dbc2e906a50cf8b7310849bb156a90bc40436f28a86832e59e232b589`.
-- v3 변경: 큰 반복 서리 얼룩의 밝기 감소(기술 참고 색차>28 픽셀 4358→1569), 흙 바탕+우향 알파 오버레이→얇은 서리 오른쪽 타일 **양쪽 경계 최대 RGBA delta0**, 표지판은 한쪽 평평한 꼬리/오른쪽 한쪽 화살촉. **오른쪽은 PNG 표시 기본 방향이지 Main22 실제 길 안내 방향이나 목적지를 확정한 것이 아님.**
-- 실제 ZIP/PNG는 이 ChatGPT 대화에서 다운로드 제공; GitHub에는 QA/Manifest/해시 **문서만** 기록하고 바이너리 미업로드. `docs/art-new` 제작 QA [Chapter3_NorthF1_Environment_6_TargetedFix_v3_QA_20261021.md](../../Chapter3_NorthF1_Environment_6_TargetedFix_v3_QA_20261021.md), 커밋 `b18d06fbbf318cfeff085a86aeb198b8b3aafe95`.
-- **오프라인 PASS / 미술·Unity 미승인**: 2×2/3×3 반복, 우측 연결, 표지판 128px 비교, ZIP CRC. 이미지 합성은 Unity GameView가 아님. Single-tile 반복 특징 잔존 가능/4방향 오토타일 아님/PPU·TileGrid·Collider·휠체어 통행폭 및 실제 F1 Play Mode 미검증. 현재 F1 전체 미술 상태 계속 **HOLD**.
-- 다음: Codex에 **이번 변경3+KEEP3 SHA만 격리 Delta QA** 요청 → 바울 대표 최종 미술 승인 → 별도 승인 후 Unity Main22 첫 플레이 구현. 다른 F2~F5·마을·설빙의 폭군·승인 서리들쥐·Chapter1/2 원본 보존, `main` 직접 반영 금지.
-
-## 2026-10-21 Main23 서릿길 마을 v3 — 개별 게임 아트 후보 43종
-
-- 이번에는 ArtPilot v2 11장 콘셉트를 다시 포장한 것이 아니라 **독립 Sprite PNG 43종** 제작: Tile4 (256 RGBA/상하좌우 경계 일치), 전환/길 경계2, 독립 건물5, 지붕·벽·문 모듈9, 생활소품14, 상점/방향 표식6, 비작동 포탈 석재3. 2×2·3×3 반복QA8·16:9/4:3/21:9 오프라인 배치3·자산 미리보기1, Manifest/QA/SHA4 = ZIP 총59파일.
-- 실제 사용자 ZIP: `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_v3.zip`, 최종 ZIP SHA **`2a74677d5f62d7e13e64ea85ba62e12175be0be0e0d19864c23233f1bd84e79a`**, 17,311,281 bytes; ChatGPT 대화 다운로드에 실제 파일 존재. 브랜치에는 **아트 바이너리 없이 보고 문서만** 기록함.
-- SHA mismatch 감사: 이 작업공간의 v2 ZIP 해시 `2142fe641c64a2ead8ad37309258d49727f35e5aaea74e429cbd6bae546154ad`는 기존 기록과 일치, 19 ZIP entry/CRC PASS·Manifest 기준 15 PNG SHA 일치. Codex 대표님 F: 실물에서 측정한 **`19dfad3cc6f7e27b03e1dcfc194cdb1bf56d9e133b48f303288eff98886833d`**는 다른 사본. 두 번째 사본 실물 미접근이므로 **차이 원인 미확정**, Codex ZIP 엔트리·PNG SHA 대조 필요. 신규 v3 ZIP은 작성 후 바이트 해시 기록했으며 최종 전달 파일과 동일.
-- 오프라인 PASS: PNG 디코딩/독립 RGBA/전부 외곽에 투명 여백/지면4종 edge pixel match/2×2·3×3 자료/ZIP CRC·SHA. 최초 지면 외곽의 검은 선 결함은 최종본에서 제거 후 재검증. 오프라인 마을 배치 PNG는 **Unity GameView 아님**.
-- 제한: 건물 지붕·벽·문 모듈 간 실사용 접합/Unity PPU·Pivot·Collider·실제 휠체어 3WU 통행/포탈 비작동·캐릭터와의 스타일 조화·Sorting 미검증. 미술 **ART_CANDIDATE / REPRESENTATIVE_APPROVAL_PENDING**, 정식 GameReady PASS 주장 금지. Portal은 돌기단만 있고 VFX/연결 기능 없음.
-- [GitHub 보고](../../Chapter3_Main23_FrostwayVillage_GameArt_v3_ActualDelivery_QA_20261021.md) 커밋 `b7ddd71895288a077c55fdb3e0a91375ab43f604`. Main23 기획 정본 및 Issue #45를 우선 확인하고, Codex 변경분 검수/대표 승인 후에만 실제 Unity 적용. `docs/art-new`만 사용, **main 직접 Commit/Push·병합 금지**. F1 원본6·기존 공식 인물/몬스터·Chapter1/2 아트/Unity/Save 보호.
-
-## 2026-10-21 Main23 Frostway Village v4 — 두 PNG 분리잔여 제거
-
-- Codex [Issue #45](https://github.com/HappyPaul812/Project-Limitless/issues/45) v3 DeltaQA: **PNG43/CRC/Manifest 기술 PASS, 격리 Unity 3화면비 조립·통행 QA 완료**, 다만 두 PNG의 다른 원화 조각 때문에 미술 FAIL, Tile4의 3×3 반복무늬 미술 HOLD. Main23 정식 씬/퀘스트 구현 완료 상태 아님.
-- **v4 표적 수정 완료**: `Buildings/Frostway_SkillShop_Building.png` x12..28/y196..376 범위의 **별도 연결조각 2496픽셀**, `Buildings/Modular/Frostway_Roof_Gable.png` x100..144/y183..206의 **별도 조각 712픽셀**만 삭제. 사각형 일괄 마스킹 아닌 alpha connected-component 제거. **두 Sprite 본체 RGBA 픽셀은 전부 v3와 동일**.
-- 변경 PNG v4 SHA: SkillShop `ef34b49de4f807debf4a69e1947eb9b8e02a543ee117ca2867fe3aa06a5efb17` / Roof Gable `37ea6a69844b662c40583cea3d457ff0c47344aef7054ff8e32b4d09870dceb0`. v3 원본 SHA 각각 `7e3562c22f00a07a85f0ab0349b8119dff924f3ef4dccf199cccdc9ec367be89` / `4971eea0e473ec7c7c1579001a454be52417fd9f3f38b9e223b00e0deaaf71ec`.
-- **기존 게임 아트 나머지41 PNG의 원본 ZIP entry 바이트/SHA 41/41 동일**, 특히 Tiles4 PNG 모두 수정0. 새 3×3 Pattern HOLD 표시 자료 5 PNG 추가. Earth: x9..94,y120..252 풀/돌; Gravel: x23..130,y26..120 자갈; ThinFrost: x9..94,y120..252; Stone Path: x60..215,y94..240 특정 포석 배열. 2×2/3×3 경계 기술 PASS와 시각 반복 HOLD를 분리.
-- 실제 ZIP `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v4.zip`, **SHA256 `ee25baef91ec740b85dd3bb62b32583292d703f9261863bd534d0eb8241d1896`**, **19,767,770 bytes / 70 entries**. 원본게임 PNG43(변경2, 보존41), 기존 반복·화면비 오프라인 참고12, 신규 before-after 6, 신규 TileHold5, Manifest/QA/SHA4. 압축 CRC/SHA/PNG 43 정상. 실물은 ChatGPT 다운로드 첨부, GitHub에는 문서만 기록.
-- **QA 문서** [Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v4_QA_20261021.md](../../Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v4_QA_20261021.md), 커밋 `cbacca86c6a69faf3240e8fc09971a3b2fdceb6a`.
-- **승인 게이트:** v4 Codex 격리 변경분 Unity QA + 바울 대표 미술 승인 대기. 타일 패턴 때문에 전체 미술 HOLD 지속. 이전 Preview/ 의 16:9/4:3/21:9는 v3에서 생성된 **오프라인 참조이미지**로서 v4 Unity GameView 아님. Main23 Scene/Save/Unity/GUID, 공식 F1·Wolf·이전 v2 콘셉트11, Chapter1·2 변경0. `docs/art-new`만 문서 커밋, `main` 직접 Commit/Push/병합 금지.
-- 후임 세션은 해당 문서+ZIP/Issue #45 재확인→Codex 변경분 QA 확인→대표 승인 여부 확인. Tiles4는 대표 허가 전 수정하지 말고 임의 전체 타일 재제작 금지.
-
-## 2026-10-21 Main23 서릿길 마을 타일 반복 표적완화 v5
-
-- 인수 즉시 `docs/art-new` 이 문서 + `docs/planning`의 `PLANNING_LATEST.md` 최신(2026-10-21 늑대 Run6 v5 승인 / Village v4 HOLD) + Issue #45 최신 Codex 결과 참조. 늑대 Run6 v5는 이미 바울 대표 **모션 승인**이지만 Main23 마을은 **미술 HOLD**.
-- v4 원본 ZIP `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v4.zip` SHA `ee25baef91ec740b85dd3bb62b32583292d703f9261863bd534d0eb8241d1896` 이 작업환경에서 다시 확인; 사용자 PC `F:\Downloads\`의 파일은 직접 다루지 않음.
-- **v5 실제 생성·납품**: `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v5.zip`, SHA256 **`1affc1a4c23f3bcc6a9e9e18924b08bce3134eab065d8362757725f96e7f71b4`**, 20,085,423 bytes, **72 entries**. 게임용 PNG 43 중 **수정3/바이트 동일40**. Tile Earth(24062 pixels), ThinFrost(23973), Gravel(31120) **국소 텍스처 반복 모티프 완화**. Tile StonePath·SkillShop·RoofGable v4 PASS 등 기타40 byte SHA 동일.
-- **오프라인 QA PASS**: 전부 PNG RGBA/타일 256×256/수정 타일 주변 RGBA edge 보존 + X/Y 첫/끝 edge 일치, 40 byte-identical, SHA256SUMS 71/71, ZIP CRC. Tile4의 v4↔v5 2×2·3×3 비교20 PNG/128px 원본 크기 미리보기와 독립 v5 실 PNG 사용 3 화면비 1600×900·1200×900·2100×900 **오프라인 합성**. 반복 무늬는 약화 시안이지 최종미술 합격 보증 아님.
-- **OPEN16 주의**: GitHub 기획/Issue에 기존 Codex CSV 기반 OPEN 16개라는 **집계**는 있으나 **행별 CSV 원문 파일명·좌표·조건을 해당 소스 ZIP·원격 담당자료·유저 Library에서 확보하지 못함**. 따라서 개별 OPEN16 해결0 / 종결0, 원본 검수 CSV 요청 필요. 어떤 건물/소품의 미확인 결함도 임의 수정하지 않음.
-- 상세 QA·실물 SHA/기타 제한: [Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v5_QA_20261021.md](../../Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v5_QA_20261021.md), `docs/art-new` 커밋 `006fc8f4edfa00943052a00e4ace8217e11306fc`. **실 PNG/ZIP은 ChatGPT 대화 다운로드 첨부**이며 GitHub는 문서/해시만, Unity/Editor/Scene/Save/Main/F1/Wolf/다른 아트 변경하지 않음.
-- 다음: Codex 기존 16 CSV **행별 원본 공유** → 중복/이전 v4 해결 여부 검증 → 해당 OPEN만 표적 추가 수정. v5 3 Tile는 Codex 격리 실3×3/UI DeltaQA와 바울 대표 최종 미술 승인 필요. `main` 직접 커밋/Push/병합 금지.
-
-## HISTORY — 기존 main·담당 고유 기록 보존
-
-## 2026-10-20 EOD 실행 결과
-
-PR41 main db242b77 및 원본 main 동기화 완료. 승인/제외 경계는 아래와 동일하며, 완료문서 후속PR의 최종 SHA는 Codex 인계와 원본 Temp/EOD20261020/OriginalLocalSync_Proof.json을 따릅니다.
-
-## 2026-10-20 EOD 최신 경계
-
-승인1포즈/Idle 참조4PNG만 Unity밖 보존. 전투Fixv2는 보관/검수·미술승인대기, 게임연결0. 담당의 아래 기록은 작성 시점의 이력이며 EOD 실행 결과는 Codex 최종 인계·증거를 따릅니다.
-
-# SPRITE_ART 최신 인계 — 2026-10-12
-
-**최종 사용자 결정(2026-10-12): 리뉴얼 담당은 Chapter 1·2 기존 아트 교체(환경·몬스터·보스·펫·NPC·VFX)만 전담합니다. 기존 스프라이트 담당은 Chapter 3 이후 모든 신규 아트(환경·필드·던전·몬스터·보스·펫·NPC·캐릭터·VFX·UI 필요 이미지)를 총괄합니다. 기존 공식 승인 자산은 별도 승인 없이 교체하지 않습니다. Codex는 구현·Unity 통합·QA 전담입니다.**
-
-**Chapter 3 이후 모든 신규 아트** 전담. 신규 배경·지역·던전·몬스터·보스·펫·NPC·캐릭터·초상화·VFX·필요 UI 제작. Chapter1·2 무료 아트 교체는 리뉴얼 담당 작업이므로 중복 제작 금지. 최신 Chapter3 설계 `문서/06_스킬/Chapter3_스킬상점_강화_냉기_동결괴사_20261012.md`와 스토리·몬스터 정본을 확인하고 공식 원본 보존. 실제 사용자 미술 승인·Codex QA 전에는 구현 완료로 보고하지 않습니다. 자세한 결정은 `../../LIMITLESS_20261012_전체대화_결정_인계.md`.
-
-## 2026-10-13 Chapter3 북쪽 환경 비주얼 기획 v1 — 콘셉트 초안, 사용자 미술 검토 대기
-
-- **역할**: Chapter3부터 모든 신규 아트(환경·던전·몬스터·보스·펫·NPC·캐릭터·VFX·UI)의 아트 총괄. Chapter1·2 기존 무료/공용 아트 리뉴얼은 별도 담당; 이미 승인된 하렌/세린/태온/폴/미엘/플레이어와 기존 Scene/PNG는 변경하지 않음.
-- **확인한 원격 기준**: `HappyPaul812/Project-Limitless` `main` `eca6f1e5ceb42e9d6c88b53368bc109280a547b8`. Chapter3 초기 방향, 태온 형제애, 스킬 상점·강화/한기·동상·동결괴사, 냉기 보스 화로, Chapter3 몬스터·펫·경제 준비, Haren/Serin 통합 QA, 등장인물 정본 확인. PC LOCAL `git status`와 실제 Unity 실행은 확인하지 않음.
-- **기획 확정 배경**: Chapter3 Main22 시작, 북쪽으로 추위→서리→첫눈→눈길→본격 설원→심부 동토의 환경 흐름. 이는 시각/기후 단계이지 공식 Field/Scene 6개를 확정하는 숫자가 아님. Main21 초보 마을에는 본격 적설이 없고 차가운 공기/북풍/아침 서리만 제안.
-- **오늘 제작물(대화 산출물·GitHub 미등록)**: `Limitless_Chapter3_North_Visual_Dev_v1.zip`; 내부 `Docs/Chapter3_North_Visual_Tone_Guide.md`, `Docs/Chapter3_New_Art_Requirements.md`, `Concept/Chapter3_NorthernApproach_Stage01_Concept.png`(1200×765 RGB 참고 시안), `Concept/Chapter3_North_Visual_Moodboard_Draft.png`(1536×1024 RGB 참고 보드), `Manifest.md`. ZIP 무결성 검사 PASS; 픽셀아트의 게임용 Tile/PUU/Pivot/Collider나 Unity Import 검증 아님. 생성 시안의 비공식 인물/생물/건축물은 확정 캐논 아님.
-- **톤 가이드 제안**: 초기 흙색/회녹색/생활감 유지 → 가장자리 서리 → 흙이 노출된 첫눈 → 눌린 눈길 → 넓은 설원 → 암반·얼음이 혼합된 깊은 동토. 완전 흰색 단일화 금지, 가독성·명도층·바람 패턴·통행경계 차이를 강화. 제안 팔레트 및 적설 퍼센트는 **연출 참고치**이며 스킬/게임플레이 시스템 수치 아님.
-- **자산 제안**: 신규 Ground/Transition/눈 패치/식생/바위/얼음·동토, 이후 던전/신규 몬스터·보스·펫·NPC·캐릭터·VFX·UI/전리품·상점 아이콘. 구체 Scene/지역 수/몬스터 ID/보스 이름/게임용 해상도/PPU/프레임은 전부 미정.
-- **검증 및 승인**: `ART_CONCEPT_DRAFT / USER_ART_REVIEW_PENDING / NOT_UNITY_INTEGRATED`. 사용자 아트 승인0, Codex Runtime QA0. 기존 공식 PNG/Unity/Save/코드/GUID 변경0. 사용자 미술 승인과 기술 검증은 분리.
-- **접근성**: 기존 이동 보조기/휠체어를 포함한 통행 경로의 실루엣·패턴 대비 보호, 상태 전달은 텍스트+형태와 함께, 번쩍임/빠른 반복 화면 흔들림 금지. 보스 전투 중 화로는 Field 소품으로 임의 확정 금지.
-- **다음 우선 작업**: (1) 사용자에게 첫 구간 시안 및 단계별 톤 검토/승인 받기 (2) 기획 담당에게 실제 첫 신규 구간/Scene·몬스터·NPC와 별도 계약 확인 (3) Codex에 기존 Tile/PPU/Pivot/Collider 등 LOCAL 비대화형 조사를 의뢰하고 실사용 PNG 분해 제작, 승인 후에만 Unity 통합·Runtime QA. 중복 아트는 리뉴얼 담당에 조율.
-- **후임 시작 문구**: “너는 LIMITLESS Chapter3 이후 신규 아트 총괄 담당이다. GitHub SPRITE_ART.md, SPRITE_ART_LATEST.md, Chapter3 초기 방향·형제애·냉기/스킬·몬스터/경제 정본 및 CURRENT_STATUS를 읽고 와. 2026-10-13 북쪽 환경 콘셉트 초안은 미술 승인 대기이며, 기존 공식 캐릭터/Chapter1·2 리뉴얼 파일을 건드리지 마.”
-
-## 2026-10-13 GitHub 브랜치 협업 규칙
-
-- **본 담당의 유일한 GitHub 문서 작업 브랜치: `docs/art-new`**. `main` 직접 커밋·Push·병합하지 않음. main 반영은 사용자 승인 후 별도 절차.
-- 타 담당 브랜치: 기획 `docs/planning`, 리뉴얼 `docs/art-renewal`, TTS `docs/tts`, BGM `docs/bgm`, SFX `docs/sfx`, 영상 `docs/video`, Codex `codex/작업명`(별도 로컬 worktree).
-- 최신 원격 main 및 담당 브랜치, 수정 대상 blob SHA 확인 후 자기 문서만 변경. 다른 담당 변경 강제 덮어쓰기·force push 금지.
-- 완료 보고 필수: 브랜치 이름/커밋 SHA/변경 결과/사용자 승인 필요 여부.
-- 이전 Chapter3 북쪽 콘셉트 초안은 `ART_CONCEPT_DRAFT / USER_ART_REVIEW_PENDING / NOT_UNITY_INTEGRATED` 상태를 유지하며, 이번에는 게임 아트·Unity 자산을 변경하지 않음.
-- 이 규칙 갱신은 담당 아트 역할 문서와 인계문에 한정; 공통 규칙이나 타 담당 파일을 이 브랜치에서 수정하지 않음.
-
-## 2026-10-20 Chapter3 병렬제작 Issue #30 — 파일럿 아트 납품·사용자 미술 승인 대기
-
-- **발주:** `docs/planning`의 `문서/00_프로젝트/Chapter3_Team_Parallel_Production_Kickoff_20261020.md`, GitHub [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30). 이번 단계는 `CH3_PARALLEL_PREPRODUCTION_AUTHORIZED`; Main22~24 정식 ID/Scene/Dialogue Production Lock·아트 승인·전체 Runtime 미허가.
-- **완료(콘셉트 파일럿):** F1 흙·얇은서리 지면·Transition/길 Overlay/서리 관목/목제 표지판 6 PNG, 서릿길 마을 자갈 바닥/목석건물/보급상자/등불 4 PNG, 서리들쥐 1포즈·설빙의 폭군 실루엣 1포즈 KeyArt 2 PNG. 총 **독립 PNG12**. 미리보기3/기본 타일2×2 반복QA3 별도. 모두 새로운 독립 아트 시안, 기존 공식 인물/게임 씬/아트 파일 불변.
-- **파일:** `Limitless_Chapter3_ArtNew_F1_Frostway_Pilot_v1.zip`는 이번 ChatGPT 대화에서 직접 다운로드 가능. SHA-256 `6a22ac4e9c4d4f4f9e37c2ac8270b145d5483676d00f83c320cdf0e6925382b4`. **실제 PNG/ZIP 바이너리는 GitHub에 올리지 않았고, 담당 브랜치의 문서에는 명세와 SHA만 기록**. 별도 대화 세션에서는 해당 ZIP이 자동 제공되지 않으므로 사용자/기획 담당에게 전달 경로를 확인할 것.
-- **GitHub 기록:** [Chapter3_ArtNew_F1_Frostway_Pilot_Production_QA_20261020.md](../../Chapter3_ArtNew_F1_Frostway_Pilot_Production_QA_20261020.md), 담당 브랜치 `docs/art-new`, 작업 보고 커밋 `5b46e3d6bed2e4dbe3b4c3ef5aba0f94949f3d44`. 최종 인계 변경 커밋은 해당 문서의 Git History 참조.
-- **오프라인 QA:** 18 PNG 디코딩, 독립 PNG12 RGBA/256·512 규격 PASS, 3 Ground Base 좌우/상하 경계 픽셀 일치 PASS, 압축21항목 CRC PASS, Manifest 파일별 SHA 기록. 반복무늬의 눈에 띔/초상화와 스타일 일치·아트 UI/동선 가독성은 사람 미술검토 필요. 샘플 이미지는 Unity 캡처가 아님.
-- **미정 및 게이트:** Codex Issue #35의 실측 PPU/Pivot/Collider/Sorting/WorldBounds/휠체어 통행 경로·Scene 구조 보고 전 `GAME_READY` 표기 금지. 마을 북문/남문·동쪽 포탈 공간은 콘셉트 표시만, 동쪽 포탈 **비작동**. Monster/NPC/Quest/Scene ID·장착 스킬 등 새 정식 ID 임의 확정 금지. 기존 하렌·태온·세린·폴·미엘·플레이어/Chapter1·2 공식 자산 보호.
-- **다음 작업:** (1) 바울 대표 F1/마을/두 KeyArt 미술 의견 받기 (2) 기획 Production Lock·Codex PPU/Pivot/Collider 보고 확인 (3) 승인받은 자산만 실제 Import 계약에 따라 조정·확장 후 아트 승인 및 Codex Unity 통합 분리 진행. `main` 직접 Push/병합 금지.
-- **새 세션 시작 문구:** “너는 LIMITLESS Chapter3 이후 신규 아트 총괄이다. `docs/art-new`의 `SPRITE_ART_LATEST.md`와 `Chapter3_ArtNew_F1_Frostway_Pilot_Production_QA_20261020.md`, 기획 `docs/planning`의 병렬 착수 문서 및 Issue #30을 읽어 와. F1·서릿길마을 독립 PNG12 파일럿은 사용자 미술 승인/PPU 기술 계약 대기 중이고, 21항목 ZIP은 이전 대화 산출물이니 실물이 확인되기 전 GitHub에 업로드됐다고 말하지 마.”
-
-## 2026-10-20 몬스터·보스 1차 키아트 반려 및 2안씩 재시안 v2
-
-- 바울 대표 **반려 확정**: 첫 파일럿 KeyArt `NorthF1_FrostFieldMouse_KeyArt_Concept.png` 및 `FrostTyrant_Silhouette_Concept.png`는 몬스터가 완구/마스코트 같고 보스가 충분히 무섭지 않음. **이전 1차 ZIP 안의 해당 원본을 덮어쓰지 않음.**
-- **재시안 제작/포장 완료(승인 대기)**: `Limitless_Chapter3_Monster_Boss_Concept_Revisions_v2.zip`; 영문 개별 원본 `FrostFieldMouse_Concept_A.png`/`B.png`, `FrostTyrant_Concept_A.png`/`B.png`; 비교 미리보기 1, MD/JSON Manifest 2, QA JSON 1 = 총8항목. ZIP SHA256 `7b6cc00e896ffa1ddcf4e4aa6fff4b05cbf160d587ef209db5f5e72c53e97561`.
-- **한계 명시:** 네 원본은 1254×1254 RGB(쥐)/1122×1402 RGB(보스)이며 고해상도 배경 포함 콘셉트로, 픽셀아트 투명 스프라이트가 **아님**. 사용자께 A/B 디자인 검토를 받은 뒤 Chapter2 공식 아트 톤에 맞는 정식 **2D 게임용 픽셀아트 1포즈**로 다시 제작해야 함. Unity/게임 원본 수정 없음.
-- 문서·파일별 SHA·QA: [Chapter3_Monster_Boss_Concept_Revisions_v2_QA_20261020.md](../../Chapter3_Monster_Boss_Concept_Revisions_v2_QA_20261020.md) (커밋 `2cbe7299e0d3c88ab8cea100247fe4e826e583de`). 바이너리는 이 ChatGPT 대화에 다운로드 링크로 제공했으며 GitHub 브랜치에는 **기록 문서만** 올렸음.
-- F1/서릿길 마을 지형 PNG 10종은 별도 기존 파일럿 그대로 보존; 몬스터/보스 신시안은 기존 2개와 별도 패키지.
-- **후임 우선**: 서리들쥐/설빙의 폭군 각각 채택안 확인→게임용 픽셀아트 스타일로 단독 1포즈 제작→Codex PPU/Pivot/Collider 조사 반영→대표 미술 승인 후 Unity 연계. 전 몬스터 7종 애니메이션 양산 금지. `docs/art-new`만 사용, main 직접 수정 금지.
-
-## 2026-10-20 채택안 서리들쥐 A·설빙의 폭군 B — 픽셀아트 1포즈 v1
-
-- 바울 대표 디자인 **서리들쥐 A, 설빙의 폭군 B 채택**. 기존 반려본/기존 원본은 보호. 채택은 고해상도 콘셉트의 디자인 방향 승인이고, 아래 픽셀아트 1포즈 **별도 미술 승인 필요**.
-- 새 대화 산출 ZIP: `Limitless_Chapter3_ApprovedAB_PixelArt_1Pose_v1.zip` (SHA256 `4bd67210e4d813b1ceb5c22cd76a35af577837b63068af57392c41226da968fc`). `Sprites/FrostFieldMouse_A_PixelArt_1Pose.png`/`Sprites/FrostTyrant_B_PixelArt_1Pose.png` **512×512 투명 RGBA 각1포즈**, 비교 및 128px 검토 이미지·Manifest·QA JSON 총 6항목. 실제 PNG는 ChatGPT 대화 첨부이며 GitHub에는 바이너리 미업로드.
-- 오프라인: 두 PNG 크기/투명도/단일 주요 컴포넌트/외곽 여백/ZIP CRC PASS. 본 데이터는 승인 후보; PixArt 마감, 게임 내 스케일/유사 아트 결합, 움직임은 검증·제작 안 됨. `SPRITE_ART_APPROVAL_PENDING / NOT_UNITY_INTEGRATED`.
-- 정식 기록: [Chapter3_ApprovedAB_PixelArt_1Pose_v1_QA_20261020.md](../../Chapter3_ApprovedAB_PixelArt_1Pose_v1_QA_20261020.md), 커밋 `ad5f35cbe8d4f2ffde8768ba55b0d4c05ad4395a`.
-- 후임 다음 단계: 바울 대표 1포즈 아트 검토 → Codex Issue #35 PPU/Pivot/Collider·Monster Frame 계약 대조 → 별도 요청을 받아 필요 애니메이션만 제작. 기존 F1/서릿길 마을 환경과 Chapter1·2 원본, 하렌/태온/세린/폴/미엘/플레이어 변경 금지. `docs/art-new`만 사용하고 main 커밋/Push하지 않음.
-
-## 2026-10-20 서리들쥐 A·설빙의 폭군 B 1포즈 v2 재작업
-
-- Codex 비교검수 v1: 규격 기술 PASS, 미술 HOLD. **기존 A/B 디자인 선택 유지**. 새 512×512 RGBA **투명 1포즈 PNG 2개** 재제작했으나 사용자 미술 승인 대기.
-- 새 납품: `Limitless_Chapter3_ApprovedAB_1Pose_ArtRework_v2.zip`, SHA256 `0b1a3711bed9616b828c83e51070f35ed161e2d8a4d93de9cb949d318dc46919`. 게임 후보 PNG 2 + 비교 Preview1 + 128px QA1 + 공식 Ch2 이미지 비교1 + Manifest1 + Offline QA JSON1 + SHA256SUMS1 = 총8파일; CRC PASS.
-- 새 고해상도 원화에서 출력하여 이전 v1 75×49/142×121 최근접 확대 작업을 반복하지 않음. **픽셀풍 고해상도 디지털 드로잉으로서 최종 수동 픽셀 마감/Ch2 완전 일치 미확인**. 임시 Chapter2 비교판은 동일 윤곽 크기로 정규화한 시각 참고판이며 실제 Unity PPU와 동일 실게임 크기 검증 아님.
-- 담당 QA·SHA 보고: [Chapter3_ApprovedAB_1Pose_ArtRework_v2_20261020.md](../../Chapter3_ApprovedAB_1Pose_ArtRework_v2_20261020.md), 커밋 `a3822c157c754b1c17ecd1c001b245ff33a41eff`. 실제 바이너리 ZIP/PNG는 이 대화 다운로드 첨부에만 존재하며 GitHub에 올리지 않음.
-- **USER_ART_APPROVAL_PENDING / CODEX_ACTUAL_GAME_SCALE_QA_PENDING / NOT_UNITY_INTEGRATED**. 차기 우선: 바울 대표 미술 감상→Codex 실제 PPU/표시 크기 비교 QA→개별 수정 필요 시 새 승인본. F1·마을 기존 PNG10/공식 캐릭터/Chapter1·2 아트/Unity 원본 보호, 애니메이션 양산 금지, `main` 미수정.
-
-## 2026-10-20 Chapter3 A/B Idle 애니메이션 기술 사전조사
-
-- 바울 대표: 서리들쥐 A/설빙의 폭군 B 1포즈 v2 미술 승인. SHA PNG A 0516914ddad36af5854065d66d01b9664329aa89eea8b394480eed6af92e32c2 / PNG B f1a3c5f91a5fef69cd881e27b578c32253d0124d5d8628a8ca748f7479333830. 원본 변경 금지.
-- GitHub 원격 Main의 MonsterDefinition, MonsterSpriteSheetAnimation, FieldMonsterInstaller, BattleSceneController와 Ch2 .asset/.png.meta 확인. 기존 Ch2 선례 Idle4/8FPS/314px 셀/PPU314/BottomCenter Pivot/Point, 일반 VisualScale1·열맥거신3, 전투 Image136×112 UI px × scale.
-- 주의: Texture2D 런타임 분할 Sprite.Create Pivot은 (0.5,0.5)이고, TextureImporter 분할 ExplicitIdleFrames Pivot은 (0.5,0). 섞으면 발밑 정렬 위험.
-- [Idle 기술 사전조사 보고](../../Chapter3_ApprovedAB_Idle_Animation_Technical_Preflight_20261020.md), 커밋 104e005952ba833e4eafa7d44333410ebe721180. 아트 담당의 GitHub 원격 확인 기록이지 Codex 로컬 구현·Unity 실측 기술 계약 완료가 아님.
-- Codex가 별도 codex/작업명 로컬 worktree에서 4프레임 전용 strip/Import PPU·Pivot·실효 UI 크기/신규 Scale과 field sorting·collider 계약을 잠가 기획/아트 담당에 인계한 후에만 Idle 파일럿 PNG 제작. Main, F1/서릿길 마을, 승인 캐릭터, Unity/Save 변경 금지.
-
-## 2026-10-20 서리들쥐 A·설빙의 폭군 B Idle 4프레임 v1 실제 납품
-
-- 바울 대표가 두 1포즈 v2 미술 승인 후 Codex **최종** Idle 계약: **2048×512 RGBA / 4프레임(가로 4×512) / 8FPS / PPU512 / Pivot(0.5,0) / 우향 / VisualScale Mouse1·Tyrant3**. 이전 PPU314안은 미확정 임시 참고였으며 폐기.
-- 실제 PNG2: `FrostFieldMouse_A_Idle_4Frames.png` SHA `5afebfa1f95ca5673162513fdea63b025546aa836550c0ceb17f0334659988f2`; `FrostTyrant_B_Idle_4Frames.png` SHA `9d9b8d05be1813c013a5d784d749ce2d8ef751541ac36ce90712f3255cb53f43`.
-- 실제 대화 ZIP: `Limitless_Chapter3_FrostFieldMouse_FrostTyrant_Idle_v1.zip`, SHA256 `6c01e55c147ab57147c767f43503553164197cc037a3834ecd2d15d10d96a23c`, 약 6.95MB. 총 12개 파일: 시트PNG2 + 각 4프레임 확인PNG2 + 정확한 8FPS APNG2(125ms/프레임) + GIF2(120/130ms 교대, 총0.5초) + 128px 전체 비교PNG1 + Manifest/QA/해시목록3. 실제 ZIP/PNG는 이 ChatGPT 대화 다운로드에 존재하며 GitHub에는 문서/해시만 기록.
-- 제작: 승인된 1포즈 PNG를 직접 기준으로 사용하고 국소적인 몸통·머리/수염·꼬리·흉곽·팔 움직임을 제작. Frame00는 승인 원본 픽셀과 같고 각 후속 3프레임은 독립적 변형. 발밑 y438~511 영역 원본과 100% 픽셀 동일. 2048×512 RGBA/4×512/투명 외곽/프레임 차별화/ZIP CRC/원본 SHA 오프라인 PASS.
-- [Idle v1 제작·검수 상세](../../Chapter3_ApprovedAB_Idle_4Frame_v1_Production_QA_20261020.md) — 최신 커밋 `8c94f9de53b3c706f67a1bf59b515cdae092eaf8` 참조.
-- **USER_ANIMATION_ART_APPROVAL_PENDING / NO_UNITY_INTEGRATION**: 움직임 미술 승인과 Codex 실제 Unity 재생 검증은 아직 하지 않았다. Attack/Hit/Defeat·다른 방향·몬스터 양산 금지. 승인된 기존 1포즈 원본·F1/마을·Chapter1·2 아트·Unity/Save 변경0. `main` 직접 Push 금지.
-- 후임: 바울 대표가 GIF/APNG 및 128px 확인 후 미술 승인하면 별도 기술 검증을 Codex에 의뢰. 신규 수정은 문제 프레임만 별도 승인받아 진행.
-
-## 2026-10-20 서리들쥐 A 전투 3동작 v1 실제 납품
-
-- 기획 발주 `Chapter3_FrostFieldMouse_AttackHitDefeat_3Strip_ProductionOrder_20261020.md`와 Codex 계약 `ad9e4b46` 기준, **Attack/Hit/Defeat PNG 시트3** 새 제작. 2048×512 RGBA, 각 4×512, 8FPS, PPU512, Pivot (0.5,0), 우향 1종, VisualScale1. Attack/Hit 후 기존 Idle 복귀, Defeat frame03 유지(미리보기 GIF/APNG은 동작 확인용 반복일 뿐 게임 loop 의미 아님).
-- 실제 ZIP: `Limitless_Chapter3_FrostFieldMouse_Combat_3Strips_v1.zip`; SHA256 `24ef8dddf76fb5843e8e7d3fac05942f1450c9f39cf366b2422a0ab82cba6741`, 8,688,417bytes. 실제 PNG/ZIP은 본 대화 첨부 다운로드 제공, GitHub 문서에는 SHA 및 QA만 기록.
-- PNG SHA: Attack `08ed9ffb3d2807b0e1a3b27450f8f3bf1ff3e56f5f33e8b6607b2983db4e402e`, Hit `37c51117ae18f2fed2bda5a8cef6af3099812b5e0979e1368634172937568f1b`, Defeat `bda2809d177d03088e85389ecea23815b92962d61c36cc68967cd0015c96dfcc`.
-- 각 프레임 확인판·128px 전체 비교·8FPS APNG/GIF·Manifest/OfflineQA/SHA 동봉. 프레임4개 각각 상이, 셀 크기/투명 가장자리/발 접지선/ZIP CRC 오프라인 PASS.
-- **주의/미술승인 보류**: 새 전투 포즈의 털 색이 승인된 차가운 회백색보다 갈색이므로 사용자 시각 확인 필요. 픽셀아트 디테일과 Unity 실표시는 미검증. **USER_COMBAT_ART_APPROVAL_PENDING / NO_UNITY_IMPORT**.
-- 기록: [Chapter3_FrostFieldMouse_Combat_3Strips_v1_ArtDelivery_QA_20261020.md](../../Chapter3_FrostFieldMouse_Combat_3Strips_v1_ArtDelivery_QA_20261020.md), 커밋 `74d918f189ce67ea2ee7118b9dfc710d2b506264`. 기존 공식 서리들쥐 Idle·1포즈 원본, 설빙의 폭군, F1·마을, Unity/Save 등 전부 변경0. `main` 직접 반영 금지.
-- 다음: 대표님께 사용 가능한 ZIP 다운로드 확인 → 미술 승인/수정 지시 → Codex 격리 Unity QA → 별도 승인 후 게임 정식 통합. Attack/Hit/Defeat 외 양산 금지.
-
-## 2026-10-20 서리들쥐 A 전투 3 Strip v1 미술 FAIL → 표적 수정 v2
-
-- Codex 이전 v1 QA: **36 PASS/0 FAIL 기술**, 미술 Attack FAIL / Hit FAIL / Defeat HOLD / 승인 Idle의 털색 불일치 FAIL. 사용자 발주: `docs/planning/문서/00_프로젝트/Chapter3_FrostFieldMouse_Combat_v1_VisualFail_3Strip_TargetedFix_20261020.md` 및 Issue #30.
-- 실 납품 v2 ZIP: `Limitless_Chapter3_FrostFieldMouse_Combat_3Strips_Fix_v2.zip`, **SHA256 `518d210a0e5b29c7214ad960c0baa3d23a88d13d4f789b5f7420982ce701bfe3`**, 10,784,249 bytes, 20 files / testzip CRC PASS. ChatGPT 대화 첨부에 실물 납품, **GitHub에 PNG/ZIP 미업로드**.
-- 신규 PNG3 SHA: Attack `c83e35b5aebbce908b6025d5a071fafc463cfe301763f68806ecddb8bd4f576b`, Hit `695ed7db1f794c3f71df1b058eb5e91f01de7ecb125369264f3624b36c9fd3c2`, Defeat `3f6a52039b766c57a5367c7145e0234b68ac0a552940de1e88ffe8f2404f3395`. 모두 2048×512 RGBA, 4×512cell, 8FPS, PPU512, Pivot(0.5,0), Scale1.
-- 수정: **Attack00과 Hit03 RGBA 전체 셀이 승인 Idle00 픽셀과 동일**, bbox [22,124,490,490]. **Attack02 최대 앞발 할퀴기** (v1 Attack01의 강한 공격을 올바른 이벤트 타이밍 위치로 이동). 중간 프레임 털 부위 냉회백 톤/명암 국소 보정, 동작 특성 유지. **Defeat03 알파 실루엣 v1과 정확 동일**, RGB는 털색 정합 목적의 부분 변경만.
-- ZIP에 프레임별 컨택트 시트·8FPS APNG/GIF·Idle→Attack/Hit 8FPS 전환 프리뷰·112px v1/v2/Idle 비교·Attack02/Defeat03 확대·128px 전체 비교·Manifest·QA JSON·SHA 제공.
-- 제작 QA 문서: [Chapter3_FrostFieldMouse_Combat_3Strips_Fix_v2_ArtDelivery_QA_20261020.md](../../Chapter3_FrostFieldMouse_Combat_3Strips_Fix_v2_ArtDelivery_QA_20261020.md), 커밋 **`3833a3262dd9966344c7ee9f946a896b37b39d6f`**.
-- **상태:** `ART_FIX_V2_DELIVERED / CODEX_DELTA_QA_PENDING / USER_COMBAT_ART_APPROVAL_PENDING`. 이전 36개 QA 전수 재검사 금지, 새 이미지 3종만 경계 프레임/Attack02 타격/Defeat03 HOLD/색상 불연속 최소 실제 Unity 검증 필요. 승인된 Idle/1포즈/보스 B/F1·서릿길 마을/Chapter1·2 및 Unity/Save/GUID 원본은 보호. **main 직접 Push/병합 없음**.
-- 후임: 이 ZIP과 승인 Idle ZIP 두 실물 확보 → Codex 변경분 QA 결과 확인 → 사용자 미술 승인 또는 표적 수정 후 새 버전. 다른 캐릭터/몬스터 애니메이션 무단 확대 제작 금지.
