@@ -1,0 +1,4 @@
+Unity 6000.6.5f1
+8 imported 512x512 sprites
+0.96s loop and 8 sampled frames, last frame holds to boundary before restart
+Visual prefab SpriteRenderer -> v2 frame 0; Animator -> controller -> Idle clip -> v2 8 frames
