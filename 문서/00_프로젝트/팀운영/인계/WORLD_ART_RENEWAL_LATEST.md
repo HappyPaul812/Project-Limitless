@@ -1,3 +1,10 @@
+## 2026-11-19 / Issue #119 — 아르벨 포털 관리인 독립 정지 원화 납품
+
+- 기존 arbel-portal-keeper (-7,-3), Resident, “연결 기능은 아직 준비 중입니다.”, 승인 OGA20 공유. 복구본 ba59838b 및 북부 거점 서비스 기획/#45/#56 확인. 북부 포털 OFF 유지; 신규 기능/배치/대사/ID 확정0. 전용 승인 원화 확인 범위 내 미발견. 기존 전용 이슈 미발견으로 #119 신규 개설.
+- 신규 `Arbel_PortalKeeper.png` 512×512 투명 RGBA 정지1포즈, 140331 bytes, SHA256 `31c063f5a6d80491d74cd8207b670e8340cd624c21f0af200d8911171ce1b4cf`, alpha>8 bbox(149,57,361,469), 외곽 접촉0. 최종 자주색 망토·모자·옆땋은 머리·지도/원형 표장 시안만 납품. 은행/장비/관리/경비와 차별, 펫 분양 담당과 얼굴·환영 손짓/소품 모티프 유사성 잔존하여 미술 검토 필요.
+- 실제 NPC8종 512/128/40 비교판 SHA256 `6dd2edabe93a6cec569e4a0da5ea523c69e3be10854b7f2d42f3e50f5556d99b`. 북부 공식 NPC 원본 미확보, 직접 비교 미검증. 전체 ZIP `Limitless_PortalKeeper.zip` 1215647 bytes SHA256 `4cab4373d0b8d2a1efddb0b38230aa459a5848d8149ef4d1a34233a8ab6f14cd`, CRC9/9/Manifest7/7/SUMS8/8 PASS. PNG 전용 ZIP `PortalKeeper_PNG.zip` 139766 bytes SHA256 `aa720ef47900f0e99e767949bcbb90622355d550d55227608a8cf8623ee2928c` CRC PASS.
+- [제작 보고](../../Renewal_20261119_Issue119_Arbel_PortalKeeper_StillArt_Pilot.md), docs/art-renewal commit `b0bfc47cc7267353a7b3677dcf407df62d163e7a`. FILE_TECH_PASS / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED. 기존 승인 원화·임시 주민 후보·펫2 미적용·Scene·Save/UserData·Discord 보호. 새 기능·초상화·애니메이션·Unity 적용0. Unity6000.6.5f1/#85 HOLD/불씨망령 HOLD 유지, main 직접 commit/Push/Merge0.
+
 ## 2026-11-19 / 아르벨 임시 주민 교체용 독립 정지 원화 납품 (#111)
 
 - 대표 지시: 단색 임시 주민 1명만 독립 외형 제작. #111 실제 감사 기준 Arbel (1.5,-1.5) Scene VillageNpc, VillageNpcPlaceholder GUID4c4988789a0e2a049b860bfa288d71bc, StableID/Role 없음, 일반 인사대사. 별도 arbel-resident-west 아님. 기존 실제 감사 보고를 확인했으며 이번 PC 화면 직접 재실행0. 기존 독립 승인 원화는 확인 범위에서 미발견.
