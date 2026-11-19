@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-19 — 정령계 회전 연출 / 불씨망령 NPC 완료 후순위
+
+- 대표 현재 눈보라 정령 원화 외형 긍정 평가, 회전형 모션 방향 수용. [정령계 공통 기준](https://github.com/HappyPaul812/Project-Limitless/commit/98ef6141c5160bfa68cce516017c5938e21f0a46), [신규 아트 #112](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-6996240986). 승인 원화 보존, #116 잡템6종 완료 이후 핵 중심 눈바람 순환 Idle8 후보→공격·피격·패배 순차 검토. 새 모션 사용자 미술 승인 필요. WoW는 운동 원리 참고만, 자산 복제 금지. 전투/드롭/펫 규칙 불변.
+- **불씨망령 HOLD_UNTIL_NPC_RENEWAL_COMPLETE**. Chapter1·2 NPC 리뉴얼 전체 완료 확인 후 별도 발주. 기존 원화/모션 조사→필요할 때만 Idle/Attack 최소 보정. 이번 리뉴얼 발주·재제작·Unity 적용0. 다른 몬스터 전면 수정 금지. 기존 NPC 작업 우선. 이번 기획 문서화 및 이슈 방향 공유만, docs/planning 외 제품/main 변경0.
+
+---
+
 # PLANNING / 2026-11-19 — Chapter3 스토리·서브 승인 / 대사·보상 기준 잠금 / 밸런스·아트 발주
 
 - 11/19 대표 명시 서브6 승인 [6a1ffee](https://github.com/HappyPaul812/Project-Limitless/commit/6a1ffee14c6bbd33e48b18dbab6e5e65982b8d97), 메인 스토리/엔딩 조건부 승인(구조 재설계 불필요 판정) [4274cf7](https://github.com/HappyPaul812/Project-Limitless/commit/4274cf7b3dde1a2c503094759df8ffdc74aab5b1). 세부 대사·보상 위임 반영 [정식 대본/기준/정적 수치 검증](https://github.com/HappyPaul812/Project-Limitless/commit/ff25aab4c505a15f95c29ee18852eddefdccd92b). Main22~29 EXP1160/T480, 서브6 EXP690/T255, 합 EXP1850/T735. Main26 미엘·세린 수다 단 한 번 과거 힌트, Main27 폴·미엘 차 약속, Main29 하렌 “잘.했.어.” 보호. Ch4 도입부 화로 제작자 발견. Dialogue/Voice ID 및 기존 구현 대조·TTS 제작 별도.
