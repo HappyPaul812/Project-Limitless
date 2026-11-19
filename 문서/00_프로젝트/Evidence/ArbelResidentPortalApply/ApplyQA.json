@@ -1,0 +1,44 @@
+[
+  {
+    "zip": "Limitless_Arbel_Resident.zip",
+    "zipSha256": "968f8f6ca8ba4dc0c5b59b162e333a2d0ea7075f88c45391008f86fc3ee95143",
+    "asset": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/Arbel_PlaceholderResident.png",
+    "assetSha256": "9f2a425f7ab40cb106b13cf812c43b2e2ecf5dcf48ddd79b84f1d8ef0d28822c",
+    "guid": "ee7e1dd3fcd5433893cd266876793577",
+    "bbox": [
+      174,
+      58,
+      337,
+      470
+    ],
+    "ppu": 412,
+    "pivot": [
+      0.4990234375,
+      0.484375
+    ],
+    "crc": 9,
+    "manifest": 7,
+    "sums": 8
+  },
+  {
+    "zip": "Limitless_PortalKeeper.zip",
+    "zipSha256": "4cab4373d0b8d2a1efddb0b38230aa459a5848d8149ef4d1a34233a8ab6f14cd",
+    "asset": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/Arbel_PortalKeeper.png",
+    "assetSha256": "31c063f5a6d80491d74cd8207b670e8340cd624c21f0af200d8911171ce1b4cf",
+    "guid": "978490d1f7e54bf3a0335c0fe2c3f501",
+    "bbox": [
+      149,
+      57,
+      361,
+      469
+    ],
+    "ppu": 360.5,
+    "pivot": [
+      0.498046875,
+      0.083984375
+    ],
+    "crc": 9,
+    "manifest": 7,
+    "sums": 8
+  }
+]
