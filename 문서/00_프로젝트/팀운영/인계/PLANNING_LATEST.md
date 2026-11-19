@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-19 — 밸런스 PARTIAL 접수 / 전리품6·펫 관리 담당 납품
+
+- [접수 및 권고](https://github.com/HappyPaul812/Project-Limitless/commit/9a5b3ba5a59cd82fd93b29e424207517e2a105c4). #118 C# 모형 성장 목표 FAIL, 31/56/81전 Lv18~19/19~21/20~22, 56전 메인 Lv22 부족3075~5565. Main22~24 현재0/0. 라이선스 초기화 실패로 실제 전투 미검증. 승인 수치 변경0; Lv19~21 보스 편성별 검증 우선, 목표 Lv22~23 유지 필요시 Main25~27 EXP 보강 비교(대표 승인 별도). 라이선스 재설정/반복 실행 금지, 기존 증거 재사용.
+- #116 `F:\Downloads\Chapter3_Loot_Issue116.zip`, #117 `F:\Downloads\Limitless_PetManagement_117.zip` 담당 납품 확인. Codex 합동 오프라인 실물검수/비교판, 사용자 미술 승인 전 적용 금지. 눈보라 회전 Idle 다음, 불씨망령 NPC 완료까지 보류. main/Unity/Save/Discord 변경 없음.
+
+---
+
 # PLANNING / 2026-11-19 — 정령계 회전 연출 / 불씨망령 NPC 완료 후순위
 
 - 대표 현재 눈보라 정령 원화 외형 긍정 평가, 회전형 모션 방향 수용. [정령계 공통 기준](https://github.com/HappyPaul812/Project-Limitless/commit/98ef6141c5160bfa68cce516017c5938e21f0a46), [신규 아트 #112](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-6996240986). 승인 원화 보존, #116 잡템6종 완료 이후 핵 중심 눈바람 순환 Idle8 후보→공격·피격·패배 순차 검토. 새 모션 사용자 미술 승인 필요. WoW는 운동 원리 참고만, 자산 복제 금지. 전투/드롭/펫 규칙 불변.
