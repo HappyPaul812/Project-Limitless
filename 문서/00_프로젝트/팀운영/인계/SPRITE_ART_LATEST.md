@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-19 / Issue #112 — Hit4 최종 승인 및 눈보라 정령 Defeat4 후보 납품
+
+- [Hit4 최종 승인 및 Defeat4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7004512175) 확인. KeyPose·Idle8 v1/v2·Attack4·Hit4 PNG 5종 실제 SHA256 작업 전후 일치, 원본 수정0. Hit4 SHA256 `2e07e2178f48bf0dcd6367a73a9f9c4af5311073df2dc2c9a7e33e139b311de1`. 기존 Hit4 승인 대기 표기는 과거 이력.
+- 신규 **`BlizzardWisp_M5_Defeat4_2048x512_RGBA_CANDIDATE.png`** 2048×512 RGBA/4×512셀, 677,357bytes, SHA256 **`5f4c5942895035b23d824707a7e4e534c20c323b4a3aa82bc5cd824735d23299`**. 핵 약화→눈바람 풀림/파편 분산→붕괴→전투불능. 신규 2172×724 패배 시안에서 4셀 분리·알파 정리·동일 배율0.85 축소·공통 하단 y464 정렬. 기존 원화의 직접 변형이 아니므로 세부 묘사 차이 가능. 4셀 상이·경계 alpha0·분리 PNG 일치. 전체 평면회전·외부 자산·별도 VFX0.
+- 실제 512/128/40 비교판·비루프 GIF. 디코드 4프레임 160/190/230/1600ms=2180ms, 마지막 자세 1.6초 유지. ZIP `BlizzardWisp_Issue112_Defeat4.zip` 2,562,804bytes/13entries, SHA256 **`006f1d72bf7b536ced44ea8998abd8402d63950e78c0862a1cab4a91dba28a91`**. CRC PASS/Manifest11/11/SUMS12/12, 비순환. Library `/LIMITLESS/Issue112_BlizzardWisp_Defeat4/` ZIP·PNG·GIF·비교판2 저장.
+- [**Defeat4 제작 보고**](../../Chapter3_BlizzardWisp_M5_Defeat4_ArtPilot_20261119.md), `docs/art-new` commit `50a46aeb5fe45ab21a0bbc3a1933224d96ff510f`. **HIT4_USER_APPROVED / DEFEAT4_ART_CANDIDATE / USER_DEFEAT4_ART_REVIEW_PENDING / DEFEAT4_UNITY_NOT_APPLIED**. 이번 Unity 실행·적용 및 전투·스킬·VFX·드롭·펫 변경0. 기존 Idle8 v2 로컬 적용 이력 보존, 정식 M5 등록/실전 조우 별도. Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/승인 원본 보호. main 직접 commit/Push/Merge0.
+
+
 ## 2026-11-19 / Issue #112 — Attack4 최종 승인 및 눈보라 정령 Hit4 후보 납품
 
 - 대표 직접 지시로 **Attack4 최종 미술 승인** 확정. [직전 기술 검수](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7003359918) 유지. 기존 KeyPose·Idle8 v1·Idle8 v2·Attack4 PNG 실제 Library 회수 후 SHA256 작업 전후 모두 일치, 원본 수정0. 승인 Attack4 SHA256 `f8ca104d24c2826c4a757c5dd3ad80e30e29b222cbdcd6e38c4eaa4b051a9934`. 아래 Attack4 승인 대기 표기는 과거 이력.
