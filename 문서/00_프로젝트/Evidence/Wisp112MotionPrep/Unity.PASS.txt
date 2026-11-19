@@ -1,0 +1,3 @@
+Unity 6000.6.5f1: KeyPose single, Idle8 v2 references preserved; Attack/Hit/Defeat 4 sprites each.
+Verified per-cell samples and final holds: Attack .82s, Hit .52s, Defeat 2.18s. Non-loop previews.
+Verified existing visual prefab and Animator links (Idle_Right default and three manual visual states).
