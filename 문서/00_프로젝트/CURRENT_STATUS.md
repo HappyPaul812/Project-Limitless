@@ -1,3 +1,11 @@
+## 2026-11-19 · Chapter 3 전리품 미술 승인 및 아르벨 펫 NPC 원화 연결
+
+- 승인 아르벨 펫 분양·관리 PNG 2종을 원본에 반영했습니다. 변경 C# 컴파일·개별 SHA 일치. Unity 6000.6.5f1 격리 배치는 컴파일 단계에서 시간 제한으로 중단되어 실제 아르벨 화면·상호작용 확인이 남았습니다.
+- 전리품 PNG 6종은 정식 등록 대상 0/6으로 적용 준비만 완료했습니다. 다음 작업은 새 Item ID·드롭 등록 확인 후 연결입니다. 경험치 보상 보류.
+- 제품 커밋 `44d4ab5449131ca51876791f5ca3879aaaaf7a5d`, 로컬 `codex/issue118-chapter3-balance`, 원격 Push 미실행.
+
+[상세 적용·검증 기록](Chapter3_Art_Apply_20261119.md)
+
 ## 2026-11-17 일일 마감 — 원본 승인분 보존·복구 원격 검증
 
 **APPROVED_PRODUCTS_PRESERVED / REMOTE_RECOVERY_PUSH_VERIFIED / LOCAL_FF_SYNC_COMPLETE / NON_GIT_OFFSITE_INCOMPLETE / DAY_CLOSED**.
