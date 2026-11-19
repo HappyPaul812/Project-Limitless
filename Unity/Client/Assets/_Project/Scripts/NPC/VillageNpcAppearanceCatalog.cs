@@ -41,8 +41,8 @@ namespace ProjectLimitless.NPC
                 ["arbel-shop"] = "VillageNpcSprites/Eldiran/OGA03_GeneralShop_Original_Approved",
                 ["arbel-healer"] = "VillageNpcSprites/Eldiran/OGA06_Healer_Original_Approved",
                 ["arbel-party-guide"] = "VillageNpcSprites/Eldiran/OGA10_PartyManager_HandFix_v2_Approved",
-                ["arbel-pet-adoption"] = "VillageNpcSprites/Eldiran/OGA17_EquipmentShop_Original_Approved",
-                ["arbel-pet-management"] = "VillageNpcSprites/Eldiran/OGA16_Bank_Original_Approved",
+                ["arbel-pet-adoption"] = "VillageNpcSprites/Eldiran/Arbel_PetAdoption",
+                ["arbel-pet-management"] = "VillageNpcSprites/Eldiran/Arbel_PetManagement",
                 ["arbel-resident-west"] = "VillageNpcSprites/Eldiran/OGA11_Resident02_Original_Approved",
                 ["arbel-portal-keeper"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard_Distinct_Approved",
             };
@@ -57,12 +57,12 @@ namespace ProjectLimitless.NPC
 
             if (!ResourcePaths.TryGetValue(stableNpcId, out string resourcePath))
             {
-                // 클리어 후 확대된 시설은 기존 Arbel 기능 NPC의 원본 Sprite를 재사용합니다.
-                // 새로운 그림·기존 NPC 외형 변경 없이 역할만 명확하게 표시합니다.
+                // 등록된 다른 거점에는 기존 장비상인·은행 외형을 유지합니다.
+                // 독립 원화는 승인된 아르벨 NPC의 stable ID에만 연결합니다.
                 if (role == VillageNpcRoleType.PetAdoption)
-                    resourcePath = ResourcePaths["arbel-pet-adoption"];
+                    resourcePath = ResourcePaths["starter-village-equipment-shop"];
                 else if (role == VillageNpcRoleType.PetManagement)
-                    resourcePath = ResourcePaths["arbel-pet-management"];
+                    resourcePath = ResourcePaths["starter-village-bank"];
                 else return false;
             }
 
