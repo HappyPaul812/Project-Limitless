@@ -1,3 +1,9 @@
+# PLANNING / 2026-11-19 — 눈보라 Hit4·불씨망령 Attack4 최종 승인
+
+- 대표 “둘 다 좋아..” [눈보라 Hit4 승인/Defeat4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7004512175), [불씨망령 Attack4 승인](https://github.com/HappyPaul812/Project-Limitless/issues/120#issuecomment-7004513160). 두 Library ZIP 직접 회수, SHA 납품값 일치·CRC/SUMS 전부 PASS. Windows 직접 접근/Unity 신규 검증 없음. 눈보라 KeyPose/Idle8v2/Attack4/Hit4 승인4/5, Idle만 시각 자산 적용, 정식 등록 전. Defeat4 마지막 제작(핵 약화/눈바람 풀림/파편 흩어짐/잔류). 불씨망령 Idle4·Attack4 승인, Hit/Defeat 기존 유지 우선, 승인 통합 시트 d25afb4cc932fd333f67854a28821bf239afa43c36ed937f479793e03285197a, 실제 원본과 미수정 셀/메타/GUID 대조 후 Codex 최소 적용·전투 QA, 연결 결함만 별도 보완. main/Save/Unity6000.6.5f1/Discord/#85 보호. 신규 미술·게임 적용 미실행.
+
+---
+
 # PLANNING / 2026-11-19 — 눈보라 정령 Idle8 v2 승인·시각 자산 적용 / 후속 3모션 발주
 
 - 대표 v2 최종 미술 승인, [Codex 적용 기록](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7002165110). Unity6000.6.5f1 격리 Editor에서 Sprite8/0.96초 반복 Clip/Controller/시각 Prefab 연결 PASS, 제품32297d6ad37a1be7f31f94e98b57dcfb91a5886e, 보고d336fc0fda72fc33b08005ac8c88c731a13c6251 로컬 미Push. 정식 MonsterDefinition/조우/F4·F5 씬 미등록, 실제 전투 미검증. v1/KeyPose 보존.
