@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-19 / Issue #112 — 눈보라 정령 Idle8 v2 본체 눈바람 회전 보완
+
+- [v1 기술 PASS·회전감 보완 지시](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-6999769300) 확인. 기존 KeyPose·Idle8 v1 PNG·v1 ZIP 작업 전후 SHA256 동일, 원본 수정0. v1은 유지, 신규 v2 별도 후보.
+- **`BlizzardWisp_M5_Idle8_v2_4096x512_RGBA_CANDIDATE.png`** 4096×512 RGBA, 가로8×512셀, 1,678,792bytes, SHA256 **`ba6a7bddcd37bdf7fe78939862e93a50828561a08564756572d0bba19f51692a`**. 원본 본체의 비강체 각도·반경 진행파 및 이동 명암 융선으로 은백색 띠 순환 표현 강화. 기존 v1 얼음 조각12개 중심 경로 재사용, 개별 회전·전후 합성, 핵 위치 안정, 미세 부유. 전체 원화 단순 평면 회전0. 8셀 상이/경계알파0/개별 QA 프레임 일치. v2 첫 프레임은 KeyPose와 픽셀 동일하지 않지만 기존 원본 변경0. 2D 근사·사용자 미술 검토 필요.
+- 실제 512/128/40 비교판, v2 단독 및 실제 v1·v2 시트 나란히 비교 GIF. 각 GIF 재개봉 **120ms×8=960ms/주기**, loop=0. ZIP `BlizzardWisp_Issue112_Idle8_v2.zip` 6,528,393bytes/18entries, SHA256 **`8be07f1984d77065743ff587fb2319e3225f1003e1d8201169974cb9dc413f9c`**, CRC PASS/Manifest16/16/SUMS17/17, 비순환. Library `/LIMITLESS/Issue112_BlizzardWisp_Idle8_v2/` ZIP·PNG·GIF2·보드 저장 성공.
+- [**v2 보완 제작·검증 보고**](../../Chapter3_BlizzardWisp_M5_Idle8_v2_Targeted_20261119.md), `docs/art-new` commit **`c628173c77a8728ce4d62ae5c606914d9bc26230`**. **KEYPOSE_KEEP / IDLE8_V1_KEEP / IDLE8_V2_ART_CANDIDATE / USER_V2_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED**. Attack/Hit/Defeat·Unity·전투/펫/드롭 변경0. #85 HOLD·기존 승인 자산·Save/UserData·Discord 보호. 불씨망령 HOLD. main 직접 commit·Push·Merge0.
+
+
 ## 2026-11-19 / Issue #112 — 눈보라 정령 Idle8 후보 납품 및 #116 전리품 최종 승인 반영
 
 - [#116 전리품6종 최종 승인](https://github.com/HappyPaul812/Project-Limitless/issues/116#issuecomment-6997032271) 확인. **ART_USER_APPROVED_6_OF_6 / UNITY_NOT_APPLIED**. 기존 ZIP SHA `8d7ff5e8c3c16aebe9d2992ace2326002e8e72946d62c1b0faad37a251acb54c`, 재제작0. [Codex 기록](https://github.com/HappyPaul812/Project-Limitless/issues/116#issuecomment-6997270316) 기준 로컬 적용 준비 보관, Item/드롭 연결0/6. 아래 이전 승인 대기 표기는 납품 당시 이력.
