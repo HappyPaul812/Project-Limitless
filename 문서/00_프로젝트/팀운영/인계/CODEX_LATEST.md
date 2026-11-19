@@ -1,3 +1,9 @@
+## 2026-11-19 · Issue #118 Chapter 3 밸런스 PARTIAL
+
+- 합성 31/56/81전 종료 Lv18~19/19~21/20~22. 로컬 C# 성장 함수 실행, 첫 한기 기존 격리 Unity 실측 재사용. 신규 Unity 실행 Licensing 초기화 실패. F3~5/폭군/화로/스킬25/펫4 실제 연결 및 3인 조합 실측 미검증.
+- Main22~24 로컬 0EXP/0T와 승인 보상 차이 및 후보 대사 ID 기록. 원본 게임·Save/UserData 미접근·변경 없음. 메인 진행 EXP 보강 또는 낮은 레벨에서 보스 플레이 검증을 비교하고, 변경 전 승인 필요.
+- [검증표·권고안](../../Issue118_Chapter3_Balance_QA_20261119.md) · [Issue #118](https://github.com/HappyPaul812/Project-Limitless/issues/118). 로컬 보고 브랜치 codex/issue118-chapter3-balance. 원격 Push 미실행.
+
 ## 2026-11-17 일일 마감 — 원본 승인분 보존·복구 원격 검증
 
 **APPROVED_PRODUCTS_PRESERVED / REMOTE_RECOVERY_PUSH_VERIFIED / LOCAL_FF_SYNC_COMPLETE / NON_GIT_OFFSITE_INCOMPLETE / DAY_CLOSED**.
