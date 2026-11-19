@@ -44,7 +44,7 @@ namespace ProjectLimitless.NPC
                 ["arbel-pet-adoption"] = "VillageNpcSprites/Eldiran/Arbel_PetAdoption",
                 ["arbel-pet-management"] = "VillageNpcSprites/Eldiran/Arbel_PetManagement",
                 ["arbel-resident-west"] = "VillageNpcSprites/Eldiran/OGA11_Resident02_Original_Approved",
-                ["arbel-portal-keeper"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard_Distinct_Approved",
+                ["arbel-portal-keeper"] = "VillageNpcSprites/Eldiran/Arbel_PortalKeeper",
             };
 
         public static bool Apply(
