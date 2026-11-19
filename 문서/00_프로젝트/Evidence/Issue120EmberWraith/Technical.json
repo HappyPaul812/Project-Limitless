@@ -1,0 +1,45 @@
+{
+  "packages": [
+    {
+      "zip": "Limitless_EmberWraith_Issue120_Idle4.zip",
+      "zipSha256": "0c5356d6e807f79c0fde9b1763715e89c2d03c4443ee57a100b81b2f376b9a37",
+      "pngSha256": "7b26e90652f9916faf5712647a2bf23c91a1ca2ea8bc266ca273a1de1dd58e70",
+      "crc": 12,
+      "manifest": 10,
+      "sums": 11
+    },
+    {
+      "zip": "Limitless_EmberWraith_Issue120_Attack4.zip",
+      "zipSha256": "bd5fefaa815361ae0d76e397fecaeb5e312a8d70ee85347e2de3179f76c56b69",
+      "pngSha256": "d25afb4cc932fd333f67854a28821bf239afa43c36ed937f479793e03285197a",
+      "crc": 10,
+      "manifest": 8,
+      "sums": 9
+    }
+  ],
+  "sheet": "Unity/Client/Assets/_Project/Art/Monsters/15_EmberWraith/Ember_Wraith_Sprite_Sheet.png",
+  "original": "e6dfe61da6d754f615aaeff7f10719cc336b46d0ff7f5c09249545fd10c25655",
+  "meta": "793b1747af945cee325ff3a4695d72561dd28e0e8840ef0aa92631baba6d19c5",
+  "idleChanged": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "attackChanged": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "preserved": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ]
+}

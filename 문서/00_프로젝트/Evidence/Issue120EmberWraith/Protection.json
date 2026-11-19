@@ -1,0 +1,42 @@
+[
+  {
+    "Path": "Unity/Client/Assets/_Project/Art/Monsters/15_EmberWraith/Ember_Wraith_Sprite_Sheet.png.meta",
+    "SHA256": "793b1747af945cee325ff3a4695d72561dd28e0e8840ef0aa92631baba6d19c5"
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/MonsterDefinitions/15_EmberWraith.asset",
+    "SHA256": "ea803824132fe62a6f6faa14adaf99d3258ff448e11acef4a05e233ec3ad306c"
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/MonsterSpawns/Field07_EmberWraith01.asset",
+    "SHA256": "beae4d78174fbe53c08448f6cb6d3b822c86e8bbcc8dcd78608f6a9506cef4bb"
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Scripts/Battle/BattleSceneController.cs",
+    "SHA256": "b5bc481980fbd8a9f26e3472a7e7e06775573ca29d97f4dbec58280b7f6c42b4"
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Scripts/Battle/BattlePrototypeEncounter.cs",
+    "SHA256": "888b4f4018c3d819e45e334403546ed7f983d9d5a60f72c099375469a3b90b1f"
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Scripts/Battle/BattleChapter2MonsterRuntime.cs",
+    "SHA256": "bbfce0d14e26078672fa854b4a828d901dd19fe52622de9a3b35ccf90d2be595"
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Scripts/Monster/MonsterSpriteSheetAnimation.cs",
+    "SHA256": "8241eb508916820dc32bf7f3933e9142feec41baa39c73ff6338d1395ca2963b"
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Scenes/Field_07_AshenReach.unity",
+    "SHA256": "1fc38182dab5fb59998dd98b72a7ae578509e890836003442f0e98c87e7188e1"
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Scenes/Battle.unity",
+    "SHA256": "c6be69fce5eb25bc0c5f49142f78ab4dcd0857f62b8f87880cb4c0b306ea5fbf"
+  },
+  {
+    "Path": "Unity/Client/ProjectSettings/ProjectVersion.txt",
+    "SHA256": "b3402f9d37aab37e8ad7676fff8d2f3b1333d857d2fade3fae888482e59d42ad"
+  }
+]
