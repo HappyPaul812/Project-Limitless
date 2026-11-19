@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-19 / Issue #112 — Attack4 최종 승인 및 눈보라 정령 Hit4 후보 납품
+
+- 대표 직접 지시로 **Attack4 최종 미술 승인** 확정. [직전 기술 검수](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7003359918) 유지. 기존 KeyPose·Idle8 v1·Idle8 v2·Attack4 PNG 실제 Library 회수 후 SHA256 작업 전후 모두 일치, 원본 수정0. 승인 Attack4 SHA256 `f8ca104d24c2826c4a757c5dd3ad80e30e29b222cbdcd6e38c4eaa4b051a9934`. 아래 Attack4 승인 대기 표기는 과거 이력.
+- 신규 **`BlizzardWisp_M5_Hit4_2048x512_RGBA_CANDIDATE.png`** 2048×512 RGBA/4×512셀, 836,115bytes, SHA256 **`2e07e2178f48bf0dcd6367a73a9f9c4af5311073df2dc2c9a7e33e139b311de1`**. 승인 Idle8 v2 위상6/7/0/1(0-based) 기반 핵 반동→눈바람 국소 수축→회복→대기. 마지막 셀은 승인 v2 위상1 전RGBA 동일. 국소 역좌표 변형, 전체 평면회전/외부 자산/별도 VFX/붕괴0. 4셀 상이, 경계 alpha0, 분리 PNG 일치. 미술 최종 검토 필요.
+- 실제 512/128/40 비교판·비루프 GIF, 디코드 4프레임 90/130/110/190ms=520ms. ZIP `BlizzardWisp_Issue112_Hit4.zip` 3,231,506bytes/13entries SHA256 **`be090af54ba2e4699b72b4325e876d2248c79b2cb1a0ca6800bb890b34625a8c`**. CRC PASS, Manifest11/11, SUMS12/12, 비순환. Library `/LIMITLESS/Issue112_BlizzardWisp_Hit4/` ZIP/PNG/GIF/비교판2 저장 및 ZIP 재회수 byte-identical/CRC PASS.
+- [**Hit4 제작 보고**](../../Chapter3_BlizzardWisp_M5_Hit4_ArtPilot_20261119.md) `docs/art-new` commit `e3bb235004849e13ef4ecb28af2065706df4ebf2`. **ATTACK4_USER_APPROVED / HIT4_ART_CANDIDATE / USER_HIT4_ART_REVIEW_PENDING / HIT4_UNITY_NOT_APPLIED**. Defeat4 미제작. 기존 Idle8 v2 로컬 Unity 적용 이력 보존, 이번 Unity/전투/스킬/펫/드롭 변경0. #85 HOLD/Save/UserData/Discord/승인 원본 보호, main 직접 commit/Push/Merge0.
+
+
 ## 2026-11-19 / Issue #112 — Idle8 v2 최종 승인 및 눈보라 정령 Attack4 후보 납품
 
 - [Idle8 v2 최종 승인·Attack4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7002458727) 확인. 기존 KeyPose·v1·v2 PNG와 v1/v2 ZIP 작업 전후 SHA256 동일. 승인 v2 PNG `ba6a7bddcd37bdf7fe78939862e93a50828561a08564756572d0bba19f51692a` 보존. [Codex 기존 로컬 적용](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7002165110) Idle8 v2 8셀/0.96초 클립/Controller/시각 Prefab 검증 PASS, REMOTE_NOT_PUSHED, 정식 조우 및 실전 미검증. 이번 공격 작업에서는 Unity 변경0.
