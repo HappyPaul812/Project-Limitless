@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-19 / Issue #112 — Idle8 v2 최종 승인 및 눈보라 정령 Attack4 후보 납품
+
+- [Idle8 v2 최종 승인·Attack4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7002458727) 확인. 기존 KeyPose·v1·v2 PNG와 v1/v2 ZIP 작업 전후 SHA256 동일. 승인 v2 PNG `ba6a7bddcd37bdf7fe78939862e93a50828561a08564756572d0bba19f51692a` 보존. [Codex 기존 로컬 적용](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7002165110) Idle8 v2 8셀/0.96초 클립/Controller/시각 Prefab 검증 PASS, REMOTE_NOT_PUSHED, 정식 조우 및 실전 미검증. 이번 공격 작업에서는 Unity 변경0.
+- 신규 **`BlizzardWisp_M5_Attack4_2048x512_RGBA_CANDIDATE.png`** 2048×512 RGBA, 가로4×512셀, 788,615bytes, SHA256 **`f8ca104d24c2826c4a757c5dd3ad80e30e29b222cbdcd6e38c4eaa4b051a9934`**. 승인 v2 실제 위상0/2/4/6 기반 국소 압축·우향 눈바람띠 방출·잔류·복귀, 마지막 셀은 v2 위상6과 동일. 전체 원화 평면 회전0, 별도 VFX/외부 자산0. 개별 QA 셀4와 시트 일치, 경계 alpha0. 생성 시안은 최종 납품에 미사용. 2D 변형 기반이며 공격감은 사용자 검토 필요.
+- 실제 512/128/40 비교판 및 비루프 GIF, 재개봉 4프레임 실제 지연 **200/120/180/320ms=820ms**. ZIP `BlizzardWisp_Issue112_Attack4.zip` 2,896,857bytes/13entries SHA256 **`a3f919971890686617e8335e65749f1c05dc71394a5b3f11d9234b8b589d792f`**, CRC PASS/Manifest11/11/SUMS12/12, 비순환. Library `/LIMITLESS/Issue112_BlizzardWisp_Attack4/` ZIP·PNG·GIF·비교판2 저장.
+- [**Attack4 제작 보고**](../../Chapter3_BlizzardWisp_M5_Attack4_ArtPilot_20261119.md) `docs/art-new` commit `4d79482932cc6f169c0c948ef725ddaebac74254`. **IDLE8_V2_KEEP / ATTACK4_ART_CANDIDATE / USER_ATTACK4_ART_REVIEW_PENDING / ATTACK4_UNITY_NOT_APPLIED**. Hit4·Defeat4 순차 승인 전 착수0. 기존 승인 자산/#85 HOLD/Save/UserData/Discord 보호, 신규 Unity 적용·스킬·판정·VFX·수치·드롭 변경0. 불씨망령 HOLD, main 직접 commit/Push/Merge0.
+
+
 ## 2026-11-19 / Issue #112 — 눈보라 정령 Idle8 v2 본체 눈바람 회전 보완
 
 - [v1 기술 PASS·회전감 보완 지시](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-6999769300) 확인. 기존 KeyPose·Idle8 v1 PNG·v1 ZIP 작업 전후 SHA256 동일, 원본 수정0. v1은 유지, 신규 v2 별도 후보.
