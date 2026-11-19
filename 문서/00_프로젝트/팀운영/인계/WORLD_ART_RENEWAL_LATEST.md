@@ -1,3 +1,10 @@
+## 2026-11-19 / 아르벨 임시 주민 교체용 독립 정지 원화 납품 (#111)
+
+- 대표 지시: 단색 임시 주민 1명만 독립 외형 제작. #111 실제 감사 기준 Arbel (1.5,-1.5) Scene VillageNpc, VillageNpcPlaceholder GUID4c4988789a0e2a049b860bfa288d71bc, StableID/Role 없음, 일반 인사대사. 별도 arbel-resident-west 아님. 기존 실제 감사 보고를 확인했으며 이번 PC 화면 직접 재실행0. 기존 독립 승인 원화는 확인 범위에서 미발견.
+- 신규 `Arbel_PlaceholderResident.png` 512×512 투명 RGBA 정지1포즈, 124405bytes SHA256 `9f2a425f7ab40cb106b13cf812c43b2e2ecf5dcf48ddd79b84f1d8ef0d28822c`, alpha>8 bbox(174,58,337,470), 외곽접촉0. 적갈색 곱슬머리·적자색 생활 튜닉·크림색 바지·작은 물병. 신상·새 직업/퀘스트/ID 확정0. 기존 서비스NPC와 구별, 기존 평면 원화 대비 세밀한 명암 미술 검토 필요.
+- 실제 OGA16/17·승인 펫 분양/관리·레온·OGA11·신규 실물 512/128/40 비교판 SHA256 `03dd0fe56cf067bcfbb967984a206c31e8c1f5e550f64e6c4b55864b139e300e`, 참조 원본 SHA 불변. ZIP `Limitless_Arbel_Resident.zip`, 1050091bytes, SHA256 `968f8f6ca8ba4dc0c5b59b162e333a2d0ea7075f88c45391008f86fc3ee95143`, 9파일 CRC PASS, Manifest7/7 SUMS8/8 PASS. PNG 전용 ZIP `Arbel_Resident_PNG.zip`, 123716bytes SHA256 `c7cecdd7bb2351baf72e681f0e468e6735541b32d0bf4da8168927fa7e607c40`, CRC PASS.
+- [정식 보고서](../../Renewal_20261119_Arbel_PlaceholderResident_StillArt_Pilot.md), docs/art-renewal commit `9031e83cabf30c393d03c4e2b7303c1e349dbdda`. FILE_TECH_PASS / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED. 기존 승인17 원화, 펫2 미적용, 독립 후보9 보호. 후속 별도 승인 시 Codex 최소 적용 검증. 불씨망령 HOLD, Unity6000.6.5f1, #85 HOLD, Save/UserData/Discord/Scene/main 보호. 초상화·애니메이션·Unity·main 직접 commit/Push/Merge0.
+
 ## 2026-11-19 / 펫 관리 담당 최종 승인 · Chapter1·2 NPC 잔여 목록 · 불씨망령 HOLD
 
 - **대표 최종 승인:** #117 펫 관리 담당 원화 SHA256 `62a771d90ccf27bc9754779c900178d22740dee041b66b1ec74172b00df285b9` BYTE_KEEP. #113 분양 담당 승인 유지. 두 전용 원화 모두 기술PASS/미술 승인/Unity 미적용. 기존 미술 승인 대기 기록은 최신 결정으로 대체. 재작화 금지.
