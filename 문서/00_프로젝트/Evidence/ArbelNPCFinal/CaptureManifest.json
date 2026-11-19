@@ -1,0 +1,74 @@
+[
+  {
+    "file": "Arbel_PetAdoption_World_1280x720.png",
+    "size": [
+      1280,
+      720
+    ],
+    "bytes": 326009,
+    "sha256": "6dcb848df13bd26e56a5f051f55b07f8ce79896ecd90ca1c26a0d5e87124c8c4"
+  },
+  {
+    "file": "PetAdoption_Menu_1280x720.png",
+    "size": [
+      1280,
+      720
+    ],
+    "bytes": 310431,
+    "sha256": "9ec355baa8b6eba9195db92a972866d2c6ad8a049ebedbcb494c9de7fb6f4cff"
+  },
+  {
+    "file": "Arbel_PetManagement_World_1280x720.png",
+    "size": [
+      1280,
+      720
+    ],
+    "bytes": 324676,
+    "sha256": "6b6a89be945df4badc80e74de78e0683095758e311eaf2d6b1dd5da3e151793a"
+  },
+  {
+    "file": "PetManagement_Menu_1280x720.png",
+    "size": [
+      1280,
+      720
+    ],
+    "bytes": 304041,
+    "sha256": "1372a8b00369e2ac97674aee8c5c1a4909566b82e20462456b043d312ce8bdc0"
+  },
+  {
+    "file": "Arbel_PlaceholderResident_World_1280x720.png",
+    "size": [
+      1280,
+      720
+    ],
+    "bytes": 376714,
+    "sha256": "10d750977de1ccaf2427e36b5e48b232930d58d55d78445e1bfbfe8a3466609c"
+  },
+  {
+    "file": "Arbel_PlaceholderResident_Dialogue_1280x720.png",
+    "size": [
+      1280,
+      720
+    ],
+    "bytes": 414857,
+    "sha256": "0b31bdc30bd68264bb887df55b769bd25d8ac61772b7d826be71b73ce427bf62"
+  },
+  {
+    "file": "Arbel_PortalKeeper_World_1280x720.png",
+    "size": [
+      1280,
+      720
+    ],
+    "bytes": 319690,
+    "sha256": "823580557b8492e220ffe7aa7283bb353ff1c7e14e0e3e62e7904e34f056a88b"
+  },
+  {
+    "file": "Arbel_PortalKeeper_Dialogue_1280x720.png",
+    "size": [
+      1280,
+      720
+    ],
+    "bytes": 341761,
+    "sha256": "37c88bd3d9d0f10191ba227658f23489d2dbd704700a561022a30a3426a285d6"
+  }
+]
