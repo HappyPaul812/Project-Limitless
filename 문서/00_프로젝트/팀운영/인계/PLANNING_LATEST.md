@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-19 — 전리품6·펫 관리 담당 최종 승인 / 눈보라 Idle8
+
+- 대표 “메인, 리뉴얼 승인.” [접수 정본](https://github.com/HappyPaul812/Project-Limitless/commit/e5414969d548a8f5def22908950d7e3c0f37b5f5), [#116](https://github.com/HappyPaul812/Project-Limitless/issues/116#issuecomment-6997032271), [#117](https://github.com/HappyPaul812/Project-Limitless/issues/117#issuecomment-6997032892). 두 실물 기술PASS 및 최종 미술 승인, 게임 미적용. 기존 #113 분양 미술승인 유지. 반복 오프라인 QA/재작화 불필요. 실제 역할/참조 및 아이템 등록 존재 여부 확인 뒤 최소 적용 별도.
+- [눈보라 Idle8 발주](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-6997033601), 현재 원화 유지·핵 중심 자연 순환, GIF/ZIP/비교판. 리뉴얼은 NPC 잔여 목록 먼저 확정(기존 조사 재사용, 필요한 부분만 읽기감사); 불씨망령은 전체 NPC 완료까지 HOLD.
+- [밸런스 후속 PARTIAL](https://github.com/HappyPaul812/Project-Limitless/issues/118#issuecomment-6996864448), 일반환경 라이선스 확인 성공/실행 지연 미확정. Lv19~21 조합36 모형 모두 승리/화로1/20~36행동, 실전 미검증. 선택전0/서브0 6전에서 Main25~27 EXP+3500/+3500/+4000이면 Lv22~23. **EXP_CHANGE_NOT_APPROVED** (미술 승인만). 기존 승인 보상/스탯 변경0, 분할안 및 일반탐험 과성장 별도 검토. main/Unity/Save/Discord 변경0.
+
+---
+
 # PLANNING / 2026-11-19 — 밸런스 PARTIAL 접수 / 전리품6·펫 관리 담당 납품
 
 - [접수 및 권고](https://github.com/HappyPaul812/Project-Limitless/commit/9a5b3ba5a59cd82fd93b29e424207517e2a105c4). #118 C# 모형 성장 목표 FAIL, 31/56/81전 Lv18~19/19~21/20~22, 56전 메인 Lv22 부족3075~5565. Main22~24 현재0/0. 라이선스 초기화 실패로 실제 전투 미검증. 승인 수치 변경0; Lv19~21 보스 편성별 검증 우선, 목표 Lv22~23 유지 필요시 Main25~27 EXP 보강 비교(대표 승인 별도). 라이선스 재설정/반복 실행 금지, 기존 증거 재사용.
