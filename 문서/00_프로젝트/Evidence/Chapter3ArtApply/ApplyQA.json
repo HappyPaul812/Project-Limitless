@@ -1,0 +1,107 @@
+{
+  "npcs": [
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/Arbel_PetAdoption.png",
+      "sha256": "d64c342bd4bd8953bafce1feb8949d3cb5ce1a4b67ecf88cda3a6757beb4e47d",
+      "pivot": [
+        0.5,
+        0.080078125
+      ],
+      "ppu": 360.5,
+      "visibleWorldHeight": 1.1428571428571428,
+      "reference": "OGA17_EquipmentShop_Original_Approved"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/Arbel_PetManagement.png",
+      "sha256": "62a771d90ccf27bc9754779c900178d22740dee041b66b1ec74172b00df285b9",
+      "pivot": [
+        0.5009765625,
+        0.083984375
+      ],
+      "ppu": 361.375,
+      "visibleWorldHeight": 1.1428571428571428,
+      "reference": "OGA16_Bank_Original_Approved"
+    }
+  ],
+  "lootPrepared": [
+    {
+      "file": "Icons/Loot_BlizzardWisp_BlizzardCrystal.png",
+      "sha256": "16b100a6e109cfebd5ba3ed7d2dc2729018dcc3b47153a82c6e8e48854103b25",
+      "bytes": 4036,
+      "bbox": [
+        14,
+        12,
+        112,
+        116
+      ],
+      "alpha0": 9908,
+      "partialAlpha": 0
+    },
+    {
+      "file": "Icons/Loot_FrostOwl_FrostFeather.png",
+      "sha256": "6be6ac2502cb7476dbff11d52514148d99773a4e61272e2fb06ddf4935c3832e",
+      "bytes": 3341,
+      "bbox": [
+        14,
+        12,
+        112,
+        116
+      ],
+      "alpha0": 11156,
+      "partialAlpha": 0
+    },
+    {
+      "file": "Icons/Loot_FrostVole_FrostedFur.png",
+      "sha256": "356bdef577ee85d6a609c5476601821d07b3e49a4a475b5c1f41b05c12bea704",
+      "bytes": 3168,
+      "bbox": [
+        12,
+        18,
+        116,
+        110
+      ],
+      "alpha0": 10224,
+      "partialAlpha": 0
+    },
+    {
+      "file": "Icons/Loot_IceBeetle_IceCarapace.png",
+      "sha256": "371c5fbc50d1682de7a35a3c116000b30e5b0aeb65839b098156b8968d688853",
+      "bytes": 3506,
+      "bbox": [
+        12,
+        12,
+        116,
+        116
+      ],
+      "alpha0": 10092,
+      "partialAlpha": 0
+    },
+    {
+      "file": "Icons/Loot_RimeSentinel_MagicBlockingCrystal.png",
+      "sha256": "0978353c3562b527072a70b907d06ae74985fa9b0f9e4b8ec7cd334673da25a8",
+      "bytes": 4098,
+      "bbox": [
+        12,
+        12,
+        114,
+        116
+      ],
+      "alpha0": 9644,
+      "partialAlpha": 0
+    },
+    {
+      "file": "Icons/Loot_SnowStoat_SnowDown.png",
+      "sha256": "2dca5ba78a8e1da51f40492ccb209c41f2046914d4c831d6cb8e7296ce0a43fc",
+      "bytes": 3769,
+      "bbox": [
+        12,
+        14,
+        116,
+        114
+      ],
+      "alpha0": 9604,
+      "partialAlpha": 0
+    }
+  ],
+  "lootRegistered": []
+}

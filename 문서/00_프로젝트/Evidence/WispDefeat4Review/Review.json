@@ -1,0 +1,96 @@
+{
+  "archives": {
+    "v1": {
+      "zipSha256": "a4db522ec21d96edd7718655bb5889f32d9d25c5cfe79c0c44dbbf729428e58d",
+      "zipBytes": 6121505,
+      "crc": 17,
+      "manifest": 15,
+      "sums": 16,
+      "sheetSha256": "28a8ae1d325617431ed3c2441467c235c323ce229fe91fa5190018ac8bde1cd7"
+    },
+    "v2": {
+      "zipSha256": "8be07f1984d77065743ff587fb2319e3225f1003e1d8201169974cb9dc413f9c",
+      "zipBytes": 6528393,
+      "crc": 18,
+      "manifest": 16,
+      "sums": 17,
+      "sheetSha256": "ba6a7bddcd37bdf7fe78939862e93a50828561a08564756572d0bba19f51692a"
+    },
+    "attack": {
+      "zipSha256": "a3f919971890686617e8335e65749f1c05dc71394a5b3f11d9234b8b589d792f",
+      "zipBytes": 2896857,
+      "crc": 13,
+      "manifest": 11,
+      "sums": 12,
+      "sheetSha256": "f8ca104d24c2826c4a757c5dd3ad80e30e29b222cbdcd6e38c4eaa4b051a9934"
+    },
+    "hit": {
+      "zipSha256": "be090af54ba2e4699b72b4325e876d2248c79b2cb1a0ca6800bb890b34625a8c",
+      "zipBytes": 3231506,
+      "crc": 13,
+      "manifest": 11,
+      "sums": 12,
+      "sheetSha256": "2e07e2178f48bf0dcd6367a73a9f9c4af5311073df2dc2c9a7e33e139b311de1"
+    },
+    "defeat": {
+      "zipSha256": "006f1d72bf7b536ced44ea8998abd8402d63950e78c0862a1cab4a91dba28a91",
+      "zipBytes": 2562804,
+      "crc": 13,
+      "manifest": 11,
+      "sums": 12,
+      "sheetSha256": "5f4c5942895035b23d824707a7e4e534c20c323b4a3aa82bc5cd824735d23299"
+    }
+  },
+  "keySha256": "0c72c3f8fc80c9e74bf648236a0ff1746ef344ef71f03b4c005c38db59915586",
+  "frames": [
+    {
+      "bbox": [
+        62,
+        16,
+        449,
+        464
+      ],
+      "alphaPixels": 83878
+    },
+    {
+      "bbox": [
+        50,
+        35,
+        461,
+        464
+      ],
+      "alphaPixels": 75292
+    },
+    {
+      "bbox": [
+        45,
+        144,
+        466,
+        464
+      ],
+      "alphaPixels": 65115
+    },
+    {
+      "bbox": [
+        47,
+        218,
+        464,
+        464
+      ],
+      "alphaPixels": 49430
+    }
+  ],
+  "gifDelaysMs": [
+    160,
+    190,
+    230,
+    1600
+  ],
+  "gifNearestFrameMAE": [
+    0.548,
+    0.44,
+    0.345,
+    0.258
+  ],
+  "gifSha256": "15c2deb5be25880d368190d4cf5fc1ff0ad41dd944b0dba67fa832349c95fc0b"
+}

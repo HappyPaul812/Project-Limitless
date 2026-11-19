@@ -1,0 +1,65 @@
+opportunities,counterplay,withoutGate,withGate,targetStacksAfterFurnace,talentCost
+ready/ready/ready,1,KO,allow if declined,0,0
+ready/ready/chill,1,KO,allow if declined,0,0
+ready/ready/frostbite,1,KO,allow if declined,0,0
+ready/ready/ko,1,KO,allow if declined,0,0
+ready/chill/ready,1,KO,allow if declined,0,0
+ready/chill/chill,1,KO,allow if declined,0,0
+ready/chill/frostbite,1,KO,allow if declined,0,0
+ready/chill/ko,1,KO,allow if declined,0,0
+ready/frostbite/ready,1,KO,allow if declined,0,0
+ready/frostbite/chill,1,KO,allow if declined,0,0
+ready/frostbite/frostbite,1,KO,allow if declined,0,0
+ready/frostbite/ko,1,KO,allow if declined,0,0
+ready/ko/ready,1,KO,allow if declined,0,0
+ready/ko/chill,1,KO,allow if declined,0,0
+ready/ko/frostbite,1,KO,allow if declined,0,0
+ready/ko/ko,1,KO,allow if declined,0,0
+chill/ready/ready,1,KO,allow if declined,0,0
+chill/ready/chill,1,KO,allow if declined,0,0
+chill/ready/frostbite,1,KO,allow if declined,0,0
+chill/ready/ko,1,KO,allow if declined,0,0
+chill/chill/ready,1,KO,allow if declined,0,0
+chill/chill/chill,0,KO,defer,,0
+chill/chill/frostbite,0,KO,defer,,0
+chill/chill/ko,0,KO,defer,,0
+chill/frostbite/ready,1,KO,allow if declined,0,0
+chill/frostbite/chill,0,KO,defer,,0
+chill/frostbite/frostbite,0,KO,defer,,0
+chill/frostbite/ko,0,KO,defer,,0
+chill/ko/ready,1,KO,allow if declined,0,0
+chill/ko/chill,0,KO,defer,,0
+chill/ko/frostbite,0,KO,defer,,0
+chill/ko/ko,0,KO,defer,,0
+frostbite/ready/ready,1,KO,allow if declined,0,0
+frostbite/ready/chill,1,KO,allow if declined,0,0
+frostbite/ready/frostbite,1,KO,allow if declined,0,0
+frostbite/ready/ko,1,KO,allow if declined,0,0
+frostbite/chill/ready,1,KO,allow if declined,0,0
+frostbite/chill/chill,0,KO,defer,,0
+frostbite/chill/frostbite,0,KO,defer,,0
+frostbite/chill/ko,0,KO,defer,,0
+frostbite/frostbite/ready,1,KO,allow if declined,0,0
+frostbite/frostbite/chill,0,KO,defer,,0
+frostbite/frostbite/frostbite,0,KO,defer,,0
+frostbite/frostbite/ko,0,KO,defer,,0
+frostbite/ko/ready,1,KO,allow if declined,0,0
+frostbite/ko/chill,0,KO,defer,,0
+frostbite/ko/frostbite,0,KO,defer,,0
+frostbite/ko/ko,0,KO,defer,,0
+ko/ready/ready,1,KO,allow if declined,0,0
+ko/ready/chill,1,KO,allow if declined,0,0
+ko/ready/frostbite,1,KO,allow if declined,0,0
+ko/ready/ko,1,KO,allow if declined,0,0
+ko/chill/ready,1,KO,allow if declined,0,0
+ko/chill/chill,0,KO,defer,,0
+ko/chill/frostbite,0,KO,defer,,0
+ko/chill/ko,0,KO,defer,,0
+ko/frostbite/ready,1,KO,allow if declined,0,0
+ko/frostbite/chill,0,KO,defer,,0
+ko/frostbite/frostbite,0,KO,defer,,0
+ko/frostbite/ko,0,KO,defer,,0
+ko/ko/ready,1,KO,allow if declined,0,0
+ko/ko/chill,0,KO,defer,,0
+ko/ko/frostbite,0,KO,defer,,0
+ko/ko/ko,0,battle ended,battle ended,,0

@@ -1,0 +1,8 @@
+# 2026-11-19 · 아르벨 펫 NPC 독립 원화 적용 및 Chapter 3 전리품 준비
+
+- 바울 대표의 이번 지시로 [#116](https://github.com/HappyPaul812/Project-Limitless/issues/116)의 전리품 6종과 [#117](https://github.com/HappyPaul812/Project-Limitless/issues/117)의 관리 원화 최종 미술 승인. [#113](https://github.com/HappyPaul812/Project-Limitless/issues/113)의 기존 분양 원화도 적용 승인.
+- 승인 PNG 두 장을 바이트 그대로 추가하고 기존 `VillageNpcAppearanceCatalog`에서 아르벨 분양 `arbel-pet-adoption`(5, -3), 관리 `arbel-pet-management`(7, -3) ID에 연결했습니다. 다른 거점의 역할 fallback은 기존 OGA17/OGA16 경로를 유지합니다. 기존 서비스·배치·이름표·Collider와 Scene은 그대로입니다.
+- 기존 승인 외형의 가시 높이 약 1.143 월드 단위를 기준으로 분양 PPU 360.5, 관리 PPU 361.375를 선택했습니다. 알파 8 초과 실루엣의 가로 중심과 발밑을 커스텀 피벗 기준으로 삼았습니다. Point 필터와 Single Sprite를 사용합니다. 분양 SHA256 `d64c342bd4bd8953bafce1feb8949d3cb5ce1a4b67ecf88cda3a6757beb4e47d`, 관리 SHA256 `62a771d90ccf27bc9754779c900178d22740dee041b66b1ec74172b00df285b9`입니다.
+- 전리품 6종의 정식 Item ID와 몬스터 드롭 연결을 Resources 및 관련 코드에서 조사했습니다. Main22 들쥐 prototype과 Main24 올빼미 후보는 존재하지만 확인한 정의에 신규 전리품 엔트리가 없습니다. 족제비·얼음갑충·눈보라 정령·빙각 수호체와 승인 전리품 매핑도 미등록입니다. 등록 가능한 대상은 0/6입니다. 승인 PNG 원본 6종을 `Temp/Chapter3ArtApply/PreparedLoot`에 준비하고 SHA를 대조했습니다. 정식 등록이 생겼을 때 Item ID 및 드롭 연결과 기존 아이템 아이콘 임포트 규격을 대조해 적용합니다. 개인 Save·기존 아이템·아트·승인값·경험치 보상 및 Unity 버전 변경은 없었습니다.
+- 기존 기술 QA를 재사용했습니다. 적용된 PNG 2종과 준비본 6종의 SHA 일치, 기존 참고 자산 10종의 SHA 일치, 신규 GUID 충돌 없음, 로컬 Unity 6000.6.5f1 어셈블리 참조로 변경 C# 컴파일 통과, Git whitespace 검사 통과. 격리 Unity 배치는 라이선스와 패키지 초기화를 통과해 스크립트 컴파일을 시작했으나 95초 제한 전에 검증 메서드가 실행되지 않았습니다. 실제 Sprite 임포트·아르벨 Play 화면 및 휠체어 접근 확인은 남아 있습니다.
+- 게임 파일의 제품 커밋 `44d4ab5449131ca51876791f5ca3879aaaaf7a5d`는 별도의 로컬 `codex/issue118-chapter3-balance` 브랜치에 있습니다. 원본 작업 폴더에는 해당 5경로를 반영했습니다. 원격 Push 미실행. [개별 SHA와 임포트 값](Evidence/Chapter3ArtApply/ApplyQA.json)

@@ -1,0 +1,130 @@
+{
+  "packages": [
+    {
+      "zip": "Chapter3_Loot_Issue116.zip",
+      "bytes": 175145,
+      "sha256": "8d7ff5e8c3c16aebe9d2992ace2326002e8e72946d62c1b0faad37a251acb54c",
+      "crc": "PASS",
+      "manifestCount": 10,
+      "sumsCount": 11,
+      "assets": [
+        {
+          "file": "Icons/Loot_BlizzardWisp_BlizzardCrystal.png",
+          "sha256": "16b100a6e109cfebd5ba3ed7d2dc2729018dcc3b47153a82c6e8e48854103b25",
+          "bytes": 4036,
+          "bbox": [
+            14,
+            12,
+            112,
+            116
+          ],
+          "alpha0": 9908,
+          "partialAlpha": 0
+        },
+        {
+          "file": "Icons/Loot_FrostOwl_FrostFeather.png",
+          "sha256": "6be6ac2502cb7476dbff11d52514148d99773a4e61272e2fb06ddf4935c3832e",
+          "bytes": 3341,
+          "bbox": [
+            14,
+            12,
+            112,
+            116
+          ],
+          "alpha0": 11156,
+          "partialAlpha": 0
+        },
+        {
+          "file": "Icons/Loot_FrostVole_FrostedFur.png",
+          "sha256": "356bdef577ee85d6a609c5476601821d07b3e49a4a475b5c1f41b05c12bea704",
+          "bytes": 3168,
+          "bbox": [
+            12,
+            18,
+            116,
+            110
+          ],
+          "alpha0": 10224,
+          "partialAlpha": 0
+        },
+        {
+          "file": "Icons/Loot_IceBeetle_IceCarapace.png",
+          "sha256": "371c5fbc50d1682de7a35a3c116000b30e5b0aeb65839b098156b8968d688853",
+          "bytes": 3506,
+          "bbox": [
+            12,
+            12,
+            116,
+            116
+          ],
+          "alpha0": 10092,
+          "partialAlpha": 0
+        },
+        {
+          "file": "Icons/Loot_RimeSentinel_MagicBlockingCrystal.png",
+          "sha256": "0978353c3562b527072a70b907d06ae74985fa9b0f9e4b8ec7cd334673da25a8",
+          "bytes": 4098,
+          "bbox": [
+            12,
+            12,
+            114,
+            116
+          ],
+          "alpha0": 9644,
+          "partialAlpha": 0
+        },
+        {
+          "file": "Icons/Loot_SnowStoat_SnowDown.png",
+          "sha256": "2dca5ba78a8e1da51f40492ccb209c41f2046914d4c831d6cb8e7296ce0a43fc",
+          "bytes": 3769,
+          "bbox": [
+            12,
+            14,
+            116,
+            114
+          ],
+          "alpha0": 9604,
+          "partialAlpha": 0
+        }
+      ]
+    },
+    {
+      "zip": "Limitless_PetManagement_117.zip",
+      "bytes": 807823,
+      "sha256": "72b7d5312097ad0599916f92f656cdfbe896742bfb9c07468c5adf97b448cf8d",
+      "crc": "PASS",
+      "manifestCount": 7,
+      "sumsCount": 8,
+      "assets": [
+        {
+          "file": "Candidates_512/Arbel_PetManagement.png",
+          "sha256": "62a771d90ccf27bc9754779c900178d22740dee041b66b1ec74172b00df285b9",
+          "bytes": 148207,
+          "bbox": [
+            150,
+            56,
+            362,
+            470
+          ],
+          "alpha0": 205938,
+          "partialAlpha": 55285
+        }
+      ]
+    }
+  ],
+  "ch2References": {
+    "Loot_SootHound_Fang.png": "5020e7cd572399632a3e19df1318a17477350778272fb0fc15029ada9ef0dc63",
+    "Loot_HeatwindHawk_Feather.png": "9b25288bac730fa2453b0e9f0bb61caae2a84c77372095628e72647a9f8ea332",
+    "Loot_FissureLizard_Scale.png": "629df9280aefeca307436c5b6e1ce55d56acff6e73ab897ff2eded21162ce888",
+    "Loot_EmberBeetle_Carapace.png": "bedbe891d1ed0b7d144533003887879ef8d8cabe82c7e0af19e4fc795519e326",
+    "Loot_EmberWraith_EmberShard.png": "e1e3ee1ac24cb8d78e95c30470ac8a3c841b2be2fab11085671a20ebc81bb617",
+    "Loot_ObsidianBeetle_Shell.png": "613e9914f8b3539bf204204e74a0a07a45c84436b1a1da21aa3f84f155ea40b2",
+    "Loot_ScorchingWatcher_CoreFragment.png": "cb7358d81f711372118281dbd0b565e17654178a34f6f791effed34cceab3b6d"
+  },
+  "npcReferences": {
+    "PetAdoption113": "d64c342bd4bd8953bafce1feb8949d3cb5ce1a4b67ecf88cda3a6757beb4e47d",
+    "OGA16_Bank_Original_Approved.png": "1199c57d3c279b51af83452c8b580814d6456417ea8e3f3b83ea9fdc6c5f8dcd",
+    "OGA17_EquipmentShop_Original_Approved.png": "1282d90a7f89924e3efaad40679cbc272193bb9e05397765671549d9de646359",
+    "Main13_Leon_Approved.png": "ff7cfd081e7727a7ab228bae0a5ece879727b98594514c932d4a616396bc8fdc"
+  }
+}

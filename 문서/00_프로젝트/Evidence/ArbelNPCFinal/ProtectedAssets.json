@@ -1,0 +1,117 @@
+[
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/OGA03_GeneralShop_Original_Approved.png",
+    "SHA256": "09b2d97643a7aaefd51930eb374c48bf358020f015cc4cce9e7ef4903853151d",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/OGA03_GeneralShop_Original_Approved.png.meta",
+    "SHA256": "b02a3e7e2802e89eb859ec150ac52eb48fb3b7d77a9fe5519eaac965f40180be",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/OGA06_Healer_Original_Approved.png",
+    "SHA256": "67aef89677e9b9f174f30b2c2a9e854eaee4e61814774402bd94a18691bd401f",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/OGA06_Healer_Original_Approved.png.meta",
+    "SHA256": "7c09b0dcf7b2ec2ee6d524549688f1346d82894f99439cce54e618d7881f8f69",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/OGA10_PartyManager_HandFix_v2_Approved.png",
+    "SHA256": "6be1a2d777a312dedd392b8ad6fbb2ba77b350d46d7bd2113d9d11bf09c7e6f3",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/OGA10_PartyManager_HandFix_v2_Approved.png.meta",
+    "SHA256": "7aedb8731d9c90994a8257ffac6270c55516516c277c25d779abc1a9c4f4a537",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/OGA11_Resident02_Original_Approved.png",
+    "SHA256": "5fde2e4cfbcdca2839f7da1071dbbbc4b7f239ee85ab7f7b9985be48a5cb91f9",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/OGA11_Resident02_Original_Approved.png.meta",
+    "SHA256": "3fe0de008b2d595707e9e571ff2bf7bff72b7e574a2c832bed010ff66c395418",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/OGA20_GateGuard_Distinct_Approved.png",
+    "SHA256": "19efaea3859246a41d9bd3cb1880744f3b0802b9c51ec22f0937a6794e201ef9",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/OGA20_GateGuard_Distinct_Approved.png.meta",
+    "SHA256": "f1e9f5cf72a75ad60fa7c81f18a863f7ee004799c3b965e20b07693a7550f755",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/Arbel_PetAdoption.png",
+    "SHA256": "d64c342bd4bd8953bafce1feb8949d3cb5ce1a4b67ecf88cda3a6757beb4e47d",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/Arbel_PetAdoption.png.meta",
+    "SHA256": "71a9712e4c081a4c739796d6c245d5a55e8ce8ab2307acf3b678d0396e5ee181",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/Arbel_PetManagement.png",
+    "SHA256": "62a771d90ccf27bc9754779c900178d22740dee041b66b1ec74172b00df285b9",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/Arbel_PetManagement.png.meta",
+    "SHA256": "76ea18c3bdf80abba0a17e6370152f55d1fe1eb37feeab22d85f53835201faa6",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/Arbel_PlaceholderResident.png",
+    "SHA256": "9f2a425f7ab40cb106b13cf812c43b2e2ecf5dcf48ddd79b84f1d8ef0d28822c",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/Arbel_PlaceholderResident.png.meta",
+    "SHA256": "15e4e9e283f99e32b1c0956b4c98ae1d313791cb330f522d0953168201e00280",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/Arbel_PortalKeeper.png",
+    "SHA256": "31c063f5a6d80491d74cd8207b670e8340cd624c21f0af200d8911171ce1b4cf",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Resources/VillageNpcSprites/Eldiran/Arbel_PortalKeeper.png.meta",
+    "SHA256": "aa63e8eb02848c40f5e10d3d3fb09da90de1e1dfdf8efda727e8afd8c555b784",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Scenes/Arbel.unity",
+    "SHA256": "5f085784b6948b2a4338ef6a17eb48aa85f59a0e937cce80087a37c24e99db5a",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Scenes/Field_03.unity",
+    "SHA256": "cf9fac91a5cc0f49c58f07c15fcea1ee1c27de5bb64daa8e53c1727ad69551d1",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Scripts/NPC/VillageNpcAppearanceCatalog.cs",
+    "SHA256": "d3fbcf01da28cdb7ffcb509ce6c853c558fd94c6279e1400a9f6f0387683cb55",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+    "SHA256": "aa68db60453a648dff1aaa06a698b6fdc5903bdb948634d6edce8f77faf2f36e",
+    "ApprovedCommitMatches": true
+  },
+  {
+    "Path": "Unity/Client/ProjectSettings/ProjectVersion.txt",
+    "SHA256": "b3402f9d37aab37e8ad7676fff8d2f3b1333d857d2fade3fae888482e59d42ad",
+    "ApprovedCommitMatches": true
+  }
+]

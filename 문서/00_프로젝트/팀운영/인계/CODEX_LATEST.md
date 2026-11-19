@@ -1,3 +1,73 @@
+# CODEX / 2026-11-19 마감
+
+[이틀 승인 작업 통합 및 복구 보고](../../EOD_20261119_SafeIntegration_Recovery.md)
+
+아르벨 NPC 4종과 불씨망령 적용·검증, 눈보라 정령 등록 준비 및 승인 전리품 보존. Unity 6000.6.5f1, #85 HOLD 및 #118 실제 보스전 미검증 상태 유지. 마지막 제품 9324b658, 검증 보고 67c9c3c7. 원본·복구 검증의 최종 SHA와 결과는 [Issue #121](https://github.com/HappyPaul812/Project-Limitless/issues/121)에서 확인합니다. 오늘 개발 종료.
+
+---
+
+## 2026-11-19 · 눈보라 정령 승인 모션 적용 준비 (#112)
+
+- 승인 KeyPose, Idle8 v2, Attack4, Hit4, Defeat4 게임용 기준 자산 정리. Unity 6000.6.5f1 격리 임포트·Sprite 연결·세 비루프 클립 샘플링 PASS. 기존 Idle과 프리팹 유지.
+- M5 정식 등록과 F4/F5 연결은 후속입니다. 동상·조우·실전 검증 계획 문서화. 기존 데이터·Save 보호. 제품 `9324b65849a25a4322052d217a7baa087a2b01f0`, 원격 Push 미실행.
+
+[상세 기록](../../Issue112_Wisp_Approved_Motion_Prep_20261119.md)
+
+## 2026-11-19 · 눈보라 정령 Defeat4 오프라인 검수
+
+- 2048×512 RGBA·4셀·GIF·ZIP 기술 PASS. 핵 약화와 눈바람 붕괴·잔류 자세 판독 PASS 의견. 미술 승인 권고 및 대표 판단 대기. Unity 미적용.
+- [검수 결과](../../Issue112_Wisp_Defeat4_Review_20261119.md). 로컬 codex/issue112-wisp-defeat4-review, 원격 Push 미실행.
+
+## 2026-11-19 · 몬스터 전투불능 프레임 덮어쓰기 수정 (#120)
+
+- 치명타 이후 공격 종료 콜백이 Idle을 덮어쓰던 경로를 확인하고 HP0인 몬스터의 대기 복원만 차단했습니다. 아트·메타·전투 데이터·Save 보호.
+- Unity 6000.6.5f1 격리 Play 실제 불씨망령·화열딱정벌레·균열도마뱀 전투에서 KO 뒤 Idle 0회, 마지막 전투불능 셀 유지 및 기존 공격·피격 확인. 75 PASS / 0 FAIL. 제품 `4b423a70585cfed7b4fbf1697bf61da7476ccd4b`, 원격 Push 미실행.
+
+[상세 기록](../../Issue120_Monster_Defeat_Idle_Fix_20261119.md)
+
+## 2026-11-19 · 불씨망령 승인 Idle4·Attack4 통합 시트 적용 (#120)
+
+- 승인 PNG 1경로에 반영. 기존 피격·전투불능 8셀 전 RGBA, Sprite ID·meta·전투/스폰 데이터 보호. Unity 6000.6.5f1 실제 격리 Field07 전투 30 PASS·게임 오류 0. 합성 Save의 승리 보상과 복귀까지 확인.
+- 전투불능 마지막 셀 직전 Idle 한 프레임이 추적 로그에 관찰됐으며 기존 연출 코드를 유지했습니다. 제품 `37248c3b4345c7152db2ad2afad2aaf743294369`, 원격 Push 미실행.
+
+[상세 기록](../../Issue120_EmberWraith_Idle4_Attack4_Apply_20261119.md)
+
+## 2026-11-19 · 눈보라 정령 Idle8 v2 승인 기준 자산 반영
+
+- 승인 v2 PNG, 8개 Sprite, Idle 0.96초 반복 클립, 컨트롤러와 시각 프리팹을 원본 프로젝트에 반영했습니다. Unity 6000.6.5f1 격리 임포트·클립 샘플링·프리팹 연결 PASS.
+- 정식 M5 등록 및 F4/F5 참조 연결은 후속입니다. v1·KeyPose 보존, Save와 전투·다른 몬스터 데이터 변경 없음. 제품 `32297d6ad37a1be7f31f94e98b57dcfb91a5886e`, 원격 Push 미실행.
+
+[상세 기록](../../Issue112_BlizzardWisp_Idle8_V2_Apply_20261119.md)
+
+## 2026-11-19 · Issue #112 눈보라 정령 Idle8 v2 오프라인 검수
+
+- KeyPose·v1 보존과 v2 ZIP/시트/분리셀/GIF/비교판 확인. v2 본체 띠 회전감 개선, 512/128 회전 방향 명확, 40은 소용돌이 인상 위주. 8프레임·120ms 유지. 미술 승인 권고 및 대표 검토 대기, Unity 미적용.
+- [검수 및 비교](../../Issue112_BlizzardWisp_Idle8_V2_Review_20261119.md). 로컬 codex/issue112-wisp-idle8-v2-review, 원격 Push 미실행.
+
+## 2026-11-19 · Chapter 1·2 NPC 리뉴얼 종료
+
+- Unity 6000.6.5f1 실제 격리 Play Mode에서 아르벨 펫 분양·관리·주민·포털 관리인 4명 표시 및 상호작용 50 PASS / 0 FAIL / 게임 런타임 오류 0. 포털 이동 비활성. 아르벨·카타콤 공용 원화 8명의 실제 Sprite와 승인 파일 보존 확인.
+- 개인 Save 미접근. 합성 슬롯으로 독침벌 분양 100T·추가 비용 없는 장착 및 기록 검증. 주민·치유사 이름표의 일부 구도 겹침은 이전 캡처에도 있는 배치 특성으로 기록.
+- 관련 제품 커밋 `44d4ab5449131ca51876791f5ca3879aaaaf7a5d`, `31a72cf42a890a7c43e32005ba583172a5733256`. 이번 작업은 승인 범위 검증과 종료 문서만 반영했습니다. 원격 Push 미실행.
+
+[종료 보고서](../../Chapter1_2_NPC_Renewal_Closure_20261119.md)
+
+## 2026-11-19 · 아르벨 주민·포털 관리인 승인 원화 적용
+
+- Arbel (1.5,-1.5) 마을 주민의 Scene 인스턴스와 (-7,-3) 포털 관리인의 외형을 승인 PNG로 교체했습니다. 기존 위치·대사·기능 및 포털 비활성을 유지합니다.
+- 두 ZIP/PNG SHA와 기술 검수 기록 재대조, 변경 C# 및 Unity 6000.6.5f1 배치 컴파일 통과. 격리 Editor에서 두 PNG의 Sprite 로드, 주민 Scene 참조·좌표·색·기존 Trigger 및 관리인 카탈로그 연결을 확인했습니다. 실제 Play에서 포털 준비 안내와 주민 인사를 확인할 수 있습니다.
+- 제품 커밋 `31a72cf42a890a7c43e32005ba583172a5733256`, 로컬 작업 브랜치 `codex/issue118-chapter3-balance`, 원격 Push 미실행.
+
+[상세 적용·검증 기록](../../Arbel_Resident_Portal_Art_Apply_20261119.md)
+
+## 2026-11-19 · Chapter 3 전리품 미술 승인 및 아르벨 펫 NPC 원화 연결
+
+- 승인 아르벨 펫 분양·관리 PNG 2종을 원본에 반영했습니다. 변경 C# 컴파일·개별 SHA 일치. Unity 6000.6.5f1 격리 배치는 컴파일 단계에서 시간 제한으로 중단되어 실제 아르벨 화면·상호작용 확인이 남았습니다.
+- 전리품 PNG 6종은 정식 등록 대상 0/6으로 적용 준비만 완료했습니다. 다음 작업은 새 Item ID·드롭 등록 확인 후 연결입니다. 경험치 보상 보류.
+- 제품 커밋 `44d4ab5449131ca51876791f5ca3879aaaaf7a5d`, 로컬 `codex/issue118-chapter3-balance`, 원격 Push 미실행.
+
+[상세 적용·검증 기록](../../Chapter3_Art_Apply_20261119.md)
+
 ## 2026-11-17 일일 마감 — 원본 승인분 보존·복구 원격 검증
 
 **APPROVED_PRODUCTS_PRESERVED / REMOTE_RECOVERY_PUSH_VERIFIED / LOCAL_FF_SYNC_COMPLETE / NON_GIT_OFFSITE_INCOMPLETE / DAY_CLOSED**.

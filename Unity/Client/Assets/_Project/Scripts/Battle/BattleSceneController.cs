@@ -2889,6 +2889,9 @@ namespace ProjectLimitless.Battle
         /// <summary>공격 연출 뒤 필드 프레임이 아닌 진영별 전투 Idle Sprite를 다시 적용합니다.</summary>
         private static void RestoreBattleIdle(CombatantView view)
         {
+            // 치명타 HUD 갱신에서 시작한 몬스터 전투불능 프레임을 공격 종료 시 덮지 않습니다.
+            if (view?.MonsterAnimation != null && view.LastHp <= 0) return;
+
             if (view?.CharacterAnimation != null)
             {
                 view.CharacterAnimation.PlayIdle();
