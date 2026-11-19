@@ -1,3 +1,11 @@
+## 2026-11-19 / Issue #120 — 불씨망령 기존 원화 기반 Idle4 순환 보완 납품
+
+- **NPC 리뉴얼 종료**: 대표 최종 종료 및 #111 50PASS/0FAIL/오류0, 기존 승인 공용 NPC8 유지. #113/#117, 아르벨 임시 주민 및 #119 로컬 적용 보고 확인. 불씨망령 기존 HOLD는 미술 검토/Idle 발주 범위에서만 해제.
+- **원본 실물 확보**: Library Ember_Wraith_Sprite_Sheet(1).png의 raw bytes Git blob SHA1 `56d00511dea6f0bace2276199f32974b8b8680ad` = 복구본 ba59838b의 GitHub 원본 SHA. 원본 SHA256 `e6dfe61da6d754f615aaeff7f10719cc336b46d0ff7f5c09249545fd10c25655` 전후 동일. 1256×1256 RGBA 4×4/314px, Idle4/8FPS, PPU314, 슬라이스 하단 중앙 pivot, GUID 4828f7482c83eb949abd1f3017c227b3. 최신 로컬 직접 접근/Unity 실행 없음.
+- **후보**: `Ember_Wraith_Sprite_Sheet_Idle4_Candidate.png` SHA256 `7b26e90652f9916faf5712647a2bf23c91a1ca2ea8bc266ca273a1de1dd58e70`. 기존 smoke 국소 이동, 테이퍼 흐름 및 불씨/재 공전. 전체 회전0/새 원화 제작0/프레임 확대0. Idle 얼굴·핵 보호 마스크 frame당10729px RGBA 변화0, 셀 경계 alpha 변화0, 나머지 Attack/Hit/Defeat 12셀 RGBA 변화0. 외곽 연기 alpha 일부 의도적 변경. 기존 중심/실루엣을 유지해 회전은 국소적, 40px 작은 재 판독 제한. Blizzard v2 비교 GIF는 방향 참고, 최종 승인 아님.
+- **납품**: `Limitless_EmberWraith_Issue120_Idle4.zip` 5848242 bytes, SHA256 `0c5356d6e807f79c0fde9b1763715e89c2d03c4443ee57a100b81b2f376b9a37`, CRC12/12, Manifest10/10, SUMS11/11 PASS. 원본/후보 비교 GIF SHA256 `e52e9e802481a09b0d152e6f8cdcf5d19866132ca7f16c68299cd590897048c3`, 재디코드 4프레임/120·130·120·130ms, 314/128/40 실제 비교판 포함. Windows 자동 복사 및 Unity 적용 없음.
+- [제작 보고서](../../Renewal_20261119_Issue120_EmberWraith_Idle4_LocalRotation_Pilot.md) docs/art-renewal commit `ff5c4a999e6313df12140d4373178e626dd92504`. **FILE_TECH_PASS / IDLE_ART_REVIEW_PENDING / NOT_UNITY_APPLIED / ATTACK_REVIEW_DEFERRED**. Idle 승인 이후 Attack 보완 여부 결정, 기존 전투 및 몬스터 정의/GUID/meta/Save/UserData/Discord 보호. Unity6000.6.5f1, #85 HOLD 유지, main 직접 commit/Push/Merge0.
+
 ## 2026-11-19 / Issue #119 — 아르벨 포털 관리인 독립 정지 원화 납품
 
 - 기존 arbel-portal-keeper (-7,-3), Resident, “연결 기능은 아직 준비 중입니다.”, 승인 OGA20 공유. 복구본 ba59838b 및 북부 거점 서비스 기획/#45/#56 확인. 북부 포털 OFF 유지; 신규 기능/배치/대사/ID 확정0. 전용 승인 원화 확인 범위 내 미발견. 기존 전용 이슈 미발견으로 #119 신규 개설.
