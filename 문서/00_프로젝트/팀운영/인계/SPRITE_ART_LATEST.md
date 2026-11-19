@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-19 / Issue #112 — 눈보라 정령 Idle8 후보 납품 및 #116 전리품 최종 승인 반영
+
+- [#116 전리품6종 최종 승인](https://github.com/HappyPaul812/Project-Limitless/issues/116#issuecomment-6997032271) 확인. **ART_USER_APPROVED_6_OF_6 / UNITY_NOT_APPLIED**. 기존 ZIP SHA `8d7ff5e8c3c16aebe9d2992ace2326002e8e72946d62c1b0faad37a251acb54c`, 재제작0. [Codex 기록](https://github.com/HappyPaul812/Project-Limitless/issues/116#issuecomment-6997270316) 기준 로컬 적용 준비 보관, Item/드롭 연결0/6. 아래 이전 승인 대기 표기는 납품 당시 이력.
+- [정령계 공통 아트모션 운영 기준](https://github.com/HappyPaul812/Project-Limitless/commit/98ef6141c5160bfa68cce516017c5938e21f0a46) 및 [#112 회전 Idle8 발주](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-6997033601) 확인. KeyPose SHA256 `0c72c3f8fc80c9e74bf648236a0ff1746ef344ef71f03b4c005c38db59915586` 실제 회수·작업 전후 일치, 원본 수정0.
+- 신규 **`Sprite/BlizzardWisp_M5_Idle8_4096x512_RGBA_CANDIDATE.png`** 4096×512 RGBA, 가로8×512셀, 1,605,449bytes, SHA256 **`28a8ae1d325617431ed3c2441467c235c323ce229fe91fa5190018ac8bde1cd7`**. Frame00 원화 전RGBA 동일, 8프레임 상이, 각 셀 경계 alpha0. 원본 본체와 얼음 조각12개를 분리, 핵 주위 눈바람의 국소 각도/반경 주기 변형 및 얼음 조각 공전, 전후 합성, 최대 약3px 부유. 전체 원화 평면 회전0. 2D 근사이며 자연스러운 회전감·루프는 사용자 미술 검토 필요. 별도 생성 시안 납품 사용0.
+- 실제 512/128/40px 비교판·간략 보드·축소 스트립, 검토 GIF 디코드8프레임 제작 이미지 일치, **120ms×8=960ms/주기**, loop=0. ZIP `BlizzardWisp_Issue112_Idle8.zip` 6,121,505bytes/17entries, SHA256 **`a4db522ec21d96edd7718655bb5889f32d9d25c5cfe79c0c44dbbf729428e58d`**. CRC PASS/Manifest15/15/SUMS16/16, 비순환. Library `/LIMITLESS/Issue112_BlizzardWisp_Idle8/` ZIP·PNG·GIF·비교판2 저장 완료.
+- [**Idle8 제작·검증 보고**](../../Chapter3_BlizzardWisp_M5_Idle8_ArtPilot_20261119.md), `docs/art-new` commit **`9574c44583f2f6eb219f900fcb65e77140918cef`**. **KEYPOSE_KEEP / IDLE8_ART_CANDIDATE / USER_IDLE8_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED**. Attack/Hit/Defeat·Unity·스탯/드롭/펫/ItemId 변경0. Ch2 불씨망령은 NPC 리뉴얼 전체 완료 후 별도 발주까지 HOLD. Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/승인 자산 보호, main 직접 commit·Push·Merge0.
+
+
 ## 2026-11-19 / Issue #116 — Chapter3 전리품 6종 아이콘 후보 납품
 
 - [#116 전리품 발주](https://github.com/HappyPaul812/Project-Limitless/issues/116) 및 [기획 정본](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/08_몬스터/Chapter3_북부몬스터7종_전투밸런스_20261118.md) 확인. 기존 완료 Ch3 세트는 조회 범위에서 미발견(Windows F: 전수 미검증). 생성된 6개 시안 재사용, 중복 재생성0.
