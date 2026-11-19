@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-19 — 임시 주민·포털 관리인 최종 승인 / 눈보라 Idle8 회전 보완
+
+- 대표 “리뉴얼 둘 다 승인”. [아르벨 임시 주민 #111](https://github.com/HappyPaul812/Project-Limitless/issues/111#issuecomment-6999767617), [포털 관리인 #119](https://github.com/HappyPaul812/Project-Limitless/issues/119#issuecomment-6999768343). Library 동일 ZIP 실물 직접 회수, 납품 SHA256 일치, CRC 및 SUMS 전체 PASS. 임시 주민 ZIP968f8f6ca8ba4dc0c5b59b162e333a2d0ea7075f88c45391008f86fc3ee95143 / PNG9f2a425f7ab40cb106b13cf812c43b2e2ecf5dcf48ddd79b84f1d8ef0d28822c; 포털 ZIP4cab4373d0b8d2a1efddb0b38230aa459a5848d8149ef4d1a34233a8ab6f14cd / PNG31c063f5a6d80491d74cd8207b670e8340cd624c21f0af200d8911171ce1b4cf. 모두512RGBA, USER_ART_APPROVED / UNITY_NOT_APPLIED. 사용자 Windows 경로 직접 접근 아님. 별도 Codex 최소 적용(임시 주민 (1.5,-1.5) 그 인스턴스 외형만, 포털 기존 arbel-portal-keeper(-7,-3)만; 위치/인사/기능 및 공통 프리팹·다른 NPC 보호, 포털 OFF). 펫 분양/관리 독립 원화 로컬 적용 보고(제품444dab54/보고27c2c104, 화면·상호작용 미검증), 전리품 적용 준비0/6 보호.
+- [눈보라 Idle8 #112](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-6999769300) 대표 조건부 승인: 8프레임 한계일 경우에만 승인. Library ZIP 실물 SHA 일치/CRC17/17/SUMS16/16, 4096×512 RGBA, GIF120ms×8. 실제 프레임 스트립 확인, 외곽 조각 공전이나 큰 눈바람 띠/내부 명암 패턴 거의 고정으로 회전감 약함. 프레임 수만의 한계 아님. TECH_PASS / IDLE8_V1_KEEP / TARGETED_V2_REVIEW_PENDING. 기존 원화 및 v1 보존, 8셀 유지하고 핵 주변 눈바람 주요 덩어리/명암/겹침의 순차 이동을 강조한 v2 1회만 발주, 필요성 입증될 때만 12~16 후보 별도 승인. Attack/Hit/Defeat/Unity 대기. 불씨망령 NPC 전체 완료 전 HOLD, 잔여 공유 외형8종은 승인 오리지널이라 추가 독립 제작 의무 미확정. main/Save/Discord/Unity 변경0.
+
+---
+
 # PLANNING / 2026-11-19 — 전리품6·펫 관리 담당 최종 승인 / 눈보라 Idle8
 
 - 대표 “메인, 리뉴얼 승인.” [접수 정본](https://github.com/HappyPaul812/Project-Limitless/commit/e5414969d548a8f5def22908950d7e3c0f37b5f5), [#116](https://github.com/HappyPaul812/Project-Limitless/issues/116#issuecomment-6997032271), [#117](https://github.com/HappyPaul812/Project-Limitless/issues/117#issuecomment-6997032892). 두 실물 기술PASS 및 최종 미술 승인, 게임 미적용. 기존 #113 분양 미술승인 유지. 반복 오프라인 QA/재작화 불필요. 실제 역할/참조 및 아이템 등록 존재 여부 확인 뒤 최소 적용 별도.
