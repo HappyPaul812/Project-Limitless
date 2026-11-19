@@ -1,3 +1,10 @@
+## 2026-11-19 / Issue #120 — 승인 Idle4 보존 및 Attack4 국소 보완 납품
+
+- 대표 Idle4 최종 미술 승인: 전체 승인 Idle 시트 SHA256 `7b26e90652f9916faf5712647a2bf23c91a1ca2ea8bc266ca273a1de1dd58e70`. 기존 원본/승인 시트 파일 해시 불변. 이번 후보는 Attack04–07만 변경; 승인 Idle4 및 Hit/Defeat8 픽셀 차이0.
+- 신규 `Ember_Wraith_Sprite_Sheet_Idle4_Attack4_Candidate.png` SHA256 `d25afb4cc932fd333f67854a28821bf239afa43c36ed937f479793e03285197a`, 1256² RGBA/314² 4×4, 8FPS. 기존 Attack 포즈 기반의 연기 국소 흐름, 기존 큰 화염 호 광량 일부 감소, 신규 시안에서 분리한 불꽃 효과만 05·06에 합성(응축/우향 방출), 재·불씨. 핵/후드 보호 영역·셀 경계4px RGBA 변화0. 전체 원화 회전/재생성 시트 통째 교체0.
+- 실제 비교 GIF SHA256 `a61461ee9f31834b71f271349ca8804437accf8bc497598d5a5dc5a9321e146f`, 4프레임/500ms. 314/128/40 비교판, 원본/신규 Attack strip. ZIP `Limitless_EmberWraith_Issue120_Attack4.zip` 5481648 bytes SHA256 `bd5fefaa815361ae0d76e397fecaeb5e312a8d70ee85347e2de3179f76c56b69`, CRC10/10, Manifest8/8, SUMS9/9 PASS. 기존 큰 불꽃 호 일부 남음, 40px 세부 재 판독 제한. 기존 시트 경계 잔여 알파 보존, Unity 미검증.
+- [제작 보고서](../../Renewal_20261119_Issue120_EmberWraith_Attack4_LocalEffects_Pilot.md), docs/art-renewal commit `050d54a0d946c850f45af49090592067047c26ba`. FILE_TECH_PASS / IDLE_USER_ART_APPROVED / ATTACK_ART_REVIEW_PENDING / HIT_DEFEAT_REVIEW_DEFERRED / NOT_UNITY_APPLIED. 기존 전투/타이밍/드롭/펫 불가/GUID/meta/Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/main 보호.
+
 ## 2026-11-19 / Issue #120 — 불씨망령 기존 원화 기반 Idle4 순환 보완 납품
 
 - **NPC 리뉴얼 종료**: 대표 최종 종료 및 #111 50PASS/0FAIL/오류0, 기존 승인 공용 NPC8 유지. #113/#117, 아르벨 임시 주민 및 #119 로컬 적용 보고 확인. 불씨망령 기존 HOLD는 미술 검토/Idle 발주 범위에서만 해제.
