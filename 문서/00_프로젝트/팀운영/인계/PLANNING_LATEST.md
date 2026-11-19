@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-19 — 아르벨 임시 주민·포털 관리인 로컬 적용 접수
+
+- [주민 적용](https://github.com/HappyPaul812/Project-Limitless/issues/111#issuecomment-7000171223), [포털 관리인 적용](https://github.com/HappyPaul812/Project-Limitless/issues/119#issuecomment-7000172208). 제품 31a72cf42a890a7c43e32005ba583172a5733256 / 보고 8698f594021ac7ed6849e47639bcc9a2abbf1a52, 로컬 codex/issue118-chapter3-balance, REMOTE_NOT_PUSHED. 원본 작업 폴더 적용 보고, Unity6000.6.5f1 격리 Editor 실제 Sprite Import/Scene/Catalog/좌표/Trigger PASS, exit0. 주민(1.5,-1.5) 단색 인스턴스만 교체, 기존 인사 유지. 포털(-7,-3) 기존 역할 및 준비 중 대사/비활성 유지. 실제 Play 대화 미실행. 로컬 전체 보고 원문 미Push로 미확인.
+- 이전 펫 분양/관리 독립 원화 적용 보고와 합쳐 아르벨 신규 NPC4종 실제 사용자 Play 확인 필요. 기존 [잔여 조사](https://github.com/HappyPaul812/Project-Limitless/commit/e59b4bbf6b9cbc311e1d470e1c0194a0408bc8ad)의 9개 공유 오리지널 외형 후보에서 포털 관리인 제외 8개(카타콤 입구4, 아르벨4). 외부 에셋 잔여로 간주하지 않음. 별도 독립 제작 의무 아님. 대표 수용/최종 실제 참조 확인 후 NPC 리뉴얼 종료 판정. 불씨망령 그때까지 HOLD. 신규 전면 감사/반복 QA 불필요, 미확인 실사용만 최소 확인. 눈보라 Idle8 v2 대기. 이번 기획 문서만 변경.
+
+---
+
 # PLANNING / 2026-11-19 — 임시 주민·포털 관리인 최종 승인 / 눈보라 Idle8 회전 보완
 
 - 대표 “리뉴얼 둘 다 승인”. [아르벨 임시 주민 #111](https://github.com/HappyPaul812/Project-Limitless/issues/111#issuecomment-6999767617), [포털 관리인 #119](https://github.com/HappyPaul812/Project-Limitless/issues/119#issuecomment-6999768343). Library 동일 ZIP 실물 직접 회수, 납품 SHA256 일치, CRC 및 SUMS 전체 PASS. 임시 주민 ZIP968f8f6ca8ba4dc0c5b59b162e333a2d0ea7075f88c45391008f86fc3ee95143 / PNG9f2a425f7ab40cb106b13cf812c43b2e2ecf5dcf48ddd79b84f1d8ef0d28822c; 포털 ZIP4cab4373d0b8d2a1efddb0b38230aa459a5848d8149ef4d1a34233a8ab6f14cd / PNG31c063f5a6d80491d74cd8207b670e8340cd624c21f0af200d8911171ce1b4cf. 모두512RGBA, USER_ART_APPROVED / UNITY_NOT_APPLIED. 사용자 Windows 경로 직접 접근 아님. 별도 Codex 최소 적용(임시 주민 (1.5,-1.5) 그 인스턴스 외형만, 포털 기존 arbel-portal-keeper(-7,-3)만; 위치/인사/기능 및 공통 프리팹·다른 NPC 보호, 포털 OFF). 펫 분양/관리 독립 원화 로컬 적용 보고(제품444dab54/보고27c2c104, 화면·상호작용 미검증), 전리품 적용 준비0/6 보호.
