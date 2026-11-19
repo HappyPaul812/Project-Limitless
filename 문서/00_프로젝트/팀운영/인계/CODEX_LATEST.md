@@ -1,3 +1,8 @@
+## 2026-11-19 · Issue #112 눈보라 정령 Idle8 v2 오프라인 검수
+
+- KeyPose·v1 보존과 v2 ZIP/시트/분리셀/GIF/비교판 확인. v2 본체 띠 회전감 개선, 512/128 회전 방향 명확, 40은 소용돌이 인상 위주. 8프레임·120ms 유지. 미술 승인 권고 및 대표 검토 대기, Unity 미적용.
+- [검수 및 비교](../../Issue112_BlizzardWisp_Idle8_V2_Review_20261119.md). 로컬 codex/issue112-wisp-idle8-v2-review, 원격 Push 미실행.
+
 ## 2026-11-19 · Chapter 1·2 NPC 리뉴얼 종료
 
 - Unity 6000.6.5f1 실제 격리 Play Mode에서 아르벨 펫 분양·관리·주민·포털 관리인 4명 표시 및 상호작용 50 PASS / 0 FAIL / 게임 런타임 오류 0. 포털 이동 비활성. 아르벨·카타콤 공용 원화 8명의 실제 Sprite와 승인 파일 보존 확인.
