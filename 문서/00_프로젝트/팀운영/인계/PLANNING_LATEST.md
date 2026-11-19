@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-19 — Chapter3 스토리·서브 승인 / 대사·보상 기준 잠금 / 밸런스·아트 발주
+
+- 11/19 대표 명시 서브6 승인 [6a1ffee](https://github.com/HappyPaul812/Project-Limitless/commit/6a1ffee14c6bbd33e48b18dbab6e5e65982b8d97), 메인 스토리/엔딩 조건부 승인(구조 재설계 불필요 판정) [4274cf7](https://github.com/HappyPaul812/Project-Limitless/commit/4274cf7b3dde1a2c503094759df8ffdc74aab5b1). 세부 대사·보상 위임 반영 [정식 대본/기준/정적 수치 검증](https://github.com/HappyPaul812/Project-Limitless/commit/ff25aab4c505a15f95c29ee18852eddefdccd92b). Main22~29 EXP1160/T480, 서브6 EXP690/T255, 합 EXP1850/T735. Main26 미엘·세린 수다 단 한 번 과거 힌트, Main27 폴·미엘 차 약속, Main29 하렌 “잘.했.어.” 보호. Ch4 도입부 화로 제작자 발견. Dialogue/Voice ID 및 기존 구현 대조·TTS 제작 별도.
+- **정적 검증**: 실제 원격 복구본 ExperienceProgression/CharacterGrowthCalculator 공식 대조, Python 독립 누산. 합성 Lv16/17 잔여0, 5/10 선택전투/필드(총31/56)에서 Lv18~20, 20/25회(총106/131)에 Lv21~23. Lv22~23 목표와 노가다 위험, 기본 스탯 G/H vs 딜러 차이 확인. 보상은 기획 기준 잠금, 실제 플레이 미검증. [Codex 최소 밸런스 QA](https://github.com/HappyPaul812/Project-Limitless/issues/118), 원본 변경0/개인 Save 접근0/Unity6000.6.5f1/#85 HOLD/Discord 보호. 실제 검증 후 조정안.
+- 신규 아트 [잡템6종 #116](https://github.com/HappyPaul812/Project-Limitless/issues/116) 눈보라 정령 기존 1포즈 기술PASS·미술 승인 대기라 모션 대기, 독립 작업 발주. 리뉴얼 [펫 관리 담당 #117](https://github.com/HappyPaul812/Project-Limitless/issues/117), #113 분양 승인/게임 미적용 보호. 실제 담당 세션 실행은 대표 프롬프트 전달 필요. 메인/원본/아트/Unity 변경 없음.
+
+---
+
 # PLANNING / 2026-11-18 — Chapter3 Main24~29 상세 메인 서사 제안
 
 - 대표 메인 계속/여자들 수다 통해 미엘 과거 살짝/폴·미엘 로맨스 요청. [상세 스토리·목표·보상](https://github.com/HappyPaul812/Project-Limitless/commit/d3a906d4ef4f0e10170d127d3bc7a106ed28004b) 기록. Main22/23 구현 기초 보호, 24 F2 첫 한기/어묵탕2 → 25 F3 온맥·얼음갑충 → 26 F4 피난처·해빙연고2·정령/형제 갈등 → 27 F5 빙각 수호체/하렌이 태온 판단에 신뢰/폴미엘 둘이 차 약속 → 28 화로 보스 기믹 → 29 온기 회복/하렌 마지막 정확 “잘.했.어.”. Main26 안전 쉼터의 미엘·세린 차와 수다 중 ‘예전에도 저한테 먼저 치료받으라고 하던 사람이 있었어요.’ 단 한 번 힌트(직접 전쟁/약혼/사망 공개X). 여성 플레이어 추가 반응 선택, 모두 같은 정보. Chapter5/6 장기 복선 보존.
