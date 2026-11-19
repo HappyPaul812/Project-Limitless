@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-19 — NPC 리뉴얼 종료 / 불씨망령 발주
+
+- [NPC 종료](https://github.com/HappyPaul812/Project-Limitless/issues/111#issuecomment-7000806171) 승인 범위 실제 격리 Play 50PASS/0FAIL/오류0, 공용 원화8 유지, 합성 Save만. 이름표 겹침 기존 이슈. 로컬 보고 d14f5907235b462df5bbe7c92c665c43ad8bff50 미Push. NPC 리뉴얼 종료.
+- [불씨망령 작업](https://github.com/HappyPaul812/Project-Limitless/issues/120), [공통 규칙 갱신](https://github.com/HappyPaul812/Project-Limitless/commit/8f22f2b33794a7296cd584c635d4c618b6d80cf3). NPC 종료 게이트 해제, 기존 원화/실사용 모션 감사 후 KEEP 또는 Idle 회전감 최소 보완, 미술 승인 전 Attack/Unity 적용 금지. 눈보라 Idle8 v2 검수 대기. 원본 게임/Save/main 변경 없음.
+
+---
+
 # PLANNING / 2026-11-19 — 아르벨 임시 주민·포털 관리인 로컬 적용 접수
 
 - [주민 적용](https://github.com/HappyPaul812/Project-Limitless/issues/111#issuecomment-7000171223), [포털 관리인 적용](https://github.com/HappyPaul812/Project-Limitless/issues/119#issuecomment-7000172208). 제품 31a72cf42a890a7c43e32005ba583172a5733256 / 보고 8698f594021ac7ed6849e47639bcc9a2abbf1a52, 로컬 codex/issue118-chapter3-balance, REMOTE_NOT_PUSHED. 원본 작업 폴더 적용 보고, Unity6000.6.5f1 격리 Editor 실제 Sprite Import/Scene/Catalog/좌표/Trigger PASS, exit0. 주민(1.5,-1.5) 단색 인스턴스만 교체, 기존 인사 유지. 포털(-7,-3) 기존 역할 및 준비 중 대사/비활성 유지. 실제 Play 대화 미실행. 로컬 전체 보고 원문 미Push로 미확인.
