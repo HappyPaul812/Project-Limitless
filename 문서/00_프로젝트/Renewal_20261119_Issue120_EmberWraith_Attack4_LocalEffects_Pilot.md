@@ -1,0 +1,8 @@
+# LIMITLESS / Issue #120 — 불씨망령 Attack4 국소 효과 보완 (2026-11-19)
+- 대표 Idle4 최종 미술 승인, SHA256 7b26e90652f9916faf5712647a2bf23c91a1ca2ea8bc266ca273a1de1dd58e70. 원본 e6dfe61da6d754f615aaeff7f10719cc336b46d0ff7f5c09249545fd10c25655 및 승인 Idle 시트 해시 직접 재확인. 기존 1256×1256 RGBA 4×4/314px, 8FPS 유지.
+- 기존 Attack04–07 원화/포즈를 기반으로 연기 국소 변위, 기존 넓은 불꽃 호의 일부 광량 감소, 응축 및 우향 방출용 불꽃 효과를 직전 AI 생성 시안에서 색/영역 마스크로 분리·합성(05–06), 재·불씨 포인트 보완. 생성된 시트의 캐릭터 전체 및 생성 비교 이미지를 납품하지 않음. 전체 원화 회전0. 핵·후드 보호 영역 및 셀 경계 4px 띠 RGBA 변화0. 기존 원본의 경계 잔여 픽셀은 이번 범위 밖이라 그대로 보존.
+- 완성 후보 Ember_Wraith_Sprite_Sheet_Idle4_Attack4_Candidate.png SHA256 d25afb4cc932fd333f67854a28821bf239afa43c36ed937f479793e03285197a. 승인 Idle 4셀 및 Hit/Defeat 8셀 RGBA 픽셀 차이0; Attack4 변경 픽셀 30860/38801/49432/27491. 원본 전체/승인 Idle PNG 파일의 덮어쓰기0.
+- 실물 PNG 기반 비교 GIF Ember_Wraith_Attack4_Before_After.gif SHA256 a61461ee9f31834b71f271349ca8804437accf8bc497598d5a5dc5a9321e146f, 4프레임, 120/130/120/130ms, 총500ms. 실제 314/128/40 비교판 SHA256 61590965bfcd4f229a85bc92989c928c197118a29dae5bfcdf65bd77ae1b2bb6. 게임용 PNG와 기존/신규 Attack strip, README/SourceDeclaration/QA/Manifest/SUMS 포함.
+- 전체 ZIP Limitless_EmberWraith_Issue120_Attack4.zip, 5481648 bytes, SHA256 bd5fefaa815361ae0d76e397fecaeb5e312a8d70ee85347e2de3179f76c56b69, 10 entries, CRC PASS, Manifest8/8 및 SUMS9/9 PASS. 사용자 F: 자동복사 없음. 
+- 미술 검토: 기존 큰 불꽃 호가 일부 남아 있으며 40px의 작은 재 표현은 제한적. 기존 시트의 가장자리 잔여 알파는 이번에 변경하지 않음. Unity 실게임 검증 없음. 
+- FILE_TECH_PASS / IDLE_USER_ART_APPROVED / ATTACK_ART_REVIEW_PENDING / HIT_DEFEAT_REVIEW_DEFERRED / NOT_UNITY_APPLIED. 기존 전투 기믹, 피해, 타이밍, 드롭, 펫 불가, GUID/meta, Unity6000.6.5f1, #85 HOLD, Save/UserData/Discord, 다른 승인 자산 보호. main 직접 commit/Push/Merge0. Attack 승인 후 Hit/Defeat 보완 여부 별도 결정.
