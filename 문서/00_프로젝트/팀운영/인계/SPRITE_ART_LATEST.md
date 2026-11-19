@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-19 / Issue #116 — Chapter3 전리품 6종 아이콘 후보 납품
+
+- [#116 전리품 발주](https://github.com/HappyPaul812/Project-Limitless/issues/116) 및 [기획 정본](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/08_몬스터/Chapter3_북부몬스터7종_전투밸런스_20261118.md) 확인. 기존 완료 Ch3 세트는 조회 범위에서 미발견(Windows F: 전수 미검증). 생성된 6개 시안 재사용, 중복 재생성0.
+- 신규 **독립 128×128 투명 RGBA PNG 6종**: 서리 묻은 털뭉치, 설원 솜털, 서리깃, 빙갑 조각, 눈폭풍 결정, 마력차단 결정. Ch2 실물 PNG 열풍 깃털·화열 갑각·잔불 파편 3종의 SHA 기존 문서와 일치 확인. 64px 격자/17 가시색/어두운 윤곽/2배 nearest 정규화, 128/40 실축소 및 Ch2 실물 3종 비교판. 신규 내부 묘사가 더 복잡하므로 화풍 일치 최종 시각 승인 필요. Ch2 7종 전수 및 실제 UI 미검증. 기존 PNG 변경0.
+- ZIP `Chapter3_Loot_Issue116.zip` **175,145bytes/12entries**, SHA256 `8d7ff5e8c3c16aebe9d2992ace2326002e8e72946d62c1b0faad37a251acb54c`. PNG 6/6 규격·테두리 투명 PASS, CRC PASS, Manifest 10/10, SUMS 11/11, 비순환. SourceDeclaration 포함. Library `/LIMITLESS/Issue116_Chapter3_Loot/` ZIP·PNG6·비교판2 저장 및 ZIP 재회수 byte-exact/CRC PASS.
+- [**전리품 6종 제작 보고 및 개별 PNG SHA**](../../Chapter3_Loot_Icons_Issue116_20261119.md) `docs/art-new` commit `b92b91b6b96e726dcd3aed85a389b5a15ee90b2b`. **ART_CANDIDATE_6_OF_6 / USER_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED**. #112 눈보라 정령 추가 모션 미진행. 기존 승인 원본·#85 HOLD·Unity6000.6.5f1·Save/UserData·Discord 보호. ItemId/드롭/판매가/펫/Unity 적용0. main 직접 commit·Push·Merge0.
+
+
 ## 2026-11-17 / Issue #112 — 얼음갑충 최종 승인·눈보라 정령 M5 1포즈 후보 납품
 
 - [#103 얼음갑충 최종 승인](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6941419315) 확인. **KeyPose·Idle4·Attack4·Hit4·Defeat4 USER_ART_APPROVED / UNITY_NOT_APPLIED**, 5종 재제작 금지. 기존 Defeat4 대기 표기는 당시 납품 기록이며 최신 승인으로 대체됨.
