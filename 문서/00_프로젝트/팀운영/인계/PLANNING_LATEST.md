@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-19 — 불씨망령 리뉴얼 실제 전투 적용 접수
+
+- [Codex 적용](https://github.com/HappyPaul812/Project-Limitless/issues/120#issuecomment-7004742285), [기획 접수](https://github.com/HappyPaul812/Project-Limitless/issues/120#issuecomment-7005002357). 승인 통합 시트 SHA256 d25afb4cc932fd333f67854a28821bf239afa43c36ed937f479793e03285197a 원본 반영, Idle/Attack만 변경, Hit/Defeat8셀 및 .meta/GUID/전투·스폰·Save 유지. Unity6000.6.5f1 격리 Field07 실제 전투30PASS/0FAIL/오류0, 4모션 각4셀/복귀/마지막 유지/14T·52EXP/Field 복귀 합성Save 검증. 제품37248c3b4345c7152db2ad2afad2aaf743294369, 보고921a5e30a817a02fe065fba7be827a8eda84fa3a, 로컬 codex/issue120-ember-wraith-idle-attack, REMOTE_NOT_PUSHED.
+- ART_RENEWAL_APPLIED / ACTUAL_BATTLE_QA_PASS / TRANSIENT_IDLE_FRAME_OPEN. Defeat 마지막 셀 직전 Idle 1프레임 관찰: 공격 종료 Sprite 복원과 일치하지만 원인/기존 발생 여부 미확정. 아트 재제작 없음, Codex 기존 증거/코드로 국소 원인 조사 후 필요할 때만 최소 수정/회귀 QA, 공용 전투 대규모 수정 금지. 눈보라 Defeat4 납품 대기. 이번 기획 문서만 변경.
+
+---
+
 # PLANNING / 2026-11-19 — 눈보라 Hit4·불씨망령 Attack4 최종 승인
 
 - 대표 “둘 다 좋아..” [눈보라 Hit4 승인/Defeat4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7004512175), [불씨망령 Attack4 승인](https://github.com/HappyPaul812/Project-Limitless/issues/120#issuecomment-7004513160). 두 Library ZIP 직접 회수, SHA 납품값 일치·CRC/SUMS 전부 PASS. Windows 직접 접근/Unity 신규 검증 없음. 눈보라 KeyPose/Idle8v2/Attack4/Hit4 승인4/5, Idle만 시각 자산 적용, 정식 등록 전. Defeat4 마지막 제작(핵 약화/눈바람 풀림/파편 흩어짐/잔류). 불씨망령 Idle4·Attack4 승인, Hit/Defeat 기존 유지 우선, 승인 통합 시트 d25afb4cc932fd333f67854a28821bf239afa43c36ed937f479793e03285197a, 실제 원본과 미수정 셀/메타/GUID 대조 후 Codex 최소 적용·전투 QA, 연결 결함만 별도 보완. main/Save/Unity6000.6.5f1/Discord/#85 보호. 신규 미술·게임 적용 미실행.
