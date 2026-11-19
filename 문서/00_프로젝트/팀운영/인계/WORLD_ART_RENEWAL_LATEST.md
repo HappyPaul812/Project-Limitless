@@ -1,3 +1,11 @@
+## 2026-11-19 / Issue #117 — 아르벨 펫 관리 담당 독립 정지 원화 납품 (현재 최신)
+
+- #117 기준 #113 펫 분양 담당 미술 승인, 게임 미적용. 승인 PNG SHA256 `d64c342bd4bd8953bafce1feb8949d3cb5ce1a4b67ecf88cda3a6757beb4e47d` 보존 확인. 관리 담당은 OGA16_Bank 공유. 담당 인계·접근 가능한 Library 및 Issue에서 전용 승인 원화 미발견(전체 로컬/브랜치 전수조사 아님).
+- 신규 관리 담당 `Arbel_PetManagement.png` 512×512 RGBA 투명 정지1포즈, 148207 bytes, SHA256 `62a771d90ccf27bc9754779c900178d22740dee041b66b1ec74172b00df285b9`, alpha>8 bbox(152,56,361,469), 외곽 알파 접촉0. 짧은 회색빛 머리·수염·황토 조끼·청회색 실용복·빗/관리 가방으로 분양 담당 및 은행과 차별. 기존 평면 화풍보다 세밀한 명암, 레온과 일부 모티프 유사성은 미술 검토 필요.
+- 실물 OGA17/16·승인 분양 담당·레온 최근 납품본·신규 512/128/40px 오프라인 비교판 SHA256 `03e39bdcec5da64fd550199d3ed8b7c0fb0eefccb8d2ad2ae619aa0981b806cf`. 참조 원본 바이트 불변.
+- 전체 ZIP `Limitless_PetManagement_117.zip` 807823 bytes SHA256 `72b7d5312097ad0599916f92f656cdfbe896742bfb9c07468c5adf97b448cf8d`, 9파일 CRC PASS/Manifest7/7/SUMS8/8 PASS. PNG 전용 ZIP `PetManagement_117_PNG.zip` 147204 bytes SHA256 `ccd1845a320e313a2cbcaa92c82e77da2e71fb3fd4b2bea3a3bfaeb3bcde42d4` CRC PASS. Library `/LIMITLESS_Art_Delivery/Issue117_Arbel_PetManagement_20261119/` PNG·ZIP2·비교판4파일 저장 완료.
+- [제작 보고서](../../Renewal_20261119_Issue117_Arbel_PetManagement_StillArt_Pilot.md), docs/art-renewal commit `9ef7cfd1b00a2ae834b9b580eb3c154e48210856`. FILE_TECH_PASS / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED. 기존 승인 NPC·Placeholder·Unity6000.6.5f1·Issue85 HOLD·Save/UserData·Discord 보호. 새 이름/서사/기능/동물/초상화/애니메이션/Unity/Codex 적용0. main 직접 commit/Push/Merge0. 승인 후 PPU/Pivot·실제 월드 배치·관리 fallback 범위 별도 QA.
+
 ## 2026-11-17 / Issue #113 — 아르벨 펫 분양 담당 독립 정지 원화 납품 (현재 최신)
 
 - **현재 매핑 확인:** arbel-pet-adoption → OGA17_EquipmentShop, arbel-pet-management → OGA16_Bank. [#113](https://github.com/HappyPaul812/Project-Limitless/issues/113), 최신 인계 및 접근 가능한 Library에서 분양 담당 독립 기승인 원화 미발견. Windows 및 모든 브랜치 전수검사 아님.
