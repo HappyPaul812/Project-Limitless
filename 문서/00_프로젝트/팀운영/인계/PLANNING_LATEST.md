@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-19 — 이틀간 승인분 마감 발주
+
+- 대표 11/18~19 전 작업 통합·로컬 동기화·PC 장애 대비 push 요청. [마감 이슈](https://github.com/HappyPaul812/Project-Limitless/issues/121) / [작업 정본](https://github.com/HappyPaul812/Project-Limitless/commit/f15f04a135619049a60ea2327de678570d508eb1). WORK_ORDER_ONLY, 실제 로컬/원격 제품 복구 push 아직 미완료. 11/17 복구본 보존, 새 clean 복구 ref 및 fresh fetch/해시 검증, FF-only, Unity6000.6.5f1, #85 HOLD·Save/UserData/Discord·기존 dirty/untracked 보호. 비Git offsite 별도 확인.
+- 눈보라 Defeat4 최종 미술 승인, [승인5종 로컬 준비](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7007374645) 제품9324b658/보고67c9c3c7: 격리 Import·프레임·홀드·Prefab/Animator PASS. M5/F4~5 정식 등록/실전 미검증. 재제작 금지. [불씨망령 KO Idle 끼어듦 수정](https://github.com/HappyPaul812/Project-Limitless/issues/120#issuecomment-7005479268) 제품4b423a70/보고df77effd, 실제3종75PASS/0FAIL/오류0. 이전 OPEN 대체. NPC 종료50PASS, 전리품0/6 등록. EXP 변경 미승인. 마감 이후 대표 재개 전 추가 개발 금지.
+
+---
+
 # PLANNING / 2026-11-19 — 불씨망령 리뉴얼 실제 전투 적용 접수
 
 - [Codex 적용](https://github.com/HappyPaul812/Project-Limitless/issues/120#issuecomment-7004742285), [기획 접수](https://github.com/HappyPaul812/Project-Limitless/issues/120#issuecomment-7005002357). 승인 통합 시트 SHA256 d25afb4cc932fd333f67854a28821bf239afa43c36ed937f479793e03285197a 원본 반영, Idle/Attack만 변경, Hit/Defeat8셀 및 .meta/GUID/전투·스폰·Save 유지. Unity6000.6.5f1 격리 Field07 실제 전투30PASS/0FAIL/오류0, 4모션 각4셀/복귀/마지막 유지/14T·52EXP/Field 복귀 합성Save 검증. 제품37248c3b4345c7152db2ad2afad2aaf743294369, 보고921a5e30a817a02fe065fba7be827a8eda84fa3a, 로컬 codex/issue120-ember-wraith-idle-attack, REMOTE_NOT_PUSHED.
