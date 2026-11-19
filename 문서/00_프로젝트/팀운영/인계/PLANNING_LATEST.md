@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-19 — 눈보라 정령 Idle8 v2 승인·시각 자산 적용 / 후속 3모션 발주
+
+- 대표 v2 최종 미술 승인, [Codex 적용 기록](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7002165110). Unity6000.6.5f1 격리 Editor에서 Sprite8/0.96초 반복 Clip/Controller/시각 Prefab 연결 PASS, 제품32297d6ad37a1be7f31f94e98b57dcfb91a5886e, 보고d336fc0fda72fc33b08005ac8c88c731a13c6251 로컬 미Push. 정식 MonsterDefinition/조우/F4·F5 씬 미등록, 실제 전투 미검증. v1/KeyPose 보존.
+- 대표 후속 모션 요청. [Attack4→Hit4→Defeat4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7002458727). Attack4를 우선 제작(2048×512 RGBA 4셀; 핵 주변 눈바람 응축→우향 방출→잔류→대기 복귀). 이후 피격·전투불능 4셀씩 단계별 미술 승인. 기존 전투 기획, Idle8 v2, 원본 보호. 전체 모션 승인 후 별도 통합 적용/정식 등록 검증, 현재 Unity 변경0. 불씨망령은 기존 별도 발주 유지.
+
+---
+
 # PLANNING / 2026-11-19 — NPC 리뉴얼 종료 / 불씨망령 발주
 
 - [NPC 종료](https://github.com/HappyPaul812/Project-Limitless/issues/111#issuecomment-7000806171) 승인 범위 실제 격리 Play 50PASS/0FAIL/오류0, 공용 원화8 유지, 합성 Save만. 이름표 겹침 기존 이슈. 로컬 보고 d14f5907235b462df5bbe7c92c665c43ad8bff50 미Push. NPC 리뉴얼 종료.
