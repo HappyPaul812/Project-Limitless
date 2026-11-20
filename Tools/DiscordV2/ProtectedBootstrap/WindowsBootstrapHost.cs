@@ -32,7 +32,7 @@ internal sealed class WindowsBootstrapHost:IBootstrapHost
     [DllImport("advapi32.dll",SetLastError=true)] private static extern bool OpenProcessToken(nint process,uint access,out nint token);
     [DllImport("advapi32.dll",SetLastError=true)] private static extern bool GetTokenInformation(nint token,int kind,out int value,uint size,out uint needed);
     private static void Check(bool ok){if(!ok)throw new Win32Exception(Marshal.GetLastWin32Error());}
-    private static string Administrator()
+    internal static string Administrator()
     {
         if(OpenThreadToken(GetCurrentThread(),8,true,out nint threadToken)){CloseHandle(threadToken);throw new InvalidOperationException("BOOTSTRAP_IMPERSONATION");}
         BootstrapPolicy.Need(Marshal.GetLastWin32Error()==1008,"BOOTSTRAP_THREAD_TOKEN_UNKNOWN");

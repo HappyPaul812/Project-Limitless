@@ -1,3 +1,7 @@
+## 2026-11-21 Discord V2 staging 표적 검증 / 실행 HOLD
+
+Windows 생성·HANDLE readback 코드, 격리 원장 단발 소비, 동일 바이트 서명·SHA 검증을 구현했습니다. 관리형 경고 0·오류 0, 표적 15 PASS / 0 FAIL. 실제 관리자 생성, 운영 원장·서명 신뢰 채널과의 연결은 승인 대기입니다. cutoff/계정 만료 연장 없음. NO_GO / MANUAL / EXECUTION_HOLD. [변경·검증 보고](Discord_V2_Staging_Delta_20261121.md)
+
 ## 2026-10-31 staging 최종 정적 판정 HOLD / 스크립트·로더 SHA 확보
 
 기준142e67ad01726ef1c415f3315c159f58bcc2afa5·브랜치 codex/discord-v2-staging-final-readiness-hold-20261031. 기존25PASS/0FAIL보존·재시험0. 기존 문서로더를 데이터검증 전용 파일화/AST구문0오류·직접실행0. [정확한2SHA·미구현경계·승인/GUI·11월7일인계](Discord_V2_Staging_FinalReadiness_HOLD_20261031.md). 실제Windowsbackend/토큰부모HANDLE readback·영구재사용차단·출처독립승인미완→READY_FOR_USER_APPROVAL아님/HOLD·생성명령미발급. 기존제품/이미지/binding변경0·실폴더ACL/EXE/Task계정OnBootV3/UnitySave/빌드/Push변경0. NO_GO/MANUAL/EXECUTION_HOLD·cutoff자동연장금지。
