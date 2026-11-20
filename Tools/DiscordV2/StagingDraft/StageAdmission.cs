@@ -26,12 +26,14 @@ internal static partial class StageSecurityApi
     // 독립 검증기의 실행 허용은 OS 배포 정책에서 이 호출 이전에 적용해야 합니다.
     // 이 빌드는 운영 키 미승인 및 기존 계약 만료 상태로 어떤 Windows 변경도 허용하지 않습니다.
     internal static string InstallFromApproval(string sourcePath, byte[] approvalBytes,
-        byte[] approvalSignature, byte[] sourceSignature, byte[] publicKey)
+        byte[] approvalSignature, byte[] sourceSignature)
     {
-        BootstrapPolicy.Need(BootstrapPolicy.Sha(ApprovedSignerSha), "STAGE_TRUST_HOLD");
+        BootstrapPolicy.Need(BootstrapPolicy.Sha(ApprovedCertificateSha) && BootstrapPolicy.Sha(ApprovedSignerSha), "STAGE_TRUST_HOLD");
         DemandTime(DateTimeOffset.UtcNow, BootstrapPolicy.Cutoff);
         using var host = new WindowsBootstrapHost();
         using var source = new FileStream(sourcePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+        byte[] publicKey = VerifyAuthenticode(source, ApprovedCertificateSha, ApprovedSignerSha);
+        source.Position = 0;
         return Admit(source, approvalBytes, approvalSignature, sourceSignature, publicKey,
             ApprovedSignerSha, BootstrapPolicy.Cutoff, () => DateTimeOffset.UtcNow,
             approval => { ObserveWindows(host, approval); },

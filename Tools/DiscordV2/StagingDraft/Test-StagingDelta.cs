@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 
 const string approval = "01ad352abd5c48caa2138587a230a118";
+if (args is ["authenticode-only"]) return StagingAuthenticodeTests.Run();
 if (args is ["admission-only"]) return StagingAdmissionTests.Run();
 if (args.Length != 0)
 {

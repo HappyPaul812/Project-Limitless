@@ -10,6 +10,8 @@
   <ItemGroup>
     <Compile Include="StageSecurityApi.cs"/>
     <Compile Include="StageAdmission.cs"/>
+    <Compile Include="StageAuthenticode.cs"/>
+    <Compile Include="Test-StagingAuthenticode.cs"/>
     <Compile Include="Test-StagingAdmission.cs"/>
     <Compile Include="Test-StagingDelta.cs"/>
     <Compile Include="../ProtectedBootstrap/BootstrapPolicy.cs"/>

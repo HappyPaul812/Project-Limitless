@@ -61,7 +61,7 @@ internal static class StagingAdmissionTests
         }
 
         Check("production-missing-trust-stops-before-open", () => Reject<InvalidOperationException>(
-            () => StageSecurityApi.InstallFromApproval("", [], [], [], []), "STAGE_TRUST_HOLD"));
+            () => StageSecurityApi.InstallFromApproval("", [], [], []), "STAGE_TRUST_HOLD"));
         Check("deny-unapproved-signer-before-consume", () => Reject<InvalidOperationException>(
             () => RunApproval(approval, fingerprint: new string('0', 64)), "STAGE_TRUST_HOLD"));
         Check("deny-tampered-signed-approval", () => Reject<InvalidOperationException>(
