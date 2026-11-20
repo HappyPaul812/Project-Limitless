@@ -133,3 +133,11 @@ try {
 - 관리 계정을 재검토하고 새 계약·시간창·원장 바인딩을 신규 단발 승인에 묶습니다. 그 뒤 실제 staging 생성과 readback을 별도로 승인합니다. 기존 7 PASS 유지, 재실행 0회. NO_GO / MANUAL / EXECUTION_HOLD.
 
 공식 근거 [인증서 발급 및 키 정책](https://learn.microsoft.com/en-us/powershell/module/pki/new-selfsignedcertificate?view=windowsserver2025-ps) · [공개 인증서 내보내기](https://learn.microsoft.com/en-us/powershell/module/pki/export-certificate)
+
+## 운영 공개 인증서 연결 및 서명 대상 HOLD
+
+승인한 공개 CER 파일 SHA-256과 인증서 DER SHA-256이 일치합니다. Windows 지문 및 LocalMachine My·Root·TrustedPublisher 사본을 대조했습니다. 인증서 DER SHA-256과 RSA SPKI SHA-256을 각각 소문자 64자리로 기존 코드에 고정했고 기존 cutoff는 유지했습니다. 관리형 컴파일 경고·오류 0입니다. 기존 시험은 실행하지 않았습니다.
+
+Windows SDK의 Microsoft 서명이 유효한 SignTool을 확인했습니다. 승인된 검증기 릴리스나 정확한 서명 대상 이미지 목록이 확인되지 않았습니다. 테스트·초안·기존 배포 이미지는 서명하지 않았으며 실제 서명자 확인 및 서명본 변조·다른 인증서 거부 시험은 미실행입니다.
+
+다음 승인 순서는 검증기 릴리스 및 서명 대상 파일·보호 배포 경로 확정 → 격리 복사본 서명 및 파일별 확인 → 운영 정책에서 상승 전 독립 검증 확인 → 최초 원장의 별도 보호 생성·readback입니다. 최초 원장 생성은 기존 경로가 있으면 중단하고, 승인 관리자·조상을 확인한 뒤 관리자 전용 비상속 descriptor로 원자 생성합니다. 동일 HANDLE에서 경로·owner·DACL·파일 키를 확인한 뒤 새 계약과 관리자 계정 재검토를 거친 신규 승인에 파일 키를 묶습니다. 이후 staging 생성에 별도 승인이 필요합니다. 실제 관리자 작업과 ACL·원장 변경 없음. NO_GO / MANUAL / EXECUTION_HOLD.

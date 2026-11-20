@@ -12,7 +12,7 @@ internal static partial class StageSecurityApi
 
     // 승인된 릴리스에서만 독립 배포 채널의 공개키 SHA를 봉인합니다.
     // 소스 트리 또는 명령행으로 운영 trust anchor를 설정하는 경로는 없습니다.
-    private const string ApprovedSignerSha = "";
+    private const string ApprovedSignerSha = "2a6d0a7d31e7642df209b6cbe12fa628500663f540eb6bd557cac2aca2d31f7c";
 
     internal sealed record InstallationApproval(
         string Profile, string ApprovalId, string Stage, string Ledger, string LedgerKey,
@@ -24,7 +24,7 @@ internal static partial class StageSecurityApi
         ref SecurityAttributes security, uint disposition, uint flags, IntPtr template);
 
     // 독립 검증기의 실행 허용은 OS 배포 정책에서 이 호출 이전에 적용해야 합니다.
-    // 이 빌드는 운영 키 미승인 및 기존 계약 만료 상태로 어떤 Windows 변경도 허용하지 않습니다.
+    // 기존 계약 만료 상태에서는 승인된 서명자도 Windows 변경을 수행할 수 없습니다.
     internal static string InstallFromApproval(string sourcePath, byte[] approvalBytes,
         byte[] approvalSignature, byte[] sourceSignature)
     {

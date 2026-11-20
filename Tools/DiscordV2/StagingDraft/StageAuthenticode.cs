@@ -4,7 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 
 internal static partial class StageSecurityApi
 {
-    private const string ApprovedCertificateSha = "";
+    private const string ApprovedCertificateSha = "7dba5310d6ded0035595e5e7ab8b8b73422f2925b49c633426995c322940672c";
     private const string CodeSigningOid = "1.3.6.1.5.5.7.3.3";
     private static readonly Guid GenericVerify = new("00aac56b-cd44-11d0-8cc2-00c04fc295ee");
 

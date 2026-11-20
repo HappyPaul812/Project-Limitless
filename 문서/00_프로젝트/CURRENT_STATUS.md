@@ -1,3 +1,7 @@
+## 2026-11-21 운영 공개 인증서 연결 / 서명 대상 HOLD
+
+CER·Windows 저장소 및 DER·SPKI 지문 대조 PASS, 변경 범위 관리형 경고·오류 0. 공식 SDK SignTool 확인. 승인 검증기 릴리스와 서명 대상 미확정으로 실제 서명 및 변조 시험 미실행. [검증·남은 단계](Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7053575978).
+
 ## 2026-11-21 로컬 코드서명 발급 준비 / HOLD
 
 발급·공개 CER 내보내기·별도 신뢰 등록 명령을 준비하고 3개 블록 구문을 확인했습니다. 기존 구현 506cbfc0 및 7 PASS 재사용, 실제 실행·저장소 변경 0. [명령과 승인 범위](Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7053091470).
