@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 
 // 최초 staging 전용 Windows 경계입니다. 기존 Bootstrap의 대상/실행 파일은 변경하지 않습니다.
-internal static class StageSecurityApi
+internal static partial class StageSecurityApi
 {
     internal const string Stage = @"C:\ProgramData\LimitlessDiscordV2BootstrapStaging";
     private const string Sddl = "O:BAG:SYD:P(A;;FA;;;SY)(A;;FA;;;BA)";
@@ -29,47 +29,6 @@ internal static class StageSecurityApi
 
     [DllImport("kernel32.dll", ExactSpelling = true)]
     private static extern IntPtr LocalFree(IntPtr pointer);
-
-    // 운영 원장과 신뢰된 승인 공급자가 승인되기 전에는 이 경계를 실행기에 연결하지 않습니다.
-    // 만료된 계약은 native 호출 전에도 거부합니다. 생성 직후의 HANDLE은 검증이 끝날 때까지 유지합니다.
-    private static void CreateAndReadBack(string administratorSid, DateTimeOffset expires,
-        string[] parentKeys, string[] parentSecurityHashes)
-    {
-        using var host = new WindowsBootstrapHost();
-        DemandTime(DateTimeOffset.UtcNow, expires);
-        BootstrapPolicy.Need(host.FixedNtfsVolume, "STAGE_VOLUME");
-
-        // Bootstrap의 실제 상승·비위장 토큰 검사는 내부 API를 공용 소스에서 재사용합니다.
-        BootstrapPolicy.Need(WindowsBootstrapHost.Administrator() == administratorSid, "STAGE_ACTOR_CHANGED");
-        ulong volume = ValidateParents(host, parentKeys, parentSecurityHashes);
-        BootstrapPolicy.Need(!host.Exists(Stage), "STAGE_EXISTS");
-
-        if (!ConvertStringSecurityDescriptorToSecurityDescriptorW(Sddl, 1, out IntPtr descriptor, out _))
-            throw new Win32Exception(Marshal.GetLastWin32Error());
-        try
-        {
-            var security = new SecurityAttributes
-            {
-                Length = (uint)Marshal.SizeOf<SecurityAttributes>(),
-                Descriptor = descriptor,
-                InheritHandle = 0
-            };
-            BootstrapPolicy.Need(ValidateParents(host, parentKeys, parentSecurityHashes) == volume, "STAGE_VOLUME_CHANGED");
-            BootstrapPolicy.Need(WindowsBootstrapHost.Administrator() == administratorSid, "STAGE_ACTOR_CHANGED");
-            DemandTime(DateTimeOffset.UtcNow, expires);
-            // 경로가 그 사이에 생기면 OS가 실패시킵니다. 기존 항목으로 이어가거나 복구하지 않습니다.
-            if (!CreateDirectoryW(Stage, ref security))
-                throw new Win32Exception(Marshal.GetLastWin32Error());
-
-            var created = host.PinAndRead(Stage);
-            ValidateCreated(created, volume);
-            BootstrapPolicy.Need(ValidateParents(host, parentKeys, parentSecurityHashes) == volume, "STAGE_VOLUME_CHANGED");
-        }
-        finally
-        {
-            LocalFree(descriptor);
-        }
-    }
 
     internal static void DemandTime(DateTimeOffset now, DateTimeOffset expires)
         => BootstrapPolicy.Need(now <= BootstrapPolicy.Cutoff && expires > now

@@ -1,3 +1,7 @@
+## 2026-11-21 Discord V2 staging 운영 승인 연결 / HOLD
+
+독립 검증 → 고정 보호 원장 단발 소비 → 재확인 → 생성 호출을 연결했습니다. 관리형 경고·오류 0, 신규 12 PASS / 0 FAIL. 원장 최초 준비, 독립 신뢰 릴리스, 신규 계약과 실제 적용은 별도 승인 대기입니다. [검증 및 적용 조건](../../Discord_V2_Staging_Admission_20261121.md)
+
 ## 2026-11-21 Discord V2 staging 표적 검증 / 실행 HOLD
 
 Windows 생성·HANDLE readback 코드, 격리 원장 단발 소비, 동일 바이트 서명·SHA 검증을 구현했습니다. 관리형 경고 0·오류 0, 표적 15 PASS / 0 FAIL. 실제 관리자 생성, 운영 원장·서명 신뢰 채널과의 연결은 승인 대기입니다. cutoff/계정 만료 연장 없음. NO_GO / MANUAL / EXECUTION_HOLD. [변경·검증 보고](../../Discord_V2_Staging_Delta_20261121.md)

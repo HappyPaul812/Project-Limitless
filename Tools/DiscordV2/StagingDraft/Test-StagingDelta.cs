@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 
 const string approval = "01ad352abd5c48caa2138587a230a118";
+if (args is ["admission-only"]) return StagingAdmissionTests.Run();
 if (args.Length != 0)
 {
     try { StageSecurityApi.ConsumeIsolatedApproval(args[0], approval); return 0; }

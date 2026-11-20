@@ -59,7 +59,7 @@ internal sealed class WindowsBootstrapHost:IBootstrapHost
         try{uint size=GetSecurityDescriptorLength(sd);BootstrapPolicy.Need(size is >0 and <=65536,"BOOTSTRAP_SD_SIZE");byte[] raw=new byte[size];Marshal.Copy(sd,raw,0,(int)size);return raw;}
         finally{LocalFree(sd);}
     }
-    private static BootstrapNode Read(SafeFileHandle handle,string path,bool directory)
+    internal static BootstrapNode Read(SafeFileHandle handle,string path,bool directory)
     {
         Check(GetFileInformationByHandleEx(handle,9,out var attributes,8));Check(GetFileId(handle,18,out var id,24));Check(GetHandleInformation(handle,out uint flags));
         var final=new StringBuilder(32768);uint length=GetFinalPathNameByHandleW(handle,final,(uint)final.Capacity,0);
