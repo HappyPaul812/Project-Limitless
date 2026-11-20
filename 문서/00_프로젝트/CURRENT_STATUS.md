@@ -1,3 +1,7 @@
+## 2026-11-21 로컬 코드서명 발급 준비 / HOLD
+
+발급·공개 CER 내보내기·별도 신뢰 등록 명령을 준비하고 3개 블록 구문을 확인했습니다. 기존 구현 506cbfc0 및 7 PASS 재사용, 실제 실행·저장소 변경 0. [명령과 승인 범위](Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7053091470).
+
 ## 2026-11-21 로컬 운영 서명 검증 연결 / HOLD
 
 Windows Authenticode와 인증서·SPKI 지문, 코드서명 EKU, 유효기간을 승인 입구에 연결했습니다. 경고·오류 0, 신규 7 PASS / 0 FAIL. 실제 운영 인증서·신뢰 등록·서명본 성공 및 사전 실행 허용은 별도 승인 대기입니다. NO_GO / MANUAL / EXECUTION_HOLD. [절차 및 검증](Discord_V2_Staging_Admission_20261121.md)
