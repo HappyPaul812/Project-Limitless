@@ -1,6 +1,7 @@
 ## 2026-11-21 로컬 운영 서명 검증 연결 / HOLD
 
 Windows Authenticode와 인증서·SPKI 지문, 코드서명 EKU, 유효기간을 승인 입구에 연결했습니다. 경고·오류 0, 신규 7 PASS / 0 FAIL. 실제 운영 인증서·신뢰 등록·서명본 성공 및 사전 실행 허용은 별도 승인 대기입니다. NO_GO / MANUAL / EXECUTION_HOLD. [절차 및 검증](Discord_V2_Staging_Admission_20261121.md)
+구현 `506cbfc0edd27d3935a2977bf2fd282a82b2f517` · [Issue #66 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7052998889) · LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
 
 ## 2026-11-21 운영 신뢰 읽기 전용 확인 / HOLD
 
