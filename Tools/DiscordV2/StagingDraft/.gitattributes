@@ -7,3 +7,4 @@ Invoke-VerifierFirstRunOnce.ps1 -text
 Prepare-InitialProtectedLedger.ps1 -text
 Invoke-InitialInstallerSigning.ps1 -text
 Invoke-InstallerProtectedDeploymentOnce.ps1 -text
+StagingSource.Candidate.ps1 -text

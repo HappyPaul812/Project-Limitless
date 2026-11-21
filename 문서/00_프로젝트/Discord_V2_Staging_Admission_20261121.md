@@ -529,3 +529,22 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 ## 서명 설치 EXE 보호 배포 결과
 
 대표의 출력 `INSTALLER_DEPLOYED_HANDLE_VERIFIED`와 배포 SHA-256 `52694e574cee3068e0c84131dcd9b93d19a2b59a42a63cf322c87a596c91806d`의 승인값 일치를 확인했습니다. 고정 대상은 `C:\ProgramData\LimitlessDiscordV2InstallerRuntime\Limitless.InitialStagingInstaller.exe`입니다. 이 표식은 원본 서명·인증서 확인, 복사본 동일 HANDLE 최종 경로·파일 ID·소유자·비상속 DACL·전체 파일 SHA·Authenticode 확인 성공을 나타냅니다. 파일 receipt는 관리자 로컬 보관입니다. 실행 자료 `a1cc3e5454b3d74f5f5a79291e06ef12323ff12a`. 실제 설치 호출·신규 승인 입력의 발급과 소비·staging·Task·AI는 미실행 및 별도 승인 대기입니다. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 최초 staging 원본 및 신규 단발 승인 입력 준비
+
+현재 승인된 최초 staging용 서명 원본 패키지·Manifest는 확인되지 않았습니다. 운영 설치 경로에서 `StagingSource.ps1`, `StagingSource.sig`, `InstallApproval.json`, `InstallApproval.sig`의 배치 기록이나 현재 토큰에서 읽기 가능한 파일이 확인되지 않았습니다. 배포 커밋은 설치 EXE 1개만 확인했습니다. 읽기 제한을 파일 부재로 단정하지 않습니다.
+
+제한된 생성 범위를 명시한 새 미서명 입력은 `Tools/DiscordV2/StagingDraft/StagingSource.Candidate.ps1`, SHA-256 `9007a8cface8955d645b3aa7821bd0084cbf0df21ccb51093575ddbde2a8d7e8`입니다. Manifest는 승인 서명 설치 EXE 및 기존 검증기 SHA, 고정 staging·원장 경로, 초기 descriptor 및 제품 파일 0개를 선언합니다. PowerShell 구문과 실행문이 즉시 중단하는 throw 한 개임을 확인했습니다. 현재 설치 코드는 원본 파일 서명·SHA를 전체 바이트에 대해 검증하고 스크립트를 실행하지 않습니다. Manifest 필드를 별도로 파싱하거나 제품 패키지를 복사하지 않습니다. 과거 Bootstrap 및 다른 배포 이미지의 Manifest는 이번 승인에 사용하지 않습니다.
+
+| 항목 | 확정된 계약 범위 |
+|---|---|
+| 프로필 | DISCORD_V2_INITIAL_STAGING_INSTALL_V1. 만료된 기존 프로필이나 승인 ID 재사용 금지 |
+| 설치 이미지·실행 주체 | 기존 보호 설치본 SHA `52694e574cee3068e0c84131dcd9b93d19a2b59a42a63cf322c87a596c91806d`, 승인된 `windows` 로컬 SID에 일치하는 상승·비위장 관리자 |
+| 원본 | 승인 Authenticode로 서명된 `StagingSource.ps1`의 최종 전체 SHA와 같은 바이트의 RSA-PSS 분리 서명 `StagingSource.sig` |
+| 승인 원문 | 보호된 `InstallApproval.json`의 바깥 `InstallerSha256`와 안쪽 `Approval`. 기존 원장 파일 키, 정확한 원장/대상 경로, 관리자 SID, 조상 파일 키·descriptor SHA, 원본 SHA, 새 단발 GUID, UTC NotBefore/Expires와 `InstallApproval.sig` |
+| 시간 | 절대 UTC 시간창, 서버와 PC 자동 연장 없음, Expires는 NotBefore 뒤 최대 5분. 실제 UTC 값은 별도 발급 승인 시 고정 |
+| 변경 범위 | 원장의 새 승인 ID .used 한 건을 보호·flush한 뒤 `C:\ProgramData\LimitlessDiscordV2BootstrapStaging` 한 곳을 빈 디렉터리로 원자 생성하고 HANDLE 검증. 제품 파일·Bootstrap·Task·AI 없음 |
+
+계약 발급은 보호 입력 작성 및 분리 서명을 끝내는 별도 작업이며 승인 소비는 나중에 실행될 설치 경계의 CREATE_NEW에서만 수행됩니다. 서명·SID·기존 검증기·시간창·원장 키·부모·대상 부재 확인 후 소비를 선점하고, 상태를 다시 확인한 뒤 생성합니다. 중복, 이미 있는 대상, 만료, 권한 불일치 또는 생성·readback 오류는 HOLD이며 사용 기록 및 일부 결과를 보존합니다. 이 순서와 거부 조건은 소스와 기존 신규 설치 모의 10 PASS로 대조했으며 재실행하지 않았습니다.
+
+작성한 것은 미서명 원본 Manifest 후보와 승인 계약 명세뿐입니다. 승인 원문과 서명을 발급하거나 배치하지 않았고 소비·운영 실행을 하지 않았습니다. 다음 최소 승인 범위는 위 미서명 원본 한 개의 Authenticode 및 같은 바이트의 RSA-PSS 분리 서명 준비·검증입니다. 서명 후 실제 SourceSha는 미서명 SHA와 별개입니다. 이후 보호 배치 및 별도 승인 발급이 완료되어야 현재 지원하는 고정 운영 설치 명령을 발급할 수 있습니다. NO_GO / MANUAL / EXECUTION_HOLD.
