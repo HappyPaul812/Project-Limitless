@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>false</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <NuGetAudit>false</NuGetAudit>
+    <DebugType>embedded</DebugType>
+    <AssemblyName>Limitless.StagingVerifier</AssemblyName>
+    <Version>0.1.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="StagingVerifierProgram.cs"/>
+    <Compile Include="StageSecurityApi.cs"/>
+    <Compile Include="StageAdmission.cs"/>
+    <Compile Include="StageAuthenticode.cs"/>
+    <Compile Include="../ProtectedBootstrap/BootstrapPolicy.cs"/>
+    <Compile Include="../ProtectedBootstrap/WindowsBootstrapHost.cs"/>
+  </ItemGroup>
+</Project>

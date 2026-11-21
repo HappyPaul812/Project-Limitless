@@ -41,6 +41,34 @@ internal static partial class StageSecurityApi
             approval => CreateAndReadBack(host, approval));
     }
 
+
+    // 운영 EXE의 검토 경로는 원장과 승인 자료를 읽기만 합니다. 실제 소비는 설치 경계에서 다시 검사합니다.
+    internal static void ReviewFromApproval(string sourcePath, byte[] approvalBytes,
+        byte[] approvalSignature, byte[] sourceSignature)
+    {
+        DemandTime(DateTimeOffset.UtcNow, BootstrapPolicy.Cutoff);
+        using var host = new WindowsBootstrapHost();
+        using var source = new FileStream(sourcePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+        byte[] publicKey = VerifyAuthenticode(source, ApprovedCertificateSha, ApprovedSignerSha);
+        source.Position = 0;
+        var approval = VerifyApprovalAndSource(source, approvalBytes, approvalSignature, sourceSignature,
+            publicKey, ApprovedSignerSha, BootstrapPolicy.Cutoff, () => DateTimeOffset.UtcNow);
+        ObserveWindows(host, approval);
+        BootstrapPolicy.Need(!host.Exists(Path.Combine(InitialLedger, approval.ApprovalId + ".used")),
+            "STAGE_APPROVAL_USED");
+        CheckWindow(approval, DateTimeOffset.UtcNow, BootstrapPolicy.Cutoff);
+    }
+
+    internal static void ReviewReleaseImage(string path, string expectedSha)
+    {
+        BootstrapPolicy.Need(BootstrapPolicy.Sha(expectedSha), "STAGE_IMAGE_SHA_FORMAT");
+        using var image = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
+        VerifyAuthenticode(image, ApprovedCertificateSha, ApprovedSignerSha);
+        image.Position = 0;
+        BootstrapPolicy.Need(Convert.ToHexString(SHA256.HashData(image)).ToLowerInvariant() == expectedSha,
+            "STAGE_IMAGE_SHA");
+    }
+
     // 이 연결 경계는 승인 원문과 검증된 스크립트를 데이터로만 읽습니다.
     // 파일 시스템 변경은 사전 검사, 영구 소비, 재검사를 모두 거쳐야 합니다.
     internal static string Admit(Stream source, byte[] approvalBytes, byte[] approvalSignature,
@@ -48,6 +76,22 @@ internal static partial class StageSecurityApi
         Func<DateTimeOffset> now, Action<InstallationApproval> observe,
         Action<InstallationApproval> consume, Action<InstallationApproval> create)
     {
+        var approval = VerifyApprovalAndSource(source, approvalBytes, approvalSignature, sourceSignature,
+            publicKey, signerSha, contractCutoff, now);
+        observe(approval);
+        CheckWindow(approval, now(), contractCutoff);
+        consume(approval);
+        observe(approval);
+        CheckWindow(approval, now(), contractCutoff);
+        create(approval);
+        return "STAGE_CREATED_AND_READBACK";
+    }
+
+    private static InstallationApproval VerifyApprovalAndSource(Stream source, byte[] approvalBytes,
+        byte[] approvalSignature, byte[] sourceSignature, byte[] publicKey, string signerSha,
+        DateTimeOffset contractCutoff, Func<DateTimeOffset> now)
+    {
+
         BootstrapPolicy.Need(BootstrapPolicy.Sha(signerSha) && publicKey.Length is > 0 and <= 4096, "STAGE_TRUST_HOLD");
         var key = (byte[])publicKey.Clone();
         BootstrapPolicy.Need(BootstrapPolicy.Hash(key) == signerSha, "STAGE_TRUST_HOLD");
@@ -75,22 +119,14 @@ internal static partial class StageSecurityApi
             && approval.ParentSecurityHashes?.Length == BootstrapPolicy.Ancestors.Count
             && approval.ParentSecurityHashes.All(h => h is not null && BootstrapPolicy.Sha(h)),
             "STAGE_APPROVAL_SCOPE");
-        void CheckWindow()
-        {
-            var time = now();
-            BootstrapPolicy.Need(approval.NotBefore != default && time >= approval.NotBefore
-                && time < approval.Expires && approval.Expires <= contractCutoff, "STAGE_EXPIRED");
-        }
-        CheckWindow();
+        CheckWindow(approval, now(), contractCutoff);
         _ = VerifySignedSource(source, approval.SourceSha!, signer, sourceSignature);
-        observe(approval);
-        CheckWindow();
-        consume(approval);
-        observe(approval);
-        CheckWindow();
-        create(approval);
-        return "STAGE_CREATED_AND_READBACK";
+        return approval;
     }
+
+    private static void CheckWindow(InstallationApproval approval, DateTimeOffset time, DateTimeOffset contractCutoff)
+        => BootstrapPolicy.Need(approval.NotBefore != default && time >= approval.NotBefore
+            && time < approval.Expires && approval.Expires <= contractCutoff, "STAGE_EXPIRED");
 
     private static bool IsApprovalId(string? input)
         => Guid.TryParseExact(input, "N", out var id) && id != Guid.Empty && id.ToString("N") == input;
