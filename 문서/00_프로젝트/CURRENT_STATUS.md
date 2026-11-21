@@ -1,3 +1,7 @@
+## Discord V2 보호 저장소 최종 생성 입력 / 승인 대기
+
+고정 생성 스크립트·SHA 및 상승 전 독립/상승 후 동일 바이트 검증 명령 준비. 컴파일·Windows PowerShell 5.1 구문·조상 HANDLE 읽기 PASS. 생성 미실행, 후보 부재. [최종 명령](Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054941208). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 보호 승인 저장소 생성 절차 / 승인 대기
 
 기존·후보 저장소 부재. 고정 NTFS 조상은 읽기 전용 확인했으며 선점 가능성 때문에 기존 항목과 경합은 중단합니다. Microsoft 서명 내장 호스트와 독립 SHA 검증을 전제로 입력·단일 경로·초기 보호 descriptor·HANDLE readback을 별도 승인합니다. 폴더·ACL 변경 없음. [절차](Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054838675). NO_GO / MANUAL / EXECUTION_HOLD.

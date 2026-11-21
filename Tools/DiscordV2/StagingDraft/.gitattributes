@@ -1,0 +1,1 @@
+Prepare-VerifierApprovalStore.ps1 -text whitespace=cr-at-eol

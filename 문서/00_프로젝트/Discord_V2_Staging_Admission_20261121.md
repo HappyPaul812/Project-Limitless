@@ -191,3 +191,60 @@ pwsh -NoProfile -File '.\Tools\DiscordV2\StagingDraft\Test-ApprovedSigningKey.ps
 - 대표 별도 승인의 최소 범위는 승인 계정·호스트·확정 입력 해시·대상 단일 경로·보안 descriptor·시간창·1회 생성 및 readback입니다. 계정 승인 기록 작성, 원장·staging 생성, 검증기 배포·키 검사·서명은 범위 밖입니다. 폴더 또는 ACL 변경은 이번에 없었습니다. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054838675).
 
 공식 근거 [CreateDirectory 및 SECURITY_ATTRIBUTES](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createdirectory)
+
+## 보호 승인 저장소 최종 입력과 실행 명령
+
+입력은 `Tools/DiscordV2/StagingDraft/Prepare-VerifierApprovalStore.ps1`입니다. SHA-256은 **8e54b904e70f14d8b5444593f1ee1840c4ad41c81f3a396a68e53f6ca9ab65f0**입니다. `VerifierStorePreparation.cs`에서 미리 컴파일한 DLL을 내장했으므로 관리자 세션에서 컴파일하거나 외부 DLL을 열 필요가 없습니다. 소스나 개행을 고치면 새로운 승인 대상입니다.
+
+### 상승 전 독립 검증
+
+기존 승인 채널의 SHA-256과 아래 출력이 일치해야 합니다. 결과는 로컬에서 대조합니다. 검증할 스크립트 자체에서 승인 해시를 읽지 않습니다. 관리자 실행은 생성 작업에 대한 별도 승인 및 승인 시간창 발급 후에만 진행합니다.
+
+```powershell
+$hostExe = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
+$inputFile = 'F:\study\codex\Project-Limitless\Temp\DiscordUsageDiagnostics20261026\Worktree\Tools\DiscordV2\StagingDraft\Prepare-VerifierApprovalStore.ps1'
+$hostSignature = Get-AuthenticodeSignature -LiteralPath $hostExe
+if ($hostSignature.Status -ne 'Valid' -or
+    $hostSignature.SignerCertificate.Subject -notmatch '(^|,\s*)O=Microsoft Corporation(,|$)') {
+    throw 'HOLD_HOST_SIGNATURE'
+}
+(Get-FileHash -LiteralPath $inputFile -Algorithm SHA256).Hash
+```
+
+### 별도 승인 후 관리자 실행
+
+지정 계정의 정상 로그인에서 승인 시간창 안에 아래 명령으로 UAC 상승을 요청합니다. 이 명령은 저장소를 생성하지 않고 확인된 내장 호스트만 엽니다.
+
+```powershell
+Start-Process -FilePath 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe' -Verb RunAs -ArgumentList '-NoLogo','-NoProfile'
+```
+
+승인 SID·시작·종료는 독립 로컬 승인 기록에서 조회합니다. 아래 블록 실행 전 해당 승인 ID가 미사용인지 확인하고 1회 시작을 기록합니다. 승인 해시는 별도 채널에서 대조한 값을 입력합니다. 스크립트 바이트를 한 HANDLE에서 제한 크기로 읽고 검증한 메모리에서 실행합니다. 경로를 다시 열어 실행하지 않습니다.
+
+```powershell
+$ErrorActionPreference = 'Stop'
+$inputFile = 'F:\study\codex\Project-Limitless\Temp\DiscordUsageDiagnostics20261026\Worktree\Tools\DiscordV2\StagingDraft\Prepare-VerifierApprovalStore.ps1'
+$approvedSha = (Read-Host '독립 승인 기록의 스크립트 SHA-256').ToUpperInvariant()
+if ($approvedSha -cnotmatch '^[A-F0-9]{64}$') { throw 'HOLD_APPROVAL_SHA_FORMAT' }
+$approvedSid = Read-Host '로컬 승인 기록의 SID'
+$approvedStart = Read-Host '승인 시작 yyyy-MM-ddTHH:mm:ss+09:00'
+$approvedEnd = Read-Host '승인 종료 yyyy-MM-ddTHH:mm:ss+09:00'
+
+$stream = [IO.FileStream]::new($inputFile, [IO.FileMode]::Open, [IO.FileAccess]::Read, [IO.FileShare]::Read)
+try {
+    if ($stream.Length -lt 1 -or $stream.Length -gt 65536) { throw 'HOLD_INPUT_SIZE' }
+    $bytes = New-Object byte[] ([int]$stream.Length)
+    for ($offset = 0; $offset -lt $bytes.Length; $offset += $read) {
+        $read = $stream.Read($bytes, $offset, $bytes.Length - $offset)
+        if ($read -le 0) { throw 'HOLD_INPUT_READ' }
+    }
+    $sha = [Security.Cryptography.SHA256]::Create()
+    try { $actual = [BitConverter]::ToString($sha.ComputeHash($bytes)).Replace('-', '') }
+    finally { $sha.Dispose() }
+    if ($actual -cne $approvedSha) { throw 'HOLD_INPUT_SHA' }
+    $verifiedText = [Text.UTF8Encoding]::new($false, $true).GetString($bytes)
+    & ([ScriptBlock]::Create($verifiedText)) -ApprovedSignerSid $approvedSid -ApprovedStart $approvedStart -ApprovedEnd $approvedEnd
+} finally { $stream.Dispose() }
+```
+
+`STORE_CREATED_HANDLE_VERIFIED`의 파일 ID와 descriptor SHA는 보호된 로컬 경로에서만 보관합니다. 기존 항목, 권한 불일치, 경합, 검증 실패 또는 일부 생성이 발견되면 HOLD하며 재실행·삭제·수선하지 않습니다. 승인 기록 작성과 키 검사는 이후 별도 단계입니다. 관리형 컴파일, 내장 DLL 바이트 일치, Windows PowerShell 5.1 구문, 실제 조상 HANDLE 읽기만 확인했습니다. 생성 함수 미호출, 대상 여전히 부재. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054941208).
