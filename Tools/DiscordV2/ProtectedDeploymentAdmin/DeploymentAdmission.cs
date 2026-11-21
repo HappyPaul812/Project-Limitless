@@ -9,6 +9,7 @@ internal sealed class DeploymentRequest
     public string Profile { get; set; }="";
     public string DeploymentId { get; set; }="";
     public string TrialId { get; set; }="";
+    public string AdministratorSid { get; set; }="";
     public string ToolSha256 { get; set; }="";
     public string LedgerRoot { get; set; }="";
     public string ManifestPath { get; set; }="";
@@ -29,7 +30,7 @@ internal sealed class DeploymentRequest
 }
 [JsonSerializable(typeof(DeploymentRequest))]
 internal partial class DeploymentRequestJson:JsonSerializerContext { }
-internal sealed record DeploymentActor(bool ElevatedAdministrator,bool NotImpersonating,string ToolSha256);
+internal sealed record DeploymentActor(bool ElevatedAdministrator,bool NotImpersonating,string ToolSha256,string UserSid);
 internal enum DeploymentStepKind { Consume, Directory, Copy }
 internal sealed record DeploymentStep(DeploymentStepKind Kind,string Target,bool Evidence=false,DeploymentFile? File=null,string Sha="");
 
@@ -37,6 +38,7 @@ internal sealed record DeploymentStep(DeploymentStepKind Kind,string Target,bool
 internal interface IDeploymentHost:IProtectedDeployment
 {
     byte[] ReadProtected(string path,int limit);
+    void VerifyRequestSignature(byte[] raw);
     DeploymentActor ObserveActor();
     void BindBoundary(DeploymentWriteBoundary boundary);
     string LedgerRoot { get; }
@@ -68,7 +70,8 @@ internal sealed class DeploymentAdmission
     {
         this.raw=(byte[])raw.Clone();rawSha=sha;this.binding=binding;this.host=host;
         AdmissionPolicy.Require(AdmissionPolicy.Sha(sha)&&ProtectedDeployment.Hash(raw)==sha,"DEPLOY_REQUEST_SHA");
-        Request=Strict(raw,8192,DeploymentRequestJson.Default.DeploymentRequest);
+        host.VerifyRequestSignature(this.raw);
+        Request=Strict(this.raw,8192,DeploymentRequestJson.Default.DeploymentRequest);
         // 보호된 읽기만 수행하며 backend는 원본 HANDLE을 계속 보유하여 교체를 막습니다.
         foreach(string p in new[]{Request.ManifestPath,Request.ApprovalPath,Request.ContractPath,Request.RiskBasisPath})
             AdmissionPolicy.Require(Path.IsPathFullyQualified(p),"DEPLOY_INPUT_PATH");
@@ -81,7 +84,7 @@ internal sealed class DeploymentAdmission
     {
         var r=Request;
         DeploymentLedgerPolicy.Root(r.LedgerRoot,host.LedgerRoot,binding);host.PinLedger();
-        AdmissionPolicy.Require(ProtectedDeployment.Hash(raw)==rawSha&&r.Approved&&r.Profile=="INDEPENDENT_ADMIN_DEPLOY_V1"
+        AdmissionPolicy.Require(ProtectedDeployment.Hash(raw)==rawSha&&r.Approved&&r.Profile=="INDEPENDENT_ADMIN_DEPLOY_V2"
             && Guid.TryParseExact(r.DeploymentId,"N",out var id)&&id!=Guid.Empty&&id.ToString("N")==r.DeploymentId
             && r.TrialId==NativeTrialPolicy.CandidateTrialId,"DEPLOY_REQUEST_HOLD");
         AdmissionPolicy.Require(r.CreateRoots&&r.CopyFiles&&r.CredentialsReviewed&&r.OtherLaunchPathsReviewed
@@ -111,7 +114,7 @@ internal sealed class DeploymentAdmission
             byte[] bytes=host.ReadProtected(f.Source,limit);AdmissionPolicy.Require(ProtectedDeployment.Hash(bytes)==f.Sha256&&bytes.Length==f.Bytes,"DEPLOY_TRUST_SHA");return bytes;
         });
         var actor=host.ObserveActor();
-        AdmissionPolicy.Require(actor.ElevatedAdministrator&&actor.NotImpersonating&&actor.ToolSha256==r.ToolSha256,"DEPLOY_ACTOR_HOLD");
+        AdmissionPolicy.Require(actor.ElevatedAdministrator&&actor.NotImpersonating&&actor.ToolSha256==r.ToolSha256 && !string.IsNullOrWhiteSpace(r.AdministratorSid) && actor.UserSid==r.AdministratorSid,"DEPLOY_ACTOR_HOLD");
         // 신뢰 조회와 관리자/자기 이미지 확인 뒤 현재 시각을 다시 검사합니다.
         var now=host.Now;
         AdmissionPolicy.Require(now<=AdmissionPolicy.Deadline&&now<r.ExpiresUtc&&r.ExpiresUtc<=a.ExpiresUtc

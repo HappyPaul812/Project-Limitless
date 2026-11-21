@@ -1,14 +1,7 @@
 using System.Security.AccessControl;
 using System.Text;
 
-// 승인된 실제 위치가 아직 없습니다. CLI/환경변수/요청 폴더로 채우지 않으며 미발급이면 HOLD합니다.
-// 향후 검토된 private binding 파일이 Supply를 구현해야 합니다. 원장 bootstrap은 별도 관리자 승인입니다.
-internal static partial class DeploymentLedgerBinding
-{
-    internal static readonly string Root=Read();
-    private static string Read(){string root="";Supply(ref root);return root;}
-    static partial void Supply(ref string root);
-}
+internal static class DeploymentLedgerBinding { internal const string Root=@"C:\ProgramData\Limitless\DiscordV2\Control\DeploymentLedger"; }
 internal static class DeploymentLedgerPolicy
 {
     internal const string Sddl="O:BAG:SYD:P(A;;FA;;;SY)(A;;FA;;;BA)";

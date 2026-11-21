@@ -1,3 +1,7 @@
+## Discord V2 독립 배포 도구 격리 검증 / 운영 HOLD
+
+소스의 제품 배포 원장이 현재 Control\DeploymentLedger에 고정됐습니다. V2 서명 요청 및 실행 SID 확인을 추가했고, 기존 실행 cutoff는 유지합니다. 독립 배포 시험 관리형 컴파일 경고·오류 0, 승인 51 PASS와 원장 24 PASS. 실제 Windows 원장, 배포 도구 실행 및 제품 복사 없음. 현행 Native 바인딩·계약, 후보 서명·승인 및 운영 도구 제작이 별도로 필요합니다. Unity 확인 사항 없음.
+
 ## Discord V2 운영 시간 대조 / 기존 승인 만료
 
 Windows 지역시·UTC와 시각 조회 일치. 세션 날짜 표기는 운영 코드에 미사용. Windows UTC 기준 기존 발급 만료, 동기화 서비스 상태는 조회 권한 부족. 승인 보존·설치 미실행. [시간 근거와 별도 승인 순서](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.

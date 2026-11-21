@@ -1,4 +1,6 @@
 using System.ComponentModel;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using System.Runtime.InteropServices;
 using System.Security.AccessControl;
 using System.Security.Principal;
@@ -43,13 +45,39 @@ internal sealed class AdminDeploymentWindows : IDeploymentHost,IDisposable
         if(path.Equals(requestPath,StringComparison.OrdinalIgnoreCase))AdmissionPolicy.Require(ProtectedDeployment.Hash(raw)==requestSha,"DEPLOY_REQUEST_SHA");
         protectedInputs.Add(path,raw);return (byte[])raw.Clone();
     }
+    public void VerifyRequestSignature(byte[] raw)
+    {
+        byte[] signature=ReadProtected(requestPath+".sig",4096);
+        using var store=new X509Store(StoreName.Root,StoreLocation.LocalMachine);
+        store.Open(OpenFlags.ReadOnly|OpenFlags.OpenExistingOnly);
+        var certificates=store.Certificates;
+        try
+        {
+            var cert=certificates.Cast<X509Certificate2>().SingleOrDefault(candidate =>
+                ProtectedDeployment.Hash(candidate.RawData)=="7dba5310d6ded0035595e5e7ab8b8b73422f2925b49c633426995c322940672c")
+                ?? throw new InvalidOperationException("DEPLOY_APPROVAL_CERTIFICATE_HOLD");
+            var now=Now.UtcDateTime;
+            AdmissionPolicy.Require(cert.NotBefore.ToUniversalTime()<=now && now<cert.NotAfter.ToUniversalTime() &&
+                cert.Extensions.OfType<X509EnhancedKeyUsageExtension>().Any(eku =>
+                    eku.EnhancedKeyUsages.Cast<Oid>().Any(oid => oid.Value=="1.3.6.1.5.5.7.3.3")),
+                "DEPLOY_APPROVAL_CERTIFICATE_POLICY_HOLD");
+            using var signer=cert.GetRSAPublicKey() ?? throw new InvalidOperationException("DEPLOY_APPROVAL_KEY_HOLD");
+            AdmissionPolicy.Require(ProtectedDeployment.Hash(signer.ExportSubjectPublicKeyInfo())==
+                "2a6d0a7d31e7642df209b6cbe12fa628500663f540eb6bd557cac2aca2d31f7c" &&
+                signer.VerifyData(raw,signature,HashAlgorithmName.SHA256,RSASignaturePadding.Pss),
+                "DEPLOY_APPROVAL_SIGNATURE_HOLD");
+        }
+        finally { foreach(var cert in certificates)cert.Dispose(); }
+    }
+
     public DeploymentActor ObserveActor()
     {
         EnsureAdmin();string path=Environment.ProcessPath??throw new InvalidOperationException("DEPLOY_TOOL_PATH");
         // 자기 실행 파일과 모든 부모도 보호된 경로여야 합니다. 작업자 쓰기 가능 폴더의 도구는 거부합니다.
         AdmissionPolicy.Require(Path.GetFileName(path)=="Limitless.DeploymentAdmin.exe","DEPLOY_TOOL_NATIVE_REQUIRED");
         byte[] raw=ReadProtected(path,268435456);DeploymentSecurityPolicy.NativeImage(raw);
-        return new(true,true,ProtectedDeployment.Hash(raw));
+        using var actor=WindowsIdentity.GetCurrent();
+        return new(true,true,ProtectedDeployment.Hash(raw),actor.User?.Value??"");
     }
     [DllImport("kernel32.dll",CharSet=CharSet.Unicode,SetLastError=true)]
     [return:MarshalAs(UnmanagedType.Bool)] private static extern bool CreateDirectoryW(string path,ref AdmissionWindows.Attributes attributes);

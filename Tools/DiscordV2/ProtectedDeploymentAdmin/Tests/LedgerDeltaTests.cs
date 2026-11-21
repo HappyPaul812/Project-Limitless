@@ -91,8 +91,8 @@ internal static partial class DeploymentAdminTests
             if(kind==3)f.Host.Actor=f.Host.Actor with{NotImpersonating=false};
             Deny(()=>ConsumeRequest(f,@"X:\Request\request",new(records)));Check(records.IsEmpty);
         });
-        Test("unknown-or-missing-production-binding-holds",()=>{
-            Check(DeploymentLedgerBinding.Root=="");Deny(()=>DeploymentLedgerPolicy.Root(@"X:\GuessedLedger",DeploymentLedgerBinding.Root,Binding));
+        Test("fixed-production-binding-rejects-alternate-root",()=>{
+            Check(DeploymentLedgerBinding.Root==@"C:\ProgramData\Limitless\DiscordV2\Control\DeploymentLedger");Deny(()=>DeploymentLedgerPolicy.Root(@"X:\GuessedLedger",DeploymentLedgerBinding.Root,Binding));
         });
         foreach(string root in new[]{@"X:\OtherLedger",@"\\server\share\Ledger",@"X:\FixedAdminLedger\..\Redirect",Native.CodeRoot})
             Test("ledger-redirect-denied-"+root,()=>Deny(()=>DeploymentLedgerPolicy.Root(root,@"X:\FixedAdminLedger",Binding)));

@@ -1,4 +1,5 @@
 using System.Text;
+using System.Security.Cryptography;
 using System.Text.Json;
 using System.Security.AccessControl;
 
@@ -8,6 +9,8 @@ internal static partial class DeploymentAdminTests
     private static readonly DateTimeOffset Now=new(2026,10,31,6,0,0,TimeSpan.Zero);
     private static readonly AdmissionBinding Binding=new(Native.Worker,Native.TaskPath,Native.CodeRoot,Native.EvidenceRoot);
     private static int pass,fail;
+    private const string AdministratorSid="S-1-5-21-1-2-3-1001";
+    private static readonly RSA ApprovalSigner=RSA.Create(2048);
     private static string Hash(byte[] b)=>ProtectedDeployment.Hash(b);
     private static void Check(bool ok){if(!ok)throw new Exception("ASSERT");}
     private static void Deny(Action action){try{action();}catch{return;}throw new Exception("EXPECTED_REJECTION");}
@@ -38,7 +41,7 @@ internal static partial class DeploymentAdminTests
                 Files=[new(){Name="Supervisor.exe",Source=@"X:\Images\Supervisor.exe",Sha256=DeploymentAdmission.SupervisorSha,Bytes=7559680},new(){Name="Probe.exe",Source=@"X:\Images\Probe.exe",Sha256=DeploymentAdmission.ProbeSha,Bytes=1892352},
                     new(){Name="TrialContract.json",Source=ContractPath},new(){Name=trial+".fake-only-trust.json",Source=trustPath,Sha256=Hash(trustRaw),Bytes=trustRaw.Length},new(){Name=trial+".fake-only-trust-basis.txt",Source=basisPath,Sha256=Hash(basis),Bytes=basis.Length}]};
             Approval=new(){Approved=true,Profile="PROTECTED_DEPLOYMENT_V1",DeploymentId="11111111111111111111111111111111",TrialId=trial,ExpiresUtc=expiry};
-            Request=new(){Approved=true,Profile="INDEPENDENT_ADMIN_DEPLOY_V1",DeploymentId=Approval.DeploymentId,TrialId=trial,ToolSha256=new('d',64),LedgerRoot=Host.LedgerRoot,ManifestPath=ManifestPath,ApprovalPath=ApprovalPath,ContractPath=ContractPath,RiskBasisPath=RiskPath,ExpiresUtc=expiry,CreateRoots=true,CopyFiles=true,CredentialsReviewed=true,OtherLaunchPathsReviewed=true,ImageTrustReviewed=true,PrivilegedToolRiskAccepted=true};
+            Request=new(){Approved=true,Profile="INDEPENDENT_ADMIN_DEPLOY_V2",AdministratorSid=AdministratorSid,DeploymentId=Approval.DeploymentId,TrialId=trial,ToolSha256=new('d',64),LedgerRoot=Host.LedgerRoot,ManifestPath=ManifestPath,ApprovalPath=ApprovalPath,ContractPath=ContractPath,RiskBasisPath=RiskPath,ExpiresUtc=expiry,CreateRoots=true,CopyFiles=true,CredentialsReviewed=true,OtherLaunchPathsReviewed=true,ImageTrustReviewed=true,PrivilegedToolRiskAccepted=true};
             Seal();
         }
         internal void Seal()
@@ -49,7 +52,12 @@ internal static partial class DeploymentAdminTests
             Approval.ManifestSha256=Hash(manifest);byte[] approval=JsonSerializer.SerializeToUtf8Bytes(Approval,DeploymentJson.Default.DeploymentApproval);Host.Inputs[ApprovalPath]=approval;
             Request.ManifestSha256=Hash(manifest);Request.ApprovalSha256=Hash(approval);Request.ContractSha256=Hash(contract);Request.RiskBasisSha256=Hash(Host.Inputs[RiskPath]);
         }
-        internal byte[] Raw()=>JsonSerializer.SerializeToUtf8Bytes(Request,DeploymentRequestJson.Default.DeploymentRequest);
+        internal byte[] Raw()
+        {
+            byte[] raw=JsonSerializer.SerializeToUtf8Bytes(Request,DeploymentRequestJson.Default.DeploymentRequest);
+            Host.Sign(raw);
+            return raw;
+        }
         internal int Run(string mode="--apply"){byte[] raw=Raw();return DeploymentController.Run(mode,raw,Hash(raw),Binding,Host);}
         internal void NoWrites()=>Check(Host.Consumes==0&&Host.DirectoryWrites==0&&Host.Copies==0);
     }
@@ -58,7 +66,7 @@ internal static partial class DeploymentAdminTests
         internal readonly Dictionary<string,byte[]> Inputs=[];
         internal HashSet<string> Directories=[@"X:\"],Files=[],Consumed=[];
         internal DateTimeOffset Clock=DeploymentAdminTests.Now;
-        internal DeploymentActor Actor=new(true,true,new('d',64));
+        internal DeploymentActor Actor=new(true,true,new('d',64),AdministratorSid);
         internal int Consumes,DirectoryWrites,Copies;
         internal int Deletes=>0;
         internal bool BadProtected,BadAncestor,BadSource,FailDirectory,FailCopyReadback;
@@ -69,6 +77,13 @@ internal static partial class DeploymentAdminTests
         public string LedgerRoot=>@"X:\FixedAdminLedger";
         public void PinLedger()=>DeploymentLedgerPolicy.Root(LedgerRoot,LedgerRoot,Binding);
         public byte[] ReadProtected(string path,int limit){if(BadProtected||!Inputs.TryGetValue(path,out var b)||b.Length>limit)throw new IOException("PROTECTED_INPUT_HOLD");return (byte[])b.Clone();}
+        private byte[] signature=[];
+        internal void Sign(byte[] raw)=>signature=ApprovalSigner.SignData(raw,HashAlgorithmName.SHA256,RSASignaturePadding.Pss);
+        public void VerifyRequestSignature(byte[] raw)
+        {
+            if(!ApprovalSigner.VerifyData(raw,signature,HashAlgorithmName.SHA256,RSASignaturePadding.Pss))
+                throw new InvalidOperationException("DEPLOY_APPROVAL_SIGNATURE_HOLD");
+        }
         public DeploymentActor ObserveActor(){OnActor?.Invoke();return Actor;}
         public void BindBoundary(DeploymentWriteBoundary b){if(boundary is not null)throw new IOException("BOUND");boundary=b;}
         private void Guard(DeploymentStep s){BeforeNative?.Invoke(s);(boundary??throw new IOException("UNBOUND")).Check(s);}
@@ -94,7 +109,15 @@ internal static partial class DeploymentAdminTests
         foreach(string root in new[]{Native.CodeRoot,Native.EvidenceRoot})Test("existing-root-preserved-"+root,()=>{var f=new Fixture();f.Host.Directories.Add(root);Deny(()=>f.Run());f.NoWrites();Check(f.Host.Directories.Contains(root));});
         Test("file-at-root-denied",()=>{var f=new Fixture();f.Host.Files.Add(Native.CodeRoot);Deny(()=>f.Run());f.NoWrites();});
         foreach(int kind in new[]{0,1,2})Test("protected-input-ancestor-source-failure-"+kind,()=>{var f=new Fixture();if(kind==0)f.Host.BadProtected=true;if(kind==1)f.Host.BadAncestor=true;if(kind==2)f.Host.BadSource=true;Deny(()=>f.Run());f.NoWrites();});
-        Test("request-duplicate-json-no-writes",()=>{var f=new Fixture();byte[] b=Encoding.UTF8.GetBytes(Encoding.UTF8.GetString(f.Raw()).Insert(1,"\"Approved\":true,"));Deny(()=>DeploymentController.Run("--apply",b,Hash(b),Binding,f.Host));f.NoWrites();});
+        Test("signature-tamper-rehashed-request-denied",()=>{
+            var f=new Fixture();byte[] raw=f.Raw();byte[] changed=[..raw,(byte)' '];
+            Deny(()=>DeploymentController.Run("--apply",changed,Hash(changed),Binding,f.Host));f.NoWrites();
+        });
+        Test("signed-request-wrong-administrator",()=>{
+            var f=new Fixture();f.Request.AdministratorSid="S-1-5-21-1-2-3-1002";
+            Deny(()=>f.Run());f.NoWrites();
+        });
+        Test("request-duplicate-json-no-writes",()=>{var f=new Fixture();byte[] b=Encoding.UTF8.GetBytes(Encoding.UTF8.GetString(f.Raw()).Insert(1,"\"Approved\":true,"));f.Host.Sign(b);Deny(()=>DeploymentController.Run("--apply",b,Hash(b),Binding,f.Host));f.NoWrites();});
         Test("request-wrong-raw-sha",()=>{var f=new Fixture();Deny(()=>DeploymentController.Run("--apply",f.Raw(),new('a',64),Binding,f.Host));f.NoWrites();});
         Test("approval-id-must-match-request",()=>{var f=new Fixture();f.Approval.DeploymentId="22222222222222222222222222222222";f.Seal();Deny(()=>f.Run());f.NoWrites();});
         Test("image-substitution-denied",()=>{var f=new Fixture();f.Plan.Files[0].Sha256=new('e',64);f.Seal();Deny(()=>f.Run());f.NoWrites();});

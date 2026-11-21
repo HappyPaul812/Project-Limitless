@@ -34,7 +34,7 @@ internal static partial class DeploymentAdminTests
             });
         }
         Test("candidate-descendants-missing-no-ledger-security-claim",()=>Check(root.GetProperty("Missing").GetArrayLength()==4));
-        Test("unsafe-candidate-not-installed-in-production-binding",()=>Check(DeploymentLedgerBinding.Root==""&&DeploymentLedgerBinding.Root!=candidate));
+        Test("unsafe-candidate-not-installed-in-production-binding",()=>Check(DeploymentLedgerBinding.Root!=candidate));
         Console.WriteLine($"LEDGER_CANDIDATE_REVIEW: {pass} PASS / {fail} FAIL; CANDIDATE_ADOPTION=HOLD; PRIVATE_BINDING_NOT_CREATED; WINDOWS_MUTATIONS=0; OLD_SUITES=0");
         return fail==0?0:1;
     }
