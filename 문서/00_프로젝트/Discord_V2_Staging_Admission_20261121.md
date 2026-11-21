@@ -258,3 +258,11 @@ try {
 새 내장 5.1 호스트에서 입력 바이트의 고정 해시를 대조하고 같은 바이트를 실행합니다. 보호 저장소 생성 성공 출력의 `=` 뒤 값을 로컬 입력으로 사용합니다. 확인된 Microsoft 호스트·지정 계정 SID·상승 토큰, 부모 보호, 저장소 HANDLE 파일 ID·descriptor SHA와 원래 성공 출력을 대조합니다. 잠근 후보 EXE 및 검사 스크립트 SHA와 인증서 DER를 대조합니다. 보관하는 SPKI 지문은 해당 정확한 DER에 대해 이미 확인한 값입니다. 승인 범위는 계정 지정이며 개인키 검사는 수행하지 않습니다.
 
 `SigningAccountDesignation.v1.json`은 고정 경로의 관리자 전용 초기 descriptor와 CREATE_NEW로 한 번만 만듭니다. 기존 파일·부분 파일은 보존합니다. flush 후 동일 파일 HANDLE에서 바이트와 ACL을 읽고 부모·저장소를 다시 확인한 뒤에만 `DESIGNATION_CREATED_HANDLE_VERIFIED`를 반환합니다. 오류가 나면 다시 실행하거나 파일을 삭제·수선하지 않습니다. SID·저장소 식별값·결과 SHA는 로컬에만 보관합니다. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 승인 기록을 확인하는 키 검사 1회 실행 자료
+
+대표가 보호 승인 기록을 생성하고 HANDLE 검증을 완료했습니다. 별도 읽기 전용 1회 승인을 받았습니다. Codex 토큰은 비상승이며 고객의 기존 관리자 PowerShell 창에서만 실행합니다. 공식 서명이 유효한 고정 PowerShell 7 경로를 사용합니다.
+
+실행 입력 `Tools/DiscordV2/StagingDraft/Invoke-VerifierSigningKeyCheckOnce.ps1`, SHA-256 `5423a41b681771fba5f39a46ee4d09371c258d613f4b17811b3a5d5a789ea291`. 보호 저장소 생성과 승인 기록 작성의 성공 출력 각각의 `=` 뒤 값을 로컬에서 입력합니다. 동일 HANDLE에서 최종 경로·조상·저장소·승인 파일 owner/DACL·원문 해시를 확인하고, 기록에 봉인된 계정 SID가 상승 토큰과 일치한 뒤에만 키 검사로 넘어갑니다. 기존 검사 스크립트의 SHA-256을 확인해 동일 메모리 바이트에서 한 번 실행합니다. 기록·키·ACL을 변경하는 진입점은 없습니다. 실패하면 재시도하지 않습니다.
+
+관리형 컴파일, 실행 입력과 기존 검사 스크립트의 구문, 읽기 전용 진입점의 범위를 확인했습니다. 실제 키 열기·SPKI 검사는 아직 실행하지 않았습니다. 성공 표식은 `PASS_SIGNER_SID_KEY_SPKI_READ_ONLY`입니다. SID 및 로컬 결과 해시는 게시하지 않습니다. NO_GO / MANUAL / EXECUTION_HOLD.

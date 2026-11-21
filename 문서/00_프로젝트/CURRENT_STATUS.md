@@ -1,3 +1,7 @@
+## Discord V2 보호 승인 기록 PASS / 키 검사 1회 준비
+
+대표가 승인 기록 생성과 HANDLE 검증을 완료했습니다. 기존 키 검사에 앞서 보호 기록·SID·고정 스크립트 SHA를 대조하는 읽기 전용 실행 자료를 준비했습니다. 실제 검사 NOT_RUN. [실행 조건](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 대표 실행용 보호 승인 기록 1회 준비
 
 고정 입력·해시·승인 저장소 HANDLE 대조·CREATE_NEW 및 동일 HANDLE readback 준비. 관리형 컴파일·Windows PowerShell 5.1 구문/해싱 PASS, 실제 작성 미실행. [실행 조건](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
