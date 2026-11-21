@@ -92,25 +92,59 @@ internal static partial class StageSecurityApi
         DateTimeOffset contractCutoff, Func<DateTimeOffset> now)
     {
 
+        using var signer = OpenApprovalSigner(publicKey, signerSha);
+        var approval = ReadSignedApproval<InstallationApproval>(approvalBytes, approvalSignature, signer);
+        CheckApprovalScope(approval, Profile);
+        CheckWindow(approval, now(), contractCutoff);
+        _ = VerifySignedSource(source, approval.SourceSha, signer, sourceSignature);
+        return approval;
+    }
+
+    private static RSA OpenApprovalSigner(byte[] publicKey, string signerSha)
+    {
         BootstrapPolicy.Need(BootstrapPolicy.Sha(signerSha) && publicKey.Length is > 0 and <= 4096, "STAGE_TRUST_HOLD");
         var key = (byte[])publicKey.Clone();
         BootstrapPolicy.Need(BootstrapPolicy.Hash(key) == signerSha, "STAGE_TRUST_HOLD");
-        BootstrapPolicy.Need(approvalBytes.Length is > 0 and <= 8192, "STAGE_APPROVAL_SIZE");
-        using var signer = RSA.Create();
-        signer.ImportSubjectPublicKeyInfo(key, out int read);
+        var signer = RSA.Create();
+        try
+        {
+            signer.ImportSubjectPublicKeyInfo(key, out int read);
+            BootstrapPolicy.Need(read == key.Length && signer.KeySize >= 2048, "STAGE_APPROVAL_SIGNATURE");
+            return signer;
+        }
+        catch { signer.Dispose(); throw; }
+    }
+
+    private static T ReadSignedApproval<T>(byte[] approvalBytes, byte[] approvalSignature, RSA signer) where T : class
+    {
+        BootstrapPolicy.Need(approvalBytes.Length is > 0 and <= 8192 &&
+            approvalSignature.Length is > 0 and <= 4096, "STAGE_APPROVAL_SIZE");
         var signedApproval = (byte[])approvalBytes.Clone();
-        BootstrapPolicy.Need(read == key.Length && signer.KeySize >= 2048
-            && signer.VerifyData(signedApproval, approvalSignature, HashAlgorithmName.SHA256, RSASignaturePadding.Pss),
+        BootstrapPolicy.Need(signer.VerifyData(signedApproval, approvalSignature, HashAlgorithmName.SHA256, RSASignaturePadding.Pss),
             "STAGE_APPROVAL_SIGNATURE");
         using var document = JsonDocument.Parse(signedApproval);
-        var fields = new HashSet<string>(StringComparer.Ordinal);
-        foreach (var property in document.RootElement.EnumerateObject())
-            BootstrapPolicy.Need(fields.Add(property.Name), "STAGE_APPROVAL_FIELDS");
-        var approval = document.RootElement.Deserialize<InstallationApproval>(new JsonSerializerOptions
+        CheckUniqueFields(document.RootElement);
+        return document.RootElement.Deserialize<T>(new JsonSerializerOptions
         {
             UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow
         }) ?? throw new InvalidOperationException("STAGE_APPROVAL_FIELDS");
-        BootstrapPolicy.Need(approval.Profile == Profile && approval.Stage == Stage
+    }
+
+    private static void CheckUniqueFields(JsonElement node)
+    {
+        if (node.ValueKind != JsonValueKind.Object)
+            return;
+        var fields = new HashSet<string>(StringComparer.Ordinal);
+        foreach (var property in node.EnumerateObject())
+        {
+            BootstrapPolicy.Need(fields.Add(property.Name), "STAGE_APPROVAL_FIELDS");
+            CheckUniqueFields(property.Value);
+        }
+    }
+
+    private static void CheckApprovalScope(InstallationApproval approval, string profile)
+    {
+        BootstrapPolicy.Need(approval.Profile == profile && approval.Stage == Stage
             && approval.Ledger == InitialLedger && !string.IsNullOrWhiteSpace(approval.LedgerKey)
             && !string.IsNullOrWhiteSpace(approval.AdministratorSid)
             && IsApprovalId(approval.ApprovalId) && approval.SourceSha is not null
@@ -119,9 +153,6 @@ internal static partial class StageSecurityApi
             && approval.ParentSecurityHashes?.Length == BootstrapPolicy.Ancestors.Count
             && approval.ParentSecurityHashes.All(h => h is not null && BootstrapPolicy.Sha(h)),
             "STAGE_APPROVAL_SCOPE");
-        CheckWindow(approval, now(), contractCutoff);
-        _ = VerifySignedSource(source, approval.SourceSha!, signer, sourceSignature);
-        return approval;
     }
 
     private static void CheckWindow(InstallationApproval approval, DateTimeOffset time, DateTimeOffset contractCutoff)
@@ -131,9 +162,10 @@ internal static partial class StageSecurityApi
     private static bool IsApprovalId(string? input)
         => Guid.TryParseExact(input, "N", out var id) && id != Guid.Empty && id.ToString("N") == input;
 
-    private static ulong ObserveWindows(WindowsBootstrapHost host, InstallationApproval approval)
+    private static ulong ObserveWindows(WindowsBootstrapHost host, InstallationApproval approval, Action? demandWindow = null)
     {
-        DemandTime(DateTimeOffset.UtcNow, approval.Expires);
+        if (demandWindow is null) DemandTime(DateTimeOffset.UtcNow, approval.Expires);
+        else demandWindow();
         BootstrapPolicy.Need(host.FixedNtfsVolume && WindowsBootstrapHost.Administrator() == approval.AdministratorSid,
             "STAGE_ACTOR_OR_VOLUME");
         ulong volume = ValidateParents(host, approval.ParentKeys, approval.ParentSecurityHashes);
@@ -145,15 +177,16 @@ internal static partial class StageSecurityApi
         return volume;
     }
 
-    private static void ConsumeWindowsApproval(WindowsBootstrapHost host, InstallationApproval approval)
+    private static void ConsumeWindowsApproval(WindowsBootstrapHost host, InstallationApproval approval, Action? demandWindow = null)
     {
         IntPtr descriptor = AllocateDescriptor();
         try
         {
             var security = InitialSecurity(descriptor);
-            ulong volume = ObserveWindows(host, approval);
+            ulong volume = ObserveWindows(host, approval, demandWindow);
             string path = Path.Combine(InitialLedger, approval.ApprovalId + ".used");
             // CREATE_NEW는 경쟁에서 한 프로세스만 통과시킵니다. 빈 기록도 보존합니다.
+            demandWindow?.Invoke();
             using var marker = CreateFileW(path, 0x40020000, 0, ref security, 1, 0x80200000, IntPtr.Zero);
             if (marker.IsInvalid)
                 throw new Win32Exception(Marshal.GetLastWin32Error());
@@ -166,13 +199,14 @@ internal static partial class StageSecurityApi
         finally { LocalFree(descriptor); }
     }
 
-    private static void CreateAndReadBack(WindowsBootstrapHost host, InstallationApproval approval)
+    private static void CreateAndReadBack(WindowsBootstrapHost host, InstallationApproval approval, Action? demandWindow = null)
     {
         IntPtr descriptor = AllocateDescriptor();
         try
         {
             var security = InitialSecurity(descriptor);
-            ulong volume = ObserveWindows(host, approval);
+            ulong volume = ObserveWindows(host, approval, demandWindow);
+            demandWindow?.Invoke();
             if (!CreateDirectoryW(Stage, ref security))
                 throw new Win32Exception(Marshal.GetLastWin32Error());
             ValidateCreated(host.PinAndRead(Stage), volume);

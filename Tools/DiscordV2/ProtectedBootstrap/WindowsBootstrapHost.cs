@@ -77,7 +77,7 @@ internal sealed class WindowsBootstrapHost:IBootstrapHost
         try{using var handle=Open(path,false);return true;}
         catch(Win32Exception e) when(e.NativeErrorCode is 2 or 3){return false;}
     }
-    private SafeFileHandle ProtectedFile(string path)
+    internal SafeFileHandle ProtectedFile(string path)
     {
         Canonical(path);BootstrapPolicy.Need(!BootstrapPolicy.Targets.Any(t=>path.Equals(t,StringComparison.OrdinalIgnoreCase)
             ||path.StartsWith(t+Path.DirectorySeparatorChar,StringComparison.OrdinalIgnoreCase)),"BOOTSTRAP_INPUT_IN_NEW_TARGET");

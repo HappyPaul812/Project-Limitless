@@ -54,11 +54,11 @@ internal static partial class StageSecurityApi
     private static extern IntPtr WTHelperGetProvCertFromChain(IntPtr signer, uint index);
 
     // Windows 정책 결과의 실제 서명자에서 공개키를 얻습니다. 별도 입력 키나 자체 서명만으로는 통과하지 않습니다.
-    internal static byte[] VerifyAuthenticode(FileStream source, string certificateSha, string publicKeySha)
+    internal static byte[] VerifyAuthenticode(FileStream source, string certificateSha, string publicKeySha, string? pinnedPath = null)
     {
         BootstrapPolicy.Need(BootstrapPolicy.Sha(certificateSha) && BootstrapPolicy.Sha(publicKeySha), "STAGE_TRUST_HOLD");
         var handle = source.SafeFileHandle;
-        var file = new TrustFile { Size = (uint)Marshal.SizeOf<TrustFile>(), Path = source.Name, Handle = handle.DangerousGetHandle() };
+        var file = new TrustFile { Size = (uint)Marshal.SizeOf<TrustFile>(), Path = pinnedPath ?? source.Name, Handle = handle.DangerousGetHandle() };
         IntPtr filePointer = Marshal.AllocHGlobal(Marshal.SizeOf<TrustFile>());
         try
         {
