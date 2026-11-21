@@ -1,3 +1,7 @@
+## Discord V2 실제 설치 이미지 확인 / 현재 실행 명령 없음
+
+레거시 Bootstrap 실물 SHA 일치 및 만료 확인. 운영 검증기는 읽기 전용, 별도 최초 staging 운영 호출자·승인 EXE 없음. 보호 원장·승인 저장소·검증기 존재, staging·제품 루트 부재. 다음 승인: 독립 설치 진입점 구현 및 격리 검증만. [이미지·계약](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 신규 설치 계약과 실행 주체 승인안
 
 만료 계약·보호 원장·읽기 전용 검증기 연결 확인. windows 상승 관리자 1회 staging 생성 및 별도 최소권한 서비스 계정 범위를 제안했습니다. 다음 승인: 별도 설치 진입점 구현·격리 검증만. 신규 발급·소비·staging·AI 미실행. [승인안](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.

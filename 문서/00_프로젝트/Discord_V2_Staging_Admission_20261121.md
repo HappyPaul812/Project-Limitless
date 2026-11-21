@@ -470,3 +470,16 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 ```
 
 현재 작업은 계약과 실행 주체 제안입니다. 소스·릴리스·기존 운영 상태 변경, 신규 승인 발급·소비·staging·AI 실행 및 이전 시험 반복 없음. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 실제 Windows 설치 프로그램 확인 결과
+
+- **레거시 설치 이미지 실물 확인.** `E:\LimitlessBuildDependencies\NativeAOT20261028\BootstrapNative20261031-e9e95a17a3a0412db3b3a21aefa62d50\artifacts\Bootstrap\Limitless.ProtectedBootstrap.exe`, 2,951,168 bytes, SHA-256 `2ff5669350a6761a7eb979f6133a4b0a85b44f5440f96a05644a57601026349e`로 빌드 인계와 일치. 코드상 `--review`, `--create` 및 필수 옵션 `--authorization`, `--authorization-sha`를 지원합니다. 별도 보호 staging의 입력을 요구하고 신규 제품 경로 여섯 개만 대상으로 하며 최초 staging 한 곳을 생성하는 도구가 아닙니다. 인계에 기록된 E 원본은 관리자 실행용으로 봉인된 경로가 아니고, 내장 cutoff 2026-11-01 23:59:59 KST가 만료됐습니다. 재사용하지 않습니다.
+- **현재 배포 검증기.** `C:\ProgramData\LimitlessDiscordV2VerifierRuntime\Limitless.StagingVerifier.exe`, 배포 HANDLE SHA-256 `86ba45f0139122f80c1cfb9492700edb9a537e63bd9ee511ac9231e34fb3d7ca` 기록을 재사용했습니다. 지원 모드는 `--version`, `--verify-image`, `--review`입니다. `--install`은 없고 `--review`의 기존 계약도 만료됐습니다.
+- **별도 배포 관리자 후보.** `DeploymentAdmin.csproj`는 `--review`, `--apply` 소스를 갖지만 대상 작업트리와 빌드 인계에서 해당 승인 EXE/SHA를 확인하지 못했습니다. 최초 staging 생성용 `InstallFromApproval`도 기존 관리형 내부 구현이며 운영 호출자 또는 승인 EXE가 없습니다.
+- **부분 준비 상태.** 읽기 전용으로 최초 보호 원장, 서명 계정 승인 저장소, 운영 검증기 디렉터리가 존재하고 최초 staging 및 제품 루트가 부재임을 확인했습니다. 원장 내용 또는 승인 기록은 읽거나 변경하지 않았습니다. 이전 원장·서명·격리 시험을 재실행하지 않았습니다. 자리표시자 명령의 PowerShell BadExpression은 실행 파일 호출 전에 발생했습니다.
+
+### 신규 계약과 다음 승인
+
+직접 설치 주체는 **지정 `windows` 계정의 별도 승인된 상승·비위장 관리자 토큰**으로 확정할 것을 요청합니다. 서비스 계정의 용도는 이후 승인된 Task·Session 0 운영이며 이번 설치에서 제외합니다. 신규 단발 계약은 고정 staging 한 곳, 독립 실행 정책에 고정된 신뢰 설치 이미지 전체 SHA, 승인 SID, 로컬 보호 원장의 기존 파일 키, 조상 파일 키·descriptor SHA, 원본/승인 서명과 원문 SHA, 발급 시 고정된 UTC 최대 5분 시간창에 묶습니다. 계정 지정 기록은 설치 권한을 직접 수여하지 않습니다. 검증 완료 뒤 보호 원장에 단발 사용 기록을 CREATE_NEW·flush 한 뒤에만 생성하며 실패 시 기존 원장과 부분 상태를 보존하고 중지합니다.
+
+다음 최소 승인은 **별도 최초 staging 설치 진입점 구현 및 격리 검증만**입니다. 운영 승인 발급·소비·서명·배포·staging·Task·AI를 포함하지 않습니다. 현재 사용할 수 있는 설치 명령은 없습니다. 신규 신뢰 실행 파일과 보호 승인 입력이 검증된 후에만 자리표시자 없는 실제 명령을 발급합니다. NO_GO / MANUAL / EXECUTION_HOLD.
