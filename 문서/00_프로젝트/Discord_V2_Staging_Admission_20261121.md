@@ -343,3 +343,18 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
   - 미서명은 `unsigned.exe`의 원래 SHA를 넘깁니다. 예상 `HOLD STAGE_AUTHENTICODE` 및 비정상 종료.
   - 다른 서명자는 유효한 서명과 원래 SHA를 유지한 `foreign-signer.exe`를 넘깁니다. 예상 `HOLD STAGE_SIGNER_PIN` 및 비정상 종료.
 - 원본·서명 기준 복사본을 변조하지 않고, 신뢰되지 않은 시험 실행 파일이나 변조본 자체를 실행하지 않습니다. 예상과 다른 결과가 나오면 즉시 중단하며 남은 케이스는 NOT_RUN입니다. 현재 변조·거부 시험 모두 NOT_RUN, 운영 배포·AI 실행 없음. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7056114329). NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 서명 검증 1회 실행 최종 승인 요청
+
+격리 폴더 `Temp/DiscordUsageDiagnostics20261026/VerifierTamperFixtures-86ba45f0`에서 입력을 고정했습니다. 세 파일은 실제 SHA를 읽기 전용으로 확인했습니다. 네 번째 해시는 파일 생성 없이 메모리에서 계산했습니다. 기존 성공 복사 작업은 반복하지 않았습니다.
+
+| 파일 | SHA-256 | 예상 결과 |
+|---|---|---|
+| signed-baseline.exe | `86ba45f0139122f80c1cfb9492700edb9a537e63bd9ee511ac9231e34fb3d7ca` | 종료 0 / VERIFIED_IMAGE_ONLY |
+| tampered.exe (미생성, 예상 SHA) | `d6af9bfbe3c77136b200181135d6eed1e4f24ddac838624b476076e171ab9712` | 종료 1 / HOLD STAGE_AUTHENTICODE |
+| unsigned.exe | `145f3921e88ab2caba98afd4c5bb39eb7f9706aa6ad5e3fca5d5891f9f73adbb` | 종료 1 / HOLD STAGE_AUTHENTICODE |
+| foreign-signer.exe | `0d0189af3356554a462c2a60d0d59f6006b68d743f5c0cc93c530b083706f075` | 종료 1 / HOLD STAGE_SIGNER_PIN |
+
+별도 승인 후에만 PE .text의 파일 오프셋 `0x420`을 `0x00 → 0x01`로 바꾼 새 복사본 한 개를 만듭니다. 수정 오프셋이 PE 인증서 테이블 밖의 서명 대상 섹션 안에 있음을 확인했습니다. 정상 서명 기준본은 Windows Authenticode 유효, 승인 인증서 DER 및 공개키 SPKI, 코드서명 용도 및 현재 유효기간, 같은 HANDLE의 전체 파일 SHA가 모두 일치해야 합니다. 각 부정 입력에는 그 입력 자체의 정확한 SHA를 넘겨 서명 정책의 거부를 분리합니다.
+
+대표의 별도 승인 범위는 비관리자 격리 폴더에서 새 변조본 1개 생성 및 해당 기준본만 검증기로 실행하여 기준본 통과 1건과 거부 3건을 각각 한 번 검사하는 것입니다. 예상과 다른 결과가 나오면 즉시 HOLD하고 남은 건은 미실행으로 기록합니다. 실패 자동 재시도, 기준본·원본·보호 승인 기록 변경, 운영 배포·AI 없음. 현재 실제 결과는 모두 NOT_RUN입니다. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7056199196). NO_GO / MANUAL / EXECUTION_HOLD.

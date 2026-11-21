@@ -1,3 +1,7 @@
+## Discord V2 서명 검증 최종 승인 대기
+
+격리 세 파일 SHA 일치 및 변조 예정 메모리 SHA 고정. 파일 생성·검증기 실행·시험 모두 미실행. 기준본 허용 1건 및 세 거부 케이스의 별도 1회 승인 대기. [입력·판정](Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7056199196). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 서명 방어 시험 입력 준비 / 시험 승인 대기
 
 격리 미서명·다른 서명자 입력 SHA 확인 완료. 보호 서명 기준본 복사는 관리자 읽기 필요. 세 거부 시험의 예상 코드 확정, 실제 변조·검증기 실행 NOT_RUN. [시험 계획](Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7056114329). NO_GO / MANUAL / EXECUTION_HOLD.
