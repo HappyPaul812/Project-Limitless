@@ -1,3 +1,7 @@
+## Discord V2 운영 시간 대조 / 기존 승인 만료
+
+Windows 지역시·UTC와 시각 조회 일치. 세션 날짜 표기는 운영 코드에 미사용. Windows UTC 기준 기존 발급 만료, 동기화 서비스 상태는 조회 권한 부족. 승인 보존·설치 미실행. [시간 근거와 별도 승인 순서](../../Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 신규 설치 승인 발급 PASS / 설치 HOLD
 
 대표 실행에서 발급·HANDLE 검증 성공 표식 확인. 시간 기준 불일치로 현 시간창 유효 판정 보류, 별도 설치 승인 없음. 소비·설치·staging·Task·AI 미실행. [발급 결과](../../Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
