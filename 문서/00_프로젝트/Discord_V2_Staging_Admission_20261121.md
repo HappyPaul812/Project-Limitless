@@ -395,3 +395,11 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 순서는 검증기 배포 및 독립 최초 실행 신뢰 확인 → 최초 보호 원장 준비·파일 키 readback → 기존 서명 계정 기록과 별개의 신규 설치 승인 발급 및 지원된 설치 실행 주체 확정 → 승인 검토와 단발 소비·staging 설치 검증 → 별도 승인된 Task/서비스 계정 검증입니다. 만료한 계약과 계정은 재사용하지 않습니다.
 
 다음 최소 승인 범위는 **후보 경로에 고정된 서명 검증기 한 파일의 보호 복사 및 HANDLE readback**입니다. 실행, 원장·staging 생성, Windows 정책·Task 변경, AI 실행은 포함하지 않습니다. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 운영 검증기 보호 배포 1회 실행 자료
+
+대표가 승인한 대상 `C:\ProgramData\LimitlessDiscordV2VerifierRuntime\Limitless.StagingVerifier.exe` 한 개만 새로 만듭니다. 입력은 `Invoke-VerifierProtectedDeploymentOnce.ps1`, SHA-256 `d82f314a7e8c5b929843d2ec68b48f6a6fac2afb3e086fdd8ae33fedb7742d5d`입니다. 이미 열린 관리자 Windows PowerShell에서 공식 Microsoft 서명 고정 PowerShell 7 호스트를 사용합니다. 실행 자료 SHA를 독립적으로 대조하고 같은 메모리 바이트를 실행합니다. Codex의 기존 토큰은 비상승입니다.
+
+동일 승인 관리자 토큰을 확인한 뒤 서명 원본과 조상 HANDLE을 읽기 전용으로 유지합니다. 승인한 전체 이미지 SHA 및 Authenticode·지문·DER·SPKI·코드서명 EKU·유효기간을 확인합니다. 디렉터리와 EXE 한 개에 생성 시점부터 SYSTEM·Administrators만 전체 제어하는 보호 descriptor를 적용합니다. 기존 경로가 있거나 ACL·조상 상태가 다르면 중단하며 기존 항목을 채택하지 않습니다.
+
+복사본은 같은 읽기 HANDLE에서 최종 경로·파일 ID·소유자·그룹·비상속 DACL 및 SHA를 확인합니다. 해당 파일의 서명 확인 후 같은 HANDLE에서 보호 상태를 다시 대조합니다. 성공 표식 `VERIFIER_DEPLOYED_HANDLE_VERIFIED`와 `DEPLOYED_EXE_SHA256`; `DEPLOYED_FILE_RECEIPT`는 로컬 보관. 실패하면 재실행하거나 일부 생성 결과를 삭제·수선하지 않습니다. 컴파일·구문·내장 어댑터 바이트와 호출 범위만 확인했습니다. 실제 관리자 복사 및 후검증 NOT_RUN, 검증기 실행·staging·원장·Task·AI 없음. NO_GO / MANUAL / EXECUTION_HOLD.

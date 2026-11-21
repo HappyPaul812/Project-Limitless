@@ -1,3 +1,7 @@
+## Discord V2 보호 배포 1회 승인 / 대표 실행 대기
+
+고정 서명 원본 확인 후 EXE 한 개를 초기 보호 DACL로 복사하고 동일 HANDLE에서 확인하는 실행 자료를 준비했습니다. 컴파일·구문·내장 바인딩 PASS, 실제 관리자 복사 및 후검증 NOT_RUN. [실행 조건](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 운영 검증기 배포 준비 / HOLD
 
 서명·격리 4 PASS 재사용. 승인 저장소와 분리한 운영 배포 후보, 독립 최초 실행 및 단발 소비·설치 잔여 조건 정리. 다음 최소 승인: 서명 EXE 한 개의 보호 복사와 HANDLE readback. 실제 배포·실행·빌드 없음. [배포 순서와 차단 조건](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.

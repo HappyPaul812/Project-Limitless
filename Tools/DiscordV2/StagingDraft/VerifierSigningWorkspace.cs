@@ -8,7 +8,11 @@ public static partial class LimitlessVerifierStorePreparation
 {
     public sealed class SigningWorkspace : IDisposable
     {
+#if VERIFIER_DEPLOY
+        private const string Folder = @"C:\ProgramData\LimitlessDiscordV2VerifierRuntime";
+#else
         private const string Folder = @"C:\ProgramData\LimitlessDiscordV2SigningOnce";
+#endif
         private readonly SafeFileHandle root, parent, folder;
         private readonly string rootKey, parentKey, folderKey;
         private readonly ulong volume;
@@ -68,7 +72,11 @@ public static partial class LimitlessVerifierStorePreparation
 
         private static string FilePath(string name)
         {
+#if VERIFIER_DEPLOY
+            Need(name == "Limitless.StagingVerifier.exe", "HOLD_WORKSPACE_NAME");
+#else
             Need(name == "signtool.exe" || name == "Limitless.StagingVerifier.exe", "HOLD_WORKSPACE_NAME");
+#endif
             return Path.Combine(Folder, name);
         }
 
@@ -114,6 +122,18 @@ public static partial class LimitlessVerifierStorePreparation
             }
             catch { handle.Dispose(); throw; }
         }
+
+#if VERIFIER_DEPLOY
+        public string Readback(FileStream file)
+        {
+            Check();
+            ulong fileVolume;
+            string key = ReadPinned(file.SafeFileHandle, FilePath("Limitless.StagingVerifier.exe"),
+                false, out fileVolume, false);
+            Need(fileVolume == volume, "HOLD_COPY_VOLUME");
+            return key;
+        }
+#endif
 
         public void Dispose()
         {
