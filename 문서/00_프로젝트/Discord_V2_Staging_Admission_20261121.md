@@ -181,3 +181,13 @@ pwsh -NoProfile -File '.\Tools\DiscordV2\StagingDraft\Test-ApprovedSigningKey.ps
 - 계정 지정 뒤 **읽기 전용 검사 1회의 별도 승인**에 작업 ID·시간창·허용 실행 토큰을 적습니다. 기존 정상 로그인에서 승인된 토큰을 사용하고, 승인 기록의 SID와 실제 토큰 및 검사 스크립트·후보 해시를 재대조합니다. 보호된 승인 기록에서 미사용 상태를 확인한 뒤 같은 ID의 시작 시각을 먼저 남깁니다. 실행 주체는 한 명이고, 시작 기록이 있으면 결과가 없거나 실패해도 같은 승인으로 재실행하지 않습니다. 시작을 기록할 수 없으면 실행을 보류합니다.
 - 검토한 PowerShell 7 세션에서 `& $approvedScript -ApprovedSignerSid $approvedSid -CandidatePath $candidate`를 한 번만 호출합니다. 세 변수는 보호된 승인 기록에서 로컬로 읽습니다. `PASS_SIGNER_SID_KEY_SPKI_READ_ONLY`가 나오면 검사 결과를 기록합니다. 그 외 결과나 중단은 HOLD입니다. 이 1회 검사는 서명 승인과 별개입니다.
 - 검사 PASS 후 서명에 필요한 별도 승인에는 같은 계정/SID, 동일 인증서 지문과 후보 EXE SHA-256, Microsoft 서명 SDK SignTool, 서명할 격리 후보 한 개를 묶습니다. 그 전에는 서명과 배포가 금지됩니다. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054692478).
+
+## 보호 승인 저장소 최초 생성 승인 범위
+
+- 기존 승인 경로와 후보 `C:\ProgramData\LimitlessDiscordV2Verifier`는 조회 시 부재입니다. C:는 고정 NTFS이고 C: 루트와 ProgramData는 reparse가 아닙니다. 현재 ACL의 직접 적용 규칙에서 비관리자의 조상 대체·삭제 또는 권한 변경을 허용하는 항목은 확인되지 않았습니다. 하위 디렉터리 생성 허용 규칙은 있어 이름 선점이 가능합니다. 이 확인은 실제 실행 때 검증할 부모 HANDLE과 효과 권한을 대신하지 않습니다.
+- 최초에는 승인 저장소 **후보 한 디렉터리만** 생성합니다. owner Administrators, group SYSTEM, 상속 차단 DACL, SYSTEM과 Administrators 전부 허용을 초기 descriptor `O:BAG:SYD:P(A;;FA;;;SY)(A;;FA;;;BA)`로 전달합니다. 하위 승인 파일은 추후 별도 승인 범위에서 상속에 의존하지 않고 보호 descriptor와 CREATE_NEW로 작성합니다. 일반 사용자의 쓰기·하위 추가·삭제·ACL 변경 권한은 허용하지 않습니다. 기존 상위 ACL과 다른 후보 경로를 건드리지 않습니다.
+- 독립 신뢰 출발점의 후보는 Microsoft Authenticode가 유효한 Windows 내장 PowerShell 절대 경로입니다. 확인 결과 해당 호스트는 Microsoft 서명 Valid였습니다. 관리자가 보호된 시스템 경로·서명 및 실행 정책을 상승 전에 확인하고, 최소 생성 입력은 검토된 확정 바이트를 별도 승인 채널의 SHA-256과 대조한 뒤 동일 메모리에서 사용합니다. 프로필 및 외부 작업트리 의존을 배제하고 시스템 API만 사용합니다. 호스트 서명은 생성 입력을 승인하지 않습니다. 미서명 검증기는 이 절차에 사용하지 않습니다. 정확한 생성 입력과 해시를 확정하는 작업은 실제 승인 요청에 선행합니다.
+- 실행 범위는 승인 계정의 정상 UAC 상승과 비위장 토큰 확인 → 고정 NTFS와 조상 HANDLE의 최종 경로·볼륨·file key·owner/DACL 검증 및 유지 → 후보 부재 재확인 → 초기 descriptor를 지정한 CreateDirectoryW 단발 → 동일 디렉터리 HANDLE로 최종 경로·reparse·owner/group·비상속 DACL·file key 확인입니다. OS가 기존 항목 또는 경합을 보고하거나 readback이 실패하면 중단합니다. 기존 경로를 채택하거나 ACL을 수정하거나 부분 결과를 삭제하지 않습니다.
+- 대표 별도 승인의 최소 범위는 승인 계정·호스트·확정 입력 해시·대상 단일 경로·보안 descriptor·시간창·1회 생성 및 readback입니다. 계정 승인 기록 작성, 원장·staging 생성, 검증기 배포·키 검사·서명은 범위 밖입니다. 폴더 또는 ACL 변경은 이번에 없었습니다. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054838675).
+
+공식 근거 [CreateDirectory 및 SECURITY_ATTRIBUTES](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createdirectory)

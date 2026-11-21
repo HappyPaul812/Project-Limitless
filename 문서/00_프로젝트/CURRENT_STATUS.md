@@ -1,3 +1,7 @@
+## Discord V2 보호 승인 저장소 생성 절차 / 승인 대기
+
+기존·후보 저장소 부재. 고정 NTFS 조상은 읽기 전용 확인했으며 선점 가능성 때문에 기존 항목과 경합은 중단합니다. Microsoft 서명 내장 호스트와 독립 SHA 검증을 전제로 입력·단일 경로·초기 보호 descriptor·HANDLE readback을 별도 승인합니다. 폴더·ACL 변경 없음. [절차](Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054838675). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 서명 계정 대표 지정 승인 / 보호 기록 미발급
 
 대표 지정 승인을 받았고 실제 SID·콘솔·토큰의 일치 및 후보 EXE SHA·인증서 지문·DER·SPKI 확인을 완료했습니다. 계획된 승인 저장소가 없으며 작업트리는 소유자·DACL·쓰기 보호 조건을 충족하지 않습니다. 따라서 실제 승인 파일과 파일 무결성 기록은 미발급입니다. 식별 정보 미기록, 쓰기 시험·키 검사·서명·ACL 변경 없음. 기존 보호 승인 경로 확인 또는 별도 준비 승인 대기. NO_GO / MANUAL / EXECUTION_HOLD.
