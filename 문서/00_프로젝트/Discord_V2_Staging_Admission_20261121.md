@@ -525,3 +525,7 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 - 입력 `Tools/DiscordV2/StagingDraft/Invoke-InstallerProtectedDeploymentOnce.ps1`, SHA-256 `c0f14a975c88e024ad2ae1aaa67d647384d1146f8207f7c5746fffb0cce24e75`. 기존 배포 실행 자료는 변경하지 않았습니다. 관리형 어댑터 컴파일·PowerShell 구문·내장 어댑터 동일성·정확한 고정 원본/목적지와 배포 전용 범위를 확인했습니다. 설치 EXE 최초 실행 진입점이 이 자료에 없습니다.
 - 별도 1회 보호 복사 승인 후 기존 관리자 창의 공식 서명 PowerShell에서 검증된 입력 바이트를 실행합니다. 원본·조상 HANDLE 고정, Authenticode·인증서 지문·DER/SPKI·EKU·유효기간·전체 SHA 대조, 초기 Administrators owner/SYSTEM group 및 비상속 SYSTEM/Administrators 전용 DACL, 신규 EXE 한 개 CREATE_NEW 및 flush 순입니다. 동일 복사본 HANDLE에서 최종 경로·파일 ID·owner/DACL·SHA 및 서명을 확인한 뒤 `INSTALLER_DEPLOYED_HANDLE_VERIFIED`를 출력합니다. 파일 receipt는 로컬 보관합니다.
 - 기존 위치 발견, 서명·권한·해시 불일치, 부분 실패는 HOLD이며 재시도·수선·삭제 없음. 실제 보호 배포와 그 결과는 현재 NOT_RUN입니다. 승인 필요 범위는 고정 위치의 폴더 및 위 EXE 한 파일의 보호 복사·HANDLE readback 한 번입니다. 최초 실행·`--install`·승인 발급/소비·staging·Task·계정·AI는 제외합니다. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 서명 설치 EXE 보호 배포 결과
+
+대표의 출력 `INSTALLER_DEPLOYED_HANDLE_VERIFIED`와 배포 SHA-256 `52694e574cee3068e0c84131dcd9b93d19a2b59a42a63cf322c87a596c91806d`의 승인값 일치를 확인했습니다. 고정 대상은 `C:\ProgramData\LimitlessDiscordV2InstallerRuntime\Limitless.InitialStagingInstaller.exe`입니다. 이 표식은 원본 서명·인증서 확인, 복사본 동일 HANDLE 최종 경로·파일 ID·소유자·비상속 DACL·전체 파일 SHA·Authenticode 확인 성공을 나타냅니다. 파일 receipt는 관리자 로컬 보관입니다. 실행 자료 `a1cc3e5454b3d74f5f5a79291e06ef12323ff12a`. 실제 설치 호출·신규 승인 입력의 발급과 소비·staging·Task·AI는 미실행 및 별도 승인 대기입니다. NO_GO / MANUAL / EXECUTION_HOLD.
