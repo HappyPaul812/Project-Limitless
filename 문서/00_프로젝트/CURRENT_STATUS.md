@@ -1,3 +1,7 @@
+## Discord V2 서명 계정 대표 지정 승인 / 보호 기록 미발급
+
+대표 지정 승인을 받았고 실제 SID·콘솔·토큰의 일치 및 후보 EXE SHA·인증서 지문·DER·SPKI 확인을 완료했습니다. 계획된 승인 저장소가 없으며 작업트리는 소유자·DACL·쓰기 보호 조건을 충족하지 않습니다. 따라서 실제 승인 파일과 파일 무결성 기록은 미발급입니다. 식별 정보 미기록, 쓰기 시험·키 검사·서명·ACL 변경 없음. 기존 보호 승인 경로 확인 또는 별도 준비 승인 대기. NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 기존 계정 서명 승인 준비 / 대표 승인 대기
 
 후보 SID·콘솔·현재 토큰 일치 확인. 비상승 접근 거부 원인은 상승 상태 또는 키 ACL 중 미확정입니다. 실제 승인 기록 미발급, 검사 NOT_RUN. [승인 기록 항목과 1회 절차](Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054692478). NO_GO / MANUAL / EXECUTION_HOLD.
