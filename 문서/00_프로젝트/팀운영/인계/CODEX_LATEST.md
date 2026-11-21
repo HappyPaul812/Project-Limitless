@@ -1,3 +1,7 @@
+## Discord V2 서명 계정 후보 확인 / 지정 대기
+
+활성 로컬 관리자 직접 구성원 후보 한 명이 활성 콘솔 로그인·현재 실행 계정과 일치합니다. 현재 토큰은 관리자 역할 비활성입니다. 후보 승인 및 그 계정의 정상 서명 토큰에서 실제 키 접근, 키 소유자·접근 ACL은 미확인입니다. 대표 지정 후 로컬에서 승인 계정·SID를 대조하고, 별도 승인으로 읽기 전용 검사 1회만 실행합니다. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054628347). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 승인 서명 계정 실검증 / 미실행
 
 현재 토큰 SID는 조회 가능하나 대조할 승인 SID 및 지정 계정의 실행 토큰과 읽기 전용 1회 검사 별도 승인을 확인하지 못했습니다. 기존 점검 스크립트 0b9a7dc2 미실행, 실제 키 접근·SPKI 일치 NOT_RUN. 서명 및 운영 변경 없음. NO_GO / MANUAL / EXECUTION_HOLD.
