@@ -1,3 +1,7 @@
+## Discord V2 보호 복사본 단발 서명 승인 / 대표 실행 대기
+
+보호 작업 공간·고정 SDK SignTool 복사·1회 로컬 서명과 후검증을 준비했습니다. 관리형 컴파일·구문·격리 SDK 자체 검증 PASS, 실제 관리자 서명 NOT_RUN. [실행 조건](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 독립 검증기 EXE 서명 최종 준비 / 승인 대기
 
 후보 미서명 SHA와 승인 인증서 대조, 이전 키 검사 PASS 재사용. SignTool과 후검증 명령 구문 확인. 보호 작업 복사본·SDK 경로 및 1회 서명 별도 승인 대기; 서명과 서명 후 SHA NOT_RUN. [절차](Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7055935996). NO_GO / MANUAL / EXECUTION_HOLD.

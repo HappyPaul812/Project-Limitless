@@ -321,3 +321,11 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 ```
 
 현재 서명 및 서명 후 SHA는 NOT_RUN입니다. 실패하면 재시도·인증서 교체·ACL 변경을 하지 않고 산출물을 배포에서 제외합니다. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7055935996) · [Microsoft SignTool 문서](https://learn.microsoft.com/en-us/windows/win32/seccrypto/signtool). NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 대표 실행용 단발 보호 복사본 서명
+
+대표의 서명 승인을 받았습니다. 입력은 `Invoke-VerifierSigningOnce.ps1`, SHA-256 `1b7388b915530c7f061b555bb03f2f62e5ff455a442c6547660c1676bd76277d`입니다. 원본과 기존 승인 저장소는 수정하지 않습니다. 지정 상승 토큰·보호 승인 원문 및 기존 로컬 receipt 두 개를 대조한 뒤에만 별도 신규 작업 공간 `C:\ProgramData\LimitlessDiscordV2SigningOnce`를 초기 관리자 전용 descriptor로 원자 생성합니다. 이미 있으면 중지합니다. 작업 공간은 서명 성공 여부와 관계없이 재시도에 재사용하지 않습니다.
+
+같은 HANDLE에서 읽어 승인 SHA를 대조한 후보 및 공식 SDK SignTool 바이트를 두 보호 파일에 씁니다. SignTool은 보호 작업 폴더에서 System32 PATH로만 실행하고 SDK 원래 디렉터리의 DLL은 복사하지 않습니다. SDK 단독 실행의 `verify /pa /all`을 비관리자 격리 복사본에서 확인했습니다. 실제 서명은 해당 EXE만 `sign /sm /s My /sha1 <승인 지문> /fd SHA256`으로 한 번 수행합니다. 외부 타임스탬프 없이 로컬 서명합니다.
+
+성공 표식 `SIGNING_AUTHENTICODE_VERIFIED`는 SignTool 검증, Windows Authenticode, 인증서 지문·DER·SPKI/EKU/유효기간, 보호 파일 HANDLE 및 서명 후 SHA 확인 뒤에만 출력합니다. 조상/작업 공간/파일 보호 불일치, 서명 또는 검증 실패는 HOLD입니다. 실패물을 수정·삭제·재시도하지 않습니다. 현재 실제 관리자 서명 NOT_RUN, 기존 키 검사 재실행 없음, 배포·ACL 변경 없음. NO_GO / MANUAL / EXECUTION_HOLD.
