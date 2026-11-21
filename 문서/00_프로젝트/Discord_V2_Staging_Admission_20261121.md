@@ -548,3 +548,16 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 계약 발급은 보호 입력 작성 및 분리 서명을 끝내는 별도 작업이며 승인 소비는 나중에 실행될 설치 경계의 CREATE_NEW에서만 수행됩니다. 서명·SID·기존 검증기·시간창·원장 키·부모·대상 부재 확인 후 소비를 선점하고, 상태를 다시 확인한 뒤 생성합니다. 중복, 이미 있는 대상, 만료, 권한 불일치 또는 생성·readback 오류는 HOLD이며 사용 기록 및 일부 결과를 보존합니다. 이 순서와 거부 조건은 소스와 기존 신규 설치 모의 10 PASS로 대조했으며 재실행하지 않았습니다.
 
 작성한 것은 미서명 원본 Manifest 후보와 승인 계약 명세뿐입니다. 승인 원문과 서명을 발급하거나 배치하지 않았고 소비·운영 실행을 하지 않았습니다. 다음 최소 승인 범위는 위 미서명 원본 한 개의 Authenticode 및 같은 바이트의 RSA-PSS 분리 서명 준비·검증입니다. 서명 후 실제 SourceSha는 미서명 SHA와 별개입니다. 이후 보호 배치 및 별도 승인 발급이 완료되어야 현재 지원하는 고정 운영 설치 명령을 발급할 수 있습니다. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## Staging 원본의 Authenticode 및 동일 바이트 RSA-PSS 서명 준비
+
+실제 미서명 후보 파일은 `StagingSource.Candidate.ps1`이며 SHA-256 `9007a8cface8955d645b3aa7821bd0084cbf0df21ccb51093575ddbde2a8d7e8`가 고정값과 일치합니다. 후보 원본은 수정하지 않았습니다. 이전 승인 `windows` 상승 서명 계정, 보호 계정 지정 기록, 승인 인증서 Windows 지문·DER·SPKI와 앞선 읽기 전용 PASS를 재사용합니다. 이번에 실제 개인키를 열거나 서명하지 않았습니다.
+
+입력 `Invoke-StagingSourceSigningOnce.ps1`, SHA-256 `e11091d23057a6f6b59c1a47974af70e639dd57499145f656c91cbd5cd326ecb`. 대표가 양쪽 서명을 각각 1회 승인한 뒤 기존 관리자 창에서 해시가 검증된 같은 바이트를 `-SignSourceAfterApproval`로 호출합니다. 이전 보호 저장소 생성 및 계정 지정 기록의 로컬 성공 receipt를 사용합니다. 서명용 작업 폴더 `C:\ProgramData\LimitlessDiscordV2StagingSourceSigningOnce`는 별도 새 보호 공간입니다. 같은 폴더가 있으면 중지합니다.
+
+1. 지정 토큰·보호 승인 기록·서명 인증서와 실제 키 공개 SPKI를 대조하고, 비내보내기 정책을 확인합니다. 미서명 후보 SHA를 대조해 보호 `StagingSource.ps1` 복사본 한 개를 만듭니다. 승인 후 원자 시도 표식을 남겨 재시도를 거부합니다.
+2. `Set-AuthenticodeSignature`에서 승인 인증서와 SHA256을 사용해 복사본을 한 번 서명합니다. 서명 후 복사본을 쓰기·삭제 공유 없는 동일 HANDLE에 유지하고 전체 바이트를 읽어 새 SHA를 구합니다. Authenticode·승인 인증서 지문·DER·공개 SPKI·EKU·유효기간을 대조합니다.
+3. 기존 보호 검증기 이미지를 고정 SHA/ACL/HANDLE로 확인해 `--verify-image` 입력으로 이 파일 경로와 최종 해시를 전달합니다. Windows 서명자·전체 파일 SHA·인증서 정책이 맞을 때의 종료 0과 `VERIFIED_IMAGE_ONLY`를 요구합니다. 이 명령의 범위는 이미지 검증입니다. 분리 서명 검증은 별도로 진행합니다.
+4. 승인 키로 **같은 HANDLE에서 읽은 동일 바이트**에 `SignData(..., SHA256, Pss)` 한 번을 호출합니다. 승인 인증서 공개키로 검증한 다음 보호 작업 폴더의 `StagingSource.sig`를 CREATE_NEW로 씁니다. 보존한 원본 HANDLE과 분리 서명 readback을 공개키로 다시 대조합니다. 바이트·키·시간창 불일치 또는 서명 실패는 재시도 없이 HOLD입니다. 결과의 `SIGNED_SOURCE_SHA256`, `DETACHED_SIGNATURE_SHA256`는 별개입니다.
+
+컴파일·구문·고정 경로·서명 순서 및 호출 수 정적 확인 완료. 실제 Authenticode·분리 서명·서명 후 SHA·보호 검증기 실행은 NOT_RUN입니다. 기존 시험 반복, 승인 발급/소비, 운영 설치·staging·Task·AI 및 보호 자산 변경 없음. NO_GO / MANUAL / EXECUTION_HOLD.

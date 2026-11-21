@@ -16,6 +16,8 @@ public static partial class LimitlessVerifierStorePreparation
         private const string DeploymentName = "Limitless.StagingVerifier.exe";
 #elif INSTALLER_SIGNING
         private const string Folder = @"C:\ProgramData\LimitlessDiscordV2InstallerSigningOnce";
+#elif STAGING_SOURCE_SIGNING
+        private const string Folder = @"C:\ProgramData\LimitlessDiscordV2StagingSourceSigningOnce";
 #else
         private const string Folder = @"C:\ProgramData\LimitlessDiscordV2SigningOnce";
 #endif
@@ -24,7 +26,7 @@ public static partial class LimitlessVerifierStorePreparation
         private readonly ulong volume;
         public string DirectoryPath { get { return Folder; } }
 
-#if INSTALLER_SIGNING
+#if INSTALLER_SIGNING || STAGING_SOURCE_SIGNING
         public string Receipt { get { Check(); return folderKey; } }
 
         public void MarkSigningAttempt()
@@ -69,7 +71,7 @@ public static partial class LimitlessVerifierStorePreparation
                 rootKey = ReadPinned(root, Root, true, out volume);
                 parentKey = ReadPinned(parent, Parent, true, out parentVolume);
                 Need(volume == parentVolume, "HOLD_PARENT_VOLUME");
-#if INSTALLER_SIGNING
+#if INSTALLER_SIGNING || STAGING_SOURCE_SIGNING
                 if (!openExisting)
 #endif
                 {
@@ -119,6 +121,8 @@ public static partial class LimitlessVerifierStorePreparation
             Need(name == DeploymentName, "HOLD_WORKSPACE_NAME");
 #elif INSTALLER_SIGNING
             Need(name == "signtool.exe" || name == "Limitless.InitialStagingInstaller.exe", "HOLD_WORKSPACE_NAME");
+#elif STAGING_SOURCE_SIGNING
+            Need(name == "StagingSource.ps1" || name == "StagingSource.sig", "HOLD_WORKSPACE_NAME");
 #else
             Need(name == "signtool.exe" || name == "Limitless.StagingVerifier.exe", "HOLD_WORKSPACE_NAME");
 #endif

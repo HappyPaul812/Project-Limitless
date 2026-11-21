@@ -1,3 +1,7 @@
+## Discord V2 staging 원본 Authenticode·PSS 서명 준비
+
+미서명 고정 SHA 일치, 기존 서명 계정 PASS 재사용. 보호 복사본 Authenticode 후 같은 HANDLE 바이트 PSS 1회 및 독립 공개키·검증기 확인 절차 준비. 두 서명 및 후해시 NOT_RUN, 별도 승인 대기. [절차](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 최초 staging 원본과 단발 승인 입력 준비 / HOLD
 
 빈 staging 범위의 미서명 Manifest 후보·SHA와 새 발급 계약을 고정했습니다. 승인된 서명 원본과 보호 승인 입력 미확정, 운영 명령 미발급. 기존 모의 결과 재사용, 설치·발급·소비 미실행. [원본·계약](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.

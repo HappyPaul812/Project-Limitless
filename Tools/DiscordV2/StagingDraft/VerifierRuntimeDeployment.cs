@@ -11,6 +11,9 @@ public static partial class LimitlessVerifierStorePreparation
 #if INSTALLER_DEPLOY
         private const string SourceFolder = @"C:\ProgramData\LimitlessDiscordV2InstallerSigningOnce";
         private const string SourceFile = SourceFolder + @"\Limitless.InitialStagingInstaller.exe";
+#elif STAGING_SOURCE_SIGNING
+        private const string SourceFolder = @"C:\ProgramData\LimitlessDiscordV2VerifierRuntime";
+        private const string SourceFile = SourceFolder + @"\Limitless.StagingVerifier.exe";
 #else
         private const string SourceFolder = @"C:\ProgramData\LimitlessDiscordV2SigningOnce";
         private const string SourceFile = SourceFolder + @"\Limitless.StagingVerifier.exe";
