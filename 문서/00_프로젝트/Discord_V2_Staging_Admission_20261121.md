@@ -512,3 +512,9 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 ## 독립 설치 EXE 미서명 보호 복사 결과
 
 대표 실행의 `INSTALLER_SIGNING_COPY_PREPARED`를 확인했습니다. 보호 미서명 파일 `C:\ProgramData\LimitlessDiscordV2InstallerSigningOnce\Limitless.InitialStagingInstaller.exe`의 SHA-256은 `f0d793f3fe21a4d75db46d999e7c11188e72c14721f69088f27eab4ab558f285`로 승인 후보값과 일치했습니다. 보호 작업 폴더 receipt는 로컬에서만 보관합니다. 실행 입력 `51aac14155954cec8904f98f60469606ec186dc0`. 실제 서명·서명 후 검증, `--install`, staging·원장 소비·Task·AI는 NOT_RUN입니다. 다음은 보호 복사본 한 파일의 별도 서명 승인입니다. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 독립 설치 EXE 디지털 서명 1회 결과
+
+대표 제공 실행에서 `INSTALLER_SIGNING_AUTHENTICODE_VERIFIED` 및 SignTool 검증 성공을 확인했습니다. 서명본 `C:\ProgramData\LimitlessDiscordV2InstallerSigningOnce\Limitless.InitialStagingInstaller.exe`. 서명 전 SHA-256 `f0d793f3fe21a4d75db46d999e7c11188e72c14721f69088f27eab4ab558f285`는 승인 미서명 값과 일치했으며, 서명 후 SHA-256은 `52694e574cee3068e0c84131dcd9b93d19a2b59a42a63cf322c87a596c91806d`입니다. SHA-256 Authenticode, 타임스탬프 없음. 성공 표식은 인증서 지문·DER·SPKI·코드서명 EKU·유효기간 확인을 포함합니다. 작업 폴더 receipt는 게시하지 않습니다. 실행 자료 `51aac14155954cec8904f98f60469606ec186dc0`.
+
+후속 별도 승인 대기는 서명 설치 EXE의 보호 배포·동일 HANDLE 읽기 검증입니다. 새 보호 설치 입력·승인 발급, `--install`, 실제 staging·원장 소비·Task·AI는 미실행입니다. 이전 모의시험과 서명 재실행 없음. NO_GO / MANUAL / EXECUTION_HOLD.

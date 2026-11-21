@@ -1,3 +1,7 @@
+## Discord V2 독립 설치 EXE 서명 PASS / 배포 별도 승인 대기
+
+대표 1회 서명과 Authenticode PASS, 서명 후 SHA 52694e574cee3068e0c84131dcd9b93d19a2b59a42a63cf322c87a596c91806d. 타임스탬프 없음. 운영 보호 배포·신규 발급·설치·원장 소비·Task·AI 미실행. [서명 결과](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 설치 EXE 보호 복사 PASS / 서명 별도 승인 대기
 
 대표 실행 보호 미서명 복사본 SHA가 승인 후보값과 일치했습니다. 서명과 운영 실행 NOT_RUN. [결과](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
