@@ -155,3 +155,9 @@ Windows SDK의 Microsoft 서명이 유효한 SignTool을 확인했습니다. 승
 - 현재 비상승 토큰에서 RSA 개인키 열기 실패 `0x80090016`. 코드 자체로 키 컨테이너 부재와 권한 거부를 구분할 수 없습니다. 지정 서명 계정의 정확한 계정과 토큰은 로컬 승인 기록에서 대조해야 하며, 현재 세션에서 지정 계정의 키 접근은 확인하지 않았습니다.
 - 지정 서명 계정에서 관리자 PowerShell로 현재 계정이 승인 기록과 맞는지 확인한 뒤, 같은 EXE 해시·인증서 지문·유효기간·코드서명 EKU를 대조합니다. 같은 인증서를 `GetRSAPrivateKey`로 열 수 있고, RSA 키가 인증서 SPKI와 일치하며 기존 내보내기 불가 정책을 유지하는지 확인합니다. 확인 단계에서는 서명하지 않습니다. 실패하면 중단하고 ACL·인증서 저장소·키 연결을 변경하지 않습니다.
 - 사전 점검이 모두 맞고 별도 서명 승인을 받은 경우에만 기존 Microsoft 서명 SDK SignTool로 명시된 EXE 한 개를 서명합니다. 서명 뒤 Authenticode·서명자 지문을 검증하고 서명 후 SHA-256을 미서명 해시와 별도로 기록합니다. 서명본 변조·다른 서명자 거부 시험과 운영 배포는 후속 승인 단계입니다. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054226849).
+
+## 승인 키 연결 및 접근 실패 분류
+
+- EXE SHA 및 승인 인증서 지문은 유지됩니다. `LocalMachine\My`에는 승인 인증서와 영구 키 연결 속성 `CERT_KEY_PROV_INFO`가 있고, `CurrentUser\My`에는 같은 인증서가 없습니다. 연결은 Microsoft Software Key Storage Provider의 명명된 머신 키 컨테이너를 가리킵니다.
+- `NCryptOpenStorageProvider` 성공, 연결 속성 그대로 머신·무인 읽기 전용 `NCryptOpenKey` 호출은 `0x80090010 (NTE_PERM)`입니다. 이전 상위 API의 `0x80090016`보다 현재 비상승 토큰의 접근 거부를 직접 보여 줍니다. 컨테이너의 실재, 키 공개 부분과 인증서의 일치, 지정 서명 계정의 기존 권한은 미확인입니다.
+- 최소 경로는 바울 대표가 승인한 기존 서명 계정의 토큰에서 같은 머신 컨테이너의 무인 열기를 읽기 전용으로 재확인하는 것입니다. 성공하면 공개 SPKI와 내보내기 불가 정책을 대조합니다. 접근 거부가 계속되면 지정 계정의 기존 권한만 관리자와 검토하고, 키 부재 또는 공개키 불일치가 드러나면 HOLD합니다. ACL·키 연결·인증서 변경과 실제 서명은 이번 범위 밖입니다. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054326187).

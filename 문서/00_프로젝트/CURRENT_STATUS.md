@@ -1,3 +1,7 @@
+## Discord V2 운영 서명 키 연결 분류 / HOLD
+
+승인 EXE SHA·인증서 지문 유지. 인증서의 CNG 머신 키 컨테이너 연결을 읽었으며 공급자는 열리고 현재 토큰의 컨테이너 열기는 NTE_PERM입니다. 지정 계정의 기존 권한을 통한 키 열기·SPKI 일치 검증 대기. [근거](Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054326187). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## 2026-11-21 독립 검증기 서명 사전 점검 / HOLD
 
 미서명 EXE SHA 및 승인 인증서 메타데이터 일치. 현재 비상승 토큰의 개인키 열기 0x80090016, 지정 계정의 읽기 전용 확인 및 별도 서명 승인 대기입니다. [사전 조건](Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054226849). NO_GO / MANUAL / EXECUTION_HOLD.
