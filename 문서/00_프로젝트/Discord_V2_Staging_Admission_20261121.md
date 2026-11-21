@@ -148,3 +148,10 @@ Windows SDK의 Microsoft 서명이 유효한 SignTool을 확인했습니다. 승
 - 로컬 후보 `Temp/DiscordUsageDiagnostics20261026/StagingVerifierRelease-3f674efb/candidate/Limitless.StagingVerifier.exe`. 미서명 SHA-256 `145f3921e88ab2caba98afd4c5bb39eb7f9706aa6ad5e3fca5d5891f9f73adbb`. 신규 6 PASS / 0 FAIL로 버전, 설치 명령·잘못된 SHA 형식·미서명·만료·다른 유효 서명자 거부를 확인했습니다.
 - 공식 SignTool은 승인 인증서를 선택할 수 없었고 현재 계정에서 개인키 열기는 0x80090016으로 실패했습니다. 기존 권한으로 키를 열 수 있는 지정 서명 계정에서만 후보 SHA를 먼저 확인하고 서명합니다. 서명본 검증과 변조 시험은 미실행입니다. 인증서·키 재발급, 권한 변경, 기존 시험 재실행 없음.
 - 선행 배포 경로 후보는 `C:\ProgramData\LimitlessDiscordV2Verifier`입니다. 고정 경로와 조상의 reparse·소유자·DACL·최종 경로를 확인합니다. 소유자는 Administrators, 보호 DACL은 SYSTEM·Administrators에 전체 제어와 파일 상속을 부여하고 지정된 사전 검증 계정에는 필요한 경우 읽기·실행만 부여합니다. 일반 사용자 쓰기·추가·삭제·ACL 변경 권한을 허용하지 않습니다. 승인 파일 SHA·서명자 및 상승 전 Windows 허용 정책을 별도로 연결합니다. 이 경로 또는 ACL을 생성·변경하지 않았습니다. 실제 원장·staging·Bootstrap 실행은 별도 승인입니다. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 독립 검증기 서명 계정 사전 점검
+
+- 기존 후보 SHA-256 일치 및 `NotSigned` 확인. 지정 인증서는 `LocalMachine\My`에서 지문 일치, 코드서명 EKU, 키 연결 표시와 유효기간을 확인했습니다. 유효기간 KST 2026-11-21 08:20:56부터 2027-11-21 08:30:56까지.
+- 현재 비상승 토큰에서 RSA 개인키 열기 실패 `0x80090016`. 코드 자체로 키 컨테이너 부재와 권한 거부를 구분할 수 없습니다. 지정 서명 계정의 정확한 계정과 토큰은 로컬 승인 기록에서 대조해야 하며, 현재 세션에서 지정 계정의 키 접근은 확인하지 않았습니다.
+- 지정 서명 계정에서 관리자 PowerShell로 현재 계정이 승인 기록과 맞는지 확인한 뒤, 같은 EXE 해시·인증서 지문·유효기간·코드서명 EKU를 대조합니다. 같은 인증서를 `GetRSAPrivateKey`로 열 수 있고, RSA 키가 인증서 SPKI와 일치하며 기존 내보내기 불가 정책을 유지하는지 확인합니다. 확인 단계에서는 서명하지 않습니다. 실패하면 중단하고 ACL·인증서 저장소·키 연결을 변경하지 않습니다.
+- 사전 점검이 모두 맞고 별도 서명 승인을 받은 경우에만 기존 Microsoft 서명 SDK SignTool로 명시된 EXE 한 개를 서명합니다. 서명 뒤 Authenticode·서명자 지문을 검증하고 서명 후 SHA-256을 미서명 해시와 별도로 기록합니다. 서명본 변조·다른 서명자 거부 시험과 운영 배포는 후속 승인 단계입니다. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054226849).

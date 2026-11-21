@@ -1,3 +1,7 @@
+## 2026-11-21 독립 검증기 서명 사전 점검 / HOLD
+
+미서명 EXE SHA 및 승인 인증서 메타데이터 일치. 현재 비상승 토큰의 개인키 열기 0x80090016, 지정 계정의 읽기 전용 확인 및 별도 서명 승인 대기입니다. [사전 조건](Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054226849). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## 2026-11-21 독립 검증기 릴리스 후보 / 서명 HOLD
 
 소스 3f674efb의 단일 Windows x64 EXE 빌드, 신규 6 PASS / 0 FAIL. 현재 계정에서 개인키 열기 실패로 후보는 미서명입니다. [후보·SHA·배포 조건](Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054106449). NO_GO / MANUAL / EXECUTION_HOLD.
