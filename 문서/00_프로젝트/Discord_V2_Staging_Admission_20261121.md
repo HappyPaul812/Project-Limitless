@@ -417,3 +417,7 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 자동 실제 실행 없이 준비만 승인됐습니다. 별도 승인이 있으면 기존 관리자 창에서 실행 자료의 고정 바이트를 대조한 뒤 `-ExecuteFirstRun`을 사용해 정확히 `--version`만 전달합니다. 사용자 런타임·프로파일러·시작 훅 변수가 상속되지 않도록 새 프로세스 환경을 구성합니다. 종료 0, stderr 비어 있음, 버전 `0.1.0+3f674efb1be6466d57aa99f017563fd29ba62b7c`일 때만 `VERIFIER_FIRST_RUN_PASS`를 출력합니다. 기본 호출은 사전 확인만 수행합니다. `--review`와 운영 설치·원장·staging·Task·서비스 계정·AI는 실행 범위에 포함되지 않습니다.
 
 실행 자료 구문과 Microsoft 호스트/런타임 읽기 전용 검사를 확인했습니다. 기존 검증기·서명·격리 시험·배포 반복, 제품 빌드, 실제 EXE 실행 없음. 첫 실행 실패·런타임 변경은 재시도 없이 HOLD입니다. 첫 실행 성공 후에도 staging 생성 및 AI 실행은 별도 승인입니다. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 운영 검증기 최초 실행 결과
+
+대표가 제공한 출력 `VERIFIER_FIRST_RUN_PASS=0.1.0+3f674efb1be6466d57aa99f017563fd29ba62b7c`를 승인값과 대조했습니다. 배포 경로의 승인 EXE와 독립 Microsoft 호스트·고정 시스템 런타임의 사전 검사가 성공했고 `--version`만 전달되어 종료 0·예상 버전·빈 stderr가 확인됐다는 표식입니다. 대표의 최초 실행 결과이며 Codex가 실행을 반복하지 않았습니다. 실행 자료 `3904ac5f42502c7a875f1206505643b01554b342`. 운영 원장 생성·소비, staging, Task, 서비스 계정 변경 및 AI 실행은 미실행입니다. 최초 원장 준비, 새 계약·설치 진입점은 별도 승인 대기입니다. NO_GO / MANUAL / EXECUTION_HOLD.
