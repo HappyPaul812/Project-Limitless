@@ -1,3 +1,7 @@
+## Discord V2 새 설치 EXE 보호 복사 준비 / 서명 별도 승인 대기
+
+미서명 후보 SHA 승인값 일치. 기본 복사 전용 모드와 별도 1회 서명 게이트 준비·정적 확인 완료. 실제 보호 복사 및 서명 NOT_RUN. [경로·해시·명령](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 최초 staging 독립 설치 후보 / 신규 모의 10 PASS
 
 기존 서명 검증기 연결, 새 최대 5분 계약·단발 소비·고정 staging 생성 진입점 구현. 고정 소스 20963f59, 미서명 단일 후보 생성. 신규 모의 10 PASS / 0 FAIL, 실제 운영 호출·발급·소비·생성 미실행. 다음 별도 승인: 후보 한 파일 서명 및 후검증만. [후보 SHA와 후속 승인](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.

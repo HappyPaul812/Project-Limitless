@@ -5,3 +5,4 @@ Invoke-VerifierSigningOnce.ps1 -text
 Invoke-VerifierProtectedDeploymentOnce.ps1 -text
 Invoke-VerifierFirstRunOnce.ps1 -text
 Prepare-InitialProtectedLedger.ps1 -text
+Invoke-InitialInstallerSigning.ps1 -text

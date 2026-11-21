@@ -496,3 +496,15 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 - 새 후보 한 개의 서명·서명 후 SHA 확정 및 독립 검증은 별도 승인입니다. 미서명 SHA는 운영 승인에 사용할 수 없습니다. 이후 설치 이미지·세 승인 입력과 원본을 보호 경로에 배치하는 승인, 새 운영 발급 및 실제 1회 설치도 별도입니다. 독립 호스트 정책과 시스템 .NET 경로를 실제 호출 전에 대조해야 합니다.
 - 코드 계약의 운영 실행 파일은 `C:\ProgramData\LimitlessDiscordV2InstallerRuntime\Limitless.InitialStagingInstaller.exe`, 옵션은 `--install` 하나입니다. 같은 보호 디렉터리에 고정 입력 `StagingSource.ps1`, `StagingSource.sig`, `InstallApproval.json`, `InstallApproval.sig`가 필요합니다. 운영 경로와 승인 입력은 미발급/미배치입니다. 복사해 실행할 운영 명령은 신뢰 배포와 보호 승인 입력을 마친 다음에만 제공할 수 있습니다.
 - 다음 최소 승인: 위 미서명 후보의 SHA를 고정한 **한 파일 서명 및 서명 직후 검증만**. 운영 배포·발급·소비·staging·Task·AI 제외. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 독립 설치 후보 보호 복사 및 서명 승인 대기
+
+소스 `20963f59d0e5cbc8671e8a19fb216e780fbc7b40`의 기존 미서명 EXE SHA-256 `f0d793f3fe21a4d75db46d999e7c11188e72c14721f69088f27eab4ab558f285`가 승인값과 일치했습니다. 기존 서명 계정 `windows`와 LIMITLESS 인증서 지문 `437423567AD4B703578F231E34A06592B38DB4EB`만 재사용합니다. 기존 서명 계정 기록은 계정 신뢰만 뒷받침합니다. 이 설치 후보에는 별도 서명 승인이 필요합니다.
+
+입력 `Invoke-InitialInstallerSigning.ps1`, SHA-256 `b03d4c7a5c37f50aadd6c3210fe722dffd83babaae895a7f6dfc3bd72e2712af`. 기본 모드는 Microsoft 서명 고정 호스트, 승인 SID·보호 승인 기록 및 원본 SHA를 대조한 뒤 새 관리자 전용 작업 폴더에 미서명 EXE와 고정 SDK SignTool만 복사·readback합니다. 기본 출력은 `INSTALLER_SIGNING_COPY_PREPARED`이며 SignTool을 실행하지 않습니다. Codex는 비상승 상태이므로 실제 보호 복사는 대표 기존 관리자 세션 실행 대기입니다.
+
+서명 대상 고정 경로 `C:\ProgramData\LimitlessDiscordV2InstallerSigningOnce\Limitless.InitialStagingInstaller.exe`. 별도 서명 승인 후 보호 작업 복사본의 영수증, SID, SHA를 재대조하고 작업 폴더에 원자적 1회 시도 표식을 남긴 뒤, 같은 폴더의 고정 `signtool.exe`에 다음 인수를 한 번만 전달합니다.
+
+`sign /sm /s My /sha1 437423567AD4B703578F231E34A06592B38DB4EB /fd SHA256 C:\ProgramData\LimitlessDiscordV2InstallerSigningOnce\Limitless.InitialStagingInstaller.exe`
+
+서명 후 SignTool 검증, Authenticode, 인증서 지문·DER·SPKI·EKU·유효기간 및 별도 SHA를 확인합니다. 오류는 재시도·삭제·수선 없이 HOLD입니다. 이번에는 컴파일·구문·고정 범위 및 서명 게이트 순서만 확인했습니다. 실제 보호 복사·서명·서명 후 SHA·운영 호출 모두 NOT_RUN, 이전 격리 시험 반복 없음. 설치·staging·원장 소비·Task·AI 금지, NO_GO / MANUAL / EXECUTION_HOLD.

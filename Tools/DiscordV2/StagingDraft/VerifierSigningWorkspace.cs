@@ -10,6 +10,8 @@ public static partial class LimitlessVerifierStorePreparation
     {
 #if VERIFIER_DEPLOY
         private const string Folder = @"C:\ProgramData\LimitlessDiscordV2VerifierRuntime";
+#elif INSTALLER_SIGNING
+        private const string Folder = @"C:\ProgramData\LimitlessDiscordV2InstallerSigningOnce";
 #else
         private const string Folder = @"C:\ProgramData\LimitlessDiscordV2SigningOnce";
 #endif
@@ -18,7 +20,39 @@ public static partial class LimitlessVerifierStorePreparation
         private readonly ulong volume;
         public string DirectoryPath { get { return Folder; } }
 
+#if INSTALLER_SIGNING
+        public string Receipt { get { Check(); return folderKey; } }
+
+        public void MarkSigningAttempt()
+        {
+            Check();
+            IntPtr descriptor;
+            uint size;
+            Win(ConvertStringSecurityDescriptorToSecurityDescriptorW(InitialSddl, 1, out descriptor, out size));
+            try
+            {
+                var attrs = AttributesFor(descriptor);
+                string path = Path.Combine(Folder, "sign-attempt.used");
+                using (var handle = CreateProtectedFile(path, 0xc0020000, 0, ref attrs, 1, 0x80200000, IntPtr.Zero))
+                {
+                    Win(!handle.IsInvalid);
+                    ulong fileVolume;
+                    ReadPinned(handle, path, false, out fileVolume, false);
+                    Need(fileVolume == volume, "HOLD_MARKER_VOLUME");
+                    using (var stream = new FileStream(handle, FileAccess.Write))
+                    {
+                        stream.WriteByte(1);
+                        stream.Flush(true);
+                    }
+                }
+            }
+            finally { LocalFree(descriptor); }
+        }
+
+        public SigningWorkspace(string sid, DateTimeOffset start, DateTimeOffset end, bool openExisting)
+#else
         public SigningWorkspace(string sid, DateTimeOffset start, DateTimeOffset end)
+#endif
         {
             DemandActor(sid, start, end);
             var drive = new DriveInfo(Root);
@@ -31,20 +65,25 @@ public static partial class LimitlessVerifierStorePreparation
                 rootKey = ReadPinned(root, Root, true, out volume);
                 parentKey = ReadPinned(parent, Parent, true, out parentVolume);
                 Need(volume == parentVolume, "HOLD_PARENT_VOLUME");
-                IntPtr descriptor;
-                uint size;
-                Win(ConvertStringSecurityDescriptorToSecurityDescriptorW(InitialSddl, 1, out descriptor, out size));
-                try
+#if INSTALLER_SIGNING
+                if (!openExisting)
+#endif
                 {
-                    var attrs = AttributesFor(descriptor);
-                    ulong ignored;
-                    Need(ReadPinned(root, Root, true, out ignored) == rootKey &&
-                        ReadPinned(parent, Parent, true, out ignored) == parentKey, "HOLD_PARENT_CHANGED");
-                    DemandActor(sid, start, end);
-                    // 기존 위치는 채택하지 않습니다. 새 작업 경로가 이 서명 1회 시도의 표식입니다.
-                    Win(CreateDirectoryW(Folder, ref attrs));
+                    IntPtr descriptor;
+                    uint size;
+                    Win(ConvertStringSecurityDescriptorToSecurityDescriptorW(InitialSddl, 1, out descriptor, out size));
+                    try
+                    {
+                        var attrs = AttributesFor(descriptor);
+                        ulong ignored;
+                        Need(ReadPinned(root, Root, true, out ignored) == rootKey &&
+                            ReadPinned(parent, Parent, true, out ignored) == parentKey, "HOLD_PARENT_CHANGED");
+                        DemandActor(sid, start, end);
+                        // 기존 위치는 채택하지 않습니다. 새 작업 경로가 이 서명 1회 시도의 표식입니다.
+                        Win(CreateDirectoryW(Folder, ref attrs));
+                    }
+                    finally { LocalFree(descriptor); }
                 }
-                finally { LocalFree(descriptor); }
                 folder = Pin(Folder);
                 ulong folderVolume;
                 folderKey = ReadPinned(folder, Folder, false, out folderVolume);
@@ -74,6 +113,8 @@ public static partial class LimitlessVerifierStorePreparation
         {
 #if VERIFIER_DEPLOY
             Need(name == "Limitless.StagingVerifier.exe", "HOLD_WORKSPACE_NAME");
+#elif INSTALLER_SIGNING
+            Need(name == "signtool.exe" || name == "Limitless.InitialStagingInstaller.exe", "HOLD_WORKSPACE_NAME");
 #else
             Need(name == "signtool.exe" || name == "Limitless.StagingVerifier.exe", "HOLD_WORKSPACE_NAME");
 #endif
