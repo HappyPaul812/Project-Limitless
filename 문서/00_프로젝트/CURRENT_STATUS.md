@@ -1,3 +1,7 @@
+## Discord V2 서명 staging 입력 두 파일 보호 배치 PASS
+
+대표 실행에서 기존 지정 기록 SHA 일치 및 대상 부재 확인 뒤 두 파일 보호 배치·동일 HANDLE·이중 서명 검증 통과. 신규 승인 발급·소비·설치 미실행 및 별도 승인 대기. [실측 SHA와 결과](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 입력 보호 복사 / receipt 형식 HOLD
 
 설치 EXE 배포 receipt 입력란에 계정 지정 기록의 단일 SHA가 들어가 쓰기 전에 거부되었습니다. 스크립트 SHA 불변. 현재 비상승 토큰에서 보호 기록·대상 목록 읽기 거부, 관리자 읽기 전용 확인 필요. 복사 NOT_RUN, 기존 시도 시작됨, 별도 1회 재실행 승인 대기. 원장 소비·운영 변경 없음. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7057482217). NO_GO / MANUAL / EXECUTION_HOLD.

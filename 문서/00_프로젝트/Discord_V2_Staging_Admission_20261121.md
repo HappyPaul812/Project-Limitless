@@ -577,3 +577,14 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 각 파일은 owner Administrators/group SYSTEM, 비상속 SYSTEM·Administrators 전용 DACL과 CREATE_NEW로만 쓰고 flush합니다. 파일별 기록 시 HANDLE의 ID를 읽은 뒤, 보호 읽기 HANDLE의 최종 경로·파일 ID·소유자·DACL·전체 SHA 및 원문 Authenticode와 분리 PSS 조합을 검증합니다. 기존 폴더/ACL·EXE는 변경하지 않습니다. 충돌·불일치·부분 실패 시 재시도, 파일 삭제 및 권한 완화 없이 HOLD입니다. 성공 표식은 `STAGING_INPUTS_DEPLOYED_HANDLE_VERIFIED`입니다.
 
 관리형 컴파일·PowerShell 구문·고정 경로와 두 입력 전용 범위 확인 PASS. 현재 실제 복사·설치 NOT_RUN, 관리자 창에서 대표 1회 실행 대기입니다. 실제 스크립트/EXE 실행, 설치 승인 발급·소비·staging·Task·AI 및 기존 시험 반복 없음. 후속 설치 승인 발급은 별도 승인입니다. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 서명된 staging 입력 두 파일 배치 결과
+
+대표 관리자 세션에서 계정 지정 기록 SHA 일치 및 두 대상 부재 확인 후 `STAGING_INPUTS_DEPLOYED_HANDLE_VERIFIED`가 출력됐습니다. 기존 설치 Runtime에 다음 두 새 파일만 배치되었습니다.
+
+| 파일 | 배포 확인 SHA-256 |
+|---|---|
+| StagingSource.ps1 | `caf59966f74e5d5d520a6a5245e9c118c75320ff138efe757d36619a058a37f7` |
+| StagingSource.sig | `6892ef8aa4b5e85c20d5bd94e25e48e96d25dc116860ff2f0c9070bb74b0d388` |
+
+두 값은 승인 해시와 일치합니다. 성공 표식은 복사본 HANDLE에서 경로·파일 ID·owner/DACL·SHA, Authenticode 및 RSA-PSS 재확인을 포함합니다. 원본 실행·설치 승인 발급/소비·`--install`·staging·Task·AI는 미실행입니다. 다음 단계는 보호된 신규 단발 설치 승인 입력 발급의 별도 승인입니다. NO_GO / MANUAL / EXECUTION_HOLD.
