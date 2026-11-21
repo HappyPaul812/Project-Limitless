@@ -403,3 +403,7 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 동일 승인 관리자 토큰을 확인한 뒤 서명 원본과 조상 HANDLE을 읽기 전용으로 유지합니다. 승인한 전체 이미지 SHA 및 Authenticode·지문·DER·SPKI·코드서명 EKU·유효기간을 확인합니다. 디렉터리와 EXE 한 개에 생성 시점부터 SYSTEM·Administrators만 전체 제어하는 보호 descriptor를 적용합니다. 기존 경로가 있거나 ACL·조상 상태가 다르면 중단하며 기존 항목을 채택하지 않습니다.
 
 복사본은 같은 읽기 HANDLE에서 최종 경로·파일 ID·소유자·그룹·비상속 DACL 및 SHA를 확인합니다. 해당 파일의 서명 확인 후 같은 HANDLE에서 보호 상태를 다시 대조합니다. 성공 표식 `VERIFIER_DEPLOYED_HANDLE_VERIFIED`와 `DEPLOYED_EXE_SHA256`; `DEPLOYED_FILE_RECEIPT`는 로컬 보관. 실패하면 재실행하거나 일부 생성 결과를 삭제·수선하지 않습니다. 컴파일·구문·내장 어댑터 바이트와 호출 범위만 확인했습니다. 실제 관리자 복사 및 후검증 NOT_RUN, 검증기 실행·staging·원장·Task·AI 없음. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 운영 검증기 보호 복사 결과
+
+대표의 관리자 실행 결과 `VERIFIER_DEPLOYED_HANDLE_VERIFIED`와 승인 SHA-256 `86ba45f0139122f80c1cfb9492700edb9a537e63bd9ee511ac9231e34fb3d7ca` 일치를 확인했습니다. 대상 `C:\ProgramData\LimitlessDiscordV2VerifierRuntime\Limitless.StagingVerifier.exe`. 고정 서명 원본의 Authenticode·승인 인증서 및 배포 파일의 동일 HANDLE 최종 경로·파일 ID·소유자·비상속 DACL·SHA 검증을 통과한 실행 결과입니다. 실제 파일 receipt는 운영자 로컬에만 보관합니다. 배포 실행 자료 `2a444ca0e630b21562d9f3ab89f424ae4edf7ba9`. 검증기 최초 실행, 원장 생성·소비, staging, Task, AI는 미실행 및 별도 승인 대기입니다. NO_GO / MANUAL / EXECUTION_HOLD.
