@@ -561,3 +561,9 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 4. 승인 키로 **같은 HANDLE에서 읽은 동일 바이트**에 `SignData(..., SHA256, Pss)` 한 번을 호출합니다. 승인 인증서 공개키로 검증한 다음 보호 작업 폴더의 `StagingSource.sig`를 CREATE_NEW로 씁니다. 보존한 원본 HANDLE과 분리 서명 readback을 공개키로 다시 대조합니다. 바이트·키·시간창 불일치 또는 서명 실패는 재시도 없이 HOLD입니다. 결과의 `SIGNED_SOURCE_SHA256`, `DETACHED_SIGNATURE_SHA256`는 별개입니다.
 
 컴파일·구문·고정 경로·서명 순서 및 호출 수 정적 확인 완료. 실제 Authenticode·분리 서명·서명 후 SHA·보호 검증기 실행은 NOT_RUN입니다. 기존 시험 반복, 승인 발급/소비, 운영 설치·staging·Task·AI 및 보호 자산 변경 없음. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## Staging 원본 Authenticode 및 RSA-PSS 서명 결과
+
+대표가 제공한 `STAGING_SOURCE_AUTHENTICODE_AND_PSS_VERIFIED`를 확인했습니다. 보호 작업 폴더 `C:\ProgramData\LimitlessDiscordV2StagingSourceSigningOnce`의 `StagingSource.ps1` 최종 SHA-256은 `caf59966f74e5d5d520a6a5245e9c118c75320ff138efe757d36619a058a37f7`, `StagingSource.sig` SHA-256은 `6892ef8aa4b5e85c20d5bd94e25e48e96d25dc116860ff2f0c9070bb74b0d388`입니다. 실행 자료 `5a418bf47ac993193f7078ce4b9a29c6c2183d64`.
+
+성공 표식은 최종 파일의 Authenticode, 승인 서명자 및 고정 해시에 대한 기존 검증기 통과, 같은 HANDLE에서 읽은 동일 최종 바이트의 RSA-PSS 공개키 검증 및 분리 파일 readback을 포함합니다. 실제 출력은 대표 실행 결과를 재사용했습니다. 원래 미서명 후보 수정·원본 스크립트 실행·검사 반복 없음. 다음 최소 승인은 위 두 파일의 설치 Runtime 보호 배치와 동일 HANDLE 검증입니다. 승인 발급/소비·설치·staging·Task·AI는 미실행입니다. NO_GO / MANUAL / EXECUTION_HOLD.

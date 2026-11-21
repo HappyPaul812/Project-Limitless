@@ -1,3 +1,7 @@
+## Discord V2 staging 원본 Authenticode·RSA-PSS PASS
+
+대표 실행 결과 최종 원본 및 분리 서명 후검증 PASS. 두 파일의 설치 Runtime 보호 배치만 다음 승인 대기. 승인 발급·소비·설치 미실행. [최종 SHA 및 결과](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 staging 원본 Authenticode·PSS 서명 준비
 
 미서명 고정 SHA 일치, 기존 서명 계정 PASS 재사용. 보호 복사본 Authenticode 후 같은 HANDLE 바이트 PSS 1회 및 독립 공개키·검증기 확인 절차 준비. 두 서명 및 후해시 NOT_RUN, 별도 승인 대기. [절차](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
