@@ -1,3 +1,7 @@
+## Discord V2 독립 검증기 EXE 서명 최종 준비 / 승인 대기
+
+후보 미서명 SHA와 승인 인증서 대조, 이전 키 검사 PASS 재사용. SignTool과 후검증 명령 구문 확인. 보호 작업 복사본·SDK 경로 및 1회 서명 별도 승인 대기; 서명과 서명 후 SHA NOT_RUN. [절차](../../Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7055935996). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 지정 서명 계정 키 검사 1회 PASS
 
 대표 실행 결과 PASS_SIGNER_SID_KEY_SPKI_READ_ONLY. 보호 승인 기록·토큰 SID·고정 검사 입력 대조 뒤 기존 머신 키 접근 및 인증서 공개 SPKI 일치 확인. 기존 EXE 한 개의 서명은 별도 승인 대기, 검사 재실행 0. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7055884486). NO_GO / MANUAL / EXECUTION_HOLD.

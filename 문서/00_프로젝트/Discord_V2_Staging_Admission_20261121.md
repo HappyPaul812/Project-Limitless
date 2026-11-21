@@ -266,3 +266,58 @@ try {
 실행 입력 `Tools/DiscordV2/StagingDraft/Invoke-VerifierSigningKeyCheckOnce.ps1`, SHA-256 `5423a41b681771fba5f39a46ee4d09371c258d613f4b17811b3a5d5a789ea291`. 보호 저장소 생성과 승인 기록 작성의 성공 출력 각각의 `=` 뒤 값을 로컬에서 입력합니다. 동일 HANDLE에서 최종 경로·조상·저장소·승인 파일 owner/DACL·원문 해시를 확인하고, 기록에 봉인된 계정 SID가 상승 토큰과 일치한 뒤에만 키 검사로 넘어갑니다. 기존 검사 스크립트의 SHA-256을 확인해 동일 메모리 바이트에서 한 번 실행합니다. 기록·키·ACL을 변경하는 진입점은 없습니다. 실패하면 재시도하지 않습니다.
 
 관리형 컴파일, 실행 입력과 기존 검사 스크립트의 구문, 읽기 전용 진입점의 범위를 확인했습니다. 실제 키 열기·SPKI 검사는 아직 실행하지 않았습니다. 성공 표식은 `PASS_SIGNER_SID_KEY_SPKI_READ_ONLY`입니다. SID 및 로컬 결과 해시는 게시하지 않습니다. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 고정 독립 검증기 한 파일의 서명 준비
+
+- 원본 후보 `StagingVerifierRelease-3f674efb/candidate/Limitless.StagingVerifier.exe`는 `NotSigned`이며 승인 기록과 동일한 SHA-256 `145f3921e88ab2caba98afd4c5bb39eb7f9706aa6ad5e3fca5d5891f9f73adbb`입니다. 승인 인증서의 Windows 지문과 유효기간을 확인했고, 지정 계정의 앞선 읽기 전용 검사 PASS를 재사용했습니다.
+- 확인한 Microsoft SDK SignTool의 SHA-256은 `0d0189af3356554a462c2a60d0d59f6006b68d743f5c0cc93c530b083706f075`입니다. 후보와 SDK 위치에는 승인 주체 외 쓰기 허용 ACE가 관측됐습니다. 해당 경로에서 관리자 서명을 진행하지 않습니다. 기존 ACL을 수정하지 않고, 다음 승인에서 보호된 작업 복사본·SignTool 및 필요한 SDK 종속 파일의 실행 위치를 지정합니다. 보호 승인 저장소와 승인 기록은 그대로 보존합니다.
+- 별도 승인의 대상은 지정 계정, 후보 원본 SHA와 보호 복사본 한 개, 승인 인증서 지문, SDK 바이너리 SHA 및 보호 실행 경로, 외부 타임스탬프 없는 로컬 서명 한 번입니다. 보호 경로의 조상·owner·DACL·최종 경로 확인과 승인 복사본의 같은 SHA 확인이 선행합니다. 전후 SHA는 별개 값입니다.
+
+### 보호 경로 확정 및 별도 승인 이후에만 실행
+
+승인 기록의 SID와 같은 실행 토큰을 사용합니다. `$tool`과 `$target`은 승인된 보호 절대 경로입니다. 기존 후보에서 바이트가 동일한 작업 복사본 한 개를 사용하고 해당 위치의 교체·쓰기 조건을 검증한 다음 실행합니다. 아래는 서명 명령과 후속 판정입니다.
+
+```powershell
+$ErrorActionPreference = 'Stop'
+$expectedBefore = '145f3921e88ab2caba98afd4c5bb39eb7f9706aa6ad5e3fca5d5891f9f73adbb'
+$expectedTool = '0d0189af3356554a462c2a60d0d59f6006b68d743f5c0cc93c530b083706f075'
+$thumb = '437423567AD4B703578F231E34A06592B38DB4EB'
+$before = (Get-FileHash -LiteralPath $target -Algorithm SHA256).Hash.ToLowerInvariant()
+$toolSig = Get-AuthenticodeSignature -LiteralPath $tool
+if ($before -cne $expectedBefore -or (Get-AuthenticodeSignature -LiteralPath $target).Status -ne 'NotSigned' -or
+    (Get-FileHash -LiteralPath $tool -Algorithm SHA256).Hash.ToLowerInvariant() -cne $expectedTool -or
+    $toolSig.Status -ne 'Valid' -or $toolSig.SignerCertificate.Subject -notmatch '(^|,\s*)O=Microsoft Corporation(,|$)') {
+    throw 'HOLD_SIGN_INPUT'
+}
+
+& $tool sign /sm /s My /sha1 $thumb /fd SHA256 $target
+if ($LASTEXITCODE -ne 0) { throw 'HOLD_SIGN_NO_RETRY' }
+
+& $tool verify /pa /all $target
+if ($LASTEXITCODE -ne 0) { throw 'HOLD_AUTHENTICODE_VERIFY' }
+$signature = Get-AuthenticodeSignature -LiteralPath $target
+if ($signature.Status -ne 'Valid' -or $signature.SignerCertificate.Thumbprint -cne $thumb) {
+    throw 'HOLD_SIGNER_THUMBPRINT'
+}
+$leaf = $signature.SignerCertificate
+$publicKey = [Security.Cryptography.X509Certificates.RSACertificateExtensions]::GetRSAPublicKey($leaf)
+try {
+    $der = $leaf.GetCertHashString([Security.Cryptography.HashAlgorithmName]::SHA256).ToLowerInvariant()
+    $spki = [Convert]::ToHexString([Security.Cryptography.SHA256]::HashData(
+        $publicKey.ExportSubjectPublicKeyInfo())).ToLowerInvariant()
+    $eku = @($leaf.Extensions |
+        Where-Object { $_ -is [Security.Cryptography.X509Certificates.X509EnhancedKeyUsageExtension] } |
+        ForEach-Object { $_.EnhancedKeyUsages } | ForEach-Object { $_.Value })
+    $now = Get-Date
+    if ($der -cne '7dba5310d6ded0035595e5e7ab8b8b73422f2925b49c633426995c322940672c' -or
+        $spki -cne '2a6d0a7d31e7642df209b6cbe12fa628500663f540eb6bd557cac2aca2d31f7c' -or
+        $eku -notcontains '1.3.6.1.5.5.7.3.3' -or $now -lt $leaf.NotBefore -or $now -ge $leaf.NotAfter) {
+        throw 'HOLD_SIGNER_POLICY'
+    }
+} finally { if ($null -ne $publicKey) { $publicKey.Dispose() } }
+$after = (Get-FileHash -LiteralPath $target -Algorithm SHA256).Hash.ToLowerInvariant()
+if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
+[pscustomobject]@{ Authenticode = 'PASS'; UnsignedSha256 = $before; SignedSha256 = $after }
+```
+
+현재 서명 및 서명 후 SHA는 NOT_RUN입니다. 실패하면 재시도·인증서 교체·ACL 변경을 하지 않고 산출물을 배포에서 제외합니다. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7055935996) · [Microsoft SignTool 문서](https://learn.microsoft.com/en-us/windows/win32/seccrypto/signtool). NO_GO / MANUAL / EXECUTION_HOLD.
