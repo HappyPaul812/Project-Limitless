@@ -1,1 +1,2 @@
 Prepare-VerifierApprovalStore.ps1 -text whitespace=cr-at-eol
+Write-VerifierSigningDesignation.ps1 -text

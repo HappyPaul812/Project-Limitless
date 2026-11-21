@@ -248,3 +248,13 @@ try {
 ```
 
 `STORE_CREATED_HANDLE_VERIFIED`의 파일 ID와 descriptor SHA는 보호된 로컬 경로에서만 보관합니다. 기존 항목, 권한 불일치, 경합, 검증 실패 또는 일부 생성이 발견되면 HOLD하며 재실행·삭제·수선하지 않습니다. 승인 기록 작성과 키 검사는 이후 별도 단계입니다. 관리형 컴파일, 내장 DLL 바이트 일치, Windows PowerShell 5.1 구문, 실제 조상 HANDLE 읽기만 확인했습니다. 생성 함수 미호출, 대상 여전히 부재. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054941208).
+
+## 보호 승인 기록 1회 작성 실행 자료
+
+최초 저장소는 대표가 생성하고 HANDLE 검증을 완료했습니다. 이전 기록 작성 시도는 Codex 토큰에서 ACL 조회가 거부되어 파일 생성 호출 전 종료됐습니다. 해당 1회 승인은 생성 호출로 소비되지 않았습니다. 현재 지시에 따라 대표의 관리자 PowerShell 5.1에서만 1회 진행합니다.
+
+실행 입력 `Tools/DiscordV2/StagingDraft/Write-VerifierSigningDesignation.ps1`, SHA-256 `2019653b99997fe46ce892c320f05cfa792080316c4bda6be299fc4cc41f0482`. 기존 저장소 생성 스크립트 및 검사 스크립트는 변경하지 않았습니다. Windows PowerShell 5.1 구문과 두 가지 해시 입력, 관리형 컴파일과 저장소 생성 진입점 미포함을 확인했습니다. 실제 기록 생성은 미실행입니다.
+
+새 내장 5.1 호스트에서 입력 바이트의 고정 해시를 대조하고 같은 바이트를 실행합니다. 보호 저장소 생성 성공 출력의 `=` 뒤 값을 로컬 입력으로 사용합니다. 확인된 Microsoft 호스트·지정 계정 SID·상승 토큰, 부모 보호, 저장소 HANDLE 파일 ID·descriptor SHA와 원래 성공 출력을 대조합니다. 잠근 후보 EXE 및 검사 스크립트 SHA와 인증서 DER를 대조합니다. 보관하는 SPKI 지문은 해당 정확한 DER에 대해 이미 확인한 값입니다. 승인 범위는 계정 지정이며 개인키 검사는 수행하지 않습니다.
+
+`SigningAccountDesignation.v1.json`은 고정 경로의 관리자 전용 초기 descriptor와 CREATE_NEW로 한 번만 만듭니다. 기존 파일·부분 파일은 보존합니다. flush 후 동일 파일 HANDLE에서 바이트와 ACL을 읽고 부모·저장소를 다시 확인한 뒤에만 `DESIGNATION_CREATED_HANDLE_VERIFIED`를 반환합니다. 오류가 나면 다시 실행하거나 파일을 삭제·수선하지 않습니다. SID·저장소 식별값·결과 SHA는 로컬에만 보관합니다. NO_GO / MANUAL / EXECUTION_HOLD.

@@ -8,7 +8,7 @@ using System.Security.Principal;
 using System.Text;
 using Microsoft.Win32.SafeHandles;
 
-public static class LimitlessVerifierStorePreparation
+public static partial class LimitlessVerifierStorePreparation
 {
     private const string Root = @"C:\";
     private const string Parent = @"C:\ProgramData";
@@ -127,11 +127,11 @@ public static class LimitlessVerifierStorePreparation
         finally { LocalFree(descriptor); }
     }
 
-    private static string ReadPinned(SafeFileHandle handle, string path, bool ancestor, out ulong volume)
+    private static string ReadPinned(SafeFileHandle handle, string path, bool ancestor, out ulong volume, bool directory = true)
     {
         FileTag tag;
         Win(ReadTag(handle, 9, out tag, 8));
-        Need((tag.Attributes & 0x410) == 0x10, "HOLD_REPARSE_OR_NOT_DIRECTORY");
+        Need((tag.Attributes & 0x410) == (directory ? 0x10U : 0U), "HOLD_REPARSE_OR_NOT_DIRECTORY");
         FileId id;
         Win(ReadFileId(handle, 18, out id, 24));
         Need(id.Low != 0 || id.High != 0, "HOLD_FILE_ID");
@@ -193,6 +193,7 @@ public static class LimitlessVerifierStorePreparation
         }
     }
 
+#if !DESIGNATION_ONLY
     public static string CreateOnce(string approvedSid, DateTimeOffset start, DateTimeOffset end)
     {
         // 승인 기록의 SID와 로컬 windows 계정이 모두 일치해야 합니다.
@@ -239,4 +240,5 @@ public static class LimitlessVerifierStorePreparation
             finally { LocalFree(descriptor); }
         }
     }
+#endif
 }
