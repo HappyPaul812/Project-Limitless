@@ -1,3 +1,7 @@
+## 2026-11-21 독립 검증기 서명 대상 확인 / HOLD
+
+구현 9ae8cc4c의 StageAdmission/StageAuthenticode는 기존 테스트 프로젝트에만 포함되고 운영 호출자는 없습니다. 기존 검증 전용 로더와 Bootstrap은 운영 독립 검증기 릴리스로 확인되지 않았습니다. 승인 소스에 대응되는 서명 대상 EXE가 없어 SHA·서명·변조 시험 미실행입니다. 최초 staging 후보는 생성 이전의 검증기 신뢰 경로로 사용할 수 없습니다. 승인 릴리스와 선행 보호 배포 위치가 확보되면 최초 원장의 단발 생성·동일 HANDLE readback만 별도 승인합니다. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7053991960). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## 2026-11-21 운영 공개 인증서 연결 / 서명 대상 HOLD
 
 CER·Windows 저장소 및 DER·SPKI 지문 대조 PASS, 변경 범위 관리형 경고·오류 0. 공식 SDK SignTool 확인. 승인 검증기 릴리스와 서명 대상 미확정으로 실제 서명 및 변조 시험 미실행. [검증·남은 단계](../../Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7053575978).
