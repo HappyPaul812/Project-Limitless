@@ -1,3 +1,7 @@
+## 2026-11-21 독립 검증기 릴리스 후보 / 서명 HOLD
+
+소스 3f674efb의 단일 Windows x64 EXE 빌드, 신규 6 PASS / 0 FAIL. 현재 계정에서 개인키 열기 실패로 후보는 미서명입니다. [후보·SHA·배포 조건](Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054106449). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## 2026-11-21 독립 검증기 서명 대상 확인 / HOLD
 
 구현 9ae8cc4c의 StageAdmission/StageAuthenticode는 기존 테스트 프로젝트에만 포함되고 운영 호출자는 없습니다. 기존 검증 전용 로더와 Bootstrap은 운영 독립 검증기 릴리스로 확인되지 않았습니다. 승인 소스에 대응되는 서명 대상 EXE가 없어 SHA·서명·변조 시험 미실행입니다. 최초 staging 후보는 생성 이전의 검증기 신뢰 경로로 사용할 수 없습니다. 승인 릴리스와 선행 보호 배포 위치가 확보되면 최초 원장의 단발 생성·동일 HANDLE readback만 별도 승인합니다. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7053991960). NO_GO / MANUAL / EXECUTION_HOLD.

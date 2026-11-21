@@ -141,3 +141,10 @@ try {
 Windows SDK의 Microsoft 서명이 유효한 SignTool을 확인했습니다. 승인된 검증기 릴리스나 정확한 서명 대상 이미지 목록이 확인되지 않았습니다. 테스트·초안·기존 배포 이미지는 서명하지 않았으며 실제 서명자 확인 및 서명본 변조·다른 인증서 거부 시험은 미실행입니다.
 
 다음 승인 순서는 검증기 릴리스 및 서명 대상 파일·보호 배포 경로 확정 → 격리 복사본 서명 및 파일별 확인 → 운영 정책에서 상승 전 독립 검증 확인 → 최초 원장의 별도 보호 생성·readback입니다. 최초 원장 생성은 기존 경로가 있으면 중단하고, 승인 관리자·조상을 확인한 뒤 관리자 전용 비상속 descriptor로 원자 생성합니다. 동일 HANDLE에서 경로·owner·DACL·파일 키를 확인한 뒤 새 계약과 관리자 계정 재검토를 거친 신규 승인에 파일 키를 묶습니다. 이후 staging 생성에 별도 승인이 필요합니다. 실제 관리자 작업과 ACL·원장 변경 없음. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 독립 운영 검증기 릴리스 후보
+
+- 소스 커밋 `3f674efb1be6466d57aa99f017563fd29ba62b7c`, 버전 `0.1.0+3f674efb1be6466d57aa99f017563fd29ba62b7c`. 기존 승인·Authenticode·동일 HANDLE SHA·보호 원장 검증을 별도 Windows x64 단일 EXE의 읽기 전용 진입점에 연결했습니다. 기존 .NET 10 런타임을 사용하고 운영 설치 명령은 노출하지 않습니다.
+- 로컬 후보 `Temp/DiscordUsageDiagnostics20261026/StagingVerifierRelease-3f674efb/candidate/Limitless.StagingVerifier.exe`. 미서명 SHA-256 `145f3921e88ab2caba98afd4c5bb39eb7f9706aa6ad5e3fca5d5891f9f73adbb`. 신규 6 PASS / 0 FAIL로 버전, 설치 명령·잘못된 SHA 형식·미서명·만료·다른 유효 서명자 거부를 확인했습니다.
+- 공식 SignTool은 승인 인증서를 선택할 수 없었고 현재 계정에서 개인키 열기는 0x80090016으로 실패했습니다. 기존 권한으로 키를 열 수 있는 지정 서명 계정에서만 후보 SHA를 먼저 확인하고 서명합니다. 서명본 검증과 변조 시험은 미실행입니다. 인증서·키 재발급, 권한 변경, 기존 시험 재실행 없음.
+- 선행 배포 경로 후보는 `C:\ProgramData\LimitlessDiscordV2Verifier`입니다. 고정 경로와 조상의 reparse·소유자·DACL·최종 경로를 확인합니다. 소유자는 Administrators, 보호 DACL은 SYSTEM·Administrators에 전체 제어와 파일 상속을 부여하고 지정된 사전 검증 계정에는 필요한 경우 읽기·실행만 부여합니다. 일반 사용자 쓰기·추가·삭제·ACL 변경 권한을 허용하지 않습니다. 승인 파일 SHA·서명자 및 상승 전 Windows 허용 정책을 별도로 연결합니다. 이 경로 또는 ACL을 생성·변경하지 않았습니다. 실제 원장·staging·Bootstrap 실행은 별도 승인입니다. NO_GO / MANUAL / EXECUTION_HOLD.
