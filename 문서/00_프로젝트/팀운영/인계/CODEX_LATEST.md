@@ -1,3 +1,7 @@
+## Discord V2 기존 계정 서명 승인 준비 / 대표 승인 대기
+
+후보 SID·콘솔·현재 토큰 일치 확인. 비상승 접근 거부 원인은 상승 상태 또는 키 ACL 중 미확정입니다. 실제 승인 기록 미발급, 검사 NOT_RUN. [승인 기록 항목과 1회 절차](../../Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054692478). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 서명 계정 후보 확인 / 지정 대기
 
 활성 로컬 관리자 직접 구성원 후보 한 명이 활성 콘솔 로그인·현재 실행 계정과 일치합니다. 현재 토큰은 관리자 역할 비활성입니다. 후보 승인 및 그 계정의 정상 서명 토큰에서 실제 키 접근, 키 소유자·접근 ACL은 미확인입니다. 대표 지정 후 로컬에서 승인 계정·SID를 대조하고, 별도 승인으로 읽기 전용 검사 1회만 실행합니다. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054628347). NO_GO / MANUAL / EXECUTION_HOLD.

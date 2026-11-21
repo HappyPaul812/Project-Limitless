@@ -173,3 +173,11 @@ pwsh -NoProfile -File '.\Tools\DiscordV2\StagingDraft\Test-ApprovedSigningKey.ps
 
 - 스크립트는 일치하는 SID에서만 실행하고, 기존 KSP 연결의 머신 컨테이너를 무인 모드로 엽니다. 인증서 DER·유효기간·EKU, 실제 키의 공개 SPKI와 비내보내기 정책을 대조합니다. 서명, 저장소/ACL 변경, 개인키 복사·내보내기 없음. 파서·SID 불일치 조기 거부·네이티브 어댑터 컴파일만 확인했습니다. 지정 계정의 성공 경로는 아직 미실행입니다.
 - `PASS_SIGNER_SID_KEY_SPKI_READ_ONLY` 확인 후 별도 서명 승인이 있을 때만 같은 계정에서 EXE 해시 재대조 및 SignTool 서명으로 이어집니다. `HOLD_KEY_OPEN` 또는 SPKI 불일치는 운영 HOLD를 유지합니다.
+
+## 기존 로컬 계정의 서명 승인 준비
+
+- 후보 계정의 실제 SID를 로컬 사용자 정보에서 확인했습니다. 활성 콘솔·최근 대화형 로그인·현재 토큰과 모두 일치했고 현재 토큰의 관리자 역할은 비활성입니다. 확인 결과는 계정 승인, 키 접근 성공, ACL 원인의 확정을 뜻하지 않습니다. SID는 기록하지 않습니다.
+- **대표 지정 전에는 미승인**입니다. 실제 기록은 쓰기 권한이 제한된 기존 승인 로컬 저장소를 대표가 지정한 뒤에만 작성합니다. 보호가 확인되지 않으면 기록을 발급하지 않습니다. 항목은 지정 계정 및 실제 SID, 승인 주체·시각, 인증서 Windows 지문·DER SHA-256·RSA SPKI SHA-256, 후보 EXE 경로·미서명 SHA-256, 검사 스크립트 소스 커밋·실제 파일 SHA-256입니다. 지문과 후보 해시는 기존 구현의 승인값을 대조합니다. 현재 검사 스크립트 SHA-256은 `ab57366eef3eefe1e74c6f50cebf440c815d88e6ef8aada2ffa66c616448b24f`입니다. 실제 승인서나 SID가 포함된 파일은 이 작업에서 만들지 않았습니다.
+- 계정 지정 뒤 **읽기 전용 검사 1회의 별도 승인**에 작업 ID·시간창·허용 실행 토큰을 적습니다. 기존 정상 로그인에서 승인된 토큰을 사용하고, 승인 기록의 SID와 실제 토큰 및 검사 스크립트·후보 해시를 재대조합니다. 보호된 승인 기록에서 미사용 상태를 확인한 뒤 같은 ID의 시작 시각을 먼저 남깁니다. 실행 주체는 한 명이고, 시작 기록이 있으면 결과가 없거나 실패해도 같은 승인으로 재실행하지 않습니다. 시작을 기록할 수 없으면 실행을 보류합니다.
+- 검토한 PowerShell 7 세션에서 `& $approvedScript -ApprovedSignerSid $approvedSid -CandidatePath $candidate`를 한 번만 호출합니다. 세 변수는 보호된 승인 기록에서 로컬로 읽습니다. `PASS_SIGNER_SID_KEY_SPKI_READ_ONLY`가 나오면 검사 결과를 기록합니다. 그 외 결과나 중단은 HOLD입니다. 이 1회 검사는 서명 승인과 별개입니다.
+- 검사 PASS 후 서명에 필요한 별도 승인에는 같은 계정/SID, 동일 인증서 지문과 후보 EXE SHA-256, Microsoft 서명 SDK SignTool, 서명할 격리 후보 한 개를 묶습니다. 그 전에는 서명과 배포가 금지됩니다. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054692478).
