@@ -508,3 +508,7 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 `sign /sm /s My /sha1 437423567AD4B703578F231E34A06592B38DB4EB /fd SHA256 C:\ProgramData\LimitlessDiscordV2InstallerSigningOnce\Limitless.InitialStagingInstaller.exe`
 
 서명 후 SignTool 검증, Authenticode, 인증서 지문·DER·SPKI·EKU·유효기간 및 별도 SHA를 확인합니다. 오류는 재시도·삭제·수선 없이 HOLD입니다. 이번에는 컴파일·구문·고정 범위 및 서명 게이트 순서만 확인했습니다. 실제 보호 복사·서명·서명 후 SHA·운영 호출 모두 NOT_RUN, 이전 격리 시험 반복 없음. 설치·staging·원장 소비·Task·AI 금지, NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 독립 설치 EXE 미서명 보호 복사 결과
+
+대표 실행의 `INSTALLER_SIGNING_COPY_PREPARED`를 확인했습니다. 보호 미서명 파일 `C:\ProgramData\LimitlessDiscordV2InstallerSigningOnce\Limitless.InitialStagingInstaller.exe`의 SHA-256은 `f0d793f3fe21a4d75db46d999e7c11188e72c14721f69088f27eab4ab558f285`로 승인 후보값과 일치했습니다. 보호 작업 폴더 receipt는 로컬에서만 보관합니다. 실행 입력 `51aac14155954cec8904f98f60469606ec186dc0`. 실제 서명·서명 후 검증, `--install`, staging·원장 소비·Task·AI는 NOT_RUN입니다. 다음은 보호 복사본 한 파일의 별도 서명 승인입니다. NO_GO / MANUAL / EXECUTION_HOLD.

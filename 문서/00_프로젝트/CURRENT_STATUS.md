@@ -1,3 +1,7 @@
+## Discord V2 설치 EXE 보호 복사 PASS / 서명 별도 승인 대기
+
+대표 실행 보호 미서명 복사본 SHA가 승인 후보값과 일치했습니다. 서명과 운영 실행 NOT_RUN. [결과](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 새 설치 EXE 보호 복사 준비 / 서명 별도 승인 대기
 
 미서명 후보 SHA 승인값 일치. 기본 복사 전용 모드와 별도 1회 서명 게이트 준비·정적 확인 완료. 실제 보호 복사 및 서명 NOT_RUN. [경로·해시·명령](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
