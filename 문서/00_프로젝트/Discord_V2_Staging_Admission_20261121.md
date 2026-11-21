@@ -483,3 +483,16 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 직접 설치 주체는 **지정 `windows` 계정의 별도 승인된 상승·비위장 관리자 토큰**으로 확정할 것을 요청합니다. 서비스 계정의 용도는 이후 승인된 Task·Session 0 운영이며 이번 설치에서 제외합니다. 신규 단발 계약은 고정 staging 한 곳, 독립 실행 정책에 고정된 신뢰 설치 이미지 전체 SHA, 승인 SID, 로컬 보호 원장의 기존 파일 키, 조상 파일 키·descriptor SHA, 원본/승인 서명과 원문 SHA, 발급 시 고정된 UTC 최대 5분 시간창에 묶습니다. 계정 지정 기록은 설치 권한을 직접 수여하지 않습니다. 검증 완료 뒤 보호 원장에 단발 사용 기록을 CREATE_NEW·flush 한 뒤에만 생성하며 실패 시 기존 원장과 부분 상태를 보존하고 중지합니다.
 
 다음 최소 승인은 **별도 최초 staging 설치 진입점 구현 및 격리 검증만**입니다. 운영 승인 발급·소비·서명·배포·staging·Task·AI를 포함하지 않습니다. 현재 사용할 수 있는 설치 명령은 없습니다. 신규 신뢰 실행 파일과 보호 승인 입력이 검증된 후에만 자리표시자 없는 실제 명령을 발급합니다. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 최초 staging 독립 설치 진입점 구현 및 모의검증
+
+- 고정 소스 `20963f59d0e5cbc8671e8a19fb216e780fbc7b40`. 후보 `Temp/DiscordUsageDiagnostics20261026/InitialStagingInstaller-Independent/candidate/Limitless.InitialStagingInstaller.exe`, 버전 `0.1.0+20963f59d0e5cbc8671e8a19fb216e780fbc7b40`, 259,781 bytes, 미서명 SHA-256 `f0d793f3fe21a4d75db46d999e7c11188e72c14721f69088f27eab4ab558f285`. 기존 검증기·보호 원장·승인 기록·레거시 이미지 변경 없음.
+- 새 계약 `DISCORD_V2_INITIAL_STAGING_INSTALL_V1`은 서명 원문 안에 설치 EXE 전체 SHA와 기존 staging 범위를 포함합니다. 해당 범위는 관리자 SID, 고정 원장 및 파일 키, 조상 키/SD SHA, 고정 staging 경로, 원본 SHA, UTC 유효시간 최대 5분, 단발 GUID에 묶입니다. 기존 승인 인증서 Authenticode와 원문/원본 RSA-PSS를 모두 요구합니다. 기존 계약·만료 시간은 재사용하지 않습니다.
+- 승인된 고정 위치의 기존 서명 검증기 EXE를 보호 HANDLE로 유지하고 승인 SHA를 대조합니다. 기존 검증기를 `--verify-image`로 호출하여 설치 EXE의 승인 서명과 동일 HANDLE 전체 SHA를 확인하고 종료 0·예상 stdout·빈 stderr만 수락합니다. 이 단계 뒤 설치 경계가 실제 비위장 상승 관리자와 원장·조상·목표 부재를 재확인하고, CREATE_NEW 단발 사용 기록을 보호·flush한 후 staging 한 곳만 생성·HANDLE 검증할 수 있습니다. 실패하면 추가 쓰기·재시도 없이 중단하고 이미 소비된 기록과 부분 결과를 보존합니다. 설치 입력인 스크립트는 서명 검증에만 사용합니다.
+- 정상 순서, 설치 이미지 변조, 승인·원본 변조, 관리자 불일치, 만료/미개시/최대 5분 초과, 기존 검증기 거부, 권한 오류, 중복, 소비 이후 만료, readback 실패에 대해 신규 모의 **10 PASS / 0 FAIL**입니다. 최종 커밋에서 설치 후보와 격리 fixture만 오프라인 관리형 발행했습니다. 실제 Windows 권한·운영 검증기 연결·네이티브 소비 및 생성 성공은 미검증입니다. 기존 완료 시험 재실행·운영 EXE 실행·실제 승인 발급/소비·staging·Task·AI 호출 없음.
+
+### 후속 승인과 운영 명령 준비 상태
+
+- 새 후보 한 개의 서명·서명 후 SHA 확정 및 독립 검증은 별도 승인입니다. 미서명 SHA는 운영 승인에 사용할 수 없습니다. 이후 설치 이미지·세 승인 입력과 원본을 보호 경로에 배치하는 승인, 새 운영 발급 및 실제 1회 설치도 별도입니다. 독립 호스트 정책과 시스템 .NET 경로를 실제 호출 전에 대조해야 합니다.
+- 코드 계약의 운영 실행 파일은 `C:\ProgramData\LimitlessDiscordV2InstallerRuntime\Limitless.InitialStagingInstaller.exe`, 옵션은 `--install` 하나입니다. 같은 보호 디렉터리에 고정 입력 `StagingSource.ps1`, `StagingSource.sig`, `InstallApproval.json`, `InstallApproval.sig`가 필요합니다. 운영 경로와 승인 입력은 미발급/미배치입니다. 복사해 실행할 운영 명령은 신뢰 배포와 보호 승인 입력을 마친 다음에만 제공할 수 있습니다.
+- 다음 최소 승인: 위 미서명 후보의 SHA를 고정한 **한 파일 서명 및 서명 직후 검증만**. 운영 배포·발급·소비·staging·Task·AI 제외. NO_GO / MANUAL / EXECUTION_HOLD.

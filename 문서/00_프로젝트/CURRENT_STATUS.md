@@ -1,3 +1,7 @@
+## Discord V2 최초 staging 독립 설치 후보 / 신규 모의 10 PASS
+
+기존 서명 검증기 연결, 새 최대 5분 계약·단발 소비·고정 staging 생성 진입점 구현. 고정 소스 20963f59, 미서명 단일 후보 생성. 신규 모의 10 PASS / 0 FAIL, 실제 운영 호출·발급·소비·생성 미실행. 다음 별도 승인: 후보 한 파일 서명 및 후검증만. [후보 SHA와 후속 승인](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 실제 설치 이미지 확인 / 현재 실행 명령 없음
 
 레거시 Bootstrap 실물 SHA 일치 및 만료 확인. 운영 검증기는 읽기 전용, 별도 최초 staging 운영 호출자·승인 EXE 없음. 보호 원장·승인 저장소·검증기 존재, staging·제품 루트 부재. 다음 승인: 독립 설치 진입점 구현 및 격리 검증만. [이미지·계약](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
