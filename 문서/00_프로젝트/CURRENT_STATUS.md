@@ -1,3 +1,7 @@
+## Discord V2 신규 설치 승인 발급 PASS / 설치 HOLD
+
+대표 실행에서 발급·HANDLE 검증 성공 표식 확인. 시간 기준 불일치로 현 시간창 유효 판정 보류, 별도 설치 승인 없음. 소비·설치·staging·Task·AI 미실행. [발급 결과](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 신규 단발 승인 발급 및 별도 설치 명령 준비
 
 발급·설치 실행 입력을 별도 SHA 및 별도 실행 게이트로 분리. 고정 설치본·SID·보호 원장·서명 원본·UTC 5분 계약과 단발 확인 마련. 컴파일·구문·범위 PASS, 실제 발급/소비/설치 NOT_RUN. [승인 절차](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.

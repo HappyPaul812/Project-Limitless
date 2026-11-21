@@ -603,3 +603,9 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 실제 설치는 별도의 승인입니다. 발급 성공·미만료 상태에서 두 승인 파일의 SHA를 각각 `-ApprovalSha` 및 `-ApprovalSignatureSha`에 전달하고 `-InstallAfterApproval`을 지정합니다. 실행 전용 입력은 기존 신뢰 호스트와 시스템 런타임, 설치 EXE SHA·서명·보호 ACL, 같은 HANDLE의 승인 두 파일과 RSA-PSS·승인 UTC 창·현재 SID를 확인합니다. 고정 보호 EXE `C:\ProgramData\LimitlessDiscordV2InstallerRuntime\Limitless.InitialStagingInstaller.exe`에 오직 `--install`만 전달합니다. 소비와 원자적 staging 생성, readback은 기존 설치 EXE만 수행합니다. 출력 `STAGE_CREATED_AND_READBACK`가 성공입니다. 출력 불일치·시간초과·충돌·보호 불일치 또는 부분 상태는 HOLD이며, 재실행·ACL 변경·삭제·수선 금지입니다. 발급 후 두 파일과 실제 원장 내용은 공개하지 않습니다.
 
 컴파일 및 새 PowerShell 구문, 발급/실행 고정 범위와 합성 JSON 파싱만 확인했습니다. 실제 승인 발급·설치 호출·원장 소비·staging·Task·AI 및 기존 시험 반복 없음. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 신규 단발 설치 승인 발급 결과
+
+대표 제공 출력에서 `INSTALL_APPROVAL_ISSUED_HANDLE_VERIFIED`를 확인했습니다. 보호 승인 원문과 분리 서명의 CREATE_NEW 및 동일 HANDLE readback 성공을 뜻합니다. 승인 원문·서명 해시와 식별값은 로컬 보관합니다. 실행 자료 `fb3e88b0f1c07ef0dc0c86899343b0827f2016f9`.
+
+출력의 만료 시각은 2026-11-21 14:21:19 KST입니다. Windows가 보고한 날짜와 세션 기준 날짜가 달라 정상 시간창으로 확정하지 않았습니다. 설치 별도 승인도 확인되지 않았습니다. `--install`, 승인 소비 및 staging 생성은 미실행입니다. 시간 불일치 또는 만료 상태에서 파일 교체·재발급·시계 변경·재실행 금지. Task·AI 미실행. NO_GO / MANUAL / EXECUTION_HOLD.
