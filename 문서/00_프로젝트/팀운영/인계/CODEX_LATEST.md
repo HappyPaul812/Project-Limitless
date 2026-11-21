@@ -1,3 +1,7 @@
+## Discord V2 최초 보호 원장 생성 준비 / 별도 승인 대기
+
+고정 원장 경로·스크립트 SHA·초기 관리자 전용 descriptor와 동일 HANDLE readback 준비. 관리형 컴파일·내장 바이트·Windows PowerShell 5.1 구문 PASS. 원장 생성·승인 소비 NOT_RUN. [실행 조건](../../Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 운영 검증기 최초 읽기 전용 실행 PASS
 
 대표 실행 VERIFIER_FIRST_RUN_PASS, 승인 버전 및 종료 0·빈 stderr 확인. 최초 원장·staging·Task·AI 별도 승인 대기. [결과](../../Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.

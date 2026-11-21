@@ -421,3 +421,15 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 ## 운영 검증기 최초 실행 결과
 
 대표가 제공한 출력 `VERIFIER_FIRST_RUN_PASS=0.1.0+3f674efb1be6466d57aa99f017563fd29ba62b7c`를 승인값과 대조했습니다. 배포 경로의 승인 EXE와 독립 Microsoft 호스트·고정 시스템 런타임의 사전 검사가 성공했고 `--version`만 전달되어 종료 0·예상 버전·빈 stderr가 확인됐다는 표식입니다. 대표의 최초 실행 결과이며 Codex가 실행을 반복하지 않았습니다. 실행 자료 `3904ac5f42502c7a875f1206505643b01554b342`. 운영 원장 생성·소비, staging, Task, 서비스 계정 변경 및 AI 실행은 미실행입니다. 최초 원장 준비, 새 계약·설치 진입점은 별도 승인 대기입니다. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 최초 보호 원장 1회 생성 준비
+
+고정 원장 경로 `C:\ProgramData\LimitlessDiscordV2BootstrapLedger`는 설치 코드의 InitialLedger와 정확히 일치하고 읽기 전용 관찰에서 부재였습니다. 입력은 `Tools/DiscordV2/StagingDraft/Prepare-InitialProtectedLedger.ps1`, SHA-256 `c7ec44b6d5768c3447f4f17120cf53d934cc6ef2b9140f50294605e92bf45205`입니다. 기존 보호 승인 저장소, 배포본, 서명 계정 승인 기록은 그대로 보존합니다.
+
+별도 생성 승인 후 정상 로그인한 `windows`의 승인 관리자 토큰에서 고정 Microsoft 서명 Windows PowerShell 5.1을 새 프로필 없이 실행합니다. 호스트 SHA·서명을 확인하고 스크립트의 고정 SHA와 동일 메모리 바이트만 사용합니다. 1회 생성만 승인하며 기존 원장이나 권한 불일치 시 중지합니다. 사전에 열린 조상 HANDLE의 보호 상태를 검사하고 초기 descriptor에 SYSTEM 및 Administrators만 전체 제어를 부여한 후 원자 생성합니다.
+
+성공 표식은 `LEDGER_CREATED_HANDLE_VERIFIED`입니다. 동일 HANDLE에서 최종 경로, 파일 ID, owner/group, 비상속 DACL, 보안 descriptor 바이트의 SHA-256을 확인합니다. 로컬 결과의 처음 두 필드인 볼륨 ID와 파일 ID는 이후 설치 승인 `LedgerKey`에 쓰이며 세 번째 SHA는 원장 디렉터리의 보안 descriptor 해시입니다. 식별값과 해시는 로컬 보관하며 GitHub에 게시하지 않습니다.
+
+원장 생성은 계정 지정 승인 기록 작성이나 설치 승인 발급과 분리합니다. 생성 입력에는 `.used` 쓰기·승인 소비 기능이 없습니다. 기존 설치 코드만 별도 승인 후 단발 소비를 수행할 수 있습니다. 기존 cutoff가 만료됐고 현재 배포된 검증기는 읽기 전용이므로 원장 생성만으로 설치 게이트가 열리지 않습니다.
+
+신규 관리형 컴파일, 고정 경로·내장 바이트, Windows PowerShell 5.1 구문을 확인했습니다. 원장 생성/소비 NOT_RUN, 기존 성공 시험 반복·운영 변경 없음. 기존 경로 충돌·검증 실패 시 재시도·ACL 완화·부분 결과 삭제 금지. NO_GO / MANUAL / EXECUTION_HOLD.

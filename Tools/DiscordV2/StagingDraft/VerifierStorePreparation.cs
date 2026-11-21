@@ -12,7 +12,11 @@ public static partial class LimitlessVerifierStorePreparation
 {
     private const string Root = @"C:\";
     private const string Parent = @"C:\ProgramData";
+#if INITIAL_LEDGER
+    private const string Target = @"C:\ProgramData\LimitlessDiscordV2BootstrapLedger";
+#else
     private const string Target = @"C:\ProgramData\LimitlessDiscordV2Verifier";
+#endif
     private const string SystemSid = "S-1-5-18";
     private const string AdminSid = "S-1-5-32-544";
     private const string InstallerSid = "S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464";
