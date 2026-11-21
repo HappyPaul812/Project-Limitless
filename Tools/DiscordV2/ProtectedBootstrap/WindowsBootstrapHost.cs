@@ -1,3 +1,6 @@
+using System.Diagnostics;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Security.AccessControl;
@@ -5,9 +8,15 @@ using System.Security.Principal;
 using System.Text;
 using Microsoft.Win32.SafeHandles;
 
-// 디렉터리 생성 이외의 Windows 변경 API는 없습니다. 모의 테스트는 이 타입을 생성하지 않습니다.
-internal sealed class WindowsBootstrapHost:IBootstrapHost
+// 운영 쓰기는 단발 원장 기록과 고정 디렉터리 생성으로 제한합니다.
+internal sealed class WindowsBootstrapHost:ISignedBootstrapHost
 {
+    private const string Image = BootstrapPolicy.Staging + @"\Limitless.ProtectedBootstrap.exe";
+    private const string VerifierRoot = @"C:\ProgramData\LimitlessDiscordV2VerifierRuntime";
+    private const string Verifier = VerifierRoot + @"\Limitless.StagingVerifier.exe";
+    private const string VerifierSha = "86ba45f0139122f80c1cfb9492700edb9a537e63bd9ee511ac9231e34fb3d7ca";
+    private const string CertificateSha = "7dba5310d6ded0035595e5e7ab8b8b73422f2925b49c633426995c322940672c";
+    private const string SignerSha = "2a6d0a7d31e7642df209b6cbe12fa628500663f540eb6bd557cac2aca2d31f7c";
     private readonly Dictionary<string,SafeFileHandle> pins=new(StringComparer.OrdinalIgnoreCase);
     private BootstrapWriteGate? gate;
     public DateTimeOffset Now=>DateTimeOffset.UtcNow;
@@ -17,6 +26,8 @@ internal sealed class WindowsBootstrapHost:IBootstrapHost
     [StructLayout(LayoutKind.Sequential)] private struct FileAttributes {internal uint Attributes,Tag;}
     [DllImport("kernel32.dll",CharSet=CharSet.Unicode,SetLastError=true)] private static extern bool CreateDirectoryW(string path,ref Attributes security);
     [DllImport("kernel32.dll",CharSet=CharSet.Unicode,SetLastError=true)] private static extern SafeFileHandle CreateFileW(string path,uint access,uint share,nint security,uint disposition,uint flags,nint template);
+    [DllImport("kernel32.dll",EntryPoint="CreateFileW",CharSet=CharSet.Unicode,SetLastError=true)]
+    private static extern SafeFileHandle CreateNewFile(string path,uint access,uint share,ref Attributes security,uint disposition,uint flags,nint template);
     [DllImport("kernel32.dll",SetLastError=true)] private static extern bool GetFileInformationByHandleEx(SafeFileHandle handle,int kind,out FileAttributes info,uint size);
     [DllImport("kernel32.dll",EntryPoint="GetFileInformationByHandleEx",SetLastError=true)] private static extern bool GetFileId(SafeFileHandle handle,int kind,out FileId info,uint size);
     [DllImport("kernel32.dll",CharSet=CharSet.Unicode,SetLastError=true)] private static extern uint GetFinalPathNameByHandleW(SafeFileHandle handle,StringBuilder path,uint length,uint flags);
@@ -89,7 +100,10 @@ internal sealed class WindowsBootstrapHost:IBootstrapHost
     public byte[] ReadProtectedAuthorization(string path)
     {
         Administrator();var file=ProtectedFile(path);long size=RandomAccess.GetLength(file);BootstrapPolicy.Need(size is >0 and <=8192,"BOOTSTRAP_AUTH_SIZE");
-        byte[] raw=new byte[size];BootstrapPolicy.Need(RandomAccess.Read(file,raw,0)==raw.Length,"BOOTSTRAP_AUTH_SHORT");return raw;
+        using var stream=new FileStream(new SafeFileHandle(file.DangerousGetHandle(),ownsHandle:false),FileAccess.Read);
+        byte[] raw=new byte[size];
+        stream.ReadExactly(raw);
+        return raw;
     }
     public BootstrapActor ObserveActor()
     {
@@ -102,6 +116,88 @@ internal sealed class WindowsBootstrapHost:IBootstrapHost
         BootstrapPolicy.Need(Administrator()==user,"BOOTSTRAP_ADMIN_CHANGED_DURING_IMAGE_READ");
         return new(true,true,false,user,Convert.ToHexString(hash.GetHashAndReset()).ToLowerInvariant());
     }
+    internal static RSA OpenApprovalSigner()
+    {
+        using var store=new X509Store(StoreName.Root,StoreLocation.LocalMachine);
+        store.Open(OpenFlags.ReadOnly|OpenFlags.OpenExistingOnly);
+        var certificates=store.Certificates;
+        try
+        {
+            var cert=certificates.Cast<X509Certificate2>().SingleOrDefault(candidate =>
+                BootstrapPolicy.Hash(candidate.RawData)==CertificateSha)
+                ?? throw new InvalidOperationException("BOOTSTRAP_APPROVAL_CERTIFICATE");
+            var now=DateTime.UtcNow;
+            BootstrapPolicy.Need(cert.NotBefore.ToUniversalTime()<=now && now<cert.NotAfter.ToUniversalTime() &&
+                cert.Extensions.OfType<X509EnhancedKeyUsageExtension>().Any(eku =>
+                    eku.EnhancedKeyUsages.Cast<Oid>().Any(oid => oid.Value=="1.3.6.1.5.5.7.3.3")),
+                "BOOTSTRAP_APPROVAL_CERTIFICATE_POLICY");
+            using var key=cert.GetRSAPublicKey() ?? throw new InvalidOperationException("BOOTSTRAP_APPROVAL_KEY");
+            byte[] spki=key.ExportSubjectPublicKeyInfo();
+            BootstrapPolicy.Need(BootstrapPolicy.Hash(spki)==SignerSha,"BOOTSTRAP_APPROVAL_SIGNER_PIN");
+            return RSA.Create(key.ExportParameters(false));
+        }
+        finally { foreach (var cert in certificates) cert.Dispose(); }
+    }
+
+    public void VerifyImage(string sha)
+    {
+        BootstrapPolicy.Need(string.Equals(Environment.ProcessPath,Image,StringComparison.OrdinalIgnoreCase),
+            "BOOTSTRAP_DEPLOYED_IMAGE_PATH");
+        BootstrapPolicy.AdministrativeSecurity(PinAndRead(VerifierRoot).Security,BootstrapPolicy.AdminSid);
+        var file=ProtectedFile(Verifier);
+        using (var stream=new FileStream(new SafeFileHandle(file.DangerousGetHandle(),ownsHandle:false),FileAccess.Read))
+            BootstrapPolicy.Need(stream.Length is >0 and <=67108864 &&
+                Convert.ToHexString(SHA256.HashData(stream)).Equals(VerifierSha,StringComparison.OrdinalIgnoreCase),
+                "BOOTSTRAP_VERIFIER_PIN");
+
+        var start=new ProcessStartInfo(Verifier)
+        {
+            WorkingDirectory=VerifierRoot,UseShellExecute=false,CreateNoWindow=true,
+            RedirectStandardOutput=true,RedirectStandardError=true
+        };
+        start.ArgumentList.Add("--verify-image");
+        start.ArgumentList.Add(Image);
+        start.ArgumentList.Add(sha);
+        start.Environment.Clear();
+        start.Environment["SystemRoot"]=@"C:\Windows";
+        start.Environment["WINDIR"]=@"C:\Windows";
+        start.Environment["SystemDrive"]="C:";
+        start.Environment["PATH"]=@"C:\Windows\System32";
+        start.Environment["DOTNET_ROOT"]=@"C:\Program Files\dotnet";
+        start.Environment["DOTNET_ROOT_X64"]=@"C:\Program Files\dotnet";
+        start.Environment["DOTNET_ROLL_FORWARD"]="LatestPatch";
+        using var process=Process.Start(start) ?? throw new InvalidOperationException("BOOTSTRAP_VERIFIER_START");
+        var output=process.StandardOutput.ReadToEndAsync();
+        var errors=process.StandardError.ReadToEndAsync();
+        if (!process.WaitForExit(20000))
+        {
+            process.Kill(entireProcessTree:true);
+            throw new InvalidOperationException("BOOTSTRAP_VERIFIER_TIMEOUT");
+        }
+        BootstrapPolicy.Need(process.ExitCode==0 && output.GetAwaiter().GetResult().Trim()=="VERIFIED_IMAGE_ONLY" &&
+            errors.GetAwaiter().GetResult().Trim().Length==0,"BOOTSTRAP_VERIFIER_DENIED");
+    }
+
+    public void Consume(BootstrapAuthorization approval,Action demandReady)
+    {
+        string path=Path.Combine(BootstrapPolicy.Ledger,approval.ApprovalId+".used");
+        Check(ConvertStringSecurityDescriptorToSecurityDescriptorW(BootstrapPolicy.Sddl(BootstrapPolicy.AdminSid),1,out nint sd,out _));
+        try
+        {
+            var attributes=new Attributes{Size=(uint)Marshal.SizeOf<Attributes>(),Descriptor=sd,Inherit=0};
+            ulong volume=PinAndRead(BootstrapPolicy.Ledger).Volume;
+            demandReady();
+            using var marker=CreateNewFile(path,0x40020000,0,ref attributes,1,0x80200000,0);
+            Check(!marker.IsInvalid);
+            var observed=Read(marker,path,false);
+            BootstrapPolicy.Need(observed.Volume==volume,"BOOTSTRAP_LEDGER_VOLUME");
+            BootstrapPolicy.AdministrativeSecurity(observed.Security,BootstrapPolicy.AdminSid);
+            RandomAccess.Write(marker,new byte[]{1},0);
+            RandomAccess.FlushToDisk(marker);
+        }
+        finally { LocalFree(sd); }
+    }
+
     public void Bind(BootstrapWriteGate value){BootstrapPolicy.Need(gate is null,"BOOTSTRAP_ALREADY_BOUND");value.RequireHost(this);gate=value;}
     public void CreateProtected(string path,string sddl)
     {

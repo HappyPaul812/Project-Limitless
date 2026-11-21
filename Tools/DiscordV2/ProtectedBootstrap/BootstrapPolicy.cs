@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-// 배포/Task/계정/원장 소비와 분리된, 고정 6개 디렉터리만 생성하는 승인입니다.
+// 고정 운영 디렉터리 6개를 생성하는 승인 범위입니다.
 internal sealed class BootstrapAuthorization
 {
     public bool Approved { get; set; }
@@ -15,6 +15,9 @@ internal sealed class BootstrapAuthorization
     public string[] Targets { get; set; }=[];
     public string[] AncestorSecuritySha256 { get; set; }=[];
     public string[] AncestorFileKeys { get; set; }=[];
+    [JsonIgnore(Condition=JsonIgnoreCondition.WhenWritingNull)] public string[]? ProtectedFileKeys { get; set; }
+    [JsonIgnore(Condition=JsonIgnoreCondition.WhenWritingNull)] public string[]? ProtectedSecuritySha256 { get; set; }
+    [JsonIgnore(Condition=JsonIgnoreCondition.WhenWritingDefault)] public DateTimeOffset NotBeforeUtc { get; set; }
     public DateTimeOffset ExpiresUtc { get; set; }
 }
 [JsonSerializable(typeof(BootstrapAuthorization))]
@@ -31,9 +34,18 @@ internal interface IBootstrapHost:IDisposable
     void Bind(BootstrapWriteGate gate);
     void CreateProtected(string path,string sddl);
 }
+internal interface ISignedBootstrapHost : IBootstrapHost
+{
+    void VerifyImage(string sha);
+    void Consume(BootstrapAuthorization approval, Action demandReady);
+}
 internal static class BootstrapPolicy
 {
     internal const string SystemSid="S-1-5-18",AdminSid="S-1-5-32-544";
+    internal const string SignedProfile="DISCORD_V2_PROTECTED_BOOTSTRAP_V2";
+    internal const string Staging=@"C:\ProgramData\LimitlessDiscordV2BootstrapStaging";
+    internal const string Ledger=@"C:\ProgramData\LimitlessDiscordV2BootstrapLedger";
+    internal static readonly IReadOnlyList<string> ProtectedPaths=Array.AsReadOnly(new[]{Staging,Ledger});
     private const string Installer="S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464";
     internal static readonly DateTimeOffset Cutoff=new(2026,11,1,23,59,59,TimeSpan.FromHours(9));
     internal static readonly IReadOnlyList<string> Ancestors=Array.AsReadOnly(new[]{@"C:\",@"C:\ProgramData"});
@@ -44,23 +56,33 @@ internal static class BootstrapPolicy
     internal static string Hash(byte[] raw)=>Convert.ToHexString(SHA256.HashData(raw)).ToLowerInvariant();
     internal static bool Sha(string s)=>s.Length==64&&s.All(c=>c is >= '0' and <= '9' or >= 'a' and <= 'f');
     internal static string Sddl(string owner)=>"O:"+owner+"G:SYD:P(A;;FA;;;SY)(A;;FA;;;BA)";
-    internal static BootstrapAuthorization Parse(byte[] raw,string sha)
+    internal static BootstrapAuthorization Parse(byte[] raw,string sha,bool signed=false)
     {
         Need(raw.Length is >0 and <=8192&&Sha(sha)&&Hash(raw)==sha,"BOOTSTRAP_AUTH_SHA");
         using var doc=JsonDocument.Parse(raw);Need(doc.RootElement.ValueKind==JsonValueKind.Object,"BOOTSTRAP_AUTH_OBJECT");
         var fields=BootstrapJson.Default.BootstrapAuthorization.Properties.Select(p=>p.Name).ToHashSet();var seen=new HashSet<string>();
+        if(!signed)fields.ExceptWith(["ProtectedFileKeys","ProtectedSecuritySha256","NotBeforeUtc"]);
         foreach(var p in doc.RootElement.EnumerateObject())Need(fields.Contains(p.Name)&&seen.Add(p.Name),"BOOTSTRAP_AUTH_FIELDS");
         Need(fields.SetEquals(seen),"BOOTSTRAP_AUTH_FIELDS");
         return JsonSerializer.Deserialize(raw,BootstrapJson.Default.BootstrapAuthorization)??throw new InvalidOperationException("BOOTSTRAP_AUTH_NULL");
     }
-    internal static void Authorization(BootstrapAuthorization a,DateTimeOffset now)
+    internal static void Authorization(BootstrapAuthorization a,DateTimeOffset now,bool signed)
     {
-        Need(a.Approved&&a.Profile=="DISCORD_V2_PROTECTED_BOOTSTRAP_V1"&&Guid.TryParseExact(a.ApprovalId,"N",out var id)
+        Need(a.Approved&&a.Profile==(signed?SignedProfile:"DISCORD_V2_PROTECTED_BOOTSTRAP_V1")&&Guid.TryParseExact(a.ApprovalId,"N",out var id)
             &&id!=Guid.Empty&&id.ToString("N")==a.ApprovalId,"BOOTSTRAP_NOT_AUTHORIZED");
         Need(a.Targets.SequenceEqual(Targets,StringComparer.Ordinal)&&a.OwnerSid is AdminSid or SystemSid,"BOOTSTRAP_SCOPE");
         Need(Sha(a.ToolSha256)&&!string.IsNullOrWhiteSpace(a.AdministratorSid)&&a.AncestorSecuritySha256.Length==2
             &&a.AncestorSecuritySha256.All(Sha)&&a.AncestorFileKeys.Length==2&&a.AncestorFileKeys.All(k=>!string.IsNullOrWhiteSpace(k)),"BOOTSTRAP_BINDING");
-        Need(now<=Cutoff&&a.ExpiresUtc>now&&a.ExpiresUtc<=Cutoff,"BOOTSTRAP_EXPIRED");
+        if (!signed)
+        {
+            Need(now<=Cutoff&&a.ExpiresUtc>now&&a.ExpiresUtc<=Cutoff,"BOOTSTRAP_EXPIRED");
+            return;
+        }
+        Need(a.NotBeforeUtc != default && a.NotBeforeUtc.Offset == TimeSpan.Zero &&
+            a.ExpiresUtc.Offset == TimeSpan.Zero && a.NotBeforeUtc <= now && now < a.ExpiresUtc &&
+            a.ExpiresUtc - a.NotBeforeUtc <= TimeSpan.FromMinutes(5), "BOOTSTRAP_SIGNED_WINDOW");
+        Need(a.ProtectedFileKeys is {Length:2} && a.ProtectedFileKeys.All(k => !string.IsNullOrWhiteSpace(k)) &&
+            a.ProtectedSecuritySha256 is {Length:2} && a.ProtectedSecuritySha256.All(Sha), "BOOTSTRAP_PROTECTED_BINDING");
     }
     internal static void Node(BootstrapNode n,string path)
         =>Need(n.Path.Equals(path,StringComparison.OrdinalIgnoreCase)&&n.Directory&&!n.Reparse&&(n.HandleFlags&1)==0&&!string.IsNullOrWhiteSpace(n.Key),"BOOTSTRAP_PATH_HANDLE");
@@ -101,13 +123,14 @@ internal sealed class BootstrapWriteGate
     private readonly Dictionary<string,BootstrapNode> parents=[];
     private int next;
     private bool attempted;
-    internal BootstrapWriteGate(BootstrapAuthorization authorization,IBootstrapHost host,CancellationToken cancellation)
-    {this.authorization=authorization;this.host=host;this.cancellation=cancellation;}
+    private readonly bool signed;
+    internal BootstrapWriteGate(BootstrapAuthorization authorization,IBootstrapHost host,CancellationToken cancellation,bool signed=false)
+    {this.authorization=authorization;this.host=host;this.cancellation=cancellation;this.signed=signed;}
     internal void RequireHost(IBootstrapHost expected)=>BootstrapPolicy.Need(ReferenceEquals(host,expected),"BOOTSTRAP_GATE_HOST_MISMATCH");
     internal string Sddl=>BootstrapPolicy.Sddl(authorization.OwnerSid);
     internal void Validate()
     {
-        cancellation.ThrowIfCancellationRequested();BootstrapPolicy.Authorization(authorization,host.Now);
+        cancellation.ThrowIfCancellationRequested();BootstrapPolicy.Authorization(authorization,host.Now,signed);
         var actor=host.ObserveActor();
         BootstrapPolicy.Need(actor.Administrator&&actor.Elevated&&!actor.Impersonating&&actor.UserSid==authorization.AdministratorSid
             &&actor.ToolSha256==authorization.ToolSha256,"BOOTSTRAP_ADMIN_OR_IMAGE");
@@ -121,6 +144,19 @@ internal sealed class BootstrapWriteGate
             else parents.Add(path,node);
         }
         BootstrapPolicy.Need(parents.Values.Select(n=>n.Volume).Distinct().Count()==1,"BOOTSTRAP_VOLUME");
+        if (signed)
+        {
+            for (int i=0;i<BootstrapPolicy.ProtectedPaths.Count;i++)
+            {
+                string path=BootstrapPolicy.ProtectedPaths[i];
+                var node=host.PinAndRead(path);
+                BootstrapPolicy.Node(node,path);
+                BootstrapPolicy.AdministrativeSecurity(node.Security,BootstrapPolicy.AdminSid);
+                BootstrapPolicy.Need(node.Volume==parents[BootstrapPolicy.Ancestors[0]].Volume &&
+                    node.Key==authorization.ProtectedFileKeys![i] &&
+                    BootstrapPolicy.Hash(node.Security)==authorization.ProtectedSecuritySha256![i],"BOOTSTRAP_PROTECTED_PATH_CHANGED");
+            }
+        }
         foreach(var entry in created)
         {
             var node=host.PinAndRead(entry.Key);VerifyNew(node,entry.Key);
@@ -131,7 +167,7 @@ internal sealed class BootstrapWriteGate
         actor=host.ObserveActor();
         BootstrapPolicy.Need(actor.Administrator&&actor.Elevated&&!actor.Impersonating&&actor.UserSid==authorization.AdministratorSid
             &&actor.ToolSha256==authorization.ToolSha256,"BOOTSTRAP_ADMIN_OR_IMAGE");
-        BootstrapPolicy.Authorization(authorization,host.Now);cancellation.ThrowIfCancellationRequested();
+        BootstrapPolicy.Authorization(authorization,host.Now,signed);cancellation.ThrowIfCancellationRequested();
     }
     private void VerifyNew(BootstrapNode node,string path)
     {
@@ -152,10 +188,32 @@ internal sealed class BootstrapWriteGate
 }
 internal static class BootstrapController
 {
+    internal static int RunSigned(byte[] raw,string sha,byte[] signature,RSA signer,ISignedBootstrapHost host,
+        bool create,CancellationToken cancellation=default)
+    {
+        BootstrapPolicy.Need(raw.Length is >0 and <=8192 && signature.Length is >0 and <=4096 &&
+            signer.VerifyData(raw,signature,HashAlgorithmName.SHA256,RSASignaturePadding.Pss),"BOOTSTRAP_APPROVAL_SIGNATURE");
+        var approval=BootstrapPolicy.Parse(raw,sha,signed:true);
+        var gate=new BootstrapWriteGate(approval,host,cancellation,signed:true);
+        gate.Validate();
+        host.VerifyImage(approval.ToolSha256);
+        gate.Validate();
+        if (!create) return 0;
+
+        // 선점에 실패하거나 생성이 중단돼도 승인 기록과 부분 결과는 보존합니다.
+        host.Consume(approval,gate.Validate);
+        return Create(host,gate);
+    }
+
     internal static int Run(byte[] raw,string sha,IBootstrapHost host,bool create,CancellationToken cancellation=default)
     {
+        BootstrapPolicy.Need(host is not ISignedBootstrapHost,"BOOTSTRAP_LEGACY_FIXTURE_ONLY");
         var gate=new BootstrapWriteGate(BootstrapPolicy.Parse(raw,sha),host,cancellation);gate.Validate();
-        if(!create)return 0;
+        return create ? Create(host,gate) : 0;
+    }
+
+    private static int Create(IBootstrapHost host,BootstrapWriteGate gate)
+    {
         host.Bind(gate);
         foreach(string path in BootstrapPolicy.Targets){host.CreateProtected(path,gate.Sddl);gate.Accept(path);}
         gate.Finish();return BootstrapPolicy.Targets.Count;
