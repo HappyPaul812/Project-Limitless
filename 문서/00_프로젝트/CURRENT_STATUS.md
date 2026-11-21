@@ -1,3 +1,7 @@
+## Discord V2 지정 서명 계정 점검 절차 / HOLD
+
+후보 SHA·인증서 지문 일치. 승인 SID를 대조한 후 기존 머신 키 열기·SPKI·내보내기 불가 정책을 확인하는 읽기 전용 절차 준비. 파서·SID 거부·어댑터 컴파일 PASS, 지정 계정의 실제 접근은 미검증입니다. [실행 절차](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 운영 서명 키 연결 분류 / HOLD
 
 승인 EXE SHA·인증서 지문 유지. 인증서의 CNG 머신 키 컨테이너 연결을 읽었으며 공급자는 열리고 현재 토큰의 컨테이너 열기는 NTE_PERM입니다. 지정 계정의 기존 권한을 통한 키 열기·SPKI 일치 검증 대기. [근거](Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054326187). NO_GO / MANUAL / EXECUTION_HOLD.

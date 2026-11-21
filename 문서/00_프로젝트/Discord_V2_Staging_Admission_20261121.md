@@ -161,3 +161,15 @@ Windows SDK의 Microsoft 서명이 유효한 SignTool을 확인했습니다. 승
 - EXE SHA 및 승인 인증서 지문은 유지됩니다. `LocalMachine\My`에는 승인 인증서와 영구 키 연결 속성 `CERT_KEY_PROV_INFO`가 있고, `CurrentUser\My`에는 같은 인증서가 없습니다. 연결은 Microsoft Software Key Storage Provider의 명명된 머신 키 컨테이너를 가리킵니다.
 - `NCryptOpenStorageProvider` 성공, 연결 속성 그대로 머신·무인 읽기 전용 `NCryptOpenKey` 호출은 `0x80090010 (NTE_PERM)`입니다. 이전 상위 API의 `0x80090016`보다 현재 비상승 토큰의 접근 거부를 직접 보여 줍니다. 컨테이너의 실재, 키 공개 부분과 인증서의 일치, 지정 서명 계정의 기존 권한은 미확인입니다.
 - 최소 경로는 바울 대표가 승인한 기존 서명 계정의 토큰에서 같은 머신 컨테이너의 무인 열기를 읽기 전용으로 재확인하는 것입니다. 성공하면 공개 SPKI와 내보내기 불가 정책을 대조합니다. 접근 거부가 계속되면 지정 계정의 기존 권한만 관리자와 검토하고, 키 부재 또는 공개키 불일치가 드러나면 HOLD합니다. ACL·키 연결·인증서 변경과 실제 서명은 이번 범위 밖입니다. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054326187).
+
+## 지정 서명 계정의 읽기 전용 검증
+
+- 승인 후보 EXE SHA, 인증서 Windows 지문과 DER SHA 일치를 재확인했습니다. 현재 실행 토큰의 SID는 조회 가능하고 관리자 역할은 비활성입니다. 외부에 기록할 승인 SID는 없으며 승인 기록의 서명 계정 SID와 현재 토큰의 동일 여부는 미확인입니다. 현재 토큰의 CNG 접근 거부 결과를 재사용했습니다.
+- 지정 계정의 기존 토큰에서 보호된 로컬 승인 기록의 SID를 대조한 뒤 새 PowerShell 7 세션에서 아래 명령을 실행합니다. 스크립트 소스는 이 커밋의 검토된 사본을 사용합니다. `$approvedSid`에는 로컬 승인 기록 값, `$candidate`에는 확인할 후보 EXE의 절대 경로를 설정합니다. SID·컨테이너 이름·키 데이터를 Issue·로그에 올리지 않습니다.
+
+```powershell
+pwsh -NoProfile -File '.\Tools\DiscordV2\StagingDraft\Test-ApprovedSigningKey.ps1' -ApprovedSignerSid $approvedSid -CandidatePath $candidate
+```
+
+- 스크립트는 일치하는 SID에서만 실행하고, 기존 KSP 연결의 머신 컨테이너를 무인 모드로 엽니다. 인증서 DER·유효기간·EKU, 실제 키의 공개 SPKI와 비내보내기 정책을 대조합니다. 서명, 저장소/ACL 변경, 개인키 복사·내보내기 없음. 파서·SID 불일치 조기 거부·네이티브 어댑터 컴파일만 확인했습니다. 지정 계정의 성공 경로는 아직 미실행입니다.
+- `PASS_SIGNER_SID_KEY_SPKI_READ_ONLY` 확인 후 별도 서명 승인이 있을 때만 같은 계정에서 EXE 해시 재대조 및 SignTool 서명으로 이어집니다. `HOLD_KEY_OPEN` 또는 SPKI 불일치는 운영 HOLD를 유지합니다.
