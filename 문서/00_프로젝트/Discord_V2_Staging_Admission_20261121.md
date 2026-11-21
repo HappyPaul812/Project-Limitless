@@ -333,3 +333,13 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 ## 보호 복사본 서명 1회 결과
 
 바울 대표의 관리자 PowerShell 실행 결과 `SIGNING_AUTHENTICODE_VERIFIED` 및 SignTool `verify /pa /all` 성공을 확인했습니다. 서명본은 `C:\ProgramData\LimitlessDiscordV2SigningOnce\Limitless.StagingVerifier.exe`입니다. 서명 입력 SHA-256 `145f3921e88ab2caba98afd4c5bb39eb7f9706aa6ad5e3fca5d5891f9f73adbb`, 서명 후 SHA-256 `86ba45f0139122f80c1cfb9492700edb9a537e63bd9ee511ac9231e34fb3d7ca`. SHA-256 Authenticode, 타임스탬프 없음. 실행 자료 `cd602656afd836d8dddcfca17d56f3ce41e95479`. 대표가 제공한 실행 결과를 기록했으며 Codex에서 서명·검증을 반복하지 않았습니다. 서명본 변조 시험, 운영 배포, 원장·staging 및 AI 실행은 별도 승인 대기입니다. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7056070665). NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 서명본 변조 방어 시험 준비 (실행 승인 대기)
+
+- 보호 서명본은 이전 SHA와 경로를 보존합니다. 격리 폴더는 `Temp/DiscordUsageDiagnostics20261026/VerifierTamperFixtures-86ba45f0`입니다. 승인 미서명 후보 `unsigned.exe` 및 Microsoft 서명 SDK의 기존 파일 `foreign-signer.exe`를 복사해 각각 사전에 기록한 소스 SHA와 같음을 확인했습니다. 운영 파일을 변경하지 않았습니다.
+- 보호된 서명본은 현재 비상승 토큰에서 읽기가 거부됩니다. 기존 관리자 세션에서 보호 서명본을 읽기 전용으로 열고 같은 메모리 바이트의 SHA-256 `86ba45f0139122f80c1cfb9492700edb9a537e63bd9ee511ac9231e34fb3d7ca`를 대조한 후, 격리 폴더에 `signed-baseline.exe`로 CREATE_NEW 복사하고 같은 해시를 readback합니다. 복사 단계에서 검증기·시험 입력을 실행하지 않습니다.
+- 별도 시험 승인 후, `signed-baseline.exe`의 전체 파일 SHA와 Authenticode 정책을 재확인하고 유일한 검증기 실행 파일로 사용합니다. 기준본을 `--verify-image`로 검증해 `VERIFIED_IMAGE_ONLY` 확인 후 다음 세 시험을 각각 한 번 수행합니다. 시험 대상은 데이터로 전달합니다.
+  - 변조는 기준본의 별도 `tampered.exe` 복사본에서 서명 범위가 확실한 PE 섹션 데이터 1바이트만 바꿉니다. 변경 바이트의 실제 SHA를 검증 인수로 사용해 단순 SHA 입력 불일치로 인한 거부를 배제합니다. 예상 `HOLD STAGE_AUTHENTICODE` 및 비정상 종료.
+  - 미서명은 `unsigned.exe`의 원래 SHA를 넘깁니다. 예상 `HOLD STAGE_AUTHENTICODE` 및 비정상 종료.
+  - 다른 서명자는 유효한 서명과 원래 SHA를 유지한 `foreign-signer.exe`를 넘깁니다. 예상 `HOLD STAGE_SIGNER_PIN` 및 비정상 종료.
+- 원본·서명 기준 복사본을 변조하지 않고, 신뢰되지 않은 시험 실행 파일이나 변조본 자체를 실행하지 않습니다. 예상과 다른 결과가 나오면 즉시 중단하며 남은 케이스는 NOT_RUN입니다. 현재 변조·거부 시험 모두 NOT_RUN, 운영 배포·AI 실행 없음. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7056114329). NO_GO / MANUAL / EXECUTION_HOLD.

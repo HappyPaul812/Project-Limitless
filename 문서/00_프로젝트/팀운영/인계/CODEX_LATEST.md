@@ -1,3 +1,7 @@
+## Discord V2 서명 방어 시험 입력 준비 / 시험 승인 대기
+
+격리 미서명·다른 서명자 입력 SHA 확인 완료. 보호 서명 기준본 복사는 관리자 읽기 필요. 세 거부 시험의 예상 코드 확정, 실제 변조·검증기 실행 NOT_RUN. [시험 계획](../../Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7056114329). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 보호 복사본 단발 서명 PASS
 
 대표 실행 결과 SignTool·Authenticode PASS, 서명 후 SHA 86ba45f0139122f80c1cfb9492700edb9a537e63bd9ee511ac9231e34fb3d7ca. 타임스탬프 없음. 서명본 변조 시험·운영 적용은 별도 승인 대기. [전후 SHA·경로](../../Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7056070665). NO_GO / MANUAL / EXECUTION_HOLD.
