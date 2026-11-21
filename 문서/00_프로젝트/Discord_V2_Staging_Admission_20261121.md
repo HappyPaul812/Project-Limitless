@@ -407,3 +407,13 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 ## 운영 검증기 보호 복사 결과
 
 대표의 관리자 실행 결과 `VERIFIER_DEPLOYED_HANDLE_VERIFIED`와 승인 SHA-256 `86ba45f0139122f80c1cfb9492700edb9a537e63bd9ee511ac9231e34fb3d7ca` 일치를 확인했습니다. 대상 `C:\ProgramData\LimitlessDiscordV2VerifierRuntime\Limitless.StagingVerifier.exe`. 고정 서명 원본의 Authenticode·승인 인증서 및 배포 파일의 동일 HANDLE 최종 경로·파일 ID·소유자·비상속 DACL·SHA 검증을 통과한 실행 결과입니다. 실제 파일 receipt는 운영자 로컬에만 보관합니다. 배포 실행 자료 `2a444ca0e630b21562d9f3ab89f424ae4edf7ba9`. 검증기 최초 실행, 원장 생성·소비, staging, Task, AI는 미실행 및 별도 승인 대기입니다. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 운영 검증기 최초 실행 1회 준비
+
+입력 `Tools/DiscordV2/StagingDraft/Invoke-VerifierFirstRunOnce.ps1`, SHA-256 `842f5ac9faae6374886003b4362220dbc6ed1cea0eb6320426438da65afc4071`. 배포에 사용한 공식 Microsoft 서명 Windows PowerShell 5.1에서 고정 PowerShell 7 경로와 파일 해시를 대조한 뒤 새 호스트를 사용합니다. 스크립트는 Microsoft 서명·고정 호스트 SHA, 동일 승인 계정과 상승 상태, 경로 관계·쓰기 보호, x64 .NET 10.0.14의 예상 런타임 집합 및 핵심 DLL의 Microsoft 서명·SHA를 확인합니다. 기존 OS, 정책, ACL을 변경하지 않습니다.
+
+배포본은 파일 열기 후 쓰기·삭제 공유 없이 그 HANDLE을 유지합니다. 파일 및 폴더의 관리자 전용 비상속 DACL, 승인 SHA-256, Windows Authenticode, 인증서 지문·DER·SPKI·코드서명 EKU·유효기간을 대조합니다. 배포 단계의 대표 검증 결과를 보존했으며 현재 비상승 Codex 토큰으로 보호 배포본을 다시 읽을 수 없었습니다. 따라서 최초 실행에 앞선 실제 배포본 재확인은 대표 관리자 세션에서 실행 자료가 수행합니다.
+
+자동 실제 실행 없이 준비만 승인됐습니다. 별도 승인이 있으면 기존 관리자 창에서 실행 자료의 고정 바이트를 대조한 뒤 `-ExecuteFirstRun`을 사용해 정확히 `--version`만 전달합니다. 사용자 런타임·프로파일러·시작 훅 변수가 상속되지 않도록 새 프로세스 환경을 구성합니다. 종료 0, stderr 비어 있음, 버전 `0.1.0+3f674efb1be6466d57aa99f017563fd29ba62b7c`일 때만 `VERIFIER_FIRST_RUN_PASS`를 출력합니다. 기본 호출은 사전 확인만 수행합니다. `--review`와 운영 설치·원장·staging·Task·서비스 계정·AI는 실행 범위에 포함되지 않습니다.
+
+실행 자료 구문과 Microsoft 호스트/런타임 읽기 전용 검사를 확인했습니다. 기존 검증기·서명·격리 시험·배포 반복, 제품 빌드, 실제 EXE 실행 없음. 첫 실행 실패·런타임 변경은 재시도 없이 HOLD입니다. 첫 실행 성공 후에도 staging 생성 및 AI 실행은 별도 승인입니다. NO_GO / MANUAL / EXECUTION_HOLD.

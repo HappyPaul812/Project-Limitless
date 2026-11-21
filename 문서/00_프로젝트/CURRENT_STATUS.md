@@ -1,3 +1,7 @@
+## Discord V2 운영 검증기 최초 실행 준비 / 별도 승인 대기
+
+고정 Windows 호스트·시스템 런타임·배포 SHA/서명 대조 후 --version 한 번만 허용하는 실행 자료 준비. 구문·시스템 호스트/런타임 읽기 검증 PASS, 배포본 재확인 및 실제 첫 실행 NOT_RUN. [실행 조건](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 운영 검증기 보호 배포 PASS
 
 대표 실행 결과 보호 복사 한 개 및 동일 HANDLE 검증 PASS, 배포 SHA가 승인값과 일치합니다. 최초 실행·원장·staging·Task·AI는 미실행 및 별도 승인 대기. [배포 결과](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
