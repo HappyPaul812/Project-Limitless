@@ -1,3 +1,7 @@
+## Discord V2 서명 설치 EXE 보호 배포 준비 / 별도 승인 대기
+
+고정 원본 및 설치 전용 목적지·SHA·생성 시 보호와 동일 HANDLE 검증 입력 준비. 컴파일·구문·내장 범위 PASS. 실제 보호 복사 NOT_RUN. [실행 조건](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 독립 설치 EXE 서명 PASS / 배포 별도 승인 대기
 
 대표 1회 서명과 Authenticode PASS, 서명 후 SHA 52694e574cee3068e0c84131dcd9b93d19a2b59a42a63cf322c87a596c91806d. 타임스탬프 없음. 운영 보호 배포·신규 발급·설치·원장 소비·Task·AI 미실행. [서명 결과](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.

@@ -8,8 +8,13 @@ public static partial class LimitlessVerifierStorePreparation
     // 원본 서명 폴더와 조상도 열어 둔 상태에서 Authenticode와 원문 SHA를 읽습니다.
     public sealed class SignedVerifierSource : IDisposable
     {
+#if INSTALLER_DEPLOY
+        private const string SourceFolder = @"C:\ProgramData\LimitlessDiscordV2InstallerSigningOnce";
+        private const string SourceFile = SourceFolder + @"\Limitless.InitialStagingInstaller.exe";
+#else
         private const string SourceFolder = @"C:\ProgramData\LimitlessDiscordV2SigningOnce";
         private const string SourceFile = SourceFolder + @"\Limitless.StagingVerifier.exe";
+#endif
         private readonly SafeFileHandle root, parent, folder;
         private readonly string rootKey, parentKey, folderKey, fileKey;
         public FileStream Stream { get; private set; }

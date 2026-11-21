@@ -518,3 +518,10 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 대표 제공 실행에서 `INSTALLER_SIGNING_AUTHENTICODE_VERIFIED` 및 SignTool 검증 성공을 확인했습니다. 서명본 `C:\ProgramData\LimitlessDiscordV2InstallerSigningOnce\Limitless.InitialStagingInstaller.exe`. 서명 전 SHA-256 `f0d793f3fe21a4d75db46d999e7c11188e72c14721f69088f27eab4ab558f285`는 승인 미서명 값과 일치했으며, 서명 후 SHA-256은 `52694e574cee3068e0c84131dcd9b93d19a2b59a42a63cf322c87a596c91806d`입니다. SHA-256 Authenticode, 타임스탬프 없음. 성공 표식은 인증서 지문·DER·SPKI·코드서명 EKU·유효기간 확인을 포함합니다. 작업 폴더 receipt는 게시하지 않습니다. 실행 자료 `51aac14155954cec8904f98f60469606ec186dc0`.
 
 후속 별도 승인 대기는 서명 설치 EXE의 보호 배포·동일 HANDLE 읽기 검증입니다. 새 보호 설치 입력·승인 발급, `--install`, 실제 staging·원장 소비·Task·AI는 미실행입니다. 이전 모의시험과 서명 재실행 없음. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 서명 설치 EXE 보호 배포 최종 준비
+
+- 원본 `C:\ProgramData\LimitlessDiscordV2InstallerSigningOnce\Limitless.InitialStagingInstaller.exe`, 승인 서명 SHA-256 `52694e574cee3068e0c84131dcd9b93d19a2b59a42a63cf322c87a596c91806d`를 고정했습니다. 배포 대상 `C:\ProgramData\LimitlessDiscordV2InstallerRuntime\Limitless.InitialStagingInstaller.exe`는 설치 코드 고정 경로와 일치합니다. 대상 디렉터리는 조회 시 부재였습니다. 이전 실제 서명 및 격리 결과를 재사용했습니다.
+- 입력 `Tools/DiscordV2/StagingDraft/Invoke-InstallerProtectedDeploymentOnce.ps1`, SHA-256 `c0f14a975c88e024ad2ae1aaa67d647384d1146f8207f7c5746fffb0cce24e75`. 기존 배포 실행 자료는 변경하지 않았습니다. 관리형 어댑터 컴파일·PowerShell 구문·내장 어댑터 동일성·정확한 고정 원본/목적지와 배포 전용 범위를 확인했습니다. 설치 EXE 최초 실행 진입점이 이 자료에 없습니다.
+- 별도 1회 보호 복사 승인 후 기존 관리자 창의 공식 서명 PowerShell에서 검증된 입력 바이트를 실행합니다. 원본·조상 HANDLE 고정, Authenticode·인증서 지문·DER/SPKI·EKU·유효기간·전체 SHA 대조, 초기 Administrators owner/SYSTEM group 및 비상속 SYSTEM/Administrators 전용 DACL, 신규 EXE 한 개 CREATE_NEW 및 flush 순입니다. 동일 복사본 HANDLE에서 최종 경로·파일 ID·owner/DACL·SHA 및 서명을 확인한 뒤 `INSTALLER_DEPLOYED_HANDLE_VERIFIED`를 출력합니다. 파일 receipt는 로컬 보관합니다.
+- 기존 위치 발견, 서명·권한·해시 불일치, 부분 실패는 HOLD이며 재시도·수선·삭제 없음. 실제 보호 배포와 그 결과는 현재 NOT_RUN입니다. 승인 필요 범위는 고정 위치의 폴더 및 위 EXE 한 파일의 보호 복사·HANDLE readback 한 번입니다. 최초 실행·`--install`·승인 발급/소비·staging·Task·계정·AI는 제외합니다. NO_GO / MANUAL / EXECUTION_HOLD.

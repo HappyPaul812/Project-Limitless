@@ -8,8 +8,12 @@ public static partial class LimitlessVerifierStorePreparation
 {
     public sealed class SigningWorkspace : IDisposable
     {
-#if VERIFIER_DEPLOY
+#if INSTALLER_DEPLOY
+        private const string Folder = @"C:\ProgramData\LimitlessDiscordV2InstallerRuntime";
+        private const string DeploymentName = "Limitless.InitialStagingInstaller.exe";
+#elif VERIFIER_DEPLOY
         private const string Folder = @"C:\ProgramData\LimitlessDiscordV2VerifierRuntime";
+        private const string DeploymentName = "Limitless.StagingVerifier.exe";
 #elif INSTALLER_SIGNING
         private const string Folder = @"C:\ProgramData\LimitlessDiscordV2InstallerSigningOnce";
 #else
@@ -111,8 +115,8 @@ public static partial class LimitlessVerifierStorePreparation
 
         private static string FilePath(string name)
         {
-#if VERIFIER_DEPLOY
-            Need(name == "Limitless.StagingVerifier.exe", "HOLD_WORKSPACE_NAME");
+#if VERIFIER_DEPLOY || INSTALLER_DEPLOY
+            Need(name == DeploymentName, "HOLD_WORKSPACE_NAME");
 #elif INSTALLER_SIGNING
             Need(name == "signtool.exe" || name == "Limitless.InitialStagingInstaller.exe", "HOLD_WORKSPACE_NAME");
 #else
@@ -164,12 +168,12 @@ public static partial class LimitlessVerifierStorePreparation
             catch { handle.Dispose(); throw; }
         }
 
-#if VERIFIER_DEPLOY
+#if VERIFIER_DEPLOY || INSTALLER_DEPLOY
         public string Readback(FileStream file)
         {
             Check();
             ulong fileVolume;
-            string key = ReadPinned(file.SafeFileHandle, FilePath("Limitless.StagingVerifier.exe"),
+            string key = ReadPinned(file.SafeFileHandle, FilePath(DeploymentName),
                 false, out fileVolume, false);
             Need(fileVolume == volume, "HOLD_COPY_VOLUME");
             return key;
