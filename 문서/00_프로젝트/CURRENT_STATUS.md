@@ -1,3 +1,7 @@
+## Discord V2 보호 승인 기록 1회 / 사전 검증 HOLD
+
+대표가 보호 저장소 생성·HANDLE 검증을 완료했습니다. 계정 지정 승인 기록 1회 작성 승인 후, 현재 계정·콘솔 토큰과 후보·검사 스크립트·공개 인증서 지문은 일치했습니다. 현재 토큰의 관리자 역할이 비활성이며 보호 저장소 ACL 조회가 접근 거부되어 기록 생성 및 파일 무결성 확인은 NOT_RUN입니다. 권한 완화·재시도·키 검사·서명 없음. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7055640398). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 보호 저장소 최종 생성 입력 / 승인 대기
 
 고정 생성 스크립트·SHA 및 상승 전 독립/상승 후 동일 바이트 검증 명령 준비. 컴파일·Windows PowerShell 5.1 구문·조상 HANDLE 읽기 PASS. 생성 미실행, 후보 부재. [최종 명령](Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7054941208). NO_GO / MANUAL / EXECUTION_HOLD.
