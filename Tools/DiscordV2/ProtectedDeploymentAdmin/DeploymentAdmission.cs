@@ -16,6 +16,7 @@ internal sealed class DeploymentRequest
     public string ManifestSha256 { get; set; }="";
     public string ApprovalPath { get; set; }="";
     public string ApprovalSha256 { get; set; }="";
+    public string ProductContractSha256 { get; set; }="";
     public string ContractPath { get; set; }="";
     public string ContractSha256 { get; set; }="";
     public string RiskBasisPath { get; set; }="";

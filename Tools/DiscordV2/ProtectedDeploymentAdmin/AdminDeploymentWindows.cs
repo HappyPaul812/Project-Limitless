@@ -48,6 +48,32 @@ internal sealed class AdminDeploymentWindows : IDeploymentHost,IDisposable
     public void VerifyRequestSignature(byte[] raw)
     {
         byte[] signature=ReadProtected(requestPath+".sig",4096);
+        using var signer=OpenApprovalSigner();
+        AdmissionPolicy.Require(signer.VerifyData(raw,signature,HashAlgorithmName.SHA256,RSASignaturePadding.Pss),
+            "DEPLOY_APPROVAL_SIGNATURE_HOLD");
+    }
+
+    public void VerifyCurrentProductContract(byte[] request,AdmissionBinding binding)
+    {
+        var scope=DeploymentAdmission.Strict(request,8192,DeploymentRequestJson.Default.DeploymentRequest);
+        string path=Path.Combine(CurrentFakeOnlyContract.Approvals,"FakeOnlyProduct.json");
+        byte[] contract=ReadProtected(path,4096);
+        byte[] signature=ReadProtected(path+".sig",4096);
+        byte[] manifest=ReadProtected(scope.ManifestPath,16384);
+        AdmissionPolicy.Require(ProtectedDeployment.Hash(contract)==scope.ProductContractSha256 &&
+            ProtectedDeployment.Hash(manifest)==scope.ManifestSha256,"FAKE_V2_REQUEST_BINDING");
+        var plan=System.Text.Json.JsonSerializer.Deserialize(manifest,DeploymentJson.Default.DeploymentPlan)
+            ?? throw new InvalidOperationException("DEPLOY_PLAN_NULL");
+        using var signer=OpenApprovalSigner();
+        CurrentFakeOnlyContract.Validate(contract,signature,signer,CurrentFakeOnlyContract.Signer,binding,Now,
+            plan.Files.Single(file=>file.Name=="Supervisor.exe").Sha256,
+            plan.Files.Single(file=>file.Name=="Probe.exe").Sha256);
+        // 제품의 Authenticode 및 기존 실행 경계 연결은 별도 승인 후 구현합니다.
+        throw new InvalidOperationException("FAKE_V2_PRODUCT_IMAGE_TRUST_AND_RUNTIME_HOLD");
+    }
+
+    private RSA OpenApprovalSigner()
+    {
         using var store=new X509Store(StoreName.Root,StoreLocation.LocalMachine);
         store.Open(OpenFlags.ReadOnly|OpenFlags.OpenExistingOnly);
         var certificates=store.Certificates;
@@ -62,10 +88,9 @@ internal sealed class AdminDeploymentWindows : IDeploymentHost,IDisposable
                     eku.EnhancedKeyUsages.Cast<Oid>().Any(oid => oid.Value=="1.3.6.1.5.5.7.3.3")),
                 "DEPLOY_APPROVAL_CERTIFICATE_POLICY_HOLD");
             using var signer=cert.GetRSAPublicKey() ?? throw new InvalidOperationException("DEPLOY_APPROVAL_KEY_HOLD");
-            AdmissionPolicy.Require(ProtectedDeployment.Hash(signer.ExportSubjectPublicKeyInfo())==
-                "2a6d0a7d31e7642df209b6cbe12fa628500663f540eb6bd557cac2aca2d31f7c" &&
-                signer.VerifyData(raw,signature,HashAlgorithmName.SHA256,RSASignaturePadding.Pss),
-                "DEPLOY_APPROVAL_SIGNATURE_HOLD");
+            AdmissionPolicy.Require(ProtectedDeployment.Hash(signer.ExportSubjectPublicKeyInfo())==CurrentFakeOnlyContract.Signer,
+                "DEPLOY_APPROVAL_KEY_PIN_HOLD");
+            return RSA.Create(signer.ExportParameters(false));
         }
         finally { foreach(var cert in certificates)cert.Dispose(); }
     }
@@ -74,7 +99,7 @@ internal sealed class AdminDeploymentWindows : IDeploymentHost,IDisposable
     {
         EnsureAdmin();string path=Environment.ProcessPath??throw new InvalidOperationException("DEPLOY_TOOL_PATH");
         // 자기 실행 파일과 모든 부모도 보호된 경로여야 합니다. 작업자 쓰기 가능 폴더의 도구는 거부합니다.
-        AdmissionPolicy.Require(Path.GetFileName(path)=="Limitless.DeploymentAdmin.exe","DEPLOY_TOOL_NATIVE_REQUIRED");
+        AdmissionPolicy.Require(path.Equals(CurrentFakeOnlyContract.Tool,StringComparison.OrdinalIgnoreCase),"DEPLOY_TOOL_NATIVE_REQUIRED");
         byte[] raw=ReadProtected(path,268435456);DeploymentSecurityPolicy.NativeImage(raw);
         using var actor=WindowsIdentity.GetCurrent();
         return new(true,true,ProtectedDeployment.Hash(raw),actor.User?.Value??"");

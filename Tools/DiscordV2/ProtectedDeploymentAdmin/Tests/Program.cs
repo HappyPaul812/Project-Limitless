@@ -99,6 +99,7 @@ internal static partial class DeploymentAdminTests
     static int Main(string[] args)
     {
         if(args is ["--candidate-review",var input])return CandidatePathReview(input);
+        if(args is ["--current-product-contract"])return CurrentProductContractChecks();
         if(args is ["--ledger-delta"])return LedgerDelta();
         if(args.Length>0&&args[0]=="--ledger-peer")return LedgerPeer(args);
         Test("review-full-plan-no-consume-or-writes",()=>{var f=new Fixture();Check(f.Run("--review")>5);f.NoWrites();});

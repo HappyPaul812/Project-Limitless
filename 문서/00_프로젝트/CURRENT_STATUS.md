@@ -1,3 +1,7 @@
+## Discord V2 FAKE_ONLY 제품 계약 / 운영 HOLD
+
+서명된 제품 계약의 이미지 해시·서명자·계정 SID·Task·고정 Code/Evidence·UTC 최대 5분·FAKE_ONLY 범위를 검증합니다. 독립 배포 진입점은 현행 바인딩과 제품 계약을 요구한 뒤 이미지 신뢰·실행 입구 연결 전까지 운영 배포를 거부합니다. 관리형 컴파일 경고·오류 0, 신규 표적 14 PASS. 기존 테스트·운영 자산 변경 없음. 실제 SID/Task, 후보 Authenticode 검증과 Supervisor 실행 승인 연결이 남았습니다. Unity 확인 사항 없음.
+
 ## Discord V2 독립 배포 도구 격리 검증 / 운영 HOLD
 
 소스의 제품 배포 원장이 현재 Control\DeploymentLedger에 고정됐습니다. V2 서명 요청 및 실행 SID 확인을 추가했고, 기존 실행 cutoff는 유지합니다. 독립 배포 시험 관리형 컴파일 경고·오류 0, 승인 51 PASS와 원장 24 PASS. 실제 Windows 원장, 배포 도구 실행 및 제품 복사 없음. 현행 Native 바인딩·계약, 후보 서명·승인 및 운영 도구 제작이 별도로 필요합니다. Unity 확인 사항 없음.
