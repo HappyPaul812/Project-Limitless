@@ -1,3 +1,7 @@
+## Discord V2 최초 보호 원장 생성 및 HANDLE 검증 PASS
+
+대표 실행 LEDGER_CREATED_HANDLE_VERIFIED 확인. 실제 원장 식별값은 로컬 보관. 신규 설치 계약·승인 발급 및 소비·staging·Task·AI는 미실행과 별도 승인 대기. [결과](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 최초 보호 원장 생성 준비 / 별도 승인 대기
 
 고정 원장 경로·스크립트 SHA·초기 관리자 전용 descriptor와 동일 HANDLE readback 준비. 관리형 컴파일·내장 바이트·Windows PowerShell 5.1 구문 PASS. 원장 생성·승인 소비 NOT_RUN. [실행 조건](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.

@@ -433,3 +433,7 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 원장 생성은 계정 지정 승인 기록 작성이나 설치 승인 발급과 분리합니다. 생성 입력에는 `.used` 쓰기·승인 소비 기능이 없습니다. 기존 설치 코드만 별도 승인 후 단발 소비를 수행할 수 있습니다. 기존 cutoff가 만료됐고 현재 배포된 검증기는 읽기 전용이므로 원장 생성만으로 설치 게이트가 열리지 않습니다.
 
 신규 관리형 컴파일, 고정 경로·내장 바이트, Windows PowerShell 5.1 구문을 확인했습니다. 원장 생성/소비 NOT_RUN, 기존 성공 시험 반복·운영 변경 없음. 기존 경로 충돌·검증 실패 시 재시도·ACL 완화·부분 결과 삭제 금지. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 최초 보호 원장 생성 결과
+
+대표 제공 출력의 `LEDGER_CREATED_HANDLE_VERIFIED`를 확인했습니다. `C:\ProgramData\LimitlessDiscordV2BootstrapLedger` 신규 생성과 동일 HANDLE의 최종 경로·파일 ID·owner/group·비상속 DACL·descriptor SHA 검증 PASS입니다. 로컬 원장 receipt는 게시하지 않습니다. 실행 자료 `2dbadc2b08ec8f4aa24976a52850e12173807a52`. Codex 재실행 없음. 새 설치 승인 발급이나 `.used` 소비, staging, Task, AI 실행은 미실행입니다. 다음은 만료된 계약의 대체 범위와 운영 설치 호출자 승인입니다. NO_GO / MANUAL / EXECUTION_HOLD.
