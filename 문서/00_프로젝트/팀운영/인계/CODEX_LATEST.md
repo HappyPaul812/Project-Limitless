@@ -1,3 +1,7 @@
+## Discord V2 신규 설치 계약과 실행 주체 승인안
+
+만료 계약·보호 원장·읽기 전용 검증기 연결 확인. windows 상승 관리자 1회 staging 생성 및 별도 최소권한 서비스 계정 범위를 제안했습니다. 다음 승인: 별도 설치 진입점 구현·격리 검증만. 신규 발급·소비·staging·AI 미실행. [승인안](../../Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 최초 보호 원장 생성 및 HANDLE 검증 PASS
 
 대표 실행 LEDGER_CREATED_HANDLE_VERIFIED 확인. 실제 원장 식별값은 로컬 보관. 신규 설치 계약·승인 발급 및 소비·staging·Task·AI는 미실행과 별도 승인 대기. [결과](../../Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.

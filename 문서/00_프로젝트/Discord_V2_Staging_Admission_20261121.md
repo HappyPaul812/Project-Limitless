@@ -437,3 +437,36 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 ## 최초 보호 원장 생성 결과
 
 대표 제공 출력의 `LEDGER_CREATED_HANDLE_VERIFIED`를 확인했습니다. `C:\ProgramData\LimitlessDiscordV2BootstrapLedger` 신규 생성과 동일 HANDLE의 최종 경로·파일 ID·owner/group·비상속 DACL·descriptor SHA 검증 PASS입니다. 로컬 원장 receipt는 게시하지 않습니다. 실행 자료 `2dbadc2b08ec8f4aa24976a52850e12173807a52`. Codex 재실행 없음. 새 설치 승인 발급이나 `.used` 소비, staging, Task, AI 실행은 미실행입니다. 다음은 만료된 계약의 대체 범위와 운영 설치 호출자 승인입니다. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 신규 설치 계약 및 실행 주체 최종 승인안
+
+### 기존 범위와 현재 연결
+
+기존 최초 staging 계약 `DISCORD_V2_INITIAL_STAGING_V2`는 고정 staging 한 경로 및 보호 원장에 대해, 승인 SID와 일치하는 상승·비위장 Windows 관리자만 사용할 수 있었습니다. 승인 시작·만료의 코드 상한은 **2026-11-01 23:59:59 KST**입니다. 별도의 기존 Bootstrap 계약 `DISCORD_V2_PROTECTED_BOOTSTRAP_V1`은 서명·지문 고정된 도구와 관리자 토큰으로 제품 트리의 고정 여섯 경로만 최초 생성합니다. 같은 만료 상한을 공유합니다. 기존 전용 Worker 계정 만료 인계값은 **2026-11-02 00:00 KST**이며 이번에는 재조회하거나 변경하지 않았습니다.
+
+현 보호 원장은 생성 및 HANDLE 검증을 통과했습니다. 이 결과는 새 계약의 원장 파일 키를 제공하며 계정 지정 기록에 설치 권한을 추가하지 않습니다. 현재 운영 서명 EXE의 `--review`는 승인·원본 서명, 동일 HANDLE SHA, 관리자·조상·원장 파일 키 및 미소비 여부를 읽습니다. 지금은 코드 cutoff에서 거부합니다. 기존 코드의 `InstallFromApproval`에는 영구 CREATE_NEW 소비·생성 직전 재검증·staging readback이 있지만 운영 CLI에 호출자가 없습니다. 배포된 EXE는 그대로 보존합니다.
+
+### 새 계약 제안
+
+| 항목 | 승인할 범위 |
+|---|---|
+| 작업 | 고정 `C:\ProgramData\LimitlessDiscordV2BootstrapStaging` 한 디렉터리의 1회 원자 생성 및 동일 HANDLE 검증. 제품 Bootstrap 실행·배포·Task·서비스 계정·AI 제외 |
+| 실행 주체 | 별도 설치 승인을 받은 `windows` 정상 로그인·상승·비위장 토큰의 실제 SID, 신뢰된 보호 실행 경로·공식 호스트 정책과 해당 설치 도구 서명 및 전체 SHA |
+| 발급 자료 | 신규 계약 식별자와 재사용하지 않은 단발 ID, 관리자 SID, fixed staging 및 원장 경로, 원장 파일 키, 조상 파일 키와 descriptor SHA, 승인된 원본 SHA, 승인 JSON 원문 및 원본의 분리 서명. 운영 실행 도구의 서명·전체 SHA는 독립 실행 정책에서 고정 |
+| 시간 | 승인 발급 시 절대 UTC 시작·종료를 서명하고 종료는 시작 후 최대 5분으로 제안. 별도 승인한 신규 릴리스 상한 이내. 시계·시간창 불명은 거부. 실행 시작이나 재실행으로 자동 연장하지 않음 |
+| 단발 소비 | 승인 및 시간·토큰·경로·원장 보호 확인 후, staging 생성 전에 같은 원장의 해당 `.used`를 CREATE_NEW·보호 descriptor·flush로 남김. 기록이 있거나 불명확하면 거부. 생성 직전 재확인 |
+| 실패 | 불일치·만료·재사용·경로 존재·권한 오류·readback 실패 시 NO_GO/MANUAL/EXECUTION_HOLD. 소비 및 부분 결과 보존, 재시도·삭제·권한 완화 없음 |
+
+계정 지정과 새 발급·소비는 서로 다른 승인입니다. `windows`는 승인된 관리자 설치·보호 readback을 맡을 수 있습니다. 운영 Task·Session 0·장기 서비스·AI는 최소 권한으로 새로 검증한 별도 서비스 계정을 사용해야 하며, 만료·로그온 권한 및 접근 ACL은 별도 작업입니다. 기존 Task·서비스 계정·OnBoot·운영 봇은 보존했습니다.
+
+### 다음 승인 한 건과 명령 형태
+
+다음 승인은 **별도 1회용 설치 진입점 구현 및 격리 검증**입니다. 기존 읽기 전용 검증기를 유지하고, 기존 설치 경계를 호출하는 최소 진입점에 새 계약·시간 제한·시험을 연결합니다. 이 작업에는 실제 승인 발급/소비, 운영 서명·배포, staging 생성, Task 및 AI가 포함되지 않습니다.
+
+후속 승인 때 필요한 CLI 계약은 아래와 같습니다. 현재 배포본에 이 모드가 없고 신규 실행 경로·보호 입력·서명 후보 미확정이므로 운영 실행 명령은 발급하지 않았습니다.
+
+```powershell
+& $approvedInstaller --install $protectedSource $sealedApproval $approvalSignature $sourceSignature
+```
+
+현재 작업은 계약과 실행 주체 제안입니다. 소스·릴리스·기존 운영 상태 변경, 신규 승인 발급·소비·staging·AI 실행 및 이전 시험 반복 없음. NO_GO / MANUAL / EXECUTION_HOLD.
