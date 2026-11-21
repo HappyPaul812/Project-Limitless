@@ -197,7 +197,7 @@ public static partial class LimitlessVerifierStorePreparation
         }
     }
 
-#if !DESIGNATION_ONLY && !DESIGNATION_READ_ONLY && !SIGNING_ONCE && !VERIFIER_DEPLOY && !INSTALLER_SIGNING && !INSTALLER_DEPLOY && !STAGING_SOURCE_SIGNING && !STAGING_SOURCE_DEPLOY
+#if !DESIGNATION_ONLY && !DESIGNATION_READ_ONLY && !SIGNING_ONCE && !VERIFIER_DEPLOY && !INSTALLER_SIGNING && !INSTALLER_DEPLOY && !STAGING_SOURCE_SIGNING && !STAGING_SOURCE_DEPLOY && !INSTALL_APPROVAL_ISSUE
     public static string CreateOnce(string approvedSid, DateTimeOffset start, DateTimeOffset end)
     {
         // 승인 기록의 SID와 로컬 windows 계정이 모두 일치해야 합니다.

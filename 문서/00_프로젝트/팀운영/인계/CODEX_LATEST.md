@@ -1,3 +1,7 @@
+## Discord V2 신규 단발 승인 발급 및 별도 설치 명령 준비
+
+발급·설치 실행 입력을 별도 SHA 및 별도 실행 게이트로 분리. 고정 설치본·SID·보호 원장·서명 원본·UTC 5분 계약과 단발 확인 마련. 컴파일·구문·범위 PASS, 실제 발급/소비/설치 NOT_RUN. [승인 절차](../../Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 서명 staging 입력 두 파일 보호 배치 PASS
 
 대표 실행에서 기존 지정 기록 SHA 일치 및 대상 부재 확인 뒤 두 파일 보호 배치·동일 HANDLE·이중 서명 검증 통과. 신규 승인 발급·소비·설치 미실행 및 별도 승인 대기. [실측 SHA와 결과](../../Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.

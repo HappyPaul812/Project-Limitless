@@ -10,3 +10,5 @@ Invoke-InstallerProtectedDeploymentOnce.ps1 -text
 StagingSource.Candidate.ps1 -text
 Invoke-StagingSourceSigningOnce.ps1 -text
 Invoke-StagingInputProtectedDeploymentOnce.ps1 -text
+Invoke-InitialInstallApprovalIssueOnce.ps1 -text
+Invoke-ApprovedInitialStagingInstallOnce.ps1 -text

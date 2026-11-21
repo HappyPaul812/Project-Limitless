@@ -588,3 +588,18 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 | StagingSource.sig | `6892ef8aa4b5e85c20d5bd94e25e48e96d25dc116860ff2f0c9070bb74b0d388` |
 
 두 값은 승인 해시와 일치합니다. 성공 표식은 복사본 HANDLE에서 경로·파일 ID·owner/DACL·SHA, Authenticode 및 RSA-PSS 재확인을 포함합니다. 원본 실행·설치 승인 발급/소비·`--install`·staging·Task·AI는 미실행입니다. 다음 단계는 보호된 신규 단발 설치 승인 입력 발급의 별도 승인입니다. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 신규 설치 승인 발급과 별도 설치 명령 준비
+
+| 단계 | 고정 입력 | SHA-256 |
+|---|---|---|
+| 발급 전용 | `Tools/DiscordV2/StagingDraft/Invoke-InitialInstallApprovalIssueOnce.ps1` | `c1990e9c14c46a2b9e0a25e65b8eada312ffdb174457b48dfbb099aacfb0a3d3` |
+| 실행 전용 | `Tools/DiscordV2/StagingDraft/Invoke-ApprovedInitialStagingInstallOnce.ps1` | `458e862d6d27d81aba7026bfa0ff1db08812e33706f14d716d25180377f9b27a` |
+
+발급은 별도 대표 승인 후 기존 관리자 PowerShell에서 공식 서명 PowerShell 7과 검증된 명령 바이트로 수행합니다. 입력은 이전 보호 저장소 receipt, 계정 지정 기록 SHA, 설치 EXE 배포 receipt, 최초 원장 receipt입니다. 모두 성공 표식의 `=` 뒤 로컬 값이며 구간별 형식을 검사합니다. `-IssueAfterApproval`이 없으면 중단합니다.
+
+발급 경계는 `windows` 관리자 SID 및 계정 지정 기록, 고정 설치 EXE SHA, 원장·조상 HANDLE, 승인된 StagingSource.ps1의 Authenticode/전체 SHA 및 동일 파일 RSA-PSS, 승인 인증서 공개키를 대조합니다. 정상 조건에서만 재사용하지 않은 단발 GUID와 5분 UTC 창을 만들고 JSON 원문에 한 번 분리 서명합니다. 원장에 사용 기록이 없음을 읽기 전용 확인합니다. 기존 대상 및 승인 파일이 없는 경우에만 Runtime 내부 `InstallApproval.sig`, 이어 `InstallApproval.json`을 CREATE_NEW로 보호 생성합니다. 같은 HANDLE의 내용·ACL·ID와 공개키 검증 뒤 `INSTALL_APPROVAL_ISSUED_HANDLE_VERIFIED` 및 두 결과 SHA·UTC 종료 시각을 출력합니다. 발급 경계에는 원장 쓰기나 설치 호출이 없습니다.
+
+실제 설치는 별도의 승인입니다. 발급 성공·미만료 상태에서 두 승인 파일의 SHA를 각각 `-ApprovalSha` 및 `-ApprovalSignatureSha`에 전달하고 `-InstallAfterApproval`을 지정합니다. 실행 전용 입력은 기존 신뢰 호스트와 시스템 런타임, 설치 EXE SHA·서명·보호 ACL, 같은 HANDLE의 승인 두 파일과 RSA-PSS·승인 UTC 창·현재 SID를 확인합니다. 고정 보호 EXE `C:\ProgramData\LimitlessDiscordV2InstallerRuntime\Limitless.InitialStagingInstaller.exe`에 오직 `--install`만 전달합니다. 소비와 원자적 staging 생성, readback은 기존 설치 EXE만 수행합니다. 출력 `STAGE_CREATED_AND_READBACK`가 성공입니다. 출력 불일치·시간초과·충돌·보호 불일치 또는 부분 상태는 HOLD이며, 재실행·ACL 변경·삭제·수선 금지입니다. 발급 후 두 파일과 실제 원장 내용은 공개하지 않습니다.
+
+컴파일 및 새 PowerShell 구문, 발급/실행 고정 범위와 합성 JSON 파싱만 확인했습니다. 실제 승인 발급·설치 호출·원장 소비·staging·Task·AI 및 기존 시험 반복 없음. NO_GO / MANUAL / EXECUTION_HOLD.
