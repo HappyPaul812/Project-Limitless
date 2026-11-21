@@ -1,3 +1,7 @@
+## Discord V2 지정 서명 계정 키 검사 1회 PASS
+
+대표 실행 결과 PASS_SIGNER_SID_KEY_SPKI_READ_ONLY. 보호 승인 기록·토큰 SID·고정 검사 입력 대조 뒤 기존 머신 키 접근 및 인증서 공개 SPKI 일치 확인. 기존 EXE 한 개의 서명은 별도 승인 대기, 검사 재실행 0. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7055884486). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 보호 승인 기록 PASS / 키 검사 1회 준비
 
 대표가 승인 기록 생성과 HANDLE 검증을 완료했습니다. 기존 키 검사에 앞서 보호 기록·SID·고정 스크립트 SHA를 대조하는 읽기 전용 실행 자료를 준비했습니다. 실제 검사 NOT_RUN. [실행 조건](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
