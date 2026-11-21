@@ -1,3 +1,7 @@
+## Discord V2 서명 staging 입력 보호 배치 승인 / 대표 실행 대기
+
+기존 Runtime의 고정 두 입력 CREATE_NEW·동일 HANDLE readback·이중 서명 검증 절차 준비. 컴파일·구문·범위 PASS, 보호 복사 NOT_RUN. 신규 발급·소비·설치 미실행. [조건](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 staging 원본 Authenticode·RSA-PSS PASS
 
 대표 실행 결과 최종 원본 및 분리 서명 후검증 PASS. 두 파일의 설치 Runtime 보호 배치만 다음 승인 대기. 승인 발급·소비·설치 미실행. [최종 SHA 및 결과](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.

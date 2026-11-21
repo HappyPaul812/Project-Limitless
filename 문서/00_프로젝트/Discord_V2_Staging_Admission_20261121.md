@@ -567,3 +567,13 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 대표가 제공한 `STAGING_SOURCE_AUTHENTICODE_AND_PSS_VERIFIED`를 확인했습니다. 보호 작업 폴더 `C:\ProgramData\LimitlessDiscordV2StagingSourceSigningOnce`의 `StagingSource.ps1` 최종 SHA-256은 `caf59966f74e5d5d520a6a5245e9c118c75320ff138efe757d36619a058a37f7`, `StagingSource.sig` SHA-256은 `6892ef8aa4b5e85c20d5bd94e25e48e96d25dc116860ff2f0c9070bb74b0d388`입니다. 실행 자료 `5a418bf47ac993193f7078ce4b9a29c6c2183d64`.
 
 성공 표식은 최종 파일의 Authenticode, 승인 서명자 및 고정 해시에 대한 기존 검증기 통과, 같은 HANDLE에서 읽은 동일 최종 바이트의 RSA-PSS 공개키 검증 및 분리 파일 readback을 포함합니다. 실제 출력은 대표 실행 결과를 재사용했습니다. 원래 미서명 후보 수정·원본 스크립트 실행·검사 반복 없음. 다음 최소 승인은 위 두 파일의 설치 Runtime 보호 배치와 동일 HANDLE 검증입니다. 승인 발급/소비·설치·staging·Task·AI는 미실행입니다. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 서명된 staging 입력 두 파일의 1회 보호 배치
+
+승인 원본 폴더 `C:\ProgramData\LimitlessDiscordV2StagingSourceSigningOnce`, 기존 대상 `C:\ProgramData\LimitlessDiscordV2InstallerRuntime`. 이름은 `StagingSource.ps1` 및 `StagingSource.sig` 두 개로 고정합니다. 원본 SHA 각각 `caf59966f74e5d5d520a6a5245e9c118c75320ff138efe757d36619a058a37f7`, `6892ef8aa4b5e85c20d5bd94e25e48e96d25dc116860ff2f0c9070bb74b0d388`. 입력 `Invoke-StagingInputProtectedDeploymentOnce.ps1` SHA-256 `d9ec2deba6fbaa70873c18b5453ba34d088a5a056072211791b53a57b2346cef`.
+
+대표가 기존 관리자 창에서 Microsoft 서명 고정 PowerShell을 사용합니다. 바로 앞 설치 EXE 배포 성공 출력의 `DEPLOYED_FILE_RECEIPT`는 로컬 입력입니다. 상승 지정 계정 토큰, 조상·원본 폴더·기존 런타임의 보호, 보호 설치 EXE 전체 SHA 및 해당 receipt를 대조합니다. 두 원본을 읽기 전용 HANDLE에 유지하며 각각 승인 SHA, 원본 Authenticode 및 같은 바이트의 RSA-PSS 조합을 확인합니다. 두 대상 이름의 부재를 먼저 검사합니다.
+
+각 파일은 owner Administrators/group SYSTEM, 비상속 SYSTEM·Administrators 전용 DACL과 CREATE_NEW로만 쓰고 flush합니다. 파일별 기록 시 HANDLE의 ID를 읽은 뒤, 보호 읽기 HANDLE의 최종 경로·파일 ID·소유자·DACL·전체 SHA 및 원문 Authenticode와 분리 PSS 조합을 검증합니다. 기존 폴더/ACL·EXE는 변경하지 않습니다. 충돌·불일치·부분 실패 시 재시도, 파일 삭제 및 권한 완화 없이 HOLD입니다. 성공 표식은 `STAGING_INPUTS_DEPLOYED_HANDLE_VERIFIED`입니다.
+
+관리형 컴파일·PowerShell 구문·고정 경로와 두 입력 전용 범위 확인 PASS. 현재 실제 복사·설치 NOT_RUN, 관리자 창에서 대표 1회 실행 대기입니다. 실제 스크립트/EXE 실행, 설치 승인 발급·소비·staging·Task·AI 및 기존 시험 반복 없음. 후속 설치 승인 발급은 별도 승인입니다. NO_GO / MANUAL / EXECUTION_HOLD.
