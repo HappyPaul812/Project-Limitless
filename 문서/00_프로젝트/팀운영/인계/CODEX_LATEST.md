@@ -1,3 +1,7 @@
+## Discord V2 운영 검증기 배포 준비 / HOLD
+
+서명·격리 4 PASS 재사용. 승인 저장소와 분리한 운영 배포 후보, 독립 최초 실행 및 단발 소비·설치 잔여 조건 정리. 다음 최소 승인: 서명 EXE 한 개의 보호 복사와 HANDLE readback. 실제 배포·실행·빌드 없음. [배포 순서와 차단 조건](../../Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 격리 서명 검증 4건 PASS
 
 비관리자 검증 4 PASS / 0 FAIL, 각 1회. 변조 복사본 1개 SHA 실측 일치, 기준본 통과와 변조·미서명·다른 서명자 거부 확인. 운영 적용 미승인. [실제 SHA·결과](../../Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
