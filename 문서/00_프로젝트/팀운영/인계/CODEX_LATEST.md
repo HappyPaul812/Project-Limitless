@@ -1,3 +1,7 @@
+## Discord V2 보호 복사본 단발 서명 PASS
+
+대표 실행 결과 SignTool·Authenticode PASS, 서명 후 SHA 86ba45f0139122f80c1cfb9492700edb9a537e63bd9ee511ac9231e34fb3d7ca. 타임스탬프 없음. 서명본 변조 시험·운영 적용은 별도 승인 대기. [전후 SHA·경로](../../Discord_V2_Staging_Admission_20261121.md) · [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7056070665). NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 보호 복사본 단발 서명 승인 / 대표 실행 대기
 
 보호 작업 공간·고정 SDK SignTool 복사·1회 로컬 서명과 후검증을 준비했습니다. 관리형 컴파일·구문·격리 SDK 자체 검증 PASS, 실제 관리자 서명 NOT_RUN. [실행 조건](../../Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.

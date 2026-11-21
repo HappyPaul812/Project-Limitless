@@ -329,3 +329,7 @@ if ($after -ceq $before) { throw 'HOLD_IMAGE_UNCHANGED' }
 같은 HANDLE에서 읽어 승인 SHA를 대조한 후보 및 공식 SDK SignTool 바이트를 두 보호 파일에 씁니다. SignTool은 보호 작업 폴더에서 System32 PATH로만 실행하고 SDK 원래 디렉터리의 DLL은 복사하지 않습니다. SDK 단독 실행의 `verify /pa /all`을 비관리자 격리 복사본에서 확인했습니다. 실제 서명은 해당 EXE만 `sign /sm /s My /sha1 <승인 지문> /fd SHA256`으로 한 번 수행합니다. 외부 타임스탬프 없이 로컬 서명합니다.
 
 성공 표식 `SIGNING_AUTHENTICODE_VERIFIED`는 SignTool 검증, Windows Authenticode, 인증서 지문·DER·SPKI/EKU/유효기간, 보호 파일 HANDLE 및 서명 후 SHA 확인 뒤에만 출력합니다. 조상/작업 공간/파일 보호 불일치, 서명 또는 검증 실패는 HOLD입니다. 실패물을 수정·삭제·재시도하지 않습니다. 현재 실제 관리자 서명 NOT_RUN, 기존 키 검사 재실행 없음, 배포·ACL 변경 없음. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 보호 복사본 서명 1회 결과
+
+바울 대표의 관리자 PowerShell 실행 결과 `SIGNING_AUTHENTICODE_VERIFIED` 및 SignTool `verify /pa /all` 성공을 확인했습니다. 서명본은 `C:\ProgramData\LimitlessDiscordV2SigningOnce\Limitless.StagingVerifier.exe`입니다. 서명 입력 SHA-256 `145f3921e88ab2caba98afd4c5bb39eb7f9706aa6ad5e3fca5d5891f9f73adbb`, 서명 후 SHA-256 `86ba45f0139122f80c1cfb9492700edb9a537e63bd9ee511ac9231e34fb3d7ca`. SHA-256 Authenticode, 타임스탬프 없음. 실행 자료 `cd602656afd836d8dddcfca17d56f3ce41e95479`. 대표가 제공한 실행 결과를 기록했으며 Codex에서 서명·검증을 반복하지 않았습니다. 서명본 변조 시험, 운영 배포, 원장·staging 및 AI 실행은 별도 승인 대기입니다. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7056070665). NO_GO / MANUAL / EXECUTION_HOLD.
