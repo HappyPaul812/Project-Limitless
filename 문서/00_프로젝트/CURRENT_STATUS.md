@@ -1,3 +1,7 @@
+## Discord V2 승인 서명 계정 실검증 / 미실행
+
+현재 토큰 SID는 조회 가능하나 대조할 승인 SID 및 지정 계정의 실행 토큰과 읽기 전용 1회 검사 별도 승인을 확인하지 못했습니다. 기존 점검 스크립트 0b9a7dc2 미실행, 실제 키 접근·SPKI 일치 NOT_RUN. 서명 및 운영 변경 없음. NO_GO / MANUAL / EXECUTION_HOLD.
+
 ## Discord V2 지정 서명 계정 점검 절차 / HOLD
 
 후보 SHA·인증서 지문 일치. 승인 SID를 대조한 후 기존 머신 키 열기·SPKI·내보내기 불가 정책을 확인하는 읽기 전용 절차 준비. 파서·SID 거부·어댑터 컴파일 PASS, 지정 계정의 실제 접근은 미검증입니다. [실행 절차](Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
