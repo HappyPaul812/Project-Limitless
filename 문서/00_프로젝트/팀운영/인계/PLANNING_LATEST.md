@@ -1,3 +1,16 @@
+# PLANNING / 2026-11-23 — 총괄 부서 보고 접수 및 비용 절감 TTS 정책 확정
+
+- 바울 대표 결정: **주요 5인(폴·미엘·세린·태온·하렌) 기존 승인 음성 유지**, 나머지 NPC는 **기본 무음**, 반드시 필요한 경우에만 기존 Gemini와 별개인 공식 **Google Cloud Text-to-Speech 한국어 Standard/WaveNet 월 무료 범위** 검토. Cloud 청구 계정 설정/초과 자동과금이 있으므로 '완전 무료' 보장 없음. 새 API 호출·서비스 계정·키·결제 설정·음성 생성 **0**, 대표 추후 별도 승인 필요. 비공식 Google Translate gTTS 상업용 사용 금지. [#125 직접 전달](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7087343324).
+- [2026-11-23 종합 검토/정책 문서](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261123_TTS_CastingPolicy_And_Team_Results.md), 기획 정책 commit `ae2500bc4f896b15edd929be6ab6d3a8df56d925`.
+- #122 전리품6 승인 PNG는 준비됐으나 정식 ItemId·Monster 연결 **0/6**, 격리 .NET 60 PASS 및 난수100% 드롭 누락 재현. 등록·정식 ID/완료키·보상 소실 정책은 승인 전 HOLD.
+- #123 F3 소량 아트 ZIP 실제 Library SHA/CRC 및 비교판 확인. 시각 콘셉트는 긍정적이나 지면접합은 **단일 길가 overlay** 추천, 실제 TileSeam/PPU/Collider/4.5WU 동선 QA·사용자 시각 승인은 대기. 유니티 적용0.
+- #124 리뉴얼: 실사용 Game-icons 9종 CC BY3.0 귀속 필요, SpectralBloom/Kenney 21개 CC0 및 현장 확인 대기. 중복 NPC/Monster 리뉴얼 지시 금지.
+- #125 TTS: 승인 원문 101행(주요72, 기타NPC23, 무음6); 후보 VoiceID 충돌0, Runtime 미확인·음성 생성0. 신규 정책으로 NPC 23개 일괄합성 금지.
+- #31 BGM: F1/서릿길 원곡2개 사용자 과거 승인 누락 정정, 새 루프 A/B 수정만 청취 판정 대기. 새원곡 재승인·재생성 금지.
+- **PLANNING_POLICY_DOCUMENTED / ROLE_FOLLOWUP_NOT_YET_CONFIRMED / NO_UNITY_CHANGE / NO_REMOTE_MAIN_CHANGE**. 이번 인계 자체는 담당 세션 자동작업을 시작하지 않음. Unity6000.6.5f1·#85/Discord HOLD, Save/UserData/기존 승인자산 보호.
+
+---
+
 # PLANNING / 2026-11-23 — 부서별 병렬 작업 지시 발행
 
 - 바울 대표의 "각자 일 시켜줘" 요청에 따라 [11/23 공식 발주표](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261123_Parallel_Work_Order.md) 작성, `docs/planning` 문서 commit `eeec03c6f94c58a1f3234eae6841955d74a7f891`.
