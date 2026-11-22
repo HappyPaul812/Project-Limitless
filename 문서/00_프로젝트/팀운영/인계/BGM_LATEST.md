@@ -71,3 +71,23 @@ Issue #31: F1 북풍·서릿길 마을 2곡 샘플.
 - 다만 Raw MP3의 종료 무음 문제는 별도 기술 이슈로 `LOOP_EDIT_REQUIRED` 유지.
 - 2026-11-23 생성한 소형 A/B는 **새 루프 편집안**이므로 `LOOP_EDIT_APPROVAL_PENDING`.
 - 배포 Master / Unity 적용은 여전히 0, 별도 승인 전 보류.
+
+
+## 2026-11-23 Issue #31 LoopPlan 기술 검증 완료
+
+- 두 원곡은 이미 **USER_LISTENING_APPROVED**. 재승인 요청 금지.
+- 원본 SHA 재확인 및 보호:
+  - Grass `2bbbe6fe02b46c391653a5409802dde819ba64b5b5be99b20bbeafb4ad9b0fca`
+  - Hearth `a8cae73d15d276ad5cf25415ee13bce6e9761b331822f8dcb5928da9b87c772b`
+- B 방식 경계 미세 조정:
+  - Grass Intro 0–14.60s / Body 14.60–68.10s / xfade0.55s
+  - Hearth Intro 0–4.35s / Body 4.35–60.80s / xfade0.55s
+- 기술 QA:
+  - B 두 곡 경계 연속 무음 0초.
+  - hard click spike 기계검사 PASS.
+  - 자동 onset/beat continuity PASS. Grass는 crossfade 내부 약한 완급 변화가 있으나 누락 beat/gap 없음.
+  - 4개 비교 MP3 전체 decode PASS.
+- Review ZIP: `LIMITLESS_Issue31_LoopReview_20261123.zip`, 2,199,087bytes, SHA256 `65a37dc8322a0eb5ed6e52527de1ac0754a5bd3252e108dd6dd56bd1406a3484`.
+- GitHub binary 등록0. 원본 수정0. 배포 Master0. Unity6000.6.5f1/Mixer/TTS/Save/UserData 변경0.
+- 상태: **B_LOOPPLAN_TECH_PASS / LOOP_EDIT_USER_APPROVAL_PENDING / MASTER_NOT_BUILT / UNITY_NOT_APPLIED**.
+- 상세: `문서/00_프로젝트/Chapter3_BGM_LoopEdit_AB_QA_20261123.md`
