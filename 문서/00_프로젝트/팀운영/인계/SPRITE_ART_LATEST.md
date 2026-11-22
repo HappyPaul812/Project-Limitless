@@ -1,5 +1,17 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-23 / Issue #123 — Chapter3 F3 눈 덮인 고갯길 신규 환경 아트 3종 파일럿 납품
+
+- [#123 11/23 최신 신규 작업 지시](https://github.com/HappyPaul812/Project-Limitless/issues/123) 및 [11/19 안전체크포인트](https://github.com/HappyPaul812/Project-Limitless/tree/backup/2026-11-19-safe-checkpoint) 확인. F2 실제 ZIP: `Limitless_F2_MinimalFollowup_20261103.zip` (표지판288×384·낮은 울타리256×192·그루터기320×384, 대안 미술 미승인), `Limitless_F2_Stump_Natural_Issue81_20261103.zip` (자연 그루터기 v4 승인), `LIMITLESS_Issue75_F2_BendSnow_ArtCandidate_20261110.zip` (F2 굽음 후보, C SnowEdge 미채택), `F2_P2_Targeted_Sign_Stump_20261029.zip` (과거 후보) 4개 실물 오프라인 참조. F2 표지판·울타리·그루터기·눈 경계 구자산 **중복 제작 금지** 준수.
+- **신규 원화 3개만** (모두 투명 RGBA):
+  - `F3_SnowRock_GroundTransition_256x256_RGBA_CANDIDATE.png` **256×256**, SHA256 `d63c8d5ae60921dc7007caf839b720d68dda8078f273b86f1404f6121475a4be` — 눈·암석 전환부 **single-placement overlay**. 반복용 Base/4면 타일 이음매 **NOT_VERIFIED**.
+  - `F3_LowFrostRock_Outcrop_320x192_RGBA_CANDIDATE.png` **320×192**, SHA256 `ddbba749c8f60f3b207769c35883aa844e80e782e8dc512077608d2568f07bb1` — 길 외곽 낮은 빙설 암반. Collider 미작성·중앙경로 배치 금지.
+  - `F3_FlushStone_EdgeMarker_256x128_RGBA_CANDIDATE.png` **256×128**, SHA256 `ccb99fa51dec1c33d07eaca3fd0fede994b65f0fd5776c98cda690b197ffedc0` — 표지판/울타리 아닌 바닥형 시각 경계, 낮은 돌+옅은 빙설. Collider 미작성.
+- 실제 최종 PNG를 직접 사용한 원크기/128/40px 비교판, 기존 F2 실물 원화(승인 그루터기와 미승인 울타리·눈길 후보의 상태 명시) 비교판, 중앙 통행로 비움 **오프라인 개념배치**(실제 Unity 화면·4.5WU 통행 QA 아님) 제출. F1 지면256²·F2 소품 기존 크기 참고, F2 FirstSnow 기록 PPU128을 F3 확정 계약으로 오인 금지. F3 **PPU/Pivot/Grid/Sorting/Collider 및 실제 연결·접근성 `SPEC_PENDING`**.
+- ZIP **`LIMITLESS_Issue123_F3_SnowPass_3Asset_ArtPilot_20261123.zip` 1,047,761bytes/10entries**, SHA256 **`5704d754355d7a4d353be8324c0c442e0b8672e623fe7492849e40c49c4e8be4`**. ZIP CRC PASS, Manifest 8/8 크기·SHA PASS, SHA256SUMS 9/9 PASS, 자기/순환 해시참조0. SourceDeclaration/QA 포함. ChatGPT Library `/LIMITLESS/Issue123_F3_SnowPass_Pilot_20261123/`에 ZIP+PNG3+비교판3 저장.
+- [**#123 공식 제작·검증 보고**](../../Chapter3_F3_SnowPass_Issue123_ArtPilot_20261123.md) `docs/art-new` commit **`961f910ae5a3ba8934f7badd6d229f4edea07f65`**. **`F3_ART_PILOT_3_READY / OFFLINE_QA_PASS / USER_ART_REVIEW_PENDING / TILE_SEAM_AND_PPU_SPEC_PENDING / UNITY_NOT_APPLIED`**. 기존 승인 F1·F2/B352/BattleBGv2/M1~M5/환경·모든 Scene/Collider/Quest/Spawn/Save/UserData/Discord/#85 HOLD 및 Unity6000.6.5f1 보호. 신규 F4/F5/맵 타일양산 없음, main 직접 commit/merge 없음. 원격 ZIP/PNG 바이너리 GitHub 업로드0.
+
+
 ## 2026-11-19 / Issue #112 — Hit4 최종 승인 및 눈보라 정령 Defeat4 후보 납품
 
 - [Hit4 최종 승인 및 Defeat4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7004512175) 확인. KeyPose·Idle8 v1/v2·Attack4·Hit4 PNG 5종 실제 SHA256 작업 전후 일치, 원본 수정0. Hit4 SHA256 `2e07e2178f48bf0dcd6367a73a9f9c4af5311073df2dc2c9a7e33e139b311de1`. 기존 Hit4 승인 대기 표기는 과거 이력.
