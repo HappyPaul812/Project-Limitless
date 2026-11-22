@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-23 — #122 승인 선택지·#123 기술 합격 최종 접수
+
+- Codex 최근 브랜치 `codex/ch3-loot6-contract-20261123` 로컬 HEAD `240c72ec39b3d539802b8c2729e3b6d2a98c95e4`, 문서만 갱신, 원격 Push·제품 적용0.
+- [#122 최종 기획 권고](https://github.com/HappyPaul812/Project-Limitless/issues/122#issuecomment-7087963907): 100% RNG 경계 최소 수정(기존56/제안56 PASS), 충돌 없는 6개 Stable ItemId를 정식 후보로 권고. 단회 엘리트는 실재하는 Stable Encounter ID/슬롯 저장 키를 확인한 뒤만 적용, 가방 만석 PendingReward와 완료 플래그를 같은 성공 스냅샷, 저장 실패 승리화면 재시도 우선. 합성 저장39 PASS지만 제품 Save/재접속 미검증. 사용자 실제 승인 전 본편/몬스터 등록/드롭 연결0/6.
+- [#123 최종 기술 접수](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7087964254): PNG 파일기술3/3·Unity격리 Import3/3 PASS, 단일 지면오버레이/길 밖 암반/바닥경계 표식 방향 유지, 반복 타일 금지, F3 본편 Scene·4.5WU·접지/Sorting/Collider·실제 Player Path NOT_VERIFIED. 별도 대표 최종 미술 승인 전 게임 배치0, 재작업 불필요.
+- **이 기록은 대표 승인 대체가 아님**. Unity6000.6.5f1·#85 HOLD, 기존 승인 원본·Save/UserData·Discord·원격 main 보호.
+
+---
+
 # PLANNING / 2026-11-23 — #122·#123 합동 기술 검수 접수
 
 - Codex 실제 HEAD `2c13a60840c67c2220336f5d0f6fcfe1880fcc57`, 브랜치 `codex/ch3-loot6-contract-20261123`, LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
