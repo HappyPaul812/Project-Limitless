@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-23 — #122·#123 합동 기술 검수 접수
+
+- Codex 실제 HEAD `2c13a60840c67c2220336f5d0f6fcfe1880fcc57`, 브랜치 `codex/ch3-loot6-contract-20261123`, LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+- [#123 접수](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7087857261): F3 PNG 3/3 격리 Unity Import PASS, 단일 눈·암석 데칼/길 바깥 암반/바닥 경계 소품으로 후보 유지. 반복 타일 seam FAIL(투명 간격), 실제 F3 Scene/4.5WU 통행·GameView·Sorting/접지 NOT_VERIFIED. 미술 최종 대표 승인 대기, 재작화 요청0, 본편 적용0.
+- [#122 접수](https://github.com/HappyPaul812/Project-Limitless/issues/122#issuecomment-7087856829): 실제 `BattleVictoryReward.Calculate`의 `Random.value >= DropChance`에서 RNG=1.0일 때 드롭100% 누락 재현. 최소 수정보정 격리 기존56/제안56 PASS, 단회 엘리트 보상 합성모델39PASS. 실제 Save/재접속·Unity 제품 미검증, Stable ItemId·MonsterDefinition 등록 0/6. 본편 RNG 수정 포함 사용자 별도 승인 필요, ID/조우키·만석 저장과 UX 확정 전 DROP_LINK_HOLD 유지.
+- 기획 지시는 이미 검증한 56/39/3 수치 재실행이 아니라 최소 diff·ItemId 후보·수령/실패 정책 옵션을 대표에게 제출하도록 조율. 기존 Unity6000.6.5f1/#85 HOLD/개인 Save/UserData·Discord·원격 main 보호.
+
+---
+
 # PLANNING / 2026-11-23 — 총괄 부서 보고 접수 및 비용 절감 TTS 정책 확정
 
 - 바울 대표 결정: **주요 5인(폴·미엘·세린·태온·하렌) 기존 승인 음성 유지**, 나머지 NPC는 **기본 무음**, 반드시 필요한 경우에만 기존 Gemini와 별개인 공식 **Google Cloud Text-to-Speech 한국어 Standard/WaveNet 월 무료 범위** 검토. Cloud 청구 계정 설정/초과 자동과금이 있으므로 '완전 무료' 보장 없음. 새 API 호출·서비스 계정·키·결제 설정·음성 생성 **0**, 대표 추후 별도 승인 필요. 비공식 Google Translate gTTS 상업용 사용 금지. [#125 직접 전달](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7087343324).
