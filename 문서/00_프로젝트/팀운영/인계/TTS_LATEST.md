@@ -1,5 +1,20 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-23 최신 — Issue #125 Chapter3 Main24~29·서브6 TTS 무호출 사전 발주표 완료
+
+**발주 정본:** [GitHub Issue #125](https://github.com/HappyPaul812/Project-Limitless/issues/125) / `docs/planning` 2026-11-19 [승인 대사·보상 기준](../../../03_스토리/Chapter3_정식대사_보상기준_밸런스검증_20261119.md). 최신 기획의 `PLANNING_DIALOGUE_LOCK`은 실제 Runtime ID 승인과 구별.
+
+- **신규 정식 분석 보고:** [`TTS_Issue125_Ch3_Main24_29_Side6_20261123_Preflight.md`](../../TTS_Issue125_Ch3_Main24_29_Side6_20261123_Preflight.md) 및 [101행 원문 검토 CSV](../../TTS_Issue125_Ch3_Main24_29_Side6_ApprovedDialogue_Preflight_20261123.csv). 정확 승인 원문/장면별 발화자/예상 캐스팅/새 Dialogue ID 후보/기획 지문/Runtime HOLD를 구분.
+- **집계:** Main24~29 전체 **83행**, 그중 인물 발화 후보 **77** / 무음 플레이어·HUD **6**. 서브 6종 수락·미충족·완료 각3 = **18** 후보. 101행 중 기존 VoiceID 재사용 가능한 주요 인물 5명 새 대사 **72**(세린15·미엘17·폴15·하렌13·태온12), 신규 NPC/주민 VoiceID 미승인 **23**, 무음6. 신규 WAV/기존 승인 WAV 정확 원문 중복은 실 PC 재검증 이전이므로 무조건 없다고 주장하지 않음.
+- **기존 Voice 캐스팅 보존:** 세린 `companion_serin / Erinome`, 미엘 `companion_miel / Sulafat`, 폴 `companion_paul / Achird`, 태온 `companion_taeon / Algieba`, 하렌 `story_haren / Alnilam`. 새로운 성우 디자인/억양 강제·개별 모델 변경 없음. `오르나/마레/도아/루덴/피난 주민/주민`은 CharacterId·VoiceID 및 발화 대상 자체가 미승인: 임의 보이스 배정 금지.
+- **서사 잠금:** Main26 미엘 “……예전에도 저한테 먼저 치료받으라고 하던 사람이 있었어요.” 1회 암시 + 짧은 여백, Main27 폴·미엘 따뜻한 차 약속, Main29 하렌 정확 “**잘.했.어.**” 및 음악·자막 여백. 플레이어5줄/보스 HUD1줄은 모두 TTS 무음. 지문과 대사 혼합 금지.
+- **ID 검사:** CSV 후보 ID 101개 내부 중복0, 접근 가능한 11/19 제품 안전 checkpoint의 기존 `StoryVoiceCatalog` **312 ID 대비 문자열 충돌0**, 최신 기획 Main22/23과 동일 화자/정확 발화 텍스트0. 그러나 **실제 PC 로컬 Main22~24 Runtime DialogueID/QuestId 확인은 미수행**, 제안 ID 101개는 `PROPOSAL_NOT_RUNTIME`. Main24는 일부 구현, Main25~29 및 서브6 정식 Runtime 미구현으로 **신규 TTS 발주 보류**.
+- **미래 통계만 계산:** 승인 후 기존5명 신규 행 최대72회 + NPC까지 전부 음성화할 경우 추가 최대23회 = 총 **최대95개의 최초 합성 요청**(기존 파일 발견/재사용 시 감소, 재시도 시 증가). 이전의 40회/PT 하루 로컬 안전 상한 가정에서 72회 최소2일, 95회 최소3일이라는 참고치만 제시. 실제 Google 프로젝트/모델 무료 quota·과금/외부 호출은 미확인. **이번 실행 `Google_API=0` / `API.txt_READ=0` / WAV0/mp3 0**.
+- **보호:** 162/162 기존 승인 StoryVoiceCatalog/WAV/Meta/GUID/Save/기존 PNG, Unity 승인 `6000.6.5f1`, Discord, Issue #85 HOLD, 원본 PC/원격 main 및 사용자의 미커밋 변경 전부 건드리지 않음. 원격 main의 과거 Unity 버전이 기준이 아님. 안전 checkpoint Unity ProjectVersion은 `6000.6.5f1`으로 읽기 확인만 함.
+- **필요한 사용자 후속 승인:** (1) Main24 로컬 구현 ID/기획 텍스트 매핑 및 Main25~29·서브6 Runtime 구현 후 안정 ID 확정, (2) 5인 신규72 음성 제작 일괄 승인 여부, (3) NPC 23행을 음성화할지와 실제 CharacterId/VoiceID 확정, (4) 장면의 스타일/실제 사용자 청취 QA 단계. 기획의 기존 11/19 대사 내용은 재승인 대상 아님. TTS 합성은 사용자 직접 담당, Codex는 요청받을 때만 읽기전용 Runtime 조사/추후 통합.
+- 상태 `DIALOGUE_MANIFEST_ONLY / TTS_NOT_GENERATED / ID_HOLD / NPC_CASTING_HOLD`. 생성·유료 호출·Unity 적용·main 병합/Push 금지. **브랜치 `docs/tts`**에 보고와 CSV, 이 인계 및 Issue125 댓글 기록.
+
+
 ## 2026-10-24 20:22 KST 사용자 Codex 결과 스크린샷 — 162 음성 격리 worktree 적용 및 검증 보고 / main 미반영
 
 - **보고 근거:** 사용자 제공 Codex 화면. 별도 worktree `codex/tts-voice-integration-20261024`에서 적용 완료, **원본 작업 폴더 변경0** 보고. 세린 Erinome67 + 태온 Algieba85 + 하렌 Alnilam3 + 기존 KEEP 폴3/미엘2/레온2 = **162/162**.
