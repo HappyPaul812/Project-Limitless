@@ -58,3 +58,16 @@ Issue #31: F1 북풍·서릿길 마을 2곡 샘플.
 - Unity 6000.6.5f1 / Mixer / TTS / Save / UserData / 승인 자산 변경0. Issue #85 HOLD 유지.
 - 상세 QA: `문서/00_프로젝트/Chapter3_BGM_LoopEdit_AB_QA_20261123.md`
 - 다음 게이트: 사용자 A/B 청취 승인 후에만 별도 Master/Loop 제작. Unity 적용은 별도 Codex 계약.
+
+
+## 2026-11-23 승인 상태 정정 — 2026-10-20 대화 근거 복구
+
+- 이전 GitHub 인계의 `USER_REVIEW_PENDING`은 **기록 누락**으로 정정한다.
+- 2026-10-20 BGM 대화에서 바울 대표가 두 곡을 **“둘 다 좋고”**라고 직접 승인한 기록을 다시 확인했다.
+- 따라서:
+  - `Where_the_Grass_Bends.mp3` = **USER_LISTENING_APPROVED / Main22 F1 승인곡**
+  - `Hearth_in_the_Low_Valley.mp3` = **USER_LISTENING_APPROVED / Main23 서릿길 마을 승인곡**
+- 원곡 사용 승인 재확인 불필요.
+- 다만 Raw MP3의 종료 무음 문제는 별도 기술 이슈로 `LOOP_EDIT_REQUIRED` 유지.
+- 2026-11-23 생성한 소형 A/B는 **새 루프 편집안**이므로 `LOOP_EDIT_APPROVAL_PENDING`.
+- 배포 Master / Unity 적용은 여전히 0, 별도 승인 전 보류.
