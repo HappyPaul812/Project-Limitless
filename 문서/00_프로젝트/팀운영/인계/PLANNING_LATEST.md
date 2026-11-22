@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-23 — 부서별 병렬 작업 지시 발행
+
+- 바울 대표의 "각자 일 시켜줘" 요청에 따라 [11/23 공식 발주표](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261123_Parallel_Work_Order.md) 작성, `docs/planning` 문서 commit `eeec03c6f94c58a1f3234eae6841955d74a7f891`.
+- 신규 Issue [#122 Codex 전리품6](https://github.com/HappyPaul812/Project-Limitless/issues/122), [#123 F3 신규 아트](https://github.com/HappyPaul812/Project-Limitless/issues/123), [#124 Ch1·2 실사용 외부 VFX/아이콘 집중 감사](https://github.com/HappyPaul812/Project-Limitless/issues/124), [#125 TTS 대사 VoiceID 무호출 준비](https://github.com/HappyPaul812/Project-Limitless/issues/125) 4건 발행. 기존 [#31 BGM](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7086604560), [#33 SFX](https://github.com/HappyPaul812/Project-Limitless/issues/33#issuecomment-7086604972), [#98 영상](https://github.com/HappyPaul812/Project-Limitless/issues/98#issuecomment-7086605435), [#118 기획 성장](https://github.com/HappyPaul812/Project-Limitless/issues/118#issuecomment-7086605896) 후속 발주 댓글 기록.
+- 11/19 완료 원본 로컬 main `736df561`(당시 보고), 검증 복구 `f6408291`, 과거 원격 main `bfd28154` 구분. 기존 승인 보존, Unity6000.6.5f1, #85 HOLD 및 #66 Discord HOLD, 비Git 외부백업 미완료 유지.
+- **TASKS_ISSUED / REAL_ROLE_EXECUTION_NOT_VERIFIED / NO_PRODUCT_CHANGE / NO_REMOTE_MAIN_CHANGE**. 별도 세션 자동착수는 보장되지 않음. 대표가 각 담당에게 이슈 전달한 후 실제 결과를 기획에서 다시 접수/검수. 문서 commit SHA는 이번 인계 추가 commit에서 별도 갱신됨.
+
+---
+
 # PLANNING / 2026-11-19 — 이틀간 승인분 마감 발주
 
 - 대표 11/18~19 전 작업 통합·로컬 동기화·PC 장애 대비 push 요청. [마감 이슈](https://github.com/HappyPaul812/Project-Limitless/issues/121) / [작업 정본](https://github.com/HappyPaul812/Project-Limitless/commit/f15f04a135619049a60ea2327de678570d508eb1). WORK_ORDER_ONLY, 실제 로컬/원격 제품 복구 push 아직 미완료. 11/17 복구본 보존, 새 clean 복구 ref 및 fresh fetch/해시 검증, FF-only, Unity6000.6.5f1, #85 HOLD·Save/UserData/Discord·기존 dirty/untracked 보호. 비Git offsite 별도 확인.
