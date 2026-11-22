@@ -2,163 +2,146 @@
 
 - 담당: BGM
 - 브랜치: `docs/bgm`
-- 근거: Issue #31 2026-11-23 후속 발주
-- 상태: **SOURCE_SHA_PASS / SONG_APPROVED_BOTH / LOOP_EDIT_PLAN_READY / SMALL_AB_READY / LOOP_EDIT_APPROVAL_PENDING / UNITY_NOT_APPLIED**
+- 근거: Issue #31 2026-11-23 후속 발주 및 바울 대표 승인 상태 정정
+- 상태: **SONG_APPROVED_BOTH / SOURCE_SHA_PASS / B_LOOPPLAN_TECH_PASS / LOOP_EDIT_USER_APPROVAL_PENDING / MASTER_NOT_BUILT / UNITY_NOT_APPLIED**
 - Unity: **6000.6.5f1 보호 / 접근·Import·수정 0**
-- 기존 승인 BGM/TTS/Mixer/Save/UserData: 변경 0
-- 보스 풀트랙 신규 제작: 0
+- 기존 공식 BGM/TTS/Mixer/Save/UserData: 변경 0
 - 신규 Gemini 재생성: 0
+- 보스 풀트랙 작업: 0
 
-## 1. 원본 SHA 재확인
+## 1. 원곡 승인 및 SHA 보호
 
-### Main22 F1 후보
+두 원곡은 바울 대표가 2026-10-20 이미 최종 청취 승인했다. 재승인 요청하지 않는다.
+
+### Main22 F1
+- 곡: `Where the Grass Bends`
 - 파일: `Where_the_Grass_Bends.mp3`
 - 길이: 74.239958초
 - 44.1kHz / Stereo / MP3
-- SHA256: `2bbbe6fe02b46c391653a5409802dde819ba64b5b5be99b20bbeafb4ad9b0fca`
-- 2026-10-20 기록과 **일치 PASS**
-- 기존 끝 무음: 약 71.88초 이후, 약 2.36초
+- 원본 SHA256: `2bbbe6fe02b46c391653a5409802dde819ba64b5b5be99b20bbeafb4ad9b0fca`
+- 상태: **USER_LISTENING_APPROVED / SOURCE_SHA_PASS**
 
-### Main23 서릿길 마을 후보
+### Main23 서릿길 마을
+- 곡: `Hearth in the Low Valley`
 - 파일: `Hearth_in_the_Low_Valley.mp3`
 - 길이: 72.620333초
 - 44.1kHz / Stereo / MP3
-- SHA256: `a8cae73d15d276ad5cf25415ee13bce6e9761b331822f8dcb5928da9b87c772b`
-- 2026-10-20 기록과 **일치 PASS**
-- 기존 시작 무음 약 0.45초 / 끝 무음 약 2.55초
+- 원본 SHA256: `a8cae73d15d276ad5cf25415ee13bce6e9761b331822f8dcb5928da9b87c772b`
+- 상태: **USER_LISTENING_APPROVED / SOURCE_SHA_PASS**
 
-## 2. 사용자 청취 승인 정정 — 2026-10-20 대화 근거 복구
+원본 두 파일은 편집·덮어쓰기하지 않았다.
 
-2026-11-23 후속 확인 과정에서 GitHub 기록만 대조해 두 곡을 `USER_REVIEW_PENDING`으로 잘못 유지했으나, 이전 BGM 대화 기록을 다시 확인한 결과 **2026-10-20 바울 대표가 두 곡에 대해 “둘 다 좋고”라고 직접 평가·승인한 기록을 복구했다.**
+## 2. B 방식 LoopPlan 최종 검토 후보
 
-따라서 기존 GitHub의 승인 대기 표기는 기록 누락으로 정정한다.
-
-- `Where the Grass Bends` — **USER_LISTENING_APPROVED / Main22 F1 사용 승인**
-- `Hearth in the Low Valley` — **USER_LISTENING_APPROVED / Main23 서릿길 마을 사용 승인**
-- 두 곡의 작곡/장면 배정 승인: **완료**
-- 원본 MP3 SHA/파일 상태: 기존 10/20 기술 QA 그대로 유지
-- Raw direct loop의 무음 문제: 승인과 별개로 **LOOP_EDIT_REQUIRED**
-- 2026-11-23 신규 A/B 루프 편집안: **LOOP_EDIT_APPROVAL_PENDING**
-- Unity 적용: **별도 승인 전 보류**
-
-즉, **원곡 두 곡을 다시 승인받을 필요는 없고, 이번에 새로 만든 루프 편집 방식만 확인 대상**이다.
-
-## 3. Loop Edit 계획
-
-### A. Where the Grass Bends — F1
-
-단순 끝 무음 제거 후 0초로 되감는 방식은 권장하지 않는다.
-원본 시작부가 매우 조용하고 후반부는 상대적으로 강해, 끝→처음에서 다이내믹 리셋이 들릴 가능성이 크다.
-
-기계적 후보 분석:
-- Intro 보존 후보: 0.00 → 약 14.80초
-- Loop body 후보: 약 **14.80 → 68.05초**
-- 후보 접점의 국소 loudness는 대략 -15.4dB 수준으로 서로 근접
-- 음색/화성 유사도 휴리스틱 약 0.92
-- Crossfade 후보: **0.55초**, 짧은 equal/linear 계열
-- 실제 Master 확정 전 사람 청취로 박/프레이즈/호흡 확인 필요
-
-권장 구조:
-`Intro 0–14.80s → Loop Body 14.80–68.05s ↺`
-
-주의:
-현행 Unity BGM 재생기가 Intro + Body 분리 재생을 지원하는지 이번 BGM 작업에서 변경/검증하지 않았다.
-Unity 구현은 별도 Codex 계약 전 **HOLD**.
-
-### B. Hearth in the Low Valley — 서릿길 마을
-
-시작/끝 무음만 제거한 전체곡 반복도 가능성은 있으나 종지감이 남는다.
-본문 내부의 유사 구간을 이용한 Intro + Body 방식이 더 안전한 후보다.
-
-기계적 후보 분석:
-- Intro 보존 후보: 0.00 → 약 4.32초
-- Loop body 후보: 약 **4.32 → 60.72초**
-- 후보 접점 국소 loudness는 약 -14.0dB로 매우 근접
-- 음색/화성 유사도 휴리스틱 약 0.97
-- Crossfade 후보: **0.55초**
-- 실제 사람 청취로 멜로디 프레이즈/박자 겹침 확인 필요
-
-권장 구조:
-`Intro 0–4.32s → Loop Body 4.32–60.72s ↺`
-
-## 4. 소형 A/B 비교본
-
-**배포용 Master가 아니다.** 승인 판단용 짧은 비교 파일만 생성했다.
-원본 두 MP3는 수정하지 않았다.
+이전 1차 B 방식(본문 내부 유사 구간 + 짧은 crossfade)을 유지하되, 박자 위상과 다이내믹을 다시 계산해 경계를 미세 조정했다. 이 값은 **배포 Master가 아니라 최종 루프 편집 승인용 후보**다.
 
 ### Where the Grass Bends
-A / Raw Wrap:
-- 내용: 원본 66.00s→끝 + 원본 0→6.00s
-- 길이: 14.288980초
-- SHA256: `30a415e9bd9c0fbf98593dcf4bb5ad7f4227cf312ef9ead4597e8e89fa680735`
-- 목적: 끝 무음과 원점 복귀 문제 비교
+- Intro 보존: 0.00 → 14.60초
+- Loop Body 후보: **14.60 → 68.10초**
+- Body 길이: **53.50초**
+- Crossfade: **0.55초**
+- 약 80 BPM 계열 기준으로 반복 길이가 박자 격자에 거의 정렬됨.
+- 기존 14.80→68.05 초안보다 박자 위상 정렬과 경계 RMS 일치를 개선.
 
-B / Loop Plan:
-- 내용: 62.05→68.05s + 14.80→20.80s, 0.55s crossfade
-- 길이: 11.493878초
-- SHA256: `d369f299f2da794ce3ff4921fb3a402ca450bd426872483eb8bbfd40ea46877a`
-- 목적: 제안 loop boundary의 접합만 비교
+권장 구조:
+`Intro 0–14.60s → Loop Body 14.60–68.10s ↺`
 
 ### Hearth in the Low Valley
-A / Raw Wrap:
-- 내용: 원본 64.60s→끝 + 원본 0→6.00s
-- 길이: 14.053878초
-- SHA256: `1f7ce6597f2fe10a2918a74cebfa3aadbaeb1df2baceaa85969e9ab1e00267c7`
+- Intro 보존: 0.00 → 4.35초
+- Loop Body 후보: **4.35 → 60.80초**
+- Body 길이: **56.45초**
+- Crossfade: **0.55초**
+- 약 76 BPM / 세부 onset grid 기준 반복 길이가 거의 정렬됨.
+- 기존 4.32→60.72 초안에서 경계를 소폭 정리.
 
-B / Loop Plan:
-- 내용: 54.72→60.72s + 4.32→10.32s, 0.55s crossfade
-- 길이: 11.493878초
-- SHA256: `e6c1cc562d7d4a6da328749a063a3ac37a9de0e4703136801c63d189d1120e17`
+권장 구조:
+`Intro 0–4.35s → Loop Body 4.35–60.80s ↺`
 
-### 파일 QA
-- 4개 MP3 전체 ffmpeg decode: **PASS**
-- Sample peak: A/B 모두 0.0 ~ -0.1dBFS 범위
-- 추가 gain/compression/EQ: **0**
+## 3. 반복 경계 기술 검증
+
+### A / 원곡 끝→처음 비교
+원곡 그대로 끝까지 재생 후 처음으로 돌아가는 비교본.
+
+- Grass: -50dBFS 이하 연속 무음 최대 약 **2.53초**
+- Hearth: -50dBFS 이하 연속 무음 최대 약 **3.07초**
+- 판정: **RAW_WRAP_FAIL** — 무음/종지 때문에 필드·마을 상시 Loop에 부적합.
+
+### B / LoopPlan 비교
+제안 Loop Body의 끝 6초 + 시작 6초를 0.55초 crossfade로 연결한 소형 비교본.
+
+#### 무음
+- Grass B: 경계 포함 파일에서 -50dBFS 이하 연속 무음 **0.00초**
+- Hearth B: **0.00초**
+- 판정: **PASS**
+
+#### Hard click
+경계 ±0.8초의 sample-to-sample delta를 파일 전체 고변화 구간과 비교했다.
+
+- Grass B: 경계 최대 delta 약 **0.066**, 파일 전체 99.9 percentile 약 **0.086**
+- Hearth B: 경계 최대 delta 약 **0.059**, 파일 전체 99.9 percentile 약 **0.063**
+- 경계가 파일 내부의 일반적인 순간 변화보다 비정상적으로 큰 spike를 만들지 않음.
+- 판정: **기계검사상 HARD_CLICK 없음 / PASS**
+
+#### 박자 끊김
+자동 onset/beat 추적 기준:
+
+- Grass B: 약 **79.5 BPM** 계열. 경계 인접 beat interval 약 **0.65~0.75초**, 전체 중앙값 약 **0.743초**. 누락 beat 수준의 긴 공백은 없음. crossfade 내부의 가벼운 완급 변화는 있으나 끊김으로 판정할 정도의 gap은 검출되지 않음.
+- Hearth B: 약 **152 BPM 세부 grid(체감 약 76 BPM)**. 경계 인접 interval 약 **0.337~0.395초**, 중앙값 약 **0.395초**. 연속성 유지.
+- 판정: **MECHANICAL_RHYTHM_CONTINUITY_PASS**
+- 단, 음악적 프레이즈의 최종 선호 판단은 바울 대표의 루프 편집 청취 승인으로 확정한다.
+
+## 4. 비교 청취 파일
+
+실제 작업공간:
+`/mnt/data/LIMITLESS_Issue31_LoopReview_20261123/`
+
+### Where the Grass Bends
+A / 원곡 경계:
+- `Where_the_Grass_Bends_A_OriginalBoundary.mp3`
+- SHA256: `d05fdc2e7622f0cc767fbefd8b55f0289d9bf3438bbc05c08bcc7b0127c512d4`
+
+B / LoopPlan:
+- `Where_the_Grass_Bends_B_LoopPlan_Review.mp3`
+- SHA256: `a0ec5513f719fcd1dfb9f2406b3172657cacbcff53ea2fe53b61b038c6f29a82`
+
+### Hearth in the Low Valley
+A / 원곡 경계:
+- `Hearth_in_the_Low_Valley_A_OriginalBoundary.mp3`
+- SHA256: `320c1670fe9dd84a5a94c94c0bbeae5fbb200283461b9b0b6595ee821ebd539c`
+
+B / LoopPlan:
+- `Hearth_in_the_Low_Valley_B_LoopPlan_Review.mp3`
+- SHA256: `809218890960139c5c185f164f1fcce8f3451e5777dade1f1e56bf70f2cae68c`
+
+묶음:
+- `LIMITLESS_Issue31_LoopReview_20261123.zip`
+- Size: 2,199,087 bytes
+- SHA256: `65a37dc8322a0eb5ed6e52527de1ac0754a5bd3252e108dd6dd56bd1406a3484`
+
+검증:
+- 4 MP3 전체 ffmpeg decode **PASS**
+- 44.1kHz / Stereo 유지
+- 추가 gain / EQ / compression: **0**
 - 원본 SHA 변경: **0**
 - GitHub binary 등록: **0**
-- 실제 작업공간 산출물: ChatGPT 세션 작업공간 `/mnt/data/limitless_bgm_ab_20261123/`
-- A/B 파일은 임시 청취 비교본이며 제품 자산으로 취급하지 않는다.
+- 위 파일은 **비교 청취용 Review Preview**이며 배포용 Master가 아니다.
 
-## 5. 클릭 / 박자 / 다이내믹 / TTS 판정
+## 5. TTS / Mixer / Unity 경계
 
-### Raw A
-- 두 곡 모두 종료 무음 때문에 루프 공백이 명확히 생기는 구조.
-- F1은 후반→매우 조용한 도입부로 복귀하는 다이내믹 리셋 위험이 큼.
-- 마을곡은 시작/끝 무음 + 종지 때문에 전체 raw wrap을 제품 loop로 승인하기 어려움.
+- 원본 곡의 gain/EQ/compression을 바꾸지 않았으므로 기존 대사 공간을 훼손하는 믹싱 변경 없음.
+- 실제 TTS 동시재생 QA: 이번 범위에서 **NOT_RUN**.
+- 기존 Mixer / ducking 정책 변경: 0.
+- Unity 6000.6.5f1 Import/Play/ProjectVersion/Packages 변경: 0.
+- 배포용 Master / Unity 연결: **대표의 LoopPlan 최종 승인 후 별도 단계**.
+- Issue #85 HOLD 유지.
 
-### Planned B
-- 0.55초 crossfade로 샘플 단절에 의한 hard click 위험을 낮춤.
-- 기계적 decode/peak 검사 PASS.
-- 후보 접점은 음색/다이내믹이 Raw보다 유사함.
-- **사람 청취 기준의 박자/프레이즈 자연스러움은 아직 승인하지 않음**.
+## 6. 현재 결론
 
-### TTS 공간
-- 원본 믹스의 gain/EQ/compression을 변경하지 않았고, 접점 테스트만 수행.
-- 10/20의 “대사 공간 PASS 추천”을 훼손하는 변경은 없음.
-- 실제 TTS와 동시 재생 A/B: **NOT_RUN / USER_LISTENING_REQUIRED**
-- Mixer/ducking 정책 변경: 0
+- 두 원곡: **최종 청취 승인 완료 / 재승인 불필요**
+- B 방식 LoopPlan: **기계 QA PASS / 최종 청취 승인 대기**
+- A 원곡 wrap: 무음 때문에 비권장
+- 배포 Master: **미제작**
+- Unity 적용: **0**
+- 기존 공식 BGM·TTS·Mixer·Save/UserData: **보호**
 
-## 6. 보호 및 보류
-
-- Chapter3 승인 배정 유지:
-  - F1 탐험 **승인곡** = `Where the Grass Bends`
-  - 서릿길 안전거점 **승인곡** = `Hearth in the Low Valley`
-- 기존 BGM/Mixer/TTS/Save/UserData/승인 아트 변경 0
-- Unity 6000.6.5f1 접근/Import/Play/ProjectVersion/Packages 변경 0
-- Issue #85 HOLD 유지
-- 보스 풀트랙 작업 0
-- 신규 생성 0
-- 배포용 Master 0
-- Unity 적용 0
-
-## 7. 다음 승인 게이트
-
-원곡 두 곡의 사용 승인은 완료. 바울 대표가 **2026-11-23 신규 A/B 루프 편집안**만 사람 귀로 확인한 뒤 각각:
-- `A_RAW_KEEP`
-- `B_LOOP_PLAN_APPROVED`
-- `REVISE_LOOP_POINT`
-
-중 하나로 판정.
-
-**B_LOOP_PLAN_APPROVED 이후에만** 원본 보존 + 별도 Master/Loop 파일 제작을 허용한다.
-Unity 연결은 Master 승인과 별도의 Codex 적용 계약이 필요하다.
+다음 게이트는 바울 대표가 비교 청취본에서 각 곡의 **B LoopPlan 편집만 최종 승인**하는 것이다. 승인 후에만 별도 Master/Loop 파일 제작 및 Unity 적용 계약으로 이동한다.
