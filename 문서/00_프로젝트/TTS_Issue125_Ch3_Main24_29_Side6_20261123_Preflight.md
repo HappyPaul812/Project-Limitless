@@ -1,5 +1,7 @@
 # LIMITLESS TTS / Issue #125 — Chapter3 Main24~29·서브6 승인 대사·VoiceID 사전 발주 감사 (2026-11-23)
 
+> **최신 적용 정책(2026-11-23):** 기존 이 문서는 11/19 대사 추출에 기반한 **변경 전 최대 합성량(주연72+NPC23=95)** 감사 기록입니다. 최신 사용자 방침에서 **일반 NPC 23행은 텍스트/자막 기본 무음**, 그중 마레의 교육용 2행만 **음성 필요성 검토(승인0)**로 바뀌었습니다. **이 문서의 가상 23 NPC API 호출·95건 총합을 실행 발주로 해석하지 마세요.** [정책·비용 업데이트 보고](TTS_Issue125_NPC23_TextDefault_CloudStandardWaveNet_PolicyCost_20261123.md) 및 [NPC 23행 정책 override CSV](TTS_Issue125_NPC23_TextDefault_CloudVoice_Review_20261123.csv)를 우선합니다. 주연5 VoiceID/기존 WAV162 KEEP, API0.
+
 **상태:** `DIALOGUE_MANIFEST_ONLY / CANDIDATE_IDS_UNAPPROVED / TTS_NOT_GENERATED / API_CALLS_0 / UNITY_UNCHANGED`  
 **GitHub 작업 브랜치:** `docs/tts`  
 **실제 정본:** `docs/planning`의 [11/19 Chapter3 정식 대사·보상·밸런스](../03_스토리/Chapter3_정식대사_보상기준_밸런스검증_20261119.md) (읽은 Git Blob `6431d00659aeee71907c37e2c54330925598311a`), [11/18 Main24~29 스토리](../03_스토리/Chapter3_Main24_29_상세스토리_퀘스트_보상_20261118.md), [11/18 서브6](../03_스토리/Chapter3_서브퀘스트6종_상세기획_20261118.md), [Issue #125](https://github.com/HappyPaul812/Project-Limitless/issues/125).  
