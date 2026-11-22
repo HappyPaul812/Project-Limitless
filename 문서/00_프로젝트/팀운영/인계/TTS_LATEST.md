@@ -1,5 +1,20 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-23 사용자 TTS 추가 정책 적용 — NPC 21무음/마레2 필요성 검토·주연 Voice 유지·Cloud 비용 조사
+
+**정책 정본:** Issue [#125 2026-11-23 기획 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7087343324) 및 사용자 직접 업무지시. **앞선 101행 TTS 대사 선행 조사 이후의 우선 적용 정책.**
+
+- **납품:** [23 NPC 무음·예외 2 검토 세부보고](../../TTS_Issue125_NPC23_TextDefault_CloudStandardWaveNet_PolicyCost_20261123.md) / [23 NPC 1:1 원문·필요성 판단 CSV](../../TTS_Issue125_NPC23_TextDefault_CloudVoice_Review_20261123.csv). 이전 `TTS_Issue125_Ch3_Main24_29_Side6_ApprovedDialogue_Preflight_20261123.csv`의 NPC 행 `voice_call_if_approved=1`은 **이전 최대 가상 비용 산정**이지 실제 현재 발주가 아님. **최신 분류가 우선**.
+- **주요 5인 신규 대사72:** 세린 Erinome15 / 미엘 Sulafat17 / 폴 Achird15 / 태온 Algieba12 / 하렌 Alnilam13, 기존 승인 VoiceID와 원문 유지. 72개 Runtime Stable ID/사용자 신규 제작 승인 전 **Google API0/새 WAV0**. 기존 162개 승인된 WAV·Catalog·.meta/GUID/Save 재합성·교체 금지.
+- **신규 NPC 23:** **`TEXT_ONLY_DEFAULT` 21행**, **`CONDITIONAL_REVIEW_ONLY` 2행(마레 Main24 한기/어묵탕84자, Main26 동상/해빙연고66자)**. 나머지는 Main24 루덴1 + Main26 피난주민/주민2 + 서브6 수락/부족/완료18 = 21개 전부 화면 대사·QuestLog로만 제공. 마레2도 자동 음성 생성 대상 아님. 추가 음성화 여부는 *자막/접근성 QA에서 정말 필요한지 확인한 뒤* 사용자 별도 결정.
+- **정확 원문 Unicode 문자예산:** NPC23 총 **776자**(무음21 626자 + 검토2 150자). 기존5인72 합 **1,655자**는 기존 Gemini용 원문 길이 조사 수치이지 Cloud Standard/WaveNet 예상 청구 대상이 아님. 현재 승인된 Cloud API 입력 = **0자**, 호출0.
+- **공식 Google Cloud Text-to-Speech 가격표(2026-11-23 조사):** 한국어 `ko-KR-Standard-A/B/C/D`·`ko-KR-Wavenet-A/B/C/D` 제공. Standard/WaveNet은 상세 가격표상 **월 각각 400만 문자 무료 구간으로 표기, 양측 같은 SKU `9D01-5995-B545`**. 중복 무료 한도로 계산 금지. 무료 초과 문자당 **US$0.000004**/100만당$4. *기존 Gemini API 서비스/쿼터와 다르며 Cloud 결제 계정 연결 및 API 활성화 필수, 초과 자동 과금*. 실제 계정/프로젝트/SKU 한도는 활성화 직전 다시 검증. 공식 https://cloud.google.com/text-to-speech/pricing .
+- **과금 방지:** 현 상태 API 활성화·결제 연결·계정 생성·Google API키 열람·유료 요청·합성 **전부 승인 전 금지**. 예산 알림만으로 과금 정지 불가능; 2026-11-10 Cloud 강제 spend-cap 적용 서비스 목록에 **Cloud TTS 없음**(Gemini API/Agent Platform/Cloud Run만). 실제 승인 후에도 문자 하드게이트/중앙 장부/단일 실행/외부 사용량·월 Billing 확인이 필요. 공식 https://docs.cloud.google.com/billing/docs/how-to/budgets / https://docs.cloud.google.com/billing/docs/how-to/budgets-spend-caps .
+- **비공식 gTTS 금지:** Google Translate의 비문서화 음성 기능 라이브러리이며 공식 Cloud TTS 아니고 정식 상용 음원에 채택하지 않음. https://github.com/pndurette/gTTS .
+- **향후 사용자 별도 승인 게이트:** Main24/26 마레2 예외 실제 필요성, NPC 신규 CharacterId·VoiceID/성별/음색, 공식 Google Cloud 결제/비용 부담·API 생성의 명시적 승인, 주연72 실제 Runtime stable ID 및 사용자 신규 제작, 승인 음성별 최종 청취·Unity 연동. 기획 11/19 승인 원문 자체는 재승인 요구 없음.
+- **안전:** Unity `6000.6.5f1`, 162 WAV, Save, 원본 `main`, 기존 승인 아트, #85 HOLD, Discord는 그대로. 브랜치 `docs/tts` 문서만 변경; API0, 비용0, WAV0, 계정/청구0, 원본 PC0. 상태 `POLICY_DOCUMENTED / NPC_TTS_HOLD / USER_APPROVAL_REQUIRED`.
+
+
 ## 2026-11-23 최신 — Issue #125 Chapter3 Main24~29·서브6 TTS 무호출 사전 발주표 완료
 
 **발주 정본:** [GitHub Issue #125](https://github.com/HappyPaul812/Project-Limitless/issues/125) / `docs/planning` 2026-11-19 [승인 대사·보상 기준](../../../03_스토리/Chapter3_정식대사_보상기준_밸런스검증_20261119.md). 최신 기획의 `PLANNING_DIALOGUE_LOCK`은 실제 Runtime ID 승인과 구별.
