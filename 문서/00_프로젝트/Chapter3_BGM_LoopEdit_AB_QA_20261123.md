@@ -3,7 +3,7 @@
 - 담당: BGM
 - 브랜치: `docs/bgm`
 - 근거: Issue #31 2026-11-23 후속 발주
-- 상태: **SOURCE_SHA_PASS / APPROVAL_RECOVERY_NOT_FOUND / LOOP_EDIT_PLAN_READY / SMALL_AB_READY / USER_LISTENING_REQUIRED / UNITY_NOT_APPLIED**
+- 상태: **SOURCE_SHA_PASS / SONG_APPROVED_BOTH / LOOP_EDIT_PLAN_READY / SMALL_AB_READY / LOOP_EDIT_APPROVAL_PENDING / UNITY_NOT_APPLIED**
 - Unity: **6000.6.5f1 보호 / 접근·Import·수정 0**
 - 기존 승인 BGM/TTS/Mixer/Save/UserData: 변경 0
 - 보스 풀트랙 신규 제작: 0
@@ -27,22 +27,21 @@
 - 2026-10-20 기록과 **일치 PASS**
 - 기존 시작 무음 약 0.45초 / 끝 무음 약 2.55초
 
-## 2. 사용자 청취 승인 복구 판정
+## 2. 사용자 청취 승인 정정 — 2026-10-20 대화 근거 복구
 
-Issue #31의 2026-11-23 지시는 “11/19 승인 복구 ref 참조”를 요구한다.
-확인한 범위:
-- Issue #31 전체 댓글
-- `docs/bgm` 최신 `BGM_LATEST.md`
-- 2026-11-19 마감/복구 Issue #121의 BGM 관련 기록
+2026-11-23 후속 확인 과정에서 GitHub 기록만 대조해 두 곡을 `USER_REVIEW_PENDING`으로 잘못 유지했으나, 이전 BGM 대화 기록을 다시 확인한 결과 **2026-10-20 바울 대표가 두 곡에 대해 “둘 다 좋고”라고 직접 평가·승인한 기록을 복구했다.**
 
-위 범위에서는 두 곡에 대한 **명시적 사람 청취 승인 문구를 복구하지 못했다**.
-`BGM_LATEST.md`의 최신 상태도 두 곡을 `USER_REVIEW_PENDING`으로 남긴다.
+따라서 기존 GitHub의 승인 대기 표기는 기록 누락으로 정정한다.
 
-따라서:
-- 두 곡을 **최종본/공식 Master라고 부르지 않음**
-- 역할 적합 후보 상태 유지
-- 실제 배포용 Master / Unity 적용 보류
-- 상태: **APPROVAL_RECOVERY_NOT_FOUND / USER_LISTENING_REQUIRED**
+- `Where the Grass Bends` — **USER_LISTENING_APPROVED / Main22 F1 사용 승인**
+- `Hearth in the Low Valley` — **USER_LISTENING_APPROVED / Main23 서릿길 마을 사용 승인**
+- 두 곡의 작곡/장면 배정 승인: **완료**
+- 원본 MP3 SHA/파일 상태: 기존 10/20 기술 QA 그대로 유지
+- Raw direct loop의 무음 문제: 승인과 별개로 **LOOP_EDIT_REQUIRED**
+- 2026-11-23 신규 A/B 루프 편집안: **LOOP_EDIT_APPROVAL_PENDING**
+- Unity 적용: **별도 승인 전 보류**
+
+즉, **원곡 두 곡을 다시 승인받을 필요는 없고, 이번에 새로 만든 루프 편집 방식만 확인 대상**이다.
 
 ## 3. Loop Edit 계획
 
@@ -141,9 +140,9 @@ B / Loop Plan:
 
 ## 6. 보호 및 보류
 
-- Chapter3 역할 유지:
-  - F1 탐험 후보 = `Where the Grass Bends`
-  - 서릿길 안전거점 후보 = `Hearth in the Low Valley`
+- Chapter3 승인 배정 유지:
+  - F1 탐험 **승인곡** = `Where the Grass Bends`
+  - 서릿길 안전거점 **승인곡** = `Hearth in the Low Valley`
 - 기존 BGM/Mixer/TTS/Save/UserData/승인 아트 변경 0
 - Unity 6000.6.5f1 접근/Import/Play/ProjectVersion/Packages 변경 0
 - Issue #85 HOLD 유지
@@ -154,7 +153,7 @@ B / Loop Plan:
 
 ## 7. 다음 승인 게이트
 
-바울 대표가 A/B를 사람 귀로 확인한 뒤 각각:
+원곡 두 곡의 사용 승인은 완료. 바울 대표가 **2026-11-23 신규 A/B 루프 편집안**만 사람 귀로 확인한 뒤 각각:
 - `A_RAW_KEEP`
 - `B_LOOP_PLAN_APPROVED`
 - `REVISE_LOOP_POINT`
