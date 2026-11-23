@@ -1,5 +1,16 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-23 TTS 담당 직접 작성 — Main24 잔여 7개 STAGE-only 일괄 생성 보조 실행기
+
+- 바울 대표의 **“한번에 하자”**, 이후 **“코덱스 말고 니가 소스 짜야지”** 지시에 따라 TTS 담당 ChatGPT가 직접 Python 소스를 작성했다. Codex 작업 의뢰/실행 없음.
+- **사용자에게 전달한 실행 가능 ZIP**: `LIMITLESS_Main24_StageOnly_Batch7_20261123.zip` (10,374 bytes), SHA256 `0f790a562ff72483a154cb0ac6b6b2aab91a4c10f3a1c3761f1661ea9cacf5cb`. 이번 대화 다운로드로 제공(사용자 PC 설치/실행은 아직 NOT_VERIFIED). ZIP에 `Chapter3_Main24_Batch7_Orchestrator.py`, `test_Main24_Batch7_OFFLINE.py`, `README_Main24_Batch7_KO.txt`, `SHA256SUMS_Main24_Batch7.txt` 포함. API 키/기존 WAV/Unity 없음.
+- 배치용 Python 소스 SHA256 `0afdab0727277d94ebe034f1e3a45888899bcf983b0a284ac8d17bf322c150b9`. **원본 `Chapter3_Principal72_STAGING_ONLY.py`는 사용자 PC에만 있고 이 세션에서 직접 읽지 못했으므로 실제 결합 테스트 미완료.** 신규 스크립트는 기존 프로그램 변경 없이 `check`와 `run --max-calls 1`을 순차 호출해 최대7회 제작하고 승인된 앞선 3 WAV의 알려진 SHA를 보호. 외부 라이브러리/새 TTS 구현/키 접근 없음.
+- 안전조건: `Chapter3_StageOnly_72/PT_QUOTA_VERIFIED.json`의 동일 PT 날짜/기존 모델/본인 확인/유료차단 및 해당 PT 이미3건 이후 **추가7건 무료 확인(누적 최소10)**. 이 승인 숫자만 수정해 실행하는 것은 금지. 기존 생성기가 관리하는 Project/Model 실제 제약, 공유 시도장부, HOLD/LOCK, 429 재시도·전환 금지 유지. 프로그램은 최초 검사(`--dry-run`)와 일괄(`--run`)을 분리하고 대표 본인의 단일 승인 문구 `RUN_MAIN24_ALL_7`을 받는다.
+- **오프라인 API-free 모의 6/6 PASS:** ① 기본 검사 호출0, ② 누적 무료증명 부족시 중단, ③ 7건 단일 순서 정상 완료, ④ 앞선 승인 WAV 변조 거부, ⑤ 중간 생성 실패 후 성공본 보존/재개, ⑥ 예상 밖 기존 WAV 자동덮어쓰기 거부. 컴파일/ZIP CRC PASS, **실제 Google API 0 / 사용자 PC 실WAV 생성0 / Unity 적용0**.
+- 실행 명령: 사용자 PC `F:\Downloads\Voice`에 새 실행기 복사 후 `python .\Chapter3_Main24_Batch7_Orchestrator.py --dry-run`; quota 증명과 검사 통과시에만 `python .\Chapter3_Main24_Batch7_Orchestrator.py --run`. Stage 완료 뒤 **사용자 7개 각각 청취 QA**와 향후 실제 Unity Runtime ID 매핑/별도 통합 승인 필요.
+- 현재 상태는 앞선 3/10 Stage 생성, 사용자 청취 승인 3/3, **이번 배치 실제 7건 미생성**. 기존 승인 WAV162 KEEP, Unity 6000.6.5f1/Save/StoryVoiceCatalog/.meta/GUID/main 불변. 배치 원본 소스는 현재 **사용자에게 ZIP으로 전달**, GitHub 소스 파일 자체 커밋은 아직 하지 않았다. 보고 문서만 docs/tts 갱신.
+
+
 ## 2026-11-23 Main24 세린 세 번째 STAGE WAV 사용자 청취 PASS (3/10)
 
 - 바울 대표가 `ch3stage_main24_serin_002` — 세린(Erinome) `그건 비상용이에요!` 제작 로그 보고 후 청취 평가 질문에 직접 **“좋아”**라고 답변: **청취 QA PASS**. 세 번째 신규 Stage WAV의 사용자 승인 기록이다.
