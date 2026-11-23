@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-23 — BGM 신규 제작 전환 / #127
+
+- 사용자: `bgm는 또 안만들지? 제미나이 괜히 열었네....;;;;;` — 기존 BGM 루프 편집 외 **새 음악 제작 배정이 필요**하다는 지적으로 접수.
+- 최신 #31 [최종 루프 Master 납품 보고](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7088342969): F1·서릿길 2곡은 사용자 청취 승인, 11/23 WAV Intro+Loop 4개 최종 제작·QA PASS, ZIP `LIMITLESS_Issue31_FinalLoopMasters_20261123.zip`. 음악 생성0, Unity 적용0, main 미반영. 이 곡들 재생성·중복 루프QA 중지.
+- **신규 BGM 발주 [Issue #127](https://github.com/HappyPaul812/Project-Limitless/issues/127)**: F2 첫눈의 숲과 F3 눈 덮인 고갯길 탐험곡 **오리지널 1차 데모 각1곡**. 두 곡을 명확히 구분하고 Gemini에 붙여넣을 영문 프롬프트 제공. 실제 실행은 대표/BGM 담당이 명시적으로 진행; 자동 Gemini 호출, 과금, API 키조회는 없음. 인게임 연결·마스터·F4/F5/보스곡은 별도 승인.
+- Codex #122 최근 직접 보고: 서리들쥐 MonsterDefinition1/6 고립 브랜치 등록/Delta10PASS, 나머지5는 의존조건 미충족 HOLD. 기존 전리품6 및 미커밋/Save/Unity6000.6.5f1/#85 HOLD/원격main 보호.
+- **기획 Issue 작성 ≠ BGM 세션 자동 실행**. 실제 제작 프롬프트를 사용자에게 함께 전달한다.
+
+---
+
 # PLANNING / 2026-11-23 — 바울 대표 빙각 수호체 F5 엘리트 재승인
 
 - 대표 직접 답변: **“승인, 중간 보스는 챕터2에도 있었으니까.”** 10/14의 북부 일반5+단회 엘리트1+보스1과 11/18 승인 전투 계약에 포함된 **빙각 수호체**의 존재·중간보스 포지션을 재확인. 별도 몬스터 추가가 아님.
