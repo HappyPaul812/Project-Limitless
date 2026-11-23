@@ -1,3 +1,15 @@
+# PLANNING / 2026-11-24 — Issue #85 패키지·GUID 검증 수정 7파일 로컬 커밋 보존 완료
+
+- 바울 대표가 Codex 최종 보존 결과 전달. [Issue #85 Codex 실적 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-7116392287) 직접 확인.
+- 격리 브랜치 `codex/issue85-unity60006-package-guid-repair-20261124` **제품 commit `6fc46b429159026adf99da686b0b87e909238e19`**, 보고 commit `c5d9ed202a445ce3ef68c72f0b54cc47c1719b9c`. **LOCAL_COMMITTED / REMOTE_NOT_PUSHED / LOCAL_MAIN_NOT_APPLIED**.
+- 제품 변경 정확히 **7경로**: `Unity/Client/Packages/manifest.json`, `Unity/Client/Packages/packages-lock.json`, `Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_00..04.png.meta` 5개. 승인 PNG/개인 설정/자동 Import 생성물 미포함. `GoldenArrow/golden_arrow_00.png.meta` 기존 GUID 잠금 유지, Healer5는 원본에서 실존하던 고유 GUID 재사용. 16개 보호 파일 SHA/lock 변경20항목·diff 체크 통과.
+- **검증 PASS (선행 증거 재사용):** Unity6000.6.5f1 UPM Animation16.0.1/PSDImporter15.0.1/Tooling4.0.1 Resolve·C#오류0·Tooling Import예외0/UI33/33, 전체 Asset GUID 중복0, GoldenArrow8/Healer5 실제 Sprite 로더·공격 프레임, 빙각 KO/단회 피해·F2 BGM Intro→Loop 표적. 새 QA 강행·새 Unity 재실행 없음.
+- **잔여 HOLD:** `UnityEditor.Search.SearchInit.IndexationOnStartup` 예외가 즉시 Bootstrap Play에서는 1건, 5초 지연 Play에서는 0건. 두 테스트 시작화면 업데이트는 계속 됨. 정확한 원인/실제 일반 Editor Play·Standalone·시작화면 이후 게임 흐름 미검증. 캐시·실행순서 완전통제 없음. **ISSUE85_OPEN / SEARCH_EDITOR_FOLLOWUP / GENERAL_PRODUCT_QA_NOT_VERIFIED**. C# 컴파일 오류가 잔존한다고 쓰지 않는다.
+- **차기 게이트 제안:** 패키지·GUID 수정을 반복하지 말고 대표의 실제 게임 사용 또는 향후 단 1회 범위 제한된 정상 Play 검증으로 일반 플레이 영향 구분, 결과 보고 후 **별도 사용자 승인 하에서만** 로컬 main 적용·11/23 복구 체크포인트 후속 새 안전 백업/원격 Push 결정. 검색 인덱싱 옵션/Library 삭제/임의 패키지 업데이트로 오류를 감추지 말 것.
+- 원본 `main` `65cceb2d6c3283d18abec6e27d8a6f1296411f17`, Git 상태853 경로, 기존 11/23 복구 ref 및 승인 자산/Save/UserData·Discord·기밀 불변, `main` 병합·원격 Push/Issue 닫기 없음.
+
+---
+
 # PLANNING / 2026-11-24 — #85 Bootstrap Search 조건부 예외, 기술 복구7파일 안전 커밋 우선
 
 - 바울 대표가 Codex 11/24 Unity 6000.6.5f1 격리 Bootstrap 2회 결과를 전달. [원문](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-7116282657): 즉시 Play에서 `UnityEditor.Search.SearchInit.IndexationOnStartup` `ArgumentOutOfRangeException` 1건 발생하나 시작 메뉴는 6초 진행, Play 요청을 5초 지연하면 예외0·시작 메뉴 6초 진행. 모두 `IndexOnStartup=True`; 캐시/실행순서 통제 미완, 일반 인터랙티브 Editor·Standalone·타 화면 검증 미실행. Editor Search 초기화 타이밍 관련 **가능성만**, 원인·사용자 실제 게임 무해 확정 금지.
