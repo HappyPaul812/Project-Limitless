@@ -1,3 +1,29 @@
+## 2026-11-23 · Chapter 3 승인 BGM 연결 (#31·#127)
+
+- 제품 `c24f3bec02b0c4511032cfb26e7a7452efdaabea`, 브랜치 `codex/ch3-approved-bgm4-runtime-20261123`.
+- Unity 6000.6.5f1 격리 Play 24 PASS / 0 FAIL. 네 곡 각각 Intro→Loop 및 반복 3회, 씬·전투 음악 전환, Voice/SFX·Mixer, 기존 음악 회귀 확인.
+- F3 실씬 배정 HOLD. 전체 제품 씬, Save Continue 및 실제 출력 청취는 미검증. #85 HOLD, #126 로컬 브랜치 보호, main 병합 및 Push 없음.
+
+## 2026-11-23 · #126 빙각 수호체 전투 연결
+
+- 제품 커밋 `a2faf0b02c960ddc795cc3054ad4beebbeb49d5f`, 브랜치 `codex/issue126-rime-sentinel-runtime-20261123`.
+- Unity 6000.6.5f1 격리 Play 10 PASS / 0 FAIL. 제품 전투 컴포넌트 타격 1회, HP 0에서 Defeat4 최종 자세 유지, Ember 회귀 확인.
+- 제품 전체 전투 및 승리 전환 미검증. F5 정식 Scene·조우·AI·전리품·Save와 #85 HOLD 유지. 원격 Push 및 병합 없음.
+
+# 2026-11-23 · #122 정식 MonsterDefinition Delta
+
+[등록 결과](Issue122_MonsterDefinition_20261123.md). 별도 브랜치 `codex/ch3-monster-definitions-20261123`, 제품 `8706671145c59fdbb0aa4c1ba268edfcbe65ec86`. 서리들쥐 1/6, Unity 6000.6.5f1 격리 10 PASS / 0 FAIL. 5종의 승인 아트·전투 런타임 의존성을 문서화했습니다. 실제 조우·드롭·Save와 전열 실전 확인은 별도 승인 단계입니다. #85 HOLD 유지.
+
+---
+
+# 2026-11-23 · #122 승인 전리품 등록 브랜치
+
+- [등록 및 Unity Delta](Issue122_Registration_20261123.md). 제품 `9588d75cfbe46e656ee6dcc4b5e8f85c4aa04cc0`, `codex/ch3-loot6-registration-20261123` 로컬 전용. 확정 드롭 비교 수정과 ItemDefinition·승인 Sprite 6종 등록.
+- Unity 6000.6.5f1 격리 Delta 32 PASS / 0 FAIL. 본편 Unity 통합은 추후 동기화 승인 단계에서 확인합니다. 공식 조우 ID 확인과 단회 보상·실제 Save 격리 검증이 남았습니다.
+- #123 F3 실제 Scene과 휠체어 검증 및 최종 미술 승인 필요. #85 HOLD 유지.
+
+---
+
 # 2026-11-19 마감
 
 [이틀 승인 작업 통합 및 복구 보고](EOD_20261119_SafeIntegration_Recovery.md)

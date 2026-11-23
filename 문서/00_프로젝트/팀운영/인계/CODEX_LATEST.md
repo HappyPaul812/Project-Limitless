@@ -1,3 +1,73 @@
+## 2026-11-23 · Chapter 3 승인 BGM 연결 (#31·#127)
+
+- 제품 `c24f3bec02b0c4511032cfb26e7a7452efdaabea`, 브랜치 `codex/ch3-approved-bgm4-runtime-20261123`.
+- Unity 6000.6.5f1 격리 Play 24 PASS / 0 FAIL. 네 곡 각각 Intro→Loop 및 반복 3회, 씬·전투 음악 전환, Voice/SFX·Mixer, 기존 음악 회귀 확인.
+- F3 실씬 배정 HOLD. 전체 제품 씬, Save Continue 및 실제 출력 청취는 미검증. #85 HOLD, #126 로컬 브랜치 보호, main 병합 및 Push 없음.
+
+## 2026-11-23 · #126 빙각 수호체 전투 연결
+
+- 제품 커밋 `a2faf0b02c960ddc795cc3054ad4beebbeb49d5f`, 브랜치 `codex/issue126-rime-sentinel-runtime-20261123`.
+- Unity 6000.6.5f1 격리 Play 10 PASS / 0 FAIL. 제품 전투 컴포넌트 타격 1회, HP 0에서 Defeat4 최종 자세 유지, Ember 회귀 확인.
+- 제품 전체 전투 및 승리 전환 미검증. F5 정식 Scene·조우·AI·전리품·Save와 #85 HOLD 유지. 원격 Push 및 병합 없음.
+
+# CODEX / 2026-11-23 · #122 정식 몬스터 정의 Delta
+
+- [등록 결과와 HOLD 조건](../../Issue122_MonsterDefinition_20261123.md). 서리들쥐 `frost_vole` 1/6 등록, 승인 Sprite 16개 연결. Unity 6000.6.5f1 신규 Delta 10 PASS / 0 FAIL. 제품 `8706671145c59fdbb0aa4c1ba268edfcbe65ec86`, `codex/ch3-monster-definitions-20261123`.
+- 5종 HOLD. 족제비 예고 강공, 올빼미 정식 한기, 갑충 갑각 방어, 정령 동상과 빙각 수호체 전투/아트 의존성이 남았습니다.
+- Spawn·공식 조우·드롭·Save 연결 보류. 기존 전리품 6종과 RNG 보존, #85 HOLD, main 병합·Push 0.
+
+---
+
+# CODEX / 2026-11-23 · #122 정식 연동 조사 / #124 실물 비교
+
+- [조사 및 비교 보고](../../Issue122_124_Encounter_Vision_Audit_20261123.md). #122 등록 제품 보존, MonsterDefinition·정식 조우 ID 각각 0/6, DROP_LINK_HOLD. 데이터·단회 보상 승인 계약 정리. 32/56/39 PASS 재실행 0.
+- #124 공식 Symbol 5·외부 Trait 5의 로컬 PNG와 Vision 후보를 비교했습니다. 30px 세부 가독성 PARTIAL, 실제 GameView 미검증. 대표 미술 및 적용 승인 대기, 다른 4종 제작 0.
+- 담당 브랜치 `codex/ch3-loot6-encounter-vision-audit-20261123`. 실제 보고 SHA는 Issue #122·#124 댓글 참조. Unity 6000.6.5f1, #85 HOLD 및 원본 보호.
+
+---
+
+# CODEX / 2026-11-23 · #122 승인 전리품 등록
+
+- [등록 및 Unity Delta](../../Issue122_Registration_20261123.md). 제품 `9588d75cfbe46e656ee6dcc4b5e8f85c4aa04cc0` (`codex/ch3-loot6-registration-20261123`). 정식 ItemId 6개와 승인 Sprite 등록, 확정 드롭 비교 한 줄 반영. Unity 6000.6.5f1 격리 32 PASS / 0 FAIL.
+- 공식 조우 ID 0/6, DROP_LINK_HOLD. 단회 키와 보상 대기·저장 실패의 실제 Save 연동은 조우 ID 확인 후 별도 구현 및 검증합니다.
+- #123 추가 검수·재작업 0. 단일 오버레이 조건, F3 공식 Scene·휠체어 검증 및 최종 미술 승인 대기. #85 HOLD, 원본 main 동기화·Push 0.
+
+---
+
+# CODEX / 2026-11-23 · #122·#123 승인 선택지
+
+- [본편 적용 전 승인 선택지](../../Issue122_123_Approval_Options_20261123.md)에 #122 실제 C# 한 줄 diff, 후보 ID 6종과 충돌 0, 단회 키·대기 수령 위치·저장 실패 정책을 기록했습니다. 기존 56/39 PASS 재실행 0. 정식 등록·드롭 연결 HOLD.
+- #123 Import 3/3 기술 PASS 접수. PNG 3종 재작업 금지, 지면 접합 단일 오버레이, F3 정식 Scene 전 통행 검증 보류. 대표 최종 미술 승인 대기.
+- #85 HOLD, Unity 6000.6.5f1. 담당 브랜치 `codex/ch3-loot6-contract-20261123` 로컬 기록. 실제 SHA는 [#122](https://github.com/HappyPaul812/Project-Limitless/issues/122)·[#123](https://github.com/HappyPaul812/Project-Limitless/issues/123) 결과 댓글 참조.
+
+---
+
+# CODEX / 2026-11-23 · #123 / #122 통합 검수
+
+- [#123 F3 파일럿 기술 검수](../../Issue123_F3_TechnicalReview_20261123.md) — 파일 3/3·Unity 6000.6.5f1 격리 Import 3/3 PASS. 960/1280/1680×720 Unity 카메라 증거 확보. F3 실제 Scene/GameView·4.5WU 도보/휠체어 NOT_VERIFIED, 반복 타일 및 본편 적용 HOLD.
+- [#122 전리품 후속](../../Issue122_Ch3_Loot6_Followup_20261123.md) — 기존 60 PASS 재사용. 원본 경계 56, 제안 수정 56, 저장 모델 39 PASS. 공식 Item/Monster 등록 각각 0/6, DROP_LINK_HOLD.
+- 승인 자산과 Unity 버전, #85 HOLD, 원본 main 및 사용자 작업 보존. 대표 승인 대기. 로컬 담당 브랜치 `codex/ch3-loot6-contract-20261123`, Push 생략. 실제 HEAD는 [#123](https://github.com/HappyPaul812/Project-Limitless/issues/123) 및 [#122](https://github.com/HappyPaul812/Project-Limitless/issues/122) 결과 댓글에서 확인합니다.
+
+---
+
+# CODEX / 2026-11-23 · Issue #122
+
+[Chapter 3 전리품 6종 등록 계약](../../Issue122_Ch3_Loot6_Contract_20261123.md)
+
+- 승인 PNG 6/6 바이트와 SHA-256 일치. 정식 ItemId 0/6, 공식 몬스터 연결 0/6. `DROP_LINK_HOLD`.
+- Material·Stack99·판매 전용 계약과 100% 난수 경계, 단회 엘리트의 영속 완료 및 지급 조건을 기록했습니다. 정적 Delta 및 격리 .NET 60 PASS. 100% 드롭의 난수 1 경계 결함 재현. Unity 실행 검증은 승인 후 격리에서 진행합니다.
+- 대표 승인 대기. 작업 브랜치 `codex/ch3-loot6-contract-20261123`, 실제 보고 SHA는 [Issue #122](https://github.com/HappyPaul812/Project-Limitless/issues/122)에서 확인합니다.
+
+---
+
+# CODEX / 2026-11-23 · #125 Main24 Runtime 대사 계약
+
+- [STAGED_ID_PLAN](../../Issue125_Main24_Staged_ID_Plan_20261123.md). 연결 0/10, HOLD 10. 보급/정식 조우/승리의 Story 경계 없이 후보 탐험 안내에 대사 삽입 보류.
+- Unity 6000.6.5f1 실제 Flow 격리 컴파일/콜백 17 PASS, 제품 전체 Scene 미실행. 승인 WAV162 SHA/GUID 일치, 미확인 593경로 추가 확정 0, 파일명 단서 8.
+- `codex/main24-tts-dialogue-contract-20261123` 워크트리. main/Save/TTS/API 0, `reviewed_by_user=false`. 실제 SHA는 Issue #125 참조.
+
+---
+
 # CODEX / 2026-11-19 마감
 
 [이틀 승인 작업 통합 및 복구 보고](../../EOD_20261119_SafeIntegration_Recovery.md)

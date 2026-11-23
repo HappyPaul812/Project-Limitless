@@ -1,0 +1,3446 @@
+# PLANNING / 2026-11-23 EOD — 13시간 작업 전체 안전 통합·로컬 동기화·복구 Push 사용자 승인
+
+- 바울 대표 명시 지시: **“오늘은 여기까지 하자, 거의 13시간 했으면 할만큼 한거지 뭐, 지금까지 한 작업들 다 합치고 로컬 동기화, 복구 푸시까지 해줘.”**. 신규 작업 배정은 중단, 당일 성과 안전통합·복구 작업 1회가 최우선.
+- Codex **현장 실행용 [EOD 지시 정본](../../EOD_20261123_SafeIntegration_LocalSync_RecoveryPush_Order.md)**를 `docs/planning` 커밋 `63ba8b8a0dc8f420116f5b05c5b3554b5900da74`로 작성. [GitHub Issue #128](https://github.com/HappyPaul812/Project-Limitless/issues/128) 발행. 기획 채팅/원격 문서 작성과 **실제 사용자 PC 로컬 Git/Unity 실행은 별개**: 현재 `EOD_ORDER_GITHUB_POSTED / LOCAL_MAIN_SYNC_NOT_VERIFIED / BACKUP_PUSH_NOT_VERIFIED`.
+- 필수 포함: #126 빙각 실제 격리 전투10PASS/0FAIL(제품 `a2faf0b02c960ddc795cc3054ad4beebbeb49d5f`, 보고 `b2580729ac6c57f22195bef83094b256e96dca60`), #31/#127 Chapter3 승인 BGM4 Intro+Loop WAV8 격리24PASS/0FAIL(제품 `c24f3bec02b0c4511032cfb26e7a7452efdaabea`, 보고 `0ad2d36907a2b7b5cbe3b7e63e0e2e7539e62fe2`), #122 서리들쥐 정의1/6 격리 등록 호환·승인 확인 후 조건부, 오늘 기획·TTS·BGM·리뉴얼·신규아트 문서 보존.
+- HOLD 보존: F5 공식 조우·AI·단회 Drop/Save·F3 정식 씬 배정, #124 독침/젤 대표 최종 미술 승인·ItemDefinition 교체, #125 Main24 Stage10 RuntimeID 0/10, #118 성장 EXP 안, #85 HOLD, 미검증 다른 북부 몬스터. 승인 전 후보 제품 강제 배포 금지.
+- 목표: 원본 미커밋/미추적/Save/UserData·Discord·기밀·승인 PNG/WAV·기존 Unity6000.6.5f1 보호 → 안전 통합 branch → 로컬 main FF-only 동기화 → **새 GitHub 복구 ref `backup/2026-11-23-safe-checkpoint` Push** → 원격 ref SHA/별도 clone/fsck 확인. 기존 `backup/2026-11-19-safe-checkpoint` `f64082914e114096b6b9393263e7a36f7d829a55`, 오래된 원격 main `bfd281545632877325f5d21e04cefb924042c465` **불변**. 비Git Stage WAV/ZIP/영상·개인 파일은 이 Push만으로 백업되지 않음을 명시.
+- Codex 실행 결과 수령 전에는 성공/완료라 주장하지 않음. 문제·충돌이면 안전중단 + 이유·커밋/서버SHA/비Git 미보호 항목 기록. 오늘 종료와 대표 휴식 우선.
+
+---
+
+# PLANNING / 2026-11-23 — 빙각 실전 애니메이션 10PASS 접수, BGM 4곡 Unity 연결 승인, 리뉴얼 ZIP 검수
+
+- **빙각 수호체 #126**: Codex 실제 [Issue 보고](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7098552079) 및 바울 대표 화면 접수. `codex/issue126-rime-sentinel-runtime-20261123`, 제품 `a2faf0b02c960ddc795cc3054ad4beebbeb49d5f`, 보고 `b2580729ac6c57f22195bef83094b256e96dca60` (**LOCAL_COMMITTED / REMOTE_NOT_PUSHED**). Unity6000.6.5f1 격리 Play **10PASS/0FAIL**, 공격 프레임2에서 피해44 단회, Idle/Hit/Attack 정상 복귀, HP0에서 Defeat4 최종 셀 유지, Ember 회귀 PASS, 승인 PNG5 SHA 일치. **F5 실제 Scene·정식 조우·유니크 AI/MonsterDefinition·보상 단회 Save·제품 승리전환은 미검증 HOLD**. 격리 Editor Search 예외1 별도 원인/기존 상태 구분 필요. 원본 main 병합·Push 없음.
+- **BGM 사용자 직접 지시** “bgm도 넣자.” → F1/서릿길 (#31), F2/F3 (#127) 승인 **곡4 Intro+Loop WAV8 Unity 실제 연결·격리 Play 검증 승인**. [BGM Codex 실행 정본](../../20261123_Chapter3_Approved4BGM_Unity_Integration_Order.md) 커밋 `48bd99d081625bd517e80ab14a3dea93a2131f6a`; [#31 발주](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7098787504), [#127 발주](https://github.com/HappyPaul812/Project-Limitless/issues/127#issuecomment-7098788475). 기존 Final WAV4+4/Importer PASS 반복 금지, 기존 단일곡 호환에 DSP Intro→Loop 예약/취소 최소 변경. F3 Scene 없으면 Catalog 등록만/배정 HOLD, 기존 Ch1·2 BGM/TTS/Mixer 보존. 출시 전 상업 라이선스 별도 확인 `COMMERCIAL_USE_EXPLICIT_LICENSE_PENDING`; **현재 Codex 실행 결과 보고 전/게임 적용 미확인**.
+- **리뉴얼 #124** 바울 대표 로컬 파일명 `LIMITLESS_Issue124_StingerGel_Tint_TipOnly_20261123.zip` 전달. 기획에서 정확한 동일명 Library ZIP 실제 복원·검수: 418,286bytes, SHA256 `a62442885359d75abd556cca01f648e1c7d71058dcf44050391860eff9cb2a98`, CRC PASS/Manifest24/24 SHA+bytes PASS. PNG 원본 독침 v2/초원 슬라임 젤 기존 SHA 일치, 선택 침끝 후보 실제 59px 변경 확인. [기획 실물 리뷰](../../20261123_Issue124_StingerGel_Tint_TipOnly_Planning_Review.md) 커밋 `6331ab294a1771da97aa74b039ce69f7816df8d3`, [Issue 리뷰](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7098789622). **White Tint 방향 PASS**(오프라인), 기본 독침 v2/젤 보존, 선택후보 자동 미술 승인 없음. 실제 30/40/50px Unity Inventory GameView 미검증·최종 대표 승인·제품 교체 HOLD.
+- 이 기록은 `docs/planning` 문서와 Issue 보고뿐. Unity6000.6.5f1, 기존 승인 원본/Save/UserData/Discord/#85 HOLD/main 보호. 서로 다른 Codex 브랜치 병합·원격 Push 별도 승인.
+
+---
+
+# PLANNING / 2026-11-23 — 빙각 수호체 실게임 연결·격리 전투 QA 착수 승인
+
+- 바울 대표: **“그래 하자.”** — 최종 미술 승인된 빙각 수호체 KeyPose·Idle4·Attack4 v2·Hit4·Defeat4의 **Unity 게임용 연결 및 전투/전투불능 최소 격리 QA** 착수 승인. GitHub [실행 지시 정본](../../20261123_RimeSentinel_ApprovedArt_Runtime_Integration_Order.md) 커밋 `ac79be00e7831c337b73389d07ad797cc422c88b`.
+- Codex 분리 worktree/브랜치 `codex/issue126-rime-sentinel-runtime-20261123` 권고. 실제 최신 로컬베이스·승인 PNG SHA를 먼저 대조, 기존 #122 몬스터/전리품 브랜치와 카탈로그 충돌 방지. Idle260ms×4, Attack660ms, Hit610ms, Defeat2450ms 마지막 셀 유지. 기존 #120 KO→Idle 덮어쓰기 방지 검증 결과 재사용. 실제 새 연결부만 Unity6000.6.5f1 Play 검증.
+- F5 Scene/단회 stable encounter/AI 예고 강타/드롭 및 Save 안전장치 미존재·미검증 시 해당 부분은 HOLD, 유사 자산/더미 구현으로 무리하게 통과시키지 않는다. **실제 원본 local main/remote main 병합·Push·신규 Scene·Save 구조 변경 불허**. 본편 통합 단계는 Codex 제품 QA 보고를 확인한 뒤 판단.
+- 기획에서 지시서만 GitHub 게시; Codex가 사용자 PC에서 실행했거나 게임에 이미 들어갔다고 보고하지 않는다. `#85 HOLD`, 기존 승인 아트, Unity6000.6.5f1, Save/UserData, Discord, TTS/BGM 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 바울 대표 빙각 수호체 Defeat4 최종 미술 승인 · 애니메이션 미술 라인 마감
+
+- **대표 직접 최종 결정:** “빙각이는 나도 좋아, 승인,”. 문맥상 2026-11-23 [#126 Defeat4 기획 미술 PASS·Codex 격리 Unity PASS 보고](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7097771461)에 대한 답변으로, **빙각 수호체(Rime Sentinel) Defeat4 최종 사용자 미술 승인**을 확정한다. 이전 Hit4 승인과 혼동하지 않는다.
+- **승인 납품:** `LIMITLESS_Issue126_RimeSentinel_Defeat4_20261123.zip` / SHA256 `c7b840ce80815814be0a11269d29b636acfa0b2966981801fa19228bade296ef`. 무거운 균형 상실→주저앉음→전투불능 정지, 2048×512 4셀. 기존 Codex 격리 Animator 비루프 2450ms(180/220/250/1800), 112px 모션·접지 PASS; 40px 세부 PARTIAL은 기존 검증 주의사항으로 유지. 기존 QA 재실행 요구 없음.
+- **미술 라인 마감:** KeyPose / Idle4(260ms·4프레임) / Attack4 v2(660ms·4프레임) / Hit4(610ms·4프레임) / Defeat4(2450ms·4프레임) 5개 납품 모두 **USER_ART_APPROVED / ART_LINE_COMPLETE**. 승인 원본과 GIF/PNG/Manifest/SHA 보호, 다시 그리거나 새 모션을 무단 양산하지 않는다.
+- **실제 Unity 제품 적용은 별도:** F5 실제 Scene, MonsterDefinition·조우/AI·피격/KO 후 Idle 덮어쓰기, 전리품/단회 Save, 전투/스폰·배포 적용 및 본편 QA **NOT_VERIFIED / PRODUCT_INTEGRATION_HOLD**. 본 승인만으로 `main` 병합, 로컬 원본 변경, 원격 Push를 지시·승인하지 않음. 후속 Codex 작업은 명시된 범위와 별도 승인에 따라 진행.
+- `docs/planning` 기획 기록. Unity 6000.6.5f1 / #85 HOLD / Save·UserData·Discord / 기존 승인 스프라이트 원본 및 `main` 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 빙각 수호체 Defeat4 · 독침벌 전리품 침 v2 합동 검수
+
+- 바울 대표 Codex 격리 Unity 합동 검수 결과 화면 제출. Codex `codex/issue126-124-defeat-stinger-20261123`, SHA `3c77498e09741649e2daa0ea2c9aef0c71ec5254`; Unity6000.6.5f1 유지, 본편/원본 main·Save/UserData/Discord/승인 아트/Push0.
+- **빙각 수호체 Defeat4** 납품 ZIP `LIMITLESS_Issue126_RimeSentinel_Defeat4_20261123.zip` SHA256 `c7b840ce80815814be0a11269d29b636acfa0b2966981801fa19228bade296ef`. Library 실제 KeyPose와 신규 4프레임 512/128/40 비교판 직접 확인. 112px 무너짐→주저앉음→정지 분명, 원형·접지 유지, 세부 갑옷 조금 차이나지만 **기획 미술 PASS**. Codex 실제 Animator 비루프2450ms(180/220/250/1800)·프레임3 최종 정지3.0초까지 PASS; 40px 미세 PARTIAL. **바울 대표 신규 Defeat4 최종 미술 승인 아직 별도**, 과거 Hit4 조건부 승인은 Defeat4 자동 확대 금지. 실제 F5 KO 후 Idle Sprite 교체 이슈/보스 실전 연동 미검증. [Issue #126](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7097771461). 미술 승인 후 빙각 수호체의 KeyPose/Idle4/Attack4v2/Hit4/Defeat4 미술 라인 마감 가능, 본편 배포 적용 별도.
+- **독침벌의 침 Organic v2** ZIP `LIMITLESS_VenomBeeStinger_Organic_v2_20261123.zip` SHA256 `345017cf17c1a07eaad5dc866150a090b48ce16803bcecada3dcc43640945f53`. Library 벌 원화 대비 128/40/30 직접 확인. 실제 벌에 맞춰 금색/검은색 키틴 뿌리·자주빛 침으로 v1 금속 무기형 문제 개선, 트레이스 인상 없음. Codex 실제 wasp-sting·Sting Sprite·Ch1/2 아이콘 비교: **128/50/40 PASS**, **30px 끝/독방울 PARTIAL** 및 틴트/화풍 PARTIAL. **기획 미술 방향 PASS, 대표 최종·제품 교체 HOLD**. 30px를 위해 전체 재제작하지 말고 기존 v2 보호 + white tint 40/50px / 30px 현재 tint 비교·국소 끝/방울 강조만 필요 시 파일럿. 기존 초원 슬라임 젤은 재생성 금지, white vs green tint 비교. [Issue #124](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7097772475).
+- 두 자산 모두 기술 검증 합격을 본편 적용/대표 최종 미술 승인으로 자동 승격하지 않음. 신규 숲거미 실/맹독뱀 비늘 양산 및 기존 완료 미술 재작업 보류, 보호 규정 유지.
+
+---
+
+# PLANNING / 2026-11-23 — 주요 인물 Chapter3 신규 TTS 72행 제작 큐 재개
+
+- 바울 대표 지시 **“tts는 안뽑니? 주요인물.”** → **주연5인 신규 음성72의 단계적 제작 준비·실행 착수 지시**. [Issue #125 TTS 공식 인계](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7092725116). 실제 Google POST/WAV 제작은 아직 수행되지 않았으며 유료 API·Cloud 계정/결제 승인으로 확대하지 않는다.
+- `docs/tts/문서/00_프로젝트/TTS_Issue125_Ch3_Main24_29_Side6_ApprovedDialogue_Preflight_20261123.csv`의 승인 원문101행 가운데 **주연72**: **Main24 10 / Main25 9 / Main26 22 / Main27 14 / Main28 8 / Main29 9**. 캐스팅: 폴 Achird15 / 미엘 Sulafat17 / 세린 Erinome15 / 태온 Algieba12 / 하렌 Alnilam13. 별도 성우 신규 디자인 금지. 기존 WAV162·Catalog312 ID/GUID/meta/기승인 음성 무재생성 KEEP.
+- **최우선 Main24 대사10건** 실PC Runtime stable DialogueID·Speaker/VoiceID와 기존162 WAV 중복여부 Codex 읽기전용 조사 → 실제 안정 ID가 확정된 신규분부터 Gemini 기존 승인 음색으로 **1건 시험/사용자 청취 → 작은 배치 제작**. Main25~29 미구현 ID를 임의 확정하지 않고 내용/음색 잠금된 manifest에 stage; 전체 장 구현 완료까지 기다리느라 72 전체 사전 준비를 멈추지 않음.
+- Gemini 실제 quota·프로젝트/모델·과금상태/상업 조건 사전 확인, 기존 API 사용량 ledger/HOLD/LOCK/429 중단을 유지. **기존 무료 범위 외 결제·유료 POST·Google Cloud TTS 계정 활성화/키 조회 승인 없음**. 실제 접근 불가 시 호출 없이 실행 가능한 TTS 제작기/명령과 검수표만 준비, 합성 완료 주장 금지.
+- NPC23은 기존 **21무음 + 마레2 예외 검토만** 유지, 자동 음성 생성 금지. 플레이어5/HUD1 무음. Main26 미엘 과거·Main27 차약속·Main29 하렌 `잘.했.어.` 지문/여백 보존.
+- TTS `docs/tts`, 기획 `docs/planning`만 작업 기록; Codex는 로컬 ID 검증/후일 별도 통합 담당. Unity6000.6.5f1, Save/UserData/Discord, #85 HOLD, 승인 아트/본편main 직접 수정·원격 Push/병합 금지.
+
+---
+
+# PLANNING / 2026-11-23 — 몬스터 명칭 사용자 직접 정정: 초원 슬라임
+
+- 바울 대표: **“초원 슬라임이다.”** → 기획의 과거 '풀슬라임' 표현을 잘못된 한국어 이름으로 정정. 공식 몬스터 호칭은 **초원 슬라임**.
+- 전리품 미술 작업은 **“초원 슬라임의 젤 전리품 아이콘”**으로 표기. 게임 데이터 식별자 `GrassSlimeGel`, `material_grass_slime_gel`, 원본 Game-icons `dripping-goo` GUID 등 기술식별자는 기존대로 유지; 몬스터 이름 정정을 빌미로 임의 Rename/ID 변경·Quest/Drop/Save 교체 금지.
+- 이미 존재하는 초원 슬라임 젤 원화 후보는 재제작하지 않고 색상 Tint 검토만. 리뉴얼 담당의 이번 신규 원화는 별도 **독침벌의 침 전리품 아이콘**1종.
+- 사용자에게는 **초원 슬라임**, **초원 슬라임 젤** 한국어 표기를 사용. 지난 지시의 `GrassSlimeGel`은 코드 식별자일 뿐 공식 표기 아님.
+
+---
+
+# PLANNING / 2026-11-23 — 리뉴얼 담당 신규 업무: Chapter1 독침벌 전리품 오리지널 미술
+
+- 바울 대표: **“리뉴얼 논다.”** → 이미 승인한 길 능력 아이콘5/몬스터/펫 등 다시 그리지 않고 **실사용 외부 Chapter1 전리품 아이콘**으로 작업 전환. [Issue #124 공식 발주 기록](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7092215322).
+- 감사 기준 현행 Game-icons.net/ItemDefinition **4개 외부 직접 GUID**: GrassSlimeGel `dripping-goo` (`40b87c14...`) / VenomBeeStinger `wasp-sting` (`73b52f1f...`) / ForestSpiderSilk `spider-web` (`fa189694...`) / VenomSnakeScale `dorsal-scales` (`aeb1ca89...`).
+- **이번 실제 원화 1종 발주:** 독침벌 침 `VenomBeeStinger` 128² RGBA 독립 아이콘 파일럿. 기존 `wasp-sting` 의미를 잇되 복제·트레이스/단순변형 금지. 128/40/30 인벤토리 축소·실사용 어두운 UI 보드/기존 Ch1·2 잡템 화풍 비교, SHA/Manifest/ZIP, 출처 증명. 담당 docs/art-renewal 실물+문서 SHA 보고, 대표 승인 대기.
+- **기존 풀슬라임 젤** `GrassSlimeGel_Original_128_RGBA.png` 후보 이미 보유, 새로 그리지 말 것. 기존 iconTint (.55,1,.38,1)가 새로운 원화 색 명암을 누른 Codex PARTIAL 상태를 **원본색(white tint) vs 기존 틴트 비교판**으로만 검토. Unity `ItemDefinition` Tint 변경은 승인 전 금지, 이미지 국소 수정은 필요성·승인 후.
+- 숲거미 실·맹독뱀 비늘의 오리지널 아이콘 **아직 미납품**, 단계적 후속 후보. 독침벌 파일럿 사용자 미술 승인 전 **두 PNG 동시 양산 금지**, 기존 GrassSlimeGel 승인도 별도.
+- 모든 승인 길 문장/길 능력 아이콘·몬스터/펫/Ch2·Ch3 전리품 유지, ItemDefinition/MonsterDefinition/GUID/meta/Scene/Unity 본편/Save/UserData/Discord/main 수정·원격 병합/Push 금지. CC BY3.0 출처/크레딧 유지, Unity6000.6.5f1, #85 HOLD.
+
+---
+
+# PLANNING / 2026-11-23 — 빙각 수호체 Hit4 조건부 승인 충족 → 사용자 미술 최종 승인
+
+- 바울 대표 선행 조건 **“코덱스 된다고 하면 나도 승인”**. 신규 Hit4 Codex 실제 Unity6000.6.5f1 격리 검증 **PASS** 접수, [Issue #126 확정 승인](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7092168466)에 기록. Codex `codex/issue126-hit4-delta-20261123`, 실제 SHA `0de6f31ef376e5fc19791810f3cd481228cd157d`.
+- 4프레임 **비반복610ms** (100/160/130/220ms), Hit0→1→2→3→Idle0→1, 시험 피격 플래시1회·해제 정상, 전투 112px 어깨/상체 반동·최하단 접지 및 승인 Idle4 정상 복귀 PASS. 40px 세부 반동 PARTIAL이나 실전 112px 정상 판독; 약점 보존 기록. **USER_HIT4_ART_APPROVED_CONDITION_FULFILLED**.
+- 승인 납품 `LIMITLESS_Issue126_RimeSentinel_Hit4_20261123.zip` SHA256 `4ceb3996d1d602dcdccbf5980b7cd3423a2c9b1e509615c4c450c7ab4c642ea2`, Hit4 PNG SHA `bd6d66be3b990d9bc7f33261f1d9835abd413c28b91a5842ac9800a5dec28496`. 기존 승인 KeyPose/Idle4(260ms)/Attack4v2(660ms)/Hit4(610ms) 원본 보호.
+- 이제 **메인 신규 아트 Defeat4 단독 파일럿** 허가: 무거운 균형 상실→주저앉음→안정된 전투불능, 4×512 셀 2048×512 투명 RGBA, 512/128/40 크기/비반복 GIF/ZIP/Manifest/SHA 제출. 새 충격/소멸 VFX 추가·기존 승인 원화 변경 금지. 대표 Defeat4 미술 승인 및 Unity 격리 QA는 다음 단계.
+- **격리 Hit4 QA PASS ≠ 실제 F5 조우/본편 피해·피격 VFX·AI/Save/Drop 적용 PASS**. 본편 적용/원격 main 병합/Push 미승인, #85 HOLD, Unity6000.6.5f1, Save/UserData/Discord·공식 아트 보호. Codex 기완료 QA 반복 금지.
+
+---
+
+# PLANNING / 2026-11-23 — 빙각 수호체 Hit4 Codex 검증 조건부 바울 대표 승인
+
+- 바울 대표 직접: **“코덱스 된다고 하면 나도 승인”** — Hit4 신규 애니메이션의 **Codex 실제 Unity 검증 PASS 시 최종 미술 승인 발효**. 현재까지는 기획 시각 방향 PASS, 신규 Hit4 실 Unity 검증 **미완료**. [Issue #126 조건부 승인 공식 기록](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091987076).
+- 승인 대상 고정: `LIMITLESS_Issue126_RimeSentinel_Hit4_20261123.zip` 3,519,214B SHA256 `4ceb3996d1d602dcdccbf5980b7cd3423a2c9b1e509615c4c450c7ab4c642ea2`, 비루프 4프레임100/160/130/220ms=610ms, 원본 승인 KeyPose/Idle4/Attack4v2 보호.
+- **PASS 조건**: Codex Unity6000.6.5f1 격리 재생, 112/40px 피격 반동·Tint/VFX 가독성, 타격 1회·Idle4 260ms 복귀·접지/중심축 안정성, 기존 승인 원본 무변경 검증. 이 조건 모두 PASS 보고되면 대표 Hit4 미술 승인 확정 → 메인 신규 아트 Defeat4 1파일럿 제작 발주 가능. PARTIAL/HOLD/FAIL 시 조건 불충족으로 보류.
+- 본편 Scene/F5 실전 연동·MonsterDefinition/Save/Drop·main 병합·Push는 본 조건에 포함되지 않으며 미승인 그대로. 기존 파일 QA/Attack4 v2 PASS 재시험0. Unity6000.6.5f1/#85 HOLD/Save/UserData·Discord 원본 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 빙각 수호체 Hit4 실물 검토 · 기획 미술 PASS
+
+- 바울 대표 `F:\\Downloads\\LIMITLESS_Issue126_RimeSentinel_Hit4_20261123.zip` 경로 제출. 기존 Library 동일명 ZIP 실제 컨테이너에서 확인: 3,519,214B SHA256 `4ceb3996d1d602dcdccbf5980b7cd3423a2c9b1e509615c4c450c7ab4c642ea2`, CRC PASS, Manifest 11/11 hash+bytes PASS, GIF 비루프100/160/130/220ms=610ms. 512/128/40 비교판 직접 시각 검토.
+- **기획 미술 PASS**: 상체·어깨 충격·후방 반동·복귀가 4프레임에 구현됨, 승인 KeyPose/Idle4/Attack4 v2 보존, 발접지 유지/마지막 프레임 KeyPose 일치(담당 기술 QA). **40px의 반동은 작음**; 실제 112px 전투·히트 Tint 결합 국소 검증 권고. 작업 자체를 다시 만들 필요 없이 보존.
+- **대표 Hit4 최종 승인 명시 아직 없음**: 이번 메시지는 ZIP 경로 전달이므로 품질 PASS를 USER_APPROVED로 적지 않음. 실제 Unity Hit4 신규 Animator/GameView/피격 효과 QA 미실시, 이전 Attack4v2 격리 PASS를 유용하되 Hit4로 이월하지 않음. Defeat4는 기존 'Hit4 승인 후' 순서에 따라 HOLD.
+- [Issue #126 기록](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091921272). 필요하면 Codex에게 Hit4 신규분만 610ms 비루프/Idle 복귀/112·40px 피격 효과 최소 검증, F5 실전/HIT 애니메이션 본편 적용·main 병합/Push 금지.
+- Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/승인 원본/원격 main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 승인 길 능력 아이콘5 / 빙각 수호체 Attack4 v2 실제 격리 Unity 검수 접수
+
+- 바울 대표 Codex 보고 화면 접수 + Issues #124/#126 실제 최종 Codex 댓글 교차 확인. Unity6000.6.5f1, local `codex/issue124-126-approved-art-delta-20261123` SHA `7d3127a3baa19b19af34c056c746ec2aafcf84c5`. 격리 검증, 원본 main/Save/UserData/Discord 적용·병합·Push0.
+- **길 능력 아이콘 5종 최신 리워크:** 실제 PathSelectionController 어두운 상세30px의 시각·청각 **2 PASS**, 지적·지체·마음 **3 PARTIAL**(선/중앙 기구/회복선 작음). 임시40px에서는 **5/5 PASS**, 공식 PathSymbol5 보존·전체 화면 아이콘 영역외 동일 **10/10 PASS**. [Issue #124 인계](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7091883119). 미술 원본 재제작 금지, 다음 Codex는 **40px 슬롯을 제품 레이아웃에 안전하게 배치 가능한지 한 번만 격리 UI 파일럿**으로 글자 겹침/여백/클릭·포커스·접근성 확인. 검증 전 본편 40px 확대·PathDefinition GUID 참조 교체·기존 외부 저작자 크레딧 삭제 금지.
+- **빙각 수호체 Attack4 v2:** 격리 Animator 비반복660ms, 3번째 타격 프레임 325ms 상대 캡처(이벤트 작성340ms), HP100→56, 피해숫자/-44/피격 Tint, 끝에 승인 Idle4 260ms 정상 복귀 **PASS**. **실제 F5 현장 전투/AI/정식 피해 연동 미검증**. [Issue #126 인계](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091883757). 동일 QA 반복0. 본편 연결/Encounter/Save/Drop 별도 승인 단계.
+- **Hit4 신규 미술 후보가 이미 실제 납품됨**: `LIMITLESS_Issue126_RimeSentinel_Hit4_20261123.zip` SHA `4ceb3996d1d602dcdccbf5980b7cd3423a2c9b1e509615c4c450c7ab4c642ea2`. 납품 비교판 512/128/40을 기획 직접 열어봄. 4단계 충격→반동→회복→승인 KeyPose 복귀, 40px 내부 모션 미세하므로 대표 미술 검토 대기. **새 Hit4 중복 발주 금지 / Defeat4 승인 전 HOLD.** 메인 신규 아트 담당 docs/art-new 기존 commit `92c42f831b0461b780644ad1b1614284dc50bd53`.
+- #85 HOLD, 본편 Scene/Prefab/PathDefinition/GUID/meta/Save/UserData/Discord/main 보호. 사용자 최종 미술 승인한 길5·Attack4 v2의 상태 유지.
+
+---
+
+# PLANNING / 2026-11-23 — 바울 대표 미술 승인: 길 능력 아이콘5 리워크 + 빙각 수호체 Attack4 v2
+
+- 바울 대표가 본 기획의 두 실물 비교/미술 방향 PASS 후 **“어. 그래”** 동의. 두 아트의 **대표 최종 미술 승인**으로 기록. 이후 **Unity 게임 적용/메인 병합 승인은 별개**. [길 능력 아이콘 승인](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7091428274) / [빙각 수호체 Attack4 v2 승인](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091428809).
+- **길 능력 아이콘**: 최신 리워크 `LIMITLESS_Issue124_Trait5_Rework_20261123.zip` SHA256 `b2f468126e1880d39d2a487f347568b61d8cbbfaf460bcb44849dcda8923b5df` **5종 USER_ART_APPROVED**. 이전 귀/뇌 중심 아이콘과 구분. 공식 `pathSymbol`5 불변. Codex는 오로지 새 후보5의 실제 길 선택 UI 30/40px·UI Tint/가독성/외부 Game-icons 원본 유사성 국소 격리 검증. 과거 후보에 대한 Codex PASS를 최신 리워크의 PASS로 혼동 금지. 외부 원본 CC BY3.0 크레딧 원본 유지, 제품 연결/PathDefinitions/원본 main 변경 금지.
+- **빙각 수호체**: `LIMITLESS_Issue126_RimeSentinel_Attack4_v2_Targeted_20261123.zip` SHA256 `04cdead8ccffc14350fe9cd7e666a1635dddd6214631c8dc8ae7831f8dfc8661` **Attack4 v2 USER_ART_APPROVED**. 4×512셀 / 170·120·150·220ms(총660ms) 비루프, 주먹 전진감 강화·기존 KeyPose/Idle4 보호. Codex 격리 Animator/전투UI/피해 VFX 타격 시점 290~440ms 최소 QA 허용, 실제 본편 적용/연동 승인 아직 없음. 메인 신규 아트 **Hit4 파일럿1종 제작 발주 허용**, 이후 미술 검토 후 Defeat4; 특수 공격 모션 혼합 금지.
+- 역할/범위: 기획은 승인 및 인계, 리뉴얼 담당 재교육 세션에서 길5 추가 재제작0, Codex는 격리 테스트, 메인 아트는 Hit4 신규 후보. 문서 기록만 `docs/planning`, Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/승인 원본/main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 길 능력 아이콘5 재작업 및 빙각 수호체 Attack4 v2 실물 검수
+
+바울 대표 제출 F:\\Downloads 동일명 Library ZIP 2개 실제 획득, 개봉·Manifest/hash·실물 비교판 직접 시각 평가. **기획 미술 방향 두 항목 PASS** (대표 최종 승인/제품 Unity 적용과 구분).
+
+- **길 능력 아이콘** — `LIMITLESS_Issue124_Trait5_Rework_20261123.zip` 2,478,785B SHA256 `b2f468126e1880d39d2a487f347568b61d8cbbfaf460bcb44849dcda8923b5df`. ZIP CRC PASS/Manifest23/23 PASS. 시각 초점·청각 공명·지적 결절망·지체 회전·마음 보호문장으로 직설적 귀/뇌 문제 해결, 청/은/심청/절제 금색 시리즈 통일. 128/40 판독 양호, **30px 세부 구분 일부 PARTIAL**. 동봉 HTML 기존 원본은 원격 URL이므로 **기존 Game-icons 원본 픽셀 직접 대조 미검증**. **기획 방향 PASS, 대표 최종 미술 승인 대기, 이번 재작업 PNG의 실제 Unity UI/GameView 미검증.** 공식 PathSymbol5 절대 수정 금지. [Issue #124 검토](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7091190320).
+- **빙각 수호체 Attack4 수정본** — `LIMITLESS_Issue126_RimeSentinel_Attack4_v2_Targeted_20261123.zip` 6,444,482B SHA256 `04cdead8ccffc14350fe9cd7e666a1635dddd6214631c8dc8ae7831f8dfc8661`. ZIP CRC PASS/Manifest14/14 PASS. v1 대비 **2·3프레임만 주먹 전방 돌출·원근감/어깨 추종 강화**한 것 직접 확인, 1·4프레임 원형, 전체 묵직함·접지·KeyPose 유지. 40px 변화는 소폭이지만 128/512에서 명확. 비루프170/120/150/220ms. **기획 미술 방향 PASS, 대표 최종 미술 승인 대기, v2 자체 Unity Animator/타격판정 미검증**. [Issue #126 검토](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091190943).
+- 작업 중복 금지: 이미 제출된 PNG 재생성/전면 수정 요구0. Codex 새 후보 해당 슬롯의 읽기전용 국소 Unity UI/Attack 재생·전투 이벤트 검증은 대표 작품 승인 후 별도 진행. 승인 전 GUID/meta/PathDefinition/Scene/Prefab/공식 PathSymbol/Unity 게임 적용·main 병합 금지.
+- Unity6000.6.5f1, #85 HOLD, Save/UserData·Discord·승인 아트 및 main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 길 능력 오리지널 후보 5종 실제 비교판 직접 검토
+
+- 바울 대표가 “그래.”라고 응답해 기존에 제작된 5종 후보의 실물 비교판(현재 ChatGPT Library)을 재사용, 직접 시각 검토. **신규 제작/재생성 지시0**.
+- [Issue #124 실물 검토 기록](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7090472869). 열람: `Trait4_vs_Vision_v2_128_40_30_Comparison.png`, `Trait4_40_30_DarkLight_Readability.png`, `Vision_v1_v2_512_128_40_30_26_24_Board.png`.
+- **기획 디자인 방향 5종 PASS:** 시각=눈/표적, 청각=귀/파장, 지적=신경연결, 지체=바퀴/방향, 마음의 상처=균열/봉합. 일관된 냉청·백·네이비·방향점, 128px 분명하고 40px 중심 모티프 인식.
+- **30px PARTIAL:** 내부 도안 축소로 시리즈 내 구분성 실게임 확인 필요. 실물 Unity 제품 GameView/공식 PathSymbol5 직접 이미지 대비 미검증. **기획 방향 PASS는 사용자 최종 미술 승인이나 본편 교체/출시 승인이 아님.**
+- 현행 원격 main `PathDefinition.traitIcon`5는 Game-icons 외부 GUID, `pathSymbol`5는 기존 고유 GUID로 분리 확인. 이미 납품된 Trait5로 재그림 없이 진행, Codex 30/40px 실제 길 선택 UI 한 장 비교 캡처 최소QA 후 대표에게 검토. 승인 전 PathDefinition/Scene/Prefab/GUID/meta/main 변경 금지.
+- `GrassSlimeGel` 후보는 이번 5개 Trait 시각 판정과 독립, 신규 전리품 양산 자동 승인 아님. 리뉴얼 담당 재교육 경과 보존, 중복 제작0. Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 리뉴얼 담당 재교육 지시 수령·업무 범위 정정 (최신)
+
+- 바울 대표의 최신 통지: **“리뉴얼 교육 다시 시켰어.”** 이전 아래의 “리뉴얼 퇴사/추가 배정 금지”는 당시 상태 기록이며 **현재 운영 상태로 사용하지 말 것**. 신규/복귀 리뉴얼 담당의 **재교육 착수**로 기록. 교육 완료·실제 업무 착수·GitHub 갱신 완료는 아직 확인되지 않음.
+- 대표가 직전에 정정한 범위: **공식 길 문장(Path Symbol) 5종은 이미 자체 제작된 승인 자산으로 보존.** `PathDefinition.traitIcon`에 연결된 **별개의 능력(Trait) 아이콘 5종은 기존 Game-icons.net 외부 자산**이므로 오리지널화 후보. 정확한 경로, UI 크기 및 기존 재사용 가능성부터 확인하며 공식 문장을 다시 그리지 않음.
+- [기존 #124](https://github.com/HappyPaul812/Project-Limitless/issues/124) 산출물: 시각 Trait v2 1종 + 청각·지적·지체·마음 Trait 4종이 **이미 후보로 제작되어 납품**됨. 5종 전부 새로 만드는 지시 금지. `GrassSlimeGel` 오리지널 1종 후보도 이미 납품됨. 모든 후보의 대표 최종 미술 승인 및 제품 적용 여부는 별도, `UNITY_NOT_APPLIED`.
+- **재교육 후 첫 과제는 제작이 아니라 감사·중복방지 인계**: 담당 최신 문서/이슈 #124를 읽고 공식 Path Symbol5 ↔ 외부 Trait5 ↔ 새 후보 Trait5를 실제 UI 기능/사용 위치/규격 기준으로 비교해 '보존·재사용·채택 검토·미확정'만 분류. 필요한 화면·자산이 없으면 NOT_VERIFIED. 새 PNG 생성·기존 GUID/meta·PathDefinition 교체·Unity 적용/원격 main 변경은 승인 전 금지.
+- 후임 담당 문서 기록은 `docs/art-renewal`과 `WORLD_ART_RENEWAL_LATEST.md`/Issue #124, 실제 커밋 SHA 및 바울 대표 승인 게이트로 보고. 기획 담당은 별도 BGM Gemini 작업을 수행하지 않음.
+- Unity6000.6.5f1, #85 HOLD, 기존 승인 NPC·몬스터·펫·환경, 개인 Save/UserData·Discord 및 main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 길 공식 아이콘 중복 제작 지시 철회 / 리뉴얼 담당 퇴사
+
+- 바울 대표: “리뉴얼 퇴사 했는데, 근데 길 아이콘 원래 우리가 그린거 아냐? 왜 또 그려?” — 기획이 기존 자체 제작 `pathSymbol`과 외부 `traitIcon`을 혼동해 추가 4종 원화 제작을 서둘렀음을 인정하고 **추가 제작 지시 철회**.
+- [Issue #124 정정 기록](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7090270678): **길 공식 Path Symbol 5종은 이미 오리지널 제작/승인 자산**. `PathDefinition.pathSymbol`에 연결. 별도 `traitIcon` 슬롯은 복구본 정적 참조상 Game-icons.net CC BY3.0 **외부 5종**으로 남아 있음. 상업적 사용 자체는 가능하며 원저자 표시를 지켜야 함. 단, 두 슬롯을 반드시 서로 다른 신규 이미지로 유지해야 한다는 기획 결론은 없음.
+- 기존 자체 Path Symbol5를 UI의 traitIcon 위치에도 **재사용할 수 있는지 먼저 확인**해야 하므로, 추가 Trait 아이콘 제작/배치/교체/양산은 **중단**. 이미 제출된 Vision v2·청각/지적/지체/마음 신규 4종 후보는 기록·파일로만 보존하고 사용자 최종 승인·게임 적용으로 오인하지 않음.
+- **리뉴얼 담당 퇴사** 사용자 통지 접수, 이 세션에 추가 작업 지시하지 않음. 후속은 기획에서 필요성 판정 후 Codex의 최소 읽기전용 UI 역할 검토, 실물 제작 필요가 확정될 때만 별도 담당 지정.
+- `docs/art-renewal` 원본/Issue #124 기존 이력·승인 PathSymbol5/ItemDefinition/GUID/meta/Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/main 보호. 당장 Codex 실행/게임 수정 지시 없음.
+
+---
+
+# PLANNING / 2026-11-23 — 리뉴얼 담당 재배정 (#124)
+
+- 바울 대표: “리뉴얼은 노는데?” — 타 부서 병렬 진행 중 리뉴얼 후속 배정 누락을 정정. [#124 후속 지시](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7089569833)에 2개 작은 실작업 지정.
+- **A 시각 Trait v2 국소 수정**: 기존 후보 40px PASS, 30px 동심원 약함, 24/26px에서 눈보다 표식 우세. 새 PNG 후보/실제 512·128·40·30·26·24 비교와 v1 대비 Delta 제출. 기존 5 PathSymbol/GUID 불변.
+- **B Chapter1 재료 아이콘 1종 파일럿**: `GrassSlimeGel` 기존 Game-icons `dripping-goo`을 대체할 128 RGBA 신규 독립 원화 1종 + 128/40/30 인벤토리 판독 비교. 나머지 외부 전리품3/길 특성4는 현재 파일럿 승인 전 신규 양산0. 기존 ItemDefinition/GUID/Runtime·기존 승인 Ch2/3 아트 보존.
+- 담당 `docs/art-renewal` 결과+실제 PNG ZIP/Manifest SHA 및 WORLD_ART_RENEWAL_LATEST/이슈 댓글 보고. 대표 최종 미술 승인 전 Unity 교체0, Codex QA 별도. 기획 세션은 담당에게 복사 가능한 지시문 전달; GitHub 기록 자체가 자동 실행 아님.
+- Unity6000.6.5f1, #85 HOLD, Save/UserData/Discord, main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 빙각 수호체 Idle4 선행 조건 충족 · 최종 미술 승인
+
+- 바울 대표 선행 조건: **“게임에서도gif처럼 되면 승인.”** Codex 실제 제품 전투 UI와 SpriteRenderer Animator 격리 Play Mode에서 GIF 동작 재현 보고 수령. local `codex/issue126-idle4-play-20261123` SHA `72da0d376f22c48175b4e7e3499c9165f771eada`.
+- Animator259.93ms/셀 · 전투UI260.02ms/셀 / 4프레임1.04초, 순서0→1→2→3, 112px 전투 렌더 하단18행 접지4/4 및 중심이동 가로0.009/세로0.347px, 40px 실루엣 판독. **#126 Idle4 최종 미술 승인** ([GitHub 기록](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7089455631)). 승인 원본 KeyPose/Idle4 SHA 잠금. **260ms 프레임 유지**: 기존 8fps(125ms) 사용하면 GIF 약1.04초보다 약2배 빠름.
+- 미검증·보류: F5 실제 Scene·조우/단회 Save·MonsterDefinition·Drop·전열 Sorting/Collider 본편 실측, main 병합/Push. Idle4 미술 승인 ≠ 본편 Unity 적용 승인.
+- 후속 메인 신규 아트 **Attack4 1파일럿** 제작 지시 가능. 승인된 Idle4 원본 보호. 기본 `얼음 주먹` 공격(110%)의 준비→타격→회복만 새 원화, 다음 행동 `팔 들어올리기` 예고 및 `균열 강타(180%)`와 합치지 않음. 2048×512/4×512 RGBA·512/128/40·GIF·ZIP/Manifest/SHA 제출, 사용자 미술 승인 전 Hit/Defeat·차기 모션 제작·게임 적용 금지.
+- 모든 작업 `docs/art-new`, Unity6000.6.5f1/#85 HOLD/승인 아트·Save/UserData/Discord/원본 main 보호. Codex의 기존 Idle4 QA 재실행0.
+
+---
+
+# PLANNING / 2026-11-23 — Issue #127 F2·F3 BGM B 루프 최종 승인
+
+- **대표 직접 승인 조건:** “루프도 들어봤어. 니가 안이상하면 승인,” — 기획에서 실제 ZIP의 기술 이상 여부 확인 후 최종 승인.
+- [Issue #127 공식 승인·기술 검증 기록](https://github.com/HappyPaul812/Project-Limitless/issues/127#issuecomment-7089411448).
+- 실제 Library `LIMITLESS_Issue127_LoopReview_20261123.zip` 1,168,179 bytes / SHA256 `71cd20113303053b74ed77230089d2e48bfd232f117e9c78c638555d85954b8e`, CRC PASS, 내부 파일 SHA **5/5 PASS**, A/B MP3 **4/4 디코딩 PASS**, 44.1kHz stereo. A의 긴 무음 F2~1.82s/F3~2.74s → B는 두 곡 모두 최장~0.02s. B 연결부의 특이 급격한 샘플변화 징후 없음. 기획 본인은 청각적으로 직접 듣지 않았으며, 대표가 직접 듣고 조건부 동의한 뒤 기술 확인으로 승인함.
+- **F2 `Beneath_the_Frozen_Boughs`** B Loop 13.560–62.775s, **F3 `Steps_on_Frozen_Stone`** B Loop 24.102–81.107s, xfade0.55s 각 **USER_APPROVED**. 원곡2 사용자 승인도 유지, 재생성·재편곡/원곡덮어쓰기 금지.
+- 이제 BGM 담당의 **최종 Intro+Loop WAV Master 제작 승인**. ZIP+Manifest/SHA와 소형 검증, docs/bgm·BGM_LATEST 및 #127 담당 브랜치 보고를 기다림. 배포 Master는 아직 미제작, Unity 적용/원격 main 병합 미승인. BGM Gemini 프롬프트·음원제작은 BGM 담당 전담(기획 업무 침범 금지).
+- **권리 표시:** 소비자 Gemini/Lyria의 유료 게임 내 사용을 명시한 근거는 아직 `COMMERCIAL_USE_EXPLICIT_LICENSE_PENDING`; 이는 출시 전 별도 확인사항이며 BGM 미술·기술 승인 취소가 아님.
+- Unity6000.6.5f1, #85 HOLD, 기존 승인 BGM/TTS/Mixer/Save/UserData·main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — #127 F2·F3 BGM 청취 승인 기록 정정
+
+- BGM 세션 대조 결과, 바울 대표가 2026-11-23 F2/F3 새 BGM 1차 데모를 듣고 **“나도 좋아.”**라고 직접 승인했음을 확인. **기획 담당의 "BGM 원곡 미승인" 안내가 잘못되었으며 정정**.
+- F2 `Beneath_the_Frozen_Boughs.mp3` = **USER_APPROVED**; F3 `Steps_on_Frozen_Stone.mp3` = **USER_APPROVED**. 승인 원곡 SHA/길이/내용 보존, 재생성·원곡 재청취 요청 금지.
+- [Issue #127 원곡 승인 기록](https://github.com/HappyPaul812/Project-Limitless/issues/127)에서 BGM 담당이 승인 상태 반영. 이어서 제출된 `LIMITLESS_Issue127_LoopReview_20261123.zip`은 B 경계 기술 QA PASS / **LOOP_USER_APPROVAL_PENDING**. 원곡 청취 승인이 A/B 루프 편집 청취 승인까지 자동으로 포함하지 않음.
+- F2 B 후보 구간 `13.560–62.775s`, F3 `24.102–81.107s`, 각각 0.55s crossfade. 배포 Master 제작/Unity 적용 아직 0. 신규 Gemini 생성/재생성은 BGM 담당만 관리. 상업적 사용권 표현은 `COMMERCIAL_USE_EXPLICIT_LICENSE_PENDING`(상업 사용 불가 판정 아님).
+- 대표께 추가 요청할 때는 **두 원곡이 아닌 LoopReview B 연결부만** 판단을 구할 것. Unity6000.6.5f1/#85 HOLD/Save/TTS·승인 원본 보호.
+
+---
+
+# PLANNING / 2026-11-23 — Codex #126·#31 격리 Unity 기술 검수 접수 및 Idle4 최신 납품 발견
+
+- Codex 작은 격리 `codex/issue126-31-import-delta-20261123` SHA `1ba99e0cb1e8ce70389df1633f6839fbf80348d5`, **총12 PASS/0 FAIL**; 기존 성과·ZIP CRC/SHA QA 재실행0, 원본 main/Unity6000.6.5f1/#85 HOLD 및 Save/TTS/Mixer 보호. 실제 게임 적용·Push·병합0.
+- [#126 기술 접수](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7088932121): Rime Sentinel 승인 KeyPose SHA 일치, 격리 Sprite Import3/3 PASS, PPU512/Point/Center Pivot, 40px 주먹·어깨 판독. 공식 F5 Scene·전열 크기/Sorting/접지 GameView NOT_VERIFIED. **현 메인 아트가 Idle4 후보 ZIP을 이미 납품**했고 Library 비교판과 GIF 확보: ZIP SHA `65520ee3b6fc5f1433489ba733ed40ea3256d4e50e977b9f67edd5fb19b2b0d2`. KeyPose 사용자 승인과 Idle4 신규 파일럿 승인 대기 분리, Attack/Hit/Defeat 자동 착수 금지.
+- [#31 기술 접수](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7088931615): Final WAV4 Unity Import 9PASS. BGM 서비스/Scene Catalog는 현재 Scene당 단일 AudioSource/AudioClip이며, F1·서릿길 배정0. 승인 Intro→Loop 구조 구현에 두 AudioSource DSP 스케줄링·전투/씬 전환 취소·기존 단일곡 호환 필요. 실제 루프·TTS/Mixer·Listener 검증0. 다음은 격리 설계/코드 최소변경 및 Delta QA와 사용자 최종 적용승인 **별도**. 음원 생성·리마스터 금지.
+- 기획 조율: #126 Idle4 비교 GIF는 바울 대표에게 직접 보여 승인 요청, #31 Codex 기술 확장은 사용자의 실제 별도 코드 지시 전까지 권고안. 이 보고만으로 본편 적용 승인 없음.
+
+---
+
+# PLANNING / 2026-11-23 — #126 빙각 KeyPose 사용자 외형 승인 및 #31 Final WAV 실물 접수
+
+- 바울 대표: `F:\Downloads\LIMITLESS_Issue31_FinalLoopMasters_20261123.zip`, `F:\Downloads\LIMITLESS_Issue126_RimeSentinel_KeyPose_20261123.zip` 납품 전달 및 “빙각이 묵직하니 중간보스하기 좋겠네..ㅋㅋ 승인”.
+- **#126 새 KeyPose 최종 미술 승인** ([Issue 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7088805208)): 신규 M6 Rime Sentinel 512×512 투명 RGBA 1포즈. ZIP SHA256 `f2098a5e1affc13e3708eebf5d30f5c8e4fd9bdcfb0f72d41059e9178d34a46e`, 9entries·CRC PASS·SUMS8/8 PASS. PNG SHA256 `c34ea53a95aa6a1fdba4f5e355715fbc25797d6d51e4d544cb9e4dab52f7073c`. 실제 M4/M5 비교판·128/40 이미지 확인, 육중한 팔/흉곽·엘리트 실루엣 승인. **Idle4 1종 파일럿 착수 가능**; Attack/Hit/Defeat 이후 승인, 실제 Unity Import/GameView·F5 배치·Monster/Drop/Save 등록 불승인. 승인 원본 바이트 잠금.
+- **#31 BGM Master ZIP 실물 접수** ([Issue 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7088807352)): SHA256 `3c9810962e1a1db11117d5a3fe6ee8ce5caa4fcc62cc6889656aff7ac7d39c94` / 21,459,175bytes/7entries/CRC PASS/SUMS6/6 PASS. WAV PCM16/44.1kHz/stereo 4개, 길이 Grass Intro15.15s Loop52.95s; Hearth Intro4.90s Loop55.90s. 기존 원곡·B Loop 사용자 승인 유지, *추가 음악 생성 불필요/Unity 적용 별도 승인*. 신규 F2/F3 음악은 BGM 담당 #127 전담.
+- 다음 담당 전달: 메인 신규 아트는 **승인 KeyPose 기반 Idle4 소량 파일럿**, Codex는 **#126 KeyPose 격리 Unity 기술 QA + #31 Master Audio Import/루프 연동 계약 읽기전용 검토**(기존 #122 작업 및 QA 반복 금지). 타 담당 세션 자동 실행 아님; 복사할 메시지 대표에게 함께 제공.
+- 제품 실제 Unity6000.6.5f1, #85 HOLD, 개인 Save/UserData·Discord·기존 승인 자산 및 원격 main 불변.
+
+---
+
+# PLANNING / 2026-11-23 — BGM/Gemini 제작 역할을 BGM 담당으로 전면 위임
+
+- **대표 확정 지시:** “앞으로는 니가 제미나이 까지 하지 말고 bgm 넘겨”. 이후 기획 담당은 **BGM 사용 장면/감정/우선순위·승인 조율과 담당용 복붙 업무 지시문만** 작성하고, **Gemini용 음악 생성 프롬프트 작성·직접 실행·대표에게 프롬프트 작업 요청은 하지 않음**.
+- [BGM 공식 역할 분장·제작 흐름 정본](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/팀운영/BGM_WORKFLOW_ROLE_BOUNDARY_20261123.md) / 정책 커밋 `c118f51ccc5fa3269447f4284d09363d1196823c`. BGM 담당이 Gemini 프롬프트·제작·편집·QA·납품/해시/사용권·`docs/bgm` 인계 담당; Codex는 승인 음원만 Unity 적용.
+- #31 원곡2+최종 WAV4 완료 상태 KEEP / 신규 #127 F2·F3 각1차 데모 작업은 **BGM 담당 실행**. 기획이 전에 #127에 썼던 영문 Gemini 프롬프트는 과거 참고안으로만 취급하고 지금부터 추가 작성 금지. 구체 구현은 담당 직접 수행·요청하며 승인 없는 외부 유료 API/결제 없음.
+- **담당 세션은 GitHub 댓글만으로 자동 시작하지 않으므로 대표에게 BGM 담당 복붙 지시문을 반드시 함께 전달**. `docs/bgm` 수용 인계 및 Issue #127 결과를 기다리고, 기획에서 BGM 실행/청취 완료를 선행 주장하지 않음.
+- Unity6000.6.5f1/#85 HOLD, 원본 main, Save/UserData·TTS/Mixer·기존 승인 음원 보호.
+
+---
+
+# PLANNING / 2026-11-23 — BGM 신규 제작 전환 / #127
+
+- 사용자: `bgm는 또 안만들지? 제미나이 괜히 열었네....;;;;;` — 기존 BGM 루프 편집 외 **새 음악 제작 배정이 필요**하다는 지적으로 접수.
+- 최신 #31 [최종 루프 Master 납품 보고](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7088342969): F1·서릿길 2곡은 사용자 청취 승인, 11/23 WAV Intro+Loop 4개 최종 제작·QA PASS, ZIP `LIMITLESS_Issue31_FinalLoopMasters_20261123.zip`. 음악 생성0, Unity 적용0, main 미반영. 이 곡들 재생성·중복 루프QA 중지.
+- **신규 BGM 발주 [Issue #127](https://github.com/HappyPaul812/Project-Limitless/issues/127)**: F2 첫눈의 숲과 F3 눈 덮인 고갯길 탐험곡 **오리지널 1차 데모 각1곡**. 두 곡을 명확히 구분하고 Gemini에 붙여넣을 영문 프롬프트 제공. 실제 실행은 대표/BGM 담당이 명시적으로 진행; 자동 Gemini 호출, 과금, API 키조회는 없음. 인게임 연결·마스터·F4/F5/보스곡은 별도 승인.
+- Codex #122 최근 직접 보고: 서리들쥐 MonsterDefinition1/6 고립 브랜치 등록/Delta10PASS, 나머지5는 의존조건 미충족 HOLD. 기존 전리품6 및 미커밋/Save/Unity6000.6.5f1/#85 HOLD/원격main 보호.
+- **기획 Issue 작성 ≠ BGM 세션 자동 실행**. 실제 제작 프롬프트를 사용자에게 함께 전달한다.
+
+---
+
+# PLANNING / 2026-11-23 — 바울 대표 빙각 수호체 F5 엘리트 재승인
+
+- 대표 직접 답변: **“승인, 중간 보스는 챕터2에도 있었으니까.”** 10/14의 북부 일반5+단회 엘리트1+보스1과 11/18 승인 전투 계약에 포함된 **빙각 수호체**의 존재·중간보스 포지션을 재확인. 별도 몬스터 추가가 아님.
+- F5 동토의 균열 단회 엘리트, Lv21 HP820 ATK40 AGI9 EXP125/T32, `얼음주먹(110%)→팔들기(예고)→균열강타(180%)` 순환, 동결괴사·동상 없음, 잡템 마력차단 결정100% 1개·판매22. 기존 11/18 승인 설계 보존.
+- [#126 신규 아트 1포즈 파일럿](https://github.com/HappyPaul812/Project-Limitless/issues/126) 발행. 시안 착수만 가능, 최종 미술 판정/Idle·Attack·Hit·Defeat 양산/Unity 본편 적용은 추가 승인. 기존 Codex #122 MonsterDefinition 격리 등록/ID·조우·드롭·Save는 별도 진행.
+- [#122 승인 기록](https://github.com/HappyPaul812/Project-Limitless/issues/122#issuecomment-7088435901). Unity6000.6.5f1/#85 HOLD, main/기존 승인 자산/Save/UserData/Discord 보호.
+
+---
+
+# PLANNING / 2026-11-23 — #122 정식 조우·#124 시각 Trait 국소 감사 접수
+
+- Codex 로컬 격리 감사 브랜치 `codex/ch3-loot6-encounter-vision-audit-20261123`, 커밋 `0a5f253d2fde7a8aa2bfabaec70fa118ea72d5c1`. 미Push, 제품 원본 main 변경0, 기존 테스트32·56·39 재실행0.
+- [#122 총괄 검토](https://github.com/HappyPaul812/Project-Limitless/issues/122#issuecomment-7088337359): ItemDefinition/PNG 6종은 등록 브랜치에 준비됐으나 MonsterDefinition/공식 조우 각각 0/6. QA 올빼미/프로토타입 들쥐/정령 Visual Prefab은 정식 등록이 아니다. 다음은 **별도 대표 승인이 있을 경우** 승인 스탯·행동·ID 규격에 맞는 데이터-only 6 MonsterDefinition 최소 등록. F3~F5 Scene/Spawn/Drop 연결/단회 엘리트 Save/수령 장소·정식 보상/원본 main 병합은 승인 전 HOLD.
+- [#124 총괄 검토](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7088337969): Codex 로컬 실제 공식 Symbol5/외부 trait5 PNG 대조 PASS; Vision 새 후보 40px 양호, 30px 청색 동심원 약화, 24/26px 눈보다 조준 표식 우선. 해당 로컬 비교 이미지 자체는 현 기획 환경 미열람. 리뉴얼 담당에게 30/26/24px 대비/실루엣 **Vision 1종만 국소 보완 v2** 권고. 다른 4종 양산·Unity 적용/기존 GUID 수정 금지. 최종 대표 미술 승인 대기.
+- 기획 기록은 사용자 승인 자체가 아니다. Unity6000.6.5f1/#85 HOLD, Save/UserData/Discord 및 기존 승인 아트·원격 main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — BGM 두 곡 B 방식 루프 청취 승인
+
+- 바울 대표 직접 피드백: `일단 코덱스는 시켰고, bgm은 들었는데 좋네..` — 전달된 #31 A/B 비교본 청취 직후. 기획에서는 두 곡 `B_LOOP_PLAN_USER_APPROVED`로 접수.
+- [GitHub Issue #31 승인 기록](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7088290131): `Where_the_Grass_Bends` F1 Intro 0–14.60 / Loop 14.60–68.10 / crossfade0.55초, `Hearth_in_the_Low_Valley` 서릿길 Intro0–4.35 / Loop4.35–60.80 / crossfade0.55초. 원곡2 기존 승인과 소스 SHA 유지.
+- **후속 BGM 담당:** 원본 덮어쓰기 없이 배포용 Intro/Loop 마스터 새 파일로 만들고 작은 규모의 최종 음질/무음/클릭/박자 QA, SHA256 및 docs/bgm/BGM_LATEST.md/Issue31 보고. 새로운 음악 생성·유료 API 금지.
+- **아직 미완:** Master 파일 제작 및 제품 Unity 적용. 담당자가 실제 납품·검증하기 전 '완료' 표시 금지. 기존 Codex #122/#124 실행은 사용자 지시 전달 완료이므로 새 작업을 끼워넣지 않음.
+- Unity6000.6.5f1, Mixer/TTS/Save/UserData, #85 HOLD, 원격 main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — #122 등록·#31 BGM ZIP·#124 시각 Trait ZIP 실물 접수
+
+- 사용자 제공 #122 Codex 완료 보고 대조: 별도 `codex/ch3-loot6-registration-20261123` 제품 SHA `9588d75cfbe46e656ee6dcc4b5e8f85c4aa04cc0`, 보고 HEAD `01c8f197b27d30508b6517adb6b7d560da9df5e4`. 100% RNG 1줄, ItemDef6+승인PNG6+meta12 총25파일, Unity6000.6.5f1 Delta32 PASS/0FAIL. **정식 Item6 브랜치 등록 완료, 본편 original main 미동기화**, 대상 공식 Monster/Encounter ID/Drop 연결0/6. [#122 총괄 접수](https://github.com/HappyPaul812/Project-Limitless/issues/122#issuecomment-7088220386).
+- [#31 실물 ZIP](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7088219406) `LIMITLESS_Issue31_LoopReview_20261123.zip` = 2,199,087bytes, SHA256 `65a37dc8322a0eb5ed6e52527de1ac0754a5bd3252e108dd6dd56bd1406a3484`, 전체 CRC와 A/B4+README SHA PASS. 44.1kHz 2ch 비교프리뷰4, 실제 사람 청취 최종 승인 없음. B 방식 기술 PASS/원곡2 이미 승인, Master·Unity 아직0. ZIP 목록은 README/해시에서 절대경로 이름을 쓰지만 실물 매핑+바이트 검증 일치; 정상 ZIP.
+- [#124 실물 ZIP](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7088219907) `LIMITLESS_Issue124_Trait5_VisionPilot_20261123.zip` = 512,911bytes, SHA256 `f8d0d09986131cf68d19d72a2b6546fe4324583758777e06a2c80b53d11e3a9c`, CRC 및 payload+Manifest SHA PASS. 신규 시각 Trait 512/128/40 시각 확인에서 눈/중앙 표식 판독 가능·색채 일관 양호. **기존 공식 Symbol5+외부 Trait5 실물 화소 비교 및 실제 Unity 30/40px UI 미검증** → 최종 대표 미술승인/제품교체 HOLD. 동일 구조비교판에 기존 PNG 실물 없음. 다음은 Codex 로컬 읽기전용 5+5 실물 참조와 신규 Vision 후보 비교 1회, 중복제작/전체 QA 금지.
+- 모두 기존 승인 Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord, 원격 main 보호. GitHub 담당 Issue 검토만 추가, 외부 Google API/신규 제품적용0.
+- 운영 권고: #124 실물 비교와 #122 미등록 몬스터6/조우 키 계약 확인을 Codex 한 번의 경량 읽기전용 작업으로 병렬화; BGM 최종 루프는 바울 대표 A/B 청취 뒤 결정.
+
+---
+
+# PLANNING / 2026-11-23 — TTS·BGM 최신 담당 보고 재확인
+
+- 사용자 지시: Codex #122/#123 지시문 전달 완료. TTS #125·BGM #31 최신 공식 보고 재검토.
+- [TTS #125 최신 보고](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7087447265) + `docs/tts` 정책·인계 실물 확인: 총101대사행(주요5인72/NPC23/무음6), 신규 NPC `TEXT_ONLY_DEFAULT` **21행**, 마레 Main24(84자)·Main26(66자) 2행은 `CONDITIONAL_REVIEW_ONLY`이지 제작 승인 아님. 기존 승인 WAV162 보존, 신규 Google Cloud 호출·계정·결제·WAV0. Cloud 월 무료 구간은 청구계정 활성화 필요/초과 과금 및 예산알림이 자동차단이 아님. 정확 Runtime IDs/주연72 신규제작 및 예외2의 필요성 별도 승인 대기. 문서 마지막 정책 커밋 `f25164697c249a9cdda153ceecc9295c3c82478a`.
+- [BGM #31 최신 보고](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7087496635) + `docs/bgm` QA/인계 실물 확인: F1 `Where_the_Grass_Bends`, 서릿길 `Hearth_in_the_Low_Valley` 원곡2개는 대표 과거 청취 승인 확정. 새 B LoopPlan(Grass intro14.60/body14.60-68.10, Hearth intro4.35/body4.35-60.80, xfade0.55)은 기계적 무음0·hardclick/beat PASS, 4 Preview decode PASS. **최종 사람 청취 승인 미확인**, 배포 Master 미제작, Unity 미적용. ZIP `LIMITLESS_Issue31_LoopReview_20261123.zip` 2,199,087 bytes SHA256 `65a37dc8322a0eb5ed6e52527de1ac0754a5bd3252e108dd6dd56bd1406a3484`. 담당 커밋 `d8a22436b3c67459fbf03eb34a0834df72e5de52`.
+- 본 기획 세션의 접근 가능한 Library 검색에서 Review ZIP 실물은 **NOT_ACCESSIBLE**, 따라서 청각 심사·최종 루프 승인이라고 주장하지 않음. 후속은 비교본 전달 및 바울 대표 청취, 승인 후에만 배포 Master 제작/Unity 연동 별도.
+- `REVIEW_COMPLETE / TTS_POLICY_COMPLIANT / BGM_LOOP_USER_LISTENING_PENDING / NO_PRODUCT_CHANGE`. Unity6000.6.5f1, 기존 Save·TTS·Mixer/Discord/#85 HOLD, 원격 main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — #122 승인 선택지·#123 기술 합격 최종 접수
+
+- Codex 최근 브랜치 `codex/ch3-loot6-contract-20261123` 로컬 HEAD `240c72ec39b3d539802b8c2729e3b6d2a98c95e4`, 문서만 갱신, 원격 Push·제품 적용0.
+- [#122 최종 기획 권고](https://github.com/HappyPaul812/Project-Limitless/issues/122#issuecomment-7087963907): 100% RNG 경계 최소 수정(기존56/제안56 PASS), 충돌 없는 6개 Stable ItemId를 정식 후보로 권고. 단회 엘리트는 실재하는 Stable Encounter ID/슬롯 저장 키를 확인한 뒤만 적용, 가방 만석 PendingReward와 완료 플래그를 같은 성공 스냅샷, 저장 실패 승리화면 재시도 우선. 합성 저장39 PASS지만 제품 Save/재접속 미검증. 사용자 실제 승인 전 본편/몬스터 등록/드롭 연결0/6.
+- [#123 최종 기술 접수](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7087964254): PNG 파일기술3/3·Unity격리 Import3/3 PASS, 단일 지면오버레이/길 밖 암반/바닥경계 표식 방향 유지, 반복 타일 금지, F3 본편 Scene·4.5WU·접지/Sorting/Collider·실제 Player Path NOT_VERIFIED. 별도 대표 최종 미술 승인 전 게임 배치0, 재작업 불필요.
+- **이 기록은 대표 승인 대체가 아님**. Unity6000.6.5f1·#85 HOLD, 기존 승인 원본·Save/UserData·Discord·원격 main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — #122·#123 합동 기술 검수 접수
+
+- Codex 실제 HEAD `2c13a60840c67c2220336f5d0f6fcfe1880fcc57`, 브랜치 `codex/ch3-loot6-contract-20261123`, LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+- [#123 접수](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7087857261): F3 PNG 3/3 격리 Unity Import PASS, 단일 눈·암석 데칼/길 바깥 암반/바닥 경계 소품으로 후보 유지. 반복 타일 seam FAIL(투명 간격), 실제 F3 Scene/4.5WU 통행·GameView·Sorting/접지 NOT_VERIFIED. 미술 최종 대표 승인 대기, 재작화 요청0, 본편 적용0.
+- [#122 접수](https://github.com/HappyPaul812/Project-Limitless/issues/122#issuecomment-7087856829): 실제 `BattleVictoryReward.Calculate`의 `Random.value >= DropChance`에서 RNG=1.0일 때 드롭100% 누락 재현. 최소 수정보정 격리 기존56/제안56 PASS, 단회 엘리트 보상 합성모델39PASS. 실제 Save/재접속·Unity 제품 미검증, Stable ItemId·MonsterDefinition 등록 0/6. 본편 RNG 수정 포함 사용자 별도 승인 필요, ID/조우키·만석 저장과 UX 확정 전 DROP_LINK_HOLD 유지.
+- 기획 지시는 이미 검증한 56/39/3 수치 재실행이 아니라 최소 diff·ItemId 후보·수령/실패 정책 옵션을 대표에게 제출하도록 조율. 기존 Unity6000.6.5f1/#85 HOLD/개인 Save/UserData·Discord·원격 main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 총괄 부서 보고 접수 및 비용 절감 TTS 정책 확정
+
+- 바울 대표 결정: **주요 5인(폴·미엘·세린·태온·하렌) 기존 승인 음성 유지**, 나머지 NPC는 **기본 무음**, 반드시 필요한 경우에만 기존 Gemini와 별개인 공식 **Google Cloud Text-to-Speech 한국어 Standard/WaveNet 월 무료 범위** 검토. Cloud 청구 계정 설정/초과 자동과금이 있으므로 '완전 무료' 보장 없음. 새 API 호출·서비스 계정·키·결제 설정·음성 생성 **0**, 대표 추후 별도 승인 필요. 비공식 Google Translate gTTS 상업용 사용 금지. [#125 직접 전달](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7087343324).
+- [2026-11-23 종합 검토/정책 문서](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261123_TTS_CastingPolicy_And_Team_Results.md), 기획 정책 commit `ae2500bc4f896b15edd929be6ab6d3a8df56d925`.
+- #122 전리품6 승인 PNG는 준비됐으나 정식 ItemId·Monster 연결 **0/6**, 격리 .NET 60 PASS 및 난수100% 드롭 누락 재현. 등록·정식 ID/완료키·보상 소실 정책은 승인 전 HOLD.
+- #123 F3 소량 아트 ZIP 실제 Library SHA/CRC 및 비교판 확인. 시각 콘셉트는 긍정적이나 지면접합은 **단일 길가 overlay** 추천, 실제 TileSeam/PPU/Collider/4.5WU 동선 QA·사용자 시각 승인은 대기. 유니티 적용0.
+- #124 리뉴얼: 실사용 Game-icons 9종 CC BY3.0 귀속 필요, SpectralBloom/Kenney 21개 CC0 및 현장 확인 대기. 중복 NPC/Monster 리뉴얼 지시 금지.
+- #125 TTS: 승인 원문 101행(주요72, 기타NPC23, 무음6); 후보 VoiceID 충돌0, Runtime 미확인·음성 생성0. 신규 정책으로 NPC 23개 일괄합성 금지.
+- #31 BGM: F1/서릿길 원곡2개 사용자 과거 승인 누락 정정, 새 루프 A/B 수정만 청취 판정 대기. 새원곡 재승인·재생성 금지.
+- **PLANNING_POLICY_DOCUMENTED / ROLE_FOLLOWUP_NOT_YET_CONFIRMED / NO_UNITY_CHANGE / NO_REMOTE_MAIN_CHANGE**. 이번 인계 자체는 담당 세션 자동작업을 시작하지 않음. Unity6000.6.5f1·#85/Discord HOLD, Save/UserData/기존 승인자산 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 부서별 병렬 작업 지시 발행
+
+- 바울 대표의 "각자 일 시켜줘" 요청에 따라 [11/23 공식 발주표](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261123_Parallel_Work_Order.md) 작성, `docs/planning` 문서 commit `eeec03c6f94c58a1f3234eae6841955d74a7f891`.
+- 신규 Issue [#122 Codex 전리품6](https://github.com/HappyPaul812/Project-Limitless/issues/122), [#123 F3 신규 아트](https://github.com/HappyPaul812/Project-Limitless/issues/123), [#124 Ch1·2 실사용 외부 VFX/아이콘 집중 감사](https://github.com/HappyPaul812/Project-Limitless/issues/124), [#125 TTS 대사 VoiceID 무호출 준비](https://github.com/HappyPaul812/Project-Limitless/issues/125) 4건 발행. 기존 [#31 BGM](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7086604560), [#33 SFX](https://github.com/HappyPaul812/Project-Limitless/issues/33#issuecomment-7086604972), [#98 영상](https://github.com/HappyPaul812/Project-Limitless/issues/98#issuecomment-7086605435), [#118 기획 성장](https://github.com/HappyPaul812/Project-Limitless/issues/118#issuecomment-7086605896) 후속 발주 댓글 기록.
+- 11/19 완료 원본 로컬 main `736df561`(당시 보고), 검증 복구 `f6408291`, 과거 원격 main `bfd28154` 구분. 기존 승인 보존, Unity6000.6.5f1, #85 HOLD 및 #66 Discord HOLD, 비Git 외부백업 미완료 유지.
+- **TASKS_ISSUED / REAL_ROLE_EXECUTION_NOT_VERIFIED / NO_PRODUCT_CHANGE / NO_REMOTE_MAIN_CHANGE**. 별도 세션 자동착수는 보장되지 않음. 대표가 각 담당에게 이슈 전달한 후 실제 결과를 기획에서 다시 접수/검수. 문서 commit SHA는 이번 인계 추가 commit에서 별도 갱신됨.
+
+---
+
+# PLANNING / 2026-11-19 — 이틀간 승인분 마감 발주
+
+- 대표 11/18~19 전 작업 통합·로컬 동기화·PC 장애 대비 push 요청. [마감 이슈](https://github.com/HappyPaul812/Project-Limitless/issues/121) / [작업 정본](https://github.com/HappyPaul812/Project-Limitless/commit/f15f04a135619049a60ea2327de678570d508eb1). WORK_ORDER_ONLY, 실제 로컬/원격 제품 복구 push 아직 미완료. 11/17 복구본 보존, 새 clean 복구 ref 및 fresh fetch/해시 검증, FF-only, Unity6000.6.5f1, #85 HOLD·Save/UserData/Discord·기존 dirty/untracked 보호. 비Git offsite 별도 확인.
+- 눈보라 Defeat4 최종 미술 승인, [승인5종 로컬 준비](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7007374645) 제품9324b658/보고67c9c3c7: 격리 Import·프레임·홀드·Prefab/Animator PASS. M5/F4~5 정식 등록/실전 미검증. 재제작 금지. [불씨망령 KO Idle 끼어듦 수정](https://github.com/HappyPaul812/Project-Limitless/issues/120#issuecomment-7005479268) 제품4b423a70/보고df77effd, 실제3종75PASS/0FAIL/오류0. 이전 OPEN 대체. NPC 종료50PASS, 전리품0/6 등록. EXP 변경 미승인. 마감 이후 대표 재개 전 추가 개발 금지.
+
+---
+
+# PLANNING / 2026-11-19 — 불씨망령 리뉴얼 실제 전투 적용 접수
+
+- [Codex 적용](https://github.com/HappyPaul812/Project-Limitless/issues/120#issuecomment-7004742285), [기획 접수](https://github.com/HappyPaul812/Project-Limitless/issues/120#issuecomment-7005002357). 승인 통합 시트 SHA256 d25afb4cc932fd333f67854a28821bf239afa43c36ed937f479793e03285197a 원본 반영, Idle/Attack만 변경, Hit/Defeat8셀 및 .meta/GUID/전투·스폰·Save 유지. Unity6000.6.5f1 격리 Field07 실제 전투30PASS/0FAIL/오류0, 4모션 각4셀/복귀/마지막 유지/14T·52EXP/Field 복귀 합성Save 검증. 제품37248c3b4345c7152db2ad2afad2aaf743294369, 보고921a5e30a817a02fe065fba7be827a8eda84fa3a, 로컬 codex/issue120-ember-wraith-idle-attack, REMOTE_NOT_PUSHED.
+- ART_RENEWAL_APPLIED / ACTUAL_BATTLE_QA_PASS / TRANSIENT_IDLE_FRAME_OPEN. Defeat 마지막 셀 직전 Idle 1프레임 관찰: 공격 종료 Sprite 복원과 일치하지만 원인/기존 발생 여부 미확정. 아트 재제작 없음, Codex 기존 증거/코드로 국소 원인 조사 후 필요할 때만 최소 수정/회귀 QA, 공용 전투 대규모 수정 금지. 눈보라 Defeat4 납품 대기. 이번 기획 문서만 변경.
+
+---
+
+# PLANNING / 2026-11-19 — 눈보라 Hit4·불씨망령 Attack4 최종 승인
+
+- 대표 “둘 다 좋아..” [눈보라 Hit4 승인/Defeat4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7004512175), [불씨망령 Attack4 승인](https://github.com/HappyPaul812/Project-Limitless/issues/120#issuecomment-7004513160). 두 Library ZIP 직접 회수, SHA 납품값 일치·CRC/SUMS 전부 PASS. Windows 직접 접근/Unity 신규 검증 없음. 눈보라 KeyPose/Idle8v2/Attack4/Hit4 승인4/5, Idle만 시각 자산 적용, 정식 등록 전. Defeat4 마지막 제작(핵 약화/눈바람 풀림/파편 흩어짐/잔류). 불씨망령 Idle4·Attack4 승인, Hit/Defeat 기존 유지 우선, 승인 통합 시트 d25afb4cc932fd333f67854a28821bf239afa43c36ed937f479793e03285197a, 실제 원본과 미수정 셀/메타/GUID 대조 후 Codex 최소 적용·전투 QA, 연결 결함만 별도 보완. main/Save/Unity6000.6.5f1/Discord/#85 보호. 신규 미술·게임 적용 미실행.
+
+---
+
+# PLANNING / 2026-11-19 — 눈보라 정령 Idle8 v2 승인·시각 자산 적용 / 후속 3모션 발주
+
+- 대표 v2 최종 미술 승인, [Codex 적용 기록](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7002165110). Unity6000.6.5f1 격리 Editor에서 Sprite8/0.96초 반복 Clip/Controller/시각 Prefab 연결 PASS, 제품32297d6ad37a1be7f31f94e98b57dcfb91a5886e, 보고d336fc0fda72fc33b08005ac8c88c731a13c6251 로컬 미Push. 정식 MonsterDefinition/조우/F4·F5 씬 미등록, 실제 전투 미검증. v1/KeyPose 보존.
+- 대표 후속 모션 요청. [Attack4→Hit4→Defeat4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7002458727). Attack4를 우선 제작(2048×512 RGBA 4셀; 핵 주변 눈바람 응축→우향 방출→잔류→대기 복귀). 이후 피격·전투불능 4셀씩 단계별 미술 승인. 기존 전투 기획, Idle8 v2, 원본 보호. 전체 모션 승인 후 별도 통합 적용/정식 등록 검증, 현재 Unity 변경0. 불씨망령은 기존 별도 발주 유지.
+
+---
+
+# PLANNING / 2026-11-19 — NPC 리뉴얼 종료 / 불씨망령 발주
+
+- [NPC 종료](https://github.com/HappyPaul812/Project-Limitless/issues/111#issuecomment-7000806171) 승인 범위 실제 격리 Play 50PASS/0FAIL/오류0, 공용 원화8 유지, 합성 Save만. 이름표 겹침 기존 이슈. 로컬 보고 d14f5907235b462df5bbe7c92c665c43ad8bff50 미Push. NPC 리뉴얼 종료.
+- [불씨망령 작업](https://github.com/HappyPaul812/Project-Limitless/issues/120), [공통 규칙 갱신](https://github.com/HappyPaul812/Project-Limitless/commit/8f22f2b33794a7296cd584c635d4c618b6d80cf3). NPC 종료 게이트 해제, 기존 원화/실사용 모션 감사 후 KEEP 또는 Idle 회전감 최소 보완, 미술 승인 전 Attack/Unity 적용 금지. 눈보라 Idle8 v2 검수 대기. 원본 게임/Save/main 변경 없음.
+
+---
+
+# PLANNING / 2026-11-19 — 아르벨 임시 주민·포털 관리인 로컬 적용 접수
+
+- [주민 적용](https://github.com/HappyPaul812/Project-Limitless/issues/111#issuecomment-7000171223), [포털 관리인 적용](https://github.com/HappyPaul812/Project-Limitless/issues/119#issuecomment-7000172208). 제품 31a72cf42a890a7c43e32005ba583172a5733256 / 보고 8698f594021ac7ed6849e47639bcc9a2abbf1a52, 로컬 codex/issue118-chapter3-balance, REMOTE_NOT_PUSHED. 원본 작업 폴더 적용 보고, Unity6000.6.5f1 격리 Editor 실제 Sprite Import/Scene/Catalog/좌표/Trigger PASS, exit0. 주민(1.5,-1.5) 단색 인스턴스만 교체, 기존 인사 유지. 포털(-7,-3) 기존 역할 및 준비 중 대사/비활성 유지. 실제 Play 대화 미실행. 로컬 전체 보고 원문 미Push로 미확인.
+- 이전 펫 분양/관리 독립 원화 적용 보고와 합쳐 아르벨 신규 NPC4종 실제 사용자 Play 확인 필요. 기존 [잔여 조사](https://github.com/HappyPaul812/Project-Limitless/commit/e59b4bbf6b9cbc311e1d470e1c0194a0408bc8ad)의 9개 공유 오리지널 외형 후보에서 포털 관리인 제외 8개(카타콤 입구4, 아르벨4). 외부 에셋 잔여로 간주하지 않음. 별도 독립 제작 의무 아님. 대표 수용/최종 실제 참조 확인 후 NPC 리뉴얼 종료 판정. 불씨망령 그때까지 HOLD. 신규 전면 감사/반복 QA 불필요, 미확인 실사용만 최소 확인. 눈보라 Idle8 v2 대기. 이번 기획 문서만 변경.
+
+---
+
+# PLANNING / 2026-11-19 — 임시 주민·포털 관리인 최종 승인 / 눈보라 Idle8 회전 보완
+
+- 대표 “리뉴얼 둘 다 승인”. [아르벨 임시 주민 #111](https://github.com/HappyPaul812/Project-Limitless/issues/111#issuecomment-6999767617), [포털 관리인 #119](https://github.com/HappyPaul812/Project-Limitless/issues/119#issuecomment-6999768343). Library 동일 ZIP 실물 직접 회수, 납품 SHA256 일치, CRC 및 SUMS 전체 PASS. 임시 주민 ZIP968f8f6ca8ba4dc0c5b59b162e333a2d0ea7075f88c45391008f86fc3ee95143 / PNG9f2a425f7ab40cb106b13cf812c43b2e2ecf5dcf48ddd79b84f1d8ef0d28822c; 포털 ZIP4cab4373d0b8d2a1efddb0b38230aa459a5848d8149ef4d1a34233a8ab6f14cd / PNG31c063f5a6d80491d74cd8207b670e8340cd624c21f0af200d8911171ce1b4cf. 모두512RGBA, USER_ART_APPROVED / UNITY_NOT_APPLIED. 사용자 Windows 경로 직접 접근 아님. 별도 Codex 최소 적용(임시 주민 (1.5,-1.5) 그 인스턴스 외형만, 포털 기존 arbel-portal-keeper(-7,-3)만; 위치/인사/기능 및 공통 프리팹·다른 NPC 보호, 포털 OFF). 펫 분양/관리 독립 원화 로컬 적용 보고(제품444dab54/보고27c2c104, 화면·상호작용 미검증), 전리품 적용 준비0/6 보호.
+- [눈보라 Idle8 #112](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-6999769300) 대표 조건부 승인: 8프레임 한계일 경우에만 승인. Library ZIP 실물 SHA 일치/CRC17/17/SUMS16/16, 4096×512 RGBA, GIF120ms×8. 실제 프레임 스트립 확인, 외곽 조각 공전이나 큰 눈바람 띠/내부 명암 패턴 거의 고정으로 회전감 약함. 프레임 수만의 한계 아님. TECH_PASS / IDLE8_V1_KEEP / TARGETED_V2_REVIEW_PENDING. 기존 원화 및 v1 보존, 8셀 유지하고 핵 주변 눈바람 주요 덩어리/명암/겹침의 순차 이동을 강조한 v2 1회만 발주, 필요성 입증될 때만 12~16 후보 별도 승인. Attack/Hit/Defeat/Unity 대기. 불씨망령 NPC 전체 완료 전 HOLD, 잔여 공유 외형8종은 승인 오리지널이라 추가 독립 제작 의무 미확정. main/Save/Discord/Unity 변경0.
+
+---
+
+# PLANNING / 2026-11-19 — 전리품6·펫 관리 담당 최종 승인 / 눈보라 Idle8
+
+- 대표 “메인, 리뉴얼 승인.” [접수 정본](https://github.com/HappyPaul812/Project-Limitless/commit/e5414969d548a8f5def22908950d7e3c0f37b5f5), [#116](https://github.com/HappyPaul812/Project-Limitless/issues/116#issuecomment-6997032271), [#117](https://github.com/HappyPaul812/Project-Limitless/issues/117#issuecomment-6997032892). 두 실물 기술PASS 및 최종 미술 승인, 게임 미적용. 기존 #113 분양 미술승인 유지. 반복 오프라인 QA/재작화 불필요. 실제 역할/참조 및 아이템 등록 존재 여부 확인 뒤 최소 적용 별도.
+- [눈보라 Idle8 발주](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-6997033601), 현재 원화 유지·핵 중심 자연 순환, GIF/ZIP/비교판. 리뉴얼은 NPC 잔여 목록 먼저 확정(기존 조사 재사용, 필요한 부분만 읽기감사); 불씨망령은 전체 NPC 완료까지 HOLD.
+- [밸런스 후속 PARTIAL](https://github.com/HappyPaul812/Project-Limitless/issues/118#issuecomment-6996864448), 일반환경 라이선스 확인 성공/실행 지연 미확정. Lv19~21 조합36 모형 모두 승리/화로1/20~36행동, 실전 미검증. 선택전0/서브0 6전에서 Main25~27 EXP+3500/+3500/+4000이면 Lv22~23. **EXP_CHANGE_NOT_APPROVED** (미술 승인만). 기존 승인 보상/스탯 변경0, 분할안 및 일반탐험 과성장 별도 검토. main/Unity/Save/Discord 변경0.
+
+---
+
+# PLANNING / 2026-11-19 — 밸런스 PARTIAL 접수 / 전리품6·펫 관리 담당 납품
+
+- [접수 및 권고](https://github.com/HappyPaul812/Project-Limitless/commit/9a5b3ba5a59cd82fd93b29e424207517e2a105c4). #118 C# 모형 성장 목표 FAIL, 31/56/81전 Lv18~19/19~21/20~22, 56전 메인 Lv22 부족3075~5565. Main22~24 현재0/0. 라이선스 초기화 실패로 실제 전투 미검증. 승인 수치 변경0; Lv19~21 보스 편성별 검증 우선, 목표 Lv22~23 유지 필요시 Main25~27 EXP 보강 비교(대표 승인 별도). 라이선스 재설정/반복 실행 금지, 기존 증거 재사용.
+- #116 `F:\Downloads\Chapter3_Loot_Issue116.zip`, #117 `F:\Downloads\Limitless_PetManagement_117.zip` 담당 납품 확인. Codex 합동 오프라인 실물검수/비교판, 사용자 미술 승인 전 적용 금지. 눈보라 회전 Idle 다음, 불씨망령 NPC 완료까지 보류. main/Unity/Save/Discord 변경 없음.
+
+---
+
+# PLANNING / 2026-11-19 — 정령계 회전 연출 / 불씨망령 NPC 완료 후순위
+
+- 대표 현재 눈보라 정령 원화 외형 긍정 평가, 회전형 모션 방향 수용. [정령계 공통 기준](https://github.com/HappyPaul812/Project-Limitless/commit/98ef6141c5160bfa68cce516017c5938e21f0a46), [신규 아트 #112](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-6996240986). 승인 원화 보존, #116 잡템6종 완료 이후 핵 중심 눈바람 순환 Idle8 후보→공격·피격·패배 순차 검토. 새 모션 사용자 미술 승인 필요. WoW는 운동 원리 참고만, 자산 복제 금지. 전투/드롭/펫 규칙 불변.
+- **불씨망령 HOLD_UNTIL_NPC_RENEWAL_COMPLETE**. Chapter1·2 NPC 리뉴얼 전체 완료 확인 후 별도 발주. 기존 원화/모션 조사→필요할 때만 Idle/Attack 최소 보정. 이번 리뉴얼 발주·재제작·Unity 적용0. 다른 몬스터 전면 수정 금지. 기존 NPC 작업 우선. 이번 기획 문서화 및 이슈 방향 공유만, docs/planning 외 제품/main 변경0.
+
+---
+
+# PLANNING / 2026-11-19 — Chapter3 스토리·서브 승인 / 대사·보상 기준 잠금 / 밸런스·아트 발주
+
+- 11/19 대표 명시 서브6 승인 [6a1ffee](https://github.com/HappyPaul812/Project-Limitless/commit/6a1ffee14c6bbd33e48b18dbab6e5e65982b8d97), 메인 스토리/엔딩 조건부 승인(구조 재설계 불필요 판정) [4274cf7](https://github.com/HappyPaul812/Project-Limitless/commit/4274cf7b3dde1a2c503094759df8ffdc74aab5b1). 세부 대사·보상 위임 반영 [정식 대본/기준/정적 수치 검증](https://github.com/HappyPaul812/Project-Limitless/commit/ff25aab4c505a15f95c29ee18852eddefdccd92b). Main22~29 EXP1160/T480, 서브6 EXP690/T255, 합 EXP1850/T735. Main26 미엘·세린 수다 단 한 번 과거 힌트, Main27 폴·미엘 차 약속, Main29 하렌 “잘.했.어.” 보호. Ch4 도입부 화로 제작자 발견. Dialogue/Voice ID 및 기존 구현 대조·TTS 제작 별도.
+- **정적 검증**: 실제 원격 복구본 ExperienceProgression/CharacterGrowthCalculator 공식 대조, Python 독립 누산. 합성 Lv16/17 잔여0, 5/10 선택전투/필드(총31/56)에서 Lv18~20, 20/25회(총106/131)에 Lv21~23. Lv22~23 목표와 노가다 위험, 기본 스탯 G/H vs 딜러 차이 확인. 보상은 기획 기준 잠금, 실제 플레이 미검증. [Codex 최소 밸런스 QA](https://github.com/HappyPaul812/Project-Limitless/issues/118), 원본 변경0/개인 Save 접근0/Unity6000.6.5f1/#85 HOLD/Discord 보호. 실제 검증 후 조정안.
+- 신규 아트 [잡템6종 #116](https://github.com/HappyPaul812/Project-Limitless/issues/116) 눈보라 정령 기존 1포즈 기술PASS·미술 승인 대기라 모션 대기, 독립 작업 발주. 리뉴얼 [펫 관리 담당 #117](https://github.com/HappyPaul812/Project-Limitless/issues/117), #113 분양 승인/게임 미적용 보호. 실제 담당 세션 실행은 대표 프롬프트 전달 필요. 메인/원본/아트/Unity 변경 없음.
+
+---
+
+# PLANNING / 2026-11-18 — Chapter3 Main24~29 상세 메인 서사 제안
+
+- 대표 메인 계속/여자들 수다 통해 미엘 과거 살짝/폴·미엘 로맨스 요청. [상세 스토리·목표·보상](https://github.com/HappyPaul812/Project-Limitless/commit/d3a906d4ef4f0e10170d127d3bc7a106ed28004b) 기록. Main22/23 구현 기초 보호, 24 F2 첫 한기/어묵탕2 → 25 F3 온맥·얼음갑충 → 26 F4 피난처·해빙연고2·정령/형제 갈등 → 27 F5 빙각 수호체/하렌이 태온 판단에 신뢰/폴미엘 둘이 차 약속 → 28 화로 보스 기믹 → 29 온기 회복/하렌 마지막 정확 “잘.했.어.”. Main26 안전 쉼터의 미엘·세린 차와 수다 중 ‘예전에도 저한테 먼저 치료받으라고 하던 사람이 있었어요.’ 단 한 번 힌트(직접 전쟁/약혼/사망 공개X). 여성 플레이어 추가 반응 선택, 모두 같은 정보. Chapter5/6 장기 복선 보존.
+- Ch3 종료 현장, Ch4 첫 도입 화로 제작자 발견→서릿길 귀환 보고→시작 마을 새 스킬상인→동쪽으로 이동 방향(기존 Main29 귀환보고를 다음 장 첫 동선에 옮기는 세부 제안). Main22~29 Quest 보상 110/40,120/45,130/50,140/55,150/60,160/65,200/100,150/65(합1160EXP/480T) 후보, 보스 전투210/60 별도. 서브6종은 승인 대기, 합성 성장·경제 검증 전 Lv22~23 목표 미보장. 기존 Main22/23 보상/세이브 중복 방지 조회, 실제 목표/정식 DialogueID·TTS·아트·Scene/ID 미정.
+- STORY_DETAIL_PROPOSAL/USER_REVIEW_PENDING/RUNTIME_NOT_IMPLEMENTED. Unity/Codex/TTS/Art/main 변경 없음, 기존 #85 HOLD 유지.
+
+---
+
+# PLANNING / 2026-11-18 — Chapter3 서브퀘스트 6종 제안
+
+- 대표 “서브 퀘스트도.” 기존 마을 초안 3종 보존 + 후반 3종, [통합 제안](https://github.com/HappyPaul812/Project-Limitless/commit/a6df081eaea9a6c2ad7c5e4ba9ed9273c9211982) 기록. 얼어붙지 않은 길(90/30), 돌아오지 않는 발자국(95/35), 따뜻한 한 잔(105/40), 눈길의 보강판(120/45), 눈보라 속의 길잡이(135/50), 잠든 수호체의 기록(145/55). 합계 EXP690/T255. 일반 잡템6개 사용(판매가65), 단회 마력차단 결정 비소모. 선택형/기존 수집·완료 UI·보상 중복 방지 보존, 메인 필수X/정식 NPC·ID·위치·승리기록 실측 필요. USER_APPROVAL_PENDING / NOT_IMPLEMENTED. 다음 Main24~29 상세/보상 및 Ch4 연결 별도. Unity/Codex/main 변경 없음.
+
+---
+
+# PLANNING / 2026-11-18 — 스킬25종·상점·냉기 해제 아이템 기획 승인
+
+- 대표 직전 통합안 “승인.” [승인 정본](https://github.com/HappyPaul812/Project-Limitless/commit/1ce1044ef9b75c0fa41975a2a30e04de52076f95). 25종 효과·쿨/MP 초도 기준, 일반 신규40/강화30/부활50/온기의 불꽃20, 서릿길 마을 Main24 첫 안내부터 판매(추가 레벨 제한 없음), 영입 동료별 구매, 강화 자동대체/전투 밖 무료 장착6 유지. 따끈 어묵탕20/10·해빙 연고40/20, 각각 첫 F2/F4 전2개 일회 지급, 해제 범위 및 기존 규칙 유지. **USER_DESIGN_APPROVED / IMPLEMENTATION_AND_BALANCE_QA_PENDING**.
+- 실제 수치·MP·경제·저장 Writer 충돌·안정 ID·NPC/공급 경로·실제 인터랙션 검증 및 구현 발주는 별도. Unity/Codex/게임/main 변경 없음. 다음 기획: Main24 완료부터 Chapter3 마지막 화로까지 상세 퀘스트/보상, 기존 서사·11/18 승인 몬스터/상점·Chapter4 단서 보호.
+
+---
+
+# PLANNING / 2026-11-18 — 스킬25종/상점/냉기약 통합 제안
+
+- 대표 “계속 기획해봐.” [신규 통합안](https://github.com/HappyPaul812/Project-Limitless/commit/c202209c1a939cff4aa94a2b5c164b6ed17dc609) 작성. 10/13 5직업 기승인 상세 방향 및 기존 배율/쿨/MP 후보 그대로, 25종 전체 가격/해금 및 상호작용 정리. 신규40/강화30/부활50/온기의 불꽃20, Main24 서릿길 마을 첫 안내 시 25종 판매(캐릭터 직업별 필터), 추가 레벨 제한 없음, 캐릭터별 구매/기본3무료/강화 자동대체/6슬롯·전투밖 무료. Chapter3 완료 후 전역 확대 유지.
+- 신규 해제 아이템: 따끈 어묵탕 한기만20/판매10, 해빙 연고 동상만40/판매20, Stack99/성공 행동1+1개/무효0. 최초 F2 전 어묵탕2, F4 전 연고2 일회성 공급 후보. 기존 회복/냉각약 등 유지, 정화II 과열/한기/동상 추가, 괴사는 화로 전용. F2 최초 서리올빼미 최대1회 예고/복귀보호 승인 보존, 일반전 반복과 구분. 실측 무자금·패배 재대응 확인 필요.
+- 수호자 감전/엄호/맹세, 균열+사냥 표식(큰 효과만), 맹공 2타, 씨앗 재적용/부활 턴큐 등 최소 상세 제안. **DETAIL_AND_ECONOMY_USER_REVIEW_PENDING / NOT_IMPLEMENTED**. 기존 직업1차 승인 존중, 실제 MP/피해/재화/Save Writer 안전계약·IDs·밸런스 QA/구현 승인 별도. Unity/Codex/main/아트 수정 없음.
+
+---
+
+# PLANNING / 2026-11-18 — 설원족제비 승인 누락 정정 및 스킬 상세 재확인
+
+- 이전 대화 11/17 대표 설원족제비 Defeat4 ‘좋고’ 최종 승인 확인. [Codex 실물 검수 PASS](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6932058502), [누락 정정](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6977474496), [현황 문서](https://github.com/HappyPaul812/Project-Limitless/commit/16e9eb715f9e9c1eb3b5add430edd8654c07db52). 기존 EOD/아트 대기 표기는 누락된 과거 상태. KeyPose/Idle4/Attack4 v2/Hit4/Defeat4 미술 승인 완료, 기술 오프라인 PASS, Unity NOT_APPLIED. 신규 재작화/재승인 요청/동일 검수 반복 금지.
+- 10/13 직업별 5개 상세 기획 문서 전부 재확인: 신규10/강화15의 방향은 이미 대표 1차 승인, 구체 배율·쿨·MP와 가격/해금·연산 계약 최종 기술 검증/구현 승인만 남음. [상품25 카탈로그](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/Main24_SkillShop_Catalog25_PriceAndUnlock_Proposal_20261029.md) 가격 신규40/강화30/부활50/온기의 불꽃20 미승인 제안. 기존 직업 상세 수치 무단 변경 금지. 이번 실제 Unity/Save/main 변경 없음.
+
+---
+
+# PLANNING / 2026-11-18 — Chapter4 폴의 고향·부모의 사랑과 독립 / 빛과 마법·마법 기계
+
+- 대표 직접 결정: Chapter4는 폴의 고향, 부모의 사랑 및 장애인의 독립·자기결정권 서사. Chapter3 종료 후 온기의 화로 제작자가 폴의 고향 대마법사이자 폴의 스승임을 조사로 발견하는 시작. 시작 마을 귀환 후 동쪽으로 계속 이동, Chapter3 완료 스킬 상인 전역 확대 기존 정본과 연결. 환경 콘셉트 빛/마법/마법으로 움직이는 기계.
+- [Chapter4 초기 방향](https://github.com/HappyPaul812/Project-Limitless/commit/1e312c6191363793faff44ec51f152b47a0ff27d), [장비·제작 방향 갱신](https://github.com/HappyPaul812/Project-Limitless/commit/0e83332069ceb3d7bfb3637f6bce145d3a385d64). 신규 시스템 **장비 장착 + 몬스터 잡템 활용 아이템 제작** 확정 방향; 기존 잡템 판매/드롭 유지. 제작 성공100%/고정 레시피/공방/재료 재획득·대체 등 상세 제안. 앞선 제작 제외 기획 폐기. 개인 의료/가족 정보 공개문서에 기록하지 않음.
+- 기존 폴 캐릭터/미엘 Slow Burn·하렌 형제애 결말/화로 기능 보호. 독립은 도움 거부나 장애 치료/극복 증명이 아니라 자기 선택과 지원 활용. 부모와 스승 이름·과거·정식 대사·적/보스·Scene/Quest·장비 레시피 가격 미정. Chapter3 우선 진행, 신규 Unity/Codex/아트/TTS/제품/main 변경 없음, #85 HOLD 유지.
+
+---
+
+# PLANNING / 2026-11-18 — Chapter3 전리품 승인 / Chapter4 장비 도입 방향
+
+- 대표 전리품 승인. [Chapter3 통합 정본](https://github.com/HappyPaul812/Project-Limitless/commit/6a8e85c8e8bf74383b137347af9ba1ceb68f24c2) 7종/펫4종/잡템6종 드롭률·가격 기획 승인 완료. 신규 아이콘 및 실제 적용/QA 별도.
+- 대표 “우리게임에 장착 아이템 시스템이 어울릴까? 어울리면 챕터4에 시스템 시작하게...” → 기획 적합 판단, Chapter4부터 일반 장비 시스템 시작 방향 기록. [장비 도입 1차안](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/Chapter4_장비시스템_도입_1차기획_20261118.md) commit 9796d9221ecf567d082bcac41444cf22532482bd. 슬롯3(무기/방어구/장신구), 직업별 무기, 공용 방어구/장신구, 주인공·동료 별도 장착, 전투 밖 무료 변경, 상점/NPC 및 퀘스트/고정드롭 활용, 기존 아트 외형 불변, 랜덤옵션/강화/내구도/제작 등 초기 제외는 세부 제안. 기존 장비상 안내만 구현/ItemCategory.Equipment 존재/장착 미구현 확인. 현재 Chapter3에는 소급 적용 금지. 정확한 장비/가격/스탯/UI/Save 계약 및 테스트 후 구현 승인. Unity/Codex 실행 및 main 변경 없음, #85 HOLD 유지.
+
+---
+
+# PLANNING / 2026-11-18 — 북부 7종 통합 기획 승인 / 잡템 6종 경제 제안
+
+- 대표 “승인할게..전리품 드롭률과 판매 가격도 기획해봐.” 직전 7종 능력치·전투·배치/보스/냉기 및 펫4종(서리들쥐 포함) 기획 승인. 기존 100탈렌트/승리 해금 유지. 실제 구현 및 밸런스 검증 별도.
+- [통합 기획 정본](https://github.com/HappyPaul812/Project-Limitless/commit/5a80b543589dc420cf25a270a163708e266affc1) 7절 신규 잡템 제안: 서리 묻은 털뭉치 50%/8, 설원 솜털 50%/9, 서리깃 45%/10, 빙갑 조각 45%/12, 눈폭풍 결정 45%/14, 마력차단 결정 100%/22(단회 엘리트), 보스 일반 Loot 없음. 확률/판매가 아직 사용자 승인 대기. 기존 Ch2 확률45~50/엘리트60%, 가격6~10/15 기준. 기존 승리 후 개체별 독립 1개 roll, Stack99, 상점 구매 불가/판매 가능, 재판매/Quest·경제 실제 검증 별도. 신규 아이콘 6종 128 RGBA 후속 별도 발주. 비반복 엘리트 재스폰/중복 금지 및 필수 수집 아이템으로 강제하지 않음.
+- Unity/Codex/제품/원격 main 변경 없음, #85 HOLD 유지. 스킬·소모품 가격 및 실제 Save 잔고는 미검증.
+
+---
+
+# PLANNING / 2026-11-18 — Chapter3 북부 몬스터 7종 통합 전투 기획
+
+- 대표 전체 몬스터 기획 요청. [통합 전투 밸런스 7종](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/08_몬스터/Chapter3_북부몬스터7종_전투밸런스_20261118.md) 작성 commit f431807f1b3c2d5b62e769ba054bcd519ef2b4f8 / [검토 Issue](https://github.com/HappyPaul812/Project-Limitless/issues/115). DESIGN_PROPOSAL/USER_REVIEW_PENDING/RUNTIME_NOT_IMPLEMENTED.
+- 서리들쥐 Lv17 HP200 ATK28 AG12 EXP60 Talent16, 설원족제비 18/220/34/19/68/18, 서리올빼미 18/205/30/17/70/18, 얼음갑충 19/360/32/7/76/20(기수용), 눈보라 정령 20/255/36/12/84/22, 빙각 수호체 21/820/40/9/125/32, 설빙의 폭군 22/1800/42/11/210/60. 기존 Ch2 확정 능력치 기반 후보. 실제 성장·경제·밸런스/ID/좌표/드롭률·판매가 미검증/미정.
+- 펫 후보3종(설원족제비 첫 한기 무효/올빼미 첫 동상 무효/갑충 방어60%) 유지, 동물형 서리들쥐 추가 선택지(굴파기 원거리 직접 피해10% 감소) 제안, 최종 승인 대기. 100탈렌트/실제 승리/사수별 장착 유지. 정령·수호체·보스 불가.
+- 한기2행동 차단 기존, 동상2행동 차단+각 차단 행동 종료 시 최대HP4%(제안), 일반 조우 1명만 냉기 행동불가/상태 시전자 최대1. 보스 HP900 이하 2페이즈, 예고한 숨결 1스택씩, 3번째 즉시KO 전에 실제 유효 화로 행동 기회 보장, 화로 비용0/행동1/전체중첩 제거, 시간제한/추가잡몹 없음. 기존 “잘.했.어.” 보호. 신규 틱/턴큐는 승인 및 시험 필요.
+- Unity/Codex/원격main/게임 제품 수정0, #85 HOLD 유지. 다음 사용자 결정 및 실제 기기 데이터 감사 후 구현 계약.
+
+---
+
+# PLANNING / 2026-11-18 — 서리올빼미 펫 후보 누락 정정
+
+- 대표 “올빼미 빠졌어”: Chapter3 동물형 펫 재검토 명단에 **설원족제비·서리올빼미·얼음갑충** 3종 포함. 기존 상세기획의 서리올빼미 분양 보류/1차 불가(조류형 역할 중복 방지)는 재검토 대상으로 옮김. 서리들쥐는 기존 불가 제안 그대로이며 이번에 일괄 허용을 확정하지 않음.
+- 펫 효과 제안: 설원족제비 첫 한기 1회 저항(기존 후보), 서리올빼미 '서리 깃털' 첫 실제 동상 적용 1회 무효(장착 사수 본인, 전투당 1회, 이미 적용된 상태 해제/동결괴사 면역 없음), 얼음갑충 '빙갑 엄호' 방어 중 직접피해 명목 60% 감소(기존 제안). 공통 승리 기록→100탈렌트 분양→사수별 장착. 상시 면역/추가 행동/새 상태 추가 없음. 세 종의 최종 분양 및 구체 효과는 대표 승인 대기, 한기/동상 런타임 미구현 상태 구분. Codex/Unity 실행 없음.
+
+---
+
+# PLANNING / 2026-11-18 — 얼음갑충 능력치 수용 / 펫 분양 재검토
+
+- 대표 “좋아. 근데 이거도 동물계 아냐? 펫 안돼?”: 직전 얼음갑충 수치·스킬·지역 제안 긍정 수용, 펫 불가 항목 재검토 요청. Lv19 HP360 ATK32 AG7 EXP76 Talent20 및 갑각 밀치기110%·갑각 닫기 다음 유효 직접피해1회 -50%·다음 자기 행동 만료·F3/F4 배치 방향 사용자 수용 기록. 실제 밸런스·좌표·드롭률/가격 미검증/미정 유지.
+- 기존 펫 불가 이유는 생물 분류가 아니라 기존 갑충 펫과의 개성 중복 방지용 기획 제안. 얼음갑충은 동물형(곤충)으로 분양 가능 설계가 세계관에 부합. 기존 이끼갑충의 상시 직접 피해 -5%, 균열도마뱀 첫 직접 피해 -20%, 화열딱정벌레 첫 화상 무효와 구별하기 위해 **펫 가능 전환 권고 / 패시브 후보 '빙갑 엄호': 장착 사수가 방어(Guard) 중 받는 직접 피해만 기존 Guard 처리 이후 ×0.8 (기존 50% 감소→합계60% 감소, 기존 파이프라인 반올림·최소피해 규칙 유지), DoT 제외. 공격 추가효과 없음, 일반 습격 유지.** 기존 실제 승리 발견→100탈렌트 구매→개별 사수 장착/저장, 별도 턴/HP/슬롯 없음. 설원족제비 기존 한기 첫1회 저항 후보와 별개.
+- 펫 가능 변경 및 효과는 사용자 최종 결정 전 제안 상태. 기존 펫 불가 정본을 아직 최종 덮어쓰지 않음. 기존 1종 우선 분양 후보 정책 변경 필요 여부도 후속 승인. Unity/Codex 실행0, #85 HOLD·F3/F4 미구현 유지.
+
+---
+
+# PLANNING / 2026-11-18 — 얼음갑충 전투 수치·등장 위치 제안 (대표 승인 대기)
+
+- 기존 [북부 상세기획](../../../08_몬스터/Chapter3_설빙의폭군_온기의화로_북부몬스터_상세기획_20261014.md)과 1차 기획 유지: F3 눈 덮인 고갯길(Lv18~20 대역) 첫 등장 → F4 백색 침엽림(Lv19~21 대역) 재등장. 전열 일반 방어형, 상태이상 없음, 분양 불가, 빙갑 조각 잡템 후보. F3/F4 실제 Scene/스폰 미구현.
+- [Chapter2 확정 전투 계약](https://github.com/HappyPaul812/Project-Limitless/blob/ba59838bf923832362f3b1fccf4897864cc678fa/문서/08_몬스터/Chapter2_몬스터_1차_설계.md): 화열딱정벌레 Lv12 HP220 ATK22 AG7 EXP46 Talent13; 흑요석 갑충 Lv13 HP250 ATK24 AG8 EXP50 Talent14. 서리들쥐 HP60 등은 클래스 기본/외형 구성, 서리올빼미 Lv1 HP60 등은 격리 검증용 수치/보상0이므로 정식 수치 근거 아님. 실제 Chapter2 완료 Save·플레이어 공격/경제 실측 및 최신 로컬 Definition 값은 미검증.
+- **신규 제안(미확정): 얼음갑충 Lv19 / HP360 / 공격32 / 민첩7 / 기본 EXP76 / 탈렌트20.** 갑각 밀치기 단일 근접 물리 110%, 기존 전후열/도발 적용. 갑각 닫기 자신의 행동 1회 소비, 다음 실제 유효 직접 피해 1회 50% 감소 후 해제, 다음 자기 행동 시작까지 유효, 지속피해/0피해 미소비, 중첩/완전무적 금지. 제안 AI 고정 4행동 주기 밀치기→닫기→밀치기→밀치기, 반복(닫기 사이 일반 공격3회), 상태 텍스트+아이콘 표시, 기존 공용 피해/방어/공격 모션 재사용 범위 확인; 새 방어 아트 필요 시 별도. 다른 신규 상태/불 약점/펫 미추가.
+- 조우 제안: 첫 고갯길 입구에서 안전거리 둔 안쪽 바위 근처 단독1기(회피 가능), 고갯길 안쪽 얼음갑충1+서리올빼미1, 백색 침엽림 얼음갑충1+눈보라 정령1(동상 대응 공급 선행). 일반 적 화면/전투 최대2, NPC·출입구·대사 지점과 거리 및 휠체어 통로 보장. 실제 좌표/리스폰 점검 별도. 빙갑 조각 1종, 확률/판매가 기존 경제 대조 후 확정. EXP/Talent까지 밸런스 초안이며 승인 및 실제 파티 실측 전 확정 금지.
+- 이번은 휴대폰에서 기획 논의용 초안 기록뿐. Unity/코드/신규 제작/Codex 실행 없음. #103 전체 미술/게임 적용 승인 기존 유지, 실제 등록·조우 미적용. #85 HOLD/Save/기존 승인작 보호, main 변경 없음.
+
+---
+
+# PLANNING / 2026-11-17 — 일일 마감 완료 확인 / 11월 18일 모바일 기획 재개
+
+- [Codex 최종 마감](https://github.com/HappyPaul812/Project-Limitless/issues/114#issuecomment-6946090923) 확인: 승인 제품19경로·담당보고15건 통합, 원본 FF-only 완료 local main 455e2fd13c59c92277bae21a8b1264ee79682a8b. [복구 브랜치](https://github.com/HappyPaul812/Project-Limitless/tree/backup/2026-11-17-safe-checkpoint) 서버 ba59838bf923832362f3b1fccf4897864cc678fa, 독립 수신58경로 SHA256 일치. 원격 main bfd281545632877325f5d21e04cefb924042c465 불변. Unity6000.6.5f1/오류0·경고42, 기존 사용자자료·Save/UserData·Discord/#85 HOLD 보존. 비Git 자료 PC 밖 암호화 백업은 미완, 로컬 증분/230브랜치 bundle 커버 확인. F: 299.17GiB 여유. 기획은 Codex 실제 보고 확인, 독립 로컬 실행 없음.
+- 대표 11/18 휴대폰 접속 시 재개 예정: **얼음갑충 능력치와 등장 위치부터 기획**. 모바일에서 이해/결정하기 쉽게 몬스터 이름 기준으로 진행. 기존 상세기획 F3 눈 덮인 고갯길~F4 백색 침엽림, 전열 방어형의 공식 방향과 기존 몬스터 실수치/경험치·보상 곡선 대조 후 레벨·HP/공격/민첩·방어 패턴·전리품·조우 편성 및 첫 배치의 후보 제시. 사용자 결정 전 수치 확정·Unity 적용 금지. F3/F4 실제 Scene 미구현 및 M4 등록 없음 명시, 임의 기존 몬스터 대체 금지. M4 아트/게임 적용 승인 유지, 실제 미적용. 펫 분양 담당 신규 원화 미적용 및 눈보라 정령 미술 승인 대기 유지. 대표 재접속 전 추가 개발·자동 실행 없음.
+
+---
+
+# PLANNING / 2026-11-17 — 일일 마감 / 승인분 통합 및 로컬 동기화 발주
+
+- 대표 “오늘은 여기까지 하자. 어제처럼 해줘.” → [EOD #114](https://github.com/HappyPaul812/Project-Limitless/issues/114) 승인분 통합·원본 local 동기화·안전한 비-main 복구 브랜치 보존 발주. 기획 실제 GitHub 발주, Codex 실행 결과 아직 없음. 11/16 복구 기준 9d84b81934a7c… 실제 로컬/원격 ref부터 확인. main 직접 commit/Push/Merge 금지, 원격 main과 로컬 Unity 버전 차이 주의(실제6000.6.5f1 유지), Save/UserData/Discord/#85 HOLD/dirty/untracked/개인 비Git 보존.
+- 오늘 실제 로컬 적용: 시작마을 주민·남문경비/공용 이름표·E 안내, Main04/07 부상 여행자, 레온, 카타콤·아르벨 파티안내인, 잔여 외부 NPC 참조 수정. 관련 #102/104~111 최신 보고와 실제 파일 대조 후 같은 Catalog 등의 누적 변경 보존. 기존 QA 재사용, 통합 delta만 확인.
+- [얼음갑충](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6943910391) 전체 미술 및 게임 적용 승인, 44PASS 격리 QA, 실제 M4 등록/스탯/조우/예정 F3·F4 Scene 부재 → NOT_APPLIED, 임의 기준/신규 등록 금지. 내일 기획에서 등록·밸런스·첫 배치 계약 우선 정리 후 Codex 재발주. [펫 분양 담당](https://github.com/HappyPaul812/Project-Limitless/issues/113#issuecomment-6943908814) 최종 미술 승인, 게임 미적용 유지(다음 실제 적용 지시 별도). [눈보라 정령](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-6943599943) 파일 기술 PASS/미술 승인 대기. 설원족제비 Defeat4 최신 확인 댓글상 승인 대기(#100, 이후 승인 있으면 실제 기록 대조). 단색 임시 주민 처리 미결. 오늘 마감 중 새 제작·새 기능·미적용 자산 제품 반영 금지.
+- 보고는 사람이 알아보기 쉽게 **작업·몬스터·NPC 이름 우선**, 이슈 번호는 지시문/링크/기술 문서에서 보조 표기. 별도 실물 검사·동기화·원격 push 성공 주장 금지. 원격 보존·local HEAD·비Git 외부백업 각각 결과 분리.
+
+---
+
+# PLANNING / 2026-11-17 — Codex 한도 보류 중 두 아트 독립 병렬 발주
+
+- 대표 “그래.”로 두 아트 다음 작업 진행 동의. [#112 M5 눈보라 정령](https://github.com/HappyPaul812/Project-Limitless/issues/112) 신규 512 RGBA 우향 1포즈 후보만. 정본 M5 F4~5 후열 자연 정령, 은백 소용돌이/어두운 푸른 핵, 비인간형. 기존 실물/승인 원화 선확인 후 없을 때만 제작, 512/128/40 비교·ZIP QA·사용자 승인. M4 전체 미술 승인 보호, 모션/Unity/스탯/Spawn/펫 금지.
+- Main14~21 스토리 정본 조회상 레온 이후 미제작 일반 퀘스트 NPC 명확히 확인되지 않음(원격 문서 범위, 로컬 전수 아님). [#113 펫 분양 담당](https://github.com/HappyPaul812/Project-Limitless/issues/113) 기존 arbel-pet-adoption 역할의 독립 512 RGBA 정지 1포즈 후보 발주. #111 승인 OGA17 적용은 완료 유지; 외부 참조 제거 반복이 아니라 장비상인/펫 관리인 외형 구별 목적. 기존 원화 선확인 및 중복 금지, 초상화/애니메이션/새 캐논/Unity 적용 금지. Arbel 단색 Placeholder 처리 미결 유지.
+- 서로 독립, Codex 추가 호출0. 실제 아트 제작 및 사용자 전달은 아직 별도. Unity6000.6.5f1/#85 HOLD/Save/Discord/승인 자산 보호, main 직접 commit/Push/Merge0.
+
+---
+
+# PLANNING / 2026-11-17 — 얼음갑충 Defeat4 최종 미술 승인 / 전체 모션 적용 준비
+
+- 바울 대표 직접 답변 “어 승인.”으로 [Defeat4 기획 실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6941389577) 최종 미술 승인. **KEYPOSE_IDLE4_ATTACK4_HIT4_DEFEAT4_USER_ART_APPROVED / UNITY_NOT_APPLIED**. Defeat4 PNG SHA256 9cd3fd4c1925f9953830d9d857b96f11f8bb754dc7b57fe34640936f4cb1c5fb, ZIP SHA256 c04ad4e6528f3ea9aa36971b8ef9ce033711d2e96ba0d13589f3adb0fb676bbc. 기존 4종 승인 파일 포함 원본 픽셀 보호, 재제작 금지.
+- Codex 캡처 기준 5시간 한도 5%, 초기화 후 한 번에 전체 모션 대상 최소 QA/적용 준비. Windows F: 승인 ZIP 5종 실물 해시 비교, Unity6000.6.5f1 실제 버전 일치 확인. 기존 M4 등록·전투 계약 재확인, Idle 반복/Attack·Hit·Defeat 비루프 및 마지막 패배 자세 유지, 기존 전투 타이밍·피해 판정 보존. M4 기존 등록 또는 승인된 적용 계약이 없으면 격리 미리보기만 검증하고 제품 등록/Spawn/스탯·펫 등 새 기능은 임의 추가 금지. 실제 적용 결과 별도 보고. 기존 NPC 적용분·Save/UserData/Discord/#85 HOLD·승인 자산·dirty/untracked 보호, main 직접 commit/Push/Merge 금지. 아직 Codex 실제 실행 없음. 작업 지시문은 초기화 후 대표가 전달하는 방식.
+
+---
+
+# PLANNING / 2026-11-17 — #111 원본 적용 확인 / 얼음갑충 Defeat4 기획 실물 검수 / Codex 한도 절약
+
+- [#109 레온 최종 적용](https://github.com/HappyPaul812/Project-Limitless/issues/109#issuecomment-6940954919) 178PASS/0FAIL, [#110 파티 안내인](https://github.com/HappyPaul812/Project-Limitless/issues/110#issuecomment-6940956185) 85PASS 기존 완료 유지. [#111 실제 적용 보고](https://github.com/HappyPaul812/Project-Limitless/issues/111#issuecomment-6941300553) 160PASS/0FAIL, 원본 working tree 적용 및 Unity6000.6.5f1 compile 정상/Console 오류0. 제품 e4478f57f2e60a94d32a07b79d00b6fed1cf975e, 문서 cf4638841adad39b8eaa0a9fbba4178bad90a972, LOCAL_COMMITTED/REMOTE_NOT_PUSHED. 3지역×BASE/Main21완료 56 NPC 기록에서 legacy 렌더0, 외부PNG12 보관 유지; 전 게임 전체 제거 판정 아님. Arbel(1.5,-1.5) 단색 주민은 외부PNG가 아닌 초기 Placeholder 잔존(VillageNpcRole/StableID 없음), 처리 미결. 새 원화/삭제/역할 부여는 별도 결정.
+- #103 Defeat4: 대표 제공 F:/Downloads/IceBeetle_Issue103_Defeat4_20261117.zip 경로와 동일명 Library 실제 ZIP 3,134,616bytes를 기획이 자체 열어 직접 검수. ZIP SHA c04ad4e6528f3ea9aa36971b8ef9ce033711d2e96ba0d13589f3adb0fb676bbc, CRC PASS, Manifest10/10 및 SUMS11/11 실제 재검증. PNG SHA 9cd3fd4c1925f9953830d9d857b96f11f8bb754dc7b57fe34640936f4cb1c5fb, 2048×512 RGBA, 4셀 개별 QA PNG 픽셀 일치. 실제 GIF 비루프 160/190/220/1600ms. Hit4 라이브러리 승인 PNG SHA cf1dd6c78ffeffd12f8d026dda7ae362e09ffd0a7a3dee536d86569df4f51a3c 일치; 마지막 Hit bbox (29,125,484,464) vs 첫 Defeat (28,126,483,464), 전 패배 프레임 하단 y464 일치. 직접 시각 비교상 갑각 디테일 일부 차이 있으나 외형 연속성과 다리 접힘/점진적 낮아짐 양호, 3~4번 변화 작지만 마지막 정지 유지 목적에 부합. KEEP/USER_FINAL_ART_APPROVAL_PENDING/UNITY_NOT_APPLIED. Windows F: 실물 및 실제 Unity 미검증.
+- 대표 한도 캡처 5시간 5%/초기화 1h13m, 주간59%. 지금 추가 Codex 요청 보류 권고; 승인 후 한도 초기화 시 기존 KeyPose/Idle4/Attack4/Hit4/Defeat4 전체를 묶어 필요한 최소 검증 발주. #85 HOLD, Save/UserData/Discord/승인자산 보호. 원격 main과 PC HEAD/Unity 버전 차이는 실제 확인 후 동기화, 임의 버전 변경/Push/Merge 금지. 이번 기획은 Library 오프라인 QA 및 GitHub 기록만 실시, 최종 사용자 승인 아님.
+
+---
+
+# PLANNING / 2026-11-17 — 파티 안내인 85PASS 적용 / 레온 진행 중 / 잔여 legacy NPC 2종 순차 정리
+
+- [#110 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/110#issuecomment-6940618986): safezone-catacomb-party/arbel-party-guide 매핑2줄 승인 OGA10으로 교체, Delta85PASS/0FAIL, 원본 compile errors0/warnings42, 원본 working tree 적용. PNG/meta/GUID 변경0. 제품 6c81a03d229f0075b39dcbfa07656182e7f6bae5, 보고 78c330d6843e11a537abfed9ce72e452d210b344. 확인 위치 Field03(2.85,-2.55), Arbel(-3,-2). 실제 사용자 Play 확인 별도.
+- #110 실제 3Scene/BASE 및 Main21 완료 상태 감사: 구형 PNG 12종 중 실사용2종(OGA17·OGA11), NPC 미표시10종. 실사용 대상 arbel-pet-adoption, arbel-resident-west 및 Main21 후 카타콤/시작마을 펫분양 fallback 2명(총4참조). 전 프로젝트 미사용·삭제 판정 아님.
+- 레온 #109 적용 지시문은 대표가 이미 전달, 결과 미접수. [#111 후속 발주](https://github.com/HappyPaul812/Project-Limitless/issues/111): 레온 완료 후에만 동일 카탈로그 순차 작업. 기존 승인 OGA17/OGA11 원화 재사용하여 해당 legacy 직접 매핑 및 펫분양 fallback 제거, 최소 Delta QA 후 원본 working tree 적용. 역할별 새 독립 원화는 별도 판단. 중복 재제작 금지.
+- 별도 Arbel (1.5,-1.5) NO_ROLE:VillageNpc 단색 PlaceholderVisual 실제 활성 발견. #111에서는 역할/생성 경로/ID/의도 읽기 조사만, 임의 삭제/새 역할/아트 생성 금지. 결과 후 필요 작업 발주. 신규 초상화 제외 유지.
+- Unity6000.6.5f1, #85 HOLD, Save/UserData/Discord/기존 작품 보호, no Push/Merge/main 직접 commit/대형 QA 복제. 이번 기획은 GitHub 발주·기록만 완료, #111 실제 실행 전.
+
+---
+
+# PLANNING / 2026-11-17 — 얼음갑충 Hit4·레온 최종 승인 / NPC 초상화 범위 제외
+
+- 대표 직접 결정: “레온 초상화까지 할려면 챕터1 도 해야 되니까 초상화는 빼, 둘 다 승인하고”. Hit4 및 Main13 레온 정지 원화 USER_ART_APPROVED, Unity 미적용. 일반·퀘스트 NPC 리뉴얼은 정지 원화 중심, 신규 초상화 제외. 기존 공식 주요 인물 초상화는 삭제·수정하지 않는다. 레온 초상화 미발견은 적용 차단 조건 아님.
+- [#103 승인 및 Defeat4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6940446478): 승인 KeyPose·Idle4·Attack4·Hit4 보호, 다음 Defeat4 2048x512 RGBA 4프레임만 제작, 최종 패배 자세 유지/비루프 검토 GIF. Unity 적용·펫/스탯·Spawn은 별도.
+- [#109 승인 및 레온 적용 발주](https://github.com/HappyPaul812/Project-Limitless/issues/109#issuecomment-6940447233): F:/Downloads/Limitless_Main13_Leon.zip 승인 원본 해시 유지, arbel-leon 전용 Sprite+meta 및 매핑만 변경. OGA09 공유자 보호, 기존 이름표/안내·대화·퀘스트 최소 DeltaQA. #110 두 파티 안내인 작업과 동일 카탈로그 충돌이 없도록 단일 순차 작업으로 병행 업무 조정, #110 결과가 이미 있는 경우 중복 적용 금지. 원본 working tree만 조건부 적용.
+- 리뉴얼 다음 NPC는 #110의 실사용 외부 NPC 감사 결과를 활용해 퀘스트 순서와 실제 잔여 자산을 기준으로 발주. 불필요한 중복 원화·초상화 제작 금지.
+- Unity6000.6.5f1, #85 HOLD, Save/UserData/Discord/승인원본 및 dirty/untracked 보호, main 직접 commit/Push/Merge 금지. GitHub 발주·문서화만 실행, 실제 제작/Unity 적용은 별도.
+
+---
+
+# PLANNING / 2026-11-17 — 카타콤/아르벨 파티 안내인 외부 원화 잔존 발견·수정 발주 및 신규 아트 검수
+
+- 대표 실제 플레이 피드백: '챕터 1의 던전 앞 npc중에 파티 안내인 우리꺼 아니다?' [#101 원본 적용 보고](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6913091059)에서 starter-village-party-manager만 승인 OGA10으로 변경했으며 safezone-catacomb-party/arbel-party-guide는 legacy OGA10 유지 명시. 원격 main 코드도 공유 경로 확인. 현재 로컬 실물은 Codex 재확인 필요.
+- [#110](https://github.com/HappyPaul812/Project-Limitless/issues/110) 두 파티 안내인 승인 OGA10 경로 조건부 교체 및 기타 실사용 외부 NPC 읽기 감사 발주. 기존 원화 재제작 금지, 다른 지역 NPC 무단 일괄 변경 금지. 별개 인물 고유 디자인은 별도 미술 발주. 기존 NPC12·Main04/07·#106 이름표·상호작용 보존.
+- [#108 Main07 원본 적용](https://github.com/HappyPaul812/Project-Limitless/issues/108#issuecomment-6938996850): 134 PASS/0 FAIL, PPU430/Pivot(255,46)px, GUID 2cf0a7d9462740c58756aca0f18f3391, 제품 f1b0fc9258003d3c12e9c1f1bd830dda84f51b21, 원본 working tree만 적용. 미엘 필드 Sprite 미존재로 참고 체격 비교만, 1.1WU 통상접근 범위 QA, 사용자 실플레이 대기.
+- [#103 Hit4 실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6940004708): FILE_TECH_PASS / ART_REVIEW_PENDING / NOT_APPLIED. ZIP SHA 982328b9a96f13330b8cdf9d8be6433abd9907fa1b1826dbec0ec352bc6bee55, PNG SHA cf1dd6c78ffeffd12f8d026dda7ae362e09ffd0a7a3dee536d86569df4f51a3c. 마지막 KeyPose 일치, 접지 유지, 이상 프레임 없음. KEEP 권고, 사용자 승인 전 Defeat4 발주 금지.
+- [#109 레온 실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/109#issuecomment-6940006218): FILE_TECH_PASS / USER_ART_APPROVAL_PENDING / NOT_APPLIED. PNG SHA ff7cfd081e7727a7ab228bae0a5ece879727b98594514c932d4a616396bc8fdc, ZIP SHA dfaaf5fe453dadeaa268a24edbdcefafb6a9b0266db4c6e6251131b741d6504a. OGA09와 구별, 세밀한 명암·치비 비율 조화는 사용자 판단 필요. 공식 레온 초상화 미발견(대조 미검증). 사용자 최종 승인 전 적용 금지.
+- GitHub 발주/기획 기록만 완료, 로컬 작업 자동실행 없음. Unity6000.6.5f1/#85 HOLD/Save/Discord/기존 원본과 dirty/untracked 보호, main 직접 commit/Push/Merge 금지.
+
+---
+
+# PLANNING / 2026-11-17 — 얼음갑충 Attack4·Main07 부상자 최종 미술 승인 / 후속 3건
+
+- 대표가 두 원화 승인 요청에 '어. 승인,' 답변. **Attack4 및 Main07 USER_ART_APPROVED**, 재작업 없음, 아직 Unity 미적용.
+- [#103 승인·Hit4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6938653973): KeyPose·Idle4·Attack4 승인 바이트 보호. 2048×512 RGBA 4프레임 Hit4만 제작. 피격 반동→회복, 갑각·발 접지 유지. Defeat4/Unity/스탯·스폰 금지.
+- [#108 승인·로컬 적용 발주](https://github.com/HappyPaul812/Project-Limitless/issues/108#issuecomment-6938654608): Main07 WoundedTravelerVisual 기존 임시 OGA07 참조만 전용 PNG로 교체, F:/Downloads/Limitless_Main07_Traveler.zip. Main04 화면 가림 개선 교훈 적용, 960/1280/1680 HUD ON·얼굴/안내·미엘/폴 상대 체격/접지·기존 퀘스트 흐름 최소 DeltaQA PASS 시 로컬 원본 작업트리 적용. Main04·기존 NPC12·공용 UI 보호.
+- 다음 순서 조사: Main08 신규 인물 없음, Main09 폴 기존, Main10~11 조사/전투와 기존 인물, Main12 기존 잡화상인, Main13 세린 공식 유지. [#109 Main13 레온 신규 발주](https://github.com/HappyPaul812/Project-Limitless/issues/109). 정본 Chapter2_도입부_Main12_14.md 목표6 meet_arbel_warden, arbel-leon. 원격 main VillageNpcAppearanceCatalog.cs는 레온에 OGA09_VillageRepresentative를 공유. **기승인 레온 독립 원화/공식 초상화 먼저 확인, 없다면 512 RGBA 1포즈만 제작**. 기존 주민 대표와 얼굴/체형/의상 구별, 공식 초상화 있을 시 일치, 부상 설정 임의 추가 금지. 최신 로컬 구현은 Codex 확인 필요.
+- 세 업무 병렬 발주 및 GitHub 기록만 수행, 실제 생성/로컬 적용 미실행. Unity6000.6.5f1, #85 HOLD, Save/UserData/Discord 및 기승인 원본·dirty/untracked 보호, main 직접 commit/Push/Merge 금지.
+
+---
+
+# PLANNING / 2026-11-17 — Main04 화면 가림 해소·로컬 적용 / Attack4 및 Main07 기술 PASS
+
+- 대표 제출 Codex 화면 2장과 [#107 원본 적용 보고](https://github.com/HappyPaul812/Project-Limitless/issues/107#issuecomment-6938131437), [#103 실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6938132684), [#108 실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/108#issuecomment-6938133891) 확인.
+- **#107 Main04 승인 여행자 LOCAL_ORIGINAL_WORKING_TREE_APPLIED / USER_REALPLAY_PENDING**. 제품 4파일 MainQuest04FieldFlow.cs, QuestNavigationPresenter.cs, 전용 PNG+meta. 새 PNG SHA256 2687c1c62e5bd20e6e0fb16c3428225aa28fc156c80a5c08b6af2350d9e9715d, GUID f325180de4944364a0dd74c1a814d6df, PPU360/Pivot(.5,.08203125), tint.82/sorting7 유지. Meeting Y5.5→3.4, 미엘(7.55,3.5), 여행자(8.85,3.05), StoryLabel Y1.15→1.65, 미엘 전용 E Y1.48→1.66, 표식1.92→2.08. Main04 한정 카메라/목표판 배치 보완; 공용 #106 이름표·CameraFollow·Scene Asset 불변.
+- 기능65 PASS + 별도 최종 화면59 PASS, 정상 HUD ON 960/1280/1680×4방향 및 얼굴/이름표/목표판 비가림. 승리는 QA EndBattle(true) 결과 호출 검증이며 실제 전체 3대3 승리 플레이는 아님. 원본 Import/compile PASS, Console errors0/warnings104, QA의 기존 Search 초기화 예외 별도. 실제 사용자 Play 확인은 남아 있음.
+- **#103 IceBeetle Attack4 FILE_TECH_PASS / USER_ART_APPROVAL_PENDING / NOT_APPLIED**. ZIP SHA ebb4172037c7b7e74115be0aaf38e70dc9c58b6e928549934415e290d682f997, PNG SHA d8dab5e411f7eeb0aa73b1e412b8d820ecfeb38d514c60cf5fef7eb29af4b236, CRC/Manifest10/10/SUMS11/11 PASS, 2048x512 RGBA 4셀. 첫 프레임은 준비 자세, 마지막은 승인 KeyPose 전픽셀 동일. 발 접지 y430..511 불변, 정점 오른쪽7px 여백·클리핑0, 실제 GIF 180/110/130/180ms(총600ms) 가변. 준비→갑각 밀치기→정점→회복, 이상 프레임 없음. KEEP 권고, 승인 전 Hit4 제작/Unity 적용 금지.
+- **#108 Main07 숲길 부상자 FILE_TECH_PASS / USER_ART_APPROVAL_PENDING / NOT_APPLIED**. ZIP SHA b943fb9198f02da7a6df90853457e1bac2b74d916c356b2faab6bac8089db6bd, PNG SHA 90c727b95bee6b2586333d44ebb05b8077664a7e5877084cbbe4a1010676b432, CRC/Manifest7/7/SUMS8/8 PASS, 512x512 RGBA. 회색 앞머리·자주 외투·다리 붕대·한손으로 바닥 지지하는 자세. Main04 및 기존 주민과 구별, 고어 없음. KEEP 권고, 캐논 상세/동일인 관계 미확정. 승인 후 Main07만 독립 Sprite 참조 교체 및 #107 가림 방지 교훈 재사용하여 실제 상대 체격/접지/HUD/퀘스트 안내 최소 DeltaQA.
+- Codex 브랜치 codex/main04-layout-art103-108-20261117, 제품 커밋 3f66fdb25d9445738f8b484d065d92d84e462442, 보고 cf1122569f0aeda216a3c0841e2e8d9fff5c3764. main HEAD52f84e64 유지, 원격 Push/Merge 없음. 기존 보호8350파일/주민12/Save/Discord 유지, Unity6000.6.5f1/#85 HOLD. 기획은 보고 검토 및 문서화만 수행, 실제 아트 직접 시각검사·로컬 실행 없음. 두 신규 아트 미술 승인은 별도 대기.
+
+---
+
+# PLANNING / 2026-11-17 — IceBeetle Idle4·Main04 여행자 사용자 승인 및 후속 3건 발주
+
+- 바울 대표가 두 원화 최종 승인 권고와 후속 단계에 '그래.'라고 답변. **IceBeetle Idle4 및 Main04 부상 여행자 USER_ART_APPROVED**. 원본 PNG 추가 재작업 없음. 두 건 모두 아직 Unity 미적용.
+- [#103 승인·Attack4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6936952632): 승인 KeyPose 및 Idle4 바이트 보존, 2048x512 RGBA Attack4 1시트만 제작. 갑각 밀치기 동작 후보(준비→짧은 밀치기→정점→회복), 512/128/40 비교와 GIF 실제 재생간격 표기·비순환 Manifest/SUMS/CRC. Hit/Defeat/Unity/정식 스탯·스킬·Spawn 금지.
+- [#107 승인·Codex 조건부 적용 발주](https://github.com/HappyPaul812/Project-Limitless/issues/107#issuecomment-6936953484): F:/Downloads/Limitless_Main04_Traveler.zip, PNG SHA 2687c1c62e5bd20e6e0fb16c3428225aa28fc156c80a5c08b6af2350d9e9715d. Main04 전용 독립 Sprite, legacy32px OGA07 참조만 교체. 맞춤 PPU/Pivot 및 미엘과의 상대 체격, 앉은 자세, sorting/tint, StoryLabel 얼굴 비가림, 퀘스트 회귀 확인. 최소 DeltaQA PASS 시 로컬 원본 작업트리만 안전 적용. 기존 원본/Save/Discord/미커밋 보호.
+- [#108 Main07 리뉴얼 신규 발주](https://github.com/HappyPaul812/Project-Limitless/issues/108): Field02 WoundedTravelerVisual(4.4,0.2), 미엘이 치료하느라 전투 제외되는 숲길 부상자. Main04와 동일인이라는 확정 근거는 아직 없음. **별개 디자인 후보로 진행하되 캐논 동일인 여부를 확정하지 않는다**. 기존 승인 원화 또는 동일인 근거 발견 시 중복 제작 중단. 없으면 512 RGBA 정지 1포즈, Main04·주민과 다른 인상, 치료/휴식 상태, 부상 상세 임의 설정 금지.
+- 세 업무 독립 병렬. GitHub 발주·문서화만 수행, 실제 아트 생성 및 Codex 로컬 적용은 각 담당에게 전달 후 실행해야 함. Unity6000.6.5f1, Issue85 HOLD, Save/UserData/Discord·기존 승인 원화 및 작업 보존, main 직접 commit/Push/Merge 금지.
+
+---
+
+# PLANNING / 2026-11-17 — IceBeetle Idle4 및 Main04 여행자 오프라인 기술검수 PASS
+
+- 바울 대표 Codex 검수 화면 및 [#103 실제 F: 검수](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6936676152), [#107 실제 F: 검수](https://github.com/HappyPaul812/Project-Limitless/issues/107#issuecomment-6936677447) 대조 확인. 두 건 FILE_TECH_PASS / USER_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED. 검사 브랜치 codex/art103-107-offline-review-20261117, 로컬 보고 커밋 29d324990ca7845d733b2d88bb7bf5c5089a403e, 원격 Push 없음.
+- #103 얼음갑충 Idle4 ZIP SHA256 8a9ecec00a98cb094e155aa31f7e737190358d9481ad333d2371e8013281ea87, PNG SHA256 bd06c6d9a901d4c3550882ad4ce061629195b60e75f04636ec4814ebb0967793. Manifest10/10·SUMS11/11·CRC PASS, 2048x512 RGBA 4셀. Frame00 독립 승인 KeyPose 픽셀 동일, 발 y397~511 RGBA 동일. 2~4프레임 갑각 미세운동 정상, 이상 프레임 없음. GIF 실제 120ms/frame(약8.33FPS)와 문서125ms/8FPS 차이는 검토자료 타이밍 표기 한계이며 게임용 PNG 결함 아님. 정확한 8FPS 증명으로 쓰지 않고 다음 문서 갱신 때 표기만 정정 권고. 같은 ZIP/PNG 재작업·재검사 불필요.
+- #107 Main04 부상 여행자 ZIP SHA256 286fe97b6f68f44f45d22a6a4940b9e5b84fc09d8b53d7d9333211e3bc4311a3, PNG SHA256 2687c1c62e5bd20e6e0fb16c3428225aa28fc156c80a5c08b6af2350d9e9715d. Manifest7/7·SUMS8/8·CRC PASS, 512x512 RGBA, 앉은 자세·팔 붕대·여행장비/피로 표현 자연스러움, 고어 없음. 실제 Main04 참조는 legacy32px OGA07, 기존 승인 512px 주민용 OGA07과 별개. 두 파일을 구분하고 실제 장면 참조만 교체. 미술 승인 후 별도 최소 QA에서 맞춤 PPU/Pivot, 미엘과 크기·접지, 기존 tint.82/sorting7/독립 StoryLabel Y1.15 얼굴 비가림 검증. Main07 동일인 미확정 유지.
+- 앞서 제출된 #104/#105 로컬 적용 결과 화면: OGA19/OGA20 원본 working tree 적용, Delta118PASS/0FAIL, Console errors0, 기존 NPC10·이름표Y1.37/E안내/주민숨김 보존. 공식 태온 초상화·Sprite 직접 대조에서 강한 유사성 없음. OGA20 남문/카타콤/아르벨 포탈 관리자 반영. 두 신규 PPU367.5, Pivot(.4990234375,.076171875). Codex 제품 커밋 a0d5674bc83ddae5223cc4c62f23b2889876f2ed, main HEAD 유지/Push/Merge 없음. 시작마을 NPC12 제품 적용 보고 완료(사용자 직접 플레이 확인은 별도).
+- 기존 원본 보호 목록8350개 대조, Unity 실행/Import/적용/GUID 수정/Push/Merge0, #85 HOLD, Unity6000.6.5f1, Save/UserData/Discord 보호. 기획 판단은 Codex 실물 보고 기반이며 기획 세션에서 PNG를 직접 시각 검토한 것이 아님. 두 후보 모두 KEEP 권고, 사용자 미술 승인 전 얼음갑충 Attack4 및 여행자 제품 적용을 자동 발주하지 않는다.
+
+---
+
+# PLANNING / 2026-11-17 — 메인 퀘스트 순서대로 리뉴얼 NPC 제작
+
+- 바울 대표 결정: **“퀘스트 순서대로 npc 만들어줘.”** 이미 승인·적용한 시작마을 일반 NPC를 재제작하지 않고, 실제 스토리·퀘스트 자료가 뒷받침하는 최초 미제작 퀘스트 등장인물부터 1종씩 제작한다.
+- [메인 스토리와 퀘스트 설계](https://github.com/HappyPaul812/Project-Limitless/blob/main/문서/03_스토리/메인_스토리와_퀘스트_설계.md), [Main04 실제 설치 코드](https://github.com/HappyPaul812/Project-Limitless/blob/main/Unity/Client/Assets/_Project/Scripts/World/MainQuest04FieldFlow.cs), [Main07 실제 설치 코드](https://github.com/HappyPaul812/Project-Limitless/blob/main/Unity/Client/Assets/_Project/Scripts/World/MainQuest07FieldFlow.cs)를 확인했다. Main01 = 승인 주민대표/남문경비, Main02 = 신규 NPC 없음, Main03 = 기존 태온, **첫 제작 대상 Main04 「세 사람」 부상당한 여행자**.
+- Main04 Field01 미엘이 습격당한 여행자를 치료 중이고 대사 “조금만 참으세요. 출혈은 멎었습니다.”가 확인된다. 실제 CreateWoundedTraveler에서 **OGA07_Resident01 스프라이트를 임시 재사용**하고, 위치(8.15,5.15), 그림 sorting7, tint.82, **별도 WorldSpace StoryLabel Y1.15**를 사용한다. 이 레이블은 최근 #106 일반 NPC 이름표 Y1.37 코드와 별개다.
+- [Issue #107 첫 제작 발주](https://github.com/HappyPaul812/Project-Limitless/issues/107): 512x512 RGBA 투명 정지 1포즈, 부상·응급처치/회복 상황 자연스럽게 표현. 기존 OGA07와 다른 인상, 기존 미엘·태온 원본·시점·화풍 유지. **부상 부위·이름·직업·성별·영구장애 등 미확정 캐논 임의 추가 금지**, 피·고어·비참함 과장 금지. 실제 PNG 기반 512/128/40 비교판 및 출처/Manifest/SUMS/CRC. 미술 승인 전 Unity 원본 적용 금지.
+- 다음 퀘스트 **Main07**에도 Field02 위치(4.4,0.2) 부상당한 여행자 시각 객체가 있고 현재 OGA07를 재사용한다. **Main04·Main07이 동일 인물이라고 확정된 스토리 근거는 확인되지 않아**, Main04 제작 이후 이름/Identity·원문 대조로 재사용 가능 여부 결정. Main05·06 기존 동료와 흔적 중심으로 신규 인물 필요 없음. 사이드 퀘스트는 선행/실제 startNpcId·turnInNpcId 검증 뒤 별도 분류.
+- 인계는 docs/planning만 변경; 리뉴얼 담당 docs/art-renewal 제작과 Codex Unity DeltaQA는 별도 실제 수행 필요. Unity6000.6.5f1, #85 HOLD, Save/UserData·Discord·기승인 NPC12·미커밋·미추적·Scene/Quest 보호. main 직접 commit/Push/Merge 없음.
+
+---
+# PLANNING / 2026-11-17 — 이름표 155PASS, 얼음갑충 1포즈·리뉴얼 NPC104/105 미술 시각 수용
+
+- 바울 대표가 [Codex Issue106 보고](https://github.com/HappyPaul812/Project-Limitless/issues/106#issuecomment-6934444417)와 “**메인 얼음벌레 이뻐. 포즈니까 다운은 안받아도 되지? 그리고 리뉴얼도 좋네, F:\Downloads\Limitless_NPC_104_105.zip**”라고 전달. **이름표 문제 실제 원본 working tree 코드 적용**, Nameplate Y1.02→1.37, 공용 기능 NPC E안내1.48→1.87·표식 활성시2.48, Resident 상시 숨김 그대로, **최종 Delta155PASS/0FAIL·원본 컴파일 PASS/Console errors0**. 변경파일 `VillageNpcAppearanceCatalog.cs`, `NpcInteractionPrompt.cs` 2개. 로컬 Codex 제품 SHA `4f62cce85c05ccf1b7de5f3f5ef0aae3c9620ebf`·최종보고 `207c191d64e36c7c0f9ffe3ca26ce98b60d74b5e`, mainHEAD `52f84e64` 유지/remote Push0. **사용자 새 Play에서 머리/이름표/E 실제 확인 PENDING**.
+- [#103 M4 얼음갑충](https://github.com/HappyPaul812/Project-Limitless/issues/103#issuecomment-6934713199): **KeyPose 512² RGBA 사용자 시각 승인** (“이뻐”). 공식 PNG `IceBeetle_M4_KeyPose_512_RGBA_CANDIDATE.png` SHA256 `b7ff0592226c2a1f28270053cf03483b6051c69edb412b59a7965ccf8699b3ad`, ZIP `IceBeetle_Issue103_OnePose.zip` SHA256 `ca56030e22d581ef58bafe51b66cc9181478dfa8343f16f33155aeda8f14323a` (담당 보고). **ChatGPT Library `/LIMITLESS/Issue103_IceBeetle_OnePose/` 보관**, 당장 F: ZIP 다운로드하지 않아도 다음 아트 담당이 Library 원본으로 Idle4 소량 제작 가능. 단 **GitHub 바이너리 원화 미업로드·PC 밖 복원백업 미확보**, 출시·안전복원 전 공식 PNG/ZIP 별도 저장·해시 검증 필요. 키포즈 재그리기/수정 금지; 아직 Unity 미적용.
+- [#104 OGA19](https://github.com/HappyPaul812/Project-Limitless/issues/104#issuecomment-6934714159)·[#105 OGA20](https://github.com/HappyPaul812/Project-Limitless/issues/105#issuecomment-6934715031): 바울 대표 “리뉴얼도 좋네” **두 신규 정지 디자인 시각 수용**. 납품 전체 ZIP `F:\Downloads\Limitless_NPC_104_105.zip` 담당 SHA `807f7d6bb3c29f8846c08d5c7e985244b009ebc6b1bea4a1181c641ed3d9351e`. OGA19 PNG SHA `d0ec6f5712ea9d7d6cada6335742986613b2d4149b1f4b75c662b0a3e22a1028`, OGA20 PNG SHA `19efaea3859246a41d9bd3cb1880744f3b0802b9c51ec22f0937a6794e201ef9`. **Codex가 사용자 실제 F: ZIP CRC/SHA 검증 전**; 아트 담당도 공식 태온 이미지 실물 대조를 하지 못해 **OGA20 `TAEON_VISUAL_NOT_VERIFIED`**, 구형 닮은 시안 HOLD 그대로. Codex에서 태온 공식 실물 비교·기존 OGA20 Sprite3지역 공유(시작마을 남문·카타콤 keeper·아르벨 portal keeper) 영향 확인, #106 이름표Y1.37/E프롬프트·주민 이름표 숨김 보존하여 부분 DeltaQA PASS 시에만 안전한 로컬 원본 작업트리 적용. Issue85 HOLD·Save/UserData/Discord 기존 승인NPC10 원형 보호, 원격 main Push/Merge 없음.
+- 다음 아트: #103 승인 1포즈 원본 바이트를 그대로 참조하여 Idle4 후보1시트만 별도 제작(아트 담당이 Library에서 정확 SHA 검증해야 함). 여기서는 Unity 원본 조작·아트 PNG 생성·Codex 직접 실행하지 않았음.
+
+---
+
+# PLANNING / 2026-11-17 오전 — OGA20 남문 경비 새 원화 재개 및 NPC 얼굴 이름표 위치 최소 상향
+
+- 바울 대표: **“남문 경비병도 아직 안만들었네? 리뉴얼 지시문 다시 주고, 이제 npc들 얼굴이 생겼으니까 이름표 좀만 위로 올리고... 얼굴이 이름표에 가려진다.”**
+- **리뉴얼 두 대상:** 기존 [#104 OGA19 주민4](https://github.com/HappyPaul812/Project-Limitless/issues/104)와 신규 [#105 OGA20 남문경비 태온 유사성 해소용 새로운 1포즈](https://github.com/HappyPaul812/Project-Limitless/issues/105). [#104 변경범위 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/104#issuecomment-6933831678). 과거 #60 OGA20 시안은 태온 닮음으로 **HOLD**이며 새 **미술 파일럿 재개는 허용**하나 구형 시안 승인이나 원본게임 적용은 아니다. 둘 모두 기승인 원화/기존 비교판 조사 → 실제 미제작분에 한해 **512×512 RGBA 정지1포즈씩**. 새 스타일 규칙 '같은 마을, 다른 가족/인물상' 적용. OGA20 경비는 **태온과 얼굴·헤어/체형·갑옷·색/소품 비교** 필수. 기존 승인 NPC10종·StableID/대사/Scene/Save/Discord 원형 보호. 아트 승인 전 Unity 적용 금지.
+- **별도 Codex 이름표 UX 개선:** [Issue #106](https://github.com/HappyPaul812/Project-Limitless/issues/106). GitHub `main`의 실제 코드 `Unity/Client/Assets/_Project/Scripts/NPC/VillageNpcAppearanceCatalog.cs`에서 `NameplateOffset=(0,1.02,0)`, `ConfigureNameplate`의 `Label.localPosition`에 그대로 적용하며 중앙 앵커. 기존 원화가 크므로 머리/모자를 가릴 여지가 실제로 있음. **local 현재 제품 코드 우선**, 시작마을 기능 NPC/대표의 상시 이름표를 **최소 +약0.1~0.2WU** 정도 상향하는 표적 후보에서 시작하되 최종 수치는 실제 Sprite/Label bounds와 960/1280/1680×720 최소 DeltaQA로 결정. 이름표 크기·대사·상호작용/Resident 상시 숨김·검은 그림자·Sprite/PPU/Pivot/Collider·다른 맵/UI 보호. 특히 최근 #102 `VillageNpcAppearanceCatalog` 원본 working-tree **NPC 매핑 변경2줄** 덮어쓰기 금지. #85 Package/GUID HOLD·Unity6000.6.5f1 고정. Delta PASS일 때만 원본 working tree 코드 최소변경; 원격 main Push/Merge 금지.
+- OGA20 외형 리소스는 시작마을 `starter-village-gate-guard`뿐 아니라 **safezone-catacomb-keeper, arbel-portal-keeper**에도 공유되므로 최종 Unity 적용 전 다른 지역 회귀 확인. `StarterVillageHubInstaller`에서 남문경비 실제 위치 **(2.4,-5.1)**; 아트와 라벨 문제는 독립 발주.
+- **이번 기획 직접 완료:** GitHub #104 갱신 댓글/#105·#106 신규 이슈/`docs/planning` 인계. 로컬 PC Unity·아트 파일의 실제 생성, 표시 위치 변경 및 Codex QA는 아직 실행되지 않음. 다음 답변에는 리뉴얼 담당 지시문과 Codex 지시문을 별도 복붙 제공.
+
+---
+
+# PLANNING / 2026-11-17 오전 — 설원족제비 아직 Unity 미적용 / 리뉴얼 OGA19 주민4 발주
+
+- 바울 대표 “**족제비는 게임에 넣었어? 리뉴얼도 일 시키고**” → Issue #100 최신 납품/오프라인 Codex 기록상 **설원족제비 M2 KeyPose·Idle4·Attack4v2·Hit4·Defeat4 다섯 아트 사용자 미술 승인, Unity 본편 `NOT_APPLIED`**. 독립 Game Import/Animator/전투 연결/정식 MonsterID·Spawn은 아직 완료 증거 없음. 이전 서리들쥐 기존 게임 적용과 혼동 금지. 아트 승인만으로 자동 게임 적용·펫 기능·스탯 확정 금지. 명시 적용 지시를 받으면 Codex가 ZIP 실측→기존 적 visual 구조/전투와의 최소 DeltaQA→조건부 로컬 적용. Unity6000.6.5f1/#85 HOLD/Save/Discord 보호.
+- **리뉴얼 발주 완료:** [Issue #104 OGA19 주민4 1포즈](https://github.com/HappyPaul812/Project-Limitless/issues/104). 기존 StableID `starter-village-resident-04`/Resources `VillageNpcSprites/Eldiran/OGA19_Resident04`. 이번에는 **오직 OGA19 512×512 RGBA 정지 1포즈**, 먼저 기승인 원화 중복 확인. 기존 승인·원본 적용된 **10종 OGA02/03/06/07/09/10/11/13/16/17 바이트 원형 보호**. OGA20 남문경비 태온 유사성 HOLD 유지.
+- **대표 공통 피드백**: “다음부터는 서로 다른 느낌으로, 마을 사람들이 한 가족처럼 보이지 않게.” 기존 10 NPC와 같은 픽셀 밀도/시점/접지 유지하되, **얼굴형·눈매·머리·체형·의상 색면·생활소품**은 확실히 차별화. [외형 다양성 규칙](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Renewal_StarterVillage_NPC_Visual_Diversity_Rule_20261117.md) 적용, 가장 비슷한 승인 원화2~3개와 512/128/40 직접 PNG 비교 필수. 초상화/애니/Unity 적용은 대표 승인 전 금지.
+- #102 OGA11·OGA13 원본 worktree 5파일 적용 53PASS/0FAIL, **main HEAD는 아직 원본 52f84e64로 unchanged**, 로컬 별도 commit만. #85 Unity package/GUID 및 PC 밖 외부 백업 여전히 HOLD. 원격 main Push/merge 금지.
+- 이번 기획은 GitHub `docs/planning` 인계·Issue #104 발주만 했으며 실제 PC/Unity/아트 파일 제작 실행0.
+
+---
+
+# PLANNING / 2026-11-17 오전 — #102 NPC 원본 로컬 적용 53PASS 및 메인 아트 M4 얼음갑충 1포즈 발주
+
+- 바울 대표 #102 Codex 완료 보고 화면 접수. [실제 #102 완료 근거](https://github.com/HappyPaul812/Project-Limitless/issues/102#issuecomment-6932597021): 승인 **OGA11 주민2·OGA13 주민3** PNG2+.meta2+`VillageNpcAppearanceCatalog.cs` 2매핑(총5파일) 원본 **작업 트리 적용 완료**, Unity **6000.6.5f1** 기존 QA 재사용 **53PASS/0FAIL**, 원본 Import/compile/Resources PASS·Console errors0(기존 경고104) / Save·Discord·기존8NPC 보호. **원본 main HEAD는 `52f84e643d5d860665eadfe1614a30c745209f00` 그대로**이며 제품은 원본 working tree 반영 상태, **main commit/remote Push/merge 미완**. 로컬 Codex 제품 commit `b7ace6b7f7958b4d74457f4c31db01e667b28856`, 보고 `7b987a11bd62f4fb238e64ccc0e569e52b0de34a`. 사용자 원본 실플레이 수용 PENDING. 다음 통합 시 안전 경계 재검토.
+- 바울 대표 “**메인 다음 작업 뭐야?**” → [신규 Issue #103 M4 얼음갑충 1포즈 발주](https://github.com/HappyPaul812/Project-Limitless/issues/103). 북부7종 정본 M4는 **F3~F4 전열 방어형 얼음갑충**: 청록색 넓은 얼음 갑각·짧은 다리·낮은 몸, 희미한 금빛 옛 온기 흔적 가능, Chapter2 화열딱정벌레와 확실히 독립된 디자인. **512×512 투명 RGBA 정지 KeyPose 1장** + 512·128·40 직접 축소·동배율 기존 승인 몬스터 비교, ZIP/SHA·비순환 Manifest/SUMS/CRC. 기존 제작 유무 다시 확인. 정확 몹 수치·드롭/ID/Spawn/펫/Skill은 TBD, Unity 적용X; 사용자 미술 승인 뒤 후속 Idle4 검토.
+- M1 서리들쥐 4모션 미술 마감, M2 설원족제비 KeyPose·Idle4·Attack4v2·Hit4·Defeat4 5종 사용자 승인·Unity 미적용, M3 서리올빼미 KeyPose·Idle8·Attack4 승인 및 F2 진행 계약 존재(후속 Hit/Defeat 완료 확인되지 않아 자동 완료 선언X). 기존 승인 PNG·F2 환경/기존 보스 보호.
+- 11/17 외부 백업 목적지 **BLOCKED**, Issue85 Tooling4 미커밋 패키지/GUID6 원본 검토 완료, Unity 표적 QA 미실행 HOLD. UserData/Save/Discord 보존, remote main Push·merge 금지. 이번 기획 업데이트는 `docs/planning` 문서/Issue 생성만; 실제 코덱스 PC 작업·미술 자동 생성 없음.
+
+---
+
+# PLANNING / 2026-11-17 오전 — Codex Issue #100·#102 실제 ZIP 오프라인 기술 PASS 접수
+
+- 바울 대표 Codex 검수 화면 전달. [#102 NPC 실제 검사](https://github.com/HappyPaul812/Project-Limitless/issues/102#issuecomment-6932056730), [#100 SnowStoat Defeat4 실제 검사](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6932058502)를 직접 확인. **두 ZIP 모두 FILE_TECH_PASS / 미술 승인 별도 대기 / Unity 미적용**. 검사 브랜치 `codex/art100-102-offline-review-20261117`, 로컬 보고 커밋 `7dc8b5fedfdad7449370c220297d88ee2cb443f9`, REMOTE_NOT_PUSHED.
+- **NPC102** 실물 `F:\Downloads\Limitless_NPC_102.zip` ZIP SHA256 `c6e2268f817df91447f462ad7b7f30de3710fcc2abb168556884f7136c285b95` (13members)·CRC/Manifest11/11·SUMS12/12 PASS, 512×512 RGBA PNG OGA11 주민2 SHA `5fde2e4cfbcdca2839f7da1071dbbbc4b7f239ee85ab7f7b9985be48a5cb91f9`, OGA13 주민3 SHA `0b2b5a1a19965eeff4bbdccff0072d25c7881e6695bdc32b146542311be7f849`. 128/40 축소 판독·상대 화풍 큰 이탈0·기존8종 SHA 보존, **완전 화풍일치 확정은 아님**, `STYLE_REVIEW_PENDING / USER_ART_APPROVAL_PENDING`.
+- **SnowStoat Defeat4** 실물 ZIP `F:\Downloads\SnowStoat_Issue100_Defeat4_20261117.zip` SHA256 `34f23d12ee4d4580e72f00ec0deb143b1d5b33aaa6d8d132c6495579961d6ad2` (12members), CRC/Manifest10/10·SUMS11/11 PASS, PNG `SnowStoat_M2_Defeat4_2048x512_RGBA_CANDIDATE.png` SHA `8bc97ce0af5d4896d2259df39972ea018ea1a6e494883349cc3b3065926bfe4f`. 2048×512 RGBA/4프레임, 00 긴장(균형상실 표현 약함)→01 낮춤→02 엎드림→03 완전히 쓰러진 자세 유지. 재기립0, 128px 움직임 읽힘, 40px 눈/자세 세부 한계. 4프레임 GIF의 마지막 1750ms 비루프, 비교 근거 PASS. `DEFEAT4_ART_REVIEW_PENDING / USER_ART_APPROVAL_PENDING`. 기존 KeyPose·Idle4·Attack4v2·Hit4 SHA 4/4 동일.
+- **Codex 작업범위 준수** Unity 실행·Import·원본적용·Assets/Guid/PNG 수정0, Issue85 HOLD, Save/UserData/Discord/dirty/untracked 보호, 승인 NPC8/기존 아트 보존. 소량 오프라인 검수에서 기술 HOLD0. 사용자 최종 미술 승인 전 NPC102 Unity 적용 및 Defeat4 공식 마감/Unity 적용을 자동 지시하지 않는다. 추가 동일 기술QA 반복 불필요. 서리족제비 F0의 초기 균형상실 가독성과 NPC 기존8과의 화풍은 사용자 512/128/40 실제 그림 확인 후 결재.
+- Issue85 기존 11/17 감사 보고 별도: 비공개 외부 백업 목적지 없음 `BLOCKED`, 내부8342 SHA PASS·Tooling4 파일 읽기 확인, Unity 표적 QA NOT_RUN/HOLD, Product commit/Push0. 외부 백업 위치 확보 우선.
+
+---
+
+# PLANNING / 2026-11-17 오전 — 11/16 EOD 인계 재개 / 복구·Issue85 진단 / 신규 Defeat4·NPC102 병렬
+
+- 바울 대표 “굿모닝~ 오늘도 열심히 해보자, 어제 이어서 하자” → 11/16 종료 이후 첫 업무 재개. GitHub 확인: `origin/main=bfd281545632877325f5d21e04cefb924042c465`, `backup/2026-11-16-safe-checkpoint=9d84b81934a7cff7dcf4bf5083de3f1f45ea7201`. 로컬 원본 main `52f84e643d5d860665eadfe1614a30c745209f00`은 전일 Codex EOD 보고이며 원격과 같다고 주장하지 않는다.
+- **Codex 우선:** [Issue #85 재개 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6931010623). F: 내부 Git bundle 1.48GB·8342 보호 SHA·Downloads1479 목록 등을 재사용해 실제 **PC 밖의 검증된 비공개 암호화 저장소** 확인 및 가능 범위 증분 백업. 확인되지 않은 외부 위치/암호 없으면 `OFFSITE_BACKUP_BLOCKED_NO_DESTINATION`; 공개 GitHub에 민감자료 업로드 금지.
+- **Issue #85 재진단:** Git 커밋 Packages `Animation15.1.0/PSD14.0.3/Tooling3.0.1`, working tree `16.0.1/15.0.1/4.0.1` 및 원본 투사체6meta는 working tree에서 각 고유 GUID로 알려짐. 과거 Tooling3 USS/UXML8경로12회 예외·중복GUID6 HOLD를 인지하고 새로 덮어고치지 말 것. 변경 diff/기존 Library·로그 읽기조사 후 기존 격리환경 재사용 가능할 때만 **Unity6000.6.5f1 표적 Import/compile·GoldenArrow8/Healer5 Resources 로드 1회 조건부**. 제품 원본 커밋·main Push·원본 dirty/untracked 조작 금지. 결과 후 최소 적용 결정을 따로.
+- **메인 신규아트:** [#100 Defeat4 1시트 발주](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6931011521). SnowStoat KeyPose/Idle4/Attack4v2/Hit4 모두 사용자 미술 승인(원본 byte KEEP), Defeat4만 2048×512 RGBA/가로4. Hit는 회복, Defeat는 쓰러진 자세 유지. 512/128/40px·비루프 GIF 및 비순환 Manifest/SUMS CRC. 아직 Unity·MonsterID/Spawn·펫 개발X. `docs/art-new` 사용자 Defeat4 최종 검토 대기.
+- **리뉴얼 아트:** [새 Issue #102](https://github.com/HappyPaul812/Project-Limitless/issues/102)로 OGA11 주민2·OGA13 주민3 각각512² RGBA 정지 1포즈2종. 기존 8NPC 승인/원본로컬 적용 보호, OGA20 남문경비 HOLD. 기존 납품 확인 후 미제작만. `docs/art-renewal` 사용자 미술승인 전 Unity 적용X.
+- **공통 규칙:** 단일 목적 소량 아트, 이전 PASS 재검사·대형 Unity QA/project 복제 최소화, 디스크 여유 전후 보고, Discord/Save/UserData/승인아트·미Push/미커밋/미추적 전체 보호. Unity버전 **6000.6.5f1** 혼동 금지. main 직접 commit/Push/merge·force/reset/clean 금지. 이번 기획 세션은 GitHub 발주/문서화만 수행했으며 사용자 PC에 Codex·아트 세션이 자동 실행된 것은 아님.
+- **다음 정리:** Codex 실제 보고를 받은 뒤 외부 백업 범위/Issue85 패키지·GUID 표적 PASS 여부를 판정하고, 메인 Defeat4·리뉴얼 NPC102 실물은 사용자 최종 미술승인 후 다음 단계로 전달.
+
+---
+
+# PLANNING / 2026-11-16 EOD 완료 결과 검수 — 로컬 안전 통합·원격 Git 복구브랜치 VERIFIED / 외부 비Git 백업 미완료
+
+- 바울 대표가 **Codex 11/16 EOD 결과 보고 화면** 제출. [Issue #85 Codex EOD 완료 상세 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6914098861)을 확인했으며, 총괄 기획이 GitHub REST ref를 **별도로 재조회**해 **`main=bfd281545632877325f5d21e04cefb924042c465` 유지** 및 **`backup/2026-11-16-safe-checkpoint=9d84b81934a7cff7dcf4bf5083de3f1f45ea7201` 실제 존재·Push 완료** 확인. [복구 브랜치](https://github.com/HappyPaul812/Project-Limitless/tree/backup/2026-11-16-safe-checkpoint).
+- **로컬 main 최종 SHA** `52f84e643d5d860665eadfe1614a30c745209f00`: Codex의 승인 대상 NPC 제품·완료 문서 **26개**의 보호된 통합 후 `FF-only` 동기화 보고. 이 로컬 `main` SHA가 원격 `backup/` SHA나 원격 `main` SHA와 같다는 뜻이 아님. 원격 복구 브랜치는 원격 main/기존 Clean 계보에서 **승인 NPC 제품9경로 + 문서28경로**만 선별한 재구성 계보이며 전체 로컬main 미러/전체 72개 미Push 이력/Release-ready 아님.
+- **원격 보안 게이트:** 신규 Git 객체 **383개(커밋3/tree79/blob301)** 감사 후 일반 Push. 공개 원격에 인증값·Save/개인자료·Discord 파일/미승인 대용량 산출물 넣지 않음. 새 Git 객체 검사와 비교·출처·리스크 검토를 통과했으나 **모든 비밀형태의 절대 부재를 보증한 것은 아님**. 작은 별도 bare Git 저장소 fetch 및 NPC 제품9파일+README 해시검증 보고(다른 물리 PC에서 Unity 재빌드/복구는 미실시).
+- **Issue #85 원격 main Push HOLD 계속 유지:** Unity6000.6.5f1에서 검증된 Release Import·GUID 최종 PASS 부재. **Git에 커밋된 패키지** Animation15.1.0/PSD14.0.3/Tooling3.0.1와 **현재 미커밋 Working Tree** 16.0.1/15.0.1/4.0.1이 다르고, 실사용 projectile 6meta는 **커밋된 tree에 GUID 중복**, working tree에는 고유 GUID6으로 별도 미커밋 상태. 제품 변경·패키지 실험·GUID 강제수정0, User Editor Unity6000.6.5f1 보호. 일부 로컬 Import·컴파일이 정상이었다는 사실이 외부 복구 Release PASS 의미는 아님.
+- **F: 내부 보호/백업:** 기존 사용자 dirty **302 / untracked 550** 보존, local branch210개·remote 없는 커밋 있는 branch171개 / worktree160개(그중 오래된76개 조회 timed out, clean 오판 금지). 보호파일 **8342/8342 SHA 대조**. 로컬 `AllLocalRefs.bundle` 1.48GB/418refs + EOD 문서 bundle 85KB 검증했으나 **동일 F: 드라이브**라 외부 백업이 아님. Downloads 1479개 자료 목록만 정리. **안전한 비공개 외부 저장 장소·암호화/실제 복원 검증 미확보**: 승인 Art ZIP/PNG·TTS·영상·Save/UserData·Discord 설정/키·미커밋/untracked·전체로컬 Git 이력을 다른 PC에서 완전히 복구 가능하다고 주장 금지.
+- **F: 여유공간 감소** 약 `322.47GB→320.99GB` (주로 로컬 Git bundle 생성), 신규 대형 QA Unity 복제/불필요한 정리 없음. 외부 비Git 백업과 오래된76 worktree 안전 상태 확인은 다음 별도 작업 우선순위; 지금은 오늘 종료 지시 따라 **자동 추가 작업0**.
+- **최종 게이트:** `LOCAL_SYNC_DONE / BACKUP_BRANCH_PUSH_DONE / REMOTE_MAIN_PUSH_HOLD / OFFSITE_NON_GIT_BACKUP_INCOMPLETE / DAY_CLOSED`. [복구 관련 기획 계획서](../20261116_EOD_Offsite_Recovery_SafeIntegration.md)의 당시 실행 전 PENDING 상태는 이후 이 최신 Codex 결과로 대체; 브랜치별 역사와 권한을 구분.
+
+---
+
+# PLANNING / 2026-11-16 EOD — SnowStoat Hit4 승인·안전 통합/로컬 동기화/원격 복구 및 조건부 main Push 발주
+
+- 바울 대표 “**승인하고 오늘은 여기까지 하자. 지금까지 한 작업들 다 합치고 로컬 동기화 하고. 가능하면 메인 푸시도 해줘. 로컬 컴이 고장나도 다시 이어할 수 있게.**” → **설원족제비 Hit4 최종 미술 승인** 및 하루 종료/안전 통합·원격 복원 최우선. [#100 승인 증거](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6913468404), [#85 안전 통합/조건부 main Push·복원 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6913469590), [2026-11-16 상세 EOD 복구계약](../20261116_EOD_Offsite_Recovery_SafeIntegration.md), 작성 커밋 `a98d42b78a30f0ac49388325f8cf290738facc00`.
+- **SnowStoat KeyPose·Idle4·Attack4 v2·Hit4 4종 중 4개 아트 승인**, Hit4 PNG SHA `dc2c2588b4ec3d06766ab042c4297898aebca4f907593a5820ce8cbad2f6aab5`, ZIP SHA `e058e9610ec90cf9c2f7e8b0f48b5cde42a70fe7319f861d5c53d1736ecaadfc`. **Unity 미적용/Defeat4 미제작**; 오늘 추가 제작/적용하지 않는다.
+- #101 NPC OGA10/07 승인 원화 **로컬 원본 적용 완료**(Codex 53/53 PASS, 원본 local main 최종 `977f3b6c83793c50d03f44c851d6205d2fe7b2f5`, REMOTE_NOT_PUSHED). #99 NPC OGA02/17도 로컬 적용 완료(62/62). 사용자 실플레이 확인은 아직 안 됨. 기존 승인 NPC6 및 OGA20 HOLD/Save/UserData/Discord 보호.
+- **최신 GitHub 원격 main `bfd281545632877325f5d21e04cefb924042c465` / remote ProjectVersion.txt `6000.5.7f1`**, 실제 Unity Editor **6000.6.5f1**. #85 2D Tooling Import USS/UXML 예외 및 BattleProjectiles GUID6 충돌 **HOLD**. 기술 PASS 없이 Release/main Push 금지; 바울 대표의 새 요청은 **안전 조건 통과 시에만 main 일반 non-force Push 허용**. 우선 승인·비밀감사된 커밋을 별도 remote `backup/2026-11-16-safe-checkpoint` 같은 ref로 보존, 공개 저장소에 Discord keys·Save/개인자료·미승인/대형 임시 파일 Push 금지. git 밖 ZIP/PNG/영상/비밀/dirty는 PC와 분리된 암호화 저장소가 있어야 전체 복원 가능.
+- **실행 책임:** GitHub에 기획 인계/Issue/복구계약은 실제 저장. PC F: 직접 접근 불가로 **Codex 통합·로컬 sync·remote main Push·remote backup branch Push·Non-Git offsite data 백업은 이 기획 세션에서 실행하지 않음**. 정확한 `PENDING_LOCAL_CODEX` 및 `REMOTE_MAIN_PUSH_NOT_DONE` 기록. Codex 작업 실행 후 원격 ref 실제 SHA와 보호 감사 수치를 근거로 결과 판정해야 함.
+- **오늘 종료:** 안전 백업/조건부 통합 외 추가 신규 아트/기획·Unity QA 시작 금지, 불확실하면 STOP/HOLD 및 복원 범위 보고.
+
+---
+
+# PLANNING / 2026-11-16 — NPC OGA10·OGA07 로컬 적용 완료 / 설원족제비 Hit4 후보 접수
+
+- 바울 대표 Codex 결과 화면: **OGA10 파티관리인·OGA07 주민1 v2 로컬 원본 게임 적용**, Unity **6000.6.5f1**, 표적 Delta **53/53 PASS**, 원본 Import·compile·Resources 정상, 원본 Console error0 (기존 Editor Search 색인 오류는 별도 환경로그). [Issue #101 Codex 근거](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6913091059). `APPROVED_V2_LOCAL_ORIGINAL_APPLIED / USER_REALPLAY_PENDING / REMOTE_NOT_PUSHED`.
+- 제품 새 PNG2 + 각.meta2 + `VillageNpcAppearanceCatalog.cs` 외형 경로 총 **5파일**만 변경. OGA10 SHA `6be1a2d777a312dedd392b8ad6fbb2ba77b350d46d7bd2113d9d11bf09c7e6f3`, GUID `012b7ee363574fe3900bbd56a472b984`; OGA07 SHA `640b82a236afd5ca6025d5eb28970009f40941d39eadedeeeea0e180d5034d28`, GUID `d3efb2534cda4b699e8f0ba236325209`. 두 PNG 공통 **PPU360.5 / normalized Pivot(.4990234375,.08203125)**, 보이는 높이1.142857WU. 보호된 기존6NPC·OGA20 HOLD·Save/UserData·Discord·기존 Scene/Quest·다른 OGA10 참조 불변.
+- 제품 커밋 `81f8a45df4182ad2aa64a71b5408217616b5b3d0` / 브랜치 `codex/npc101-approved-original-20261116`; 보고·인계 포함 로컬 원본 FF-only 최종 SHA `977f3b6c83793c50d03f44c851d6205d2fe7b2f5`; 원격 Push 없음. 대표 확인 시작마을 광장 서쪽 파티안내인 **(-6.4,-2.1)**, 주민1 **(-3.2,-1.2)**; 주민1 상시 Nameplate 숨김 기존 정책.
+- 바울 대표 `F:\Downloads\SnowStoat_Issue100_Hit4_20261116.zip` 전달 및 “히트가 뭐야? 몬스터가 맞으면 나오는거 맞아?” 질의: **Hit = 비치명타를 포함한 공격 피격 반응**, 전투 HP0이면 Defeat와 구분. 보고상 신규 Hit4 **2048×512 RGBA, 4프레임 (움찔→몸통 후퇴→회복→승인 KeyPose)**, PNG SHA `dc2c2588b4ec3d06766ab042c4297898aebca4f907593a5820ce8cbad2f6aab5`; ZIP **1156630bytes/12entries**, SHA `e058e9610ec90cf9c2f7e8b0f48b5cde42a70fe7319f861d5c53d1736ecaadfc`, 담당 CRC PASS/Manifest10/10/SUMS11/11. [Issue #100 납품보고](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6913048734). **`HIT4_ART_CANDIDATE / USER_HIT4_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED`**. 기획 세션에서 바울 대표 PC F: 실물 ZIP 직접 검사하지 않았음.
+- 승인 KeyPose·Idle4·Attack4 v2 보존, Defeat4 제작·새 펫 스킬/정식 MonsterID/Spawn·Unity 적용 무승인. #85 HOLD·원격 main Push/merge 및 새 대형 QA·Discord 작업 변경0. 이번 기획은 GitHub `docs/planning` 문서만 갱신.
+
+---
+
+# PLANNING / 2026-11-16 저녁 — Snow Stoat Attack4 v2 바울 대표 최종 미술 승인 / Hit4 발주
+
+- 바울 대표가 설원족제비 Attack4 v2 메타데이터 수정본에 대해 **“승인.”**이라고 명시. 최신 바로 전 결재 대상은 **Attack4 v2**이므로 `KEYPOSE_USER_APPROVED / IDLE4_USER_APPROVED / ATTACK4_V2_USER_ART_APPROVED / ART_BYTES_KEEP / UNITY_NOT_APPLIED` 확정. [Issue #100 최종 미술 승인 및 Hit4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6912398648).
+- 승인 실물: `SnowStoat_M2_Attack4_MouthFix_v2_2048x512_RGBA.png` SHA256 `5175483e486889736f4f89402ec8a04595491c5c587e51a3f6bbd1365391364a`; 2048×512 RGBA/4셀. 메타 정정 후 공식 ZIP `SnowStoat_Attack4_MetadataFix_20261116.zip` SHA256 `24ce0b771d4cf68e9758828fb892d9043b20eb51bd27bf826e07dedda0d60dc8` (담당 검증 CRC PASS·Manifest9/9·SUMS10/10). 1포즈/Idle4/Attack4 v2 재제작·수정 금지.
+- **메인 신규아트 다음 범위는 Hit4 1시트 파일럿만**, 2048×512 RGBA·4×512. 피격 움찔→후퇴→회복에 집중, 실물512/128/40 비교 및 GIF·비순환 Manifest/SUMS/CRC; 사용자 Hit4 최종 미술 승인 대기. Defeat4/Run·펫 시스템·MonsterID/Spawn/스탯/드롭/Unity Import 자동 시작 금지.
+- **#101 OGA10/OGA07 NPC v2는 별도 건**: Codex 기술 PASS·KEEP 권고이나 사용자의 **최종 미술 승인/게임 적용 승인 아직 별도 미접수**. “승인”을 이 건까지 확대하지 않음.
+- Unity6000.6.5f1, #85 Package/Push HOLD, 승인 공식아트/Save/UserData/Discord/원격 main 유지. 이 기획 세션은 `docs/planning` 인계 및 Issue만 기록, 로컬 PC Unity 조작·실제 Hit4 제작/적용 없음.
+
+---
+
+# PLANNING / 2026-11-16 18:17 — 설원족제비 Attack4 v2 메타데이터 수정 납품 접수
+
+- 바울 대표가 `F:\Downloads\SnowStoat_Attack4_MetadataFix_20261116.zip` 전달. [#100 메인아트 공식 수정 납품 보고](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6912297538)와 [신규아트 인계](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/팀운영/인계/SPRITE_ART_LATEST.md) 확인.
+- 납품 보고상 새 ZIP **852900bytes/11entries**, SHA256 `24ce0b771d4cf68e9758828fb892d9043b20eb51bd27bf826e07dedda0d60dc8`, CRC PASS / Manifest payload **9/9 PASS** / SUMS payload9+Manifest **10/10 PASS**. Manifest 자기참조 및 SUMS 순환참조 제거, 이전 ZIP 대비 **payload 9개 byte exact KEEP**, 변경 ZIP 멤버는 `Manifest.json`, `SHA256SUMS.txt` 두 개만.
+- 공격 PNG 기존 승인검수 v2 SHA256 `5175483e486889736f4f89402ec8a04595491c5c587e51a3f6bbd1365391364a` 유지. 기존 승인 KeyPose `fd25ef50528a5f630e44382e3fc40a3df607a267176f758706962a2cbc41e778`, Idle4 `ee6951b0333ba6586b4009ccf51cfd3a397d69f839552fe88a709f9c34bf0633` 보호. 그림 재제작 필요0, 기존 Codex v2 PNG KEEP 권고 재사용.
+- **정확한 판정:** `METADATA_FIXED_PER_ART_REPORT / PACKAGED_TECH_PASS_PER_ART_REPORT / ATTACK4_V2_IMAGE_KEEP_RECOMMENDED / USER_FINAL_VISUAL_APPROVAL_PENDING / UNITY_NOT_APPLIED`. 기획 세션은 **F: 로컬 파일 실물 해시를 직접 측정하지 않음**. 새 코덱스 전수 QA·게임 적용·Hit/Defeat 제작을 자동 지시하지 않음. 실제 F: ZIP 확인은 필요 시 기존 Codex worktree에서 소량 CRC/SUMS만.
+- 리뉴얼 #101 NPC10/07 v2 실물 Codex 검증 PASS/KEEP 권고 상태 별개. 기존 승인 NPC6·OGA20 HOLD/Save/UserData·Discord/Unity6000.6.5f1/Issue85 HOLD 유지; remote main Push·Merge 금지. 이번 총괄 기획은 `docs/planning` 인계만 문서화.
+
+---
+
+# PLANNING / 2026-11-16 저녁 — Codex 최종 오프라인 결과: Stoat Attack4 v2 PARTIAL(메타만), NPC101 v2 PASS
+
+- 바울 대표 Codex 결과 화면 확인 및 GitHub [#100 실측](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6911980162)·[#101 실측](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6911981684) 대조. 신규아트 Stoat MouthFix v2 **IMAGE_TECH_PASS / PNG_KEEP / MANIFEST_METADATA_FAIL(2항목) / USER_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED**. 이미지 원본 SHA `5175483e486889736f4f89402ec8a04595491c5c587e51a3f6bbd1365391364a`, ZIP SHA `76e27b0c8d4fcfab09a11f857235755ce759a97572ae96bbb8641ea990388cb4`; ZIP CRC·SUMS10/10 PASS. Manifest 자신 항목 expected3347bytes vs actual3644bytes/SHA 불일치 및 SHA256SUMS expected vs actual 해시 불일치로 **11항목 중2 FAIL**. 그림 재제작 금지, **Manifest의 자기/순환참조 제거·SUMS 비순환 해시 목록으로 재패키징만** 담당에게 후속 요청. [#100 기획 결정](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6912055109).
+- NPC101 OGA10·OGA07 손보정 v2 **실물 F: SHA·픽셀 검사 PASS / BINARIES_CLEAN / WRONG_PREVIEW_ONLY / KEEP_RECOMMENDED / USER_FINAL_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED**. SHA OGA10 `6be1a2d777a312dedd392b8ad6fbb2ba77b350d46d7bd2113d9d11bf09c7e6f3`, OGA07 `640b82a236afd5ca6025d5eb28970009f40941d39eadedeeeea0e180d5034d28`; 원본 대비178/127픽셀만 변경, 손 외 0, 금발 이물 캐릭터 ZIP 내 없음. 불필요한 재작화/계속 손보정 중단. [#101 기획 결정](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6912055996).
+- 두 결과 공통: **Unity 미실행·원본 게임 미적용·PNG 재제작0**, 기존 worktree 재사용, Codex 로컬 문서 커밋 `e4bde19fb8585a3d9673af2bb3cb666a02b162fb`, REMOTE_NOT_PUSHED. 기존 NPC6·OGA20 HOLD/KeyPose·Idle4·Mouse/Owl 등 공식아트·Save/UserData·Discord·Issue85 HOLD/Unity6000.6.5f1 보호. 새 Unity QA·대형 프로젝트 복제/원격 main Push·merge 금지.
+- 다음 결재: Stoat v2 시각 승인 및 NPC v2 최종 미술 승인 여부 사용자 확인 후 각 단계 진행; 메타데이터 정리는 **메인 아트 담당의 파일 재패키징만**, Codex 재검사 필요하면 새 PNG 작업 없이 소량 해시/CRC만.
+
+---
+
+# PLANNING / 2026-11-16 저녁 — 설원족제비 Attack4 MouthFix v2 + NPC101 재포장 ZIP 동시 Codex 최소 검수 발주
+
+- 바울 대표 `F:\Downloads\Stoat_Attack4_MouthFix_v2.zip` 전달. 리뉴얼 담당의 #101 잘못된 금발 이미지 정정 보고 수용 후 **“코덱스 검수나 하자 둘 다”**. [Issue #100 Codex 동시 최소검수 발주](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6911678456), [Issue #101 Codex 동시 최소검수 발주](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6911679237).
+- Stoat 담당 [Attack4 MouthFix v2 보고](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6911522213): v2 PNG SHA `5175483e486889736f4f89402ec8a04595491c5c587e51a3f6bbd1365391364a`; 원본 Attack4 v1 대비 1기준 프레임2 입 ROI 1015px/프레임3 575px만 변화, 프레임1/4 0. 공식 납품 ZIP 이름 `Stoat_Attack4_MouthFix.zip` SHA `76e27b0c8d4fcfab09a11f857235755ce759a97572ae96bbb8641ea990388cb4`/852864bytes이며 **대표 제공 이름에 `_v2` 붙음**. Codex F: 실제 파일/PNG 해시·ROI/입 시각 연속성 확인. 기존 승인 KeyPose·Idle4 변경 금지; Attack4 v2 미술 승인 대기.
+- 리뉴얼 담당 [#101 금발 이미지 오류 감사](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6911482906): 채팅 답변에서 독립 이미지 비교 표시를 잘못 삽입한 표시 오류, 실제 OGA10/07 파일 2장과 무관하다고 보고. **대표의 `F:\Downloads\npc101_fix.zip` 재포장 납품 SHA `ee98f2bde1062193f3b9100d9af67ca3b9fc2f17342c5ee30449193d20b2be3e`/287887bytes**는 예전 v2 납품 ZIP `acbc523c6de831bc0d6b6556c36cd28cce297858218e38ca61e5414387063a64`/695127bytes와 **컨테이너 구성이 달라 해시 불일치해도 즉시 오염 단정하지 말 것**. 내부 v2 PNG2 해시 OGA10 `6be1a2d777a312dedd392b8ad6fbb2ba77b350d46d7bd2113d9d11bf09c7e6f3`, OGA07 `640b82a236afd5ca6025d5eb28970009f40941d39eadedeeeea0e180d5034d28` 확인/원본과 픽셀 비교 및 실제 PNG 비교판 원천 검증.
+- 이번 지시는 **읽기 전용 오프라인 Codex 소량 검수**. 기존 QA·Library 자료 재사용; 새로운 대형 Unity worktree, Unity 실행, 게임 적용, 이미지 재생성, 장비/펫 기능 구현 금지. 원본/Save/UserData/Discord·Unity6000.6.5f1·Issue85 HOLD/원격 main 변경0. 문제 없으면 기술 PASS+사용자 시각 승인 게이트 보존, **자동 승인/적용0**.
+- 이 시점 기획은 GitHub `docs/planning` 지시·인계만 업데이트, PC F: 파일 직접 확인이나 Codex 실제 실행은 하지 않음. Codex 검수 결과·원본 해시는 후속 보고 수령 시 확정.
+
+---
+
+# PLANNING / 2026-11-16 17:11 — SnowStoat Attack4 + NPC101 v2 납품 보고 접수·오역 정정
+
+- 바울 대표가 `F:\Downloads\SnowStoat_Issue100_Attack4.zip` 및 `F:\Downloads\npc101_fix.zip` 경로 전달. GitHub 두 담당의 실제 납품·기술 보고 확인. **F: 실제 ZIP은 이 기획 세션에서 직접 열거나 SHA 재확인하지 못했으므로 `F_DRIVE_BINARY_NOT_DIRECTLY_VERIFIED`**; 담당 납품본과 파일명은 대응 가능하나 바이트 동일성 자동 추정 금지.
+- [#100 Attack4 제작 보고](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6910828231)와 [기획 접수](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6911048043): 승인 1포즈/Idle4 유지, 신규 2048×512 RGBA 4프레임 공격(준비→물기→스냅→회복), PNG SHA `a5f5856115473329d1b1a00a5db1022f1831ec48955e5e34f29b711dfb12141a`, 납품 ZIP SHA `2683a8bdb84595e648f56914944441b856986efee8647c0d2b92a7e5f9b13daf` 보고. `ATTACK4_ART_CANDIDATE / USER_APPROVAL_PENDING / NOT_UNITY_APPLIED`.
+- [#101 HandFix v2 제작 보고](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6910708912) 및 [기획 오역 정정](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6911040411): NPC OGA10·07 v2 512² RGBA 각각 손 영역 **178px /127px**만 변화, 원본 얼굴·복장·눈/명암 유지. v2 PNG SHA `6be1a2d777a312dedd392b8ad6fbb2ba77b350d46d7bd2113d9d11bf09c7e6f3` 및 `640b82a236afd5ca6025d5eb28970009f40941d39eadedeeeea0e180d5034d28`, 납품 ZIP SHA `acbc523c6de831bc0d6b6556c36cd28cce297858218e38ca61e5414387063a64`. `NPC101_V2_ART_CANDIDATE / USER_APPROVAL_PENDING / NOT_UNITY_APPLIED`.
+- **기획 오역 책임:** 바울 대표의 "NPC는 손 볼게 있으면 손보고"는 **필요한 부분을 손보라는 뜻**인데 과거 기획이 '손가락만'으로 오해하여 담당에게 잘못 전달한 것. 작업 담당 실물 보고 내 '대표 손만 지정' 표현은 원래 사용자 의도 아님. 사용자가 이전 NPC 2종 그림을 좋다고 평가했으므로 무조건 전면 재제작하지 말 것. 필요한 시각 수정만, 승인되면 그대로 게임용 적용 단계.
+- 기존 완료 NPC6, OGA20 HOLD, 설원족제비 1포즈·Idle4, Mouse/Owl/Ch1·2·3 승인 아트/Save/UserData/Discord, Unity6000.6.5f1/Issue85 HOLD/디스크 정리 규칙 유지; 추가 Unity QA/원본 적용·원격 main Push/Merge0. GitHub `docs/planning` 기록만.
+
+---
+
+# PLANNING / 2026-11-16 오후 — SnowStoat Idle4 + Issue101 NPC2 재전달 ZIP 최소 기술검수
+
+- 바울 대표 전달 파일: `F:\Downloads\Limitless_SnowStoat_Idle4_REDELIVERY.zip`, `F:\Downloads\Limitless_NPC_101.zip`. Codex가 **둘 모두 기존 정식 납품본 SHA256 일치·CRC/Manifest 해시 정상·기술 PASS**라고 보고. 로컬 검사문서 커밋 `7878275b`. 이 F: ZIP은 기획 ChatGPT 환경에서 직접 열지 않았으며 **Codex 검사 결과를 접수**한 것임.
+- [신규 #100 Idle4 기존 납품 보고](https://github.com/HappyPaul812/Project-Limitless/issues/100#issuecomment-6906336530): 2048×512 RGBA 가로4 ×512², 승인 KeyPose=Frame00, 발 영역 변화0·꼬리 연결 유지. 원본 ZIP 정본 `SnowStoat_Issue100_Idle4.zip` SHA `fa850041d0ed88d30a9e23a7b60e4345f22e2c12b4d01875042fb755970b734d` (재전달 파일명은 별개). **`IDLE4_FILE_TECH_PASS / USER_IDLE_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`**. 1포즈만 이전 사용자 미술 승인; Idle4 시각 승인은 이번 Codex 기술 PASS로 대체하지 않음.
+- [리뉴얼 #101 납품 보고](https://github.com/HappyPaul812/Project-Limitless/issues/101#issuecomment-6909823447): OGA10 파티관리인 SHA `7a53cbb71544b69e996a06c7b576c9498d0565cc701a9123a6ad9485cd1d18a1`, OGA07 주민1 SHA `940aa98590333b1423ed5f49101c9cf5a146a0079c8e354fc33e0ce943dff798`, 원본 ZIP 정본 SHA `0ec80e1fa546f1ce9cde560bea34f07b3359a0678565d72daec3f711bc232ca5`. Codex는 둘 512²RGBA·투명 외곽과 128/40 축소 일치 기술 PASS 보고. **신규 NPC는 기존 6종보다 눈/음영이 세밀하며, 40px OGA10 세 사람 표식과 작은 소품 가독성 한계**가 명시되어 사용자 미술·화풍 최종 검토 요구. **`NPC101_FILE_TECH_PASS / ART_STYLE_REVIEW_REQUIRED / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`**.
+- 확인 결과는 기존 보고서 재사용이며 Unity 실행·새 Project 복제·원본 게임 변경·PNG 수정·원격 Push/Merge 0. 기존 6 NPC/OGA20 HOLD/Save/UserData/Discord/Unity6000.6.5f1/Issue85 HOLD 보호. 승인을 받으면 메인 아트는 설원족제비 Attack/Hit/Defeat 다음 단계, 리뉴얼은 #101 NPC 2종 후속 Codex 최소 Unity DeltaQA 별도 적용 승인 게이트.
+- 기획 측에서는 라이브러리의 참고 이미지 몇 장을 열람했으나 **재전달 ZIP 최종 PNG 원본과 byte-exact 일치 여부를 확인하지 못했으므로 새 독립 미술 승인으로 표시하지 않음**.
+
+---
+
+# PLANNING / 2026-11-16 오후 — 리뉴얼 신규 NPC OGA10 파티관리인·OGA07 주민1 2종 발주
+
+- 바울 대표: **“리뉴얼 다음 일 시켜줘..”** → **Chapter1 시작마을 OGA10 파티관리인 + OGA07 주민1** 각각 독립 512×512 투명 정지 1포즈 **총 신규2종 아트 파일럿**. 정본 [Issue #101](https://github.com/HappyPaul812/Project-Limitless/issues/101) 및 [기획 제작 계약](../20261116_Renewal_OGA10_OGA07_NPC_TwoPilot_Order.md), `docs/planning` commit `27f654200fcd30718d5a6607a18c0304a03c7374`.
+- OGA10 기존 `starter-village-party-manager` / `VillageNpcSprites/Eldiran/OGA10_PartyManager`, OGA07 기존 `starter-village-resident-01` / `VillageNpcSprites/Eldiran/OGA07_Resident01`. 기승인 오리지널 실물 확인되면 중복 신규제작 금지. 새 직업·NPC 서사·파티 기능 추가 X. NPC 정지/초상화 없음, 애니 전프레임 일괄 제작 X.
+- 기존 승인·원본로컬 적용 완료 OGA03/09/06/16/02/17 6종 변경 금지. [#99](https://github.com/HappyPaul812/Project-Limitless/issues/99#issuecomment-6906678804) OGA02/17 Unity62PASS/Console0/로컬FF 완료, **사용자 실플레이는 PENDING**이며 이번 별도 아트 병렬 진행과 혼동 금지. OGA20 남문경비 태온 유사 HOLD, OGA11/13/19 이번 제작 대상 아님.
+- `docs/art-renewal` 담당은 512·128·40 실축소 및 기승인 원본 동일배율 시각 QA, PNG·ZIP/SHA/출처 실제 납품, 인계·이슈 보고. 원화 사용자 미술 승인 전 Unity/원본 제품 교체 X. Unity6000.6.5f1, Issue85 Push HOLD, Discord/Save/UserData 보호, 대형 QA 복제 금지.
+- 이번 총괄 기획은 GitHub `docs/planning` 문서와 Issue만 작성. 실제 이미지 출력/사용자 PC 변경·remote main Push/merge 0.
+
+---
+
+# PLANNING / 2026-11-16 오후 — Issue #99 OGA02·OGA17 게임 원본 로컬 적용 완료 보고 검토
+
+- 바울 대표가 Codex 최종 완료 화면 제출. [#99 Codex 실제 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/99#issuecomment-6906678804)를 대조하여 **`OGA02_OGA17_LOCAL_ORIGINAL_APPLIED / APPEARANCE_DELTA_62_PASS / ORIGINAL_IMPORT_COMPILE_RESOURCES_PASS / CONSOLE_ERRORS_0 / USER_REALPLAY_PENDING / REMOTE_NOT_PUSHED`** 접수.
+- **신규 PNG+meta 4개 + 기존 `VillageNpcAppearanceCatalog.cs` 외형 리소스 경로 1개, 제품 총5파일만 변경**. 승인 원본 PNG SHA 재검사 두 종 일치. OGA02 GUID `203587cfe9b34e5c9c7bbfc55117bf1f` / PPU357.875 / normalized Pivot(0.5,0.083984375), OGA17 GUID `5b473af875ba45b586eae7d500dbe10e` / PPU358.75 / Pivot(0.4990234375,0.08203125). 둘 다 알파 가시 높이 기존1.142857WU 유지, 기존 PNG/GUID/meta 바이트 불변.
+- **제품 커밋** `7b84fa76e8948bb09febdf688898cdaa1ef231c8`; 브랜치 `codex/ch1-oga02-17-original-apply-20261116`; 로컬 원본 `main` FF-only/no-autostash 동기화 후 최종 문서 포함 `669adc275fc173f3292b2f714710434ce9895509`; **원격 Push 없음**. Unity **6000.6.5f1**, 표적 QA **62/62 PASS**, 로컬 원본 Import/compile/Resources 연결 PASS/Console error0, #85 Package 수정0.
+- **범위/남은 기능 분리:** OGA02는 원래 훈련 안내만, OGA17은 원래 장비상인 안내 대사만 지원. **별도 훈련 메뉴와 장비 구매·판매는 기존 미구현**(`NOT_IMPLEMENTED_BASELINE`, QA NOT_RUN); 잡화점 거래 QA 성공을 장비 거래 완료로 잘못 기재하지 않는다. 이번은 NPC 외형 교체 완료이지 관련 신규 게임 기능 구현 아님.
+- **원본 보호**: 승인 OGA03/06/09/16, HOLD OGA20, 다른 Scene/Quest/가격/Collider, Save/UserData·Discord·사용자 dirty/untracked 유지, 원본Editor Scene/Play/포커스 미변경. 기존 격리 QA환경 재사용·프로젝트 전체 복제0. Codex 보고 F: 여유 bytes **324418146304→322490466304** (감소 1,927,680,000 bytes ≈1.93 GB); 디스크 자원운영 규칙상 QA 캐시·Import 증가량 모니터링, 안전 근거 없는 삭제 금지.
+- **바울 대표 최종 실플레이 수용은 아직 미접수.** 확인 위치: 시작마을 동쪽 훈련장 관리인 (6.4,-2.1), 장비상인 (5.8,1.2). 새 전체 QA/기존 NPC 재작업 불필요. 실제 확인 후 `USER_REALPLAY_ACCEPTED`만 별도 기록.
+- 이번 기획은 GitHub `docs/planning` 인계 기록만 갱신하고 사용자 PC 로컬 Unity·게임·Save 및 원격 main을 건드리지 않음.
+
+---
+
+# PLANNING / 2026-11-16 정오 — #99 NPC OGA02·OGA17 원본 로컬 게임 적용 승인
+
+- 바울 대표 **“게임에 넣자. npc.”** → 기존 OGA02 훈련장 안내인 + OGA17 장비상인 미술 승인에 이어 **실제 로컬 게임 외형 적용을 명시 승인**. [GitHub Issue #99 원본 적용 지시 및 안전 게이트](https://github.com/HappyPaul812/Project-Limitless/issues/99#issuecomment-6906279696).
+- **적용 범위:** `F:\Downloads\LIMITLESS_ISSUE99_OGA02_OGA17_NPC_ORIGINAL_ART_PILOT_20261116.zip`의 기존 승인 PNG2 바이트 고정. OGA02 기존 SHA256 `07bdb6368dcab01c85f551b71bd79ba391a3c3f621355664fc6453cb5da98cdf`, OGA17 `1282d90a7f89924e3efaad40679cbc272193bb9e05397765671549d9de646359`. PC 실제 ZIP/PNG SHA·CRC는 Codex가 새로 검사해야 하며 기획은 F: 직접 열지 않음.
+- **Codex 단일 연속 단계:** 실물 SHA → 기존32px/PPU28 기준 월드 표시 높이·발 접지·StableID/훈련·상점 기능을 보존하는 새 독립 Sprite Import 설정 → 기존 Unity6000.6.5f1 격리 환경 최소 Delta GameView QA → **PASS일 때만 제품 최소 경로를 로컬 원본 적용** 및 원본 Import/컴파일 검증. Issue85 Unity 패키지 오류나 사용자 dirty 충돌 발생하면 HOLD, 강제 적용/재설치/패키지 업그레이드 금지.
+- 기존 OGA03/09/06/16 완료/사용자 실플레이 수용, OGA20 HOLD, 다른 리뉴얼·메인 아트·Save/UserData·Discord/원본 Unity Editor와 Git history 보존. 대규모 신규 워크트리·캐시, 기존 전수 QA 반복 금지. 원격 main Push·병합 금지. **이번 기획 세션은 GitHub 문서/Issue 승인 기록만 수정, 사용자 PC 실제 게임 반영 결과는 `PENDING_CODEX`.**
+
+---
+
+# PLANNING / 2026-11-16 — Issue #99 OGA02·OGA17 NPC 2종 사용자 미술 승인 접수
+
+- 바울 대표가 `F:\Downloads\LIMITLESS_ISSUE99_OGA02_OGA17_NPC_ORIGINAL_ART_PILOT_20261116.zip` 전달 후 “내가 npc는 깜빡하고 말 안했구나... 미안.. 좋아...”라고 두 NPC에 대해 명시적으로 긍정. **OGA02 훈련장 안내인 + OGA17 장비상인 원화 2종 USER_ART_APPROVED**, 미술 재제작/재승인 불필요. 기획 공식 판정 [Issue #99 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/99#issuecomment-6906154651).
+- 실물 정본은 [#99 리뉴얼 납품](https://github.com/HappyPaul812/Project-Limitless/issues/99#issuecomment-6905457126) 그대로: OGA02 SHA256 `07bdb6368dcab01c85f551b71bd79ba391a3c3f621355664fc6453cb5da98cdf`; OGA17 SHA256 `1282d90a7f89924e3efaad40679cbc272193bb9e05397765671549d9de646359`, 각각512²RGBA. ZIP SHA256 `f10cb1f417f6bc03c64a05028f9549eacc23276e148c81136d5d922b2b4f1bdd`. 기획은 F: 실물 재해시하지 않았고 기존 납품 QA 수치를 재사용.
+- **아트 승인 ≠ Unity 적용 승인**. 다음 게이트는 Codex가 Windows ZIP 해시 검증→기존32px/PPU28 원본 마을 NPC와 같은 보이는 높이/발접지·Nameplate·Collider/StableID·훈련·장비상점 상호작용에 대한 **최소 격리 Delta QA**; 새 512 마스터를 PPU28로 바로 Import 금지. 실제 게임 제품 반영은 후속 별도 승인 필요.
+- OGA03/09/06/16 이미 완료/사용자 실플레이 수용 → 재수정 금지. OGA20 태온 유사성 HOLD 유지. Unity6000.6.5f1, #85 Import/Push HOLD, Save/UserData/Discord 보호, main Push·Merge0. 이번 회차 GitHub 기획 문서/댓글만 변경.
+
+---
+
+# PLANNING / 2026-11-16 — 메인 신규 아트 다음 작업: Chapter3 M2 설원족제비 1포즈
+
+- 바울 대표 “메인 쪽 다음 작업 가자 그럼.” → 서리들쥐 A 4모션16프레임 `ART_COMPLETE`를 보호하고, F1~F2의 **두 번째 일반 몬스터 M2 설원족제비(Snow Stoat)** 신규 1포즈 파일럿 발주. 신규 작업 [Issue #100](https://github.com/HappyPaul812/Project-Limitless/issues/100)와 [기획 세부 지시서](../20261116_Chapter3_SnowStoat_OnePose_ArtPilot_Order.md), 문서 commit `6f86289f5af8a9ba2dd33a55d2163a6d0fcfd5a5`.
+- 정본: [북부7종 상세기획](../../../08_몬스터/Chapter3_설빙의폭군_온기의화로_북부몬스터_상세기획_20261014.md) M2; F1/2, 길고 흰 몸·검은 꼬리끝·짧은 다리·전열·단일 물기, 상태이상 없음. 신규 펫 후보 하나이지만 펫 제작/한기 효과/ID·보상·전투수치 미확정. 먼저 승인 서리들쥐/올빼미/Ch2 스타일 비교 가능한 **512² 투명 1포즈 딱1개**와 128/40 축소 검토. 기존 제작 사실 발견 시 재그림0.
+- `docs/art-new` 담당에게 아트 전달 필요. 이슈 등록은 담당 세션 자동 시작이 아님. 사용자 1포즈 최종 미술 승인 전 Idle/Attack/Hit/Defeat나 펫/World/Unity 시스템 제작 금지. Unity6000.6.5f1, Issue85 Package/Import·Push HOLD, 원본/Save/Discord/GUID 보호, 대형QA복제 금지.
+- 기획 자체 GitHub docs/planning 파일·Issue만 변경; 원본 PC Unity/Git local main 조작·원격 main Push0.
+
+---
+
+# PLANNING / 2026-11-16 — 서리들쥐 신규 아트 최종보고 검토 및 마감 접수
+
+- 바울 대표 “메인아트 보고서 확인해” 요청으로 [메인 아트 11/16 실보고](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/Chapter3_FrostFieldMouse_A_FinalArtCloseout_20261116.md)를 직접 확인. `docs/art-new` 문서 `d26f06b966a91dcb03fc352c80dfed96772af81a`, `SPRITE_ART_LATEST` 인계 `e86f4de609a5794790b11278ea2115c4eef802b0`.
+- **기획 미술 마감 판정:** `FROST_FIELD_MOUSE_ART_COMPLETE / USER_ART_APPROVED / 4_MOTIONS_16_FRAMES_KEEP / NO_NEW_ART`. 기존 Idle/Attack/Hit/Defeat 각4, field Idle00, 10/21 Unity 외형40PASS 및 Main22 격리136PASS 근거 재사용. 11/16 새 Unity Play/PNG 재SHA 실행0; 승인 PNG 변경·미술 재승인 금지.
+- **게임 후속은 미완료:** 외형 `MonsterVisuals/FrostFieldMouse.asset` `monsterId` 공란, Main22 `prototype_main22_frost_field_mouse` ID/지정조우 연결은 실제 존재, 별도 정식 일반 MonsterDefinitions/Spawn·수치·EXP/골드·전리품 확정 전. Main22 미구현이라고 주장하지 말 것. 원본 최신 실플레이/Save는 미검증이므로 기획과 Codex가 별도 승인 계약 후 진행.
+- [Issue #30 최종 기획 접수 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-6905357705). 리뉴얼 NPC OGA02/17 신규제작 #99는 독립 진행. Unity6000.6.5f1, Issue85 HOLD/디스크 규칙/Discord 보호, 게임 원본과 GitHub main Push/merge 변경0.
+
+---
+
+# PLANNING / 2026-11-16 오전 — 서리들쥐 미술 마감·리뉴얼 NPC02/17 신규 2종 병렬 발주
+
+- 바울 대표 “메인 아트는 들쥐? 완성을, 리뉴얼은 계속 npc 작업 맡겨줘.” → [기획 정본](../20261116_Parallel_Art_MouseCloseout_NPC02_17.md) `docs/planning` commit `16e21eac1ee05161f2c25948c69d6afc138a6ca1`.
+- 신규 아트 [Issue #30 마감 발주](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-6904538244): **Mouse Idle4/Attack4/Hit4/Defeat4 이미 승인, Unity 40PASS 연결**. 승인 원본 재제작 금지. 1포즈/4모션·실물 SHA Final Closeout과 F1/Monster ID/Spawn/보상 실제 상태 분리 보고. 부재가 증명된 별도 추가 Sprite만 사용자 승인 전 견적, 기본 신규이미지0.
+- 리뉴얼 [Issue #99 신규 발주](https://github.com/HappyPaul812/Project-Limitless/issues/99): **OGA02 훈련장 안내인 + OGA17 장비상인** 신규 정지 NPC 각1 포즈(총2). 기존 4종 **OGA03/09/06/16 사용자 미술승인·로컬 원본 적용·실플레이 확인** 보호. OGA20 남문경비 태온 유사 HOLD 유지. NPC 초상화·애니·전체 일괄제작 금지. 기존 게임 stableID/Quest/Collider/Save 등 유지.
+- 각각 `docs/art-new`, `docs/art-renewal` 인계/보고 및 SHA·실물 PNG·미술 승인·Unity 적용 구별. 이슈 등록은 아트 세션 자동 실행이 아니므로 담당 세션으로 전달할 프롬프트 제공.
+- 기존 Unity **6000.6.5f1**, Issue #85 Package/Import 및 Clean Release HOLD; 11/12 디스크 관리 규칙 준수(중복 대형 QA/격리 프로젝트 금지, Discord 전면 보호). 오늘 기획 GitHub 문서·Issue 외 사용자 PC Unity·Save/Git local main·원격 main Push/병합0.
+
+---
+
+# PLANNING / 2026-11-12 저녁 — QA 디스크 관리 규칙 확정 / 코덱스 정리 작업 중단
+
+- 바울 대표가 **격리 프로젝트 복제 최소화·작업 종료 시 재생성 캐시 정리·작업 전후 F: 여유 공간 측정·Discord 전면 보호**를 공식 운영 규칙으로 문서화하라고 요청. 정본: [LIMITLESS_QA_DISK_STORAGE_POLICY_20261112.md](../LIMITLESS_QA_DISK_STORAGE_POLICY_20261112.md), `docs/planning` 문서 커밋 `989e50fb905be5c9212182e079b3a06f920896a9`.
+- 11/12 마지막 정리 보고 **F: 319.848 → 326.250 GB (6.402 GB 회수)**. 사용자 화면 **5시간 잔여75% / 주간 잔여13% / 크레딧0**를 기준으로 **오늘 추가 코덱스 호출·디스크 정리 중단**. 값은 화면 확인 시점 기준이며 자동 실시간 모니터링이 아님.
+- 기존 Unity6000.6.5f1 / Issue #85 Import·Compile HOLD / Discord 보존 / 원격 main Push 금지 / local main·Clean Release·Save·미Push 작업 보호. 새 사용자 승인 없이 QA worktree 전체 삭제·대량 재복제 금지. 향후 새 격리 QA는 기존 환경 재사용과 종료 정리까지 완료 기준으로 관리.
+- 이 회차는 GitHub `docs/planning` 문서화만 수행, 사용자 PC 파일 변경·코덱스 실행·GitHub main Push 모두 **0**.
+
+---
+
+# PLANNING / 2026-11-12 오후 — #85 Clean Release HOLD 실제 보고 접수 및 PSD/GUID 후속 방향
+
+- [Codex 11/12 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6815892799) 검수. 브랜치 `codex/issue85-clean-release-repair-20261112`, 로컬 보고 커밋 `e2718597a28f82adf1d1837cd31a8f7f53ca58fc`. **Push 조건 미충족으로 원격 Push 명령 미실행** 판정이 옳음.
+- Unity **6000.6.5f1** 격리 Batch Import: Animation 15.1.0→16.0.1 변경으로 기존 `SetChecked/IsChecked` CS1061 6건 소멸. 그러나 PSD Importer **14.0.3** 내부 `Toggle.IsHovered` CS1061 1건 신규 발생해 **전체 컴파일 FAIL**. Unity 공식 6000.6 출시 패키지 `com.unity.2d.psdimporter@15.0.1` ([공식 문서](https://docs.unity.com/en-us/engine/6000.6/manual/packages-list/packages-all/pack-safe/com-unity-2d-psdimporter))이므로 **15.0.1은 합리적 격리 시험 후보일 뿐, 해결 PASS 아님**. 패키지 manifest/UPM lock의 기존 17개 baseline 재해석 + Animation1=총18 변경, 불필요한 bootstrap2 불포함. 미승인 연쇄 package diff면 중단.
+- 기존 원격 main부터 같은 GUID를 공유한 BattleProjectiles의 **GoldenArrow1/HealerMagicalProjectile5** 메타6은 서로 다른 실물 PNG이며, 실제 Unity Import에서 중복 경고와 동적 GUID 재지정 발생. `Resources.LoadAll<Sprite>`에 의해 실사용됨. 따라서 보관본으로 제쳐둘 수 없고 **런타임 자산 유실은 아직 NOT_VERIFIED**. GUID 정본 1개를 명시적으로 정한 뒤 나머지 5개만 고유GUID로 변경하는 것은 **미실행 제안**이며 사용자 승인 전 본편 meta 변경/재발급 금지.
+- 승인제품235파일 불변, 신규Git객체341개 제외대상0, 원본8322 파일 SHA 보존, tracked302/untracked550·Save/UserData·Editor 보호. 기존 local main `d360813667d2ee47515067b8dd07c1a599efec15`, 원 clean 후보 `61fdc6902a6d0c4d109c36b308a3b8889e7aaac7`, 원격 main `bfd281545632877325f5d21e04cefb924042c465` 그대로.
+- **차기 권고:** 별도 Codex worktree에서 Animation16.0.1 + PSD Importer15.0.1만 정확한 PackageManager 의존성과 실제 Unity6000.6.5f1 Batch compile/Import로 **격리 시험**, 추가 의존/신규 오류 시 HOLD. GUID6은 정본 소유·참조를 비교표로 작성하고 **5 meta 표적수정 계획만 보고**. 기존 승인 아트/Scene/Save/GUID 본편 원형 보호, 기존 QA 전수 반복 금지. *이 기록은 패키지/GUID 정식 제품 수정 승인도, 원격 Push 승인 조건 충족도 아님*. 실컴파일 PASS 및 GUID 안전 수정 계획에 대한 사용자 후속 승인 후에만 다음 게이트 진행.
+- 상태: `ANIMATION_CS1061_6_RESOLVED_IN_ISOLATION / PSD_IMPORTER_COMPILE_FAIL / PROJECTILE_GUID_RUNTIME_RISK_HOLD / ORIGINAL_PROTECTED / REMOTE_MAIN_PUSH_HOLD / OWL_USER_REALPLAY_PENDING`. 후속 local main 이력 정렬은 여전히 별도 승인 필요. 기획 GitHub 문서만 갱신, 사용자 PC 작업/원격 main Push 실행0.
+
+---
+
+# PLANNING / 2026-11-12 — Push 업무 재개: Clean Release 패키지 호환/투사체 GUID 게이트 후 안전한 원격 main FF
+
+- 바울 대표 11/12 오후 직접 “좋은 오후~ 오늘은 어제 이어서 푸시 작업부터 하자.” → **Push 작업 재개 승인**. [Issue #85 차기 Codex 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6815666478). 기존 게임 콘텐츠 작업 재개 아님, 어제 막힌 Clean Release만 우선. 통과 조건 충족 시 기존 승인대로 **원격 main 일반 FF Push 1회** 허용하되, 로컬 main ref 비FF 교체·이력강제·미승인 패키지 변경 금지.
+- 상태 기준은 Codex 실제 PC 재조회 우선: local main `d360813667d2ee47515067b8dd07c1a599efec15`, origin/main `bfd281545632877325f5d21e04cefb924042c465`, clean release 후보 `61fdc6902a6d0c4d109c36b308a3b8889e7aaac7`, 승인제품235 파일 SHA 동일, Git 신규 객체332개 exclude0. 이전 67개 과거 local-only history 병합/전송 금지.
+- 어제 `com.unity.2d.animation` 16.0.1 PackageManager **API 해석 PASS이지만 Unity6000.6.5f1 실제 CS1061 6건 해결 NOT_VERIFIED**. 기존 lock diff20 = baseline 미정합17 + empty bootstrap 기본 built-in2 + Animation 변경1. 실제 clean 프로젝트 해석 기준으로 17/2 원인·필요성 분리, `Unity/Client/Packages/manifest.json`·`packages-lock.json` 2파일 범위의 최소 패치만 격리 시험, 실제 Import/컴파일 error0 증빙. 새 의존성 변경 확대 필요/기타 제품변경이면 HOLD.
+- 기존 origin/main부터 존재하는 투사체 `.meta` GUID 중복6파일은 참조그래프 읽기전용 조사. Scene/Prefab/Resources 실제 영향·asset 소유 구분; 고위험이면 HOLD/승인요청, baseline 보관본이며 신규 위험 없다는 확인 있으면 독립잔여이슈 추적. 무단 GUID 재발급/기존 asset deletion 금지.
+- Codex `codex/issue85-clean-release-repair-20261112` 별도 worktree → 패키지 최소 Delta compile → GUID read-only → 승인제품235 sha·Git 추가 객체/비밀·Save·미승인 Temp·라이선스·브랜치보호·현재원격fast-forward 전수게이트. 모든 PASS이면 `origin` 원격 `main` 정상 non-force FF Push, 서버 ref 재조회. 실패시 HOLD/Push 미실행. 기존 local main·dirty302/untracked550/Save/UserData·원본 Editor·구 Clean 후보 원형 보존. **remote push 성공 후에도 local main은 clean history와 달라 자동 FF 정렬 불가**, 별도 백업/사용자 승인을 거쳐야 함.
+- Owl 사용자 F2 실플레이 `USER_REALPLAY_PENDING` 유지. 기획은 GitHub docs/planning/Issue만 기록하며 PC local Unity/Git·원격 main Push 직접 수행0. 상태 `PUSH_WORK_RESUMED / TECH_GATES_PENDING / REMOTE_NOT_YET_PUSHED / LOCAL_MAIN_PRESERVED`.
+
+---
+# PLANNING / 2026-11-11 EOD — #85 Animation16.0.1 격리 PackageManager 해석 PASS, Lock drift20 및 컴파일 HOLD
+
+- [Codex 사용량 제한 패키지 조사 결과](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6794708108) 확인. 분리 조사 브랜치 `codex/issue85-animation1601-isolated-20261111`, 보고 commit `a66d494103468f93a4bc31cada7871284c03ede6`(문서3만). Unity6000.6.5f1 빈 격리 bootstrap의 Package Manager API에서 승인 후보 직접 dependency53개 + Animation15.1.0→16.0.1 **해석 PASS**. **실제 Unity 프로젝트 compile 실행 전 종료**해 기존 `CS1061`6건 해결은 **NOT_VERIFIED**.
+- 생성된 lock과 기존 clean 후보 lock 차이 **20항목** 중 읽기 전용 대조상 **17은 기존 후보 lock 비정합**, **2는 빈 검증 bootstrap의 기본 builtin**, **1은 Animation 버전 변경**. 2 builtin은 새로운 Animation의 직접 필수 의존성으로 확정하지 않음. 20항목 전체를 승인 패치로 적용 금지. 향후 승인 검토 파일 범위 `Unity/Client/Packages/manifest.json`, `Unity/Client/Packages/packages-lock.json` 두 파일. ProjectVersion 변경 필요성 새 발견0, 기존 Clean 후보 commit SHA는 그대로 보호.
+- **기획 판정:** `PKG_RESOLVE_PASS / LOCK_DRIFT_RECONCILIATION_REQUIRED / CS1061_FIX_NOT_YET_VERIFIED / CLEAN_RELEASE_TECH_HOLD / REMOTE_MAIN_PUSH_HOLD`. 사용자 전달 usage 화면 기준 5시간 남은 15%, 주간 32%; 신규 복잡한 Unity/GUID Codex 작업을 같은 회차에 재시도하지 않고 기존 문서와 원본 작업 보존. 다음은 사용량 여유 때 `기존 lock baseline17 항목 분류→builtin2 제거 여부 판정→정확 Animation 의존성의 최소 manifest/lock 격리 후보→Unity6000.6.5f1 실제 compile` 순서. 실패 시 HOLD/제품원본 적용 금지. 이어서 별도 6개 projectile GUID 참조 그래프 읽기 전용 감사.
+- `Clean Release` 원래 후보 `61fdc6902a6d0c4d109c36b308a3b8889e7aaac7`, 원본 local main `d360813667d2ee47515067b8dd07c1a599efec15`, remote main `bfd281545632877325f5d21e04cefb924042c465` 불변. Save/UserData·사용자 dirty/untracked·Editor 원형 보존; 원격 Push0, main 이동0, GUID 조사0. 기존 #85 Owl 첫한기 실플레이 사용자 수용도 별도 pending.
+- 이 기획 회차는 GitHub `docs/planning` 문서만 기록하며 PC Unity/Save/Git 원본에 손대지 않음.
+
+---
+# PLANNING / 2026-11-11 EOD Clean Release 기술 HOLD — 패키지 호환성·기존 GUID 중복 별도 해결 필요
+
+- [Codex Clean Release 검증 보고](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6794286678): `codex/eod-clean-main-candidate-20261111` 후보 `61fdc6902a6d0c4d109c36b308a3b8889e7aaac7`, remote main 원부모 `bfd281545632877325f5d21e04cefb924042c465`, 승인제품235 파일 SHA일치/누락0, 승인문서41+후보 추가2, 새 Git 객체332개 비전송 대상0. 기존 로컬 main `d360813667d2ee47515067b8dd07c1a599efec15` 변경0, 사용자 Save/UserData·Editor 보호. **원격 Push 미실행**.
+- 새 배포후보 Unity6000.6.5f1 Batch Import/Compile **FAIL**: 오래된 `com.unity.2d.animation` v15.1.0 에디터 API `Button.SetChecked/IsChecked` CS1061 6개. 현재 원격 main manifest/lock도 v15.1.0, ProjectVersion.txt `6000.5.7f1` 기록. Unity 공식 패키지 가이드: **Unity6000.5=2D Animation15.1.0**, **Unity6000.6=16.0.1** (https://docs.unity.com/en-us/engine/6000.6/manual/packages-list/packages-all/pack-safe/com-unity-2d-animation). **버전 불일치 가능성 매우 높지만 실제 candidate16.0.1 수정 PASS 전에는 확정 아님**. Unity6000.6.5f1은 사용자 고정, 6000.5로 본편 downgrade 금지. 다른 2D 종속패키지는 실제 PackageManager resolve로 확인.
+- 기존 remote main부터 있는 투사체 `.meta` 동일 GUID 6건도 별개 이슈. 무차별 GUID 갱신/asset 삭제/Scene·Prefab 참조 수정 금지. 파일·GUID·AssetType·실사용 참조·정본/복제 소유권과 해결 최소 diff를 **읽기전용 감사**해 사용자 승인 재판정.
+- [#85 차기 Codex 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6794407256): Clean 후보 SHA는 그대로 보존, 별도 실험 worktree/브랜치에서 Editor6000.6.5f1에 맞춰 2D Animation **16.0.1 소규모 PackageManager 해상도+최소 compile QA**, 파급 Package/lock·ProjectVersion 변경 명세/Unity Console, Approved 235상품 불변 검사. GUID 6 참조그래프는 읽기 전용. 유의미한 package cascade/Scene 깨짐이면 HOLD. 사용자 dirty/untracked/Save/Editor·원본 localmain/후보원본 ref 불변, 원격 push0. **기술 수정 정식 후보 반영은 보고 후 별도 승인**.
+- 현재 상태: `CLEAN_RELEASE_SAFE_GIT_OBJECTS_PASS / UNITY_COMPILE_TECH_HOLD / ORIGINAL_PROJECTILE_GUID_COLLISION_HOLD / REMOTE_MAIN_UNCHANGED / LOCAL_ORIGINAL_PRESERVED / DAY_NOT_CLOSED`. 서리올빼미 정식 패턴 사용자 실플레이는 아직 미보고.
+
+---
+# PLANNING / 2026-11-11 EOD HOLD — local main 문서통합 성공, 원격 Push 보류, Clean Release 안전 후보 준비 필요
+
+- Codex [#85 2026-11-11 EOD HOLD 보고](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6793708031) 확인. 승인 문서15개 추가 로컬 FF 완료: local main **469b219ffbdbf4c8e5b51e977bbe2940eb6119a2 → d360813667d2ee47515067b8dd07c1a599efec15**. remote main 여전히 **bfd281545632877325f5d21e04cefb924042c465**. Unity6000.6.5f1, Console0, Save/UserData·dirty302/untracked550·approved game·Editor 보호. 실제 Push 명령은 **미실행**이며 서버 거절 아님.
+- HOLD 진짜 원인: 원격과 로컬 사이 **67개 Git 과거 커밋 자체**에 원격 비전송 대상 QA 생성 코드·로컬 보관 메타자료가 있어 파일을 HEAD에서 삭제해도 부모의 객체 전송 발생. 무리한 직접 FF push/삭제커밋/강제 force/이력 재작성 금지. 사용자 동의 없는 local main ref교체 금지.
+- [#85 기획 Clean Release 후속 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6793878896): 최신 `origin/main`에서 **별도** `codex/eod-clean-main-candidate-20261111` worktree를 만들고, 기존 승인된 current local main의 최종 상태를 **파일 단위 명시 허용목록**으로 이식해 몇 개의 신규 commit으로 후보 구성. 기존 67개 과거 commit을 merge/cherry-pick하지 않음. 타 팀 docs/* 전체 merge 금지, 기존 개인Save/미커밋파일·QA/Evidence/Temp·개인정보/키·미승인아트 제외. 새 후보의 실제 parent·remote fast-forward 관계, 모든 새 Git 객체와 스냅샷 SHA/메타·승인 PNG/Scenes/Unity6000.6.5f1 최소 Delta 검사 후 **후보 검수 결과만 보고**, 원격 main push 및 기존 local main ref 교체는 아직 금지.
+- 중요 이력 정책: origin/main에서 출발한 clean 후보를 remote main으로 **정상 FF push**하는 것은 원칙적으로 가능하지만 **현 로컬 main에서 clean 후보로 이동하는 것은 비FF**. 로컬 main을 동일 SHA로 정렬하려면 백업/사용자 별도 승인 및 안전한 ref CAS 절차가 필요. 기존 명시 Push 승인 범위가 히스토리 대체나 개인작업 변경까지 허가한 것은 아님. 원격 branch 보호/CI 검증·보안 Secret scan 거절이면 HOLD.
+- User realplay F2 Owl (5.7,-2) 아직 확인 미보고; 지금 마감 원격 Push HOLD와 별개로 `USER_REALPLAY_PENDING`. 기획은 GitHub docs/planning 기록만, PC Unity/로컬 branch/ref/원격main Push 수행0.
+- 상태 `LOCAL_DOC_SYNC_SUCCESS / REMOTE_MAIN_PUSH_HOLD / CLEAN_RELEASE_CANDIDATE_REQUIRED / USER_WORK_PRESERVED / DAY_NOT_CLOSED`.
+
+---
+# PLANNING / 2026-11-11 EOD — 모든 승인 작업 선택적 통합, 로컬 동기화, 원격 main Push 명시 승인
+
+- 바울 대표: **“오늘은 여기까지 하자. 지금까지 한 모든 작업들 다 합치고 로컬 동기화하고 메인 푸시도 해주라.”** → 이번 EOD에서 로컬 게임 안전 통합·원본 local main FF 및 **GitHub `main` 원격 Push 1회 명시 승인**. [Issue #85 EOD 정확 범위·보호·실행 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6793135707). 이번 명시는 기존 기본 Push HOLD의 예외이며 main 직접 commit·force Push/무단 branch policy 우회 승인이 아님.
+- [#85 Codex 실제 제품 보고](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6792344273): F2 Owl 첫 한기 예고→최대 1회 시도→첫 유효 피해·생존 대상 한기2차단→일반공격/재조우 초기화, 자연만료·허용조기제거 후 정상행동1회 재부여보호. Unity6000.6.5f1 **신규81 assertion PASS / 0FAIL** (격리75+원본Import6), 원본 Console0; 기존 99/44/68 재실행0. 제품 **4 C# 파일만** FF-only 적용, **마지막 보고된 local main `469b219ffbdbf4c8e5b51e977bbe2940eb6119a2`**, 원격 main 아직 미Push/미확인. 실제 PC HEAD는 Codex가 재조회할 것. 대표의 **정식 Owl 새 전투 실플레이 수용은 아직 대기**; Push가 실플레이 수용을 뜻하지 않음.
+- 승인제품·서류 포함 범위는 현재 확정 #94 Ch1 던전 Collision, #97 VenomSnake8, #96 HP/MP 2, #75 F2 B352, #95 NPC06/16, #91 Ch3 BG2, #57 NPC03/09+출처감사(Ch1 몬스터7/펫3), #88 한기 Stage2 B 코어, #85 정식 Owl 패턴 및 이미 승인된 오디오/TTS/기획/팀별 결과 문서. 기존 원본 local main에 반영된 제품은 재복사/재QA0, `docs/planning` 등 담당 인계 Markdown에서 누락된 승인 사실만 선별 통합. **docs/* 전체 브랜치 병합·미승인 시안/실험코드 자동 반영 금지**.
+- 제외/보호: #89 VFX 소유자와 태온·휠체어 밀집 `VISUAL_PARTIAL`, 동상 피해·동결괴사 보스/즉사/화로/정화Ⅱ/어묵탕·신규 전리품/상점·OGA20·#75 C SnowEdge/Discord 자동화 HOLD. 기존 미커밋 tracked dirty302/untracked550, Save/UserData/UserSettings/사용자 개인 파일·TTS/API키·로컬 실험 로그·ThirdParty 및 승인 아트 GUID/meta, Unity Editor Scene/Play/포커스 보호.
+- **EOD CodeX 의무**: 실제 local main HEAD/status와 `origin/main` 최신 fetch·조상 확인, 작업공간 백업/해시 보존 → 별도 `codex/eod-approved-main-push-20261111` worktree에서 승인 누락 문서만 추가(commit은 별도 브랜치, main 직접commit X) → Unity 신규 delta만 최소 확인 → origin/main..최종localmain 전체 커밋과 파일 검토(불승인/보안키/Save/크기·권한·license) → local main FF-only/no-autostash → GitHub `git push origin main:main` **force 없이 단1회**; remote divergence/branch protection/검증Fail 시 즉시 HOLD, rebase·branch 보호우회·main 직접commit·reset-hard·clean·무차별stash 금지. Push 성공은 서버 `refs/heads/main` SHA와 local main 동등 확인 후에만 표기.
+- 완료 보고에 로컬 start/end main SHA, 원격 start/end main SHA, 승인된 반영/이미 로컬 포함/HOLD, 파일/문서커밋, Save·dirty/untracked·SHA/Editor 보호, DeltaQA PASS/NOTRUN 근거, Push 실제 성공 여부/remote 원격 조회 및 CI, 원격 Main 사용자권한 승인 범위 준수, 사용자 실플레이 대기 항목을 CODEX_LATEST/CURRENT_STATUS/Issue에 기재. **기획은 GitHub `docs/planning` 인계·Issue만 기록한 것**으로 Windows Unity 원본 동기화 또는 remote main Push 성공을 주장하지 않음.
+- 상태: `EOD_20261111_USER_AUTHORIZED_MAIN_PUSH / CODEX_LOCAL_SYNC_AND_REMOTE_PUSH_PENDING / REMOTE_MAIN_NOT_YET_VERIFIED`.
+
+---
+
+# PLANNING / 2026-11-11 — #85 Main24 첫눈의 숲 Owl 한기 패턴 전투당 1회/예고/해제보호 사용자 최종 승인
+
+- 바울 대표가 2026-11-11 “그래”로 앞서 제안한 **서리올빼미 F2 첫 한기 전투 규칙** 승인. [Issue #85 공식 기획 규칙·코덱스 발주](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6791766233). ① 한기 공격 전 명확한 한글·시각 예고 ② 정상 명중 판정의 **유효 적중시에만** 한기2 자기 행동기회 차단 ③ 해당 전투 첫 한기 공격 **최대 1회 시도**, 이후 일반 공격 ④ 자연 만료·허용된 조기 해제 모두 정상 성공행동1회까지 한기 재부여만 차단. 명중 실패시 강제 피격/재시도/불명확한 확률을 새로 만들지 않음. 패턴 1회(기회 보장)와 디버프 무조건 적용은 다르다.
+- 승인된 Owl 전용 Production 동작에는 기존 **local main `4a9b72f88d58c313cee81efc03cb4118354fa38f`**에 이미 적용된 Stage2 B 코어7파일 사용([#88 68PASS 원본 적용](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6791592600)); 기존 격리 99/44 PASS 재실행0. 올빼미의 실제 F2 Encounter·EnemyAction·기존 Hit/Guard·BattleColdStatus API를 먼저 읽어 구조/파일 명세 확인, 무리한 AI 및 명중/확률 변경 금지. 기존 기본OFF는 모든 비Owl·Editor QA arm 경로에 유지, 승인된 F2 Owl 실전에서만 독립 trigger 연결. 기존 UI에 QA 제목·개발용 메시지 노출 금지.
+- **조기해제 보호 정책 신규 승인**: 허용된 한기 제거 API를 정상 호출하면 보호 부여 후 정상 자기 행동1회 완료까지 재부여 거절. 기존 정화Ⅰ이 한기 해제 가능하다는 정본 증거 없음. 정화Ⅱ·어묵탕·화로 향후 기능/아이템은 아직 HOLD이므로 **기존 정화Ⅰ/상점 스킬/아이템 효과 무단 수정 금지**; 해당 경로가 실게임에 미존재면 Editor/격리 TestAPI에서 조기해제 보호만 기술 검증하고 유저 UI에 정화 가능 약속하지 않음.
+- 독/화상/쿨다운/방어 경과·KO는 Stage2 B 기존 원본 보존. VFX/Icon6 원본 BYTE_KEEP; 960·1280 실제 화면에서 명확한 Owl 대상 소유자 식별과 상태명/횟수·일반 HUD 무가림 표적 검증, 기존 태온·휠체어 겹침 VISUAL_PARTIAL 조용히 방치하거나 완료 주장하지 말고 독립 이슈 경계로 유지.
+- 다음 Codex `codex/main24-owl-first-chill-production-20261111` 분리 worktree와 Unity6000.6.5f1 격리에서 한 전투 한기 예고→명중/실패→2차단→복귀→이후 일반공격, 일시 제거·정상행동 보호, 종료·재입장 flag 리셋, 일반Ch1/2·비Owl회귀, 키보드/마우스/휠체어 최소신규 DeltaQA만. 원본 로컬 제품 적용은 실제 manifest/보호 SHA·Git dirty·Scene/Prefab/GUID/meta/Save·원본 Editor 안전·FF 충족하는 승인된 좁은 범위에서만. 범위 확장·기존 충돌·수치 미정이면 HOLD 보고, 원격 Push/Merge 및 main 직접커밋 금지.
+- 상태 `OWL_FIRST_CHILL_RULES_USER_APPROVED / EARLY_REMOVAL_REAPPLY_GUARD_APPROVED / OWL_PRODUCTION_INTEGRATION_PENDING / STAGE2_CORE_LOCAL_APPLIED / CHILL_BOSS_FUTURE_HOLD / REMOTE_NOT_PUSHED`. 이번 기획은 GitHub docs/planning + Issue 기록만, PC 원본 Unity 변경0.
+
+---
+
+# PLANNING / 2026-11-11 — Stage2 B 한기 코어 본편 로컬 적용 성공 / Owl 정식 발동 별도 기획 결정
+
+- [#88 Codex 실제 원본 적용 보고](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6791592600), [#85](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6791601746), [기획 접수](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6791684341) 확인. Unity **6000.6.5f1**, 승인된 누적 한기Stage1+Stage2 B 제품7파일만 로컬 main FF-only 안전 적용. **신규 격리62 + 원본Import6 = 68 assertion PASS/0 FAIL, 원본Console0**. 기존 격리99·첫한기44 PASS 재실행0. 제품SHA 커밋·최종 원본 local main **`4a9b72f88d58c313cee81efc03cb4118354fa38f`**. 보고증거는 별도 브랜치 `fdf247197aa094dd3058007fa400ae5be1a59daa`에만, 원본 main 문서/검사기11개 대량추가0. 원격 Push/Merge0, Save/UserData·tracked dirty302/untracked550 및 기존 F2B352/NPC/전투BG/냉기 Icon3+VFX3 바이트 보존.
+- **한기 전투 핵심 코드 `LOCAL_ORIGINAL_CORE_APPLIED`이나 일반 Owl 자동 한기발동 OFF**. 원본에서 Editor 명시적 QA arm을 실행하지 않으면 실제 F2 Owl EnemyAction 한기0이고 시험 제목 표시0. 이 상태를 `MAIN24_CHILL_REALPLAY_COMPLETE`로 처리하지 않음. Editor 감사에서만 2회차단/정상행동복귀·CD/DoT/KO/키보드/마우스 및 960/1280 GameView 검증. 본편 사용자에게 Editor 암시 테스트 강요 금지.
+- 다음 결정 **Owl 실제 한기 발동 패턴/발동 확률 및 예고(첫 체험공정성)**, 조기해제 후 복귀보호·시연 빈도·전투 후 처리. 기획 권고(대표 아직 미승인)는 첫 F2 전투에서 예고를 통한 **최초 한기1회 체험 후 정상복귀 보장** 방향, 일반 매타격 100% 반복 재동결 불가. 불명확한 Owl EnemyAction 계약과 전투 모델은 새 구현 전에 실제 읽고, 수치/타깃/예고/쿨타임은 임의 결정하지 않음. 기존 Stage2 B 자연만료 정상행동1회 보호는 테스트 PASS. #89 VFX8px 최소간격 PASS vs 소유자 식별·태온/휠체어 밀집 VISUAL_PARTIAL 보류 유지. 동상·동결괴사·아이템·경제/상점·보스 새 효과 HOLD.
+- 상태: `CHILL_STAGE2_B_CORE_LOCAL_APPLIED / NEW_DELTA_68PASS / OWL_PRODUCTION_TRIGGER_OFF / USER_GAME_POLICY_DECISION_PENDING / REMOTE_NOT_PUSHED`. 기획 docs/planning 문서만 기록, 사용자 PC Unity 로컬 작업0.
+
+---
+
+# PLANNING / 2026-11-11 — 한기 Stage2 B 코어 원본 로컬 이식 착수 허가·실전 Owl 발동 미결정 보존
+
+- 바울 대표가 #57 OGA03/09 실플레이 수용 직후 "다음은 Chapter3 서리올빼미의 한기 전투를 본편에 연결하는 작업"에 **“그래.”**라고 승인. [Issue #88 코어 이식 지시](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6791306760). **기검증 Stage2 B99PASS 전투 코어를 본편 원본에 안전하게 연결하는 작업**을 진행하되, 아직 명시되지 않은 Owl 확률/AI/조기해제까지 임의 결정 금지.
+- 검증 기준 #88 별도 `codex/chill-stage2-b-isolated-20261111` 제품 `c886e89b44250c1088c49d2bc25170da6e51f429` / 문서 `a0ca3223dece4e8816e91841678897e7d063e02d`, Unity6000.6.5f1 격리 **99PASS/0FAIL**(턴경계80+화면19), 이전 Owl 첫한기44PASS 독립. 코어 누적 후보는 **제품7파일(신규 `BattleColdStatusRuntime.cs+.meta`, `BattleSceneController.OwlChillPilot.cs+.meta`, 기존 `BattleSceneController.cs`, `BattleSkillSystem.cs`, `BattleCombatantStatusViewModel.cs` 수정)**; Stage2 B 수정4는 이 집합 내부. 기존 승인 Icon/VFX6 원본 BYTE_KEEP.
+- 제품 범위 **CORE ONLY**: 앞선 격리 코어의 `default OFF` / Editor audit explicit arm만 보존, 일반 F2 Owl에서 무단 100% 한기·임의 발생확률/AI패턴·새 게임 보상/경제·동상 피해/동결괴사/해제상점 **생성/활성 금지**. 코어 이식 성공과 첫 Owl 정식 플레이 가능은 **다른 마일스톤**. 조기 해제 후 재부여 보호/한기 proc 정책 별도 기획 결정, #89 소유자 식별·태온 밀집 VISUAL_PARTIAL.
+- Codex 작업브랜치 `codex/chill-stage2-b-core-original-apply-20261111` 별도 worktree; 기준 마지막 `main 548cf1e275684d8c4a647685fb6f08be0c495be7`(실 PC HEAD/status 우선). 기존 #57 NPC03/09 및 Save/UserData·tracked dirty302/untracked550, NPC95/F2B352/BG91·기승인Cold6원본 보호. `7파일 Delta 제품만` 이식, 문서·증거·검사기11파일 무차별 적용 금지. 새 최소 import/compile/일반전투 회귀, **Editor explicit QA arm** 실제 한기2→1→0·턴진행·CD/DoT/보호·표시960/1280만 보고, 기존 99/44/46 등 대규모 QA 반복0. 충돌0·제품/보호파일 SHA 일치·FF안전시에만 local main FF-only/no-autostash; 원격 Push/Merge와 main 직접commit, reset-hard/clean/force/stash 금지.
+- 현재 판정 **`CHILL_STAGE2_B_CORE_USER_PROCEED_AUTHORIZED / CODEX_ORIGINAL_LOCAL_APPLICATION_PENDING / OWL_PRODUCTION_TRIGGER_UNDECIDED_HOLD / NO_REMOTE_PUSH`**. Codex 성공 보고 전까지 적용 완료 주장 금지. GitHub 기획팀은 원격 docs/planning 기록만 수행.
+
+---
+
+# PLANNING / 2026-11-11 — OGA03·OGA09 시작마을 NPC 사용자 실플레이 승인 마감
+
+- 바울 대표 **“잘 되네.”**로 신규 오리지널 잡화상인 OGA03·주민대표 OGA09의 실제 원본 로컬 Unity 게임 적용 후 시각·기능 확인 수용. [#57 사용자 승인 마감 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6791260745).
+- [Codex 제품5파일 적용](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6791085660) 근거: 검증 PNG2/meta2+VillageNpcAppearanceCatalog.cs1, 기존 격리46PASS/0FAIL + 추가 원본/격리 Import14PASS/0FAIL, Console0, Unity6000.6.5f1, 원본 local main `548cf1e275684d8c4a647685fb6f08be0c495be7` (최신 보고 기준), FF-only, remote Push/Merge0; Save/UserData·dirty302/untracked550 및 기존 NPC·F2 B352 보호.
+- **최종 상태 `ISSUE57_OGA03_09_USER_REALPLAY_ACCEPTED / LOCAL_ORIGINAL_APPLIED / COMPLETE / REMOTE_NOT_PUSHED`**. 추가 아트 재제작/중복 적용/이전 QA 재실행0. 기존 이름표 근접가림 등 범위 외 한계는 독립 추적. 이번 기획은 docs/planning 기록만 갱신, 원본 Unity 조작0.
+- #88 한기 Stage2 B 격리99PASS 원본 미적용·한기 조기해제/올빼미 정식 발동 규칙 HOLD는 별도 후속으로 유지, 이번 NPC 수용을 다른 이슈의 적용 승인으로 해석하지 않음.
+
+---
+
+# PLANNING / 2026-11-11 — OGA03·OGA09 NPC 원본 로컬 적용 성공 / 대표 실플레이 대기
+
+- [Codex #57 실제 원본 적용 보고](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6791085660) 확인. 사용자 승인 OGA03 잡화상인·OGA09 주민대표 512RGBA 원본 2PNG+meta2, `VillageNpcAppearanceCatalog.cs` 5 ID 매핑만 수정하는 **제품5파일**을 Unity6000.6.5f1 로컬 main에 FF-only 적용. 기존 격리46PASS 재반복 없이 추가 격리Import6PASS + 원본Import/컴파일8PASS = **신규14PASS/0FAIL**, 원본 Console0.
+- 원본 main **`21ecf2129efa9d9467161d972fcb0a676122223c` → `548cf1e275684d8c4a647685fb6f08be0c495be7`**. 별도 적용브랜치 `codex/ch1-oga03-09-original-apply-20261111`, 신규 GUID2, 기존 Sprite/GUID/meta·Scene/Prefab·기존 OGA06/16·F2B352·Quest·상점가격·Save/UserData·tracked dirty302/untracked550 보호, 원격 Push/Merge0.
+- Codex 자동 승인 검토에서 **제품 범위 외 보고·증거·검사기11파일 원본 main 추가FF 요청을 거절**, 본편에는 제품5파일만 남음. 이를 실패로 재통합/우회하지 말 것. 문서보고 commit `e2cc1446...`·정정 `e9688d79...`은 **별도 로컬 적용브랜치에만 존재**. 기획 원격 문서에는 결과를 요약할 뿐 원본 local main·remote main에 무조건 문서변경 추가 요구하지 않음.
+- 대표 첫 손플레이 경로: 시작마을 서쪽 상인 좌표 (-5.8,1.2) E→물건을 본다/구매·판매, 중앙 광장 주민대표 (0,1.5) E→안내/Main01. Field03 안전지대/Arbel 역할 재사용은 Codex 검증 근거. **대표가 아직 새 적용본 직접 확인했다는 보고는 없음**: `USER_REALPLAY_PENDING` 유지. QA 이전의 이름표 근접 가림은 기존 한계.
+- 사용자 사용량 화면: 5시간 한도 **100% left**, 주간45% left로 리셋 확인(사용자 제공 스크린샷). 한도11%였을 때 적용 시작해 제품 성공·리셋 시점을 맞춤. 해당 수치는 화면 촬영 시점 스냅샷으로 보존, 지속 실시간 잔량 보장 아님.
+- 현재 상태 `NPC03_09_LOCAL_ORIGINAL_APPLIED / DELTA_14PASS_0FAIL / USER_REALPLAY_PENDING / REMOTE_NOT_PUSHED / STAGE2_B_CHILL_ISOLATED_99PASS_ORIGINAL_NOT_APPLIED`. 이 회차 기획은 docs/planning만 작성, 원본PC Unity 직접 접근0.
+
+---
+
+# PLANNING / 2026-11-11 — #88 Stage2 B99PASS 격리기술 접수 및 #57 NPC03/09 다음 작업 배정
+
+- 사용자 “다음으로 가자..”로 이미 승인된 OGA03 잡화상인·OGA09 주민대표 원본 게임 교체 전 **Unity 기술검증**을 다음 최우선으로 배정. 기존 #95 OGA06/16 NPC2는 Unity 및 사용자 실플레이 완료 보호, 재제작/재테스트0. [Issue #57 Codex 발주 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6788321474).
+- **한기 #88 기존 새 격리99PASS/0FAIL 접수**([Codex 기술 결과](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6788194741), [기획 접수](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6788320895)). 턴 경계80 + GameView19, 기존44PASS 미반복. Code `c886e89b44250c1088c49d2bc25170da6e51f429` 및 QA `a0ca3223dece4e8816e91841678897e7d063e02d`; 기존 4파일만 개선, Stage1 포함 7파일 여전히 **격리 worktree**에만 있음. **원본 main 제품 적용0**. VFX 960/1280 offset 표시 PASS, 소유자 인지·태온/휠체어 본체중첩 VISUAL_PARTIAL 유지. 조기해제 복귀보호·올빼미 정식 한기부여 확률/AI/예고/수치·동상피해·보스/해제 아이템 HOLD. 99PASS를 원본 제품/콘텐츠 완성으로 처리하지 않음.
+- **#57 다음 Codex** `codex/ch1-oga03-09-unity-delta-20261111` Unity6000.6.5f1 분리 worktree, 기존 승인 PNG 512RGBA OGA03 SHA `09b2d97643a7aaefd51930eb374c48bf358020f015cc4cce9e7ef4903853151d`, OGA09 SHA `ca0336ab6bbc7aaeb16169037e73ee39ced1b674f48324baeb75b1debfa29fcf` (Library 확인 ZIP SHA `7d5d4ca4def6e21164c2c318480b428c1cc14f708590ec44c4074579fcd058ab`), 실제 Windows 실물 SHA확인. 기존 OGA03/09 월드 Scale·PPU28/Pivot·StableIDs/상점/E·마우스/키보드·주민안내/다른지역/Nameplate·Collider/Quest·Save 보호하며 **격리실GameView와 최소 기능 QA만**. 기존 승인 PNG 재생성0. PASS 후 원본 적용 정확 파일·범위 확정, 제품 로컬 main은 아직 보류. 기존 QA 전수반복0.
+- 원본 local main 최신 확인 `21ecf2129efa9d9467161d972fcb0a676122223c` (로컬 실 HEAD 우선), Save/UserData·tracked dirty302/untracked550·이미 완료 F2B352/95NPC/91BG/96포션/97뱀·승인원본 유지. Codex 5시간 한도 남은26% 사용자 UI 정보에 비추어 **새 1회 최소 범위/기존 증거 재활용**, 다른 무리한 동시 게임 전수QA 금지. GitHub branch docs/planning에만 문서 기록, 원본 Unity/local main/원격 main 변경0.
+
+---
+
+# PLANNING / 2026-11-11 — #88 한기 Stage2 B안 격리 정책 선택 및 4파일 표적 QA 지시
+
+- [Codex Stage2 읽기 전용 검토](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6787685241) 보고 **Unity실행·제품변경0 / Markdown2건 commit `5d19cde44c0781b86299a1531f72078aabca9c9d`** 접수. 기존 첫한기 시험44PASS는 A안(한기시 BeginTurn 조기 반환) 가정이며 방어/맹세/SkillCD·가이아/철벽·독/화상 전체동결을 초래, 정상 FinishCurrentAction 직접호출은 MP회복/도발·감전·침묵 소비 위험.
+- [#88 기획 B 선택](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6787744565): **Stage2 격리 구현의 정책 기본안 B** = 차단된 실제 자기 기회에도 일반 쿨다운/방어/맹세, 철벽/가이아 경과와 기존 화상→독 DoT tick/KO; 반면 실제 성공행동 뒤 MP회복/도발·감전·침묵 소비/성공행동 Path/몬스터 행동완료 기반 Cooldown은 미발생. 한기 차단 기회당 정확1차감; 활성 중 재적용거절; **자연 종료 후 살아 있는 캐릭터가 정상행동 1회를 실제 마칠 때까지 한기 재부여만 막는 보호**. 다른 디버프/공격 면역 아님; 취소·대기·다른행동·KO는 별도 규칙. 조기해제 후 동일보호 여부·동상 피해·올빼미 한기 발생확률/보상/보스/해제 공급 HOLD 유지.
+- 기존 `codex/main24-owl-first-chill-isolated-20261111` 코드 `ff670ce1e78b3aa4336e44c8429e90eb662a10ba` **7파일 격리후보의 기존 C# 4파일만** 수정하여 별도 worktree Unity6000.6.5f1 표적 DeltaQA. 변경파일: BattleSceneController.cs, BattleSceneController.OwlChillPilot.cs, BattleSkillSystem.cs, BattleColdStatusRuntime.cs. 기존44/63/107/37/99/50 전수재실행0. GameView 960/1280에서 승인 Icon/VFX6 byte keep, VFX ActionRoot sibling/offset·짧은 상태문구만 수정 후보, 태온+휠체어 Formation 겹침 HOLD.
+- **본편 원본 적용0**, 후속 사용자 제품 적용 승인 별도, Local Main 마지막 `21ecf2129efa9d9467161d972fcb0a676122223c`(PC 실 HEAD 우선), Save/UserData/dirty302/untracked550, F2 B352·NPC/전투BG 등 모든 승인 제품 보호; main 직접 commit·원격Push/Merge 금지.
+- 상태: `PLANNING_B_STAGE2_ISOLATED_RECOMMENDATION_ADOPTED / CODEX_NEW_DELTA_QA_PENDING / RULES_NOT_ORIGINAL_IMPLEMENTED / USER_FINAL_GAME_APPLY_PENDING`.
+
+---
+
+# PLANNING / 2026-11-11 — OGA03·OGA09 NPC 2종 바울 대표 최종 미술 승인
+
+- 바울 대표: “코덱스는 시켰고, OGA03·OGA09가 npc지? 그럼 아까 봤는데 좋아..” → 기존 #57의 실제 OGA03 잡화상인·OGA09 주민대표 4인 시각비교를 직접 긍정, **두 NPC의 기존 오리지널 미술 최종 승인**. [Issue #57 공식 기획 승인 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6787576315). 아트 재승인 질문·신규 원화 재제작 금지. OGA03/OGA09는 마을 정지 스프라이트이며 대화 초상화 신규 아님.
+- OGA03 `Eldiran_GeneralShop_Concept_512.png` (512RGBA) SHA256 `09b2d97643a7aaefd51930eb374c48bf358020f015cc4cce9e7ef4903853151d`. OGA09 `Eldiran_VillageRepresentative_Concept_512.png` SHA256 `ca0336ab6bbc7aaeb16169037e73ee39ced1b674f48324baeb75b1debfa29fcf`. 기존 2026-10-23 자산과 11/11 자료 같은 SHA. 검토 ZIP `LIMITLESS_ISSUE57_OGA03_OGA09_FINAL_VISUAL_REVIEW_20261111.zip` Library 검증 606,247bytes/SHA `7d5d4ca4def6e21164c2c318480b428c1cc14f708590ec44c4074579fcd058ab`; 실제 Windows F: 파일은 Codex 재확인 필요.
+- 이 승인 결과는 **`USER_ART_APPROVED_OGA03_09 / UNITY_TECH_QA_PENDING / LOCAL_ORIGINAL_NOT_APPLIED`**. Codex는 다른 작업 중인 #88 Stage2 한기 규칙 검토를 중복 발주 없이 유지하고, NPC 별도 격리 기술QA를 후속 수행: 기존 WorldScale/PPU28/pivot/StableID/상점·주민안내·재사용지역/Collider/입력/Nameplate/Save 보호, 승인 PNG 512px를 PPU28에 그대로 직접 Import하지 말 것. 미술 승인과 제품 실게임 적용 성공/인게임 기술승인을 구별.
+- #95 OGA06/16 + #91 Ch3 BattleBG v2와 #75 F2 B352는 이미 제품 적용 사용자 수용/기술검증 별도 완료 상태 보호, #89 냉기 승인 Icon3/VFX3 원본 보호. 메인 직접커밋/원격Push·Merge 금지, 원본 Unity Save/UserData·미커밋 변경 보호.
+- 본 기획 회차는 `docs/planning` 문서·Issue만 변경, Windows 원본 Unity/로컬 main 미접근·변경0.
+
+---
+
+# PLANNING / 2026-11-11 13:58 KST — Owl 첫 한기44PASS 격리 + #89 no-ZIP 정상이행 + #57 NPC03/09 시각 검수
+
+- 바울 대표가 Codex 서리올빼미 첫 한기 **Unity 격리44PASS/0FAIL** 보고와 신규 아트 파일 `F:\Downloads\Issue89_ColdVisual_TargetedReview_OFFLINE.png`, 리뉴얼 ZIP `F:\Downloads\LIMITLESS_ISSUE57_OGA03_OGA09_FINAL_VISUAL_REVIEW_20261111.zip`을 제출. Windows F: 직접 접근0, 동일 명칭 Library 보관본을 직접 실물검증. **#89는 새 아트 제작이 아닌 비교판PNG1+권고Markdown1이므로 ZIP 없음 정상**.
+- [Codex #85 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6787326038) / [기획 접수](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6787486756). 실제 Owl 유효 공격 → wheelchair 한기 2→1→0·2개 자기기회 명령 차단→복구·Enter 공격, 파티3 교착0, 상태명/ICON 확인, 격리 Unity6000.6.5f1 실제 44PASS, 7 GameView, Runtime C#0. 원본 제품 적용0. 코드 `ff670ce1e78b3aa4336e44c8429e90eb662a10ba`, 보고 `6780907ce0d1729138c2086c34a38754d5a24ad8`. 현재 마지막 local main `21ecf2129efa9d9467161d972fcb0a676122223c`; Save/UserData·tracked dirty302/untracked550 보존/remote Push0.
+- **규칙 HOLD**: 한기 자기기회 2회 차단 자체는 정본, 그러나 격리 시험 감소 시점/활성 중 재부여 거절/쿨다운·DoT의 기존 BeginTurn 누락, Owl 한기 발생률100%·딜·아이템수량 등은 시험가정/미승인. 차단 턴 경과/쿨다운·버프/DoT 경계 정의를 읽기전용 함수표로 검토 후 **대표 별도 공식 승인** 이전에 원본 Cold Stage1/한기 AI 적용 금지. 동상 피해·동결괴사 보스 패턴/리소스·무료 해제공급 HOLD.
+- [#89 아트 공식 결과](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6787123247) / [기획 접수](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6787488060). Library의 `Issue89_ColdVisual_TargetedReview_OFFLINE.png` **1680×1090 RGB**, SHA `19d23af2782b2840222db8e391ddb3bc92b64f8e9b0cf4f217b81ec998019bdf` 실제 열람. 승인 ColdVFX3+정식 Icon3는 전부 BYTE_KEEP; 설원 40px 그림 단독 구별미흡, 128px 휠체어 뒤 VFX가림, 태온·좌하단 HUD 겹침 **VISUAL_PARTIAL**; 새 게임용 그림0, ZIP 필수0, 해당 UI 문제는 Codex 최소Sorting/Offset/상태명·횟수 병기로 해결 추진하되 실제 GameView가 아닌 OFFLINE 시안으로 완료 주장금지.
+- [#57 리뉴얼 원본 납품](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6787128497)/[기획실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6787487431). Library ZIP **606,247bytes / SHA `7d5d4ca4def6e21164c2c318480b428c1cc14f708590ec44c4074579fcd058ab` / 10entries/CRC PASS**. OGA03 잡화상인(갈색 모자/앞치마/가방) SHA `09b2d97643a7aaefd51930eb374c48bf358020f015cc4cce9e7ef4903853151d`, OGA09 주민대표(회색머리/긴 남색외투/지팡이) SHA `ca0336ab6bbc7aaeb16169037e73ee39ced1b674f48324baeb75b1debfa29fcf` 보존. 4인 비교판·128/40 축소 실이미지 직접 판독: 기존 실게임 승인 OGA06·16과 화풍 일관, 두 새 후보 **KEEP2 추천**. 사용자 최종 미술 승인 **대기**, #95 기존 두 NPC+전투배경 재작화/재검사0. 원본 NPC 월드크기/PPU28·Pivot/실 상호작용은 승인 후 Codex QA, 바로 Import·본편적용 금지.
+- 이번에는 **GitHub docs/planning 인계와 Issue3개 댓글만 갱신**, 원본 F: Unity 제품/Scene/GUID/meta/Save/UserData·로컬 main 변경0. 기존 원격 main Push/Merge0. 상태 `OWL_FIRST_CHILL_ISOLATED_44PASS_POLICY_HOLD / COLD_ART6_KEEP_VISUAL_PARTIAL_NO_ZIP / OGA03_09_KEEP_RECOMMENDED_USER_APPROVAL_PENDING / ORIGINAL_PRODUCT_UNCHANGED`.
+
+---
+# PLANNING / 2026-11-11 — 다음 단계: Main24 F2 서리올빼미 첫 한기전 + 냉기 화면 가독성 + NPC03/09 승인판 병렬 착수
+
+- 바울 대표가 #95 OGA06/OGA16 NPC2와 #91 Ch3 BG2 실게임 확인 후 **“그럼 다음으로 가자..”**라고 지시. 최신 로컬 main 마지막 보고 `21ecf2129efa9d9467161d972fcb0a676122223c`(로컬 재조회 우선). #75 F2 B352, #95 NPC2, #91 BG2, #96 HP/MP, #97 VenomSnake와 몬스터/펫 출처감사 이미 완료 또는 별도 사용자 실플레이 대기 상태 보존. 중복 제작·QA·제품 적용 금지.
+- **Codex [#85 차기지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6786952685)**: Chapter3 Main24 F2 FrostOwl 첫 **한기(자기 행동 기회 2회 차단)** 격리 플레이 파일럿. 기존 Owl 조우·Battle/ColdStage1, 승인 VFX3·Icon3 HUD가 실원본에 어디까지 연결됐는지 조사 후 기존 코드 중복금지. #88 공식 한기·동상·동결괴사 분리, 미정 감소시점/재적용/동상Damage/KO간격·Owl 발동률·드롭/경제는 아직 미술/기획 승인 미완. 공식 규칙으로 무단 고정/원본 게임 적용 금지, 격리 테스트 전제로만 비교 후 필요한 승인 게이트 보고. Unity6000.6.5f1·별도 codex/main24-owl-first-chill-isolated-20261111 worktree, 휠체어·3인교착방지·명령잠금·턴복귀·HUD 1차 표적 Delta QA, Save·기승인 씬 보호, remote Push/Merge0.
+- **신규 아트 [#89 지시](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6786953257)**: 승인 냉기 전장 VFX3/정식 상태 Icon3 **6개 원본BYTE_KEEP**. 기존 11/04 VISUAL_PARTIAL 사례(설원40px 형태, 128px 휠체어뒤, 태온 겹침/하단 안내)만 실제 기존 Unity 증거에서 최소 위치/문자 병기·Sorting 개선을 제안, 신규 PNG 재생성0. `docs/art-new` 보고/SPRITE_ART_LATEST/#89, 본편 원본 미적용.
+- **리뉴얼 [#57 지시](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6786953795)**: #95 사용자 확정 NPC06/16 후속 아트 반복금지. 10/23 이미 제작된 **OGA03 잡화상인 + OGA09 주민대표 기존 후보**만 512·128·40px 및 승인 NPC 기준 1장 미술 승인 비교판으로 정리. OGA20 GateGuard 태온 유사성 기존 HOLD 보존, 기타 NPC/기존 몬스터 재제작0. `docs/art-renewal` 인계/Issue 업데이트, Unity 제품 적용/StableID/가게 로직 변경 금지.
+- **업무 분리:** Owl 런타임 Stage2 확정 정책은 바울 대표 승인 필요 (#88 기획 추천값은 미승인). 본 파일럿은 공식 냉기 피해 수치/AI 확률/화로·상점 등의 본편 구현 승인으로 해석 금지. 신규 아트/리뉴얼은 검토 자료만 제작. 완료 보고는 담당 branch+commit SHA+Issue+LATEST+QA+USER_APPROVAL 여부. 기획 GitHub docs/planning 이외 Windows 로컬 Unity/Save/UserData/remote main 변경0.
+- 상태 `MAIN24_OWL_CHILL_ISOLATED_PILOT_REQUESTED / COLD_RULES_STAGE2_USER_APPROVAL_PENDING / ART89_TARGETED_LAYOUT_REVIEW_REQUESTED / RENEWAL_OGA03_09_EXISTING_ART_REVIEW_REQUESTED / LOCAL_ORIGINAL_NO_NEW_CHANGES / REMOTE_NOT_PUSHED`.
+
+---
+# PLANNING / 2026-11-11 — #95 NPC·#91 Ch3 전투 배경 본편 적용 및 바울 대표 실게임 검수 수용 마감
+
+- 바울 대표는 Codex 승인 아트4종 로컬 적용 보고를 확인하며 **“실게임 검수도 했어..”**라고 직접 진술. **#95 NPC OGA06·OGA16 2종, #91 Snowroad/F2 전투배경 v2 2종 최종 미술 승인 + 로컬 원본 배포 + 사용자 실플레이 수용 완료**. 4종 재승인/재작화/동일 QA 재실행 금지.
+- Codex [#95 원본 적용 완료](https://github.com/HappyPaul812/Project-Limitless/issues/95#issuecomment-6786778538) / [#91](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6786779546) 기술 근거: 검증 제품 신규10+수정2 총12파일, Unity6000.6.5f1 격리107PASS/0FAIL + 추가 Import7PASS + 원본 Import9PASS, Console error0, FF-only/no-autostash, 원격 Push/Merge0. 최종 로컬 main **21ecf2129efa9d9467161d972fcb0a676122223c**. 기존 Save/UserData·사용자 dirty302/untracked550·F2 B352 및 Ch1/2 보존.
+- 사용자 최종 수용 기획 댓글 [#95](https://github.com/HappyPaul812/Project-Limitless/issues/95#issuecomment-6786869689) / [#91](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6786870219). 사용자가 확인한 실제 게임 검수를 별도 사용자 QA로 기록하되 모든 플랫폼·전투·파티·재사용장소 전수 통과로 과장하지 않음.
+- #75 F2 B352는 별도 로컬 원본 반영 기술37PASS/0FAIL 완료, 마지막 사용자 직접 손플레이 승인 여부는 이후 사용자 명시 보고로만 종결. 새로운 게임 아트 변경은 이 기획 문서 갱신에서 수행하지 않음.
+- 상태: ISSUE95_NPC2_COMPLETE / ISSUE91_CH3_BG2_COMPLETE / USER_REALPLAY_ACCEPTED / REMOTE_NOT_PUSHED / NO_NEW_PRODUCT_CHANGE.
+
+---
+# PLANNING / 2026-11-11 — Issue #95/#91 승인 아트 4종 Unity 격리 검증 107PASS 완료, 원본 미반영
+
+- [Codex #95 실검증 결과](https://github.com/HappyPaul812/Project-Limitless/issues/95#issuecomment-6786284694) 및 [#91 동시 보고](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6786285720) 확인. 4종 사용자 미술 승인 PNG SHA 동일, 격리 Unity **6000.6.5f1, 107 PASS / 0 FAIL** (17 실제 GameView, Runtime·C# 0error). 이전 대화 최초 인상 중 일부 70 PASS 표기는 정확한 수치 **107 PASS로 정정**. 테스트에서 기존 local main **3a44dd0483759dc4921b22a914853395701789d7 unchanged**, 원격 Push/Merge 없음. 원본 제품 업데이트 아직 완료하지 않았으므로 **코덱스 기술 QA 완료와 본편 적용을 구분**.
+- 테스트 브랜치 `codex/art95-91-unity-delta-20261111`: 승인 제품 정확 12파일 신규10/수정2 후보, product commit **d40bb17057da555322993c1b1c2fd7944b95bf78**, QA 문서 commit **52490cf4c5d4ca508ac6e6f5c117bdd460e93d1b**; 사용자 dirty302/untracked550/Save/UserData/원본보호5134SHA 변경0.
+- NPC: 승인 OGA06/OGA16 기존 32px/PPU28 월드 높이 1.142857WU 유지, 신규 PPU329/320.25와 하단 pivot 적정 조정; 치유/은행/Field03/Arbel 재사용 및 StableID5/Collider·Nameplate·Sorting PASS, 역할 로직(치유·안내) 유지. Field Sprite 2종이며 대사 Portrait 신규 아님.
+- BG: Snowroad/F2 v2 동일 원본 PNG 1672x941, 실제 아군3+적1·3해상도·후열 HP/상태·Ch1 Field01/Ch2 Field05 기존 배경 전환 PASS. F2 우측 나무에 의한 명확한 가독성 FAIL 없음(시험 편성 한정), 수정v3·나무삭제 불필요. 격리 SearchDatabase 예외 및 MCP Editor 초기화 로그 OPEN은 게임 Runtime/C# QA와 분리, 원본 Console0 미확정.
+- 바울 대표 “드디어 npc들도 얼굴이 생기는구먼~ ㅋㅋ 좋아..ㅋㅋ”라는 **긍정 평가** 확인. 완료 상태 `ART_4_USER_APPROVED / ISOLATED_TECH_107PASS_0FAIL / NPC_AND_BG_PRODUCT_12_FILES_READY / ORIGINAL_NOT_APPLIED / USER_REALPLAY_NOT_YET_DONE`. 신규 4종 원본 제품 배포는 기존 적용범위12파일만 안전 적용, 로컬 안전 FF 전 추가 변경·충돌 검사 필요. 다음 Codex 실행은 전달받은 명시된 제품 적용 지시 범위 내 수행, **검증한 모습과 실제 본편 동일화 후 대표 손플레이 확인**.
+
+---
+# PLANNING / 2026-11-11 — Issue #75 F2 B352 로컬 원본 적용 성공·최종 손플레이 대기
+
+- [Codex Issue #75 적용 완료](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6783671968): 사용자 추가 확대 범위 직접 승인(“어. 승인.”) 후 Unity6000.6.5f1 B352를 본편 로컬 원본에 적용. **신규 Delta QA 37PASS/0FAIL**(Runtime35+Editor2), 3해상도 실제 GameView/마을→F2 SceneTransition/휠체어 굽은 길 왕복/퇴장·재입장 Builder 생성·자원해제/Collider·HUD·나무·그루터기·올빼미 보호. 제품 **5파일만**: F2SnowPathBuilder.cs(+meta), 기존 FirstSnow GroundOverlay PNG(+meta), World_NorthF2_CANDIDATE.unity 연결. 기존 GUID/meta 및 원본 5130 보호파일(변경허용 Scene1 포함), Save/UserData, dirty302/untracked550 보존. 원격 Push/Merge0.
+- 작업브랜치 codex/f2-b352-original-apply-20261111, 제품 commit c951e0c533ac5e1a12090ea446fb05c8fd91fd61, QA/문서 da34c933dbc889b9926f74a43c08fad2ca260a45, **최종 로컬 main 3a44dd0483759dc4921b22a914853395701789d7**(FF-only). F2 그림 FirstSnow 재사용 SHA 61141ace90d5c64c2277da0cb7e27d9674bce6c05f276fb3b9801cd05ffa272a. 기술 결과 문서 본편에 반영, Unity 원본 Editor에서 Import 및 Console0/Scene·Play·포커스 보존.
+- 이전 격리 B352와 완전 동일화면 주장 금지: Owl Idle 시점 차이 2467px만 있고 그 밖 눈길·HUD·나무·플레이어 구성 동일 보고. 과거 초기 B/C 시안과는 기존 나무/좌하단 HUD 보존 때문에 화면 차이. 남쪽 HUD 일부 가림은 기승인 보호범위의 기존 한계. **사용자 최종 실플레이 확인은 아직 요청/대기**: 새 Play→서릿길 마을 북문→첫눈의 숲 F2→휠체어 굽은길 왕복→마을 복귀→재입장/중복 생성 여부. 개발자가 실제 플레이 확인 완료라고 주장하지 않음.
+- 바울 대표가 **#95 OGA06/16 + #91 C3 Snowroad/F2 v2 아트 승인 후속 Codex 격리검증 지시문을 이미 전달**했다고 보고. **동일 프롬프트 재발송 금지**, 결과 보고를 받으면 우선 검증·원본 적용 별도 승인범위 정리. 두 아트는 사용자 미술 APPROVED이나 현재 제품 Unity 적용 완료 보고 아님. F2의 적용 성공이 이 두 작업의 선행 QA 결과를 의미하지 않음.
+- 이 기획 측은 GitHub 기록만 보완했고 사용자 PC Unity를 직접 조작/재동기화/Push하지 않음. 상태: F2_B352_LOCAL_ORIGINAL_APPLIED / UNITY_DELTA_QA_37PASS / USER_REALPLAY_PENDING / ISSUE95_91_CODEX_QA_IN_FLIGHT / REMOTE_NOT_PUSHED.
+
+---
+# PLANNING / 2026-11-11 — #95 NPC2 + #91 Chapter3 BattleBG2 사용자 조건부 미술 승인 이행
+
+- 바울 대표: “NPC와 전투 배경은 웹에서 보니까 좋네. 똑같으면 승인.” 비교판에서 직접 본 두 NPC와 두 전투 배경 **동일 원본 이미지**를 SHA256 실물 확인하여 **2+2 모두 최종 미술 승인**, 중복 승인 문의 금지. ChatGPT Library 실제 파일을 materialize해 해시 재계산했으며 바울 대표 Windows F: 파일은 직접 읽지 않음. 승인된 것은 원본 캐릭터/배경 그림이고 OFFLINE 비교판 문자/표시박스/다른 NPC는 승인·배포 대상 아님.
+- **#95** [최종 미술 승인 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/95#issuecomment-6783237511): OGA06 healer 512RGBA SHA `67aef89677e9b9f174f30b2c2a9e854eaee4e61814774402bd94a18691bd401f`; OGA16 bank SHA `1199c57d3c279b51af83452c8b580814d6456417ea8e3f3b83ea9fdc6c5f8dcd` Library 원본과 공식 아트 정본 **byte-exact**. `USER_ART_APPROVED_2 / CURRENT_GAME_NOT_APPLIED`. Codex 후속은 로컬 실제 2 PNG 동일 SHA 확인, 기존 원본 NPC/PPU28/pivot하단 월드 높이/StableID/상호작용/Collider/말풍선/재사용처 보존 조건에서 격리 Unity6000.6.5f1 최소 DeltaQA. 512 px를 기존 PPU28로 직접 import 금지.
+- **#91** [최종 미술 승인 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6783238184): Snowroad v2 `Snowroad_v2.png` SHA `339beeb80d313c589cf50842fc9f6964049b0752e783d83ac8a7097c768205ab`; FirstSnowForest F2 v2 `Forest_F2_v2.png` SHA `4d57949a1a9d2ae5600d4ba1b95989153fed6a0d8f47f8fc52e6f670a013535a`. Library easy ZIP 내부 PNG를 실제 바이트 읽어 공식 v2와 **exact** 일치. `USER_ART_APPROVED_2 / UNITY_BATTLE_QA_PENDING / GAME_NOT_APPLIED`. Codex 후속 실제 3인+적/후열·상태아이콘·HP·960/1280/1680·F2 우측수피 ROI와 캐릭터 대비 최소 실제 GameView QA; FAIL 시 무단 배경 수정0·증거와 최소 표적 권고만.
+- **#75 F2 Builder B352** 이전 격리 33PASS/0FAIL, 본편 환경 기반 확대 적용 별도 사용자 최종 승인대기 상태 **그대로 유지**. #95/#91의 미술 승인으로 #75 Scene/Builder 승인이 생긴 것으로 해석 금지. 미승인 OGA03/09·20, C SnowEdge, Chill HUD/VFX, 기타 시안 변경0.
+- 기획 변경은 GitHub `docs/planning` 문서/Issue만, 원본 local Unity/Scene/Prefab/Save/UserData/GUID/meta·미커밋·원격 main Push/Merge 변경0. 이후 작업/게임 적용 결과를 Codex가 실제 실행·보고하기 전까지 QA·본편 적용 PASS 주장 금지.
+
+---
+# PLANNING / 2026-11-11 — F2 Builder B352 격리 검증 + NPC95/BattleBG91 최종 시각 검수 완료
+
+- **F2 Issue #75** [기획 수용](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6783034852). Codex 분리 Unity6000.6.5f1 파일럿 Builder B는 Runtime 신규 GO402→352, 길 Mesh/Material53→3, 격리 실제1280 GameView A/B 픽셀0, 신규 국소QA33PASS/0FAIL. 기존 나무·Stump·Owl/Collider·좌하단 HUD KEEP, 과거 B 전체 화면과 달라진211,792px는 그 보호 조합 차이; 중앙 굽음 ROI 변경0. 사용하던 PNG1 byte-exact 재등록+Builder Script1 = 신규 제품4파일(+meta2), Scene1개에 Root/Builder 및 기존 placeholder4 runtime OFF 제안. **기획 기술적 B352 추천**이나 바울 대표의 본편 환경 기반 이식/Scene 제품 변경 **별도 최종 승인 전 원본 적용0**. 402개 무차별 이식·C SnowEdge/Pine8/Shrub4/HUD 재배치 금지. Codex 작업 브랜치 codex/f2-b-base-architecture-pilot-20261111 commit23ea5e58e4532c9e4b49b3a872d6700662e27a07 (로컬 미Push).
+- **리뉴얼 #95** [기획 아트 QA](https://github.com/HappyPaul812/Project-Limitless/issues/95#issuecomment-6783035696). Windows 동명 Library ZIP 실제 materialize·검수: 745,547bytes SHA c382592ac6857a47b6631e8ebdd4ff2ea87835eaf0ef4292ab5f3c77c8a90cb4, CRC PASS/Manifest16/16·SUMS17/17. 원본 512 RGBA OGA06 치유사·OGA16 은행 안내인 SHA 유지. 직접 4인 보드/128·40px 이미지 열어 미술 **KEEP2 추천**, 40px에서도 역할 실루엣 구분. 하지만 현행 원래 OGA06/16 PNG와 실픽셀/PPU/Pivot/실월드 스케일/미엘 공식 원화 비교 NOT_VERIFIED, 바울 대표 미술 최종 승인 전 Unity 적용0·신규 재제작0. ZIP 본문에 실제 게임 이미지 원본이 없다는 사실 보호.
+- **메인 신규 아트 #91** [기획 아트 QA](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6783036485). Windows 동명 Library ZIP 실물 1,729,054bytes SHA 4d0ab744ce4e069c62b7ab720870179c0ccc5918ad0ef70024afe57bafafcd69, CRC/SUMS5/5 PASS. 실제 오프라인 승인판 2장 시각검토: Snowroad v2·F2 v2 **KEEP2 추천**, F2 우측 어두운 수피/후열(1391,433) 대비 잠재 위험은 실제 3인/HP상태 HUD 검증 전 FAIL 미확정. 이 ZIP에는 1672×941 두 배경 본체 PNG나 Ch1 5패널 비교가 미동봉(기존 보고 SHA와 증거 재사용), 새 v3/나무 삭제0. 대표 미술 최종 결정 후 Codex 6000.6.5f1 격리 실제 BattleUI/3비율 델타 QA.
+- 현재 EOD 원본 로컬 main 마지막 보고 7e8c9f1b701b0f817c965bbb82941248181ac588 (시작시 재확인), 원격 Push0, 원본 씬/Save/UserData/기존GUID/meta/사용자dirty 상태보호. 새로운 원본 제품 수정 확인되지 않음. **세 건 모두 원본 미적용, 사용자 최종 제품/미술 승인단계 별개**. 이번 기획은 GitHub docs/planning·Issue 기록만 변경.
+
+---
+# PLANNING / 2026-11-11 — Issue #75 F2 눈길 B안 환경 기반 재사용 이식 규모 확인 및 격리 파일럿
+
+- [기획 범위 기록 / Issue #75](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6781472884). 바울 대표 전달 Codex 보고: 모든 F2 관련 PNG/ZIP은 F:\Downloads\Limitless_Sprites에 있음. 원본 World_NorthF2_CANDIDATE.unity에는 GO22/SpriteRenderer14/Collider14, 눈 기반 FirstSnow 및 PathEdge 대상 0.
+- 기존 B Unity fixture F2ReuseCandidate.Install()는 Runtime에서 Ground192/FirstSnow144/Trail Mesh53/Worn12/Root1 = **새 GameObject402**, 원본 placeholder Renderer4 표시 OFF를 통해 별도 F2 환경을 생성하며 B좌표 14개는 그 안에만 존재. 402는 이 특정 재현 방식의 오브젝트 수이지 모든 구현의 논리적 최소가 아님. SnowPine8/FrostShrub4 및 HUD Layout은 추가 선택이며 이식에서 제외, C SnowEdge 신규PNG/배치는 미채택.
+- 사용자가 승인한 B 미술 방향만으로 402 오브젝트 기반 환경 조성/원본 Scene 교체까지 자동 허가된 것은 아님. 기존 14개 위치만 바꾸는 방식은 사전조건 결여로 불가능. 새 이미지 제작 필요0, 기존 Sprite/GUID 교체0, 새로운 FirstSnow 등록/Component가 필요할 경우 신규 GUID 약 2 (실제 구현에 따라 변동). Collider 변화0 설계이지만 실제 본편 충돌 QA 미실행.
+- **기획 선택**: 코덱스는 Unity6000.6.5f1 별도 worktree에 **원본과 완전히 분리된 F2 B 기반 적용 파일럿**을 1회 실시하고, 이미 존재하는 fixture 직접 구성 방식 vs 경량 독립 Builder/Mesh 결합 방식의 실제 수정 범위/유지보수성/개체수/정식 UI/접지/플레이어 경로·sorting을 정량 비교한다. 과거 검증자산·캡처 재사용, 1280 한 해상도와 국소 이동만 새 검증. 새 F2 아트/새 NPC/Ch3 배경·HUD 배치 이식 금지, GameView/회전/Sorting 포함 B 안의 모습 참조. 원본 Unity Scene/Prefab/Save/UserData/사용자 dirty·untracked·기존 공식 GUID/meta·main 원형 유지, remote push/merge 금지.
+- Pilot PASS 이후에야 선택된 정확한 환경 기반 변경파일/Prefab/Script/Resource GUID/Placeholder OFF 범위를 바울 대표에게 별도로 승인받고 로컬 제품 적용. 현재 상태 F2_B_DESIGN_APPROVED / ASSET_LOCATION_CONFIRMED / ORIGINAL_B_TARGETS_ABSENT / REUSE_BASE_EXPANSION_PENDING / PILOT_NEXT / ORIGINAL_PRODUCT_NOT_APPLIED.
+
+---
+# PLANNING / 2026-11-11 — #75 F2 B안 원본 적용 HOLD 진단 및 경로 이동 오해 정정
+
+- Codex [#75 원본 적용 전 사전조건 검사](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6781061760)에서 `World_NorthF2_CANDIDATE.unity` 기존 SpriteRenderer14개는 B의 FirstSnow_*/Snow_PathEdge_REUSE 14개와 **별개**, B 대상0개. 과거 `F2ReuseCandidate.Install()`가 실Scene placeholder를 끄고 별도 `F2_REUSE_REVIEW_ONLY` Ground/FirstSnow/PathMesh/Worn/Pine/Shrub/HUD fixture를 생성한 다음 B를 적용. B의 기준환경 자체가 원본에 없어 14개 위치만 적용 불가능. 기존 B는 회전 변경도 있음. Codex가 Scene/제품0변경 HOLD한 판단이 맞음.
+- 사용자가 파일들을 `F:\Downloads\Limitless_Sprites`로 옮긴 사실은 이 HOLD의 원인이 아님. 파일 탐색 누락이라면 다른 메시지가 나왔겠지만 보고는 **원본 hierarchy/Renderer 구성 사전조건 실패**. 옮긴 경로는 후속 Codex가 #75 후보 실물 확인시 고려.
+- 기획의 11/11 '기존 Renderer14개만 원본 이식' 승인 안내는 **원본에 실제 해당 Renderers가 있는지 검증되지 않은 잘못된 전제**였음을 인정·정정. 대표의 B 눈길 미술 방향 선택은 유효하나 fixture 기반 전체를 본편으로 이식하려면 **추가 환경 기반 변경 범위 확정 및 별도 승인 필요**.
+- [Issue #75 기획 원인 정정](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6781192239). 다음 Codex는 **읽기 전용** 원본 F2와 fixture 환경 차이 필수/선택/미승인 C 분류, `F:\Downloads\Limitless_Sprites` 실제 파일명 찾기, 최소 안전이식 대안/변경 파일·GUID·Collider 영향·사용자 승인 필요 항목 문서화. Unity 원본 Scene/Prefab/Save/UserData/GUID/meta/사용자 dirty/원격 main 변경0. 기존 전수 QA 재실행 금지.
+- 상태: `B_ART_DIRECTION_APPROVED / ORIGINAL_F2_ENVIRONMENT_MISMATCH / LOCAL_APPLY_HOLD / READ_ONLY_DELTA_REVIEW_NEXT / REMOTE_NOT_PUSHED`.
+
+---
+# PLANNING / 2026-11-11 — Issue #75 F2 첫눈의 숲 B안 사용자 최종 승인
+
+- 바울 대표가 2026-11-11 “어제 본 눈길? 그래.”로 [Issue #75 F2의 기존 FirstSnow 눈 오브젝트 14종 위치조정 B안](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6780879183) 및 로컬 원본 게임 적용 진행을 승인. C안의 별도 SnowEdge 256 신규 그림은 미채택/HOLD, 신규 아트 제작 금지.
+- 이전 B/C Unity6000.6.5f1 격리 24PASS/0FAIL, 960·1280·1680 실GameView 6장과 휠체어 국소왕복 완료. 이는 B 본편 원본 적용 결과가 아니며 Codex 현행 원본 이식 후 최소 Delta 검증이 별도 필요. 과거24/68/90/81 전수QA 반복 금지.
+- Codex는 과거 검증 브랜치 codex/f2-bc-unity-delta-20261110 (17b045e0) 및 Issue75_F2_BC_UnityDeltaQA_Result_20261110.md, Evidence/F2BCUnity20261110에서 14 Renderer의 실제 B 좌표 diff를 읽고, codex/f2-b-original-apply-20261111 분리 worktree에서 위치만 수정. 기존 Snow road/길·기승인 Stump/Tree/Owl·Collider/Scene/Prefab/Save/UserData/Editor state·사용자 dirty/untracked/GUID/meta 보호. C 시안·#95 NPC·#91 Chapter3 BGv2 및 승인 안 된 작업 병합 금지.
+- 마지막 2026-11-10 EOD local main 보고 7e8c9f1b701b0f817c965bbb82941248181ac588, 실제 로컬 HEAD 실조회 우선. 최소 검증 전부 PASS/충돌0/FF 가능한 경우에만 original local main ff-only/no-autostash 적용; remote push·merge 및 main 직접 commit 금지. 변경 전후 좌표·Renderer14 실목록·3해상도 GameView·국소 물리·보호 SHA·브랜치/commit·local main 결과 보고.
+- 기획은 GitHub 기록만 완료; 로컬 Unity 본편은 Codex가 아직 미수행. 상태 F2_B_USER_SELECTED_AND_LOCAL_APPLY_AUTHORIZED / C_HOLD / CODEX_PENDING / ORIGINAL_NOT_YET_APPLIED / REMOTE_NOT_PUSHED.
+
+---
+# PLANNING / 2026-11-10 EOD — #96 물약 손플레이 수용·전체 승인 작업 로컬 안전 동기화 요청
+
+- 바울 대표가 **시작마을 잡화상점 신규 HP·MP 오리지널 물약 2종 실제 화면을 확인**하며 “잘 되네.. 오늘은 여기까지 하자 지금까지 한 모든 작업 다 합치고 로컬 동기화까지 해줄래?” 요청. [Issue #96 사용자 수용+EOD 의뢰](https://github.com/HappyPaul812/Project-Limitless/issues/96#issuecomment-6766721860). `HP_MP_USER_REALPLAY_ACCEPTED`.
+- [Issue #96 Codex 제품 적용 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/96#issuecomment-6766609236): Unity6000.6.5f1 Delta46PASS/0FAIL + 반영분 동일 바이트 복제 재확인46PASS/0FAIL, 새 원본HP·MP PNG2/meta2+ShopPresenter.cs의 시작마을 상점 64px 전용 override, 공용 ItemDefinition·Kenney기존·타상점/인벤토리/전투·HP+30/MP+12/가격20·30·Save 보호. 기존 local main ff-only 반영 후 최종 보고 `8430f40026ac9258f2ef3323b55dfb4983f872a7`; **오늘 EOD는 이 구현을 중복 적용 금지**. 최근 실제 로컬 main은 코덱스가 시작 시 다시 실확인.
+- [Issue #97](https://github.com/HappyPaul812/Project-Limitless/issues/97#issuecomment-6763843177) VenomSnake Idle4+Attack4 v2, Unity 기본61·보완24·원본반영 복제24PASS, 기존 local main에 이미 FF, 사용자 손플레이 호평. [Issue #57](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6765905198) Ch1 몬스터 출처 7/7 ORIGINAL_CONFIRMED (슬라임 대표 원본 직접 확인, Pixel comparison NOT_RUN), 펫3/3; 제품 변경0·문서 마감 커밋 `1c8f94c9...` 별도 로컬 브랜치이므로 EOD 감사 때 정본과 필요한 문서 차이만 판단. [Issue #94](https://github.com/HappyPaul812/Project-Limitless/issues/94#issuecomment-6728213577) B1/B2 충돌 수정 사용자 승인·제품 이미 반영, [#93](https://github.com/HappyPaul812/Project-Limitless/issues/93#issuecomment-6657392516) 등 이전 사용자 승인 완료본·Bee/Spider/Ch2BG 등 이미 local main 조상.
+- 사용자 확인 없는 **명확한 HOLD**: #75 F2 BendSnow B는 기획 추천/실원본 적용 사용자 승인대기, C 시안 보류; #95 OGA06/OGA16 NPC 시안 아트 사용자 승인대기/게임 스케일 미검증; #91 Ch3 BattleBG v2 시안 user 미술 승인대기; Shoot8, 미확정 냉기 Runtime, 시각 PARTIAL, Discord 자동화 HOLD. **이번 "다 합치고"를 HOLD 제품 자동 적용 허가로 해석하지 않음**. docs/* 전체 자동 merge 금지.
+- **EOD Codex 일회 작업**: 실 local main/status/worktree/branch/승인 근거 먼저 읽기 → 백업 여유 용량 확인 후 보호개인 Save/UserData/미커밋 tracked/untracked 상태·파일별 SHA·Paths 보존 → 별도 `codex/eod-safe-sync-20261110` worktree에서 승인·누락 근거 명확한 파일/정식 문서만 선별; 이미 제품 반영된 커밋/파일 중복 적용0, 미승인 자산0 → 복제 QA/필요 신규 Git Delta만, 과거 46/24/110 등 QA 재실행0 → 충돌0·`--ff-only --no-autostash`로 **로컬 원본 main만 안전 동기화**; 원격 Push/Merge, main 직접 commit, reset-hard/clean/force/stash, 원본 Editor·Scene·포커스 조작 금지. 리뉴얼 아트·기획 문서 원격 브랜치의 사용자 승인·상태 메모는 우선 읽고 미보유 기록만 정책에 맞춰 보존; 대량 통합 금지.
+- Codex 종료 보고: 최종 실 local main SHA/브랜치·커밋, 포함 vs already-in-main vs HOLD, 사용자 dirty/untracked 및 Save path 존재/부재/개인 데이터 보호 evidence(민감정보 본문 원격 비공개), backup, Unity version, 실제 신규 Delta QA 또는 NOT_RUN, 원격 Push0, 종료상태. **현재 상태 `EOD_USER_REQUEST_RECORDED / CODEX_LOCAL_RUN_PENDING / NOT_YET_SYNC_VERIFIED`**. 기획은 Windows 로컬 F: Unity나 git 변경 못했으며 실제 sync 성공 주장 금지. 오늘 신규 아트·기능 주문 없음.
+
+---
+
+# PLANNING / 2026-11-10 — Issue #96 바울 대표 HP·MP 물약 2종 최종 미술 승인 / Codex 로컬 상점 교체 지시
+
+- **사용자 직접 확인**: 물약 ZIP·64px 밝음/어두움 비교판 시각 검수 후 “좋다고 했는데?”라고 이미 긍정 의사를 전달했음을 재확인. 기획의 중복 승인 요청 정정. **`USER_ART_APPROVED_HP_MP_2`**, 추가 미술 승인 반복 질문 금지.
+- 승인 후보: `F:\Downloads\LIMITLESS_ISSUE96_HP_MP_ORIGINAL_POTIONS_20261110.zip`; Library 실물 ZIP **2,286,596 bytes, SHA256 `d1ce0e1cbbf64b588dd2b905a50cc4ecbc2e9bf2bd06378b58ab1d2cb62d7ead`**, Manifest11/11·CRC PASS. 원본 Windows F: 경로 자체는 Codex 실조회 전까지 미검증.
+- 신규 HP PNG `Candidates/Small_HP_Potion_Original_128_RGBA.png` SHA `675a62927ee6a1321ad552674e931a8f53f88680f8d14de7a0acde7c17497f64`; MP PNG `Candidates/Small_MP_Potion_Original_128_RGBA.png` SHA `39b90dfc0dac057c61ef39adb23d215236bb9ef7abe721c6bce0e713cdfdb64a`. 원본고화질과 Preview는 참고 전용.
+- **Codex 적용 진행 승인**: 로컬 Unity **6000.6.5f1**의 별도 `codex/ch1-shop-potions-original-20261110` worktree에서 실제 게임 UI와 외부 Kenney 원래 참조 및 구매 동작 실조회 → 오리지널 PNG 2개를 독립 신규 Sprite + GUID/meta로 등록 → **시작 마을 NPC 상점 거래창 64px Image 표시만** itemID별 override 적용. 공용 `ItemDefinition`·기존 Kenney 원본 PNG/meta/GUID·다른 인벤토리/전투/타 상점·HP+30/MP+12·가격20/30 및 Save/UserData/사용자 dirty 보존. 예전 참고값 Single/PPU100/Pivot(.5,.5)/Bilinear/Uncompressed 실제 Import 계약과 비교.
+- 기존 쇼핑 UI before/after 실 GameView(오프라인 목업 아님) 64px 해상도별 시각, HP·MP 식별·화풍, 구매/판매·수량·툴팁·입력/이동잠금·가격·효과/Save 영향 0 최소 Delta QA. FAIL/원본 dirty충돌이면 원본을 변경하지 않고 HOLD. 전부 PASS면 승인된 좁은 범위 **원본 로컬 게임 안전 적용**, 재생 후 최소 검증 및 대표 손플레이 위치 보고.
+- 원격 main Push/Merge 금지, main 직접 commit 금지, 조건 충족 시에만 기존 안전 FF 방식으로 원본 로컬 적용. **사용자 미술 승인과 Unity 최종 PASS/제품 적용 완료는 별개**.
+- 현재 사실 상태: `USER_ART_APPROVED_2 / CODEX_LOCAL_IMPLEMENTATION_AUTHORIZED / UNITY_INTEGRATION_NOT_YET_REPORTED / REMOTE_PUSH_NO`. 완료 후 브랜치/SHA/변경파일/승인PNG 해시/Unity Delta QA/원본반영/대표 실플레이 확인법 보고.
+
+---
+
+# PLANNING / 2026-11-10 — Issue #96 신규 소형 HP·MP 물약 2종 라이브러리 실물 검수
+
+- 바울 대표 제공 **`F:\Downloads\LIMITLESS_ISSUE96_HP_MP_ORIGINAL_POTIONS_20261110.zip`**. 사용자 PC의 `F:`에 기획이 직접 접근할 수 없으므로 **동일 이름의 ChatGPT Library ZIP을 별도로 materialize해서 실물 검사**, 실제 F: 파일과 바이트 일치는 Codex 로컬에서 확인 필요.
+- Library ZIP **2,286,596 bytes, SHA256 `d1ce0e1cbbf64b588dd2b905a50cc4ecbc2e9bf2bd06378b58ab1d2cb62d7ead`**, 13 entries, ZIP CRC PASS, Manifest **11/11 SHA256·bytes PASS**. [리뉴얼 아트 공식 보고](https://github.com/HappyPaul812/Project-Limitless/issues/96#issuecomment-6764270047)와 동일.
+- **실제 후보 PNG2**: `Candidates/Small_HP_Potion_Original_128_RGBA.png` **128² RGBA**, SHA `675a62927ee6a1321ad552674e931a8f53f88680f8d14de7a0acde7c17497f64`, alpha bbox(19,7)..(108,122), **붉은 둥근 병·코르크·십자 장식**; `Small_MP_Potion_Original_128_RGBA.png` **128² RGBA**, SHA `39b90dfc0dac057c61ef39adb23d215236bb9ef7abe721c6bce0e713cdfdb64a`, bbox(29,7)..(97,122), **파란 가는 병·수정 마개·달 장식**. 원본1254² RGBA 각각 2종 별도 저장; Kenney trace/recolor 미주장.
+- **실제 128/64/40/32 크기 비교판과 밝음/어두움 64px 상점 모의 화면 열어본 기획 시각 판정**: 색뿐 아니라 병 실루엣과 장식으로 구별, 현재 상점 표시 크기64에서 둘 다 읽힘. **기획 미술 채택 추천 / 바울 대표 사용자 최종 미술 승인 아직 대기**. 기존 월드 픽셀 아트보다 신규 원화 광택·세부 묘사가 많아 실제 Unity 상점 UI 조화 여부는 한 차례 표적 GameView 비교 필요. 이 목업은 **OFFLINE**이며 Unity 렌더/제품교체/런타임 QA가 아님.
+- **승인 후** Codex Unity6000.6.5f1 `codex/ch1-shop-potions-original-20261110` 별도 격리에서 시작 마을 **상점 거래창 64px Image에만** 신규 독립 Sprite2 적용, 기존 공용 ItemDefinition PNG/GUID/meta 직접 덮어쓰기 금지; HP+30/가격20, MP+12/가격30 및 구매/판매/수량/툴팁/이동 입력잠금/Save 유지. 실GameView 밝기·고대비·2해상도 비교 및 최소 Delta QA PASS·원본 충돌 없음일 때만 원본 로컬 안전 적용. main 직접커밋·원격 Push/merge 금지.
+- **상태** `ART_FILE_TECH_PASS / PLANNING_VISUAL_RECOMMENDED / USER_FINAL_ART_APPROVAL_PENDING / SHOP_UNITY_NOT_APPLIED`; 이번 기획 행동은 문서/Issue 기록만, 로컬 Unity 조작·기존 제품변경0.
+
+---
+
+# PLANNING / 2026-11-10 — Chapter1 몬스터 제작 출처 감사 최종 마감 (Issue #57)
+
+- [Codex #57 실제 마감 보고](https://github.com/HappyPaul812/Project-Limitless/issues/57#issuecomment-6765905198) 확인. 바울 대표가 로컬 Unity 실제 `01_GrassSlime_Walk.png`를 보고 **“그래 이거야. 우리가 만든거야”**라고 팀 제작 출처를 직접 확인. `grass_slime` **ORIGINAL_CONFIRMED**. 기존 `moss_beetle`, `shade_bat`, `grave_wight`, B2 `silent_echo`, `seal_guardian`, `silent_warden` 포함 Ch1 잔여 7종 **7/7 ORIGINAL_CONFIRMED**. 기본 펫 Wolf/Bear/Fox **3/3 ORIGINAL_CONFIRMED**, Bee/Spider/VenomSnake 이미 오리지널 현행 교체, Chapter2 공식 몬스터 보존. 감사 범위 **확정 외부 실사용 종 0**.
+- 당시 ChatGPT Library 슬라임 1254² → GitHub 이력 1256² 투명 패딩 변환 문서, Library B2 3 PNG 3/3 현재 Unity SHA 바이트 일치. **초원 슬라임 실제 RGBA 픽셀 1:1 대조 및 패딩 alpha 검사는 NOT_RUN**. 출처 확정은 `USER_OWNER_DIRECT_CONFIRMATION`이지 픽셀 PASS라고 주장하지 않음. ZIP 필수 조건 해제, ZIP 추가 요청 금지.
+- Codex 브랜치 `codex/ch1-monster-provenance-final`, 로컬 문서 commit `1c8f94c9c9a3241a651ed46fb0547e2bf7ed67d1`; Unity PNG/GUID/meta/Scene/Prefab/Save/UserData 제품 변경0 / local main 변경0 / 원격 Push 없음.
+- 기획 정본 [Ch1 4종 최초 출처 근거](../../Chapter1_Monster4_UserDeclared_Provenance_Pending_20261110.md) 이력과 최종 마감 상태 갱신 (docs/planning commit `2aeacfd7b67726baf4e60c55e08b5ab0f3aeb836`). **Issue #57 `PROVENANCE_AUDIT_CLOSED`**, 추가 몬스터 아트 재제작/감사 발주0. 다음 리뉴얼 우선순위는 #96 HP·MP 상점 아이콘 2종, #95 NPC 시안 사용자 승인·실게임 스케일 확인이며 이는 별도 범위. 게임 전체의 NPC/VFX/UI까지 100% 오리지널 인증한 것 아님.
+
+---
+
+# PLANNING / 2026-11-10 — Chapter1 UNKNOWN4 최초 원화·게임 스프라이트 제작 계보 실물 추적
+
+- 바울 대표 요청으로 **최초 ChatGPT Library PNG 4장 직접 탐색·물리 materialize·SHA256 계산**, GitHub 최초 Sprite 등록 커밋 및 Codex #57 로컬 활성 Sprite SHA와 교차검증. 기존 UNKNOWN4를 별도 리뉴얼로 재제작 금지.
+- B2 세 몬스터 `monster_silent_echo`, `monster_seal_guardian`, `monster_silent_warden`는 **Library 2026-09-28 09:40 KST 최종 PNG 512×640 RGBA 세 장의 SHA256 = 현재 Unity 실사용 PNG SHA256 정확히 3/3 일치**. 최초 GitHub 등록 [`a393e5c6`](https://github.com/HappyPaul812/Project-Limitless/commit/a393e5c66be04715811bb757686bdb34e591f224), 2026-09-28 12:24 KST; 당시 Slicer 원본변경0 명시. Library `던전 B2 침묵의 파수꾼 설계도.png` 09-28 07:47 KST + `침묵의 수호자 픽셀 스프라이트 시트.png` 08:56 KST 컨셉 이력은 별도(최종시트와 SHA 혼동 금지).
+- `grass_slime`: Library `귀여운 숲 슬라임 16종 스프라이트 시트.png`, **2026-08-19 16:06 KST, 1254×1254 RGBA**, SHA256 `d07ea34216b1e2ff3ecbe1b8afb23d0bada56e5e944109fe8652602a59b21991`. 최초 GitHub [`139fba10`](https://github.com/HappyPaul812/Project-Limitless/commit/139fba10c70292d79145f72524f6867172df4774) **16:35 KST**에 1254 원화 우/하 +2px 투명Padding→1256 애니시트 16프레임 적용 사실을 문서화. 현행 Unity PNG SHA `1c422147f0a8fe7ee234e0ab771ab098ac32c44338d5efecc4f3f08a3174de34`; **2픽셀 편집차 때문에 SHA가 다름**, 실제 활성 PNG 1254² 영역 RGBA 픽셀 일치·추가 우/하 alpha=0 검사만 **LOCAL_PIXEL_CHECK_PENDING**.
+- **원본+읽기전용 확인 팩** `LIMITLESS_Ch1_Monster4_Original_Provenance_Evidence_20261110.zip` (4PNG/검증 Python/README, **6파일 / 2,765,032 bytes / SHA256 `773893c79511a398a08bd08a3575fd20cca4bd80fcbdb6f9d66a8f8f17103be4`**, ZIP CRC PASS) 대화 다운로드로 제공. GitHub 원격 바이너리 업로드0. Codex는 필요시 PC 로컬 `F:\Downloads` 원본이나 해당 ZIP과 현재 활성 이미지 4개를 읽기전용 비교.
+- 상세 기획 [`Chapter1_Monster4_UserDeclared_Provenance_Pending_20261110.md`](../../Chapter1_Monster4_UserDeclared_Provenance_Pending_20261110.md) 최신 commit `096f46a7976926174d93cbaded34fd811ec43c63`, docs/planning. **분류: B2 3종 USER_TEAM_ORIGINAL_SOURCE_SHA_CONFIRMED; slime USER_ORIGIN_SOURCE_FOUND / LOCAL_PIXEL_QA_PENDING; 기본펫 Wolf/Bear/Fox 3/3 ORIGINAL_CONFIRMED; 감사 범위 확정 외부 실사용 몬스터·펫0. 법적 권리 완전보장과 구별**.
+- Save/UserData/원본 Unity/Scene/Prefab/GUID/meta/현재 사용자 상태/로컬 main/원격 main 변경0. 기획 GitHub docs/planning 정본문서만 업데이트. 다음은 Codex **슬라임 변환 pixel diff 1종만 추가**, 이미 확인된 B2 3종/기존 Unity PASS 재검사 금지. PASS 후 Issue #57 분류만 별도 기록. 
+
+---
+
+# PLANNING / 2026-11-10 — Ch1 UNKNOWN 몬스터4 팀 제작 진술·Library 설계도 보강
+
+- 바울 대표의 “UNKNOWN들 우리가 만들건데, 문서화가 안됐구나? UNKNOWN들 니 라이브리리에도 있으니까 시간 날 때 찾아봐” 진술을 **기존 팀 제작·원본 보존을 요청하는 출처 근거**로 정리. 기존 `UNKNOWN` 4종(`grass_slime`, `monster_silent_echo`, `monster_seal_guardian`, `monster_silent_warden`)에 `USER_TEAM_ART_DECLARED` 별도 추가, 직접 최초 원화→현재 Unity PNG SHA 계보 검증 전에는 `ORIGINAL_CONFIRMED`로 승격 금지.
+- ChatGPT Library 실제 탐색에서 **“던전 B2 침묵의 파수꾼 설계도.png”**: 침묵의 잔영·봉인 수호체·침묵의 파수꾼 콘셉트/128px 프레임 그림 포함 확인; 현행 시트 SHA 일치의 직접 증거는 아님. 슬라임 원형/1254→1256 원본 계보 미확정.
+- Codex #57 최신 읽기전용 감사: Ch1 잔여 7중 ORIGINAL_CONFIRMED3/UNKNOWN4, 기본펫 Wolf/Bear/Fox 3/3 ORIGINAL_CONFIRMED; **실사용 THIRD_PARTY_ACTIVE로 확정된 몬스터·펫0종**, 그렇다고 게임 전체 외부아트0 종 법적 확정 선언은 불가. Bee/Spider/Snake 공식교체 및 Ch2 기존 공식 자산은 유지.
+- 신규 독립 기획 기록: [Chapter1_Monster4_UserDeclared_Provenance_Pending_20261110.md](../../Chapter1_Monster4_UserDeclared_Provenance_Pending_20261110.md) commit `00317e47e1199c856e1397551cb100d8f5ecda66` (docs/planning). 이미지 재제작/Unity 변경/로컬 main/원격 Push 없음. 다음 근거 확인은 기존 라이브러리 최초 PNG·생성대화·수정체인 및 현재 시트 SHA 대조. 4종 보호·재제작 금지.
+
+---
+
+# PLANNING / 2026-11-10 — 바울 대표 #97 VenomSnake 실게임 적용 진행 승인 · Codex 이관
+
+- 바울 대표 직접 지시: **“맹독벰 다 됐으면 게임에 넣자?”**. 최신 #97 아트 판정에 따라 **8프레임 v2 KEEP 조합의 실제 로컬 게임 적용 진행을 허용**. 신규 Attack03 final local-review 후보 **채택 금지**. 반복 추가 아트 제작 중단.
+- **실제 사용할 PNG 8개**: `F:\Downloads\VenomSnake_Anim8_Issue97_DELIVERY_ONLY.zip`의 `Frames_512/VenomSnake_Idle00~03_512_RGBA.png`, `Frames_512/VenomSnake_Attack00_512_RGBA.png`, `Frames_512/VenomSnake_Attack02_512_RGBA.png`, **`F:\Downloads\VenomSnake_Continuity_v2_2POSE_SMALL.zip`의 `Candidates_ChangedOnly/VenomSnake_Attack01_Continuity_v2_512_RGBA.png`, `VenomSnake_Attack03_Continuity_v2_512_RGBA.png`**. 원 ZIP 먼저 SHA/CRC/manifest 검증, 누락 시 STOP. 참조 ZIP `VenomSnake_Attack03_FinalReview_20261110.zip` 은 아트 비교 전용이며 적용 소스로 사용 금지.
+- 승인된 조합은 Idle4 / Attack4 @ **8 FPS**. 현행 `Unity/Client/Assets/_Project/Resources/MonsterDefinitions/04_VenomSnake.asset` 외형 계약(원격 main 기준 32×32/4 columns/각4/8FPS, `sourceFacesRight:0`, `visualSize:(0.9,0.75)`)이 512 master 및 우향 후보와 달라 **Codex가 로컬 Unity 6000.6.5f1 원본 파일/코드 실조회 후 별도 worktree 기술 교체안/PPU·pivot·scale·flip/안전 remap**.
+- Codex **격리 테스트 → 모든 필수 PASS 시 원본 로컬 적용**. 테스트: importer/sprites, 필드·전투 실표시 32/40px(게임 실제 크기 우선), 공격 후 Idle 복귀, 방향, 독 상태·쿨다운·전투 AI·드롭/경험치·MonsterDefinition 참조 및 Scene GUID/meta 변화 최소 범위. 기존 Save/UserData·미커밋·기승인 다른 자산 보호. 메인 직접 commit/원격 push/merge 금지. 원본 충돌·검증 FAIL이면 원본 건드리지 말고 STOP+증거 보고. 일회성 모든 챕터 대규모 회귀 금지.
+- **현재 사실 상태**: `USER_GAME_INTEGRATION_AUTHORIZED / CODEX_ASSIGNMENT_READY / UNITY_TEST_NOT_YET_RUN / ORIGINAL_NOT_YET_APPLIED`. 실제 Unity 적용 성공을 문서나 Issue에 허위 기재하지 말 것. Codex 작업 후 브랜치·커밋 SHA·검증 통과 수·원본 반영·사용자 실플레이 승인 필요 여부를 보고.
+
+---
+
+# PLANNING / 2026-11-10 — VenomSnake #97 Attack03 FinalReview 실제 검수 · v2 KEEP, 추가 미술 수정 중단
+
+- 바울 대표 제시 `F:\Downloads\VenomSnake_Attack03_FinalReview_20261110.zip`과 **동일 이름 ChatGPT Library ZIP 실물** 직접 검증. PC `F:` 파일 직접 접근 아님. 검증 ZIP **1,563,927 bytes**, SHA256 **`5bfb44b15b4eb70b5b7285afe9673e3199c6371428dc7bc094442cf376238bda`**, **23 entries/CRC PASS, Manifest21/21 SHA+bytes PASS**. GitHub [리뉴얼 보고 #97](https://github.com/HappyPaul812/Project-Limitless/issues/97#issuecomment-6762700011) 동일.
+- 신규 후보 512 RGBA SHA256 `a21c6a01b5a5facdec35509cd79b12fff5b6b04d686482f45745ab6a7aeab9d9` 와 기존 v2 Attack03 SHA256 `4e93ef15bd26b8692f56f93aa97dd01434f3c995156704575c45f28e9da6ad0a` 실물 픽셀 직접 대조: **53,820픽셀 수정** bbox x188..471, y66..322, x≤185/y≥325 원본 변경0, 네 변 alpha>8 접촉0. 나머지7프레임 사본 미포함, 읽기 전용 참조·원본 보존 보고 확인.
+- 512px·128px·40px BEFORE/LOCAL 비교판 검토. Attack02→03 v2 alpha IoU **0.726891→0.727948**; Attack03→Idle00 **0.820077→0.820179**, 개선 미미. 40px에서 뚜렷한 모션 이득이 없어 새 후보를 채택하지 않는 것이 타당.
+- **기획 결정: Attack01 v2 KEEP, Attack03 v2 KEEP, 새 local-headneck 후보 HOLD/NOT_ADOPTED, 반복 재수정 STOP**. User final overall animation art approval pending. 실제 Unity 미적용, Codex 실게임 적용 지시하지 않았음. 최종 아트 승인 이후에만 Codex가 6000.6.5f1 분리 worktree에서 기존 32×32/4frame/8FPS/sourceFacesRight=0 제품 계약과 신규 우향 자산 PPU/Flip/Pivot/32~40px·독/AI·Idle 복귀 최소 QA 수행하고 제품 적용은 별도 승인.
+- 다음 리뉴얼 아트 작업: **#96 작은 HP/MP 회복약 오리지널 아이콘 2종**(기존 아이템 효과·가격·GUID 보존, 후보 제작만). #95 시작 마을 NPC 기존 PILOT 2종 user art review pending. 원본 Scene/Prefab/Save/UserData/미커밋·main/원격 Push 보호.
+- 상태: `ZIP_TECH_PASS / ATTACK01_V2_KEEP / ATTACK03_V2_KEEP / LOCAL_CANDIDATE_REJECTED / ART_USER_FINAL_APPROVAL_PENDING / UNITY_NOT_APPLIED`.
+
+---
+
+# PLANNING / 2026-11-10 — VenomSnake #97 Continuity v2 간편 ZIP 직접 검수 · Attack03 추가 표적 보완 권고
+
+- 바울 대표 전달 Windows 로컬 파일명 `F:\\Downloads\\VenomSnake_Continuity_v2_2POSE_SMALL.zip`과 동일 이름의 ChatGPT Library 파일을 실제 materialize·압축 검사. **F: 로컬 바이트 직접 검증은 아님**. Library 파일 크기 **908,035 bytes**, ZIP SHA256 **`9a6b0315fd66eb8a66992085c4a7bbcfb7558759e00dab9a3de54050efe3cc73`**. 16 entries/CRC PASS, Manifest14/14 SHA·bytes PASS, SHA256SUMS PASS. [리뉴얼 원 보고 #97](https://github.com/HappyPaul812/Project-Limitless/issues/97#issuecomment-6761924550)와 동일 해시.
+- 신규 512 RGBA 수정 후보 **Attack01·Attack03만** 존재함을 확인. 이전 DELVERY_ONLY 8프레임 원본과 대조한 변경 픽셀 Attack01 **118,770**, Attack03 **129,412**; 나머지 Idle4+Attack00/02 6개 기존 원본 SHA와 QA 계약 일치. 두 수정 프레임 네 변 alpha>8 경계 접촉0. 32/40px 및 128px 비교판·8FPS GIF 디코드 120/130/120/130ms PASS. 승인 v3 원화 SHA `7001d199...` 변경 대상 아님.
+- 오프라인 인접 alpha IoU: Attack00→01 **.68984→.74934**, 01→02 **.78288→.79576**, 02→03 **.66340→.72689**, **Attack03→Idle00 .83199→.82008**. 128px 비교에서 v2 Attack03의 목·코일 세로 비율 압축으로 Idle00 복귀가 시각적으로 튈 우려; IoU는 미술 PASS 증거 아님.
+- **기획 판정**: **Attack01 v2 후보 KEEP**, Attack03은 전역 비율 재변형을 반복하기보다 **머리·턱·목 관절과 똬리 접합만 1프레임 국소 수작업/최소보완 후보**로 검토; 기존 원본 및 여타7프레임 보존. Attack02→03→Idle00 양 연결과 128/40/32px 8FPS를 한 판에서 대조. v2 전체 최종 미술 승인0, Unity 적용0.
+- 현행 MonsterDefinition 32×32 cell·4col·4frame·8FPS·`sourceFacesRight:0` 대비 신규 우향/512 후보의 PPU·Pivot·방향·Hit/독 처리 등은 **후속 사용자 모션 승인 후 Codex Unity6000.6.5f1 격리 최소 QA 대상**. 기존 승인·원본 PNG/Scene/Save/UserData·미커밋·other-team 자산보호, 원격 main 변경0. 다음 리뉴얼 순서 #97 표적1프레임 → #96 HP/MP 작은약2 → #95 NPC 기존 후보2 최종 검토.
+- 상태: `ZIP_FILE_TECH_PASS / ATTACK01_V2_KEEP_RECOMMENDED / ATTACK03_TARGETED_FIX_RECOMMENDED / USER_ANIMATION_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED`. 이번 기획 작업은 실제 PC Unity 실행·Codex 로컬 작업 수행이 아님.
+
+---
+
+# PLANNING / 2026-11-10 16:20 — F2 B안 실Unity 추천, VenomSnake Anim8 파일검수 완료
+
+- [#75 Codex B/C 실제 GameView×3해상도 최소 24PASS/0FAIL](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6761307175) → [총괄 기획 판정](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6761582746): **B 기존 FirstSnow 14Renderer 재배치 추천**, C 신규256 SnowEdge는 현 위치에 흰띠·개선미약하여 불필요, 후보 아트만 보존. **B_PLANNING_RECOMMENDED / USER_B_PRODUCT_APPROVAL_PENDING / ORIGINAL_NOT_APPLIED**. 사용자가 B 선택·본편 반영 승인하면 격리 비교 B 좌표만 안전 이식 후 국소 GameView 재확인. 기존68·90·81·24PASS 전수 재실행 금지, Unity6000.6.5f1 및 원본 수정·Save 보호.
+- [#97 리뉴얼 신규 Anim8 ZIP](https://github.com/HappyPaul812/Project-Limitless/issues/97#issuecomment-6761154879) ChatGPT Library 동일 이름 사본 실제바이트 확인: DELIVERY_ONLY SHA256 07f5922d89078b869b95abcb165a3f66355cc49a9ea63667f631c438bad74256, 12,586,609 bytes, CRC·Manifest37/37·SUMS37/37 PASS. 512RGBA 개별 Idle4+Attack4, 4×2/별도시트2와 128/40/32 시각판·8FPS 각각120/130/120/130ms GIF 실물 디코드, 기승인 v3 SHA 불변. [기획 판정](https://github.com/HappyPaul812/Project-Limitless/issues/97#issuecomment-6761585133): 디자인 방향은 괜찮으나 독립 생성 8프레임의 **목·턱·똬리 연속성**에 프레임 변화가 커서 실제 8FPS 깜빡임 가능. **FILE_TECH_PASS / ANIMATION_CONTINUITY_REVIEW_PENDING / USER_ANIM_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED**. 기존 04_VenomSnake.asset은 32cell4×4프레임·8FPS·sourceFacesRight:0(신규원화 우향과 차이). 리뉴얼 담당 최소 표적 모션 확인·보완 후 대표 검수, 새 원화 전체 재제작 금지. 사용자는 F: ZIP을 보고했으나 이번 실물 검사는 Library 동일 이름 ZIP; 사용자 PC F: 바이트 재검증 아님.
+- 예정순서: #97 미술모션 최종 확인 → #96 작은 HP/MP 회복약 오리지널2 → #95 기존 마을 NPC 후보2 사용자 승인·실제 게임 규격 확인. Codex는 B 본편 적용 사용자 승인 전 Unity 원본변경 금지, Snake 미술 승인 전 Unity 적용 금지. 기존 미커밋/Save/승인 아트/Packages·GUID·Scene 보호, 원격 main Push0.
+
+---
+# PLANNING / 2026-11-10 15:06 — F2 #75 B/C 비교 DeltaQA 계획 수용(실행 승인 대기)
+
+- [#75 Codex B/C 최소 DeltaQA 계획](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6759902464) 검토 후 [기획 범위 수용 및 게이트 기록](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6760394480). B=기존 FirstSnow 위치/각도/겹침 재배치, C=동일 B+신규256px SnowEdge 1개, 960/1280/1680 실제 GameView 기본6장, 휠체어 B/C 1280 국소 왕복, R1 눈반복·R2 길굽음, HUD·Stump·Tree/Owl 중복/이음새 검사. 과거68PASS 전수 재실행 금지.
+- **미술·실행·본편 별도 게이트**: #75 GameEdge256은 아직 `USER_FINAL_ART_REVIEW_PENDING`; Codex는 계획만 준비했고 `QA_NOT_RUN`. 사용자 직접 지시가 있을 때만 별도 격리 비교 실행. 기존 원본 main/Save/사용자 Editor 포커스·미커밋 파일 변경 금지, 원본 제품 적용은 실질 B/C 비교 뒤 별도 사용자 결정. B가 충분하면 C를 채택할 이유 없음.
+- 상태 `PLANNING_QA_SCOPE_ACCEPTED / USER_COMPARISON_RUN_PENDING / GAMEEDGE_ART_APPROVAL_PENDING / ORIGINAL_NOT_APPLIED`.
+
+---
+
+# PLANNING / 2026-11-10 오후 — 리뉴얼 우선순위 바로잡음: VenomSnake v3 애니메이션 시트 제작
+
+- 바울 대표 지적 **“NPC 2종도 이미 제작 안 하고 맹독뱀 작업했고 뱀은 애니메이션 시트는 안 만드니?”**. 기획 오류: **맹독뱀 원화 단일포즈 최종 승인!=전투 애니메이션 완성**, 즉시 [신규 Issue #97](https://github.com/HappyPaul812/Project-Limitless/issues/97)을 열어 **기승인 v3 원화로 Idle4+Attack4 실제 8프레임/4×2 SpriteSheet** 제작을 최우선 발주.
+- GitHub 원격 `04_VenomSnake.asset` 현재 Idle/Attack 모두 동일 GUID 구형 시트, 각각 32×32/4열/4프레임/8FPS. 새로운 시트는 승인 v3 원본 SHA `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0` 보존, 새로운 타격 실루엣/호흡 8프레임 128/40/32 동배율 비교, 사용자 새 애니 미술 승인 후 Unity6000.6.5f1 격리 연결. 게임 씬/MonsterDefinition/AI·독·Save/main 변경0.
+- [#43 맹독뱀 단계 정정](https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6759884999). **#95 NPC**에는 512 마스터 PNG2 리뉴얼 납품 **기록**이 있으나 **실제 게임 NPC 적용·사용자 승인 아님**. 바울 대표의 의도에 따라 추가 NPC 제작/적용을 당장 진행하지 않고 [#95 경계 정정](https://github.com/HappyPaul812/Project-Limitless/issues/95#issuecomment-6759885709). #96 기존 HP/MP 원본 NOT_FOUND이며 128² 오리지널2 제작 대기, [#96 우선순위](https://github.com/HappyPaul812/Project-Limitless/issues/96#issuecomment-6759886339).
+- 리뉴얼 작업 순서 **#97 뱀 애니 실제 시트 → #96 작은 HP/MP 그림 2 → #95 납품된 NPC 두 후보의 사용자 검토·실규격 적용**. 메인 아트 #75 F2 GameEdge는 별도 아트 승인·Unity QA 보류. 이슈 지시로 파일이 자동 제작되었다고 주장하지 않음. Unity6000.6.5f1/Save/UserData/미커밋/승인아트 보호, 담당 `docs/art-renewal`, main 직접커밋·원격Push/merge 금지.
+
+---
+
+# PLANNING / 2026-11-10 13:53 — Snake KEEP 실물·F2 GameEdge v1 검수, HP·MP2 신규 아트 발주, NPC2 기납품 확인
+
+- 바울 대표 전달 F: `LIMITLESS_VENOMSNAKE_ISSUE43_KEEP_NOCHANGE_20261110.zip`, `LIMITLESS_Issue75_F2_BendSnow_GameEdge_v1_20261110.zip`의 **같은 이름 ChatGPT Library 실물 ZIP** 직접 byte/SHA/CRC 열람. Snake ZIP `8c6871ec0cdaa452dd9000b95ac2dfce95c52b798b0925a7e683aa273c47ca80` 13파일, F2 ZIP `c38e97b3856245e474fea61f0b71f584af95618fa864723113041c6b1f7fdf58` 14파일, 담당 #43/#75 정식 보고 SHA 완전일치. 사용자 PC `F:` 자체 hash 직접재검증은 미실행.
+- **맹독뱀**: [#43 사용자 11/10 최종 미술 승인 기록](https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6758854877) 확인. v3 1254x1254 원본 SHA `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0` 완전바이트 KEEP, x0 alpha1/255 25px 및 40px 미세 독니뭉침은 **의도적 수용**, 더 이상 아트 수정/재검수 금지. 단일포즈 **USER_ART_APPROVED**, Idle/Attack·본편 Unity 적용은 별도 작업/승인. #95 NPC 착수조건 충족.
+- **F2 #75**: [오프라인 후보 기술 판독·추가 QA 게이트](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6759408146). 신규 256x256 투명 잔설패치 후보 SHA `c3eeee57c5c5597c2d764fdd831b9d25516df57c1751a6108db9e0fd1ec892c4`는 흙길/바위/관목 제외·기존소스 B 재배치와 신규패치 C를 분리. 자료는 **offline reconstruction**, 실제 1280 GameView가 아님. B 기존재사용 우선→ C 실효 비교, PPU128 중앙Pivot은 신규 실제 Import전 미확정, 길폭4.5WU/승인Stump·Ground9 보존. **USER_GAMEEDGE_FINAL_ART_REVIEW_PENDING / NOT_UNITY_APPLIED**. 기존 RT read-only 인계 #75 11/10 완료, 반복 조사 금지.
+- **물약 #96**: [Codex F: 132ZIP/2499PNG 후보 소스 탐색](https://github.com/HappyPaul812/Project-Limitless/issues/96#issuecomment-6758023477)에서 기존 작은 HP/MP 전용 오리지널 **NOT_FOUND**, Chapter2 신규7은 몬스터 잡템이지 물약 아님. [리뉴얼 소량 신규 발주](https://github.com/HappyPaul812/Project-Limitless/issues/96#issuecomment-6759409066): 128² RGBA HP작은물약1 + MP작은물약1, 64px 실제 크기/2배경·Source/SHA/CRC/Manifest. 기존 Kenney `HealingPotionSmall/ManaPotionSmall`과 ItemDefinition/공용아이콘 GUID는 사용자 아트 승인·상점전용 로컬 교체 전 그대로 보호.
+- **NPC #95**: 뱀 최종 승인 뒤 리뉴얼 담당이 이미 OGA06 치유사/OGA16 은행 안내인 512RGBA 정지 2종 완료 [#95 납품 보고](https://github.com/HappyPaul812/Project-Limitless/issues/95#issuecomment-6759025184). 기납품 `LIMITLESS_ELDIRAN_NPC_OGA06_OGA16_ORIGINAL_PILOTS_20261110.zip` SHA `89088854c3965299a206b9123e56c9ae072ced885731083e37a2347413e6c885` (실GitHub 납품값)·오프라인 비교판으로 기술 후보. [#95 기획 수용 현황](https://github.com/HappyPaul812/Project-Limitless/issues/95#issuecomment-6759410052). **사용자 최종 NPC 미술 승인 전 본편 적용X**. 이전 OGA03/09/20·NPC12 전체 양산/중복 제작 금지. 이번에는 NPC2 재작업 대신 HP/MP2 원본 아트에 집중.
+- **보호:** Unity6000.6.5f1, 로컬 main 마지막 사용자보고 `def786a3d28d239ceb0a539b42d77834828a3a8a`, 원격main Push0, Save/UserData·미커밋302/550·승인 Spider/Bee/Ch2BG/Ch3 냉기·던전 충돌 보호. 기획은 담당 GitHub 지시만 기록, 로컬 사용자 PC를 직접 수정하거나 Unity Play하지 않았으므로 완료로 주장 금지.
+
+---
+# PLANNING / 2026-11-10 정오 — F2 BendSnow·VenomSnake 검수 후속 + HP/MP 물약 출처 재탐색
+
+- 바울 대표 “전에 우리가 만든 거 같은데 챕터2 할 때...? 하여튼 다음 일들 시켜줘.” 기존 기록과 11/10 Codex 보고 #57·#43·#75 대조. **챕터2 직접 제작 7개는 몬스터 잡템(송곳니/깃털/비늘/갑각/열핵 등)**, 내부 `Battle_Item_Icons` 시트는 상태해제약 등. **작은 HP/MP 회복약 2개의 오리지널 전용 원본 제작/납품 근거 아직 미발견**. 현재 `ItemIcons/HealingPotionSmall.png` = Kenney `flask_full`, `ManaPotionSmall.png` = Kenney `flask_half` 바이트 동일, 원본 두 icon+ItemDefinition GUID 매핑은 보존.
+- **Codex 우선 [#96 시작마을 상점 HP/MP 내부 원본 탐색→안전 교체](https://github.com/HappyPaul812/Project-Limitless/issues/96)**: F:/Downloads 및 프로젝트 과거 아트 납품에서 HP/MP용 직접제작 PNG만 *한정* 재탐색, 있으면 출처·SHA·64px 실가독성 확인 후 시작마을 거래창만 국소 격리 연결/QA. 없으면 HOLD 후 리뉴얼 오리지널 HP/MP 작은 약 아이콘 각1 후속 발주. 다른 상태해제약/Chapter2 loot를 바꿔쓰지 말 것. ItemDefinition 공용 icon GUID 변경으로 상점 외 인벤토리/전투 영향 확대 금지. 유니티6000.6.5f1 고정/사용자 Save·dirty 보호/원격Push0.
+- **메인 신규 아트 [#75 보완 지시](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6757397006)**: 기존 1774×887 전시용 후보 ZIP SHA `151094aacd847ee7b4338ca08a827d0edaa21a1122df357379f0bd493afabd8a` 후보 그림 방향 수용, 단 파일이 곧 256 타일/PPU128 실게임용 아트 아님. Codex 별도 [#96] 읽기전용 F2 After_Bend1280 실제 화면좌표/PPU/4.5WU 콜라이더·소품 중복 근거 확보 후 메인에 공유. 메인은 눈 반복/길 굽음 실제 ROI 2개에만 기존 소스 재배치 또는 독립 반투명 잔설/접합 1개 후보, 오프라인 vs Unity 명시. 사용자 최종 미술 승인·Unity 적용 전까지 원본 게임 변경 금지.
+- **리뉴얼 아트 [#43 뱀 마감 보완 지시](https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6757398584)**: v3 원본 SHA `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0`, ZIP SHA `5c708234539a7751c1646508feb5fc66e8a5e11439b222494145e99923980b8b`, Codex PASS→사용자 단일포즈 최종승인 상정. 40px 세부·x0 알파25px 최소 보완 여부 판정, 필요 시 새 독립 보정안1개, 기존 v3 원본 보존. 전 프레임 양산/Unity 적용 금지. [#95 NPC 치유사/은행은 뱀 최종 미술 승인까지 HOLD](https://github.com/HappyPaul812/Project-Limitless/issues/95#issuecomment-6757399964). 신규 HP/MP 아이콘은 #96 탐색 실패 시에만 추가 제작 발주.
+- 이전 QA 재실행 금지, 기존 모든 승인 #63 Bee/#90 Spider/#92 Ch2 BG/#94 던전 Collider·TTS/Save/WAV·기존 승인 환경 보존. `main` 직접 commit/Push/remote merge 금지. `docs/planning`은 결정·이슈 지시만 기록한 상태: 실제 Codex F: 실행·아트 제작·원본 Unity 적용 아직 시작했다는 증거 없음.
+
+---
+# PLANNING / 2026-11-10 오전 — Codex 리셋 전 아트 두 담당 병렬 업무 발주
+
+- 바울 대표 “코덱스 초기화가 약1시간 반 남아 메인이랑 리뉴얼 먼저 일 시켜줘.” 현재 Codex 사용량 절약: **추가 Unity QA·로컬 동기화·재검증 0**, 오늘은 두 아트 담당 문서/실물 파일럿만 발주.
+- **메인 신규 아트 `docs/art-new`**: [#75 최신 F2 굽음·눈 반복 1구역 표적 미술 작업](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6755493865). 기존 P1/P2 재사용 격리 68PASS 인정, F2 After_Bend_1280의 패치 반복·직각 굽음 2개 ROI만 Before/After 실 아트, 부족이 실증될 때만 투명 잔설/연결 보완 PNG 최대1. 승인 길폭4.5WU·F2 Owl/Stump·Ground9/환경43·기존F2 P1/P2 보호, Unity/정식배치 변경 금지. #91 C3 전투 배경 v2는 사용자의 시각 승인 대기로 무단v3·적용 금지.
+- **리뉴얼 아트 `docs/art-renewal`**: [신규 #95 치유사 OGA06·은행 OGA16 오리지널 정지 2포즈 후보](https://github.com/HappyPaul812/Project-Limitless/issues/95). `VillageNpcAppearanceCatalog` 실사용 stableID 매핑을 바탕으로 2개 신규 PNG만 제작, 128/40 시각 판정판/SHA/Manifest; NPC 초상화·애니/대량12종 금지. 기존 #57 OGA03/OGA09·#60 OGA20 후보 재작업 금지, 이미 승인·적용된 #63 Bee/#90 Spider/#92 Ch2BG/#94 던전 물리 변경보호.
+- **작업 게이트:** 팀별 기존 자기 브랜치 Markdown 보고 commit → 해당 `*_LATEST` 갱신 → Issue 댓글 실제 파일SHA·ZIP/CRC·승인 필요 여부 보고. 사용자 PC 로컬 `main`과 Unity6000.6.5f1/Save/UserData/사용자 미커밋 파일 보호, `main` 직접 commit·원격 Push/merge 금지. **GitHub 발주만 완료, 두 담당 아트 세션의 실제 제작 시작은 지시문 전달 필요**. Codex 초기화 전 신규 Codex 테스트0.
+- 상태 `ART_NEW_F2_BEND_REQUESTED / ART_RENEWAL_NPC2_REQUESTED / RESULTS_NOT_DELIVERED`.
+
+---
+
+# PLANNING / 2026-11-09 — Issue #94 던전 B1·B2 벽 통과 사용자 플레이 수용 완료
+
+- 바울 대표 실제 플레이 판정 **“잘 고쳐졌어..”**. [#94 최종 사용자 수용 기록](https://github.com/HappyPaul812/Project-Limitless/issues/94#issuecomment-6728213577) 및 [Codex 실제 구현·QA 보고](https://github.com/HappyPaul812/Project-Limitless/issues/94#issuecomment-6728101283) 확인.
+- 승인 바닥 외부에 `Static Rigidbody2D + CompositeCollider2D`로 내부 벽 충돌 구성; 정상 복도/퀘스트 경로, B1↔B2→Field03 귀환, 도보·휠체어 물리 이동 보호. 벽 안 Save 좌표는 비파괴 안전 복구. **Unity6000.6.5f1 표적110PASS/0FAIL**, 기존 완료 QA 반복0. 로컬 main SHA **`6bebbfae6850aa60411feb6bb818523e8ef72397`**, 원격 Push·merge0.
+- **상태:** `USER_REALPLAY_ACCEPTED / LOCAL_MAIN_APPLIED / REMOTE_NOT_PUSHED`; #94 동일 문제 재검증·재작업 발주 금지. 던전 마우스 자동 길찾기(미구현)·기존 Editor Search 예외는 별도 남은 항목으로 오인하지 않음. 2026-11-09 사용자 화면 Codex 주간 한도 **1% 남음** 확인; 지금 추가 Codex 사용 발주 없음.
+
+---
+
+# PLANNING / 2026-11-09 — #94 Dungeon01 B1·B2 내부 벽 통과 P1 실제 수정 발주
+
+- 바울 대표 11/08 실게임 Dungeon01_B2 캡처에서 어두운 비보행 벽/허공 안에 플레이어가 진입한 증상. B1도 동일 가능성 제기. **[신규 P1 Issue #94](https://github.com/HappyPaul812/Project-Limitless/issues/94)**에 B1/B2 전체 내부 벽 Collision 보완, 도보·휠체어·마우스 이동/Save/출입구/Quest 접근성 조건과 로컬 안전 FF 규칙을 기록.
+- 원격 정적 코드 확인: `PlayerController`는 `Rigidbody2D.MovePosition`으로 움직임. `WorldBounds2D`는 외곽 Collider 네 면만 생성. `DungeonEnvironmentRenderer`는 새 SpriteRenderer만 생성하고 Collider를 만들지 않음. 원격 B1 Scene BoxCollider2D **18개**, B2 **15개**, 둘 다 TilemapCollider2D/PolygonCollider2D/CompositeCollider2D **0개**. 이는 **내부 비보행 공간 충돌 누락 가능성이 높은 정적 근거**, 아직 사용자 최신 로컬 Scene의 충돌 디버그 계측으로 원인 확정하지 않음.
+- **해결 방향:** 기존 승인된 던전 타일·맵/캐릭터 비주얼은 그대로 보존, **승인 바닥/복도/입구와 비보행 벽/허공 사이 실제 물리 경계**를 유효한 정적 Collider로 정확하게 구성. Unity6000.6.5f1, 플레이어 휠체어/도보 콜라이더·물리 레이어 확인, 안전한 Save/Spawn 보정은 실제 필요한 슬롯에만, B1⇄B2 및 B1→Field03 귀환, Main11 조사점/보스방/석판 보호. 이전 #93 TTS·던전 귀환·숲거미 수정 재검사/재작업 금지.
+- 마지막 보고된 로컬 main HEAD `b0ea195fbaa8148146c3fe5d7b5f609385d21a4e`는 **11/05 기준**; 실제 현재 로컬 HEAD·사용자 dirty 상태는 Codex가 직접 확인. `codex/fix-20261109-dungeon-b1-b2-collision` worktree의 수정·표적 QA 후 충돌0/원본보호 시 로컬 main FF, 원격 Push/merge 없음. 변경 파일/새 QA/Save SHA/스크린샷/최종 local main SHA를 #94·CODEX_LATEST·CURRENT_STATUS에 보고해야 완료. **기획 이슈 발주만으로 사용자 PC Unity 실제 수정 완료 아님.**
+
+---
+# PLANNING / 2026-11-05 20:44 EOD — #93 Main11 음성·Field03 입구 사용자 승인, 마지막 로컬 동기화 지시
+
+- 바울 대표가 복구 Main11 WAV10/정상18보호 및 Field03 입구/계단 가림 보완에 대해 **“잘돼”** 실플레이 수용. [#93 최종 Codex 로컬 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/93#issuecomment-6655732864): 최종 로컬 `main` HEAD **`0fb8b8c4a02a7f21fc5bf78360fb49c371a28558`**, 수정 `codex/fix-20261105-main11-voice-field03-entrance`, Unity **6000.6.5f1**, 실제 재생/입구 QA **65·9·18·19 PASS (각 0FAIL; 중복합산 금지)**, Save01/02/03 복제시험·원본 정상 TTS18·meta/GUID/승인아트/dirty302·untracked550 보호, 원격 Push/merge0. 기존 숲거미 Attack8/던전 중도귀환/파티 필터도 보존.
+- **중요 상태 정정:** 바로 아래에 적힌 15:31 `FIX_REQUESTED_NOT_EXECUTED`는 이후 Codex 실제 작업으로 해결된 **과거 시점 기록**. 11/05 밤의 최신 정본 상태는 `LOCAL_MAIN_0FB8B8_APPLIED / USER_REALPLAY_ACCEPTED / REMOTE_NOT_PUSHED`.
+- 바울 대표 오늘 마감 “지금까지 한 모든 작업들 합치고 로컬 동기화”: [#93 마감 지시](https://github.com/HappyPaul812/Project-Limitless/issues/93#issuecomment-6657174333)에 **실제 로컬 main 포함 여부·각 담당 승인 작업만 통합**을 요청. 이미 로컬 main에 있는 #63/#89/#90/#92/#93 중복 cherry-pick 금지; 미승인 #91 Ch3 BG·Shoot8·미확정 냉기 상태 규칙/시각 PARTIAL 자동 제품 반영 금지. 원본 Save/UserData, tracked dirty302/untracked550, 기존 Packages·Scene/GUID/BuildSettings, 승인 WAV/PNG SHA 보호. 충돌0·ff-only 조건에서만 추가 로컬 main 동기화, 원격 Push/병합 금지. **아직 이번 추가 EOD 감사·동기화 자체는 Codex PC에서 실행됐다는 새 증거 없음**, 별도 실제 마감 보고 이후 완료로 확정할 것.
+- 사용자 오늘 종료: 새 제작/과거 QA 전수반복·무인 자동 실행 하지 않음. CODEX_LATEST/CURRENT_STATUS 업데이트 및 로컬 브랜치·main SHA를 보고해야 다음 세션에서 안전 재개 가능.
+
+---
+
+# PLANNING / 2026-11-05 15:31 — #93 실플레이 재회귀: TTS 음성-자막 시프트 및 Field03 던전입구 캐릭터 가림
+
+- 바울 대표 실제 Unity6000.6.5f1 캡처 3장: Dungeon01 B1 화면 자막 ‘오래된 흔적이지만…’(main11_miel_002)에 실제 음성 ‘뒤쪽을 보세요…’(main11_miel_001 내용), Dungeon01 B2 자막 ‘쓰이지 않은…’(main11_miel_003)에 실제 음성 ‘오래된…’(main11_miel_002 내용). 이전 #93에서 동행 화자만 고친 것은 **이 음성 버그를 해결하지 못함**.
+- 원격 StoryVoiceCatalog.asset에서 main11_miel_001/002/003은 각 동일명 .wav.meta GUID에 정상 연결. 사용자 로컬 최신 WAV 실제 녹음 내용·Unity AudioSource.clip을 청취/추적해야 함. 자막/TTS ID/대본 변경·일괄 재녹음 금지, 잘못된 음성 내용 또는 연결만 표적 수정. 보스 뒤 001, B1 002, B2 003 실제 오디오 재생 확인.
+- Field03 화면: 거대한 파란 ‘현재목표 침묵의 지하묘지’ 판과 회색 문 아트 때문에 주인공의 상체가 숨고 하단만 돌출됨. 구 원격 MainQuest10FieldFlow 입구 위치 (0.55,-4.85), 불투명 Mark Quads sortingOrder 5와 세계공간 퀘스트 마커 sortingOrder22 확인. 실제 로컬 Sorting/QuestHUD/접근 이동을 조사해 안전한 입구 앞 가시성, 자연스런 문 진입·퇴장, 휠체어·도보 판별 최소 수정. B1/B2 귀환 및 Field03 안전지대·Save/GUID 보호.
+- [#93 실제 재회귀 수정 지시](https://github.com/HappyPaul812/Project-Limitless/issues/93#issuecomment-6651576145). 기존 #93 QA121/37/15PASS는 이 새 음성·입구 시각 문제의 PASS 증거가 아님. 기존 #93 숲거미 Attack8 및 귀환 성공 변경은 보호하고 두 항목만 집중 표적 DeltaQA.
+- 현재: USER_REALPLAY_FAIL_TTS / USER_REALPLAY_FAIL_ENTRANCE_RENDER / FIX_REQUESTED_NOT_EXECUTED. 사용자 F: PC의 실제 로컬 main 수정·안전FF는 Codex가 별도로 실행해야 함. Unity6000.6.5f1 고정, Save01/02/03/사용자 tracked302·untracked550 및 승인아트 보호, 원격 Push/merge 금지.
+
+---
+# PLANNING / 2026-11-05 오후 — Issue #93 실제 로컬 세 버그 수정 및 main 반영 완료
+
+- [Codex Issue #93 최종 결과](https://github.com/HappyPaul812/Project-Limitless/issues/93#issuecomment-6650843746): **로컬 main `706e70102ccc350f49cd881ca128c3afbe5d9d04`로 fast-forward 반영 완료**, 구현 `6f094a4095e9298d20e879d842f29b02bca6587a`, 브랜치 `codex/fix-20261105-dungeon-spider-dialogue`. **원격 GitHub Push/merge 없음**, 따라서 위 로컬 커밋을 원격 파일처럼 취급 금지. Unity **6000.6.5f1** 고정, compile 정상.
+- **숲거미 구 Shoot 아트 버그 수정:** 실제 기본 공격은 승인 Attack8, 특수 '독액 분사'는 구 `MonsterAnimations/Spider/Shoot/spiderS_000.png`가 원인. Shoot 경로 비워 **승인 Attack8 공통 재생**, 8프레임/10FPS/Idle 복귀. 구형 Shoot 실전 노출0, **Shoot8 신규 제작·승인 아님**, 기존 피해/타깃 로직 보존.
+- **Main11 조사 대사 수정:** 원본 슬롯2/3 복제에서 파티는 태온+미엘, Main11 index2. 사용자가 캡처한 **미엘 index1 발언은 정상 동행 대사**, **폴 index2 발언만 비동행 대사**로 확인. 실제 동행하지 않는 인물의 문구는 무음 조사 지문으로 대체, 동행 원문·TTS ID28개 보존. 퀘스트 스텝/저장 손상·랜덤 대사 원인으로 단정하지 않음.
+- **던전 귀환 UX 수정:** B1→Field03, B2→B1에 안내/명시 확인 출구; E/F·게임패드A·마우스 지원. 기존 보이지 않던 자동 전환 Trigger는 런타임 비활성화. 중도 나갔다 재입장할 때 퀘스트·인벤토리·보스/석판 진행 유지, 퀘스트 자동 완료X.
+- **QA:** 신규 Delta **121PASS/0FAIL**, 보완 **37PASS/0FAIL**, 입력 **15PASS/0FAIL**, 정적 **7PASS/0FAIL**(중복 포함, 합산 금지). 기존 QA 전수 재실행하지 않음. 실제 장시간 플레이/물리 장치·가독성은 **USER_REALPLAY_CONFIRM_PENDING**; 보스·석판 일부는 복제 fixture.
+- **보호:** 원본 Save02/03 포함 942개 파일 SHA불변, 미커밋 tracked302/untracked550 보호, 승인 Spider PNG24 변화0, 기존 Packages/.meta/Scene/Editor선택 변경0. 현 시점 **`LOCAL_MAIN_FIX_APPLIED / REMOTE_NOT_PUSHED / USER_REALPLAY_CHECK_PENDING`**. #93은 사용자 실플레이 확인 전까지 추적 대상으로 유지.
+- 다음 단계에서 같은 세 버그 재작업·전체QA 반복 금지. 실제 플레이에서 **숲거미 독액 분사 승인아트**, **파티 없는 캐릭터 발언 미발생**, **B1/B2 출구 안내·실제 귀환** 3가지만 짧게 확인하면 됨.
+
+---
+
+# PLANNING / 2026-11-05 14:03 — 사용자 실게임 P1 3건 접수·수정 이슈 #93
+
+- 바울 대표 11/05 Unity6000.6.5f1 `Dungeon_01` 플레이 캡처: ① #90 승인 숲거미Attack8 대신 구형 스프라이트 공격, ② Main11 조사 대사 Miel `main11_miel_002`/Paul `main11_paul_002`가 장면/동행 상태와 불일치, ③ B1/B2 귀환이 불분명하거나 불가능. **[GitHub P1 #93](https://github.com/HappyPaul812/Project-Limitless/issues/93)** 실제 수정 발주.
+- **근거:** 구 GitHub source `03_ForestSpider.asset`에는 Attack8과 별도 구 `MonsterAnimations/Spider/Shoot` 경로, `BattleSceneController.PlayMonsterDirectAreaAttack`은 `PlayShoot` 사용. **숲거미 '독액 분사' vs 일반공격을 각각 재현해 실Sprite 출처 검증 전 원인 확정 금지.** `MainQuest11Dialogue.Lines(1/2)` 두 스크린샷 문구 정확 일치, 현재 파티 최대동료2명인데 세 동료 대사가 고정 출력. `Exit_To_Field03`는 B1 (0,-11.9) 보이지 않는 자동 Trigger, 입장 Spawn (0,-8.5)·B2→B1도 동일 구조. 동행/퀘스트 단계 및 탈출 Collider·WorldBounds 실검증 필요.
+- 기획 정본 [20261105_P1_Dungeon11_Spider_Runtime_Regression.md](../../20261105_P1_Dungeon11_Spider_Runtime_Regression.md) `docs/planning` commit `fce09ce6c36e31695bf4a6652987b18204200c08`. Codex 실제 사용자 로컬 최신 main을 기준으로 변경, **원본 세이브 슬롯02·03은 복제 후 테스트**, 승인Attack8/Idle/Walk·TTS/Quest step 바이트 보호. B1/B2 언제든 명시적 귀환/중도탈출 허용, Quest11 완료를 탈출로 오판 금지. Unity6000.6.5f1, 302 dirty·550 untracked·23 개인 Save 보호, 원격 Push·main 직접 commit 금지.
+- **정직한 상태:** GitHub 이슈/기획 지시만 기록, `P1_LOCAL_FIX_NOT_EXECUTED`. 실제 코드 수정·QA·로컬 main 안전 반영은 별도 PC Codex 실행 후 결과를 보고해야 함.
+
+---
+
+# PLANNING / 2026-11-04 최종 정정 — 로컬 main 안전 동기화 성공
+
+- **이전 2026-11-04 EOD `LOCAL_MAIN_SYNC_HOLD_DIRTY` 상태는 이후 Codex 작업으로 해소됨.** 실제 원본PC **`F:/study/codex/Project-Limitless` 로컬 main HEAD `674e6b0f4a613ad7caaa0ee3a94f3f5f0b3e592d`**, [#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6629260583)·[#89](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6629262549)·[#90](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6629264307)·[#92](https://github.com/HappyPaul812/Project-Limitless/issues/92#issuecomment-6629265940) 최신 Codex 보고에서 교차확인. 기존 승인 통합 `codex/integrate-20261104-approved` HEAD `8768cbac91a291f13769c6bfa18a831673652acb` 보존, main 조상 검증. 로컬 `codex/local-main-safe-sync-20261104` 보존. **원격 Push/병합 없음**.
+- **858개 전수 분류(추적변경308·미추적550), 겹침6/해결6/HOLD0**. 기존 사용자 변경 302개·미추적550개 경로/바이트 유지, 6개 충돌한 파일은 동일승인코드1+PilotBee meta5를 보존하면서 처리. 백업 **`F:/LIMITLESS_Backups/20261104_SafeMainSync_201027`**에 원본858+별도개인23=고유881개, 189,292,519bytes, SHA 전체 재확인. 관련 없는 원본/개인23/승인PNG37/GUID 불변. **Git/파일보호 신규16PASS/0FAIL**, Unity6000.6.5f1 유지. 기존 격리 새연결60PASS와 시각보완52PASS는 **재실행하지 않았으며** 합산금지.
+- **이제 원본 main 파일 반영 완료:** #63 승인 VenomBee5·기존 PilotBee 빌드 입력 배제 경로, #90 승인Spider Attack8·Idle/Walk, #89 냉기 정식아이콘3·B표시 HUD, #92 Ashen/Obsidian 배경2·Field05~10 매핑. 단, 이번 로컬FF 동안 전체 출시 Player 빌드 새로 실행하지 않았으므로 과거 격리 QA만 검증 근거. 기존 **VISUAL_PARTIAL**(태온-휠체어전열 겹침/960 안내/128px VFX가림), **냉기 상태 로직 미확정**, **#91 Ch3 미승인BG 및 Shoot8 HOLD**, Spider/Bee 정밀 접점/FootLock 미검증 유지. 원격 main은 로컬 HEAD와 다름.
+- 다음 일정에는 **사용자 302개 추적변경/550개 미추적 파일을 무단 삭제·정리·커밋하지 말 것**. 버전·개인 Save·승인 아트를 그대로 보호하면서 차기 기획과 작업을 이어간다. 이번 사용자 요청 `LOCAL_MAIN_SYNC_SUCCESS / USER_WORK_PRESERVED / REMOTE_NOT_PUSHED`는 **실제 Codex보고로 확인**했고 ChatGPT가 직접 PC를 조작한 것은 아님.
+
+---
+
+# PLANNING / 2026-11-04 19:58 EOD — 승인 4건 격리 통합 성공, 로컬 main 안전 HOLD
+
+- 바울 대표가 제공한 Codex 최종 보고 및 [#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6628635508) · [#89](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6628636928) · [#90](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6628638252) · [#92](https://github.com/HappyPaul812/Project-Limitless/issues/92#issuecomment-6628639926) 실제 댓글 검증. **Unity6000.6.5f1 격리 통합**: 독침벌 승인5포즈·숲거미Attack8·한기/동상/동결괴사 정식아이콘+승인B안 표시·Ch2 BG Ashen/Obsidian 6필드 매핑. 승인 PNG **37개** SHA 일치, 변경된 핵심 코드 신규QA **60PASS/0FAIL**, 시각 입력 보완QA **52PASS/0FAIL**(중복 있으므로 단순 합산 금지). 격리 QA 빌드 Succeeded, 오류0·경고38.
+- **남은 시각/규칙 과제:** 기존 태온↔휠체어 전열 위치 겹침(960·1280), 960 하단 버튼/스킬 안내 테두리 근접, 냉기 128px 일부 가림·설원 40px 작은 아이콘 단독 접근성 최종PASS 불가, 냉기 재적용/동상피해/해제/화로 미확정; 거미 Shoot8 및 타격 접점·FootLock 미검증. **#91 Ch3 BG는 미술 승인 기록 없으므로 이번 통합 제외**. 이후 결함 표적검증만, 오늘 추가 QA나 재제작은 안함.
+- **통합 브랜치 `codex/integrate-20261104-approved` / 최종 SHA `8768cbac91a291f13769c6bfa18a831673652acb`**; 구현 `b5a41b3089ed43abd725c836d8934d27cf88ca58`, 보고 `aa0e48f7b3c1dd2ee0d39d15a50738463d6a6b1c`. 로컬 worktree `F:/study/codex/Project-Limitless/Temp/EODApproved20261104/Integration`. `CODEX_LATEST`·`CURRENT_STATUS` 실제 **Codex 로컬** 갱신, 원격 commit Push0. 이 보고의 기획 인계는 별도 `docs/planning` 문서 GitHub 커밋임.
+- **원본 적용 / 로컬 main 동기화 HOLD (안전 종료):** `LOCAL_MAIN_SYNC_HOLD_DIRTY`. 원본 main HEAD `634a91d3e4174c87761c0d377cfa5a695ca79e7f`, tracked dirty308·untracked550 그대로. 원본 tracked7374·개인Save/UserData23 바이트 보존, Editor/Scene/Prefab/GUID/meta/BuildSettings/Packages 등 보호. 원본 Unity 및 기존 PilotBee Resources 참조는 **여전히 구상태**임; 격리통합의 PilotBee 바이트0를 원본 Player 제외완료로 옮겨 주장 금지. 원격 main 직접 commit/Push/merge 없고 로컬 main FF도 수행하지 않음.
+- **다음 세션 첫 작업:** 사용자 기존 308/550 dirty를 삭제/초기화하지 말고 안전하게 분류(원본 사용자 변경·생성/캐시·프로젝트로 반영돼야 하는 아트)하여 백업/충돌0을 확보한 뒤 통합 브랜치 내용을 실제 로컬 원본에 안전하게 동기화할지 결정. 어제 QA 전수 재실행 금지. 사용자 오늘 마감 지시 존중하여 추가 실행/무인 예약 없음.
+- 상태 `ART_APPROVAL_DONE / ISOLATED_INTEGRATION_PASS / SOURCE_MAIN_UNTOUCHED / LOCAL_MAIN_SYNC_HOLD_DIRTY / SAFE_STOP`.
+
+---
+
+# PLANNING / 2026-11-04 EOD — 신규 3ZIP 아트 최종 승인 + 안전한 로컬 통합 지시
+
+- 바울 대표 **“다 승인하고 오늘은 여기까지 하자 다 합치고 로컬 동기화 해줘.”**: [#63 독침벌 신규3포즈+기승인 Sting·Recover v3](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6627888182), [#89 냉기 정식 상태아이콘3](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6627893169), [#92 Ch2 전투 배경 Ashen/Obsidian2](https://github.com/HappyPaul812/Project-Limitless/issues/92#issuecomment-6627894117) **사용자 최종 미술 승인**. 각 Codex 실제 F: ZIP 전체 SHA가 납품 기록과 일치. 기존 승인 #90 Spider Attack8 전체8 바이트 동결.
+- [**EOD 로컬 안전 통합 Runbook 정본**](../../20261104_EOD_ThreeApprovals_LocalIntegration_SafeRunbook.md) `docs/planning` commit `1205d7933c065c51b217d0089e86850538bfdbaa`: Unity **6000.6.5f1 고정**, 기존 원본 약308 dirty·개인 Save/UserData·Scene/Prefab/meta/GUID/BuildSettings 보호, 승인 ZIP·작업브랜치/코드 **선별 통합**과 최소 격리 QA, PilotBee Resources/02_VenomBee.asset 구참조 **출시 구성 제거 확인**. `main` 원격Push·직접커밋 금지, 로컬 main FF도 원본 dirty/충돌0일 때만. #91 Ch3 배경 v2와 #88 미확정 냉기 Gameplay 구현은 이번 아트승인을 이유로 무단 적용 금지.
+- **정직한 상태:** `USER_ART_APPROVED_63_89_92 / LOCAL_INTEGRATION_INSTRUCTIONS_READY / LOCAL_PC_NOT_EXECUTED_BY_PLANNING / ACTUAL_SYNC_UNVERIFIED`. GitHub 문서화 자체를 Unity 원본 적용·로컬 동기화 완료로 보고하지 말 것. 실제 PC Codex 실행 이후 브랜치/SHA/적용·HOLD·QA/Save 보호 상태로 마감해야 함.
+
+---
+
+# PLANNING / 2026-11-04 — 계속 진행: 세 담당 표적 실행 발주 (기존 QA 반복 금지)
+
+- **메인 #91 [실행 지시](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6623743094)**: Ch1 공식3 PNG vs C3 두 PNG 실제1:1 비교 근거 확인. 현재 Ch3 그림의 눈·원경·수관·오른쪽 수간 지정 ROI만 보완한 **v2 후보2PNG** 제작; 기존v1 바이트 보존. **적 왼쪽/아군 오른쪽(후열 x=.86)** 기준 실제 전투 UI 참고. 새 배경2 아트 USER_REVIEW_PENDING, Unity 본편 적용 금지.
+- **리뉴얼 #90 [실행 지시](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6623743727)**: 숲거미 Attack8 승인00·03·06 바이트KEEP, 01 KEEP_CANDIDATE, **02·04·05·07 네 문제 프레임만** 실제 신규 수정 후보 제작. 10FPS 8장/07→Idle 연결 확인. 새4 미술검토·발고정/실전접점·Unity 검증 미완.
+- **Codex #89 [실행 지시](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6623744401)**: 기존 냉기 VFX3 PNG 승인 유지·Unity99PASS/시각PARTIAL 인정. 40px 바퀴-이펙트 8px 분리/128px 뒤레이어·아래24px/960 상태배지 2행·1680 HUD 경계는 **QA 시험 가정**. 새 아트/정식 상태연결 없이 격리 Unity6000.6.5f1의 최소 화면 A/B만 실제 실행, 결과 기록. 과거12조건·49장/99PASS 전수반복 금지.
+- 이번에는 **새 이슈·대형 정본문서 중복 생성 없이 기존 #89·#90·#91에 실제 수행범위 댓글**만 갱신. 결과물 실제 납품/격리 실행은 각 담당 세션에서 수행해야 하므로 `TASK_ISSUED / NOT_YET_EXECUTED`. 원본 Unity·Save/UserData·승인아트·사용자 미커밋 자료·main 직접 commit/원격 Push/merge는 불변.
+
+---
+
+# PLANNING / 2026-11-04 13:47 — Chapter2 전투배경 실물 감사, Spider Attack8 Motion QA, VFX #89 배치 권고
+
+- [#91 Ch2 실제 로컬 읽기 감사](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6622600289) 접수: Field04~10 배경은 전용 이미지 아닌 기본 `NightSky/DistantField/BattleGround/GoldenHorizon` 컬러 패널, Field11 Main20은 `DeepCore_Ground_Base` 지면512재사용. **Ch2 전용 BattleBG 세트/카탈로그 없음**; 기존 구성 보존·추가 공용BG 신규 제작은 미술 범위 승인 전 HOLD. Ch1 PNG6개(카탈로그 고유4), Ch3 신규 Snowroad/F2 BG2는 파일 후보/미술 검토중. Codex 실제 F: Ch3 ZIP SHA `a8c02e9ab6189a6feb074d3f83c8cd6a8bce61ff1b8de110e7c8216934468eb9` 일치. Ch3 최종 미술·Unity 적용은 미승인.
+- 바울 대표가 보내신 `F:\Downloads\LIMITLESS_ATTACK8_ISSUE90_MOTION_QA_20261104.zip` QA ZIP은 ChatGPT Library 사본 실물 확인: 295072bytes·SHA `045fed92f86b50b2b4ea1eda3b95b397fa1219171c7702846934daa7fa63b2e8`·CRC PASS; 보고서/프레임 CSV·JSON/확대판 직접 검수. **신규 아트가 아니라 모션 QA 보고**. [#90 Renewal 검수](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6622626595) 정확 반영: 승인 00/03/06 바이트 KEEP, 01 KEEP_CANDIDATE, **02 오른 앞다리 변형 / 04 우측 분리31px / 05 왼 지지발 분리17·14·3px + 복귀 이동 최대 / 07 우측 분리7px**만 표적 수정. 공격 표적 접촉/발 Lock/실Unity는 NOT_VERIFIED, Shoot8/Bee RIGHTS_HOLD. 새4장 아직 제작하지 않았으며 8장 일괄재작업 금지.
+- [#89 Codex 레이아웃 제안](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6622602474): 자동99PASS·실제캡처49장 반복 안 함. **40px 바퀴와 VFX 약8px 분리, 128px 캐릭터 뒤/아래24px, 960 상단 상태배지2행·1680 HUD 하단 전장8px 분리** 모두 미구현 가정 제안. 승인 PNG3는 보존, 추가 2~3안 격리 비교/사용자 판정 이후 원본 게임 적용 별도.
+- 총괄 기획 문서 [20261104_Ch2_BattleBG_Audit_Attack8_MotionQA_NextSteps.md](../../20261104_Ch2_BattleBG_Audit_Attack8_MotionQA_NextSteps.md) commit `3dce7c36fd056f6574023a66effd3fd0894095df`; Unity6000.6.5f1/원본Editor·Save/UserData/승인아트/사용자미커밋 변경0·main직접commit/Push/merge0.
+
+---
+
+# PLANNING / 2026-11-04 13:14 — #89 Unity 99PASS·전투배경 #91·거미Attack8 #90 실물 검수
+
+- 바울 대표 화면의 [Codex #89 실Unity VFX보고](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6622135223) 확인: Unity6000.6.5f1, 실제 12조건·카메라 RT49캡처·자동99PASS/0FAIL/컴파일에러0; **VISUAL_PARTIAL**: 40px 휠체어 장식과 한기/동상/동결괴사 혼합, 128px 동상/괴사가 하체 가림, 960 상단배지 과밀. 승인된 PNG3 바이트 보호·원본 미적용. **[#89 기획 후속](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6622459221)** 표시 위치·스케일/상태정보/HUD 레이아웃의 최소 델타 비교만, 완료QA 전수반복·추가 아트 무단 재제작 금지.
+- 신설 **[전투 BG Issue #91](https://github.com/HappyPaul812/Project-Limitless/issues/91)**: 바울 대표 `F:\Downloads\Limitless_Chapter3_BattleBackground_2Pilot_20261104.zip` 전달, ChatGPT Library 동일명 ZIP 실물 **1,600,528bytes, SHA `a8c02e9ab6189a6feb074d3f83c8cd6a8bce61ff1b8de110e7c8216934468eb9`**, CRC/SUMS11/11/Manifest9/9 PASS. 설원·F2 각각1672×941 RGB 후보. 도형형 구도 이해되나 Ch1 공식 이미지+UI 실제 Unity 화풍비교/사용자 미술승인 미완. **Ch1 원격 PNG6 중 4종 catalog 연결; Ch2 전용 BattleBG 폴더·카탈로그 원격 미발견, Main20 기존 지면 fallback만 확인**. Ch2 로컬 실제 별도BG 존재는 `NOT_VERIFIED`. 과거 'Ch1·2 다 있음' 단정 철회. **[#91 기획 후속](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6622460670)**: 로컬 Ch2 read-only 실사·새 ZIP F: SHA 단회대조, Ch1 공식 BG 동일배율 시각 비교→사용자 승인 후 격리 Unity QA.
+- [#90 새 Attack8 실제 납품](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6622194831): Library ZIP `LIMITLESS_SPIDER_ATTACK8_ISSUE90_20261104.zip` **5,922,807bytes SHA `e612a88a6d4c6b4422cc025c0d32fb34e4ffc2f40337ffa909a1885cfae34041`**, CRC/SUMS21/21/Manifest21/21PASS, **512RGBA 8PNG·10FPS GIF**, 승인3 exact KEEP(00/03/06), 새5 광학흐름 기반 연결 후보. 8개 실제 파일은 완료지만 개별다리 관절·물리 발접지·표적 접촉·Unity Clip/새5 사용자 미술승인 미완. **[#90 기획 후속](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6622459940)** 새5에 한정 실제 10FPS/관절·발 기준 시각검토, 기존 승인v5/Idle8/Walk8·3키포즈/원본 Unity·Save/Ch2 공식·Bee RIGHTS_HOLD 보호.
+- 총괄 기획 정식 검수 문서 [20261104_VFX99_BattleBG2_SpiderAttack8_Review.md](../../20261104_VFX99_BattleBG2_SpiderAttack8_Review.md), `docs/planning` commit `1795b6b526f432dc6ddb0b2a121a20971b4ba9ba`. **기획 GitHub 문서/Issue 작성 외 Unity/Save/UserData/승인아트·main 직접 변경/Push·merge 없음**, 로컬 F: 새 두 ZIP 자체 SHA 일치는 아직 Codex가 확인하지 않음.
+
+---
+
+# PLANNING / 2026-11-04 — #89·#90 실제 F: ZIP SHA 일치, 사용자 미술 승인 확정·다음 단계 배정
+
+- 바울 대표의 “웹이랑 같다면 둘 다 좋아..” 조건을 Codex가 **실제 Windows F: 두 ZIP 전체 SHA256 1회씩 계산하여 정확 일치**함으로써 충족. [#89 Codex 승인확정](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6621573660) / [#90 Codex 승인확정](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6621574553). **미술 승인 대기 해소**: #89 v2 한기·동상·동결괴사 정지 PNG3, #90 승인 Prepare00·Contact01v2·Recover02v2 키포즈3. 기타 미제작 모션/이펙트에 승인을 확대하지 않는다.
+- #89 F: 실측 ZIP SHA `9c07f5ff782c6e272796c4f003b816a39806ab35248c2353884325ac3c24a1eb` 동일. Codex는 **Unity 6000.6.5f1 격리 시각 Delta QA의 12화면 조건 준비만 완료**했고 `QA_PREPARATION_READY / UNITY_DELTA_QA_NOT_RUN`. 실제 렌더/HUD/설원·암전장 40·128px × 960·1280·1680x720 최소 시험이 다음 Codex 임무. 신규 상태/해제/화로 런타임과 제품 원본 적용 미승인.
+- #90 F: 실측 ZIP SHA `804f8ebf85dbe7f7301cbfdecc6e85adc4e7d8888e23c3ee132bfca95854499b` 동일. 승인 3키포즈는 **바이트 동결**; 리뉴얼 `docs/art-renewal` 담당은 Attack8 8슬롯의 **미제작 5장만 신규 실제 프레임 제작**, 10FPS/우향/PPU256/scale0.7 기존 계약 보존. **Attack8 전체 8프레임 완성·실제 타격 접점·지면고정/미끄러짐·Unity Clip**은 제작/검수 전 NOT_VERIFIED, Shoot8 HOLD.
+- Codex 로컬 인계 `codex/issue89-90-local-zip-review-20261104` commit `a4cd85af`은 **LOCAL_COMMITTED / REMOTE_NOT_PUSHED**, 기존 #88 Stage1 냉기 63PASS·#84 거미 37PASS 등 회귀QA 중복 금지. 원본 Unity/Save/UserData/기존 승인 Owl·SpiderIdle8/Walk8/개인 미커밋 파일 변경·main 직접 commit/Push/merge0.
+- 이전 `USER_CONDITIONAL_ART_APPROVAL / F_DRIVE_V2_SHA_PENDING` 상태는 **2026-11-04 위 Codex 결과로 해소**. 최종 상태는 `USER_ART_APPROVED_SHA_MATCH / VFX_ISOLATED_VISUAL_QA_READY_NOT_RUN / SPIDER_ATTACK8_5_PENDING / NOT_ORIGINAL_APPLIED`.
+
+---
+
+# PLANNING / 2026-11-04 — 바울 대표 #89/#90 웹 비교판 동일 조건부 최종 미술 승인
+
+- 바울 대표 직접 답변 **“웹이랑 같다면 둘 다 좋아..”** → **#89 냉기VFX v2 3종 정지미술 + #90 Organic Spider Attack3 Prepare00 KEEP/Contact01·Recover02 v2 키포즈 미술**을 조건부 승인. **새 v2 ZIP 2종 Windows F: 실제 SHA 일치가 아직 미검증**이므로 우선 `USER_CONDITIONAL_ART_APPROVAL / F_DRIVE_V2_SHA_PENDING`. 위 [#89](https://github.com/HappyPaul812/Project-Limitless/issues/89) SHA `9c07f5ff782c6e272796c4f003b816a39806ab35248c2353884325ac3c24a1eb`, [#90](https://github.com/HappyPaul812/Project-Limitless/issues/90) SHA `804f8ebf85dbe7f7301cbfdecc6e85adc4e7d8888e23c3ee132bfca95854499b`는 Library에서 실물 검증된 정본값. Codex 1회 F: 직접 SHA 대조하여 이슈별 **일치 시 미술승인 확정, 불일치 시 해당 이슈만 HOLD**, 추가 질문 없이 보고.
+- [조건부 승인·F: SHA 게이트 공식 문서](../../20261104_Issue89_90_ConditionalUserArtApproval.md) `docs/planning` commit `72205da045070852320fadb4212154297615b84a`. 승인 성공 이후 #89는 격리 Unity6000.6.5f1 40/128px·3비율·밝은 설원·전투 HUD 시각QA만 진행, 실제 상태/해제 런타임·원본 적용 HOLD; #90은 승인 3포즈 KEEP하고 Attack8 중 미제작5개만 별도 Art 후보 제작, Shoot8·실타깃접촉·완성 10FPS/본편 적용 HOLD. **USER_ART_APPROVAL != UNITY_PASS != ORIGINAL_APPLIED**.
+- 원본 Unity/Save/UserData/기존 승인 Owl·Spider Idle/Walk/Stage1 냉기63PASS 등 보호. GitHub `main` 직접커밋, 임의 Push/merge 없음. 다른 담당 채팅과 Codex는 자동 실행되지 않음.
+
+---
+
+# PLANNING / 2026-11-04 11:47 — #89 VFX v2 · #90 Spider Attack3 v2 실물 검수
+
+- 바울 대표 로컬 `F:\Downloads\Limitless_Ch3_ColdVFX_Issue89_MinimalFollowup_20261104.zip`, `F:\Downloads\LIMITLESS_SPIDER_ATTACK3_TARGETED_ISSUE90_v2.zip` 전달. **실제 검증한 파일은 ChatGPT 라이브러리 동일 이름 사본**(Windows F: 신규 v2 직접 해시 미검증). #89 ZIP SHA `9c07f5ff782c6e272796c4f003b816a39806ab35248c2353884325ac3c24a1eb` 23entries/CRC PASS/SUMS22/22, #90 ZIP SHA `804f8ebf85dbe7f7301cbfdecc6e85adc4e7d8888e23c3ee132bfca95854499b` 12entries/CRC PASS/SUMS10/10/manifest10/10. 신규 PNG 3+2 모두512² RGBA, 4변 알파접촉0, 담당 #89/#90 보고 일치.
+- 시각적 최소 개선: #89 한기 고리 명암 개선(설원40px 연무 대비 잔여), 동상·동결괴사 40px 실루엣 여전히 실제 Unity+별도 HUD 텍스트 검증 필요. #90 Contact두부/앞다리 및 Recover 복부높이 복귀 개선, 실제 지지발·관절연속/Attack8 중간5장·타깃 접촉 미검증. 현재 **`V2_FILE_TECH_PASS / USER_FINAL_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED`**, 기존 원화/Idle/Walk/Stage1 63PASS/Save 보호.
+- [정식 v2 파일·미술 검수 문서](../../20261104_Issue89_90_TargetedV2_ZipAndArtReview.md) `docs/planning` commit `ae24cef6d139c93bb94e31089879dc77603732c3`. 불필요한 재재작화/대량 Unity QA 권고X; 사용자 시각 승인 후 **VFX 최소 격리 HUD 시야 QA**, Spider는 **3키포즈 사용자 승인 이후** 부족5프레임 제작 승인 게이트. 원격main/Unity원본/Save 변경0.
+
+---
+
+# PLANNING / 2026-11-04 — #89·#90 실제 F: 두 ZIP SHA 확인 후 아트 최소 보완 발주
+
+- 바울 대표 제출 Codex 화면 보고 및 실제 GitHub 코멘트 재확인: [#89 F:원본 검증](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6620211048) / [#90 F:원본 검증](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6620212147). F: ZIP 전체 SHA가 납품 보고와 **정확 일치**. 기존 ChatGPT Library CRC·Manifest·SHA 결과 보호, Unity QA 재실행·파일/Save 변경0. Codex 로컬 문서 commit `fd70f8e8`은 원격 Push되지 않아 GitHub 코멘트로 결과 접수.
+- 총괄 기획 **메인 아트 표적 보완 발주 [#89 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6620385952)**: 한기 설원 대비(바닥 링·연무 경계만), 동상 **붙는 결정 군집**, 동결괴사 **분리된 검푸른 큰 균열/쐐기**로 40px 상태구별. 512RGBA 신규 후보 필요한 것만, 원본 SHA 그대로 KEEP, 128/40·밝음/어두움 Before/After 판독. 새 전체 애니메이션/Unity 적용 금지.
+- 총괄 기획 **리뉴얼 거미 표적 보완 발주 [#90 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6620386396)**: Prepare00 KEEP, **Contact01 두부·복부 높이·앞다리 관절**, **Recover02 Idle 복귀 높이·지지다리** 국소 수정 후보 최대2PNG. 알파 중심 좌표와 bbox는 *실측 참고*이지 강제 Pivot값이 아님. Attack8 나머지5/Shoot8 신규 제작0. 실제 공격 접점/10FPS 완성 연속성 NOT_VERIFIED.
+- **판정:** `F_DRIVE_ZIP_SHA_MATCH / TARGETED_ART_REVISION_REQUESTED / USER_VISUAL_APPROVAL_PENDING / NOT_UNITY_APPLIED`. 기존 Owl v3/Idle8/Attack4, Spider 승인 v5/Idle8/Walk8, Bee v3 RIGHTS_HOLD, 냉기 Stage1격리63PASS, Unity6000.6.5f1, 원본 Editor/개인Save/main/사용자 미커밋 변경 보호. 메인 `docs/art-new`·리뉴얼 `docs/art-renewal` 각자 결과보고 및 이슈/인계 갱신 후 사용자 시각검토 필요. **이슈 발주 자체로 다른 담당 채팅/PC에서 자동 실행되지 않음**.
+
+---
+
+# PLANNING / 2026-11-04 10:25 — #89 냉기VFX·#90 거미Attack3 실제 라이브러리 ZIP 파일검수
+
+- 바울 대표의 Windows 로컬 경로 `F:\Downloads\LIMITLESS_SPIDER_ATTACK3_ISSUE90.zip`, `F:\Downloads\Limitless_Ch3_ColdVFX_Issue89_Pilot_20261104.zip` 전달 접수. **직접 검사한 것은 ChatGPT Library 동일이름·보고용량 ZIP의 바이트**이고, 사용자 `F:` 드라이브 원본은 `NOT_VERIFIED`. 두 보관 ZIP의 SHA가 [#89](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6619789789)/[#90](https://github.com/HappyPaul812/Project-Limitless/issues/90#issuecomment-6619839416) 보고값과 일치.
+- #89 VFX ZIP SHA `83b4efeee62cdb4cabf7dbcc4d2aea21cbefdb4507e03f53b8c59d8079e9e4ba`, CRC PASS·SUMS16/16·Manifest15/15, 신규 RGBA512 세 장 alpha변 접촉0. 512/128 형태 구별되나 한기의 **밝은 설원 대비 약함**, 동상/동결괴사 **40px 실루엣의 유사성** 사용자 미술 검토 필요. 
+- #90 Spider Attack3 ZIP SHA `91411d159d401f1772e80e848d78550dd62552f65c1a76d659c15d8b0df44d3e`, CRC PASS·SUMS19/19·Manifest19/19, 신규 RGBA512 세 장 alpha변 접촉0. Prepare/Contact/Recover 공격 의미 명확하나 10FPS 연속 연결의 방향·두부·앞다리/접지 도약이 **미검증**. Attack8 완성3/8, Shoot8 0.
+- [실물 검수·기획 판정 보고](../../20261104_Issue89_90_LibraryZip_ArtReview.md) `docs/planning` commit `6f313419ff83c9e915962ae65410e559aaff836a`. 두 담당의 기존 납품 보고는 유효하나 **ART_FINAL_APPROVAL_PENDING / NOT_UNITY_APPLIED**. 기존 올빼미/Spider v5/Idle/Walk·Bee RIGHTS_HOLD·승인 파일 SHA·개인Save/원본 Unity 유지. 다음 단계는 실루엣·연속성의 최소 시각 검토 후 사용자 승인; Codex는 F: 실제 해시와 필요한 격리 Unity 시야/타이밍만, 과거 QA 전수 반복X.
+
+---
+
+# PLANNING / 2026-11-04 — 냉기 공통 런타임 Stage1 63PASS 접수, Stage2 정책 미승인
+
+- 바울 대표 전달한 Codex 신규 실측 [Issue #88 1단계 완료보고](https://github.com/HappyPaul812/Project-Limitless/issues/88#issuecomment-6619606069) 확인. Unity **6000.6.5f1** 격리 QA `63 PASS / 0 FAIL`, 컴파일/제품 런타임오류0. 신규 `BattleColdStatusRuntime`, 기존 Battle/Status/HUD의 최소 확장. 한기 2회 차례차단·동상 별도 HP피해 API(수치 없음)·동결괴사3중첩 KO·HUD 준비까지 확인. 기존 #85/#87 QA 중복0, **원본 Unity 적용0, Push0, 개인Save/UserData 보호**. 코드 `05fdf1d4447eb3731cf66024467348bbfd3f4485`, 문서/증거 `a294a66b0307a1c69574e5939d68c0ce3cf524b2`는 **로컬 별도 worktree**에만 존재.
+- **기획 접수·2단계 결정 게이트 문서:** [Chapter3_ColdRuntime_Stage1_Receipt_Stage2_DecisionGate_20261104.md](../../Chapter3_ColdRuntime_Stage1_Receipt_Stage2_DecisionGate_20261104.md), `docs/planning` commit `b51d399abb2b6105425add93140be501b3044337`. 한기 차단 차례의 카운트/재부여·쿨타임 처리, 동상 HP 틱/감쇠·방어, Owl 첫 한기 조건/해제 접근성을 **추천안/미승인**으로 구분. 유저가 확정한 한기2턴·동상·동결괴사3중첩 KO·정화Ⅱ·어묵탕·연고·화로/보스 유효대응 계약은 유지.
+- 메인 아트 [#89 VFX3종](https://github.com/HappyPaul812/Project-Limitless/issues/89), 리뉴얼 [#90 Spider Attack3](https://github.com/HappyPaul812/Project-Limitless/issues/90)는 병렬 발주 상태이며 실제 납품 확인 전 완료 판정 금지. **Stage1 PASS != Original Apply != 정식 Owl 첫 한기전 완성**.
+- 다음: 바울 대표가 세부 규칙/원본 적용 범위 승인 → Codex 기존 Stage1 소스 재활용한 최소 Delta 구현·검증. 기존 63PASS 전수 반복·원본 최신 main 무단변경/원격 Push 금지.
+
+---
+
+# PLANNING / 2026-11-04 — 메인·리뉴얼 아트 병렬 발주 #89 / #90
+
+- 바울 대표 “메인 리뉴얼 일 시켜줘.” 지시를 받아 담당별 신규 GitHub 작업 발주: **메인 신규 아트 [#89](https://github.com/HappyPaul812/Project-Limitless/issues/89)**는 Chapter3 냉기3종(VFX 안개/결정/결빙균열) 각각 대표 정지 PNG1개·40/128px 비교판 **총3 시각 파일럿**, **Ch1·2 리뉴얼 [#90](https://github.com/HappyPaul812/Project-Limitless/issues/90)**은 사용자 승인 Organic Spider v5/Idle8/Walk8 보호하면서 **Attack 준비/타격/회수 3키포즈**만 파일럿. Attack8 전량과 Shoot8 제작 아직 승인 안 함.
+- [기획 병렬 발주 기록](../../20261104_MainArt_Renewal_Parallel_Briefs_89_90.md) `docs/planning` commit `94bb465c4d1ce15dc8cfa323ccd73ee09e3b573e`; #88 냉기 기획안과 #60/#63/#84 승인·보류 근거 대조. Owl 원화/Idle8/Attack4, Spider 승인 Walk8 ZIP SHA771bd..., Bee v3 ART_OK_CANDIDATE이나 RIGHTS_HOLD·TARGET_CONTACT_NOT_VERIFIED, 사용자 개인Save/기존 Unity6000.6.5f1·기존 QA 전수보존.
+- 상태 **`ISSUES_CREATED / ART_WORK_NOT_STARTED_OR_UNVERIFIED / USER_VISUAL_REVIEW_PENDING / NO_GAME_APPLY`**. 각 아트 담당이 별도 담당 채팅에서 이슈를 읽고 제작해 `docs/art-new` / `docs/art-renewal`에 문서·인계·이슈댓글·실 SHA를 기록해야 실제 납품. 이슈 생성만으로 다른 담당 세션/Discord 무인 작업이 자동 실행되지는 않음. main 직접 커밋/Push/병합 없음.
+
+---
+
+# PLANNING / 2026-11-04 — Chapter3 냉기 계열 3종 상태이상 VFX 기획안 정식 문서화
+
+- **바울 대표 요청:** 한기·동상·동결괴사 각각의 차별화 VFX를 기획해 GitHub에 문서화. 관련 [Issue #88](https://github.com/HappyPaul812/Project-Limitless/issues/88).
+- **정식 기획 문서:** [Chapter3 냉기계열 상태이상 VFX 기획안](../../../10_전투/Chapter3_냉기계열_상태이상_VFX_기획안_20261104.md) (`docs/planning` 신규 commit `22ece5ce7d3f92218ce2101c9d94a0581be5b3ea`). 한기=안개·눈송이, 동상=얼음결정·실제 HP틱 피드백, 동결괴사=중첩별 결빙 균열·3중첩 즉시KO 연출. 상태명+아이콘+턴·중첩수 표시, 점멸·시야가림·HUD/입력충돌 금지. 정화Ⅱ·마도사 온기의 불꽃·따끈 어묵탕·해빙 연고·보스 화로 해제 계약 변경0.
+- **기존 정본 유지:** 2026-10-12 [냉기 보스기믹](../../../10_전투/Chapter3_냉기_보스기믹_20261012.md)의 한기2턴 전체행동불가/동상 행동불가+HP감소/동결괴사1→2→3중첩 즉시KO, F2 Owl 첫 한기 전투. 개별 수치/확률·VFX 규격·실제 Art/Runtime는 TBD. QA 차용 Owl Lv1·HP60·민첩10을 공식화하지 않음.
+- **상태:** `VFX_DIRECTION_ACCEPTED / VISUAL_SPEC_PROPOSAL / ART_NOT_PRODUCED / RUNTIME_NOT_IMPLEMENTED / USER_ART_APPROVAL_PENDING`. 새 문서 작성만 완료, 새 PNG/Particle/Unity 코드·Prefab·Save·개인자료·main 변경/원격 병합 없음. 아트비교판→대표 시각승인→Unity6000.6.5f1 격리QA→별도 승인 적용 순서.
+- **기존 11-04 F2 상태 최신 인지:** #87 표식 수정은 바울 대표 승인 후 원본 워킹파일1개에 적용됨(기존 QA clone 25PASS, 적용 후 최소2PASS), 원본Editor 자연import 대기·원격Push0. 11-04 바울 대표는 F2 기존 환경 재사용 비교판에 “어제 봤는데 괜찮고”라며 시각 수용을 밝혔으나 **원본 F2 Scene 적용/최종 Unity 검증 완료와 분리**한다.
+
+---
+
+# PLANNING / 2026-11-04 — #87 QA Clone36PASS, 다음 F2 시각판단·올빼미 표식 최소 보완
+
+- [Issue #87 실제 PlayMode 스모크](https://github.com/HappyPaul812/Project-Limitless/issues/87#issuecomment-6617542875): Unity6000.6.5f1/rev3ff58d469c8a 동일 원본파일 SHA QA 복제본 신규 **36PASS/제품FAIL0**, Main23→24·북문F2→마을·도보휠체어Collider·Owl Idle8 Attack4 피해1회·HP·승패F2/안전마을·합성SaveContinue·6슬롯·퀘스트 '완료'·26Scene GUID. 초기 QA 코드 모달 owner 인자1 오류는 테스트 코드만 수정 후 미검증 나머지26건 실행; 제품오류0. 원본 Editor 실행중/포커스보호로 `ORIGINAL_EDITOR_NOT_VERIFIED`, 사용자 실제 손/발 입력 및 저시력 시야 NOT_VERIFIED. 원본mainHEAD 634a91d3, 제품4547파일/Save/UserData/index/status 원형보호, 푸시0.
+- 신규 단일 UI 시각 결함: F2 Camera RT 하단 Owl 안내 **표식 일부 화면밖 잘림**. 전체 Owl Sprite/전투Clip·기존 GameUI QA를 다시 고치지 않음. 후속 Codex 할 일이 있다면 격리복제에서 그 표식 UI anchor/canvas clamp/3비율만 표적 delta 수정, 원본상품/QA회귀전수X. 별도 [#87 기획 접수](https://github.com/HappyPaul812/Project-Limitless/issues/87#issuecomment-6617905779).
+- F2 환경 기존재료 재사용 68PASS 비교판 `F:/study/codex/Project-Limitless/Temp/F2EnvironmentReuse20261103/Review/index.html` (18 실제 Unity RT)은 **사용자 최종 미술 검토 대기**: 눈 패치 반복·길 굽음·HUD 배경/가림 3영역. 대표 승인 전 원본 F2 환경 자동 적용0. 승인 후에도 최소 델타만. 정식 Owl 한기 상태/기획수치·보상·퀘스트 완료/공급정책, Bee RIGHTS_HOLD, Writer1/2 운영정책 HOLD 유지.
+- 지금은 Codex 대규모 기존 QA를 반복하지 않고 화면 결함에 한정한 소규모 후속 및 사용자 미술 판단으로 진행.
+
+---
+# PLANNING / 2026-11-04 오전 — 로컬 통합 후 첫 F2 실제 플레이 스모크 #87
+
+- 대표 “굿모닝~ 이어서 하자.” 현시점 [#86 최종 영수증](https://github.com/HappyPaul812/Project-Limitless/issues/86#issuecomment-6606519974)에서 원본로컬 main HEAD `634a91d3e4174c87761c0d377cfa5a695ca79e7f`, Unity6000.6.5f1/rev3ff58d469c8a, 기존25 Scene+F2 26번째, 승인자산·코드 로컬 sync 완료. 어제 통합QA44PASS/F2 Scene등록26PASS, Owl전투81/F2왕복90/SpiderOwl37/F2환경후보68/저장QA 보존·재실행 필요0. **원본 에디터에서 실제 손플레이는 미검증**.
+- 다음 [Issue #87](https://github.com/HappyPaul812/Project-Limitless/issues/87) Codex **첫 좁은 Unity 스모크**: 기존 Editor/UI 포커스·원본 dirty/개인Save 보호, 먼저 원본을 백그라운드에서 안전하게 확인 가능 여부 판정. 아니라면 동일환경 QA clone으로 실 북문→F2→마을 + Owl 승패/복귀·26 Scene/6슬롯/완료문구·합성SaveContinue 최소PlayMode 검증하고 **original_editor_verified와 clone_verified를 명확히 구분**. 정식 Owl 한기/MonsterID/밸런스/보상·Main24완료/상점/미술미승인 환경·Bee 권리·Writer 복구는 HOLD. 원격 Push/병합·main 직접commit·원본Unity/사용자Save 수정0.
+- QA가 확인되면 대표 미술 검토 대기인 F2 기존재료 재사용 68PASS 실제 RT의 눈 반복·굽음·HUD 가림부터 선택, 정식 첫 한기 상태이상/무료해제·Owl 밸런스는 다음 기획 결정. 독침벌 v3는 ART_OK_CANDIDATE, RIGHTS_HOLD 유지. 당장 대규모 신규 QA·아트 재작화 추가 발주하지 않음.
+
+---
+# PLANNING / 2026-11-03 23:34 — #86 F2 BuildSettings 등록 HOLD 해소·원본 로컬 완전 동기화
+
+- [#86 최종 등록 검증](https://github.com/HappyPaul812/Project-Limitless/issues/86#issuecomment-6606419659) 및 [최종 영수증](https://github.com/HappyPaul812/Project-Limitless/issues/86#issuecomment-6606519974): **`ORIGINAL_LOCAL_SYNC_DONE / F2_BUILDSETTINGS_SCENE_REGISTERED_PASS / REMOTE_PUSH_NO`**. 최종 원본 local main·통합 branch `codex/f2-buildsettings-final-sync-20261103` HEAD `634a91d3e4174c87761c0d377cfa5a695ca79e7f` (제품등록 35b87d29, 마지막 보고 ff-only). main 직접커밋·원격Push/PR/merge0.
+- 정확한 Unity `6000.6.5f1` / revision `3ff58d469c8a`; 원본 `ProjectVersion.txt`와 실제 설치·엔진 로그 일치. 6000.5.7f1 구버전 설치/QA·다운그레이드 요구 폐기. 기존25 Scene/사용자 app-ui·input 설정 및 순서·enable·GUID **바이트보존**, `Assets/_Project/Scenes/World_NorthF2_CANDIDATE.unity` GUID `bcd0e6f38e69dc141b741fe5247855cf` 26번째에 **BuildSettings 3줄만** 추가. 승인 전후 파일 SHA/Unity import후 SHA 확인, 자동 재직렬화0.
+- 신규 **동일설정 격리 Unity 26 PASS/0 FAIL**, F2북문 왕복·승패/거점 복귀·합성Save/Continue·Main24 보상0. #86 이전 통합 Unity44PASS 및 #83·#85·#84·저장 QA 재실행0. **원본 에디터 사람이 직접 플레이 검증은 `NOT_VERIFIED`**, 실제 원본 Game/Standalone 출시는 별도 QA.
+- 기존 사용자파일847 중 BuildSettings만 승인3줄 변경, **나머지846파일 바이트 동일**, 사용자 app-ui 미커밋 diff·status기본343/상세857/staged0 및 개인Save/UserData 접근0 보존. 기존 Package/Scene/Prefab/Quest/게임코드·승인Art 건드리지 않음. #85 Owl 기본전투·#83 F2 원본 동기화는 완료했으나 공식 Owl 수치/한기상태·VFX·정식Main24 완료/상품/Writer복구/독침벌 v3·RIGHTS_HOLD·F2재사용환경 최종미술승인 등은 기존 HOLD 유지.
+- 새 업무를 무리하게 발주하지 않고 오늘 마감. 다음 시연·운영 QA 시에는 **원본 Editor 손플레이만 좁게** 검토하고, 최초 사용 전 개인 Save/백업 정책 승인 필요. Codex 사용량 보존, 추가 광범위 QA 금지.
+
+---
+# PLANNING / 2026-11-03 야간 종료 — 안전 로컬 통합·동기화 #86
+
+- 대표 지시: “오늘은 여기까지 하자, 지금까지 한 모든 작업들 합치고 로컬 동기화 해줘. 저번처럼 유니티 버전 실수 하지 말고.” **신규 [Issue #86](https://github.com/HappyPaul812/Project-Limitless/issues/86)** 통합 1회 Codex 로컬 실행 계약. GitHub에 지시/기획 인계를 남기는 것과 실제 대표 PC의 local `main`/worktree 통합 완료는 **별도**. 원격 Push·PR·병합 금지.
+- **Unity 실제 목표 = 6000.6.5f1 / revision 3ff58d469c8a**. E:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Unity.exe 선행 실행로그 근거, #79 `codex/unity-version-align-20261031` 5f619bc0… 후보. 옛 #78 기준 6000.5.7f1 설치/QA요구는 오류·폐기. 실제 원본 ProjectVersion은 변경 안 됐을 수 있으므로 **격리 staging에서만 정확 값 정렬** 후 안전 동기화 승인을 받는 절차. Unity 설치 변경·ProjectVersion 강제 덮어쓰기·BuildSettings 교체 금지.
+- 실제 로컬 원본 main `ab47b931fec92976170f9f50aabde1822d78bb90`/dirty status가 최근 보고됨 → 실 HEAD·dirty 상세 재확인, 사용자 미커밋 344/858 변경 항목·개인Save/UserData·GUID/meta·Scene·Prefab 전량 보호. `reset --hard`·`clean -fd`·강제 checkout/stash/충돌 시 ours/theirs 일괄선택 금지. **원본변경과 staging 통합을 분리**, 명확한 파일 diff/충돌0일 때만 안전 로컬 동기화. 실패 시 `STAGING_PASS / ORIGINAL_LOCAL_SYNC_HOLD` 정직 보고.
+- 합칠 승인된 기초 후보: #46·#73, #80 Main24 마을 첫 구간, #83 F2 왕복(90PASS), #85 Owl 기본 전투(81PASS), 승인 Owl v3 Idle8 Attack4·Stump v4, Organic Spider v5+Walk8 (실 접지 정량 아직 HOLD). **F2 환경 재사용 68PASS** `f6797d7a...`는 새 프리뷰·기술성공이나 사용자 **미술 승인 대기**라 본편 자동 적용 X. 기존 F2 Owl 공식 몬스터ID·수치·첫한기전·보상/해금·상품25는 미확정/임의결정 금지. Bee 타이밍A153PASS·v3 StingRecover ART_OK_CANDIDATE/`RIGHTS_HOLD`, #70 Writer fork 운영/저장소 정책 `HOLD`는 별도 브랜치·증거보존하며 자동 제품 병합 금지.
+- 기존 #80 Unity81/#83 90+#83reuse68/#85 Owl81/#84 Clip37/Bee153/#70 Writer85/72/72 대규모 QA 반복 금지. 통합 교차 연결 지점만 Unity6000.6.5f1 합성 Save·Battle/F2·Quest·6슬롯·Scene/BuildSettings 좁은 Delta QA. 기존 원본 PC Save 파일 열람/복사/해시/변경0, 원격 push0. 변경파일·브랜치/코드커밋 SHA·정확한 버전 검사·백업/통합·최종HEAD/QA·HOLD 사유 #86 및 CODEX_LATEST로 보고.
+- 오늘 #63 Bee v3 Codex 실ZIP `1169aca1c46f4322b85e7247b33a6cbc1fb684e01e0f04fb2ea7f9e9c0194ff0` 315 Sting/Recover 실제 신규·CRC/Manifest8/8/SUMS9/9 PASS, `ART_OK_CANDIDATE`/index09 준비포즈 재사용, 대표 최종미술·실접촉·원권리 미승인. 제품 적용/새20 양산0.
+
+---
+# PLANNING / 2026-11-03 저녁 — 메인 아트 차기 업무 F2 실제 환경 결손 마감
+
+- 대표: **“메인 아트는 다음 일이 뭐니?”**. Owl v3 Idle8·Attack4 USER_ART_APPROVED, #85 격리 첫 Owl Battle UI 81PASS/0FAIL, #83 F2 탐험90PASS. 추가 Owl 재작화 필요0, Owl 냉기 상태 Runtime 미등록·분리 VFX 미승인 HOLD. [#75 신규 메인아트 기획 지시](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6601880656): 다음 작업은 **F2 첫눈의 숲 실제 탐험환경 결손 0~2개만 소량 보완**, 승인 P1/P2·NaturalBroken 그루터기·승인 Frostway 지면9 원형보존, #83/#85 실제 격리 화면과 P1/P2의 미흡한 동선/접합부만 갭표로 식별. 필요없으면 새 PNG0 정당화, 이전 전체 Tile 양산/미확정 Collider·PPU 짐작/원본Unity 적용 금지.
+- FULLREDRAW 표지판·울타리는 Codex KEEP_CANDIDATE, 대표 최종 선택 대기. 자연형 그루터기 v4만 USER_APPROVED. 두 대안을 기존 대비 단일 OFFLINE 판에 제시하되 무단 미술 승인·본편 적용 금지. F2 전체맵 신규지형 대량 생산 금지. 사용자 저시력·휠체어 동선·색상에 의존하지 않은 표식 유지.
+- 독침벌 후속 #63 신규 StingRecover2 포즈 art REVISE, Codex 실PNG delta QA 예정이며 메인 아트 담당 업무 아님. Owl 한기 상태이상·해제 아이템 및 냉기 VFX는 기획 정본·런타임 계약 확정 뒤만 발주. Main24 Owl #85 기본 전투 후보 제품 원본 미반영/원격Push0. 아트 업무 후 docs/art-new/SPRITE_ART_LATEST.md와 Issue#75 브랜치/SHA 보고.
+
+---
+# PLANNING / 2026-11-03 19:42 — Owl 기본 전투 #85 81PASS / 신규 Bee StingRecover 2PNG 델타 QA
+
+- [#85 실제 F2 Owl 격리 전투 결과](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6601090552): 신규 Unity **81 PASS/0 FAIL**, Owl USER_ART_APPROVED Idle8+Attack4 실제 Battle UI Image, 기존 BattleSceneController 피해1회·HP/턴·승패·F2/안전거점 복귀·도보/휠체어Collider·합성 SaveContinue. branch `codex/main24-frost-owl-finish-20261103` 기능commit `61dce08b271bd2e801205a711a8af7d54400c84f` 최종 `47f479cce4fd282ac4c9e49ecfb75e2b1a25e461`. 기존 #83 90/#84 37 QA 반복X·원본/main/Push0. 정식 Owl 몬스터ID·밸런스/보상·한기 상태/해제 정책·Main24 완료 미확정. **GrassSlime Lv1 HP60 공격비율100 민첩10은 QA 차용수치**. OWL_BATTLE_RUNTIME_PASS와 COLD_STATUS_HOLD·NOT_ORIGINAL_APPLIED를 반드시 분리. [기획 후속](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6601546041).
+- 바울 대표 새 로컬 ZIP `F:\Downloads\LIMITLESS_BEE_STING_RECOVER_NEW_20261103.zip`. [리뉴얼아트 실제 PNG납품 보고](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6600291513) ZIP SHA `b05fcbd17572863494216499dc2befa0806361742d3c67f7866f5b871cef2c9e`, 신규 315 Sting `a10fefc6db6ff2289d298ab8b3def2263283eb163d946e7b2cd7641428485de8`, Recover `c5792c1c7c5f1b3be788dea96b013865f7f42162ca67e7d85d09add65bf9bb25`; 실제 새2 PNG/SourceDeclaration/10FPS 키포즈 반복 미리보기 납품. 제작 담당 평가 `NEW_PNG_TECH_PASS / ANIMATION_ART_REVISE / USER_ART_REVIEW_PENDING / RIGHTS_HOLD / FULL_COMBAT_NOT_READY`. 현재 ChatGPT는 대표 Windows F:바이트에 직접 접근하지 못하므로 실제 실물 확인은 Codex 로컬로 수행해야 함.
+- [#63 다음 통합 QA 지시](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6601548839): Owl 기존81PASS 보호, Bee 이번 2PNG만 기존 Prepare·Sting·Recover/Idle와 동배율→실제 +X·Sting .25s index02/Recover04~08/09안정, 날개·다리·복부 연결·320? 아님 **실제315×253** 픽셀로 OFFLINE 단일 비교판. ZIP CRC/Manifest/SUMS·SHA·새 변경유무, 기존 타이밍 후보 A **153PASS** 전수반복금지. 마지막 실제 라이선스 WEB CC BY3.0 / ZIP BY4.0 충돌, 실 Pixel-contact, 공식 판매/본편 적용은 HOLD. Bee 다른20 전체양산/새 프레임 제작이나 Owl QA 반복 금지. 합본 Codex 소규모 검수 보고 후 미술 수정 지시를 결정.
+- 정리 목표: Owl 기본 전투는 격리 구현 마감, **한기 첫 전투는 다음 별도 기획/개발 단계**. Bee는 신2포즈 연속성 검수 후 표적 재작화 범위를 좁힘. 원본 Unity·Save/UserData/Quest·BuildSettings/Packages·다른 아트/Discord66/main Push·merge 금지.
+
+---
+# PLANNING / 2026-11-03 — 서리올빼미 마무리: #85 실제 격리 F2 전투 연결
+
+- 대표 직접 요청 **“올배미 마무리 하자.”** [새 #85](https://github.com/HappyPaul812/Project-Limitless/issues/85) Codex **기존 승인 Owl v3 Idle8+Attack4를 실제 Battle UI Image와 #83 F2 격리 이동구간에 연결**해 공격/피격1회·승패/복귀까지 최소 구현. 승인 아트 반복 재제작·기존 QA 중복을 멈추고 플레이 가능한 Owl 전투 후보 제작에 집중. 정식 Scene/MonsterID/정본 수치가 미확정이면 격리 후보/HOLD로만 표시하고 임의 제품화 하지 않음.
+- Owl 정지원화·Idle8·Attack4 USER_ART_APPROVED. 최신 ZIP SHA d6648b7451dc2184c2187c0b1c2f8e0f52fc800ac6975753d0f6d38f6fbf9192, Attack02 SHA 6dcb1799e0970cd08ceadc111e7e2645f21eb973ae75f9b859c2ce356d07e936, Attack03/Idle00 81a31cf37cb834799ab5c9428da612ab13a5a496025805685daefed7b5d3c467. #84 Unity6000.6.5f1 Clip 8FPS PASS/37PASS, #83 F2왕복90PASS·정적23PASS 보존. #84 SpriteRenderer Clip을 현재 Battle UI Image에 직접 부착하면 안 됨; 기존 Resources/MonsterDefinition 명시 프레임 배열/공용 UI 재생 계약 우선.
+- Owl '한기' 전투 상태·미승인 냉기 VFX/별도 HitDefeat 아트/실 정식 Spawn·MonsterDefinition·Main24 완료보상/해금 미구현/불확정; 구현 시 공용 피격/퇴장 연출 재사용, 신규 아트·수치·아이템·정식ID 임의설정 금지. 한기 실등록 없으면 COLD_STATUS_HOLD. 다만 기본 전투 후보는 구현/델타QA. 원본 Scene/Prefab·Save/UserData·Packages/BuildSettings/ProjectVersion·main·Push/merge·다른몬스터/Discord #66 변경0.
+- 예상 로컬 branch codex/main24-frost-owl-finish-20261103, Codex가 실제 F: 승인 ZIP과 기존 격리 worktree를 검사하여 PlayMode F2 Owl 전투를 수행한 결과를 #85·#74·#83 및 CODEX_LATEST/CURRENT_STATUS로 인계. 본 이슈/문서화는 **현재 로컬 실제 게임 구현이 완료됐다는 뜻 아님**. 실본편 적용 별도 명시 승인.
+
+---
+# PLANNING / 2026-11-03 18:05 — 독침벌 공격 타이밍 후보A 153PASS / 아트 2키포즈 후속
+
+- [Codex #63 Unity 실증](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6599482389) Bee 타이밍 격리 후보 A **153PASS/0FAIL**. 기존 피해 .250293s→.250806s(HP100→93 동일·중복0), 기존 조기 Idle .610958s→Attack10@10FPS 전체 재생 후 1.000337s, 약 **.393s 다음행동 연기**. 기타 몬스터·스킬과 원본 main 미적용. 후보 소스 로컬 SHA `461c816080709a13775a71bdf8eaf00438ed571e`, 인계 `4c6d5c53881313d874667daa0b28d8dcb30ac579`, local branch `codex/bee-attack-timing-isolated-20261103`.
+- **기획 판정:** A를 독침벌 **새 아트의 시간표 참고로 잠정 유지**(Sting index02=.2~.3s +X 방향, Recover index04~08, 06~09 제자리 회수, 1초 후 Idle). 실제 게임 채택/출시·게임 템포는 별도 대표 승인·통합 QA 전 HOLD. 0.39s 길어진 턴 템포는 단점으로 분명히 보고, 기존 .25s 피해는 보호. B 약.61s/6프레임은 비교안으로만, 두 모드 동시 구현 금지.
+- 신규 리뉴얼 아트 작업 **Sting·Recover 2키포즈 국소 실재작화**만. 벌의 복부 뒤침 보존, 몸 각도/날개·다리 연결, 실제 새PNG SHA/40px/10FPS preview·오프라인 비교. 기존 Prepare·Idle2·기존20 보존. 강제 pixel-perfect 접촉은 현 공식 계약에 없음, `TARGET_CONTACT_HOLD` 유지. 기존 외부 PilotBee WEB CC BY3/원본 ZIP CC BY4 출처충돌 `RIGHTS_HOLD`, 저작자/출처/개작 관계 SourceDeclaration 명시 없으면 제품 교체 금지. [#63 기획 후속 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6599597527).
+- Owl Attack4/Organic Spider Walk8 USER_ART_APPROVED 고정, Spider 실제 발접지 계측 NOT_VERIFIED. Main24 F2 왕복 #83 Unity90, #84 37, 저장 #70/77/78 기존 QA 반복 금지. 원본 Unity/Save/UserData·Scene/Prefab·BuildSettings·Packages·main/Push/merge·Discord66 변경0. GitHub 기획 인계 변경은 로컬 아트/코드 작업 자동시작이 아님.
+
+---
+# PLANNING / 2026-11-03 — 독침벌 명목 .25초 Hit / .61초 복귀 vs 1초 Attack10
+
+- [Codex #63 실코드·출처 감사](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6598409883): 적 좌→우(+X), Bee MeleePhysical/sourceFacesRight, x 위치 .14/.32 vs .68/.86, **명목 .25s(index02) 피해**·약 **.61s Attack→Idle 복귀**이나 기존 Attack10×10FPS=**1초**. 마지막 몇 프레임 잘릴 수 있는 **코드-모션 타이밍 충돌**이 명확한 병목. 직선 반폭 계산상 사각형끝 간격 31.2UI는 실 침끝·alpha 접촉측정이 아님. 공식 hit socket/ContactFrame 없음. 실제 물리 접촉 강요/가상 좌표 단정 금지.
+- OpenGameArt 원작 PilotBee source WEB CC BY3.0(2DPIXX/2016) vs 다운로드 ZIP LICENSE CC BY4.0 (Jana Ochse / 2D!PIXX), **RIGHTS_HOLD**. 활성 Monster Resources에서 기존 외부 Idle/Attack이 실제 사용됨, ThirdParty 보관만 된 파일과 다름. 새 ART SHA도 독립 저작권 증명 아님. 신규 독침벌 제품교체/기존 파일 고지 삭제 금지.
+- Owl Attack4 USER_ART_APPROVED/격리8FPSclip PASS, Organic Spider Walk8 USER_ART_APPROVED/격리10FPSclip PASS; Spider 발별 접지 계측 NOT_VERIFIED, Owl 분리VFX HOLD, 본편/원본 미적용. [#63 기획 후속](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6598504114)은 **합성 격리 테스트에서 명목피해 .25 유지·정상 프레임재생 후 Idle 복귀 가능한지 최소 presenter Delta POC**(아니면 .61기준 새 모션 계약 비교), 실제 1회만 계산/녹화, 전체 #84/#83 QA 반복0. 확정 계약 이후에야 Bee Sting/Recover 2키포즈 최소 제작 지시.
+- 원본 Unity/Scene/Save/UserData/Packages/BuildSettings/main/Push/merge, Discord66 변경0; GitHub 이슈/문서 기록은 로컬 Codex POC 실행 전단계. 새 작업 branch `codex/bee-attack-timing-isolated-20261103` 후보.
+
+---
+# PLANNING / 2026-11-03 — Owl·Spider 최종 미술 승인 재확인, Bee 계약 조사 합본
+
+- 대표 최종 명시: **“올배미 거미 승인 한거니까 코덱스 시킬게 있으면 벌이랑 같이 줘.”** Owl Attack4(최신 Attack02 수정)와 Organic Spider v5 Walk8 **USER_ART_APPROVED** 확정. [Owl Issue #74](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6598037098), [Spider Issue #60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6598038404), [#84](https://github.com/HappyPaul812/Project-Limitless/issues/84#issuecomment-6598039586). 이는 제품 Scene/MonsterDefinition/Animator 실 게임 적용이나 원본 로컬 game 병합·Push까지 일괄 승인한 뜻 아님.
+- Owl 최신 승인 ZIP SHA256 d6648b7451dc2184c2187c0b1c2f8e0f52fc800ac6975753d0f6d38f6fbf9192, Attack02 SHA 6dcb1799e0970cd08ceadc111e7e2645f21eb973ae75f9b859c2ce356d07e936; 정지원화·Idle8·Attack00/01/03 보존. #84 격리 Unity8FPS 실Clip PASS, 미승인 냉기 분리 VFX는 여전히 HOLD/F2 실제 한기전 미구현.
+- Spider 승인 정지v5 SHA c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9, 최신 Walk8 EdgeFix ZIP SHA 771bd1813608aa3e350c6124ab0d43293c6d2988b1833014da64484d5272c8da, 기존 Idle8/Walk 원형보호. #84 격리 Unity10FPS/PPU256/scale0.7 우향 실재생 PASS. **발별 anchor·실 지면잠금·미끄러짐 NOT_VERIFIED / WALK_CONTACT_HOLD**, Attack8/Shoot8 미제작.
+- Bee [Issue #63 통합 Codex 다음 계약](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6598040972): 기존20 존재, 신규준비·찌르기·회수3포즈/Idle2 있음. 실 공격좌표/facing/ContactFrame·이동 및 리턴 모호·OpenGameArt PilotBee CC BY3/4 표시 충돌. 다음 Codex는 별도 문서전용 로컬 worktree에서 **실 Battle 코드/Scene/Prefab/라이선스 원문 읽기 조사만**, 출처/표적 미확정 시 HOLD; 근거 입증 후 Sting·Recover 두 프레임의 실재작화 지시계약 문서화. **이번에는 새 PNG/Unity 실행/원본Game·Save/UserData/BuildSettings/Packages·main Push·병합 금지**.
+- 승인 자산/지금까지 통과한 #84 Unity37PASS·#83 F2왕복90PASS·정적23PASS·저장QA는 전수반복하지 않는다. 현재 GitHub 이슈/인계 문서 갱신은 Codex 로컬 실제 실행을 의미하지 않으므로 대표에게 **통합 복붙 지시문 1개**를 전달. 최종 결과는 branch/codeSHA/권리·표적 근거/미검증 별도로 보고.
+
+---
+# PLANNING / 2026-11-03 16:21 — Owl·Spider 실제 Unity 영상 사용자 시각 수용 / Bee 미완 확인
+
+- 대표 직접 발언 **“다 봤는데 괜찮아. 근데 독침벌은 다 된거야?”** 에 따라 #84 격리 실제 Unity 캡처 Owl Attack4(수정Attack02)와 Organic Spider v5 Walk8를 **시각적으로 USER_VISUAL_ACCEPTED**로 인계. [#84 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/84#issuecomment-6597927363), [#74 Owl](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6597929323), [#60 Spider](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6597930854) 기록. 이는 본편 원본 Unity 적용 승인·새 QA PASS·Spider 실제 발접지 측정 PASS가 아니다. 기존 #84 37PASS 보존, Spider `ACTUAL_GROUND_LOCK_NOT_VERIFIED / WALK_CONTACT_HOLD`, Owl 분리 미승인 VFX HOLD, Spider Attack8/Shoot8 미제작.
+- [#63 독침벌 미완 판정](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6597932159): 기존 Idle10+Attack10 실파일 존재, 새 공격키포즈 Prepare/Sting/Recover와 정상 Idle2 실파일 존재하나 **오리지널 전투 애니메이션 전체 완성 아님/실게임 미교체**. 최신 TargetReview는 기존 PNG5 SHA 동일, 새 공격 키포즈0/TEST_ONLY storyboard1. 실제 Battle 타깃·전열후열·접촉점·몸회전·찌르기회수 연결 미정 (`TARGET_CONTRACT_HOLD / MOTION_REVISE_CONTINUE`), 기존 PilotBee CC BY3 vs 동봉BY4 `RIGHTS_HOLD`.
+- 다음 **시간 절약 작업**: Codex 읽기전용 실제 Battle 공격좌표/전열후열·좌우/facing/Monster Animation 인터페이스와 기존 Bee 출처 원문/라이선스 메타 점검, **새 실제 모션 제작 금지**, 먼저 실표적 접촉 계약·권리 근거 보고→기획 확정 후 리뉴얼 아트 담당 Sting/Recover 필요한 2키포즈만 실재작화→최소 QA→대표 승인. Main24 #83 Unity90·#84 37, 저장 QA 85/72/72 전수반복0. 원본 Main/Unity/Save/BuildSettings·Discord#66·Push/merge0.
+
+---
+# PLANNING / 2026-11-03 오후 — #84 Owl Spider 실 Unity Clip 37PASS 접수
+
+- [#84 실제 Unity6000.6.5f1 격리 AnimationClip QA](https://github.com/HappyPaul812/Project-Limitless/issues/84#issuecomment-6597692700) **37 PASS/0 FAIL**, 예전 Editor.Search 1건 환경OPEN·새 Runtime/컴파일 오류0, 실제 Camera RT 122장/영상4개. 검증 commit `bde96a92e14c663e33ce7640f98f863d58a0d306`, branch `codex/owl-spider-unity-animation-delta-20261103`. 원본 Unity/개인Save/UserData/Products/main/Push/merge0. HTML 열람판 `F:/study/codex/Project-Limitless/Temp/Issue84OwlSpiderUnityDelta20261103/Review/index.html` (로컬 Unity Camera 영상, 원본 GameView 아님).
+- Owl `OWL_CLIP_DELTA_PASS`: Attack4 8FPS/PPU512/centralPivot/scale1/01→02→03→Idle00·40px 실제 Clip+Sorting; 정적 v3/Idle8/미승인 냉기 VFX 보존. 아직 **바울 대표 최종 모션 미술 승인/본편 첫한기전 연결 미실시**. 되풀이 재작화 금지, 사용자 영상 확인 우선.
+- Spider `SPIDER_WALK_CLIP_DELTA_PASS / WALK_CONTACT_HOLD`: 10FPS/PPU256/scale0.7/우향, 0·0.65·1.3 WU/s 격리 이동·128/40 clip·가시알파 경계0 실제 통과. 그러나 8다리 개별 발 지지/스윙·실 접지/미끄러짐 계측0 → `NOT_VERIFIED`. user-approved v5 정지 디자인, Idle8 KEEP_CANDIDATE/Walk8 최종미술 미승인 유지. 사용자가 미끄러짐 인지 시에만 최소 표적 실측 QA·보완, 전체16/32 재제작 금지.
+- [#84 기획 판정](https://github.com/HappyPaul812/Project-Limitless/issues/84#issuecomment-6597852215) 기록. 다음은 사용자 로컬 캡처 확인→Owl 모션 승인여부/Spider Walk 시각판단. 기술 QA PASS/최종 미술 승인/제품 원본 적용은 서로 다르며 Main24 #83 F2왕복 90PASS·23 정적 보존. 첫 한기전·무료한기 대응·유료상품25·Main24완료/보상은 대표 결정 전 HOLD.
+
+---
+# PLANNING / 2026-11-03 15:21 — Owl/Spider 수정후보 기술통과·격리 Unity #84
+
+- [#74 Codex 마지막 ZIP 검수](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6596846762): Owl Attack02 정확1 PNG만 변경하여 01→02→03→Idle00 연속성 개선, 00·01·03·Idle8 원본보호, 8FPS/alpha PASS → `ATTACK02_CONTINUITY_OK_CANDIDATE`. **최종 사용자 모션 승인·실 Unity clip/본편 적용은 별개.**
+- Spider Walk8 01·02·06·07 네 PNG만 바꾸고 8장 네 변 가시 alpha 접촉 모두 0, 512RGBA/10FPS/00·03·04·05·승인v5/Idle8 보호 → `WALK8_EDGE_FIX_OK_CANDIDATE(경계결함만)`. 8다리 실제 지지/스윙·지면 미끄러짐/접지는 미검증, 전체보행 모션 승인 아님.
+- 두 ZIP 로컬 SHA Owl d6648b7451dc2184c2187c0b1c2f8e0f52fc800ac6975753d0f6d38f6fbf9192, Spider 771bd1813608aa3e350c6124ab0d43293c6d2988b1833014da64484d5272c8da. 검수 코드커밋 `9efa30def1c86ee05b90ac1e7b1bfb6a17ca3ea5`, 로컬 OFFLINE 비교판 `F:/study/codex/Project-Limitless/Temp/OwlSpiderEdgeReview20261103/Review/index.html`(실 Unity/GameView 아님). 원본·Save·UserData·main·Push/merge 변경0.
+- [새 #84](https://github.com/HappyPaul812/Project-Limitless/issues/84): **실 F:입력SHA 확인 후 작은 격리 Unity6000.6.5f1 AnimationClip Delta QA 1회**. Owl 8FPS·전환·40px, Spider 기존10FPS/PPU256/scale0.7 우향 계약 실제 확인 + 임시 지면에서 발 지지/스윙·미끄러짐 구별. 기존 #80 81/#83 90+23/Stump21/저장85+72+72 QA 전수반복X. 원본 Scene/Assets·개인Save/UserData·BuildSettings·Packages·ProjectVersion·Discord66/main/Push/merge/미승인 Owl VFX·Bee·Spider Attack/Shoot 변경 금지. 기술 QA가 미술 최종승인 자동으로 의미하지 않음.
+- 기획 지시문은 Codex 실행을 자동 개시하지 않으며 대표가 실제 아트 영상을 볼 때 최종 미술 채택 여부를 결정.
+
+---
+# PLANNING / 2026-11-03 오후 — Owl Attack02→03 / Spider Walk01·02·06·07 캔버스 경계 수정
+
+- [Codex 두 ZIP 실제 검수](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6595705479) 확인. Owl ZIP dd50da39530380047c8d4a6dd728d624ff828fc2dde089abc708be0558bc6856 CRC/Manifest18/18/SUMS21/21 PASS: Attack03=승인v3/Idle00 byte exact, 공격 대비·VFX분리/8FPS 정상. 하지만 02→03 체형/꼬리·발/머리·깃 질감 급전환. Seam_8FPS.gif는 1프레임 정지라 실제 연결검증 아님. [#74 최소수정](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6595843983) : 02중심 재작화, 승인03/Idle8 및 미승인FX 원형 보호, Attack 전체 새 디자인/QA 전수반복 금지.
+- Spider ZIP d840e5ddd8ac2666e4b0c7a9f4b2d0bdfc688b5ff03e01a0019ba7808d6b86b8 CRC/Manifest16/16/SUMS17/17 PASS, 6실수정/정확10FPS. **Walk01·02 오른쪽 x511, Walk06·07 왼쪽 x0의 새 가시알파 발끝 절단**, 여전히 지지·스윙/접지 움직임 개선 필요. [#60 최소수정](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6595844892): 4프레임 경계 우선, 03·05 필요할 때만, 전신 일괄축소·캔버스확장/일괄투명 마스크 금지, 승인v5/Idle8/Walk00·04 보호. 기존 Runtime10FPS, Attack8/Shoot8 미승인 유지.
+- 두 ZIP 자체검수 `codex/owl-spider-followup-review-20261103` 커밋 5fdc6201d9484967454e7aa53f7088460ac519c0, OFFLINE 판 `F:/study/codex/Project-Limitless/Temp/OwlSpiderFollowupReview20261103/Review/index.html` (실 Unity/GameView 아님). 둘 다 `REVISE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED`.
+- Bee는 실제 타깃 계약·권리 CC BY3/4 불일치 `TARGET_CONTRACT_HOLD/RIGHTS_HOLD` 지속. Main24#83 F2왕복 Unity90·정적23, #82 Stump21, 저장 #70/77/78 기존QA 전수반복 금지; 원본 Unity/Save/UserData/main/Push/Discord#66 변경 금지. GitHub 기록이 실제 담당세션의 로컬 파일 수정을 자동 실행하는 것은 아님.
+
+---
+# PLANNING / 2026-11-03 정오 — Owl/Bee/Spider 3ZIP 최종 읽기전용 검수·다음 대상 제한
+
+- [#74 Codex 실물 3ZIP 결과](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6594778265): ZIP3 CRC·각 Manifest/SUMS 확인 PASS, 새 PNG34만 decode, 7 SHA 같은 이전 자료 QA 재활용, GIF9. 로컬 branch `codex/art-owl-bee-spider-review-20261103` SHA `acf2031029741185d17190562a5ec0070d5d773b`; 본편/원본Unity/Save/UserData/Main24#83 90PASS/main/Push 변경0. OFFLINE 비교판 `F:/study/codex/Project-Limitless/Temp/ArtOwlBeeSpiderReview20261103/Review/index.html`(Unity/GameView 아님).
+- Owl Attack4 실제 새4 프레임·40px 준비→발동 대비 개선하지만 승인 v3 얼굴/머리깃·깃털/몸통/꼬리 디자인 연속성과 03→Idle00 복귀 부족, Attack01 독립 냉기 궤적·입자 VFX 범위 혼합. **메인아트** 공격 4 프레임 내 문제부위만 국소수정/별도 FX 분리. Idle8·승인 v3 동결. [#74 기획 지시](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6594916733). 사용자 모션 승인 대기.
+- Spider **기승인 v5 원화** 및 Idle00 원본 SHA 보존; Idle7+Walk8 신규15, 합계 Idle8+Walk8 **16장 누락0**. Idle8 호흡은 후보 KEEP, Walk8은 독립 다리 지지·스윙/접지미끄러짐·40px 보행가독성 미달. 기존 Runtime ForestSpider Idle/Walk **10FPS**, 제출 8FPS preview 일부는 실8.333FPS(120ms×8), **제품계약 변경 금지**. 리뉴얼아트는 Walk8 문제프레임만 재작화·10FPS 실제 GIF/발접지 phase 비교. 새 Attack8/Shoot8 보류. [#60 지시](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6594918071).
+- Bee TargetReview는 SHA 동일 Attack3+Idle2 5장 **새 포즈0**, TEST_ONLY 우측 표적 보드1장만 새 제작. 공격 대상 Slot/좌표·실 접점과 회수 동작이 미정이라 **기획/코덱스 최소 읽기전용 표적 계약 전 포즈 추가 지시 금지**. CC BY3.0/4.0 권리 충돌 HOLD, 20프레임 교체 금지. [#63 후속 기획판정](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6594918952).
+- #83 Main24 첫 F2 왕복 **격리 Unity90PASS/정적23 PASS** 보존; 원본 로컬 main에는 아직 미적용. F2 첫 한기전·무료대응·실판매 상품25/가격·Main24 완료/보상 및 Main25 해금 별도 결정. Owl/Spider/Bee 미승인 모션 본편 등록0. 기획담당은 다음 메인/리뉴얼 아트 지시문만 공급; Github 문서/이슈 등록=아트제작 완료가 아님.
+
+---
+# PLANNING / 2026-11-03 오전 — OrganicSpider v5 사용자 최종승인·메인/리뉴얼 새 아트 작업
+
+- 바울 대표: **“시켰고. 거미도 괜찮고. 아트 쪽 다음 일들 시켜.”** 앞서 #83 F2 입구 왕복 구현 Codex에 전달 확인. 이번 문구는 [#82](https://github.com/HappyPaul812/Project-Limitless/issues/82#issuecomment-6593291711) 델타 QA에서 `ALPHA_FINAL_OK_CANDIDATE`였던 **유기형 숲거미 v5 최종 알파/디자인 사용자 승인**으로 인계. 실 승인파일 `ForestSpider_Organic_v5_FORELEG_CONTOUR_ALPHA_512.png` SHA `c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9`. [Issue #60 승인·다음 작업 기록](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6593591885). **신규 Idle/Walk 모션 및 제품 교체를 승인한 것은 아님**.
+- **메인 신규 아트 다음:** [Issue #74 작업지시](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6593592716) 서리올빼미 FrostOwl v3 승인 정지 원화+Idle8+기존 Idle02/Attack02 clip-safe 유지, Attack4 **8FPS 공격 준비/발동/복귀 실 재작화**. 상단 잘림 수정만으로 모션 PASS 아님. 40px에 명확한 공격 동작 구별; 새로운 Hit/Defeat/한기실FX 없음. Main24 #83 F2 Scene 제작과 충돌 없음. `docs/art-new`/SPRITE_ART_LATEST.md와 #74 SHA·PNG/시트/GIF/QA 인계. 메인 F2 Sign/Fence FULLREDRAW는 대표 시각 미승인·계속 KEEP_CANDIDATE, Stump v4만 USER_APPROVED + 독립 Unity21PASS/실F2 동선 미검증.
+- **리뉴얼 아트 다음 A:** [Issue #60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6593591885) 승인 Spider v5 단일포즈 고정, **Idle8+Walk8=16프레임 1차 파일럿**, 8FPS는 검토 후보(기존 계약/게임 표준 확인 후 확정), 다리 자연 이동·접지·alpha·512/128/40 및 반복 GIF. Attack8/Shoot8은 첫 16모션 품질 승인 후. 승인 v5 원화 기존 파일 바이트 보존; Ch4 기계형 v3 ARCHIVE_ONLY.
+- **리뉴얼 아트 다음 B:** [Issue #63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6593593626) 새 Sting의 우하향 뒤침 실제 보이는 방향은 Codex 근거로 인계, 타깃 방향이 미확정. 단일 표적·접촉점 스토리보드 1장으로 검증 가설 명시 후 필요한 경우에만 Sting/Recover 2키포즈 실 재작화, Prepare는 필요 사유 시. 전체 기존20 재양산/Unity 본편교체 불가·PilotBee CC BY3/4 권리 HOLD.
+- 팀 운영: 위 GitHub 이슈 댓글과 기획 문서 작성은 각 아트 담당의 **로컬 이미지 자동제작·결과물 검수 착수 보장이 아님**. 사용자에게 메인/리뉴얼 담당 복붙 지시문 2개 전달, 실제 PNG 신작/ZIP SHA 완료를 받아 Codex 격리 최소 Delta QA. `main` 직접commit/Push/merge, Unity 원본·Save/UserData, Quest·BuildSettings·Packages·Discord#66 변경금지. #83 기존 Main24 QA81PASS·#70/77/78 저장QA전수반복 금지.
+
+---
+# PLANNING / 2026-11-03 — Issue #82 21PASS, Main24 F2 첫 왕복 구간 #83
+
+- [#82 Codex 실제 세부 보고](https://github.com/HappyPaul812/Project-Limitless/issues/82#issuecomment-6593291711) 및 [기획 판정](https://github.com/HappyPaul812/Project-Limitless/issues/82#issuecomment-6593417752): 바울 대표 승인 그루터기 `F2_SnowStumpPerch_NaturalBroken_v4_CANDIDATE_320x384_RGBA.png` SHA `22f2f5816b3fd2ffe45234ec807bb3d81a83f87440eb8eb1f338e0dff33404a8` 격리 **Unity6000.6.5f1 21PASS / 0FAIL**. 임시 테스트 PPU128/Scale1/Pivot(0.5,11/384), 3화면비/Alpha/접지/단순 proxy Sorting 확인. **F2 Scene/길·Collider 부재 때문에 실제 Player·도보·휠체어·YSort/길 시야 QA는 미검증**. 바울 대표 **디자인 승인 자체는 유지**, 제품/원본 Unity 적용0.
+- Spider `spider.zip` v5 SHA `c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9`: RGB262144픽셀 보존·Alpha380 감소, Field03 지면 PNG 오프라인에서 하부 긴 회백색 띠 해소 → `ALPHA_FINAL_OK_CANDIDATE` **v5 최종 미술 승인 대기**, 기존 Organic 디자인 방향 승인과 구별. 신규 32프레임 제작/Unity 제품교체0, Ch4 메카닉 거미 보존. Bee `bee.zip` Attack3 새SHA 일치·Sting 실제 침끝 **우하향** 관찰(담당 '좌측'서술과 다름); 실전 표적 위치·프레임의 급전환 미해결 `MOTION_CONTINUITY_HOLD / REAL_TARGET_NOT_VERIFIED / RIGHTS_HOLD`, 기존20 재양산0.
+- ZIP 두 개 동봉 Manifest는 합본용이라 **Spider 11/27+Bee18/27**, 합집합 Manifest27/27·SUMS28/28 PASS; 개별 full manifest PASS라고 보고 금지. Issue #82 worktree `codex/issue82-stump-spider-bee-delta-20261103` 코드/인계 `b50ce140cf155900829bd167aefb6225f806fa9a`; 실제 원본 Git/Save/Assets/Quest/Packages/BuildSettings/UI·Discord66/원격 Push 변경0.
+- **기획 새 [Issue #83](https://github.com/HappyPaul812/Project-Limitless/issues/83)**: #80 Main24 마을 첫구간 Unity81PASS를 재검증하지 않고 북문→F2 첫눈의 숲 임시안전길→북문으로 왕복하는 실제 Player/Collider/휠체어 세로절편을 **격리 Unity**에서 구현. 승인지면·그루터기만 SHA 확인 후 제한적으로 사용; 미승인 표지판/울타리·새 Owl Attack·Bee/Spider·상품25/무료 한기 지급/실전 전투·Main24 완료·Main25해금 전부 배제. F2 공식 Scene 미구현이면 승인 없이 본편공식 맵 생성·바로 게임 적용한 것으로 주장 금지. Unity 6000.6.5f1 기준, 구버전 재설치·원본 Save·main·Push/병합0.
+- 다음 대표 시각 선택: **숲거미 v5 최종 알파 외형**; Bee는 전투 표적 방향 계약 전 반복 재작화 지시 중단. 표지판·울타리 FULLREDRAW 2종은 여전히 `KEEP_CANDIDATE / USER_APPROVAL_PENDING`, 그루터기만 USER_APPROVED. 본 기획 기록/이슈생성은 Codex 실제 로컬 구현 완료를 의미하지 않음.
+
+---
+# PLANNING / 2026-11-03 오전 — 승인 F2 그루터기 격리 Unity + Spider/Bee 분리 ZIP 검수 #82
+
+- 바울 대표 제공 Codex **승인 영수증**: [#81 그루터기 v4 USER_APPROVED](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6592423200), 승인 PNG `F2_SnowStumpPerch_NaturalBroken_v4_CANDIDATE_320x384_RGBA.png` SHA `22f2f5816b3fd2ffe45234ec807bb3d81a83f87440eb8eb1f338e0dff33404a8`. Markdown5개만 승인 동기화, 실제 Unity Sprite/Scene/Prefab/Main24 원본 적용0. 기존 그루터기 이전후보 archived, FULLREDRAW F2 표지판·울타리는 사용자 미승인 KEEP_CANDIDATE.
+- 바울 대표 신규 ZIP 경로 `F:\Downloads\spider.zip`, `F:\Downloads\bee.zip`. 내용물 직접 미열람. [리뉴얼 최근 제작댓글](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6592667771)은 이전 합본 FINAL_TARGETED의 **OrganicSpider v5** SHA `c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9`, **VenomBee 신규 Attack Prepare/Sting/Recover 3포즈** SHA `e3379212…`, `391ed94e…`, `2afc69e8…` 을 보고하지만 이번 spider.zip/bee.zip이 해당 바이트인지 전혀 확인되지 않음. Bee 후방찌르기 공격축/동작 전환 모호→MOTION_HOLD, PilotBee CC BY3.0/4.0 권리 HOLD, Spider v5 알파 최종 QA 미완.
+- 신규 [Codex Issue #82](https://github.com/HappyPaul812/Project-Limitless/issues/82) **한 번의 로컬 임무**: (1) 새 ZIP 두 개 ZIP/Manifest/PNG 실제 SHA 및 이전 결과와의 차이·밑띠/찌르기 방향만 읽기전용 Delta 검수; (2) 승인된 **그루터기 한 PNG만** 격리 Unity6000.6.5f1 Sprite/PPU/Pivot/Sorting/지면접지/3화면비 배치 최소 QA. 실제 F2 Scene/Collider 미구현이면 실휠체어통행·실씬PASS 금지, 분리된 테스트 스테이지만. Main24 #80 격리 Unity81/정적14와 저장 #70/77/78(85/72/72), Main23 과거 QA 반복 금지. 원본 Unity/Save/UserData/ProjectVersion·BuildSettings/다른 아트·Discord66/main/Push/Merge·상품 스킬 구현0.
+- 이번 기획 Issue·문서 작성은 로컬 F:파일 수정/검수 실행을 뜻하지 않음. 실제 로컬 작업은 사용자에게 아래 복붙 지시문을 전달하여 Codex가 진행할 때 실행.
+
+---
+# PLANNING / 2026-11-03 오전 — #81 후속 2 ZIP 실물 델타 검수 접수
+
+- [#81 2 ZIP 델타 검수](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6591984789): F2 자연형 그루터기 PNG 신규 v4 `22f2f5816b3fd2ffe45234ec807bb3d81a83f87440eb8eb1f338e0dff33404a8`는 `KEEP_CANDIDATE`(인공 원판 사라지고 자연형 부러진 수피, 40px 판독), **바울 대표 최종 디자인 승인 대기**. F2 FULLREDRAW 표지판·울타리 두 후보도 미승인 KEEP_CANDIDATE, 실제 Unity 휠체어 길·PPU/Collider 검증0. 신규 추가 재작업 대신 비교판으로 선택받기.
+- 숲거미 유기형 디자인은 기승인. 새 v4 alpha491 감소/RGB 동일에도 **앞다리 아래 회백색 잔여 띠/직사각 ROI 경계/털 절단** 문제가 남아 `ALPHA_FINAL_HOLD`. 앞으로 동일 직사각 alpha 일괄 감소를 반복하지 말고 **털·다리 실제 외곽을 따라 수동/세밀 마스킹 단 1프레임**으로 해결. 성공 전 Idle/Walk/Attack/Shoot 32프레임 제품화 금지. 해결 불가 시 정확히 기술HOLD.
+- 독침벌 `New5` 진짜 신규 PNG5개 SHA 변화 확인; 이전 `Old5` 보존. 그러나 우향머리·좌향독침의 타격축 혼란, 공격 후 급격한 복귀 남음. 벌의 복부 뒤침 위치를 임의 머리앞으로 바꾸지 말고 **대상을 향한 몸 회전·후방 찌르기 자세 및 준비→찌르기→회수 연속성**을 공격 2~3키포즈 재작화로 확인. 기존20 PNG 전체양산0, PilotBee CC BY3/4 출처 충돌 계속 RIGHTS_HOLD.
+- 바울 대표에게 보여줄 단일 로컬 OFFLINE 비교판 `F:/study/codex/Project-Limitless/Temp/Issue81ArtDeltaFollowup20261103/Review/index.html`, 이미지/GIF 내장·브라우저18 PASS이지만 Unity/GameView 아님. 신규 기획 [Issue #81 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6592162086) 기록. 로컬 원본 Unity/Save/UserData/main·Discord #66 변경0. Main24 #80 Unity81/정적14 PASS 그대로.
+
+---
+# PLANNING / 2026-11-03 오전 — #81 3 ZIP OFFLINE 검수 완료 / 실제 수정 대상 분리
+
+- [#81 Codex 실제 3 ZIP 델타 QA](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6590636705) 및 [기획 판단](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6590736542): F2 CRC·Manifest/SUMS 정상, Bee/Spider CRC 정상이나 전체 manifest/SUMS 동봉X. OFFLINE 비교판 `F:/study/codex/Project-Limitless/Temp/ArtMain24ThreeZip20261103/Review/index.html`(브라우저기능18PASS)이며 **실 Unity 아님**. Codex #81 작업 branch `codex/art-main24-3zip-delta-20261103` 내용/인계 commit `3af7f08d4febf062865ef5b437e0951e80315bd6`; 제품변경0·원본Main24 #80 Unity81PASS 보존.
+- F2 국소 Sign_v3/Stump_v3/LowFence_v3 모두 REVISE. 독립 FULLREDRAW **Sign SHA `864e964ee4cc3868bd315af2249fe92d04e888937ae66f963232636cda8e4488`, Fence SHA `49c2969b8607d91b6bf15cb0e4485bcc3f25379669064b025d63b099c9c62e8c`**는 KEEP_CANDIDATE, 대표의 시각선택·게임 공식승인 대기. 그루터기 기존/전면대안 모두 원판·스툴 형상 HOLD → 상단 목재 형태만 새 1종 보완하도록 메인 아트에 지시. P1 기존3/나뭇가지·약한눈발 KEEP, 공식 Owl v3 정지 디자인 승인/Attack motion HOLD.
+- Ch1·2 Organic Spider 기승인 v2 디자인 그대로. v3 알파282 감소 후에도 x35..95/y304..353 주변 회백색 앞다리 아래 길쭉한 매트 남음 → **RGB 변경0·알파만 마지막 국소 정리 1포즈**. 32모션/게임교체0. 기계형 Spider v3 Ch4 ARCHIVE_ONLY.
+- Bee 개별 `LIMITLESS_BEE_ONLY.zip` 신규5포즈/GIF2는 **10/29 원본과 SHA7/7 완전히 동일, 새 아트 개선0**. 이전20프레임은 참고JSON에 SHA20 일치, 개별ZIP에 PNG20 자체없음. 이번에는 재비교·재납품을 진행으로 오인하지 말고 날개뿌리/6다리·독침 회수의 **실제 형상 재작화**, 머리우향/독침좌향 **공격축 불일치 해결** 소수 키포즈와 새 SHA 보고. 안되면 BLOCKED로 종료. PilotBee 원본 CC BY3.0/4.0 표시 충돌 계속.
+- 이슈 기록은 담당 작업 자동 시작이 아님. 메인/리뉴얼 담당에게 **복붙용 실 아트 수정 지시**를 제공하고, 다음 사용자 결정은 F2 **대안 표지판·울타리 시각 수용 여부**. 기존 저장복구·Main24·원본 Unity/Save·Discord66/main/Push/merge 보호.
+
+---
+# PLANNING / 2026-11-03 — Main24 81PASS 확인·F2/Spider/Bee 3 ZIP 통합델타 검수 #81
+
+- 대표 보고 [#80 Codex](https://github.com/HappyPaul812/Project-Limitless/issues/80#issuecomment-6590035953): `codex/main24-first-playable-no-purchase-20261103`, 구현 `70e363bea43d72c7e68abb089952e2d6f6a77a8b`, 인계 `5b02b56e467e5712bbe184b6f21c8e4640b2c76d`, 새 Unity6000.6.5f1 **81PASS**/정적14PASS/FAIL0. Main23 체크포인트→상점 안내→무료 6슬롯/기본3→한기안내→북문→F2/올빼미 예고. **F2 실제 씬·전투/퀘스트 완료/보상/Main25 해금 미구현**. 로컬 격리만, 원본 본편·원격 Push0. 기존 #70/77/78 Writer 복구 코드는 미병합.
+- 바울 대표 새 로컬 ZIP 3개: `F:\Downloads\Limitless_F2_MinimalFollowup_20261103.zip`, `F:\Downloads\LIMITLESS_BEE_ONLY.zip`, `F:\Downloads\LIMITLESS_SPIDER_ONLY.zip`. 로컬 Windows F: 실제 ZIP은 이 세션이 못 열므로 **GitHub 문서 상태와 실물 상태를 혼동하지 말 것**. [신규 Issue #81](https://github.com/HappyPaul812/Project-Limitless/issues/81) 읽기전용 3 ZIP 단일 델타 검수 Codex 지시. 아트팀 보고의 합본 `LIMITLESS_Spider_AlphaFinal_Bee_MotionPrep_20261103.zip`와 별개인 Bee/Spider 개별ZIP이므로 SHA/내용 대조 필수.
+- 11/03 [F2 #75](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6590114495) 국소 후보 Sign_v3/Stump_v3/LowFence_v3, 대안 컨셉3은 분리·미승인, 나뭇가지/약한눈발KEEP, 이전OWLv3 정지 디자인 기승인/Attack 모션HOLD; F2 PPU·휠체어 실제 Scene QA미실시. [Spider #60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6589960356) Organic v3 alpha282 감소 단일포즈(디자인 기승인, 최종알파 검토), 아직 모션32 새 제작0. [Bee #63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6589961291) 기존20+키포즈5 보존, 11/03 합본 보고는 **신규 모션 제작0**, 관절·독침방향/권리 CC BY3/4 HOLD. 개별 ZIP 실내용은 Codex 조사 전 `UNKNOWN`.
+- #81은 **문서 보고+128/40 OFFLINE 비교1판** 중심이며, 이미통과 Main24 81·Save85/72/72/Ch3Main23 148 대규모 QA 반복 금지. 대표 최종 아트 판단 전 Owl/Bee/Spider/F2 게임제품 적용0. 원본 Unity/Save/UserData/Quest/BuildSettings/Packages/Discord66/기본 main/원격 Push/병합0.
+
+---
+# PLANNING / 2026-11-03 오전 — Main24 게임 개발 재개 / #80 비결제 첫 플레이
+
+- 사용자 지시: **“굿모닝 게임 개발 이어서 하자.”** GitHub 공개 Issue/담당 인계를 확인하고 **Discord #66은 별도 NO_GO 작업으로 유지**, 게임 Chapter3 Main24로 복귀. [신규 Issue #80](https://github.com/HappyPaul812/Project-Limitless/issues/80) Codex 격리 MVP: **Main23 완료→Main24 스킬상점 안내/기존 무료3+장착6 사용→첫 한기·F2 서리올빼미 예고**의 플레이 가능한 절편, 유료 구매·화폐 차감0. F2 실씬/퀘스트 미구현이면 새 전체 맵/모션을 지어내지 않고 안전한 진입전 흐름까지 구현 후 HOLD.
+- 최신 버전 **실 PC Unity6000.6.5f1(3ff58d469c8a)**, #79 [기존 ProjectVersion 구버전 표기 정정 *격리 후보*](https://github.com/HappyPaul812/Project-Limitless/issues/79#issuecomment-6536643984): `codex/unity-version-align-20261031` code `5f619bc002a2b0725de65d154e377064884b5f43`, 원본 적용/Push0. **6000.5.7f1 신규 설치/QA 절대 재지시 금지.** main 원격 파일 내용이 구버전이어도 PC 현재 개발 버전과 구분. 과거 사용량6%는 10/31 시점 화면값이므로 11/03 현재 사용량이라고 추측하지 않고 Codex 시작시 사용자 실제 잔량 참고.
+- [#70 85PASS](https://github.com/HappyPaul812/Project-Limitless/issues/70#issuecomment-6535202556) fork 감지·자동저장차단, [#77 72PASS](https://github.com/HappyPaul812/Project-Limitless/issues/77#issuecomment-6535559285) 비파괴 명시 복구, [#78 72PASS](https://github.com/HappyPaul812/Project-Limitless/issues/78#issuecomment-6536056629) 실제 격리 Unity uGUI 시연은 **격리 기술후보/개인 Save미접근/본게임未적용** 상태. #79 실제 Standalone/운영경로·본편 복구 승인 HOLD. 기존85/72/72/40/31·Main23 148/136 전수 재검증X. 본편 저장 관련 추가 코딩/원본 동기화는 이번 #80 제외.
+- Main24 스킬상품 [25종 미승인 제안](../Main24_SkillShop_Catalog25_PriceAndUnlock_Proposal_20261029.md): 신규 일반40/강화30/부활50/온기20·StableID/전투효과/해금/무자금 무료 한기대응까지 **전부 USER_APPROVAL_PENDING**. Main24 프로토타입 상점은 실상품/결제 없음, 기존6칸·무료3 안내 재사용만. 2026-10-20 [#36 Main22~24 흐름](https://github.com/HappyPaul812/Project-Limitless/issues/36) 정본에 따라 F2 첫 한기·올빼미는 '예고'까지만, 신규 전투/Item 보급 자동생성 금지.
+- 아트 보존: Owl v3 정지원화와 Ch1·2 Organic Spider 외형은 사용자 긍정 채택, Owl Attack 모션 `ART_HOLD`, Spider 알파 잔상, F2 P1 LowFence/P2 SignStump/HOLD, Bee 모션·권리 HOLD. 이 자산들 본편 반영0, 이미 만들고 승인한 마을 지면9·기존 Main23 Scene/TTS162/몬스터/펫/원본 Save·BuildSettings·Unity 포커스 보호.
+- 담당: Codex에 **복사붙여넣기 가능한 실제 구현 지시** 제공; 별도 `codex/main24-first-playable-no-purchase-20261103` local worktree에서 Quest/UI 최소 변경+새 delta QA, branch/code SHA·PASS/HOLD·승인/적용 필요 여부 #80 보고. 메인/Push·원본 적용은 명시 승인 전 X. 기획 세션 GitHub Issue/인계 작성 ≠ Codex 로컬 실행.
+
+---
+
+# PLANNING / 2026-10-31 — 대표 Unity 버전 정정 / Codex 5시간 잔량8%
+
+- 바울 대표 **“이제 우리 게임 Unity 6000.5.7f1 아니잖아? ... 지금 5시간 8%야.”**. **현재 개발·QA 기준을 Unity 6000.6.5f1로 재확정**. Codex [#79 로컬 설치 근거](https://github.com/HappyPaul812/Project-Limitless/issues/79#issuecomment-6536508762): `E:/Program Files/Unity/Hub/Editor/6000.6.5f1`만 설치. `6000.5.7f1` 설치0. GitHub main `Unity/Client/ProjectSettings/ProjectVersion.txt`의 `m_EditorVersion: 6000.5.7f1`은 **구버전 메타데이터 미정렬**이며 현재 사용자 PC 사용 에디터 의미 아님. **구버전 재설치/QA 요구 취소**. [#79 정정·후속 최소 범위 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/79#issuecomment-6536613960).
+- 잔량8%이므로 Codex 실작업은 빠른 버전 대조·짧은 문서만 우선. 필요할 때 격리 프로젝트에서 실제 Unity 6000.6.5f1이 작성한 revision을 확인하여 **ProjectVersion만 안전 수정 후보**로 제출. 임의로 revision을 지어내거나 수동 텍스트만 바꾸고 실제 에디터 정렬을 통과했다고 주장하지 않음. 다른 Settings/Packages/Scene/Prefab/BuildSettings/Meta 변화·전체 import가 필요하면 즉시 HOLD. 원본/local main/개인 Save/Editor 포커스/원격 Push 변경0.
+- 기존 Unity6000.6.5f1 #70 분기차단85, #77 복구72, #78 실제 Canvas72 신규 PASS 유효, 재시험 필요 없음. 그러나 Windows Standalone 실제 실행·원본 프로젝트/제품 Bootstrap·실개인 Save 복구/실다중프로세스·정전은 **미검증**. #79의 정확한 6000.5.7f1 부재로 인한 버전 QA HOLD는 **요구사항을 정정**하되 Standalone/운영 정책 HOLD는 계속.
+- 저장 복구 운영용 경로/보존/사용자 명시 선택·손실 경고/HOLD·구버전 다운그레이드 정책은 사용자 최종 승인 전 적용0. Codex 잔량 아끼기 위해 지금 재설치·풀빌드·기존85+72+72 전수반복 금지.
+
+---
+
+# PLANNING / 2026-10-31 오전 — #78 Unity 복구 화면 격리 통합 72PASS, 지정버전·운영 게이트 #79
+
+- [#78 Codex 실제 Unity UI·복구 저장경계 격리 결과](https://github.com/HappyPaul812/Project-Limitless/issues/78#issuecomment-6536056629): Unity6000.6.5f1의 새 72PASS/0FAIL(실 Canvas uGUI+가상InputSystem, 새 Editor Continue/World/Autosave), Windows Player용 Assembly-CSharp 컴파일1PASS, 정적18PASS. **기존 #70 85 / #77 72·UI9 / 거래40 / #46 31 전수재실행0**. 실제 Runtime SaveRecoveryEngine/RecoveryStorageBoundary 주입·RecoveryMenuController 후보 구현; 개인 실제 Save/본편 Bootstrap/원본 Unity/Scene/BuildSettings/Player 런타임 연결0. 사용자 샘플 캡처 최종HEAD `fd657384dc3d68a559760fc9bb9c27fe817606e7`; GitHub Codex 댓글 본문 보고 `a5439381d925d04a0661851d3d50cb05e1b07682` 차이는 이후 영수증 커밋으로 추정하되 Codex 로컬 ancestry 확인 필요. 제품 소스 SHA `d8bc62dcde2ce7ba0be7e4d6d6cb1ce1d1d1a0cf`. 원격 Push0·원본 Local main 기준 `ab47b931fec92976170f9f50aabde1822d78bb90` 미적용.
+- GitHub main [ProjectVersion.txt](https://github.com/HappyPaul812/Project-Limitless/blob/main/Unity/Client/ProjectSettings/ProjectVersion.txt) 직접 확인: **m_EditorVersion 6000.5.7f1 / revision 017862109af0**. 지금까지 격리QA의 설치버전 6000.6.5f1과 다름. 버전 상향/자동 Package reserialize·원본 설치를 무단 시행하지 않음. 보존 범위에서 6000.5.7f1 설치 읽기 확인→격리 프로젝트/합성 Save를 통한 표적 QA 필요. 없거나 용량부족이면 VERSION_QA_HOLD.
+- [새 Issue #79](https://github.com/HappyPaul812/Project-Limitless/issues/79) 지정 Editor·Windows Standalone(조건 충족 시)·운영용 복구 경로/데이터 보관/명시적 사용자 선택/HOLD·구버전 정책의 **최종 원본통합 전 준비** 분리. 실 개인 Save/UserData 접근/실마이그레이션0. 실제 Standalone 신규QA 전엔 플레이어 컴파일1PASS=실행PASS 아님. 복구 엔진의 Editor synthetic 제한 무단해제 금지. 문구·실제 제품 Bootstrap 메뉴·보존 위치/정리 정책은 대표 최종 승인 필요.
+- 현재 품질/정책: `#70 DIVERGENCE_HOLD_85_PASS`, `#77 EXPLICIT_RECOVERY_72_PASS`, `#78 UNITY_UI_GATE_72_PASS`, **제품통합/지정버전 실증 미완**. 미해결 구매증표·계보·손상/잔고 차이 자동선택 금지. 상품25/가격/효과/한기 공급, Owl/Spider/F2/Bee, Discord#66 V3/Probe 유지. 기획 세션은 이슈·정본 갱신만 가능, 로컬 #79 작업은 사용자 전달 후 Codex 실행.
+
+---
+# PLANNING / 2026-10-31 — #77 명시적 복구 72PASS 접수, 게임 연결 격리 게이트 #78
+
+- [Issue #77 Codex 복구 구현 공식 보고](https://github.com/HappyPaul812/Project-Limitless/issues/77#issuecomment-6535559285): Writer1/Writer2 충돌 후보 Inspect→Choose(None default)→Confirm→양원본/backup SHA 보존→RecoveryId/새 generation 후보→전체 payload·구매증표·정확6칸 검증→독립 Activate. 원본 복제/자동 병합·환불·파일삭제0. 신규 **Unity 72PASS / 한글 UI headless9PASS / 정적22PASS, FAIL0**, 기존 #70 85PASS·40PASS·#46 31PASS 전수 반복0. **복구 후보는 UNITY_EDITOR 합성 경로 전용**, 본게임 UI 실제 연결·실사용 Save 복구 미구현. 원본/local main 적용0, Push/병합0.
+- 최종 코드 계보: #77 엔진 `db47cf1e83fc7ce84133ee3a7c8dd7b3303b474f`→QA `2793f452882e7de1a560f469ef79221d776268ea`→GitHub 본인 보고 HEAD `6f75f1c49fd0911e2fb680e2cf68223efb7312b6`; 사용자 캡처의 최종 HEAD는 `fed9248f751f12a5824cea71a813e1fb5d1addf8`로 이후 커밋 가능성이 있어 다음 로컬 Codex가 ancestry 확인. 이전 #70 인계 SHA와 최종HEAD 상이 이유는 문서 후속임 확인.
+- 미해결 시안·정책: 독립 분기에서도 레벨·탈렌트·mtime만으로 최신 후보 선정 금지. 구매 증표/유료 소유권·계보 의심 시 사용자 선택 후에도 `HELD_NO_CHANGE`, 두 원본 보존. 별도 지정 Unity6000.5.7f1·Standalone/정전/실다중게임/비NTFS/실 OS 접근성/본게임 UI/개인 Save 복구 미검증.
+- 기획 후속 [Issue #78](https://github.com/HappyPaul812/Project-Limitless/issues/78): **저장 경계·UI를 격리 Unity 게임용으로 구성·연결 검증하는 단계**, Editor 합성 복구 가드 해제/실 개인 Save 접근0. 별도 worktree에서 플레이어가 볼 수 있는 한글·키보드 중심 안전선택·미선택/취소/위험HOLD·정상Continue를 최소 구현/표적 Delta QA. 통합 후보까지만, 실제 로컬 원본 Unity/main/Save·게임 출시 반영은 **다음 승인 게이트**. 기획안 작성/Issue 게시가 Codex 작업 실행은 아님.
+- 상품25·미승인 가격40·30·20·50/해금/신규ID/스킬 효과/무자금 한기 보급은 별도 대표 결정 전 보류. #66 Discord NO_GO/MANUAL/HOLD 및 Owl/Spider 디자인 승인·모션/알파/환경/독침벌 별도 아트 HOLD 그대로.
+
+---
+
+# PLANNING / 2026-10-31 오전 — #70 Writer 분기 감지·차단 85PASS / 복구 후속 #77
+
+- [Issue #70 85PASS Codex 공식 보고](https://github.com/HappyPaul812/Project-Limitless/issues/70#issuecomment-6535202556) 확인: Writer2 Level14/Currency189 → Writer1 Level17/Currency377 이후 낡은 Writer2를 Loaded=true/WriteHeld=false로 처리하던 기존 결함을 최초 FAIL 재현→LineageVersion/Id/ParentHash/LegacyAnchorHash + 기존 Revision/CommitId/Integrity 기반 분기 감지·안전권위 판정으로 수정. 불일치 시 Continue 차단·`WritesHeld=true`·모든 원본/임시/백업 보존. 계보 확인된 단일/동일/후손은 정상 로드. 레벨·재화·mtime 단독 우선순위 금지.
+- 신규 **격리 Unity 85 PASS, 정적16 PASS, 최종 FAIL0**(matrix65/Editor Continue10/고아 backup8/삭제보호2). 변경 브랜치 `codex/issue70-writer-fork-safety-20261031`, 코드 SHA `355b0d87363b7cc2ca773cd05082239cc2323be7`. GitHub 댓글 인계 SHA `ddab0090864f85edb32284da92ac950091ed82bb`와 사용자 캡처 최종 HEAD `a6f2b0d541e09cac9e9827d793589814762bc95c` 차이는 로컬 HEAD·선후관계 재검사 필요. **이 인계 업데이트를 로컬 원본 코드 반영으로 오인하지 않음**.
+- 핵심 상태 **DIVERGENCE_DETECTED_AND_WRITE_BLOCKED / RECOVERY_NOT_IMPLEMENTED / ISOLATED_QA_PASS / PRODUCT_NOT_APPLIED**. 신규 검증 85PASS는 '안전한 자동복구 완료' 아님. 지정 Unity6000.5.7f1·실시간 두 프로그램·정전/Standalone/비NTFS·실 UX 미검증, 기존 환경 Editor.Search 예외 OPEN.
+- 새 [Issue #77](https://github.com/HappyPaul812/Project-Limitless/issues/77): 사용자의 **명시적 복구 선택**과 경고, 두 원본 비파괴 보존, 복구 RecoveryId 멱등·선택 정보 손실 확인, 새 세대 파일로 복제 복구 + 격리 Unity 합성 Save QA. 구 Writer1/2 유료 증표 손실 가능성/불명확 계보는 `HOLD`; 자동 합산·환불·최신 결정 금지. 정책 시안/실복구 QA가 통과해도 원본 main·개인Save/유료상점 적용은 별도 승인.
+- 원본 로컬 main은 #76 최종 기준 `ab47b931fec92976170f9f50aabde1822d78bb90` (#46, #73만 적용), origin/main Push0. 스킬상점 상품25·가격/효과/해금/무료 한기 보급, Owl·Spider/Ch4메카닉 후보/F2/PilotBee 권리 및 Discord#66 보호·미변경 유지. 내일외출 등 기존 사용자 일정과 무관하게 신규 작업 지시는 Codex 별도 전달 후 시작.
+
+---
+
+# PLANNING / 2026-10-31 아침 — #70 Writer1↔Writer2 분기 충돌 우선 수정
+
+- 사용자 명시 요청: **“굿모닝~ 오늘은 우선, #70 Writer1·Writer2 저장 충돌 해결부터 하자.”** Codex가 실 로컬에 접근 가능한 별도 worktree에서 **재현→분기 감지·쓰기 HOLD 수정→합성 Save 격리 QA** 실행. [Issue #70 새 기획 지시](https://github.com/HappyPaul812/Project-Limitless/issues/70#issuecomment-6534917320) 게시. **이번 GitHub 댓글/기획인계 작성 자체는 로컬 코드 수정/실행이 아님**; 바울 대표에게 복붙용 Codex 지시 제공.
+- 선행 [#76 최종 로컬 동기화](https://github.com/HappyPaul812/Project-Limitless/issues/76#issuecomment-6495762654): 로컬 `main` 실제 HEAD **`ab47b931fec92976170f9f50aabde1822d78bb90`** (#46 6슬롯+ #73 퀘스트 UI만 제품 반영). 원격 `origin/main`은 당시 `bfd281...`, Push0. #70 로컬 code SHA **`de084eae21643aa47347360811c0f883c384acb2`**, 기존 40PASS는 writer fork 통합 경계 검증 아님·실제품 원본 미반영.
+- 재현 결함: Writer2에 Level14/Currency189 후 구형 Writer1에서 Level17/Currency377 진행하자 Reader가 이전 Writer2를 조용히 읽고 `WritesHeld=false`. **레벨/탈렌트/mtime으로 최신 단정 금지**; parent hash·save revision·원본 계보/거래 ID 증명이 안 되는 이전 Writer1 작성은 경합·분기로 표시. 양쪽 후보를 보존하고 `WritesHeld=true`로 결제·autosave·재개 불확정 게시 차단. 자동병합/환불/덮어쓰기/개인Save 접근 금지. 검증한 동일계보/동일 페이로드만 안전 경로 허용.
+- 후속 Codex QA 목표: Writer1-only/Writer2-only/동일계보·양방향분기·수치역전/시각변조·구버전/손상·temp·autoSave/거래ID/새 프로세스 Continue 및 구체 14/189→17/377 regression. **합성 Save·격리 Unity 6000.6.5f1** 범위, 제품 Unity 지정6000.5.7f1/정전·다중 실프로세스/비NTFS는 미검증으로 유지. 기존31/40 전수 재실행 금지.
+- 이번 변경은 **#70 기본 거래·Reader/Writer 정책만**이며 실제 스킬상점 상품25·가격/해금/효과·F2 한기 무료대응은 미승인. Owl/Spider 승인 디자인·미완성 모션/알파·F2·Bee 및 개인Save/UserData, Main23/TTS162·Discord #66 NO_GO/MANUAL/HOLD 보호. 원격 main Commit/Push/병합0, **원본 로컬 동기화는 새 QA와 별도 조건 만족 전 금지**.
+
+---
+# PLANNING / 2026-10-29 밤 최종 마감 — Issue #76 실제 로컬 동기화 완료 / #70 Writer 분기 HOLD
+
+- **대표 캡처 및 [#76 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/76#issuecomment-6495762654) 교차 확인:** `LOCAL_SYNC_DONE`은 **#46 6슬롯 저장·#73 퀘스트 UI 4문구 변경에 한정**. 로컬 원본 `main` 최종 HEAD `ab47b931fec92976170f9f50aabde1822d78bb90`, 시작 `bfd281545632877325f5d21e04cefb924042c465`. 원격 `origin/main`은 시작 SHA 그대로, Push/PR/원격 병합0. 통합 격리브랜치 `codex/local-sync-20261029`; 사용자 PC 로컬 직접 변경은 Codex가 실행했고 기획 세션은 GitHub 결과만 확인.
+- 제품 코드 선별 커밋 #46 `356f9226b8ed83120f828709045d50a5041055a7`, #73 `27f7d1db9c3510fd39ca8bc34f09d8b8cb20e9f1`. 신규 정적 QA11 PASS + 격리 Unity **29 PASS**(write22/새 프로세스 Bootstrap Continue7). 지정 Unity **6000.5.7f1 미검증**, 설치 6000.6.5f1의 격리QA만. Quest 재료/경험치/탈렌트·중복보상 및 Save, 6슬롯 Continue OK. BuildSettings25 path/GUID·사용자 플러그인/설정 보호, 원본 개인 Save/UserData 미접근·원본 Unity 실행0.
+- **#70 Writer2 `HOLD_INTEGRATION` 최우선**: 별도 경계검증에서 기존 Writer1 최신 `Level17/Currency377` vs 신규 Writer2 `Level14/Currency189` 상태에서 Writer2가 옛 분기 데이터를 우선 읽고 `WritesHeld=false`가 되어 **최신 진행도 가림/잠재적 잘못된 재개** 발견. #70 기존 40PASS는 이 결합 경계 PASS가 아니다. Writer1/Writer2 분기 감지·권위파일 지정·쓰기중지·사용자 안전재개·구버전 호환 결정 없이 제품 적용/자동 migration/merge 금지. 스킬상점 25종 실상품·가격/ID/해금·첫 한기 대응도 아직 미승인.
+- 아트: 바울 대표 승인 **Owl v3 정적 디자인, Ch1·2 Organic Spider 디자인**만. Owl Attack 모션 `ANIM_STILL_REVISE`, Spider 왼 앞다리 알파 경계 잔상 HOLD, Bee 모션/CC BY3·4 출처 충돌, F2 P1/P2 일부 후보 ART_REVIEW/실 Unity 동선·PPU HOLD, 메카닉 Spider v3는 Ch4 `ARCHIVE_ONLY`. **미완성 아트 제품 반영0**.
+- 원본 복구 ref `codex/recovery-before-local-sync-20261029`, 상태 증거 `Temp/LocalSync20261029/FinalProof.LOCAL.json`, 101 기존 worktree·Temp 및 ignored 자료 보존, `reset --hard`·clean/강제 덮어쓰기0. 로컬 제품 4파일+보고/증거10=변경14; 기타 tracked7083 변경0, 사용자 dirty/untracked 동일·staged0. Discord #66/V3/Probe/계정·OS 설정 NO_GO/HOLD 원형보호.
+- 사용자 내일 외출/간헐적 확인: 2026-10-30 재개 최우선 **Writer1↔Writer2 저장 권위·세대 충돌 안전계약**, 이후 지정 Unity 미검증/원본 Import, Owl Attack/Spider alpha/F2 최소 미술 보완, 상품25·무자금 한기 공급은 별도 대표 결정. **오늘은 #76 완료 인계만 반영하고 별도 Codex 실행·원본 코드 변경·Push/병합 없이 마감**.
+
+---
+# PLANNING / 2026-10-29 저녁 마감 — 숲거미 디자인 승인, 로컬 통합·원본동기화 #76 준비
+
+- 바울 대표 요청: **“숲거미 좋구만. 오늘은 여기까지 하자. 나 내일 나가야 하니까... 지금까지 한 작업들 다 합치고 로컬 동기화 해줘.”** 숙면/다음날 외출 고려, 질문없이 할 수 있는 안전한 단계 처리 우선. **현재 이 기획 세션은 대표 PC Windows F: 직접 조작/로컬 git 실행 도구가 없어 로컬 동기화 실제 완료라고 주장할 수 없음.** GitHub 기록과 작업 지시까지 완료, 직접 파일 접근 가능한 Codex의 후속 실제 수행이 필요.
+- [숲거미 사용자 디자인 채택 #60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6495054916): Ch1·2 유기형 `ForestSpider_Organic_v2_CLEAN_ALPHA_512_RGBA.png` SHA `c949f37ad5511753b064b83d521e79bb76409b0427cd0abf0c9742d6d9d46661` 외형 방향 승인. **왼 앞다리 아래 가는 회백/갈색 알파매트 잔상 `ALPHA_REVISE/HOLD`**, 모션32 0프레임, Unity 실제 적용0. 기존 기계형 v3는 Ch4 ARCHIVE_ONLY.
+- [이번 마감 안전 통합 Issue #76](https://github.com/HappyPaul812/Project-Limitless/issues/76) 작성. 본게임 **코드 통합 후보**: #73 퀘스트 UI `9c57c4fe7141ad267e8fbcd07ef27473e4ddf875`, #46 스킬6칸 `3380fe9d3fb98cd7547aa9c517197e41cb977745`, #70 거래Writer2 `de084eae21643aa47347360811c0f883c384acb2`(아직 상품등록0, Writer1 fork/구버전 호환 검증 필요). Codex 로컬 브랜치들 원격 미게시/제품원본 미적용, 코드 충돌 없는 순서·부작용 점검 후 격리 통합/기존 원본 사용자 수정 백업/최소QA→안전할 때만 로컬 동기화 요청. **원격 main commit/Push/PR merge 금지**.
+- 아트는 GitHub docs/art-new/docs/art-renewal에 문서/후보 인계만, 승인한 v3 Owl **정지 디자인**과 유기형 Spider **외형**을 실제 Unity 애니메이션·Sprite 교체 승인으로 확대하지 않음. [2026-10-29 마지막 Codex 델타 검수](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6494817150): Owl Idle02/Attack02 상단 클리핑 OFFLINE 수정 PASS이나 **전체 Attack 동작 ART_HOLD**, F2 표지판 문자 제거 성공/채움 얼룩 및 횃대 스툴 느낌 ART_REVIEW, P1 울타리 접지 HOLD, Spider 얇은 잔상 HOLD; Bee 실제20파일+5키포즈 보존·전투모션 HOLD/원본 PilotBee CC BY3/4 권리 충돌 OPEN.
+- #72 25 상품 ID·가격/해금·온기의 불꽃20/부활50/기본신규40/강화30은 전부 사용자 미승인, 무자금 무료 물품2/재진입 보급도 미확정. 실상품 구매 UI/F2 한기 시스템 기능 추가0.
+- #66 Discord native/V3/Session0/Probe/OS계정 설정 `NO_GO/MANUAL/HOLD`, 회신 없이 안전한 코드 정리만 보존. 로컬 통합 중 이 worktree·ignored/Temp/증거 수정·삭제·실행·설정변경0.
+- 다음날 Codex 완료보고 **LOCAL_SYNC_DONE / STAGED_ONLY / NOT_DONE**로 구분, 실제 Git HEAD SHA 전후·원본 보존·BuildSettings 충돌·Unity QA/SaveContinue 상태를 수치와 SHA로 입증. 지역 경로/민감자료는 공개 Issue에 과다노출하지 말 것. 대표가 Codex 지시문을 전달하기 전 자동로컬처리는 시작되지 않았음.
+
+---
+# PLANNING / 2026-10-29 저녁 — Owl12/F2 P2/Organic Spider 3ZIP 검수·후속 세부 보완
+
+- 바울 대표 제공 Codex 최종 결과 로컬 브랜치 `codex/art-owl-anim-f2p2-organic-review-20261029`, 로컬 내용 SHA `0cadf20800df6ee527e76b5209695508fbe8f240`, 최종 인계 보고 SHA `d48ccb681bbc2f6c9e5edd25bc47635ec0909080`(사용자 캡처 기준). GitHub [#74 상세 통합보고](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6492706191): 세 ZIP CRC47/47·각 SHA/Manifest 일치, PNG35 decode PASS, **파일 TECH PASS만**. 실제 게임 새 애니메이션 Unity 실행·제품 적용/사용자 최종 미술 승인0.
+- **Owl v3** 정적 외형은 사용자 승인·Codex 설치 Unity6000.6.5f1 81+22PASS 보호. 신규 Idle8/Attack4는 아직 **ANIM_REVISE**: Idle02 위쪽 alpha 접촉7, Attack02 상단접촉28(깃잘림). Attack 준비→발동 차이 미약. [#74 최소후속](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6493035987): 해당 날개 부분/공격 대비만 표적 작화, 원본 v3/정상프레임/PPU512/중앙Pivot/8FPS/Idle00 보호. 원화재설계·v4·전체 재양산 금지. 8FPS 실제 사용/새12프레임 Unity PASS는 미실시.
+- **F2 P2** 나뭇가지·약한 눈발 KEEP_CANDIDATE, 그루터기/횃대 상단 인공 원판·표지판 가상글자만 표적 REVISE. [#75 후속](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6493037627). 기존 P1 울타리 v2 접지 HOLD 불변. 새 PPU/Pivot/실길·휠체어 GameView 아직 NOT_VERIFIED.
+- **Organic forest_spider Ch1·2** 유기형 방향 `ORGANIC_DIRECTION_OK/DESIGN_IMPROVED`, 새 후보 `ForestSpider_Organic_v1` 본체 유지; 다리 사이 회백색 쐐기/바닥 갈색 매트 **알파 배경잔상만 제거**. [#60 후속](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6493038497). 종전 기계형 Spider v3는 Ch4 `ARCHIVE_ONLY`, 신규32프레임0, 대표 유기형 디자인 최종 승인대기. Bee 기존20/키포즈5/HOLD·권리 CC BY3/4 불일치 유지.
+- 이번에는 각각 메인 아트(#74/#75)·리뉴얼(#60)에 **실제 이미지 최소수정 지시문**을 보내고, 한 번만 Codex 통합 Delta 검수 후 사용자에게 비교판을 보여 판정. GitHub 이슈 댓글 및 기획인계 업데이트는 진행했지만 **아트팀 로컬 PNG 제작을 자동으로 수행한 것은 아님**. 타 팀/원본 Unity/Save/UserData/Scene/Quest/거래/TTS162/Discord66/포커스·main 반영/Push·병합 금지.
+
+---
+# PLANNING / 2026-10-29 오후 — Main24 F2 메인 신규 아트 다음 단계 P2 #75
+
+- 바울 대표 요청 **“메인 아트도 시켜.”** 현재 Owl v3 디자인은 사용자가 수용했고 Codex [#74 격리 Unity 검사](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6490161019) 결과에 따라 **Owl 512/PPU512/중앙Pivot/scale1/8FPS/Idle8+Attack4** 제작 지시가 이미 전달된 상태. 이 작업을 다시 시키거나 Owl v4 재제작하지 않음.
+- 신규 [Issue #75](https://github.com/HappyPaul812/Project-Limitless/issues/75): F2 첫눈의 숲 최초 필요 환경8종 중 P1(눈 오버레이/소나무/길 경계/낮은 관목) 4종의 후보를 보존하면서 미착수 P2 **쓰러진 눈 나뭇가지/그루터기(횃대)/숲길 표지판/약한 눈발 레이어** 각 1개 OFFLINE RGBA 후보(최대4) 제작 발주. 본편 맵 양산/Unity 등록·VFX런타임·게임 기능0. Owl 애니메이션 납품과 별도 ZIP/보고.
+- P1 중 첫눈 overlay/소나무/낮은 관목 KEEP_CANDIDATE, **울타리 v2 반투명 접지 문제 ART_REVIEW** 유지. 후속 PPU/Pivot/Collider/휠체어 실제 GameView는 별도 QA 미실시. v3 승인 Owl/서리들쥐/공식 몬스터/기존 승인환경43+9·TTS162/Chapter1·2 리뉴얼/Unity 원본/Save 보호. `docs/art-new` 보고+`SPRITE_ART_LATEST.md` 갱신, 바울 대표의 최종 미술 승인 전 본편/main 반영/Push·병합0.
+
+---
+# PLANNING / 2026-10-29 / 리뉴얼 숲거미·독침벌 별도 아트 후속 발주
+
+- 바울 대표가 메인 서리올빼미 v3 격리 Unity·모션계약 Codex 지시를 전달한 후 **리뉴얼 다음 업무**를 요청. 신규 리뉴얼 담당에게 독립 병렬 작업을 발주할 수 있도록 [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6489575410)·[#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6489576030)에 기획 범위 기록.
+- **Spider v2** 512 RGBA 원본 보존; v3는 Ch2 공식화풍 맞춤, 벡터색면/관절·8다리 분리 해결하는 **실질 국소 재작화 단일포즈**. 단순 노이즈·워프 반복 금지. 승인 전 Idle/Walk/Attack/Shoot 각8 신작 모션0.
+- **Bee** 기존 Idle10+Attack10 RGBA20 및 지난 Idle2/Attack3 후보 보존. 현재 5키포즈는 움직임이 약함 → 실제 날개/다리/복부·독침의 형태·관절 자체가 바뀌는 새 **Idle2·Attack3 키포즈**만 제작. 128/40 원종횡비, 10FPS GIF 검토. 기술적으로 재작화 불가능하면 ART_BLOCKED_NEEDS_DIFFERENT_METHOD 보고, 20개 재양산0. 현재 외부 PilotBee CC BY3/4 충돌 HOLD.
+- 사용자 최종 그림 승인과 본편 적용은 별개. 리뉴얼 docs/art-renewal 보고·WORLD_ART_RENEWAL_LATEST 인계·#60/#63 실제SHA 필수, 원본 Unity/Save/main/전투 AI/Spawn/Quest/TTS 등 무변경. 대표가 잠깐씩 확인하므로 새 원화 실물 1+5와 전후 비교만 간략 제시.
+
+---
+# PLANNING / 2026-10-29 — 바울 대표 Frost Owl v3 외형 시안 긍정 판정
+
+- 사용자 직접 발언: **“올배미 좋구만.”** 최신 #74 후속 ZIP `FrostOwl_KeyPose_512_v3_CANDIDATE.png` (SHA256 `81a31cf37cb834799ab5c9428da612ab13a5a496025805685daefed7b5d3c467`)의 **외형 방향 수용, v3 KEEP**으로 기록. [#74 기획 판정 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6489269398). 이 판정은 **서리올빼미 v3에만** 해당하고 F2 다른 소품/Spider/Bee의 최종 미술 승인 아님.
+- 담당 아트는 v1/v2/v3 원본 보존, 불필요한 v4/전신·얼굴 수정 반복 금지. 다음은 사용자 별도 승인 전 **격리 Unity 동일 PPU·40px 실제 가독성/전투 표시·애니메이션 요구 계약** 확인만 고려. 40px/Unity/실제 스폰·Idle/Attack·제품 반영은 TECH_PENDING / NOT_APPLIED. #74 다른 HOLD 항목은 유지.
+- 2026-10-29 후속 통합검수 로컬 branch `codex/art-followup-spider-bee-keyposes-20261029` 최종 SHA `108016403e76024c223f2c7138c5f0ecd8e57fad`: 두 ZIP CRC/Manifest·PNG25 기술검사 정상. 울타리 접지는 반투명 관목 등 ART_REVIEW, Spider v2 거미 다리 분리 DESIGN_REVISE, Bee 5 keypose 관절형태차 부족/전투교체 HOLD. 원본 Unity/Main/Save/UserData/Push/병합0.
+
+---
+# PLANNING / 2026-10-29 오후 — Issue #74 + #60/#63 신규 ZIP 통합검수 후속 기획 판정
+
+- [Codex 신규 2 ZIP 통합검수](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6488218748), local `codex/art-integrated-review-20261029`, 보고 commit `6353caff95c7ee1f6b80335e9ce9acf254d3314a`, 최종 handoff `66644242373d2dd570b6c0c51b7ad2e183c4a5b3`, `LOCAL_COMMITTED/REMOTE_NOT_PUSHED`. **ZIP CRC/SHA/Manifest·PNG38 decode 정상 = 파일 기술 QA이지 미술 최종 승인/Unity 실전 적용 아님**. 실제 바이너리/이미지는 local ZIP만, GitHub text 보고와 같다고 이미지 직접 열람한 것으로 주장하지 않음.
+- 메인 신규아트 [#74 후속 기획 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6488506287): F2 GroundOverlay, SnowPine, FrostShrub `KEEP_CANDIDATE`; PathEdge_LowFence 접지부 국소 `REVISE`, 나머지 3종 원본 보호. Frost Owl v2 파일/국소수정 TECH_PASS이나 40px 개선 체감은 미확정→새 v3가 필요하면 **얼굴·눈/부리·꼬리만 국소 후보1**, 충분하면 PNG 생성 없이 유지. 기존 v1/v2 보존, 전체 타일/모션 제작 금지, PPU/Pivot/휠체어 실동선 HOLD.
+- 리뉴얼 [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6488513653)·[#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6488514255) 후속 기획: Spider 독창적 512 RGBA 1포즈 있으나 Ch2 대비 벡터색면·다리 관절 뭉침 → **국소 질감 보완 v2 1포즈** 후 대표 시각 검토; 기존32모션(Idle/Walk/Attack/Shoot×8) **아직 0장 신작**. Bee 새로운 **Idle10+Attack10 실제 파일 존재**는 인정, 다만 몸 전체 변형 위주라 관절 동작 미흡 → 정상20 원본보호하며 **Idle2/Attack3 정도의 표적 키포즈부터** 검토. 본편 전투 품질 승인/교체 아님. 현행 PilotBee CC BY3 vs4 출처 충돌 아직 HOLD.
+- 바울 대표 미술 최종 승인 아직 없음, Unity 실장/실전 QA/Save·UserData/Main23/Ch2 공식 아트/main 반영도 없음. **일반 NPC의 오리지널화 최소 투자, 외부 몬스터 원화 교체 우선** 정책 유지. 모든 팀 `docs/art-new`, `docs/art-renewal`에 공식 보고·latest 갱신, main 직접 Commit/Push/Merge0. 대표에게는 각 팀 짧은 지시문을 복붙용 제공.
+
+---
+# PLANNING / 2026-10-29 / 신규 메인 아트 다음 단계 #74 발주 — F2 환경4 + Owl40px 후보1
+
+- 바울 대표 요청 "메인 아트도 일 시켜줘"에 따라 [Issue #74](https://github.com/HappyPaul812/Project-Limitless/issues/74) 정식 발주 생성. Chapter1·2 리뉴얼의 숲거미/독침벌 작업과 병렬·업무 격리.
+- #71 v1 RGB 콘셉트와 Owl512 원본, Codex #71 통합검수, #72 원페이지 읽기 전용 결과 중복 작업 금지. 첫눈 숲 **게임용 분리형 RGBA 파일럿 4종(첫눈 지면 오버레이/눈 소나무/길 가장자리/낮은 서리 관목 각1)** + **FrostOwl 512 v2 국소보완 후보1** 한 회차만. Owl v1 SHA `f60c41cfdc6f3d1bc1b05b62a2281d5f607dec322b9c5c4c3090cac725c09ab1` 보존. 40px 얼굴 명암·부리/눈·꼬리 분리·여백 개선, 원화 전신 무단 교체 금지.
+- **후보 제작 승인이지 미술 최종승인 아님**: 실제 PPU/Pivot/Tile/Collider/휠체어 동선 Unity QA 및 공식 3해상도는 HOLD. 스프라이트5개를 넘어 전체 타일/애니메이션/Spawn/Combat 기능·씬 변경0. 기존 F1/서릿길 환경43·지면9/오르나80/Residence·Inn KEEP, 리뉴얼 숲거미·독침벌, Save/TTS/Main23 보호.
+- 담당 보고는 `docs/art-new` Markdown commit → `SPRITE_ART_LATEST.md` 갱신 → #74 실제 PNG/ZIP SHA·비교판·대표 시각승인 대기 인계. 본편 Unity/main/원본 적용/Push·merge 금지. 대표는 잠깐씩 확인 중이므로 **한눈에 보는 한 장 비교와 최소 한 번 승인 요청** 준비.
+
+---
+
+# PLANNING / 2026-10-29 / 바울 대표 UX 직접 결정 — 퀘스트 완료 문구 '납품' → '완료'
+
+- **사용자 명시 결정:** "퀘스트 완료할 때 '납품'이 뭐니? '완료'라고 바꿔." 퀘스트 NPC 화면에서 플레이어에게 보이는 동사·상태를 '완료'로 통일하며 재료 검증·소모/보상 수령 로직은 그대로 둠.
+- [Issue #73](https://github.com/HappyPaul812/Project-Limitless/issues/73) 생성. GitHub main `Unity/Client/Assets/_Project/Scripts/UI/SideQuestNpcPresenter.cs` 약65·107·108·114행 직접 확인. 바꿀 화면 문구: **납품 가능→완료 가능**, **재료를 납품하시겠습니까?→퀘스트를 완료하시겠습니까?**, **납품한다→완료**, **납품을 완료하지 못했습니다→퀘스트를 완료하지 못했습니다**. NPC별 대사·이야기·기능 내 변수/메서드 `TryDeliverSideQuest/CanDeliverItems/IsItemDelivery`는 자동 전역 바꾸기 금지.
+- **현재 제품 코드 미수정**(기획 브랜치 문서/이슈 발주만). 이미 Codex에 전달된 [Issue #72](https://github.com/HappyPaul812/Project-Limitless/issues/72)는 **읽기 전용**으로 유지하고, #72 작업 종료 이후 별도 `codex/quest-ui-complete-label-20261029` 최소 문자열 수정·Delta QA를 바울 대표가 추가로 Codex 지시할 수 있도록 복붙 지시문 제공. 승인 없는 main/원본 로컬 적용·Push/병합 금지.
+
+---
+
+# PLANNING / 2026-10-29 오전 — 바울 대표 간헐적 확인 모드, Main24 카탈로그25·아트 판정판 준비
+
+- 대표 지시: 오늘은 잠깐씩만 확인 가능, 어제 #70 거래기반 및 #71/#60 아트 통합 QA에서 이어갈 것. **승인 필요 항목과 읽기 전용으로 진행 가능한 작업을 분리**하고 대표의 실시간 개입을 최소화. 사용자 직접 미술승인·상품/가격 승인 없이 제품 변경/Push/병합/유료호출 없음.
+- [Issue #70 실제 Codex 거래기반 결과](https://github.com/HappyPaul812/Project-Limitless/issues/70#issuecomment-6469905906): 로컬 code `de084eae21643aa47347360811c0f883c384acb2`, 인계 `518ced262cfc8422021e0828d592c8e4c36d31bc`, 신규 **40 PASS/최종 FAIL0**(기존31PASS 재실행0), 원격/원본 미적용, 제품 실제 상품·가격·효과0. Writer2 Version2/Schema2는 옛 Writer1과 구버전진행 fork를 자동 합치지 않음. 정전·다중프로세스·별도 Player·지정6000.5.7 직접검증 HOLD. 기존 31PASS는 등록/출시 근거 아님. #46/#70 OPEN 유지.
+- [기획 신규 카탈로그 25종 표](../Main24_SkillShop_Catalog25_PriceAndUnlock_Proposal_20261029.md): 직업당 신규2+기존3강화의 1차 승인된 *디자인 방향*만 집계. 가격 **신규40/강화30/온기의 불꽃20/부활50은 전부 미승인 후보**. 직업별 전체 구매 가정 수호자170/치유사180/사수170/투사170/마도사150; 25종 총후보840은 필수 구매액/실제 지갑 아님. 챕터2 Quest 보상470과 선택 납품111은 실잔고 NOT_MEASURED.
+- [Codex 2026-10-28 아트 통합 검수 #71](https://github.com/HappyPaul812/Project-Limitless/issues/71#issuecomment-6470841523) 및 [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6470843053): 두ZIP CRC/SHA/Manifest PASS, F2 컨셉 KEEP_CANDIDATE/실동선HOLD, 서리올빼미 1포즈 기술PASS·40px 얼굴/꼬리 약함·미술 미승인; OGA20 실원본 미동봉으로 태온 공식본 동PPU 미술비교 HOLD; 숲거미 CC0/현재32프레임 원본 SHA일치·실사용 코드연결 확인→**KEEP_CURRENT/신규 그림 HOLD**. 독침벌 20프레임/권리 충돌 기존 HOLD.
+- [신규 Codex 준비 Issue #72](https://github.com/HappyPaul812/Project-Limitless/issues/72)에는 **한눈에 보는 오프라인 승인 비교판+현재 Skill/Writer2 실제 ID 충돌·경제 정적검토**만 읽기전용 발주. 대표가 Codex 지시문을 전달하기 전 로컬 작업 자동 실행0. 본편 코드/상품/원화 변경·전수 재검증·Unity Player/Editor 실행0.
+- 바울 대표에게 나중에 필요한 최소 확정: **(1) F2·Owl 및 GateGuard 실물 미술 판정 (2) 상품ID/목록·가격/해금 (3) 무자금 첫 한기 대응 도구·재지급**. 그 전까지 대표 응답 기다리며 진행 가능한 문서·참조조사만 수행.
+
+---
+
+# PLANNING / 2026-10-28 밤 — 신규 메인 아트 #71·리뉴얼 #60 병렬 후속 인계
+
+- 바울 대표가 Main24 Codex #70 설계 완료 보고 후 **메인/리뉴얼 아트 병행 진행**을 질의. 기존 각 담당 최신 GitHub 인계 및 #59/#63/#60을 확인하고 **기존 승인분은 보존하며 다음 대상만 분리**.
+- 메인 신규 아트: [Issue #71](https://github.com/HappyPaul812/Project-Limitless/issues/71) — Chapter3 Main24 F2 첫눈의 숲 오프라인 스타일·필요자산 가이드, 서리올빼미 512RGBA **단일 키포즈 후보** 및 128/40 비교, 애니메이션/기술수치/Unity 적용0. 기존 #59 오르나 visible alpha80px 기획 기본안/대표 최종 미술승인대기, Residence 집·지붕·문 KEEP/신 3PNG 배치HOLD, Inn 내장 간판 하나 KEEP/신 독립간판HOLD 보존.
+- 리뉴얼: [Issue #60 신규 기획 후속](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6469495899) — 기존 OGA20 남문경비 vs 공식 태온 **128/40px 시각 구별판**과 forest_spider 출처·활성사용 계약 1페이지. NPC 후보3 및 #63 독침벌 단일포즈는 미술승인 전 HOLD/새20프레임0; 라이선스 CC BY3/4 버전 충돌 계속 OPEN. 기존54행 감사·NPC/펫/Ch2 공식몬스터·맵 중복제작 금지.
+- 두 담당 모두 작업 시작 때 자기 브랜치 최신본 확인, 시안 실물·SHA/CRC·OFFLINE vs 실제Unity 상태·유저 미술승인 여부를 보고. `docs/art-new`·`docs/art-renewal` 기록+각 latest 갱신+이슈 댓글 필수. 이번 기획 발주는 **상품/스킬 #70, 원본 Unity/Save, main 병합/Push 승인 아님**.
+
+---
+# PLANNING / 2026-10-28 밤 — Issue #70 거래 설계 검토·가격/무자금 대응 기획 권고 (대표 최종 승인 대기)
+
+- [Codex Issue #70 읽기 전용 완료보고](https://github.com/HappyPaul812/Project-Limitless/issues/70#issuecomment-6468962827) 확인: 로컬 `codex/main24-skill-shop-contract-20261028`, SHA `0d4c50b819ae16c626fc06eade1f83d62e8985b1`, `LOCAL_COMMITTED / REMOTE_NOT_PUSHED`. 설계 QA20건은 **미실행**, Unity/코드/원본 변경0.
+- 기존 #46 스킬 6슬롯 저장 격리 31 PASS/Continue12 PASS는 **유료 신규·강화 소유권 영속화/원자결제 PASS가 아님**. 현재 Import 기본 카탈로그 한정·일반 Save `.tmp → File.Copy`는 안전한 거래/정전 내구성 불충분. #46/#70 제품 통합 완료로 오해 금지.
+- 바울 대표 검토용 **가격 후보**: 일반 신규40, 강화30, 온기의 불꽃20, 부활50 탈렌트. Chapter2 퀘스트470/납품111은 실제 종료잔고가 아니라 정적 총보상; 실 경제 검증 전 **확정 금지**.
+- 추천(미승인): 캐릭터+직업+Save별 소유권 분리, 무단 환불·구버전 Writer로 소유권 유실 금지, 한기 첫 지정전투 전 무자금도 무료 대응도구2개 확보·재전투 부족분 재지급, 구매나 치유사·마도사 편성 강제0. 최종 수량/방식과 정확 상품ID·해금·스킬 효과는 별도 승인 및 QA.
+- [기획 검토 문서](../Main24_SkillShop_Issue70_PlanningReview_20261028.md)에 근거·개선안·다음 승인게이트 기록. **지금은 본편 판매·가격·스킬/한기 실제 코드 구현 지시 아님.** 다음 Codex 작업 지시문은 바울 대표에게 복붙용으로 제공. `main`/원본 Save/Discord #66 불변.
+
+---
+
+# PLANNING / 2026-10-28 저녁 — Main24 스킬6슬롯 영구 저장·Continue 격리구현 PASS, 상점 원자적 거래 계약 #70
+
+- 바울 대표가 Codex **“Main24 스킬 6슬롯 영구 저장·복원을 구현했습니다”** 완료 화면 전달. [Issue #46 Codex 직접 구현 보고](https://github.com/HappyPaul812/Project-Limitless/issues/46#issuecomment-6468440313)와 대조, [기획 상태·후속 #70 판정](https://github.com/HappyPaul812/Project-Limitless/issues/46#issuecomment-6468556392) 기록. 실제 Code/Unity/Windows UserData를 기획 채팅에서 직접 실행한 것은 아님.
+- 실 로컬 브랜치 `codex/main24-skill-save-20261028`, 로컬 commit `3380fe9d3fb98cd7547aa9c517197e41cb977745`. `SkillLoadoutService` + `GameSaveService` + `SkillManagementPresenter` 등에서 캐릭터·직업별6칸 영속화/장착·해제 자동저장/비활성 동료·직업 복원/Save실패 메모리 rollback, 기존Version1 기본3 복원·의도적빈6존중·중복/미보유/타Job/미등록강화 참조 정리. **신규 Unity6000.6.5f1 격리 Delta31 PASS/최종 미해결FAIL0**, 실제 Editor 종료+별도 프로세스 Continue 복원12PASS 포함. 최초 구버전 null 예상1FAIL은 Unity JsonUtility 동작에 맞게 테스트 기대를 고치고 **그 항목 재검증PASS**, 최초 증거 보존. 제품 지정 Unity6000.5.7f1 직접 검증·타이틀 버튼 시각조작 `NOT_VERIFIED`; 원본4,505 SHA 불일치0, Main23/TTS162·개인 Save 보존, `LOCAL_COMMITTED / REMOTE_NOT_PUSHED / NOT_ORIGINAL_APPLIED`. GitHub main `bfd281545632877325f5d21e04cefb924042c465` 조회 불변, 원격 제품PR open0. #46는 **로컬 기술 PASS지만 main제품 통합 전**이므로 아직 OPEN.
+- 기존 2026-10-12/13 Chapter3 스킬정본의 **직업5×기본3 무료**, 이후 모든 신규/강화는 탈렌트 구매(스킬저가·부담없는 초반 경제), 전투밖 어디서나 장착비0/최대6, **강화판은 기존 ID 대체+슬롯승계 / 신규 스킬 구매시 즉시자동장착0**, Chapter3 끝나면 전 안전거점 판매 확대 계약 유지. 정확 상품ID·구체 가격·판매목록·해금레벨·스킬 수치·마레 한기약 실제 지급량은 아직 미확정, 무단 숫자/구현 금지.
+- **Codex 다음 별도 [Issue #70](https://github.com/HappyPaul812/Project-Limitless/issues/70) 읽기전용 발주**: 로컬 #46 실제 DTO/Save 코드↔현 EconomyService/Shop/Skill/Battle 정의, 비용검사·중복구매·선행강화·동시AutoSave·쓰기실패 시 `Talents+SkillOwnership+Replacements+EquippedSlots+Save` 거래 원자성/복구, Chapter2 실제 돈/펫100/퀘스트 보상 근거/초기 구매비용 후보 **미확정 제안**. Main24 마을 루덴(가칭) 발견은 자유 탐색/강제구매0, F2 첫 2턴 한기 서리올빼미 무자금 대응수단 보장. 읽기전용 1페이지 계약·테스트매트릭스만 로컬 별도 commit+GitHub #70 보고; 판매/스킬/퀘스트/한기 코드 구현이나 실제 Save·원본Unity·사용자 Editor/Discord Worker 수정0.
+- 실제 사용자 별도 PR 통합승인 전 이 로컬 코드가 main/원본에 들어간 것으로 말하지 않음. 당분간 Main24 판매구현·가격 확정은 사용자 결정 뒤에만; 기존 #46 31 PASS 전수재실행 금지. **기획이 업무를 발주한 경우 사용자에게 해당 Codex 복붙 지시문 반드시 함께 제공**.
+
+---
+
+# PLANNING / 2026-10-27 — r2 Task 존재/비활성 확인, GR 대 FR raw ACL 비교 HOLD
+
+- Codex [Issue #66 최신 r2 관리자 원본 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6440618653) / [최종 로컬 인계](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6440622468): **Task PRESENT / Disabled / Trigger0 / Restart0 / Max90sec / RunLevel0 / LogonType1 / Worker Principal / Action Path/Arguments/WorkingDir 비교 true**. OwnerBA/GroupSYSTEM/ProtectedDACL 정상 header. 그러나 Worker ACE 예상 `GR=0x80000000` 대 실제 `FR=0x120089`; pinned `DedicatedContract.cs`에 실제 SDDL 입력하여 원 설치 HOLD 흐름 재현 **2 PASS/0 FAIL**. 설치 당시 정확 throw 줄·시각은 이벤트 로깅 비활성으로 확정 못하지만 raw compare 검사 실패와 일치. GR는 제네릭권한, FR는 file-specific read; OS Task object GenericMapping/effective ACL 테스트 없이 단순 동등/과권한으로 판정 불가. raw 문자열 `GR`만 허용하도록 재등록하거나 FR이면 무조건 PASS하는 것도 금지.
+- 실제 계정 `LIMITLESSBotV2D` SID suffix1009 Disabled, `LIMITLESSWorkV2D` suffix1010 Enabled, Users-only/Worker direct Batch and deny4 확인. Code/Stage file SHA·protected DACL pass, payload766/별도 ZIP 포함 총768/예상 외0/ADS·links0, Auth0, 승인원장 consumed/Entry/Result/Lease 보존. 기존 Worker1007 Enabled/OnBoot2 SHA, V1 SID1008 Disabled·root /r1/r2 stage 보호. 원본 관리자 조회 JSON `Admin-33a67728035f4fe88db7f539e5b648dc.json` SHA `4de232b3d5af7aa6662ce4e4ec6a4d28ddc529b5c0d50656a9114f71e679140e`; 45 Query READ_OK44/UNKNOWN1(Operational event logging Disabled). READ_OK는 전체 보안/운영 PASS가 아님.
+- **다음 Codex 오프라인만:** 기존 고정 r2 소스 복제 후 Worker's ACE에 대한 `GENERIC_MAPPING` 적용 로직/정확 Windows security descriptor masks/effective access를 Task Scheduler 실제 mapping에 맞게 검증하는 보안 비교기 후보 설계. SDDL/owner/group/DACL order·protected/ACE SID·granted permissions를 fail-closed 확인하고 Worker에게 쓰기/수정DACL/삭제/불필요한 Execute·Task Run 권한이 생기지 않았는지 **strict denial synthetic tests**. `GR=0x80000000`→`FR=0x120089` mapping은 후보 가설이지 전체 ACE 등가성의 확증 아님. Exact raw compare 제거로 무조건 PASS하거나 installer 재실행 불가. 새 candidate file SHA·diff·mock PASS, 실 native read-only verifier/rollback 계획 보고 후 STOP. 읽기 전용 관리자 Task effective permission 실제 1회도 별도 대표 승인 필요; 계정/Task/ACL/Job/Lease/Stage/Approve/Consume 변경0.
+- 실제 Task 시작/Session0/실 FAKE_ONLY IPC/모델·usage/Discord/A는 다음다음 별도 승인. `PARTIAL_INSTALL_HOLD`, `MANUAL/A/runtime HOLD`, V1 `REFERENCE_VERIFICATION_HOLD` 계속. Codex branch `codex/discord-usage-diagnostics-20261026`, local final `970286453b93a7202f701361d0e93df4601d3890` (REMOTE_NOT_PUSHED); 기획 [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `0af3353bc09b331cd0b489ab0333121363a11093`.
+
+---
+
+# PLANNING / 2026-10-27 — 전용 Worker r2 부분 설치 HOLD, Task 존재·권한·원인 미확정
+
+- Codex [Issue #66 r2 설치 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6439787364)와 [마지막 로컬 커밋](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6439796482): `PARTIAL_INSTALL_HOLD`; 새로운 `LIMITLESSBotV2D` SID suffix1009, `LIMITLESSWorkV2D` suffix1010 생성 보고. 새 승인·Install1 단발 소비 완료. `CREATE_ONLY_DISABLED_TASK` 단계 MethodInvocationException(-2146233087)→InvalidOperationException(-2146233079). **Task 생성과 등록 후 ExactSDDL 확인을 같이 하는 단계**라 실제 존재 미검증. Codex 사후 GetTask는 ACCESS_DENIED(-2147024891), Get-LocalUser는 NullReference(-2147467261)로 결과 UNKNOWN. Bot/Worker 상태, Batch rights, Code/State/Auth, 신규 Task의 ACL·Disabled/trigger0, OS 전후 보호는 현재 최종감사 미완료. `existing_preserved=true`는 native 보고 표기이지 전수감사 증거 아님.
+- **즉시 HOLD/금지:** 사용한 r2 설치 명령·r2 Stage·r1 설치/재개·기존 승인 발급/소비마커 초기화 반복 금지. Task 실행/계정 Enabled 변경/ACL 수정/Task 재등록·제거/새 코드 배치/부분자산 자동삭제 금지. 실패 원인을 암호, 계정, task register 자체로 단정하지 않음. 기존 승인/소비, protected stage, 설치 Result/Entry/로그 원본 보존, 사용자에게 현재 새 Bot/Worker SID suffix만 보고됨.
+- 다음 승인 가능한 안전범위는 **시스템 변경0 관리자 읽기 전용 단발 진단**: pinned r2 Task path/기존 결과 JSON·이벤트 시간 식별하여 Task Scheduler COM `TaskService.Connect→GetFolder→GetTask→RegisteredTask.GetSecurityDescriptor`로 정확 Task의 상태/Principal/Enabled/trigger0/SD·owner를 수집, 숨김 포함 동명 task/Registry/Task XML 존재 상태 교차 판독(ACCESS_DENIED≠NOT_FOUND). 신규 계정2 exact 전체 SID/Enabled·Members·batch rights/만료 및 Code/State/Auth directory/ACL/Manifest/SHA·approval/consume/Result/lease 원본, TaskScheduler Operational 로그의 해당 설치 시도 에러를 timestamp/context 기준 조합해 **정확 예외 단계와 HRESULT/원래 nested code**를 안전하게 식별. 실 Console에서 보호 계정 암호·원시 Task Action commandline·Bot Token·CODEX_HOME 비밀을 노출하지 않는 정제 JSON만 저장. 기존 관리자 검사나 installer 전체 재실행 금지, 별도 SHA-고정 probe/오프라인 8~12회 synthetic test와 사용자 직접 읽기전용 PowerShell 실행 분리.
+- 임의 관리자 계정/권한/SeDebug 완화 금지. **실제 복구·Task/계정 삭제·재설치와 실 FAKE_ONLY IPC/AI/official usage/Discord/A 모두 후속 명시 승인**. V1 `REFERENCE_VERIFICATION_HOLD`·`MANUAL/A/runtime HOLD`; 기존 Worker1007/11·OnBoot2/운영봇·아트/인증·CLI/SQLite·Unity/Save/main 보호. r2 exact Installer SHA `83c97d781fb2d9aed797b41ea6bc799b83e939ad3ffa6f7af6a2d26f1080d68f` Manifest SHA `7c8410145ed84f06fc9901e93f78e18d0cc103ad89757172e08c84f91d8a3976` ZIP SHA `4efa0aa8a38b32fa40fa5a2dfb4042e028eeb07b1ab8d73c713a1d80efe028d0` 불변.
+- Codex local branch `codex/discord-usage-diagnostics-20261026`, docs commit `f6b616213c6a77f1ba726d4e27a9b516cfdac97d` REMOTE_NOT_PUSHED. 기획 운영 정본 `docs/planning` commit `5e68ecfc14f0059742e8bca2e65f5fedbf6d05aa`.
+
+---
+
+# PLANNING / 2026-10-27 — 전용 Worker r2 보호 Staging PASS, 실제 설치 별도 승인
+
+- Codex [Issue #66 r2 관리자 판독](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6438760726)과 [최종 인계](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6438769885): `R2_STAGING_CREATED_VERIFIED_NOT_INSTALLED`, 생성진행 true/installed=false, r2 고유 ID `3effaac30bf44760986fee9e6019b283`. 보호 stage `C:\Program Files\LimitlessRelayDedicatedV2Staging20261027\3effaac30bf44760986fee9e6019b283`, Bundle payload766+Manifest1=767, Bundle.zip 별도1(파일총768). 사용자 JSON에 실제 Owner BA SID `S-1-5-32-544`, Group SYSTEM SID `S-1-5-18`, 보호 DACL/Manifest SDDL·FileID`00730000000311c1`, volume`ca54aa62`, `all_file_metadata_sha_verified=true/exact_bytes_verified=true` 기록. Native 고정 성공 반환으로 검증 판독, 개별767 raw inventory/관리자 원본 JSON SHA를 별도 획득·독립 재조회한 건 아님(제공 JSON 보존본 SHA `9233a98a61d6515f369459e28b1ab2dddb56ed75172ba3fa5adc87775941c5ad`만 있음).
+- r2 Installer SHA `83c97d781fb2d9aed797b41ea6bc799b83e939ad3ffa6f7af6a2d26f1080d68f`(r1 Installer와 동일 bytes), Manifest SHA `7c8410145ed84f06fc9901e93f78e18d0cc103ad89757172e08c84f91d8a3976`, ZIP SHA `4efa0aa8a38b32fa40fa5a2dfb4042e028eeb07b1ab8d73c713a1d80efe028d0`. r1 기존/expired 승인지·소비·evidence/Stage 전부 보존. r1/native `consume` vs `Consume` 충돌을 `consumeDirectory`로 고친 r2 adapter8PASS. 기존 Stage1회 소비/재실행 금지. 계정/Task/설치 승인/IPC/AI/usage/Discord0.
+- **다음 제한단계**: Codex가 정확 r2 전용 staging 경로/packageID/핀과 helper·PowerShell 구문/기존 `consumeDirectory` native 실제 객체생성 경로를 정적·오프라인 재검증하고, **r2 전용 새 승인ID/epoch·create-only installer**만 별도 prepare. r1 명령 복붙/변수치환·r1 consumed approval 재사용 금지. 대표의 새 설치 한정 명시 승인 후에만 관리자 PowerShell7에서 SHA 검증된 고정 명령을 직접 실행. 고정 Stage 전체 owner/ACL+767 file·ZIP SHA 설치직전 readback. 새 `LIMITLESSBotV2D` Disabled + `LIMITLESSWorkV2D` Enabled(BATCH_ONLY) 계정2/OS 신규 서로 다른SID/보호 Code State EmptyAuth+새 `Disabled/trigger0/FAKE_ONLY` Task1만. 미확정·부분실패 → HOLD/retry0/auto-delete0/증거보존; 설치 PASS 이후 유효 Batch token/GROUP task runnable/Session0 Job 독점/실 FAKE IPC는 별도 승인, 실모델/usage/Discord/A도 별도.
+- V1 `REFERENCE_VERIFICATION_HOLD`·운영 WorkerSID1007/OnBoot2/운영봇·아트/인증/CODEX_HOME/SQLite/Unity·Save/main 보존. `MANUAL/A/runtime HOLD`. Codex branch `codex/discord-usage-diagnostics-20261026` local docs `26386d499665e3c713f1742ff7bdde04490b0dc6` REMOTE_NOT_PUSHED. 기획 [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `5acbaf74569b963c5b93220116a7feff47d58413`.
+
+---
+
+# PLANNING / 2026-10-27 — r1 Native consume/Consume 충돌 확정, 별도 r2 Staging만 다음 승인
+
+- Codex [Issue #66 r1 원인·r2 대체 후보](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6438090445): PowerShell `New-D3WindowsApi` 객체 구성에서 note `consume`와 method `Consume` 이름 충돌(대소문자 무시), `Add-Member` `MemberAlreadyExists` InvalidOperationException/-2146233079. r1 fixed-native 최소 재현, 백엔드0. 대표 최신 관리자 기록은 새 계정/Task/CodeState/consume/lease **ABSENT**, r1 새로운 Approval은 expired/present이므로 지난 설치1회 성공·실제 native 초기화가 되었다고 표현 금지.
+- r2 `F:\study\codex\Project-Limitless\Temp\Session0DedicatedV2Candidate20261027-r2.zip`; installer unchanged SHA `83c97d781fb2d9aed797b41ea6bc799b83e939ad3ffa6f7af6a2d26f1080d68f`; new Manifest `7c8410145ed84f06fc9901e93f78e18d0cc103ad89757172e08c84f91d8a3976`; ZIP `4efa0aa8a38b32fa40fa5a2dfb4042e028eeb07b1ab8d73c713a1d80efe028d0`. New package ID `3effaac30bf44760986fee9e6019b283`; only payload `Code/V2/DedicatedWindows.ps1` modified, other 765 byte-identical. strict `approved=false/auto_start=false/FAKE_ONLY/real_ai_enabled=false`; original r1 ZIP/protected staging/approval/consumption logs unchanged; do NOT move r1 approvals to r2. New adapter real-object offline8 PASS/0 FAIL, inspect PASS, actual accounts/tasks/staging/install/model/usage/Discord0, previous 151/12/10 not repeated.
+- **Next scope:** verify r2 new packageID/3SHA/source/Manifest, build or review new **distinct** staging path / exact SHA-bound local stage-only helper under administrator BA/SYSTEM protected ACL, pass native CREATE_NEW/owner/DACL/handle-fileID/NTFS/reparse/ADS/hardlink+full ZIP/766payload+Manifest SHA. Owner must separately authorize Stage1 and execute local admin command (no surprise Stage creation); stop with stage verification/no approval.json/no account2/task1. **r1 AdminCommands1~4 and Stage/Resume/Install rerun all forbidden**. Missing stage helper for r2 must be prepared + static/offline verified before any execution; don't just change a version string inside old r1 runner, and don't guess a runnable r2 command.
+- Later explicit separate approve new staged r2 Installer one-shot, genuine Windows account/token/GROUP/scheduled-task/Session0 IPC/FakeWorker/real AI/Discord/A remaining HOLD gates. `MANUAL/A HOLD`, V1 `REFERENCE_VERIFICATION_HOLD`, original SID1007/OnBoot/ops unmodified. Codex `codex/discord-usage-diagnostics-20261026` latest local `1b9b054b511fbbd899759b6eaaafad2464facf8f` REMOTE_NOT_PUSHED; [기획 운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `051ce8130fd9fce4aaeea4aad62241c68ea670be`.
+
+---
+
+# PLANNING / 2026-10-27 — V2 전용 Worker 보호 Staging 10 PASS, 신규 계정·Task 설치 별도 승인
+
+- [Issue #66 관리자 staging 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6435141316): 대표 제공 JSON의 `STAGING_CREATED_VERIFIED_NOT_INSTALLED`, 내부 native 검증 **10 PASS/0 FAIL**, admin=true, attempt=true, retry/IPC/model0. 고정 `C:\Program Files\LimitlessRelayDedicatedV2Staging20261027\a5af3087b78b45d1baae46067d5b7ac9`의 `Bundle`(766payload+Manifest=767) 및 `Bundle.zip` 추가로 **실제 파일768개**를 생성기로 검증 성공 보고. BA owner/SYSTEM group/protected DACL·부모·Handle/FileID·hardlink/reparse/ADS·byte SHA exact/zip SHA native success contract를 통과했다고 판독하되 개별 Owner·DACL·FileID 원문 제공/독립 검증 없이 과장 금지. 정제 JSON 재직렬화 저장본SHA `03335ccc8a92e49a036ec01a0201a04e8f01eed970c9bd6c4f6fb2f5d595bd34`는 원 관리자 원본 SHA 아님. 부분 실패·자동 복구 없음, 원본 F: 및 운영 시스템 변경 근거0.
+- 패키지 r1 `Session0DedicatedV2Candidate20261027-r1.zip` Installer `83c97d781fb2d9aed797b41ea6bc799b83e939ad3ffa6f7af6a2d26f1080d68f`, Manifest `43f6afcc91eae196e015393670cd9cd4ff37194099b313c2b901177226cd32e3`, ZIP `be58f8cdbe0befdcc64cd67287865c6cd6fc2611b4a706d26cda022a8014ca25`. 이전 Preflight12/Mock151 성공 결과 재시험 금지. 기존 Stage 및 Preflight 단발 명령 반복 금지.
+- **다음 별도 승인 범위**: 설치 전에 stage 원자적 Owner/Group/Protected DACL 및 ZIP·Manifest/766 file SHA와 경로·내용 readback 재검사; 별도 새 `LIMITLESSBotV2D`(Disabled)와 `LIMITLESSWorkV2D`(명시 승인된 BATCH_ONLY Enabled) 사용자/고유 SID 및 보호 Code/State/Auth(empty)/CODEX_HOME, 새 `Disabled/trigger0/FAKE_ONLY` scheduled task1개만 관리자 직접 로컬 SecureString 입력/단발 실행. 실행 명령은 Codex 로컬 `Discord_DedicatedR1_AdminCommands_20261027.md`와 준비 helper **실제 파일 SHA** 확인 후 제시할 것. 설치 승인 JSON은 이번 Stage로 생기지 않았으며 설치 단계만 제한 생성/consumption; 사용자의 보고만으로 자동 설치 승인 아님. 부분/불명/오류 시 즉시 HOLD/재시도0·자동삭제0·evidence 유지. Worker가 Enabled로 남는 부분설치 가능성 명시/별도 비활성 승인 필요. 원래 V1 Cleanup/Install 절대 재실행 금지.
+- 설치 이후 검증과 실행은 분리: 실제 새 SID·권리/Token 및 TASK GROUP runnable 범위, Code/State owner/DACL, 실제 logon4·Session0/Job·전용 lease 독점, FAKE_ONLY IPC1회 모두 추가 승인 게이트. 실제 모델/usage/Discord/A 인증, 원격 PIN 전 동작 성공 주장 금지. 기존 WorkerSID1007/11개·OnBoot2/봇아트/CLI 인증/SQLite/Unity·Game/Save·main 및 V1 `REFERENCE_VERIFICATION_HOLD` 보존, `MANUAL/A HOLD`.
+- Codex `codex/discord-usage-diagnostics-20261026` local docs `93d9a7029e04d9fd1b6bd6921961dd214392c77a`, REMOTE_NOT_PUSHED; 기획 [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `097cb241ea170fe68a7ad8be98c6a49cfa1ab4ca`.
+
+---
+
+# PLANNING / 2026-10-27 — 전용 Worker r1 Preflight12 PASS, 보호 Staging 생성만 별도 승인
+
+- Codex [Issue #66 관리자 사전검사 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6434820211): 대표가 제공한 **정제된** 관리자 결과 `admin=true`, step=Preflight, 12항목 PASS·0 HOLD, `PREFLIGHT_PASS_POSTINSTALL_CHECKS_PENDING`. r1 ZIP 766payload/Manifest1/3SHA, 새 Bot/Worker 이름·Code/State/Task/pipe·staging/approval 경로 부재, 기존 V1·Worker 및 native parent 읽기 검사 결과를 코드 변경 없이 **제공값으로** 판독. 제공값 원본 실행시각/파일경로/도구SHA 없어 원본 bytes 독립 검증 아님: 정제 JSON 저장본 SHA `81ed9bf943bc329c994823fc76b964b10f5fed501a2518fd743f91518c9c2531`은 **재직렬화 저장본만의 hash**. 처음 비관리자 5PASS/7HOLD는 이력, 실제 설치/계정/ACL/Task/staging/IPC/AI0.
+- 다음 단계는 **관리자 보호 Staging 1회만** 별도 대표 승인과 직접 관리자 PowerShell 실행. 정확 r1 Installer SHA `83c97d781fb2d9aed797b41ea6bc799b83e939ad3ffa6f7af6a2d26f1080d68f`, Manifest `43f6afcc91eae196e015393670cd9cd4ff37194099b313c2b901177226cd32e3`, ZIP `be58f8cdbe0befdcc64cd67287865c6cd6fc2611b4a706d26cda022a8014ca25`. 후보 로컬 `F:\study\codex\Project-Limitless\Temp\Session0DedicatedV2Candidate20261027-r1.zip`; 설치 소스 F: ACL은 그대로. Stage 고유root `C:\Program Files\LimitlessRelayDedicatedV2Staging20261027\a5af3087b78b45d1baae46067d5b7ac9`; Bundle(767 entries)+Bundle.zip 보호 생성. 신규 BA/SY 생성시 protected DACL/owner, 상위경로·hardlink/reparse/ADS/handle-fileID/모든 766+Manifest SHA/소유·쓰기 full readback, partial/unknown 경우 HOLD·retry0·auto-delete0. 기존 디렉터리 충돌 시 재사용/overwrite 금지.
+- **Staging 성공해도 STOP**: 승인 JSON 생성/계정2개 생성 및 Worker Batch 권리/새 Task1개 등록, actual Worker Session0 effective token/GROUP launchability, FAKE_ONLY IPC, 로그인/AI/official usage/Discord/A 각각 별도 대표 승인. 기존 V1 `REFERENCE_VERIFICATION_HOLD`·운영 WorkerSID1007/11·OnBoot2/운영 Bot/Art/인증/CODEX_HOME/SQLite/Unity Save/main 불변, MANUAL/A HOLD.
+- Codex `codex/discord-usage-diagnostics-20261026` local final `af108ad73f5a3011b3e9eb91821086561e2414b0` (REMOTE_NOT_PUSHED). [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `eb546dab48aeb31f07fc487e66f417530838b3dd`.
+
+---
+
+# PLANNING / 2026-10-27 — Discord 전용 Worker V2 r1 151 PASS, 실제 설치 전 증거 게이트
+
+- [Issue #66 최종 V2 Dedicated r1 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6434471862): 기존 Worker SID1007/11프로세스·직접Task4, V1 BotSID1008/Code root/Install1/cleanup `REFERENCE_VERIFICATION_HOLD`, OnBoot2/운영 봇·아트/인증/CODEX_HOME/SQLite/Unity/Save 불변. 새로운 Bot `LIMITLESSBotV2D` 및 Worker `LIMITLESSWorkV2D` 계정/새 SID, 별도 Code/State/Auth/CODEX_HOME/Task/pipe/approval+consume/lease 단발 실행 계약의 **오프라인 구현**. 기존 인증을 복사하지 않고 `EMPTY_NO_IMPORT_NO_LOGIN`. **실제 계정/Task/ACL/staging/IPC/로그인/AI/usage/Discord0**, MANUAL/A HOLD.
+- r1 실물 `F:\study\codex\Project-Limitless\Temp\Session0DedicatedV2Candidate20261027-r1.zip`, payload **766 + Manifest1**. Installer SHA `83c97d781fb2d9aed797b41ea6bc799b83e939ad3ffa6f7af6a2d26f1080d68f`, Manifest SHA `43f6afcc91eae196e015393670cd9cd4ff37194099b313c2b901177226cd32e3`, ZIP SHA `be58f8cdbe0befdcc64cd67287865c6cd6fc2611b4a706d26cda022a8014ca25`. `schema3`/wire2, `FAKE_ONLY/approved=false/auto_start=false/real_ai_enabled=false`. 합성 시험71+67+13 = **151 PASS/0 FAIL**. 실제 OS의 GroupTask effective token, Win native owner/DACL, IPC/Session0/Job, staging 부모·파일 핸들, 다른 launcher와의 경합 등 **미검증**.
+- **다음 1회 Codex 지시 권고(이번 실제 설치 승인 아님):** r1 내용/3SHA 동결. 새 Bot/Worker가 실제 생성될 때의 SID binding/계정 상태와 GROUP Task가 새 Worker token으로 runnable한지 결정하는 pre/postinstall 검증 계약, 기존/신규 launcher의 경합 리스크와 단일 Worker 실행 경계, 관리자 보호 native staging 설치 전 정확 SHA/Owner/DACL/상위경로/Handle/FileID/766+Manifest 전체 readback, 설치 부분 실패 HOLD·증거 보존·한번 소모·rollback/암호 직접 로컬 입력 등 **딱 설치 준비 체크리스트·읽기전용 도구/오프라인 검증**만. 아직 계정 실제 존재하지 않으므로 새 SID/토큰 실증은 provisioning 후 별도 단계로 표시하고 현재 통과했다고 하지 말 것.
+- 실제 관리자 계정2개 생성/Worker만 제한 batch 활성화/Disabled trigger0 FAKE_ONLY Task/staging 배포는 정확 r1 SHA 재확인과 대표 별도 승인 후 관리자 로컬 실행, 실제 계정/Group task/OS ACL readback과 부분 자산 생성을 검증한 뒤 STOP. fake-only IPC1회/새 Worker 계정 구독 인증/Discord·실AI/A는 차후 각각 분리. 이전 r11(SID1007계약)과 V2 r1 승인/SHA 혼용금지. 새 SID만으로 PC/구독의 한도·자원동시성 보장 안됨.
+- Codex `codex/discord-usage-diagnostics-20261026`, 구현 local `60fc6484e9a77b12f52b527b3b18eeb5161d6113`, 인계 local `057d8503bbef69a17cfbf6465d60e5cf90c83c25` (REMOTE_NOT_PUSHED), 기획 운영 정본 `docs/planning` commit `b525ad5ba35530aa0e28031ea0fe9bf3263f74f9`.
+
+---
+
+# PLANNING / 2026-10-27 — Worker 소유 11/11 확인, 기존 공유 Worker AI독점 HOLD
+
+- [Issue #66 최신 관리자 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6433935615): 이전 PID11 동일생성시각·SID1007·Session0·Windows Security batch logon4 확인. image/fileID/SHA 완료 Python3, 이름정제 동일이미지2, **6 IMAGE_HANDLE_SHA_SIGNATURE InvalidOperationException(-2146233079)**; 실패한 정확 guard 위치/서명·역할 미검증. Job관련3건도 특정 Job/실 AI 충돌과 인과관계 미확정. 그룹 SID 조회는 성공, 실제 96 Task row는 GROUP92 + Worker 직접 User4, USER4 모두 Ready/instance0. Everyone/Authenticated Users/Users 활성, Administrators/INTERACTIVE 토큰 미관측. `TaskScheduler LOGON_GROUP=4`와 `Windows Security LogonType=4(BATCH)` 다름. 현재 `HOLD_ROLE_AND_EXCLUSIVITY_UNKNOWN` 유지; 정상 프로세스라고 11개 whitelist 금지.
+- **기획 선택:** 보호 이미지6 검사에 추가 사용량 투입하기 전에 기존 공유 WorkerSID1007에서 전역 독점 보장이 불가능한 구조를 개선하는 **V2 전용 별도 Worker 계정 SID** 타당성·배포 제약·계정별 공식 subscription 로그인 필요 여부를 오프라인 설계/위협모델로 검토. 기존 인증·CODEX_HOME 복사 금지, 새 프로필/로그인은 사용자 별도 승인 후. 전용 Code/State/Bot/Worker 분리, 단일 FAKE_ONLY fixed read-only task, IPC ACL·Job90/로그온4, 모든 경합 실행 경로·세대/owner/PID/lease, 공식 usage cap·실패 HOLD/rollback·USB WiFi 및 PIN 전 원격 Discord 가능성 구분을 분석. 독립SID만으로 공유 자원·구독 동시성 보호를 보증하지 않음. V1 Cleanup/설치/실AI/Discord/A 활성화 금지.
+- V2 r11 Installer `eb321fc5ee0426cdd7e1c8f989f05a5e2ec55e6d1887789f0e16490598311bc2`, Manifest `e8d6ed623934a577f88a5bb99ebafc78a2a469c10485a0c648c40dd457356dc0`, ZIP `0250f736b44798d3ba73b5d9674fc154fa233bc74e3b972f85931c2aa59a41d0` 그대로 보존·미설치. 기존 r11이 공유SID1007 계약이므로 별도 SID Worker로 **묵시적 재활용·승인 전환 금지**, 새 패키지/manifest SHA 필요. 원본 V1 HOLD·BotSID1008·BA code·Install1·OnBoot2·운영 봇/아트·인증/CODEX_HOME·SQLite/Unity·Save/main 변경 금지.
+- Codex branch `codex/discord-usage-diagnostics-20261026` 최종 판독 local commit `d2102bb9eca1d0e0826cbcb6b3ae4f8f35deb3e3` (PUSH 없음). 기획 [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) commit `fa14a65e560d12953e28e8a63dd7b894a7d3fa55`. 다음 단계 실제 계정 생성/설치 승인 아님.
+
+---
+
+# PLANNING / 2026-10-27 — Worker11 프로세스·GROUP TaskPrincipal 조사 HOLD, V2 r11 불변
+
+- [Issue #66 관리자 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6433227907): `process_query_known=true` 및 SID1007 연관 PID/생성시각11 확보, 하지만 각 역할과 실행 충돌 관계는 미확정. 현 정책 `foreign_processes=0` 미충족 → Worker **HOLD_NOT_IDLE**. `lease_query_known=true/ABSENT`는 V2 전용만 빈 상태. `task_query_known=false/other_launchable_tasks=null`, `TASK_PRINCIPAL_RESOLUTION` GroupNotFoundException(HRESULT-2146233088), 원본은 GroupId string 길이11/UserId null/LogonType4이고 실제 그룹명/SID 값 **기록 없음**. 그룹이 로컬/도메인/내장인지 추측하지 말 것. **Task Scheduler LogonType4=GROUP (Windows 보안 이벤트 logon type4=BATCH와 다른 enum)**. `Get-LocalGroupMember -SID`는 local SAM 한정; OS GroupId SID 조회/토큰 그룹 활성화·별도 GroupId/LogonType 처리와 fail-closed를 오프라인 구현.
+- 다음 Codex **2개 범위 읽기 전용**: ① 기존 PID+생성시각 11과 Worker 계정SID1007의 연관(Owner/logon session/parent tree/실행코드 서명/작업/Job/Lease 연결) 증거를 경로민감값 없이 조사; PID 재사용·권한거부/불명 HOLD. ② 예약 작업 실제 GroupId에 대한 OS name→SID 검증, 그룹 principal과 Worker SID1007의 토큰 그룹 관계·해당 작업의 실행 가능 여부·중첩/비로컬 그룹 미지원 리스크 분리. 관리자 전체검사·Workerprobe 반복 금지, 안전 진단 후보/정확 SHA/관리자 별도 직접 한줄 안내. 보수적 zero-fp 조건을 근거없이 무력화하거나 11개 프로세스를 종료/화이트리스트하지 않는다. existing Worker 구독/계정 공유 구조로 동시 실행 통제 검증 불가하면 별도 Worker isolate 대안 설계만 보고한다.
+- V2 r11 설치 후보는 **그대로 보존**(Installer SHA `eb321fc5ee0426cdd7e1c8f989f05a5e2ec55e6d1887789f0e16490598311bc2`, Manifest `e8d6ed623934a577f88a5bb99ebafc78a2a469c10485a0c648c40dd457356dc0`, ZIP `0250f736b44798d3ba73b5d9674fc154fa233bc74e3b972f85931c2aa59a41d0`, payload769+Manifest1), staging 실제 배치·설치·IPC/모델/official usage/Discord/A 0. 기존 V1 reference hold·BotSID1008/기존 root/Install1·기존 운영 봇·아트/OnBoot2/CODEX_HOME/인증/SQLite/Unity·Save/main 보존.
+- Codex branch `codex/discord-usage-diagnostics-20261026`, local report commit `8b1371618153b8494bf0f67456c08241a3f66ac6`, PUSH 없음. 기획 [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `c61ecd3cb1bc939bc962def6109b59baf4f6804a`.
+
+---
+
+# PLANNING / 2026-10-27 — V2 r9 HOLD2 오프라인46 PASS / 실 Worker 및 Staging HOLD
+
+- Codex [Issue #66 최신 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6431728309): Worker 조회 오류 `NTAccount.ctor(string)` 빈 UserId 예외 재현, 전 검증 및 GroupId/LogonType 분기 보완. 다만 과거 원본 오류 발생의 정확 Task·인수 증거가 없어 **실제 직접 원인/Worker 유휴 아직 UNKNOWN**. 새 Worker관련 offline **21 PASS**, protected staging 계획 모델 **25 PASS**, 합계46 PASS/0 FAIL. Windows 관리자 targeted 분기는 아직 미실행. 과거 관리자 PASS6는 유지하며 다시 전체검사하지 않음.
+- 다음 2트랙: **(A)** `Tools/DiscordAIServiceDiagnostics/V2/probe-worker-hold2-readonly.ps1` SHA `0fa7933f00ad42ab7fcd20dc2d07063d6b076aa72718841948aab57500d85307`를 Codex의 로컬 상세 `Discord_V2_Hold2_Resolution_20261027.md` 정확 한줄/로컬 해시 검증 후 *대표 관리자 PowerShell7 직접* 한 번만 읽기전용 실행. `Temp/V2Hold2Worker20261027/<GUID>.json` 판독. 기존 Worker를 중단하거나 job/lease를 취득하지 않음. unknown/denied/busy는 HOLD. **(B)** `C:\Program Files\LimitlessV2Staging20261027\R9-01f8a36c9bfe4241b24b7eaa6caaddc2`의 protected BA/SYSTEM owner/DACL·부모경로/handle-fileID·reparse/hardlink/ADS/ZIP·Manifest·766payload 파일 전체 writer/sha를 보장할 **native staging create/verifier** 구현+가짜 파일시스템 오류주입 테스트(아직 미구현), 실 생성 금지.
+- **패키지 r9 설치 불가**: WorkerAdapter 수정코드가 r9 ZIP에 포함되지 않음. 기존 r9/Manifest/Installer byte와 SHA 유지, Builder·8기능 재연동·검증 후 새 r10 또는 고유 후보의 정확 installer/Manifest/ZIP pin SHA를 만들고 추가 승인 전 설치 금지. 실제 protected staging 생성·파일복사와 신규 계정·Task 등록은 별도 사용자 명시 승인 후 관리자 실행; LSA/IPC/AI/usage/Discord/A 별도 게이트. 기존 V1 `REFERENCE_VERIFICATION_HOLD`·BotSID1008 Disabled 및 root/Install1 보존.
+- Codex branch `codex/discord-usage-diagnostics-20261026`, local commit `124be621ce1883b79f4659769bde74b6bdb153c3`, REMOTE_NOT_PUSHED; 기획 [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `ae2675df80f28e569f54c46c1fa173d7fb4fbce5`. MANUAL/A HOLD, 기존 운영 봇/아트/OnBoot/Worker계정·인증/CODEX_HOME/SQLite/Unity/Save/main 불변.
+
+---
+
+# PLANNING / 2026-10-27 — Session0 V2 r9 패키지766/767 완성, 실설치 별도 승인
+
+- Codex [Issue #66 V2 r9 구현 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6430994946): V2 후보 핵심8개 구성요소 구현, `Session0V2Candidate20261027-r9.zip` **15,254,406 bytes**, payload **766**, ZIP entry **767(Manifest1 포함)**. SHA256 **Installer `1a1d671d1cf86aab56c9c2392ed4ba35a8240e348134e6a467f8eb8ec81f17a0`, Manifest `250bab2d46010841353a319fbcf34581784366ac3042e6bc0fdc97aadd17c09e`, ZIP `a4a652bdf73c9a1007bd1e761ae539d3459896b46d8a021fa1459012a1d15c41`**. r1~r8은 superseded/미승인. runtime18 PASS는 r4→r9 SHA 동일5모듈의 결과 재사용. 신규 Core84 PASS/0 FAIL, final contract9 PASS, builder2 PASS. 기존 성공 통합검사 반복 없음. `approved=false/auto_start=false/FAKE_ONLY/schema2` 유지.
+- 원격 미푸시 Codex `codex/discord-usage-diagnostics-20261026` local 구현 `62578e5174d208dd4e83ebe23c2ac438303eb478`, 완료 문서 `53fb709d171b532de2262545f6f8462621f2ce6f`. 기존 V1 BotSID1008 Disabled·보호 설치 root·Install1/cleanup 기록·`REFERENCE_VERIFICATION_HOLD` 불변; WorkerSID1007/서비스 인증/CODEX_HOME/OnBoot2/운영 봇·아트/SQLite/Unity·Game/Save/main 불변. V2 아직 실제 설치·OS IPC·A 활성화 미승인.
+- 후속은 **정확 r9 SHA/실제 실행계정/Task·Pipe·새 root 부재/기존 Worker1007 권한 및 유휴·OnBoot SHA 등 관리자 preflight 먼저**. Windows OS SDDL readback/LSA/Scheduler/Job·실 IPC는 기존 off-line PASS와 혼동하지 말 것. 대표가 새 r9 후보 설치를 별도 명시 승인하고 직접 PowerShell에서 로컬 보안 입력한 뒤에만 V2 전용 계정/Disabled·trigger0·FAKE_ONLY 신규 task 최소 설치 단1회. 부분/unknown 실패 시 HOLD·실행 승인 재사용/자동삭제/재시도 금지. **설치 후 FAKE_ONLY 계정 간 IPC1회는 또 별도 승인**, 이후 실Discord/모델/official usage/A도 별도.
+- 기획 운영 정본 `docs/planning` commit `8b1aeec9200ca71bd8c1f883c1afac3c20e6f6bb`.
+
+---
+
+# PLANNING / 2026-10-27 — V1 HOLD 보존, V2 독립 시험 후보의 오프라인 구현 우선
+
+- Codex [Issue #66 V1 참조HOLD 대안 비교](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6429561131)에서 **V2 완전 새 namespace 후보 구현 우선** 권고: V1 비활성 BotSID1008/관리자 code root/855 원본·Install1소비·모든 증거 보존. Restart Manager `RmStartSession/RegisterResources/GetList/EndSession`은 현재 등록 파일 사용자 탐색 보조 수단일 뿐 간접·과거/누락PID 참조의 무해함 보증 아님; 실제 RM 사용0. 기존 Cleanup 재시도·삭제 금지.
+- V2 설계 후보: `PAUL-PC\\LIMITLESSBotTrialV2` 신규 OS SID, `C:\Program Files\LimitlessRelayTrialV2_20261027`, `C:\ProgramData\LimitlessRelayTrialV2_20261027`, `LIMITLESS-Trial-V2-20261027-S0Host`, `LimitlessPlanningV2-<GUID>` Windows pipe; schema2/새 request·approval·consume epoch, 별도 Manifest/ZIP/고정코드 경로/보호 DACL 생성시 적용, Disabled/Trigger0/FAKE_ONLY/자동재시도0. 기존 WorkerSID1007 공유하므로 인증/스케줄러/파이프/런타임 권한·중복 워커 작업 충돌 위협은 여전히 별도 실측 게이트.
+- 새 추상 오프라인 모델 **72 PASS/0 FAIL**. 모델 산출물 및 디자인 SHA만 존재; V2 **실제 installer·Manifest·ZIP SHA null**, 설치/OS IPC/실 Worker 사용 불가. 다음 안전한 범위는 **8 구성요소(candidate builder, installer, wrapper, C# pipe boundary, host startPS, clientPS, Python transport/runtime)의 결합 코드 구현과 off-line package 빌드/정적·모의 실패검증**, 기존 V1 보안 gate(fresh-state/dacl/SID/암호분리/consume/double-run/no retry) 완화 금지. 성공 시 새 파일별 실제 SHA·manifest/zip inventory를 제시하고 STOP. 그 후 새 OS 계정/task 생성·패키지 설치는 별도 명시 승인 필요, FAKE_ONLY IPC/Discord/모델/A는 다시 분리.
+- Codex 격리 브랜치 `codex/discord-usage-diagnostics-20261026`, 비교 설계 최종 로컬 commit `63b97539ae4e1655d9f36e905b1cb2e3601b22d7`, `REMOTE_NOT_PUSHED`; [기획 운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `8fee9bafac851b4ef20fff6745d35bcb25daaedc`. MANUAL/A HOLD·원본 Unity/Save·OnBoot·봇·아트/CLI/CODEX_HOME/SQLite/main 보호.
+
+---
+
+# PLANNING / 2026-10-27 — 관리자 15현재+종료객체1+누락3, 비파괴 대안 검토
+
+- [Issue #66 관리자 판독](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6429320304): 기존 Process UNKNOWN19 중 현재 이름/ownerSID/session/생성시각 **15확인**, PID32660의 현재 종료 객체1(**과거 동일성 불명**), `Select-Object -First16`로 누락된 원본 PID3은 당시 증거로 복구불가. 15건 현재 명령줄 전부 미제공, 보호프로세스 포함; **당시 PID 동일성 검증0·직접 참조발견0·비참조 확정0**. 이전 Cleanup의 19개 확인 실패=실제 위험 입증 아님, 임의로 안전 확정할 근거도 아님. `REFERENCE_VERIFICATION_HOLD / NOT_CLEANED`; 파일/계정/Task 삭제0, 기존 Bot SID1008 Disabled 및 기존 protected 855 Code root/Install1 소비 증거 보존.
+- 권고: 동일 관리자/프로세스 명령 반복, SeDebug/ACL완화·보호 OS 프로세스 우회 중단. 대신 **자산 중심(read-only) 검사 가능성** (Microsoft Restart Manager API `RmRegisterResources/RmGetList` 등은 실제 resource 사용 프로세스 식별에 유용하나 사용중인 프로세스의 모든 간접/과거 참조를 증명하지 못함), 기존 Task282/서비스792/코드 Manifest·모듈·file-handle 증거 재활용. 우선 off-line feasibility/fake만 검증하고 운영 프로세스 중단/RmShutdown·RmRestart 사용 금지. 해소되지 않는 경우 **옛 비활성 BotSID1008과 코드root를 보존한 채 V2 별도 사용자/작업/폴더 namespace·CLI신뢰·소유DACL·boot 별도 유지** 전략을 설계하여 정확 충돌/자산/실패/롤백/보안증거를 비교; 실제 설치/삭제/토큰이동 하지 말 것. 기존 설치기가 partial resources 감지 시 HOLD함을 인정, 이를 우회해 덮어쓰기 금지.
+- Codex `codex/discord-usage-diagnostics-20261026` local 보고 `a6ad6760040684402c7f692b54a6095f5cabff30` (REMOTE_NOT_PUSHED). 기획 [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) commit `d5ba9390110eaea617537193498390ac1ecae157`. 이 단계는 설계·오프라인 조사만, Cleanup 재실행 및 실 계정/task/IPC/Fake/모델/usage/Discord/A 금지.
+
+---
+
+# PLANNING / 2026-10-27 — Discord #66 Cleanup 미확인 프로세스19 참조 조사 HOLD
+
+- [Issue #66 마지막 실제 관리자 CleanUp 판독](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6420663492): Task282, 서비스·드라이버792, 프로세스334 조사, 확정 시험자산 참조 **0**, 그러나 **19개 프로세스에서 실행 이미지/명령줄 필드 미확보**로 참조 부재 불증명 → `REFERENCE_VERIFICATION_HOLD / NOT_CLEANED`, 계정/파일/폴더/Task 삭제0·backup 미실행·`cleanup_consumed=false`. 과거 `Install1`은 이미 소모; 시험 BotSID1008 Disabled, 보호 Code root·855 SHA·이전 증거 보존. 새 LSA 수정 후보 ZIP/Manifest/Installer는 여전히 **미설치·미승인**.
+- **금일 1순위:** 지난 Cleanup script **재실행하지 않고**, 현재 Windows 관리자 읽기 전용 조사기를 별도 만들거나 기존 결과 JSON에 보조 대조를 추가: 원본 요청 ID/오류 분류, 과거 PID+생성시각이 있으면 동일성, 현재 PID·새 생성시각·Owner SID·Session·이미지/명령줄 각 조회 HRESULT/Win32 상태, 종료/OS 보호·권한거부 여부, 코드root/계정·Task 참조 여부. 원시 명령줄·토큰·민감정보는 저장하지 않고 경로 매칭 결과/근거·정제 코드만; 관리자 토큰·SeDebug 권한 자동 상승/허용 목록 추정/프로세스 kill/OS ACL 변경 금지. Windows Protected Process 등으로 필수 정보 확보 불가면 정상이라 가정하지 않고 불명·HOLD, 안전한 대체 검증 방안 제안.
+- 이 작업에서 계정/Code root/Task/Install/Remove/cleanup 재시도/실 IPC·Fake/AI/usage/Discord/A·Unity/Save/main 변경 금지. 필요 시 대표에게 관리자로 실행 가능한 **별도 no-exit·읽기 전용 단발** 검증 스크립트의 정확 SHA와 명령 제시. 해당 실행도 사용자 확인 후. 기존 성공 검사 전체 반복 금지. 기획 [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `7d7b48a434926c7bd28f7b852170dd69ff3f24b6`.
+- Codex 기존 브랜치 `codex/discord-usage-diagnostics-20261026`, 마지막 실제 Cleanup 판독 로컬 commit `a8ec860e922d088a5f4699157ac957aa441204e0` (Push 없음). 복구/삭제 승인 범위가 기존에 있으나 미확인 19건 해소 전 실제 정리 수행 금지, 정리 재개도 명시적 변경·실행 범위 분리하여 재확인.
+
+---
+
+# PLANNING / 2026-10-26 — LSA 설치 후보36 PASS, 부분 자산 복구와 재설치 별도 승인
+
+- [Issue #66 Codex 최신 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6418802491): LSA `SeBatchLogonRight` UTF16 34/36·null/해제, 설치기 오류 단계·native/HRESULT/InnerException 보호 로그, runner `exit` 제거의 **격리 신규36 PASS/0 FAIL**. 실제 설치/IPC/모델/usage/Discord0. 기존 Phase1 실제 Session0 추론 PASS·Phase2 Fake 4역할·웹 모바일 일부 확인 결과와 혼동 금지. 과거 Installer 원시 오류는 소급 검증 불가.
+- 새 비승인 패키지 `F:\study\codex\Project-Limitless\Temp\Session0LsaRepairCandidate20261026`, Installer SHA `79194ad63dfaf500158d7afa8aadf59e26e0a7487ee595ae9c685e35003c75f8`, Manifest SHA `33ed9a8318c039cd70cf8260338f56e81025ce891c0156ac18556c2aec36d165`, ZIP SHA `d678e760c1ccd41d05a4683a776cf2e877026c1de9bc5fd0a61aeccb4231daf3`, payload855중2변경/853불변, 별도 wrapper SHA `04ccc520cf9271cb055674f5636e6360fdbaceefddaae73077c247644349de0e`. `codex/discord-usage-diagnostics-20261026` impl `b2ae449450c7042bda413fe07427e402babb0480`, docs `ae163034dd299254fbc0b2e30a482f821faf08ca` (LOCAL/NO PUSH).
+- 관리자 최근 판독: 새 BOT SID...-1008 Disabled·Users만/직접 batch0, 새 Trial Task 현재 부재, 기존 보호 Code root(855 SHA)만 남고 State/Record 없음. 지난 Install1 소비 보존, 새 후보는 **기존 부분 자산 자동재사용/덮어쓰기 불가**.
+- **다음 별도 승인 ① 부분 자산 검증·정리만:** 관리자 읽기전용 ID/SID/소유/경로/reparse/SHA/Task·서비스·타 참조 및 증거 Snapshot 확인 후 정확 신규 시험 Bot 계정/Code root만 제한 정리; 자산 식별/참조 불명·해시 차이/Task 존재 시 HOLD, 나머지 계정/기존 부팅/토큰·인증/코드·증거/SQLite 불변. 정리 결과 보고/STOP. **별도 승인 ② 새 설치**: 후보 sha 재검증/작업 부재·새 계정 없음/보호 Manifest/854? (이번 기준 853 불변) 검사 후 신규 1회 제한 설치 및 실제 SD/SID 확인, IPC/AI/A는 추가 승인. 기존 설치 래퍼 재사용·Install1 초기화 절대 금지. 기획 [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) commit `92d10d917379e69c54e2b96b3918bc0da5b9b388`.
+- MANUAL/A HOLD, Unity·Save·본편·기존 봇·아트·OnBoot·main 보호.
+
+---
+
+# PLANNING / 2026-10-26 — LSA 권한 이름 Length 결함 확정, 설치 사고 원시 코드 미확정
+
+- Codex [Issue #66 관리자 읽기 전용 판독](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6418116443): `TrialAccountPolicy.cs:21` `SeBatchLogonRight`는 실제 UTF-16 byte length **34**(+NUL2, maximum **36**)인데 `Length=32/Max=34`로 마지막 `t`가 누락되는 **정적/문자열 재현 가능한 코드 결함 확정**. 반면 실제 1차 install의 LSA 도달 여부, 원래 HRESULT/NTSTATUS/NativeErrorCode 및 유일한 실패 원인은 catch에 의해 소실 → `CODE_DEFECT_CONFIRMED / INCIDENT_NATIVE_CAUSE_NOT_VERIFIED`.
+- 실제 관리자 확인: Trial Bot SID `...-1008` Disabled, Users만, 직접 batch right 없음(`[]`), 만료 2026-10-27 22:41:13 KST. 시험 예약 Task **현재 부재(관리자 exact+hidden inventory)**, 설치 Code root BA 소유/보호ACL 존재·855 SHA 불일치0, HostManifest/DeploymentRecord/State root 부재. ADMIN SID1001/WORKER1007/BOT1008 서로 다름. 기존 OnBoot2 XML SHA·boot approval 일치. 사건 당시 로그4104 문자열을 직접 AccessDenied 오류로 단정하지 않음.
+- 이번 단발 관리자 진단에서는 설치·계정활성화·권한/ACL/Task 변경·IPC/모델/usage/Discord **0회**; 기존 Install1 소비/기록 유지. 기존 설치/Remove 재시도 금지, MANUAL·A HOLD 지속. 다음 Codex 범위는 **오프라인 코드 후보 수정과 테스트만**: LSA_UNICODE_STRING Length를 실제 UTF-16 bytes로 계산하고 MaximumLength=Length+2, 예외 단계/원래 native/inner 코드의 보안 마스킹된 로컬 기록, 대화형 PowerShell `exit` 제거. 기존 후보·증거 보존, **새 Code/Installer/Manifest/ZIP SHA**와 정확 delta·부분자원 별도 복구 제안 후 중지; 실제 복구·재설치·서비스 IPC는 대표 후속 명시 승인.
+- Codex branch `codex/discord-usage-diagnostics-20261026` local commit `d41ceaf156755ad18d8f8557d2b815ffb936ce3e` (PUSH 없음). [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `04afce658e435455942713b01dd3389fa554d83d`. 기존 봇·아트·OnBoot·운영 SQLite·게임/Save/main 보호.
+
+---
+
+# PLANNING / 2026-10-26 — Discord #66 실제 설치 부분 진행 후 HOLD, 재설치 금지
+
+- Codex [Issue #66 설치 1회 기록](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6417537981): 승인 855 SHA 검사 PASS 후 새 Bot 계정 `PAUL-PC\\LIMITLESSBotTrial` SID `S-1-5-21-2858504392-1958168942-1662906075-1008` 생성, **Enabled=false**. 새 코드 root 존재/state root 없음. 새 Task 실제 존재·SD는 조회 **UNKNOWN_OR_ABSENT**로 확정 금지. 설치 결과 `PARTIAL_INSTALL_HOLD`, RuntimeException HRESULT -2146233087, **원시 직접 원인 미확정**(installer catch 원시 오류 소실). 승인 Install1 소모, 신규 설치/재시도·자산 삭제0. 새 BOT 계정·Task·ACL/만료 최종 PASS 주장 금지.
+- 관리자 대화형 PowerShell이 닫힌 것은 launcher 메모리 ScriptBlock의 **`exit 2` 설계** 탓으로 판독. 설치 예외와 별도 원인. **종전 설치 명령 반복 실행·Remove/계정 활성화/예약 Task 재등록/권한 변경 금지**, 운영 BOT·아트/OnBoot2/boot 승인 SHA/SQLite·기존 CODEX_HOME/인증·Unity/Save·main 보호. 모델/usage/Discord/IPC/Fake0; `MANUAL / A HOLD` 유지.
+- 후속 Codex 최소범위는 **관리자 로컬 읽기 전용**: 새 시험 SID/상태·그룹·직접 batch right/24h 만료, task 경로/SD/원인별 조회 결과, code/state root·owner/DACL·Manifest/record·기존 설치 로그/Windows event 확인. 비밀정보를 마스킹하고 계정·Task·서비스·기존 증거 변경0. 원인 불명은 미확정으로 기록. 읽기 전용 PowerShell 안내는 기존 인터랙티브 세션 `exit` 금지; 별도 일회성 격리 자식 프로세스로 정확한 종료코드/오류를 받고 사용자가 창을 잃지 않도록 제안.
+- 설치 재개/부분자산 복구·새 installer 후보/실제 FAKE_ONLY IPC 및 실AI/A는 진단 보고와 새 명시 승인 이후로 연기. 로컬 Codex 문서 `a0037099cb3d9ef86d5f28b7bdc56f63c1d5f738` / branch `codex/discord-usage-diagnostics-20261026`, PUSH 없음. [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `32dbe06bf570a9e70dc4781c573c705b9675a659`.
+
+---
+
+# PLANNING / 2026-10-26 — 설치기 SDDL 동시등록 후보35 PASS / 실제 설치 승인 대기
+
+- Codex [Issue #66 최신 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6416993559): Task Scheduler COM `RegisterTaskDefinition` 등록 호출에 제한 SDDL 동시 제공+즉시 `GetSecurityDescriptor(7)` 대조, CREATE-only flags50/Disabled·trigger0/인증 제한 및 실패 불명 HOLD. 신규 fake-Scheduler **35 PASS/0 FAIL**. **실제 Windows 작업 등록/계정간 IPC/AI E2E는 아직 미검증**. 일반 사용자 SID와 admin SID가 같던 문제는 신규 독립 BOT trial 계정 설치 전까지 보류.
+- 기존 Ready 원본 **855 payload/원래 Manifest/installer 보존**. 새 후보 payload 855개 중 Installer1만 변경, 854 원본SHA 유지. 새 시험 후보 `Temp/Session0TaskSecurityAtomicCandidate20261026`의 Installer SHA `117065bbfca686474f9104bc0dff20fa6528dfb9c204e5a2f2720d91994958e9`, Manifest SHA `6efbd7839bd4e452d9fbca8a465290533472e87cde71845a73bd37bdb21493ab`, ZIP SHA `4b2c56edf5bb8edc6ee7a40a10504f537223bc77874b43a36e61be735c318f83`. 이전 취약 Installer SHA `337ad613...` 실행 금지. Codex local 구현 `2ef4012fb9a963a80de5a9910b8853917fd870fd`, docs `3f6ec5861622296100377277c908bc6915840d94` (`REMOTE_NOT_PUSHED`).
+- 별도 명시 승인 후 관리자 PowerShell 직접 보안 입력/새 `PAUL-PC\\LIMITLESSBotTrial` Users SID/24h 시험 제한 및 **신규 `LIMITLESS-Trial-S0Host`** 작업 `Disabled`/`trigger0`/`FAKE_ONLY`만 설치. 시작 전 OS 실제 owner/DACL/SID 검증; 실제 Scheduler SD 정규화 등 예상 밖 상태는 재시도0·무단수정0·HOLD. 관리자·서비스 인증/기존 OnBoot2·봇·아트·게임·Save/운영 DB/CLI/본편/main 보호. 실제 FAKE_ONLY IPC와 AI/usage/Discord 호출은 분리 승인 경계.
+- 운영 `MANUAL/A_HOLD` 유지, 설치/계정생성/실 IPC/모델/usage/Discord0. 기획 운영 정본 `docs/planning` commit `569975efa33555fe3f0a7d9bfb9af370e1b08327`.
+
+---
+
+# PLANNING / 2026-10-26 — Discord #66 설치 전 SDDL 원자성 미검증으로 HOLD
+
+- Codex [Issue #66 Preflight 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6416602437): 설치 후보 Manifest/Installer SHA 일치, **855/855파일 PASS**이나 `install-session0-trial.ps1:112`에서 작업 생성 `Register-ScheduledTask` → `114`에서 `SetSecurityDescriptor` 사후 적용이며 실제 DACL readback이 없어 **원자적 권한 경계 미검증**. 실제 권한 유출 발생 주장 금지. 신규 계정0, Task0, Fake0, AI0/usage0/Discord0. 기존 29 PASS는 작업 등록 ACL 검증 근거가 아니므로 **HOLD_BEFORE_INSTALL** 유지.
+- 사용자/기획 후속 지시: **기존 설치 명령 실행 금지**. 기존 후보 855개 bytes/Manifest/Installer 보존, Codex 격리 브랜치에서 COM `RegisterTaskDefinition`의 생성 호출에 정확한 SDDL을 함께 전달하고 `GetSecurityDescriptor`로 owner/group/DACL/의도치 않은 principal ACE 확인. create-only·중복 이름 거부·unknown response 재시도0 및 원자 등록/불일치 fail-closed를 합성 작업 스케줄러에 대해 오프라인 테스트. 등록 API 및 필드 제약 문서 검증, 최소 권한·기존 OnBoot 보호. 후보 새 SHA·차이/rollback 문서화 후 중지. 별도 명시 승인 전 새 계정 생성/Task 등록/실 OS IPC·모델/usage/Discord 호출 금지.
+- Codex 브랜치 `codex/discord-usage-diagnostics-20261026`, 최신 로컬 문서 `5d259e2738768dd0816540b9a31228049db70a56` (`REMOTE_NOT_PUSHED`). 기존 `MANUAL/A HOLD`. 기획 운영 정본 `docs/planning` commit `84a2b3a6d9f42c9988ea21b7fa0e001e7e94a7bf`. 기존 봇·아트/OnBoot2/boot approval/SQLite·CLI 인증·게임/Save/main 불변.
+
+---
+
+# PLANNING / 2026-10-26 — Session0 Host↔고정 Worker 접합29 PASS, 실계정 설치 대기
+
+- Codex [Issue #66 상세 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6415686545): 모바일 5버튼→LiveSession0Bridge→Windows pipe→Session0Host→BrokerJob90→고정 read-only Planning Worker→strict JSONL→정제 결과 코드 접합 **완료**, 신규 오프라인29 PASS/0 FAIL. **실제 계정 간 OS IPC/Session0 Host 운영 설치/Discord→실모델 E2E는 미실행·미검증**. MANUAL/A HOLD 유지. 이전 성공테스트는 반복하지 않았음.
+- Bot·ADMIN·WORKER 모두 **서로 다른 실제 Windows 사용자 SID**가 필요함. 후보 새 비관리자 Bot 사용자 `PAUL-PC\\LIMITLESSBotTrial`(Users만/24시간 만료), 신규 작업 `LIMITLESS-Trial-S0Host`(기존 worker 계정 batch4, 기본 Disabled/trigger0/FAKE_ONLY). 관리자 소유 코드 무결성/원자 게시·전체90초·고정 Worker·보안 pipe/실 SID·로그on4 검사 필요. 사용자/관리자 같은 SID에서 UAC 차이만으로는 신뢰 경계 불인정.
+- 다음 제한 작업: 대표가 명시적으로 승인하면 기존 설치 후보의 Manifest/SHA·현재 계정/기존 OnBoot·원본 boot approval 확인 → 새 시험 계정/전용 코드·비활성 task만 안전하게 설치 → **실제 계정 간 FAKE_ONLY IPC 성공 여부** 확인; 보안 미확인 시 모델/사용량/Gateway 호출하지 말고 HOLD. 현재 사용자 시험 token DPAPI/운영 token·서비스 인증을 새 SID로 복사하지 말고, 별도 계정의 사용자 직접 로컬 입력은 후속 안내. 기본 자동 시작/A 사용 금지, 기존 운영 변경 금지.
+- 준비된 로컬 Bundle `Temp/Session0HostBundle20261026Ready`, Manifest SHA `9aa4a60d6dd57c320f2d268ef96dcf86694e53ca9dfdcbb6a3e97d1f33dfe7ec`, 설치기 SHA `337ad613ef6471ae6f4058043965bb3b812a0e6b31adc05ce1efb61ce0158829`. Codex `codex/discord-usage-diagnostics-20261026` local impl commit `5f1dad2284d7c2cf78c4d80d451555c3619eb60a`, docs commit `a8b0be3971aa461d09432348b309179cade27981` (**REMOTE_NOT_PUSHED**).
+- 기획 운영 정본 `docs/planning` 커밋 `3442b28b07a5d4d8a946f8e25596f38be5c57be8`. 원본 게임/Save·봇·아트·서비스 인증·기존 CLI/CODEX_HOME·OnBoot2·운영 SQLite·main 모두 변경 금지 유지.
+
+---
+
+# PLANNING / 2026-10-26 — Session0 보안 중개기 42 PASS, 실제 SID·Host SECURITY HOLD
+
+- Codex [Issue #66 상세 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6412596448): secure pipe·단발 승인·중복/취소·Job90 파생·결과 판독 **42 PASS/0 FAIL(합성34+native8)**. 단 **실제 서비스 Host → 고정 Worker backend 조립·서로 다른 계정의 IPC/서비스 OS 경계 검증 미완료**, 42PASS=실전 AI 연결 VERIFIED 아님. 새 실제 모델/usage/Discord·운영 DB/서비스작업·계정·ACL 변경0.
+- **핵심 SID:** 현재 trial 봇 Windows 사용자와 관리자 PowerShell SID가 동일. UAC 상승 토큰/사용자 쓰기 가능 폴더 ACL만으론 관리자–봇 독립경계 아님. 현재 후보는 BOT / ADMIN / WORKER 별도 SID 전제. 다음 오프라인 범위는 기존 Host↔고정 read-only Worker 결합 코드+synthetic fake-only fault 테스트와 보호 DAC/IPC 위협모델·배포/rollback 보고. 새 bot 최소권한 계정/ACL/DPAPI 토큰 재입력/Task 설치는 대표 별도 승인 전 실행 금지.
+- 기존 trial CurrentUser DPAPI token/운영 Token/서비스 인증을 새 계정에 복사·공유하지 않는다. 별도 계정이 필요하면 새 보안 입력 절차·PIN 없는 부팅/USB 무선랜 재접속 조건을 계획. 기존 MANUAL/A HOLD 및 OnBoot 봇·아트 감시 보호.
+- Codex 로컬 격리 브랜치 `codex/discord-usage-diagnostics-20261026`, 구현 commit `82af13e15469ae23d8ca13e96ac6b651f3160a9f`, docs `ef1dec16bf285024c9caa733845ff93985e07d7f` (**REMOTE_NOT_PUSHED/NOT_DEPLOYED**). [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` 갱신 commit `0c5500e3ed805345e6921256ec28c32d2c3a177a`.
+
+---
+
+# PLANNING / 2026-10-26 — 모바일 버튼·Session0 Worker 후보 35 PASS, 실전 HOLD
+
+- [Issue #66 최신 Codex 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6411977426): `mobile_planning_buttons.py` 신규 대표 전용 버튼5종(내용·승인·실행·취소·상태) + `session0_planning_bridge.py` 합성 인계 후보 **35 PASS/0 FAIL**. 기존 SHA·단발 소비·권한/만료·handoff 검증 유지. 이번 실제 모델·공식 사용량·Discord REST/Gateway·운영 DB·서비스 task 모두0회, 현재 MANUAL/A HOLD.
+- **중요 blocker:** `LiveSession0Bridge`는 **무조건 HOLD**이며 운영 Process를 실행하지 않음. 관리자 사전 arm/고정 service task·민감 없는 요청 mailbox·엄격한 관리자/서비스측 DACL·결과 reader·총90초 Job+청소/종료 및 실행 중 취소가 아직 미구현/실제 Windows 미검증. 현재 사용자 SID가 관리자 SID와 같은 환경에서 사용자 writable folder ACL만으로 안전성 주장 금지; 보안 경계 분석을 통과하지 못하면 유지 HOLD.
+- 다음은 모델·usage·Discord 등록/게시0인 격리 오프라인 구현/테스트만 승인 검토. 원본 OnBoot·운영 봇·아트·SQLite·CLI/CODEX_HOME/게임/Save·main 보존. 실제 Discord→Session0 AI 1회나 A 자동 재개는 명시적 후속 승인 필요.
+- Codex 로컬 브랜치 `codex/discord-usage-diagnostics-20261026`, 구현 commit `a61d8c17a8414335830939d7c1ec159ab1d8a023`, 문서 commit `f93d13e79b336453711a69ea5de34be2035b1d99` (`LOCAL_COMMITTED / REMOTE_NOT_PUSHED`). [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `896177cb69bb87ceea11ff80086e86a38915faef`.
+- 범위 구분: 과거 Session0 단발 실제 AI는 VERIFIED, 웹 Discord Fake 4역할/휴대전화 status·task는 PASS지만, 버튼 실전 UX/실Discord→실모델 E2E/부팅 후 A 자동재개 성공 증거는 없음.
+
+---
+
+# PLANNING / 2026-10-26 — 실제 Discord Web 4역할 Fake PASS 및 시험 정리 완료
+
+- [Issue #66 최신 실전 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6411156106): 휴대전화 `/limitless-trial status`·`task` 2개 실제 왕복, 이어 **PC 웹 Discord에서** 승인4·FakeExecutor4·기획→두 아트→Codex→기획 회신 TECH_PASS, 새 Discord SENT11·불명0. FakeExecutor만 사용: 실제 새 AI/공식 usage 조회/운영 SQLite 업무0. **모바일 전체 승인·실행 미검증, 실제 Discord→실제 Codex Worker 연결 미완료**.
+- 시험 Host 대표 완료(2026-10-26 16:53:56 KST)로 정상 종료/자식0, CREATE 1명령 반환 ID 하나만 DELETE1, 기존 guild/global 목록 복원 및 원본 queue SHA 보호. 소비/승인/receipt/checkpoint 기록 보존. 새 시험 없음; MANUAL 및 A HOLD. 기존 운영 봇·아트/OnBoot/인증/CLI/SQLite/Unity·게임/Save/main 보호.
+- 다음 권고: 모바일에서 **긴 SHA 입력을 요구하지 않는 버튼/짧은 확인 코드**(전체 SHA·역할/기준커밋/upstream/owner/채널/TTL 서버측 엄격 검증), 실제 AI 연결을 위한 Session0 Supervisor·공식 5시간/주간 usage 게이트·단일 승인 1작업/90초·검증된 보고/실패 HOLD를 **먼저 격리·오프라인**으로 구축. 이후 별도 대표 승인으로 일시 시험용 앱에서 실제 Discord→AI 읽기전용 1회 E2E. 운영 봇과 A 활성화/게임 적용은 별도 추가 승인.
+- Codex `codex/discord-usage-diagnostics-20261026` 로컬 구현 `341f6a5168a4e14b89f417de4089b5a59167d88e`, 최종 보고 `243bf0bab0841b545f5ff9cc4f187f2880826b4c` (**LOCAL_COMMITTED/REMOTE_NOT_PUSHED**). 기획 [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `d99562096b432f6c58076aa49a31462f479688c4`. 전체 모바일 VERIFIED/A READY로 과대평가 금지.
+
+---
+
+# PLANNING / 2026-10-26 — Discord Phase3 오프라인 어댑터 READY / 실제 모바일 시험 미등록
+
+- Codex [Issue #66 최신 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6409096093) 기준: 기존 1단계 서비스 Session0 AI VERIFIED, 2단계 가짜 4역할 인계24 PASS 유지. 신규 `discord.py` SDK 명령 callback 후보 `collab/mobile_discord_trial.py` **18 PASS / 0 FAIL**, 정확16개 trial ZIP smoke **5/5 PASS**. 실제 Discord 연결/게시·명령 등록·새모델/공식 usage·운영 DB 변경 **전부0**, MANUAL·A HOLD.
+- 시험용 별도 guild `/limitless-trial` 7명령: status/task/plan/approve-execution/cancel-execution/run-fake/handoff. 기존 `/limitless approve`의 **미술 승인은 건드리지 않는다**. 오직 별도 시험 application/bot와 제한 guild/channel, owner 검증, 짧은 TTL, FakeExecutor, root 최대1/가짜역할 호출 최대4/동시1, 재시도0, UNKNOWN_NO_RETRY, 임시 command 반환 ID 전용 DELETE 및 trial host 종료/정리 계획 후 제한 모바일 실제 E2E 추진.
+- 코드 브랜치 `codex/discord-usage-diagnostics-20261026` 로컬 구현 `8cbf90ba84c93f9c45f4979a65a605fda727d464` / 문서 `6fcaafa06ca5b89bde7eeffe55431afa125ddb40` (`LOCAL_COMMITTED / REMOTE_NOT_PUSHED`). 패키지 ZIP SHA `103ecc96c6796d288986eb6ba3ddf5e8612153010b4976f4b9c39a4dcc88099b`, manifest `f69049c61737476e6707bcb9559957e88115fbc19da0a56a92c8ae339348e5a7`. `approved=false`, permit 0, 미배포.
+- 다음 승인 게이트: test app/guild/channel/owner/ACL/Discord 명령 목록 사전 스냅샷과 **single guild CREATE/해당 ID DELETE** 허용 범위. 운영 봇 재시작·운영 CLI/계정/부팅 변경·새 AI 모델/A 활성화·게임·Save/main/Push 금지. [기획 운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `9ecec485f2de79feddb039b4fa31ec17178acf78`.
+
+---
+
+# PLANNING / 2026-10-26 — Discord AI 1단계 실제 VERIFIED / 2단계 오프라인 24 PASS
+
+- Codex [Issue #66 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6408778370) 확인. 서비스계정 Session0/logon4 **실제 Codex 추론 성공**(exit0, completed turn1, 한국어 최종답변, JSONL PASS, 23.170초, stderr0). 자동 재실행0, 실제 원격 HTTP 횟수 미확정; 토큰 input9934/output22/cached8192. 임시Task·permit 정리, 기존 승인/SQLite/봇·아트·OnBoot·CODEX_HOME 보호.
+- 사용자의 '1단계 성공 시 2단계 바로 진행' 조건에 따라 **2단계 가짜 SQLite/Executor/Discord 통합 24 PASS/0 FAIL**. 코드 `Tools/DiscordAICollab/collab/mobile_offline.py` 후보. `approve-execution`은 실제 봇 명령 미등록; `/limitless approve`는 기존 미술 승인으로 보호. 실제 Discord 모바일 왕복 및 운영 Worker, A 자동재개는 **아직 미검증**. MANUAL/HOLD 유지.
+- Codex 구현 브랜치 `codex/discord-usage-diagnostics-20261026`: 로컬 구현 `0dffe9738eb8e56fe06af413e19411ab87f72b25`, 완료기록 `d2db1e47b541e3e578985dc746eb31ec066b318c` (**LOCAL_COMMITTED / REMOTE_NOT_PUSHED / NOT_DEPLOYED**). 기획 [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` 반영 commit `168b848fd3e1a6bc1cb5a915058b20fc0158c713`.
+- 다음 단계 권장: 기존 봇·아트감시를 보호한 채 실제 Discord 모바일 명령/승인 구분·소유자 ID/서버/채널 스코프·서명/상태/manifest SHA·명령 롤백을 검토, 합성 실행기로 단계적 실제 Discord 왕복시험을 준비. 추가 실제 모델 호출/운영봇 변경/A 활성화·모바일 프로덕션 검증은 별도 승인 게이트로 분리하고 오해 없이 보고할 것.
+
+---
+
+# PLANNING / 2026-10-26 — Discord #66 PowerShell 충돌 2건 격리 수정
+
+- Codex [Issue #66 최신 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6406235162): 실제 서비스 Session0/logon4 및 44 SHA/기존40 보존 성공 후 usage-only 시험은 Python/App Server 시작 **전** PowerShell 스크립트 변수 충돌로 중단. `$home` ↔ ReadOnly `$HOME`, 결과변수 `$child` ↔ `[switch]$Child`. 격리 후보만 `serviceCodexHome`·`childSummaryPath`로 rename, 오프라인 3 PASS/0 FAIL. **실제 공식 사용량 조회0·모델0·Discord0**, 과거 `OFFICIAL_READ_REJECTED`/ `turn.failed` 원인 미확정.
+- 실제 배포된 기존 launcher는 불변, 새 후보 launcher SHA `3a57e70ac09ac2d357d4224ef4cc9c5ad23d7610f499380436eeb2aac80fec74`, Codex 로컬 `codex/discord-usage-diagnostics-20261026` fix commit `e10d02cbb4fccc9679a2ebd035c8426f3c603557` (`LOCAL_COMMITTED / REMOTE_NOT_PUSHED / NOT_DEPLOYED`).
+- **기존 시험 launch fuse는 소비됐고 안전상 보존**; usage RPC 0회와 혼동 금지. 무단 reset/reuse/신규 permit 발급/시험 자동 재개 금지. 사용자가 새 trial을 명시 승인하기 전에는 수정안/보호 조건 확인까지만 가능. 기존 MANUAL·OnBoot·bot/art·SQLite·boot승인·CLI·게임/Save·main 보호.
+- 기획 [Discord 운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `fdc5da9bd26a3f5486cc002dbda6c8518151467e`에 상세 반영.
+
+---
+
+# PLANNING / 2026-10-26 — Discord #66 Session9 실행 조건 HOLD / 사용량 시험 1회 미소진
+
+- [Codex Issue #66 사전게이트 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6405623813): 승인된 격리 trial·공식 사용량-only 최대1회 진행 시 비관리자 일반 사용자 **Session9** 및 작업 스케줄러 `CimJobException`으로 서비스 계정 **Session0/logon4** 확인이 불가능해 선행조건에서 HOLD. **패키지 SHA44 PASS/기존40 보호**, 그러나 trial 배포0·permit0·실조회0·모델0·Discord0. 승인된 1회 시험은 미소진, 자동 재시도 금지.
+- 다음 제한작업: 바울 대표가 직접 관리자 PowerShell을 여는 로컬 단계에서 기존 서비스 계정/배치 실행경로의 **권한·실행 정체성·Session0** 검증. 관리자 토큰 = 서비스 Session0 토큰이 아님. 기존 OnBoot2·봇/아트 감시·SHA/운영52·SQLite·CODEX_HOME/토큰 변경하지 말고, 경로 검증이 되지 않으면 HOLD. 암호·토큰 공유 금지, PIN 자동 로그인 금지.
+- 이전 `OFFICIAL_READ_REJECTED` 실질 원인과 과거 `turn.failed`는 여전히 미확정. 새 RPC 조회 호출 자체가 없어 이번 Session9/CIM 오류를 서버 사용량 오류로 판단하지 않음. Codex 로컬 보고 commit `84486500a79cdf59c41d4204d6a7c3427356422d` (`REMOTE_NOT_PUSHED`). [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) commit `77d032e448312bafd810f5dfc77ecda96d77e726`.
+- MANUAL 및 AI_EXECUTION_HOLD 유지. GitHub Push/main 병합·Unity/게임/Save·실제 A 재개/컴퓨터 종료 없음.
+
+---
+
+# PLANNING / 2026-10-26 — Discord #66 12 PASS, usage-only 격리 배포 사전검증 완료
+
+- Codex [Issue #66 latest](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6404994131) + 사용자 보고 기준 신규 usage-only 독립 진입점 오프라인 **12 PASS/0 FAIL**. 기존 검증22건/공식 전체 CLI 설치 검사 재실행 없음. **실제 사용량 조회0·AI 추론0·운영 배포0, MANUAL 유지.**
+- 승인 목록 정확한 산식: 운영 `Python42 + DiscordSecretStore.psm1 1 = 총43`, 격리 후보 `Python43 + PSM1 1 = 총44`. 기존 3파일 변경+신규 `usage_diagnostics.py` 1파일, 나머지 **40개 항목은 기존 SHA 보호**. Git checkout 줄바꿈 차이(26 Python+PSM1)를 무조건 승인하지 않은 것이 핵심. 새 `usage-only-once.py`는 운영 승인 목록에 자동 등록된 것이 아님.
+- 별도 비활성 시험 패키지, 보호 ProgramData permit, 서비스 Session0/logon4, 최소20초 supervisor, 신규 request ID, 1회 소비마커, 재시도0, 로그 경로 및 권한, 원본 보호·복구를 시험 전 확인할 것. 기존 사용량→모델 추론 runner는 사용금지.
+- Codex 작업 `codex/discord-usage-diagnostics-20261026`, 로컬 `0f98620bbd565e0ee8df6b743a6a251b21ae75b6` (`LOCAL_COMMITTED/REMOTE_NOT_PUSHED/NOT_DEPLOYED`). [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) 이력 갱신 `docs/planning` commit `fd4b741f4da8e9751a259cec800de9af87e2297b`.
+- 다음 **분리된 승인**: 격리 trial 패키지/permit 배포 → 확인 후 사용량-only 최대 1회/20초/모델0 실행. 실제 `OFFICIAL_READ_REJECTED` 원인·과거 `turn.failed` 원인 모두 미확정. A 모드/게임/CLI/부팅/본편·main/로컬 동기화 변경 승인 없음.
+
+---
+
+# PLANNING / 2026-10-26 — Discord #66 오류 진단 수정 22 PASS 및 승인 게이트
+
+- Codex [Issue #66 최신 완료](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6404667041) 확인. 서비스 사용량 조회 에러 진단보존 최소수정 후보(기존 4개 관련 파일 수정+신규 `usage_diagnostics.py` 등) **격리 오프라인 22 PASS/0 FAIL**, 실제 AI/사용량 API 조회0, 운영 배포0. **이 오류의 실제 원인 및 Session0 AI 추론 성공은 여전히 미확정**.
+- 후보 코드는 `codex/discord-usage-diagnostics-20261026` 로컬 commit `970a724775b5dfdffd407412fdd3cfc8a130a52a`, `LOCAL_COMMITTED / REMOTE_NOT_PUSHED`. 기존 운영42 허용 상한 대비 신규 모듈 후보43이므로 변경 파일 경로·내용·전후 SHA·고정 manifest·테스트 entrypoint·복구계획을 오프라인 검토한 후에만 운영 반영 승인 검토. 기존 승인 상한 자동 확장·검증 우회 금지.
+- 다음 실제 시험은 **독립된 사용량-only 진입점**으로 최대 1회/20초·자동 재시도0·모델0·Discord 메시지0·A변경0으로 제한. **해당 실조회와 운영 배포는 아직 미승인**. 기존 사용량→모델 자동 연결 runner 재사용 금지. 서비스 자기 인증/보호 로그 경로·실행 계정·모든 승인 SHA 재검증 필요.
+- 기획 정본 [Discord 운영 이력](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` 커밋 `8de449e0cf5036b8f421232561f78cd837804d6e`에 기록. 봇/아트 감시·SQLite·Unity/Save·main 보호, MANUAL/AI_EXECUTION_HOLD 유지.
+
+---
+
+# PLANNING / 2026-10-26 — Issue #66 오프라인 원인 조사 결과 및 다음 제한 단계
+
+- Codex Issue #66 [보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6404484227), 로컬 `codex/discord-ai-collaboration` commit `fcd0488ccc8a140cd08661822383f7ec3194e058`(`LOCAL_COMMITTED / REMOTE_NOT_PUSHED`) 기준, 실제 서버 원인 **미확정**. `collab/usage_bridge.py:64`가 app-server RPC `error`를 `Denied('OFFICIAL_READ_REJECTED')`로 축약하여 error.code/message/data·method/id가 사라지는 **진단 결함은 확정**. 과거 `turn.failed` 별개.
+- 이번 오프라인 조사: 모델 호출0·사용량 재조회0·설정변경0. 서비스 보호 로그 WinError5 및 스케줄러 실시간 조회 실패로 *현재 RUNNING* 확정 금지. 이전 부팅/봇 검증 결과는 보존.
+- 기획 다음 권고: 사용량 사전 게이트에서도 **비밀 제거한 원시 오류 구조·stderr/종료 코드**를 서비스 자기 프로필에 안전하게 기록하는 최소 변경/오프라인 모의 검증만. 보안 완화·운영 코드 배포·실제 사용량 조회·모델 추론·A 활성화는 별도 승인 전 보류.
+- [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) 업데이트 `docs/planning` commit `e5f6787ca5b8448afbfd87ded1756e09473802b2`. 게임 원본·main·부팅 작업 변경 없음.
+
+---
+
+# PLANNING / 2026-10-26 — Discord AI 협업 Issue #66 오프라인 조사 재개
+
+- 바울 대표가 **Discord 작업 재개**를 지시. 이전 10/24 ‘오늘 중단’ 결정을 이력으로 유지하되, 이제 **원인 조사 범위에 한해 재개 승인**. **실제 AI 추론, A 활성화, 서비스/부팅 작업 재시작은 아직 승인되지 않음**.
+- 마지막 실패: `OFFICIAL_USAGE_AND_APPROVAL` 사전 확인 → `OFFICIAL_READ_REJECTED (Denied)`, 해당 시도 모델 호출0. 과거 `turn.failed` 직접 원인도 계속 미확정이며 별건으로 관리.
+- 공식 운영 정본 [2026-10-24 기록에 10/26 재개 주석 추가](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md), [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66)에서 후속 기록. 현재 운영 상태 `MANUAL / SESSION0_AI_HOLD / OFFLINE_DIAGNOSTICS_RESUMED`.
+- Codex 후속 범위: 기존 로컬 worktree에서 사용량 조회 게이트·오류 원시로그·서비스 Session 0 vs 사용자 실행 환경 비교, 0 모델 호출·0 설정 변경 원칙. 원인·근거·다음 최소 검증 계획만 보고하고 중단. PIN 없는 원격 사용 목표 및 승인/원본 보호 정책 유지.
+- **문서 직접 GitHub 커밋 ≠ Codex 로컬 Push/코드 실행.** main 병합·게임 적용·모델 재시험 없음.
+
+---
+
+# PLANNING / 2026-10-26 — 바울 대표 원본 로컬 main 무손실 동기화 완료 (SYNC_COMPLETE)
+
+- 사용자 업로드 Codex 최종 화면 및 [Codex Issue #67 원본 동기화 완료 정식 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/67#issuecomment-6404293491) 재검토. GitHub에서 `main` HEAD **`bfd281545632877325f5d21e04cefb924042c465`** 재확인. Codex가 사용자 PC의 `origin/main` 및 원본 local main도 동일한 완전 SHA로 실측했으므로 **`SYNC_COMPLETE`** 판정. 과거 #67의 `PARTIAL/HOLD`는 이 후속 정식 완료로 해소되었음.
+- 원본 `Unity/Client/ProjectSettings/EditorBuildSettings.asset`의 사용자 `com.unity.dt.app-ui`+기존 input 설정·기존24개 Scene 원형 보존, Main23 `World_FrostwayVillage.unity` GUID `42a253fb196cf584b89d837a04fb56db` **정확1회** 추가하여 Scene 총25. 별도 원본 RAW 백업·격리 의미병합·SHA roundtrip 검사 후 한 파일만 최소 트랜잭션 완충하고 `git merge --ff-only origin/main` 성공. 사용자 app-ui 때문에 **BuildSettings는 로컬 working tree에서 dirty로 남는 것이 정상**. `main` 원격에 개인 설정 commit/Push하지 않음.
+- 보호 검증: 기존 사용자 기타 보호파일 **7,369 SHA 검사**, 승인 동기화 대상 외 SHA 차이0; dirty308→308, untracked550→550, staged0, Git porcelain 상태 raw 전후 byte동일. 독립 백업906파일(188,629,119 bytes)+참조4. 원본 Save/UserData/UserSettings/Packages 및 사용자 환경 보존, 기존 10/24 원본 백업 무수정. 신규 YAML/Scene path/GUID/config/제품212파일 **정적 Delta PASS**. 기존 제품 Main23 20 + TTS/Tool192 존재 정적 확인; 새 기능·아트·음성·BGM·Discord Worker AI 재시도0.
+- **Unity 버전 정확히 구분:** GitHub 제품 정본 `ProjectVersion.txt` 6000.5.7f1 vs 사용자 **원본로컬 설치/설정은 시작부터 `6000.6.5f1`** (Codex 실측). 원본 바이트를 최신 main의 제품 버전으로 덮어쓰지 않음. 원본 Editor/Play/Import/포커스 조작0, **원본 Unity 자연Import·컴파일·손플레이 `NOT_TESTED`**. 완료가 곧 실제 사용자 PlayMode/오디오 청취 최종 QA는 아님. Main23 Main24 Open16·미승인 아트 HOLD/Discord #66 HOLD 유지.
+- Codex 로컬 전용 증거/커밋: `codex/original-main-sync-20261026`, 보고 commit `1811ec87fbeb0c8e25d3b755148d785d4b0c4fad`; 사용자 로컬 `Temp/OriginalMainSync20261026/ReportWorktree/문서/00_프로젝트/BuildSettings_SemanticMerge_DeltaQA_20261026.md` 및 증거 `Evidence/OriginalMainSync20261026/OriginalLocalSync_Proof_20261026.json`. **Push/PR0**, 원본 main은 remote `bfd28154`로 3자 동기화. 별도 Codex 문서 커밋이 새 main 제품 commit은 아님.
+- 기획 보고: Issue #67은 제품 PR#68/마감 PR#69 및 이번 원본 Sync가 모두 완료되어 닫아도 되며, 추가 동기화/전수 Unity 재시험 지시 필요없음. 다음 자연스러운 사용자 Editor Import/Play 확인은 별도 검증 대상이고 **현 동기화 완료를 취소할 근거는 아님**. 부서별 새 작업 발주가 없으므로 이 상태보고에 복붙 지시문 필수는 적용되지 않음.
+
+---
+
+# PLANNING / 2026-10-26 아침 — 바울 대표 원본 local main 안전 동기화 재개(단일 EditorBuildSettings 충돌)
+
+- **바울 대표 직접 지시** “굿모닝~ BuildSettings 충돌을 안전하게 해결하고 원본 로컬을 동기화하는 작업해줘.” 최신 GitHub `main` 실 조회 `bfd281545632877325f5d21e04cefb924042c465`. [10/24 EOD #67](https://github.com/HappyPaul812/Project-Limitless/issues/67#issuecomment-6384533893) 결과 기준 원본 local main `47ad2eecb40135b2ee28e4947d642ebdbf0bf68a` **과거 실측**으로 3자 SHA 불일치 `PARTIAL/HOLD`. GitHub PR#68 제품(Main23 KEEP + TTS162) 및 PR#69 문서 **이미 병합 완료**; 다시 PR 생성/병합/제품 통합 불필요.
+- 원격`main`에서 실제 비교: `Unity/Client/ProjectSettings/EditorBuildSettings.asset`은 옛`47ad2eec` 이후 **`World_FrostwayVillage.unity` 등록 1개만 추가**(path `Assets/_Project/Scenes/World_FrostwayVillage.unity`, GUID `42a253fb196cf584b89d837a04fb56db`), 그 Scene meta GUID 실존. `m_configObjects/com.unity.input.settings.actions` 원격 old/current 보존. **사용자 원본에만 존재하는 `com.unity.dt.app-ui` YAML 정확한 값은 기획 원격에서 조회 불가** → Codex가 F: 원본 YAML raw bytes를 백업·의미병합하여 유지. app-ui private setting은 GitHub 공개 main에 추가 commit X, 안전 동기화 후 BuildSettings가 dirty인 건 정상.
+- [#67 후속 작업·안전 트랜잭션 지시](https://github.com/HappyPaul812/Project-Limitless/issues/67#issuecomment-6404168194): 지금 원본 local의 `HEAD/index/status` 및 사용자858 dirty/untracked·Save/UserData·지난 백업, 기존 85 worktree SHA를 **읽기전용 preflight** 후 신규 유일 백업 디렉터리에 app-ui 포함 해당 file raw bytes와 모든 사용자 상태 스냅샷 복구가능하게 보호. Clean 격리 copy에서 현재 local-only 장면/설정 추가가 전부 빠짐없이 포함된 `latest main scene1 + local app-ui exact object` YAML 시뮬레이션, GUID/scene path 유일성·YAML·m_configObjects 확인.
+- 충돌 교집합이 오직 `EditorBuildSettings.asset` 하나이고 백업 검증 성공하면, Codex가 **보호된 단일 경로만** 통제한 트랜잭션으로 임시 중립화 → `git merge --ff-only origin/main` → 검증한 합성 user setting만 working tree 복구. `git stash/clean/reset --hard/index 우회/force` 금지. 작업 중 다른 dirty 경로 충돌·원본 Unity Editor 파일변경/불명 HEAD/해시 불일치 → **STOP/HOLD**. 개인 app-ui YAML 및 원본 SHA는 공개 GitHub에 내지 말 것.
+- 완료: **원격 GitHub main == origin/main == original local main 같은 SHA**, 모든 original user `app-ui` 및 다른 로컬 전용 설정 정확 보존, `World_FrostwayVillage` 신규 scene GUID 등록1, 원본 사용자 기타 파일 SHA불일치0, Unity/Save/UserData/기승인 PNG/WAV 보호, 기존 Main23/TTS 통합 제품파일 존재/정적 scene 참조만 delta QA. 기존 Main23 148/136·TTS1031·#65 23·10/24 새 Unity25 전수반복하지 않음; 원본 Unity Editor 직접 실행/자연 import/손플레이는 별도 `NOT_TESTED`.
+- **상태:** `GITHUB_TARGET_VERIFIED / ISSUE67_SYNC_FOLLOWUP_POSTED / CODEX_ORIGINAL_LOCAL_EXECUTION_REQUIRED`. GitHub 이슈 댓글을 남겼다고 사용자의 Windows Codex가 자동 실행되는 것은 아님. 실제 sync 성공 전 `SYNC_COMPLETE` 주장 금지. 다음 응답에 반드시 **Codex 복붙용 실행 지시문** 함께 제공, Discord #66 무인 AI는 사용자 중단지시로 현재 HOLD이므로 직접 자동전달했다고 주장 금지.
+
+---
+
+# PLANNING / 2026-10-24 21:30 KST — 바울 대표 EOD 전체 승인분 통합 및 로컬 무손실 동기화 지시
+
+- 사용자 원문 **“지금까지 한 작업들 모두 합치고 로컬 동기화 해줘.”** → 승인·실제 검증 가능한 완료 제품/정본문서만 선별 EOD 통합하고 미술 후보·Discord AI 장애 HOLD를 게임 제품으로 끌어오지 않는 안전 범위로 실행.
+- **즉시 실제 GitHub 완료:** [전담당 GitHub 정식 보고 의무화 docs-only PR #62](https://github.com/HappyPaul812/Project-Limitless/pull/62), 정확5파일, 예상 head `532d0dd7a2b07f00488dedc564ce80772b7754a4`, **squash merge 성공**. 새 `main` SHA **`e8d9436ae4fe1a435efcd266b5e25221c282dcc8`**를 직접 GitHub 확인. 사용자 원본 로컬 main 및 main23/TTS 로컬 브랜치는 기획이 PC에 직접 접근할 수 없어 **아직 동기화 불가/미확인**. 로컬 Git SHA를 추정하지 않음.
+- **Codex EOD 안전실행 신규 [Issue #67](https://github.com/HappyPaul812/Project-Limitless/issues/67)**을 완료절차·파일보호/QA/미승인HOLD/PR/3자 SHA 동기화 게이트 포함해 발주. 대상 로컬 격리 Main23 5목표 F1왕복/Save/접근성 [#56/#58/#65], TTS 162/162 `codex/tts-voice-integration-20261024` 제품(보고상 140 WAV교체/신규22 ID, Unity Play1031PASS) 및 팀별 실제 최신 정본 문서 의미선별. 이 브랜치들의 remote GitHub 제품 PR은 **현시점 존재하지 않아** GitHub UI로는 병합 불가. 기존 `main` 제품 10/21·22 Wolf/Bear/Fox·Ch3 F1/Main22/Mouse·지면9는 재통합/재복사 불가.
+- **미승인 제품 제외:** 신규 오르나 원화(visible80/whole84.63은 `PLANNING_VISUAL_RECOMMENDED`일 뿐 최종아트 사용자승인 전), 남문 신규 Gable/Trim/EntryDoor(실 #58 남문 `SOUTHGATE_PROPOSAL_ONLY`/NEW_ART_REQUIRED_0), 여관 Standalone, NPC3/독침벌 좌향1포즈·20frames, Spider HOLD/Field09잔여, BGM/SFX 신규 음원, Main24 Save 설계만, #66 Discord Worker `MANUAL/HOLD/OFFICIAL_READ_REJECTED`; 승인 없는 새 TTS WAV/API 호출 금지. 담당별 보고서만 정확 `HOLD` 표기해 선별 main 문서 정본 반영.
+- **Codex 원본 Windows 보존필수:** `F:\study\codex\Project-Limitless`, 사용자 미커밋/미추적·Save/UserData·Editor·개인 작업, 이미 승인된 원본 PNG/WAV 등 변경/삭제/stash/reset/clean 없이 사전SHA 백업. 최신 origin/main에서 별도 codex EOD worktree, Main23/TTS 커밋·Resource GUID·ID 충돌 검증, 신규 통합 delta만 Unity 검사, Main23 기존148/136/41/15/33/8/23 및 TTS1031/162 전수불필요, QA 실패 범위만 HOLD. 제품PR/문서PR 통해 GitHub main 반영, 원본 local main은 안전한 `--ff-only`로 3자SHA 비교. 실제 병합/원본 동기화 성공 전 `SYNC_COMPLETE` 금지. 사용자 명령은 안전한 승인범위 통합 요청이지만 미승인 후보 적용에 대한 포괄 승인은 아님.
+- **현 단계 기획 판정** `DOCS_PR62_MERGED / EOD67_ISSUED / MAIN23_TTS_LOCAL_INTEGRATION_PENDING / ORIGINAL_LOCAL_SYNC_PENDING`. 2026-10-24 제품통합/원본PC sync는 Codex가 Windows에서 실행하고 Issue #67에 PR·전체 커밋·3자 SHA·보호/Unity QA를 직접 남겨야만 완료. 기획 답변에는 언제나 **Codex 복붙용 상세 지시문 함께 제공**.
+
+---
+
+# PLANNING / 2026-10-24 — Discord AI 협업 운영 정본 문서화 및 무인 추론 HOLD
+
+- **새 운영 정본**: [LIMITLESS Discord AI 협업 — 운영·장애·인계 (2026-10-24)](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md). `docs/planning` 작성 commit [`72a00697`](https://github.com/HappyPaul812/Project-Limitless/commit/72a00697fe466a875c8bc89e2dc7ccecc0bc1e4c).
+- **기존 성공·보존**: 대표 PIN 입력 없는 Windows 부팅 봇/아트 감시, 실제 Discord Slash 명령·PNG TEST_ONLY 수령, 네 역할 개별 실추론 및 4역할 텍스트 자동 인계는 보고·사용자 화면상 VERIFIED. 이 결과를 현재 Session 0 실제 모델 성공으로 오인하지 않는다.
+- **현재 차단/사용자 결정**: 서비스 계정 공식 CLI 패키지·구독 인증 및 `--version`/`--help` 성공과 달리 Session 0 실제 AI 추론은 `NOT_VERIFIED`. 가장 최근 재시험은 `OFFICIAL_USAGE_AND_APPROVAL` 사전 게이트 `OFFICIAL_READ_REJECTED (Denied)`로 실제 AI 호출 **0회**. 과거 `turn.failed`의 직접 원인도 미확정. **바울 대표가 2026-10-24 Discord 무인 AI 장애 작업을 오늘은 중단**하고 Codex 사용량을 게임 개발에 사용하도록 결정.
+- **운영·보호**: MANUAL 유지, A 자동 재개/무인 AI 실행 미승인, B 원격 동기화/종료 미검증. 기존 부팅 작업·운영 SQLite·게임 원본·Save·아트 승인 게이트·GitHub main 보호. 추가 유료 API/무단 재시도/무단 Push 금지. 주일은 대표 휴식 가능, AI 사전 승인 업무는 정책상 허용하되 실제 무인 추론은 HOLD.
+- **후속 최우선**: 대표가 재개를 명시하면 추가 추론 호출 없이 마지막 `Denied` 실제 원인·진단 보존 상태를 로컬 Codex에서 확인 → 근거 기반 수정보고 → 별도 승인으로 최대 1회/90초 읽기 전용 실험 → 성공 후에도 별도 A 전환 승인. `docs/planning` 문서 커밋과 Codex 로컬 `codex/discord-ai-collaboration` 미Push 작업은 구분할 것.
+- **원격 적용 상태**: 이 기획 문서/인계만 담당 브랜치에 commit. main 병합/원본 로컬 동기화/AI 재시험 실행 없음.
+
+---
+
+# PLANNING / 2026-10-23 16:46 KST — 신규 아트 #59 visible80px 최종 표시 기준 정식 보고 검토
+
+- 사용자 “메인 아트 보고서 확인.” → 실제 `docs/art-new` 최신 [문서](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/Chapter3_Main23_Issue59_Codex65_KeepHold_PlacementDecision_20261023.md) **갱신 commit `855d501c56f2107df01e49a5fefe84d87b0320bb`**, [`SPRITE_ART_LATEST.md`](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/팀운영/인계/SPRITE_ART_LATEST.md) **최신 commit `d9d14c0f6b7f8c0652c13b769e205dd5de426c7f`**, [#59 담당 정식댓글](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6359573006) **3단계 GitHub 보고 이행 완료** 확인. GitHub `main` 여전히 `47ad2eecb40135b2ee28e4947d642ebdbf0bf68a` 불변.
+- 정확한 최신 기획 크기: 오르나 **visible alpha bbox 인물 높이 80px**, **whole canvas 84.63px** (화면세로720/ortho5/PPU512/pivot256,0/scale1.175390). 과거 `82px wholecanvas` (alpha 약77.5px)는 아래 역사 본문에 보존된 옛 시안이고 최신 기본값 아님. visible96px은 보조안/wholecanvas101.55px. 새 Unity Delta23PASS는 Codex #65 결과, **담당자 자신의 새 Unity 실험이라 하지 않음**. 실제 원본 이미지·인물 외형의 바울 대표 최종 미술승인0.
+- 주택 북서 Residence `(-12.5,7.2)` 본체/지붕/출입문/Collider **KEEP_OLD**, 새 RoofGable·RoofTrim·EntryDoor 후보 PNG3 **보존 + 배치 HOLD**, 눈지붕/계단/기존 출입구 중복 `ART_HOLD_JOIN`. #58 남문 초안 `(-13,1)`와 다른 위치라 실제 남문 대상은 Codex 읽기전용 감사 전 확정 안 함. 여관 **Inn 본체 내장 간판 1개만 KEEP**, 구 Signs/Frostway_Sign_Inn 별도 중복 설치X, 신규 Inn_StandaloneSign 원본 보존·배치 HOLD.
+- 신규 PNG0/ZIP0/기존 원본 PNG수정0, 기존43·승인지면9/펫·공식몬스터·Quest·Save·Main23 Scene·OPEN16/Editor/HEAD/index 불변, Unity 본편 적용0/main 직접 commit/Push/병합0. `CODEX_GAMEVIEW_TEXT_EVIDENCE_ONLY / PLANNING_VISUAL_RECOMMENDED / USER_FINAL_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`. 담당에게 불필요한 신규 아트 생산 지시하지 않음.
+- 다음은 이미 [Issue #58 남문 목표 위치 읽기전용 확인 지시](https://github.com/HappyPaul812/Project-Limitless/issues/58#issuecomment-6359023173)를 받은 Codex가 Scene/VisualGapList를 간략 대조해 **제안만 한 남문 건물인지 필수 실자산인지** 보고하는 것. 사용자의 추가 승인 없는 별도 제작·Unity 본편 등록0. 사용자 대상 후속 작업 지시 시 **복붙용 Codex 지시문 동봉** 규칙 유지.
+
+---
+
+# PLANNING / 2026-10-23 — Issue65 Final MinimalDelta 최종 QA 23PASS/0FAIL, 오르나 visible80px 기획 우선안
+
+- **바울 대표 화면 제출 + Codex 본인 직접 GitHub 보고**: [#65 최종 공식 검수댓글](https://github.com/HappyPaul812/Project-Limitless/issues/65#issuecomment-6358720003), 결과 ZIP `F:\Downloads\Limitless_MinimalDelta65_Final_Unity_20261023_17db915d.zip` 제작본 크기 47,639,471bytes·44entries·CRC PASS·SHA256 `17db915d60dab9dcf0de521d0ac4e37e8cf9a7c0a8876461dd2aa6e944c333fd`. 이번 사용자 F: 입력 MinimalDelta ZIP 실 SHA `2bb31ffaba77f977f426c216b2a1cc9b86934d640c993f4697679b4eb9d67e11` 제작본 동일, game9 SHA9/9 및 preview manifest3/3 PASS. **이번 신규 격리 Unity 23 PASS / FAIL0 / 런타임 오류0**. 이전 검증 기존 Main23 148/136, #64 41/15, #65 33/8 전수 재실행0; 기존 PASS 수치를 합산하지 않음. 사용자 원본/기존 worktree **28,180파일 SHA변경0**,4곳HEAD/index/status 불변; 정식 본편적용/remote Push/main 병합0. Codex 로컬 branch `codex/art-minimaldelta-final-review-20261023`, 검수 commit `bc357232`, 보고/이미지 `26328382`, `LOCAL_COMMITTED / REMOTE_NOT_PUSHED`. 원격 GitHub에는 텍스트/메타 SHA만, 34PNG 원본 바이너리는 로컬 ZIP(압축해제→index.html), 기획이 전체 PNG를 직접 읽은 것은 아니며 바울 대표 축소 4칸 캡처 시각으로 확인.
+- **Orna 크기 단위 교정 필수:** 이전 `82px`는 **전체캔버스 표시 높이**, visible 인물 약`77.5px`. 이번 **`visible alpha bbox 인물 높이80px`**는 **whole-canvas `84.63px`**, PPU512/pivot(256,0)/scale `1.175390`, 좌표(-3,-4)/order2400. Codex alpha bbox(107,24)~(403,508) 실측, 720px 화면 ortho5. 기존 NPC fullcanvas 82.286px 수준으로 자연스럽다고 기획 관찰. **기획 우선 표시기준 `ORNA_VISIBLE80_PREFERRED`**, 96px visible 보조안, 40 tiny/128 large, 접근·이동/전면정렬 TECH_PASS. **바울 대표 명시 `USER_ART_APPROVED` 아직 아님**; 이름표가 근접에서 NPC 하체를 가리는 관찰은 별도 잔여, 장면/Quest/StableID/VoiceID 변경 지시하지 않음.
+- **Residence:** 기존 북서(-12.5,7.2) **건물·원래 지붕·출입문 KEEP_OLD**. 신규 RoofGable/RoofTrim *미배치*, 신규 EntryDoor만으로도 작은 눈지붕·문틀·계단 중복 `ART_HOLD_JOIN`; 신규 PNG3 후보 원본은 삭제하지 않고 HOLD. 새 문짝/문틀 단독 PNG 제작도 아직 0.
+- **Inn:** 기존 **Inn 본체 내장 간판1개 `KEEP_OLD`** TECH_PASS, 별도 Sign_Inn PNG 추가 설치0/StandaloneSign 미배치 후보보존. 추가 간판/기존 본체 수정 필요0.
+- **VenomBee:** #64 기존 Unity 비교판을 그대로 재사용. 좌향1포즈 Preview TECH_PASS vs 현행 우향 Idle10/Attack10 10FPS Runtime 교체 HOLD, 128px 가독/40px 작은 구조 약화. 라이선스 OGA CC BY3 vs 동봉 CC BY4 충돌 오픈. **신규 키포즈·20프레임 제작0, 사용자 디자인 승인 전 정식 적용0**. #65 신규23PASS는 Orna에 대한 것으로 독침벌 새 검수 합격 아님.
+- **아직 하나 남은 위치 문제:** 북서 Residence `(-12.5,7.2)` vs #58 모듈 남문 초안 `(-13,1)` 별개. 기획이 [#58 추가 읽기전용 Scene/GapList 확인](https://github.com/HappyPaul812/Project-Limitless/issues/58#issuecomment-6359023173)을 지시, 정확 남문 시설이 필수인지 확인 전 새 아트/문1PNG/Scene 이동0. [#59 오르나 visible80·KEEP/HOLD 교정](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6359022163), [#65 기획 판정](https://github.com/HappyPaul812/Project-Limitless/issues/65#issuecomment-6359021033) 반영. 메인아트 `docs/art-new` 실문서에 직전82 fullcanvas 계약이 있으므로 **같은 숫자80과 혼동하지 않도록 해당 담당이 다음 인계에서 visible80/whole84.63으로 조정** 필요.
+- **기획 결정/승인 차이:** `TECH_QA_PASS / PLANNING_VISUAL_RECOMMENDED / FINAL_USER_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED / REMOTE_MAIN_UNCHANGED`. 합격한 QA를 다시 반복하지 말고 Main23 실 본편 적용 승인 준비와 미술승인 게이트를 분리. 원격 main SHA 조회 기준 `47ad2eecb40135b2ee28e4947d642ebdbf0bf68a` 그대로. 담당 후속을 요청하는 대화 답변에는 **Codex/아트 담당별 복붙 지시문 반드시 제공**.
+
+---
+
+# PLANNING / 2026-10-23 — Codex Issue #65 실 Unity Delta QA 완료·기획 판정 및 남문 실제 대상 불일치
+
+- **실제 Codex 완료 증거:** 바울 대표 화면과 [Codex 본인 #65 GitHub 원 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/65#issuecomment-6358407741) 확인. 새 **33PASS/고정캠비교 8PASS/런타임0**, 기존 #64 41+15, Main23 148+136 전수재실행0. 원본 및 기존 worktree **21,170파일 SHA 변화0**, HEAD/index/status3개 보존, 사용자 원본 본게임 적용0/remote Git Push0/main merge0. Codex 로컬 `codex/art-pilots-review-boards-20261023` 제품 `7076fade...`/보고 `a43c989e...`, `LOCAL_COMMITTED / REMOTE_NOT_PUSHED`. GitHub 원격 이미지 **없음**.
+- **실제 로컬 그림 ZIP:** `F:\Downloads\Limitless_Issue65_ArtReview_20261023_4a3afef6.zip` / 보고 크기 41,336,680bytes·38entries/CRC PASS, SHA `4a3afef6e0abfc3a6b90afd19fe35005c67d9522bcefbdc5993a2777d52c95d1`. **압축 해제→`index.html`**을 바울 대표가 직접 열어 4주제 Unity 실측 비교판 판독. 이번 기획 세션은 파일 실 PNG 자체 열지 않았으므로 **시각 최종 승인 대기**. Board1 오르나 SHA `66cbe5ea...`, Board2 Roof SHA `8c01be54...`, Board3 Inn SHA `fd1d3f4e...`, Bee (이전 재사용) SHA `0c228ce8...`.
+- **오르나:** 기존 NPC 실제 82.286px, 휠체어 플레이어 본체72px. 40/82/96/128px 동일배율 비교, Codex **82px(512PNG/PPU512/pivot256,0/scale1.1389) 기술 우선 권고**, 96px 대안, 128은 기존 NPC1.56배이므로 기본강제X. 이름표가 NPC하체 가리는 근접 겹침은 잔여, 실제 이동/전면정렬 PASS. 대표 미술 승인 전 크기 공식확정 아님. `ORNA_82PX_TECH_RECOMMENDED / ART_USER_PENDING`.
+- **기존 주택:** 기존 Residence 북서 **(-12.5,7.2)** PPU128/Collider3.1×1.6 유지, 신규 Gable/Trim *미배치*로 큰 이중지붕 TECH 해소, 하지만 신규 EntryDoor (-12.5,7.3)도 자체 눈지붕·문틀·계단이 기존 출입구와 중복되어 **`ENTRYDOOR_ART_HOLD / RESIDENCE_KEEP_OLD_RECOMMENDED`**. 필요성이 입증되면 문짝+문틀만 후보1종 국소 제작, 승인 전 전체건물/코드 적용X.
+- **중요 구분:** #58 최초 남문모듈 **(-13,1)** 제안과 #65 실제 검수 북서 집 **(-12.5,7.2)**는 다른 장소다. **북서 집 QA PASS ≠ 남문 건물/남문 퀘스트 위치 완료**. [Codex #58 읽기전용 장소계약 확인 지시](https://github.com/HappyPaul812/Project-Limitless/issues/58#issuecomment-6358523757) 등록, 원본 GameView/Scene/GapList로 목표 필수 여부 확인 전 신규 남문 집을 재제작/배치시키지 않는다.
+- **여관:** 기존 Inn 자체 내장 Sign1개 **KEEP_OLD**시 중복 제거 및 휠체어 접근 TECH PASS. 기존 `Signs/Frostway_Sign_Inn.png`을 별도 설치한 게 아님. 신규 StandaloneSign은 파일 보존·미배치 HOLD. `INN_SINGLE_BUILTIN_SIGN_KEEP_OLD_TECH_PASS`. 별도 사용자 최종 미술 승인 필요.
+- **독침벌:** 새 작품 좌향 1포즈 vs 현행 PilotBee 우향 Idle10/Attack10 10FPS 시트 차이, 이전 #64 게임 Unity Canvas/Ch2 공식몬스터 동배율 board `A64_Bee_Ch2_Original_UnityBoard_UNAPPROVED.png` 재사용. #65 33/8은 독침벌 새 PASS 아님. 40px 구조·투명 경계 검토 필요, OGA CC BY3 vs package BY4 원본권리 충돌 `HOLD`, 신규20프레임 제작0. 실제 사용자 미술 디자인 승인 후에만 소수 키포즈 검토·애니메이션 발주.
+- **후속 GitHub 댓글:** [메인아트 #59 기술판정+남문 장소 불일치](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6358511540), [리뉴얼 #63 독침벌 비교 재사용·승인대기](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6358512205), [Codex #65 기획 검수인계](https://github.com/HappyPaul812/Project-Limitless/issues/65#issuecomment-6358513099), [Codex #58 남문 지점 검증](https://github.com/HappyPaul812/Project-Limitless/issues/58#issuecomment-6358523757). 바울 대표 최종 시각판단 전 `ART_USER_REVIEW_PENDING / MAIN_UNCHANGED`.
+- **기획 소통 의무:** 다음 부서에 일이 있으면 설명+GitHub 지시등록+**담당별 복붙 지시문을 같은 답변**에서 전달. Codex 윈도우 세션 자동실행/remote Push/Unity 본편 반영된 것처럼 과장하지 말 것.
+
+---
+
+# PLANNING / 2026-10-23 — 메인아트 MinimalDelta 파일·리뉴얼 권리보고 검토 및 Codex #65 실 Unity 인계 강화
+
+- **바울 대표 신규 제공 파일명:** `F:\Downloads\Limitless_Main23_Issue59_MinimalDelta_Review_20261023.zip`. 이 기획 세션은 사용자 Windows F:에 직접 접근하지 못하므로 **바울 대표 경로 전달 접수만**, F: 내용 CRC/SHA 직접 재검증0. **아트 담당** `docs/art-new` [정식 MinimalDelta 보고](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/Chapter3_Main23_Art59_PostCodex_MinimalDelta_Review_20261023.md) commit `d5a07c99b722bb2f00fd69088ccb6c5a0f1ee08e`, 인계 `bfa8100becf0be9f10fc436cfb9ff8e6554a13b6`, #59 댓글 확인. **제작본 기준** ZIP 812,046bytes SHA256 `2bb31ffaba77f977f426c216b2a1cc9b86934d640c993f4697679b4eb9d67e11`, 7entries/CRC PASS/SHA256SUMS6/6 PASS. **새 게임 PNG0/수정 기존 PNG0**, 오프라인 이미지 3장(오르나 40/80/96/128, 남문 기존 Roof KEEP+Gable/Trim placement 제외 EntryDoor ONLY vs 기존 문 KEEP 비교, 여관 기존 간판 KEEP vs 후보 중복). 남문 EntryDoor 자체 눈지붕·기존 문 겹침 위험 **ART_HOLD**; 오르나 실제 스케일/배율 미확정, Inn `KEEP_OLD_RECOMMENDED`, 바울 대표 최종 미술승인0.
+- **리뉴얼 독침벌 최신 보고:** `docs/art-renewal` [VenomBee Codex64/65 Rights+Motion Contract](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Renewal_VenomBee_Codex64_65_Rights_Comparison_And_MotionContract_20261023.md) commit `f908e6761433a21d4c459b13ccd2bf6e5277439c`, 인계 `e3b64fe2b93e5eeb07d46ab0c7fa6547c5c8e04c`, #63 댓글·#65 인계 요청 확인. **기존 현행 활성 PilotBee와 외부 원본 바이트 동일**은 Codex #64 사용자 캡처 보고 기준, 원본 OGA CC BY3 vs 동봉 LICENSE BY4 충돌 `RIGHTS_VERSION_CONFLICT_OPEN`. 새 VenomBee v1 좌향1포즈/512RGBA vs 우향 Idle10+Attack10/10FPS 계약 차이, 미술 승인 전 신규 20프레임0, 게임 원본·MonsterDefinition 변경0. 실제 #65 동배율 GameView 원본 그림/파일SHA가 담당에게 전달되지 않아 `BOARD_EVIDENCE_REMOTE_PENDING`.
+- **다음 실제 작업은 Codex에서**: [Codex #65 실물 MinimalDelta+리뉴얼 자료 연결 후속댓글](https://github.com/HappyPaul812/Project-Limitless/issues/65#issuecomment-6358377122) 작성. 로컬 F: MinimalDelta SHA/CRC 확인 + 기존 #64 Unity41PASS/보정15PASS 실제 캡처·문제11·VisualGapList 재사용, 실제 Unity **오르나 40/80/96/128 장면 비례, 남문 DoorOnly와 기존 도어 KEEP, 여관 기존 SignOnly**, VenomBee 신1포즈↔현행 Idle/Attack↔Ch2 공식몬스터 동배율 A/B. 기존 Main23 148+136/QA64 41+15 재실행 금지, 필요한 Delta만, 사용자 원본14,206파일·Save/UserData/dirty/HEAD/index·원격 main 보존. Codex 로컬 product/QA commit의 remote Push는 사용자 별도 명시 요청 전 금지.
+- [#59 기획 검토댓글](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6358383242) 접수; 새 PNG 제작0, 기존 후보 원본·공식43/지면9·펫·몬스터 변경0; #65 실물 Unity A/B 증거 제공 전 최종 미술승인/본편 Unity 적용/main 병합0. 담당별 GitHub 보고 의무는 이행.
+- **사용자 필수 기획응답 규칙 재확인:** 업무 진행 설명 시 반드시 Codex 및 해당 담당 **복붙용 구체 지시문을 같은 응답에 첨부**. GitHub Issue 등록만으로 Windows Codex 자동 실행되지 않음.
+
+---
+
+# PLANNING / 2026-10-23 — 바울 대표 상시 지시: 업무 설명에는 반드시 담당별 복붙 지시문 동봉
+
+**바울 대표 직접 지시(2026-10-23): “전달 완료. 앞으로 설명만 하자 말고 지시문도 같이 줘. 이건 넌 꼭 지켜.”**
+
+**기획 담당/모든 후임 세션의 응답 필수 규칙 — 즉시 적용**
+- 바울 대표에게 **Codex·메인 아트·리뉴얼·TTS·BGM·SFX·영상 등 부서에 작업을 배정하거나 검수 후속을 진행한다고 알릴 때**, GitHub Issue 작성·댓글·기획 인계 완료 사실과 별도로, **같은 답변에서 해당 담당에게 즉시 전달 가능한 한국어 복사·붙여넣기 지시문을 반드시 제공한다**. GitHub 링크만 주고 “Issue 확인하라고 하시면 됩니다”로 끝내지 않는다.
+- 담당이 여러 명이면 **담당별로 따로** 코드/복사 가능한 메시지를 만든다(예: Codex #65, art-new #59, art-renewal #63). 복잡한 작업은 핵심 작업범위·우선순위·검증/제출 증거·원본보호/금지사항·GitHub branch/Issue/실 커밋·승인 필요상태를 포함한다. 기존 결과의 반복 전수QA·무단 원본/Unity/main 적용 금지.
+- 지시문을 **답변의 하단에 누락하지 말 것**. 비기술적인 간단 상태 확인·짧은 설명은 별도 담당에게 실행지시가 없는 경우 예외이나, “진행해”, “일 시켜줘”, “후속”, “검수시켜”, “지시문” 요청 또는 응답 중 **실제 작업 할당이 있다면 항상 동봉**.
+- 사용자가 “담당에게 전달했어”라고 하면 **전달 완료로 수용**하고 같은 프롬프트 반복 전달 요구 금지. GitHub에 등록했다는 사실이 채팅 속 다른 담당/사용자 Windows Codex를 자동 실행시키지는 않으므로 실제 실행·Push/병합 확인 전 **진행/완료 주장 금지**.
+- 기존 전담당 GitHub 문서화 의무(담당 브랜치 Markdown commit→최신 인계→Issue 결과댓글→바울 대표 SHA/링크 보고)와 **동시 준수**. 이는 **GitHub 정식 지시 + 채팅 복붙용 지시문 모두** 필요한 쌍이다. 신규 담당·후임 기획 세션도 이 항목을 우선 읽고 계승한다.
+
+---
+
+# PLANNING / 2026-10-23 14:16 KST — 바울 대표 “후속 진행 해줘” / Codex #65+메인 #59·리뉴얼 #63 병렬 계약
+
+- **실행 의도:** Codex 로컬 #64의 두 ZIP SHA PASS / Unity 신검41PASS·보정캡처15PASS·런타임0 / 원본14,206파일 보호를 **다시 전수 돌리지 않고** 실제 A/B 비교판·필요한 최소 격리 Delta로 바울 대표가 미술결정할 수 있도록 한다. 새 [Codex #65](https://github.com/HappyPaul812/Project-Limitless/issues/65) **실 Unity 캡처·파일별11문제·VisualGapList 재사용, 4주제 비교판+필요할 때만 Delta 시연** 발주. 승인 전 본편 적용·main push·remote codex push·user Save/Editor 변경0; GitHub Issue 등록은 Codex 세션의 로컬 실행 증거가 아니므로 `ISSUE_CREATED / CODEX_EXECUTION_PENDING`.
+- **Codex 화면 4주제:** ① 오르나40↔128px 실제 표시 크기/동선·가독성·기존NPC 비례 ② 남문 기존 Residence+기존 Roof 유지, 신규 RoofGable/RoofTrim 후보만 **배치 제외**, EntryDoor만 재현; 겹지붕 전후/Colliders·Sort·남북3WU·화면비3종 ③ 여관 기존 Sign 하나만 **KEEP_OLD**하고 신규 StandaloneSign은 미삭제 HOLD ④ 독침벌 **좌향1포즈 예시 vs 현재 PilotBee Idle10/Attack10 10FPS vs Ch2 공식몬스터 동배율**, 후보 실제 교체 금지. GitHub 증거 게시가 권한상 불가하면 사용자 로컬 파일 경로+SHA 및 `REMOTE_NOT_PUSHED` 보고.
+- **#59 신규 아트 담당 독립 통보:** [표적 다음 계약](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6358022168). Orna Master+512 보존/스케일 제안 2안, 남문 문 조인트만 최소 대안(실Unity 비교가 불량일 경우에만 단일PNG 국소 보완), 여관 기존 Sign KEEP·후보 HOLD. **새 대형 PNG·43전체 재생산 불가**, Codex A/B 증거 전 GameView QA를 가장하지 않음, 공식 승인 전 Unity 정식 적용0. `docs/art-new` 보고+인계+Issue 결과댓글.
+- **#63 리뉴얼 담당 독립 통보:** [VenomBee 다음 계약](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6358022754). 기존 PilotBee 실제 활성이미지 바이트 동일 + CC BY3/4 버전 충돌 `RIGHTS_PENDING`; 신규 v1 좌향1포즈는 기존 Idle10/Attack10 우향 모션과 계약 불일치. **대표 실제 Ch2 동배율 비교/미술 승인 전 새 20프레임 제작 금지**, 신규 스프라이트/소스 변경0. 병렬 가능한 **라이선스·저작자 출처 및 motion compatibility 한 페이지 읽기전용 계약만** `docs/art-renewal`에 문서화/인계·이슈댓글.
+- **#64 기존 QA 인계 댓글:** [후속 #65 별도 수행 요청](https://github.com/HappyPaul812/Project-Limitless/issues/64#issuecomment-6358021412). #64 완료 자체는 로컬 QA 보고로 충분히 기술되었으나 **Codex 소유 GitHub QA 원본 커밋·증거 링크 미제출**, 원격 main SHA `47ad2eecb40135b2ee28e4947d642ebdbf0bf68a` 그대로, 검증 없는 공식 병합/완료 종결 지양.
+- **기획 상태:** `GITHUB_TASKS_DISPATCHED / ASSET_DECISION_STILL_USER_PENDING / LOCAL_CODEX_NOT_YET_REEXECUTED`. 각 담당 다른 세션을 GitHub 댓글만으로 자동 실행시키는 능력은 없음. 담당들은 다음 접속에서 GitHub 이슈 직접 읽고 해당 브랜치 실제 commit+댓글로 의무 보고. 본편 적용·PR 병합·강제 Push는 별도 사용자 승인.
+
+---
+
+# PLANNING / 2026-10-23 — Codex 실제 격리 QA #64: 41PASS+캡처15PASS, 4자산 표적 판정
+
+- 바울 대표 업로드 **Codex 로컬 QA 완료 화면**에서 읽은 결과임. 원격 `main` 그대로 `47ad2eecb40135b2ee28e4947d642ebdbf0bf68a`; GitHub `codex/art-pilots-isolated-qa-20261023` 원격 브랜치 및 Codex의 #64 공식 완료댓글 **미존재**, 기획이 화면 제공 사실을 [#64 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/64#issuecomment-6357901621)에 증거 등급 구분하여 등록. 실제 Codex 로컬 보고서/11행 문제 CSV/캡처 실파일은 이 기획 세션에서 열지 못했으므로 `CODEX_LOCAL_QA_REPORTED / REMOTE_ARTIFACTS_NOT_AVAILABLE / USER_ART_APPROVAL_PENDING`.
+- 실물 ZIP2종: Main23 Orna/SouthGate/Inn `425292ebd1e8a58ab7c4486f6fac39491c265d49b5db933dfe7586e69cee7351`; VenomBee `2e65662d68c77cfb90d7e39d9d40c2cd2816ee33882debe8a8e93ace782bd478` — **Windows F: 실제 SHA256 제작본 동일**, CRC 오류0로 사용자 전달. **새 Unity 41 PASS + 보정캡처 15 PASS / 런타임 오류0**, 기존148/136 회귀 전체 재실행0. **기존/원본 worktree 14,206파일 보호**, 제품 `3bb4f983`, 검수 보고 `91510554` 로컬커밋 2개 단축SHA, 원본적용/Push/main 병합0.
+- **오르나:** 표시/접근 TECH_PASS, **40px 너무 작음**, 실제 128px 스케일 접근성·40/128 비교 후 사용자 미술 결정. StableID/VoiceID/최종 외형 미승인.
+- **남문 주택 문·지붕:** 기존 주택+신규 박공/받침의 이중지붕 재현 `ART_HOLD`. Codex가 제시한 **신규 큰 Gable/Trim 제외 + 기존 주택 원형 유지, 문 조인트만 남기는 최소 대안** 우선. 신 PNG 삭제/전체 재제작 금지.
+- **여관 간판:** 표시 TECH_PASS, 기존 내장 간판+신규 독립간판 중복 `ART_HOLD`, 현재 `KEEP_OLD` 권고. 신규 후보는 보관, 중복 배치 금지. 대표 최종 외형 결정 전 공식 변경0.
+- **독침벌:** 1포즈 표시 TECH_PASS·전체교체 ART_HOLD; **신규 후보는 좌향1포즈**여서 기존 Idle10/Attack10 기술 계약 대체 불가, 20프레임 생산은 바울 대표의 시각 승인 전 보류. 실제 활성 독침벌 이미지가 ThirdParty **Pilot Bee 원본과 바이트 동일**로 Codex 확인 보고. OGA `CC BY3.0` vs 동봉 `LICENSE` `CC BY4.0` 버전 불일치 오픈; 현재 공식 외부 아트의 상업적 권리/표기 확인 필요. 기존 MonsterDefinition/독/드롭/Spawn/AI·Wolf/Bear/Fox/Ch2 공식 아트 보호.
+- 후속 GitHub: [메인아트 #59 기술결과 기준 최소 수정계약](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6357913863), [리뉴얼 독침벌 #63 20모션 생산 유보·원본권리](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6357914530), [Codex 통합QA #64 사용자 제공 결과 정식 접수](https://github.com/HappyPaul812/Project-Limitless/issues/64#issuecomment-6357901621). **담당에게 이슈만 남겼다고 개별 세션 자동 실행되는 것은 아님**. 다음 팀별 업무 착수 시 해당 최신 댓글을 직접 읽고 담당 브랜치에서 보고할 것.
+- 이전 기획의 메인·리뉴얼 `ART_CANDIDATE / USER_REVIEW_PENDING` 상태는 유지. 실제 Codex QA가 나왔다고 해서 **바울 대표 미술 최종 승인이나 Unity 본편 등록/remote main 병합, OPEN16 해결을 자동 실행하지 않음**. 리뉴얼 파일럿 1포즈 자체 무결성 합격과 모션 교체 부적합을 구분하고 여관 기존 간판 KEEP는 새 자산 표적 수정필요 없음에 대한 현재 권고로 기록.
+
+---
+
+# PLANNING / 2026-10-23 — 바울 대표 검수 순서 교정: Codex 실물·격리 Unity QA 우선 #64
+
+- 사용자 직접 지적: **“코덱스에 안돌리고 그냥 결정하라고?”** 기존 기획의 `#59 남문 겹지붕 ART_HOLD` 및 `#63 VenomBee 비교 부족`은 제작담당 **오프라인 파일 QA/자기 보고**를 읽어 잠정 검토한 내용이지 바울 대표가 실제 시각 비교한 최종 미술 승인이나 Codex QA가 아님. **최종 미술결정 전에 실제 Codex에서 F: ZIP 바이트 및 격리 Unity GameView 시각 검증이 필수**로 순서 정정.
+- Codex 전용 [Issue #64](https://github.com/HappyPaul812/Project-Limitless/issues/64) 작성·발주. 로컬 F: 두 ZIP `Limitless_Main23_Orna_SouthGate_InnSign_ArtPilot_20261023.zip` 제작 SHA `425292ebd1e8a58ab7c4486f6fac39491c265d49b5db933dfe7586e69cee7351`; `Limitless_Chapter1_VenomBee_OriginalKeyArt_Pilot_v1_20261023.zip` 제작 SHA `2e65662d68c77cfb90d7e39d9d40c2cd2816ee33882debe8a8e93ace782bd478`. **실 Windows 파일 SHA/Manifest/CRC와 PNG alpha, 기존 실제 GameView/PPU·Sorting·Collider·40px 비교**는 Codex 아직 돌리지 않았으므로 `NOT_TESTED`.
+- **Main23 #59:** 기존 GameArt43 중 시연18, 지면 승인9·Main23 148+136 QA 유지. 신규 오르나/남문 문·지붕/여관 간판은 독립 시험만. 남문 이중 박공·겹지붕을 실제 동배율 Unity에서 재현/관찰, 남문 3WU 통행·오르나·기존 Inn Sign 대체 필요성 판정, 정식 Sprite 적용 X.
+- **VenomBee #63:** 현 MonsterDefinition의 Idle10/Attack10 Sprite GUID 원본 추적 및 license와 40/128/실게임·Ch2공식몬스터 동배율 비교, alpha 외곽 검증. 신규 후보 1포즈일 뿐 20프레임 미제작. **실물/게임 시각 자료→Codex 기술 판정→바울 대표 미술 결정→미술 담당 필요한 국소 보완→사용자 승인된 자산만 별도 Codex 본편 적용 검토**로 계약 수정.
+- [메인아트 #59 우선 Codex QA 통지](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6357516461), [리뉴얼 #63 순서 교정](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6357517038), [Codex 기존 #58 통합 QA 연계](https://github.com/HappyPaul812/Project-Limitless/issues/58#issuecomment-6357517601) 댓글 등록. `docs/planning` 이 기록만 갱신. **GitHub Issue 생성은 사용자 Windows Codex 세션 자동 실행이 아니므로 실제 코덱스 로컬 검증 전 QA PASS 주장 금지.** 사용자 원본 Unity/Editor·Save/637files/dirty/HEAD/index, 공식 Wolf/Bear/Fox·Ch2 monsters·승인지면9, main 모두 동결.
+- Codex는 별도 worktree에서 delta-only 비전면 QA, 보고 Markdown·캡처·CSV와 SHA 로컬 commit. **원격 push는 기존 사용자 별도 명시 승인 필요**, GitHub 연결로 허가된 issue 댓글이 가능하면 link; 아니면 `LOCAL_COMMITTED/REMOTE_NOT_PUSHED` 명시. 미술 승인 최종 권한은 바울 대표.
+
+---
+
+# PLANNING / 2026-10-23 — 메인 아트 #59·리뉴얼 #63 정식 납품 보고 검토 완료
+
+바울 대표 “메인 아트, 리뉴얼 보고서 확인,” 지시. 아래 담당별 GitHub **실제 정식 보고서·최신 인계·Issue 댓글을 모두 열어 확인**했으며, 사용자 F: ZIP 자체와 원본 PNG 픽셀을 기획이 직접 읽지 않았으므로 **보고된 오프라인 파일 QA**와 대표 최종 미술 판정을 분리.
+
+- **메인 아트 #59:** [Orna SouthGate InnSign v1 정식 보고](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/Chapter3_Main23_Orna_SouthGate_InnSign_ArtPilot_v1_QA_20261023.md), `docs/art-new` 보고 최종 commit `f1c559d370b0016fd346d2b8b97328438ee13f49`, 인계 `bc7e03e0d46338b481b2cdbdc49afbb7cc09e769` 및 #59 납품 댓글 확인. 사용자 수령 `Limitless_Main23_Orna_SouthGate_InnSign_ArtPilot_20261023.zip`, 원본 보고 SHA `425292ebd1e8a58ab7c4486f6fac39491c265d49b5db933dfe7586e69cee7351` / 8,008,308bytes / 20entries / CRC+SHA19/19PASS. **PNG6** 오르나Master+5122, 남문 문·RoofGable·RoofTrim3, 여관 독립간판1. 128/40 및 3화면비 Preview는 OFFLINE, 실Unity 아트 QA/PPU/Sorting/Collider 미검증. **남문 이중 겹지붕/박공 `SOUTHGATE_JOIN_ART_HOLD`**, 오르나/여관은 후보 유지·승인대기, 기존 Inn Sign과 동시 사용 여부는 별도 비교. `ART_CANDIDATE / USER_REVIEW_PENDING / NOT_UNITY_APPLIED`. [#59 기획 QA 판정·표적후속](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6357422270): Codex #58 VisualGapList 실제 XY/PPU/footprint+동배율 GameView를 **안전 인계받아 기존 43/지면9 변경 없이** 남문 접합만 표적 보완, 기존과 신규 Inn Sign 택일, 오르나 디자인 후보 보호. 담당 공식 리포트 4단계 GitHub 의무 충족.
+- **리뉴얼 #63:** [VenomBee v1 정식 납품 검증](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Renewal_VenomBee_v1_Formal_Delivery_Verification_20261023.md), `docs/art-renewal` 보고 commit `4b5a40608d20121505e42282234087aa80470083`, 인계 `99d3b6a4bfd796d17c88482994487cb198e7a154`, #63 완료 댓글 확인. 사용자 수령 ZIP `Limitless_Chapter1_VenomBee_OriginalKeyArt_Pilot_v1_20261023.zip`, 보고 SHA `2e65662d68c77cfb90d7e39d9d40c2cd2816ee33882debe8a8e93ace782bd478` / 2,291,579bytes / 8entries/CRC PASS, 512² RGBA 1포즈+128/40 Preview. 디자인 보드는 **활성 Idle/Attack 및 Ch2 공식 몬스터 실제 원본 비교가 아님**. 기존 2Sprite GUID→PNG 실물·외부 LICENSE 미확인 `RIGHTS_SOURCE_PENDING`. 사용자 시각 승인/20프레임/Unity Import0. [#63 기획 QA 게이트](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6357422819): Codex 읽기전용 GUID 소스·권리 및 active source 대 Ch2공식아트 실물 비교 자료 확보 후 대표 승인. 기존 MonsterDefinition·전투/독/드랍/Field01 Spawn3·공식몬스터11~18·Wolf/Bear/Fox·NPC3 시안 변경0.
+- **공통 결론:** 양쪽 모두 `GITHUB_REPORT_COMPLETE`와 `OFFLINE_FILE_QA_PASS`에 해당. 이는 `USER_ART_APPROVED`나 `UNITY_APPLIED`를 의미하지 않음. 사용자 F: 복사본의 파일 SHA와 실제 그림 육안 판단은 아직 미실시. Main23 기존 격리 136 PASS는 #59 신규 PNG 검증 아님. 바울 대표 미술 결정 전 생산 20프레임/Unity 원본적용/main merge 금지. 기획 문서 기록 `docs/planning`만 갱신, `main` 변경0.
+
+---
+
+# 2026-10-23 / 리뉴얼 다음 독립 제작 승인 — Chapter1 Field01 독침벌 원화 파일럿 Issue #63
+
+- 바울 대표 사용자 지시: **“리뉴얼도 일 시켜줘.”** [신규 리뉴얼 작업 #63](https://github.com/HappyPaul812/Project-Limitless/issues/63) 직접 작성·발주. `Chapter1` 실제 초기 Field01 출현 대상 `venom_bee`를 **실 Sprite 출처·권리 표적 확인+오리지널 1포즈 원화 후보**로 진행. 기존 NPC3 미승인·숲거미 source HOLD를 그대로 두고 별도 진행; 진행 담당 브랜치 `docs/art-renewal`. 사용자 기존 Windows Unity/Save나 main 적용 승인 아님.
+- 2026-10-23 `main` `47ad2eecb40135b2ee28e4947d642ebdbf0bf68a`에서 직접 `02_VenomBee.asset`: 독침벌 몬스터 ID `venom_bee`, `idleSpriteSheet` GUID `24000000000000000000000000000004` 238×215/10프레임, `attackSpriteSheet` GUID `24000000000000000000000000000005` 315×253/10프레임, 10FPS·right facing·visualScale0.85; Field01 `Field01_VenomBee_01~03.asset` 3개 Spawn 객체가 해당 정의 참조. 실제 GameView 가시와 PNG GUID 소스·권리는 **읽기전용 대조 필요**. 비교 PilotBee README는 실 Field/Battle 미연결이라고 기록하나 실제 VenomBee MonsterDefinition에는 idle/attack 시트 GUID 연결 존재하므로 **고정 관념 대신 GUID 매핑으로 사실 판단**. PilotBee 외부 원본 LICENSE CC BY3/4 표기 차이, 원본 보호·저작권 확인 선행.
+- **이번 납품:** Chapter2 공식 몬스터5 품질 기준의 독창적 VenomBee 단독 1포즈 PNG 투명 RGBA+128/40px 비교·필요 QA/Manifest/ZIP SHA, 기존 Chapter1 Sprite/MonsterDef/AI/독/드랍/성장 수치 변경0. 기존 이미지 트레이싱/단순 32px 업스케일 금지, 20프레임 완전 모션 제작은 사용자 1포즈 미술승인 뒤. `ART_CANDIDATE / USER_REVIEW_PENDING / NOT_UNITY_APPLIED`.
+- [직전 #60에 후속 인계 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6355809997): OGA03·OGA09·OGA20 기존 NPC3 후보 전부 승인 대기, GateGuard 태온 유사성 우려 시안 유지, `forest_spider` animation rights/GUID 실측 전 새 아트0 HOLD, 기존 #60 문서가 있어도 `WORLD_ART_RENEWAL_LATEST.md` 및 담당 완료 댓글 미확인 → 신규 작업과 함께 누락 보고 정리.
+- **GitHub 의무화:** 신규 #63 납품 시 반드시 `docs/art-renewal` 정식 문서 commit + `WORLD_ART_RENEWAL_LATEST.md` 갱신 + Issue #63 본인 완료 댓글 + 바울 대표에게 GitHub 링크·브랜치·실 SHA 및 사용자 미술승인 필요 여부. 승인된 Wolf/Bear/Fox Run6, Chapter2 몬스터·보스와 Field06~11 공식 맵, Ch3 Main23 격리 작업 보호; main 직접 commit/Push·무단 Unity 적용 금지.
+- **현재 상태:** 기획 Issue 발주 완료 / 리뉴얼 담당 실제 PNG 제작 **시작·완료 증거 아직 없음**. 기존 `docs/art-renewal` HEAD `c0faf9d`는 10/23 1차 GateGuard 보고 상태. 신규 독침벌 시안 사용자 미술승인0.
+
+---
+
+# PLANNING 2026-10-23 / Main23 화면 변경분 136PASS 보고·신규 아트 #59 실제 납품 여부 확인
+
+- 바울 대표 전달 Codex 새 보고: Main23 `codex/chapter3-main23-first-playable-20261023` 화면·UX 격리 보완 **변경분136 PASS/0 FAIL**, 초기5목표 기능148PASS는 재검증하지 않음. 기존 마을 GameArt43 중 **18종** 격리 시연 배치·승인 지면 Tile9 보존, 클릭/E/F/취소, 도보·휠체어·16:9/4:3/21:9, 남문 왕복/Save/Continue delta 검증. 원본 파일 **637개**·Save/UserData/HEAD/index 보호. 제품 단축 `f90966df`, 화면/QA `9c9f361d`, Main24 #46 읽기전용 SkillSave 설계 `3f30d135`. 사용자 원본 게임 적용·remote Git Push/main 병합은 **미완료**, 기존 OPEN16 유지.
+- Codex VisualGapList CSV 및 3비율 실제 GameView가 **Codex 로컬에서 만들어졌다는 사용자 보고**; 해당 CSV를 기획/신규아트가 파일바이트로 직접 읽은 것은 아니며 명세 내용과 경로·SHA는 추정하지 않음. Codex 부족아트 상위: **주민 고유 외형, 주택 문·지붕 접합, 여관 독립 간판**. 실 18종 배치/게임화면 확인 후 새로운 코덱스 총전수QA 불필요.
+- GitHub `docs/art-new` **실제 신규아트 #59 정식 보고서** [2026-10-23 메인아트 보고](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/Chapter3_Main23_FrostwayVillage_VisualCompletion_Pilot_20261023.md) commit `88e0e60a2048e25f1fab6effb782848c5c13516c`, 최신 인계 `181511911ba5208f4e6b4c294eb63bd1fdacba51`, #59 담당 댓글 [실제 증거 보고](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6355480384) 확인. 이는 **기존 v9 ZIP49 PNG 실물 재사용 인벤토리/오프라인 contact sheet 보고**(참고 ZIP `Limitless_Main23_Issue59_ReuseAudit_PRELIMINARY_20261023.zip`, SHA `83d621d8f32fde8f31b10f10e4fa5fb29c25ff2677b472e74862f9eccd93739d`, 내부 QA CRC/SHA3PASS), **오르나·남문 건물 접합·스킬샵/여관 간판 신규 PNG는 모두 NOT_DELIVERED**. GapList 실물/Unity 미전달 당시 3비율 신규미술 QA는 `NOT_TESTED`. 사용자 최종 미술승인/본편 Unity 연결 없음. 기존43, 승인9 및 3펫 불변.
+- **기획 확정 다음 미술순서:** [Issue #59 우선순위 업데이트](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6355677632)로 Codex GapList 실제 자료 제공 후 ① **오르나 주민 고유NPC 1종**, ② **남문 주택 문·지붕 접합1세트**, ③ **여관 독립 간판1종**만 신규아트 필요 여부에 따라 표적 생산. 기존 18종 배치 자산 재활용, 43전체 재생성 금지. 새 아트 파일/ZIP 실제 SHA·40/128px 접합 미리보기 → 담당 `docs/art-new` 보고+인계+이슈댓글+바울 대표 미술 검토 순서. 완성 전 `NEW_ART_NOT_DELIVERED` 유지.
+- [Codex #58 자료 전달](https://github.com/HappyPaul812/Project-Limitless/issues/58#issuecomment-6355678485): VisualGapList 상위 행·XY·PPU·Pivot·Sorting·Collider와 실제 3비율 GameView 중 비기밀만 신규아트 #59로 넘기도록 요청. 로컬만의 제품 commit과 GitHub 공식 반영 구분, Codex 로컬 Git Push는 별도 사용자 허가 필요, original Scene/Save 보호.
+- Main24 6슬롯 SkillSave #46은 **설계/테스트 계획서 작성만** 완료 보고이며 구매·결제·저장/복원 코드는 미변경. MAIN23 원본/메인에 PR·병합하지 않은 상태에서 **기능·미술 완료 선언 불가**. 재현 영상/사용자 손플레이·기승인 지면9 외 외형 확정은 추후.
+
+---
+
+# 2026-10-23 / 리뉴얼 GateGuard 시안 접수 — 태온과 유사하다는 바울 대표 의견
+
+- 바울 대표 납품 안내: `F:\Downloads\Limitless_Eldiran_GateGuard_Concept_SpiderResearch_20261023.zip`. `docs/art-renewal` [실물보고서](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Renewal_GateGuard_Concept_Spider_PreResearch_20261023.md) 새 commit `c0faf9daf31489a3e35ceab087bc71d5b760a6a9` 확인. ZIP **보고상** 318790바이트/SHA256 `692d1a72e12f59e61373b880f3ebf1afd8fec909b2659563b35b370eb63c3cab`/CRC PASS; 실제 F: ZIP·이미지 픽셀을 이 기획 세션에서 직접 검수한 것 아님.
+- **사용자 실제 미술 피드백:** “컨셉 아트 보니까 태온이랑 비슷해. 뭐, 초상화는 없으니 괜찮겠지만...” → 현재 남문 경비 **시안 유지, 대규모 재제작 금지, 최종 승인 아직 X**, `GATEGUARD_CONCEPT_KEEP / TAEON_SIMILARITY_OBSERVED / GAME_SCALE_DISTINCTIVENESS_PENDING / USER_ART_APPROVAL_PENDING`. 남문 경비 투구·문장·창/깃발 등 역할 시각 특징, 공식 태온 Sprite/초상화와 40px/실Unity 비교로 필요할 때만 국소 표적 보완. 초상화가 없다는 이유만으로 플레이어 혼동 위험0 주장하지 않음.
+- NPC1 `Eldiran_GateGuard_Concept_512.png` 512RGBA, 128/40 preview 보고됨. 이전 두 OGA03/OGA09 원본 아트 바이너리가 새 담당 세션에 없어 `NPC_3_Concept_Comparison_Limited.png`는 placeholder 포함·실제 3NPC 비교 PASS 아님. Unity/본편/Stable ID·GUID/Save 변경0.
+- forest_spider 는 현행 Spawn·Spider 애니메이션 정적참조까지, 실 렌더·소스·권리/공식 미술 미확정으로 `HOLD_EVIDENCE / ART_NEW_0`. 기존 공식 몬스터/펫 보호.
+- [리뉴얼 Issue #60 구체 피드백·정식 GitHub 보고 의무](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6355575500) 댓글 작성. 새 담당은 기존 #60 보고 원문 재작성보다 **`WORLD_ART_RENEWAL_LATEST.md` 갱신+실제 commit SHA+이슈 완료 댓글** 먼저, 전 부서 공통 정책 #61 준수. 게임 비교 증거가 없는 현 시점에 최종 미술 PASS/정식 Unity 적용 지시하지 않음.
+
+---
+
+# 2026-10-23 / 전 담당 GitHub 보고 의무화 완료 공지·main 대상 분리 PR 준비
+
+- 바울 대표: **“각 담당은 다 의무화로 해줘.”** 공통 운영 정책 정본 `문서/00_프로젝트/팀운영/ALL_TEAMS_GITHUB_REPORTING_POLICY_20261023.md`, `COMMON_RULES.md`, `START_HERE.md`, `SESSION_HANDOFF.md`, `AGENTS.md` 5개 `docs/planning`에서 작성·갱신하고 실제 GitHub 확인.
+- 일곱 역할의 기존 업무 Issue에 개별 댓글 공지 #59(art-new),#60(art-renewal),#58(Codex),#20(TTS),#31(BGM),#33(SFX),#34(video). 기획은 본 인계로 수행; 새/후임 포함 총8 역할 대상. 중앙 [정책 수용 추적 #61](https://github.com/HappyPaul812/Project-Limitless/issues/61)에서 담당별 실제 수용 SHA+댓글 확인 후 완료로 체크.
+- 기존 `docs/planning` 브랜치의 다른 여러 기획 변경과 **절대 한꺼번에 main merge하지 않도록**, 순수 `main`에서 새로운 `docs/planning-github-reporting-20261023` 브랜치를 만들어 위 **정책 문서만 정확5파일** 선별한 [GitHub 문서 PR #62](https://github.com/HappyPaul812/Project-Limitless/pull/62) OPEN. 해당 브랜치 HEAD commit `532d0dd7a2b07f00488dedc564ce80772b7754a4`, 5파일 변경·5commit, base `main` `47ad2eecb40135b2ee28e4947d642ebdbf0bf68a`. GitHub PR `mergeable_state=unknown`(서버 아직 평가 전), **현재 `main` 미병합/로컬 sync 미실시**, 추후 사용자 마감/병합 지시 단계에서 검증. 본 정책 지시는 기존 main 직접 commit·Push 금지와 Codex 명시적 Push 승인 정책을 변경하지 않음.
+- 공통 절차: 담당 브랜치 문서 실제 Commit → 인계`*_LATEST` 갱신 → Issue/PR 결과댓글 → 바울 대표에게 URL/브랜치/commitSHA/승인 상태. 대용량 미술/음원/영상 바이너리는 GitHub 필수등록 아님, 파일명·실물경로·SHA/검증·GitHub 존재 여부 기록만 필수. 세션 자동실행은 보장되지 않으므로 각 담당의 수용 커밋은 아직 추적 대기.
+
+---
+
+# 2026-10-23 / 바울 대표 최종 운영 지시 — 전체 8담당 GitHub 정식 보고 의무화
+
+- 바울 대표 원문: **“각 담당은 다 의무화로 해줘.”** 이제 **기획·Codex·Ch1/2 리뉴얼·Ch3+ 신규 아트·TTS·BGM·SFX·개발기록 영상** 및 새/후임 담당이 전부 **GitHub 정식 보고 필수**. 보고서 복붙 전달을 바울 대표에게 요청하는 일을 원칙적으로 중단. 업무 완료/일일마감/인계는 자기 문서브랜치 Markdown 보고서 **실제 commit** + 역할 최신 인계 + 관련 Issue/PR 완료댓글 + 바울 대표에게 GitHub URL/브랜치/실제 SHA/승인·검증 상태 보고, 총4개를 원칙으로 한다. GitHub 쓰기 미완이면 `REPORT_PENDING_GITHUB_WRITE`, 문서 저장 성공·로컬 Push/본게임 적용/원격 main 병합 구별.
+- [전담당 정책 정본](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/팀운영/ALL_TEAMS_GITHUB_REPORTING_POLICY_20261023.md) `docs/planning` 최초 생성 commit `c9e6adfa106674d5a37985e4a6ca2ceb539d3a1d`, [공통 운영 시행 Issue #61](https://github.com/HappyPaul812/Project-Limitless/issues/61) 생성. `COMMON_RULES.md` 정책 추가, `START_HERE.md` 및 `SESSION_HANDOFF.md` 링크, Codex 루트 `AGENTS.md` 개별 안전규칙 추가 모두 **docs/planning**에 실제 커밋: `89e7f70f5161d8cd59b089880bbf8bb1b2511289` → `c715ba3aa029a735a79d423f0151227e26fe49d0` → `394c7b0884a90968a782bf9a907ec720d5ead7a3` → `78e99a90697b6f0b82815b5168b97c6f96a4d37b`. **원격 main 미병합, main 직접 커밋 금지.**
+- 기존 활성 업무에 정책을 **담당별 GitHub 댓글로 통보**: 신규아트 [#59](https://github.com/HappyPaul812/Project-Limitless/issues/59), 리뉴얼 [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60), Codex [#58](https://github.com/HappyPaul812/Project-Limitless/issues/58), TTS [#20](https://github.com/HappyPaul812/Project-Limitless/issues/20), BGM [#31](https://github.com/HappyPaul812/Project-Limitless/issues/31), SFX [#33](https://github.com/HappyPaul812/Project-Limitless/issues/33), 개발 영상 [#34](https://github.com/HappyPaul812/Project-Limitless/issues/34). 기획은 본 인계와 #61로 이행. 각 담당이 자신의 브랜치/인계를 실제 갱신해 **수용 완료한 것까지는 아직 확인되지 않음**. 기존 작업/승인 미술/음원·게임 동작 변경 지시 없음.
+- **예외/보호:** 대용량 아트·오디오·영상 바이너리 자동 GitHub upload 강제가 아니라 파일명/검증된 SHA/실납품위치 및 GitHub 등록여부를 문서화. 개인키·TTS API키·Save/UserData·사용자 고유 로컬 파일 유출금지. Codex의 원격 `git push`는 이전처럼 사용자 **명시적 요청 있을 때만**. `main` PR 병합 또한 별도 사용자 승인 EOD. 새 세션들이 GitHub 댓글만 보고 자동 행동한다고 주장하지 않음; 다음 업무 전달 시 #61 확인 요구.
+- **후속:** 각 역할 `*_LATEST.md`의 정책 준수 commit/SHA 확인→#61 체크. 공통정책 파일 및 COMMON_RULES·START_HERE·SESSION_HANDOFF·AGENTS 변경은 사용자의 통합 요청/검증 과정에서만 선별 PR로 main 반영. 보고 완료는 `GITHUB_REPORT_COMPLETE` 4조건 증명 시.
+
+---
+
+# 2026-10-23 / Chapter3 신규 아트 #59 구두 보고 전달 — GitHub 보고 원칙 변경
+
+- 바울 대표가 #59 마을 외형 보완 담당 보고를 **대화에 복사**해 전달: `ART_CANDIDATE / USER_REVIEW_PENDING / NOT_UNITY_APPLIED`, 범위 오르나1·남문 목석 건물 정면/문/지붕1세트·스킬상점 또는 여관 외형/간판1세트. 기존43 중 사용 가능 자산 보존, 승인 지면9 보호, 따뜻한 마을·북쪽 추위·LIMITLESS 화풍 유지, 임시 시각후보/게임 기능 변경0. **실 PNG/ZIP, 파일별 명세·SHA, 스케일/접합 Preview, 실제 Unity 검사 내용은 보고 본문에 첨부되지 않아 미확인**; 아트 납품·게임 적용·대표 승인 완료로 판단하지 않음.
+- 사용자 새 지시 **“앞으론 깃으로 하라고 그래줘.”**: 신규 아트 담당은 앞으로 완료보고를 먼저 담당 브랜치 `docs/art-new`에 Markdown 문서 실제 커밋 및 `SPRITE_ART_LATEST.md` 인계 갱신 → 해당 Issue #59 또는 후속 작업 이슈에 보고링크/실제 SHA/필요 파일·사용자 승인 필요 여부를 댓글로 게시 → 사용자에게는 GitHub 문서링크+branch+commit SHA를 간결히 전한다. 채팅 단독 보고는 완료 보고로 인정하지 않음. PNG·ZIP 바이너리 자체의 GitHub 업로드 여부는 별도 검증, 문서만 commit한 것을 실물 등록으로 과장 금지.
+- [Issue #59 GitHub 정식 납품 재보고 지시 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6355299474) 게시. **요약 보고 상태 자체는 유효한 `ART_CANDIDATE`이나 기획 미술 판정 `USER_REVIEW_PENDING`**, 누락 비교/QA/Manifest/ZIP 검증 근거와 실제 Codex VisualGapList/실 GameView QA 구분 후 대표에게 승인 검토 상정.
+- 리뉴얼 #60는 독립 진행, 승인된 서릿길 지면9·기존43 및 Main23 148PASS 코드·Save/UserData·원본/메인 절대 무단 변경 금지.
+
+---
+
+# PLANNING 2026-10-23 — 신임 리뉴얼 담당 완료보고 실제 검토·새 작업 #60 발주
+
+바울 대표: “보고서 확인하고 리뉴얼도 일 시켜,”. `docs/art-renewal` 실제 최신 보고 [2026-10-23 비고유 자산 정적감사+NPC2 시안](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Renewal_NonOriginal_ActiveVsStored_Audit_NPCPilot2_20261023.md)와 최신 인계 확인. 담당 commit `2ea29d6a82b3722ba1822bb3d3d848826c25605e`, `1c121d9ac6d54bd8df858353081bf3787e4d83d0`.
+
+- **정적감사 완료(실 Unity GameView 아직 X):** 54행 CSV, Eldiran NPC12 Stable ID→Resources.Load Sprite12/12→.meta GUID/PPU28. 실제 NPC12 렌더 보장 아님. MonsterDefinitions18의 01~04 일부 Scene Spawn 연결 확인, `forest_spider` 기존 Spider Idle/Walk/Attack/Shoot Sprite의 원본 권리/최종승인 미확정. PVFX Foundry 효과8(Resource/코드7), Kenney BattleIcons 21 로드경로, Game-icons.net14 보관(실UI미확정), Xariami 라이선스 확인 불가, PilotBee ThirdParty 미연결. 승인 Wolf/Bear/Fox·Ch2 공식11~18·맵 전부 보호.
+- **리뉴얼 NPC 시안2 실제 납품 보고:** `OGA03_GeneralShop` 상인 + `OGA09_VillageRepresentative` 주민대표 512PNG2, SVG/128·40 Preview/ZIP manifest·SHA. 통합감사 ZIP `Limitless_Chapter12_NonOriginal_Audit_NPCPilot2_20261023.zip` SHA256 `4b9e08538f8669cc00c2a8a9f73db5141f8377fe5a94cf69a9d137e38847b4dd`; NPC 시안 ZIP `Limitless_Eldiran_NPC_Pilot2_Concepts_20261023.zip` SHA256 `7162600a51fddffc8a51087c8d1bbb1f8b14c928250ade120c197d23677fb0b3`. GitHub는 문서만; 그림 바이너리 이 대화에서 실물 접근 안 됨. **바울 대표 미술승인/실게임 공식 Sprite 적용0**.
+- 지난 기획 우선 대상은 `OGA03 + OGA20_GateGuard`였으므로 추가된 `OGA09` 시안은 **보류·보존**, 누락된 남문경비 `OGA20` 1종만 다음 미술 콘셉트. **[신규 리뉴얼 Issue #60](https://github.com/HappyPaul812/Project-Limitless/issues/60)** 작성·발주: GateGuard 오리지널 512 PNG1+3인 비교/128·40/Manifest SHA/ZIP, `forest_spider` 현행 아트/Scene Spawn/권리 1페이지 사전조사. 실제 사용/공식승인 미확인 Spider **대량 재제작 금지**, existing NPC 2 PNG 및 감사54 중복 금지.
+- 원본 `Resources/VillageNpcSprites/Eldiran/OGA20_GateGuard.png` 및 StableID `starter-village-gate-guard`, GUID/meta/PPU28, NPC 상호작용·씬·퀘스트·Save 변경0. 새 512 콘셉트는 원본 Sprite 직접대체가 아님. 이후 사용자 스타일 승인 + Codex 별도 격리 Unity GameView·통행/Collider 검수 전 공식 적용 금지.
+- [기존 감사 이슈 #57](https://github.com/HappyPaul812/Project-Limitless/issues/57)에 결과 검토와 #60로 역할 분리 기록. 리뉴얼 담당 `docs/art-renewal`에서 새 미술 보고, main 변경0. 기획은 `docs/planning`에 기록. **Issue 등록은 실제 담당 세션 자동 실행이 아니며, 사용자 전달/담당 결과 확인 필요**.
+- Chapter3 Main23 격리148PASS 및 화면정리 #58·신규아트 #59·Main24 SkillSave #46은 기획 기존 흐름 그대로, 리뉴얼이 Chapter3 미술로 넘어오지 않게 병렬 분리.
+
+---
+
+# PLANNING 2026-10-23 사용자 최신 지시 — 리뉴얼 담당 독립 진행 유지 / Chapter3 Main23 마을 화면+Main24 Save 기획 선행
+
+- 바울 대표 명시: **“됐어 지금 열심히 일 하고 있어. 넵둬. 우리는 챕터 3 계속하자.”** 따라서 앞서 리뉴얼 [#57] 작업축소/진행독촉 지시는 **추가 추진하지 않음**. 리뉴얼 담당 현재 작업 독립 보장, 금일 추가 Issue댓글/재할당/독촉0. 기획/Codex/신규 아트는 Chapter3 업무만.
+- 기존 Codex Main23 첫 플레이 격리 **148PASS/0FAIL**, 5목표/F1↔마을/Save·Continue·SafeZone·휠체어/가상마우스·3비율 기능 완료. **제품 원본/remote main 반영은 아직 확인되지 않음**, 임시 건물·NPC·안내 표시와 원본 Editor 손플레이 미검증.
+- 다음 [**Chapter3 Main23 화면·퀘스트 안내 플레이패스 Codex #58**](https://github.com/HappyPaul812/Project-Limitless/issues/58): 기존 `codex/chapter3-main23-first-playable-20261023` 자산·코드 기반으로 5목표 UX(목표·E/F·마우스) 개선·위치/휠체어 접근성 보완, 기존 미승인 v5 GameArt43의 건물/지붕/문·NPC 임시박스 3화면비 시연·VisualGapList. 기존 승인 Village9 Sprite/Tile 변경 금지, Main23 148 전수QA 반복금지, 본게임 무단 Import/PR0.
+- [**Chapter3 신규 아트 표적 시안 #59**](https://github.com/HappyPaul812/Project-Limitless/issues/59): 오르나 1종, 남문 목석 건물 입면·문/지붕 1세트, 스킬샵/여관 중 부족한 입면/표식1세트 이하 우선, 기존 43 GameArt 및 v10 승인9 재제작 금지. Codex gap evidence를 우선. 신규 담당 `docs/art-new`만 수행, 리뉴얼과 무관.
+- [**Main24 SkillSave 사전 기획 #46**](https://github.com/HappyPaul812/Project-Limitless/issues/46): SkillLoadout 6슬롯 메모리 전용→Save/Continue 영속 DTO/migration/결제·강화 원자성의 **읽기전용 설계와 QA 매트릭스** 준비. 미승인 스킬가격/상품/실상점 기능·F2 한기 구현/기존Save 수정 금지. Main23 실기능과 독립 병행.
+- 상세 실행 정본 [2026-10-23 Chapter3 Main23 presentation + Main24 skill Save prep](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/LIMITLESS_20261023_Chapter3_Main23_PresentationPass_Main24_SavePrep.md) 생성 `docs/planning` commit `69e1620fcf8ffffd6078f90bf14ffaac8ab4d94e`. 추가 GitHub Issue 발주는 현 사용자 Windows Unity 작업 자동 실행이 아니므로 **실제 결과 대기**, 사용자 원본·main 미변경.
+
+---
+
+# 2026-10-23 업데이트 — Main23 격리 148PASS, 리뉴얼 전수조사 범위 축소
+
+- 바울 대표 보고 Codex **Main23 격리 첫 플레이** 5목표 전부 PASS, 신규 **148PASS / 0FAIL**. F1 심부·두 흔적·서릿길 남문·주민 및 태온/하렌 대사·SafeZone 등록과 Save/Continue·남문 F1 왕복·가상 Mouse/Keyboard·휠체어·화면비3종 실 Unity 검증. 작업브랜치 `codex/chapter3-main23-first-playable-20261023`, 제품 약식 `dcf9d6af`, 문서 약식 `2979e327`. **건물·NPC는 임시 표시, 장치 손플레이/최종 미술 미검증. 원본/remote main 미반영**, 기존 Search 예외 OPEN. [Issue #56](https://github.com/HappyPaul812/Project-Limitless/issues/56) 결과기록.
+- 바울 대표 “리뉴얼 걔는 왜 이렇게 오래 걸리니?” 피드백. 기획이 NPC12+몬스터18+VFX+아이콘+라이선스 전체를 한 번에 발주해 **일감 과대**였음을 인정하여 [Issue #57](https://github.com/HappyPaul812/Project-Limitless/issues/57) **당일 할당범위 축소**: 우선 `Eldiran/OGA03_GeneralShop`, `OGA20_GateGuard` 기존 역할·간단 사용여부만 확인하고 **독립 오리지널 후보2종 PNG·Preview·ZIP** 먼저 보고. 나머지 NPC10·몬스터18·VFX/아이콘 전수감사는 후속 backlog로 분리. 사용자 기존 자산/씬 대체0, 두 후보 대표 최종 미술 승인 대기.
+- 10/23 검색 당시 GitHub `docs/art-renewal` 최신 커밋 `a56c9950` 생성시각 2026-10-22T13:19:15Z(한국시각 10/22 22:19), Issue #57 댓글0. **현재 세션이 진행 중인지 멈췄는지 증명하지 못함**. 사용자가 바로 보낼 수 있는 범위축소 지시와 작업현황 요청 준비.
+- Main23은 격리 성공으로 기획 게이트 통과, 이후 사용자 시각확인/임시 NPC 미술 대체/원본적용·PR 등은 별도. Main24 SkillSave #46/OPEN16/F2 및 정식 Main23 대사·TTS·보상 구분 유지.
+
+---
+
+# PLANNING / 2026-10-23 굿모닝 — Chapter1·2 비고유 잔여 브리핑 / Chapter3 Main23 FirstPlayable 신규 착수 지시
+
+- 바울 대표 사용자 지시: “먼저 리뉴얼 쪽은 우리의 고유 자산 말고 뭐가 남아있나 브리핑해주고, 챕터3는 계속 진해.” 최신 원격 `main` `47ad2eecb40135b2ee28e4947d642ebdbf0bf68a`, 2026-10-22 PR#54+#55 및 사용자 원본 `SYNC_COMPLETE`을 기준으로 이틀 전 상태와 혼동 금지.
+- [금일 확정 기획·실행 계약](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/LIMITLESS_20261023_ArtRenewal_NonOriginal_Inventory_And_Main23_FirstPlayable_Kickoff.md), 문서 생성 commit `499a1c9119711ae51ab33e36d11887db2193eaf2`. Codex 실제 로컬 작업이 자동 시작된 것은 아님.
+- **리뉴얼 잔여:** [Issue #57](https://github.com/HappyPaul812/Project-Limitless/issues/57) 실사용·권리 감사 + 실제 Eldiran 12 NPC 중 2종 오리지널 아트 시안. 외부·공용 **NPC12**, `MonsterDefinitions` **18종에서 공식·사용자 승인/비고유 구분 전에는 교체 수 미확정**, PVFX Foundry CC0 기반 `BattleSkillEffects`, Game-icons.net CC BY 재료4·Path trait10, Kenney CC0 전투토큰/아이콘, ThirdParty Schwarnhild·Xariami 원본 보관 중 실제 사용 Sprite 참조만 탐색. 외부 라이브러리 원본 존재≠제품 사용, 공식 Wolf/Bear/Fox Run6 및 Chapter2 기존5/보스 KEEP. Field09 HeatVent·Obsidian Spire [#38], Field10 공식13 사용자 최종 미술리뷰 backlog. Chapter1·2 맵 전면재제작0. 출처 및 런타임 GUID 감사 없이는 몇 개를 새로 그려야 하는지 확정하지 않음.
+- **Chapter3:** [Main23 격리 실제 첫 플레이 구현 발주 #56](https://github.com/HappyPaul812/Project-Limitless/issues/56) (Quest5목표/F1 북쪽조사2/마을 남문/F1↔Village/SafeZone/주민 증언·형제애/SaveContinue/휠체어·마우스). `FrostwayVillageV10` 승인 PNG9+Tile9는 **main 등록**, 그러나 `World_FrostwayVillage.unity` **미존재**. 신규 Scene 및 Main23 Quest 실제 구현은 Codex가 격리 `codex/chapter3-main23-first-playable-20261023`에 한정. 기존 Main22/F1/Mouse 및 공식 3펫 재QA·재적용금지. 승인9 지면 타일과 아직 최종 미술승인 아닌 나머지 건물·서비스 아트 구분; 임시 기능용 표시물을 `VISUAL_PLACEHOLDER`로 명시.
+- **경계:** 마을 북문 F2 비활성·동쪽 포탈 비활성, Main24 최초 한기/신규스킬 판매·6슬롯 Save 영속성 [#46]·마을 Main23 정식대사/보상/아이콘/TTS 등 미완 별도 보류. Main23 SafeZone·Checkpoint 구현은 스킬상점 판매완료가 필요없음, 불필요한 Quest 보상=영구0 확정 금지. 사용자 Save/UserData/Editor/dirty/HEAD/index 및 전체 원본 보호, main 직접 commit·Push/병합0. Codex QA 후 사용자 실제 플레이 확인 다음 별도 EOD/원본적용 허가.
+- 오늘 작성 내용과 Issue 발주는 기획 작업 완료, **Codex 사용자 로컬 F: 작업은 실행·완료 확인 전**이므로 `MAIN23_ISOLATED_IMPLEMENTATION_REQUESTED / ART_AUDIT_REQUESTED / EXECUTION_PENDING` 최신 상태.
+
+---
+
+# PLANNING 2026-10-22 최종 EOD — Bear·Fox 제품 연결 완료 보고 + Village Candidate9 승인 / 통합 및 로컬 sync 사용자 지시
+
+- **바울 대표 직접 마감 지시**: “오늘은 여기까지 하자. 오늘 한 작업들 합치고, 로컬 동기화까지 해줘..”. 사용자 오늘 승인+QA 통과분에 대한 GitHub PR/main 선별병합 및 원본 Local 비파괴 동기화 실행을 Codex에 요청하는 EOD 승인. **GitHub [Issue #53](https://github.com/HappyPaul812/Project-Limitless/issues/53) 신규 생성**, 본 [EOD 안전실행 계약](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/LIMITLESS_20261022_EOD_ApprovedMerge_LocalSync_SafetyContract.md) `docs/planning` 생성커밋 `cdd8e497724966de259d41f67f364d3804442c38`.
+- 기획 GitHub 실측 `main` **`510c021b4159167e211be60ca90e1cb7328bafe9`**, 열린 PR0(2026-10-22 마감 직전). 이 GitHub 기획 세션에서 Codex 사용자 PC F: 로컬 Git/Unity를 직접 다룰 수 없으므로 **본 EOD는 `CODEX_EXECUTION_PENDING / REMOTE_MERGE_NOT_DONE / LOCAL_SYNC_NOT_VERIFIED`**. 이슈/계약 생성은 실제 동기화 실행이 아님.
+- **Bear Run6 v4** 사용자 미술/모션 최종 승인 + Codex 원본 게임디스크 제품 안전반영, 격리 Unity **154PASS/0FAIL**, 로컬 `codex/bear-run6-v4-apply` 제품 커밋 단축 `5b89ac92`, QA `6e86d05d`. Issue #51. **원격PR/병합 대기**. 기존 원본 디스크 재복사·154건 전수 재QA 금지.
+- **Fox Run6 v7** 사용자 미술/모션 최종 승인 + Codex 원본 게임 제품 안전 반영. 제품 변경4파일 `Fox_Run6_v7.png` 신규/meta 및 `BeastCompanionSystem.cs`·`BattleActionPresenter.cs`. 격리 Unity **162PASS/0FAIL** 소환/장착/양방향6frame/저장복원. 로컬 `codex/fox-run6-v7-apply-20261022`, 제품 commit 단축 `332d9932`, QA `5167841a`. Issue #52. **원격PR/병합 대기**. Bear와 Fox 공통 펫 코드 충돌 시 무손실 **semantic merge** 필수, 승인 Wolf v5 그대로.
+- **Village v10** 사용자 **Candidate 타일 Earth3·ThinFrost3·Gravel3=9종 최종 미술승인**, ZIP SHA `f50e312eea52a6bca8272d78532224e2c66a6b40c4b1c8be5cd164b52b2bcee5`; 기존게임 PNG49와 후보 기존6 SHA보호. **EOD에는 승인9 새 게임 자산의 별도 안전등록만 통합 후보**, 기존 Tiles/Scene 전면 치환·Main23 신규 Quest 구현 금지. 안전 기술 gate 미충족 시 Village 제품 등록만 `PARTIAL_HOLD`하고 문서/approval은 병합.
+- **미승인 제외** Village `OPEN16` 유지16/완화0/해결0, Main23 본편 Scene/Quest/안전거점, Main24 skill loadout save #46, TTS 새 WAV·Main21 KEEP7 후일 Unity 일괄 적용대기, Main22 원래 임시대사/경제/보상 확정, 미완 BGM/SFX/영상 및 Fox v6 미술반려본. **TTS 10/22 최신 상태 세린67/67·태온37/85 총104/152 READY** — 사용자 전량 청취 합격 아님, 게임 적용 금지.
+- **마감 프로토콜** 최신 GitHub main과 local 원본 user dirty/untracked/Save/UserData/Editor/HEAD/index/new SHA 읽기전용 측정 → Temp/EOD20261022 SHA backup/proof → 별도 `codex/eod-integration-20261022` worktree Bear→Fox 공통코드 의미병합, Village 안전승격 및 문서 담당별 파일단위 의미통합, 신규 영향delta QA → EOD 승인된 안전분만 PR방식 main 병합 → 사용자 원본 dirty/unique commit/이미반영 Bear·Fox 파일 덮어쓰기 없이 비파괴 FF local sync → **GitHub main/origin/main/original local main 3자 SHA와 Save/개인파일 SHA 차이0** 실증 후 `SYNC_COMPLETE` 기록.
+- reset-hard/clean/무단 stash/강제checkout/main 직접 commit·Push, Editor foreground/Play/원본 Save 변경 금지. 충돌은 해당범위 보류하고 안전한 다른 범위만 진행. ***Codex의 PR URL/mergeSHA + OriginalLocalSync_Proof가 없는 현재는 동기화 완료로 주장하지 말 것***.
+
+---
+
+# PLANNING 2026-10-22 Fox Run6 v7 — 바울 대표 최종 미술·모션 승인 완료
+
+**사용자 직접 승인 원문:** “Fox Run6 v7도 이대로 최종 승인..”  
+**최신 상태:** `FOX_RUN6_V7_USER_ART_MOTION_APPROVED / ASSET_FROZEN / CODEX_GAME_APPLY_REQUESTED / GAME_APPLY_NOT_YET_VERIFIED / GITHUB_MAIN_UNCHANGED`. 이전 `ART_PASS_RECOMMENDED / USER_APPROVAL_PENDING`은 승인 전 역사 기록으로 보존하지만 **현재 승인은 확정**.
+
+- 승인 실물: `F:\Downloads\Limitless_Beast_Fox_Run6_v7_Frame03_ForelegFix.zip`; 실제 Codex SHA256 `de6139858b2f5de95c9e8256a350f0e45744f15e404efb00161688c88e1c0030`, CRC/Manifest26/26/SHA256SUMS27/27/alpha CSV6/6, Strip/Atlas 정확6/6. v5 ManifestFix 대비 Frame00·01·02·04·05 PNG **5개 압축바이트 동일**, Frame03 **6,275 RGBA픽셀만** 개선. v6 미술반려 전신교체본 사용 금지.
+- 이미 통과한 **실제 격리 Unity 12FPS(평균11.95 FPS),128px/40px·좌우 4루프**, 앞다리 흰 쐐기 제거·02→03→04 연결 개선, 확대 4× 화면에 잔존한 미세 밝은 털띠는 **바울 대표 현 상태 수용**. **Fox v7 PNG/ZIP/Manifest SHA 원본 동결, 추가 v8 미술 수정 금지**.
+- 공식 Run6 세 동물 사용자 미술·모션 확정: **Wolf Run6 v5** 게임 적용+기존 EOD 원격 병합 완료, **Bear Run6 v4** 원본 게임 디스크 반영/격리Unity154PASS·원격PR/main 병합대기(Issue #51), **Fox Run6 v7** 미술 승인/게임 제품경로 반영은 아직 시작/완료 증거 없음(Issue #52).
+- Codex 제품 연결 신규 실행 이슈: **[#52](https://github.com/HappyPaul812/Project-Limitless/issues/52)**. 승인 Wolf/Bear 변경 금지, 사용자 원본 Unity HEAD/index·Save/UserData·dirty/untracked·Editor 포커스 보호, 별도 `codex/fox-run6-v7-apply-20261022` worktree에서 Fox 관련 최소 제품 자산/호출 등록·Unity 변경분 검사 → 안전 원본 적용 및 branch/commit/검증 보고. 기존 Wolf/Bear/전체 Main22 전수QA 반복 금지, main 직접 commit/Push/merge 금지. 실제 적용 여부는 Codex 새 보고 후 확정.
+- Village v10 Candidate9 최종 미술승인 별도 유지, OPEN16 해결0/16·Main23 게임 통합은 미완. 여우 미술 승인이 마을 전체 승인을 뜻하지 않음.
+- 보고 문서 변경은 `docs/planning` 한정, 현재 대화에서 바울 대표 로컬 F: Unity를 직접 편집한 것은 없음.
+
+---
+
+# PLANNING 2026-10-22 — Fox Run6 v7 Codex 실제 격리 Unity QA: 기술 PASS·Frame03 미술 PASS 권고 / 사용자 승인 대기
+
+바울 대표가 Codex v7 최신 결과 캡처를 직접 제공. 이 기획 세션은 로컬 F:를 직접 읽거나 Unity 실동작을 직접 검증한 것은 아님. 아래는 **사용자 제공 Codex 검사 보고**이다. 이전 v6은 미술 반려, v7은 **v5 ManifestFix 기준 Frame03만 국소 복원**한 별개 후보.
+
+- 입력: `F:\Downloads\Limitless_Beast_Fox_Run6_v7_Frame03_ForelegFix.zip`; **실 ZIP SHA256 `de6139858b2f5de95c9e8256a350f0e45744f15e404efb00161688c88e1c0030`**, 납품 신고와 일치. **CRC PASS / Manifest 26/26 / SHA256SUMS 27/27 / bbox CSV 6/6 PASS**, Source PNG6·Strip·Atlas **6/6 픽셀동일**. 기존 v5 기반 **Frame00·01·02·04·05 압축 PNG 바이트5/5 동일**, Frame03만 지정 범위 **6,275 RGBA픽셀** 변경. v6의 통짜 전신 교체본을 사용하지 않음.
+- 실제 **격리 Unity PlayMode 12FPS /128px·40px / 좌우 / 4회 루프** 실행, 실측 평균 **11.95 FPS**. **Frame03 분리된 흰 쐐기 제거·앞다리 연결 개선, 02→03→04에 뚜렷한 새 단절 미관찰** → **`FOX_V7_TECH_PASS / FRAME03_ART_PASS_RECOMMENDED`**. 다만 **4× 확대 사진에서 미세한 밝은 털띠 잔존**; 축소 128px/40px에선 Codex가 문제로 판정하지 않은 상태로 사용자가 최종 미술 수용 여부를 판단한다. 극미세 흔적을 '전혀 없음'으로 과장하지 말 것.
+- **승인·게임 적용 게이트:** Codex PASS권고≠바울 대표 미술·모션 최종 승인. 현재 **`FOX_V7_USER_APPROVAL_PENDING / NOT_GAME_APPLIED`**. 바울 대표가 최종 승인하면 승인 PNG/ZIP SHA 동결하고 Bear v4·Wolf v5의 제품 연결 방식을 참고하여 **새로운 별도 Codex 안전 제품경로 적용** (기존 게임/Save/UserData/씬/GUID/meta/dirty 보호, 실제 변경분 격리 Unity QA), main 직접 Push/merge 금지.
+- Codex 보고 브랜치 `codex/qa-fox-v7-foreleg-20261022`, 커밋 약식 `46c2ac83`·`941c1485`. 사용자 원본 **4,402파일**, 미커밋 **862파일**, HEAD/index 보호, 승인 Bear/Wolf/Main22 재검수0, 제품 적용0, GitHub Push/병합0.
+- 연관 [미술 Issue #50](https://github.com/HappyPaul812/Project-Limitless/issues/50), [리뉴얼 v7 원본 납품 QA](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Fox_Run6_v6_VisualReject_v7_Frame03_LocalForeleg_Repair_20261022.md). 마을 Candidate9 사용자 최종 승인 완료지만 OPEN16/본편 Main23 적용은 별도; Bear v4 이미 원본 게임 파일 연결+154PASS, 원격 PR/main 아직 보류.
+
+---
+
+# PLANNING 2026-10-22 — Fox Run6 v7 Frame03 ForelegFix 실물 경로 접수 / Codex 격리 미술 검수 대기
+
+- **바울 대표가 Windows 실물 ZIP 경로를 전달**: `F:\Downloads\Limitless_Beast_Fox_Run6_v7_Frame03_ForelegFix.zip`. 기획 세션은 바울 대표 Windows F:를 직접 읽은 것이 아니므로 아래 SHA/무결성은 `docs/art-renewal` 납품 담당 신고값. **Codex 실제 ZIP SHA readback과 Unity 검수 아직 없음**.
+- **중요 기획 변경 사실:** 중간 `Fox Run6 v6`은 바울 대표가 오른쪽 앞발 이상으로 직접 미술 반려. v6은 원래 요청한 Frame03 국소 수정이 아니라 전신 60,629픽셀을 교체해 동작·발목 방향이 불연속이 된 것으로 art-renewal 보고. **`FOX_V6_ART_REJECTED / NEVER_GAME_APPLY`**. v7은 v6을 기반으로 하지 않고 승인 전 단계의 **Fox v5 ManifestFix 프레임6**을 기준으로 다시 수리한 파일럿.
+- **v7 납품 보고**: ZIP **2,990,546 bytes**, SHA256 **`de6139858b2f5de95c9e8256a350f0e45744f15e404efb00161688c88e1c0030`**. `Fox_Run6_v5_ManifestFix` 대비 Frame00/01/02/04/05 **압축 PNG byte/SHA 5/5 고정**, Frame03만 **6,275 RGBA픽셀** 변경 (bbox x159..255 inclusive,y185..294 inclusive), v3에 있던 원래 그린 연속 앞다리 원화를 가슴 아래 국소 합성·밝은 흰 쐐기/분리발 제거 목표. Frame03 외 몸통·귀·꼬리·다른 다리 보존. PNG6 512×384 RGBA, Strip 3072×384·Atlas1536×768 정확 6/6, ZIP CRC PASS, Manifest 자신과 SHA256SUMS 제외 **26/26 PASS**, SHA256SUMS 자기 자신 제외 **27/27 PASS**, alpha bbox CSV 6/6 PASS, GIF/APNG 6frames 12FPS 500ms 보고(오프라인 검사).
+- **검수 계약:** Codex 별도 격리 worktree에서 사용자 실 ZIP readback SHA/CRC/Manifest/26·27/SHA, 기준 v5 ManifestFix PNG5/5 동일, Frame03 변경 영역/Strip·Atlas 정확성만 확인. **v6 미술 FAIL을 v7의 미술 판정에 전가하지 않되 v6 전신 교체 재도입 여부 확인**. Unity 실제 PlayMode 12FPS 128px·40px 양방향, 집중 구간 02→03→04와 05→00 연결 및 Frame03 밝은 쐐기·관절·발목·접지 타이밍·실루엣 검사. 프레임 외곽, 동물 디자인, 호환성 결함 새로 나타났으면 범위를 명시. **기술 PASS/FAIL 및 미술 PASS 권고/HOLD/FAIL 별도 보고.** 사용자 최종 승인 전 게임 런타임 적용/PR/main 병합 금지, Codex의 PASS 권고만으로 Bear처럼 사용자 승인 확정 금지.
+- **변경 금지:** 승인 Wolf Run6 v5, 승인·실원본 게임 반영 Bear Run6 v4(격리 Unity 154PASS, 원격 Push/PR·병합 대기), Main22/F1/마을 v10 후보9 사용자 미술 승인본·원본 Unity Editor/Save/UserData/HEAD/index·dirty/untracked. Bear/Wolf QA 재수행0, Fox 기존 전체 QA 재수행 금지.
+- **최신 상태:** `FOX_V7_DELIVERY_PATH_RECEIVED / ART_RENEWAL_OFFLINE_INTEGRITY_PASS / CODEX_ACTUAL_LOCAL_READBACK_PENDING / ISOLATED_UNITY_MOTION_QA_PENDING / USER_FINAL_MOTION_APPROVAL_PENDING / GAME_NOT_APPLIED`.
+- 정본: [Fox v6 미술 반려 및 v7 국소 복원 보고](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Fox_Run6_v6_VisualReject_v7_Frame03_LocalForeleg_Repair_20261022.md), [Issue #50](https://github.com/HappyPaul812/Project-Limitless/issues/50). GitHub 역할별 최신 문서 검토는 기존 온보딩된 담당이 스스로 수행, 별도 반복 안내문 없음.
+
+---
+
+# PLANNING 최종 최신 2026-10-22 21:48 KST — 서릿길 마을 v10 Candidate9 바울 대표 최종 미술 승인 / Fox v5 ManifestFix 기술 PASS, 모션 HOLD
+
+## A. 바울 대표 직접 승인 — Main23 Frostway Village v10 Candidate9
+
+- **사용자 명시 승인 문구:** “서릿길 마을 v10의 후보 타일 9종은 이대로 최종 미술 승인.” 기존 `VILLAGE_V10_CANDIDATE_9_ART_PASS_RECOMMENDED / USER_ART_APPROVAL_PENDING`은 당시 기록이고, 최신 상태는 **`VILLAGE_V10_CANDIDATE9_USER_ART_APPROVED`**.
+- 승인 대상 ZIP: `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_VariantTiles_v10.zip`, Codex 격리 실제 SHA `f50e312eea52a6bca8272d78532224e2c66a6b40c4b1c8be5cd164b52b2bcee5` 및 PNG 9후보. **Earth 3·ThinFrost 3 = 이전 v9 승인권고 미술 후보 byte SHA 보존, Gravel 3 = v10 표적 개선본**, Candidate 9/9 사용자 최종 미술 승인.
+- SHA/PNG/Manifest/CRC·기존49 game PNG byte preservation/경계 seam·Unity 3화면비 5×5·8×8 동배율 및 통행 proxy 변경분 QA PASS (2026-10-22 Codex 스크린샷). *현 후보 9종 추가 재제작/미술 수정 금지, 각 PNG와 ZIP SHA 동결*.
+- **범위 제한:** 후보9종의 **미술** 승인으로서, `Candidate/` PNG 9종을 정식 타일 자산 승격/게임 적용하는 후속 Codex 통합 작업의 **기획 게이트는 열렸지만 실행/완료가 증명된 것은 아님**. 기존 `Tiles/` 공식게임PNG49, Main23 Scene·Quest·SafeZone, Tilemap PPU/Pivot/GUID/meta/배치 패턴 구현·검증, 런타임, GitHub main/원본 로컬 반영은 **별도 Codex 안전 통합 절차와 실제 결과** 필요. **Village 전체 마을 최종 PASS 선언 금지**, 기존 QA `OPEN16` **유지16/완화0/해결0** 및 그에 따른 후속 게이트 계속. 사용자 승인 후보가 기존 asset 원본을 자동 덮어쓰는 허가로 오독하지 말 것.
+- [Village Issue #45](https://github.com/HappyPaul812/Project-Limitless/issues/45) 승인/OPEN16 추적, art-new v10 후보 동결 지시.
+
+## B. Fox v5 ManifestFix — 기술 무결성 PASS / 미술 HOLD
+
+- 바울 대표 Codex 결과 캡처: `F:\Downloads\Limitless_Beast_Fox_Run6_v5_ManifestFix.zip` 실 SHA `b0968d4358c916057bd23734d426f6fa0e6548a0ad8880400e4d061413f2ae29`; **CRC PASS, Manifest37/37 PASS, SHA256SUMS38/38 PASS, bbox CSV6/6 PASS**. 이전 Manifest 자기 참조 오류는 수정 완료. 기존 이미지/애니메이션 총13종이 수정 전 v5와 동일 SHA였다는 Codex 체크(이전 ZIP 실 바이너리 미보유 관계로 직접 전수 대조 대신 출력된 원 SHA 비교); 의도된 아트파일 변경 없음.
+- 격리 Unity 12FPS(실측 평균 12.004FPS), 128/40px·좌우, 4 loop 실제 재생 확인. **`FOX_V5_MANIFESTFIX_TECH_PASS / FOX_FRAME03_ART_HOLD`**: Frame03 회수 앞다리의 흰색 쐐기·스푸핑 경계가 남아 있고 Frame02→03→04 연결/무게·관절 회수가 부자연스러움. GIF480ms timing 별도 보완 필요 여부를 메타데이터/미술평가와 구분하고 실제 캡처 12FPS 판단 기준 유지. **바울 대표 최종 Fox 승인0, 제품 런타임 적용0**.
+- 다음 리뉴얼 담당은 **Frame03만 미술 표적 수정한 Fox v6 후보**(실제 아트 수정 버전) 제작. Frame00/01/02/04/05는 **바이트 동결**, Frame03 흰색 밝은 접합/관절을 본체·두 앞발·접지와 자연스럽게 합성; 02→03→04 12FPS·128/40px 동적 검증. 다른 정상 꼬리/몸통/귀·승인 Wolf 및 Bear v4 보호. 새 ZIP 자기참조 없는 Manifest/CRC/SHA/CSV bbox 명세와 릴리스 검증 후 Codex 변경분 QA, 대표 최종 미술 승인 전 공식 Fox 자산 반영 금지.
+- 별도 기존 수치: local QA branch `codex/qa-fox-v5-manifestfix-20261022`, 보고 커밋 `5eefa345`, `b88a8778` (단축, 실제 SHA 별도). 원본4,402파일 및 사용자 미커밋862파일, HEAD/index·승인 Wolf/Bear·Save/UserData 보호, GitHub Push/병합0.
+
+## 공통 기록·상태
+
+- **Bear Run6 v4** 사용자 최종 미술 승인 및 원본 게임 파일 적용 격리 Unity154PASS, 아직 GitHub Push/PR/병합 없음(Issue #51); 반복 테스트/재적용 금지.
+- **Village v10** 사용자 후보9 최종 미술 승인 기록은 **이번 문서 및 Issue #45**에 고정. 마을 전체/OPEN16/본편 Main23 적용은 별도. Fox 미술 `HOLD`, 두 아트 작업의 상태 전염 금지.
+- 기획 담당만 `docs/planning` 수정, user F: ZIP/Unity 로컬 main 파일 및 Save/UserData/Editor 직접 변경하지 않음. 마감 승인(merge/sync)은 별도 사용자 지시.
+
+---
+
+# PLANNING 최신 2026-10-22 Fox Run6 v5 패키징 게이트 실패 / Village v10 후보9 PASS권고 / Bear 제품 반영
+
+**근거:** 바울 대표 제공 Codex 최신 격리 Unity QA 캡처. 이 기획 담당은 사용자 F: 로컬 ZIP·Unity 원본을 직접 조작/재검사하지 않았으므로 아래는 Codex 실증 보고를 인계한 것임.
+
+### A. Fox Run6 v5 — 실물 Manifest 자기 참조 결함, 미술 검증 중단
+
+- 입력 `F:\Downloads\Limitless_Beast_Fox_Run6_v5.zip`; Codex 실 SHA256 **`5f6da110fe64f280528d9768bc9154d4175c0724f8541d72aa9ebbecf1cd44df`**. ZIP CRC PASS, `SHA256SUMS` **38/38 PASS**, 그러나 `Manifest` **37/38**, 실패항목은 **Manifest 파일 자신**의 기록 SHA/크기/CRC. Manifest 신고 크기 **9,184 bytes**, 실제 **9,345 bytes**. **`FOX_V5_PACKAGE_TECH_FAIL / FOX_MOTION_ART_NOT_VERIFIED`**. “Fox v5 미술 FAIL”이라고 판정하지 말 것.
+- 원인 확인/복구 우선: **리뉴얼 아트 담당은 Fox v5 기존 6 PNG/Strip/Atlas/GIF/APNG/preview/QA의 파일 SHA를 그대로 보호**하고 **Manifest 자신을 Manifest 내부 digest/size 목록의 검사 대상에서 제외**(정의상 자기 자신의 SHA를 파일 본문에서 직접 맞추는 순환 검증은 피함). 별도 `SHA256SUMS.txt`는 최종 비자기참조 파일에 대해 ZIP 생성 전 freeze 후 검증, 해당 checksum 목록 역시 자체 digest를 기록하지 않도록 처리. 진단상 별도 실제 문제 파일이 있으면 정확히 보고. Manifest/README/ZIP checksum 갱신 외 정상 이미지 재제작 금지.
+- 고정 v5 ZIP은 **변경하지 않은 보존본**으로 두고 수정본을 새 `Limitless_Beast_Fox_Run6_v5_ManifestFix.zip`로 납품·새 SHA 명시. 이후 Codex는 변경된 metadata/ZIP 무결성의 변경분만 확인하고 **Fox v4 Frame03 접합부/02→03→04 자연스러움 실 Unity PlayMode 12FPS 128/40px 시각QA**를 그때 수행. 중복 Wolf/Bear/Main22 전수QA 금지. **정식 게임 적용 금지**.
+
+### B. Village VariantTiles v10 — 후보9 미술 PASS 권고, 대표 최종승인 대기
+
+- 실 ZIP SHA256 **`f50e312eea52a6bca8272d78532224e2c66a6b40c4b1c8be5cd164b52b2bcee5`**. ZIP CRC, Candidate Manifest Gravel **3/3**, `SHA256SUMS` **64/64** PASS. 기존 게임PNG **49/49 바이트 보존**, 기존 Earth/ThinFrost 후보6 byte 보존; Gravel candidate3 수정. 실제 격리 Unity 3화면비·5×5/8×8 및 통행 proxy 정상, 후보9 전체 seam/alpha 등 **22항목 PASS**. **Gravel candidate01/02/03 각 `ART_PASS_RECOMMENDED`**, 이전 Earth/ThinFrost 각3종도 PASS 권고 → **`VILLAGE_V10_CANDIDATE_9_ART_PASS_RECOMMENDED / USER_ART_APPROVAL_PENDING`**.
+- 미술 PASS 권고는 **마을 전체 최종 승인이나 Main23 게임 적용 허가 아님**. 기존 **OPEN16 유지16·완화0·해결0** 및 Village 기능/구성/퀘스트 게이트 별도. 사용자 승인 전 Candidate9 공식 타일 승격/Unity 본편 적용/PR main 병합 금지. 후보9은 미술 결함 새로 확인되기 전 원형/SHA 동결 권고.
+
+### C. Bear Run6 v4 — 이미 원본 게임 파일 안전 반영, GitHub PR/병합 아직 없음
+
+- 바울 대표가 제공한 별도 Codex 적용완료 캡처: **승인 Bear v4 게임 파일 안전 적용**, 격리 Unity 변경분 **154 PASS**, 설치/장착/복원/6프레임 루프·좌우 이동·128/40px. 사용자 미커밋 **858개 SHA 보존** 및 Wolf/Fox/Save/UserData 보호, 원본 Editor 자연 Import/손플레이는 미검증. Codex branch `codex/bear-run6-v4-apply`, 제품 커밋 약식 `5b89ac92`, 검증문서 `6e86d05d`. **`BEAR_LOCAL_GAME_DISK_APPLIED / REMOTE_PUSH_PR_MERGE_0`** — 재복사/154 PASS 재검수 금지. 담당 Issue #51 OPEN.
+
+### 공통
+- Fox/Village Codex 브랜치 `codex/qa-village-v10-fox-v5-20261022`, 커밋 약식 `5a51296e`, `2d28b8aa`. 대상 원본 **4,402파일**, 사용자 미커밋 **862파일**, HEAD/status/index 및 Wolf/Bear 승인 자산 보호, Push·병합0. 기존 Unity Search 초기화 예외1 별도, 새 결함 판정으로 합산 금지.
+- 다음 가장 효율적 작업: **Fox ManifestFix 아트 담당에게 재포장 요청**, Codex Fox v5 변경분 무결성 확인 + 실제 미술 QA, **Village v10 후보9 바울 대표 최종 미술 승인 질문**. EOD 본게임 merge/로컬 sync는 별도 사용자 지시. 이미 완료된 Bear 적용/기존 QA 중복하지 말 것.
+
+---
+
+# PLANNING / 2026-10-22 Bear Run6 v4 바울 대표 최종 미술·모션 승인
+
+- **바울 대표 직접 승인 문구:** “곰 Run6 v4는 이대로 최종 승인”. Codex 기술 PASS·실제 격리 Unity 12FPS/128px/40px 양방향 및 메타데이터 6/6 PASS·미술 PASS 권고를 기초로 **`BEAR_RUN6_V4_USER_ART_MOTION_APPROVED`** 확정. 전날 `PASS_RECOMMENDED / USER_APPROVAL_PENDING`은 당시 기록으로 유지, 최신 상태는 승인완료.
+- 승인 ZIP: `F:\Downloads\Limitless_Beast_Bear_Run6_v4.zip`; Codex 실제 SHA256 readback = art-renewal 신고 **`4a9fedd54d58999def05b92839a1f00bc1d001375746e572f5d88bcade44977a`**, 파일 기술/CRC·Manifest33/33·SHA256SUMS34/34, CSV bbox6/6 PASS. Bear v4 six frames `512×384 RGBA`, 12FPS, Strip/Atlas. v3 대비 Frame03/04 수정, 00·01·02·05 바이트 보존. 동작 02→03→04→05·05→00 연결 미술 최종 사용자 승인.
+- **동결:** Bear Run6 v4 ZIP 및 동봉 PNG·Manifest·SHA 원본 동결, **Bear v5 추가 수정·재제작 불필요/금지**. 반면 **Fox v4 ART_HOLD / Fox v5 Frame03 보완 진행**, Village v9 Earth/ThinFrost PASS 권고+Gravel HOLD는 이 승인과 무관하며 자동 승인·적용 금지. 승인 Wolf Run6 v5 정식 자산 변경 금지.
+- **구현 게이트:** 이 승인은 **Codex의 Bear 제품 경로 안전 통합 착수**를 허용하는 아트 승인이지, `Unity 원본 제품 반영 완료 / GitHub main 병합 / 로컬 동기화 완료`가 아니다. Codex는 승인 ZIP 실제SHA 재확인 후 격리 worktree에서 Bear Run 신규 asset 및 runtime/Resources/BeastCompanionSystem 참조를 최소범위로 연결하고 12FPS·양방향·PetFacility/Save와 간섭, Wolf 기존6프레임 안정성, Bear/Fox 타원본·GUID/meta·씬·퀘스트를 변경분만 검사. 사용자 원본 dirty/untracked·Editor·Save/UserData 보호, main 직접 commit/Push·force 금지. 기존 10/21 Wolf/EOD와 현재 Bear QA 전수 반복하지 말고 재사용.
+- 제품 소스 반영·PR/병합/원본 디스크 동기화의 완료 여부는 Codex **실제 결과와 SHA 증명** 후 변경. 본 GitHub `docs/planning` 수정은 기획 기록이며 제품 파일 수정 아님.
+- 관련 [Bear/Fox QA Issue #50](https://github.com/HappyPaul812/Project-Limitless/issues/50), [리뉴얼 Bear v4 납품 정본](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Beast_Bear_Run6_v4_Continuity_Motion_Delivery_20261022.md).
+
+---
+
+# PLANNING 최신 2026-10-22 20:19 KST — Village v9 후보6 PASS권고/Gravel HOLD, Bear Run6 v4 PASS권고, Fox Run6 v4 HOLD
+
+**근거:** 바울 대표 제공 Codex 격리 Unity 결과 스크린샷. 기획 담당은 사용자 PC F: 실 ZIP·Unity를 직접 재검사하지 않았으므로 화면의 Codex 실증보고로 구분. 세 ZIP 모두 실제 readback SHA256가 아트 담당 신고와 일치:
+- **Village v9** `afea1ed0b357a5bdce9e962c7969b81b77d29e1ed11b7b9dc170d57747fbeb79` / CRC PASS, Manifest **58/58**, SHA256SUMS **72/72**. 기존 원본 공식 후보43 PNG + 변형6 = **49 게임PNG 전부 바이트 동일**, **새로운 Candidate 9종만** 별도 후보. 규격·alpha·경계 seam **54종 PASS**, 실제 Unity 동일 Tile ID·동일 카메라 5×5/8×8·16:9/4:3/21:9 비교+통행 검증. **Earth 후보 family3종 `ART_PASS_RECOMMENDED`; ThinFrost family3종 `ART_PASS_RECOMMENDED`; Gravel 후보 family3종 `ART_HOLD`** — 큰 타일 격자는 개선됐으나 자갈 고유 **미세 격자/미세 텍스처 주기성** 잔존. 후보9 전체를 승인한 것이 아님. PASS권고 6종은 **파일 SHA 동결**하고 Gravel 후보3종만 다음 버전 소규모 아트 보완; 기존43/49 PNG와 Earth/ThinFrost 후보6 절대 재제작/덮어쓰기 금지. 바울 대표 최종 미술 승인 이전 Main23/Unity 실제 제품 적용 금지.
+- **Bear Run6 v4** `4a9fedd54d58999def05b92839a1f00bc1d001375746e572f5d88bcade44977a` / CRC PASS, Manifest **33/33**, SHA256SUMS **34/34**. 실제 Unity PlayMode 12FPS·128/40px·좌우 flip PASS, bbox CSV **6/6 PASS**. Codex 미술 **`ART_PASS_RECOMMENDED`**: 03→04 높이/착지 차이 감소, 02·05 이웃 체형 연결 개선. **최종 승인 아님**. Bear v4 **수정 동결·바울 대표 시각 최종승인 요청**, 승인 전 제품 Pet runtime 적용·main 병합 금지.
+- **Fox Run6 v4** `9c46764df7f88194b1d15663e4df34ecdb24367f7e65eed298dfc089221b5827` / CRC PASS, Manifest **33/33**, SHA256SUMS **34/34**. Unity 12FPS·128/40px·좌우 flip PASS, bbox CSV **6/6 PASS**. `ART_HOLD`: **Frame03 회수 앞다리의 밝은 접합부와 관절 연결이 끊겨 보임**. 리뉴얼 아트 담당에 **Fox v5 표적 Frame03 국소 교정** 요청, 02→03→04 실제 루프 연결 검사. 기존 개선된 꼬리·머리·몸통·기타 정상 프레임 원형 보존. 전체 6프레임 재작업/늑대 수정 금지.
+- **안전/미해결:** 10/21 승인 Wolf와 4,400파일 원본·Save/UserData·기존 dirty·HEAD/status/index 보호, 제품 적용0, PR/Push/병합0. **OPEN16: 유지16·완화0·해결0**, 현재 파일럿 타일과 직접 관련 있다는 근거 없음. 서릿길 마을 후보 전체 `USER_ART_APPROVAL_PENDING`, Bear는 `USER_BEAR_RUN_V4_ART_APPROVAL_PENDING`, Fox는 `ART_HOLD`.
+- **Codex 분리 QA branch:** `codex/qa-village-v9-bear-fox-v4-20261022`, 캡처 단축 커밋 `38f72951`, `59b205a7` (로컬 여부 별도 확인).
+- **후속 최소 병렬 발주:** 신규아트 **Village v10 Gravel family3 후보만** 보완, 기존 Earth·ThinFrost 후보 SHA+49 PNG 완전 보존. 리뉴얼 **Fox Run6 v5 Frame03 접합/관절만** 개선, Bear v4/정식 Wolf 동결. 미술 PASS 권고는 바울 대표 최종 승인과 분리. 중복 전수 QA/본게임 자동적용 금지.
+
+---
+
+# PLANNING 2026-10-22 저녁 최신 — Fox Run6 v3 / Bear Run6 v3 / Village v8 실제 Codex 미술 HOLD
+
+바울 대표가 2026-10-22 최신 Codex 격리 QA 스크린샷 전달 (기획 세션이 사용자 PC/Unity를 직접 검사한 것은 아님). **세 산출물 실 ZIP SHA가 각 담당 신고와 일치, ZIP CRC PASS, 이미지/실제 격리 Unity 기술 PASS. Fox와 Bear의 지난 v2 CSV bbox 오류는 각 6/6, 합계12/12 실 PNG alpha/헤더/좌표계 대조 PASS로 해결**. SHA256SUMS Fox/Bear22/22, Village97/97. Village 원본43 byte-identical, 변경6·신규0, 기존 승인 Wolf 및 원본4400파일/Save/UserData/HEAD/index 보호, 제품적용/Push/merge 없음.
+- **Fox Run6 v3 `ART_HOLD`**: 전지 Frame02→03 앞발 분리 자체는 개선, 하지만 **발이 공중에 뜨는 타이밍과 회수 관절 움직임이 어색함**. 다음 v4 후보는 프레임01→02→03→04 연속 보폭·관절·착지 타이밍을 연결해 해결, v2부터 개선된 꼬리 일관성은 유지. 특정 프레임만 isolated repaint했다가 이웃에 새 튐 만들지 말 것.
+- **Bear Run6 v3 `ART_HOLD`**: Frame03→04 새 자세와 Frame02·05 양옆의 체형·접지 연결이 부자연스러움. 다음 v4 후보는 Frame02→03→04→05 연속성을 전체 보는 모션 아크 재구성, 개선된 05→00 머리높이 안정성·곰 체중감 유지.
+- **Village VariantTiles v8 `ART_HOLD`**: Earth/ThinFrost/Gravel 미세입자/명암 편차는 개선됐으나 **보호한 base01 고유 큰 모티프 반복 + 01↔02/03 사각 지면 구획**이 남음. 02·03만 다시 바꾸는 반복 로컬 패치 멈춤. 기존 공식 43 PNG는 일단 **원본 바이트 보존**하되 별도 비파괴 **대체 01 후보 포함 family 전3종 일괄 디자인**으로 사각 구획을 제거할 수 있는 5x5/8x8 실제 비교용 파일럿 검토. 대안은 미세 투명 overlay이나 기존 TileGrid/PPU/Sorting 계약 없이 Scene 구현 금지. 기존 base01 직접 덮어쓰기·공식 런타임 반영은 사용자 최종 미술 승인 후에만.
+- **OPEN16**: 원본 CSV/좌표 JSON Codex 보유, 미해결16/완화0/해결0. 신규아트 담당에게 **원문 파일·XY·조건** 실제 전달되어야 표적수정 가능. 기밀/사용자 절대 PC 경로 제거 후 자료 공유하고 severity 조작 금지.
+- Codex 로컬 검수 브랜치 `codex/qa-village-v8-bear-fox-v3-20261022`, 보고 캡처 commit 약식 `9576fcb9`, `226f0756`; 실제 두 ZIP/미술/기술 적용은 0. 오늘 당시 기획/아트 HEAD는 후속 업데이트 시 재확인.
+- **후속**: 신규 아트 담당 마을 v9 *대체 family 시안만*, 리뉴얼 Bear/Fox v4는 각 motion arc 시안, 각각 별도 SHA/자료·Unity 변경분 QA·대표님 최종 미술 승인 후에만 제품 Unity 적용/PR 병합. 기존 Main22/F1/Wolf QA 재실행 금지.
+
+---
+
+# PLANNING 2026-10-22 14:10 KST — Bear/Fox v2·Village v7 Codex 실제 QA 인수 (v1/v6 과거 캡처 정정)
+
+바울 대표가 직전 v1/v6 화면을 착오로 보낸 뒤, **“미안 와우 하다 헷갈렸다”**며 최신 **Bear v2·Fox v2·Village v7** 실제 검수 화면을 제공. 과거 v1/v6 판정과 혼합·재검증 금지.
+
+- **실 ZIP readback** (사용자 제공 Codex 화면 기준): Bear v2 `3d74103e01fcd9f17127afcecf52eaa9f578af96f8fa23a197a1237681c3c147`, Fox v2 `22e780627a96a87b2d1ce06f746248b0b9158cc59c834b8c6d4b2c6f9661c6ea`, Village v7 `d499f08481751c0fcda3298bbd37513466168b73105dd224b2cb767651bb691c`; 담당 art-renewal/art-new 신고값 각각 일치. ZIP CRC PASS, Bear/Fox Manifest **34/34**, Village **49/49**, SHA256SUMS Bear/Fox **35/35**, Village **87/87**.
+- **QA 결과 정확히 분리:** Bear·Fox 이미지/Unity PASS, 그러나 각각 `QA/Frame_Gait_And_Contact.csv` bbox 좌표 열 순서 **12행 모두 metadata FAIL**. 통째 “기술 QA 완전 PASS” 선언 금지; 다음 리뉴얼 산출물에서 원 프레임 Pixel alpha bbox를 재측정해 CSV 열 이름/순서/좌표계를 바로잡고 cross-check 필수. Village v7 기술 PASS.
+- **Bear v2 ART_HOLD:** v1의 05→00 머리 높이 변화는 개선. **새로운 03→04 착지/발 접지·무게 하중 연결이 급변**. 다음 Bear v3는 Frame03/04 주축, 필요시 02/05만 연속성 보완. 승인 Wolf 변경0.
+- **Fox v2 ART_HOLD:** v1 꼬리 형태 개선. **Frame02→03 전지(앞다리) 두 개가 겹치고 회수 동작의 읽힘 부족**. 다음 Fox v3는 02/03 주축, 필요시 01/04만 연결 수정. 기존 꼬리 v2 성과 보호.
+- **Village v7 ART_HOLD:** Earth/ThinFrost/Gravel 각 모티프 반복은 완화했으나 기존 01과 새 02/03의 **질감 통계·입자 크기·밀도·명암이 달라 5×5·8×8 타일별 사각 구획이 드러남**. 다음 v8은 01/기존43 PNG 보존, 02·03의 미세 질감 및 중저주파 명암분포를 01과 조화시키되 명백한 모티프 반복은 되돌리지 않는 **질감 통일형 국소 미술 수정**. 화면 edge 1px PASS만 미술PASS 근거로 쓰지 말고 실제 동배율 5×5/8×8 비교.
+- Unity 근거: 격리 실제 PlayMode 12FPS 128/40px Bear/Fox, Village 3화면비·5×5/8×8 Camera/RenderTexture; 통행 proxy **v6/v7 각각6/6 PASS**. OPEN16 원본자료 기반 **유지16·완화0·해결0**. 4,400파일 원본/HEAD/status/index/Wolf/Save/UserData 보호, 제품 적용/Push/merge0. 브랜치 `codex/qa-village-v7-bear-fox-v2-20261022`, 스크린샷 커밋 약식 `f76d8dbf`, `8982d40a`.
+- **다음 액션:** 신규 아트 v8, 리뉴얼 Bear/Fox v3 **각각 미술 표적보완**. Codex bbox metadata 오류는 우선 소스 이미지에서 다시 산출해 다음 v3 QA/CSV 바로잡기(그 자체를 모션 FAIL과 혼동 금지). OPEN16 원문/좌표를 art-new와 공유, 관련성확인 전 억측·임의 심각도 등급 금지. Main23 게임 실제 적용 및 10/21 승인 `main`/Wolf 교체 재시도 금지.
+- 근거: 사용자 2026-10-22 최신 Codex 스크린샷, `docs/art-renewal` Bear/Fox v2 납품정본, `docs/art-new` Village v7 정본. 이 기획 세션은 사용자 PC 로컬을 직접 실행/접근한 것은 아님.
+
+---
+
+# PLANNING 2026-10-22 Codex 격리 QA 인수 — Village v6 / Bear Run6 v1 / Fox Run6 v1 전부 기술PASS·미술HOLD
+
+바울 대표가 실제 Codex 보고 화면 전달. ZIP SHA256 세 건 납품값과 일치, 기술 PASS. 격리 Unity Village v6 3화면비·통행 proxy6/6 PASS이나 Earth·ThinFrost·Gravel 5×5 혼합에도 **모티프 주기성 재현→각 미술 HOLD**. Bear Run6 12FPS/128·40px 기술PASS이나 **Frame05→00 머리 높이 변화 + 관절·지지 접지 부정확→미술 HOLD**. Fox 동일기술 PASS이나 **앞다리 구분 약함 + 꼬리 곡률/몸통 일관성 부족→미술 HOLD**.
+
+검수 보고 브랜치 `codex/qa-village-v6-bear-fox-run6-20261022` 커밋 화면 표기 `6df8e1d5`, `9f9b560b`. 원본4400파일/Wolf/Save/UserData/dirty/index/HEAD 보호, 본게임 적용·Push/병합0. OPEN16 원본CSV+좌표JSON 확보·해결0/16; 검수측 전달자료 준비(공유확인 별도). 기존 SearchDatabase 환경 예외1 OPEN. 원본 Editor 자연 Import·손플레이 미검증.
+
+**후속 미술 수정 방향(미승인 후보):** 신규 아트 Village v7에서 02/03 기반의 진짜 모티프 다양화 및 5×5/8×8 어색한 반복 제거, edge seam 유지와 원본43 보존. Bear v2는 05→00 머리·지지다리 및 필요한 인접 프레임 국소수정; Fox v2는 앞다리 분리·꼬리 형태 전6프레임 일관성. 동일 픽셀 단순 재배치로 반복미술 PASS 주장 금지; 공식 Bear/Fox KeyArt 사용 근거 없음. 각자 아트 실제 다시 납품→Codex 변경분만 QA→대표 최종 미술 승인 전 런타임 적용 금지. 최신 기획 정본 `문서/00_프로젝트/20261022_Village_v6_Bear_Fox_Run6_v1_CodexQA_ArtHold_NextActions.md` (docs/planning commit `fbe6746b7dc96805f31b1517ac456452a84c9991`).
+
+---
+
+# PLANNING 2026-10-22 — Village v6·Bear Run6 v1·Fox Run6 v1 ZIP3종 검수 접수
+
+바울 대표가 사용자 Windows 실제 ZIP 경로 3종을 제공. 납품 문서 GitHub 확인:
+- Village v6 `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_VariantTiles_v6.zip`, art-new 신고 SHA256 `519ed96fa6157b7de451830412d6e881b633241b0f8cc459d186465765a4ea7e`: 기존43 PNG 바이트 유지 + 신규 변형 타일6, 총49PNG, ZIP71. **Codex 실제 SHA/실Unity 혼합5x5·대표미술 승인 대기**, OPEN16 원본CSV/좌표JSON Codex 기보유·해결0.
+- Bear Run6 v1 `F:\Downloads\Limitless_Beast_Bear_Run6_v1.zip`, renewal 신고 SHA256 `1a29475207c0f99db87726b637d301e5010bf5ef6790e2415ad679f67ffd7f19`, 37항목, source6+strip+atlas/12FPS. **승인된 Bear 정적 원화 기준이었다고 확인 불가**, AI 소스 콘셉트 보드에서 포즈 추출한 **미술 파일럿**. 
+- Fox Run6 v1 `F:\Downloads\Limitless_Beast_Fox_Run6_v1.zip`, renewal 신고 SHA256 `6d352219505497a261ffe2c1d687cece28bdf4859003d16fce88334d9a15f43d`, 37항목. **Fox 역시 승인된 고해상도 원본 근거 없음**, 새 AI 콘셉트 추출 파일럿.
+- 각각 파일 기술 오프라인 PASS(아트 담당 신고)이나 기획세션 사용자 F: ZIP 바이너리 직접 readback 불가. **아직 모든 산출물 사용자 최종 미술 승인/본편 Unity Import 0**. Codex 사전 기술 QA와 모션 Play 검수 후 Bear/Fox 별도 PASS/HOLD, Village tile OPEN16 별도 판단.
+- [기획 검수 계약](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261022_Frostway_v6_Bear_Fox_Run6_Isolated_QA_Contract.md) `docs/planning` commit `42e0e5e9f6c6d9778d25aaf01193f950acd1fddb`. 승인 Wolf Run6 v5 및 10/21 `main`/local `SYNC_COMPLETE` 기준 보호, 과거 Main22·Wolf 106 PASS 재검사 금지, main 직접 쓰기/미승인 Import 금지.
+- 사용자 선호: 담당 지시문 “너는 담당이다. GitHub 공부하고 와” 문구 생략.
+
+---
+
+# PLANNING 최종 확정 — 2026-10-21 EOD `SYNC_COMPLETE` (Codex 실증 보고 및 GitHub PR 병합 확인)
+
+- 바울 대표가 Codex 최종 스크린샷으로 **`SYNC_COMPLETE`** 보고 전달. GitHub 기능 [PR #48](https://github.com/HappyPaul812/Project-Limitless/pull/48) 병합 `c2750d1faea7ef9d54df1b4fcd7d6efb2bd49ac8` 및 문서 [PR #49](https://github.com/HappyPaul812/Project-Limitless/pull/49) 병합 `510c021b4159167e211be60ca90e1cb7328bafe9` **GitHub에서 merged=true 재확인**.
+- Codex 로컬 보호 및 Sync 보고: GitHub `main=origin/main=사용자 원본 local main` = **`510c021b4159167e211be60ca90e1cb7328bafe9`**; 승인 Wolf·Main22/F1·서리들쥐 **제품58파일** + 담당 문서 선별 통합. 기존 검증재사용, 신규 **정적38 + Unity14 PASS/FAIL0**.
+- 사용자 로컬 백업 957파일, 보호 SHA 차이0, 기존 사용자 작업 보존 **tracked dirty308/untracked550/staged0**. Save/UserData/Editor/포커스 보호, 유저 원본Editor **자연 Import·손플레이 미검증**.
+- 제외 유지: **서릿길 마을 GameArt v5 ART_HOLD (타일 Earth/ThinFrost/Gravel), OPEN16 해결0, Main23 본편미구현**, TTS 세린/태온 제작64/152 청취미승인·음성게임반영0, Main24 스킬 장착 Save 영속성 이슈 #46 미해결. Main22 **정식 대사·보상·경제**는 임시/미확정.
+- 종전 인계 문단의 “PR 생성 대기/원본 main 미병합/EOD 실행 대기”는 당시 기록이며 **2026-10-21 EOD 이후 최신 사실이 아님**. 후속 작업은 완료된 Main22·Wolf 재병합·전수QA 없이 Village variant/OPEN16 실근거 검토·Main23 선별 착수/스킬 Save 문제를 우선.
+- 사용자는 **“나 자러 가”**라고 했으므로 이 확인 이후 별도 진행/새 발주 없음. 원본 LocalSync 상세증거는 Codex PR #49 완료보고 및 로컬 `Temp/EOD20261021` 증거에서 확인. 이 기획 세션이 로컬 디스크를 직접 검사한 것은 아님.
+
+---
+
+# PLANNING 최종 2026-10-21 EOD — 바울 대표 “오늘 한 작업들 다 합치고 로컬 동기화” 승인 / Codex 실행 요청 생성
+
+- 바울 대표 지시: **“오늘은 여기까지 하자. 오늘 한 작업들 다 합치고 로컬 동기화도 해줘.”** 2026-10-21 선별 통합·로컬 원본 안전 동기화 **사용자 승인**.
+- 안전 실행 문서: `문서/00_프로젝트/LIMITLESS_20261021_EOD_ApprovedIntegration_LocalSync_Contract.md` (**`docs/planning`**; 최근 정정 commit `6bf153a3f75ac5ad657b0d80c5db89ede820157f`). **Codex 실행 이슈 [#47](https://github.com/HappyPaul812/Project-Limitless/issues/47)**.
+- 기획 GitHub 점검 출발점 remote `main` **`e4e9891f6f01ea95cada9e63b1f09946d94d6041`**, 열린 PR **0**; Codex 실제 실행 전 반드시 재조회. 이 대화 세션은 사용자 `F:\study\codex\Project-Limitless` 로컬을 직접 조작하거나 작업 실행을 시작할 수 없다.
+- **통합 대상**: (A) Wolf Run6 v5 사용자 승인 및 로컬 제품6파일 SHA6/6 적용 완료·기존 격리106PASS → GitHub PR/main 및 **중복 원본 재복사 없이** safe sync; (B) Main22 F1/서리들쥐 첫 플레이 QA136/64/40 PASS 기반 **실파일 충돌/구Save/ID 보호 게이트를 통과하는 최소 범위에 한해서** 제품PR 후보. 정식 대사·TTS/보상·경험치/경제는 PROTOTYPE으로 명시. 안전충돌 시 Main22만 보류, Wolf+문서 마감 이어감; (C) 기획/리뉴얼/신규아트/TTS/BGM 등 승인 상태를 보존하며 날짜/파일별 선별 문서·HISTORY 통합.
+- **통합 제외**: 서릿길 마을 v5 흙·서리·자갈 타일3 `ART_HOLD`·OPEN16 해결0, Main23 실제씬·Quest 미구현, Main24 스킬장착 영속 Save #46 미구현, 신규 미청취 TTS 재캐스팅 READY64/152, 미완 BGM/SFX/영상·기존 불합격 ZIP, 과거 중복 병합.
+- **원본 보호**: Save/UserData/Editor Settings·기존 10/20 사용자 dirty308/untracked548/stage0 (오늘 실측 수치 아님), 새 `Temp/EOD20261021` 안전 SHA백업, 원본 에디터/포커스/Play 무조작, reset/clean/force/stash 위험 명령 금지. separate `codex/eod-integration-20261021` 브랜치/PR→승인범위 main 머지→3자 SHA 실검증 때만 `SYNC_COMPLETE` 선언. 예상치로 완료 보고 금지.
+- **실제 작업 현황**: GitHub 기획 마감 계약·Issue 작성까지 확인. **원격 제품 병합·사용자 원본 main 동기화는 아직 Codex가 실행/완료한 증거 없음**. 후임은 Issue #47의 실제 결과/PR·SHA·LocalSyncProof 확인 전까지 `PENDING_CODEX_EXECUTION`을 유지.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-21 Wolf Run6 v5 원본 적용, Village v5 기술PASS·타일3 HOLD
+
+**자료:** 바울 대표가 Codex 작업완료 캡처를 전달. 아래 결과는 Codex의 사용자 로컬 PC 검사 보고이며 이 기획 세션의 직접 Unity/Windows 검증이 아니다.
+
+## A. Wolf Run6 v5 — 원본 디스크 반영 완료, GitHub PR/main 아직 미처리
+
+- 작업 브랜치 `codex/wolf-run6-v5-apply-20261021`, 최종 커밋 `f0dd59dd010759760811a7a1b516eab3969d500c`(사용자 첨부 이미지 기준).
+- 사용자 승인 게임 자산 6파일만 **실제 원본 디스크에 복사**, 복사 후 SHA6/6 일치; 사전SHA 및 기존4파일 복구백업 확보. 격리 제품 연결 Unity 106PASS/0FAIL 기존결과 재사용, 추가 최소 Import·컴파일·Resources 참조 검사 격리 복사본 PASS.
+- 공식 Wolf 정적 KeyArt·아이콘·기존 GUID/meta·Animator/Controller·Bear/Fox·Save/UserData 불변. **원본 Unity Editor 자연 Import와 사용자의 실제 손플레이는 아직 NOT_VERIFIED**. `WOLF_LOCAL_DISK_APPLIED / REMOTE_PR_NOT_CREATED / MAIN_NOT_MERGED`. PR 초안만 준비; Push·PR생성·main 병합0. 별도 사용자 승인 또는 명시적 지시 없이 원격 반영 강행 금지.
+
+## B. 서릿길 마을 GameArt v5 — 기술PASS / 흙·서리·자갈 타일 3종 미술 HOLD
+
+- 로컬 ZIP `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v5.zip`; Codex **실 readback SHA256 `1affc1a4c23f3bcc6a9e9e18924b08bce3134eab065d8362757725f96e7f71b4`**, 아트 납품 보고 일치. CRC·Manifest·Seam PASS. 게임용 43종 중 수정3·기존40 byte 동일, 합격 건물·지붕·돌길 보호.
+- `codex/frostway-v5-tile-delta-qa-20261021`, 최종 커밋 `6a0436c08e15c5f83fc3d1dab9a3f026ce167af6` (사용자 캡처). 실제 Unity 16:9/4:3/21:9 및 통행 proxy **12/12 PASS**. **지면 타일 미술은 Earth/ThinFrost/Gravel 모두 반복주기 무늬 잔존으로 HOLD**, 사용자 마을 최종승인0.
+- 이전 검수의 **OPEN 16건 원본 CSV와 좌표 JSON 확보**했으나 해당 16개 대상은 기존 SHA와 모두 동일, 이 v5 변경으로 해결된 항목 **0건**. 원본 CSV에 없는 심각도 등급은 추측/조작하지 않음. 현재 담당 외부에서 행별 실제 파일/좌표는 열람 불가; Codex가 원문 16행을 공유 가능한 GitHub Issue #45 댓글·기획 인계 자료로 **사실 그대로 전파**하도록 요청하고, 기획이 해당항목 범위와 현재3 타일과 관계를 분류해야 함. 기존16을 확인 없이 일괄 수정하거나 `16개 결함=16개 모두 심각`으로 치환 금지.
+- 마을/기존 승인원본 디스크 변경0, Main23 구현0, main Push/병합0. `VILLAGE_V5_TECH_PASS / TILE3_ART_HOLD / OPEN16_RESOLVED0 / UNITY_ORIGINAL_UNCHANGED`.
+
+## 다음 권고와 작업 경계
+
+1. **늑대:** 원본 디스크 적용은 끝났으므로 Codex 동일6파일 재적용/106PASS 전수재QA 금지. 원격 PR/main 병합은 승인받아 별도 실행, 사용자 Save/UserData 및 dirty 파일 비파괴 동기화.
+2. **마을:** 동일한 단일 Base 타일을 계속 재가공하는 방식으로 주기성을 제거하기 어려우므로 **대체 타일 2개씩의 소규모 변형 파일럿(흙·서리·자갈)**을 제안. 이는 **아직 사용자 승인된 v6 제작/통합 지시 아님**. 먼저 v5 기존3종 SHA 보존·다변형 조합 5x5 미술 컨셉, TileGrid·cross-seam·실측 배치 계약을 검증할 필요. Open16 항목 원본16행은 Codex에게 근거를 받아 미술 유형/기능위험 분리, 승인된 최소 대상만 수리. 기존 돌길·SkillShop·Gable·나머지40·북부F1·Wolf 변경 금지. 최종 마을PASS는 대표의 실제 미술 승인 이후만.
+
+**운영:** 팀 담당들은 온보딩 완료이므로 지시문에 “너는 담당이다. GitHub에서 공부하고 와.” 문구 넣지 말고 제목부터 바로 본문 작성. `docs/planning`에만 기획문서 커밋, main 직접 변경/Push/PR 병합 자동 실행0.
+
+---
+
+# PLANNING 최신 진행 — 2026-10-21 Wolf Run6 v5 제품 연결 106PASS, Frostway Village GameArt v5 실물 납품
+
+**입력 근거:** 바울 대표 제공 Codex 결과 화면 + 사용자 로컬 ZIP 경로, art-new [v5 납품 문서](../../Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v5_QA_20261021.md) 및 Issue #45. 이 기획 세션은 사용자 F:와 실제 Codex 로컬 worktree를 직접 조작하지 않았으므로 아래 제품 연결은 **Codex 보고**, Village v5 SHA는 **아트 담당의 납품 신고값**으로 구분.
+
+### 1. Wolf Run6 ArtRework v5 — 격리 제품경로 연결 완료 / main 미병합
+
+- 바울 대표 사전 승인: “늑대 괜찮아.. 승인..” 및 후속 “늑대는 게임에 넣고”. 승인된 아트의 추가 미술 재작업 금지.
+- Codex 결과 보고: `codex/wolf-run6-v5-apply-20261021`, commit `ab1b47ff9d46f4ed5883b85b73e87ca2036c83e6`. 본문에 의하면 승인 ZIP 실 readback SHA256 `16ba7923771c98f05b0f041b5c5a63857cdecfcdfd2e1f7768d9f24d1af0e351` 일치. 승인 Wolf Run 시트 신규 자산 등록·제품 Runtime 연결, **6파일(신규 PNG/meta2·C#4)**, 문서/증거 포함 총33개 파일. 기존 Icon/KeyArt/GUID/meta/Animator/Controller, Bear/Fox 보호.
+- 격리 Unity PlayMode 변경부 **106PASS/0FAIL**, 12FPS·6프레임 loop·양방향 이동·단일 타격·전투 종료 확인. 원본 보호4,351파일 변경/추가0. 기존 Search 환경 오류 1건은 별개; 원본Editor 자연Import·실물 손플레이 NOT_VERIFIED.
+- **중요 상태:** `WOLF_GAME_PRODUCT_WORKTREE_VERIFIED / REMOTE_MAIN_NOT_MERGED / ORIGINAL_UNCHANGED`. 로컬 제품경로 격리 구현≠사용자 본편 메인 반영. 다음 Codex는 기존 커밋 재활용→현재 main과 통합 충돌검토·PR 준비 및 승인 범위에 따른 안전 병합/원본 동기화 보고. 동의 없는 강제 Push·reset·clean·사용자 저장 덮어쓰기는 금지.
+
+### 2. Main23 Frostway Village GameArt TargetedFix v5 — 오프라인 납품 / Codex 실제검수 전
+
+- 바울 대표의 Windows ZIP 경로 `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v5.zip`. art-new 신고 SHA256 `1affc1a4c23f3bcc6a9e9e18924b08bce3134eab065d8362757725f96e7f71b4`, 20,085,423 bytes, 72 entries, SHA256SUMS 71/71 및 CRC PASS(아트 담당 환경).
+- 원본 GameArt 43 PNG 가운데 **3개 수정 / 40개 바이너리 보존**. 수정: `Frostway_Ground_Earth_01.png` 24,062pix, `Frostway_Ground_ThinFrost_01.png` 23,973pix, `Frostway_Ground_Gravel_01.png` 31,120pix. 256×256 타일 edge/seam 자체 PASS. `Frostway_Path_Stone_01.png`, SkillShop 및 RoofGable v4 PASS본, 기타40종 변경 금지.
+- 기존 타일 3×3 반복/이음매 개선의 **실제 격리 Unity 시각 DeltaQA·대표 최종 마을 미술 승인 미실시**. 이전 QA CSV의 **OPEN16**은 행별 원본(대상 파일·좌표·재현조건) 미확보. art-new의 이번 수정으로 해결된 개별 OPEN16 = 0, 비검증 16을 막연히 '해결' 선언 금지. Codex가 이전 QA 작업경로에서 CSV 원본/실제 시각근거 검색, 있으면 16개를 분야별/심각도별 분류하고 현재 v5와 중복해결 대조; 없으면 `EVIDENCE_NOT_FOUND`로 남긴다. 원본 CSV 미확보 자체만으로 기존 PASS43 자산 재제작 금지.
+- 다음: Codex 별도 clean worktree에서 ZIP 실제 SHA 확인, 3개 변경분 중심 3×3/서비스 동선·3화면비 검증 및 사용자 감상용 캡처. OPEN16의 실제 항목 근거 확보; 전체 Main23 Scene/Quest·F1/Main22·Save 재검증 반복 및 본편 적용·main 병합 금지. Village는 **`OFFLINE_QA_PASS / CODEX_DELTA_QA_PENDING / USER_ART_APPROVAL_PENDING`**.
+
+### 공통
+새 담당 지시문은 이미 입사·온보딩 완료했으므로 “너는 ○○ 담당이다. GitHub에서 공부하고 와” 문구 없이 작업 제목으로 바로 시작. GitHub 역할별 최신 정본은 담당자가 작업 시작 시 자율확인. 관련 Issue [#43](https://github.com/HappyPaul812/Project-Limitless/issues/43) / [#45](https://github.com/HappyPaul812/Project-Limitless/issues/45). 기획 GitHub 문서화만 `docs/planning`, 본편 main 직접 커밋 없음.
+
+---
+
+# PLANNING 최신 확정 — 2026-10-21 Wolf Run6 v5 바울 대표 최종 미술·모션 승인
+
+**사용자 직접 결정:** 바울 대표가 Codex 격리 12FPS/128px 모션 QA 결과를 보고 **“늑대 괜찮아.. 승인..”**이라고 최종 승인. **Wolf Run6 ArtRework v5 `USER_ART_MOTION_APPROVED`**, 이전 `USER_FINAL_MOTION_APPROVAL_PENDING/HOLD`는 이 승인 시점부터 해제(이전 기록은 당시 단계로 보존). 기존 단일 정적 Wolf KeyArt v5 승인과 구별; 새 Run6 v5 전6프레임 모션 승인이다.
+
+- 고정 납품물 `F:\Downloads\Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v5.zip`, **실제 Codex readback ZIP SHA256 `16ba7923771c98f05b0f041b5c5a63857cdecfcdfd2e1f7768d9f24d1af0e351`**.
+- Frame00~04 기존 v4 byte 동일, Frame05 174 RGBA픽셀 수정, CRC/Manifest/PNG/Strip/Atlas 기술 PASS. 격리 Unity PlayMode 12FPS·128px 수정부 미술 PASS, 바울 대표 최종 모션 승인 완료.
+- 아트 리뉴얼 담당은 **Run6 v5 프레임 추가 재작업 금지**; 승인 PNG와 기존 KeyArt SHA 보존. 미술 승인 = **본편 Unity 적용 완료 아님**. 기존 Wolf 런타임·GUID/meta/Save/UserData·main 변경0. 실제 펫 연동/애니메이터/런타임 QA 및 PR/원본 적용·병합은 별도 Codex 통합 범위와 사용자 승인으로 진행한다. 본 승인만으로 main 커밋/Push/병합을 자동 허가하지 않는다.
+- Village v4는 별도 **전체 미술 HOLD** 계속. 흙·얇은 서리 타일 반복무늬, 자갈 수용 판단, 이전 검수 CSV OPEN16이 남는다. 늑대 승인으로 마을 승인 확대 금지.
+- 관련 기획 격리QA 보고 Codex branch `codex/qa-frostway-v4-wolfrun-v5-20261021`, 스크린샷 보고 commit `133fa4ea27c9141990eb8ca75c4d0f8ed43e8d3d`(원격 반영 여부 별도 확인 필요). 이슈 [#43](https://github.com/HappyPaul812/Project-Limitless/issues/43) 및 [#45](https://github.com/HappyPaul812/Project-Limitless/issues/45).
+
+---
+
+# PLANNING 최신 추가 인계 — 2026-10-21 Village v4·Wolf Run6 v5 Codex 격리 DeltaQA 결과 수신
+
+바울 대표가 Codex 검수 화면 2장을 전달함. 이는 **사용자가 전달한 Codex 검사 보고**이며 기획 담당이 사용자 Windows F: 바이트/Unity Editor를 직접 검사한 결과가 아니다. 스크린샷의 Codex 브랜치 `codex/qa-frostway-v4-wolfrun-v5-20261021`, 보고 커밋 `133fa4ea27c9141990eb8ca75c4d0f8ed43e8d3d`; 현재 GitHub 원격 브랜치 검색에서는 나타나지 않아 원격 Push/PR/merge 완료로 주장하지 말 것.
+
+- **공통:** 두 ZIP 실제 SHA256이 납품 보고와 각각 일치. CRC·Manifest 정상. 사용자 원본 4,351파일 변경/추가0, 기존 Wolf 교체0, Main23 구현0, 기존 전체회귀 수행0, Push/병합0이라고 Codex가 보고. PDF/이미지의 Unity 자료는 Camera/RenderTexture 촬영이며 Editor GameView UI 캡처와 구분.
+- **A 서릿길 마을 GameArt v4:** 실 ZIP SHA256 `ee25baef91ec740b85dd3bb62b32583292d703f9261863bd534d0eb8241d1896`. PNG43/이전 나머지41 SHA 동일. SkillShop 잔여 조각 2,496셀, Gable 712셀 제거를 확인, 정상 본체 손상 없음. 실제 격리 Unity 16:9·4:3·21:9 검사에서 문·벽·지붕 접합·Sorting 이상 미확인. **기술 PASS / 표적2 PNG 미술 PASS / 마을 전체 미술 HOLD**. 흙(Earth)과 얇은 서리(ThinFrost) 타일 반복무늬 개선 권고, 자갈(Gravel) 반복은 대표 수용판단 필요, 돌길(Path Stone)은 반복 사용 가능 의견. 기존 검수 CSV의 **다른 OPEN 16종은 이번 수정으로 해결되지 않았음**. 타일 개선은 해당 파일만 표적 미술 수정 검토, 기존 41종 전면 재제작 금지. 대표 수용/수정결정 및 실제 세부16 OPEN 분석 전 마을 전체 PASS 선언 불가.
+- **B Wolf Run6 v5:** 실 ZIP SHA256 `16ba7923771c98f05b0f041b5c5a63857cdecfcdfd2e1f7768d9f24d1af0e351`. Run Frame00~04 바이너리 동일, Frame05 지정 범위 174 RGBA 픽셀만 변경. 실제 격리 Unity Play Mode에서 **12 FPS, 128px** 시연 검증. Frame05 뒷다리 각진 움직임 개선, 변경 영역에서 추가 결함 미발견. **기술 PASS / 변경부 미술 PASS / 전체 달리기 모션 바울 대표 최종 승인 대기 HOLD**. 기존 승인 Wolf KeyArt v5/공식 펫 런타임/기존 GUID 보호.
+- **기획 권고/다음 1~3순위:** ① 바울 대표에게 Wolf Run6 v5 모션 최종 승인 여부 및 Village 타일 수용/개선 범위 확인(선승인 금지). ② 신규아트 담당은 승인 시 흙·얇은서리 반복 패턴만 국소 완화, 자갈은 대표 판단에 따라, 돌길/기존 건물/타일 외 자산 보호; 기존 OPEN16의 실제 범위/우선순위를 별도 확인하고 전수 반복QA 금지. ③ 승인 결과별 Codex 격리 변경분 QA 및 추후 본게임 Main23/펫 반영은 **별도 사용자 승인 후**. Main22 격리136PASS/F1 64PASS/서리들쥐40PASS 재수행 금지. Main24 Skill Equip Save 이슈 #46 유지.
+
+근거: 사용자가 2026-10-21 업로드한 Codex 결과 이미지 2장. 이전 실물 납품 계약 `문서/00_프로젝트/20261021_Frostway_v4_WolfRun6_v5_Scoped_Unity_DeltaQA_Contract.md`. 연관 Issue #45/#43.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-21 Village v4 수정2 + Wolf Run6 v5 05프레임 합동 격리 QA 발주
+
+바울 대표 신규 Windows F: ZIP2종 실경로 전달. 기획세션은 F: 직접 bytes 확인 불가, 담당 docs/art-new·docs/art-renewal 최신 GitHub 납품문서 검사. **Codex 사용자파일 실제 ZIP SHA readback 및 두후보 미술승인 전**.
+**A Village TargetedFix v4** `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v4.zip`: art-new reported SHA `ee25baef91ec740b85dd3bb62b32583292d703f9261863bd534d0eb8241d1896`, 19,767,770bytes/70entry; v3 PNG43 중 41 byte-identical. 단2 PNG detached component alpha만 삭제: `Frostway_SkillShop_Building.png` x12..28/y196..376 2496px, 새 SHA ef34b49de4f807debf4a69e1947eb9b8e02a543ee117ca2867fe3aa06a5efb17; `Frostway_Roof_Gable.png` x100..144/y183..206 712px 새 SHA 37ea6a69844b662c40583cea3d457ff0c47344aef7054ff8e32b4d09870dceb0. 정상 본체 불변. 기존 타일 4종 모두 SHA 동일·픽셀edgePASS이나 **3x3 반복 무늬 ART_HOLD**, 파일별 좌표/비교근거 존재, 변경/미술 PASS 자동선언 금지. Codex 격리 실제 Unity 3비율 단2 Sprite 교체·접합과 타일 미술 반복감 판단 후 대표 최종승인.
+**B Wolf Run6 v5** `F:\Downloads\Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v5.zip`: renewal 신고 ZIP SHA `16ba7923771c98f05b0f041b5c5a63857cdecfcdfd2e1f7768d9f24d1af0e351`, 2,663,380 bytes, 6x512×384/12FPS. 00..04 Run v4와 동일 PNG bytes, 유일 Frame05 174 RGBApx bbox x318..333/y245..280의 뒷다리 윤곽 아트 수정, 새 05 PNG SHA d3d53b94be9084bfd9b2a0bbe6fa492b903138b37c86e7068c9eaefbe8b1194c. 승인 Wolf 단일 KeyArt v5 unchanged, 별도 Run6 모션 최종 승인 대기. Codex 격리 실 12FPS v4→v5 05→00 루프/접지/관절 가독성 DeltaQA, 기존 공식 펫 미교체.
+기획 정본 `문서/00_프로젝트/20261021_Frostway_v4_WolfRun6_v5_Scoped_Unity_DeltaQA_Contract.md` (docs/planning commit 3ab1a75078e1736bf1c48081eb488cd8245cc7fd), GitHub Issue #45/#43 최신 납품 댓글. 두 ZIP 모두 **아트 담당 자체 파일기술 PASS**, 실제 사용자 F: 바이너리 SHA/격리 Unity 실제QA/최종미술 미검증. Codex Main22 136PASS+F1 64PASS+Mouse40PASS 및 Main23 preflight 재시험 금지, 원본 Unity/Save/UserData/Editor/main 및 유저 다운로드 ZIP 보호. SKU/잡템/한기소모템/스킬아이콘 backlog + #46 영구장착 Save 미해결 유지.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 Village v3·Wolf Run6 v4 기술 PASS / 미술 FAIL 표적 2+1 수정
+
+Codex 최종 DeltaQA branch `codex/qa-frostway-v3-wolf-run6-v4-20261021`, commit `695f6f74e63996bb9d0ba0561dc6518f1e7af049`. **두 ZIP 실제 SHA가 art-new/renewal GitHub 납품보고와 각각 일치**, 내부 CRC/Manifest/PNG 전 PASS. 원본 4351 파일/Save/UserData/Editor/Git 불변, main 직접 Push/병합 없음.
+**Village GameArt v3 43png** 실제 격리 Unity 16:9/4:3/21:9/소규모 조립·통행 PASS이나 **미술 FAIL**: `Frostway_SkillShop_Building.png` 이웃 원화 조각 x12..29/y196..376, `Frostway_Roof_Gable.png` x100..144/y183..207. 타일 pixel-edge PASS/반복무늬 미술 HOLD. **art-new는 이2 PNG만 v4로 교정**, 다른41 byte SHA SAME, 타일 패턴은 문제 파일·정확 위치 증거만 별도 후속(기존타일 전면변경 금지), 3비율 비교·SHA/CRC·기존 Source11/F1승인6 보호. 아직 본 게임 Main23 Scene·Quest 미구현/미술승인대기.
+**Wolf Run6 v4** 실ZIP SHA `3ab0b57d2389b55ed33f73c1d3d13862b9b595245e196d1f3a4c98f090b8a412` 및 실 격리 Unity12FPS 재생 기술 PASS, Run00..03 SHA 동일 및 Run04 뒷다리 개선 유효. **미술 FAIL**: `Wolf_Run_05_v4.png` x315..338/y235..280 뒷다리 윤곽 직각 끊김. **art-renewal은 Run6 v5 05프레임 뒷다리만 원화 수준으로 보정**(00..04 전부 SHA 동일, 기존 Wolf v5 승인 KeyArt/Run04 꼬리 보호), 모션 05→00 loop/발 접지 QA 후 대표 최종 모션 승인. 기존 공식 Wolf 펫 교체0.
+기획 정본 `문서/00_프로젝트/20261021_Frostway_v3_WolfRun_v4_ArtFail_TargetedRetouch_Orders.md` (docs/planning commit `12f8dd9ee91cd10d2c3c68addbba5ec52b038425`). Issue #45/#43 최신 댓글. 기획 내부 자산대장 신규 스킬/아이콘·어묵탕·전리품과 Skill Equipment Persistence #46 계속 유지. 기존 Main22 136/F1 64/Mouse40, Main23 기술 preflight 재실행 금지. 두 아트 새 ZIP 후 Codex 하나의 DeltaQA, 원본 Unity/Save/UserData/Editor/정식 main 변경·Push/merge 금지.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 Village GameArt v3 및 Wolf Run6 v4 신규 ZIP 합동 QA 발주
+
+바울 대표가 실제 로컬 입력 2개를 제시: `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_v3.zip` 및 `F:\Downloads\Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v4.zip`. 기획자는 F: 직접 읽지 못했고 두 담당의 GitHub 납품 보고서 확인.
+**A. docs/art-new Village v3**: ZIP 보고 SHA `2a74677d5f62d7e13e64ea85ba62e12175be0be0e0d19864c23233f1bd84e79a`, **59 entries/43 독립PNG**: Tiles4/Transitions2/Buildings5/Modular9/Props14/Signs6/InactivePortal3, QA Preview12/Metadata4. 기존 v2 합성콘셉트11 재압축 방식의 GameReady FAIL을 개선한 실제 게임용 Sprite 후보, 파일/Alpha/2x2 seam 오프라인 자체 PASS이지만 마을 Unity PPU/Pivot/Sorting/건물 조립/문/휠체어 동선/타일 반복 시각/3 GameView 및 대표 미술승인은 **별도 검증 대기**. 이전 v2 ZIP SHA 불일치 원인 미해결; 새 F: ZIP 실제SHA부터 읽고 ID 검증.
+**B. docs/art-renewal Wolf Run6 v4**: ZIP 보고 SHA `3ab0b57d2389b55ed33f73c1d3d13862b9b595245e196d1f3a4c98f090b8a412`, **34 entries**. v3 포즈00~03 바이너리 유지, 04 뒷다리/후지4368pix 05 전지·앞발 루프7542pix 수정. Run04 이전 꼬리복원 영역 픽셀 불변, 512×384 six LEFT/12FPS Strip/Atlas/GIF APNG 존재. 새 v4 미술/실제 12FPS Unity QA 미검증; 구 v3 실재생 PASS/미술 HOLD를 무단 수정 금지. 승인 v5 KeyArt/기존 공식 Wolf 펫 교체 금지, 이전 v3 배포본 ZIP SHA11Byte 차이 있음.
+**Codex 다음 1회 격리 QA**: `codex/qa-village-v3-wolfrun-v4-20261021` separate clean worktree, 두 ZIP SHA/CRC/Manifest actual readback 및 각 Sprite의 actual Unity GameView vs offline 결과 엄격 분리; A Village GameArt role43별 개별png+건물 조립·반복/동선·Sorting/ServiceSigns 최소 Unity 3비율 프리뷰 검수, B Wolf Run04/05 델타와 05→00 실Unity 12FPS 재생/후지·접지·128px 가독성. 이전 Main22 136PASS/F1 64PASS/Mouse Battle40PASS 전수 재실행0, Main23 scene/quest 실제 구현·원본 Unity/Save/UserData/Editor/main Push·병합0. 납품본별 기술/미술/게임준비·대표 승인게이트 각각 보고.
+기획 정본 `문서/00_프로젝트/20261021_FrostwayGameArt_v3_WolfRun6_v4_JointCodeX_DeltaQA_Contract.md` (`docs/planning` commit `67a0b1598883ff6f81e49561e8980c4937910ed6`), 관련 Issue #45/#43 최신 댓글 반영. Main23 기술 사전점검 이전 완료; 상품/아이콘/잡템/어묵탕, Main24 스킬 장착 영구 Save 이슈 #46는 내부 대장 유지.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 마을 v2 GameReady FAIL / Wolf Run6 v3 모션 HOLD / 두 ZIP SHA 불일치
+
+바울 대표 전달 Codex 합동 QA 화면: 브랜치 `codex/qa-frostway-village-wolf-run6-20261021`, 커밋 접두 `c61f2b10`. **두 ZIP 내부 CRC/Manifest/PNG 디코딩 PASS**, 하지만 **담당 GitHub 납품보고의 전체 ZIP SHA256과 실제 Windows ZIP 해시 불일치**. Village 예상 `2142fe641c64a2ead8ad37309258d49727f35e5aaea74e429cbd6bae546154ad` vs 실제 `19dfad3cc6f7e27b03e1dcfc194cdb1bf56d9e133b48f303288eff98886833d`; Wolf Run v3 예상 `171b954ddeef2b37d1bfaeb197b8a9f028293494457b66664c1d83509b87b5e0` vs 실제 `f7eb4122b150e351900a4ab7ea82c802809605bd0444be89e36f6bf167dcd008`. 양 아트 담당 ZIP 엔트리/메타·개별 PNG SHA 대조하여 원인을 확인할 것. 내부 파일 PASS가 동일 ZIP임을 뜻하지는 않고, SHA 불일치 자체가 곧 변조를 뜻하지도 않음.
+
+**Main23 서릿길 마을 v2**: 콘셉트 미술 HOLD/게임용 Sprite 분리·완성도 FAIL, 격리 Unity GameView 미실행·오프라인 QA만. 콘셉트 PNG11/화면비 프리뷰는 있지만 개별 독립 지면 Tile/서리 경계/길, 건물·문·서비스간판/생활 소품/비활성 포탈 Sprite가 실제 게임용으로 부족. 21:9 요청인데 16:10 프리뷰를 끼워 넣은 오류. **docs/art-new는 기존 콘셉트 원본 유지→독립 Tile/건물/소품 실제 2D 투명 PNG의 Village v3**를 제작하되 F1 승인 PNG6·기존 Scene 변경 금지. 실제 Unity Import/Quest Main23 구현 여전히 대기.
+
+**Wolf Run6 v3**: 기술/격리 Unity 실제 12FPS 재생 PASS, Frame03/04 꼬리 복원/기존 00/01/02/05 바이트보존 PASS. 하지만 Frame04 뒷다리·중간 신체 비율/발 접지/05→00 loop 문제로 **모션 미술 HOLD**, 대표 승인 없음. `docs/art-renewal`은 **Wolf v5 승인 1포즈 보존**, Run6 v4에서 동작 문제에만 표적 개선, 다음 Codex deltaQA·대표 모션 승인. 기존 공식 Wolf 펫 런타임 교체/Unity 원본·Save/UserData/Editor 변경0.
+
+기획 정본 `문서/00_프로젝트/20261021_Village_WolfRun_JointQA_ShaMismatch_TargetedProduction.md` (`docs/planning` commit `296e0ca8c8207b8119c06b0cf6f8501f71d7977a`), GitHub [Issue #45](https://github.com/HappyPaul812/Project-Limitless/issues/45) / [Issue #43](https://github.com/HappyPaul812/Project-Limitless/issues/43) 최신 댓글 작성. Main23 Codex preflight는 완료, 기존 Main22 격리136PASS/F1 64PASS/Mouse Battle40PASS 재QA 반복 금지. Main24 스킬 장착 Save 지속성 Issue #46, Icon/잡템/어묵탕 내부추적 계속. 전체 재시작·main 직접 커밋/Push·병합 금지.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-21 서릿길 마을 v2 + 늑대 Run6 v3 실제 ZIP 합동 Codex QA 요청
+
+바울 대표가 이번에 로컬 두 ZIP 경로 직접 전달: `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_ArtPilot_v2.zip`, `F:\Downloads\Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v3.zip`. docs/art-new 확인 Village v2 SHA `2142fe641c64a2ead8ad37309258d49727f35e5aaea74e429cbd6bae546154ad`, 19파일(원화콘셉트 11/OfflinePreview4/Metadata4). **영문 재압축된 콘셉트 원화**지 Unity-ready 독립 건물·타일·소품 Sprite가 아님. Codex는 게임 실사용 분해가능성/누락 Sprite/동일 크기 미술검토만 먼저; 실제 GameView 주장 금지. docs/art-renewal 확인 Wolf v3 ZIP SHA `171b954ddeef2b37d1bfaeb197b8a9f028293494457b66664c1d83509b87b5e0` 36파일, 원본 Run 00/01/02/05 보존, Fail Run03/04 꼬리·뒷발 표적 수정. 자체 CRC·PNG/strip/atlas PASS, **실제 동작12FPS와 05→00·몸비율/발접지/Unity Import 및 대표 모션 승인 대기**. 승인 KeyArt v5 변형 금지. 두 ZIP은 F: 사용자 파일 직접 검사 전, 자체 SHA 보고만 존재. Codex 다음 작업은 두 패키지 비파괴 한배치 QA, Village Concept/RuntimeGameReady 등급과 Wolf 기술/모션/Runtime 검증 각각 별도 보고. Original Unity/Save/UserData/Editor/dirty/이미 승인 F1/마을 Main23 선행기획/Main22 적용준비 보호; main 직접 Commit/Push/merge 금지, 기존 QA136+64+40 반복금지.
+
+기획 계약 `문서/00_프로젝트/20261021_FrostwayVillage_v2_WolfRun6_v3_Joint_DeltaQA_And_GameReady_Gate.md` (`docs/planning` commit `bfff995e76297e66d22efa72890ded28597ae34b`), Issue #45/#43 동기화. Main23 기술 preflight 완료 `74bd1de85582...`, 예약ID20개 충돌0; `docs/art-new` 마을 실제 256 Tile·개별 Building/Props 미술은 아직 미승인. Main24 Skill6슬롯 저장 지속성 [Issue #46](https://github.com/HappyPaul812/Project-Limitless/issues/46) 유효, 아이콘/소모템/잡템 대장은 내부 지속 관리.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-21 Main23 기술 사전점검 완료 / 마을 아트 대기 / 스킬 저장 누락 추적
+
+바울 대표 전달 Codex Main23 서릿길 마을 read-only preflight 완료: `codex/chapter3-main23-village-preflight-20261021`, commit `74bd1de8558244405a2935e5fca96fcc2f0bb307`. Main22 완료→Main23 해금, 5목표 후보, F1 북쪽→마을 남문, SafeZone/Checkpoint/SaveContinue/기존 서비스 재사용 계약, F2 북문 차단·동쪽 포탈 OFF 부지 예약. 후보 ID20개 Main22 기존 목록과 중복0. Main22 격리136PASS/F1 64PASS/서리들쥐40PASS QA 재사용, 전수재QA0. **실제 Main23 Scene·Quest·NPC 생성0, 원본4,351파일/Save·UserData/Editor 보호, main Push/merge0**.
+
+**진행 중인 신규 미술**: `docs/art-new` 서릿길 마을 Environment ArtPilot v2 제작은 이미 사용자에게 지시/진행 중, 재발주 금지. 완성 실물→대표 미술 승인→Codex 격리 Unity 마을 GameView/동선/문·CheckPoint QA→Main23 격리5목표 최초 플레이. NPC/Quest 정식 ID, 상품·가격·보상/대사·TTS는 아직 미정.
+
+**중요 기술 부채**: 스킬 장착 정보 현재 메모리 전용, Save/Continue 영구 복원 안 됨. Main24 첫 스킬 상점 정식 런타임 출시 전 필수 `Save/Load 장착6슬롯·구매·강화/유효성·구버전 세이브 migration` 별도 추적 [Issue #46](https://github.com/HappyPaul812/Project-Limitless/issues/46). 이는 Main23 첫 도착/Save 구현 자체는 막지 않지만 Main24 상점과 이용자 스킬 복구 필수 블로커. 사용자 원본 세이브 복구/유니티 구현은 아직 승인된 작업 아님.
+
+기획 기록 `문서/00_프로젝트/20261021_Main23_Village_Preflight_Complete_And_SkillPersistence_Gate.md` (`docs/planning` commit `2eda4d8159c260ced19404a24c24eaec0c3fea17`), Main23 [Issue #45](https://github.com/HappyPaul812/Project-Limitless/issues/45) 최신 코멘트, Skill Save Issue #46. 현 GitHub main은 EOD 10/20 SHA `e4e9891f6f01ea95cada9e63b1f09946d94d6041`, 별도 Codex Main22 원본 반영 준비완료·제품 미병합, 리뉴얼 담당 Wolf Run6 미술 FAIL 재작업 중. 두 담당 재지시 금지. 기획 내부 아이콘·잡템·따끈 어묵탕 카탈로그 누락 추적 유지.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-21 Main23 두 담당 작업 지시 완료, Main22 적용 준비 완료 / Wolf Run6 미술 FAIL
+
+바울 대표는 **Main23 art-new 서릿길 마을 ArtPilot v2 발주와 Codex 별도 Main23 기술 사전점검 지시문 두 개 모두 전달**. 현재 산출물 기다리는 중, 동일 지시 반복 금지. 정본 20261021_Chapter3_Main23_Frostway_Village_Art_And_Tech_Parallel_Kickoff.md; Issue #45.
+
+**Main22** Codex branch codex/chapter3-main22-apply-preparation-20261021, 최종 커밋 2631e8750df8d98fb298754f3c82c5ca651c2fda, 제품 경로583건/반영13 신규40 기존수정5 분류·안전 PR 통합 계획. 기존 격리 QA136PASS + F1 64PASS + 서리들쥐 Battle40PASS 재사용. 원본 Unity·Save/UserData/Editor 변경0, remote main 제품 반영/PR 병합 없음, 정식 대사·TTS/보상/밸런스 임시. 적용 승인 요청 필요. Issue #44 현황 기록.
+
+**Wolf Run6** Codex branch codex/wolf-run6-candidate-qa-20261021, 최종 c47d7ba17c6332b28379b7c2ae315ed1ad30ec1e, ZIP c69ca17e8ebe2b8591c4dc77ebc6531b60dbe8a44ee3475d39d4cc6159f8f2ad, 29개 파일 기술 CRC/SHA/PNG PASS. 미술 FAIL: Run03·04 꼬리 잘림, 중간 프레임 몸 비율·발 접지 불안정. Unity Import/실시간 GameView 미검증. 승인 Wolf v5 정적 원화는 절대 변경하지 않고 docs/art-renewal에서 **Run6 미술만 재작업** 후 별도 후보 납품/QA/대표승인. Issue #43에 정확한 결함 기록.
+
+통합 정본 20261021_Main22_ApplyReady_WolfRun6_ArtFail_NextActions.md (docs/planning commit 4f46cb18a453dac45557fa02af92929aa006b7cc). 현재 메인 아트와 Codex Main23 작업은 별도 진행 중. 고유 Skill·소모품·잡템 아이콘 누락목록 기획 내부에서 지속 관리. main 직접 Commit/Push/병합 금지, user original/Save/UserData 보호.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-21 Main23 서릿길 마을 Art Pilot v2 + Codex 기술계약 병렬 발주
+
+바울 대표 “챕터3 다음꺼 시키자.” → 다음 스토리 **Main23 「따뜻한 땅을 떠난 자들」**, F1 심부 남하 동물 흔적→서릿길 마을 남문 도착→주민/태온 하렌 대화→북부 첫 SafeZone 체크포인트와 자유 탐색. 마을 북문F2 한기/스킬은 Main24, 족제비 별도 지정전 보류. 설빙의 폭군 보스 Combat 후순위. 마을 동쪽 **미래 포탈 광장 빈 부지 약7×7WU 예약·비작동 유지**.
+
+이미 F1 승인 환경6 실제 격리 Unity64PASS/0FAIL, 서리들쥐 Battle40PASS, Main22 격리136PASS/0FAIL, 사용자 “잘된다”. Main22 사용자 원본 local Unity 및 remote main 미병합; **Codex에게 Main22 적용 준비와 WolfRun6 후보QA를 이미 별도 지시**했으므로 새 Main23 구현을 기존 기능 브랜치에 섞지 말 것.
+
+**즉시 병렬**: art-new는 서릿길 마을 **실물 환경ArtPilot v2** (과거 Village 4 PNG는 오프라인 포맷 QA만 PASS·미술 미승인); 승인 F1을 수정하지 않고 북부 회갈색 돌기초/돌길·목석건물·지붕/문·일반/스킬상점/여관 표식, 장작/랜턴/보급상자, 미래 비활성 포탈 기단/7x7 비점유 광장, 도보·휠체어 남북3WU 통로 후보·3화면비 오프라인 합성/실PNG Manifest SHA ZIP. Codex는 별도 worktree에서 현재 Main22 branch/Main21 SafeZone·Quest/SceneID/PPU/TileGrid/Spawner/Save·북부마을 NPC/Service 계약만 **읽기전용 기술감사·잠금**, Scene/Quest 실구현 전승인 필요. Meta/GUID·원본 user Save/UserData/Editor·main 직접 Push/병합0.
+
+기획 계약 `문서/00_프로젝트/20261021_Chapter3_Main23_Frostway_Village_Art_And_Tech_Parallel_Kickoff.md` (`docs/planning` commit `1dd71d4c91db1c55c4b843fb273a64f12649db44`), 새 [Issue #45](https://github.com/HappyPaul812/Project-Limitless/issues/45), 기존 Issue #30/#36 최신 댓글. **메인 아트 담당 지시 후 Codex 프리플라이트는 현재 업무 종료 시점에 별도 전달**. 스킬 아이콘/냉기 소모품/북부 잡템 스프라이트 카탈로그 누락은 기획 내부대장 관리, 아직 ID/상품/가격 임의 확정X. 사용자에게 긴 우선순위표 노출하지 않음.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-21 Main22 첫 플레이 격리 Unity 136PASS/0FAIL, 바울 대표 “잘된다”
+
+Codex Main22 5단계 최초 플레이(초보 마을 북문 명시 출발→F1 안전스폰→서리 조사→동물 이동 단서2→서리들쥐 단독 지정전투 승리→F1 쉼터 종료) 구현 완료, QA branch `codex/chapter3-main22-first-playable-20261021`, 최종 `be7f64a3ff48a8848471166d4aefc4969080bd8b`. **신규 변경분 QA 136 PASS/0 FAIL**, 기존 F1 64 PASS와 서리들쥐 Battle40 PASS 재사용(반복0). 실제 격리 Unity GameView와 단계별 Quest 목표·방향/마우스/휠체어, Save/Continue, 마을 복귀, 도주·패배 재도전 보고. 바울 대표 “잘된다” 긍정 피드백 → `USER_POSITIVE_FIRST_PLAYABLE`, 사용자 원본 Unity 직접 손플레이 검증이나 `main` 공식 병합 승인으로 확대하지 않음.
+기획 최신 정본 `문서/00_프로젝트/Chapter3_Main22_FirstPlayable_136PASS_IsolatedQA_And_ProductionGate_20261021.md` (`docs/planning` commit `c773df6d73141a1ff9ed5094c5501c860c73034e`), 구현 [Issue #44](https://github.com/HappyPaul812/Project-Limitless/issues/44) 진행 결과 댓글. **아직 원본 적용0 / main PR merge0**. Main22 정식 스크립트/TTS·서리들쥐 레벨/EXP/드롭·잡템 아이콘/보상 정본 미확정, Prototype 임시대사·무보상 구별. 사용자 기존 Save/UserData/Editor·4351파일 보호. 다음 작업은 신규 구현 재시도가 아니라 **분리된 원본 안전 통합/PR 승인** 또는 스토리·보상 마무리 중 우선순위 결정. 임의 Main23, 북부 폭군·한기 시스템 추가 금지. 리뉴얼 Wolf Run6 병렬 제작 계속.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 F1 격리 실제 Unity 64PASS, Codex Main22 5목표 첫 플레이 구현 발주
+
+바울 대표 Codex 최종 F1 preflight: branch codex/chapter3-f1-unity-preflight-20261021, QA commit **8cf6cd7ebeb2f9b5d2f08c9151ceca84bb271c77**. 승인 NorthF1 6종 SHA/Import/PPU/Pivot/TileGrid/Sorting·실제 GameView 16:9/4:3/21:9·흙↔서리 타일 접합·도보/휠체어 길·소품 Collider·카메라 경계·격리 임시 출입/SaveContinue 모두 **64PASS/0FAIL**. 시각 통로 가시폭 최소1.45WU, Collider 지름1WU. **실제 World_StarterVillage 북문은 여전히 닫힘, Main22 Quest/Scene 완료 및 원본 Unity/main 적용은 아직0**. 기존 Mouse Battle40PASS 반복검사X.
+기획 신규 Main22 5목표 vertical slice 계약 `문서/00_프로젝트/Chapter3_Main22_FirstPlayable_IsolatedImplementation_Order_20261021.md` (**docs/planning commit a0906010c530d9a4e557ff415822ddcd9e64381e**) + 신규 [Issue #44](https://github.com/HappyPaul812/Project-Limitless/issues/44) 실행 지시. 별도 Codex worktree/branch codex/chapter3-main22-first-playable-20261021: 기존 F1 격리 실물과 기존 Mouse Combat40PASS 연결을 선택 재사용→Main21 13목표 완료 후 마을 펫NPC 자유사용/북문 명시 출발→F1 임계 안전 Spawn·흙서리조사1·남하 이동단서2·고유 서리들쥐 단독지정전 승리·안전 쉼터 정리→Main22 완료. HUD에 조사 조작·목표마커·도보/휠체어 접근성 명시, Save/Continue/이탈·재입장/전투 패배·도주 재시도 minimal delta QA. 미확정 ID/몬스터 숫자·드롭·EXP·보상은 현행 catalog 분석 후 임의 확정/신규 밸런스 생성 금지, 텍스트는 QA Prototype vs 최종Dialogue/TTS를 구분. **사용자 원본 Unity/Save/UserData/Editor/main 직접 Push/병합 금지**, 격리 구현 먼저 보고받고 원본 적용/PR은 별도 결정. 기존 Issue #35는 읽기전용 preflight로 마감 기록, Main22 실제 구현은 #44로 분리.
+리뉴얼 담당 `docs/art-renewal` Wolf v5 기준 Run6 고품질 실제 PNG 제작(`d3bf6e4e`), 신규 메인아트 F1은 6종 사용자 미술 승인 완료·재그림 불필요. 내부 Chapter3 스킬아이콘/냉기소모템/몬스터잡템/Quest 인벤토리 자산 누락대장 계속 기획 관리, 아직 스킬 상점·새 아이템 임의 게임 구현 금지. 최종 보스 표기 **설빙의 폭군**, 이번 Main22 범위 아님.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 리뉴얼 담당 Wolf v5 기반 Run6 실물 아트 제작 착수
+
+바울 대표 “리뉴얼도 일 시켜” 요청. Chapter1·2 리뉴얼 담당 docs/art-renewal에 **Wolf v5 사용자 미술 승인 단일 KeyArt**(SHA b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1) 기반의 **6프레임 고품질 달리기 Run 아트 파일럿** 실PNG/12fps/128px·40px preview 제작 지시. Wolf v5 Codex 시각 HOLD(뒷다리 옆 검은 돌기)는 대표 **현 상태 허용**, Wolf v6 재보정 지시 금지.
+기존 컴패니언 Run 실제 384×40/64×40×6/12fps/LEFT/IconIndex4/Scale2/FootPivotBottom을 참고하되 그 작은 셀을 새 아트 원화 규격으로 강제하지 않음(이전 Wolf Run v1 보노보노형 품질 반려). 원화 6 pose 고해상도와 Candidate Strip 각각 별도 납품, 기존 v5 실루엣·털 톤·늑대다운 발달림·루프03~05→00·공격 돌진 명확성 보호. 실제 엔진 PPU/Runtime mapping·GUID/Motion 승인 미검증, 신작 64×40 임의 강제/사용자 원본 Unity 전투 교체/Chapter3 미술 침범 금지.
+기획 공식 계약 문서/00_프로젝트/20261021_Chapter12_Wolf_v5_Approved_Run6_ArtProduction_Order.md (docs/planning commit d3bf6e4e52e6a20f478cd6aa793eee1b7080bdc4), Issue #43 댓글 추가. 메인아트 담당 NorthF1 v3 6종 사용자 승인→Codex 별도 격리 실제 Unity F1 GameView/TileGrid/휠체어 첫 플레이 preflight 진행, 이 작업과 병렬. 맹독뱀 v3 static Codex PASS 권고 but USER_PENDING, 추가 Snake 모션 제작 허가X. 기타 Bear/Fox는 Wolf Run 사용자 미술 승인 이후로 미룸.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 Wolf v5 현 상태와 NorthF1 v3 6종 최종 미술 승인
+
+바울 대표가 Codex 2026-10-21 Delta QA 화면을 보고 **“보니까 괜찮아.. 승인..”** 답변. **두 ZIP 모두 사용자 미술 승인**으로 잠금. 근거 Codex branch codex/art-review-wolfv5-northf1v3-delta-20261021, QA commit a6472c51054fdc6933cb065c21a9438d041b1595. ZIP/PNG 기술 PASS, 기존 전수QA 반복X, 비교는 오프라인 합성(실제 Unity GameView 아님), 원본 Save/UserData/Editor/4,351파일 보호, 공식 Unity 적용/Push/main병합0.
+**Wolf v5 단일 1포즈**: 검수자는 기술PASS·미술HOLD(뒷다리 옆 검은 돌기 x150~194/y1125~1174)를 유지했으나 **사용자가 그 결함을 직접 보고 현 상태를 승인**함. **CODEX_ART_HOLD + USER_ART_APPROVED_AS_IS_WITH_KNOWN_ARTIFACT**라고 정확 기록하고 강제 Wolf v6 재수정 요구 금지. ZIP SHA 920459eb2ef4e160461b2b6425a9b183da633cd14411655a4d5affdbaf3d8bc7, Wolf v5 PNG SHA b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1, v3/v4 보존, RGB 변경0/Alpha 감소2,174. 이 승인은 실제 Wolf Run 애니메이션/펫 시스템 변경 허가가 아니며 정본시트 기술계약 별도. 맹독뱀 v3 CODEx static PASS 권고, 대표 최종 승인 미완.
+**NorthF1 v3**: Codex 기술 PASS, 미술 **6/6 PASS**(v2 흙/길/관목 3 SHA 그대로, v3 얇은서리/전환/길표지 3 PASS), 바울 대표 최종 미술 승인. ZIP SHA 488a65c051d1d017787771e0169124e47437b472911caa9949fdd59e55079054; 6 PNG 개별 SHA는 승인정본 참조. **F1은 미술완성이나 Unity 원본 실 Import/실제 GameView/PPU/TileGrid/Collider/휠체어 물리 통행/Main22 진입·퀘스트는 미검증**. 다음 Codex는 기존 #35 사전 기술조사 재사용하여 **독립 격리 Unity F1 환경 게임화 기술 계약 및 실제 GameView** 먼저 확인, 새 전체 Main22 런타임 구현/원본 main 직접 변경 없이 보고. 서리들쥐 Battle40PASS 재QA/중복 구현 금지.
+기획 승인 정본 문서/00_프로젝트/20261021_Wolfv5_And_NorthF1v3_UserArtApproval_NextImplementationGate.md (docs/planning commit c0130e5030a04ddb0a904b1fb33097c918d223cb). GitHub Issue #43 Wolf 및 Issue #30 F1 사용자 승인 댓글 작성. F1은 이제 Main22 첫 플레이 기술 잠금 1순위, 설빙의 폭군 전투 후순위, 아이콘·잡템·소모템 내부자산 대장 유지.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 Wolf v4 HOLD / NorthF1 v2 부분 PASS: 수정 1+3종만
+
+바울 대표 Codex QA 보고: branch codex/art-review-wolfv4-northf1v2-20261021, 최종 2471b1f2e98413dfaf0a705fc63cfdd7c8688fb5. 두 ZIP 기술 PASS, 원본 Wolf v3 + F1 원본6/승인 후보 SHA 보존, 비교는 오프라인 합성(실 Unity GameView 아님). 원본 4351파일/Git/Editor/Save 보호, Art/Unity 구현/Push/main 병합 없음.
+**Wolf v4** 미술 HOLD: v4 Alpha만12,088pixel 제거/RGB 완전 불변. 아직 가슴 **위쪽** 회색 조각, 다리 미세 배경 조각, 앞발 밑 바닥 잔조각이 남아 **docs/art-renewal**에서 이 3곳만 투명화한 별도 Wolf v5 제작. v3/v4 바이트 보존, 기존 진짜 털·발끝과 전체 RGB/실루엣 불변. 맹독뱀 v3 정적1포즈 Codex PASS권고지만 대표 미술 승인 대기.
+**North F1 v2** 6개 기술 PASS, 미술 **3PASS/2HOLD/1FAIL → F1 전체 HOLD**: **흙 지면 PASS, 흙길 PASS, 서리 관목 PASS는 v2 동일 SHA KEEP**; **얇은 서리 HOLD(3×3 밝은 반복무늬), 전환부 FAIL(진한 흰 서리 옆 타일에서 급단절), 길 표지판 HOLD(양끝 비슷하고 방향 모호)**. **docs/art-new**는 해당 3종만 v3 수정, PASS3는 기존 바이트 그대로 묶어 새 6종 ZIP, 서리/전환 2×2·3×3/옆 타일 연결과 표지 방향 대비 QA. 물리적 휠체어 통행/PPU/TileGrid/Collider 실 Unity 검사 여전히 안 됨.
+작업 정본 문서/00_프로젝트/20261021_Wolfv4_F1v2_QA_TargetedFix_Orders.md, docs/planning commit c5f63b3045eb7d4ee2a38911f1f72f279b7c9de3. GitHub Issue #43/#30 댓글 기록. 실 ZIP이 나오면 Codex만 변경된 1 Wolf+3 F1 PNG Delta 재검수, 기존 수십건 QA 전수 반복 금지. 본게임 정식 Import/main 병합·사용자 미술 승인 전에는 보류. 신규 스킬 아이콘/북부 소모템/몬스터 잡템/상태이상 아이콘 누락 추적은 내부 백로그 유지.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 Codex Art QA: 맹독뱀 PASS권고, 늑대 FAIL, F1 3/3 HOLD
+
+바울 대표 제공 Codex 최종 검수 스크린샷, branch codex/art-review-monsterwolf-f1-20261021, 최종 commit 5df5f74d7e9070544bb88aa92fbfe991972498cf. **전체 비교 이미지는 오프라인 합성, Unity GameView 아님**. ZIP SHA/CRC/PNG 정상, 기존 뱀·늑대 원화2/2, F1 기존6/6 보존, Ground 2종 edge tile seam PASS. 사용자 원본 4,351파일, Git·Editor 보존, Scene/Art 제작/정식 적용/Push/main 병합0.
+**맹독뱀 v3**: 1포즈 정적 미술 PASS 권고, 독니·형태 양호/본체 잘림0. 저알파 잔여 정리 권고, Codex 보고 Snake SHA 누락 수정 필요, 실제 대표 미술 최종 승인/Unity sprite 구현은 별개. 기존 v3 SHA 그대로 보호. **늑대 v3**: FAIL, 가슴 아래 회색 배경 매트/뒷다리 배경제거 잔편; docs/art-renewal에서 이 두 부분 alpha matte만 수정 후 별도 신규 PNG, 원본 바이트 보존. 전면 재그리기/Wolf Run/Bear Fox 금지.
+**F1 3 지면 후보**: 흙 HOLD(큰 얼룩 반복/평면성), 얇은서리 HOLD(흙우세 방향 개선됐으나 결/경계·타일 반복감), 전환부 HOLD(단방향 기술정상, 재질 연결 필요). **F1 전체 HOLD**: 기존 Path_WornTrail 길 가독성+FrostShrub/Waymarker 도식성까지 미마감. docs/art-new에서 F1 이전6 PNG 기존 바이트 보존하며 지면3/길1/관목1/표지1 총6의 표적 완성 Pilot v2 제작, 완성 전 GameView/PPR/Collider·Main22 구현 승인으로 오인 금지. F1 QA JSON 내부 hash 충돌 메타 별도 정정. Codex 추가 재검수는 새 납품 후에만.
+기획 정본 문서/00_프로젝트/20261021_ArtReview_Result_SnakeWolfAndNorthF1_TargetedProduction.md (docs/planning commit a990de8d03b667e9826b1cb3086e249d79a1a9e4). GitHub Issue #43/Issue #30 코멘트 갱신. 북부 몬스터·아이콘/잡템/소모템/신규 스킬 전체 누락대장은 내부 관리하며 사용자에게 불필요한 전체 표를 보내지 않음. 서리들쥐 Unity Battle 이미 40PASS/0FAIL, 또 같은 작업 지시 금지. 설빙의 폭군 보스 전투 아트 후순위.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 두 ZIP art review 접수 및 자산 누락 대장
+
+바울 대표가 ZIP2종을 전달: (1) F:\Downloads\Limitless_MonsterWolf_KeyArt_v3_Review_20261021.zip (renewal) SHA a5189bdb542988da69581135f137b39c98b3c5434272cb5020d13310a98fdae8, 이전 Snake/Wolf v3 고해상도 원본 PNG2 SHA 동일, 오프라인QA PASS지만 원본 Ch2 공식 몬스터 314px/PPU314 실물 Unity 동표시 비교/미술 승인 없음. Snake 원본 알파 왼쪽 접촉25픽셀·작은 군집548건, Wolf 마감 매트 위험. (2) F:\Downloads\Limitless_Chapter3_NorthF1_ArtReview_Samples_v1.zip (art-new) SHA dd9963d2a2ce442ad12ecccc8c3ae74edbfb7421eb838003d21ae2df767bd086, F1 기존6 PNG 보존/전종 미술HOLD, 신규 Ground Earth/ThinFrost/Transition 후보3만 QA PASS; 기존 길 가독성, Shrub, Waymarker도 여전히 HOLD. 두 ZIP 로컬 경로는 사용자 제공, 기획 세션이 F: 실물 독립 검사했다고 주장 금지.
+**다음 실행**: Codex가 분리된 격리 worktree에서 두 ZIP read-only SHA/CRC/Manifest 및 원본 공식 Chapter2 환경·Monster Sprite와 동일 화면 스케일 비교/Alpha/길 가독성/256px 타일 반복 QA → 각 후보 미술 PASS/HOLD/FAIL 및 정확 문제가 생긴 픽셀/Render 자료 보고. 원본 Unity/Save/UserData/Editor/승인 아트/main 변경0. 내부 asset backlog: 북부 몬스터 5+elite1+boss1 전투 시트와 각 loot icons, 신규/강화 스킬 아이콘·상점 마킹·소모템(따끈 어묵탕/기타 대응/부활 미정) 및 냉기 상태 UI 표시, F1/서릿길 마을 환경. 신규 Item/Skill IDs·가치/수량은 카탈로그 정본 감사 전 임의 생성 금지. 보스 설빙의 폭군 Combat 후순위. 직전 사용자에게 전체 자산 대장 반복 표출 금지.
+기획 검증/내부 대장 정본 문서/00_프로젝트/ArtReview_20261021_MonsterWolfV3_And_NorthF1_Sample_ValidationGates.md (docs/planning commit 7917fa49d830d9c6c7bf50cc6316a459a484dbb1), Issue #43 및 #30 댓글 갱신. Mouse Combat Fix v2 원본 연결 Codex 40PASS/0FAIL과 구분, Codex feature 브랜치 외 main 병합 미실시.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 첫 실플레이 Main22 F1 우선 / 설빙의 폭군 전투 후순위
+
+바울 대표 최신 결정: 공식 몬스터명 서리들쥐(FrostFieldMouse), 보스명 **설빙의 폭군(FrostTyrant)**. '서리폭군'은 오기. 보스 Attack/Hit/Defeat 시트 제작을 당장 착수하지 말 것.
+서리들쥐 Combat Fix v2는 사용자 미술 승인·Codex 변경분23PASS/0FAIL. 직전 Codex 정식 연결 지시문은 이미 발행됨, 연결 완료 보고는 아직 없어 중복 발주 금지.
+최우선 단계: **북부 F1 6종 환경 시안 실물/게임 동배율 미술검토** (예전 ZIP/오프라인 QA만 통과, 사용자 미술·Runtime 미승인) → Codex 기존 Issue35 기술 조사 활용 Main22 Production Lock(ID/StarterVillage 북문/Portal/PPU/Collider/Save) → 승인 F1/서리들쥐로 Main22 초반 5목표를 별도 구현 승인 후 첫 플레이 검증. Main23 마을·Main24 F2 다음 순서. 독립 art-renewal의 Chapter1·2 맹독뱀/Wolf v3 병렬 별개.
+기획 문서 문서/00_프로젝트/Chapter3_20261021_F1_Main22_FirstPlayable_Priority_And_BossDefer.md (docs/planning commit a0024d21d4d3fafe7839be2336dfe1d1fdcea5dc), Issue #30 및 #35 댓글 업데이트. 현 main e4e9891f6f01ea95cada9e63b1f09946d94d6041, original Editor/Save/UserData 및 다운로드 재정리본 불변, main 직접 Push/merge 금지.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 맵 핵심 통합 완료·Field09/Field10 미결 분리, 리뉴얼 몬스터·펫 v3 재개
+
+바울 대표 “리뉴얼 쪽은 맵은 끝난거 맞으면 어제 이어서 하자” 요청에 GitHub `main` EOD·리뉴얼로드맵·Main19/Main20 아트 보고 확인. **환경의 핵심 구현·적용은 상당 부분 완료됐지만 전체 100% 미술 최종 완료 아님**: Field09는 승인 PNG5+B파생 Glow [PR41](https://github.com/HappyPaul812/Project-Limitless/pull/41) main/로컬 SYNC_COMPLETE, 그러나 [Issue38](https://github.com/HappyPaul812/Project-Limitless/issues/38) HeatVent·Spire 시각 마감과 AshPatch KEEP 후보 최종 검토 남음; Field10 공식 ArtPack13 등록·Runtime QA 있으나 `Main19_Art_Handoff.md` 최신 USER_ART_REVIEW_REQUIRED13. Field11 Main20 v3 승인/환경8·보스아트 QA 적용, Field08 공식 사용7 유지, Arbel/Field04~07 승인합본 보호. **이미 합격한 맵 재제작하지 않음.**
+
+리뉴얼 담당 `docs/art-renewal` 다음 주력은 **Chapter1·2 몬스터·펫**으로 전환. 과거 VenomSnake v1/Wolf v1 반려, v2 저해상 확대 미술 HOLD, v3 고해상 Snake PNG `7001d199...` / Wolf PNG `30b2d464...` 산출 보고는 있지만 현재 GitHub/사용자 F: 실물 존재 미확인·공식5 동일 실제 Render 비교/대표 미술 승인0. **기존 v3 원본 사용가능성·해시를 먼저 확인**, 실PNG2 및 기존 공식 Chapter2 몬스터 비교/128px QA·Manifest 실제 납품→바울 대표 승인 게이트. Source raw 접근 불가면 Codex 읽기전용 인계 요청만 기록, 가짜 PASS 금지. Chapter3 메인 아트 `docs/art-new` 작업, 현재 Codex Mouse Combat Fix v2 격리QA와 중복 지시 금지. Snake/Wolf 전체 모션·Bear/Fox 추가양산 및 기존 MonsterDefinition/Unity 적용 금지.
+
+기획 정본 `문서/00_프로젝트/Renewal_20261021_Map_Closeout_And_MonsterWolf_V3_Resume.md` (`docs/planning` commit `8678096c0e817fc298d870c43aea5b23ac3dca60`), 신규 몬스터·펫 [Issue #43](https://github.com/HappyPaul812/Project-Limitless/issues/43), Field09 환경잔여 [Issue #38](https://github.com/HappyPaul812/Project-Limitless/issues/38) status 댓글 기록. main 직접 Commit/Push/병합 금지, 대표 F: Download 폴더 정리 상태 그대로 보호.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-20 EOD 선택 병합·원본 로컬 안전 동기화 (진행 요청, 아직 완료 증거 없음)
+
+바울 대표: **“오늘은 그만하자 오늘 작업들 합치고 료컬 동기화.”** 오늘 승인·기술검증된 변경만 새 Codex branch/worktree → PR → main 병합 허용, 이후 사용자 기존 F:\\study\\codex\\Project-Limitless 원본 local 보호 동기화 지시. 기획세션 GitHub만 작성 가능하며 **직접 F: 실행/PR병합/원본 sync 완료 상태가 아님**. GitHub remote main 마지막 확인 `12c69c72f9c09f716ee6242418b1d62f83a4a0d2` (어제 PR27/28 최종), 열린 PR0 (오늘 신규 EOD 실행 전).
+
+**통합 1순위**: Field09 Sample3 승인 BaseGround/CrackedOverlayv2/Slab, Phase2 격리 PASS Cliffv2/FissureEdgev2 및 바울 대표 미술 승인 B 파생 Glow. `codex/field09-derived-glow-b-integration-20261020` `77978aa1`→`913eceb7`→`b04c42e7`, 격리 Unity39PASS/0FAIL, 원본 공식 Glow/meta/GUID 보존, sprite reference1. 아직 원본 local/remote main 적용0. Field09 전체 환경 나머지 소품 별개.
+
+**Chapter3 1포즈 2종/Idle2**: 사용자 미술 긍정·Codex14PASS, 해시 기준 참조 보존, Main22 구현/몬스터런타임 자동 적용 금지. 마지막 신작 `F:\\Downloads\\Limitless_Chapter3_FrostFieldMouse_Combat_3Strips_Fix_v2.zip` SHA `518d210a0e5b29c7214ad960c0baa3d23a88d13d4f789b5f7420982ce701bfe3`는 **오프라인 CRC/프레임QA만** 되었고 **Codex 실제 v2/사용자 최종 미술 승인 미실시**, 내일 시각 Delta검수 전 공식게임/main 제품 적용 금지. 기존 v1 Attack/Hit/Idle 색감 시각 FAIL. F1/마을 env Pilot 10 png 미승인 게임 적용 보류. BGM 두 데모곡 사용자 “좋고” 곡분위기 긍정·loop edit 미완료라 product audio 연결금지. TTS/SFX/영상 기존 보류.
+
+**실행 계약** `문서/00_프로젝트/LIMITLESS_20261020_EOD_ApprovedMerge_OriginalLocalSync_SafetyContract.md` (`docs/planning` commit `ffcf8a2d64131d22398772e6a58f50a77897692b`); Codex 실행 [Issue #40](https://github.com/HappyPaul812/Project-Limitless/issues/40). 담당 문서 브랜치 전체 merge 금지, selected files/history 유효한 부분 의미 병합. 사용자 원본 dirty/untracked/Save/UserData/Editor·공식 PNG/meta SHA 보호 백업 없으면 STOP. 정상 main PR merge + remote/origin/local main HEAD/index·원본 SHA 실측이 모두 합격할 때만 `SYNC_COMPLETE` 출력, 안되면 정확히 `SYNC_SAFE_BLOCKED`로 기록. 이전 QA 재실행 남발 금지.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-20 서리들쥐 A 전투 3 Strip v1 기술36PASS, 시각 FAIL/HOLD, 3종 표적수정 발주
+
+바울 대표 Codex 비교 캡처: 동일 전투 UI 배율 Idle00·Attack02·Hit01·Defeat03를 112px로 비교; ZIP/PNG 규격 PASS, 격리 Unity 모션 상태전환 36PASS/0FAIL, 그러나 미술 Attack FAIL/Hit FAIL/Defeat HOLD/Idle 일관성 FAIL. Codex `codex/chapter3-mouse-combat-v1-review-20261020` QA `da55fe6e` 인계 `036037e8`; ZIP SHA `24ef8dddf76fb5843e8e7d3fac05942f1450c9f39cf366b2422a0ab82cba6741`.
+
+**원인** 1) Attack00·Hit03이 승인 Mouse Idle00 대비 가시크기 약18~20% 작아서 Idle 전환 시 크기 점프, 2) Attack 최대 할퀴기가01에 있는데 기술 타격 이벤트는02, 3) 신작 전투3 Strip의 갈색 털·디테일이 승인 냉회백 Idle과 불일치. **Defeat03 사망 고정 포즈 정상**. 리디자인 전체 폐기 X, `docs/art-new`는 승인 Mouse Idle/1포즈 파일 원본 불변으로 Attack/Hit/Defeat v2의 결함 프레임/색감만 수리. Attack00/Hit03 ↔ Idle00 픽셀 알파 bbox/FootAnchor/가시 크기, Attack02 최대 할퀴기, 냉회백 털색, Defeat03 hold 보존을 검증할 112px+8FPS 비교, PNG3/ZIP/Manifest/SHA/QA 실물 납품. Codex는 새 ZIP 후 해당 3종 시각 Delta만 검수; 기존 36PASS 기능 회귀 전수 재실행 금지. 원본 Unity/Save/UserData/Editor·Push/main병합 금지, Codex·바울 대표 승인대기.
+
+기획 정본 `문서/00_프로젝트/Chapter3_FrostFieldMouse_Combat_v1_VisualFail_3Strip_TargetedFix_20261020.md` (`docs/planning` `5ee9966f67f14d29c1b0a84e07031dc407bc8dd2`); [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 댓글 기록. Field09 B파생Glow 격리39PASS/0FAIL 원본적용·PR 승인 대기는 별개, 챕터3 보스B 전투3 Strip 후순위.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 서리들쥐 Attack/Hit/Defeat Strip v1 실납품, 털 색감 주의·Codex 시각 QA 대기
+
+바울 대표 제공 로컬 경로 `F:\Downloads\Limitless_Chapter3_FrostFieldMouse_Combat_3Strips_v1.zip`. `docs/art-new` 최신 실제 제작 보고: 2048×512 RGBA 4프레임 8FPS Strip 3장(Attack/Hit/Defeat) 및 프레임별 미리보기/Manifest/CRC/SHA 납품, ZIP SHA `24ef8dddf76fb5843e8e7d3fac05942f1450c9f39cf366b2422a0ab82cba6741`, Attack `08ed9ffb3d2807b0e1a3b27450f8f3bf1ff3e56f5f33e8b6607b2983db4e402e`, Hit `37c51117ae18f2fed2bda5a8cef6af3099812b5e0979e1368634172937568f1b`, Defeat `bda2809d177d03088e85389ecea23815b92962d61c36cc68967cd0015c96dfcc`. 게임용 독립 Strip 기술 계약 PPU512·Pivot(0.5,0) 하단중앙·VisualScale1·우향 및 기존 Idle 참조 보존. 아트 담당 오프라인 포맷 QA PASS 보고, Unity 실행 없음.
+
+**중요 미술품질 경고:** 기존 승인 서리들쥐 Idle/1포즈는 냉회백색인데 새 3모션 털은 갈색 계열이 강조됨. 상이한 야생 설치류로 보일 수 있으므로 기존 승인 Idle↔Attack/Hit/Defeat 색·체형/128px 디테일/8FPS/Attack·Hit→Idle, Defeat03 hold/좌우반전과 실제 UI 같은 배율 시각 QA 필수. 작은 Source 보드를 512셀로 변환해 디테일 저하도 의심. 다음 일은 Codex 독립 worktree에서 실제 ZIP/SHA 재검증 + 변경분 격리 Unity 시각/기술 QA→바울 대표 미술 판단→필요 시 수정 1~3 PNG만 art-new로 반환. 지금 추가 아트 재제작 지시0, 원본 Unity Editor/Save/UserData/main Push/병합0. 기획 `문서/00_프로젝트/Chapter3_FrostFieldMouse_Combat_3Strips_v1_Delivery_VisualTechnical_QA_Gate_20261020.md` (`docs/planning` commit `f4019777d149be62415b132acf02d151cc1c183b`); Issue [#30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 새 댓글.
+
+별개 Field09 B 파생 Glow 격리39PASS/0FAIL·대표 원본 Unity 적용/PR 준비 승인 대기, Chapter3 설빙의 폭군 B 전투모션은 뒤로. TTS/SFX/영상 보류.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-20 Codex 서리들쥐 A 전투3 Strip 규격확정, 메인아트 실제 제작 착수
+
+바울 대표 Codex 보고: 기술 검증 PASS, branch `codex/chapter3-mouse-combat-contract-20261020`, 제작계약 commit `ad9e4b46`, 인계 `13178071`, 기존 Chapter2 몬스터정의8종/관련 코드6종·승인 Mouse PNG SHA 대조 PASS. **4×4/PPU314 임시안 폐기, 독립3 Strip으로 확정**. Attack(앞발 할퀴기→Idle), Hit(피격반응→Idle), Defeat(마지막03 유지) 각 **2048×512 RGBA 4×512 셀 가로**, **8FPS**, **PPU512/Pivot하단중앙(0.5,0), VisualScale1/우향1종·기존 좌우반전**. 기존 Mouse 승인 Idle 원본 SHA `5afebfa1f95ca5673162513fdea63b025546aa836550c0ceb17f0334659988f2` 바이트 동일 재사용, 보스 B/Field09 포함 타 신규 작업 금지.
+
+메인 아트 담당 `docs/art-new`는 **지금 바로 신규 PNG Attack/Hit/Defeat 총3장만 제작**; 4프레임별 컨택트시트/8FPS 반복미리보기/128px 비교/Manifest·SHA/ZIP CRC 동봉 실파일 납품→그때 Codex 독립 Unity 모션/Idle복귀/사망고정 최소 QA→바울 대표 최종 미술 승인→정식 전투 몬스터 등록/원본 Unity 적용 별도. 이번 Codex 기술보고는 Unity 실제 몬스터 기능 구현 또는 새 PNG 완성이 아님, Save/UserData/Editor/원본3546 보호 및 Push/main병합0.
+
+기획 정본 `문서/00_프로젝트/Chapter3_FrostFieldMouse_AttackHitDefeat_3Strip_ProductionOrder_20261020.md` (`docs/planning` commit `079e1e8bfc5cc0b35a53de228e9b9122ac31df53`), [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 신규 댓글. 메인 아트 담당 세션에 복붙 지시 1회 전달 필요, **Codex에게 같은 조사 중복 발주 금지**. Field09 B Glow 격리통합39PASS/0FAIL·원본적용 PR승인 대기 별개.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 서리들쥐 A 전투 스프라이트 제작 우선
+
+바울 대표: 두 Idle v1의 Codex Unity14PASS/0FAIL 보고 뒤 “좋은데. 전투 스프라이트는? 쥐는 빨리 만들어야지 되는거 아냐?” → **서리들쥐 A를 Chapter3 첫 전투 몬스터로 우선**. 메인 아트 담당에게 곧장 임의 4x4를 그리게 하지 않고 **Codex 기존 MonsterDefinition/MonsterSpriteSheetAnimation/Ch2공식 시트/전투 UI를 읽어 최종 Attack/Hit/Defeat 계약**(시트 또는 독립 strip, spriteRects, 4프레임/FPS·재생/복귀·명시적 frames, PPU512/Pivot 하단중앙·발 접지·scale) 확정 지시 후 실제 쥐의 나머지 전투 3모션만 빠르게 발주. 기존 승인 Mouse 1포즈 SHA `0516914d...` 및 Idle Sheet SHA `5afebfa1...` 보호, 보스 B 전투3모션은 후순위, 이미 작업 중인 아트 담당에게 Idle 재지시하지 않음.
+
+기획 `docs/planning/문서/00_프로젝트/Chapter3_FrostFieldMouse_FirstCombatSprite_Contract_Preflight_20261020.md` commit `d2f4e2964b24b40bf6928cc9d16dd7d26b0b5890`, Issue #30 댓글. 이번 Codex는 **문서/기술확정만** 허용; 원본 Unity/Editor/Save/UserData/Main 직접 Push·병합 금지. 나머지 Field09 B Glow 격리 통합39PASS 후 원본 적용승인 대기는 별개 작업.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 신규 몬스터 Idle 2종 실제 격리 Unity 14PASS/0FAIL, 대표 모션 승인 대기
+
+바울 대표 전달 Codex 최종 Idle v1 QA 보고: 서리들쥐A·설빙의 폭군B 모두 구조/기술PASS·**시각/모션PASS 권고**, 4×512×512 8FPS 0.500초 루프, Frame00 정적 승인 1포즈 픽셀 동일, 발 접지/크롭·03→00 자연스러움, **격리 Unity14PASS/0FAIL**. 서리들쥐 꼬리/앞니/발톱과 128px 야생성, 폭군 흉곽/어깨·긴 팔의 미세움직임·보스 체급 유지. Codex `codex/chapter3-idle-v1-review-20261020`, QA `1b9ad951`, 인계 `3ef27f34`. 사용자 PC 원본 Unity/Save/UserData/Editor·정적1포즈 보호, Unity 원본등록/Push/main 병합0.
+
+실물 ZIP `F:\Downloads\Limitless_Chapter3_FrostFieldMouse_FrostTyrant_Idle_v1.zip` SHA256 `6c01e55c147ab57147c767f43503553164197cc037a3834ecd2d15d10d96a23c`; Mouse Sheet `5afebfa1f95ca5673162513fdea63b025546aa836550c0ceb17f0334659988f2`, Tyrant Sheet `9d9b8d05be1813c013a5d784d749ce2d8ef751541ac36ce90712f3255cb53f43`. 신규 아트 보고 `docs/art-new/Chapter3_ApprovedAB_Idle_4Frame_v1_Production_QA_20261020.md`. **중요: Codex 시각 PASS 권고는 바울 대표 최종 모션 승인과 다름**, 현재 `USER_MOTION_APPROVAL_PENDING`으로 기록. 바울 대표가 실제 루프를 보고 승인하면 Idle 시트2 SHA 동결→향후 구현/Attack·Hit·Defeat 별도 단계 승인. 이미 신규 아트 담당에게 Idle 작업 지시했으므로 반복 지시 금지. 기획 계약 `문서/00_프로젝트/Chapter3_FrostFieldMouse_FrostTyrant_Idle_v1_IsolatedUnity_14PASS_UserMotionApprovalGate_20261020.md` (`docs/planning`, commit `bd7bee163cbb8b6c80be58b6309f87fcf0953767`), [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 댓글 기록.
+
+**별도 Field09 상태:** B 파생 Glow 승인은 이미 받고 격리 통합39PASS/0FAIL, 사용자 원본 Unity 안전 적용 및 main PR병합 승인 대기는 별도. 이 보고를 Field09 승인 답변으로 간주하지 않음.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-20 Field09 B안 격리 Unity 통합39PASS/0FAIL, 본게임 원본적용/PR 승인은 별개
+
+바울 대표 Codex 보고: 최종 승인된 5 PNG를 동일 SHA로 격리 등록하고 파생 Glow **신규 PNG/.meta/GUID** 연결/Glow Sprite 참조 **1곳만** 교체. Branch `codex/field09-derived-glow-b-integration-20261020`, 승인기준 commit `77978aa1`, B연결 `913eceb7`, QA 보고 `b04c42e7`; 신규 Glow SHA `64529ce564c05deda576f7bb151fa6426c22c006009b073c76a59d7b5775ab48`. 3 GameView 붉은띠·가이드 제거/내부 열기·조사/Missing Sprite0/Collider·격리 Save/Continue 변경분 **39PASS/0FAIL**. 과거 A/B34 및 과열UI10은 재검사 없이 이력 재사용. 원본3546/공식 Glow/meta/GUID/Save/UserData/원본 Editor 전부 보호, **original local main 적용0 / remote main Push/merge0**.
+
+B는 바울 대표가 전 턴에 **최종 미술 승인**했으며 이번 보고는 격리 적용 성공만 입증. 원본PC Unity 디스크 적용 및 별도 PR main merge는 명시적 승인 필요. Field09 미완료 다른 소품(HeatVent/Spire 등)은 자동 완료 아님. 기획 정본 `문서/00_프로젝트/Field09_B_DerivedGlow_IsolatedIntegration_39PASS_OriginalApplyGate_20261020.md` (`docs/planning`, commit `156b96eb76e0bbc2a97066205fab4caddde2182d`). Issue [#38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 인계 댓글. 대표에게 **원본 Unity 안전 적용 + PR 준비 여부**를 묻되 실제 PR 병합까지 자동 승인으로 해석하지 않는다.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-20 Field09 B 파생 Glow 최종 승인, Codex 격리 Unity 구현 착수
+
+바울 대표가 기획 질문 “B안(별도 파생 Glow)을 최종 미술안으로 승인하시겠습니까?”에 **“승인”** 답변. **B 파생 Glow 미술안 채택/격리 구현·DeltaQA 착수 승인**, A SpriteMask는 PASS 기록만 유지하고 미선택. Codex A/B branch `codex/field09-glow-composition-ab-20261020`, QA `68855edd`, 인계 `453736cb`, B 포함 두 안 모두 실 GameView 3비율 시각 PASS·Delta34PASS/0FAIL+과열UI10PASS; 성능은 측정0. 기존 Glow 원본 PNG/meta/GUID 보호·Approved Sample3 Base/CrackedOverlay/Slab + Phase2 Cliff v2/Fissure Edge v2 SHA 보존. **신규 B Glow 별도 asset+GUID를 도입하고 격리 Field09 Scene의 해당 Glow Sprite 참조 최소 교체**; 기존 개별 art asset 조합 시 본게임 공식 Phase2 완성 여부 분리. Codex 별도 `codex/field09-derived-glow-b-integration-20261020` 격리 worktree에서 실제 구현·동일 3 GameView+미니 기능 Delta 검증하되 **원본 PC 에디터/dirty/Save/UserData 및 원격 main 직접 적용/Push/병합 금지**, 보고 후 별도 승인. 원본 Glow 다시 그리기·Mask 추가·리뉴얼 새 그림 보완 불필요. Stage2 다른 환경 소품까지 완성했다는 주장은 금지.
+
+기획 실행 정본 `문서/00_프로젝트/Field09_B_DerivedGlow_UserApproval_ImplementationOrder_20261020.md` (`docs/planning`, commit `afc1425c22f9f7700d787d1ee7fe48918515bd06`). GitHub [Issue #38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 승인/실행댓글 기록. Codex에 복붙 지시문 1회 전달. Chapter3 메인 아트 Idle2 2048×512 시트 제작은 기존 지시 유지, TTS/SFX/영상 보류.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-20 Field09 Glow A/B 둘 다 실제 GameView 시각 PASS, B 파생 Glow 기술추천
+
+바울 대표 Codex QA 전달: A SpriteMask와 B 별도 파생 Glow 모두 붉은 띠/가이드 제거 PASS, 과열·조사 내부 가독성 PASS, 다른 Renderer 부작용0. B안은 기존 Glow 내부 RGB/필요 Alpha 약99.9% 유지하면서 **추가 Mask가 없어 단순 Sprite 참조 교체만 필요**. 동일 실제 3 GameView, A/B 변경분34PASS/0FAIL 및 공통 과열 위험 UI10PASS. **성능 측정은 하지 않았음**. Codex `codex/field09-glow-composition-ab-20261020`, QA `68855edd`, 인계 `453736cb`. 승인 Base/Overlay/Slab + Phase2 Cliff/Fissure 원본, 기존 Glow PNG/meta/GUID, Save/UserData/Editor 보호, 원본 Scene 변경/Push/main병합0.
+
+**기획은 B 기술 방향 추천, 그러나 바울 대표 B 파생 Glow 원화·실제 최종 적용은 아직 명시적 승인받지 않았음.** B 후보 PNG/GUID/Alpha SHA와 동일 화면 확대 비교·참조변경 범위를 Codex 기존 격리 결과로 대표에게 제시 → 미술 승인 → 이후 별도 코덱스 최소 Scene 참조 교체 및 안전 QA → PR/main 승인 순. A도 PASS한 대안으로 기록, 리뉴얼 담당은 기존 PNG 재작업 없이 대기. 신규 Chapter3 메인 아트 Idle2 제작은 별도 진행.
+
+정본 `문서/00_프로젝트/Field09_Glow_AB_VisualPass_BDerived_Recommendation_ApprovalGate_20261020.md` (`docs/planning` `1195e39c2f1d7d7dc43f90b1d5ac41efa2f30b84`). Issue [#38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 업데이트.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-20 Field09 Phase2 Cliff PASS·Fissure+Glow 합성 FAIL, 기술 후보 비교
+
+바울 대표 Codex 검수 스크린샷: Field09 Phase2 `Limitless_Field09_Redesign_Phase2_Pilot_Fix_v2.zip` 구조 ZIP/PNG/CRC PASS, 격리 Unity 기술19 PASS/0 FAIL, **Cliff v2 하단 접지 시각 PASS**, **Fissure Edge v2 단독 외곽 매트 시각 PASS**, 오직 **원본 Fissure Glow 결합에서 윗/오른쪽 붉은 띠/가이드 잔흔 시각 FAIL**. 원인은 Glow-Edge alpha 형태 부조화와 원래 Mask 없는 Renderer 조합; Glow sorting -7이 Fissure -8 앞쪽, 정렬 반전만으로는 해결 못함. Codex `codex/field09-phase2-fix-v2-qa-20261020`, QA `16c1fb92`, 인계 `fe0b412d`. original source3546+ Save/UserData/approved3+Glow/meta/GUID 보호, 공식 Unity 적용/Push/main 병합 없음.
+
+**기획 판단:** 리뉴얼 담당 Cliff/Edge v3 추가 제작 **중단**, 전체 환경 그림 재수정 금지. Codex 격리 기술 비교만 (A) Edge 기준 SpriteMask로 Glow 제한, (B) 공식 Glow 바이너리 변경 없이 새 파생 Glow sprite alpha를 Edge에 맞게 제작, 3 GameView 확대/과열·조사 가독성/Sorting side effect/Save 기능 비침범을 비교해 가장 안정적인 한 옵션 권고. Original Scene/Glow/승인 PNG 전부 불변; A/B 후보 미술승인 및 정식 적용은 바울 대표 후속 결정. 변경분 QA만, 기존30/17/92 전수 반복X.
+
+정본 `문서/00_프로젝트/Field09_Phase2_FissureGlow_CompositionRootCause_And_PrototypeGate_20261020.md` (`docs/planning` commit `222a9e42303c4e285eeed3d67a7be6c4654b0863`); [Issue #38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 업데이트. Chapter3 메인 아트 Idle2 제작은 별도 `docs/art-new` 작업 유지, 다른 담당 재지시 금지.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 Idle 기술 Lock + Field09 Phase2 Fix v2 납품
+
+바울 대표 Codex 캡처: 서리들쥐 A/설빙의 폭군 B Idle 애니메이션 기술 계약 최종 **2048×512 1행×4프레임(각512×512), 8FPS 0.5s loop, PPU512, Pivot(0.5,0) 발 중앙, 우향1, VisualScale A1/B3, UI 실제 알파 실효 A≈102×80/B≈307×305**. Codex `codex/chapter3-ab-idle-contract-20261020`, 계약 `b1793f85`, 인계 `cfed20a8`, 원본 PNG2 SHA 검증·원본 Unity 변경 없음. `docs/art-new/Chapter3_ApprovedAB_Idle_Animation_Technical_Preflight_20261020.md`의 이전 조사값 PPU314·1256×314은 **최종 제작 계약이 아님**. 메인 아트는 기존 승인 1포즈 PNG2 보호, 새 Idle 실제 시트 2장만 제작→비교 미리보기/ZIP QA→Codex 간단 반복 모션 확인→사용자 미술승인. Attack/Hit/Defeat·다른 캐릭터 제작 금지.
+
+동시 `F:\Downloads\Limitless_Field09_Redesign_Phase2_Pilot_Fix_v2.zip` 리뉴얼 보고 수령. ZIP SHA `0e4b7bfb3784b5b97a4a719c669f9564f502d67e88c2096d32475fa69a6876c8`, Cliff v2 `ad995f3c...`, FissureEdge v2 `c3dc0c13...`. `docs/art-renewal` v2 파일QA PASS지만 **기존 Glow sorting -7이 Edge -8보다 앞에 있어서 붉은 띠 시각 FAIL 가능성 유지**. Codex만 안전 격리 Unity에서 Cliff 발치 매트/Edge 외곽/기존 Glow 겹침 3비율 Delta QA. 시각 Fail이면 코드/Material/Mask 원인 분리, 기존 Glow·승인 Sample3 3종·원본 3546/Save·UserData 보호, 기존 QA30/17/92전수 재실행 금지. Phase2 원본 Unity 공식 적용/main병합 계속 HOLD. 리뉴얼 신규 다른 그림 제작은 결과 전 보류.
+
+기획 실행 정본 `문서/00_프로젝트/Chapter3_Idle2_And_Field09_Phase2Fixv2_Execution_20261020.md` (`docs/planning` commit `79dc53851cf5f462b8f0b3d598c113c919fe768e`); Issue [#30](https://github.com/HappyPaul812/Project-Limitless/issues/30), [#38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 현재 인계 댓글 기록. 세션 간 자동전달은 아님. 사용자에게 담당별 1개씩 지시문을 복붙하도록 제공. TTS/SFX/영상 기타 제작 보류.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 서리들쥐 A / 설빙의 폭군 B 1포즈 v2 미술 승인
+
+Codex QA 스크린샷: ZIP/CRC/Manifest/PNG2 PASS, 동일 Chapter2 공식 몬스터/보스 표시 비교에서 서리들쥐A=PASS(128px 꼬리/앞니/발톱·긴장 체형), 설빙의 폭군B=PASS(큰 앞손/흉곽/보스 체급·위압), 이전 v1의 3배 확대 한계 해결 권고. Codex 검수 `codex/chapter3-ab-v2-art-review-20261020`, QA `3f23d1b4`, 인계 `7f9ca843`. 바울 대표가 보고 **“좋네”** → **고해상도 A/B 방향 및 재작업 1포즈 v2 PNG2 미술 승인으로 기록**. 미술 수작업 드로잉의 제작 소스는 독립 검증 불가능하다는 기술 caveat 보존.
+
+승인 실물 `F:\Downloads\Limitless_Chapter3_ApprovedAB_1Pose_ArtRework_v2.zip`, SHA256 `0b1a3711bed9616b828c83e51070f35ed161e2d8a4d93de9cb949d318dc46919`; PNG A `0516914ddad36af5854065d66d01b9664329aa89eea8b394480eed6af92e32c2`·PNG B `f1a3c5f91a5fef69cd881e27b578c32253d0124d5d8628a8ca748f7479333830`. 기획 승인 정본 `문서/00_프로젝트/Chapter3_ApprovedAB_1Pose_ArtRework_v2_UserApproval_20261020.md` (`docs/planning`, commit `f828f4d271a50ea6ab5c583b5c8c56db23fef8d9`) 및 [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 업데이트. **1포즈 자체만 승인**이며 기존 v1은 ART_HOLD; F1/마을 환경 PNG10·전투 애니메이션/스탯/Runtime/Unity scene/Push/main병합은 별도 미승인. 다음은 기존 Animator/PPU/Pivot/Frame 계약 실측 후 승인된 2캐릭터의 Idle 짧은 파일럿 제작·검수 단계만 발주 검토. Chapter1·2 Field09 리뉴얼 수정과 업무 분리. TTS/SFX/영상은 바울 대표 보류.
+
+---
+
+# 기획 최신 인계 — 2026-10-20 Field09 Phase2 Pilot v1 기술 PASS / 실화면 시각 FAIL 2종
+
+바울 대표 Codex 검사 결과: `F:\Downloads\Limitless_Field09_Redesign_Phase2_Pilot_v1.zip` (SHA `f12b0569...`) ZIP/PNG/Manifest PASS, 격리 Delta30PASS/0FAIL/3 GameView. 그러나 **Cliff**는 가이드 삭제 후에도 하단 회백색·홍흑색 매트와 접지 오류, **Fissure Edge**는 외곽 매트와 기존 Glow 위 붉은 띠 노출·형태 불일치로 시각 FAIL. Codex QA `f2ad1781`, 인계 `89319b10`. 기존 승인3 PNG SHA 동일, 원본 3546/Save/UserData 보호, 공식 원본 적용·Push/main병합0. 기획 문서 `문서/00_프로젝트/Field09_Phase2_Pilot_v1_VisualFail_CliffFissure_TargetedArtFix_20261020.md` (`docs/planning`, commit `6e5e645cee5aed53db0152ace0a3623444cd2f4e`), Issue [#38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 댓글 반영.
+
+다음은 **리뉴얼 담당이 Cliff/Fissure 두 신규 PNG만 매트 제거·자연스러운 접지·기존 Glow와 형상 정합**으로 v2 제작해 실제 ZIP/SHA/합성 Preview 제출. **기존 Glow는 임의 수정 금지**, 변경 없이는 안 되면 사용자 승인을 위한 별도 원인분석 보고. 기존 승인3/나머지 소품/Cracked02 보호, Phase2 전체 양산 HOLD. 실제 v2 납품 이후 Codex는 2개만 시각 Delta QA(기존30/17/92 재활용)→대표 미술 확인 후 다음 Phase. Chapter3 신규 아트 재작업 별도 담당 docs/art-new, BGM 승인 별개.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 서리들쥐 A/설빙의 폭군 B 1포즈 시각 HOLD
+
+바울 대표 Codex 정적 실제 게임UI 배율 비교 QA 보고: ZIP·PNG 구조 PASS, 그러나 **1포즈 미술 수정 권고·합격 보류**. 서리들쥐 A Source75×49→x3 Nearest로 둥근 마스코트 실루엣/128px 야생성·앞니·꼬리 미약; 폭군 B Source142×121→x3 Nearest로 두개골·뿔은 보이나 흉곽/발톱 조형 밀도 낮고 Ch2 승인 보스의 체급·위압과 불일치. Codex QA commit `d2893591`. 바울 대표가 이전에 선택한 **고해상도 디자인 방향 A·B 자체는 유지**, 픽셀아트 1포즈 v1을 자동 승인하지 말 것. 메인 아트 담당에게 **2장만 1포즈 진짜 세부 픽셀 신규 드로잉**(기존 source 단순 확대·56색 자동양자화 재포장 금지) 후 128px 및 Ch2 공식 렌더 배율 비교판 제출 요청. 기존 F1·서릿길 마을 환경10종 보호, 7종 몬스터 전체 애니메이션/Unity 구현/Push/main 병합0.
+
+기획 검수·재제작 정본 `문서/00_프로젝트/Chapter3_ApprovedAB_1Pose_CodexVisualHold_ArtRework_20261020.md` (`docs/planning`, commit `7f1eef189788d7b9ba2f9e60062bef43ae11fd61`); 담당 [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 댓글 기록. 실제 v2 PNG2 납품→Codex 최소 정적 QA→바울 대표 미술 직접 승인 후에만 애니메이션 발주. 기술PASS/디자인방향 선택/미술승인/Unity Import은 독립 상태.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-20 Field09 Sample3 대표 미술 승인, 잔여 아트 Phase2 착수
+
+바울 대표: OverlayFix v2 Codex 격리 GameView 3화면·Delta17PASS/0FAIL 보고 후 **“봤는데 좋아.”** 사용자 미술 승인. 합격 PNG는 BaseGround v1 `1bd8a614988ee182640a71b9771646c3009545140e0522a3290ee3b0e3138203`, CrackedOverlay v2 `0147e6aff58e5304fd71e7474a9c018958a4234ec4c2dc2cf7382a905a7be9b7`, ObsidianSlab v1 `dfa3abb2c6c86abc3f94baa213428038a1c15b4c963e76fef69491a6deb09692`. 이전 오버레이 v1·Field09 최소보완 v1/v2 시각FAIL은 이 승인에 포함하지 않음. 기존 3종 재제작/변경 금지. **샘플 승인 ≠ 전체 Field09 완료 ≠ 원본디스크/remote main 적용.** 현재 고립된 Unity 시각QA PASS, 원본 적용0.
+
+승인·후속 정본 `문서/00_프로젝트/Field09_Redesign_Sample3_UserVisualApproval_And_Phase2_20261020.md` (`docs/planning` commit `05cbec14fb50503637abe48ee01baff5ea3b9af7`). 수정 이슈 [#37](https://github.com/HappyPaul812/Project-Limitless/issues/37) 완료 처리, 잔여 환경 Phase2 [#38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 별도 개설. 리뉴얼 담당은 실사용 나머지 6소품 후보 KEEP/REDESIGN 판정 후 필요한 것만 새 오리지널 PNG·ZIP/QA로 납품; `Ground_Cracked_02` 미사용 시 HOLD. 처음에는 대표 타입 2~3개 보수적 시각 샘플 우선, 나머지 무분별 양산 금지. Codex는 새 납품에서 이전 Sample3 Delta17/Main18 92를 반복하지 않는 좁은 QA만 수행. Chapter3 신규 아트·BGM 별개 진행, TTS/SFX/영상 대기.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 메인 아트 파일럿·BGM 2곡 보고 검토
+
+바울 대표가 F: 드라이브의 `Limitless_Chapter3_ArtNew_F1_Frostway_Pilot_v1.zip` 납품 경로를 공유하고 BGM 최신 보고도 확인 요청. `docs/art-new`의 `Chapter3_ArtNew_F1_Frostway_Pilot_Production_QA_20261020.md`와 `docs/bgm`의 `Chapter3_BGM_Pilot_2Track_Listening_QA_20261020.md` 독해: 신규 아트 PNG12(북부 F1 6·서릿길 마을4·KeyArt2) 21항목 ZIP SHA256 `6a22ac4e...`, 기술 PNG/ZIP 오프라인 PASS 보고, **원본 Windows ZIP은 이 기획 세션에서 직접 열거나 눈으로 미술 검수하지 못했으며 Unity 기술 Import·사람 미술 승인 대기**. ZIP/PNG GitHub 바이너리 미등록. 제작법은 Pillow 결정론적 픽셀드로잉이며 기존 Chapter2 스타일/월드사이즈와 실제 비교 필요. BGM 곡2: F1 `Where_the_Grass_Bends.mp3` 74.24s, 마을 `Hearth_in_the_Low_Valley.mp3` 72.62s, BGM 담당자가 각각 곡 역할/구성 PASS 추천; 다만 둘 다 처음·끝 무음/종지로 **원본 MP3 무편집 직접 Loop는 FAIL**, 사용자 청취 승인 전. 실제 MP3는 다른 BGM 세션 업로드에 있어 이 기획 세션이 독립 청취한 것이 아님. Unity 음원 적용0. 구체 내용 `문서/00_프로젝트/Chapter3_ArtF1_BGM2_Pilot_Review_Gates_20261020.md`, `docs/planning` 커밋 `1e79835340dd3ee76909a39e4dac047aba522500`.
+
+**대표 현재 순서:** Chapter3 신규 아트·BGM 담당만 우선 활동. TTS/SFX/영상은 보류. 후속은 Codex가 사용자 로컬 ZIP을 격리 환경에서 실제 Preview/Gallery·SHA/PPU/타일/퀘스트동선 비교(기존 QA 반복 금지) → 바울 대표 미술 판단; BGM 두 곡 사용자 원본 청취 → 곡 승인 시 루프별 수정본 제작 → Unity에서 대사와 믹스/동일 scene 검증. 실제 아트/음악 승인, 바이너리 전달·원본 적용/PR/main 병합과는 별개.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 병렬 착수·각 팀 Issue #30~36
+
+바울 대표: “챕터3는 설계 끝이면 각 담당한테 작업 맡겨야지?” GitHub latest 설계 검토 결과 Chapter3 방향/Chapter3 Main22~29 1차 서사/북부 필드5+보스1/서릿길 마을(Main23)/Main24 스킬상점·한기 대응/냉기3상태·온기의 화로·설빙의 폭군/형제애 중심 서사는 부서별 작업 **시작 가능**. 다만 `STORY_V1_PROPOSAL`, 정식 Quest/Dialogue/Monster/Scene IDs/좌표/금액·턴계수는 production lock **전**이다. 지금 신규 아트·BGM·SFX 소수 시안 제작, TTS 캐스팅만(API0), Codex Main22 연결·PPU/ID 읽기전용 감사, 영상 스토리보드, 기획 Main22~24 정식 ID/대사 초안 각자 병렬 진행. 전체 Unity 구현·TTS API·Main 병합 임의 착수 금지.
+
+기획 공통 발주 문서 `문서/00_프로젝트/Chapter3_Team_Parallel_Production_Kickoff_20261020.md` (`docs/planning`, commit `8fd341cbca2ff5fd4bfefbd46d3ebde8afb5e19c`). GitHub 작업 이슈: 신규 아트 [#30](https://github.com/HappyPaul812/Project-Limitless/issues/30), BGM [#31](https://github.com/HappyPaul812/Project-Limitless/issues/31), TTS API0 캐스팅/스크립트 준비 [#32](https://github.com/HappyPaul812/Project-Limitless/issues/32), SFX [#33](https://github.com/HappyPaul812/Project-Limitless/issues/33), 영상 [#34](https://github.com/HappyPaul812/Project-Limitless/issues/34), Codex read-only preflight [#35](https://github.com/HappyPaul812/Project-Limitless/issues/35), 기획 ID/Dialog release [#36](https://github.com/HappyPaul812/Project-Limitless/issues/36). 모두 담당 브랜치의 작업 목록이며 각 ChatGPT 세션이 **자동 통지를 받거나 작업을 시작한 것으로는 볼 수 없음**. 바울 대표가 담당 세션에 해당 Issue 번호/정본 확인 한 줄만 전달하면 됨.
+
+Chapter1·2 리뉴얼 담당 `docs/art-renewal`은 기존 Field09 3샘플/Slab QA 및 몬스터·Wolf 품질 관련 작업만 유지하며 Chapter3 신규 아트는 `docs/art-new` 관할. 최신 field09 환경 샘플 report GitHub PNG3 ZIP 미등록/Unity 검증 전으로 별개, Chapter3로 권한 확장 금지.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-20 Field09 새 미술 3종 Codex 기술인계 완료, 실제 PNG 샘플 제작 진행
+
+바울 대표 Codex 보고: 기존 Field09 visual fail 원인은 `PNG 경계 무늬 Tiled 반복`, `불투명 지면 간 접합`, `6종 소품 흰 가이드 픽셀`이며 실제 Scene 오브젝트 대응도 정리함. 공통 `512×512 RGBA / PPU128 / 중앙 Pivot`, 새 Base Ground `(0,0), Tiled21×15`; 새 Cracked Overlay `(-6,0), Tiled9×15`; 대표 Slab Prop `(5.2,1), 화면 약2×2`. Codex 로컬 문서 커밋 `0dcc13ab`라고 보고, GitHub Push0. 본 기획 세션이 로컬 인계서 자체를 직접 검사한 것은 아님.
+
+바울 대표의 "그렇게 해" 지시에 따라 **기존 Field09 v1/v2 픽셀보수 중단 + 화면 환경 아트 신규 제작** 확정. 다만 Main18 퀘스트13·과열/세린·몬스터/Collider·Spawn·Save 및 원본 공식 PNG/meta/GUID 보호. 새 아트 **Ground Base1·Cracked Overlay1·Slab1 = 총3개만 먼저 실제 PNG로 제작**, 이전 v1/v2 접합·흰선 실패를 피하도록 원본을 새 설계. 이 3개 ZIP 납품→Codex 격리 Unity 동일 카메라 Tiled 반복/Overlay seam/Guide/실스케일 Delta QA→바울 대표 미술 승인 이후 나머지 전체 환경으로 확대. **추가 Codex 전체 QA 반복 금지**, 기존 기능40+92PASS 역사 재사용. 신규 통합/원본 Scene 변경/PR/main병합은 아직 승인 안 됨.
+
+기획 정본: `문서/00_프로젝트/Field09_Art_Redesign_Sample3_Technical_Contract_20261020.md` (`docs/planning`, commit `44a4c97aebccb9d690f2e288634e86d7fee09b40`). 기획 문서만 GitHub에 기록함, 실제 새 PNG3 제작 및 담당 리뉴얼 세션에 자동 전송은 아직 실행 안 됨. 다음은 리뉴얼 담당에게 복붙용 샘플 3종 제작 지시 전달.
+
+---
+
+# PLANNING 인계 — 2026-10-20 Field09 v2 시각 재실패로 '보수 중단·미술 교체' 방향 권고
+
+바울 대표 Codex 보고: Field09 v2 GitHub ZIP SHA/CRC/Manifest/PNG8 PASS, 격리40PASS/0FAIL, Main18 델타 기존92PASS 재사용. **하지만 실제 화면 회색 반복띠6/소품 흰 가이드선6종 그대로 남아 visual FAIL, 원본 Scene 적용·Push·merge0**. 따라서 v1/v2의 같은 자동 픽셀 보완 v3 반복 중단을 권고. 바울 대표 “이럴 바엔 다 엎고 다시 하는게 더 안낫니?” → **기획은 Field09 환경 아트 새 제작이 타당**하다고 의견 제시하되, 사용자 최종 제작 지시는 아직 요청 중. 맵·퀘스트13·과열/몬스터·Spawner/Save·기존 공식 PNG/meta/GUID는 보호하고 **표시 환경 원화만 별도 새 에셋**으로 교체 계획.
+
+선행 QA는 Codex가 화면회색띠/흰선이 실제 PNG 자체에 있는지 또는 Renderer Tiled UV/Material/Overlay/추가 중복 오브젝트 원인인지 **1회 읽기 전용 분류**. 새 원화는 **Ground Base, Ground Cracked Overlay, 대표 소품 각1개 = 총3개 먼저** 제작→격리 Unity 동일 카메라/3비율 미술 QA→이상이 사라진 후 나머지 공식 환경만 제작. 전체 PNG 양산 후 또 6+6 실패하는 낭비 금지. 신규 `main` commit/Push·원본 Scene 삭제 금지. 기획 제안 정본 `문서/00_프로젝트/Field09_Art_Redesign_After_v2_VisualQA_Failure_20261020.md` (`docs/planning`, commit `cc3579aaa0e668aedf874e8e788b646c22db07ee`). 문서 기록만 완료, Unity 원본/이미지 파일 생성·리뉴얼 세션 작업 자동 전달은 아직 아님.
+
+---
+
+# 기획 최신 인계 — 2026-10-20 Field09 GitHub 공식 PNG10 확인, v2 실제 작업 지시
+
+바울 대표 요청: “Field09 미술 원본은 깃허브에 없으면 없는거니까 알아서 지시해줘.” 실제 최신 GitHub `main` `12c69c72f9c09f716ee6242418b1d62f83a4a0d2` 폴더 `Unity/Client/Assets/_Project/Resources/Main18/Environment/`에 **공식 PNG10종과 각 .meta가 전부 존재**하고, v2 필요 수정 대상8종의 파일 크기/블롭을 GitHub Contents에서 확인. 이전 리뉴얼 세션이 자기 컨테이너에 원본 PNG가 없다고 보고한 것은 GitHub 파일 부재가 아닌 **컨테이너/바이너리 다운로드 도구 접근 제약**. 더 이상 원본없음 핑계로 보류하지 않음.
+
+새 실행 정본 `문서/00_프로젝트/Field09_OfficialPNG_SourceConfirmed_ArtV2_ExecutionOrder_20261020.md` (`docs/planning`, 커밋 `c9a1c0a6a20e323d1d0b45689b6e896fd578f4d8`). **리뉴얼 담당은** GitHub PNG8을 바이너리로 받아 실제 수정→지면 Base·Cracked01 회색 반복띠6/Overlay seam, 나머지6개의 흰 가이드선 국소 제거→**PNG8 및 표준 검증 ZIP v2 직접 납품**. 원본 및 .meta/GUID/SHA, AshPatch·Cracked02 보호. tool byte 접근만 막히면 **Codex 단1회 읽기 전용 PNG8+Unity visualFAIL 스크린샷 추출**을 요청, 사용자 업로드 요청 금지. 실제 GitHub 원본이 없는 경우만 신규 복원 원화 후보인데 **지금은 원본 존재 확인됨**. 과거 Field09 v1 정상 ZIP 재포장/Tech40PASS/Main18 92PASS에도 실제 게임 Visual FAIL 지속·원본 적용 제외. v2 납품 후에만 Codex 최소 UI/GameView Delta QA와 조건부 원본 반영. 2026-10-19 EOD remote main/original local main SYNC_COMPLETE는 승인 자산들에 한하며 Field09 v2는 미포함. 몬스터·늑대 v3 KeyArt 사용자 미술승인 및 전체 시트 제작 대기 유지.
+
+기획 문서 작성/인계만 GitHub에 반영됨. 리뉴얼 챗 세션 간 자동 지시 전달 불가; GitHub 정본/Issue 및 복붙지시를 담당에게 전달해야 수행된다.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-19 하루 마감 통합 / 원본 로컬 안전 동기화 요청
+
+바울 대표 명시 요청: “오늘은 여기까지 하자. 오늘 작업한거 다 합치고 로컬 동기화 해줘.” GitHub remote main `675988c9f2c5c507d9a696b0378be27c0bd3309b`; 현재 열린 PR0. **오늘 Codex 로컬 feature (Main09 음성27, Main10 음성18·NPC, Field06/07 B42 원본 적용)는 GitHub 원격에 브랜치가 없음** → 로컬 Codex 실행 없이는 직접 remote 병합·F:\ Windows 로컬 동기화 불가능. 본 기획 세션이 완료했다고 보고해서는 안 됨. remote docs/planning `87ee095`(EOD 추가 전), art-renewal `bda2869`, tts `118c60f`는 main과 오래 diverge하므로 통째 병합 금지.
+
+승인된 Main09/10 음성 복구·Field06/07 B42만 선택 기능 통합, Main18/Field05/Main09 Quest 등 기존 PR #18~26 완료분 중복 금지. Field09 v1 정상 ZIP 재포장 및 기술40+delta92PASS라도 실제 **회색반복띠6/흰 가이드6 FAIL로 original 미적용**—손상/미술FAIL ZIP과 art asset은 main **제외**하고 보고서만 보존. 독사/Wolf v1 반려,v2 미술 보류,v3 KeyArt 사용자 승인 전이라 게임 적용 제외; TTS20/21 미등록22 및 Chapter3 신규아트도 미승인 적용 제외. 사용자 dirty/Untracked/Save/UserData·문서5 의미병합 고유 local SHA 보존. 원본 Editor와 active Play/포커스0. 승인 기능만 Codex 신규 격리 branch 통합 → PR·merge → original local safe sync (SAFE BLOCK 시 정직 보고), full QA 재검사 금지.
+
+마감 안전계약 정본: `문서/00_프로젝트/LIMITLESS_20261019_EOD_Merge_LocalSync_SafetyContract.md` (`docs/planning`, commit `be62f5c5969d0bd78fe733b8e66619333873fefe`). **현재 기획 문서화/인계만 실행됨. 원격 PR 병합, Windows 원본 local HEAD/index 동기화, 새 QA 실제 실행은 미실행**. Codex에게 계약 복붙 전달 후 합격 전 SYNC_COMPLETE 선언 금지.
+
+---
+
+# PLANNING 인계 — 2026-10-19 20:22 Field09 시각FAIL·리뉴얼 실제 작업 촉구
+
+바울 대표 Codex 마지막 보고: Field09 원래 잘못 만든 ZIP은 PNG8/내부3문서 바이트 보존한 **정상 표준 ZIP 재포장** 성공, 새 SHA256 6d3d866e75c696d451919d80789a89f12b429ac72f22d8e3f245a91bfc43a012, Python/Windows/.NET 해제 검증 PASS. 격리 Unity 기술40PASS/0FAIL, Main18 Delta92PASS/0FAIL이나 **실제 미술 시각FAIL(지면 회색 반복띠6, 소품6종 흰 가이드선 잔존)**으로 원본 Field09 적용을 보류한 올바른 판단. 리뉴얼 담당이 다음에는 ZIP 재포장 아닌 **8개 픽셀 자체를 실제 결함에 맞게 수정하는 v2 신규 ZIP**을 만들어야 함(기존 Main18 공식 PNG/meta/GUID 변경 금지).
+
+GitHub 리뉴얼 latest(커밋 b3dd5cb)와 correction 정본(3f3002c) 감사 결과 **독사와 늑대 Chapter2품질 KeyArt 2장 실물 납품 없음**, 이전 decorative 'LIMITLESS Monster Concept Art' 비교판의 하단 이미지가 실제 5종 공식 sprite/WorldSize 비교가 아니었다고 스스로 정정. 상태 V2_USER_QUALITY_HOLD, FULL_ANIMATION_NO, BearFox_HOLD. 요청을 문서로 재설정한 것뿐, 두 개의 완성 원화 제작 단계는 아직 미달.
+
+기획 신규 실행 정본 `문서/00_프로젝트/Field09_v1_VisualFail_And_MonsterWolf_KeyArt_Immediate_Art_Production_20261019.md` (`docs/planning`, 커밋 `33986b691edebb4b55a106b29ec1891eebfbd62c`). 리뉴얼 담당에게 실제 Field09 v2 정상 ZIP, VenomSnake_KeyArt_v3.png와 Wolf_KeyArt_v3.png 두 독립 원화를 **제작·납품 먼저** 요구. Codex는 이미 끝낸 ZIP/기능 검사 반복 금지; 리뉴얼 미술 v2 통합은 별도. 아트 담당은 `docs/art-renewal`만, main 직접 push/merge 불허. 이 기획세션은 문서만 작성, 타 세션으로 자동 전송한 것 아님.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-19 Field09 ZIP 무효/표준 재포장 + Snake/Wolf 고품질 기준 변경
+
+바울 대표 Codex 최신 보고: Limitless_Field09_ObsidianScar_Minimal_Fix_v1.zip은 로컬/GitHub SHA 같지만 ZIP 자체 32bit header byte order 오류로 Python/Windows/.NET 모두 열기 실패, 수기 복구로 실제 PNG8 해시·Manifest는 맞는 것으로 보고; Unity 새로운 QA·원본 Field09 적용 0. codex/field09-minimal-fix-unity-integration-20261019 오류 보고 커밋 008d32f18e96c4f04b53edb6a0993b2b29958332, 기존원본 4,339 SHA/UserData23 보호. 다음: 동일 PNG8 byte/SHA·기존 Manifest 유지한 표준 ZIP 새 archive SHA 재포장(Python zipfile/Explorer/.NET 세방식 CRC 검증)→유효하면 기존 Field09 격리 이미지/런타임 deltaQA→0FAIL 조건부 원본 적용. 손상 아카이브 원본 덮어쓰지 않고 별도 버전, PNG 변경 금지.
+
+바울 대표가 VenomSnake v2·Wolf v2의 지나친 픽셀 블록/Chapter2 공식 몬스터 대비 낮은 퀄리티를 지적. 리뉴얼 납품 문서상 v2는 코드 생성 픽셀 도형; 맹독뱀 32×32셀×4프레임, Wolf 64×40셀×6프레임, Chapter2 공식 그을음들개/열풍매 각 314×314 Sprite Cell. 해상도만 단순 비교/314 일괄 강제는 아니며 Chapter2 공식 아트급 실루엣·명암·해부학·광원·질감과 같은 World Size 렌더가 새 승인 기준. v2 미술 승인 HOLD, v2 단순 대형 확대 금지. 리뉴얼 담당은 뱀과 늑대 고품질 정지 Key Art 1장씩 Chapter2 공식 11~15와 동일 게임 스케일 비교로 먼저 보고→바울 대표 스타일 승인 후에만 뱀20/Wolf6 전체 시트 재제작, Bear/Fox 보류. 기존 자산 보호.
+
+정본 문서/00_프로젝트/Field09_Zip_Header_Repair_And_MonsterWolf_Chapter2_Quality_Gate_20261019.md (docs/planning, 커밋 6414d914d97ba8f5e64f41fc79a3e948c14a8ceb). 기획 문서만 직접 GitHub 기록, Codex·리뉴얼 타 세션 자동 전달/로컬 원본 Unity 실행은 없음.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-19 20:06 Field09 최소보완 ZIP 격리 QA 및 합격 시 원본 Unity 적용 승인
+
+바울 대표가 **“Field09: 별도 검수 및 Unity 적용하자”**고 명시 지시함. 기존 리뉴얼 `docs/art-renewal/문서/00_프로젝트/Field09_ObsidianScar_OfficialArt_MinimalFix_v1_Delivery_20261019.md`의 ZIP `Art_Deliveries/Limitless_Field09_ObsidianScar_Minimal_Fix_v1.zip`가 GitHub 담당 브랜치에 실제 납품돼 있으며, SHA256 `7dfa2417a8135e29e3e72c7d7921d3ade76fbedfdb376f764c09b02892296139`, 2,995,422B, PNG8개(512RG​BA)/13entries. 바울 대표의 기존 F 드라이브 파일도 후보이나 파일/해시 확인 전 존재 단정 금지. 원본10종 중 Ground2 반복/교차 seam와 Cliff·FissureEdge·FissureGlow·HeatVent·Slab·Spire 흰 가이드 6종만 격리 Unity Game View 3해상도 실제 비교, Main18 과열13목표·몹/세린/Collider/Save/Field08↔09 변경 범위 delta QA. **QA 합격과 원본 사용자파일·기존 공식8 PNG/meta/GUID/Save SHA 보존이 확인된 경우에만 Unity 원본 안전 적용 허가**, 불합격이면 멈춤. 개별 새 Asset+Scene 참조 원칙으로 기존 공식 PNG 원본 byte 보존, 원본 Editor/Play/포커스 무조작. 기존 Main18 500PASS 전수 반복 금지. GitHub main 직접 Commit/Push/병합 금지.
+
+정본 `문서/00_프로젝트/Field09_MinimalFix_v1_IsolatedQA_And_OfficialApply_Authorized_20261019.md` (`docs/planning` commit `ac6fc427485fba84cc94ba3f25cb3746ffc9cdb2`). Field09 납품 문서 상 USER_DELTA_VISUAL_REVIEW_PENDING은 과거이며 **QA 진행·조건부 적용 승인**으로 업데이트, 실제 사용자가 8장 각각을 청취/그림확인했다고 임의 주장 금지. Main10/Field06/Field07 이미 원본 적용 완료 보고 보호, 뱀/늑대 v1 반려·v2 작업은 리뉴얼 담당 별도 유지. 원본 Unity 검증/코드변경·main 병합은 이 기획 세션에서 실행하지 않았음.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-19 Field06·07 원본적용 완료·Field09 8종 국소 보완 승인 대기
+
+바울 대표 Codex 최종 통합 보고: **Field06 v1.1·Field07 v1 B42 원본 디스크 반영 완료**, 변경분 공통 **124 PASS/0 FAIL**. Field06 Ground49 빈틈 해결 유지, Arbel→Field06 Spawn 0.455~0.47 편차는 **Player Collider 겹침으로 인한 안전 위치 보정** 원인으로 수정 완료, Field07 Runtime Ash7 불투명 사각형은 기존 투명 먼지 자산으로 제거, 선택 PNG 미사용. 이전 보고의 Field06 Spawn FAIL/Field07 1 FAIL/원본 보류는 **과거 상태**. Field08 공식9 PNG 변경 없음. Main10 승인 음성18 정식 연결/원본 적용164PASS 보호. 원본4,267파일 SHA/UserData23 보존, 활성 사용자 Original Editor Main15·16 전체 손플레이 검증 및 GitHub Push/PR/main 병합은 별도.
+
+Field09 `Field_09_ObsidianScar` 실제 화면 **지면 반복선+기존 공식 소품6종 흰 가이드선** 결함 Codex 검증. 리뉴얼의 이전 정적 감사에서는 결함 의심만 있었으나 이제 실제 시각적 노출 확인으로 업데이트. 기존 PNG10 중 **최대8종**(Ground_Base, Ground_Cracked_01, Cliff_Blocker, Fissure_Edge, Fissure_Glow, HeatVent, Obsidian_Slab, Obsidian_Spire)만 최소 픽셀/Seam 보완을 **기획 권고**. AshPatch·미사용 Cracked02 절대 보호, 다른 공식 아트 재제작 불허. **바울 대표 추가 제작 승인 이전에는 후보 PNG/ZIP 생성하지 않음**. 추천 ZIP `Limitless_Field09_ExistingArt_MinimalFix_v1.zip`, 수정범위/BeforeAfter/Manifest/변경 픽셀 QA 제공. 몬스터18·기본 펫3 감사 및 첫 비공식 몬스터1+Wolf1 파일럿 제작은 계획대로 리뉴얼 담당이 병렬 진행.
+
+정본: `문서/00_프로젝트/Field06_07_OfficialApply_Field09_LimitedArtFix_ApprovalGate_20261019.md` (`docs/planning`, 커밋 `8da9993d7f6e3a08dd95b462dd336d1b57d924ba`). 기획 문서만 작성, Codex/리뉴얼 담당 세션 자동 통지나 로컬 파일 변경 없음.
+
+---
+
+# PLANNING 인계 — 2026-10-19 몬스터·야수동료(펫) 오리지널 아트 리뉴얼로 제작 중심 전환
+
+바울 대표: “그럼 리뉴얼에서는 맵은 완료지? 다음 리뉴얼은 몬스터들이랑 펫으로 하자.” **환경 신규 PNG 제작 위주 단계는 마감/일시 중지**, 다만 전체 맵 Unity 완료 판정은 **아님**: Field06 Spawn0.455, Field07 Ash7 사각형1FAIL 및 두 지역 B42 원본 적용 보류, Field09 Ground/Guide 실화면 확인, Field10/11 최종 아트/QA 승인 여부 정본 확인 대기는 Codex 후속·보존. Field08 공식 아트 유지/추가제작0.
+
+GitHub main 소스 확인: `MonsterDefinitions` 18종, Chapter2 주요 11~15 등록 전용 공식 시트5종과 16~18 프레임 배열/보스 승인 자산, Chapter1도 별도 battle/monster 시트 다수. 기보유 자산은 승인/라이선스·실게임 표출을 분류해 중복 새 제작 금지. `BeastCompanionSystem.cs`의 `wolf/bear/fox`는 여전히 `Resources/CompanionAssaultValidation/{Wolf,Bear,Fox}_Run`을 현재 코드에서 사용하며 해당 README는 ThirdParty/ScratchIO AnimatedWildAnimals 소스를 기록(문서의 '전투 미연결'은 최신 코드를 우선). **펫 3종 오리지널화 우선 실 제작 후보**.
+
+기획 발주 정본 `문서/00_프로젝트/Chapter1_2_Monsters_And_Beasts_Original_Art_Renewal_Assignment_20261019.md` (`docs/planning`, 커밋 `286c23780762d91bf399f1ae8a11cd2dd994d2f1`). 리뉴얼 담당이 MONSTER18+PET3 실제 Resource/GUID/권리/승인/프레임 감사·대응표 → 이미 승인되지 않은 유효 교체 대상 몬스터1 파일럿 + **Wolf Run 오리지널 실사용 PNG 파일럿**을 병렬 제작·ZIP/Manifest/Animation 계약/QA로 납품 → 대표 미술 승인 후 Bear/Fox와 차기 몬스터 순차 확장. 펫은 사수/세린 포함 소유·100탈렌트 분양·동료의 습격·독립턴0/슬롯0/HP0·기존 MonsterPet 재사용 규칙 보호. Unity 정식 반영/Codex 검증/메인 병합은 별도 승인. Chapter3 신규 제작은 docs/art-new 담당.
+
+작업 담당 브랜치 docs/art-renewal, main 직접 Commit·Push·승인 공식 PNG 덮어쓰기 금지. 본 세션은 docs/planning 정본 작성까지만 했고 리뉴얼 세션에 자동 발송한 것은 아님.
+
+---
+
+# PLANNING 인계 — 2026-10-19 18:48 Main10 완료, Field06/07 B42 조건부·실패 해결, Field09 화면 감사
+
+바울 대표 Codex 통합 최종 보고: Main10 복구 승인 음성18 정식 StoryVoiceCatalog 연결·원본 디스크 비파괴 적용 완료; 추가164PASS/0FAIL, PCM/GUID/Next/무음/Continue 정상, 원본 보호 4,232 SHA/UserData23. 기능/격리 입력132PASS 역사결과 별도. 원본 활성 Editor 실제 손플레이·remote main병합은 별개.
+Field06 v1.1 ZIP 일치, 격리349PASS/0FAIL, Ground49 빈틈 해결 보고. 그러나 Arbel 도착 정식 Spawn 오차 **0.455유닛 FAIL**로 보존. Field07 v1 ZIP 통과, 격리 주행 **324PASS/1FAIL**+화면20PASS; 원인은 Runtime Ash7 `AshSoil_` 바닥 Sprite 복제 후 작은 불투명 사각형. 둘 다 원본 Scene 공식 적용·원격 main 병합 보류.
+**기획 B42 조건부 선택:** Field05의 공식 동서 B42 연속성과 접근성/서쪽 조사 연결 때문에 Field06+Field07의 **격리 Unity B42 배치를 승인**. B42 각각 신규Renderer12/좌표 변경이므로 실제 QA 통과·Spawn/ASH1FAIL 해결 이전 원본 Scene 확정 적용 허가 아님. 위험이 있으면 A30 비교로 되돌려 보고. Field06 Spawn은 Transition/Collider/Grace 실원인 찾고 임의 0.455 좌표 보정 금지. Field07 Ash는 기존 투명 Sprite/Material 우선, 납품된 optional WindlessAsh1은 격리 비교 후보만 조건부 허가(실공식 적용 승인 아님). 기존 합격 QA 재실행 금지, 좁은 delta만.
+리뉴얼 Field09_ObsidianScar 감사 공식 PNG10중 활성9, 기술 Main18 QA PASS_WITH_NOTE17/USER_ART_REVIEW_REQUIRED17. **현재 신규 PNG0/ZIP0, 전체 재제작 금지; 현행 Tiled Ground Base21×15+CrackedWest9×15 경계 및 6종 흰 가이드 흔적의 실제 사용자 화면 노출 여부를 짧은 격리 시각 QA로 확인**한 후 결함이 확인된 개별 PNG만 사용자 별도 아트 보완 승인. Field08 기존 공식 아트 유지. 최초 Unity 원본 사용자 Editor 조작 금지.
+기획 최신 정본 `문서/00_프로젝트/Main10_Field06_07_Final_Gates_Field09_VisualReview_20261019.md` (`docs/planning`, 커밋 `6a9b3c8f66a19e294e4544cfb4f285a5f0ede13f`). 위 내용은 GitHub 문서 직접 기록만, Codex 별도 실행·original scene 변경·main Push/PR merge 아님.
+
+---
+# PLANNING 인계 — 2026-10-19 Main10 음성18 전부 청취 승인 / Field08 신규 제작 생략
+
+바울 대표 Codex 보고 후 **“다 들었고 다 맞고”**: Main10 기존 PCM 복구 후보18/18 `USER_LISTENING_APPROVED`. 이전 11 ASR 동일+7 우선 청취(마지막 애매한 후보 포함) 전부 승인. Codex branch codex/main10-voice-quest-interaction-fix-20261019, 기능5c36a6531f23550c535737a96e1cd18648229f6b, QA b9516bc8408ec91b13dd50f9be7d222f6aaa05fc. 치유사 NPC보다 Main10 현재 조사 목표 우선 입력 로직 격리132PASS/0FAIL, 퀘스트7/40EXP·40탈렌트/Continue/던전복귀/3비율. 기존 Main09 승인27/UserData23/기준4,235 SHA보호, TTS/API0, 원본 WAV overwrite0. **복구 후보18은 아직 Unity StoryVoiceCatalog와 원본디스크에 공식 적용 전**. 다음 Codex는 승인 후보18 SHA·본문 매핑만 정확히 정식 연결 → 국소 delta QA → 안전조건 충족시 원본 비파괴 적용 및 결과 보고. PR/main 병합/사용자 원본 Editor 실플레이 검증 별개.
+
+리뉴얼 docs/art-renewal의 Field08_RedRift_ExistingOfficialArt_Audit_20261019.md 확인: Main17 공식 PNG9중7활성, 활성37 Renderer 사용, 비표시 구 Sprite·Road는 교체 대상이 아님. 신규 필수아트0. **기획 결정: Field08_NEW_PNG_0 / NEW_ZIP_0 / REUSE_EXISTING_OFFICIAL_ART**. 바울 대표는 담당 제안을 제시하며 의견을 요청했고 기획은 '추가 제작 불필요'에 동의; 이것을 사용자 별도 명시 승인으로 부풀리지 않는다. Field07 새 승인 자산을 실제 Unity에 적용한 후 경계(-8,0↔+7,0) 동일 카메라 비교에서 확인된 색/Seam 문제만 최소 재검토. 새로운 PNG는 문제·범위가 별도 승인될 때만. 리뉴얼은 Field09_ObsidianScar **읽기전용 감사**로 이동, 실제 PNG 제작은 별도 발주.
+
+최신 기록: `문서/00_프로젝트/Main10_Voice18_User_Approval_Field08_NoNewArt_Decision_20261019.md` (docs/planning commit 8f119413a9cd104dde2393d6bdb8d1bf251d20a5), Main10 기존 버그문서 승인 addendum commit a97bd7baeaed9263724c61166ed765d254c154e3. 단 이 세션의 GitHub 기획 문서만 직접 변경했고 Codex 작업/PR/main merge/원본 Unity는 변경하지 않았다.
+
+---
+# PLANNING 인계 — 2026-10-19 17:24 Field06 v1.1·Field07 v1 사용자 미술 승인
+
+바울 대표: “코덱스 시켰고, 리뉴얼도 나왔고, 보니까 괜찮다.” 로컬 파일 `F:\Downloads\Limitless_Field07_AshenReach_Renewal_Art_v1.zip`, `F:\Downloads\Limitless_Field06_ScorchedTrail_Renewal_Art_v1_1.zip` 제공. **Field06 v1.1 및 Field07 v1 모두 USER_VISUAL_APPROVED**로 승격 (이전 두 리뉴얼 문서의 사용자 미술 승인 대기는 과거 기록). 단 `ROAD_A30_B42_UNDECIDED`, Field06 Runtime Grass49/Props, Field07 Runtime Ash7, 양쪽 optional(06 Runtime6+Decal2, 07 WindlessAsh1) HOLD, Unity Import·원본 디스크 적용·main 병합/원본 실플레이는 모두 PENDING. ZIP SHA는 리뉴얼 docs/art-renewal 보고값을 정본으로 쓰되 기획이 실제 F드라이브를 검증한 것은 아님. Field06 v1.1 ZIP SHA `d8551df7315495dcc6e4556ec33f30b711af8aeb85dc7b0a1c3612a5a6197f42`, Field07 v1 `5d398295b6f98491a294628a18763b6d72e0dedfdf5f691ccd2e8d0539150403`.
+
+Codex는 사용자 지시대로 **Main10 NPC 입력 P1 및 Main10 음성18 원음 복구 조사 선행**, Field06/07 Unity 격리 검증은 그 다음. 기존 v1 QA717과 Main09 QA 일괄 재수행 금지. 리뉴얼 담당 다음 작업은 이미 Main17 공식 아트가 적용된 `Field08_RedRift`의 **읽기 전용 자산 정본 감사만**, 기존 아트를 일괄 재제작하거나 공식 파일을 덮어쓰지 않음. 실제 보완 작업 필요한 범위만 사용자 승인 후 제작.
+
+**최신 승인 정본:** `문서/00_프로젝트/Field06_v1_1_Field07_v1_User_Art_Approval_And_Integration_Gate_20261019.md`, `docs/planning` 커밋 `7b70ed5689687b60a7f16bd074aa62af5706286d`. 기획 문서만 GitHub 커밋; 타 세션 자동 전달/Unity 원본 변경 아님.
+
+---
+
+# PLANNING 인계 — 2026-10-19 Main10 사용자 직접 재생 오류·퀘스트 치유사 NPC 입력 차단, 17시 재개
+
+바울 대표 Unity Field03 슬롯02/Main10 직접 실플레이 캡처3장: 태온 `main10_taeon_001` ‘폴이 가리킨 석재가…’에서 다음 대사처럼 들리는 ‘모서리…’ 오발화; 폴 `main10_paul_001` ‘네. 전에 본 자리를…’에 ‘단단한… 표시…’ 오발화; Main10 가공된 돌 조사에서 치유사 NPC E 입력이 먼저 먹어 진행 불가. main 소스 확인 Main10 실제 태온001/폴001 원문 정확히 일치하며 `InteractionSystem`에는 Main09 현재목표만 NPC보다 우선 처리하는 코드가 존재, Main10 전용 예외 누락. StoryVoiceCatalog Main10 NPC 총18 ID/WAV가 있지만 오디오 PCM 내용은 미검증. 이전 Main09 교정 27개, Main09 Quest6단계·Save는 보호.
+
+**대표 명령: Codex 현재 5시간 사용 잔여8%로 작업을 오후 5시에 진행**, 실제 초기화 안내는 이전 화면에서 17:17이므로 충전 여부 확인 뒤 실행. 오후 5시 예약 리마인더 등록됨(자동 Codex 실행 아님). GitHub 기획 정본 `문서/00_프로젝트/Main10_Field03_Voice_Mapping_And_Quest_NPC_Blocker_20261019.md` (docs/planning 커밋 `5e9f6e623047f35ecc8b4cfbee782498857869b5`). 17시 이후 Codex 우선순위 P1: Main10 현재 조사점 NPC 우선권/프롬프트 충돌 국소 수정(치유사 보존) → Main10 음성18 원문/PCM/GUID 검사 및 복구 후보(새 TTS API0) → 대표 청취 승인 이전 음성 정식교체0. 기존 Main09 550+261 / Field06 717 반복QA 금지, 원본 Editor/Save 보호. 사용자가 Main10 이후까지 음성이 틀렸을 것이라 우려했지만 Main11+ 오류는 관찰되지 않았으므로 먼저 Main10 전체 감사 후 관련 이력만 제안.
+
+---
+
+# PLANNING 인계 — 2026-10-19 리뉴얼 병렬 작업 분배 (Field06 v1.1·Field07 v1)
+
+바울 대표 Field06 v1 **미술 방향 승인**, 기술 수정4건 별도. **리뉴얼 아트 담당**은 `docs/planning/문서/00_프로젝트/Field06_Art_v1_UserVisualApproval_TechnicalFix_20261019.md`의 기술4건 중 실제 PNG·Alpha·Props foot·Road Upper/Lower 자산 네이밍·매핑의 미술 수정(v1.1 ZIP, 기존 v1 원본 byte 보존)을 담당; **Codex**는 Scene/Importer/Runtime Grass49 비활성화 원인·Main15/접근성 delta Unity 검증 담당. Codex에게 새 아트 제작을 맡기지 않음. 기존 717 PASS 재검사 금지. Field06 선택 Runtime6/Decal2 미배치 지속. 로컬 original apply/main merge은 별도 조건/승인.
+
+**신규 동시 발주:** `Field_07_AshenReach` — Chapter2 Main16 「재 속의 형상」 리뉴얼 환경 v1. 기획 계약 `문서/00_프로젝트/Chapter2_Field07_AshenReach_Renewal_Art_Assignment_20261019.md` (`docs/planning`, 커밋 `22682e449ca1ea8cb6032ebddc1a140044598aa9`). Field06 동서 탄 흔적→Field07 바람 없는 재·열기·고사목→Field08 붉은 균열의 전환. Main16 12단계, 움직이는 재 Runtime7, 세린(4,-2), 불씨망령 Story 전투, 여러 조사점/협곡·Save·휠체어 보호. Field06 v1.1 아트 최소 수정과 동시에 Field07 소스 감사·제작 가능, v1 ZIP 납품 후 별도 사용자 미술 승인/코덱스 Unity 검증. Chapter3 신규 아트는 별도 `docs/art-new` 전담.
+
+최신 Main09는 후보27 청취 승인·원본디스크 정식 연결에 delta261PASS, GitHub remote feature/PR/main 아직 무병합. 5시간 Codex 8% 잔여로 새 대규모 QA/원본 Editor 조작 금지. 문서만 직접 GitHub 반영했고 타 담당 세션에 자동 전달한 것은 아님.
+
+---
+
+# PLANNING 인계 — 2026-10-19 Main09 원본 디스크 적용 완료 / Field06 v1 미술 방향 승인·기술 보완 4건
+
+바울 대표 Codex 신규 캡처: Main09 승인 27개 기존 WAV 보존/신규 음성 폴더 Catalog 정식 연결, `main09_paul_002` 첫 재회 인사 순서 보존, 기존 격리550 PASS 재사용 및 **delta261 PASS/0FAIL**, 원본 사용자 파일4,178/UserData23 예상외 변경0. Codex `codex/main09-dialogue-voice-fix-20261019` 기능 커밋 `424b1912221d1555fef14d46c459fa174ac07a2` 보고. **MAIN09_ORIGINAL_DISK_APPLIED / USER_27_LISTENING_APPROVED / MAIN_GITHUB_MERGE_PENDING / LIVE_EDITOR_PLAY_NOT_VERIFIED.** 기존 과거 “원본 적용 대기” 기록은 역사기록.
+
+Field06 `F:\Downloads\Limitless_Field06_ScorchedTrail_Renewal_Art_v1.zip`: Codex `codex/field06-renewal-art-v1-review-20261019` **ZIP SHA/CRC/Manifest/PNG PASS, 실제 격리 Unity717PASS/0FAIL, 실제 Unity 비교20장**, 원본 Field06 Scene 변경0. 보고된 기술 보완 4개: Road 상하 역할 대응 오류 / 중앙 Alpha 틈 / Runtime Grass49 비활성으로 빈틈 위험 / 일부 Props 접지 차이. 선택 Runtime6+Decal2 미배치. 바울 대표 **“리뉴얼도 보고서로 봤는데 좋아.”** → **Field06 v1 전체 미술 방향 USER_VISUAL_DIRECTION_APPROVED**. 미술 스타일 재제작 금지·기술 작은 수정만 요구; 정식 원본 적용과 main 병합까지 승인된 뜻은 아님. A30/B42 Road 최종 좌표 선택은 수정 전후 실제 화면의 일치 기준으로 따로 확인, Field05 B42와 자연 연결 후보 우선. 기획 후속 정본 `문서/00_프로젝트/Field06_Art_v1_UserVisualApproval_TechnicalFix_20261019.md` (`docs/planning`, 커밋 `9304957d5a06a0b5caa6080839b957c234973c9e`). Codex 5시간 잔여8% 캡처, 기존 Field06 717/Main09 550+261 일괄 재검증 금지. 작업 재개시 기술4건만 delta 검증→안전 적용 판단.
+
+---
+
+# PLANNING 인계 — 2026-10-19 Main09 복구음성27 청취 전체 승인 / Field06 v1 로컬 ZIP 접수
+
+바울 대표는 Main09 기존 WAV 내부 잘못된 분할·합본 교정 후보 27개를 모두 청취한 후 **“다 들어봤는데 다 맞아”** 확인. Codex `codex/main09-dialogue-voice-fix-20261019` 보고의 **격리550PASS/0FAIL**과 **음성 사용자 청취27/27 APPROVED**를 분리 기록. 과거 후보7개 `USER_LISTENING_PENDING`은 모두 승인으로 갱신. `main09_paul_001`은 step1에서 step2 `paul_002` “또 뵙네요” 첫 대면 인사 뒤로 이동, 기존 원문/ID 보존. 실제 Unity 원본 음성 정식 연결·원본 Editor Import·remote main 병합은 **아직 미실행/미확인**. 다음 Codex 승인 후보 **개별SHA 고정**+Catalog·WAV/meta 최소 연결+deltaQA+원본 보호 조건부 적용, TTS API0, 전체550 재검사0.
+
+리뉴얼 담당 Field06 정본 `docs/art-renewal/문서/00_프로젝트/Field06_ScorchedTrail_Renewal_Art_v1_Delivery_20261019.md`의 ZIP은 SHA예상 `d01f797dd5566c33c6bf917a397c2032f5fc44fcf31a53dc328807e912a23b70`, 1,362,496B/38파일/PNG28(실사용후보22). 바울 대표가 Windows 로컬 **`F:\Downloads\Limitless_Field06_ScorchedTrail_Renewal_Art_v1.zip`** 경로 제시. 로컬 존재·SHA Codex 실제 확인 대기, 사용자 최종 아트 승인 아님. Static 후보14·Optional Runtime6/Decal2 8 별개, 동서 Road **A30/B42 미선정**. Main09 공식 적용 이후 Field06 ZIP read-only 검사와 격리 A/B 실제 Unity 시각/안전 검수→바울 대표 미술 결정, 승인 전 원본 Scene 적용0.
+
+신규 기획 후속 정본: `문서/00_프로젝트/Main09_Voice27_Approval_Field06_Art_v1_Handoff_20261019.md` (docs/planning, commit `13106a8c9152471bc83d35efaddb9b3ea4c12355`). 기획 문서 반영만 수행, Codex 로컬 실행/음원·씬 반영/remote main merge는 미실행.
+
+---
+
+# PLANNING 인계 — 2026-10-19 Field06 환경 리뉴얼 신규 발주
+
+바울 대표 “Main09는 Codex에 시켰으니 리뉴얼 일 줘” 지시. 이미 승인/정식 적용된 Field04 동서42·Arbel v3 23종·Field05 B42 PNG14/환경375는 중복 제작 금지. **Chapter2 다음 순서: `Field_06_ScorchedTrail` 환경 리뉴얼 v1.** 기획 정본 `문서/00_프로젝트/Chapter2_Field06_ScorchedTrail_Renewal_Art_Assignment_20261019.md` (`docs/planning`, 커밋 `d9e6411763b7cbf6b507944ade5919bf24d9ba15`). Main15 코드에서 실제 조사점·Serin 좌표와 Runtime BuildEnvironment6패치를 근거로 우선 실물매핑→동서황토-그을음-균열 시안/PNG/Manifest/Mapping/QA/영문 ZIP 제작. **아트 제작 권한만, Unity Scene 적용/사용자 미술 승인/main 병합은 별개**. Codex는 Main09 음성 버그 교정 중이므로 Field06 아트 제작은 병렬, 실물 Runtime Unity 통합은 이후 승인 시. 리뉴얼 담당에게 복붙 지시 전달 필요, 다른 담당 세션 자동 통보 불가.
+
+---
+
+# PLANNING 인계 — 2026-10-19 Main09 실사용 음성 6건 FAIL·폴 첫 인사 순서 수정 계약
+
+바울 대표 Unity 6.6 / Field03 직접 플레이에서 Main09 ‘침묵 속의 재회’의 6개 화면 음성을 제보함: `main09_miel_001` 무음, `main09_taeon_001` 문장 후반 누락, `main09_taeon_002` 앞 대사 재생, `main09_miel_002` 다른 두 발화 혼합, `main09_paul_001` 오발화, `main09_paul_002` 무음. **사용자 실플레이 기준 USER_RUNTIME_QA_FAIL**, Unity 음원 내용·PCM/재생 원인은 아직 미검증. GitHub main StoryVoiceCatalog에는 Main09 27개 ID가 등록되고 확인한 7개 GUID↔동명 wav.meta는 일치; 이것만으로 WAV 내부 발화·실제 런타임 정상 여부는 입증되지 않음.
+
+**서사 순서 원인 코드 확인:** Main09 `Lines(step1)`에서 폴이 보이기 전에 `paul_001` ‘그 길은 괜찮습니다!’를 먼저 말함; 실제 `paul.SetActive(index>=2)`이므로 `step2` 대면 첫 문장 `paul_002` ‘또 뵙네요’보다 앞서 들림. **대표 지적에 따른 순서 수정 계약**: step1에서 폴 음성을 없애고 step2 첫 대면은 ‘또 뵙네요’로 시작, `paul_001`은 step2 인사 이후 자연스러운 자리에서 정확히 한 번 재생. 6개 Quest 목표/EXP35/탈렌트35/폴 합류·원문·각 Voice ID·Save/기존 승인 TTS/Field05/Editor 보호.
+
+**새 정본:** `문서/00_프로젝트/Main09_Field03_DialogueVoice_Sequence_Bug_20261019.md` (`docs/planning`, commit `6b5c68cd1f039364d9425d70c4e9837a51558ae4`). Codex가 27개 ID→Catalog→WAV/meta→PCM 실제 발화 및 런타임 Stop/Next를 읽기 전용 감사하고 기존 음원 내 수정후보부터 확보; 엉뚱한 대사를 +1씩 기계 재연결하거나 전체 재TTS·API 호출 금지. 기존 Main08 007~011 복구 절차 참고. 이후 최소 대사 순서 수정 및 자막·음성 실Runtime/대표 청취 QA 후 별도 승인으로 병합. **기획 문서만 GitHub에 기록했으며 Unity 버그 자체는 미수정, user listening PASS 아님.** Main22 신규 개발과 TTS22건 작업에 묻히지 않게 우선 처리.
+
+---
+
+# PLANNING 인계 — 2026-10-19 사용자 로컬 문서5 충돌 해소 승인
+
+바울 대표 “충돌 해결하고 다음으로 가자.” / Github main `af21edbf5f0cdc0f241b09228ede960ab83e9b6c` (2026-10-19 확인). PR #18/#19 Main18, #22 Field05, #21 Main09, #23/#24 보고 **전부 main 병합**; Main09 9파일 + Field05 Scene1/신규32 + Main18 WAV10/meta10/Catalog **원본 디스크 적용**은 Codex 보고에 따라 완료. 본문 실제 Editor 자연 Import/OS 손플레이는 미검증으로 보존.
+
+Codex 이전 원본 local main `ff022e63dfe364f559fcc29819d27b123ad31127`, 320 tracked dirty +1053 untracked, remote overlap517 중512 byte 동일, 나머지 다섯 문서 실제 상이:
+- `문서/00_프로젝트/CURRENT_STATUS.md`
+- `문서/00_프로젝트/EndOfDay_Integration_Voice_LocalSync_QA_20261014.md`
+- `문서/00_프로젝트/팀운영/인계/CODEX_LATEST.md`
+- `문서/00_프로젝트/팀운영/인계/PLANNING_LATEST.md`
+- `문서/00_프로젝트/팀운영/인계/WORLD_ART_RENEWAL_LATEST.md`
+
+**신규 Codex runbook:** `문서/00_프로젝트/Codex_20261019_LocalMain_FiveDocument_SemanticMerge_Recovery.md` (docs/planning). 변경내용5개 로컬/원격/공통기준/Dirty/UserData23 SHA 사전보호 → 독립 worktree에서 **의미병합**, PR 정상 main 반영 → 원본 실제 Git branch/index/worktree와 active Editor 보호를 위한 별도 시뮬레이션 후 비파괴 동기화 → 상태 정확 구분. 단순 `ours/theirs`·`reset --hard`·`clean`·무단stash/force/파일삭제 금지. 이미 병합한 기능 중복구현·Main09/Field05 별도 테스트용 빌드 금지. 비파괴 원본 sync가 불가능하면 clean 별도 worktree 대안과 현장 PARTIAL을 정확히 보고.
+
+동기화 성공 후 Main09/Field05 실사용자 Play는 원본 Editor 자연 Import 후 확인만; 시간 효율 위해 기존 427/416+84/66 PASS 재검사0. **다음 미적용 음성은 Main20 5건 TTS_PENDING, Main21 등록0**, Codex는 제작 대신 읽기 전용 확인과 TTS 담당 인계까지만 수행(API0). Chapter3 신규 Unity 개발 자동 착수 금지.
+
+문서 저장은 사용자의 Windows 원본에서 직접 Git 충돌을 해결한 것이 아니며, Codex 전달/실행이 필요. 현재 `RUNBOOK_READY / CODEX_PENDING / LOCAL_SYNC_PARTIAL`.
+
+---
+
+# PLANNING 인계 — 2026-10-19 Field05 B42 사용자 미술 최종 승인·Main09 UX 수정 최우선
+
+**바울 대표 최신 지시:** “이러면 한도를 엉뚱한데 쓰는거니까 하지 말고 보고서랑 같겠지 뭐. **그냥 승인해. 중요한건 지금 하던거 이어서 하는거야.**” Field05 시각은 이미 Codex 16:9·4:3·21:9 비교 및 QA로 확인했고 **B Road42를 사용자 최종 미술 승인**함. **Main09 진행이 막힌 건 별도 UI/퀘스트 안내 문제**로, Field05 검수 전용 Play 실행환경/필드 강제 시작/기존 Main09 우회용 테스트 빌드를 만들지 말라고 명시 취소.
+
+**우선순위:** (1) **Codex 5시간 한도 초기화 후 `Main09_Field03_Quest_Navigation_Onboarding_UX_Fix_20261019.md`의 6단계 조사 안내 UX 수정** 재개. (2) 그 다음 **이미 QA한 Field05 v1 Ground3+Props7 & v2 동서 Road4, Road42 전체375 Renderer** 공식 적용·feature Push/PR/main 병합을 안전한 방식으로 진행. Field05 전용 재체험 빌드/실화면 추가 승인 요구 불필요. 단 사용자 원본 dirty/Save/UserData·Scene GUID/새 Content 충돌·baseline Search/URP 신/구 분리는 유지.
+- Codex 최종 보고 기준 Field05 **416 PASS+84 PASS/0 FAIL**, 새 Road42 화면 16:9·4:3·21:9 제출. 원본 Unity/Push/main 반영 **미완료**, 미술 **APPROVED**와 분리. Field05 Optional7 미배치.
+- 현재 Main18 세린10 PR#18/19 원격 병합과 원본 Catalog 통합은 종전 Codex 보고에 따라 완료. Codex 한도 소진 중이므로 지금 실행한 것으로 가장하지 말 것.
+- 기술·우선순위 갱신 문서: `문서/00_프로젝트/Chapter2_Field05_EastWestRoad_VisualCorrection_20261019.md`, `문서/00_프로젝트/Main09_Field03_Quest_Navigation_Onboarding_UX_Fix_20261019.md`.
+- 상태: `FIELD05_B42_USER_VISUAL_APPROVED / MAIN09_QUEST_CLARITY_FIX_PRIORITY_1 / CODEX_PAUSED_BY_QUOTA / FIELD05_OFFICIAL_APPLY_AND_PUSH_PENDING / LOCAL_SYNC_PARTIAL`.
+
+
+---
+
+# PLANNING 인계 — 2026-10-19 Main09 Field03 퀘스트 안내 막힘·조사 UX 수정 요구
+
+바울 대표가 실제 Unity Field03 Slot01 Main09 `침묵 속의 재회` 1/6의 QuestLog(“푸른 빛이 사라진 방향을 따라가세요”)와 세계 화면 “◆ 현재 목표 푸른 빛의 흔적”을 보여주고 “여기서 뭘 어떻게 하라고? 퀘스틀 어찌 하는지 설명 해야 유저가 할거 아니야?”라고 UX 실패 지적. **우선 해당 퀘스트에서 플레이어가 알아서 방향을 맞히거나 픽셀 찾기를 하는 요구를 바로잡는다**.
+
+**새 기획 정본:** `문서/00_프로젝트/Main09_Field03_Quest_Navigation_Onboarding_UX_Fix_20261019.md` (`docs/planning`), actual main code read. **Main09 (Main18과 무관)**, 퀘스트 6단계: ①파란 흔적(2.4,-4.1) 상호작용 ②바퀴 자국(3.5,-3.1) ③폴(1.8,-1.4) 대화 ④같은 폴 다시 대화 ⑤가공 석재(-0.3,-3.3) 조사 ⑥폴 다시 대화; **1.6 world units 이내 E/F/게임패드 A** 동작. 기존 메인09 quest objective/targetID/소요 대화/폴 합류·35 EXP/35 탈렌트·Save 고정. 현재 푸른 흔적은 `Mark()` 쿼드 .35×.1로 작고, `QuestNavigationTarget.Attach(...,(0,1.45,0))`로 대상 위에 UI 패널이 떠 **실제 조사 바닥 좌표를 가리기 쉬움**. 목표 없다고 오해될 수 있음. Nav offscreen 거리는 카메라 위치 기준(카메라 Z 포함)이라 잘못된 m 가능.
+
+수정 계약: 6단계 전부 **행동/대상/입력키** 명시·현재 위치(바닥) 시각 표식/고대비 반응/접근 시 E/F/A 확실한 안내, 3·4·6 동일 폴 “다시 말 걸기” 명확화, QuestLog+HUD+실제 대상 marker 일치, 오프스크린 플레이어 기준 XY 거리, 원본 Scene/Collider/Spawn·TTS/Save·화면비·접근성 회귀. 자동 퀘스트 완료나 기존 규칙 단축 금지. Codex `codex/main09-quest-clarity-20261019` 전용 격리 worktree QA→16:9/4:3/21:9 실제 Unity BeforeAfter 제출. **현재 구현0, 원본 유저 Play/dirty 보호**, 5시간 잔여3%였으므로 한도 부족 시 대기/인계. 이미 병합된 Main18 세린10 또는 아직 미술 승인 대기 Field05 B42 작업에 섞지 않는다.
+
+---
+
+# PLANNING 인계 — 2026-10-19 Codex Main18 음성10 + Field05 B42 v2 통합 마감 발주
+
+바울 대표 “리뉴얼 작업까지 다 묶어서 코덱스한테 시켜줘. 이번주에 재설정권 1장 써야 해. 기간이 얼마 없거든.” 요청. **한 번에 복사 가능한 Codex 지시**와 장기 정본 `문서/00_프로젝트/Codex_20261019_Main18_Voice_Field05_Road42_Integrated_Closeout.md` (`docs/planning`) 작성.
+
+- **A 우선**: Main18 세린10 이미 승인·격리 검증된 Codex 로컬 `codex/tts-main18-serin10-integration-20261019` 기능 `94a68cee54be397b16d8bacd4c3f930bad2eece3`, 최종 `85633624f71bd18d5d79d495812980372c056975`, Main18 22/22 실Runtime/1370PASS0FAIL/정상25+Main17 11 보호. **GitHub 원격 branch 미존재·main 미반영**(확인 당시 origin/main `c263d9e36fc0570b16130d9c011abf3965def5f7`). 원본 PCM/GUID 보호·delta QA 후 feature Push/PR/main 병합, 원본 local 안전 적용은 충돌 없는 경우만. TTS 새 생성0.
+- **B 리뉴얼**: Field05 동서 **B Road42(315 Ground+42 Road+18 Props=375 Renderer)** 기획 우선 후보, Road v2 PNG4 이미 art-renewal 납품 `Limitless_Field05_EastWest_Road_v2.zip` SHA `3a0d3b91cd87a5362ebbe435c1e5acd06ffc74354eafaa41f02b4f181d27c3d3`. 사용자 PC ZIP 설치는 미확인. 새로운 v2 Road4 실제 Unity 시각 화면/QA 전 **대표님 미술 승인X**, 따라서 우선 격리 QA와 3열 비교/별도 feature 준비까지만. **미술 승인 없이 원본 Unity 정식 적용이나 main 병합 금지**. B 신규 Renderer12, 선택7 소품 배치0/새 서쪽 Portal0/원래 Main14·몬스터·세린·Save·Arbel 이동/접근성 보호.
+- **C 로컬 동기화**: PR16 로컬 문서 커밋2 GitHub 조상 보존됨, 기존 dirty464 겹침/5내용차이로 `LOCAL_SYNC_PARTIAL`이었으므로 실제 최신 SHA/파일 및 Save23 사전 보호. hard reset/clean/강제push/무단stash 금지. GitHub Merge QA PASS, 로컬 Sync 별도 증빙.
+- **Codex 비용/시간:** 이미 합격된 Main18 1370/Field05 1582 게이트를 똑같이 처음부터 중복 반복하지 말고 새 원격기반 delta 및 B v2 신규 PNG4 변경사항 중심으로 검사. A/B 분리 worktree·commit, 원본 Editor/Play/포커스 무조작. 제안자 기획이 재설정권을 사용하거나 사용자 PC Codex를 직접 실행한 것은 아님.
+- **상태:** `INSTRUCTION_READY / USER_TO_SEND_CODEX / A_REMOTE_PENDING / B_ISOLATED_V2_QA_PENDING / LOCAL_SYNC_PARTIAL`. 역할 인계 및 불완료 단계 선명히 보고. 현재 docs/planning 문서 작성만 완료, 메인 브랜치 미병합.
+
+---
+
+# PLANNING 인계 — 2026-10-19 서릿길 마을 NPC7·서브퀘스트3·Main23~24 시퀀스 설계
+
+바울 대표 “그래” = 지난 기획 세션 말미의 **Chapter3 서릿길 마을 주민·상점·Main23~24 스토리 대사 구체화 계속** 진행 동의. `docs/planning`에 새 문서 2개 생성:
+
+1. `문서/03_스토리/Chapter3_서릿길마을_NPC_서비스_서브퀘스트_v1_20261019.md` — **상호작용 NPC7명 가안**: 오르나(안내/책임자), 루덴(Chapter3 첫 스킬 구매), 마레(보급·한기약), 도아(여관/회복·동료 일상), 베른(파티·진형), 기존 펫 분양 담당·펫 관리 담당(Chapter2 완료 전국거점 서비스 재사용). 가칭5 이름/Unity ID·아트 미확정. 마을 선택 서브퀘스트3(얼어붙지 않은 길, 돌아오지 않는 발자국, 따뜻한 한 잔). 한기2턴 첫 강제전 직전 누구나 유효한 해제경로를 확보, **따끈 어묵탕1개 보장(실제 TurnOrder QA에서2개 가능)** 제안. 구매 강제0, 신규·강화 스킬은 탈렌트 구매 필수·장착은 무료.
+2. `문서/03_스토리/Chapter3_Main23_24_서릿길마을_스토리시퀀스_v1_20261019.md` — Main23 F1 흔적 조사→마을 남문/오르나와 주민증언·태온의 판단/하렌 과보호→SafeZone 해금→자유탐색·선택 미엘·세린 수다·폴·미엘 상호 배려. Main24 스킬/보급 상점 자유 소개, 유효 대응책 확보→북문→F2 첫눈→서리올빼미1 한기 예고형 전투. Main23 별도 족제비 강제전은 중복 방지 위해 보류. 세린/미엘 스토리 기여는 전투 편성3인과 별도, 여성플레이어 추가 한마디 선택 가능하나 정보/보상 동일. 미엘 전쟁 상실 배경 Chapter5/6 공개, Chapter3 Main26 아주 작은 암시만.
+3. 마스터플랜 `Chapter3_서릿길마을_상세마스터플랜_v1_20261019.md`에 두 문서 연결 반영. 동쪽 **Future Portal 비작동 전용 7×7world 후보 부지·도착 Spawn·대기/완충 분리** 원칙 고수. 포탈 퀘스트/SceneTransition/텔레포트 기능0.
+
+**주의:** 신규 NPC/Quest/Dialogue/Sprite/TTS/스킬상점은 **문서상의 상세설계 v1**일 뿐 구현0, 아트·성우 제작 발주0, 사용자 미술 승인0. `docs/art-new` Chapter3 신작 담당. 현재 Codex Main18 오디오 작업 우선, TTS 담당 새 세션 인계중, `docs/art-renewal` Field05 Road4 v2 Unity 검수 대기. 원본 Unity/Save/dirty/로컬 Sync PARTIAL 보호, main 자동 병합 금지. 다음은 북부 마을의 실제 Scene 경계·NPC 배치 실측 및 사용자가 원하는 후속 Story 정식 대본/경관 아트 발주 승인 게이트다.
+
+---
+
+# PLANNING 인계 — 2026-10-19 Field05 B42 우선·Road4 v2 준비됨, Codex Main18/신입 TTS 담당 분리
+
+**바울 대표 상황 공유:** Field05 v1/동서 A30/동서 B42의 실제 Unity 3열 비교 결과 전달. **B Road42가 서쪽 진행 방향을 가장 분명히 보여 줌 → 기획 우선 후보 B42**, 사용자가 명시한 **공식 최종 B 미술·정식 적용 승인으로 소급하지 않음**. A30은 길이 짧아 보임. Codex QA **1,582 PASS/0 FAIL, Console gate FAIL(기존 baseline Search/URP 동일), 전체 PARTIAL**, Main14·세린·몬스터·Arbel 왕복·Save/Continue 합격, 원본4067파일 변경0. 공식 Unity 버전 확인/수동 실플레이/최종 미술 미검증. **B는 기존 Road30 →42(신규Renderer12)**.
+
+**이미 신작 동서 Road4 제작 완료:** `docs/art-renewal`의 `문서/00_프로젝트/Field05_EastWest_Road_v2_Art_Delivery_20261019.md`; `Limitless_Field05_EastWest_Road_v2.zip` 보고 SHA **`3a0d3b91cd87a5362ebbe435c1e5acd06ffc74354eafaa41f02b4f181d27c3d3`**, PNG4 `Upper/Lower/WestEnd_Upper/WestEnd_Lower`, 오프라인 seam PASS. 실제 Unity 신규 v2 적용/실사용 QA·사용자 F: ZIP 확인은 **대기**. 재제작/중복 발주하지 말 것.
+
+**담당 자원 배치:** 지금 Codex는 **Main18 목소리 Unity 통합 작업 중**이고 **구 TTS 담당 세션 종료, 신입 TTS 담당 교육 중**이라는 바울 대표 보고. Codex 작업 중간에 Field05를 끼워 넣지 않으며 새 TTS 담당에게 Main18 Codex와 중복 API/음성발주하지 않는다. Main18 안정 마감 후 Field05 Road4 v2 ZIP SHA 확인→**B42 격리 Unity 실화면/물리/동선/퀘스트/저장·Console 기준선** 검증→바울 대표 최종 미술 확인→정식 적용 여부 결정. 기존 유저 Unity/Save/Dirty·Field04·Arbel 보호. Field05 Optional7 여전히 배치0.
+
+**갱신 정본:** `문서/00_프로젝트/Chapter2_Field05_EastWestRoad_VisualCorrection_20261019.md` (`docs/planning`). 현재 `B42_PLANNING_PREFERRED / ROAD4_ART_DELIVERED / CODEX_MAIN18_BUSY / FIELD05_V2_QA_PENDING / USER_FINAL_ART_APPROVAL_PENDING / UNITY_ORIGINAL_UNCHANGED`.
+
+---
+
+# PLANNING 인계 — 2026-10-19 북부 「서릿길 마을」 상세 설계·장래 순간이동 포탈 전용부지 예약
+
+바울 대표 지시 “챕터3 마을 설계 계속하자 다 알아서 하되, 나중에 쓸 순간이동 포탈 자리도 잊지 말고”에 따라 **기획 설계 상세화 권한 확인, 별도 사용자 재승인 질문 없이 v1 마스터플랜 작성**.
+
+**신규 정본:** `문서/03_스토리/Chapter3_서릿길마을_상세마스터플랜_v1_20261019.md` (`docs/planning`). 작업명 `서릿길 마을`(가칭), **Main23 F1심부 조사→마을 남문 최초 안전거점·주민·Save·일반/첫 스킬 상점 해금→Main24 마을 북문에서 한기 대응/스킬 선택적 준비 후 F2 첫눈의 숲 진입**. Chapter3 북부 필드5+보스1 불변·Main26 F4 별도 피난처 유지. 기존 `Chapter3_Main22_29_북부_온기의화로_스토리구성안_20261014.md` 메인23·24 표와 `Chapter3_Main23_24_북부탐험_첫눈_한기_연결기획_v1_20261014.md` 1·4번 목표를 **최신 동선 기준**으로 수정; 초기 마을 제안 문서에 정본 링크 추가. 옛 문서의 Main23 F2 입구/첫눈 도착이라는 설명은 **폐기된 이전 초안**.
+
+**반드시 준수할 미래 포탈 설계 계약:** 마을 **동쪽에 독립된 약7×7world 공간 후보**로 **돌기단/포탈 설치예정 pad, 미래 도착 Spawn, 접근/대기 포켓, 360도 여유**를 처음부터 예약한다. 남북 F1/F2 출입구/중앙·첫 스킬 상점 경로에 장애물/Portal/나무/지붕 겹침이 없도록. 아르벨 과거 PortalAnchor/Tree 겹침 재발 방지. **현재 포탈 워프/SceneTransition/Fast Travel UI/NPC/스킬/특수효과 활성화는 금지(OFF, 미래 계약 TBD)**. 포탈 구역을 경유해야 상점이나 퀘스트 진행되는 상황 금지. 수치와 좌표는 **Scene/PPU/Camera/Wheelchair QA 후 실제 확정할 임시 디자인 예산**.
+
+**그밖에:** 단 하나의 본원 마법 `온기의 화로`와 마을 일반 장작난로 구별; 한기2턴 해제 `따끈 어묵탕` 등 실제 사전 확보/무자금 소프트락 방지; Chapter3 최초 스킬 상점 탈렌트 구매/강화 대체/장착6칸/전투 외 무료 변경, Chapter3 완료 후 전역 판매망, Chapter2 완료후 전역 펫서비스. 태온/하렌 형제애 메인, 폴/미엘 로맨스·미엘/세린 일상, 미엘 과거 Chapter5~6 내부 스포일러 보호. 마을 출입구·Save·사망복귀/호버/보조수단 접근성 설계.
+
+**상태:** `VILLAGE_DESIGN_V1_COMPLETE / FUTURE_PORTAL_SITE_RESERVED_ON_PAPER / UNITY_AND_ART_NOT_IMPLEMENTED`. 사용자가 현 시점 **기획 자체를 맡긴 것**이지 신작 스프라이트/씬·Fast Travel 구현이나 main 병합 요청 아님. 정식 Scene/Quest/Portal ID·정확 치수·판매 가격·NPC 수/이름·TTS·미술 승인 미정. Chapter3 신규 미술은 `docs/art-new`, 기존 리뉴얼 담당 `docs/art-renewal`은 Field05 마감 관련 업무만 담당. Codex는 후속 지시 전 로컬 Unity 원본 보호/실물 QA만. 관련 기존 local main 동기화 PARTIAL과 Field05 서진 도로 보완 HOLD를 방해하지 말 것.
+
+---
+
+# PLANNING 인계 — 2026-10-19 Field05 v1 서부 동서도로 방향 보완
+
+바울 대표가 리뉴얼 Field05 v1 격리 실제 Unity 비교 화면에 대해 “맘엔 드는데, 챕터2는 방향이 서쪽인데 왜 길이 자꾸 남쪽이야?”라고 지적. **v1 색감·분위기는 긍정/단, 전체 미술 최종 승인 아님; 기존 세로 도로 유지 문제는 HOLD.** GitHub 실제 YAML RoadLeft/Right30이 y -7..7 **15행×2열**이고, v1은 Sprite-only 교체여서 Transform 불변. Field05 동쪽 Arbel Spawn (8,0), Exit (10.7,0). Main14 수로(5,2), 초소(-2,2), 진동(-6,-2), 세린(1,0)·몬스터 고정 보호. **주도로를 동↔서로 정렬**하고 조사점에는 짧은 지선 후보, 신규 서쪽 Portal 금지.
+
+**새 발주 정본:** `문서/00_프로젝트/Chapter2_Field05_EastWestRoad_VisualCorrection_20261019.md` (`docs/planning`). Codex 격리 Unity에서 현재 v1 / Road30 동서15열×2행 / Road42 동서21열×2행 연장 후보를 실제 카메라 QA하고 리뉴얼 담당은 필요한 Road2 v2 최소 PNG/ZIP을 만든다. 유저 승인 전 원본 Scene·GitHub main·선택7종 배치0. Main14/휠체어/Save/Portal 동선, 기존 Field04/Arbel 이미지 및 active editor/dirty 보존. local main sync PARTIAL 유지.
+
+---
+
+# PLANNING 인계 — 2026-10-19 Chapter3 신규 북부 마을 누락 지적 / Main23 첫 거점 제안
+
+바울 대표가 “챕터3 마을은 없니? 메인23인가 챕터3 시작 기획할 때 마을 얘기가 없어서 묻는다”라고 질문. 실정본 Main22~29 / Main23~24 확인 결과 **북부 5필드·보스/임시 쉼터만 있었고 정식 신규 마을 배치 확정이 없었음**을 인정.
+
+**신규 제안 작성, 유저 확정 대기:** `문서/03_스토리/Chapter3_서릿길마을_첫안전거점_Main23_신설제안_20261019.md` (`docs/planning`). 첫 북부 마을 `서릿길 마을`(가칭)을 **F1 북쪽–F2 첫눈 사이 안전지역**으로 구성하여 **Main23 F1 심부 조사→마을 도착/해금**, **Main24 마을에서 첫 스킬 상점·회복·한기 대응 물품 사전 준비→F2 첫눈**. Main21 초보 마을 펫 서비스 소개, Main22 F1 첫 전투를 변경하지 않음. Main26 F4 `사라지는 피난처`는 독립된 장소로 유지. **단 하나의 마법 `온기의 화로`** 정본 보호하며 신규 마을 일반 난로는 특수 기믹이 아님. 마을은 5개 일반 필드에 포함되지 않음.
+
+**중요:** 현재는 `PROPOSAL / USER_REVIEW_PENDING / NEW_VILLAGE_SCENE_NOT_IMPLEMENTED`이므로 Codex/아트 담당에게 제작·구현 발주 금지. 사용자 수락 뒤 정식 위치/이름/안전지역/상점·퀘스트 범위 확정 및 `docs/art-new` Chapter3 신규 미술 담당에게 발주. `docs/art-renewal`의 Chapter1·2 Field05 제작과 섞지 않음. 기존 Main23 `F2 입구 완료`안은 변경 후보일 뿐 아직 정본 교체 완료가 아니다.
+
+---
+
+# PLANNING 인계 — 2026-10-19 Chapter2 Field05 환경 리뉴얼 v1 제작 발주
+
+바울 대표 “굿모닝~ 이어서 하자, 먼저 리뉴얼부터 일 시켜” 지시에 따라 **Chapter1·2 리뉴얼 담당의 다음 신규 제작 대상은 `Field_05_WesternOutskirts`**로 지정. 기획 발주 정본: `문서/00_프로젝트/Chapter2_Field05_Renewal_Art_Assignment_20261019.md` (`docs/planning`). **기본 Source 감사→오리지널 환경 PNG v1·실제 Scene 대응표·미리보기·ZIP→사용자 미술 승인 후 Codex 통합** 순서.
+
+원격 `main c263d9e36fc0570b16130d9c011abf3965def5f7` 기준 **Field04 v2 42도로 및 Arbel v3 기본23종/국소 지붕/처마 이미 PR main 병합**. `docs/art-renewal` 최신 인계가 2026-10-14 당시 미술 미승인으로 쓰여 있다면 구버전이므로 반드시 최신 main의 `Arbel_v3_Official_Apply_QA_20261014.md`·`Field04_v2_Official42_Apply_QA_20261013.md` 대조 후 갱신. 두 필드 재제작 금지. Field03 Rock B v2는 기술/Render 접지 PASS지만 미술 승인/원본 적용 보류 — Field05와 별개. Portal-나무 OPEN, Optional11 미배치/미승인. Chapter3 신규 아트는 별도 `docs/art-new` 담당.
+
+Field05 관련 정본: `FieldThemes/Field05_DryOutskirts.asset` 건조 황토·olive, `FieldConnections/Field05_EastToArbel.asset` 출구/Spawn 기존 보호, `MonsterSpawns/Field05_SootHound.asset` (3,-3)·`Field05_FissureLizard.asset` (-4,3) 각 활동반경1/리스폰35초. Main14 세린 재합류·메마른 수로/초소/땅진동 진행 정본. 실제 Renderer 수와 Sprite ID는 기존 Field05 Scene/로컬 Codex read-only 감사 후 정함.
+
+현장주의: PR16은 로컬 문서2커밋의 **원격 조상 포함 이력 보존 완료**지만 로컬 Dirty464경로 겹침(이중5개 내용 상이)로 **로컬 main 동기화 PARTIAL**, 원본 Unity/dirty/Save를 절대 건드리지 않음. 이 작업은 기획 발주 문서만 추가했고 **아직 리뉴얼 담당 별도 세션 실행·실제 PNG/ZIP 제작·Unity 적용은 확인되지 않음**.
+
+---
+
+# PLANNING 인계 — 2026-10-14 최종 마감: 음성·원격 병합 DONE, 로컬 main SYNC PARTIAL
+
+**바울 대표 2026-10-14 저녁 마감 지시와 Codex 최종 보고(사용자 전달 화면) 반영.** 바울 대표는 토요일(10/17) 또는 월요일(10/19) 복귀 예정이므로 추가 작업을 요청하지 않는다.
+
+### 원격 GitHub — 기획 세션 직접 재확인
+
+- `origin/main` SHA **`9110bc7624e08ddbdd93b96510e8fafc5fbe341c`** (2026-10-14 20시경).
+- [PR #12](https://github.com/HappyPaul812/Project-Limitless/pull/12) Arbel v3 적용과 [PR #13](https://github.com/HappyPaul812/Project-Limitless/pull/13) 오늘 기획 문서는 앞서 main 병합 완료.
+- [PR #14](https://github.com/HappyPaul812/Project-Limitless/pull/14) Main08 태온 007~011 승인 음성 정식 복구 **merged:true**, merge SHA **`d05a325b05f2eab79ee18c5ca65e9ee523a5e5ab`**.
+- [PR #15](https://github.com/HappyPaul812/Project-Limitless/pull/15) 오늘 마감·QA 문서 **merged:true**, merge SHA **`9110bc7624e08ddbdd93b96510e8fafc5fbe341c`**. 현재 원격 main 최종 SHA와 일치.
+- PR #14 음성 구현 후보 Commit `2ff11baa878156f9b7c537d9580e70cd1f5568e4`은 **사용자 화면에 보고된 값**; 실제 최종 HEAD/코드 SHA는 PR 정보의 head_sha/merge_sha를 우선 따른다.
+
+### 로컬 원본 — Codex 보고, 기획 세션 현장 접속 없음
+
+- 바울 대표가 전달한 Codex QA: **격리 백그라운드 2,343 PASS / 0 FAIL**, Main08 음성007~011 Catalog 연결 완료, 발화의 자연스러운 호흡·여운 보존과 필요 선행 무음 Trim, 신규 TTS0, 기존 승인 태온005/006·미엘·Player 무음 불변. 아르벨/음성 페이지/Save/Continue/Main21 펫 서비스/전투 회귀 보고 PASS. **실제 대표 PC Unity 플레이/청취 최종 재검수는 미검증**.
+- **로컬 `main`**: `ff022e63dfe364f559fcc29819d27b123ad31127`; **원격 `origin/main`**: `9110bc7624e08ddbdd93b96510e8fafc5fbe341c`. 로컬에만 있는 **문서 커밋2개**로 이력 분기되어 단순 FF 불가. Codex가 **강제 merge/reset/clean을 하지 않고 중단했음 = `LOCAL_SYNC_PARTIAL / USER_FILES_PROTECTED`**.
+- 보호 보고: dirty·미추적 경로 **1,274개**를 백업, 기존 **5,851개 파일** 중 승인 Catalog/상태·인계 문서 **3개만 변경**, **UserData 23개 SHA 동일**, Editor/Play/OS 포커스 제어 **0회**. 이 숫자는 기획 세션 자체 로컬 검사가 아니라 **Codex 보고**.
+- 기존 **Portal-나무 겹침** 및 Unity **URP/Search** 환경 이슈 OPEN. 기타 신규 게임 버그는 보고된 범위에서 확인되지 않았으나 원본 Editor 직접 플레이 등 남은 검증과 구분.
+
+### 재개 순서 (토요일/월요일)
+
+1. Codex가 사용자 원본 PC 로컬 `main`의 추가 문서 커밋2개의 SHA·경로·내용과 origin/main의 충돌 여부를 **읽기 전용** 분석. 사용자 dirty/미추적1,274경로 및 백업 위치·UserData SHA, 루트 Unity의 Arbel Scene/음성 Catalog 실바이트 해시 확인.
+2. **문서만 분기된 이력을 비파괴적으로 정리하는 최소 경로**를 제안: 해당 2커밋이 원격에 반영되었는지 확인 → 중복 없는 문서 보존/필요 시 별도 작업 브랜치나 사전 백업→격리 worktree에서 통합 시뮬레이션. **로컬 기존 commit이 사라지는 `reset --hard`/무분별한 rebase/clean/force push 금지**. 원본 active Editor 파일과 원격 병합 변경의 동시 덮어쓰기 금지.
+3. 양쪽 모든 승인 변경과 문서2커밋의 보존·통합이 입증되면 로컬 안전 업데이트를 수행하고 **`local main == origin/main == GitHub main` SHA** 및 `git status` 보호 전후 확인. 충돌 위험이면 계속 `PARTIAL`로 보고·원본 보호.
+4. 원본 Editor 자연 Import 후 **사용자가 원하면** Main08 007~011 페이지별 실제 청취와 Arbel 국소 지붕·처마 등 인게임 시각 확인. GitHub PR14/15를 다시 병합하거나 Main21/Chapter3 미확정 기획을 실제 게임 콘텐츠로 만들지 않는다.
+
+**최종 상태:** `REMOTE_MAIN_MERGES_DONE / AUDIO_REPAIR_QA_PASS_REPORTED / LOCAL_MAIN_DIVERGED_PROTECTED / LOCAL_SYNC_PARTIAL / ORIGINAL_EDITOR_MANUAL_REVIEW_PENDING`. 바울 대표에게 피로한 당일 추가 작업 요구 금지. `docs/planning` 담당 문서 갱신만 했으며 main 직접 Push 없음.
+
+---
+
+# PLANNING 인계 — 2026-10-14 야간 음성007~011 최종 승인·오늘 통합·로컬 동기화 위임
+
+**바울 대표 실제 발언:** 태온007~011 복구 후보 **모두 들어 보고 원래 짝 전부 확인**, 선행 무음 일부는 Codex 판단으로 최소 보정, 다섯 음성 버그의 공식 수정/검증/오늘꺼 통합/깃허브-로컬 동기화를 마치길 요청. 추가 청취 승인 반복요청 불필요하나 **원문·PCM 발화 경계·Catalog GUID/Meta·실제 Runtime 5페이지** 대조 및 편집 안전 QA를 반드시 실시. 잘못된 본문/샘플 손상이면 STOP, 새 TTS 호출·기존005/006/미엘/Player 변경 금지.
+
+**지금 GitHub에서 확인된 부분완료:** Arbel v3 Codex 정식 적용 브랜치 `codex/arbel-v3-official-apply-20261014` HEAD `652867c988d015f0eb65ccb82591d2ef3a36551b`; 승인 23아트/국소 지붕·처마, **3953PASS/0FAIL(단위 assertion), 부분환경 미검증**, 사용자 PC 원본 디스크 적용/Feature Push라는 Codex 보고. 기획에서 **PR#12 생성→main 병합 완료**, merge SHA **`3aa66981f2545d463126e01a96c359c21ca804ea`**. 이 branch를 또 병합하지 않는다. 기존 Portal-나무/URP/Search/Editor 실환경 문제 OPEN; 승인 Optional11 배치0. 원본 PC·Git 로컬 `main`과 원격 동기화는 **Codex 이후 검증 필요**.
+
+**새 실행 정본:** `문서/00_프로젝트/EndOfDay_Integration_LocalSync_Runbook_20261014.md` (`docs/planning`). 음성 수정 후 신규 후보WAV/007~011 Catalog만 Codex 전용 브랜치 Push/PR/QA PASS 시 main 병합, `docs/planning` 오늘 승인·기획 문서도 검증 후 PR 병합. 원격 main SHA와 **로컬 main/origin main 일치**는 사용자 dirty·Unity Editor/Play/Save 충돌을 보호하며 **비파괴적 fast-forward만 가능한 경우** 실행. `reset --hard/clean -fd/force push` 금지. 해당 작업 직접 완료한 척 보고하지 않음.
+
+**Chapter3 기획 선행:** Main21 완료 `World_StarterVillage` 펫서비스를 자유롭게 이용해도 되고, 북쪽 F1부터 Main22 서리들쥐1 첫 전투. Main23 F1심부/첫눈, Main24 F2 한기2턴 사전 대응 안내. Main22~24 세부기획 `docs/planning` 작성 완료(DRAFT/미구현). 사용자 편안히 주무시는 동안 별도 비동기 작업을 자동 실행하는 기능이 여기 연결된 것은 아님.
+
+---
+
+# PLANNING 인계 — 2026-10-14 저녁 Main22 상세·Main23~24 연결 설계 진행
+
+바울 대표가 저녁 식사 중 기획을 계속 진행해 달라고 요청, 기획 담당이 **Main22 상세 v1 + Main23~24 연결 v1**를 `docs/planning`에 작성. 새 정본:
+- `문서/03_스토리/Chapter3_Main22_북풍의징후_상세기획_v1_20261014.md` — Main21 완료→초보 마을 **펫 분양/관리 NPC 자유 방문/새 서비스 소개**→북쪽 자율 출발→F1(녹지·얇은 서리) 조사2~3→**서리들쥐1기 지정전투**→F1 쉼터에서 형제/동료 대사. Main22 5단계 목표·안전 Spawn/포털 왕복·저밀도 몬스터·Save·접근성·Path 반응형 규칙·대사 Tone 제안 및 남은 승인 게이트 기록.
+- `문서/03_스토리/Chapter3_Main23_24_북부탐험_첫눈_한기_연결기획_v1_20261014.md` — Main23 F1 심부 발자국·설원족제비1 조우 후보→F2 첫눈 경계. Main24 F2 진입 첫 한기 2턴 전체 행동불가, **최초 필수 한기전 이전 대응약/정화Ⅱ/온기의 불꽃 등 실사용 대응 경로 확보**(상품·가격·사전지급 방식 미정), 서리올빼미1 예고형 전투·파티 전원 행동불가 무대응 방지.
+- 전체 정본 `문서/03_스토리/Chapter3_Main22_29_북부_온기의화로_스토리구성안_20261014.md`에 두 문서 연결. **실제 `main` Main21 QuestDefinition `nextMainQuestId` 빈 값 발견** → Main22 해금·Continue·일회 보상/북쪽 포털이 실제로 동작하는지 구현 승인 뒤 Codex 검증 필수.
+- **스포일러·인물 경계:** 태온/하렌 반말·형제애 메인/결말 `잘.했.어.`, 폴·미엘 쌍방 Slow Burn, 세린의 독립 조사/미엘·세린 수다, 여성 플레이어의 추가 반응(동일 정보/보상), 미엘 과거는 Chapter5/6까지 비공개.
+- **승인 상태:** 세부 Objective·대사·NPC 동작 제안은 **v1 DRAFT / USER_REVIEW_PENDING / UNITY_NOT_IMPLEMENTED**. 기존 Main21 13단계·챕터 전환·펫 서비스 구현과 User Save 보호. 스킬은 상점에서 탈렌트 구매하는 기존 정책 유지. Chapter3 아트/TTS/BGM·코드 구현 발주0.
+- 다음: 바울 대표 귀환 후 이 세부 구성, 첫 조우 빈도/유저 부담, F2 한기 해제 수단 공급방법, 북쪽 원정 출발 동기, Chapter3 신규 Scene 구성의 중요한 설계 선택 검토. **사용자 식사 동안에도 메시지를 받지 않은 시간에 백그라운드 작업을 계속했다고 주장하지 않는다**. 이 턴에서만 GitHub 기획 진행.
+
+---
+
+# PLANNING 인계 — 2026-10-14 Main21 초보 마을 귀환 이유: 펫 서비스 공개와 기후 전환
+
+**바울 대표 직접 정정:** Main21의 마차 귀환은 Chapter1 **초보 마을 `World_StarterVillage`**에서 종료. 왜 다시 마을을 거치는가? **(1) Chapter2 클리어 뒤 기존 초보 마을에도 펫 분양·관리 서비스가 추가됐음을 플레이어에게 직접 보여 주기, (2) 뜨거운 서부→곧바로 얼어붙은 설원으로 넘어가는 기후 개연성 문제 방지**. 복귀 장소·목적을 혼동하지 말 것. 이미 `main`에 있는 `SafeZonePetServiceRollout`은 **Main21 완료 후** 새 펫 NPC 2명 활성화: 따라서 Main21 목표10 마차 도착 당시 NPC를 강제 보여주거나 목표13 전에 서비스 사용 강제하면 안 됨. **Main21 목표13/클리어 후 마을 자유 탐색(펫 NPC 자발적 확인/이용) → 북쪽 길로 자발적 Main22 출발 → 신규 북부 F1 몬스터/서리**. 펫 구매 의무0, Main22 즉시 Scene 강제 전환0, 기존 보유/직업·SafeZone·Save·13목표/미술 보호.
+
+기후: **서부 열기→평온한 초보 마을(찬 북풍 정도)→F1 얇은 서리·서리들쥐·설원족제비→F2 첫눈→F3~F5 눈/동토**. 북행 탐사의 직접 동기는 기존 Main21의 북쪽 이상 징후와 F1 동물 남하 조사이며, 펫 시설은 마을 귀환의 게임플레이 허브 이유다. Main21의 기존 하렌 첫 만남/북쪽 준비를 Main22에서 반복 금지. 상세 Scene Portal/퀘스트/배치·새 대사는 기획/구현 미확정.
+
+갱신 문서 (`docs/planning`):
+- `문서/03_스토리/Chapter2_Main21_돌아온_온기.md`
+- `문서/03_스토리/Chapter3_Main22_29_북부_온기의화로_스토리구성안_20261014.md`
+
+---
+
+# PLANNING 인계 — 2026-10-14 Main22 새 북부 필드·첫 몬스터 전투 포함
+
+바울 대표 피드백 **“메인22 어디서 해? 필드, 몬스터 안들어?”** 반영. **마을 준비만 하는 Main22안 폐기**. Main22 `북풍의 징후`는 **아르벨 출발 → Chapter3 신규 북부 F1 ‘북풍의 들머리’ 입장 → 서리·남쪽으로 향하는 동물 흔적 2~3곳 조사 → 서리들쥐 1기 첫 지정전투 → 태온/하렌 의견차 → F1 내 안전지점 종료**로 수정. F1 일반2종은 기존 **서리들쥐·설원족제비** 그대로(한 화면 몹 최대2, 일반전1~2기). **Main23**은 F1 심부 탐색·동물 남하 흔적 확인 후 **F2 ‘첫눈의 숲’ 입구까지**, Main24에서 F2 첫 한기 예고/대응. 기존 일반5종/엘리트1/보스1·북부 일반필드5+보스전1 유지, 하렌은 자동 4인 전투 합류 금지. Main22 필드·전투는 기획안이며 신규 SceneId/QuestId·레벨·EXP·아트·구현은 미확정.
+
+수정 정본: `문서/03_스토리/Chapter3_Main22_29_북부_온기의화로_스토리구성안_20261014.md` (`docs/planning`). 뒤편의 이전 Main22 '마을에서 준비만' 요약은 이 최신 정본에 의해 대체됨. 다음 Main22 실제 Objective/Dialogue·이동 연결 안전성 확정 필요.
+
+---
+
+# PLANNING 인계 — 2026-10-14 Chapter3 인물 관계 3축·미엘 과거 설정 확정
+
+바울 대표가 Chapter3 **형제애 태온·하렌(메인) / 폴·미엘 Slow Burn / 미엘·세린 일상 수다(+여성 플레이어 선택적 참여)**의 3축을 요청·확정. **내부 스포일러 신규 사용자 확정:** 미엘은 과거 결혼을 약속한 사랑하는 남성과 함께 전쟁에 참전, 둘 모두 큰 부상, 남성이 미엘을 먼저 치료해 달라 했고 미엘 치료 중 그가 곁에서 사망. 이 경험이 **미엘의 마음의 상처와 타인을 먼저 치료하려는 경향**의 핵심 개인적 맥락. 본격 공개는 **Chapter5 또는 Chapter6**, **Chapter3 Main26 안전 쉼터에서 단 한 차례 짧은 말/표정으로 간접 암시 후보**. 지금 트라우마 관련 리서치·질환 명명/치료 묘사는 보류. 동료 본인의 자기결정권·중요 정보 성별 동등성·세린 독립적인 탐사/판단 보호. 폴은 과거 연인 대체/트라우마 치료사 역할이 아니며 새 고백·연애 확정 없음.
+
+**내부 스포일러 정본:** `문서/03_스토리/Chapter3_형제애_폴미엘_여성동료수다_미엘과거복선_20261014.md` (`docs/planning`). `Chapter3_Main22_29_북부_온기의화로_스토리구성안_20261014.md`와 `문서/04_등장인물/폴_미엘_관계.md` 동기화 완료. Chapter3 Main22~29은 여전히 **1차 구조 가안**이고 아직 QuestID/Dialogue/TTS/BGM/아트/Unity 제작0. 태온·하렌 결말 정확 **“잘.했.어.”** 보존. 공개 영상·TTS 녹음용 대본으로 이 비공개 전쟁 사건을 미리 공유하지 말 것. 다음에는 Main22~24 자세한 목표/인물 대사 먼저 설계.
+
+---
+
+# PLANNING 인계 — 2026-10-14 아르벨 국소 투명·접합 최종 미술 승인
+
+바울 대표가 이전 지붕·집 간격 문제를 수정한 Codex **국소 지붕 투명 + 처마 접합부 마감색** 3열 Unity 비교 화면을 직접 본 후 **“미술 승인은 내가 보는거면 봤으니까 된거지 뭐”**라고 명시 승인. **아르벨 기본 23종과 해당 국소 투명·접합 표현 USER_ART_APPROVED, 미술 재승인 질문 금지**. Codex 보고 **1,039PASS/0FAIL·실제 Unity 캡처38장**, 신규PNG0, 문·벽·처마 불투명 보호, 배경 건물 떠보임 보완.
+
+기획 정본 `문서/00_프로젝트/Arbel_v3_Official_Apply_Push_Gate_20261014.md` 갱신. 남은 사항은 ZIP 검증본 SHA(`84e9707d...`) vs 현재 Downloads 문서차이(`58fb22...`) 소스 확정과 정식 디스크 적용/접근성·Quest·Save/Scene 회귀 QA, 작업 Codex feature Push. 기존 조건부 정식 적용/feature Push 승인 유효하되 **실제 적용·Push0, main 병합은 별도 승인**. 선택 장식11개 미배치, 기존 Portal-나무 OPEN 유지. 사용자의 원본 Unity Editor/Save/dirty 상태 보호. Codex 잔여 할당량을 고려하여 현재 새 작업을 시작했다고 주장하지 않음.
+
+---
+
+# PLANNING 인계 — 2026-10-14 Field02~Field03 태온007~011 음성 페이지 대응 오류 (최신)
+
+바울 대표 실제 Unity Play 캡처5장·청취 재제보: Field02 `폭이 같습니다` 음성 미재생, Field03 `누군가` 화면에서 앞 `폭이` 재생, `너무 조용합니다` 화면에서 `누군가` 재생, `그 이유가 무엇인지는` 전에 앞 태온 음성 연결/혼재, `마법 같습니다` 내용은 정상이지만 시작 공백 길다. 코드 원문/Stable ID 실제 확인: `main08_taeon_supp_007`~`011`. 중간 미엘 대사/무음 Player, 5+3페이지 `DeepZone` 분할, 이미 main 병합 승인한 태온005/006 **절대 수정 금지**.
+
+**기획 새 정본**: `문서/00_프로젝트/Main08_Field02_Field03_Taeon007_011_Voice_Content_Audit_20261014.md` (`docs/planning`). 코드 DialoguePresenter는 페이지마다 이전 음원을 Stop하고 선택 Clip Play, 따라서 **WAV 실제 내용·GUID 연결·합본/선행무음·현재 AudioSource timeSamples**를 Codex **원본 읽기전용** 우선 대조. 후보007~011은 기존 PCM 재사용/손실없는 분리/필요시 선행 여백 최소 보정 후 별도 임시 폴더와 개별 청취 자료만 납품. **새 TTS 0, 실제 Unity 음성 연결0, Commit/Push0, main병합0**. 청취 승인 후에만 정확 ID 대상 정식 연결/QA/브랜치 Push 지시. Main08 PR#11 merged/main SHA `314f7fbbd66799ff93ec71404bcf388023c655be` 보호. Arbel v3 지붕 깊이감/집-지붕 떨어져 보이는 미술 HOLD와 분리.
+
+---
+
+# PLANNING 인계 — 2026-10-14 아르벨 세린 투명 지붕 후보 기술 PASS, 미술 판정 대기
+
+Codex 격리 새 후보: 기존 Y-Sorting + SortingGroup + **세린을 실제로 가리는 지붕만 투명 렌더링**. 지붕 불투명 영역이 세린을 약99.79% 가림, Order 값만으로 해결 불가능. **1,575PASS/0FAIL, 실제 Unity 캡처68장, 세린 위치변화/문·기타NPC 상호작용3/3PASS**, 새PNG0, 원본5223파일/Editor/Play/포커스·Save·Scene 변경0, 공식 적용·Push0. 기존 Portal-나무 겹침 OPEN·Optional 장식11 미배치. 보고서 우측 화면은 세린이 드러나지만 지붕 위에 서 있는 인상을 완전히 해소하는지는 사용자 시각 판정 필요. **USER_VISUAL_APPROVAL_PENDING / OFFICIAL_APPLY_BLOCKED**: 기술 QA를 최종 미술 승인으로 간주 금지. 다음 바울 대표에게 우측 투명 지붕 최종안 승인 여부 확인 후, 필요시 동적/국소 투명화 수정 제안·격리 검증. 기록 `문서/00_프로젝트/Arbel_v3_Official_Apply_Push_Gate_20261014.md` `docs/planning`.
+
+---
+
+# PLANNING 인계 — 2026-10-14 PR #11 태온 005·006 main 병합 확인
+
+바울 대표가 Main08 음성 PR #11의 **main 병합을 명시 승인**하고 기획 담당이 정상 병합 수행. PR #11 = merged/closed, merge commit **`314f7fbbd66799ff93ec71404bcf388023c655be`**; GitHub 원격 `main` HEAD가 정확히 동일 SHA임을 다시 확인. 태온005·006(사용자 최종 청취 승인; 005 선행무음185.833ms 축소, 006 기존 PCM 보존), 음성 Catalog 2개 ID 연결과 QA 문서·증거 병합. 사전 224PASS/FAIL0, 별도 기존 Search·스피커·대화 중 조우 OPEN은 그대로.
+
+**아르벨 v3 공식 적용은 세린 지붕 깊이감 FAIL로 여전히 BLOCKED**, 선택 장식11 미배치. TTS 병합을 아르벨 승인으로 오해 금지. 최신 확인은 `문서/00_프로젝트/Main08_Trace03_Taeon005006_Voice_Boundary_Followup_20261014.md`.
+
+---
+
+# PLANNING 인계 — 2026-10-14 태온005·006 최종 사용자 청취 승인 및 PR #11
+
+바울 대표가 005 최종 공백 축소 WAV를 다시 듣고 **“들었어 좋아.”** 최종 청취 승인. 승인한 태온005 최종6.543625초/006 3.800542초, 기존 승인6·Stable ID 보호. 원본 게임 디스크 Catalog2참조 적용 보고, Field02 QA224PASS/FAIL0·전체 Search/실제 스피커 등 PARTIAL.
+
+음성 전용 GitHub **[PR #11](https://github.com/HappyPaul812/Project-Limitless/pull/11)** OPEN, 최신 조회 **mergeable:true**, 비교 **main보다 ahead2/behind0**, 20파일(새음성2/meta3/Catalog/QA/문서). 원격 작업 HEAD `721602256ac4e8c4c7081e6b6b3f04122b266edd`, `main` 아직 `bddca540d2fdd9e93f642f8d0f387b34730bd2d8` 불변. 사용자 `좋아`는 **음성 청취 승인**으로 기록, 팀 운영 정책에 따라 **main 병합의 명시 승인 전 실행 보류**. 아르벨 세린 지붕 FAIL/정식 적용 차단은 별도 계속 유지. 최신 음성 정본 `문서/00_프로젝트/Main08_Trace03_Taeon005006_Voice_Boundary_Followup_20261014.md` (docs/planning).
+
+---
+
+# PLANNING 인계 — 2026-10-14 태온005/006 원격 Push 완료·최종005 청취 확인 권장
+
+바울 대표 보고 + GitHub 직접 확인: 작업브랜치 `codex/main08-taeon005006-final-20261014` 원격 HEAD `721602256ac4e8c4c7081e6b6b3f04122b266edd` Push 완료. 원본 디스크 새로운 승인WAV2/meta3와 Catalog 참조ID005/006 등록, 기존 승인6·원본WAV/meta·Editor/Play/포커스·5,221파일 보호. 005 선행 무음185.833ms만 제거→6.543625s; 006 3.800542s 완전 동일. Field02 대상 224PASS/FAIL0, 기존 Editor Search 예외/물리스피커/정본 버전/대화중일반몬스터 정상조우는 PARTIAL·OPEN. main `bddca540...` 변화0.
+
+**주의**: 실제 WAV 선행 약한 신호 0.14초, 강한 발화 신호 약2.33초(첫 음절 시점으로 단정 불가). 바울 대표가 처음 요청한 공백의 체감 개선을 재청취하면 최종 승인 판단에 유익. **PR/main 병합은 사용자 승인 전 대기**. 만일 여전히 공백 길면 Codex에게 보존된 숨/내부 여백 청취 기반 진단만 요청. 정본 `문서/00_프로젝트/Main08_Trace03_Taeon005006_Voice_Boundary_Followup_20261014.md`.
+
+---
+
+# PLANNING 인계 — 2026-10-14 Arbel 공식 적용 FAIL, 세린 깊이감 원인 진단
+
+바울 대표 Codex 보고: **아르벨 정식 적용 필수 게이트 FAIL**, 원본 적용·Commit·Push 중단 완료. 격리 시험 기술 **905PASS**, Renderer284/284·Missing Sprite/Script0·캡처17장·후보23·PNG재제작0. 그러나 기존 지붕 Sorting 뒤=세린 거의 가려짐, 앞으로=세린 지붕 위에 선 것처럼 보임. Order30 등 단순 Sorting으로는 해결되지 않음. 원본5223 SHA/HEAD/dirty·Unity Editor/Play/포커스·Save·Scene 무변경. 기존 Portal/나무 겹침은 별도 OPEN.
+
+정본 `문서/00_프로젝트/Arbel_v3_Official_Apply_Push_Gate_20261014.md` 후속 상태 갱신: **OFFICIAL_APPLY_BLOCKED / SERIN_DEPTH_VISUAL_FAIL**. 다음 지시는 **Codex 격리 깊이감 원인·실제 발앵커/Y-Sort/지붕 앞뒤 레이어/문·NPC 시야·적응형 roof transparency/mask 가능성 조사**, 객관적 Before/After 제시. PNG 지붕 분리 필요 시 Chapter1·2 리뉴얼 담당 `docs/art-renewal`에 정확 자산/렌더러/처마 마스크 범위를 요청. 정상 미술 승인 유지하되 전경 레이어 세부 보완. 23개 새 아트 전체 재제작 금지; Optional11 미배치; 원본 공식 적용 및 작업 브랜치 Commit·Push/PR/main 병합은 **시각 게이트 재PASS·사용자 비교 확인 전** 금지. 태온005/006 TTS 후속은 별도 작업.
+
+---
+
+# PLANNING 인계 — 2026-10-14 태온005·006 직접 청취 승인 + 005 공백 보정
+
+바울 대표가 분리 두 WAV를 각각 청취하고 **“둘 다 정상인데. '초원에서는...' 앞이 좀 공백이 있네?”**라고 보고. **006은 내용·음색·경계 전체 승인**, **005는 내용·음색 승인, 첫 발화 이전 선행 무음만 짧게 보정 필요**. 005 6.729s와 006 3.801s는 기존 분리 후보 길이이며 최종 005는 조금 짧아질 수 있음. Codex는 원인이 WAV 선행 무음인지 런타임 시작 지연인지 확인 후, 발음/호흡을 살려 무음만 최소 Trim하고 006 PCM은 그대로 보존. 원본 PCM 전체 재결합 동일성은 최종 Trim 뒤 주장 금지; 살아 있는 발화 PCM·기존 승인6·다른 대사/Save/Editor 보호.
+
+기획 정본 `문서/00_프로젝트/Main08_Trace03_Taeon005006_Voice_Boundary_Followup_20261014.md` 갱신. 사용자가 2문장 청취 승인했으므로 기술적으로 안전한 005 trim 확인 후 해당 2 Stable ID만 격리 Unity Catalog 연결/회귀 검증, 전용 codex 브랜치 Push **조건부 진행 가능**, `main` 직접 변경/병합 금지. **현재 Codex 적용 완료는 아님**.
+
+---
+
+# PLANNING 인계 — 2026-10-14 태온005·006 무손실 후보 청취 대기
+
+바울 대표 전달 Codex 결과: 기존 태온006 합본 WAV에서 **`main08_taeon_supp_005` 6.729초, `main08_taeon_supp_006` 3.801초**를 무손실 분리하여 후보 제작 완료. 자동전사 정본문장 **2/2 일치**, 클리핑0, 샘플 삭제·중복0, 합친 PCM=원본 PCM 동일. 기존 승인6/원본 WAV·GUID/meta·Catalog/Unity·Scene·Save/기타대사 불변, 신규 TTS/API·정식 게임연결·Push0. **실제 바울 대표 개별 청취 승인 전**이며 후보 기술 PASS를 청취 승인으로 오해하지 않음. 다음: 후보 둘 다 재생·음색/문장·분리 경계 승인 받은 뒤 Codex에만 해당2 StableID 정식 연결/검증 지시. 최신 기록 `문서/00_프로젝트/Main08_Trace03_Taeon005006_Voice_Boundary_Followup_20261014.md`.
+
+---
+
+# PLANNING 인계 — 2026-10-14 Arbel v3 조건부 공식 적용·feature Push 승인
+
+바울 대표가 아르벨 격리 Unity 3245 PASS 보고와 미해결 세린 지붕 깊이감/Portal 기존 겹침을 받은 뒤 **“넘어가자.”**고 지시. 기획은 이를 **세린 Sorting/가림 필수 시각검증 및 출처 ZIP SHA 확인 성공 시** 원본 Arbel v3 기본 23종 공식 디스크 적용과 전용 `codex/*` 브랜치 Commit·Push를 진행하라는 **조건부 승인**으로 관리. **main 직접 작업/PR 병합/Optional11 배치 승인 없음**.
+
+작업 정본: `문서/00_프로젝트/Arbel_v3_Official_Apply_Push_Gate_20261014.md` (`docs/planning`). ZIP 검증본 SHA `84e9707df7f0409e0238781f0860499dd4344b79ec88b49964a7ce7d8e10633b` 사용 필수, Downloads 다른 SHA는 PNG43 동일하더라도 보존본과 문서 차이 확인 전 임의 혼용 금지. 기존 원본5223/사용자 dirty/Save·Editor/Play/포커스, Field04/Main08 TTS 및 다른 씬 불변. **세린 앞뒤 깊이감/양쪽 문 시야·휠체어 이동/Portal 사용 실질 장애를 검증 전 PASS 처리 금지**. 필수 게이트 불합격이면 적용/Push 중단. 현재 **지시 문서화 완료, Codex 실제 적용 미실행**.
+
+---
+
+# PLANNING 인계 — 2026-10-14 Arbel v3 격리 Sorting 보완 3245 PASS
+
+사용자 전달 Codex 격리 보완 결과: **3,245 PASS / 0 FAIL**, 실제 Unity 캡처55, 교체후보23, Renderer284/284, Sprite/Script 누락0, Optional 장식0. **PNG 43개 픽셀 변경0**, SpriteRenderer Sorting만 격리 환경에서 조정해 세린을 화면에 드러내고 양쪽 건물 문 가림을 해결. Collider가 있는 소품9 배치 높이 검증 통과, 기존 Barrel·파티 안내판·Chest Collider 우회 경로 도보/휠체어5/5 지점 도달. **OPEN**: 세린의 지붕 앞뒤 깊이감 시각 판정, 기존 Portal-나무 겹침, 수동 실제 조작/전체 런타임 QA. 현재 Downloads ZIP SHA는 기대값과 달라 **기대 SHA `84e9707d...`의 이전 보존 검증본**으로 실험했고 PNG43 동일·문서11개 차이만 보고, 정식 적용 때 출처 확정 필요.
+
+기획 상태는 `ISOLATED_TECH_PASS / VISUAL_PARTIAL / ORIGINAL_APPLY_NOT_AUTHORIZED`. 원본5223 SHA 불변·Editor/Play/포커스·Save 미변경·Push0. 다음 Codex는 **세린 지붕 앞뒤 위치별 화면 비교→가림 자연스러움 점검과 Sorting 범위 확정** 후 사용자 확인. Portal 겹침은 기존 이슈로 별도 관리. 승인 디자인 재제작 금지, 공식 Unity 적용·브랜치 Push/main 병합 미승인. 갱신 정본 `문서/00_프로젝트/Arbel_v3_User_Visual_Approval_And_Occlusion_Fix_20261014.md`.
+
+---
+
+# PLANNING 인계 — 2026-10-14 Field02 Main08 태온005·006 음성 불일치
+
+바울 대표가 원본 Unity Field_02 캡처2장과 함께 “초원에서는…”부터 “이 흔적…” 직전까지 다른 대사라고 재제보. MainQuest08FieldFlow.GetLines 실제 대조: 정확히 Trace03의 **태온005** (`main08_taeon_supp_005`, “초원에서는 무언가를 피해 밀려오는 것처럼 보였습니다.”), **태온006** (`main08_taeon_supp_006`, “여기서는 그 방향이 조금 더 분명합니다.”), 다음 플레이어 무음 “그러면 우리가 찾던 방향은 맞는 것 같습니다.”까지. WheelTracks 첫 **미엘004** (“이 흔적… 폴 씨 것 아닐까요?”)은 **제외 경계**. 10/13 Main08 음성6개 승인 적용 당시 **태온005/006은 OPEN**이었고, 기존 ASR에서 기존005에는 태온004의 긴문장, 기존006에는 정본005+006 합본 발화 기록이 있다.
+
+신규 기획 정본 `문서/00_프로젝트/Main08_Trace03_Taeon005006_Voice_Boundary_Followup_20261014.md` (docs/planning). 다음 Codex는 기존006 PCM에서 두 정확 문장의 무손실 분리 가능성 진단 후 **005/006 두 후보를 별도 폴더로 출력하고 인간 청취 승인 요청**. 분리 실패일 때만 TTS 담당에게 그 ID만 제작 검토. 원본 WAV·meta·Catalog·승인 6개·Unity Editor/Save 변경0, 신규 TTS/API0. 현 상태 **CANDIDATES_PENDING / USER_LISTENING_PENDING / NOT_APPLIED**. 대화 중 일반조우 OPEN은 별도 보호.
+
+---
+
+# PLANNING 인계 — 2026-10-14 Arbel v3 미술 방향 승인 / 화면 가림 보완 대기
+
+사용자가 Codex 아르벨 격리 Unity 캡처 39장을 직접 보고 **“봤어. 좋아”**라고 답함. 따라서 **USER_VISUAL_DIRECTION_APPROVED**. 보고 수치: 교체 후보23 / Renderer284/284 / 선택장식0 / 전체 Scene 참조3654 정상 / Missing Sprite·Script0, 원본5223파일 변화0. **기술 PASS / 시각 PARTIAL**: 북서 지붕이 세린 가림, 양쪽 건물 벽이 출입문 가림. 소품9종 실제 물리접지/기존 Portal-나무 중첩/휠체어 6/8 및 미도달2 지점 HOLD. Downloads ZIP 기대 SHA 불일치라 시험은 기대 SHA와 일치한 기존 검증본으로 진행한 점 주의. 정식 적용 전에 후보 ZIP SHA를 확정해야 함.
+
+정본: `문서/00_프로젝트/Arbel_v3_User_Visual_Approval_And_Occlusion_Fix_20261014.md` (docs/planning). **다음은 Codex 격리 환경에서 지붕/벽 가림만 최소 보정하고 실제 Unity 전후 비교 + 기능/접근성 재검증**, PNG 수정 필요 시 리뉴얼 아트 담당 개별 수정 요구. 사용자 재확인 전 원본 공식 적용/Push/main 병합 승인 없음. 선택 장식11종 계속 미배치.
+
+---
+
+# PLANNING 인계 — 2026-10-14 Arbel v3 격리 Unity 화면시험 승인 (최신)
+
+바울 대표가 "그래."라고 명시하여 Arbel v3의 **원본 변경 없는 격리 Unity 시험적 Sprite 교체 및 실제 GameView/RenderTexture Before/After 캡처**를 승인함. 이는 전체 미술 승인/원본 Unity 공식 적용/feature Push/main 병합 승인 **아님**.
+
+신규 기획 정본: `문서/00_프로젝트/Arbel_v3_IsolatedUnity_VisualTrial_Gate_20261014.md` (`docs/planning`). Codex에게 23개 직접교체 후보만 격리 Scene에 시험 적용, 바닥·도로·벽12, 지붕2 가림 HOLD, 소품9 접지 HOLD를 구별해 실제 Unity 렌더링 비교 제작 지시. Optional11 배치0/Portal(-7,-4) 겹침 무변경. 원본 Unity Editor/Play·Save/Scene/dirty·Assets/GUID/meta 전부 보호. 이후 바울 대표가 실제 게임 화면 직접 확인하고 23개 기본안 및 11개 선택 장식을 별도로 승인.
+
+**현재: ISOLATED_TRIAL_REQUEST_READY / NOT_YET_TESTED / USER_ART_APPROVAL_PENDING.** GitHub 문서 작성만 완료, Codex가 실제 격리 Unity 시험/이미지 제작을 했다고 주장하지 않는다.
+
+---
+
+# PLANNING 인계 — 2026-10-14 북부 Main22~29 스토리 1차 구성
+
+바울 대표 지시 “우리는 기획이나 하자”에 따라 Arbel v3 리뉴얼 확인/담당 문서 인계는 아트 담당에게 맡기고 기획에서는 Chapter3 북부 **온기의 화로·설빙의 폭군** 메인 시나리오를 진전. 신규 문서: 문서/03_스토리/Chapter3_Main22_29_북부_온기의화로_스토리구성안_20261014.md (docs/planning).
+
+**Main22~29 8개 퀘스트는 기획 제안/미확정**: 출발→F1 피난동물→F2 첫한기→F3 세린이 화로 마력단서 발견→F4 피난처와 동상→F5 빙각 수호체 및 하렌·태온 신뢰→Main28 설빙의 폭군과 단일 화로 전투→Main29 서서히 돌아오는 온기와 전투 후 정확 대사 “잘.했.어.”. 북부 일반필드5+보스1, 일반몹5/엘리트1/보스1, 조우저밀도/냉기 대응 사전 공급/실시간 시간제한 없음, 하렌 자동 영구 합류·3인 초과 전투 금지. 세린/폴/미엘도 스토리 의사결정과 안전 확보에 기여. 확정된 보스명·화로 전제와 제안된 세부 원인/퀘스트 수 구분. 새 Quest/Scene/아트/TTS/코드 제작0. 다음 Main22~24 목표·대사 설계 및 Main28 턴큐 안정성 확인.
+
+---
+
+# PLANNING 인계 — 2026-10-14 Codex Arbel v3 보고 후 아트 담당 명시 확인 대기
+
+Codex v3 메타데이터 정정은 사용자 전달 보고 기준 **QA PASS**: `Limitless_Arbel_Renewal_Art_v3.zip` SHA256 `84e9707df7f0409e0238781f0860499dd4344b79ec88b49964a7ce7d8e10633b`, 소품 Sprite.rect 8개 정정, 기존 PNG34/34 동바이트·284Renderer·도로 seam0·북서 십자, 검사2455+191PASS; 원본 Unity·Push0.
+
+**중요한 부서 간 인계 조치:** GitHub `docs/art-renewal`의 `WORLD_ART_RENEWAL_LATEST.md`를 확인하니 아직 v2 상태임. 따라서 리뉴얼 담당이 v3 결과를 **직접 읽고 검토한 것은 미확인**. 기획 담당은 `Arbel_v2_Props8_Metadata_Correction_Gate_20261014.md`에 리뉴얼 담당의 **명시 검토·응답·문서 갱신 지시**를 기록함. 바울 대표가 담당 세션에 이를 전달한 뒤 담당의 리뷰와 `docs/art-renewal` 문서화 커밋을 확인할 필요가 있음. 자동 세션간 전달 완료로 주장하지 말 것.
+
+현 상태: **Codex 기술 문서 QA 완료 보고 접수 / 아트 담당 v3 확인 미완 / 바울 대표 미술 승인 미완 / Unity 적용·런타임·Push 미진행**. 지붕/NPC 가림·소품 실제 접지·Portal 장식 충돌/선택장식11 HOLD.
+
+---
+# PLANNING 인계 — 2026-10-14 Arbel v2 재검수 / Props8 기록 오류 (최신)
+
+바울 대표가 Codex v2 재검수 결과를 전달. v2 ZIP SHA256 17625d35c93599bdd74a4b8280c0416240c402be279815c8966199410bca97b7 일치, PNG/CRC/Manifest, 도로 Seam0, 북서 의료 십자 수정, Arbel Renderer284/284 전부 PASS. 다만 **소품9종 중 원본 크기 필드8종의 기존 시트/복합크기 fallback 오기**가 있음. Codex 정정 근거 CSV에 따르면 Medium Tree 125×146→128×156, Barrel64×82→128×128; 나머지는 임의 추정하지 않고 CSV 근거로 복구. PNG 자체 오류 아님.
+
+최신 문서: 문서/00_프로젝트/Arbel_v2_Props8_Metadata_Correction_Gate_20261014.md (docs/planning). **권고: Codex가 기존 감사 근거 CSV로 문서8종만 고쳐 v2를 보존한 별도 v3 ZIP(문서정정판) 제작**, 실사용 PNG34 전부 동일 SHA, Renderer284/284+기존 QA 재검증. 선택 장식11종·지붕2종 가림·실제 Alpha foot/접지·Portal 충돌은 HOLD. 사용자 미술 승인·Unity 적용·main Push 전 단계이며 원본 Editor/Save 보호.
+
+---
+# PLANNING 인계 — 2026-10-14 Arbel v1 QA 미술 보완3항목 (최신)
+
+바울 대표 제공 Codex 로컬 검수: `F:/Downloads/Limitless_Arbel_Renewal_Art_v1.zip` SHA256 `ec707452169aa99ec297a7ac23a14928d4a0123b4b7b051d17ddcb282953d626`; 47파일/PNG40/Arbel Renderer284/284, PNG CRC/Manifest·바닥6 seam 대부분 정상. **NEEDS_MINOR_FIX**: (1) 도로2장의 좌우 RGB·상하 Alpha 경계 불일치, (2) 소품 **9개**의 원본 크기/가시 alpha 접지 데이터 보완, (3) 북서 건물의 십자표지가 실제 치유사 위치와 달라 안내 오해. Preview5는 합성화면/실 Unity 미검증; 지붕 확대·선택장식11·Portal 기존 충돌 HOLD. **원본 Unity 적용0, Push0, 바울 대표 미술 최종 승인 대기.** 기술 대응 284/284 정상이어도 전체 교체 승인 아님. 리뉴얼 담당 `docs/art-renewal`에 `Limitless_Arbel_Renewal_Art_v2.zip` 최소 보완, 기존 정상 PNG/Asset/SHA·GUID/meta 보존, 변경부 비교 및 인계 문서 요청. Codex는 v2 읽기 전용 재검증 후 사용자 미술 승인 때만 통합.
+
+정본: `문서/00_프로젝트/Arbel_Renewal_v1_MinorFix_QA_Handoff_20261014.md` (docs/planning). Chapter3 설빙의 폭군/신규 아트와 별도 업무.
+
+---
+
+# PLANNING 인계 — 2026-10-14 설빙의 폭군·온기의 화로 (최신)
+
+바울 대표 직접 확정: Chapter3 최종보스 이름 **‘설빙의 폭군’**, 현대 판타지에서 알려진 웬디고 이미지에서 영감을 받는 **LIMITLESS 고유 보스**. **마법의 온기의 화로가 북부를 보호하고 있으나 남은 힘이 거의 없어 곧 영구 결빙 위기**. 보스 입김에서 눈발/눈보라가 뿜어 나오며 `동결괴사`를 부여한다. 보스 이름 가칭 `백빙의 심장`은 **폐기**. 화로는 기존 보스전 기능대로 `살아 있는 아군1명/행동1회/동결괴사 중첩 전부 제거/회복·부활0`이며 실제 화로 잔량/실시간 카운트다운으로 기존 공정성을 깨지 않는다.
+
+신규 정본: `문서/08_몬스터/Chapter3_설빙의폭군_온기의화로_북부몬스터_상세기획_20261014.md`. 일반5종(서리들쥐·설원족제비·서리올빼미·얼음갑충·눈보라 정령)+엘리트 빙각 수호체+보스 설빙의 폭군, 일반 탐험 Field5→단독 보스전1. 모든 적의 화로 약화와의 연관, 전열·후열, 행동/상태, 전리품 후보, 설원족제비 한기 대응 펫 후보 1종, 낮은 화면 밀도/대응 선제 공급까지 기획. 1차 문서는 최신안 링크를 넣어 오래된 보스명 오인 방지.
+
+**승인 경계:** 보스 명칭과 온기의 화로/입김 동결괴사 중심은 바울 대표 확정. 실제 화로 기원·마력 흐름 구조·필드 가칭·몬스터 이름과 전투 수치/패턴·보스 정체·펫 효과·Drop/EXP/Talent·Scene/Quest/Monster ID는 세부 제안이며 승인/검증 전 구현 금지. 상태 한기/동상/동결괴사 및 전투3인/온기의 화로 기존 정본, 마지막 **‘잘.했.어.’** 정확한 문자·후전투 연출 보존. Chapter3 신규 아트 담당 `docs/art-new`이며 현재 아르벨 Chapter1·2 리뉴얼 `docs/art-renewal` 작업과 무관. 다음: 실제 Chapter2 완료 Save·경제 표본 read-only 조사→정확 보스 턴큐/괴사 3중첩 공정성·몬스터 전투 밸런스/드롭 계약 설계→사용자 승인→신규 아트/코드 요청.
+
+---
+
+# PLANNING 인계 — 2026-10-14 Chapter3 북부 필드·몬스터 1차 구성
+
+**최신 바울 대표 지시:** “북쪽으로 갈수록 얼어붙는 필드니까 알아서 해, 보스 전까지 필드가 몇개인지 계획을 세우고 몬스터를 기획하자. 몹이 많으면 정신 없어.”
+
+기획 담당이 `문서/08_몬스터/Chapter3_북부5필드_몬스터7종_1차기획_20261014.md`를 `docs/planning`에 신규 문서로 작성. **일반 탐험 필드5개 + 보스 전용 전장1개, 일반5종+엘리트1+보스1** 1차 구성. 북진 단계: 북풍의 들머리→첫눈의 숲→눈 덮인 고갯길→백색 침엽림→동토의 균열→백빙의 심장(보스, 모든 이름 가칭). **한 화면 일반 적 최대2개체 목표**, 필드당 일반 종2이하, 일반 조우1~2마리/엘리트·보스 독립전투, 동결괴사 보스전용, 기본펫/기존펫 보호, 신규 펫 우선1종 설계 후보. 냉기 F2/동상 F4 도입은 대응법 선제 공급과 예고 필수. 기존 형제애 `잘.했.어.`와 전투3인 보호. 명칭/레벨/드롭/Exact IDs/전투 수치는 후속 사용자 검토·밸런스까지 **TBD**, 기획안·미구현.
+
+이 문서는 최신 병합 main `bddca540d2fdd9e93f642f8d0f387b34730bd2d8` 정본 및 `Chapter3_초기_방향`, `Chapter3_냉기_보스기믹`을 존중. **Chapter3 새 환경/몬스터 이미지는 신규 아트 담당(`docs/art-new`) 업무**, 현재 진행 중인 아르벨 리뉴얼(`docs/art-renewal`)과 분리. 기존 Chapter1·2 Sprite 복구/Field04 통합 완료를 신규 구현으로 확대하지 않음.
+
+**다음 순서:** 5개 필드 구조에 맞는 몬스터별 스탯/행동 예고·사전 대응·드롭과 펫 효과 상세 → 실제 Chapter2 완료 플레이 레벨·탈렌트·몬스터 보상 실측 분석 → 보스 화로 턴 큐 공정성 모델과 형제애 Main22 이후 사건 배치 → 사용자 최종 수치/미술 승인 → Codex 구현 요청. 문서화만 완료, Unity·TTS·Scene·Spawn 변경 없음.
+
+---
+
+# PLANNING 인계 — 2026-10-14 오전 재개
+
+사용자 “굿모닝~! 이어서 하자”에 따라 GitHub 최신 상태 확인: 원격 EOD `codex/eod-integration-20261013` `47b865e9c19c23d30c2c9eb5e14c79cddb79a52d`; PR #10 OPEN/Draft/미병합; main `0e0476649b667129cb7aa6004f4b677335ed8be2` 변화 없음. 어제 기능854 PASS/0FAIL·정적83 PASS이나 전체 BuildScene Sprite 참조 FAIL 기존문제(Arbel·Field05~08). **신규 복구 수행/검증 완료된 원격 증거 없음.** `Sprite_Reference_Restore_Integration_Gate_20261014.md`에 정확한 Codex 복구 범위·검증·통합 PR 게이트를 신규 정본화. 다음: Codex 기술 Sprite 참조 복구(아르벨/서부 필드), GitHub 작업 브랜치 Push, 합본 QA 통과 시에만 PR10 Ready→main 병합. 기존 타 부서 아트 리뉴얼·TTS 승인 필요 사항과 명확히 분리. 원본 Editor/Save/dirty tree 보호. 본 문서 추가는 GitHub `docs/planning` 기록만 바꾸고 Unity 게임 파일을 수정하지 않음.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-13 (퇴근 전)
+
+## 최신 통합 판정 — BLOCKED / PR #10 Draft / main 미병합
+
+바울 대표가 “오늘까지 한 것 모두 합쳐줘”를 승인하여 Codex가 완료·승인 범위만 `codex/eod-integration-20261013`에 합치고 원격 Push까지 수행했습니다. GitHub에서 원격 HEAD `47b865e9c19c23d30c2c9eb5e14c79cddb79a52d`, [PR #10](https://github.com/HappyPaul812/Project-Limitless/pull/10) **OPEN/Draft/미병합**, main `0e0476649b667129cb7aa6004f4b677335ed8be2` 불변 직접 확인. 충돌 PR #8/#9은 합본 작업 브랜치에서 해결됐으며 승인 Field04 Road42(도로42, Renderer375, PNG52), Main08 승인 TTS6, B/C 스킬UI·펫시설, Chapter3 기획, 최신 담당 인계 모두 포함됐습니다.
+
+Codex 새 합본 QA **기능854 PASS·기능FAIL0, 정적83 PASS**지만 **23개 활성 BuildScene Sprite 참조 전체 검사 FAIL**. 기존 main에서도 동일 문제가 재현되어 `Arbel` Edit Mode 약285/Runtime284개, `Field_05_WesternOutskirts` Edit/Runtime362개의 Sprite null로 실제 배경 누락 확인; Field06~08에도 기존 null 다수. 전체 누락 main 2,111→통합1,749로 감소, Field04의362건이 해소되고 **추가 새 누락은0**. 기존 문제라도 시각 배경 결함을 PASS로 표시하지 않고 main 병합을 중단한 조치는 타당합니다. 기존 Search 예외·정본 Unity버전 차이·서쪽 Spawn 겹침·북쪽 Collider 틈·스킬 저장 영속 미구현·Main08 태온005/006 음성 문제·사람 플레이 미검증은 OPEN/PARTIAL로 유지합니다.
+
+정본 보고서: [EOD_Integration_Final_QA_20261013.md](../../EOD_Integration_Final_QA_20261013.md) (통합 작업 브랜치), 증거 `문서/00_프로젝트/Evidence/EODIntegration20261013`. 원본 5,199파일 SHA256, 기존 사용자 dirty/HEAD, Save/Scene/음성/아트, Editor·Play/포커스 무변경 보고. **main 현재로서는 절대 Merge 금지**.
+
+### 다음 1순위 — 기존 Arbel·Field05~08 Sprite Importer 참조 복구
+
+Codex에게 원본 로컬에서 기존 PNG·사용자 수동 Importer/meta·GUID/local fileID/atlas subasset을 **읽기 전용** 대조시키고, 동일 바이트 자산을 `_Project`에 프로젝트 관리 방식으로 등록해 해당 Scene의 Sprite 참조만 교정하는 최소 수정안을 별도 worktree/브랜치에서 검증시킵니다. ThirdParty 원본/meta 임의수정, Scene 재생성, 위치·Collider·Quest 수정, 승인 아트 재제작 금지. 아르벨 리뉴얼 제작 자체와 이 기술적 참조 복구는 **서로 다른 작업**입니다.
+
+수정 뒤 23 BuildScene 전체 Edit + 해당 Runtime 배경 참조 및 기존 합본 854검사 영향 범위 회귀, 카메라 실제 화면, 전체 원본 파일 보호 검증. 기존 main에서 발생한 문제임을 근거와 함께 남기되 누락 게이트 PASS 전 PR #10 Ready/main Merge 금지. 안전 QA 통과 시에만 사용자의 이전 최종 통합 승인을 실행할 수 있습니다.
+
+---
+
+# PLANNING 최신 인계 — 2026-10-12
+
+**최종 사용자 결정(2026-10-12): 리뉴얼 담당은 Chapter 1·2 기존 아트 교체(환경·몬스터·보스·펫·NPC·VFX)만 전담합니다. 기존 스프라이트 담당은 Chapter 3 이후 모든 신규 아트(환경·필드·던전·몬스터·보스·펫·NPC·캐릭터·VFX·UI 필요 이미지)를 총괄합니다. 기존 공식 승인 자산은 별도 승인 없이 교체하지 않습니다. Codex는 구현·Unity 통합·QA 전담입니다.**
+
+우선 참조: `../../LIMITLESS_20261012_전체대화_결정_인계.md`와 Chapter2 리뉴얼 로드맵, CURRENT_STATUS, CODEX_LATEST. Chapter1 B1/B2 환경 미술/통합 완료 보고, B1 문 작은 상태표시 보완 보고, Field03 Rock B v2 ZIP 없어서 ART_FIX_PENDING. Chapter2 지역/자산 리뉴얼은 Field04부터 시작. Chapter3 스킬 상점·강화판, 부활·정화Ⅱ, 한기/동상/동결괴사·온기의 화로 등은 기획 확정이나 미구현. Main18 세린 TTS10개 선별 재생성 대기. 사용자 직접 Git Push; 모든 담당 세션 용량 전에 사전 보고·후임 인계. 구체적 기획 수치를 임의 확정하지 않습니다.
