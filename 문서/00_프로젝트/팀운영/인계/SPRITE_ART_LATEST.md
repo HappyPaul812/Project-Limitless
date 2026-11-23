@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-23 / Issue #126 — Attack4 v2 최종 승인 및 빙각 수호체 Hit4 신규 파일럿 납품
+
+- [#126 바울 대표 Attack4 v2 최종 승인 및 Hit4 파일럿 발주](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091428809) 확인. [Codex v2 격리 Unity 기술 검증](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091633547)과 구별: **KeyPose·Idle4·Attack4 v2 미술 승인 완료/원본 KEEP**, 이번 Hit4는 별도 승인·Unity 검증 필요. 기존 Attack4 v2 미술 승인 대기 기록은 과거 이력으로 남김.
+- 기존 실물 PNG 3종 제작 전후 SHA256 일치, 수정0: KeyPose `c34ea53a95aa6a1fdba4f5e355715fbc25797d6d51e4d544cb9e4dab52f7073c`, Idle4 `0757ebedd37f24e7939d26f38be2efbf9560906b832fae187c61273a314b753e`, Attack4 v2 `0649ef42da7aa628e471a49f4554ad150a0a5fc1b28235a5e9b42bf025030621`.
+- **신규 Hit4 한 시트** `Sprite/RimeSentinel_M6_Hit4_2048x512_RGBA_CANDIDATE.png`, **2048×512 투명 RGBA / 가로4×512셀 / 1,151,287 bytes**, SHA256 **`bd6d66be3b990d9bc7f33261f1d9835abd413c28b91a5842ac9800a5dec28496`**. 승인 KeyPose 파생 2D 국소 반동: 충격→어깨/상체 후방 반동→균형 회복→대기. Frame03 KeyPose 픽셀 동일, 4프레임 접지 y424..511 전RGBA 원본 동일, 4개 독립 셀·알파 외곽0·QA 프레임 일치. 앞서 생성된 다른 디자인의 2172×724 시안 최종 미사용. 국소 bilinear 보간이므로 완전 수작업 애니메이션 재작화/Unity 실측 아님.
+- 실제 512/128/40px 축소 비교판, 투명 128·40px 4프레임 스트립, 비루프 검토 GIF(**100/160/130/220ms = 총610ms**, Unity 정식 피격 애니메이션 타이밍 미확정). ZIP **`LIMITLESS_Issue126_RimeSentinel_Hit4_20261123.zip`**, 3,519,214bytes/13 entries, SHA256 **`4ceb3996d1d602dcdccbf5980b7cd3423a2c9b1e509615c4c450c7ab4c642ea2`**. CRC PASS/Manifest 11/11/SUMS 12/12, 비순환. Library `/LIMITLESS/Issue126_RimeSentinel_Hit4_20261123/` ZIP·PNG·비교판·GIF 저장.
+- [**Hit4 제작·검증 보고**](../../Chapter3_RimeSentinel_M6_Hit4_ArtPilot_20261123.md), `docs/art-new` 실제 commit **`92c42f831b0461b780644ad1b1614284dc50bd53`**. **`KEYPOSE_IDLE4_ATTACK4V2_USER_APPROVED / HIT4_ART_CANDIDATE / USER_HIT4_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / HIT4_UNITY_NOT_APPLIED`**. Hit4 미술 승인 전 Defeat4·기타 공격 예고/균열 강타 모션 미제작. Unity6000.6.5f1 / #85 HOLD / Save/UserData·Discord / Codex#122 / M1~M5·F1~F3/기존 공식 원본/main 보호. main 직접 commit/Push/Merge0.
+
+
 ## 2026-11-23 / Issue #126 — Attack4 v2 주먹 타격 전진 국소 보완 납품
 
 - [#126 Attack4 v1 Codex 기술 검수](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7089964295): 40px 타격 분리 PARTIAL, v1 Unity 격리 비루프 Animator PASS. 대표 신규 피드백: 주먹의 전진·사거리감과 어깨 추종 부족 → **2·3프레임만 국소 보완**. 기존 KeyPose·Idle4 최종 미술 승인 잠금 및 Attack4 v1 보존.
