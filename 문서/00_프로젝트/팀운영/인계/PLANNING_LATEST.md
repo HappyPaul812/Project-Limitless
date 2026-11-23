@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-23 — TTS·BGM 최신 담당 보고 재확인
+
+- 사용자 지시: Codex #122/#123 지시문 전달 완료. TTS #125·BGM #31 최신 공식 보고 재검토.
+- [TTS #125 최신 보고](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7087447265) + `docs/tts` 정책·인계 실물 확인: 총101대사행(주요5인72/NPC23/무음6), 신규 NPC `TEXT_ONLY_DEFAULT` **21행**, 마레 Main24(84자)·Main26(66자) 2행은 `CONDITIONAL_REVIEW_ONLY`이지 제작 승인 아님. 기존 승인 WAV162 보존, 신규 Google Cloud 호출·계정·결제·WAV0. Cloud 월 무료 구간은 청구계정 활성화 필요/초과 과금 및 예산알림이 자동차단이 아님. 정확 Runtime IDs/주연72 신규제작 및 예외2의 필요성 별도 승인 대기. 문서 마지막 정책 커밋 `f25164697c249a9cdda153ceecc9295c3c82478a`.
+- [BGM #31 최신 보고](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7087496635) + `docs/bgm` QA/인계 실물 확인: F1 `Where_the_Grass_Bends`, 서릿길 `Hearth_in_the_Low_Valley` 원곡2개는 대표 과거 청취 승인 확정. 새 B LoopPlan(Grass intro14.60/body14.60-68.10, Hearth intro4.35/body4.35-60.80, xfade0.55)은 기계적 무음0·hardclick/beat PASS, 4 Preview decode PASS. **최종 사람 청취 승인 미확인**, 배포 Master 미제작, Unity 미적용. ZIP `LIMITLESS_Issue31_LoopReview_20261123.zip` 2,199,087 bytes SHA256 `65a37dc8322a0eb5ed6e52527de1ac0754a5bd3252e108dd6dd56bd1406a3484`. 담당 커밋 `d8a22436b3c67459fbf03eb34a0834df72e5de52`.
+- 본 기획 세션의 접근 가능한 Library 검색에서 Review ZIP 실물은 **NOT_ACCESSIBLE**, 따라서 청각 심사·최종 루프 승인이라고 주장하지 않음. 후속은 비교본 전달 및 바울 대표 청취, 승인 후에만 배포 Master 제작/Unity 연동 별도.
+- `REVIEW_COMPLETE / TTS_POLICY_COMPLIANT / BGM_LOOP_USER_LISTENING_PENDING / NO_PRODUCT_CHANGE`. Unity6000.6.5f1, 기존 Save·TTS·Mixer/Discord/#85 HOLD, 원격 main 보호.
+
+---
+
 # PLANNING / 2026-11-23 — #122 승인 선택지·#123 기술 합격 최종 접수
 
 - Codex 최근 브랜치 `codex/ch3-loot6-contract-20261123` 로컬 HEAD `240c72ec39b3d539802b8c2729e3b6d2a98c95e4`, 문서만 갱신, 원격 Push·제품 적용0.
