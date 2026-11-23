@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-24 — #85 Bootstrap Search 조건부 예외, 기술 복구7파일 안전 커밋 우선
+
+- 바울 대표가 Codex 11/24 Unity 6000.6.5f1 격리 Bootstrap 2회 결과를 전달. [원문](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-7116282657): 즉시 Play에서 `UnityEditor.Search.SearchInit.IndexationOnStartup` `ArgumentOutOfRangeException` 1건 발생하나 시작 메뉴는 6초 진행, Play 요청을 5초 지연하면 예외0·시작 메뉴 6초 진행. 모두 `IndexOnStartup=True`; 캐시/실행순서 통제 미완, 일반 인터랙티브 Editor·Standalone·타 화면 검증 미실행. Editor Search 초기화 타이밍 관련 **가능성만**, 원인·사용자 실제 게임 무해 확정 금지.
+- 유지된 기술 PASS: `Animation16.0.1 / PSDImporter15.0.1 / Tooling4.0.1` Unity UPM, C#0·Import0·ToolingUI33/33, Healer5 고유GUID+GoldenArrow 원GUID·중복0, GoldenArrow8/Healer5 런타임·빙각 KO·F2 BGM 최소 회귀.
+- [**기획 최종 지시: Codex 제품 후보 안전 보존·Search 분리**](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-7116338215). 현재 격리 worktree 미커밋 `Unity/Client/Packages/manifest.json` + `packages-lock.json` + `HealerMagicalProjectile/*00..04.png.meta` **7경로만** 별도 제품 커밋, 관련 결과/인계 문서 별도 보고 커밋하도록 지시. 이미 PASS한 Play/Import 반복 금지, 원본 main `65cceb2d6c3283d18abec6e27d8a6f1296411f17`, 11/23 원격 복구 SHA·사용자 미커밋/미추적·Save/UserData·Discord/Unity6000.6.5f1 유지. 이 지시로 로컬 실제 커밋 실행됐다고 선언하지 않는다.
+- Search 예외는 **EDITOR_SEARCH_FOLLOWUP**, 일반 Editor/실게임/Standalone 미검증. `#85 OPEN/HOLD` 유지, 대표의 제품 적용 승인 전 main FF·원격 Push·Issue Close 금지. 임의 패키지 버전업/Editor prefs/검색 DB 캐시 삭제 및 신규 회귀전수 금지.
+
+---
+
 # PLANNING / 2026-11-24 — 바울 대표 SFX 중단 · 영상 월간 1회 / #85 기술 PASS와 Search 에러 HOLD 분리
 
 - **바울 대표 운영정책 변경:** “sfx는 포기 상태, 영상은 한달에 한번만 하면 돼... ^^”. 이전 11/24 SFX #33 제작 지시는 **취소**, #33 `closed/not_planned` [공식 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/33#issuecomment-7116164370). 신규 SFX 제작·지시·도구·비용 투입0, 과거 자산 삭제0. 개발기록 영상은 **월1회**, 11/16 Raw 촬영/QA 존재하므로 이번 11/24 추가 비교편집 발주 **보류**, 12월 월간 작업에 대표 승인 따라 반영 [#98](https://github.com/HappyPaul812/Project-Limitless/issues/98#issuecomment-7116165098). 11월 영상 Final 업로드/승인을 추정하지 않음.
