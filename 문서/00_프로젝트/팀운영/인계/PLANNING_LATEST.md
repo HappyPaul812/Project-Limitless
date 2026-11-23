@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-23 — Codex #126·#31 격리 Unity 기술 검수 접수 및 Idle4 최신 납품 발견
+
+- Codex 작은 격리 `codex/issue126-31-import-delta-20261123` SHA `1ba99e0cb1e8ce70389df1633f6839fbf80348d5`, **총12 PASS/0 FAIL**; 기존 성과·ZIP CRC/SHA QA 재실행0, 원본 main/Unity6000.6.5f1/#85 HOLD 및 Save/TTS/Mixer 보호. 실제 게임 적용·Push·병합0.
+- [#126 기술 접수](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7088932121): Rime Sentinel 승인 KeyPose SHA 일치, 격리 Sprite Import3/3 PASS, PPU512/Point/Center Pivot, 40px 주먹·어깨 판독. 공식 F5 Scene·전열 크기/Sorting/접지 GameView NOT_VERIFIED. **현 메인 아트가 Idle4 후보 ZIP을 이미 납품**했고 Library 비교판과 GIF 확보: ZIP SHA `65520ee3b6fc5f1433489ba733ed40ea3256d4e50e977b9f67edd5fb19b2b0d2`. KeyPose 사용자 승인과 Idle4 신규 파일럿 승인 대기 분리, Attack/Hit/Defeat 자동 착수 금지.
+- [#31 기술 접수](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7088931615): Final WAV4 Unity Import 9PASS. BGM 서비스/Scene Catalog는 현재 Scene당 단일 AudioSource/AudioClip이며, F1·서릿길 배정0. 승인 Intro→Loop 구조 구현에 두 AudioSource DSP 스케줄링·전투/씬 전환 취소·기존 단일곡 호환 필요. 실제 루프·TTS/Mixer·Listener 검증0. 다음은 격리 설계/코드 최소변경 및 Delta QA와 사용자 최종 적용승인 **별도**. 음원 생성·리마스터 금지.
+- 기획 조율: #126 Idle4 비교 GIF는 바울 대표에게 직접 보여 승인 요청, #31 Codex 기술 확장은 사용자의 실제 별도 코드 지시 전까지 권고안. 이 보고만으로 본편 적용 승인 없음.
+
+---
+
 # PLANNING / 2026-11-23 — #126 빙각 KeyPose 사용자 외형 승인 및 #31 Final WAV 실물 접수
 
 - 바울 대표: `F:\Downloads\LIMITLESS_Issue31_FinalLoopMasters_20261123.zip`, `F:\Downloads\LIMITLESS_Issue126_RimeSentinel_KeyPose_20261123.zip` 납품 전달 및 “빙각이 묵직하니 중간보스하기 좋겠네..ㅋㅋ 승인”.
