@@ -91,3 +91,27 @@ Issue #31: F1 북풍·서릿길 마을 2곡 샘플.
 - GitHub binary 등록0. 원본 수정0. 배포 Master0. Unity6000.6.5f1/Mixer/TTS/Save/UserData 변경0.
 - 상태: **B_LOOPPLAN_TECH_PASS / LOOP_EDIT_USER_APPROVAL_PENDING / MASTER_NOT_BUILT / UNITY_NOT_APPLIED**.
 - 상세: `문서/00_프로젝트/Chapter3_BGM_LoopEdit_AB_QA_20261123.md`
+
+
+## 2026-11-23 Issue #31 최종 Intro·Loop Master 제작 완료
+
+- Issue #31 최신 기록에서 바울 대표의 **B_LOOP_PLAN_USER_APPROVED** 확인.
+- 두 승인 원곡 SHA 불변:
+  - Grass `2bbbe6fe02b46c391653a5409802dde819ba64b5b5be99b20bbeafb4ad9b0fca`
+  - Hearth `a8cae73d15d276ad5cf25415ee13bce6e9761b331822f8dcb5928da9b87c772b`
+- 최종 납품 형식: WAV PCM16 / 44.1kHz / Stereo.
+- Grass:
+  - Intro 15.15s SHA `55443ce14f9d7fd86e53a95d03d04ab98eb2a70ce3f8ed260cba81e0e1713261`
+  - Loop 52.95s SHA `eb49138171a85e95856c2d1d5f96ae21de92f4a5bafe4c5726c46f8f499e69cd`
+- Hearth:
+  - Intro 4.90s SHA `f6fb974b363bcb881cfbb7264a8a97c87c49fd4d6d298f11bc69b4a7329c2561`
+  - Loop 55.90s SHA `0164f502afda08f17b4a13ec5922e8feadcef7aa5d932300fa097fb45bf747ce`
+- 최소 QA: 4 WAV decode PASS, Loop 경계 무음0, hard-click 검사 PASS, 승인 B transition 보존, gain/EQ/compression0.
+- 납품: `LIMITLESS_Issue31_FinalLoopMasters_20261123.zip`
+  - 21,459,175bytes
+  - SHA256 `3c9810962e1a1db11117d5a3fe6ee8ce5caa4fcc62cc6889656aff7ac7d39c94`
+  - CRC PASS
+- 원본 수정0 / 신규 음악 생성0 / 유료 API0 / GitHub binary0.
+- Unity6000.6.5f1, BGM/TTS/Mixer/Save/UserData 변경0.
+- 상태: **FINAL_MASTER_DELIVERED / UNITY_INTEGRATION_PENDING_CODEX / MAIN_MERGE_NOT_DONE**.
+- 상세: `문서/00_프로젝트/Chapter3_BGM_LoopEdit_AB_QA_20261123.md`
