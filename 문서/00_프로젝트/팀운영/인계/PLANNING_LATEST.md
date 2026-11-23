@@ -1,3 +1,14 @@
+# PLANNING / 2026-11-23 — 주요 인물 Chapter3 신규 TTS 72행 제작 큐 재개
+
+- 바울 대표 지시 **“tts는 안뽑니? 주요인물.”** → **주연5인 신규 음성72의 단계적 제작 준비·실행 착수 지시**. [Issue #125 TTS 공식 인계](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7092725116). 실제 Google POST/WAV 제작은 아직 수행되지 않았으며 유료 API·Cloud 계정/결제 승인으로 확대하지 않는다.
+- `docs/tts/문서/00_프로젝트/TTS_Issue125_Ch3_Main24_29_Side6_ApprovedDialogue_Preflight_20261123.csv`의 승인 원문101행 가운데 **주연72**: **Main24 10 / Main25 9 / Main26 22 / Main27 14 / Main28 8 / Main29 9**. 캐스팅: 폴 Achird15 / 미엘 Sulafat17 / 세린 Erinome15 / 태온 Algieba12 / 하렌 Alnilam13. 별도 성우 신규 디자인 금지. 기존 WAV162·Catalog312 ID/GUID/meta/기승인 음성 무재생성 KEEP.
+- **최우선 Main24 대사10건** 실PC Runtime stable DialogueID·Speaker/VoiceID와 기존162 WAV 중복여부 Codex 읽기전용 조사 → 실제 안정 ID가 확정된 신규분부터 Gemini 기존 승인 음색으로 **1건 시험/사용자 청취 → 작은 배치 제작**. Main25~29 미구현 ID를 임의 확정하지 않고 내용/음색 잠금된 manifest에 stage; 전체 장 구현 완료까지 기다리느라 72 전체 사전 준비를 멈추지 않음.
+- Gemini 실제 quota·프로젝트/모델·과금상태/상업 조건 사전 확인, 기존 API 사용량 ledger/HOLD/LOCK/429 중단을 유지. **기존 무료 범위 외 결제·유료 POST·Google Cloud TTS 계정 활성화/키 조회 승인 없음**. 실제 접근 불가 시 호출 없이 실행 가능한 TTS 제작기/명령과 검수표만 준비, 합성 완료 주장 금지.
+- NPC23은 기존 **21무음 + 마레2 예외 검토만** 유지, 자동 음성 생성 금지. 플레이어5/HUD1 무음. Main26 미엘 과거·Main27 차약속·Main29 하렌 `잘.했.어.` 지문/여백 보존.
+- TTS `docs/tts`, 기획 `docs/planning`만 작업 기록; Codex는 로컬 ID 검증/후일 별도 통합 담당. Unity6000.6.5f1, Save/UserData/Discord, #85 HOLD, 승인 아트/본편main 직접 수정·원격 Push/병합 금지.
+
+---
+
 # PLANNING / 2026-11-23 — 몬스터 명칭 사용자 직접 정정: 초원 슬라임
 
 - 바울 대표: **“초원 슬라임이다.”** → 기획의 과거 '풀슬라임' 표현을 잘못된 한국어 이름으로 정정. 공식 몬스터 호칭은 **초원 슬라임**.
