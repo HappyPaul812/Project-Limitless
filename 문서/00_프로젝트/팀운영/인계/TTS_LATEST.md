@@ -1,5 +1,14 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-23 Main24 세린 세 번째 STAGE WAV 사용자 청취 PASS (3/10)
+
+- 바울 대표가 `ch3stage_main24_serin_002` — 세린(Erinome) `그건 비상용이에요!` 제작 로그 보고 후 청취 평가 질문에 직접 **“좋아”**라고 답변: **청취 QA PASS**. 세 번째 신규 Stage WAV의 사용자 승인 기록이다.
+- 프로그램 콘솔에 표시된 해당 WAV SHA256: `20d863e8a6888ef25bc793c3aeba608b6f7d5dcc20053905f10191582ed3eeca` (이 세션에서 WAV 파일 직접 해시 검증하지 않음). 별도 세 번째 청취 승인 마커가 실제 로컬에 기록됐는지는 미확인; 기존 첫 샘플 전용 QA 마커를 덮어쓰지 않는다.
+- **Main24 Stage 생성 3/10, 사용자 청취 승인 3/3, 잔여 7건**. 다음 정본 큐는 `main24_paul_001` / 폴 `Achird` / **`두 분 다 준비는 확실하시군요.`**, StageID는 아직 생성되지 않았고 정식 Unity Runtime ID도 아니다.
+- **네 번째 POST 전에** 사용자 본인이 동일 PT 일자/모델/실제 Google Project 무료 잔량·외부 사용 및 로컬 공유 journal을 검증하여 누적 `max_new_posts_confirmed_today >= 4`를 실증한 경우에만 그 사실대로 갱신. 검증 불가시 API 호출 중단. 실행 전 `Chapter3_Principal72_STAGING_ONLY.py check`, 승인 후 `run --max-calls 1` / `RUN_MAIN24_BATCH`, 후속 사용자 직접 청취. 자동429 재시도·failover 금지, 유료 호출 금지.
+- 새 Stage WAV는 Unity 미적용, 실제 Runtime 연결 `0/10`, 기존 승인 WAV162·Unity `6000.6.5f1`/Save/.meta/GUID/main 보호. 590개 원문 불명 WAV 중복 감사 별도 미완. 본 기록은 청취 승인과 차후 한 건 게이트 안내이며 추가 POST가 수행됐다는 뜻 아님.
+
+
 ## 2026-11-23 Main24 세린 세 번째 STAGE WAV 생성 성공 — 사용자 청취 QA 대기 (3/10)
 
 - 사용자 제공 로컬 콘솔: `[READY - STAGING ONLY, NOT UNITY] Main24 stage items=8, free cap permits at most 1 POST(s)` → `RUN_MAIN24_BATCH` 본인 입력 → `[API 3] ch3stage_main24_serin_002 | Serin / Erinome | '그건 비상용이에요!'` → `[CREATED]` 성공 및 `[DONE]` 출력. 앞선 Stage 2건 다음 **Main24 실제 생성 3/10, 잔여 7건**. 본 로그는 사용자 PC에서 실행된 프로그램 출력으로, TTS 담당이 WAV 파일을 직접 열지 못함.
