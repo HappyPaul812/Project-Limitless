@@ -134,3 +134,18 @@ BGM 담당 기술/음악 평가:
 - main 병합0
 - 기존 승인 BGM/TTS/Mixer/Save/UserData 변경0
 - Issue #85 HOLD 유지
+
+
+## 8. 2026-11-23 바울 대표 청취 승인
+
+바울 대표 직접 피드백: **“나도 좋아.”**
+
+직전 F2/F3 1차 데모 청취 맥락에서 두 곡 모두에 대한 승인으로 접수한다.
+
+- F2 `Beneath the Frozen Boughs` → **F2_USER_APPROVED**
+- F3 `Steps on Frozen Stone` → **F3_USER_APPROVED**
+- 두 원곡 SHA 및 파일은 불변.
+- 재생성 불필요.
+- 다음 게이트: 승인곡 2종에 대해서만 Loop A/B 비교본 제작.
+- Loop Master / Unity 적용 / main 병합은 아직 금지.
+- 상업 사용 권리 상태 `COMMERCIAL_GAME_USE_EXPLICIT_LICENSE_NOT_VERIFIED` 유지.
