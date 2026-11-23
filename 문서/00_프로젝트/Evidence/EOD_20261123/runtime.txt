@@ -1,0 +1,12 @@
+PASS sentinel presentation and empty loot
+PASS actual melee impact once at 0.3417s frame 2, 44 HP
+PASS attack returns to Idle
+PASS Ember legacy FPS and sync selection preserved
+PASS Ember legacy idle progresses
+PASS legacy melee damage applied once
+PASS Rime Hit returns to Idle
+PASS HP zero and late actions cannot replace Defeat0
+PASS Defeat3 held beyond 2450ms and late completion
+PASS Ember legacy KO holds final cell
+PASS BGM Intro to DSP loop while Rime final KO pose stays held
+11 PASS / 0 FAIL

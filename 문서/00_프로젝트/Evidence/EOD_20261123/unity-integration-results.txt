@@ -1,0 +1,12 @@
+6000.6.5f1
+PASS Editor pinned
+PASS Rime presentation five approved bindings, empty loot
+PASS Rime no formal monster registration
+PASS Frost vole official asset, four linked motions and empty loot
+PASS World_NorthF1 enabled and audio pair resolved
+PASS World_FrostwayVillage enabled and audio pair resolved
+PASS World_NorthF2_CANDIDATE enabled and audio pair resolved
+PASS F3 registered pair, no scene assignment
+PASS Chapter 1/2 legacy clips resolve
+PASS six official ItemDefinitions resolve with distinct stable IDs
+10 PASS / 0 FAIL

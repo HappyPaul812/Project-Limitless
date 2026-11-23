@@ -1,0 +1,6 @@
+com.unity.2d.animation@6d5a363ae647\Editor\SkinningModule\UI\Toolbar.cs(40,50): error CS1061 SetChecked
+com.unity.2d.animation@6d5a363ae647\Editor\SkinningModule\UI\Toolbar.cs(45,24): error CS1061 IsChecked
+com.unity.2d.animation@6d5a363ae647\Editor\SkinningModule\UI\Toolbar.cs(55,24): error CS1061 SetChecked
+com.unity.2d.animation@6d5a363ae647\Editor\SkinningModule\VisibilityTool\VisibilityTool.cs(157,46): error CS1061 SetChecked
+com.unity.2d.animation@6d5a363ae647\Editor\SkinningModule\VisibilityTool\VisibilityTool.cs(158,35): error CS1061 SetChecked
+com.unity.2d.animation@6d5a363ae647\Editor\UpgradeTools\Utilities\ButtonStripField.cs(129,30): error CS1061 SetChecked
