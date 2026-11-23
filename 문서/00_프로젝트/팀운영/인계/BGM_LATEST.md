@@ -232,3 +232,29 @@ Issue #31: F1 북풍·서릿길 마을 2곡 샘플.
 - 상태: **FINAL_MASTER_DELIVERED / MASTER_QA_PASS / UNITY_INTEGRATION_PENDING_CODEX / MAIN_NOT_MERGED**.
 - 상업권은 `COMMERCIAL_USE_EXPLICIT_LICENSE_PENDING`으로 출시 전 별도 관리.
 - 상세: `문서/00_프로젝트/Issue127_F2_F3_FinalLoopMasters_QA_20261123.md`
+
+
+## 2026-11-24 Issue #129 — F4 눈보라 구간 BGM 브리프/프롬프트
+
+- 최신 Issue #129 및 `20261124_Parallel_Department_Orders_While_Issue85_Repair.md` 확인.
+- 기존 완료 보호:
+  - F1 `Where the Grass Bends`
+  - 서릿길 마을 `Hearth in the Low Valley`
+  - F2 `Beneath the Frozen Boughs`
+  - F3 `Steps on Frozen Stone`
+  - 승인 Intro/Loop WAV8
+- 기존곡 재생성/재편집/기술 QA 반복0.
+- F4 방향:
+  - F3보다 더 춥고 위험한 탐험
+  - 눈보라/노출/정령성 또는 이상현상 감각 강화
+  - F3의 low strings + forward pulse 계보는 유지
+  - 화성/고역 texture는 더 차갑고 불안정하게
+  - F5/최종 보스 대비를 위해 대형 brass/drum/choir/climax 금지
+  - 80~90BPM, 60~85s 권장(45~90s 허용), TTS midrange 공간 확보
+- Gemini/Lyria 생성 프롬프트 v1 작성 및 잠금.
+- 상세: `문서/00_프로젝트/Issue129_F4_Blizzard_BGM_Production_Brief_20261124.md`
+- 상태: **BRIEF_LOCKED / GEMINI_PROMPT_LOCKED / AUDIO_GENERATION_NOT_AUTHORIZED / AUDIO_FILE_0 / UNITY_CHANGE_0**
+- 상업권: `COMMERCIAL_USE_EXPLICIT_LICENSE_PENDING` 유지.
+- 실제 생성은 바울 대표 별도 승인 후 Gemini Short / Instrumental / 1회만.
+- F4 실제 Scene/정식 런타임 배정은 NOT_VERIFIED. 새 적명/Scene ID 임의 확정 없음.
+- Unity6000.6.5f1, 기존 승인 BGM/TTS/Mixer/Save/UserData, #85 HOLD 보호.
