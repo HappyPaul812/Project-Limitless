@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-24 — 바울 대표 SFX 중단 · 영상 월간 1회 / #85 기술 PASS와 Search 에러 HOLD 분리
+
+- **바울 대표 운영정책 변경:** “sfx는 포기 상태, 영상은 한달에 한번만 하면 돼... ^^”. 이전 11/24 SFX #33 제작 지시는 **취소**, #33 `closed/not_planned` [공식 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/33#issuecomment-7116164370). 신규 SFX 제작·지시·도구·비용 투입0, 과거 자산 삭제0. 개발기록 영상은 **월1회**, 11/16 Raw 촬영/QA 존재하므로 이번 11/24 추가 비교편집 발주 **보류**, 12월 월간 작업에 대표 승인 따라 반영 [#98](https://github.com/HappyPaul812/Project-Limitless/issues/98#issuecomment-7116165098). 11월 영상 Final 업로드/승인을 추정하지 않음.
+- [병렬 발주 문서 정정](../../20261124_Parallel_Department_Orders_While_Issue85_Repair.md) `docs/planning` 커밋 `cd512078667175e251c77b8f2aff8b7c3a690f06`. 현재 실제 병렬 추진 부서는 **메인 신규 아트 #123, 리뉴얼 #124, TTS #125, BGM #129** 4개만. Codex와 Unity 파일 충돌없음.
+- **#85 Codex 11/24 실제 결과** [원문](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-7115971873): Unity 6000.6.5f1, UPM Animation16.0.1/PSD15.0.1/Tooling4.0.1 `PACKAGE_RESOLVE_PASS`; 클린 C#오류0/Tooling Import예외0/UI33/33, Assets meta GUID중복0/GoldenArrow8·Healer5 실사용 PASS, 빙각 단타·KO/F2 BGM Intro→Loop 표적 PASS. **전체 Unity QA는 Editor Search `SearchInit.IndexationOnStartup` `ArgumentOutOfRangeException` 1건으로 FAIL / #85 HOLD**. 예외가 사용자 일반 Play에 영향을 주는지는 아직 미확정. 후보 작업 격리 worktree에 **미커밋으로 보존**(제품·보고 commit SHA없음), 로컬 main `65cceb2d6c3283d18abec6e27d8a6f1296411f17` 원본 Git상태853 유지/Push0.
+- **기획 판단:** 패키지·컴파일/Import/GUID 해결 성공은 정확하게 기록하면서 Search Editor error **독립 재현·범위 제한**만 [#85 최소 후속 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-7116165847). 공식 Unity Search 환경설정에 시작시 인덱싱 옵션 존재; 오류 해결 확정 아님, 격리 환경 1~2회 비교만 허용, 원본 Library/Editor prefs/Packages 캐시 변경·대규모 QA 금지. 전부 PASS·대표 적용 승인 전 원본 main 반영/원격 Push/Issue 닫기 금지.
+- 현재 모든 역할 문서화는 기획 `docs/planning` 기록만이며 타 담당 실제 실행은 별도. Unity6000.6.5f1, 11/23 복구 ref, Save/UserData·Discord/개인 API·기존 승인 PNG/WAV·미커밋303/미추적550 유지.
+
+---
+
 # PLANNING / 2026-11-24 — Codex #85 복구 중 타 담당 6부서 병렬 지시
 
 - 바울 대표 직접 지시: “코덱스는 열심히 하고 있고, 딴 담당자들 일 하자.” → #85는 Codex 단독 복구 유지, 기획이 신규아트·리뉴얼·TTS·BGM·SFX·개발기록영상 작업 분리.
