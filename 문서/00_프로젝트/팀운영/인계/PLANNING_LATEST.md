@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-23 — BGM 두 곡 B 방식 루프 청취 승인
+
+- 바울 대표 직접 피드백: `일단 코덱스는 시켰고, bgm은 들었는데 좋네..` — 전달된 #31 A/B 비교본 청취 직후. 기획에서는 두 곡 `B_LOOP_PLAN_USER_APPROVED`로 접수.
+- [GitHub Issue #31 승인 기록](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7088290131): `Where_the_Grass_Bends` F1 Intro 0–14.60 / Loop 14.60–68.10 / crossfade0.55초, `Hearth_in_the_Low_Valley` 서릿길 Intro0–4.35 / Loop4.35–60.80 / crossfade0.55초. 원곡2 기존 승인과 소스 SHA 유지.
+- **후속 BGM 담당:** 원본 덮어쓰기 없이 배포용 Intro/Loop 마스터 새 파일로 만들고 작은 규모의 최종 음질/무음/클릭/박자 QA, SHA256 및 docs/bgm/BGM_LATEST.md/Issue31 보고. 새로운 음악 생성·유료 API 금지.
+- **아직 미완:** Master 파일 제작 및 제품 Unity 적용. 담당자가 실제 납품·검증하기 전 '완료' 표시 금지. 기존 Codex #122/#124 실행은 사용자 지시 전달 완료이므로 새 작업을 끼워넣지 않음.
+- Unity6000.6.5f1, Mixer/TTS/Save/UserData, #85 HOLD, 원격 main 보호.
+
+---
+
 # PLANNING / 2026-11-23 — #122 등록·#31 BGM ZIP·#124 시각 Trait ZIP 실물 접수
 
 - 사용자 제공 #122 Codex 완료 보고 대조: 별도 `codex/ch3-loot6-registration-20261123` 제품 SHA `9588d75cfbe46e656ee6dcc4b5e8f85c4aa04cc0`, 보고 HEAD `01c8f197b27d30508b6517adb6b7d560da9df5e4`. 100% RNG 1줄, ItemDef6+승인PNG6+meta12 총25파일, Unity6000.6.5f1 Delta32 PASS/0FAIL. **정식 Item6 브랜치 등록 완료, 본편 original main 미동기화**, 대상 공식 Monster/Encounter ID/Drop 연결0/6. [#122 총괄 접수](https://github.com/HappyPaul812/Project-Limitless/issues/122#issuecomment-7088220386).
