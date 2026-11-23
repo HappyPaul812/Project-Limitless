@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-24 — 독침벌 침·초원 슬라임 젤 최종 미술 승인 및 공격 버튼 포함 3종 적용
+
+- 대표 직접 승인 “내가 승인 안했어? 미안..;; 승인..;” → 독침벌 Organic v2 원본과 초원 슬라임 젤 원본 `USER_ART_APPROVED`. White Tint 권고 채택, TipOnly 59px 후보 미채택 보존. 기존 원화 재제작 금지.
+- [#124 승인 및 Codex 적용 지시](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7117133033): 승인 전리품2 + 기존 승인 공격 버튼1만 별도 `codex/issue124-loot2-attack-icon-20261124`에 연결. 실제 PNG SHA 확인, ItemDefinition icon/White Tint와 command.attack 경로만 변경, 실제 Unity 6000.6.5f1 UI 최소 검증. 기존 itemId/드롭/Save/외부 원본·기존 GUID/meta 유지, 방어 버튼 제작 중으로 제외.
+- `ISOLATED_APPLICATION_AUTHORIZED / CODEX_EXECUTION_PENDING / MAIN_NOT_APPLIED`. #85 수정 후보 및 기존 원본 main·개인자료 보호, 패키지 임의 변경/병합·원격 Push 금지. 실제 적용 결과 및 제품/보고 SHA 별도 보고 필요.
+
+---
+
 # PLANNING / 2026-11-24 — 기본 공격 버튼 대표 최종 미술 승인 · 방어 버튼 후속 제작
 
 - 대표 직접 결정 “나도 봤는데 승인해도 돼.” → [#124 공격 버튼 최종 미술 승인](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7116923432). `AttackButton_Original_128_RGBA.png` SHA256 `cf775727e27be825809a6b3d9bd04b227abe3408055873f70616cc8a9ca19a32`, `USER_ART_APPROVED / UNITY_NOT_APPLIED`. 원본 보존, 재제작 금지.
