@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-23 — 빙각 수호체 실게임 연결·격리 전투 QA 착수 승인
+
+- 바울 대표: **“그래 하자.”** — 최종 미술 승인된 빙각 수호체 KeyPose·Idle4·Attack4 v2·Hit4·Defeat4의 **Unity 게임용 연결 및 전투/전투불능 최소 격리 QA** 착수 승인. GitHub [실행 지시 정본](../../20261123_RimeSentinel_ApprovedArt_Runtime_Integration_Order.md) 커밋 `ac79be00e7831c337b73389d07ad797cc422c88b`.
+- Codex 분리 worktree/브랜치 `codex/issue126-rime-sentinel-runtime-20261123` 권고. 실제 최신 로컬베이스·승인 PNG SHA를 먼저 대조, 기존 #122 몬스터/전리품 브랜치와 카탈로그 충돌 방지. Idle260ms×4, Attack660ms, Hit610ms, Defeat2450ms 마지막 셀 유지. 기존 #120 KO→Idle 덮어쓰기 방지 검증 결과 재사용. 실제 새 연결부만 Unity6000.6.5f1 Play 검증.
+- F5 Scene/단회 stable encounter/AI 예고 강타/드롭 및 Save 안전장치 미존재·미검증 시 해당 부분은 HOLD, 유사 자산/더미 구현으로 무리하게 통과시키지 않는다. **실제 원본 local main/remote main 병합·Push·신규 Scene·Save 구조 변경 불허**. 본편 통합 단계는 Codex 제품 QA 보고를 확인한 뒤 판단.
+- 기획에서 지시서만 GitHub 게시; Codex가 사용자 PC에서 실행했거나 게임에 이미 들어갔다고 보고하지 않는다. `#85 HOLD`, 기존 승인 아트, Unity6000.6.5f1, Save/UserData, Discord, TTS/BGM 보호.
+
+---
+
 # PLANNING / 2026-11-23 — 바울 대표 빙각 수호체 Defeat4 최종 미술 승인 · 애니메이션 미술 라인 마감
 
 - **대표 직접 최종 결정:** “빙각이는 나도 좋아, 승인,”. 문맥상 2026-11-23 [#126 Defeat4 기획 미술 PASS·Codex 격리 Unity PASS 보고](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7097771461)에 대한 답변으로, **빙각 수호체(Rime Sentinel) Defeat4 최종 사용자 미술 승인**을 확정한다. 이전 Hit4 승인과 혼동하지 않는다.
