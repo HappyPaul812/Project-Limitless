@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-23 — 빙각 수호체 Hit4 실물 검토 · 기획 미술 PASS
+
+- 바울 대표 `F:\\Downloads\\LIMITLESS_Issue126_RimeSentinel_Hit4_20261123.zip` 경로 제출. 기존 Library 동일명 ZIP 실제 컨테이너에서 확인: 3,519,214B SHA256 `4ceb3996d1d602dcdccbf5980b7cd3423a2c9b1e509615c4c450c7ab4c642ea2`, CRC PASS, Manifest 11/11 hash+bytes PASS, GIF 비루프100/160/130/220ms=610ms. 512/128/40 비교판 직접 시각 검토.
+- **기획 미술 PASS**: 상체·어깨 충격·후방 반동·복귀가 4프레임에 구현됨, 승인 KeyPose/Idle4/Attack4 v2 보존, 발접지 유지/마지막 프레임 KeyPose 일치(담당 기술 QA). **40px의 반동은 작음**; 실제 112px 전투·히트 Tint 결합 국소 검증 권고. 작업 자체를 다시 만들 필요 없이 보존.
+- **대표 Hit4 최종 승인 명시 아직 없음**: 이번 메시지는 ZIP 경로 전달이므로 품질 PASS를 USER_APPROVED로 적지 않음. 실제 Unity Hit4 신규 Animator/GameView/피격 효과 QA 미실시, 이전 Attack4v2 격리 PASS를 유용하되 Hit4로 이월하지 않음. Defeat4는 기존 'Hit4 승인 후' 순서에 따라 HOLD.
+- [Issue #126 기록](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091921272). 필요하면 Codex에게 Hit4 신규분만 610ms 비루프/Idle 복귀/112·40px 피격 효과 최소 검증, F5 실전/HIT 애니메이션 본편 적용·main 병합/Push 금지.
+- Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/승인 원본/원격 main 보호.
+
+---
+
 # PLANNING / 2026-11-23 — 승인 길 능력 아이콘5 / 빙각 수호체 Attack4 v2 실제 격리 Unity 검수 접수
 
 - 바울 대표 Codex 보고 화면 접수 + Issues #124/#126 실제 최종 Codex 댓글 교차 확인. Unity6000.6.5f1, local `codex/issue124-126-approved-art-delta-20261123` SHA `7d3127a3baa19b19af34c056c746ec2aafcf84c5`. 격리 검증, 원본 main/Save/UserData/Discord 적용·병합·Push0.
