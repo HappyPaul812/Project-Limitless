@@ -193,3 +193,16 @@ Issue #31: F1 북풍·서릿길 마을 2곡 샘플.
   - SHA256 `71cd20113303053b74ed77230089d2e48bfd232f117e9c78c638555d85954b8e`
 - 상태: **LOOP_AB_READY / B_LOOP_TECH_PASS / LOOP_USER_APPROVAL_PENDING / MASTER_NOT_BUILT / UNITY_NOT_APPLIED**.
 - 상세: `문서/00_프로젝트/Issue127_F2_F3_LoopReview_QA_20261123.md`
+
+
+## 2026-11-23 상업 사용권 상태 정리
+
+- 초기 안내에서 “상업 사용 가능”을 너무 단정적으로 표현한 점을 BGM 담당 기록상 정정.
+- 현재 공식 문서 기준:
+  - Google이 생성된 원본 콘텐츠에 소유권을 주장하지 않음: **CONFIRMED**
+  - 상업 사용 금지 조항: **NOT FOUND**
+  - 무료 Gemini/Lyria 음악의 유료 게임 사용을 명시적으로 보장하는 전용 라이선스 문구: **PENDING_FURTHER_CONFIRMATION**
+- 상태 표기는 `COMMERCIAL_USE_EXPLICIT_LICENSE_PENDING`.
+- 이는 `COMMERCIAL_USE_FORBIDDEN`이 아님.
+- 기존 승인 BGM 및 Issue #127 F2/F3는 계속 보존·제작/검수 진행. 폐기/재생성 지시 없음.
+- 상용 출시 전 권리 근거를 추가 확인하는 별도 게이트만 유지.
