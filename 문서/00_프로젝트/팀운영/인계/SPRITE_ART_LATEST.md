@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-23 / Issue #126 — Hit4 조건 충족 최종 승인 → 빙각 수호체 Defeat4 파일럿 납품
+
+- [#126 Hit4 Codex 격리 Unity 6000.6.5f1 PASS 및 대표 조건부 승인 발효](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7092168466) 확인. Hit4 실제 4프레임/610ms 및 112px 충격·접지 PASS, 40px 반동은 PARTIAL로 기록된 채 **사용자 최종 미술 승인**. 기존 **KeyPose·Idle4(260ms×4)·Attack4 v2(비루프660ms)·Hit4(비루프610ms)** 4종 모두 승인/원본 KEEP, 실제 기존 PNG 작업 전후 SHA256 일치: `c34ea53a95aa6a1fdba4f5e355715fbc25797d6d51e4d544cb9e4dab52f7073c`, `0757ebedd37f24e7939d26f38be2efbf9560906b832fae187c61273a314b753e`, `0649ef42da7aa628e471a49f4554ad150a0a5fc1b28235a5e9b42bf025030621`, `bd6d66be3b990d9bc7f33261f1d9835abd413c28b91a5842ac9800a5dec28496`. 기존 Hit4 '승인대기' 표기는 과거 제작 시점 이력.
+- 신규 **`Sprite/RimeSentinel_M6_Defeat4_2048x512_RGBA_CANDIDATE.png`**, **2048×512 투명 RGBA / 가로4셀×512² / 975,465bytes**, SHA256 **`a7d12a5a86495b59b2c7e0a96e658ff1cf743cdec3daafa9fb4e9ce9a8124d8d`**. 균형 상실→무릎·상체 내려앉음→쓰러짐→전투불능 유지. 신규 생성한 패배 4포즈의 흰 배경을 실루엣 분리/알파 정리해 **동일 축소율0.887574**·하단 y489로 정렬; 4개 셀 상이·외곽 alpha0·QA 분리 프레임 일치. 폭발·소멸·얼음 파편 추가0. **승인 원화 픽셀을 직접 변형한 모션이 아니라 신규 생성 패배 포즈이므로 얼굴/갑옷 일부 묘사 차이 가능: 사용자 미술 시각 승인 필요**. 승인 원본4종 수정0.
+- 실제 512/128/40 축소 비교판·승인 KeyPose 대비 보드, 비루프 GIF 4프레임 **180/220/250/1800ms = 2450ms**, 마지막 1.8초 정지; Unity Animator 최종 고정 포즈는 별도 상태 유지 계약 필요/미검증. ZIP **`LIMITLESS_Issue126_RimeSentinel_Defeat4_20261123.zip` 3,607,746bytes/14 entries**, SHA256 **`c7b840ce80815814be0a11269d29b636acfa0b2966981801fa19228bade296ef`**. CRC PASS, Manifest12/12, SUMS13/13, 순환참조0, SourceDeclaration/QA 포함. Library `/LIMITLESS/Issue126_RimeSentinel_Defeat4_20261123/` ZIP·PNG·비교판2·GIF 저장.
+- [**Defeat4 제작·검증 보고**](../../Chapter3_RimeSentinel_M6_Defeat4_ArtPilot_20261123.md), `docs/art-new` 실제 commit **`92c8eb67342756c88917df65ca063425839aa5ff`**. **`KEYPOSE_IDLE4_ATTACK4V2_HIT4_USER_APPROVED / DEFEAT4_ART_CANDIDATE / USER_DEFEAT4_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED`**. 실 Unity 임포트/Animator/GameView·PPU/Pivot·전투불능 자세 유지 QA NOT_RUN. 기존 승인 Unity 검증을 Defeat4에 승계 금지. Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/Codex#122/공식 M1~M5·F1~F3/BattleBG/설빙의 폭군 및 main 보호. 본편 Scene/Prefab/MonsterDefinition/Drop/Spawn 변경·main 직접 commit/Push/Merge0.
+
+
 ## 2026-11-23 / Issue #126 — Attack4 v2 최종 승인 및 빙각 수호체 Hit4 신규 파일럿 납품
 
 - [#126 바울 대표 Attack4 v2 최종 승인 및 Hit4 파일럿 발주](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091428809) 확인. [Codex v2 격리 Unity 기술 검증](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091633547)과 구별: **KeyPose·Idle4·Attack4 v2 미술 승인 완료/원본 KEEP**, 이번 Hit4는 별도 승인·Unity 검증 필요. 기존 Attack4 v2 미술 승인 대기 기록은 과거 이력으로 남김.
