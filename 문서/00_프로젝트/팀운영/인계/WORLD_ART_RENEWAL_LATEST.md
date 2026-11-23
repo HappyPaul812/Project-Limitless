@@ -1,3 +1,15 @@
+## 2026-11-23 / Issue #124 독침벌 Organic v2 + 초원 슬라임 젤 / Tint·30px 국소검토 (최신)
+
+- Codex 격리 검수 https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7096499843: 128/50/40 PASS, 30px 침끝·독방울 PARTIAL, Gold Tint·Ch2 스타일 PARTIAL.
+- 원본 Organic v2 SHA256 9b6d0b82f63b2e38813c9a0a979274b82729a970d84b8851456d22ea0179edd3, GrassSlimeGel SHA256 ca06a5384883e0c848c4a2e893f5f524ee0d81ef22a0420425f3c0c58a902a55 **둘 다 바이트 보존**.
+- ItemDefinition 기존 색: 독침 Gold(1,.72,.18,1), 젤 Green(.55,1,.38,1). 각각 White (1,1,1,1)와 실제 30/40/50px 오프라인 비교. **두 아이콘 모두 White Tint 격리 비교 우선 권고**; 본편 값 수정0.
+- 독침 **침끝/독방울 59픽셀만** 보완한 선택 후보 SHA256 d614ed5250e790efb1ed57268aba4cfe99f5ad9982e2eb6a53c7f82a669de233. 기존 v2 원화 덮어쓰기 금지, 대표 최종 승인 전 적용 금지.
+- ZIP LIMITLESS_Issue124_StingerGel_Tint_TipOnly_20261123.zip, SHA256 a62442885359d75abd556cca01f648e1c7d71058dcf44050391860eff9cb2a98, 418286 bytes, CRC26/26 PASS, Manifest24/24 PASS. 실물 PNG/보드/QA 포함, 이 ChatGPT 대화 첨부에만 저장됨.
+- Chapter1 기존 두 아이콘 자체 비교; Ch2 실제 PNG 파일 없으므로 Codex 화풍 PARTIAL 유지·실화소 QA 미완료.
+- [정식 보고](../../Renewal_20261123_Issue124_StingerGel_Tint_TipOnly_FinalReview.md), 문서 커밋 a101ea82a708b008e758436d55a1fbc8347a4665, 브랜치 docs/art-renewal.
+- 숲거미 실·맹독뱀 비늘 신규0; 기존 몬스터/펫/승인 길 Trait5/PathSymbol5, Unity6000.6.5f1, #85 HOLD, Scene/Prefab/GUID/meta/ItemDefinition/Save/UserData/Discord/main 변경0.
+- 상태: SOURCE_KEEP / OFFLINE_TINT_COMPARE_DONE / OPTIONAL_TIP_DELTA_59PX / USER_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED.
+
 ## 2026-11-23 / 독침벌의 침 아이콘 v1 반려 → v2 신규 유기체형 직접 제작
 
 - 바울 대표 피드백: 기존 독침벌 침 시안이 우리 벌에서 나온 침처럼 안 보이고 무기 형태이므로 **v1 미술 반려**. 대표 승인으로 기록하거나 적용하지 말 것.
