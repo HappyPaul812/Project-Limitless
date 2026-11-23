@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-23 — #122 등록·#31 BGM ZIP·#124 시각 Trait ZIP 실물 접수
+
+- 사용자 제공 #122 Codex 완료 보고 대조: 별도 `codex/ch3-loot6-registration-20261123` 제품 SHA `9588d75cfbe46e656ee6dcc4b5e8f85c4aa04cc0`, 보고 HEAD `01c8f197b27d30508b6517adb6b7d560da9df5e4`. 100% RNG 1줄, ItemDef6+승인PNG6+meta12 총25파일, Unity6000.6.5f1 Delta32 PASS/0FAIL. **정식 Item6 브랜치 등록 완료, 본편 original main 미동기화**, 대상 공식 Monster/Encounter ID/Drop 연결0/6. [#122 총괄 접수](https://github.com/HappyPaul812/Project-Limitless/issues/122#issuecomment-7088220386).
+- [#31 실물 ZIP](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7088219406) `LIMITLESS_Issue31_LoopReview_20261123.zip` = 2,199,087bytes, SHA256 `65a37dc8322a0eb5ed6e52527de1ac0754a5bd3252e108dd6dd56bd1406a3484`, 전체 CRC와 A/B4+README SHA PASS. 44.1kHz 2ch 비교프리뷰4, 실제 사람 청취 최종 승인 없음. B 방식 기술 PASS/원곡2 이미 승인, Master·Unity 아직0. ZIP 목록은 README/해시에서 절대경로 이름을 쓰지만 실물 매핑+바이트 검증 일치; 정상 ZIP.
+- [#124 실물 ZIP](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7088219907) `LIMITLESS_Issue124_Trait5_VisionPilot_20261123.zip` = 512,911bytes, SHA256 `f8d0d09986131cf68d19d72a2b6546fe4324583758777e06a2c80b53d11e3a9c`, CRC 및 payload+Manifest SHA PASS. 신규 시각 Trait 512/128/40 시각 확인에서 눈/중앙 표식 판독 가능·색채 일관 양호. **기존 공식 Symbol5+외부 Trait5 실물 화소 비교 및 실제 Unity 30/40px UI 미검증** → 최종 대표 미술승인/제품교체 HOLD. 동일 구조비교판에 기존 PNG 실물 없음. 다음은 Codex 로컬 읽기전용 5+5 실물 참조와 신규 Vision 후보 비교 1회, 중복제작/전체 QA 금지.
+- 모두 기존 승인 Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord, 원격 main 보호. GitHub 담당 Issue 검토만 추가, 외부 Google API/신규 제품적용0.
+- 운영 권고: #124 실물 비교와 #122 미등록 몬스터6/조우 키 계약 확인을 Codex 한 번의 경량 읽기전용 작업으로 병렬화; BGM 최종 루프는 바울 대표 A/B 청취 뒤 결정.
+
+---
+
 # PLANNING / 2026-11-23 — TTS·BGM 최신 담당 보고 재확인
 
 - 사용자 지시: Codex #122/#123 지시문 전달 완료. TTS #125·BGM #31 최신 공식 보고 재검토.
