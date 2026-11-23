@@ -145,3 +145,95 @@ B / LoopPlan:
 - 기존 공식 BGM·TTS·Mixer·Save/UserData: **보호**
 
 다음 게이트는 바울 대표가 비교 청취본에서 각 곡의 **B LoopPlan 편집만 최종 승인**하는 것이다. 승인 후에만 별도 Master/Loop 파일 제작 및 Unity 적용 계약으로 이동한다.
+
+
+## 7. 2026-11-23 B LoopPlan 사용자 최종 승인 후 게임용 Intro·Loop Master 제작
+
+Issue #31 최신 승인 기록에서 바울 대표의 두 곡 B LoopPlan 직접 청취 승인을 확인했다.
+
+상태:
+**TWO_SONGS_APPROVED / B_LOOP_EDIT_LISTENING_APPROVED / FINAL_INTRO_LOOP_MASTERS_BUILT / MASTER_QA_PASS / UNITY_NOT_APPLIED**
+
+### 제작 원칙
+- 기존 승인 MP3 원본은 수정·덮어쓰기하지 않음.
+- 새로운 음악 생성·유료 API 호출 0.
+- 승인된 논리 경계와 0.55초 crossfade만 사용.
+- MP3 재인코딩 패딩을 피하고 Unity 후속 Import에서 샘플 경계를 보존하기 위해 최종 납품은 **WAV PCM16 / 44.1kHz / Stereo**로 제작.
+- Unity 6000.6.5f1, 기존 공식 BGM·TTS·Mixer·Save/UserData 접근·변경 0.
+
+### 최종 파일 — Where the Grass Bends / Main22 F1 북풍
+승인 원본:
+- `Where_the_Grass_Bends.mp3`
+- SHA256 `2bbbe6fe02b46c391653a5409802dde819ba64b5b5be99b20bbeafb4ad9b0fca`
+
+승인 LoopPlan:
+- Logical Start 14.60s
+- Logical End 68.10s
+- Crossfade 0.55s
+
+최종 렌더:
+- `Where_the_Grass_Bends_Intro_FINAL.wav`
+  - 15.15s
+  - SHA256 `55443ce14f9d7fd86e53a95d03d04ab98eb2a70ce3f8ed260cba81e0e1713261`
+- `Where_the_Grass_Bends_Loop_FINAL.wav`
+  - 52.95s
+  - SHA256 `eb49138171a85e95856c2d1d5f96ae21de92f4a5bafe4c5726c46f8f499e69cd`
+
+### 최종 파일 — Hearth in the Low Valley / Main23 서릿길 마을
+승인 원본:
+- `Hearth_in_the_Low_Valley.mp3`
+- SHA256 `a8cae73d15d276ad5cf25415ee13bce6e9761b331822f8dcb5928da9b87c772b`
+
+승인 LoopPlan:
+- Logical Start 4.35s
+- Logical End 60.80s
+- Crossfade 0.55s
+
+최종 렌더:
+- `Hearth_in_the_Low_Valley_Intro_FINAL.wav`
+  - 4.90s
+  - SHA256 `f6fb974b363bcb881cfbb7264a8a97c87c49fd4d6d298f11bc69b4a7329c2561`
+- `Hearth_in_the_Low_Valley_Loop_FINAL.wav`
+  - 55.90s
+  - SHA256 `0164f502afda08f17b4a13ec5922e8feadcef7aa5d932300fa097fb45bf747ce`
+
+### Intro→Loop 및 Loop→Loop 렌더 방식
+승인된 0.55초 crossfade의 head 구간을 Intro에서 자연스럽게 이어받고, Loop 파일 끝에 tail→head crossfade를 배치했다.
+따라서 물리적 Intro→Loop handoff는 논리적 Loop Start + 0.55초 지점이다.
+이 방식은 승인된 음악적 B transition을 유지하면서:
+- Intro 마지막 sample → Loop 첫 sample을 원곡의 인접 sample로 유지
+- Loop 마지막 crossfade 종료 → 다음 Loop 첫 sample을 원곡의 인접 sample로 유지
+하도록 설계했다.
+
+### 최소 Master QA
+두 최종 Loop WAV 모두:
+- ffmpeg full decode: **PASS**
+- 반복 경계 -50dBFS 이하 연속 무음: **0.00s**
+- hard click 기계검사: **PASS**
+- 승인 B transition의 박자/프레이즈 구조를 그대로 사용
+- gain / EQ / compression / normalization 추가: **0**
+
+Where:
+- Repeat seam sample delta 약 0.01990
+- 내부 sample delta p99.9 약 0.10764
+- Intro→Loop sample delta 약 0.01990
+
+Hearth:
+- Repeat seam sample delta 약 0.00299
+- 내부 sample delta p99.9 약 0.06803
+- Intro→Loop sample delta 약 0.00299
+
+반복 seam delta가 곡 내부의 일반 고변화 범위보다 작아 새로운 hard click 징후 없음.
+
+### 납품 ZIP
+- `LIMITLESS_Issue31_FinalLoopMasters_20261123.zip`
+- 21,459,175 bytes
+- SHA256 `3c9810962e1a1db11117d5a3fe6ee8ce5caa4fcc62cc6889656aff7ac7d39c94`
+- ZIP CRC: **PASS**
+- 포함: 최종 WAV 4개 + README + MANIFEST + SHA256SUMS
+- GitHub binary 등록: 0
+- Unity 적용: 0
+- main 병합: 0
+
+최종 상태:
+**FINAL_MASTER_DELIVERED / UNITY_INTEGRATION_PENDING_CODEX / MAIN_MERGE_NOT_DONE**
