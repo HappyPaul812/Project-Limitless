@@ -1,3 +1,12 @@
+## 2026-11-23 / 독침벌의 침 아이콘 v1 반려 → v2 신규 유기체형 직접 제작
+
+- 바울 대표 피드백: 기존 독침벌 침 시안이 우리 벌에서 나온 침처럼 안 보이고 무기 형태이므로 **v1 미술 반려**. 대표 승인으로 기록하거나 적용하지 말 것.
+- 실제 이전 `독침벌 리뉴얼 게임 아트 시트.png`를 확인하고 검황 키틴 배마디/자주색 배 끝 독침을 참고해 **새 오리지널 v2 독침 단독 PNG 128 RGBA 한 장** 제작. 40/30 실제 축소와 어두운/밝은 배경, 벌 원화 비교판 제작. 과거 시트는 현재 게임 최신 Sprite의 최종 원본 동등성 미확인.
+- 납품 ZIP `LIMITLESS_VenomBeeStinger_Organic_v2_20261123.zip` 454080 bytes, SHA256 `345017cf17c1a07eaad5dc866150a090b48ce16803bcecada3dcc43640945f53`, ZIP CRC8 PASS, Manifest payload6 SHA/size PASS. 현재 대화 첨부에서 직접 제공, F:로 자동복사/게임 적용하지 않음.
+- [보고서](../../Renewal_20261123_Issue124_VenomBeeStinger_Organic_v2_UserFeedback.md), 문서 최초 커밋 `8455a238296684768819af77bd1090a4245c59e7`, 브랜치 `docs/art-renewal`.
+- **초원 슬라임 젤 재제작0**, 나머지 전리품2 신규PNG0. Unity6000.6.5f1, Scene/Prefab/GUID/meta/ItemDefinition/승인 Path Symbol/몬스터/Save/UserData/Discord/main 변경0.
+- `V1_ART_REJECTED / V2_FILE_QA_PASS / V2_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED`.
+
 ## 2026-11-23 / Issue #124 대표 재작업 지시 — Trait Icon 5종 직접 제작 (현 최신)
 
 - **대표 피드백:** 11/23 기존 후보의 귀/뇌형 직설적 표현 거부. 시각 포함 Trait5 전부 외부 게임 사용 아이콘의 추상적 구조를 더 가깝게 계승하되 직접 복제·트레이스 금지.
