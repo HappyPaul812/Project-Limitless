@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-24 — Codex #85 복구 중 타 담당 6부서 병렬 지시
+
+- 바울 대표 직접 지시: “코덱스는 열심히 하고 있고, 딴 담당자들 일 하자.” → #85는 Codex 단독 복구 유지, 기획이 신규아트·리뉴얼·TTS·BGM·SFX·개발기록영상 작업 분리.
+- [**기획 실행 정본**](../../20261124_Parallel_Department_Orders_While_Issue85_Repair.md) `docs/planning` commit `d1672ee3bee5856bc6078d8024b6dc7a2e02fdfe`. GitHub 실제 발주: [#123 F3 최종 보드·F4 개념](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7115938974), [#124 Kenney 공격버튼 신규 오리지널 PNG 1파일럿](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7115939762), [#125 Main24 Stage10 실물 인계·Main25 9건 무호출 사전큐](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7115940550), [#129 F4 BGM1 브리프·Gemini 프롬프트](https://github.com/HappyPaul812/Project-Limitless/issues/129), [#33 북풍/걸음/온기 SFX 소량 파일럿](https://github.com/HappyPaul812/Project-Limitless/issues/33#issuecomment-7115941309), [#98 11/16 Raw 개발기록 비교편집 후보](https://github.com/HappyPaul812/Project-Limitless/issues/98#issuecomment-7115942073).
+- #123 기존 F3 원본3와 #126 빙각 5모션, #124 Trait5·Stinger/Gel, 기존 승인 BGM4/WAV8·TTS Stage10 및 기타 공식 Monster·NPC·맵 전부 보호. 신규 art1만 파일럿, F4 신규 영상/맵 PNG 양산 금지. TTS 신규 API0, BGM F4 프롬프트/브리프만, SFX 사용자 청취 승인 전 Unity0, video YouTube 공개0.
+- **이번에는 Unity/Package/GUID/meta/원본 main/원격 Push 작업을 어느 부서에도 배정하지 않음**, #85 Codex 격리 복구와 작업 파일 비충돌. 기준 복구 ref `backup/2026-11-23-safe-checkpoint` `65cceb2d6c3283d18abec6e27d8a6f1296411f17` 보존. 각 부서가 실제 사용자 ChatGPT 역할 세션에서 작업을 시작한 것으로 자동 해석하지 않는다. 사용자에게 복붙 지시문 제공. 결과 브랜치/커밋/SHA/검증/사용자승인·Unity 적용 여부 별도 보고.
+
+---
+
 # PLANNING / 2026-11-24 — Issue #85 2D 패키지 CS1061 · Tooling 경로 · 투사체 GUID 격리 복구 승인
 
 - 바울 대표 “기존 Animation 15.1.0 컴파일 오류로 #85 HOLD는 미해결 건 해결 할 수 있니? 니가 판단해보고 할 수 있겠으면 코덱스 시켜.” → 기획 검토 결과 **수정 가능성 높음**, Codex **격리 제품수정 파일럿**을 명시 발주. [정식 지시](../../20261124_Issue85_Animation_PSD_Tooling_GUID_IsolatedRepair_Order.md) 커밋 `ff35e095f950a201a5f781960dee74196b807dc6`, [Issue #85 업무 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-7115654109).
