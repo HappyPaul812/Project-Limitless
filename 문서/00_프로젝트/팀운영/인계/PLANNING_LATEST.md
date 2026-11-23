@@ -1,3 +1,14 @@
+# PLANNING / 2026-11-23 EOD — 13시간 작업 전체 안전 통합·로컬 동기화·복구 Push 사용자 승인
+
+- 바울 대표 명시 지시: **“오늘은 여기까지 하자, 거의 13시간 했으면 할만큼 한거지 뭐, 지금까지 한 작업들 다 합치고 로컬 동기화, 복구 푸시까지 해줘.”**. 신규 작업 배정은 중단, 당일 성과 안전통합·복구 작업 1회가 최우선.
+- Codex **현장 실행용 [EOD 지시 정본](../../EOD_20261123_SafeIntegration_LocalSync_RecoveryPush_Order.md)**를 `docs/planning` 커밋 `63ba8b8a0dc8f420116f5b05c5b3554b5900da74`로 작성. [GitHub Issue #128](https://github.com/HappyPaul812/Project-Limitless/issues/128) 발행. 기획 채팅/원격 문서 작성과 **실제 사용자 PC 로컬 Git/Unity 실행은 별개**: 현재 `EOD_ORDER_GITHUB_POSTED / LOCAL_MAIN_SYNC_NOT_VERIFIED / BACKUP_PUSH_NOT_VERIFIED`.
+- 필수 포함: #126 빙각 실제 격리 전투10PASS/0FAIL(제품 `a2faf0b02c960ddc795cc3054ad4beebbeb49d5f`, 보고 `b2580729ac6c57f22195bef83094b256e96dca60`), #31/#127 Chapter3 승인 BGM4 Intro+Loop WAV8 격리24PASS/0FAIL(제품 `c24f3bec02b0c4511032cfb26e7a7452efdaabea`, 보고 `0ad2d36907a2b7b5cbe3b7e63e0e2e7539e62fe2`), #122 서리들쥐 정의1/6 격리 등록 호환·승인 확인 후 조건부, 오늘 기획·TTS·BGM·리뉴얼·신규아트 문서 보존.
+- HOLD 보존: F5 공식 조우·AI·단회 Drop/Save·F3 정식 씬 배정, #124 독침/젤 대표 최종 미술 승인·ItemDefinition 교체, #125 Main24 Stage10 RuntimeID 0/10, #118 성장 EXP 안, #85 HOLD, 미검증 다른 북부 몬스터. 승인 전 후보 제품 강제 배포 금지.
+- 목표: 원본 미커밋/미추적/Save/UserData·Discord·기밀·승인 PNG/WAV·기존 Unity6000.6.5f1 보호 → 안전 통합 branch → 로컬 main FF-only 동기화 → **새 GitHub 복구 ref `backup/2026-11-23-safe-checkpoint` Push** → 원격 ref SHA/별도 clone/fsck 확인. 기존 `backup/2026-11-19-safe-checkpoint` `f64082914e114096b6b9393263e7a36f7d829a55`, 오래된 원격 main `bfd281545632877325f5d21e04cefb924042c465` **불변**. 비Git Stage WAV/ZIP/영상·개인 파일은 이 Push만으로 백업되지 않음을 명시.
+- Codex 실행 결과 수령 전에는 성공/완료라 주장하지 않음. 문제·충돌이면 안전중단 + 이유·커밋/서버SHA/비Git 미보호 항목 기록. 오늘 종료와 대표 휴식 우선.
+
+---
+
 # PLANNING / 2026-11-23 — 빙각 실전 애니메이션 10PASS 접수, BGM 4곡 Unity 연결 승인, 리뉴얼 ZIP 검수
 
 - **빙각 수호체 #126**: Codex 실제 [Issue 보고](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7098552079) 및 바울 대표 화면 접수. `codex/issue126-rime-sentinel-runtime-20261123`, 제품 `a2faf0b02c960ddc795cc3054ad4beebbeb49d5f`, 보고 `b2580729ac6c57f22195bef83094b256e96dca60` (**LOCAL_COMMITTED / REMOTE_NOT_PUSHED**). Unity6000.6.5f1 격리 Play **10PASS/0FAIL**, 공격 프레임2에서 피해44 단회, Idle/Hit/Attack 정상 복귀, HP0에서 Defeat4 최종 셀 유지, Ember 회귀 PASS, 승인 PNG5 SHA 일치. **F5 실제 Scene·정식 조우·유니크 AI/MonsterDefinition·보상 단회 Save·제품 승리전환은 미검증 HOLD**. 격리 Editor Search 예외1 별도 원인/기존 상태 구분 필요. 원본 main 병합·Push 없음.
