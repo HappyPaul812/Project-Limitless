@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-23 — #122 정식 조우·#124 시각 Trait 국소 감사 접수
+
+- Codex 로컬 격리 감사 브랜치 `codex/ch3-loot6-encounter-vision-audit-20261123`, 커밋 `0a5f253d2fde7a8aa2bfabaec70fa118ea72d5c1`. 미Push, 제품 원본 main 변경0, 기존 테스트32·56·39 재실행0.
+- [#122 총괄 검토](https://github.com/HappyPaul812/Project-Limitless/issues/122#issuecomment-7088337359): ItemDefinition/PNG 6종은 등록 브랜치에 준비됐으나 MonsterDefinition/공식 조우 각각 0/6. QA 올빼미/프로토타입 들쥐/정령 Visual Prefab은 정식 등록이 아니다. 다음은 **별도 대표 승인이 있을 경우** 승인 스탯·행동·ID 규격에 맞는 데이터-only 6 MonsterDefinition 최소 등록. F3~F5 Scene/Spawn/Drop 연결/단회 엘리트 Save/수령 장소·정식 보상/원본 main 병합은 승인 전 HOLD.
+- [#124 총괄 검토](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7088337969): Codex 로컬 실제 공식 Symbol5/외부 trait5 PNG 대조 PASS; Vision 새 후보 40px 양호, 30px 청색 동심원 약화, 24/26px 눈보다 조준 표식 우선. 해당 로컬 비교 이미지 자체는 현 기획 환경 미열람. 리뉴얼 담당에게 30/26/24px 대비/실루엣 **Vision 1종만 국소 보완 v2** 권고. 다른 4종 양산·Unity 적용/기존 GUID 수정 금지. 최종 대표 미술 승인 대기.
+- 기획 기록은 사용자 승인 자체가 아니다. Unity6000.6.5f1/#85 HOLD, Save/UserData/Discord 및 기존 승인 아트·원격 main 보호.
+
+---
+
 # PLANNING / 2026-11-23 — BGM 두 곡 B 방식 루프 청취 승인
 
 - 바울 대표 직접 피드백: `일단 코덱스는 시켰고, bgm은 들었는데 좋네..` — 전달된 #31 A/B 비교본 청취 직후. 기획에서는 두 곡 `B_LOOP_PLAN_USER_APPROVED`로 접수.
