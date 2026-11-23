@@ -165,3 +165,14 @@ Issue #31: F1 북풍·서릿길 마을 2곡 샘플.
 - 상용권: `COMMERCIAL_GAME_USE_EXPLICIT_LICENSE_NOT_VERIFIED` 유지.
 - 상세 QA: `문서/00_프로젝트/Issue127_F2_F3_BGM_FirstDemo_QA_20261123.md`
 - 다음: 바울 대표 두 곡 실제 청취 승인 → 승인곡만 Loop A/B 편집 단계.
+
+
+## 2026-11-23 Issue #127 — F2/F3 사용자 청취 승인
+
+바울 대표 직접 피드백 “나도 좋아.”를 두 데모의 실제 청취 승인으로 접수.
+- `Beneath_the_Frozen_Boughs.mp3` → **F2_USER_APPROVED**
+- `Steps_on_Frozen_Stone.mp3` → **F3_USER_APPROVED**
+- 재생성0, 원본 SHA 변경0.
+- 다음: 승인된 두 곡만 Loop A/B 편집·검증.
+- Master/Unity 적용/main 병합0.
+- 상업권 `COMMERCIAL_GAME_USE_EXPLICIT_LICENSE_NOT_VERIFIED` 유지.
