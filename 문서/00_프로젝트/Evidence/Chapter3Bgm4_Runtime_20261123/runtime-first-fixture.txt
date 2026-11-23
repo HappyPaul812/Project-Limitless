@@ -1,0 +1,26 @@
+6000.6.5f1
+PASS F1 actual assigned pair/source flags
+PASS rapid scene change replaced both F1 reservations with village
+PASS village actual Intro to Loop
+PASS active F2 candidate assigned approved pair
+PASS F2 actual Intro to Loop
+PASS F3 pair registered and no blank scene match
+PASS F3 actual Intro to Loop direct pair exercise, no F3 Scene
+PASS listener pause freezes DSP reservations
+PASS Chapter3 battle cancels pending exploration track; existing no-battle-track policy
+PASS battle return restarts F1 Intro
+PASS approved TTS via product source plays concurrently
+PASS concurrent SFX/Voice and both BGM sources route to independent groups
+PASS Mixer channel levels and master mute
+PASS Mixer unmute restores master
+PASS F1 actual Intro to Loop
+wrap 1, dsp 124.587, samples 2334271->117
+wrap 2, dsp 177.515, samples 2334242->88
+wrap 3, dsp 230.485, samples 2334212->58
+PASS three full F1 loop wraps with no Intro restart
+FAIL legacy Chapter1 single track preserved
+FAIL legacy Chapter1 combat track
+FAIL legacy Chapter2 single track preserved on return fade
+PASS one persistent service and one listener
+PASS disable clears both sources
+18 PASS / 3 FAIL

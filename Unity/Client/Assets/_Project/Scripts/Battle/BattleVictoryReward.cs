@@ -52,7 +52,7 @@ namespace ProjectLimitless.Battle
                 foreach (MonsterLootEntry loot in definition.LootEntries)
                 {
                     if (loot == null || string.IsNullOrWhiteSpace(loot.ItemId) || loot.DropChance <= 0f
-                        || random.NextValue() >= loot.DropChance) continue;
+                        || (loot.DropChance < 1f && random.NextValue() >= loot.DropChance)) continue;
                     int count = random.RangeInclusive(loot.MinCount, loot.MaxCount);
                     if (count <= 0) continue;
                     itemCounts.TryGetValue(loot.ItemId, out int current);

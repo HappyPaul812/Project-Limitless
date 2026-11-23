@@ -1,0 +1,18 @@
+PASS main24_candidate_skill is reachable
+PASS main24_candidate_skill ID order and empty speaker
+PASS skill has no quest mutation before completion
+PASS skill completion uses existing quest route
+PASS main24_candidate_supply is reachable
+PASS main24_candidate_supply ID order and empty speaker
+PASS supply completion uses existing quest route
+PASS main24_candidate_north is reachable
+PASS main24_candidate_north ID order and empty speaker
+PASS step 3 routes to travel, no dialogue override
+PASS main24_candidate_f2_observe is reachable
+PASS main24_candidate_f2_observe ID order and empty speaker
+PASS observe remains incomplete until dialogue completion
+PASS observe completion uses existing quest route
+PASS main24_candidate_guide is reachable
+PASS main24_candidate_guide ID order and empty speaker
+PASS no save slot used
+17 PASS / 0 FAIL

@@ -183,7 +183,8 @@ namespace ProjectLimitless.Battle
         /// 완료 콜백은 모든 표시 상태가 복구된 뒤 호출되므로 다음 턴 진행 시점으로 사용할 수 있습니다.
         /// </summary>
         public IEnumerator PlayMeleeAttack(RectTransform attacker, RectTransform target, Image targetSprite, Font damageFont,
-            Func<int> applyImpact, Action<int> onImpact, Action onComplete, Func<bool> isAttackVisualPlaying = null)
+            Func<int> applyImpact, Action<int> onImpact, Action onComplete, Func<bool> isAttackVisualPlaying = null,
+            float impactSeconds = 0f)
         {
             if (attacker == null || target == null || targetSprite == null)
             {
@@ -199,8 +200,10 @@ namespace ProjectLimitless.Battle
             Vector2 direction = targetOrigin.x >= attackerOrigin.x ? Vector2.right : Vector2.left;
             Vector3 destination = targetOrigin - (Vector3)(direction * TargetGap);
 
+            float began = Time.time;
             yield return Move(attacker, attackerOrigin, destination, ApproachDuration);
-            yield return new WaitForSeconds(ImpactPause);
+            // 승인 프레임 타이밍이 있을 때만 공격 시작 시각을 기준으로 피해를 맞춥니다.
+            yield return new WaitForSeconds(impactSeconds > 0f ? Mathf.Max(0f, impactSeconds - (Time.time - began)) : ImpactPause);
 
             int damage = applyImpact == null ? 0 : applyImpact();
             onImpact?.Invoke(damage);

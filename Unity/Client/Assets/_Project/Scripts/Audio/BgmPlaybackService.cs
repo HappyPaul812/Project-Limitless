@@ -3,17 +3,20 @@ using UnityEngine.SceneManagement;
 
 namespace ProjectLimitless.Audio
 {
-    /// <summary>Scene을 넘어 단 하나의 BGM Source를 유지합니다. Voice와 독립적이며 공용 음량은 Mixer에서만 적용합니다.</summary>
+    /// <summary>Scene을 넘어 하나의 BGM 서비스를 유지합니다. Voice와 독립적이며 공용 음량은 Mixer에서만 적용합니다.</summary>
     public sealed class BgmPlaybackService : MonoBehaviour
     {
         public static BgmPlaybackService Instance { get; private set; }
         private AudioSource source;
+        private AudioSource loopSource;
+        private double loopStart;
         private BgmSceneCatalog catalog;
         private AudioListener sceneListener;
         private bool westernIntroductionPlaying;
         private Coroutine transition;
         private bool battleMusicActive;
-        public AudioClip CurrentClip => source != null ? source.clip : null;
+        public AudioClip CurrentClip => loopSource != null && loopSource.clip != null &&
+            AudioSettings.dspTime >= loopStart ? loopSource.clip : source != null ? source.clip : null;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void ResetRuntime() => Instance = null;
@@ -30,12 +33,7 @@ namespace ProjectLimitless.Audio
             Instance = this;
             DontDestroyOnLoad(gameObject);
             catalog = Resources.Load<BgmSceneCatalog>("Audio/Music/BgmSceneCatalog");
-            source = gameObject.AddComponent<AudioSource>();
-            source.playOnAwake = false;
-            source.loop = true;
-            source.spatialBlend = 0f;
-            source.volume = 1f;
-            AudioSettingsService.Route(source, GameAudioChannel.BGM);
+            source = CreateSource();
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
@@ -53,13 +51,14 @@ namespace ProjectLimitless.Audio
             // Battle는 참가자를 만든 Controller의 Start가 배정합니다. 서비스 Start 순서에 따라 덮어쓰지 않습니다.
             if (scene.name != "Battle")
             {
-                AudioClip next = catalog != null ? catalog.Find(scene.name) : null;
+                AudioClip intro = null;
+                AudioClip next = catalog != null ? catalog.Find(scene.name, out intro) : null;
                 if (battleMusicActive)
                 {
                     battleMusicActive = false;
-                    Transition(next, .75f, .9f);
+                    Transition(next, .75f, .9f, intro);
                 }
-                else Play(next);
+                else Play(next, intro);
             }
             // Intro는 자신의 Camera/Listener를 Start에서 생성합니다. 먼저 Listener를 만들면 두 출력이 겹칩니다.
             if (scene.name == "OpeningIntro") { sceneListener = null; return; }
@@ -89,45 +88,99 @@ namespace ProjectLimitless.Audio
             sceneListener = listenerObject.GetComponent<AudioListener>();
         }
 
-        /// <summary>이미 진행 중인 같은 곡은 재시작하지 않습니다. null은 음악 미정 공간으로 진입했을 때의 정리입니다.</summary>
-        public void Play(AudioClip clip)
+        private AudioSource CreateSource()
         {
-            if (source == null || source.clip == clip && (clip == null || source.isPlaying)) return;
-            CancelTransition();
-            source.volume = 1f;
-            source.Stop();
-            source.loop = true;
-            source.clip = clip;
-            if (clip != null) source.Play();
+            var audio = gameObject.AddComponent<AudioSource>();
+            audio.playOnAwake = false;
+            audio.spatialBlend = 0f;
+            AudioSettingsService.Route(audio, GameAudioChannel.BGM);
+            return audio;
         }
 
-        // 한 Source의 음량만 순차 변경합니다. Mixer의 사용자 음량과 독립적이며 두 곡이 겹치지 않습니다.
+        public void Play(AudioClip clip) => Play(clip, null);
+
+        private void Play(AudioClip clip, AudioClip intro)
+        {
+            if (source == null) return;
+            if (transition == null &&
+                (intro != null && source.clip == intro && loopSource != null && loopSource.clip == clip ||
+                 intro == null && (loopSource == null || loopSource.clip == null) &&
+                 source.clip == clip && (clip == null || source.isPlaying))) return;
+            CancelTransition();
+            StartTrack(clip, intro, 1f);
+        }
+
+        private void StopTrack()
+        {
+            source.Stop();
+            source.clip = null;
+            if (loopSource == null) return;
+            // Stop은 재생 중인 소스와 아직 DSP에 예약된 소스 모두를 취소합니다.
+            loopSource.Stop();
+            loopSource.clip = null;
+        }
+
+        private void StartTrack(AudioClip clip, AudioClip intro, float gain)
+        {
+            StopTrack();
+            SetGain(gain);
+            if (clip == null) return;
+            if (intro == null)
+            {
+                source.clip = clip;
+                source.loop = true;
+                source.Play();
+                return;
+            }
+
+            if (loopSource == null) loopSource = CreateSource();
+            loopSource.volume = gain;
+            source.clip = intro;
+            source.loop = false;
+            loopSource.clip = clip;
+            loopSource.loop = true;
+            // 같은 DSP 시계에 두 클립을 예약해 프레임 지연 없이 Intro 끝 샘플에서 Loop를 시작합니다.
+            double introStart = AudioSettings.dspTime + .10;
+            loopStart = introStart + (double)intro.samples / intro.frequency;
+            source.PlayScheduled(introStart);
+            source.SetScheduledEndTime(loopStart);
+            loopSource.PlayScheduled(loopStart);
+        }
+
+        private void SetGain(float gain)
+        {
+            source.volume = gain;
+            if (loopSource != null) loopSource.volume = gain;
+        }
+
         private void CancelTransition()
         {
             if (transition != null) StopCoroutine(transition);
             transition = null;
         }
-        private void Transition(AudioClip clip, float fadeOut, float fadeIn)
+
+        private void Transition(AudioClip clip, float fadeOut, float fadeIn, AudioClip intro = null)
         {
             CancelTransition();
-            transition = StartCoroutine(Fade(clip, fadeOut, fadeIn));
+            transition = StartCoroutine(Fade(clip, intro, fadeOut, fadeIn));
         }
-        private System.Collections.IEnumerator Fade(AudioClip clip, float fadeOut, float fadeIn)
+
+        private System.Collections.IEnumerator Fade(AudioClip clip, AudioClip intro, float fadeOut, float fadeIn)
         {
             float initial = source.volume;
             for (float elapsed = 0; elapsed < fadeOut; elapsed += Time.unscaledDeltaTime)
             {
-                source.volume = initial * (1f - elapsed / fadeOut);
+                SetGain(initial * (1f - elapsed / fadeOut));
                 yield return null;
             }
-            source.Stop(); source.clip = clip; source.loop = true; source.volume = 0f;
-            if (clip != null) source.Play();
+            StartTrack(clip, intro, 0f);
             for (float elapsed = 0; elapsed < fadeIn; elapsed += Time.unscaledDeltaTime)
             {
-                source.volume = elapsed / fadeIn;
+                SetGain(elapsed / fadeIn);
                 yield return null;
             }
-            source.volume = 1f; transition = null;
+            SetGain(1f);
+            transition = null;
         }
 
         /// <summary>Field03의 기존 안전 반경 판정만 음악에 반영하며, 거점/퀘스트 저장 조건은 바꾸지 않습니다.</summary>
@@ -137,7 +190,7 @@ namespace ProjectLimitless.Audio
             Play(catalog != null ? inside ? catalog.SafeZoneClip : catalog.Find("Field_03") : null);
         }
 
-        private void OnDisable() { CancelTransition(); battleMusicActive = false; if (source != null) { source.Stop(); source.clip = null; } }
+        private void OnDisable() { CancelTransition(); battleMusicActive = false; if (source != null) StopTrack(); }
         /// <summary>실제 참가자가 준비된 Battle Start에서 호출합니다. 기존 Source/Mixer와 복귀 Scene 정책을 재사용합니다.</summary>
         public void PlayBattleMusic(bool isBoss)
         {

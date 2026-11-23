@@ -38,7 +38,9 @@ namespace ProjectLimitless.Monster
         // 승인 연결 대상만 대기하여 다른 몬스터의 기존 시간을 보존합니다.
         // 승인된 맹독뱀 4프레임도 0.5초를 끝까지 재생한 뒤 Idle로 복귀합니다.
         // 피해·독 부여 시점은 기존 Presenter가 유지하며, 다른 몬스터의 재생 계약은 바꾸지 않습니다.
-        public bool UsesApprovedAttackTiming => definition != null && (definition.MonsterId == "venom_bee" || definition.MonsterId == "forest_spider" || definition.MonsterId == "venom_snake");
+        public bool IsTimedHitPlaying => reacting && !defeated && definition?.HitFrameSeconds?.Length > 0;
+
+        public bool UsesApprovedAttackTiming => definition != null && (definition.MeleeImpactSeconds > 0f || definition.MonsterId == "venom_bee" || definition.MonsterId == "forest_spider" || definition.MonsterId == "venom_snake");
 
         public bool IsAttackPlaying => isActiveAndEnabled && attacking && !defeated;
 
@@ -72,6 +74,10 @@ namespace ProjectLimitless.Monster
             if (monster != null && monster.ExplicitAttackFrames.Length > 0) attackFrames = monster.ExplicitAttackFrames;
             if (monster != null) hitFrames = monster.ExplicitHitFrames;
             if (monster != null) defeatFrames = monster.ExplicitDefeatFrames;
+            if (monster?.HitSpriteSheet != null && hitFrames.Length == 0)
+                hitFrames = CreateFrames(monster.HitSpriteSheet, monster.IdleFrameSize, monster.IdleColumns, monster.IdleFrameCount, $"{monster.MonsterId}_Hit");
+            if (monster?.DefeatSpriteSheet != null && defeatFrames.Length == 0)
+                defeatFrames = CreateFrames(monster.DefeatSpriteSheet, monster.IdleFrameSize, monster.IdleColumns, monster.IdleFrameCount, $"{monster.MonsterId}_Defeat");
             ShowFrame(idleFrames, 0);
         }
 
@@ -98,6 +104,7 @@ namespace ProjectLimitless.Monster
         /// <summary>4×4 시트의 세 번째 행을 강한 행동과 피격이 공유합니다. 원본에 없는 Walk 프레임은 만들지 않습니다.</summary>
         public void PlaySkill()
         {
+            if (defeated) return;
             if (hitFrames.Length == 0) { PlayAttack(); return; }
             usingSkill = true; attacking = false; shooting = false; reacting = false; elapsed = 0f;
             ShowFrame(hitFrames, 0);
@@ -132,6 +139,8 @@ namespace ProjectLimitless.Monster
 
         public void StopAttackAndReturnToIdle()
         {
+            // 치명타나 유지 시간이 지정된 피격 중의 늦은 공격 완료 콜백은 현재 모션을 덮을 수 없습니다.
+            if (defeated || IsTimedHitPlaying) return;
             attacking = false;
             shooting = false;
             usingSkill = false;
@@ -150,7 +159,11 @@ namespace ProjectLimitless.Monster
             // 일시정지 중 공격만 먼저 끝나거나 배속에서 Sting과 피해가 어긋나지 않게 합니다.
             // 다른 몬스터/Idle/피격/스킬의 기존 Clock은 그대로 유지합니다.
             elapsed += attacking && attackUsesBattleTime ? Time.deltaTime : Time.unscaledDeltaTime;
-            int frameIndex = Mathf.FloorToInt(elapsed * definition.AnimationFramesPerSecond);
+            float[] timing = defeated ? definition.DefeatFrameSeconds : reacting ? definition.HitFrameSeconds
+                : attacking ? definition.AttackFrameSeconds : frames == idleFrames ? definition.IdleFrameSeconds : null;
+            int frameIndex = timing != null && timing.Length == frames.Length
+                ? ResolveTimedFrame(timing, elapsed, frames == idleFrames)
+                : Mathf.FloorToInt(elapsed * definition.AnimationFramesPerSecond);
             if ((attacking || shooting || reacting || usingSkill) && frameIndex >= frames.Length)
             {
                 reacting = false;
@@ -158,6 +171,21 @@ namespace ProjectLimitless.Monster
                 return;
             }
             ShowFrame(frames, defeated ? Mathf.Min(frameIndex, frames.Length - 1) : frameIndex % frames.Length);
+        }
+
+        // 비반복 모션은 배열 끝에서 완료를 알립니다. KO 표시만 호출부에서 마지막 셀에 고정합니다.
+        private static int ResolveTimedFrame(float[] seconds, float time, bool repeat)
+        {
+            float total = 0f;
+            foreach (float hold in seconds) total += hold;
+            if (total <= 0f) return 0;
+            if (repeat) time %= total;
+            for (int i = 0; i < seconds.Length; i++)
+            {
+                time -= seconds[i];
+                if (time < 0f) return i;
+            }
+            return seconds.Length;
         }
 
         private static Sprite[] LoadFrames(string resourcePath)

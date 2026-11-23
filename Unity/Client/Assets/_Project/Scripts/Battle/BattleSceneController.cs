@@ -2879,7 +2879,9 @@ namespace ProjectLimitless.Battle
                 applyImpact,
                 onImpact,
                 onComplete,
-                actorView.MonsterAnimation == null || !actorView.MonsterAnimation.UsesApprovedAttackTiming ? null : (Func<bool>)(() => actorView.MonsterAnimation.IsAttackPlaying)));
+                actorView.MonsterAnimation == null || !actorView.MonsterAnimation.UsesApprovedAttackTiming ? null : (Func<bool>)(() => actorView.MonsterAnimation.IsAttackPlaying),
+                !strongVisual && participantSetups.TryGetValue(actor, out BattleParticipantSetup meleeSetup)
+                    ? meleeSetup.MonsterDefinition?.MeleeImpactSeconds ?? 0f : 0f));
         }
         /// <summary>파일명 순서로 추출된 Projectile 프레임을 불러와 공용 Presenter에 전달합니다.</summary>
         private static Sprite[] LoadProjectileFrames(string resourcesPath)
@@ -2890,7 +2892,7 @@ namespace ProjectLimitless.Battle
         private static void RestoreBattleIdle(CombatantView view)
         {
             // 치명타 HUD 갱신에서 시작한 몬스터 전투불능 프레임을 공격 종료 시 덮지 않습니다.
-            if (view?.MonsterAnimation != null && view.LastHp <= 0) return;
+            if (view?.MonsterAnimation != null && (view.LastHp <= 0 || view.MonsterAnimation.IsTimedHitPlaying)) return;
 
             if (view?.CharacterAnimation != null)
             {

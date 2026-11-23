@@ -96,6 +96,24 @@ namespace ProjectLimitless.Monster
         [SerializeField] private string directAreaAttackName;
         [SerializeField, Min(0)] private int directAreaAttackDamage;
 
+        [Header("선택적 모션별 타이밍")]
+        // 승인 포즈별 유지 시간이 있는 정의에만 적용합니다. 기존 정의는 공용 FPS를 그대로 사용합니다.
+        [SerializeField] private Texture2D hitSpriteSheet;
+        [SerializeField] private Texture2D defeatSpriteSheet;
+        [SerializeField] private float[] idleFrameSeconds;
+        [SerializeField] private float[] attackFrameSeconds;
+        [SerializeField] private float[] hitFrameSeconds;
+        [SerializeField] private float[] defeatFrameSeconds;
+        [SerializeField, Min(0f)] private float meleeImpactSeconds;
+
+        public Texture2D HitSpriteSheet => hitSpriteSheet;
+        public Texture2D DefeatSpriteSheet => defeatSpriteSheet;
+        public float[] IdleFrameSeconds => idleFrameSeconds;
+        public float[] AttackFrameSeconds => attackFrameSeconds;
+        public float[] HitFrameSeconds => hitFrameSeconds;
+        public float[] DefeatFrameSeconds => defeatFrameSeconds;
+        public float MeleeImpactSeconds => meleeImpactSeconds;
+
         public string MonsterId => monsterId;
         public string DisplayName => displayName;
         public int MonsterLevel => Mathf.Max(1, monsterLevel);

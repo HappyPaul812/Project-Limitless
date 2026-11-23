@@ -1,0 +1,33 @@
+PASS Sprite import material_frost_vole_frosted_fur
+PASS Sprite import material_snow_stoat_snow_down
+PASS Sprite import material_frost_owl_frost_feather
+PASS Sprite import material_ice_beetle_ice_carapace
+PASS Sprite import material_blizzard_wisp_blizzard_crystal
+PASS Sprite import material_rime_sentinel_magic_blocking_crystal
+PASS Catalog 22 existing + 6 unique
+PASS Loaded all 3 existing shops
+PASS ItemDefinition and Sprite link material_frost_vole_frosted_fur
+PASS Cannot buy material_frost_vole_frosted_fur
+PASS Stack99 material_frost_vole_frosted_fur
+PASS Sale value and stock material_frost_vole_frosted_fur
+PASS ItemDefinition and Sprite link material_snow_stoat_snow_down
+PASS Cannot buy material_snow_stoat_snow_down
+PASS Stack99 material_snow_stoat_snow_down
+PASS Sale value and stock material_snow_stoat_snow_down
+PASS ItemDefinition and Sprite link material_frost_owl_frost_feather
+PASS Cannot buy material_frost_owl_frost_feather
+PASS Stack99 material_frost_owl_frost_feather
+PASS Sale value and stock material_frost_owl_frost_feather
+PASS ItemDefinition and Sprite link material_ice_beetle_ice_carapace
+PASS Cannot buy material_ice_beetle_ice_carapace
+PASS Stack99 material_ice_beetle_ice_carapace
+PASS Sale value and stock material_ice_beetle_ice_carapace
+PASS ItemDefinition and Sprite link material_blizzard_wisp_blizzard_crystal
+PASS Cannot buy material_blizzard_wisp_blizzard_crystal
+PASS Stack99 material_blizzard_wisp_blizzard_crystal
+PASS Sale value and stock material_blizzard_wisp_blizzard_crystal
+PASS ItemDefinition and Sprite link material_rime_sentinel_magic_blocking_crystal
+PASS Cannot buy material_rime_sentinel_magic_blocking_crystal
+PASS Stack99 material_rime_sentinel_magic_blocking_crystal
+PASS Sale value and stock material_rime_sentinel_magic_blocking_crystal
+32 PASS / 0 FAIL

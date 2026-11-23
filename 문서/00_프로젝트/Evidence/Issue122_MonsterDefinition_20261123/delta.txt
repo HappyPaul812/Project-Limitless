@@ -1,0 +1,11 @@
+PASS 18 prior definitions, no frost_vole collision
+PASS Idle four approved Sprite sub-assets
+PASS Attack four approved Sprite sub-assets
+PASS Hit four approved Sprite sub-assets
+PASS Defeat four approved Sprite sub-assets
+PASS stable official resource identity
+PASS 19 unique catalog IDs
+PASS approved stats
+PASS serialized approved Sprite links
+PASS no drop, support, poison or area attack
+10 PASS / 0 FAIL

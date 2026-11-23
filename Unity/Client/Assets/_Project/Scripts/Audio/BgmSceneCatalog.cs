@@ -12,6 +12,7 @@ namespace ProjectLimitless.Audio
         {
             public string sceneName;
             public AudioClip clip;
+            public AudioClip intro;
         }
         [SerializeField] private Entry[] scenes = Array.Empty<Entry>();
         [SerializeField] private AudioClip safeZoneClip;
@@ -51,10 +52,19 @@ namespace ProjectLimitless.Audio
             }
         }
 
-        public AudioClip Find(string sceneName)
+        public AudioClip Find(string sceneName) => Find(sceneName, out _);
+
+        public AudioClip Find(string sceneName, out AudioClip intro)
         {
+            intro = null;
+            // 아직 Scene이 없는 승인곡은 등록만 유지합니다.
+            if (string.IsNullOrEmpty(sceneName)) return null;
             foreach (Entry entry in scenes)
-                if (string.Equals(entry.sceneName, sceneName, StringComparison.Ordinal)) return entry.clip;
+            {
+                if (!string.Equals(entry.sceneName, sceneName, StringComparison.Ordinal)) continue;
+                intro = entry.intro;
+                return entry.clip;
+            }
             return null;
         }
     }
