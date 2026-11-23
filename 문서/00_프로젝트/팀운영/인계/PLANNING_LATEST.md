@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-24 — 기본 공격 버튼 대표 최종 미술 승인 · 방어 버튼 후속 제작
+
+- 대표 직접 결정 “나도 봤는데 승인해도 돼.” → [#124 공격 버튼 최종 미술 승인](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7116923432). `AttackButton_Original_128_RGBA.png` SHA256 `cf775727e27be825809a6b3d9bd04b227abe3408055873f70616cc8a9ca19a32`, `USER_ART_APPROVED / UNITY_NOT_APPLIED`. 원본 보존, 재제작 금지.
+- [기본 방어 버튼 다음 발주](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7116871218): 기존 Kenney shield 대체 오리지널 방패 1종, 공격 버튼과 화풍 통일, 철벽/수호의 맹세/가이아 웰과 구분, 128 RGBA·30/40px 비교·ZIP/Manifest/SHA 제출. 미납품·미승인.
+- 공격 버튼의 실제 Unity 적용·기존 Kenney 대조·GameView QA는 별도 단계. #85 HOLD 및 main 보호. F3 또는 다른 리뉴얼 후보 승인을 의미하지 않음.
+
+---
+
 # PLANNING / 2026-11-24 — 바울 대표 #124 공격 버튼·#123 F3/F4 ZIP 실물 기획 검수
 
 - 바울 대표 로컬 납품 파일명 2개 전달. 기획에서 ChatGPT Library의 동일명 ZIP 실물 열람 및 Manifest·SHA256SUMS·CRC 검증 완료. [기획 실물 검수 정본](../../20261124_Issue123_Issue124_Art_Delivery_Review.md) 커밋 `a5ac0ff3f6d1e7417224b5e789ddab68915ff359`.
