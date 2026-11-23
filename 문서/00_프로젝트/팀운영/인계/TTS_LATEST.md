@@ -1,5 +1,17 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-23 16시경 사용자 Stage-only 선제 제작 승인 및 실제 PowerShell 사전검사 결과
+
+- 사용자에게 "게임 구현을 기다리지 않고 임시 WAV부터 먼저 제작" 방식을 설명하고 직접 **"그래"** 승인을 받음. **`STAGE_ONLY_METHOD_APPROVED`**로 정책 결정을 업데이트. 이는 새로운 Runtime ID 확정이나 **유료/실제 Google API 무료잔량 확인의 대체가 아님**. 기존 승인 WAV162·Unity6000.6.5f1·Save·main·NPC 정책 그대로 유지.
+- 사용자 실제 `Chapter3_Principal72_STAGING_ONLY.py check` 출력: `[QUEUE] 72/72 valid`, Main24 STAGE AUDIO ONLY, `Runtime ID 0/10`, 기존162 보호. `[STAGE AUTHORIZATION PENDING]` 이유 **`codex_report_examined_by_user=false`**, `[QUOTA VERIFICATION PENDING]` 이유 **사용자의 `PT_QUOTA_VERIFIED.json`가 해당 실행 시점 태평양 날짜 `2026-11-22 UTC-8` 및 모델과 불일치**. 공유 로컬 장부 **0/40**, 키/그룹 각0. **`check` 읽기전용이고 Google POST=0, WAV=0**.
+- 참고: 한국 2026-11-23 오후5시 이전은 미국 태평양 `2026-11-22`이고 오후5시 이후는 `2026-11-23` (11월 PST UTC−8). **`PT_QUOTA_VERIFIED.json` 날짜는 사용자의 해당 실행 때 프로그램이 실제 출력한 PT 날짜와 같아야 함.** 어제 날짜 증거를 오늘 사용하거나 `0/40`을 무료 할당량으로 오인하지 않는다.
+- 해당 파일럿 ZIP `LIMITLESS_Main24_StageOnly_TTS_Pilot_20261123.zip` SHA256 `36b4764ad645ecf296c7a1e3c8214b5d82d685c5687f315349169c10a5f097c7` 현재 로컬 도구에서 크기 16607bytes, CRC PASS 검증. 첫 승인 JSON 경로 `F:\Downloads\Voice\Chapter3_StageOnly_72\Main24_STAGE_AUTHORIZATION.json`. 실제 Codex **근거 보고서 파일이 존재**하고 내용을 확인했을 때에만 `codex_report_path`를 실제 경로로 넣고 `codex_report_examined_by_user` 등 5개 인지/승인 flag를 true로 설정. `real_runtime_id=null` 유지, `STAGE_AUDIO_ONLY_NOT_RUNTIME` 유지. 590경로 WAV 원문·화자 중복 불확실성은 분명히 남음.
+- 두 번째 `F:\Downloads\Voice\Chapter3_StageOnly_72\PT_QUOTA_VERIFIED.json`는 **별도 현재 PT날짜·모델 `gemini-3.8-flash-tts`** 및 실제 무료 tier/프로젝트별 키 소속/외부 사용 포함 잔여·과금 없음 확인 후만 `user_verified=true`, `max_new_posts_confirmed_today`를 실확인 범위내 정수(처음 테스트1이면 1)로. 유료/Google Cloud billing 활성화 금지. `RENEWAL_SETTINGS.json`의 `free_tier_confirmed/project_groups_confirmed`도 실제 유효해야 함. API 사용시 이전부터 쓰던 사용자가 직접 실행.
+- 두 현장증거가 모두 적합해야 `python .\Chapter3_Principal72_STAGING_ONLY.py check` → `run --max-calls 1` → `RUN_MAIN24_1` 한 개 시험. **실제 Google 합성은 아직 미실행**, 신규 WAV SHA·청취 PASS 없음. 첫 샘플 승인 전 2번째 요청 금지. `429` 자동 재시도/자동전환 없음.
+- 사용자 화면에서 `STAGE_AUTHORIZATION_PENDING`이 나온 것은 프로그램의 **정상 안전 중단**, 승인 철회가 아님. 사용자 "그래" 동의는 GitHub에 기록하되 실행기 본인 확인·보고서 증거·실제 quota gate는 우회하지 않는다.
+- [Stage-only 정책/절차](../../TTS_Issue125_Main24_STAGED_ID_PLAN_0of10_제작분리_20261123.md) / [Issue #125](https://github.com/HappyPaul812/Project-Limitless/issues/125).
+
+
 ## 2026-11-23 Main24 후속 Codex 결과 — STAGED_ID_PLAN·Runtime 0/10 · Stage-only 음성 제작 선택지 준비
 
 - **사용자 전달 최신 Codex 보고:** Main24는 북문/관찰 구간이 탐험 후보 흐름, 올빼미 전투는 선택형 QA 조우. 승인 대사 전용 정식 발화·조사·승리 트리거가 **아직 존재하지 않으므로 게임 Runtime 변경 없이 `STAGED_ID_PLAN`으로 안전 기록**. 실제 Runtime연결0/10, `VERIFIED_NEW=0`, `VERIFIED_KEEP_EXISTING=0`, `HOLD_RUNTIME_ID=10`, `reviewed_by_user=false`. 탐험 안내 ID12 보존.
