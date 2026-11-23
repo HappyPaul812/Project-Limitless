@@ -1,5 +1,12 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-23 Main24 미엘 Stage WAV — 사용자 청취 QA PASS (2/10)
+
+- 사용자 제공 두 번째 생성 로그: `[API 2]`→`[CREATED] ch3stage_main24_miel_001` / **미엘 Sulafat**, 정확 승인 문장 **“저는 어묵탕부터 생각나는데요?”**, 콘솔 WAV SHA256 **`1097dabc14a3958f51b97e2b7e72eef3751782725b018a9ef1e70806ef1ca7dd`**. User "좋아."는 직전 "미엘 음성을 직접 들어보시고 좋으신지" 질문에 대한 **명시적 사용자 청취 승인 PASS**. ChatGPT가 로컬 WAV bytes 자체를 검사한 것은 아니고 생성기 출력 근거.
+- **Main24 스테이징 실제 생성 2/10, 청취 승인 2/2, 나머지 8건**. 기존 첫 세린 `ch3stage_main24_serin_001` SHA `6bf00d66d0b230cb339d0a68079272a9fc2f1510f254a0cff365751b53f14464` (사용자 청취 승인 + `[QA] Previous approval exists; no changes made.` 확인). 미엘은 스테이징 후속 개별 QA marker 생성 기능이 없는 현 파일럿이므로 **인계·Issue에 사용자 청취 PASS로 기록**, 임의로 첫 샘플 QA 파일 덮어쓰지 않는다.
+- 다음 **`ch3stage_main24_serin_002` / 세린 Erinome / “그건 비상용이에요!”**. 첫 2 POST를 이미 사용. **금일 누적 실제 무료 상한 3회 이상을 해당 Google 프로젝트/모델/외부 사용까지 재확인한 경우만** `PT_QUOTA_VERIFIED.json`의 `max_new_posts_confirmed_today`를 누적 `3` 이상으로 설정 가능. 로컬 ledger 1/40, 2/40은 Google 무료 잔량이 아님. `check`로 로컬 기록과 gate 확인 → `run --max-calls 1` / `RUN_MAIN24_BATCH`로 세 번째 1건만 진행. 무료 잔량 확인 불가시 중단.
+- **기존 승인 WAV162/162 KEEP**, Stage ID ≠ Unity Runtime ID, 정식 Runtime 매핑 **0/10**, Unity6000.6.5f1·Save·main·원본 WAV 수정0, 미확인 590 WAV 경로 존재. 429 재시도·자동 전환 없음.
+
 ## 2026-11-23 Main24 STAGE-only 두 번째 실제 합성 성공 — 미엘 청취 대기
 
 - 사용자 로컬 PowerShell 실제 출력: `Chapter3_Principal72_STAGING_ONLY.py run --max-calls 1` / `RUN_MAIN24_BATCH` → `[READY] stage items=9, free cap permits at most 1 POST` → `[API 2]` / `[CREATED]` **`ch3stage_main24_miel_001`**. 음성 **미엘 / Sulafat**, 정확 승인 대사 **`저는 어묵탕부터 생각나는데요?`**.
