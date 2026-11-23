@@ -1,5 +1,15 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-24 Issue #125 — Main24 Stage10 보호·증거표 / Main25 9행 STAGING_PREP_ONLY
+
+- 11/24 최신 [기획 발주](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7115940550) 확인 후 승인된 Main24 **10/10 Stage WAV 사용자 제작·청취 PASS를 보호**. 재합성0. 기존 승인 WAV162, Unity6000.6.5f1, Save/.meta/GUID/main/#85 보호. 11/23 백업 checkpoint `65cceb2d6c3283d18abec6e27d8a6f1296411f17`은 참조만 하며 작업 없음.
+- **Main24 StageID ↔ candidate_id ↔ speaker ↔ 기존 승인 Voice ↔ 정확 대사** 10개 대응 JSON 추가: [Issue125_Main24_10_StageProof_20261124.json](https://github.com/HappyPaul812/Project-Limitless/blob/docs/tts/Tools/TTS/Issue125_Main24_10_StageProof_20261124.json). 첫 3건 StageID/콘솔SHA 존재(현재 WAV 직접 재해시 아님); 뒤의 7건은 직전 배치7 소스 예상 StageID+대표 사용자 제작·청취 합격만 확인, **실파일 SHA/sidecar/PT 원장/파일 존재 현장 검증 NOT_VERIFIED**. 현 Runtime ID **0/10 HOLD**, StageID는 RuntimeID가 아님. 기존 590 WAV 중복 미확인.
+- **Main25 원문 9/9**를 [Chapter3 72개 정본](https://github.com/HappyPaul812/Project-Limitless/blob/docs/tts/Tools/TTS/Chapter3_Protagonist72_ApprovedQueue_20261123.json)에서 일치하게 추출·Voice 검수. [Issue125_Main25_9_StagePrep_20261124.json](https://github.com/HappyPaul812/Project-Limitless/blob/docs/tts/Tools/TTS/Issue125_Main25_9_StagePrep_20261124.json): 세린2 Erinome, 폴3 Achird, 태온2 Algieba, 하렌1 Alnilam, 미엘1 Sulafat, 원문/구두점 잠금. 해당9 행과 72큐 내부 정확 동일 화자+문장 중복0, 기존162/590와 실물 중복 검사는 미확인. `main25_*` 후보ID와 제안 `ch3stage_main25_*`를 정식 RuntimeID/현생성기지원 StageID로 오해 금지. Main25 **NEW_WAV0, API_POST0, STAGING_PREP_ONLY**.
+- TTS 담당 직접 제작 **로컬 읽기전용 Python 검사기** 및 Manifest/README/fixtures ZIP을 사용자에게 대화 첨부: `LIMITLESS_TTS_Issue125_StageProof_Main25_Preflight_20261124.zip` 13,716B, SHA256 `e33779f881b25517f5d59a0572801e518c83bb5e0e88df6ec9e759985b04c069`. 스크립트 `Main24_Main25_ReadOnly_Preflight.py` SHA256 `1d64549de68a7d05006739d1dfcb3ebfa6b3fab1758e9f9891748073938343bd`. **오프라인 fixture 8/8 PASS**; 실제 사용자 WAV 파일/원장이나 Google 무료quota 본 세션 직접 열람0. ZIP과 Python 소스는 **대화에서만 전달**, GitHub 저장소에 ZIP/Python 소스를 커밋했다고 주장하지 않음.
+- 공식 상세 결과: [TTS_Issue125_Main24_Proof_Main25_StagingPrep_20261124.md](https://github.com/HappyPaul812/Project-Limitless/blob/docs/tts/문서/00_프로젝트/TTS_Issue125_Main24_Proof_Main25_StagingPrep_20261124.md). **API0/유료0/무단 합성0/Unity편집0/원본 WAV 수정0**; Main25 제작기 개발·Runtime ID 실증·기존162/590 중복감사·실제 태평양 날짜 무료 quota/프로젝트/외부 사용 확인·대표 별도 실행 승인 전 합성 금지. 429 자동 retry/failover0, Unity Runtime 적용 별도 승인.
+- 브랜치 `docs/tts`; 정본 큐 72행 자체 불변. `main`에 직접 commit/merge/push 안 함.
+
+
 ## 2026-11-23 Main24 STAGE 10/10 생성 및 사용자 청취 10/10 PASS — Stage-only 완료
 
 - 사용자 직접 보고(2026-11-23 KST): **“다 뽑았어. 다 들었는데 좋아.”** 이는 직전 TTS 담당이 직접 작성·전달한 `Chapter3_Main24_Batch7_Orchestrator.py`를 통한 **Main24 잔여 7개 제작 완료 및 7개 전부 청취 PASS**를 뜻하는 것으로 문맥 확인. 이전 Main24 첫 3개 생성/청취 PASS와 합산해 **Main24 10/10 STAGING WAV 제작 완료, 사용자 청취 QA 10/10 PASS**. 최초 72개 주요 인물 합성 큐 중 Main24 10개만 완료이며, **Main25~Main29 62건은 미완**.
