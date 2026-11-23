@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-24 — 바울 대표 #124 공격 버튼·#123 F3/F4 ZIP 실물 기획 검수
+
+- 바울 대표 로컬 납품 파일명 2개 전달. 기획에서 ChatGPT Library의 동일명 ZIP 실물 열람 및 Manifest·SHA256SUMS·CRC 검증 완료. [기획 실물 검수 정본](../../20261124_Issue123_Issue124_Art_Delivery_Review.md) 커밋 `a5ac0ff3f6d1e7417224b5e789ddab68915ff359`.
+- **#124 AttackButton** `LIMITLESS_Issue124_AttackButton_Original_20261124.zip` 1,659,563B SHA `14aeea5420912bbfc4c996f108a96db36058f34433324e02321c5de32b1ba9c7` CRC10/Manifest8/SUMS9 PASS. 128×128투명 아이콘(검 은색·손잡이 금색·붉은 참격) 실제 30/40px 오프라인 다크/라이트 검토 `PLANNING_ART_PASS / REDRAW_NOT_NEEDED`; 실제 Kenney 원본 1:1 및 GameView `NOT_VERIFIED`. 대표 최종 미술 승인·Unity 제품 교체 HOLD. [#124 검수 기록](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7116768391).
+- **#123 F3→F4** `LIMITLESS_Issue123_F3_FinalArtReview_F4Concept_20261124.zip` 1,113,445B SHA `191d9f52c6c4baba35cb1cd276ffa98573b9c64875baa5db1463320438520098` CRC8/Manifest6/SUMS7 PASS. 기존 11/23 F3 PNG3 원본 SHA 동일 확인, 원본수정0. GroundTransition(단일 오버레이), LowFrostRock(길 밖) **기획 시각 PASS**. FlushStone EdgeMarker 중앙 청색은 물웅덩이/위험 오독 우려로 **색상만 저채도 회청색 국소 v2 옵션 후보** 요청, v1 원본 보존/30·40px 비교/대표 별도 채택. F4 백색침엽림 풍설·수목 그늘·중앙 통행로 팔레트는 **기획 CONCEPT PASS**이며 신규 게임용 PNG/맵 승인 아님. [#123 검수·후속 기록](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7116769430). F3 Scene/4.5WU 실제 도보·휠체어/Collider/Sorting/GameView NOT_VERIFIED, 최종 대표 미술 승인·Unity 적용 HOLD.
+- 두 ZIP은 ChatGPT Library 동일명 자료를 확인한 것이며 사용자 PC F:의 바이너리 직접 실측은 아님. Codex #85 수정후보·Unity6000.6.5f1·기존 11/23 복구/원본 main, Save/UserData·Discord·기존 승인 PNG/WAV/meta/GUID 보호. 새 Codex QA·Unity 작업 발주하지 않음.
+
+---
+
 # PLANNING / 2026-11-24 — Issue #85 패키지·GUID 검증 수정 7파일 로컬 커밋 보존 완료
 
 - 바울 대표가 Codex 최종 보존 결과 전달. [Issue #85 Codex 실적 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-7116392287) 직접 확인.
