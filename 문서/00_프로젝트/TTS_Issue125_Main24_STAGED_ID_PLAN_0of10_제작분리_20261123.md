@@ -25,13 +25,13 @@
 ### 독립 신규 파일럿 패키지
 
 - **파일:** `LIMITLESS_Main24_StageOnly_TTS_Pilot_20261123.zip`
-- **크기:** 16,515바이트
-- **SHA256:** `d5c96afbcdc4687b0475d866424e4e12458c2ce7e9f29c3d354b353e71067692`
+- **크기:** 16,607바이트
+- **SHA256:** `36b4764ad645ecf296c7a1e3c8214b5d82d685c5687f315349169c10a5f097c7`
 - **포함:** `Chapter3_Principal72_STAGING_ONLY.py`, `Chapter3_Protagonist72_ApprovedQueue_20261123.json`, `README_Main24_STAGING_KO.txt`, `test_ch3_staging_offline.py`.
 - **설치 위치(사용자가 직접):** `F:\Downloads\Voice`에 이 4개 파일 추가. **기존 `Chapter3_Principal72_Pilot.py` 또는 `Renewal_Auto_TTS_Failover_v2.py`를 덮어쓰지 않는다.**
 - **생성 대상 분리:** `F:\Downloads\Voice\Chapter3_StageOnly_72\Serin\ch3stage_main24_serin_001.wav` 같은 **임시 스테이징 ID**로 저장. 이 이름은 실제 Runtime ID가 아니며 다른 기존 파일이나 Unity로 자동 복사하지 않는다.
 - **기존 승인 162 보호:** 모든 신규 WAV+sidecar는 `Chapter3_StageOnly_72` 하위. Google 키는 `F:\Downloads\Voice\API.txt` 및 기존 `Renewal_Voices\API.txt`를 **메모리에서만 동일한 키 세트인지 검사**하며 키값 출력/파일 재작성 금지. 기존 append-only PT 사용량 로그를 **공유**, 전체 로컬 하루40·그룹별10 안전상한 및 HOLD/LOCK·sha 검증 재사용. 429 자동 재시도/자동 키전환 **OFF**.
-- **기본 게이트 모두 False:** 새 `Main24_STAGE_AUTHORIZATION.json`의 본인 Codex 보고서 확인/Runtime0/10 인정/**593경로 미확인 위험 인정**/Stage-only 합성 명시 승인/162보호 확인이 모두 true여야만 파일럿 합성 허용. `real_runtime_id`는 계속 null이어야 한다. **기존 RuntimeAudit의 reviewed_by_user=false를 무단 true로 바꾸지 않는다.**
+- **기본 게이트 모두 False, 보고서 실파일 존재 확인:** 새 `Main24_STAGE_AUTHORIZATION.json`의 본인 Codex 보고서 확인(실제 보고서 경로의 파일 존재까지 검사)/Runtime0/10 인정/**593경로 미확인 위험 인정**/Stage-only 합성 명시 승인/162보호 확인이 모두 true여야만 파일럿 합성 허용. `real_runtime_id`는 계속 null이어야 한다. **기존 RuntimeAudit의 reviewed_by_user=false를 무단 true로 바꾸지 않는다.**
 - **별도 같은 PT 날짜 Google quota 확인:** 신규 `PT_QUOTA_VERIFIED.json`의 **그날 Gemini 무료 실제 잔량/모델/Key→Project ID·외부 호출 누계/유료 차단 사용자 검증**이 전부 true여야만 실행. 로컬 0/40이 원격 무료잔량 보장이 아님. 미국 태평양 표준시(PST) 11월에는 현지 날짜가 한국시간 오후5시에 바뀐다.
 - **첫 WAV 생성:** *두 게이트 모두 확인된 경우에만* `python .\Chapter3_Principal72_STAGING_ONLY.py run --max-calls 1` → `RUN_MAIN24_1` 직접 입력. 첫 결과 청취 승인 전 나머지 추가 호출0. 합격 시 `approve`/ `APPROVE_MAIN24_SAMPLE`, 그 다음 최대 2개 소배치는 `run --max-calls 2` / `RUN_MAIN24_BATCH`.
 - **기존 주연 캐스팅 보호:** 폴 Achird, 미엘 Sulafat, 세린 Erinome, 태온 Algieba, 하렌 Alnilam. 승인 72행 순서·원문·문장부호 그대로. NPC21 무음+마레2 검토, 플레이어/HUD6 무음, 기존 승인162 WAV/GUID 그대로.
