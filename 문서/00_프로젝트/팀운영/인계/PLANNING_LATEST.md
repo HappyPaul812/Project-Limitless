@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-23 — 빙각 수호체 Hit4 Codex 검증 조건부 바울 대표 승인
+
+- 바울 대표 직접: **“코덱스 된다고 하면 나도 승인”** — Hit4 신규 애니메이션의 **Codex 실제 Unity 검증 PASS 시 최종 미술 승인 발효**. 현재까지는 기획 시각 방향 PASS, 신규 Hit4 실 Unity 검증 **미완료**. [Issue #126 조건부 승인 공식 기록](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091987076).
+- 승인 대상 고정: `LIMITLESS_Issue126_RimeSentinel_Hit4_20261123.zip` 3,519,214B SHA256 `4ceb3996d1d602dcdccbf5980b7cd3423a2c9b1e509615c4c450c7ab4c642ea2`, 비루프 4프레임100/160/130/220ms=610ms, 원본 승인 KeyPose/Idle4/Attack4v2 보호.
+- **PASS 조건**: Codex Unity6000.6.5f1 격리 재생, 112/40px 피격 반동·Tint/VFX 가독성, 타격 1회·Idle4 260ms 복귀·접지/중심축 안정성, 기존 승인 원본 무변경 검증. 이 조건 모두 PASS 보고되면 대표 Hit4 미술 승인 확정 → 메인 신규 아트 Defeat4 1파일럿 제작 발주 가능. PARTIAL/HOLD/FAIL 시 조건 불충족으로 보류.
+- 본편 Scene/F5 실전 연동·MonsterDefinition/Save/Drop·main 병합·Push는 본 조건에 포함되지 않으며 미승인 그대로. 기존 파일 QA/Attack4 v2 PASS 재시험0. Unity6000.6.5f1/#85 HOLD/Save/UserData·Discord 원본 보호.
+
+---
+
 # PLANNING / 2026-11-23 — 빙각 수호체 Hit4 실물 검토 · 기획 미술 PASS
 
 - 바울 대표 `F:\\Downloads\\LIMITLESS_Issue126_RimeSentinel_Hit4_20261123.zip` 경로 제출. 기존 Library 동일명 ZIP 실제 컨테이너에서 확인: 3,519,214B SHA256 `4ceb3996d1d602dcdccbf5980b7cd3423a2c9b1e509615c4c450c7ab4c642ea2`, CRC PASS, Manifest 11/11 hash+bytes PASS, GIF 비루프100/160/130/220ms=610ms. 512/128/40 비교판 직접 시각 검토.
