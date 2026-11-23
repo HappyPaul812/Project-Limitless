@@ -1,5 +1,13 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-23 Main24 STAGE-only 두 번째 실제 합성 성공 — 미엘 청취 대기
+
+- 사용자 로컬 PowerShell 실제 출력: `Chapter3_Principal72_STAGING_ONLY.py run --max-calls 1` / `RUN_MAIN24_BATCH` → `[READY] stage items=9, free cap permits at most 1 POST` → `[API 2]` / `[CREATED]` **`ch3stage_main24_miel_001`**. 음성 **미엘 / Sulafat**, 정확 승인 대사 **`저는 어묵탕부터 생각나는데요?`**.
+- 사용자 프로그램 출력 파일 **SHA256 `1097dabc14a3958f51b97e2b7e72eef3751782725b018a9ef1e70806ef1ca7dd`** (콘솔 전사, 이 세션에서 실제 WAV bytes 재해시하지 않음). 실제 Stage 생성 **2/10**, 잔여 **8/10**. 첫 세린 `ch3stage_main24_serin_001` 사용자 청취 PASS·로컬 기존 QA 승인 마커 존재 보고, SHA `6bf00d66d0b230cb339d0a68079272a9fc2f1510f254a0cff365751b53f14464`.
+- **미엘 청취 QA PENDING — 사용자에게 아직 좋다는 청취 승인을 받지 않음**. 재생·승인 전 자동 추가 합성 금지. 실행 로그상 신규 API `[API 2]`이므로 최소 해당 건이 두 번째 합성 호출; 공유 PT 원장 실제 최신 누계는 `check`로 재확인 전 임의 확정 금지.
+- 다음 요청은 미엘 본인 청취 확인 및 `check`에서 공유 PT ledger, 당일 모델 무료 잔량·외부 프로젝트 사용과 `PT_QUOTA_VERIFIED.json` 새 누적 허용량 확인 뒤만. 최초 2건 허용량은 이미 사용된 것으로 보수적으로 취급. **무승인 quota 늘리지 말 것**, 429 자동 재시도/자동 전환0.
+- Runtime 연결 **0/10**, 기존 Unity6000.6.5f1·Save·main·승인WAV162 보호, 기존 WAV590 경로의 중복 여부 미확인 유지. 이번은 STAGE WAV 1건의 성공이지 실제 게임 적용이 아니다. 브랜치 `docs/tts`.
+
 ## 2026-11-23 Main24 첫 실제 STAGE WAV 1건 생성·바울 대표 직접 청취 PASS
 
 - **첫 실생성 성공(사용자 로컬 로그):** `python .\Chapter3_Principal72_STAGING_ONLY.py run --max-calls 1` / `RUN_MAIN24_1` → `[API 1]` / `[CREATED] ch3stage_main24_serin_001` **Main24 1/10**, 나머지 9개 대기. 실제 사용 모델/승인 기존 목소리 `companion_serin / Erinome`, 원문 **`첫눈이네요. 장갑을 더 챙기길 잘했어요.`**, Stage ID는 **Unity 실제 Runtime ID가 아님**.
