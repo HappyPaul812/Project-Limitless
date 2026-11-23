@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-23 — #127 F2·F3 BGM 청취 승인 기록 정정
+
+- BGM 세션 대조 결과, 바울 대표가 2026-11-23 F2/F3 새 BGM 1차 데모를 듣고 **“나도 좋아.”**라고 직접 승인했음을 확인. **기획 담당의 "BGM 원곡 미승인" 안내가 잘못되었으며 정정**.
+- F2 `Beneath_the_Frozen_Boughs.mp3` = **USER_APPROVED**; F3 `Steps_on_Frozen_Stone.mp3` = **USER_APPROVED**. 승인 원곡 SHA/길이/내용 보존, 재생성·원곡 재청취 요청 금지.
+- [Issue #127 원곡 승인 기록](https://github.com/HappyPaul812/Project-Limitless/issues/127)에서 BGM 담당이 승인 상태 반영. 이어서 제출된 `LIMITLESS_Issue127_LoopReview_20261123.zip`은 B 경계 기술 QA PASS / **LOOP_USER_APPROVAL_PENDING**. 원곡 청취 승인이 A/B 루프 편집 청취 승인까지 자동으로 포함하지 않음.
+- F2 B 후보 구간 `13.560–62.775s`, F3 `24.102–81.107s`, 각각 0.55s crossfade. 배포 Master 제작/Unity 적용 아직 0. 신규 Gemini 생성/재생성은 BGM 담당만 관리. 상업적 사용권 표현은 `COMMERCIAL_USE_EXPLICIT_LICENSE_PENDING`(상업 사용 불가 판정 아님).
+- 대표께 추가 요청할 때는 **두 원곡이 아닌 LoopReview B 연결부만** 판단을 구할 것. Unity6000.6.5f1/#85 HOLD/Save/TTS·승인 원본 보호.
+
+---
+
 # PLANNING / 2026-11-23 — Codex #126·#31 격리 Unity 기술 검수 접수 및 Idle4 최신 납품 발견
 
 - Codex 작은 격리 `codex/issue126-31-import-delta-20261123` SHA `1ba99e0cb1e8ce70389df1633f6839fbf80348d5`, **총12 PASS/0 FAIL**; 기존 성과·ZIP CRC/SHA QA 재실행0, 원본 main/Unity6000.6.5f1/#85 HOLD 및 Save/TTS/Mixer 보호. 실제 게임 적용·Push·병합0.
