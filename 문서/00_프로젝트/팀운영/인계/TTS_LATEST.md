@@ -1,5 +1,16 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-24 Main25 9건 일괄 Stage-only 제작기 직접 작성 및 배포
+
+- 대표가 전날 10회 사용, 4개 프로젝트 각10회라는 운영 조건을 제시. 추가 외부 사용이 없고 실제 독립 Project/Model별 무료 한도가 유효하다면 **예상 잔량30회, Main25 예정9회, 예상 잔량21회**. 이는 Google 원격 실조회가 아님. 대표의 "어."는 직전 TTS 담당의 Main25 전용 일괄 Python 생성기 작성 제안에 대한 승인. 사용자의 로컬 실제 실행 승인 및 무과금 확인은 별도로 받음.
+- TTS 담당 직접 작성 `LIMITLESS_Main25_StageOnly_Batch9_20261124.zip` 12,128B / SHA256 `d26e353d85c42bf57242b95a18608e5909030b7876077f222b34ef67116f9cb2`. `Chapter3_Main25_STAGING_ONLY.py` SHA256 `c10a54c62579b87a29be7766fbdb89276444b189b019b5c58cd699d8a2f425cf`; `MAIN25_STAGE9_FROZEN.json` SHA256 `31e7b89435273e33f60a25bdecc05c14bd5202092f8068d98761f9724b9c1373`. 사용자 대화에 ZIP 납품. Python/ZIP 자체를 GitHub에 커밋했다고 주장하지 않음.
+- 기존 사용자 설치 `Renewal_Auto_TTS_Failover_v2.py`의 단일 request 및 공유 ledger/HOLD/lock 재사용 인터페이스는 GitHub `Tools/TTS/Haren_Main21_AfterRenewal_3.py`로 확인. 기존 v2 본체 사용자PC 실소스는 직접 확인하지 못하여 **실제 결합 미검증**. 인터페이스/모델/기존 설정/공유 장부 불일치 시 fail-closed. 기존 Main24 생성기를 Main25용이라고 가정하지 않음.
+- 72큐 정본 Main25 9개 원문·화자·Voice 고정, Main24 10개의 측정 SHA 실행 전후 확인, 별도 출력 `Chapter3_StageOnly_72/Main25/<인물>/ch3stage_main25_*.wav` 사용. 기존162 및 Main24 WAV10 덮어쓰기 금지. Runtime ID null, 이전162/590 중복 여부 미검증이므로 사용자에게 잔존 위험 안내 및 실행 동의 요구.
+- `check` → 실제 PT/모델/프로젝트별 무료량·외부 사용·과금 차단 확인 → 사용자 직접 `run` 및 `RUN_MAIN25_ALL_9` 입력 후만 합성. 공유 원장·로컬 상한·프로젝트별 안전 조건 적용. 429/불확실 결과/장부·파일 오류 시 STOP, 자동 retry/failover0. 기존 quota JSON 임의 갱신 없음.
+- 오프라인 가짜 엔진 테스트 **9/9 PASS**, Python 컴파일/ZIP CRC PASS. 검사 무호출, 승인 거부, 9건 정상 순차 처리·재실행 중복 없음, 첫 실패 즉시 중단, Main24 해시 불일치 차단, 부족 quota 차단, HOLD 차단, manifest 변조 차단, 예상 밖 WAV 차단. 실제 Google POST0/실제 WAV0. 사용자PC 실행결과 및 청취는 대기.
+- #85 Codex 복구 간섭0, Unity6000.6.5f1/Save/.meta/GUID/main/기존 원본 변경0. 대표 실행 후 새 Main25 9개 실제 청취 및 별도 Runtime 매핑 전 Unity 적용 금지.
+
+
 ## 2026-11-24 사용자 PC 읽기 전용 검사 결과 — Main24 10/10 파일 존재·SHA 일치
 
 - 사용자가 `Main24_Main25_ReadOnly_Preflight.py` 실행 결과 JSON을 제출. 정책 `READ_ONLY_NO_API_NO_UNITY_NO_FILE_MUTATION`, 승인 큐 `SOURCE_MATCH` / problems=[].
