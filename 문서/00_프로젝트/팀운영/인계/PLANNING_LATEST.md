@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-23 — 바울 대표 미술 승인: 길 능력 아이콘5 리워크 + 빙각 수호체 Attack4 v2
+
+- 바울 대표가 본 기획의 두 실물 비교/미술 방향 PASS 후 **“어. 그래”** 동의. 두 아트의 **대표 최종 미술 승인**으로 기록. 이후 **Unity 게임 적용/메인 병합 승인은 별개**. [길 능력 아이콘 승인](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7091428274) / [빙각 수호체 Attack4 v2 승인](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091428809).
+- **길 능력 아이콘**: 최신 리워크 `LIMITLESS_Issue124_Trait5_Rework_20261123.zip` SHA256 `b2f468126e1880d39d2a487f347568b61d8cbbfaf460bcb44849dcda8923b5df` **5종 USER_ART_APPROVED**. 이전 귀/뇌 중심 아이콘과 구분. 공식 `pathSymbol`5 불변. Codex는 오로지 새 후보5의 실제 길 선택 UI 30/40px·UI Tint/가독성/외부 Game-icons 원본 유사성 국소 격리 검증. 과거 후보에 대한 Codex PASS를 최신 리워크의 PASS로 혼동 금지. 외부 원본 CC BY3.0 크레딧 원본 유지, 제품 연결/PathDefinitions/원본 main 변경 금지.
+- **빙각 수호체**: `LIMITLESS_Issue126_RimeSentinel_Attack4_v2_Targeted_20261123.zip` SHA256 `04cdead8ccffc14350fe9cd7e666a1635dddd6214631c8dc8ae7831f8dfc8661` **Attack4 v2 USER_ART_APPROVED**. 4×512셀 / 170·120·150·220ms(총660ms) 비루프, 주먹 전진감 강화·기존 KeyPose/Idle4 보호. Codex 격리 Animator/전투UI/피해 VFX 타격 시점 290~440ms 최소 QA 허용, 실제 본편 적용/연동 승인 아직 없음. 메인 신규 아트 **Hit4 파일럿1종 제작 발주 허용**, 이후 미술 검토 후 Defeat4; 특수 공격 모션 혼합 금지.
+- 역할/범위: 기획은 승인 및 인계, 리뉴얼 담당 재교육 세션에서 길5 추가 재제작0, Codex는 격리 테스트, 메인 아트는 Hit4 신규 후보. 문서 기록만 `docs/planning`, Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/승인 원본/main 보호.
+
+---
+
 # PLANNING / 2026-11-23 — 길 능력 아이콘5 재작업 및 빙각 수호체 Attack4 v2 실물 검수
 
 바울 대표 제출 F:\\Downloads 동일명 Library ZIP 2개 실제 획득, 개봉·Manifest/hash·실물 비교판 직접 시각 평가. **기획 미술 방향 두 항목 PASS** (대표 최종 승인/제품 Unity 적용과 구분).
