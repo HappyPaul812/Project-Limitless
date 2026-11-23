@@ -1,5 +1,15 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-23 Main24 세린 세 번째 STAGE WAV 생성 성공 — 사용자 청취 QA 대기 (3/10)
+
+- 사용자 제공 로컬 콘솔: `[READY - STAGING ONLY, NOT UNITY] Main24 stage items=8, free cap permits at most 1 POST(s)` → `RUN_MAIN24_BATCH` 본인 입력 → `[API 3] ch3stage_main24_serin_002 | Serin / Erinome | '그건 비상용이에요!'` → `[CREATED]` 성공 및 `[DONE]` 출력. 앞선 Stage 2건 다음 **Main24 실제 생성 3/10, 잔여 7건**. 본 로그는 사용자 PC에서 실행된 프로그램 출력으로, TTS 담당이 WAV 파일을 직접 열지 못함.
+- Stage ID `ch3stage_main24_serin_002` (**Unity Runtime Stable ID 아님**); 세린 기존 승인 Voice **Erinome**, 원문 **`그건 비상용이에요!`**. 프로그램 표시 SHA256 **`20d863e8a6888ef25bc793c3aeba608b6f7d5dcc20053905f10191582ed3eeca`** (콘솔 전사; 파일 바이트 직접 재해시 아님).
+- **사람 청취 QA PENDING**: 대표의 이번 대사 직접 청취 합격/불합격은 아직 받지 않음. 기존 2건(세린 첫 대사 + 미엘 첫 대사) 사용자 청취 PASS 유지; 현재 생성 3건 / 사용자 청취 승인 2건. 후속 합성은 이 대사 청취 확인 뒤에만 검토.
+- 공유 PT 사용량은 사용자 로그상 `[API 3]`까지 성공. 로컬 `free cap`은 Google 실제 무료잔여량 보증이 아님. **네 번째 요청 전** 동일 태평양 날짜·`gemini-3.8-flash-tts`·Google Project/모델별 실 무료잔량·외부 사용·무과금 여부와 공유 journal을 `check`로 재확인하고, 확인된 누적 허용 횟수가 최소 4회일 때만 `PT_QUOTA_VERIFIED.json`을 실제 근거대로 갱신. 무료잔량 증거 미비 시 중단; 429 retry/failover 금지.
+- 기존 승인 WAV162는 계속 **KEEP 정책**. Main24 실제 Runtime ID 매핑 0/10 `STAGED_ID_PLAN` 유지; 590개 기존 WAV 원문 중복 미확인 상태. 이번 Stage WAV를 Unity로 복사하거나 StoryVoiceCatalog/Save/.meta/GUID를 변경했다는 증거 없음. Unity 버전 계약 `6000.6.5f1`, main/Discord/#85 HOLD 보호. 새 Stage WAV만 생성, Unity 적용 승인 없음.
+- 출처: 사용자 제공 `[API 3]` 로컬 로그 및 [Issue #125](https://github.com/HappyPaul812/Project-Limitless/issues/125). 본 기록은 GitHub 문서화만 수행하며 사용자 로컬 환경·API를 추가 호출하지 않음.
+
+
 ## 2026-11-23 Main24 미엘 Stage WAV — 사용자 청취 QA PASS (2/10)
 
 - 사용자 제공 두 번째 생성 로그: `[API 2]`→`[CREATED] ch3stage_main24_miel_001` / **미엘 Sulafat**, 정확 승인 문장 **“저는 어묵탕부터 생각나는데요?”**, 콘솔 WAV SHA256 **`1097dabc14a3958f51b97e2b7e72eef3751782725b018a9ef1e70806ef1ca7dd`**. User "좋아."는 직전 "미엘 음성을 직접 들어보시고 좋으신지" 질문에 대한 **명시적 사용자 청취 승인 PASS**. ChatGPT가 로컬 WAV bytes 자체를 검사한 것은 아니고 생성기 출력 근거.
