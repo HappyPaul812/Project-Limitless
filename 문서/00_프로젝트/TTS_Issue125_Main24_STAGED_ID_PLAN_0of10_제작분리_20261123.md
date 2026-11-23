@@ -1,8 +1,18 @@
 # LIMITLESS TTS / Issue #125 — Main24 `STAGED_ID_PLAN` 검수와 신규 WAV 선제제작 분리 옵션
 
+## 2026-11-23 사용자 Stage-only 방식 채택 및 첫 read-only 체크
+
+- 사용자 **"그래"**로 **"게임 구현을 기다리지 않고 임시 WAV 먼저 제작"** 방식을 명시 승인. 기존 `STAGE_ONLY_OPT_IN_PENDING` 상태는 `STAGE_ONLY_METHOD_APPROVED`로 갱신. 다만 사용자가 로컬 Codex 보고서와 590경로 미확인 중복 위험을 직접 확인하고 승인 JSON에 기록해야 한다는 스크립트의 증거 게이트는 그대로 유지. 현재 첫 유료/무료 API POST 승인은 아직 없음.
+- 사용자가 실행한 `Chapter3_Principal72_STAGING_ONLY.py check`의 실제 출력: `[QUEUE] 72/72 valid`; Runtime ID0/10, 기존162 보호; `[STAGE AUTHORIZATION PENDING] ... codex_report_examined_by_user=false`; `[SHARED LOCAL LEDGER] PT=2026-11-22 UTC-8, tried=0/40`; `[QUOTA VERIFICATION PENDING] ... Quota proof not for current PT 2026-11-22 and model`; `[NO POST]` 확인. 오류가 아닌 fail-closed 정상 상태.
+- 체크 시점이 한국 오후5시 전으로 **현지 PT=전날(11/22)**이 맞다. 17:00 KST부터 11/23 PT로 전환. 승인서의 `pt_date`는 **재실행 때 프로그램이 실제 출력한 현재 PT 날짜**와 일치해야 하며 이전 날짜 확인을 재사용하거나 `0/40`을 실제 Google 무료잔량으로 간주 금지.
+- 사용자 로컬 안내: `F:\Downloads\Voice\Chapter3_StageOnly_72\Main24_STAGE_AUTHORIZATION.json`에서 실제 Codex **근거 보고서 파일 실경로**를 `codex_report_path`에 기재하고 보고서의 Runtime0/10 및 590 WAV 중복 미확인을 검토한 다음 5개 true 설정. `real_runtime_id`는 null로 유지. `PT_QUOTA_VERIFIED.json`은 해당 실행 날짜와 기존 모델 `gemini-3.8-flash-tts`의 실제 무료사용잔량/4키 실 프로젝트 소속/외부 사용 누계/무과금 상태를 사용자 스스로 확인한 경우만 5개 확인값 true와 `max_new_posts_confirmed_today` 실제 허용량(첫 샘플 1이면 1)을 기록.
+- 두 게이트 통과시 `check`→`run --max-calls 1`, 사용자 `RUN_MAIN24_1` 승인. 429 자동 retry/failover OFF, 한 WAV만 Stage-only 폴더에 생성. 사람 청취 합격 전 소배치 중단.
+- **보고 현재상태:** Stage-only 제작 방식은 승인됨, 필수 실증자료/현재 PT 원격 무료quota 확인 대기, 실제 API0/새 WAV0/생성파일 SHA 없음. 기존 WAV162/Unity6000.6.5f1/Save/main 유지.
+
+
 **기록 날짜:** 2026-11-23  
 **담당 브랜치:** `docs/tts`  
-**실제 상태:** `RUNTIME_ID_0_OF_10 / STAGED_ID_PLAN / APPROVED_162_KEEP / 593_DUPLICATE_UNVERIFIABLE / API_POST_0 / NEW_WAV_0 / STAGE_ONLY_OPT_IN_PENDING`  
+**실제 상태:** `RUNTIME_ID_0_OF_10 / STAGED_ID_PLAN / APPROVED_162_KEEP / 590_DUPLICATE_UNVERIFIABLE / API_POST_0 / NEW_WAV_0 / STAGE_ONLY_METHOD_APPROVED; EVIDENCE_AND_PT_FREE_QUOTA_PENDING`  
 **근거:** 사용자 Codex 완료 스크린샷, [Issue #125](https://github.com/HappyPaul812/Project-Limitless/issues/125), [72개 승인 발화 Manifest](https://github.com/HappyPaul812/Project-Limitless/blob/docs/tts/Tools/TTS/Chapter3_Protagonist72_ApprovedQueue_20261123.json), [기존 Main24 10/10 HOLD 기록](TTS_Issue125_Main24_10_RuntimeID_전체HOLD_후속조치_20261123.md).
 
 ## 1. Codex 최신 감사 결과 — 이것은 실패가 아니라 정상 보호
