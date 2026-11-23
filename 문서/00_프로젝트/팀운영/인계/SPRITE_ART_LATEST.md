@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-23 / Issue #126 — Idle4 최종 승인 및 빙각 수호체 Attack4 단일 파일럿 납품
+
+- [#126 대표 Idle4 조건 충족 및 최종 승인](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7089455631) 확인. Codex Unity6000.6.5f1 격리 SpriteRenderer/전투 UI **260ms×4 = 1.04초** 실제 검증, 기존 8FPS 가정 대체 금지. **KeyPose+Idle4 모두 사용자 승인 KEEP**. 실물 원본 SHA256 `c34ea53a95aa6a1fdba4f5e355715fbc25797d6d51e4d544cb9e4dab52f7073c`, `0757ebedd37f24e7939d26f38be2efbf9560906b832fae187c61273a314b753e` 작업 전후 일치, 원본 변경0. 아래 Idle4 승인대기 문구는 과거 납품 시점 이력.
+- 신규 **`RimeSentinel_M6_Attack4_2048x512_RGBA_CANDIDATE.png`** 2048×512 투명 RGBA/가로4×512셀, 1,130,329 bytes, SHA256 **`7a44d60d540176d06c96ee3ff221db5ebbde40077977d8de8762a714ff480e62`**. 승인 KeyPose 기반 국소 2D 주먹 단일 근접 공격(준비 -9px→전진+11px→타격+26px/약14% 국소 원근→승인 KeyPose 복귀). Frame03 KeyPose 전RGBA 완전 동일, y424..511 하단 접지 영역 4/4 원본 동일, 4셀 서로 상이/외곽 알파0/QA 개별 프레임 일치. 앞서 생성된 2172×724 시안은 양주먹 교대 결함으로 **최종 미사용**. 본 파일럿은 수작업 신규 포즈가 아닌 국소 변형, 실제 공격 박력·깊이감 사용자 미술 검토 필요.
+- 실제 납품 셀 기반 **512/128/40px 비교판** 및 비루프 GIF(실제 디코드 **170/120/150/220ms = 660ms**, Unity Animator 정식 FPS/판정 미확정). ZIP **`LIMITLESS_Issue126_RimeSentinel_Attack4_20261123.zip`** 3,781,167 bytes/13 entries, SHA256 **`32bb44b25a8af81692bfa7f505d815236362be159cbbf2e0989af167a4ab5e1d`**, CRC PASS/Manifest11/11/SUMS12/12, 순환참조0. Library `/LIMITLESS/Issue126_RimeSentinel_Attack4_20261123/` ZIP·PNG·비교판·GIF 저장 성공.
+- [**Attack4 제작·검증 보고**](../../Chapter3_RimeSentinel_M6_Attack4_ArtPilot_20261123.md) `docs/art-new` commit **`b48dc47ad2ed3ef865f84c02ff5b26a6f36d9395`**. **`KEYPOSE_IDLE4_USER_APPROVED / ATTACK4_ART_CANDIDATE / USER_ATTACK4_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / ATTACK4_UNITY_NOT_APPLIED`**. 별도 예고 `팔 들어올리기`·`균열 강타`/Hit4/Defeat4 제작0, 실제 Unity 시트 Import/전투 시점 QA 미실행. Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/Codex#122/기존 승인 M1~M5·F1~F3·설빙의 폭군·BattleBG 원본 보호, main 직접 commit/Push/Merge0.
+
+
 ## 2026-11-23 / Issue #126 — 빙각 수호체 KeyPose 최종 승인 → Idle4 게임용 후보 납품
 
 - [#126 바울 대표 KeyPose 원화 최종 승인·Idle4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7088805208) 확인. 기존 빙각 수호체 KeyPose **`USER_ART_APPROVED`**로 승격; 이전 1포즈 승인대기 기록은 납품 당시 이력. 원본 512×512 RGBA를 Library 실물 회수하여 SHA256 **`c34ea53a95aa6a1fdba4f5e355715fbc25797d6d51e4d544cb9e4dab52f7073c`** 일치, 원본 파일 재생성·수정0.
