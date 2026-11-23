@@ -1,5 +1,14 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-24 사용자 PC 읽기 전용 검사 결과 — Main24 10/10 파일 존재·SHA 일치
+
+- 사용자가 `Main24_Main25_ReadOnly_Preflight.py` 실행 결과 JSON을 제출. 정책 `READ_ONLY_NO_API_NO_UNITY_NO_FILE_MUTATION`, 승인 큐 `SOURCE_MATCH` / problems=[].
+- Main24 실제 사용자 로컬 기대 경로 WAV **10/10 존재**, 청취 PASS10/10, hard_mismatches=0. 최초3개는 기존 CREATED 콘솔 SHA와 일치, 후속7개는 배치7 progress SHA와 일치. **10개 측정 SHA를 KEEP 기준으로 증거표에 등록**: [Main24 증거 JSON](https://github.com/HappyPaul812/Project-Limitless/blob/docs/tts/Tools/TTS/Issue125_Main24_10_StageProof_20261124.json), commit `4f2578ed4ac9c025e70376dca7a14990f16c48b2`. 사용자 제공 로컬 검사 출력에 근거하며 ChatGPT의 원본 파일 직접 해시는 아님.
+- 배치 progress는 독립 증거가 아님. sidecar 후보 10개 존재하지만 내용 검증0, PT 공유 원장·실제 무료/과금·WAV 포맷 및 길이 별도 미검증. 상태 `ALL_WAV_PRESENT_NEEDS_TECH_REVIEW`, 실제 Runtime ID 0/10 HOLD. 기존 승인162 및 Main24 10개 재합성/덮어쓰기 금지. 이번 세션 Unity/원본 파일 변경0.
+- Main25 9개 정확 원문/화자/Voice/제안 StageID 로컬 정본 대조 PASS, 9개 중복0; 기존162/590 경로 중복 감사 미완. 실제 Runtime ID 0/9, quota_today=NOT_VERIFIED, ready_for_synthesis=false, approval_to_generate_more=false, API POST0. 실제 무료잔량과 사용자 별도 승인 및 생성기/중복/Stage 계약 검증 전까지 STAGING_PREP_ONLY 유지.
+- 이번 결과는 앞선 11/24 파일 존재/SHA 미확인 기록을 갱신한다. sidecar/원장/Runtime 관련 미검증 상태는 유지. #85 Codex 단독 작업 보호, 추가 Codex 지시 없음.
+
+
 ## 2026-11-24 Issue #125 — Main24 Stage10 보호·증거표 / Main25 9행 STAGING_PREP_ONLY
 
 - 11/24 최신 [기획 발주](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7115940550) 확인 후 승인된 Main24 **10/10 Stage WAV 사용자 제작·청취 PASS를 보호**. 재합성0. 기존 승인 WAV162, Unity6000.6.5f1, Save/.meta/GUID/main/#85 보호. 11/23 백업 checkpoint `65cceb2d6c3283d18abec6e27d8a6f1296411f17`은 참조만 하며 작업 없음.
