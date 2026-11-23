@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-23 — 리뉴얼 담당 재배정 (#124)
+
+- 바울 대표: “리뉴얼은 노는데?” — 타 부서 병렬 진행 중 리뉴얼 후속 배정 누락을 정정. [#124 후속 지시](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7089569833)에 2개 작은 실작업 지정.
+- **A 시각 Trait v2 국소 수정**: 기존 후보 40px PASS, 30px 동심원 약함, 24/26px에서 눈보다 표식 우세. 새 PNG 후보/실제 512·128·40·30·26·24 비교와 v1 대비 Delta 제출. 기존 5 PathSymbol/GUID 불변.
+- **B Chapter1 재료 아이콘 1종 파일럿**: `GrassSlimeGel` 기존 Game-icons `dripping-goo`을 대체할 128 RGBA 신규 독립 원화 1종 + 128/40/30 인벤토리 판독 비교. 나머지 외부 전리품3/길 특성4는 현재 파일럿 승인 전 신규 양산0. 기존 ItemDefinition/GUID/Runtime·기존 승인 Ch2/3 아트 보존.
+- 담당 `docs/art-renewal` 결과+실제 PNG ZIP/Manifest SHA 및 WORLD_ART_RENEWAL_LATEST/이슈 댓글 보고. 대표 최종 미술 승인 전 Unity 교체0, Codex QA 별도. 기획 세션은 담당에게 복사 가능한 지시문 전달; GitHub 기록 자체가 자동 실행 아님.
+- Unity6000.6.5f1, #85 HOLD, Save/UserData/Discord, main 보호.
+
+---
+
 # PLANNING / 2026-11-23 — 빙각 수호체 Idle4 선행 조건 충족 · 최종 미술 승인
 
 - 바울 대표 선행 조건: **“게임에서도gif처럼 되면 승인.”** Codex 실제 제품 전투 UI와 SpriteRenderer Animator 격리 Play Mode에서 GIF 동작 재현 보고 수령. local `codex/issue126-idle4-play-20261123` SHA `72da0d376f22c48175b4e7e3499c9165f771eada`.
