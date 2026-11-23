@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-23 — 빙각 수호체 Hit4 조건부 승인 충족 → 사용자 미술 최종 승인
+
+- 바울 대표 선행 조건 **“코덱스 된다고 하면 나도 승인”**. 신규 Hit4 Codex 실제 Unity6000.6.5f1 격리 검증 **PASS** 접수, [Issue #126 확정 승인](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7092168466)에 기록. Codex `codex/issue126-hit4-delta-20261123`, 실제 SHA `0de6f31ef376e5fc19791810f3cd481228cd157d`.
+- 4프레임 **비반복610ms** (100/160/130/220ms), Hit0→1→2→3→Idle0→1, 시험 피격 플래시1회·해제 정상, 전투 112px 어깨/상체 반동·최하단 접지 및 승인 Idle4 정상 복귀 PASS. 40px 세부 반동 PARTIAL이나 실전 112px 정상 판독; 약점 보존 기록. **USER_HIT4_ART_APPROVED_CONDITION_FULFILLED**.
+- 승인 납품 `LIMITLESS_Issue126_RimeSentinel_Hit4_20261123.zip` SHA256 `4ceb3996d1d602dcdccbf5980b7cd3423a2c9b1e509615c4c450c7ab4c642ea2`, Hit4 PNG SHA `bd6d66be3b990d9bc7f33261f1d9835abd413c28b91a5842ac9800a5dec28496`. 기존 승인 KeyPose/Idle4(260ms)/Attack4v2(660ms)/Hit4(610ms) 원본 보호.
+- 이제 **메인 신규 아트 Defeat4 단독 파일럿** 허가: 무거운 균형 상실→주저앉음→안정된 전투불능, 4×512 셀 2048×512 투명 RGBA, 512/128/40 크기/비반복 GIF/ZIP/Manifest/SHA 제출. 새 충격/소멸 VFX 추가·기존 승인 원화 변경 금지. 대표 Defeat4 미술 승인 및 Unity 격리 QA는 다음 단계.
+- **격리 Hit4 QA PASS ≠ 실제 F5 조우/본편 피해·피격 VFX·AI/Save/Drop 적용 PASS**. 본편 적용/원격 main 병합/Push 미승인, #85 HOLD, Unity6000.6.5f1, Save/UserData/Discord·공식 아트 보호. Codex 기완료 QA 반복 금지.
+
+---
+
 # PLANNING / 2026-11-23 — 빙각 수호체 Hit4 Codex 검증 조건부 바울 대표 승인
 
 - 바울 대표 직접: **“코덱스 된다고 하면 나도 승인”** — Hit4 신규 애니메이션의 **Codex 실제 Unity 검증 PASS 시 최종 미술 승인 발효**. 현재까지는 기획 시각 방향 PASS, 신규 Hit4 실 Unity 검증 **미완료**. [Issue #126 조건부 승인 공식 기록](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091987076).
