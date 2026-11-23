@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-23 — 승인 길 능력 아이콘5 / 빙각 수호체 Attack4 v2 실제 격리 Unity 검수 접수
+
+- 바울 대표 Codex 보고 화면 접수 + Issues #124/#126 실제 최종 Codex 댓글 교차 확인. Unity6000.6.5f1, local `codex/issue124-126-approved-art-delta-20261123` SHA `7d3127a3baa19b19af34c056c746ec2aafcf84c5`. 격리 검증, 원본 main/Save/UserData/Discord 적용·병합·Push0.
+- **길 능력 아이콘 5종 최신 리워크:** 실제 PathSelectionController 어두운 상세30px의 시각·청각 **2 PASS**, 지적·지체·마음 **3 PARTIAL**(선/중앙 기구/회복선 작음). 임시40px에서는 **5/5 PASS**, 공식 PathSymbol5 보존·전체 화면 아이콘 영역외 동일 **10/10 PASS**. [Issue #124 인계](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7091883119). 미술 원본 재제작 금지, 다음 Codex는 **40px 슬롯을 제품 레이아웃에 안전하게 배치 가능한지 한 번만 격리 UI 파일럿**으로 글자 겹침/여백/클릭·포커스·접근성 확인. 검증 전 본편 40px 확대·PathDefinition GUID 참조 교체·기존 외부 저작자 크레딧 삭제 금지.
+- **빙각 수호체 Attack4 v2:** 격리 Animator 비반복660ms, 3번째 타격 프레임 325ms 상대 캡처(이벤트 작성340ms), HP100→56, 피해숫자/-44/피격 Tint, 끝에 승인 Idle4 260ms 정상 복귀 **PASS**. **실제 F5 현장 전투/AI/정식 피해 연동 미검증**. [Issue #126 인계](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091883757). 동일 QA 반복0. 본편 연결/Encounter/Save/Drop 별도 승인 단계.
+- **Hit4 신규 미술 후보가 이미 실제 납품됨**: `LIMITLESS_Issue126_RimeSentinel_Hit4_20261123.zip` SHA `4ceb3996d1d602dcdccbf5980b7cd3423a2c9b1e509615c4c450c7ab4c642ea2`. 납품 비교판 512/128/40을 기획 직접 열어봄. 4단계 충격→반동→회복→승인 KeyPose 복귀, 40px 내부 모션 미세하므로 대표 미술 검토 대기. **새 Hit4 중복 발주 금지 / Defeat4 승인 전 HOLD.** 메인 신규 아트 담당 docs/art-new 기존 commit `92c42f831b0461b780644ad1b1614284dc50bd53`.
+- #85 HOLD, 본편 Scene/Prefab/PathDefinition/GUID/meta/Save/UserData/Discord/main 보호. 사용자 최종 미술 승인한 길5·Attack4 v2의 상태 유지.
+
+---
+
 # PLANNING / 2026-11-23 — 바울 대표 미술 승인: 길 능력 아이콘5 리워크 + 빙각 수호체 Attack4 v2
 
 - 바울 대표가 본 기획의 두 실물 비교/미술 방향 PASS 후 **“어. 그래”** 동의. 두 아트의 **대표 최종 미술 승인**으로 기록. 이후 **Unity 게임 적용/메인 병합 승인은 별개**. [길 능력 아이콘 승인](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7091428274) / [빙각 수호체 Attack4 v2 승인](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091428809).
