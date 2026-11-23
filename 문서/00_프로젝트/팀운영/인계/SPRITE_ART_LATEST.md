@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-23 / Issue #126 — 빙각 수호체 KeyPose 최종 승인 → Idle4 게임용 후보 납품
+
+- [#126 바울 대표 KeyPose 원화 최종 승인·Idle4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7088805208) 확인. 기존 빙각 수호체 KeyPose **`USER_ART_APPROVED`**로 승격; 이전 1포즈 승인대기 기록은 납품 당시 이력. 원본 512×512 RGBA를 Library 실물 회수하여 SHA256 **`c34ea53a95aa6a1fdba4f5e355715fbc25797d6d51e4d544cb9e4dab52f7073c`** 일치, 원본 파일 재생성·수정0.
+- 신규 **`RimeSentinel_M6_Idle4_2048x512_RGBA_CANDIDATE.png`** 2048×512 투명 RGBA/가로4×512셀, 1,124,477 bytes, SHA256 **`0757ebedd37f24e7939d26f38be2efbf9560906b832fae187c61273a314b753e`**. Frame00 승인 KeyPose 전체512 RGBA 픽셀 동일. Frame01~03은 상부 몸통·얼음 어깨·거대 주먹의 느린 국소 무게 이동/반동/자세 회복(한 장 전체회전·이동 아님); **y425..511 발 접지 영역 4/4 원본 RGBA 동일**, 얼굴·갑옷·주먹·다리 디자인 보존. 각 셀 유일·가장자리 alpha0/분리 QA PNG와 시트 일치. 2D 비강체 remap 보간이므로 실제 픽셀 내부 변화 다수·정식 Unity 시각 승인 전 최종 아트 미확정.
+- 게임용 최종 시트 기반 **512/128/40px 실제 축소**·검토용 GIF. GIF 디코드 **260ms×4 = 1040ms/주기**, loop=0 반복 (실제 Animator 타이밍 미확정). ZIP **`LIMITLESS_Issue126_RimeSentinel_Idle4_20261123.zip`** 3,649,494 bytes/13 entries, SHA256 **`65520ee3b6fc5f1433489ba733ed40ea3256d4e50e977b9f67edd5fb19b2b0d2`**, ZIP CRC PASS/Manifest11/11/SUMS12/12, 자기·순환 해시참조0. SourceDeclaration/animation QA 포함. Library **`/LIMITLESS/Issue126_RimeSentinel_Idle4_20261123/`**에 ZIP·시트 PNG·비교판·GIF 저장.
+- [**Idle4 제작·검증 보고**](../../Chapter3_RimeSentinel_M6_Idle4_ArtPilot_20261123.md) `docs/art-new` commit **`18a746f574be4bd5086acd82dccaeb331ce4d819`**. **`KEYPOSE_USER_APPROVED / IDLE4_ART_CANDIDATE / USER_IDLE4_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED`**. Idle4 최종 승인 전 Attack4/Hit4/Defeat4 제작0. Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/Codex#122/기존 M1~M5·F1~F3 Issue123·설빙의 폭군·BattleBG 원본 보호. Unity 실행/Scene/Prefab/Collider/Animator/정식 몬스터/스탯·Drop 변경0, main 직접 commit·Push·Merge0.
+
+
 ## 2026-11-23 / Issue #126 — 빙각 수호체 M6 엘리트 KeyPose 신규 1포즈 후보 납품
 
 - [Issue #126 중간보스 정식 기획 승인](https://github.com/HappyPaul812/Project-Limitless/issues/126): **F5 단회 엘리트/전열**의 존재·수치·전투 패턴 승인. **외형 1포즈 미술 승인은 별도**. 기획 Lv21/HP820/공격40/민첩9/EXP125/탈렌트32, 얼음 주먹→팔 들어올리기(0피해 예고)→균열 강타→반복, 도망 허용·리스폰 금지, 마력차단 결정 기획 보호. Codex #122 정식 몬스터 데이터 별도 작업과 충돌 금지.
