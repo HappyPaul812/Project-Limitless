@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-23 / Issue #126 — Attack4 v2 주먹 타격 전진 국소 보완 납품
+
+- [#126 Attack4 v1 Codex 기술 검수](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7089964295): 40px 타격 분리 PARTIAL, v1 Unity 격리 비루프 Animator PASS. 대표 신규 피드백: 주먹의 전진·사거리감과 어깨 추종 부족 → **2·3프레임만 국소 보완**. 기존 KeyPose·Idle4 최종 미술 승인 잠금 및 Attack4 v1 보존.
+- 실제 읽기 전용 원본 SHA256 작업 전후 일치: KeyPose `c34ea53a95aa6a1fdba4f5e355715fbc25797d6d51e4d544cb9e4dab52f7073c`, Idle4 `0757ebedd37f24e7939d26f38be2efbf9560906b832fae187c61273a314b753e`, Attack4 v1 `7a44d60d540176d06c96ee3ff221db5ebbde40077977d8de8762a714ff480e62`. 기존 PNG 수정·덮어쓰기0.
+- 신규 **`RimeSentinel_M6_Attack4_v2_2048x512_RGBA_CANDIDATE.png`** 2048×512 투명RGBA/4×512px 셀, 1,137,770bytes, SHA256 **`0649ef42da7aa628e471a49f4554ad150a0a5fc1b28235a5e9b42bf025030621`**. 기존 v1의 0-based 프레임0·3 전체RGBA **픽셀 동일**, 프레임3 KeyPose 동일. 0-based 프레임1·2만 오른쪽 주먹의 화면 앞쪽 돌출·국소 원근확대·어깨/전완 소폭 추종. v1 대비 차이 픽셀 0/42,758/47,805/0, 실제 40px 축소에서 다른 픽셀 0/381/418/0(색상 리샘플링 포함). 모든 프레임 y424..511 승인 KeyPose 픽셀 동일, 셀 외곽 alpha0·프레임 상이·독립QA셀 일치. 일부 2D 역좌표 보간 사용, 완전 수작업 새 원화 아님.
+- 실제 512/128/40 축소 판독판, **v1/v2 전프레임 비교판**, 타격 확대판 및 최종 PNG 기반 검토GIF 2종 비루프 **170/120/150/220ms, 총660ms**. ZIP `LIMITLESS_Issue126_RimeSentinel_Attack4_v2_Targeted_20261123.zip`, 6,444,482bytes/16 entries, SHA256 **`04cdead8ccffc14350fe9cd7e666a1635dddd6214631c8dc8ae7831f8dfc8661`**. CRC PASS, Manifest14/14, SUMS15/15, 순환참조0. Library `/LIMITLESS/Issue126_RimeSentinel_Attack4_v2_20261123/` ZIP·PNG·비교판3·GIF2 저장.
+- [**Attack4 v2 수정 제작·검증 보고**](../../Chapter3_RimeSentinel_M6_Attack4_v2_Targeted_20261123.md), `docs/art-new` commit **`65bec1bbcbcf20b7aa56268d0647659339a910c8`**. **`KEYPOSE_IDLE4_USER_APPROVED / ATTACK4_V2_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED`**. v2 실 Unity Animator/GameView/타격판정·PPU·Collider QA NOT_RUN. Hit/Defeat/팔들어올리기 예고/균열강타 신규 제작0. Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/Codex#122/기존 M1~M5 및 최종 보스·F1~F3/BattleBG/main 보호. main 직접 commit·Push·Merge0.
+
+
 ## 2026-11-23 / Issue #126 — Idle4 최종 승인 및 빙각 수호체 Attack4 단일 파일럿 납품
 
 - [#126 대표 Idle4 조건 충족 및 최종 승인](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7089455631) 확인. Codex Unity6000.6.5f1 격리 SpriteRenderer/전투 UI **260ms×4 = 1.04초** 실제 검증, 기존 8FPS 가정 대체 금지. **KeyPose+Idle4 모두 사용자 승인 KEEP**. 실물 원본 SHA256 `c34ea53a95aa6a1fdba4f5e355715fbc25797d6d51e4d544cb9e4dab52f7073c`, `0757ebedd37f24e7939d26f38be2efbf9560906b832fae187c61273a314b753e` 작업 전후 일치, 원본 변경0. 아래 Idle4 승인대기 문구는 과거 납품 시점 이력.
