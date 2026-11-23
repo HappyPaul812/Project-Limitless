@@ -1,3 +1,14 @@
+# PLANNING / 2026-11-23 — 길 능력 오리지널 후보 5종 실제 비교판 직접 검토
+
+- 바울 대표가 “그래.”라고 응답해 기존에 제작된 5종 후보의 실물 비교판(현재 ChatGPT Library)을 재사용, 직접 시각 검토. **신규 제작/재생성 지시0**.
+- [Issue #124 실물 검토 기록](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7090472869). 열람: `Trait4_vs_Vision_v2_128_40_30_Comparison.png`, `Trait4_40_30_DarkLight_Readability.png`, `Vision_v1_v2_512_128_40_30_26_24_Board.png`.
+- **기획 디자인 방향 5종 PASS:** 시각=눈/표적, 청각=귀/파장, 지적=신경연결, 지체=바퀴/방향, 마음의 상처=균열/봉합. 일관된 냉청·백·네이비·방향점, 128px 분명하고 40px 중심 모티프 인식.
+- **30px PARTIAL:** 내부 도안 축소로 시리즈 내 구분성 실게임 확인 필요. 실물 Unity 제품 GameView/공식 PathSymbol5 직접 이미지 대비 미검증. **기획 방향 PASS는 사용자 최종 미술 승인이나 본편 교체/출시 승인이 아님.**
+- 현행 원격 main `PathDefinition.traitIcon`5는 Game-icons 외부 GUID, `pathSymbol`5는 기존 고유 GUID로 분리 확인. 이미 납품된 Trait5로 재그림 없이 진행, Codex 30/40px 실제 길 선택 UI 한 장 비교 캡처 최소QA 후 대표에게 검토. 승인 전 PathDefinition/Scene/Prefab/GUID/meta/main 변경 금지.
+- `GrassSlimeGel` 후보는 이번 5개 Trait 시각 판정과 독립, 신규 전리품 양산 자동 승인 아님. 리뉴얼 담당 재교육 경과 보존, 중복 제작0. Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord 보호.
+
+---
+
 # PLANNING / 2026-11-23 — 리뉴얼 담당 재교육 지시 수령·업무 범위 정정 (최신)
 
 - 바울 대표의 최신 통지: **“리뉴얼 교육 다시 시켰어.”** 이전 아래의 “리뉴얼 퇴사/추가 배정 금지”는 당시 상태 기록이며 **현재 운영 상태로 사용하지 말 것**. 신규/복귀 리뉴얼 담당의 **재교육 착수**로 기록. 교육 완료·실제 업무 착수·GitHub 갱신 완료는 아직 확인되지 않음.
