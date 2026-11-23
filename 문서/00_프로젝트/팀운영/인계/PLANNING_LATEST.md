@@ -1,3 +1,14 @@
+# PLANNING / 2026-11-23 — 길 능력 아이콘5 재작업 및 빙각 수호체 Attack4 v2 실물 검수
+
+바울 대표 제출 F:\\Downloads 동일명 Library ZIP 2개 실제 획득, 개봉·Manifest/hash·실물 비교판 직접 시각 평가. **기획 미술 방향 두 항목 PASS** (대표 최종 승인/제품 Unity 적용과 구분).
+
+- **길 능력 아이콘** — `LIMITLESS_Issue124_Trait5_Rework_20261123.zip` 2,478,785B SHA256 `b2f468126e1880d39d2a487f347568b61d8cbbfaf460bcb44849dcda8923b5df`. ZIP CRC PASS/Manifest23/23 PASS. 시각 초점·청각 공명·지적 결절망·지체 회전·마음 보호문장으로 직설적 귀/뇌 문제 해결, 청/은/심청/절제 금색 시리즈 통일. 128/40 판독 양호, **30px 세부 구분 일부 PARTIAL**. 동봉 HTML 기존 원본은 원격 URL이므로 **기존 Game-icons 원본 픽셀 직접 대조 미검증**. **기획 방향 PASS, 대표 최종 미술 승인 대기, 이번 재작업 PNG의 실제 Unity UI/GameView 미검증.** 공식 PathSymbol5 절대 수정 금지. [Issue #124 검토](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7091190320).
+- **빙각 수호체 Attack4 수정본** — `LIMITLESS_Issue126_RimeSentinel_Attack4_v2_Targeted_20261123.zip` 6,444,482B SHA256 `04cdead8ccffc14350fe9cd7e666a1635dddd6214631c8dc8ae7831f8dfc8661`. ZIP CRC PASS/Manifest14/14 PASS. v1 대비 **2·3프레임만 주먹 전방 돌출·원근감/어깨 추종 강화**한 것 직접 확인, 1·4프레임 원형, 전체 묵직함·접지·KeyPose 유지. 40px 변화는 소폭이지만 128/512에서 명확. 비루프170/120/150/220ms. **기획 미술 방향 PASS, 대표 최종 미술 승인 대기, v2 자체 Unity Animator/타격판정 미검증**. [Issue #126 검토](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091190943).
+- 작업 중복 금지: 이미 제출된 PNG 재생성/전면 수정 요구0. Codex 새 후보 해당 슬롯의 읽기전용 국소 Unity UI/Attack 재생·전투 이벤트 검증은 대표 작품 승인 후 별도 진행. 승인 전 GUID/meta/PathDefinition/Scene/Prefab/공식 PathSymbol/Unity 게임 적용·main 병합 금지.
+- Unity6000.6.5f1, #85 HOLD, Save/UserData·Discord·승인 아트 및 main 보호.
+
+---
+
 # PLANNING / 2026-11-23 — 길 능력 오리지널 후보 5종 실제 비교판 직접 검토
 
 - 바울 대표가 “그래.”라고 응답해 기존에 제작된 5종 후보의 실물 비교판(현재 ChatGPT Library)을 재사용, 직접 시각 검토. **신규 제작/재생성 지시0**.
