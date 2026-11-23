@@ -1,5 +1,15 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-23 Main24 첫 실제 STAGE WAV 1건 생성·바울 대표 직접 청취 PASS
+
+- **첫 실생성 성공(사용자 로컬 로그):** `python .\Chapter3_Principal72_STAGING_ONLY.py run --max-calls 1` / `RUN_MAIN24_1` → `[API 1]` / `[CREATED] ch3stage_main24_serin_001` **Main24 1/10**, 나머지 9개 대기. 실제 사용 모델/승인 기존 목소리 `companion_serin / Erinome`, 원문 **`첫눈이네요. 장갑을 더 챙기길 잘했어요.`**, Stage ID는 **Unity 실제 Runtime ID가 아님**.
+- **실제 WAV SHA256(생성 프로그램 사용자 콘솔에서 전사):** `6bf00d66d0b230cb339d0a68079272a9fc2f1510f254a0cff365751b53f14464`; 예상 저장 `F:\Downloads\Voice\Chapter3_StageOnly_72\Serin\ch3stage_main24_serin_001.wav`. 로컬 bytes는 ChatGPT가 직접 열지 못했으므로 프로그램 SHA 출력값 그대로 기록. **사용자 직접 ‘들었어. 좋아.’ → 청취 PASS**.
+- **후속 필수:** 사용자 `python .\Chapter3_Principal72_STAGING_ONLY.py approve` → `APPROVE_MAIN24_SAMPLE`로 기생성 WAV SHA 검증 후 `MAIN24_STAGE_SAMPLE_APPROVED.json` **로컬 QA marker 생성**. 아직 해당 명령 실제 성공 출력은 **미확인**, GitHub에 사용자 PASS는 기록하되 marker가 생성됐다고 주장하지 않는다.
+- QA marker 생성만으로 추가 무료 요청 허가 생기지 않음. 최초 `PT_QUOTA_VERIFIED.json`의 실제 확인 허용 **1 POST**는 이미 이번 1건에 사용한 것으로 보수적으로 취급. 추가 요청 전 **같은 PT 날짜/모델 실제 Google 무료 잔량·4프로젝트 별 외부 사용 확인**, 공유 사용량 ledger `check` 확인 후 누적 허용량 갱신. 확인 못 하면 `run` 금지. 이후 1~2건 작은 묶음/청취 검수/각 WAV SHA 증거. 429 자동 재호출·전환 금지.
+- **이번 생성은 기존162 WAV의 재생성·교체 아님.** Unity `6000.6.5f1`/StoryVoiceCatalog/Save/main 수정0, Runtime 연결은 `STAGED_ID_PLAN / 0/10` 상태 그대로. 미확인 590경로 중복 가능성 유지. NPC 21 무음·마레2 검토만, Main25~29 62행 원문/5인 VoiceID 대기 보호.
+- 자세한 원문·SHA·실제로 확인한 것/미검증 구분: [첫 실제 세린 WAV 및 QA 기록](../../TTS_Issue125_Main24_StageOnly_FirstSample_QA_PASS_20261123.md) (commit `1e32fa29feec0e5ae1de03e397381397cabd62c5`). 담당 `docs/tts`; 실제 WAV 파일 자체 GitHub 업로드 아님, Issue #125 댓글 별도 기록.
+
+
 ## 2026-11-23 16시경 사용자 Stage-only 선제 제작 승인 및 실제 PowerShell 사전검사 결과
 
 - 사용자에게 "게임 구현을 기다리지 않고 임시 WAV부터 먼저 제작" 방식을 설명하고 직접 **"그래"** 승인을 받음. **`STAGE_ONLY_METHOD_APPROVED`**로 정책 결정을 업데이트. 이는 새로운 Runtime ID 확정이나 **유료/실제 Google API 무료잔량 확인의 대체가 아님**. 기존 승인 WAV162·Unity6000.6.5f1·Save·main·NPC 정책 그대로 유지.
