@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-23 — 빙각 실전 애니메이션 10PASS 접수, BGM 4곡 Unity 연결 승인, 리뉴얼 ZIP 검수
+
+- **빙각 수호체 #126**: Codex 실제 [Issue 보고](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7098552079) 및 바울 대표 화면 접수. `codex/issue126-rime-sentinel-runtime-20261123`, 제품 `a2faf0b02c960ddc795cc3054ad4beebbeb49d5f`, 보고 `b2580729ac6c57f22195bef83094b256e96dca60` (**LOCAL_COMMITTED / REMOTE_NOT_PUSHED**). Unity6000.6.5f1 격리 Play **10PASS/0FAIL**, 공격 프레임2에서 피해44 단회, Idle/Hit/Attack 정상 복귀, HP0에서 Defeat4 최종 셀 유지, Ember 회귀 PASS, 승인 PNG5 SHA 일치. **F5 실제 Scene·정식 조우·유니크 AI/MonsterDefinition·보상 단회 Save·제품 승리전환은 미검증 HOLD**. 격리 Editor Search 예외1 별도 원인/기존 상태 구분 필요. 원본 main 병합·Push 없음.
+- **BGM 사용자 직접 지시** “bgm도 넣자.” → F1/서릿길 (#31), F2/F3 (#127) 승인 **곡4 Intro+Loop WAV8 Unity 실제 연결·격리 Play 검증 승인**. [BGM Codex 실행 정본](../../20261123_Chapter3_Approved4BGM_Unity_Integration_Order.md) 커밋 `48bd99d081625bd517e80ab14a3dea93a2131f6a`; [#31 발주](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7098787504), [#127 발주](https://github.com/HappyPaul812/Project-Limitless/issues/127#issuecomment-7098788475). 기존 Final WAV4+4/Importer PASS 반복 금지, 기존 단일곡 호환에 DSP Intro→Loop 예약/취소 최소 변경. F3 Scene 없으면 Catalog 등록만/배정 HOLD, 기존 Ch1·2 BGM/TTS/Mixer 보존. 출시 전 상업 라이선스 별도 확인 `COMMERCIAL_USE_EXPLICIT_LICENSE_PENDING`; **현재 Codex 실행 결과 보고 전/게임 적용 미확인**.
+- **리뉴얼 #124** 바울 대표 로컬 파일명 `LIMITLESS_Issue124_StingerGel_Tint_TipOnly_20261123.zip` 전달. 기획에서 정확한 동일명 Library ZIP 실제 복원·검수: 418,286bytes, SHA256 `a62442885359d75abd556cca01f648e1c7d71058dcf44050391860eff9cb2a98`, CRC PASS/Manifest24/24 SHA+bytes PASS. PNG 원본 독침 v2/초원 슬라임 젤 기존 SHA 일치, 선택 침끝 후보 실제 59px 변경 확인. [기획 실물 리뷰](../../20261123_Issue124_StingerGel_Tint_TipOnly_Planning_Review.md) 커밋 `6331ab294a1771da97aa74b039ce69f7816df8d3`, [Issue 리뷰](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7098789622). **White Tint 방향 PASS**(오프라인), 기본 독침 v2/젤 보존, 선택후보 자동 미술 승인 없음. 실제 30/40/50px Unity Inventory GameView 미검증·최종 대표 승인·제품 교체 HOLD.
+- 이 기록은 `docs/planning` 문서와 Issue 보고뿐. Unity6000.6.5f1, 기존 승인 원본/Save/UserData/Discord/#85 HOLD/main 보호. 서로 다른 Codex 브랜치 병합·원격 Push 별도 승인.
+
+---
+
 # PLANNING / 2026-11-23 — 빙각 수호체 실게임 연결·격리 전투 QA 착수 승인
 
 - 바울 대표: **“그래 하자.”** — 최종 미술 승인된 빙각 수호체 KeyPose·Idle4·Attack4 v2·Hit4·Defeat4의 **Unity 게임용 연결 및 전투/전투불능 최소 격리 QA** 착수 승인. GitHub [실행 지시 정본](../../20261123_RimeSentinel_ApprovedArt_Runtime_Integration_Order.md) 커밋 `ac79be00e7831c337b73389d07ad797cc422c88b`.
