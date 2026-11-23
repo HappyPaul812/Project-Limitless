@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-23 — 빙각 수호체 Defeat4 · 독침벌 전리품 침 v2 합동 검수
+
+- 바울 대표 Codex 격리 Unity 합동 검수 결과 화면 제출. Codex `codex/issue126-124-defeat-stinger-20261123`, SHA `3c77498e09741649e2daa0ea2c9aef0c71ec5254`; Unity6000.6.5f1 유지, 본편/원본 main·Save/UserData/Discord/승인 아트/Push0.
+- **빙각 수호체 Defeat4** 납품 ZIP `LIMITLESS_Issue126_RimeSentinel_Defeat4_20261123.zip` SHA256 `c7b840ce80815814be0a11269d29b636acfa0b2966981801fa19228bade296ef`. Library 실제 KeyPose와 신규 4프레임 512/128/40 비교판 직접 확인. 112px 무너짐→주저앉음→정지 분명, 원형·접지 유지, 세부 갑옷 조금 차이나지만 **기획 미술 PASS**. Codex 실제 Animator 비루프2450ms(180/220/250/1800)·프레임3 최종 정지3.0초까지 PASS; 40px 미세 PARTIAL. **바울 대표 신규 Defeat4 최종 미술 승인 아직 별도**, 과거 Hit4 조건부 승인은 Defeat4 자동 확대 금지. 실제 F5 KO 후 Idle Sprite 교체 이슈/보스 실전 연동 미검증. [Issue #126](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7097771461). 미술 승인 후 빙각 수호체의 KeyPose/Idle4/Attack4v2/Hit4/Defeat4 미술 라인 마감 가능, 본편 배포 적용 별도.
+- **독침벌의 침 Organic v2** ZIP `LIMITLESS_VenomBeeStinger_Organic_v2_20261123.zip` SHA256 `345017cf17c1a07eaad5dc866150a090b48ce16803bcecada3dcc43640945f53`. Library 벌 원화 대비 128/40/30 직접 확인. 실제 벌에 맞춰 금색/검은색 키틴 뿌리·자주빛 침으로 v1 금속 무기형 문제 개선, 트레이스 인상 없음. Codex 실제 wasp-sting·Sting Sprite·Ch1/2 아이콘 비교: **128/50/40 PASS**, **30px 끝/독방울 PARTIAL** 및 틴트/화풍 PARTIAL. **기획 미술 방향 PASS, 대표 최종·제품 교체 HOLD**. 30px를 위해 전체 재제작하지 말고 기존 v2 보호 + white tint 40/50px / 30px 현재 tint 비교·국소 끝/방울 강조만 필요 시 파일럿. 기존 초원 슬라임 젤은 재생성 금지, white vs green tint 비교. [Issue #124](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7097772475).
+- 두 자산 모두 기술 검증 합격을 본편 적용/대표 최종 미술 승인으로 자동 승격하지 않음. 신규 숲거미 실/맹독뱀 비늘 양산 및 기존 완료 미술 재작업 보류, 보호 규정 유지.
+
+---
+
 # PLANNING / 2026-11-23 — 주요 인물 Chapter3 신규 TTS 72행 제작 큐 재개
 
 - 바울 대표 지시 **“tts는 안뽑니? 주요인물.”** → **주연5인 신규 음성72의 단계적 제작 준비·실행 착수 지시**. [Issue #125 TTS 공식 인계](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7092725116). 실제 Google POST/WAV 제작은 아직 수행되지 않았으며 유료 API·Cloud 계정/결제 승인으로 확대하지 않는다.
