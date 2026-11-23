@@ -206,3 +206,29 @@ Issue #31: F1 북풍·서릿길 마을 2곡 샘플.
 - 이는 `COMMERCIAL_USE_FORBIDDEN`이 아님.
 - 기존 승인 BGM 및 Issue #127 F2/F3는 계속 보존·제작/검수 진행. 폐기/재생성 지시 없음.
 - 상용 출시 전 권리 근거를 추가 확인하는 별도 게이트만 유지.
+
+
+## 2026-11-23 Issue #127 — F2/F3 Final Intro+Loop Master 완료
+
+- 바울 대표의 B LoopPlan 최종 승인 확인.
+- 승인 원본 SHA 보호:
+  - F2 `c3f1339e30d8973ad467e30650072f9fc2360ea1f90627a3570bfcaeb384e3b1`
+  - F3 `ce3aa05a5235791892dd222bb8e958084634c085f69edfae0ec31850ec6d20e7`
+- 최종 형식: WAV PCM16 / 44.1kHz / Stereo.
+- F2:
+  - Intro 14.110454s SHA `090bf9417981173fb9cfc5fd998786413aa8b06c58c7e5b3157bb4e45b050504`
+  - Loop 48.664694s SHA `8cefeeea2735d28efa796b987254ab6af96be1cbe297062622f029529a55327f`
+- F3:
+  - Intro 24.652313s SHA `9b157be7560f30c5401a7a225431cc791214d1933e4154355e6fca6cb8296036`
+  - Loop 56.454989s SHA `09609b95da9f907a98079ad659c4ef8b559e9324b410d22e0e9c96df0662c1f8`
+- Master QA: 4 WAV decode PASS, Loop 경계 무음0, hard-click 검사 PASS, Intro→Loop handoff PASS, 추가 gain/EQ/compression0.
+- 납품 ZIP:
+  - `LIMITLESS_Issue127_FinalLoopMasters_20261123.zip`
+  - 24,120,430bytes
+  - SHA256 `0d0a3a098440edd9f8805cff02891db67530561d63b715bf4d46288d9fe32c2b`
+  - CRC PASS
+- ZIP 포함: WAV4 + MANIFEST.json + SHA256SUMS.txt + README.txt.
+- 신규 Gemini 생성0 / 재편곡0 / 원본 수정0 / GitHub binary0.
+- 상태: **FINAL_MASTER_DELIVERED / MASTER_QA_PASS / UNITY_INTEGRATION_PENDING_CODEX / MAIN_NOT_MERGED**.
+- 상업권은 `COMMERCIAL_USE_EXPLICIT_LICENSE_PENDING`으로 출시 전 별도 관리.
+- 상세: `문서/00_프로젝트/Issue127_F2_F3_FinalLoopMasters_QA_20261123.md`
