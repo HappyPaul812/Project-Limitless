@@ -1,3 +1,14 @@
+# PLANNING / 2026-11-23 — 리뉴얼 담당 신규 업무: Chapter1 독침벌 전리품 오리지널 미술
+
+- 바울 대표: **“리뉴얼 논다.”** → 이미 승인한 길 능력 아이콘5/몬스터/펫 등 다시 그리지 않고 **실사용 외부 Chapter1 전리품 아이콘**으로 작업 전환. [Issue #124 공식 발주 기록](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7092215322).
+- 감사 기준 현행 Game-icons.net/ItemDefinition **4개 외부 직접 GUID**: GrassSlimeGel `dripping-goo` (`40b87c14...`) / VenomBeeStinger `wasp-sting` (`73b52f1f...`) / ForestSpiderSilk `spider-web` (`fa189694...`) / VenomSnakeScale `dorsal-scales` (`aeb1ca89...`).
+- **이번 실제 원화 1종 발주:** 독침벌 침 `VenomBeeStinger` 128² RGBA 독립 아이콘 파일럿. 기존 `wasp-sting` 의미를 잇되 복제·트레이스/단순변형 금지. 128/40/30 인벤토리 축소·실사용 어두운 UI 보드/기존 Ch1·2 잡템 화풍 비교, SHA/Manifest/ZIP, 출처 증명. 담당 docs/art-renewal 실물+문서 SHA 보고, 대표 승인 대기.
+- **기존 풀슬라임 젤** `GrassSlimeGel_Original_128_RGBA.png` 후보 이미 보유, 새로 그리지 말 것. 기존 iconTint (.55,1,.38,1)가 새로운 원화 색 명암을 누른 Codex PARTIAL 상태를 **원본색(white tint) vs 기존 틴트 비교판**으로만 검토. Unity `ItemDefinition` Tint 변경은 승인 전 금지, 이미지 국소 수정은 필요성·승인 후.
+- 숲거미 실·맹독뱀 비늘의 오리지널 아이콘 **아직 미납품**, 단계적 후속 후보. 독침벌 파일럿 사용자 미술 승인 전 **두 PNG 동시 양산 금지**, 기존 GrassSlimeGel 승인도 별도.
+- 모든 승인 길 문장/길 능력 아이콘·몬스터/펫/Ch2·Ch3 전리품 유지, ItemDefinition/MonsterDefinition/GUID/meta/Scene/Unity 본편/Save/UserData/Discord/main 수정·원격 병합/Push 금지. CC BY3.0 출처/크레딧 유지, Unity6000.6.5f1, #85 HOLD.
+
+---
+
 # PLANNING / 2026-11-23 — 빙각 수호체 Hit4 조건부 승인 충족 → 사용자 미술 최종 승인
 
 - 바울 대표 선행 조건 **“코덱스 된다고 하면 나도 승인”**. 신규 Hit4 Codex 실제 Unity6000.6.5f1 격리 검증 **PASS** 접수, [Issue #126 확정 승인](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7092168466)에 기록. Codex `codex/issue126-hit4-delta-20261123`, 실제 SHA `0de6f31ef376e5fc19791810f3cd481228cd157d`.
