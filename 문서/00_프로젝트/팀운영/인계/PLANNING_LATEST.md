@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-23 — 빙각 수호체 Idle4 선행 조건 충족 · 최종 미술 승인
+
+- 바울 대표 선행 조건: **“게임에서도gif처럼 되면 승인.”** Codex 실제 제품 전투 UI와 SpriteRenderer Animator 격리 Play Mode에서 GIF 동작 재현 보고 수령. local `codex/issue126-idle4-play-20261123` SHA `72da0d376f22c48175b4e7e3499c9165f771eada`.
+- Animator259.93ms/셀 · 전투UI260.02ms/셀 / 4프레임1.04초, 순서0→1→2→3, 112px 전투 렌더 하단18행 접지4/4 및 중심이동 가로0.009/세로0.347px, 40px 실루엣 판독. **#126 Idle4 최종 미술 승인** ([GitHub 기록](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7089455631)). 승인 원본 KeyPose/Idle4 SHA 잠금. **260ms 프레임 유지**: 기존 8fps(125ms) 사용하면 GIF 약1.04초보다 약2배 빠름.
+- 미검증·보류: F5 실제 Scene·조우/단회 Save·MonsterDefinition·Drop·전열 Sorting/Collider 본편 실측, main 병합/Push. Idle4 미술 승인 ≠ 본편 Unity 적용 승인.
+- 후속 메인 신규 아트 **Attack4 1파일럿** 제작 지시 가능. 승인된 Idle4 원본 보호. 기본 `얼음 주먹` 공격(110%)의 준비→타격→회복만 새 원화, 다음 행동 `팔 들어올리기` 예고 및 `균열 강타(180%)`와 합치지 않음. 2048×512/4×512 RGBA·512/128/40·GIF·ZIP/Manifest/SHA 제출, 사용자 미술 승인 전 Hit/Defeat·차기 모션 제작·게임 적용 금지.
+- 모든 작업 `docs/art-new`, Unity6000.6.5f1/#85 HOLD/승인 아트·Save/UserData/Discord/원본 main 보호. Codex의 기존 Idle4 QA 재실행0.
+
+---
+
 # PLANNING / 2026-11-23 — Issue #127 F2·F3 BGM B 루프 최종 승인
 
 - **대표 직접 승인 조건:** “루프도 들어봤어. 니가 안이상하면 승인,” — 기획에서 실제 ZIP의 기술 이상 여부 확인 후 최종 승인.
