@@ -1,5 +1,18 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-23 최신 주요5인 Chapter3 72 신규 TTS 제작 승인 — Main24 10개 파일럿 실행 준비(실 API0)
+
+- **사용자 명시적 최신 승인:** Main24 10 → Main25 9 → Main26 22 → Main27 14 → Main28 8 → Main29 9, **신규 음성 총72**을 제작 대상 전환. 이 72행은 11/19 `docs/planning` 확정 원문/화자/VoiceID를 고정했고 **기존 162 승인 WAV 절대 재생성/교체 금지**. NPC 21 TEXT_ONLY + 마레2 CONDITIONAL_REVIEW, 플레이어5/HUD1 무음 유지.
+- **[72개 불변 생산 큐 JSON](https://github.com/HappyPaul812/Project-Limitless/blob/docs/tts/Tools/TTS/Chapter3_Protagonist72_ApprovedQueue_20261123.json)** (Git SHA `fae34d014e2e010d53b54874aeaa4b226ce987ea`) 및 **[Main24 실제 시험 제작 runbook](../../TTS_Issue125_Ch3_72_Main24_10_실제제작_안전실행_20261123.md)** (Git SHA `f0089b889ec69c1d41e2d0aba7fcd23232932768`). Main24 첫 후보 `main24_serin_001` 세린 Erinome “첫눈이네요. 장갑을 더 챙기길 잘했어요.”, **candidate_id이지 실제 Unity Runtime ID 아님**.
+- **사용자 실행 가능 ZIP(이번 대화 제공):** `LIMITLESS_Chapter3_Main24_10_Pilot_72Queue_20261123.zip` 17,374바이트 SHA256 `6d03f97fe62ee0be6eacf3d44b75163f5d2b0dcca23db5f67badc90469c16903`. 포함 `Chapter3_Principal72_Pilot.py`, 정본 72행 JSON, 한국어 README, 7건 오프라인 테스트. Code checks exact 72 text fingerprint `51fe8da0`, 음성 승인 캐스팅, Main24 실제 Runtime ID/162 WAV·다른 WAV 중복 read-only Codex audit JSON + 사용자 확인, **당일 PT 실제 Google 무료 quota/프로젝트 mapping/외부 사용 확인** JSON 둘 다 없으면 POST 거부. 첫 생성 최대 1개/인간 청취 QA 승인 전 추가 호출 거부/이후 1~3 소배치.
+- **기존 동작 재사용:** `F:\Downloads\Voice` 사용자 직접 합성, `Renewal_Voices\Renewal_Auto_TTS_Failover_v2.py`를 *import만* 해 기존 Gemini 모델 `gemini-3.8-flash-tts`와 PT 날짜, 4키 Project 안전상한10/총40, 기존 공유 `_progress/api_events.jsonl`, HOLD+RUNNING.lock, WAV SHA 메타 검증 재사용. **이번 파일럿은 429 자동 전환/재시도 모두 OFF**, 즉시 HOLD/사람 개입. 새 WAV는 `F:\Downloads\Voice\Chapter3_Principal_72\<Speaker>\<확정RuntimeID>.wav` 로만 저장. Unity/원본 WAV0 수정.
+- **오프라인 7 검사 PASS:** 72 queue 완전성·원문 해시, Codex 실 ID 감사 전 차단, 무료quota 증거 전 차단, mock 단일 WAV 성공, 청취 승인 전 차단, SHA 승인 마커 후 2건 mock 소배치, 구 PT 검증문서 거부. Python compile/ZIP CRC PASS. **실제 Google API POST=0, 신규 WAV=0, 사용자 PC F: 직접 변경=0**, 아직 실제 Codex 로컬 read-only 감사도 수행했다고 주장하지 않음.
+- **다음 구체 작업:** 사용자가 `F:\Downloads\Voice`에 ZIP만 풀고 `python .\Chapter3_Principal72_Pilot.py init`→`check`(Google POST0); Codex에 runbook의 **읽기 전용 Main24 StableID/기존WAV/Unity6000.6.5f1** 감사 지시를 복붙. Codex `Main24_RuntimeAudit.json`을 검증자료와 함께 작성하고 **user reviewed=true는 본인이 승인**. 이후 실제 Google 무료quota·billing·Project ID/공유장부를 확인하여 `PT_QUOTA_VERIFIED.json`을 **실제 증거가 있을 때만** 승인. `run --max-calls 1`→`RUN_MAIN24_1` 입력, 첫 WAV 직접 청취 후 `approve`→`APPROVE_MAIN24_SAMPLE` 후 소배치. 무료 quota 미확인 시 STOP. 2026-11-23은 미국 태평양 **PST(UTC-8)**로 KST 17시에 PT 자정이 됨(과거 PDT 16시 아님).
+- **실제 사용자 승인 상태 구분:** 72 신규 합성 *대상* 및 5인 캐스팅은 이미 승인. **아직 미해결:** 실제 Main24 안정 ID/동일 대사 WAV 감사, 실시간 무료 쿼터/같은 Project 실제 소속 및 billing, 첫 음성 청취, 10개 후 QA/Unity 연동. Main25~29 미확정 ID는 72행 큐에서 HOLD 유지하되 전체 구현 완료를 기다리며 방치하지 않는다.
+- **기존 캐스팅 불변:** 폴 Achird15 / 미엘 Sulafat17 / 세린 Erinome15 / 태온 Algieba12 / 하렌 Alnilam13. Main26 미엘 1줄 트라우마 과잉연출 금지, Main27 폴·미엘 차 약속 자연스럽게, Main29 하렌 정확 `잘.했.어.`/말끝·연출 여백 보호.
+- `docs/tts` 인계·Issue #125 댓글에 실제 진행상태·문서 SHA 기록. Unity·WAV·Save·main·#85 HOLD 변경 없음. TTS 신규 WAV 실제로 만들어졌다고 보고 금지.
+
+
 ## 2026-11-23 사용자 TTS 추가 정책 적용 — NPC 21무음/마레2 필요성 검토·주연 Voice 유지·Cloud 비용 조사
 
 **정책 정본:** Issue [#125 2026-11-23 기획 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7087343324) 및 사용자 직접 업무지시. **앞선 101행 TTS 대사 선행 조사 이후의 우선 적용 정책.**
