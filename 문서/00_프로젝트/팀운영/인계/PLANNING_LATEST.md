@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-24 — Issue #85 2D 패키지 CS1061 · Tooling 경로 · 투사체 GUID 격리 복구 승인
+
+- 바울 대표 “기존 Animation 15.1.0 컴파일 오류로 #85 HOLD는 미해결 건 해결 할 수 있니? 니가 판단해보고 할 수 있겠으면 코덱스 시켜.” → 기획 검토 결과 **수정 가능성 높음**, Codex **격리 제품수정 파일럿**을 명시 발주. [정식 지시](../../20261124_Issue85_Animation_PSD_Tooling_GUID_IsolatedRepair_Order.md) 커밋 `ff35e095f950a201a5f781960dee74196b807dc6`, [Issue #85 업무 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-7115654109).
+- 근거: 11/23 복구 `65cceb2d6c3283d18abec6e27d8a6f1296411f17`의 Unity6000.6.5f1 + Git `manifest/lock` Animation15.1.0/PSD14.0.3/Tooling3.0.1. 공식 Unity6000.6 권장 패키지 Animation16.0.1/PSD15.0.1/Tooling4.0.1. 11/12 격리 시험에서는 첫 두 업데이트로 C# CS1061 7개 소멸, Tooling3 USS/UXML 경로 예외8/12. 11/17 실 사용자 미커밋 working tree에 3업데이트·GoldenArrow+Healer GUID6고유 이미 있었으나 전체 UPM lock13/27차이·짧은 경로 영향과 Runtime 검증 미완료. 자동 복제/재설치 금지.
+- Codex는 오늘 최신로컬 안전 베이스 및 원본 미커밋303/미추적550/Save/UserData·Discord/키/TTS/BGM/승인아트/11-23 복구 ref 보호 후 짧은 경로의 별도 `codex/issue85-unity60006-package-guid-repair-20261124`에서만 **패키지 manifest/lock 3종 UPM 정합 해결 + GoldenArrow 정본 GUID 보존·Healer5 meta 충돌 수정**. 실제 clean checkout Unity6000.6.5f1 Batch C# 컴파일0·Tooling Import예외0·GUID0·GoldenArrow8/Healer5 Resources runtime PASS 및 최소 빙각/BGM 회귀 증거 요구. 패키지 추가 드리프트·GUID 참조 이상·검증오류 시 STOP/HOLD.
+- **`ISOLATED_REPAIR_ORDER_POSTED / CODEX_NOT_YET_RUN / ISSUE85_HOLD`**. 대표 원본 main 동기화·원격 Push/이슈 닫기는 **격리 전체 PASS 후 별도 기획 판단/승인**. 11/23 제품 11PASS/0FAIL 및 기존 복구원격 SHA 유지, 사용자 PC 직접 실행했다는 주장 금지.
+
+---
+
 # PLANNING / 2026-11-23 EOD — 13시간 작업 전체 안전 통합·로컬 동기화·복구 Push 사용자 승인
 
 - 바울 대표 명시 지시: **“오늘은 여기까지 하자, 거의 13시간 했으면 할만큼 한거지 뭐, 지금까지 한 작업들 다 합치고 로컬 동기화, 복구 푸시까지 해줘.”**. 신규 작업 배정은 중단, 당일 성과 안전통합·복구 작업 1회가 최우선.
