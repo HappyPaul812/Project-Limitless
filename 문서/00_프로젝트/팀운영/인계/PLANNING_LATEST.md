@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-23 — 길 공식 아이콘 중복 제작 지시 철회 / 리뉴얼 담당 퇴사
+
+- 바울 대표: “리뉴얼 퇴사 했는데, 근데 길 아이콘 원래 우리가 그린거 아냐? 왜 또 그려?” — 기획이 기존 자체 제작 `pathSymbol`과 외부 `traitIcon`을 혼동해 추가 4종 원화 제작을 서둘렀음을 인정하고 **추가 제작 지시 철회**.
+- [Issue #124 정정 기록](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7090270678): **길 공식 Path Symbol 5종은 이미 오리지널 제작/승인 자산**. `PathDefinition.pathSymbol`에 연결. 별도 `traitIcon` 슬롯은 복구본 정적 참조상 Game-icons.net CC BY3.0 **외부 5종**으로 남아 있음. 상업적 사용 자체는 가능하며 원저자 표시를 지켜야 함. 단, 두 슬롯을 반드시 서로 다른 신규 이미지로 유지해야 한다는 기획 결론은 없음.
+- 기존 자체 Path Symbol5를 UI의 traitIcon 위치에도 **재사용할 수 있는지 먼저 확인**해야 하므로, 추가 Trait 아이콘 제작/배치/교체/양산은 **중단**. 이미 제출된 Vision v2·청각/지적/지체/마음 신규 4종 후보는 기록·파일로만 보존하고 사용자 최종 승인·게임 적용으로 오인하지 않음.
+- **리뉴얼 담당 퇴사** 사용자 통지 접수, 이 세션에 추가 작업 지시하지 않음. 후속은 기획에서 필요성 판정 후 Codex의 최소 읽기전용 UI 역할 검토, 실물 제작 필요가 확정될 때만 별도 담당 지정.
+- `docs/art-renewal` 원본/Issue #124 기존 이력·승인 PathSymbol5/ItemDefinition/GUID/meta/Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/main 보호. 당장 Codex 실행/게임 수정 지시 없음.
+
+---
+
 # PLANNING / 2026-11-23 — 리뉴얼 담당 재배정 (#124)
 
 - 바울 대표: “리뉴얼은 노는데?” — 타 부서 병렬 진행 중 리뉴얼 후속 배정 누락을 정정. [#124 후속 지시](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7089569833)에 2개 작은 실작업 지정.
