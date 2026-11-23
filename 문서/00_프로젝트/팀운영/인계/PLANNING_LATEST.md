@@ -1,3 +1,15 @@
+# PLANNING / 2026-11-23 — Issue #127 F2·F3 BGM B 루프 최종 승인
+
+- **대표 직접 승인 조건:** “루프도 들어봤어. 니가 안이상하면 승인,” — 기획에서 실제 ZIP의 기술 이상 여부 확인 후 최종 승인.
+- [Issue #127 공식 승인·기술 검증 기록](https://github.com/HappyPaul812/Project-Limitless/issues/127#issuecomment-7089411448).
+- 실제 Library `LIMITLESS_Issue127_LoopReview_20261123.zip` 1,168,179 bytes / SHA256 `71cd20113303053b74ed77230089d2e48bfd232f117e9c78c638555d85954b8e`, CRC PASS, 내부 파일 SHA **5/5 PASS**, A/B MP3 **4/4 디코딩 PASS**, 44.1kHz stereo. A의 긴 무음 F2~1.82s/F3~2.74s → B는 두 곡 모두 최장~0.02s. B 연결부의 특이 급격한 샘플변화 징후 없음. 기획 본인은 청각적으로 직접 듣지 않았으며, 대표가 직접 듣고 조건부 동의한 뒤 기술 확인으로 승인함.
+- **F2 `Beneath_the_Frozen_Boughs`** B Loop 13.560–62.775s, **F3 `Steps_on_Frozen_Stone`** B Loop 24.102–81.107s, xfade0.55s 각 **USER_APPROVED**. 원곡2 사용자 승인도 유지, 재생성·재편곡/원곡덮어쓰기 금지.
+- 이제 BGM 담당의 **최종 Intro+Loop WAV Master 제작 승인**. ZIP+Manifest/SHA와 소형 검증, docs/bgm·BGM_LATEST 및 #127 담당 브랜치 보고를 기다림. 배포 Master는 아직 미제작, Unity 적용/원격 main 병합 미승인. BGM Gemini 프롬프트·음원제작은 BGM 담당 전담(기획 업무 침범 금지).
+- **권리 표시:** 소비자 Gemini/Lyria의 유료 게임 내 사용을 명시한 근거는 아직 `COMMERCIAL_USE_EXPLICIT_LICENSE_PENDING`; 이는 출시 전 별도 확인사항이며 BGM 미술·기술 승인 취소가 아님.
+- Unity6000.6.5f1, #85 HOLD, 기존 승인 BGM/TTS/Mixer/Save/UserData·main 보호.
+
+---
+
 # PLANNING / 2026-11-23 — #127 F2·F3 BGM 청취 승인 기록 정정
 
 - BGM 세션 대조 결과, 바울 대표가 2026-11-23 F2/F3 새 BGM 1차 데모를 듣고 **“나도 좋아.”**라고 직접 승인했음을 확인. **기획 담당의 "BGM 원곡 미승인" 안내가 잘못되었으며 정정**.
