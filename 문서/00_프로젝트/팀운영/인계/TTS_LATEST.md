@@ -1,5 +1,16 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-23 Main24 STAGE 10/10 생성 및 사용자 청취 10/10 PASS — Stage-only 완료
+
+- 사용자 직접 보고(2026-11-23 KST): **“다 뽑았어. 다 들었는데 좋아.”** 이는 직전 TTS 담당이 직접 작성·전달한 `Chapter3_Main24_Batch7_Orchestrator.py`를 통한 **Main24 잔여 7개 제작 완료 및 7개 전부 청취 PASS**를 뜻하는 것으로 문맥 확인. 이전 Main24 첫 3개 생성/청취 PASS와 합산해 **Main24 10/10 STAGING WAV 제작 완료, 사용자 청취 QA 10/10 PASS**. 최초 72개 주요 인물 합성 큐 중 Main24 10개만 완료이며, **Main25~Main29 62건은 미완**.
+- *검증 범위*: 이번 7개에 대한 사용자 로컬 console 생성 로그, 파일명/크기/개별 SHA256, sidecar, PT 호출 원장, 모델 실제 과금 여부는 TTS 담당이 직접 열람한 바 없으므로 **사용자 보고로만 완료 처리(USER_REPORTED_PRODUCED_AND_LISTENED_PASS)**. 7개 고유 SHA를 추정·창작하지 않음. 정확한 로컬 파일/원장 실물 검증은 별도 후속 감사. 사용자 청취 PASS와 파일 기술 검수 PASS는 구별한다.
+- 사용자 첫 3건의 SHA256(콘솔 전사) 증거는 기존 인계 기록을 유지한다. 4~10번째 예정 큐 순서는 `main24_paul_001` 폴/Achird, `main24_serin_003` 세린/Erinome, `main24_haren_001` 하렌/Alnilam, `main24_taeon_001` 태온/Algieba, `main24_haren_002` 하렌/Alnilam, `main24_miel_002` 미엘/Sulafat, `main24_paul_002` 폴/Achird. 이 7건의 개별 StageID 생성 규칙과 파일 내용/해시는 미실사.
+- **STAGING ONLY — UNITY 적용 승인/적용 완료 아님.** Main24의 실제 Runtime Stable Dialogue ID 매핑은 기존 확인 결과 **0/10**인 채 HOLD. Stage ID를 Runtime ID로 사용하거나 .wav를 임의 `Assets`에 복사 금지. 실제 Unity 퀘스트 트리거/대사 ID/발화자 매핑에 관한 별도 읽기 전용 감사와 승인 뒤 적용 가능.
+- 기존 승인 WAV162/162 KEEP, Unity `6000.6.5f1`, Save, .meta/GUID, main 및 Discord/Issue #85 HOLD 보호. 미확인 기존 WAV590 경로 감사 별도 미완.
+- **다음 업무:** (1) 각 10 WAV의 StageID ↔ 승인 72큐(candidate_id, speaker, text, voice, sha) 대응표·PT 사용원장·실물 SHA 검증(제작 재호출 없음), (2) Main24 실제 Runtime ID 확보 여부 검토/0건 상태면 기획·구현 담당과 매핑 계약 수립, (3) Main25 다음 9건 STAGE 제작 시 기존 무료 정책 준수하고 PT 날짜·Project별 실제 무료 잔량을 새로 검증. **현재 추가 API 호출 요청 없음.**
+- 기록 경로: `docs/tts` 브랜치 인계, Issue #125. 해당 상태는 사용자 직접 승인/보고에 근거하며 세션이 사용자 Windows F: 볼륨을 직접 조회한 것이 아니다.
+
+
 ## 2026-11-23 TTS 담당 직접 작성 — Main24 잔여 7개 STAGE-only 일괄 생성 보조 실행기
 
 - 바울 대표의 **“한번에 하자”**, 이후 **“코덱스 말고 니가 소스 짜야지”** 지시에 따라 TTS 담당 ChatGPT가 직접 Python 소스를 작성했다. Codex 작업 의뢰/실행 없음.
