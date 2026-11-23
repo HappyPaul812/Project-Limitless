@@ -1,5 +1,15 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-23 Main24 실PC 읽기전용 감사 결과 — RuntimeID 0/10, 모든 10개 안전 HOLD
+
+- **사용자 실제 Codex 화면**: Unity `6000.6.5f1` Main24의 11/19 승인 주요인물 **대사10행과 연결된 실제 Runtime DialogueID+SpeakerID+CharacterID 조합은 0/10**. `VERIFIED_NEW=0`, `VERIFIED_KEEP_EXISTING=0`, `HOLD_RUNTIME_ID=10`. `reviewed_by_user=false` 및 전체 WAV 중복확인 플래그 false. 당장 TTS run 금지(안전 검사 정상).
+- Main24 탐험·안내용 ID 총12개 `main24_candidate_supply_01~03`, `north_01`, `f2_observe_01~03`, `guide_01`, `skill_01~04`는 **SpeakerID 및 발화 CharacterID 없이 존재**. 승인 대사10개와 연결된 Story Runtime ID가 아니므로 임의 대응/강제 `VERIFIED_NEW` 금지.
+- StoryVoiceCatalog **312항목 중복ID0**, 그 범위에서 안내ID↔승인큐 후보 문자열 충돌0. 기존 **승인 WAV162 SHA/GUID 일치** 보고. WAV 총941 중 **원문+화자를 검증 가능한348경로에서 동일 발화0**, 나머지 **593경로는 원문메타 부족으로 중복여부 미확인**(전체941 중복0이라는 의미 아님).
+- **[Issue125 Main24 감사·Codex 후속 최소구현 정본](../../TTS_Issue125_Main24_10_RuntimeID_전체HOLD_후속조치_20261123.md)** (GitHub `docs/tts` 커밋 `76f9c46c1d6c6a4f8894053cbb0c3bcd25df3bae`) 기록. 다음 Codex 작업은 사용자 지시를 받으면 별도 `codex/main24-tts-dialogue-contract-20261123` worktree에서 10개의 실제 스토리 발화경로/StableID/화자/원문 최소 연결, 기존 WAV 593 중 원문 불확인 건 읽기전용 감사. Runtime에 안전하게 연결 못하면 STAGED_ID_PLAN 보고 후 `HOLD` 유지. **기존 Main24 탐험 후보 12 ID/퀘스트·기존 WAV·Unity·main 보호**.
+- 승인된 72대사 제작 대상으로 유지; 첫 Main24 시범 신규 음성 **실제 Google API0, WAV0, SHA없음, 청취 PASS0**. `Main24_RuntimeAudit.json` 사용자 검수·정확한 `VERIFIED_NEW` 증거와 같은 PT날짜 Google 무료 quota/외부 사용·과금 안전 상태 확인 전 `run` 금지. 검증되면 사용자 본인이 첫1건 호출/청취 후 소배치. **Main25~29의 62행 원문/5인 VoiceID 불변 대기**. NPC21 무음, 마레2 검토만, 기존 승인 WAV162 변경0.
+- 이번 보고 자체는 GitHub `docs/tts` 문서·Issue만 변경, 실제 사용자 로컬 Unity·WAV·Save/API/원본 main 수정0. 본 감사의 원본 JSON/SHA 목록은 사용자 스크린샷에 링크로만 보이며 ChatGPT가 사용자 PC에서 직접 읽은 것은 아니므로 Codex 후속 시 실자료 읽기 필요.
+
+
 ## 2026-11-23 최신 주요5인 Chapter3 72 신규 TTS 제작 승인 — Main24 10개 파일럿 실행 준비(실 API0)
 
 - **사용자 명시적 최신 승인:** Main24 10 → Main25 9 → Main26 22 → Main27 14 → Main28 8 → Main29 9, **신규 음성 총72**을 제작 대상 전환. 이 72행은 11/19 `docs/planning` 확정 원문/화자/VoiceID를 고정했고 **기존 162 승인 WAV 절대 재생성/교체 금지**. NPC 21 TEXT_ONLY + 마레2 CONDITIONAL_REVIEW, 플레이어5/HUD1 무음 유지.
