@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-23 — #126 빙각 KeyPose 사용자 외형 승인 및 #31 Final WAV 실물 접수
+
+- 바울 대표: `F:\Downloads\LIMITLESS_Issue31_FinalLoopMasters_20261123.zip`, `F:\Downloads\LIMITLESS_Issue126_RimeSentinel_KeyPose_20261123.zip` 납품 전달 및 “빙각이 묵직하니 중간보스하기 좋겠네..ㅋㅋ 승인”.
+- **#126 새 KeyPose 최종 미술 승인** ([Issue 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7088805208)): 신규 M6 Rime Sentinel 512×512 투명 RGBA 1포즈. ZIP SHA256 `f2098a5e1affc13e3708eebf5d30f5c8e4fd9bdcfb0f72d41059e9178d34a46e`, 9entries·CRC PASS·SUMS8/8 PASS. PNG SHA256 `c34ea53a95aa6a1fdba4f5e355715fbc25797d6d51e4d544cb9e4dab52f7073c`. 실제 M4/M5 비교판·128/40 이미지 확인, 육중한 팔/흉곽·엘리트 실루엣 승인. **Idle4 1종 파일럿 착수 가능**; Attack/Hit/Defeat 이후 승인, 실제 Unity Import/GameView·F5 배치·Monster/Drop/Save 등록 불승인. 승인 원본 바이트 잠금.
+- **#31 BGM Master ZIP 실물 접수** ([Issue 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7088807352)): SHA256 `3c9810962e1a1db11117d5a3fe6ee8ce5caa4fcc62cc6889656aff7ac7d39c94` / 21,459,175bytes/7entries/CRC PASS/SUMS6/6 PASS. WAV PCM16/44.1kHz/stereo 4개, 길이 Grass Intro15.15s Loop52.95s; Hearth Intro4.90s Loop55.90s. 기존 원곡·B Loop 사용자 승인 유지, *추가 음악 생성 불필요/Unity 적용 별도 승인*. 신규 F2/F3 음악은 BGM 담당 #127 전담.
+- 다음 담당 전달: 메인 신규 아트는 **승인 KeyPose 기반 Idle4 소량 파일럿**, Codex는 **#126 KeyPose 격리 Unity 기술 QA + #31 Master Audio Import/루프 연동 계약 읽기전용 검토**(기존 #122 작업 및 QA 반복 금지). 타 담당 세션 자동 실행 아님; 복사할 메시지 대표에게 함께 제공.
+- 제품 실제 Unity6000.6.5f1, #85 HOLD, 개인 Save/UserData·Discord·기존 승인 자산 및 원격 main 불변.
+
+---
+
 # PLANNING / 2026-11-23 — BGM/Gemini 제작 역할을 BGM 담당으로 전면 위임
 
 - **대표 확정 지시:** “앞으로는 니가 제미나이 까지 하지 말고 bgm 넘겨”. 이후 기획 담당은 **BGM 사용 장면/감정/우선순위·승인 조율과 담당용 복붙 업무 지시문만** 작성하고, **Gemini용 음악 생성 프롬프트 작성·직접 실행·대표에게 프롬프트 작업 요청은 하지 않음**.
