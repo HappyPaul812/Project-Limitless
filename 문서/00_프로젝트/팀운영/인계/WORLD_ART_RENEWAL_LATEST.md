@@ -1,3 +1,13 @@
+## 2026-11-24 / Issue #124 신규 공격 버튼 아이콘 오리지널 파일럿 1종
+
+- [최신 기획 발주](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7115939762) 따라 Kenney BattleUiIconCatalog의 Attack(sword) 기능을 참고하되 원본 이미지 재사용·트레이싱 없이 **1종 신규 그래픽 PNG** 제작. 은색 검날·금색 손잡이·붉은 참격의 LIMITLESS 화풍.
+- 게임 후보 `AttackButton_Original_128_RGBA.png` 128×128 투명 RGBA SHA256 `cf775727e27be825809a6b3d9bd04b227abe3408055873f70616cc8a9ca19a32`. 40px·30px 실축소 투명 Preview, 다크/라이트 버튼 실제 픽셀 보드 및 512 마스터 포함.
+- 검수 ZIP `LIMITLESS_Issue124_AttackButton_Original_20261124.zip` 1,659,563 bytes SHA256 `14aeea5420912bbfc4c996f108a96db36058f34433324e02321c5de32b1ba9c7`, CRC **10/10 PASS**, Manifest payload **8/8** hash/size PASS. 실물 파일은 현재 대화 다운로드 첨부, 대표 Windows F: 및 GitHub 아트 바이너리 자동 복사·등록 아님.
+- [제작·QA 보고서](../../Renewal_20261124_Issue124_AttackButton_Original_Pilot_Delivery.md), 최초 문서 commit `5f95aad00810b817eae70bdb0cf7ab59247973fa`, 브랜치 `docs/art-renewal`.
+- 기존 Kenney 원본 실제 PNG 및 Unity GameView 직접 실픽셀 대조 `NOT_VERIFIED`; 40/30 오프라인 가독성 검토일 뿐 제품 미술 승인 아님. **대표 최종 미술 승인 대기**, Codex 제품 연결 교체는 별도.
+- 기존 독침벌 침·초원 슬라임 젤·Trait5/PathSymbol5·기승인 몬스터/펫/NPC/환경/ItemDefinition/기존 Kenney 버튼/라이선스/Scene/Prefab/GUID/meta/Save/UserData/Discord/main 무변경. Unity 6000.6.5f1, Codex #85 HOLD. main 병합/Push0.
+- 상태 `NEW_ATTACK_PILOT_1 / FILE_TECH_PASS / USER_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED`.
+
 ## 2026-11-23 / Issue #124 독침벌 Organic v2 + 초원 슬라임 젤 / Tint·30px 국소검토 (최신)
 
 - Codex 격리 검수 https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7096499843: 128/50/40 PASS, 30px 침끝·독방울 PARTIAL, Gold Tint·Ch2 스타일 PARTIAL.
