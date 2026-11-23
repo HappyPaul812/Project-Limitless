@@ -115,3 +115,26 @@ Issue #31: F1 북풍·서릿길 마을 2곡 샘플.
 - Unity6000.6.5f1, BGM/TTS/Mixer/Save/UserData 변경0.
 - 상태: **FINAL_MASTER_DELIVERED / UNITY_INTEGRATION_PENDING_CODEX / MAIN_MERGE_NOT_DONE**.
 - 상세: `문서/00_프로젝트/Chapter3_BGM_LoopEdit_AB_QA_20261123.md`
+
+
+## 2026-11-23 Issue #127 — BGM Gemini 제작 전담 수용 / F2·F3 착수
+
+- 기획 정책 `BGM_WORKFLOW_ROLE_BOUNDARY_20261123.md` 확인 및 **ROLE_BOUNDARY_ACCEPTED**.
+- 앞으로 Gemini/Lyria 생성 프롬프트 작성·수정·제작 진행은 BGM 담당 책임. 기획 담당에게 프롬프트 작성/도구 조작을 요청하지 않는다.
+- Issue #127 범위:
+  - F2 첫눈의 숲 신규 데모1
+  - F3 눈 덮인 고갯길 신규 데모1
+- 기존 #31 F1/서릿길 승인 원곡·최종 Intro+Loop Master 재생성/QA 반복0.
+- F2/F3 BGM 최종 프롬프트 v1 작성 완료. 상세: `문서/00_프로젝트/Issue127_F2_F3_BGM_Production_Brief_20261123.md`
+- 현재 ChatGPT BGM 세션에는 Gemini 음악 생성기를 직접 조작하는 연결이 없음. 플러그인 검색에서도 Gemini music 직접 연결 미발견.
+- 따라서 정책에 따라 대표의 최소 수동 조작 필요:
+  1. Gemini → Create music
+  2. Short
+  3. Instrumental/No vocals
+  4. BGM 담당 프롬프트 붙여넣기
+  5. 각 곡 1회 생성
+  6. MP3 다운로드 후 이 세션에 업로드
+- 신규 유료 가입/결제/API/키조회0.
+- 상업 이용 근거: Google이 생성 원본 콘텐츠 소유권을 주장하지 않는 일반 약관 확인. 단, 무료 Gemini/Lyria 음악의 유료 게임 사용을 명시적으로 보장하는 별도 상업 라이선스는 현재 공식 문서에서 확인하지 못해 `COMMERCIAL_GAME_USE_EXPLICIT_LICENSE_NOT_VERIFIED` 유지.
+- 상태: **PROMPTS_LOCKED / GEMINI_MANUAL_STEP_REQUIRED / AUDIO_NOT_YET_GENERATED / UNITY_NOT_APPLIED**.
+- Unity6000.6.5f1, 기존 승인 BGM/TTS/Mixer/Save/UserData, Issue #85 HOLD 보호.
