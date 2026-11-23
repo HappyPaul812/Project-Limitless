@@ -176,3 +176,20 @@ Issue #31: F1 북풍·서릿길 마을 2곡 샘플.
 - 다음: 승인된 두 곡만 Loop A/B 편집·검증.
 - Master/Unity 적용/main 병합0.
 - 상업권 `COMMERCIAL_GAME_USE_EXPLICIT_LICENSE_NOT_VERIFIED` 유지.
+
+
+## 2026-11-23 Issue #127 — F2/F3 Loop A/B 준비
+
+- 두 곡 자체 사용자 승인 완료.
+- 원본 SHA 보호:
+  - F2 `c3f1339e30d8973ad467e30650072f9fc2360ea1f90627a3570bfcaeb384e3b1`
+  - F3 `ce3aa05a5235791892dd222bb8e958084634c085f69edfae0ec31850ec6d20e7`
+- B Loop 후보:
+  - F2 13.560→62.775s / xfade0.55s
+  - F3 24.102→81.107s / xfade0.55s
+- 두 B preview 경계 near-silence 최대0.02s, hard-click delta가 내부99.9 percentile 이하 → 기술 PASS.
+- Review ZIP `LIMITLESS_Issue127_LoopReview_20261123.zip`
+  - 1,168,179bytes
+  - SHA256 `71cd20113303053b74ed77230089d2e48bfd232f117e9c78c638555d85954b8e`
+- 상태: **LOOP_AB_READY / B_LOOP_TECH_PASS / LOOP_USER_APPROVAL_PENDING / MASTER_NOT_BUILT / UNITY_NOT_APPLIED**.
+- 상세: `문서/00_프로젝트/Issue127_F2_F3_LoopReview_QA_20261123.md`
