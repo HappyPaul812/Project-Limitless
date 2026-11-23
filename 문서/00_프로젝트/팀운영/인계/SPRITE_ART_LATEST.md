@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-23 / Issue #126 — 빙각 수호체 M6 엘리트 KeyPose 신규 1포즈 후보 납품
+
+- [Issue #126 중간보스 정식 기획 승인](https://github.com/HappyPaul812/Project-Limitless/issues/126): **F5 단회 엘리트/전열**의 존재·수치·전투 패턴 승인. **외형 1포즈 미술 승인은 별도**. 기획 Lv21/HP820/공격40/민첩9/EXP125/탈렌트32, 얼음 주먹→팔 들어올리기(0피해 예고)→균열 강타→반복, 도망 허용·리스폰 금지, 마력차단 결정 기획 보호. Codex #122 정식 몬스터 데이터 별도 작업과 충돌 금지.
+- **신규 후보 1포즈** `Candidate/RimeSentinel_M6_KeyPose_512_RGBA_CANDIDATE.png`, **512×512 투명 RGBA / 320,670bytes**, SHA256 **`c34ea53a95aa6a1fdba4f5e355715fbc25797d6d51e4d544cb9e4dab52f7073c`**. 원본 신규 생성 `빙결_거대_골렘_수호자.png` 1254² RGBA SHA256 `fb031eec459d864995fc31b30f5c17569906bebe9bae896a26b2ce385048463b`의 고립 알파 정리·비율 유지 축소·투명 512 캔버스 정규화. 이 대화의 예전 다른 시안을 최종 후보로 혼동 금지. 얼음·암석 인공 형태·육중한 양팔 주먹·금빛 균열·발 접지, M4 곤충/M5 부유 정령과 별도. 40px에서 가시 다소 복잡하며 최종 보스급 장식 과다 가능성은 사용자 검토 대상으로 명시.
+- 실제 최종 PNG 기반 **512/128/40px 실제 축소**와 M4 Ice Beetle/M5 Blizzard Wisp **승인 실물 512 캔버스 기준 비교판**. Unity 동일 PPU/world scale 비교가 아님. 공식 Frost Tyrant/Ch2 엘리트 실제 PNG 동배율 비교는 `NOT_VERIFIED`; 검증 없이 공식 비교 PASS로 표시 금지. Unity Import/PPU/Pivot/Animator/Collider/월드 시점·가독성 QA `NOT_RUN`.
+- ZIP **`LIMITLESS_Issue126_RimeSentinel_KeyPose_20261123.zip` 1,158,884bytes/9entries** SHA256 **`f2098a5e1affc13e3708eebf5d30f5c8e4fd9bdcfb0f72d41059e9178d34a46e`**, CRC PASS, Manifest7/7·SUMS8/8 PASS, 비순환. SourceDeclaration/QA 포함. ChatGPT Library `/LIMITLESS/Issue126_RimeSentinel_KeyPose_20261123/`에 ZIP/PNG/비교판2 저장.
+- [**M6 KeyPose 신규 제작 보고**](../../Chapter3_RimeSentinel_M6_Issue126_KeyPose_ArtPilot_20261123.md) `docs/art-new` commit **`e087e08caf13fee587531a0f74484db7b0877140`**. **`ELITE_EXISTENCE_APPROVED / KEYPOSE_ART_CANDIDATE / USER_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED`**. 사용자 KeyPose 미술 승인 전 Idle/Attack/Hit/Defeat 제작0. 승인된 M1~M5/F1~F2/F3 Issue123/최종 보스·BattleBG·Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord 보호, main 직접 commit/Push/Merge0. GitHub PNG/ZIP 바이너리 업로드 및 Windows F: 직접 복사 없음.
+
+
 ## 2026-11-23 / Issue #123 — Chapter3 F3 눈 덮인 고갯길 신규 환경 아트 3종 파일럿 납품
 
 - [#123 11/23 최신 신규 작업 지시](https://github.com/HappyPaul812/Project-Limitless/issues/123) 및 [11/19 안전체크포인트](https://github.com/HappyPaul812/Project-Limitless/tree/backup/2026-11-19-safe-checkpoint) 확인. F2 실제 ZIP: `Limitless_F2_MinimalFollowup_20261103.zip` (표지판288×384·낮은 울타리256×192·그루터기320×384, 대안 미술 미승인), `Limitless_F2_Stump_Natural_Issue81_20261103.zip` (자연 그루터기 v4 승인), `LIMITLESS_Issue75_F2_BendSnow_ArtCandidate_20261110.zip` (F2 굽음 후보, C SnowEdge 미채택), `F2_P2_Targeted_Sign_Stump_20261029.zip` (과거 후보) 4개 실물 오프라인 참조. F2 표지판·울타리·그루터기·눈 경계 구자산 **중복 제작 금지** 준수.
