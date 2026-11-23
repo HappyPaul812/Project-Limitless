@@ -1,3 +1,13 @@
+# 2026-11-24 대표 최신 결정 — SFX 및 월간 영상 정책 정정 (아래 과거 병렬 발주보다 우선)
+
+- **SFX 포기·중단**: 대표 “sfx는 포기 상태” 확정. 기존 발주 #33 북풍·눈 발걸음·온기 환경음 새 제작은 **취소**. [Issue #33](https://github.com/HappyPaul812/Project-Limitless/issues/33#issuecomment-7116164370)에서 `closed / not_planned`. 기존 납품물 삭제 금지; 대표가 직접 재개하기 전까지 SFX 작업/담당 소환/비용 투입0.
+- **영상 월 1회**: 대표 “영상은 한달에 한번만 하면 돼... ^^” 확정. 11월16일 개발기록 Raw 촬영 및 QA가 이미 있으므로, 앞선 당일 11/24 추가 비교편집 요청은 보류/철회. [Issue #98](https://github.com/HappyPaul812/Project-Limitless/issues/98#issuecomment-7116165098)에 `NOVEMBER_EXTRA_WORK_ON_HOLD`로 기록. 12월 월간 제작 시점에는 대표 일정·허락을 기준으로 **단일 회차** 기획, 월중 추가 재촬영·편집 독촉 금지. 원본 Raw/10월 Final/미공개 편집 후보 보존; 이미 게시 완료로 오인 금지.
+- **#85 Codex 최신 보고**: [기술 수정 PASS/Editor Search 1 오류로 전체 HOLD](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-7115971873). Anim16.0.1/PSD15.0.1/Tooling4.0.1 UPM Resolve·C#0·Import0·GUID0·전투/BGM 표적 PASS. 수정 후보는 격리 worktree **미커밋 보존**, 원본 `main` 그대로. [유일 잔여 UnityEditor.Search IndexationOnStartup 오류 좁은 분리진단 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-7116165847) — 대규모 재QA/패키지 재교체/원본 Cache 변경 금지.
+- 현재 실제 병렬 대상: **신규 아트 #123, 리뉴얼 #124, TTS #125, BGM #129**. 영상 정기 회차까지 보류, SFX 중단.
+- 본 문서의 아래 2026-11-24 6부서 최초 발주표는 **당시 기록만**. 위 최신 정책이 충돌 항목을 명시적으로 대체한다.
+
+---
+
 # LIMITLESS / 2026-11-24 / Codex #85 복구 집중 기간 — 다른 담당 병렬 제작 6건
 
 **대표 직접 지시**: “코덱스는 열심히 하고 있고, 딴 담당자들 일 하자.” `#85` 패키지/메타 복구는 Codex 단독 진행. **다른 부서는 GitHub 문서 + 독립 미술·오디오·편집 납품만**, Codex 추가 요청/Unity 본편 변경/신규 Play QA/원본 main 병합·원격 Push 금지.
