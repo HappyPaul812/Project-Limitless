@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-23 — 바울 대표 빙각 수호체 F5 엘리트 재승인
+
+- 대표 직접 답변: **“승인, 중간 보스는 챕터2에도 있었으니까.”** 10/14의 북부 일반5+단회 엘리트1+보스1과 11/18 승인 전투 계약에 포함된 **빙각 수호체**의 존재·중간보스 포지션을 재확인. 별도 몬스터 추가가 아님.
+- F5 동토의 균열 단회 엘리트, Lv21 HP820 ATK40 AGI9 EXP125/T32, `얼음주먹(110%)→팔들기(예고)→균열강타(180%)` 순환, 동결괴사·동상 없음, 잡템 마력차단 결정100% 1개·판매22. 기존 11/18 승인 설계 보존.
+- [#126 신규 아트 1포즈 파일럿](https://github.com/HappyPaul812/Project-Limitless/issues/126) 발행. 시안 착수만 가능, 최종 미술 판정/Idle·Attack·Hit·Defeat 양산/Unity 본편 적용은 추가 승인. 기존 Codex #122 MonsterDefinition 격리 등록/ID·조우·드롭·Save는 별도 진행.
+- [#122 승인 기록](https://github.com/HappyPaul812/Project-Limitless/issues/122#issuecomment-7088435901). Unity6000.6.5f1/#85 HOLD, main/기존 승인 자산/Save/UserData/Discord 보호.
+
+---
+
 # PLANNING / 2026-11-23 — #122 정식 조우·#124 시각 Trait 국소 감사 접수
 
 - Codex 로컬 격리 감사 브랜치 `codex/ch3-loot6-encounter-vision-audit-20261123`, 커밋 `0a5f253d2fde7a8aa2bfabaec70fa118ea72d5c1`. 미Push, 제품 원본 main 변경0, 기존 테스트32·56·39 재실행0.
