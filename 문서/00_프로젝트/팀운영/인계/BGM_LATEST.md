@@ -138,3 +138,30 @@ Issue #31: F1 북풍·서릿길 마을 2곡 샘플.
 - 상업 이용 근거: Google이 생성 원본 콘텐츠 소유권을 주장하지 않는 일반 약관 확인. 단, 무료 Gemini/Lyria 음악의 유료 게임 사용을 명시적으로 보장하는 별도 상업 라이선스는 현재 공식 문서에서 확인하지 못해 `COMMERCIAL_GAME_USE_EXPLICIT_LICENSE_NOT_VERIFIED` 유지.
 - 상태: **PROMPTS_LOCKED / GEMINI_MANUAL_STEP_REQUIRED / AUDIO_NOT_YET_GENERATED / UNITY_NOT_APPLIED**.
 - Unity6000.6.5f1, 기존 승인 BGM/TTS/Mixer/Save/UserData, Issue #85 HOLD 보호.
+
+
+## 2026-11-23 Issue #127 — F2/F3 1차 데모 실제 수령
+
+- F2 `Beneath_the_Frozen_Boughs.mp3`
+  - 76.4865s / 44.1kHz Stereo
+  - SHA256 `c3f1339e30d8973ad467e30650072f9fc2360ea1f90627a3570bfcaeb384e3b1`
+  - Size 1,843,393bytes
+  - 체감 약78.3BPM, -11.33LUFS, peak -0.09dBFS
+  - 끝 무음 약1.91s
+  - F2 역할 **PASS 추천 / USER_LISTENING_PENDING**
+- F3 `Steps_on_Frozen_Stone.mp3`
+  - 92.4996s / 44.1kHz Stereo
+  - SHA256 `ce3aa05a5235791892dd222bb8e958084634c085f69edfae0ec31850ec6d20e7`
+  - Size 2,227,707bytes
+  - 체감 약80.7BPM, -11.65LUFS, sample peak 약-0.006dBFS, clipping0
+  - 끝 무음 약2.67s. 실음악 약89.83s → 재생성 없이 향후 꼬리 제거로 길이 규격 충족 가능.
+  - F3 역할 **PASS 추천 / USER_LISTENING_PENDING**
+- 두 곡 decode PASS, 역할 분리 PASS 추천, 원본 gain/EQ/compression 변경0.
+- tentative loop 후보:
+  - F2 12.8→62.4s
+  - F3 24.5→84.1s
+  - 아직 Loop 편집/마스터 제작0.
+- 기존 F1/서릿길 재생성0, Unity6000.6.5f1/TTS/Mixer/Save/UserData 변경0.
+- 상용권: `COMMERCIAL_GAME_USE_EXPLICIT_LICENSE_NOT_VERIFIED` 유지.
+- 상세 QA: `문서/00_프로젝트/Issue127_F2_F3_BGM_FirstDemo_QA_20261123.md`
+- 다음: 바울 대표 두 곡 실제 청취 승인 → 승인곡만 Loop A/B 편집 단계.
