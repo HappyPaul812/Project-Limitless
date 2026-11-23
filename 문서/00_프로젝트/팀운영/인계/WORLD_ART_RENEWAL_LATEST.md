@@ -1,3 +1,12 @@
+## 2026-11-23 / Issue #124 대표 재작업 지시 — Trait Icon 5종 직접 제작 (현 최신)
+
+- **대표 피드백:** 11/23 기존 후보의 귀/뇌형 직설적 표현 거부. 시각 포함 Trait5 전부 외부 게임 사용 아이콘의 추상적 구조를 더 가깝게 계승하되 직접 복제·트레이스 금지.
+- **신규 실물:** 128×128 RGBA5, 40px/30px 실제 축소10, 5종 밝은/어두운 UI 보드, 외부 원본 공식 CDN 이미지와 신규 이미지를 나란히 호출하는 HTML, Manifest/SHA256/QA. ZIP `LIMITLESS_Issue124_Trait5_Rework_20261123.zip` **2,478,785 bytes**, SHA256 `b2f468126e1880d39d2a487f347568b61d8cbbfaf460bcb44849dcda8923b5df`, ZIP CRC25/25 PASS, Manifest payload23/23 SHA/bytes PASS. **이 ChatGPT 대화 첨부 파일**이며 대표 F:\\Downloads/게임 Unity/원격 GitHub에 ZIP 바이너리 자동 복사·반영 없음.
+- **기술/미술 구분:** 생성 이미지 직접 분리·검증 `FILE_TECH_PASS`; 기존 5종 원본 PNG는 제작 환경에 저장하지 못해 원본 실픽셀 비교 PNG 미제작, **HTML 공식 URL 비교판**으로 대체. 대표 실물 미술 승인 `PENDING`, 실제 Unity GameView `NOT_VERIFIED`. 기존 오늘 후보 5종은 참고 이력으로 보존하되 이번 후보를 신규 검토 대상 취급.
+- **정식 보고:** [Trait5 전면 재작업 납품 보고](../../Renewal_20261123_Issue124_Trait5_Rework_OriginalIdentity_Report.md); 최초 문서 commit `7f7dc7df2c111901cc6e2ba179f65e0cce937890`, 브랜치 `docs/art-renewal`.
+- **보호:** 기존 `pathSymbol` 5종 절대 수정0. 외부 `traitIcon` 원본 GUID/meta/PathDefinitions, Unity6000.6.5f1, Scene/Prefab/Save/UserData, 공식 NPC/몬스터/펫/환경, #85 HOLD, main 직접 변경0. **최종 미술 승인 후 별도 Codex 최소 교체**.
+- **상태:** `ART_CANDIDATE_5_DELIVERED / FILE_TECH_PASS / ORIGINAL_PIXEL_COMPARE_PENDING / USER_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED`.
+
 ## 2026-11-23 / Issue #124 후속 — 청각·지적·지체·마음의 상처 Trait4 신규 오리지널 PNG 납품
 
 - **바울 대표 최신 지시:** 시각 Trait v2 **30px 기획검수 통과** (기존 원화 KEEP, 실제 Unity 적용/대표 최종 게임 교체 승인 아님), 나머지 청각·지적·지체·마음의 상처 Trait 4종 각각 128×128 RGBA 새 미술 후보 제작. 기존 공식 PathSymbol5·경로 정의/GUID/meta·Unity 모두 변경0.
