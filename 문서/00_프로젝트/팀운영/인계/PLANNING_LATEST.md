@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-23 — 바울 대표 빙각 수호체 Defeat4 최종 미술 승인 · 애니메이션 미술 라인 마감
+
+- **대표 직접 최종 결정:** “빙각이는 나도 좋아, 승인,”. 문맥상 2026-11-23 [#126 Defeat4 기획 미술 PASS·Codex 격리 Unity PASS 보고](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7097771461)에 대한 답변으로, **빙각 수호체(Rime Sentinel) Defeat4 최종 사용자 미술 승인**을 확정한다. 이전 Hit4 승인과 혼동하지 않는다.
+- **승인 납품:** `LIMITLESS_Issue126_RimeSentinel_Defeat4_20261123.zip` / SHA256 `c7b840ce80815814be0a11269d29b636acfa0b2966981801fa19228bade296ef`. 무거운 균형 상실→주저앉음→전투불능 정지, 2048×512 4셀. 기존 Codex 격리 Animator 비루프 2450ms(180/220/250/1800), 112px 모션·접지 PASS; 40px 세부 PARTIAL은 기존 검증 주의사항으로 유지. 기존 QA 재실행 요구 없음.
+- **미술 라인 마감:** KeyPose / Idle4(260ms·4프레임) / Attack4 v2(660ms·4프레임) / Hit4(610ms·4프레임) / Defeat4(2450ms·4프레임) 5개 납품 모두 **USER_ART_APPROVED / ART_LINE_COMPLETE**. 승인 원본과 GIF/PNG/Manifest/SHA 보호, 다시 그리거나 새 모션을 무단 양산하지 않는다.
+- **실제 Unity 제품 적용은 별도:** F5 실제 Scene, MonsterDefinition·조우/AI·피격/KO 후 Idle 덮어쓰기, 전리품/단회 Save, 전투/스폰·배포 적용 및 본편 QA **NOT_VERIFIED / PRODUCT_INTEGRATION_HOLD**. 본 승인만으로 `main` 병합, 로컬 원본 변경, 원격 Push를 지시·승인하지 않음. 후속 Codex 작업은 명시된 범위와 별도 승인에 따라 진행.
+- `docs/planning` 기획 기록. Unity 6000.6.5f1 / #85 HOLD / Save·UserData·Discord / 기존 승인 스프라이트 원본 및 `main` 보호.
+
+---
+
 # PLANNING / 2026-11-23 — 빙각 수호체 Defeat4 · 독침벌 전리품 침 v2 합동 검수
 
 - 바울 대표 Codex 격리 Unity 합동 검수 결과 화면 제출. Codex `codex/issue126-124-defeat-stinger-20261123`, SHA `3c77498e09741649e2daa0ea2c9aef0c71ec5254`; Unity6000.6.5f1 유지, 본편/원본 main·Save/UserData/Discord/승인 아트/Push0.
