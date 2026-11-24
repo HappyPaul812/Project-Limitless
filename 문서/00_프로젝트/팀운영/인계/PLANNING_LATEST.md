@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-24 — Main24·25 정식 플레이 구현 완료 / Main25 음성 승인 누락 정정
+
+- [#130 Codex 실적](https://github.com/HappyPaul812/Project-Limitless/issues/130#issuecomment-7123142095): MAIN24 COMPLETE / MAIN25 COMPLETE, Unity6000.6.5f1 호환 QA 223 PASS/0 FAIL. Bootstrap 합성 Main23 완료 슬롯에서 보급·올빼미 한기·패배/안전복귀·재도전·F3 북진·갑충 갑각·Main25 완료·Save/Continue·도보/휠체어·단회 보상 검증. 실제 원본 클린 Import/Editor Search/출력 장치 청취 미검증.
+- 브랜치 codex/ch3-main24-main25-playable-20261124; Main24 `939f0d8239443155f8724bb2a33c508ffd2bed62`, Main25 `c1e7dbf1e2b2e2047fdcd1c2397e817fdcd90594`, Main24 음성 `2dc3ef008d38a8c28d2d1f850189c307d397a4c9`, 통합 보완 `e85835235b7ff8aa558a4e15568387bf5234f445`, 보고 `e16557881daea9843dfada6f7812e407be048f79`. LOCAL_COMMITTED / REMOTE_NOT_PUSHED / MAIN_NOT_APPLIED.
+- Main24 WAV10/10 실제 대사 연결 PASS. Main25 9개 로컬 WAV는 #130에서 AUDIO_HOLD. 하지만 당일 10:01 KST경 TTS 담당 세션의 Main25 9개 실행 직후 대표 발언 “다 뽑았고 들었어 좋아.” 및 해당 세션의 9/9 제작·청취 승인 기록 확인. [#125 승인 인계 정정](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7123232724), [#130 기존 WAV9 연결 발주](https://github.com/HappyPaul812/Project-Limitless/issues/130#issuecomment-7123233472). 실제 파일 SHA/화자/문장/Runtime ID 일치한 것만 연결, 재합성/API 호출0, 기존181개 보호. 223 PASS 반복 금지, Main25 음성 표적 QA만. 실제 연결 결과 대기.
+- #85 호환7경로는 QA 복제본에서만 사용, 원본 #85 HOLD 유지. #124 승인 자산/개인 Save/UserData/Discord/원본 main 보호. Main26 이후 신규 구현 및 main 병합/Push 금지. 향후 대표 승인으로 안전 통합 별도.
+
+---
+
 # PLANNING / 2026-11-24 — Main24·25 정식 플레이 구현 착수 승인
 
 - 대표 “메인25까지 구현 가능한거지?” → 기획 Main24 완료→F3 구현→Main25 완료→연속 플레이 검증 제안에 “그래 고~!” 승인. [신규 Issue #130 실제 구현 발주](https://github.com/HappyPaul812/Project-Limitless/issues/130). Unity6000.6.5f1 별도 worktree, 원본 main/원격 Push 금지.
