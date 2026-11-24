@@ -1,0 +1,8 @@
+# LIMITLESS / Issue #123 / 마지막 온기의 화로 v3 — 2026-11-24
+[기획 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7123881584) 확인. 대표가 v1 방향 재작업 및 v2 금빛 강화 요청, v3 원화 합격 및 Codex 검수 요청. 제작자 정체 공개 문양 금지 유지. 이전 화로 원본 미확보, 발견 시 재사용 우선/비교 후 채택. 별도 P2 HOLD.
+- 신규 게임 PNG 1종 Art/LastWarmth_Hearth_Body_v3_256x256_RGBA.png, 256×256 RGBA, 97458 bytes, SHA256 3a3094749ba49c6b7139b9638a61d543fa903d7ec214209f2b51a43985c1a5d2, alpha bbox [10,8,245,248), 외곽 alpha0. 승인 1254 master SHA256 2403ef51efbc105276f3136fc7f5cb9f913468da556fea49dc4085f3f0745358, 원본 바이트 복사 보존, 비례 축소·alpha<=8 정리만. Master는 Reference 전용. PPU128/Pivot 하단 중앙 제안, 실제 계약 미확정.
+- 실제 보스 KeyPose f1a3c5f91a5fef69cd881e27b578c32253d0124d5d8628a8ca748f7479333830 / Idle4 9d9b8d05be1813c013a5d784d749ce2d8ef751541ac36ce90712f3255cb53f43 / 결빙 5abfe30fcb1a09579a7617fe1df08079c0b83eeb982677cf57ec2bfc5166b6d5, 3/3 일치·작업 전후 불변.
+- 실제 PNG 1:1 픽셀 비교판 및 128/40/30px 밝고 어두운 배경 검토. 생성형 비교판 미사용. 북진 기존 탐험 패널 보존, 전투 개념에 실제 원화 합성. 남쪽 F5→북쪽 목표, 북쪽 화살표, 4.5WU 미실측 목표, 직접 이동 없는 화로 전투 명령 유지. 실제 World 배율/Sorting/카메라/UI/통행 미검증.
+- ZIP LIMITLESS_Issue123_LastWarmth_Hearth_v3_20261124.zip, 3806588 bytes/6 entries, SHA256 1f4caab7cd712fc325450b8644e727dd6fc4719e876810d0c370fd5ffbc4e676. CRC PASS, SHA256SUMS 5/5. 실제 대화 다운로드 납품, GitHub 바이너리 미업로드.
+- 대표 원화 승인 및 Codex 검수 요청에 따라 검수용 전달. 기존 원본 재생성·추가 Unity 실행/적용·Scene·main 변경0. Codex 표적 검수는 파일/알파/실물 비교/기존 보스·빙벽 SHA/동선·가독성 위주, #85/Unity6000.6.5f1/#131/Save/UserData/Discord 보호. 본편 적용 승인 아님.
+**USER_ORIGINAL_ART_APPROVED / 256_EXPORT_OFFLINE_QA_PASS / CODEX_TARGETED_QA_PENDING / UNITY_NOT_APPLIED**.
