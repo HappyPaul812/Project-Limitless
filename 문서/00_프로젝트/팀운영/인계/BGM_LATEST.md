@@ -258,3 +258,13 @@ Issue #31: F1 북풍·서릿길 마을 2곡 샘플.
 - 실제 생성은 바울 대표 별도 승인 후 Gemini Short / Instrumental / 1회만.
 - F4 실제 Scene/정식 런타임 배정은 NOT_VERIFIED. 새 적명/Scene ID 임의 확정 없음.
 - Unity6000.6.5f1, 기존 승인 BGM/TTS/Mixer/Save/UserData, #85 HOLD 보호.
+
+
+## 2026-11-24 Issue #129 — F4 데모 수령
+
+- Breath_Upon_The_Pass.mp3 / 73.168917s / 44.1kHz stereo / 1,763,772bytes.
+- SHA256 f0142ee5e0c7a30c24aead0c483aa9a3b10de97e1d1c0e6318c039157f8a3b47.
+- 전체 decode PASS, 길이 PASS, -11.5 LUFS, true peak +0.2 dBTP, decoded sample peak +0.157 dBFS(19 channel samples > 1), 끝 저레벨 약2.48s.
+- F4 탐험곡 적합 PASS 추천. 원곡 청취 승인 대기. 피크 여유 및 루프 편집은 승인 후 별도 파일로 진행. A/B0 / Master0 / Unity0 / main0.
+- COMMERCIAL_USE_EXPLICIT_LICENSE_PENDING. 기존 승인곡4/WAV8 및 #85 HOLD 보호.
+- 보고: 문서/00_프로젝트/Issue129_F4_BGM_FirstDemo_QA_20261124.md
