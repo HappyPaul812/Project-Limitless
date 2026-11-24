@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-24 / Issue #123 — F3 최종 승인 및 F4 백색 침엽림 환경 2종 납품
+
+- [F3 최종 승인 및 F4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7118370238) 확인. GroundTransition·LowFrostRock·FlushStone v2 **USER_ART_APPROVED / KEEP**, v1 보존. F3 본편/4.5WU 실제 통행·Collider/Sorting/v2 Import 미검증. 실제 F2 승인 그루터기와 F3 원본 3종+v1 SHA 작업 전후 일치.
+- F4 신규 게임용 후보 2종만: `Art/F4_WhiteConifer_384x512_RGBA_CANDIDATE.png` 384×512 RGBA SHA256 `398b07335d84b0702a54e1bfae109bce75c60679f8e6a6fda6ccad6cd4386fad` (길 밖 수목, 제안 Pivot 0.5/0.01953125), `Art/F4_DirectionalSnowdrift_384x192_RGBA_CANDIDATE.png` 384×192 RGBA SHA256 `1ae4ae973495d7d5c09efa3c7b6604233e6d4e66e74ca4d2d0e275e3bef630b1` (최대 alpha168/255, 단일 배치 풍설, 제안 Pivot 0.5/0.5). 투명 알파 잡음 정리/비율 유지 축소; 기존 자산 재작화0.
+- 실제 F2/F3/신규 2종 1:1 픽셀 비교 및 실제 30/40px 폭 축소판, 실제 PNG 기반 접근성 고려 오프라인 배치 개념도(중앙 밝은 길, 수목·풍설 가장자리). 4.5WU는 목표만, 실제 통행 미검증. 생성된 가상 비교판은 최종 납품에 미사용.
+- ZIP `LIMITLESS_Issue123_F4_WhiteConifer_2Asset_Pilot_20261124.zip` 1,110,832 bytes / 8 entries / SHA256 `cc011d31e8af7bccccc4ea7379b78c58db62e72b8bfb3b4ab5b4cf5564ee4a54`, CRC PASS, Manifest6/6, SUMS7/7 PASS, 순환참조0. Library `/LIMITLESS/Issue123_F4_WhiteConifer_20261124/` ZIP·PNG2·비교판·개념도 저장.
+- [제작·검증 보고](../../Chapter3_F4_WhiteConifer_TwoAsset_Pilot_20261124.md) `docs/art-new` commit `31d6f706fadcae826e42ec79999b3c8d71aad203`. **F4_TWO_ASSET_CANDIDATE / USER_ART_APPROVAL_REQUIRED / UNITY_NOT_APPLIED**. Unity6000.6.5f1/#85 HOLD/기존 승인 아트/Save/UserData/Discord/main 보호. 전체 맵/추가 VFX/Scene/Unity 적용/새 Codex 발주/main 직접 commit·Push·Merge0.
+
+
 ## 2026-11-24 / Issue #123 — FlushStone EdgeMarker v2 중앙색 국소 보완
 
 - [기획 미술 검토](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7116769430) 확인. GroundTransition·LowFrostRock PLANNING_ART_PASS, F4 PLANNING_CONCEPT_DIRECTION_PASS. 기존 3종 원본 보존. 대표 최종 미술 승인 별도.
