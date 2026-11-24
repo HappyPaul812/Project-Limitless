@@ -1,3 +1,11 @@
+## 2026-11-24 / Issue #124 기본 취소 버튼 독립 원화 1종 (최신)
+
+- 기획 발주 댓글 7121163563 확인: command.cancel / Kenney arrowLeft 대상 1종. 공격·방어·스킬·도망 v2 최종 승인 원본 4종 SHA256 일치, 비교용 바이트 보존.
+- 신규 CancelButton_Original_128_RGBA.png SHA256 3eeb5e4090ec330c60cf45ee65ebf02b7bc008b1557e0a77a1a20c5b9ba47533, 128×128 투명 RGBA. 은색 좌향 화살표/금색 테두리, 문틀·마법광 없는 단순 실루엣으로 우향 도망과 구분. 승인 4종+취소 실제 128/40/30px 비교판. 실제 Kenney 원본 및 Unity GameView NOT_VERIFIED.
+- ZIP LIMITLESS_Issue124_CancelButton_Original_20261124.zip, 1149497B, SHA256 b879e2ce1768511d0f06ab07063dbd5ea9eead3dd4fcc7165c06baa6cf6e8ef0; CRC14/14, Manifest12/12, SUMS13/13 PASS. 대화 첨부 실물.
+- [정식 보고](../../Renewal_20261124_Issue124_CancelButton_Original_Pilot_Delivery.md) commit 33de0b13716311b206600549d1fc10d077bf1274, docs/art-renewal.
+- 대표 미술 승인 및 Codex 표적 QA 대기. 기존 승인 자산/Unity6000.6.5f1/#85/전투 기능/코드/GUID/meta/Save/UserData/Discord/main 보호. Unity 적용/병합/Push0.
+
 ## 2026-11-24 / Issue #124 도망 버튼 v2 국소 보완 (최신)
 
 - Codex 댓글 7120230169 및 기획 7120275605 확인. v1 기능/표시 PASS, 포털 구분 PARTIAL, 보스전 제한 미실행. 기존 PASS 반복 금지.
