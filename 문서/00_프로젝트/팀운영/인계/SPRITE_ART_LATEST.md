@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-24 / Issue #123 — 결빙 배경 채택 승인·기존 화로 원본 회수 조사 PARTIAL
+
+- [최신 기획](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7122404848) 결빙 배경 승인 KEEP. 보스 KeyPose/Idle4와 결빙 원본 실물 SHA 3/3 일치, 작업 전후 불변. 재작화0.
+- SEARCHED_PATHS: GitHub 코드/커밋/Issue #30·#123·10/12·10/14·11/18 계약, Library 제목 및 이름순 15페이지 3000 항목(전체 미완료), 과거 보스 ZIP2개·결빙 ZIP1개 내부/CRC 검사. 화로 원화 파일명/경로/해시 미확보. 사용자 PC 로컬·모든 ZIP 전체 감사 미실행, 부재 확정 금지.
+- 신규 검토판 1장: 승인 실물 2종 1:1 및 화로 미확보 패널, 기획 참고색만. 기존 북진 개념도 바이트 그대로 재사용: 남쪽 F5 입구→북쪽 보스 목표/북쪽 화살표/4.5WU 미실측 목표, 화로 전투 명령·직접 이동 불필요. 실제 금빛 대비·가림·Sorting·통행 미검증.
+- 납품 LIMITLESS_Issue123_LastWarmth_FinalReview_PARTIAL_20261124.zip 1381133 bytes/5 entries SHA256 c29d950c0c93b440ad058230785205d4dd60bb921673f0b7273b6f5c7c0dac22, CRC PASS, 실제 대화 다운로드 납품·GitHub 바이너리 미업로드. [보고서](../../Chapter3_LastWarmth_Hearth_Source_Search_FinalReview_20261124.md) commit eb6867f6f47ff072a5e1b3b5d76d91d01a8536e9.
+- **ICE_BACKDROP_APPROVED_KEEP / HEARTH_SOURCE_NOT_RECOVERED / FINAL_THREE_ASSET_REVIEW_PARTIAL / NO_NEW_GAME_ART / UNITY_NOT_APPLIED**. 다음 Codex 로컬 읽기 전용 파일/ZIP/GUID·참조 검색을 다른 승인 작업에 묶어 최소 조사 후 확보 시 3종 최종 비교, 미제작 확인 시 별도 1종 승인 요청. P2 HOLD. #85/Unity6000.6.5f1/main/Save/UserData/Discord 보호. 신규 게임 PNG0/Scene/Unity 적용0/main 직접 commit·Push·Merge0.
+
+
 ## 2026-11-24 / Issue #123 — 마지막 온기의 화로 결빙 배경 파일럿 납품
 
 - [최신 기획 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121661390) 및 [Codex 구상 검수](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121620530) 확인. 결빙 벽 독립 배경 소품 1종만 제작.
