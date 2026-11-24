@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-24 — Main24·25 정식 플레이 구현 착수 승인
+
+- 대표 “메인25까지 구현 가능한거지?” → 기획 Main24 완료→F3 구현→Main25 완료→연속 플레이 검증 제안에 “그래 고~!” 승인. [신규 Issue #130 실제 구현 발주](https://github.com/HappyPaul812/Project-Limitless/issues/130). Unity6000.6.5f1 별도 worktree, 원본 main/원격 Push 금지.
+- 11/23 복구 정본의 Main24 QuestDefinition은 F2 안전 왕복 후보(완료/보상 없음), Main25 정식 Scene/Quest 신규 구현 필요. Main24 보급·서리올빼미 단독 한기 전투·완료, F3 승인 원화3 및 등록 BGM 연결·마력 표식2 조사·얼음갑충 단독 갑각 방어 전투·Main25 완료 목표. 남쪽 입구→북쪽 출구, 실제 도보/휠체어·Save·단회 지급/보상·연속 플레이 검증. 미확정 계약은 HOLD, Main26 이후 구현 금지.
+- Main24 TTS Stage10 승인/로컬 해시 일치 보고, Runtime 0/10; Main25 Stage9 준비 기록, 실제 WAV/청취 승인 여부 재확인. 증거 일치하는 음성만 연결, 나머지는 텍스트 진행 및 AUDIO_HOLD; 신규 API 호출/재합성 금지. #85 후보 및 기존 승인 자산 보호.
+- [#124 Chapter1 잡템4 격리 적용 마감](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7122478787): 제품 `549549a1ff197dc74686c7042c50122b661aa0f2`, 보고 `7d14e4fa94c6b692cec5538c3c0049f23d05aa77`, 호환 QA 10PASS/0FAIL, White Tint 개선·기존 ID/수량/드롭률/판매가 유지. 제품 클린 Import/전체 Save 미검증, main 미반영. 기본 명령 버튼6(아이템 기존 유지) 완료 보호.
+- #123 결빙 배경 채택/화로 실물 비교 PARTIAL은 기존 발주 유지; Main25 구현의 선행 조건 아님. 실제 Codex 실행 결과 대기, 목표 완료 선언 금지.
+
+---
+
 # PLANNING / 2026-11-24 — F5 균열 원화·도망 v2 승인 및 보스 구역/취소 버튼 후속
 
 - Codex 실제 표적 검수 보고 `8fe6e0eab4b16e2f43c37d40969cdb051e285d8c`, [#123](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121034099), [#124](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7121035060). F5 Edge 파일·개념 배치 PASS, F3 참조 실물2종 당시 PARTIAL. 기획에서 기존 11/23 Library ZIP CRC 정상, GroundTransition SHA `d63c8d5ae60921dc7007caf839b720d68dda8078f273b86f1404f6121475a4be`, LowFrostRock SHA `ddbba749c8f60f3b207769c35883aa844e80e782e8dc512077608d2568f07bb1` 승인값 일치 직접 확인. 사용자 PC의 실물 재검증을 뜻하지 않음.
