@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-24 — F4 원화·스킬 버튼 조건부 최종 승인 및 다음 발주
+
+- 대표 조건부 결정 “덱스씨가 별 문제 없다고 하면 나도 승인.” Codex 검수 보고 `a4de990615563214fc279936c50e3c1f88d6f2d6`, [#123 F4 검수](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7119159890), [#124 스킬 검수](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7119160974) 확인.
+- F4 백색 침엽수·방향성 풍설 오버레이 원화 채택 승인, 파일/Import PASS, 시험 배치 남→북 방향·4.5WU bounds 침범0. **배치 PARTIAL/실제 F3~F5 씬·Collider·도보·휠체어 실주행 HOLD**, 시험 배치를 실제 제품 검증으로 오인 금지. F5 동토의 균열 환경 구상 1장·신규 파일럿 후보 최대2종 제안 발주 [#123](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7119304884). 앞으로 Ch3 환경 개념도 **남쪽 입구→북쪽 출구/북쪽 화살표/세로 주동선** 명시.
+- 기본 스킬 버튼 최종 미술 승인, 실제 30/40px 및 메뉴 PASS. 30px 장식 흐림은 수용. Codex command.skill 적용 발주 및 리뉴얼 다음 command.flee 도망 버튼 1종 제작 발주 [#124](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7119305405). 기존 방어 적용 제품 `1d8ec56059458b18a3344eb1753c9f63fc041ae2`, 보고 `97bcc020aba378b5d57056e108f1a9efe2372df0` 보존. 실제 제품 클린 Import/Save 미검증.
+- Unity6000.6.5f1/#85 HOLD, 기존 승인 원화/원본 main/Save/UserData/Discord 보호. 승인 원화 재작화 금지, 새 적용 결과 및 부서 납품 대기.
+
+---
+
 # PLANNING / 2026-11-24 — F3 환경 최종 미술 승인 · 방어 버튼 승인 · F4/스킬 후속 발주
 
 - 대표 직접 결정 “나도 승인” → [#123 F3 환경 3종 최종 미술 승인](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7118370238), [#124 방어 버튼 최종 미술 승인](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7118370936). F3 GroundTransition·LowFrostRock 유지, FlushStone v2 SHA256 `e4d6af0f3aa854eeeef591091312ae593e2c928ed31123f4ca83cfe049b704b3` 채택. v1 보존. DefendButton PNG SHA256 `026574c506cf03db37eca4b57a24ba74251db4d6e48f5c868cf421ca69c43413` 채택. 재작화 금지. 실제 F3 Scene/통행·v2 Import 및 방어 버튼 적용은 미검증.
