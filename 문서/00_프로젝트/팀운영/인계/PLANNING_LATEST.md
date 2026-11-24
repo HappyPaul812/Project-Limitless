@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-24 — Main25 승인 음성9 연결 완료 / 안전 통합 게이트
+
+- [#130](https://github.com/HappyPaul812/Project-Limitless/issues/130#issuecomment-7123300696) 및 [#125](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7123298974) Codex 최종 보고 직접 확인. Main25 기존 Runtime ID 9개에 승인 WAV9 연결, 원문/화자/Voice/SHA256/PCM24kHz16bit모노 일치. 실제 F3 표식1→표식2→갑충전 직전→정리 대화 Clip9/9 및 순서, 마지막 플레이어 무음 자막 유지. Unity6000.6.5f1 호환 QA 신규 27PASS/0FAIL, 기존 223PASS 재실행0. Main24 WAV10 및 기존 승인 음성 보존, 재합성/API0.
+- 브랜치 `codex/ch3-main24-main25-playable-20261124`, 제품 `751c8458b203b55ad71355b5f7d267bd4bc7c4fd`, 보고 `2abf6dfe4002953c414f4ae3e782712df5b1583e`. MAIN24_COMPLETE / MAIN25_COMPLETE / AUDIO_CONNECTED_19_OF_19 / LOCAL_COMMITTED / MAIN_NOT_APPLIED / REMOTE_NOT_PUSHED.
+- 다음 제안: #130 구현·음성 및 #124 전투 UI/Ch1 잡템4(제품 549549a1ff197dc74686c7042c50122b661aa0f2, 보고 7d14e4fa94c6b692cec5538c3c0049f23d05aa77)와 #85 검증 복구7경로(제품 6fc46b429159026adf99da686b0b87e909238e19, 보고 c5d9ed202a445ce3ef68c72f0b54cc47c1719b9c)의 관계·충돌·실제 로컬 HEAD를 확인해 별도 통합 후보에서 클린 Import/컴파일 및 최소 실플레이·합성 Save 검증. 이전 223/27 전수 반복 금지. #85 Search 오류의 미해결 상태를 자동 PASS로 바꾸지 않는다. 실제 출력 장치 청취 미검증 유지.
+- 원본 main 반영·원격 Push는 대표 별도 승인 후. 기존 11/23 복구 ref, 사용자 미커밋/미추적, Save/UserData/Discord/키 보호. Unity6000.6.5f1 고정. Main26 이후 신규 구현 별도. 이 인계는 통합 완료 또는 실제 Codex 실행을 뜻하지 않음.
+
+---
+
 # PLANNING / 2026-11-24 — Main24·25 정식 플레이 구현 완료 / Main25 음성 승인 누락 정정
 
 - [#130 Codex 실적](https://github.com/HappyPaul812/Project-Limitless/issues/130#issuecomment-7123142095): MAIN24 COMPLETE / MAIN25 COMPLETE, Unity6000.6.5f1 호환 QA 223 PASS/0 FAIL. Bootstrap 합성 Main23 완료 슬롯에서 보급·올빼미 한기·패배/안전복귀·재도전·F3 북진·갑충 갑각·Main25 완료·Save/Continue·도보/휠체어·단회 보상 검증. 실제 원본 클린 Import/Editor Search/출력 장치 청취 미검증.
