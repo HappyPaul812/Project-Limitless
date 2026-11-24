@@ -1,3 +1,12 @@
+## 2026-11-24 / Issue #124 수호자 스킬 3종 표적 보완 v2 (최신)
+
+- Codex 검수 댓글 7127093770 확인. 기존 v1 파일·Unity 표시·공유 계약 PASS 유지, 작은 HUD 구분 PARTIAL만 개선. 기존 PASS 반복0.
+- 도발 원본 KEEP SHA256 960bd0a3b87eadae637a1e2243eb3eab848b28963651ba328b01e699dba5687b. 철벽 v2 SHA256 6bebeac7b03c6906b6f23adb822f6a05531c3fe49ea48b8452d44cf76ae5f08f: 요새/흉벽 강조, 중앙 방패 축소, 기존 화풍 유지한 구성 수정. 맹세 v2 SHA256 3b66adf62bff00d86056f29564e7a885d0987b58812624c4bb8de03ba6e49977: 기존 v1 좌우 아군 주변 RGB 1835픽셀 보완, alpha 전부 동일. 기존 v1 3종과 승인 기본 명령3종 SHA 일치 및 원본 보존.
+- 128 RGBA 및 실제 40/30/24/20px v1/v2 비교판, 기본 방어/철벽 직접 비교, HUD 확대. v2 Unity 실제 화면 NOT_VERIFIED.
+- ZIP LIMITLESS_Issue124_GuardianSkill3_v2_Targeted_20261124.zip, 2204204B, SHA256 9abaa07de47ee869f35570a7647aad70189eb660400a77c5332acdbb0d9dfb18; CRC41/41, Manifest39/39, SUMS40/40 PASS. 대화 다운로드 실물.
+- [정식 보고](../../Renewal_20261124_Issue124_GuardianSkill3_v2_Targeted_Delivery.md) commit edd73d714aceb69a7ad6ad2f26c757b5bb5c0112, docs/art-renewal.
+- 미술 승인 대기. 기존 원화/기능/공유 계약/수치/코드/GUID/meta/Save/UserData/#85/#131/main 보호. Codex 검수 요청·Unity 적용·병합/Push0.
+
 ## 2026-11-24 / Issue #124 수호자 기본 스킬 3종 원화 납품 (최신)
 
 - 최신 기획 발주 댓글 7123880804 확인. 도발/철벽/수호의 맹세만 제작. Codex 휴식 중 검수 요청·Unity 적용0. 상태 아이콘 별도 제작0.
