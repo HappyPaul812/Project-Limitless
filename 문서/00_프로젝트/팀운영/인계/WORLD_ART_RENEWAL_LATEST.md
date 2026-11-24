@@ -1,3 +1,11 @@
+## 2026-11-24 / Issue #124 기본 방어 버튼 독립 원화 1종 (최신)
+
+- 기획 발주 댓글 7116871218 확인: command.defend / Kenney shield 대상 1종. 공격 승인 원본 SHA256 cf775727e27be825809a6b3d9bd04b227abe3408055873f70616cc8a9ca19a32 그대로 비교용 보존. 공격 및 전리품2 대표 미술 승인 사실은 댓글 7116923432 / 7117133033 기준, 이번 방어 승인과 구분.
+- 신규 DefendButton_Original_128_RGBA.png SHA256 026574c506cf03db37eca4b57a24ba74251db4d6e48f5c868cf421ca69c43413, 128×128 투명 RGBA. 은색 방패/금색 장식/청색 동작, 기본 공격과 128·40·30px 실제 픽셀 비교판 제작. 스킬 실제 PNG/Kenney 원본 픽셀 비교 및 Unity GameView NOT_VERIFIED.
+- ZIP LIMITLESS_Issue124_DefendButton_Original_20261124.zip, 1368605B, SHA256 3cdfa248cd0fc2d363f3bcbc3345665da5aa72de24fd6aa46bdcde834ffb3a5a; CRC 10/10 PASS, Manifest 8/8 SHA·bytes PASS. 대화 다운로드 실물, Windows F: 자동 복사 아님.
+- [정식 보고](../../Renewal_20261124_Issue124_DefendButton_Original_Pilot_Delivery.md) commit c90831068b10802e6694153d26f300848bc6c231, docs/art-renewal.
+- 대표 방어 미술 승인 대기. 기존 공격·전리품·Trait5/공식 길 문장·몬스터·펫·기타 스킬 보호, Unity6000.6.5f1/#85/기존 게임 코드 및 Scene/Prefab/GUID/meta/Save/UserData/Discord/main 변경0. Unity 적용/병합/Push0.
+
 ## 2026-11-24 / Issue #124 신규 공격 버튼 아이콘 오리지널 파일럿 1종
 
 - [최신 기획 발주](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7115939762) 따라 Kenney BattleUiIconCatalog의 Attack(sword) 기능을 참고하되 원본 이미지 재사용·트레이싱 없이 **1종 신규 그래픽 PNG** 제작. 은색 검날·금색 손잡이·붉은 참격의 LIMITLESS 화풍.
