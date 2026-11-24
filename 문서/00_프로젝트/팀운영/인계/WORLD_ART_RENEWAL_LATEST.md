@@ -1,3 +1,12 @@
+## 2026-11-24 / Issue #124 수호자 기본 스킬 3종 원화 납품 (최신)
+
+- 최신 기획 발주 댓글 7123880804 확인. 도발/철벽/수호의 맹세만 제작. Codex 휴식 중 검수 요청·Unity 적용0. 상태 아이콘 별도 제작0.
+- 신규 128×128 RGBA: Guardian_Taunt_Original_128_RGBA.png SHA256 960bd0a3b87eadae637a1e2243eb3eab848b28963651ba328b01e699dba5687b; Guardian_IronWall_Original_128_RGBA.png SHA256 76954eabf4557c6c4c44aacb8b6a0a9432d005373db159b5956d63c3d14a960e; Guardian_CoverAllies_Original_128_RGBA.png SHA256 e6dd2c2516c07e8d3a415b04cb60599fbc50a62cba64a603ced686a8d4593906. 기존 승인 공격·방어·스킬 SHA 일치/바이트 보존.
+- 실제 128/40/30/24/20px 비교판 및 30px 4배 확대 포함. 공통 방패 형상으로 작은 HUD 구분성 추가 확인 필요. 기존 Kenney 실제 PNG 픽셀 비교 및 Unity GameView NOT_VERIFIED.
+- ZIP LIMITLESS_Issue124_GuardianSkill3_Original_20261124.zip, 4991933B, SHA256 8526cfc6e041022e0b1019535bd0350f9de9b69f5fec1b98f17232fdde93c5eb; CRC27/27, Manifest25/25, SUMS26/26 PASS. 대화 다운로드 실물, F: 자동복사 아님.
+- [정식 보고](../../Renewal_20261124_Issue124_GuardianSkill3_Original_Delivery.md) commit e0cd9fab6b101b1a3feeb0b5f92a84fe27f32c02, docs/art-renewal.
+- 대표 미술 승인 대기 / CODEX_REST / NOT_UNITY_APPLIED. 기존 승인 자산·기능·수치·GUID/meta·코드·Save/UserData·#131·#85·main 보호. 병합·Push0.
+
 ## 2026-11-24 / Issue #124 Chapter1 남은 잡템 2종 신규 원화 납품 (최신)
 
 - 기획 발주 댓글 7121604210 확인. ForestSpiderSilk/VenomSnakeScale 2종만 제작. 실제 승인 #90 숲거미 Attack00(승인 ZIP SHA 일치) 및 #97 실제 적용 뱀 Idle00(원본 SHA 일치), #43 승인 KeyArt 직접 열람. 기존 승인 독침벌 침·초원 슬라임 젤 SHA 일치·보존.
