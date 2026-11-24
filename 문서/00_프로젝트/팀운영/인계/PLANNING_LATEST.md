@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-24 — 개발 마감 / 원격 복구 PASS / 원본 로컬 동기화 HOLD
+
+- [Issue #132 최종 마감 보고](https://github.com/HappyPaul812/Project-Limitless/issues/132#issuecomment-7130080751) 확인. 통합 PASS / 원본 local main FF HOLD / 원격 복구 PASS. 최종 제품 `931325391a3f5ae1da8c4e7f0ceb7f98a64519d9`, 보고 `88a0214f395029b851dd930038516906d8bed590`, 로컬 마감 브랜치 `codex/eod-20261124-safe-checkpoint`. Unity6000.6.5f1, 기존 통합137PASS 및 수호자7PASS 재사용(새 전수 QA 아님).
+- [원격 복구 스냅샷](https://github.com/HappyPaul812/Project-Limitless/tree/backup/2026-11-24-safe-checkpoint) `cede8815dc0fdcf4d81e95031167365a8b2a2244`. 11/23 원격 복구본 기반 선별 스냅샷으로 승인 제품·WAV19·미적용 승인 원화 PNG16·담당 인계5종 보존. 독립 fetch/checkout, git fsck --full, SHA 대조 PASS. 원격 main 및 11/23 복구 ref 보존. Save/UserData/Discord/키/개인 파일/납품 ZIP 제외, F4 BGM Master ZIP은 로컬 별도 백업 대상. 이 기획 인계 갱신은 마감 복구 스냅샷 이후의 문서 기록이며 그 스냅샷을 변경하지 않음.
+- 원본 local main `65cceb2d6c3283d18abec6e27d8a6f1296411f17` 유지. 겹침8경로 중 치유사 meta5 줄바꿈 정규화 동일, manifest/lock/BuildSettings3은 사용자 AI Inference/App UI/패키지 세트와 승인 #85/F3 등록 차이 미해결. 사용자 파일 원본 백업 및 HEAD/index/status853경로·내용 해시866경로 사후 일치. #85 Editor Search 예외 미해결. 다음 개발 시 읽기 전용 3-way 비교 및 안전 동기화 우선, 기존 작업 재구현 금지. 사용자 변경 무단 덮어쓰기 금지.
+- 오늘 승인된 화로 v3/Flame8 원화는 KEEP, 실제 게임 배치 별도. 치유사 스킬3종은 발주 상태, 납품·검수 전. Main26 이후 신규 구현 금지. 대표가 오늘 개발 종료를 선언했으므로 새 Codex/아트/TTS 작업 및 예약 발주 없음. 다음 작업은 대표가 돌아와 재개를 요청할 때 진행.
+
+---
+
 # PLANNING / 2026-11-24 — #131 통합 후보 실행 PASS / 원본 동기화 HOLD
 
 - [Codex #131 최종 결과](https://github.com/HappyPaul812/Project-Limitless/issues/131#issuecomment-7123671090) 직접 확인. 통합 브랜치 `codex/integration-20261124-main25-safe`, 기준 `65cceb2d6c3283d18abec6e27d8a6f1296411f17`, 통합 제품 `5399c89b2be41c2c7ea0a0aedb36b16eb70f3120`, 보고 `9d155ca635143b217a9cdd68a0c3e8be54106cb4`. #85 승인7경로, #124 전투 버튼/Ch1 잡템4, #130 Main24/25 및 음성19 포함. Unity6000.6.5f1 새 Library 클린 Import/C# 컴파일 성공, 실제 Bootstrap 합성 슬롯→Main24/25 완료→Continue 및 대표 UI/음성/BGM **137 PASS / 0 FAIL**. 기존 223/27 전수 재실행0.
