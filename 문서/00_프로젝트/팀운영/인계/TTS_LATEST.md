@@ -1,5 +1,12 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-24 Main25 Batch9 v1.1 사용자 PC check 통과 — 실제 합성 대기
+
+- 사용자 실제 출력: Main24 SHA matched 10/10, Main25 0/9, Native key/group counts list(len=4) / dict(len=4), totals matched. 기존 공유 장부 형식과 v1.1 검사 호환 확인.
+- PT 2026-11-23, shared attempts=10/40, pending=9. 로컬 그룹별 잔여 PROJECT_1=7, PROJECT_2=7, PROJECT_3=8, PROJECT_4=8. 로컬 전체 잔여30, 예정9회 성공적 실행 시 잔여21회(추가 사용/실패 시 달라짐). 실제 Google 원격 무료량과 과금 확인은 사용자 책임이며 이 출력은 원격 quota 증거가 아님.
+- check API POST0. 기존162/승인 Main24 10개 KEEP. Main25 Runtime ID unknown, 162/590 중복 검토 미완, STAGING ONLY. 실제 무료 조건 충족 및 사용자의 run + RUN_MAIN25_ALL_9 입력 후에만 합성 가능. 현재 생성0/9, 청취 QA0/9, Unity 적용0. 자동 재시도/429 전환 금지.
+
+
 ## 2026-11-24 Main25 Batch9 v1.1 — 공유 ledger 반환 형식 호환 수정
 
 - 사용자 실제 출력: Main24 SHA 10/10 일치, Main25 0/9, STAGING ONLY, 이후 `[SAFE STOP] Shared ledger count schema differs`. 이전 코드 usage()의 kc/gc dict-only 검사가 실제 엔진 반환형과 호환되지 않은 것으로 확인. 어느 반환형이 실제 사용되는지는 해당 콘솔만으로 미확정. API 승인/요청 단계 전에 중단. 신규 WAV0, 추가 API POST0.
