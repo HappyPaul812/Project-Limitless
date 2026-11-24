@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-24 — 안전 통합 및 로컬 동기화 승인 (5시간 잔여24%)
+
+- 대표 요청 “지금 안전한 통합해 5시간 한도가 24%라 안되나?” → [Issue #131 안전 통합 발주](https://github.com/HappyPaul812/Project-Limitless/issues/131). #85 검증 제품7파일, #124 전투 UI/Ch1 잡템4, #130 Main24·25 및 승인 음성19개를 최신 실제 local main 기반 별도 통합 worktree에서 선별 결합. 정확한 한도 사용량은 미확인, 24% 내 완료 보장 없음.
+- Unity6000.6.5f1 고정, 통합 후보 커밋 우선, 클린 Import/컴파일 및 최소 통합 스모크 1회. 기존 223/27 PASS 등 전수 반복 금지. #85 Search 예외 재현 또는 제품 검증 FAIL/충돌/한도 부족 시 후보 보존 후 원본 반영 HOLD. 
+- 안전 검증 PASS 및 원본 보호/충돌0 확인 시에만 local main FF-only/no-autostash 동기화 승인. 사용자 미커밋/미추적·Save/UserData·Discord/키·11/23 복구 ref 보존. 원격 Push 별도 승인, Main26 이후 신규 작업 금지. 실제 실행 및 결과 대기, 통합 완료로 해석 금지.
+
+---
+
 # PLANNING / 2026-11-24 — Main25 승인 음성9 연결 완료 / 안전 통합 게이트
 
 - [#130](https://github.com/HappyPaul812/Project-Limitless/issues/130#issuecomment-7123300696) 및 [#125](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7123298974) Codex 최종 보고 직접 확인. Main25 기존 Runtime ID 9개에 승인 WAV9 연결, 원문/화자/Voice/SHA256/PCM24kHz16bit모노 일치. 실제 F3 표식1→표식2→갑충전 직전→정리 대화 Clip9/9 및 순서, 마지막 플레이어 무음 자막 유지. Unity6000.6.5f1 호환 QA 신규 27PASS/0FAIL, 기존 223PASS 재실행0. Main24 WAV10 및 기존 승인 음성 보존, 재합성/API0.
