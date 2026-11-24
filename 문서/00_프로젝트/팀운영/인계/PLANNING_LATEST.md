@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-24 — F3 환경 최종 미술 승인 · 방어 버튼 승인 · F4/스킬 후속 발주
+
+- 대표 직접 결정 “나도 승인” → [#123 F3 환경 3종 최종 미술 승인](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7118370238), [#124 방어 버튼 최종 미술 승인](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7118370936). F3 GroundTransition·LowFrostRock 유지, FlushStone v2 SHA256 `e4d6af0f3aa854eeeef591091312ae593e2c928ed31123f4ca83cfe049b704b3` 채택. v1 보존. DefendButton PNG SHA256 `026574c506cf03db37eca4b57a24ba74251db4d6e48f5c868cf421ca69c43413` 채택. 재작화 금지. 실제 F3 Scene/통행·v2 Import 및 방어 버튼 적용은 미검증.
+- #124 기존 승인 독침·젤·공격 3종 격리 적용: 제품 `39fa4576e1ae984c09684ac14f56e48f1d541ca1`, 보고 `f96b732c78a82159b84d3c4acf24a757e39fa172`. 호환 QA 복제본 실제 UI/단회 타격 PASS, 30px 침끝 세부 PARTIAL 수용 권고, 클린 Import/Save 왕복 미실행, 원본 main 미통합.
+- Codex 다음: 위 3종 보존 후 방어 command.defend 경로만 신규 PNG에 연결, 50% 방어 감소 기능/버튼 표시 최소 검증. 기존 #85 후보 보호 및 원본 main 병합/Push 금지.
+- 메인 신규 아트 다음: F4 백색 침엽수 1종 + 방향성 풍설 지면 오버레이 1종 파일럿. 기존 자산 재사용 우선, 통행로 확보, 기존 승인 F2/F3 보존. 신규 맵 양산/Unity 금지.
+- 리뉴얼 다음: 공용 스킬 버튼(command.skill, Kenney star) 1종, 공격·방어 화풍 통일, 128 RGBA 및 30/40px 실축소 비교. 기존 원화/코드 보호. 각 부서 발주 기록 완료, 실제 실행/납품 대기.
+
+---
+
 # PLANNING / 2026-11-24 — 독침벌 침·초원 슬라임 젤 최종 미술 승인 및 공격 버튼 포함 3종 적용
 
 - 대표 직접 승인 “내가 승인 안했어? 미안..;; 승인..;” → 독침벌 Organic v2 원본과 초원 슬라임 젤 원본 `USER_ART_APPROVED`. White Tint 권고 채택, TipOnly 59px 후보 미채택 보존. 기존 원화 재제작 금지.
