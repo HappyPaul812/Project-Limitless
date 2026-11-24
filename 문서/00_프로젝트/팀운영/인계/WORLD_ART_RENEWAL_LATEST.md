@@ -1,3 +1,11 @@
+## 2026-11-24 / Issue #124 Chapter1 남은 잡템 2종 신규 원화 납품 (최신)
+
+- 기획 발주 댓글 7121604210 확인. ForestSpiderSilk/VenomSnakeScale 2종만 제작. 실제 승인 #90 숲거미 Attack00(승인 ZIP SHA 일치) 및 #97 실제 적용 뱀 Idle00(원본 SHA 일치), #43 승인 KeyArt 직접 열람. 기존 승인 독침벌 침·초원 슬라임 젤 SHA 일치·보존.
+- 신규 128×128 RGBA: ForestSpiderSilk_Original_128_RGBA.png SHA256 af0270104e6f9a18230fdfc12367c12b4b4068bd0e385b9f1e2151985802369a; VenomSnakeScale_Original_128_RGBA.png SHA256 ab5233986383622101e0b3b168cabf6050c6d1cb1b13a34606f7beb81e74eea2. 실타래 이끼색 국소 조정, 뱀은 최초 부적합 녹색안 폐기 후 실제 흑갈색/황금빛 무늬 반영. 실제 30/40/50px, 몬스터·승인 잡템 비교 및 원색/현재 Tint 검토판. 외부 기존 PNG 2종 직접 조회 및 32px 4-bit alpha 파생 비교(원본 파일 자체는 ZIP 미포함). Chapter2 실물 및 Unity GameView NOT_VERIFIED. White Tint 우선 검토, ItemDefinition 변경0.
+- ZIP LIMITLESS_Issue124_Chapter1_Loot2_Original_20261124.zip, 3143659B, SHA256 907f6a188cdc1eca792f2026ef2156b0696ae38d53b76b273a9555630d2d2f39; CRC29/29, Manifest27/27, SUMS28/28 PASS. 채팅 다운로드 실물, F: 자동복사 아님.
+- [정식 보고](../../Renewal_20261124_Issue124_Chapter1_Loot2_Original_Delivery.md) commit fcf7c675a1e2d94a9d1d06046e6ec70ae9452c66, docs/art-renewal.
+- Codex 표적 검수 및 대표 미술 승인 대기. 승인 원화·수치/드롭/가격/코드/Unity6000.6.5f1/#85/GUID/meta/Save/UserData/main 보호. Unity 적용·병합·Push0. 기존 승인 명령5종 재제작0.
+
 ## 2026-11-24 / Issue #124 기본 취소 버튼 독립 원화 1종 (최신)
 
 - 기획 발주 댓글 7121163563 확인: command.cancel / Kenney arrowLeft 대상 1종. 공격·방어·스킬·도망 v2 최종 승인 원본 4종 SHA256 일치, 비교용 바이트 보존.
