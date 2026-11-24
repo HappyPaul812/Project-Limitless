@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-24 / Issue #123 — FlushStone EdgeMarker v2 중앙색 국소 보완
+
+- [기획 미술 검토](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7116769430) 확인. GroundTransition·LowFrostRock PLANNING_ART_PASS, F4 PLANNING_CONCEPT_DIRECTION_PASS. 기존 3종 원본 보존. 대표 최종 미술 승인 별도.
+- 신규 후보 1종 `F3_FlushStone_EdgeMarker_v2_256x128_RGBA_CANDIDATE.png`, 256×128 RGBA, SHA256 `e4d6af0f3aa854eeeef591091312ae593e2c928ed31123f4ca83cfe049b704b3`. v1 원본 SHA256 `ccb99fa51dec1c33d07eaca3fd0fede994b65f0fd5776c98cda690b197ffedc0` 보존. 기존 3종 실제 원본 SHA 작업 전후 동일. 수동 ROI와 색상 가중치로 중앙 푸른 부분만 저채도 회청색 변환, 1613픽셀 변경, bbox [80,91,168,121) / 전체 alpha 동일 / ROI 밖 RGBA 동일. 기존 돌·눈 형태/크기/배치 보존. 생성 시안 최종 미사용.
+- 실제 30×15/40×20 RGBA 축소 비교판 및 원본 1:1·중앙 3배 확대. ZIP `LIMITLESS_Issue123_FlushStone_v2_Targeted_20261124.zip` 104505bytes/9entries, SHA256 `31bea127a99135cfe0965fedbf6d3a3547d4f571359ad43435202202e30b5ec4`, CRC PASS, Manifest7/7, SUMS8/8, 비순환. Library `/LIMITLESS/Issue123_FlushStone_v2_20261124/` ZIP·PNG·비교판 저장 성공.
+- [제작·검증 보고](../../Chapter3_F3_FlushStone_v2_Targeted_20261124.md) `docs/art-new` commit `6a395bf65f85f352050bb407f9e1eb42f2105f47`. **F3_V2_ART_REVIEW_PENDING / F4_CONCEPT_DIRECTION_PASS / UNITY_NOT_APPLIED**. v2 실제 배경 오독/Unity import/4.5WU 통행 미검증. F4 신규 PNG/Scene/VFX 제작0, Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/기존 승인 자산 보호. main 직접 commit/Push/Merge0.
+
+
 ## 2026-11-24 / Issue #123 — F3 최종 미술 검토 동배율 보드·동선 개념도 / F4 백색 침엽림 기획
 
 - [#123 11/24 최신 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7115938974)·[#85 복구중 병렬 부서 정본](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261124_Parallel_Department_Orders_While_Issue85_Repair.md) 확인. **기존 F3 게임 PNG3 원본 재제작·수정0, 기술 QA 반복0**. 기존 Codex 파일3/3·격리 Unity Import3/3 PASS **재사용**, 대표 최종 미술 승인 별도 PENDING. 게임용 PNG SHA: GroundTransition `d63c8d5ae60921dc7007caf839b720d68dda8078f273b86f1404f6121475a4be`, LowFrostRock `ddbba749c8f60f3b207769c35883aa844e80e782e8dc512077608d2568f07bb1`, FlushStone `ccb99fa51dec1c33d07eaca3fd0fede994b65f0fd5776c98cda690b197ffedc0`. 11/23 ZIP SHA `5704d754355d7a4d353be8324c0c442e0b8672e623fe7492849e40c49c4e8be4` 동일/CRC PASS.
