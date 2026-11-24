@@ -1,3 +1,11 @@
+## 2026-11-24 / Issue #124 기본 스킬 버튼 독립 원화 1종 (최신)
+
+- 기획 발주 댓글 7118370936 확인: command.skill / Kenney star 대상 1종. 공격·방어 대표 최종 미술 승인 원본의 SHA256 일치 확인 및 비교용 바이트 보호.
+- 신규 SkillButton_Original_128_RGBA.png SHA256 dd9b8a971751d597d97c216ae83b44db68b0caabaf0ea32503e8b13100baab00, 128×128 투명 RGBA. 공용 스킬 메뉴 별 문양, 은금속 장식, 청색 동작 강조. 공격/방어/스킬 128·40·30px 실제 크기 다크/라이트 비교판. 실제 게임의 주문/길 능력 아이콘 및 기존 Kenney 실물 비교, Unity GameView NOT_VERIFIED.
+- ZIP LIMITLESS_Issue124_SkillButton_Original_20261124.zip, 1507469B, SHA256 b8d9a0076278cbb39656c0f3fbc3e7c188d35ae4bc38f7875cada4572ebee256; CRC11/11, Manifest9/9, SUMS10/10 PASS. 대화 다운로드 실물, Windows F: 자동 복사 아님.
+- [정식 보고](../../Renewal_20261124_Issue124_SkillButton_Original_Pilot_Delivery.md) commit 19ff0a90c126d5a4cf294933c461811e98250c0f, docs/art-renewal.
+- 대표 스킬 미술 승인 대기. 기존 승인 공격·방어·전리품·Trait5/공식 길 문장·게임 자산 보존. Unity6000.6.5f1, #85, 코드/GUID/meta/Save/UserData/Discord/main 변경0. 제품 적용·병합·Push0.
+
 ## 2026-11-24 / Issue #124 기본 방어 버튼 독립 원화 1종 (최신)
 
 - 기획 발주 댓글 7116871218 확인: command.defend / Kenney shield 대상 1종. 공격 승인 원본 SHA256 cf775727e27be825809a6b3d9bd04b227abe3408055873f70616cc8a9ca19a32 그대로 비교용 보존. 공격 및 전리품2 대표 미술 승인 사실은 댓글 7116923432 / 7117133033 기준, 이번 방어 승인과 구분.
