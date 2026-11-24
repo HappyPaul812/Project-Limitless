@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-24 — #131 통합 후보 실행 PASS / 원본 동기화 HOLD
+
+- [Codex #131 최종 결과](https://github.com/HappyPaul812/Project-Limitless/issues/131#issuecomment-7123671090) 직접 확인. 통합 브랜치 `codex/integration-20261124-main25-safe`, 기준 `65cceb2d6c3283d18abec6e27d8a6f1296411f17`, 통합 제품 `5399c89b2be41c2c7ea0a0aedb36b16eb70f3120`, 보고 `9d155ca635143b217a9cdd68a0c3e8be54106cb4`. #85 승인7경로, #124 전투 버튼/Ch1 잡템4, #130 Main24/25 및 음성19 포함. Unity6000.6.5f1 새 Library 클린 Import/C# 컴파일 성공, 실제 Bootstrap 합성 슬롯→Main24/25 완료→Continue 및 대표 UI/음성/BGM **137 PASS / 0 FAIL**. 기존 223/27 전수 재실행0.
+- **원본 FF HOLD:** 사용자 미커밋 8경로 겹침. 치유사 .meta 5개는 정규화 텍스트 동일, manifest.json/packages-lock.json/BuildSettings 관련 파일은 후보와 다름. 클린 Import 직후 기존 UnityEditor.Search.SearchInit.IndexationOnStartup ArgumentOutOfRangeException 재현. 게임 실행 후보 PASS와 Editor 오류 해결은 별개. #85 OPEN/HOLD. 원본 main 기준 SHA 그대로, 미커밋303/미추적550/보호23 전후 보존, Save/UserData/Discord/Editor 원본 보호, 원격 Push0.
+- 대표가 전달한 한도 화면 기준 5시간 8% 남음, 주간60% 남음, 크레딧0, 초기화까지 2시간(캡처 당시). 기획 권고: 지금 추가 Codex 작업을 발주하지 않고 현재 후보/보고 커밋 보존. 다음 승인/작업 시 8경로의 원본 변경 의도·바이트·충돌을 읽기 전용 비교, 특히 실제 차이3경로만 별도 안전 병합안 검토. 사용자 변경 삭제/강제 FF/원본 설정 변경/Library 삭제/기존 전수 QA 금지. Search 예외 관련 원본 적용 게이트는 별도 기획 결정 전 유지. 아직 로컬 main 동기화 또는 원격 복구 완료 아님.
+
+---
+
 # PLANNING / 2026-11-24 — 안전 통합 및 로컬 동기화 승인 (5시간 잔여24%)
 
 - 대표 요청 “지금 안전한 통합해 5시간 한도가 24%라 안되나?” → [Issue #131 안전 통합 발주](https://github.com/HappyPaul812/Project-Limitless/issues/131). #85 검증 제품7파일, #124 전투 UI/Ch1 잡템4, #130 Main24·25 및 승인 음성19개를 최신 실제 local main 기반 별도 통합 worktree에서 선별 결합. 정확한 한도 사용량은 미확인, 24% 내 완료 보장 없음.
