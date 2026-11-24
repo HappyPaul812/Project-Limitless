@@ -1,5 +1,14 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-24 Main25 Stage-only 9개 제작 및 사용자 청취 승인 완료
+
+- 사용자 직접 보고: "다 뽑았고 들었어 좋아." Main25 Batch9 v1.1의 9개 제작 및 전량 청취 PASS로 기록. 기존 Main24 10/10 청취 승인 유지. Chapter3 승인 주요 인물 큐 진행 19/72(잔여53).
+- Main25 9개는 사용자 제작·청취 승인 완료(KEEP). 실제 생성 로그/개별 WAV SHA256/sidecar/공유 장부의 실행 후 수치는 아직 제출되지 않았으므로 기술 검증은 NOT_VERIFIED. 재합성·덮어쓰기 금지. Main24 10개는 기존 해시 검증 결과 유지, 기존 승인162개 보호.
+- Main25 직전 check 기준 PT 2026-11-23, 공유 attempts 10/40. 신규 9건 각각 1 POST 및 다른 사용/실패가 없었다면 예상19/40(잔여21), 실제 사용량 및 제공자 무료 잔량은 미확인.
+- STAGING ONLY. Main25 실제 Runtime ID 미확인, Unity 적용 승인 및 연결 미실시. 기존162/590 중복 감사 미완료. Unity/main/Save/#85 변경 없음. 이 세션에서 추가 합성 요청 없음.
+- 다음: Main25 실제 출력 9개 존재·해시·sidecar·정본 일치 읽기 전용 검증 및 기존 음성 보호, 이후 Main26 승인 큐 22개 제작 준비(실제 무료 조건 및 실행 승인 별도).
+
+
 ## 2026-11-24 Main25 Batch9 v1.1 사용자 PC check 통과 — 실제 합성 대기
 
 - 사용자 실제 출력: Main24 SHA matched 10/10, Main25 0/9, Native key/group counts list(len=4) / dict(len=4), totals matched. 기존 공유 장부 형식과 v1.1 검사 호환 확인.
