@@ -268,3 +268,13 @@ Issue #31: F1 북풍·서릿길 마을 2곡 샘플.
 - F4 탐험곡 적합 PASS 추천. 원곡 청취 승인 대기. 피크 여유 및 루프 편집은 승인 후 별도 파일로 진행. A/B0 / Master0 / Unity0 / main0.
 - COMMERCIAL_USE_EXPLICIT_LICENSE_PENDING. 기존 승인곡4/WAV8 및 #85 HOLD 보호.
 - 보고: 문서/00_프로젝트/Issue129_F4_BGM_FirstDemo_QA_20261124.md
+
+
+## 2026-11-24 Issue #129 — F4 원곡 승인 및 Loop A/B
+
+- 대표 직접 “승인.” → Breath Upon The Pass 원곡 USER_APPROVED. 원본 SHA f0142ee5e0c7a30c24aead0c483aa9a3b10de97e1d1c0e6318c039157f8a3b47 전후 일치.
+- B 후보 522444→2611336 samples @44100Hz (11.846803→59.213968s), xfade 24255 samples/0.55s, A/B 동일 -2dB gain. A 저레벨 2.73s, B 0s, true peak A -2.2/B -1.9dBTP. decode 및 기계적 경계 검사 PASS.
+- ZIP LIMITLESS_Issue129_LoopReview_20261124.zip / 3843795 bytes / SHA256 6c565077e19c3281bba835aec720ddfa013d73441f9808aa1106a86cbb5feac1 / CRC PASS.
+- 상태: ORIGINAL_USER_APPROVED / LOOP_AB_READY / B_LOOP_TECH_PASS / LOOP_USER_APPROVAL_PENDING / MASTER_NOT_BUILT / UNITY_NOT_APPLIED.
+- 다음: B 및 -2dB gain 청취 승인 후 Master. 상업권 COMMERCIAL_USE_EXPLICIT_LICENSE_PENDING. 기존 승인곡4/WAV8 및 #85 HOLD 보호. Unity/main 변경0.
+- 상세: 문서/00_프로젝트/Issue129_F4_LoopReview_QA_20261124.md
