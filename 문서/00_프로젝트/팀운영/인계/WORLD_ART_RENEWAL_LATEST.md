@@ -1,3 +1,11 @@
+## 2026-11-24 / Issue #124 기본 도망 버튼 독립 원화 1종 (최신)
+
+- 기획 발주 댓글 7119305405 확인: command.flee / Kenney exitRight 대상 1종. 승인 공격·방어·스킬 원본 SHA256 일치 확인, 비교용 바이트 보호.
+- 신규 FleeButton_Original_128_RGBA.png SHA256 b8bb8399c52ea6992810ce93eb1b56198817f789cae431a5313c855cd4bce054, 128×128 투명 RGBA. 금색 출구·우향 은색 화살표·청색 이동 강조. 4종 128/40/30px 실제 크기 비교판. 아치형·청색 광휘로 포털 혼동 가능성 PARTIAL. 기존 Kenney/포털/취소/뒤로가기 실제 PNG와 Unity GameView NOT_VERIFIED.
+- ZIP LIMITLESS_Issue124_FleeButton_Original_20261124.zip, 1383049B, SHA256 2d406c8556e2eef67b0b6d3cceab5868ee0804036490981a273eada238221f91; CRC12/12, Manifest10/10, SUMS11/11 PASS. 대화 다운로드 실물, Windows F: 자동 복사 아님.
+- [정식 보고](../../Renewal_20261124_Issue124_FleeButton_Original_Pilot_Delivery.md) commit a00917725d0f6365a5d82d82262e3371cf0e0a9c, docs/art-renewal.
+- 대표 도망 미술 승인 대기. 기존 승인 자산/Unity6000.6.5f1/#85/도망 로직/코드/GUID/meta/Save/UserData/Discord/main 보호. 제품 적용·병합·Push0.
+
 ## 2026-11-24 / Issue #124 기본 스킬 버튼 독립 원화 1종 (최신)
 
 - 기획 발주 댓글 7118370936 확인: command.skill / Kenney star 대상 1종. 공격·방어 대표 최종 미술 승인 원본의 SHA256 일치 확인 및 비교용 바이트 보호.
