@@ -1,5 +1,15 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-24 / Issue #123 — F5 최종 원화 채택 및 마지막 온기의 화로 보스 구역 구상
+
+- [최신 기획 지시](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121162958) 및 [Codex F5 검수](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121034099) 확인. F5 Edge 원화 채택 KEEP, 추가 암반 HOLD, 실제 제품 Import/Scene/Collider/실주행 HOLD 유지.
+- 마지막 온기의 화로: 남쪽 F5 입구→북쪽 설빙의 폭군 단독 대치 목표, 북쪽 화살표, 연속 평탄 통행로(4.5WU 목표·미실측). 후속 출구 TBD. 승인 환경 F3 3종/F4 2종/F5 1종의 실제 Library PNG SHA256 6/6 승인값 일치, 작업 전후 불변. 실물 축소 합성 13개 소품의 도식상 통행로 경계 교차0. 기존 Codex F3 로컬 참조 PARTIAL 기록 유지, 사용자 PC 재검증 아님.
+- 보스 전투 화면과 탐험 동선 구별. 화로 사용은 행동 가능한 아군 자기 차례의 명령→살아 있는 아군1명 동결괴사 전체 제거, 행동1회 소비·아이템/탈렌트0·회복/부활0·횟수 제한0. 기존 타깃/취소 규칙 및 3중첩 전 유효 대응 기회 유지. 실제 UI/턴큐/Collider/실주행 검증0. 전투 전 깊은 회청 결빙·희미한 금빛, 승리 후 눈발 감소·온기 회복. #30 보스 B 원화 및 Idle4 제작 기록 확인, 기존 보스 및 화로 원본 실물은 이번 검색 범위 내 미확보. 도식상 명시적 자리표시, 기존 원본 확인 전 중복 제작 금지.
+- 신규 제안 최대2종: P1 Boss_EncasingIce_Backdrop 512×384 (기존 F3/F5 암반·균열로 부족할 경우), P2 Hearth_WarmthGround_Overlay 256×256 (기존 화로/광원으로 부족할 경우). 신규 게임 PNG0, 원화 재제작0.
+- ZIP `LIMITLESS_Issue123_LastWarmth_Concept_20261124.zip` 502657 bytes/5entries SHA256 `2ad2122e697b92a4888963aa9878ab247b89c1ff5d48b8d8d5d0f7383a4900bd`, CRC PASS, Manifest3/3, SUMS4/4. 구상도 1680×1400 SHA256 `c4c37da6c8d868dfec16df242cd1c6cfb6f5c1dea3ac0adc9191e24a4447f624`. Library `/LIMITLESS/Issue123_LastWarmth_Concept_20261124/` ZIP·PNG·제안서 저장.
+- [제작 보고](../../Chapter3_LastWarmth_BossArena_Concept_20261124.md) `docs/art-new` commit `201fad4d229245f1eebc594c11f3a47238df8224`. **BOSS_ARENA_CONCEPT_ONLY / CONCEPT_REVIEW_PENDING / EXISTING_BOSS_HEARTH_BYTES_NOT_RECOVERED / UNITY_NOT_APPLIED**. 기존 승인 원화·Unity6000.6.5f1·#85 HOLD·main/Save/UserData/Discord 보호. 전체 맵/Scene/신규 스프라이트 제작/Unity 적용0, main 직접 commit/Push/Merge0.
+
+
 ## 2026-11-24 / Issue #123 — F5 구상 승인 및 FrozenRift_Edge 파일럿 납품
 
 - [F5 구상 승인 및 1종 제작 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7120274835), [Codex 개념 PASS](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7120228919) 확인. 기존 F3/F4 승인 PNG5종 실제 SHA 작업 전후 일치, 원본 수정0.
