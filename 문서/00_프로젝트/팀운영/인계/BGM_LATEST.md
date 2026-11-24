@@ -278,3 +278,14 @@ Issue #31: F1 북풍·서릿길 마을 2곡 샘플.
 - 상태: ORIGINAL_USER_APPROVED / LOOP_AB_READY / B_LOOP_TECH_PASS / LOOP_USER_APPROVAL_PENDING / MASTER_NOT_BUILT / UNITY_NOT_APPLIED.
 - 다음: B 및 -2dB gain 청취 승인 후 Master. 상업권 COMMERCIAL_USE_EXPLICIT_LICENSE_PENDING. 기존 승인곡4/WAV8 및 #85 HOLD 보호. Unity/main 변경0.
 - 상세: 문서/00_프로젝트/Issue129_F4_LoopReview_QA_20261124.md
+
+
+## 2026-11-24 Issue #129 — F4 최종 Intro/Loop Master 완료
+
+- 대표 “좋아” → B 루프/-2dB 승인. 원곡 승인 유지. 원본 SHA f0142ee5e0c7a30c24aead0c483aa9a3b10de97e1d1c0e6318c039157f8a3b47 전후 일치.
+- Breath Upon The Pass: Intro 12.396803s / SHA 6a8e907c6212c7e56f206593bb5c673213ad12dbdb027cb0e93b7bb8afab9c27; Loop 46.817166s / SHA b38f6c7dcd2d8ab335e5475d418eb5111e2e68bfb64c0609a1702ea6efbaf7ef. PCM16/44.1kHz/stereo.
+- 2/2 decode PASS, 경계 무음0, 기계적 클릭 검사 PASS, true peak -2.2/-1.8dBTP. 승인 B 비교 구간 PCM16 전 샘플 동일(0 LSB 차이).
+- ZIP LIMITLESS_Issue129_FinalLoopMasters_20261124.zip / 9890962 bytes / SHA256 2ab6609247c0232565e3adf51c0654b9d417ce9300a7634bc4a42c69e9af26ac / CRC PASS. WAV2+Manifest+README+SHA256SUMS.
+- 상태: FINAL_MASTER_DELIVERED / MASTER_QA_PASS / UNITY_INTEGRATION_PENDING_CODEX / MAIN_NOT_MERGED.
+- 기존 승인곡4/WAV8 KEEP. 신규 생성/원본 변경/Unity/main 변경0. #85 HOLD 보호. 상업권 COMMERCIAL_USE_EXPLICIT_LICENSE_PENDING 유지.
+- 상세: 문서/00_프로젝트/Issue129_F4_FinalLoopMasters_QA_20261124.md
