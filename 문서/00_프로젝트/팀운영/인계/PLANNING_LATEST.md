@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-24 — F5 균열 원화·도망 v2 승인 및 보스 구역/취소 버튼 후속
+
+- Codex 실제 표적 검수 보고 `8fe6e0eab4b16e2f43c37d40969cdb051e285d8c`, [#123](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121034099), [#124](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7121035060). F5 Edge 파일·개념 배치 PASS, F3 참조 실물2종 당시 PARTIAL. 기획에서 기존 11/23 Library ZIP CRC 정상, GroundTransition SHA `d63c8d5ae60921dc7007caf839b720d68dda8078f273b86f1404f6121475a4be`, LowFrostRock SHA `ddbba749c8f60f3b207769c35883aa844e80e782e8dc512077608d2568f07bb1` 승인값 일치 직접 확인. 사용자 PC의 실물 재검증을 뜻하지 않음.
+- 기존 대표의 Codex 이상 없으면 승인 방침에 따라 F5 Edge 원화 채택 및 Flee v2 최종 미술 승인. 실제 F5 Import/Scene/Collider/4.5WU 통행과 도보·휠체어 실주행 HOLD. F5 추가 암반 P2 보류. 도망 v2 파일/포털 구분/Unity 기능 PASS, 보스전 도망 제한 미실행.
+- [#123 승인·후속 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121162958): 마지막 온기의 화로(전장 가칭) 환경 구상, 기존 화로/보스/환경 자산 재사용 우선, 신규 후보 최대2종 제안만. 남쪽 F5 입구→북쪽 보스 구역 세로 주동선·북쪽 화살표·목표 표시. 신규 PNG 양산/Scene/기존 원화 변경 금지.
+- [#124 승인·후속 발주](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7121163563): Codex 도망 v2 command.flee 격리 적용, 기존 승인 자산·#85 후보 보호. 리뉴얼은 command.cancel 기본 취소/뒤로가기 128 RGBA 1종 제작. Unity6000.6.5f1 유지, 기존 PASS 반복 최소화, main 병합/Push 금지.
+- 기존 스킬 적용 제품 `5deda99eeeb5bb817a22dbee426f5d7d600704ed` / 보고 `1f086de2593991f76ff0d47dd37cc167702a2bdf` 보존. 제품 클린 Import/Save 미검증. 각 담당 실제 실행 결과 대기.
+
+---
+
 # PLANNING / 2026-11-24 — F4 원화·스킬 버튼 조건부 최종 승인 및 다음 발주
 
 - 대표 조건부 결정 “덱스씨가 별 문제 없다고 하면 나도 승인.” Codex 검수 보고 `a4de990615563214fc279936c50e3c1f88d6f2d6`, [#123 F4 검수](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7119159890), [#124 스킬 검수](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7119160974) 확인.
