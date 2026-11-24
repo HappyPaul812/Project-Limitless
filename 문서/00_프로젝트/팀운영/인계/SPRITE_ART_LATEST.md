@@ -1,5 +1,15 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-24 / Issue #123 — 마지막 온기의 화로 결빙 배경 파일럿 납품
+
+- [최신 기획 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121661390) 및 [Codex 구상 검수](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121620530) 확인. 결빙 벽 독립 배경 소품 1종만 제작.
+- `Boss_EncasingIce_Backdrop_512x384_RGBA_CANDIDATE.png` 512×384 투명 RGBA, 205071 bytes, SHA256 `5abfe30fcb1a09579a7617fe1df08079c0b83eeb982677cf57ec2bfc5166b6d5`, alpha bbox [8,95,504,374), 외곽 alpha0. 제안 PPU128/Pivot(0.5,10/384), 북측 외곽·캐릭터 뒤 Sorting, 실제 Import/정식 배율 미검증.
+- 기존 F3~F5 승인 PNG6종 및 설빙의 폭군 1포즈/Idle4 실물 SHA256 8/8 일치·작업 전후 보존. 기존 보스 원본 ZIP 두 개 회수 및 CRC 정상. KeyPose SHA `f1a3c5f91a5fef69cd881e27b578c32253d0124d5d8628a8ca748f7479333830`, Idle4 SHA `9d9b8d05be1813c013a5d784d749ce2d8ef751541ac36ce90712f3255cb53f43`. 기존 화로 검색 후 원본 미확보, 존재 여부 단정 금지, 자리표시만. 화로 본체/온기 오버레이 신규 제작0, P2 HOLD.
+- 실물 보스·환경 1:1 픽셀 비교판 및 북진 개념 배치도. 남쪽 F5 입구→북쪽 보스 목표, 북쪽 화살표, 기존 자산 재사용, 중앙 통행로와 11개 배치 사각형 교차0. 4.5WU 실측/Scene/Collider/UI/턴큐 미검증. 화로는 전투 명령, 직접 이동 없음. 희미한 금빛은 도식 표현만.
+- ZIP `LIMITLESS_Issue123_LastWarmth_IceBackdrop_Pilot_20261124.zip` 2020468 bytes / 7 entries / SHA256 `ad909b7b54f51caf5f6d112f176a5db759505ef2e47ab8b6719ff39f7db460ab`. CRC PASS, Manifest5/5, SUMS6/6, 비순환. Library `/LIMITLESS/Issue123_LastWarmth_IceBackdrop_20261124/` 납품 대상.
+- [제작 보고](../../Chapter3_LastWarmth_EncasingIce_Backdrop_Pilot_20261124.md) 실제 커밋 `a3d5f401af8a318fe6bd43dd8abe4e12000ba406`. **ICE_BACKDROP_CANDIDATE / USER_ART_REVIEW_REQUIRED / OFFLINE_QA_PASS / BOSS_SOURCE_RECOVERED / HEARTH_SOURCE_NOT_RECOVERED / UNITY_NOT_APPLIED**. 기존 승인 아트/Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/main 보호, 전체 맵/Scene/Unity 적용0, main 직접 commit/Push/Merge0.
+
+
 ## 2026-11-24 / Issue #123 — F5 최종 원화 채택 및 마지막 온기의 화로 보스 구역 구상
 
 - [최신 기획 지시](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121162958) 및 [Codex F5 검수](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121034099) 확인. F5 Edge 원화 채택 KEEP, 추가 암반 HOLD, 실제 제품 Import/Scene/Collider/실주행 HOLD 유지.
