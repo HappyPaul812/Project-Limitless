@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-24 / Issue #123 — 마지막 온기의 화로 v3 원화 승인·검수 납품
+
+- [발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7123881584), 대표 원화 합격 및 Codex 검수 요청. 기존 화로 원본 미확보, 발견 시 재사용 우선/비교 후 채택. v3 강화된 황금 마력 핵, 제작자 식별 문양 금지, P2 HOLD.
+- 게임용 PNG 256×256 RGBA 97458 bytes, alpha bbox [10,8,245,248), 외곽 alpha0, SHA256 3a3094749ba49c6b7139b9638a61d543fa903d7ec214209f2b51a43985c1a5d2. Master 1254 RGBA 원본 보존, 비례 축소·alpha<=8 정리. 승인 보스 KeyPose/Idle4/결빙 실물 SHA3/3 일치·불변. 실제 PNG 1:1 및 128/40/30px 비교판, 기존 남→북 탐험 패널 유지 및 실제 화로 합성 전투 개념도. 4.5WU 목표 미실측, 실제 배율/Sorting/UI/통행 미검증.
+- ZIP LIMITLESS_Issue123_LastWarmth_Hearth_v3_20261124.zip 3806588 bytes/6 entries SHA256 1f4caab7cd712fc325450b8644e727dd6fc4719e876810d0c370fd5ffbc4e676, CRC PASS/SHA256SUMS5/5. 대화 다운로드 납품, GitHub 바이너리 미업로드. [보고](../../Chapter3_LastWarmth_Hearth_v3_ApprovedArt_20261124.md) commit 9b6f6ebcd0e01f62881ed7a998a08a46a20e8c2e.
+- **USER_ORIGINAL_ART_APPROVED / 256_EXPORT_OFFLINE_QA_PASS / CODEX_TARGETED_QA_PENDING / UNITY_NOT_APPLIED**. 대표 검수 요청만 승인, Unity 본편 적용·main 병합/Push 별도. #85/Unity6000.6.5f1/#131/Save/UserData/Discord 보호.
+
+
 ## 2026-11-24 / Issue #123 — 결빙 배경 채택 승인·기존 화로 원본 회수 조사 PARTIAL
 
 - [최신 기획](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7122404848) 결빙 배경 승인 KEEP. 보스 KeyPose/Idle4와 결빙 원본 실물 SHA 3/3 일치, 작업 전후 불변. 재작화0.
