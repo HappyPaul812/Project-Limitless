@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-24 / Issue #123 — F5 구상 승인 및 FrozenRift_Edge 파일럿 납품
+
+- [F5 구상 승인 및 1종 제작 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7120274835), [Codex 개념 PASS](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7120228919) 확인. 기존 F3/F4 승인 PNG5종 실제 SHA 작업 전후 일치, 원본 수정0.
+- 신규 `F5_FrozenRift_Edge_384x256_RGBA_CANDIDATE.png` 384×256 투명 RGBA, SHA256 `29d2eff4659aa3c4aad0b63cf8a7ae661409d111488f8e625042f1b6339dbd7c`, bbox [8,30,376,248), 외곽 alpha0. 신규 원화 광륜 알파 정리·비율 유지 축소. 제안 PPU128/Pivot(0.5,0.03125), 단일 외곽 배치 소품/오버레이, 반복 바닥·Collider·기믹 아님. P2 Permafrost_LayeredRock HOLD, 기존 암반 재사용.
+- 실제 F3/F4 PNG5종+신규1종 1:1 및 30/40px 폭 비교판, 실물 PNG 합성 북진 개념도. 남쪽 F4 입구→북쪽 출구, 북쪽 화살표, 풍설 별도. 도식상 중앙 통행로 bounds 침범0, 실제 4.5WU/Scene/Collider/Sorting/통행 NOT_VERIFIED. 생성 가상 비교판 미사용.
+- ZIP `LIMITLESS_Issue123_F5_FrozenRift_Edge_Pilot_20261124.zip` 1,367,602bytes/7entries SHA256 `1fc7e2c8edf4db21e445d1f20f6f7d2ec6e2be835a7b2dba44d096f4f5e4d96b`. CRC PASS, Manifest5/5, SUMS6/6, 비순환. Library `/LIMITLESS/Issue123_F5_FrozenRift_Edge_20261124/` ZIP·PNG·비교판·배치도 저장.
+- [제작 보고](../../Chapter3_F5_FrozenRift_Edge_Pilot_20261124.md) `docs/art-new` commit `bfb9d300e0afbce04455d99327937faaa2caca2f`. **F5_CONCEPT_PLANNING_APPROVED / FROZEN_RIFT_EDGE_USER_ART_REVIEW_PENDING / OFFLINE_QA_PASS / UNITY_NOT_APPLIED**. 기존 승인 원화/Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/main 보호. 전체 맵/Scene/VFX/추가 암반/Unity 적용0, main 직접 commit/Push/Merge0.
+
+
 ## 2026-11-24 / Issue #123 — F4 최종 승인 및 F5 동토의 균열 북진 환경 구상
 
 - [F4 최종 원화 승인/F5 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7119304884) 확인. F3 승인3종/F4 승인2종 KEEP, F4 격리 Import PASS/배치 PARTIAL/정식 통행·제품 적용 HOLD. 실제 PNG5종 회수 및 기존 SHA 작업 전후 일치, 원본 수정0.
