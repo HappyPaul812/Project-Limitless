@@ -669,6 +669,15 @@ namespace ProjectLimitless.Battle
         /// 활성 중에는 방어를 함께 적용하지 않는 확정 규칙에 따라 TakeDamage의 방어 단계를 건너뜁니다.
         /// UI 차단 외에도 계산 경계에서 중첩을 막아 외부 호출이 있어도 60% 감소만 적용되게 합니다.
         /// </summary>
+        // 닫힌 갑각은 직접 피해가 실제로 들어갈 때만 소모하며, 다음 자기 차례 시작에도 만료됩니다.
+        private Combatant iceShellOwner;
+        internal void CloseIceShell(Combatant actor) => iceShellOwner = actor;
+        internal bool HasIceShell(Combatant actor) => actor != null && actor.IsAlive && iceShellOwner == actor;
+        internal void ExpireIceShell(Combatant actor)
+        {
+            if (iceShellOwner == actor) iceShellOwner = null;
+        }
+
         public int ApplyIncomingDamage(Combatant target, int rawDamage,
             BattleDamageOrigin origin = BattleDamageOrigin.DirectCombatAction, bool areaAttack = false)
         {
@@ -718,7 +727,10 @@ namespace ProjectLimitless.Battle
                 }
             }
 
+            bool coveredByIceShell = origin == BattleDamageOrigin.DirectCombatAction && iceShellOwner == target;
+            if (coveredByIceShell) damageAfterCover = damageAfterCover / 2 + damageAfterCover % 2;
             int appliedDamage = ApplyPersonalDefense(target, damageAfterCover);
+            if (coveredByIceShell && appliedDamage > 0) iceShellOwner = null;
             if (origin == BattleDamageOrigin.DirectCombatAction && appliedDamage > 0 && target.Side == BattleSide.Allies
                 && BeastCompanionService.IsSharpshooter(target.Id)
                 && BeastCompanionService.GetEquippedId(target.Id) == "fissure_lizard")

@@ -20,8 +20,8 @@ MonoBehaviour:
   maxStack: 999
   buyPrice: 0
   sellPrice: 3
-  icon: {fileID: 21300000, guid: 73b52f1f2998f6646a226eed86602ed4, type: 3}
-  iconTint: {r: 1, g: 0.72, b: 0.18, a: 1}
+  icon: {fileID: 21300000, guid: c19b35e07fb24b9f850eedf4227e67fb, type: 3}
+  iconTint: {r: 1, g: 1, b: 1, a: 1}
   useType: 0
   effectType: 0
   effectAmount: 0

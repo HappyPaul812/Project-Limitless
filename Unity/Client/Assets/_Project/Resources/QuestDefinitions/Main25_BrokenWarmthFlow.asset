@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c82de195ab08742b4c2ed83c2494f1, type: 3}
+  m_Name: Main25_BrokenWarmthFlow
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
+  questId: main_25_broken_warmth_flow
+  displayName: 끊어진 온맥
+  description: 눈 덮인 고갯길에서 끊어진 마력의 흔적을 조사하세요.
+  questType: 0
+  objectives:
+  - objectiveId: enter_north_f3
+    description: 첫눈의 숲에서 북쪽 고갯길로 들어가세요.
+    objectiveType: 1
+    targetId: north_f3_entry
+    requiredCount: 1
+  - objectiveId: inspect_first_warmth_mark
+    description: 남쪽 마력 표식을 조사하세요.
+    objectiveType: 3
+    targetId: main25_warmth_mark_south
+    requiredCount: 1
+  - objectiveId: inspect_second_warmth_mark
+    description: 북쪽 마력 표식을 조사하세요.
+    objectiveType: 3
+    targetId: main25_warmth_mark_north
+    requiredCount: 1
+  - objectiveId: defeat_first_ice_beetle
+    description: 얼음갑충 단독 전투에서 승리하세요.
+    objectiveType: 2
+    targetId: main25_first_ice_beetle
+    requiredCount: 1
+  - objectiveId: discuss_broken_flow
+    description: 북쪽 길 표식에서 동료들과 이야기를 마치세요.
+    objectiveType: 3
+    targetId: main25_broken_flow_debrief
+    requiredCount: 1
+  reward:
+    Experience: 140
+    Currency: 55
+    Items: []
+  prerequisiteQuestIds:
+  - main_24_first_snow_warning
+  nextMainQuestId:
+  startNpcId:
+  turnInNpcId:
+  acceptanceDialogue:
+  insufficientDialogue:
+  completionDialogue:

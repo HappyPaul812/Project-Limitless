@@ -1,0 +1,13 @@
+# LIMITLESS / Issue #123 / 마지막 온기의 화로 결빙 배경 파일럿 — 2026-11-24
+
+[최신 제작 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121661390), [Codex 구상 검수](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121620530) 및 이전 구상 기록 확인. 북쪽 보스 대치 배경 결빙 벽 1종 제작, 전체 구상/제품 승인과 구분.
+
+## 신규 실제 게임 PNG
+- Art/Boss_EncasingIce_Backdrop_512x384_RGBA_CANDIDATE.png: 512×384 RGBA, 205071 bytes, SHA256 5abfe30fcb1a09579a7617fe1df08079c0b83eeb982677cf57ec2bfc5166b6d5. Alpha bbox [8,95,504,374), 외곽 alpha0. 생성 원화 1448×1086 SHA256 059baae7bee76b004a4e450c88da2bc0c71908a7e70bb5a38e8507f795547f72에서 alpha>32 최대 연결성분 추출/정규화·비율 유지 축소(0.3625730994). 북측 외곽 배경 소품, 제안 PPU128/Pivot(0.5,10/384), 캐릭터 뒤 Sorting. 실제 Import/정식 배율·Sorting/Collider 미검증. 반복 타일/새 충돌체 아님.
+- 승인 보스 실물 회수 완료: Library Limitless_Chapter3_ApprovedAB_1Pose_ArtRework_v2.zip SHA256 0b1a3711bed9616b828c83e51070f35ed161e2d8a4d93de9cb949d318dc46919 및 Limitless_Chapter3_FrostFieldMouse_FrostTyrant_Idle_v1.zip SHA256 6c01e55c147ab57147c767f43503553164197cc037a3834ecd2d15d10d96a23c. ZIP CRC 정상. FrostTyrant_B_1Pose_Rework_v2.png SHA256 f1a3c5f91a5fef69cd881e27b578c32253d0124d5d8628a8ca748f7479333830, FrostTyrant_B_Idle_4Frames.png SHA256 9d9b8d05be1813c013a5d784d749ce2d8ef751541ac36ce90712f3255cb53f43 기존 #30 기록 일치. 원본 수정0.
+- F3~F5 승인 실물 6종 SHA256 대조 및 보존. 총 기존 8PNG 작업 전후 불변. 개별 해시는 ZIP Docs/AssetQA.json에 기록. 기존 화로 원화는 Library/기존 기록 검색 후 미확보. 존재하지 않는다고 단정하지 않으며 명시적 자리표시로 유지. 실제 화로/온기 오버레이 제작0, 후속 Hearth_WarmthGround_Overlay HOLD.
+- Review/LastWarmth_Boss_Environment_1to1_Review.png SHA256 1653bc5e75084b58014c4860a85a5c1a6d099dcf53d2026b50cc5b4af78a2c4c: 실물 보스와 신규 빙벽/F3~F5 대표 환경 원본 1:1 픽셀 비교(동일 월드 배율 아님).
+- Review/LastWarmth_Northbound_IceBackdrop_Placement_OFFLINE.png SHA256 c44dc9dd78e6bc3f7573f133580e4b361c797d74e0381efca2bd7f2ea070792d: 남쪽 F5 입구→북쪽 목표/북쪽 화살표, 승인 자산 재사용·북측 빙벽 배치. 11개 배치 사각형과 중앙 통행로 사각형 교차0. 4.5WU는 목표 폭이며 실제 통행 검증 아님. 전투 화면 별도 구상, 실제 보스 합성 및 화로 자리표시/금빛 분위기 도식. 화로는 전투 명령이며 직접 이동 없음. 기존 상태/턴큐 계약 유지. 후속 출구 TBD.
+- ZIP LIMITLESS_Issue123_LastWarmth_IceBackdrop_Pilot_20261124.zip: 2020468 bytes / 7 entries / SHA256 ad909b7b54f51caf5f6d112f176a5db759505ef2e47ab8b6719ff39f7db460ab. CRC PASS, Manifest5/5, SUMS6/6 PASS, 비순환. Library /LIMITLESS/Issue123_LastWarmth_IceBackdrop_20261124/ ZIP·원화·비교판·배치도 납품 대상.
+
+**ICE_BACKDROP_CANDIDATE / USER_ART_REVIEW_REQUIRED / OFFLINE_FILE_QA_PASS / BOSS_SOURCE_RECOVERED / HEARTH_SOURCE_NOT_RECOVERED / UNITY_NOT_APPLIED**. #85 HOLD, Unity6000.6.5f1, 기존 승인 원화, Save/UserData, Discord 및 main 보호. 기존 보스·화로 재작화0, 전체 맵/Scene 양산0, Unity 실행·적용0. docs/art-new 문서 및 인계, #123 보고만. main 직접 commit/Push/Merge0.

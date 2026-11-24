@@ -82,13 +82,13 @@ namespace ProjectLimitless.Battle
     public static class BattlePrototypeEncounterFactory
     {
         private const int SlimeBaseAttack = 10;
-        /// <summary>정식 수치가 정해지기 전 F2 후보 한 마리만 기존 파티/기본 전투 규칙으로 검증합니다.</summary>
-        public static BattleEncounterSetup CreateMain24OwlCandidate(string name,string job,string path,
+        /// <summary>북부 지정 조우는 기존 파티를 유지하면서 승인된 몬스터 한 마리만 배치합니다.</summary>
+        public static BattleEncounterSetup CreateNorthStoryEncounter(string name,string job,string path,
             int hp,int attack,int agility,MonsterDefinition monster)
         {
             var party=CreateThreeVsThree(name,job,path,hp,attack,agility,null,null,monster);
             return new BattleEncounterSetup(party.Allies,new[]{CreateMonster(monster,monster.MonsterId,
-                monster.DisplayName,FormationRow.Front,0,monster.BattleAgility)});
+                monster.DisplayName,monster.MonsterId == "frost_owl" ? FormationRow.Rear : FormationRow.Front,0,monster.BattleAgility)});
         }
         public const string GraveWightOneValidationId = "validation_grave_wight_one";
         public const string GraveWightTwoValidationId = "validation_grave_wight_two";
@@ -434,7 +434,7 @@ namespace ProjectLimitless.Battle
             return new BattleParticipantSetup(fallbackId, name, string.Empty, BattleSide.Enemies,
                 new FormationSlot(row, column), monster?.MaxHp ?? 60, attack,
                 monster != null && monster.UseDefinitionBattleAgility ? monster.BattleAgility : agility, 0,
-                monster?.MonsterId == "heatwind_hawk" ? TargetRangeType.RangedPhysical
+                (monster?.MonsterId == "heatwind_hawk" || monster?.MonsterId == "frost_owl") ? TargetRangeType.RangedPhysical
                     : monster?.MonsterId == "ember_wraith" ? TargetRangeType.Magic
                     : TargetRangeType.MeleePhysical,
                 false, BattleParticipantVisualType.EncounterMonster,

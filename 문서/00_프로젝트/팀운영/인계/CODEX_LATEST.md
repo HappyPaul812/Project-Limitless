@@ -1,3 +1,72 @@
+# 2026-11-24 · #132 개발 마감
+
+제품 `931325391a3f5ae1da8c4e7f0ceb7f98a64519d9` · Unity 6000.6.5f1 기존 통합 137 PASS 및 수호자 7 PASS 재사용. 원본 설정 충돌과 #85 Search 예외 기록, local main FF HOLD. [마감 보고](../../Issue132_EOD_SafeCheckpoint_20261124.md) · [복구 영수증](https://github.com/HappyPaul812/Project-Limitless/issues/132).
+
+# 2026-11-24 · #124 수호자 기본 스킬 승인 Sprite 연결
+
+제품 `931325391a3f5ae1da8c4e7f0ceb7f98a64519d9`. Unity 6000.6.5f1에서 로딩·상태 공유 PASS. #85·#131·원본 main 보호. [적용 보고](../../Issue124_GuardianSkill3_Apply_20261124.md) · LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
+
+# 2026-11-24 · #131 안전 통합 후보 검증 / local main 동기화 HOLD
+
+통합 제품 `5399c89b2be41c2c7ea0a0aedb36b16eb70f3120`. Unity 6000.6.5f1 클린 Import·C# 컴파일·게임 스모크 137 PASS. #85 Editor Search 예외 재현 및 원본 미커밋 변경 8경로 겹침으로 FF HOLD. 원본 local main `65cceb2d6c3283d18abec6e27d8a6f1296411f17`, 사용자 파일·저장 보호. [통합 검증 보고](../../Issue131_SafeIntegration_20261124.md)
+
+# 2026-11-24 · #125·#130 Main25 승인 음성 연결
+
+제품 `751c8458b203b55ad71355b5f7d267bd4bc7c4fd`. Main25 WAV 실물·화자·원문 9/9 대조, Unity 6000.6.5f1 호환 QA에서 실제 Clip 9/9 및 네 구간 순서 PASS. 기존 Main24 및 승인 음성 보존. 원본 클린 Import와 실제 장치 청취 미검증. [음성 검증 보고](../../Issue125_130_Main25_ApprovedVoice_20261124.md)
+
+# 2026-11-24 · #130 Chapter3 Main24~25 격리 구현 완료
+
+Main24 `939f0d82`, Main25 `c1e7dbf1`, Main24 음성 `2dc3ef00`, 통합 보완 `e8583523`. Unity 6000.6.5f1 호환 QA에서 Bootstrap Continue → Main24 보급·패배/재도전·완료 → F3 도보/휠체어·Main25 완료·Continue를 검증했습니다. 표적 223 PASS. Main24 실제 음성 Clip 10/10, Main25 임시 WAV 9건은 청취 승인 증거 대기라 텍스트로 진행합니다. 다음 작업은 Main25 음성 청취 승인 확인과 원본 클린 Import 검증입니다. #85 후보와 #124 승인 제품 보호, main 병합·Push 없음. [구현·검증 보고](../../Issue130_Main24_Main25_Playable_20261124.md)
+
+# 2026-11-24 · Issue #124 Chapter1 잡템 4종 격리 적용 마감
+
+제품 `549549a1ff197dc74686c7042c50122b661aa0f2`. 실·비늘 원화와 White Tint 연결. Unity 6000.6.5f1 호환 QA의 인벤토리 30/40/50px 표시·비늘 금색 무늬·기존 ID/수량 호환 PASS. 기존 침·젤·버튼·#85 보호. 제품 클린 Import·전체 Save 왕복 미실행. 다음 리뉴얼은 별도 발주 후 진행. [표적 검증 보고](../../Issue124_Chapter1_Loot2_Apply_20261124.md)
+
+# 2026-11-24 · Issue #123 IceBackdrop / #124 Chapter1 전리품 2종
+
+- 두 ZIP 무결성·원색 재료 판독·빙벽 개념 배치 PASS. 뱀 비늘 현행 Tint 및 화로 실물 대비 PARTIAL.
+- [표적 검수 보고](../../Issue123_124_Loot2_IceBackdrop_Targeted_QA_20261124.md). 최종 승인과 제품 반영 HOLD. 기존 취소 적용 및 승인 원본 보호, main 병합·Push 없음.
+
+# 2026-11-24 · Issue #124 승인 기본 취소 버튼 적용
+
+제품 `f47a0908db0eaa7ef2c17e751b3556f783a30fc5`. Unity 6000.6.5f1 호환 QA에서 새 Sprite 표시와 아이템 메뉴 취소 후 명령·포커스 복귀 PASS. 기존 승인 아이콘·#85 후보 보호, 클린 Import와 Save 왕복 미실행, main 병합·Push 없음. [표적 검증 보고](../../Issue124_Cancel_Apply_20261124.md)
+
+# 2026-11-24 · Issue #123 마지막 온기의 화로와 #124 기본 취소 버튼 검수
+
+- 취소 파일·30/40px 가독성·격리 Unity 메뉴 복귀 PASS. 화로 파일·남→북 동선·환경 재사용 PASS, 화로 원화와 최종 결빙 규모 PARTIAL.
+- [표적 검수 보고](../../Issue123_124_Cancel_LastWarmth_Targeted_QA_20261124.md). 최종 승인·제품 반영 HOLD. 기존 도망 v2 제품 유지, main 병합·Push 없음.
+
+# 2026-11-24 · Issue #124 승인 도망 버튼 v2 연결
+
+제품 `6a6fc331a5b9672834d823c30965eb9a9057f9d9`. Unity 6000.6.5f1 호환 QA에서 Battle의 새 Sprite 표시와 던전 B2 보스전 도망 차단 PASS. 공격·방어·스킬·전리품 및 #85 후보 보호. 원본 클린 Import·Save 왕복 미실행, main 병합과 원격 Push 없음. 다음 별도 작업은 승인 후 취소 버튼 검수입니다.
+
+# 2026-11-24 · Issue #123 F5 균열 가장자리 / #124 도망 v2 표적 검수
+
+- 도망 v2 파일·30/40px 포털 혼동 완화·격리 Unity PASS. F5 파일·미술 방향·남→북 개념 배치 PASS, F3 두 승인 참조 원본 바이트 미확인으로 PARTIAL.
+- [표적 검수 보고](../../Issue123_124_F5Edge_FleeV2_Targeted_QA_20261124.md). 미술 승인과 본편 반영 HOLD. 보고 전용이며 제품 변경·병합·Push 없음.
+
+
+# 2026-11-24 · Issue #123 F5 구상 및 #124 도망 버튼 기술 검수
+
+- F5 북진·공용 통행로 개념 PASS, 실제 Scene·도보/휠체어 실주행과 제품 적용 HOLD. 도망 Unity 표시·활성/비활성·Field_01 복귀 PASS, 30px 포털 유사성 PARTIAL 및 최종 승인 HOLD.
+- [검수 화면과 검증 근거](../../Issue123_124_F5_Flee_Technical_Review_20261124.md). 제품·#85 보호, 제품 반영·main 병합·Push 없음.
+
+# 2026-11-24 · Issue #124 승인 기본 스킬 버튼
+
+제품 `5deda99eeeb5bb817a22dbee426f5d7d600704ed`. Unity 6000.6.5f1 호환 QA에서 실제 스킬 메뉴 열기·복귀와 활성·비활성 PASS. 기존 승인 아이콘 보존, 클린 Import·Save 왕복 미실행, #85·본편 적용 HOLD.
+
+# 2026-11-24 · Issue #123·#124 신규 아트 통합 기술 검수
+
+- 기본 스킬 PNG·실제 Unity 30/40px 표시 및 공용 메뉴 열기·닫기 PASS. F4 수목·풍설 Import와 시험 4.5 WU 북진 배치 PASS, 정식 출입구·도보/휠체어 실주행 미검증으로 PARTIAL. 두 후보 모두 미술 승인·본편 적용 HOLD.
+- [검수 근거와 로컬 화면 목록](../../Issue123_124_Skill_F4_Technical_Review_20261124.md). 기존 승인 후보 및 #85 보존. 제품 변경 커밋·main 병합·Push 없음.
+
+# 2026-11-24 · Issue #124 기본 방어 아이콘 적용
+
+제품 `1d8ec56059458b18a3344eb1753c9f63fc041ae2`. Unity 6000.6.5f1 호환 QA에서 실제 방어 버튼 활성·비활성과 원시 피해 20 → HP 10 감소, 다음 턴 방어 해제 PASS. 기존 승인 아이콘 3종 보호. 제품 클린 Import와 Save 왕복 미실행, #85·본편 적용 HOLD.
+
+# 2026-11-24 · Issue #124 승인 아이콘 3종
+
+독침벌 침 Organic v2·초원 슬라임 젤 White Tint 및 공격 버튼 오리지널 아이콘을 격리 브랜치에 적용했습니다. 제품 SHA `39fa4576e1ae984c09684ac14f56e48f1d541ca1`. Unity 6000.6.5f1 호환 QA 복제본에서 실제 인벤토리 및 공격 활성·비활성·단회 피해 확인. 30px 침끝 가독성 PARTIAL, 본편 적용과 #85 HOLD 유지.
 # 2026-11-23 마감 (#128)
 
 빙각 수호체·승인 BGM 4곡·서리들쥐 1/6·전리품 6종 통합 `e5d58a840e1ee18524af9959ee84f195932d2542`. Unity 6000.6.5f1 격리 Play 11 PASS, 호환 패키지에서 전체 컴파일 및 참조 10 PASS. Git 원본 패키지 #85 HOLD. F3/F5 정식 연결, #124 시안 및 Main24 TTS Runtime HOLD. 로컬 동기화와 원격 복구 실제 SHA는 [Issue #128](https://github.com/HappyPaul812/Project-Limitless/issues/128)에 기록합니다.

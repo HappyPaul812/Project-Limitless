@@ -51,14 +51,14 @@ namespace ProjectLimitless.Battle
         // 보존하고, 런타임에 필요한 PNG만 Resources에서 Sprite로 불러오는 구조입니다.
         private static readonly Dictionary<string, string> ResourcePaths = new Dictionary<string, string>
         {
-            { Attack, "KenneyBattleIcons/sword" },
-            { Skill, "KenneyBattleIcons/star" },
+            { Attack, "BattleItemIcons/AttackButton_Original_128_RGBA" },
+            { Skill, "BattleItemIcons/SkillButton_Original_128_RGBA" },
             { Item, "BattleItemIcons/Battle_Item_Icons_128x128_Sheet" },
-            { Defend, "KenneyBattleIcons/shield" },
-            { Flee, "KenneyBattleIcons/exitRight" },
+            { Defend, "BattleItemIcons/DefendButton_Original_128_RGBA" },
+            { Flee, "BattleItemIcons/FleeButton_v2_128_RGBA" },
             // 취소는 X보다 "한 단계 뒤로 이동" 의미가 분명한 왼쪽 화살표를 사용합니다.
             // cross.png는 투사의 공격 스킬 '난도'에만 사용하고, 전투 자원 기세와 회심의 일격은 skull로 구분합니다.
-            { Cancel, "KenneyBattleIcons/arrowLeft" },
+            { Cancel, "BattleItemIcons/CancelButton_Original_128_RGBA" },
             { Acting, "KenneyBattleIcons/arrowRight" },
             // 도발은 조준점보다 "한 참가자가 특정 방향을 향하게 됨"을 보여 주는 pawn_right를 사용합니다.
             // 실제 강제 대상 판정은 Combatant가 담당하고, 이 경로는 그 결과를 읽어 보여 주기만 합니다.
@@ -66,16 +66,15 @@ namespace ProjectLimitless.Battle
             { CooldownStart, "KenneyBattleIcons/hourglass_top" },
             { CooldownProgress, "KenneyBattleIcons/hourglass" },
             { CooldownEnd, "KenneyBattleIcons/hourglass_bottom" },
-            // 아래 세 항목은 스킬 버튼 전용입니다. 같은 도발이라도 적에게 남은 상태는 pawn_right,
-            // 수호자가 누르는 스킬은 pawn_left를 사용해 서로 다른 화면 역할을 구분합니다.
-            { GuardianTauntSkill, "KenneyBattleIcons/pawn_left" },
+            // 도발 스킬은 전용 원화를 사용하고, 적에게 남는 상태는 pawn_right를 사용합니다.
+            { GuardianTauntSkill, "BattleItemIcons/Guardian_Taunt_v1_KEEP_128_RGBA" },
             // 철벽 버튼과 상태 HUD는 같은 실제 성벽 아이콘을 사용해 두 화면의 의미를 일치시킵니다.
-            // 공용 방어 shield와 가이아 웰 dice_shield는 기존 경로를 그대로 유지합니다.
-            { GuardianIronWallSkill, "KenneyBattleIcons/structure_wall" },
-            { IronWall, "KenneyBattleIcons/structure_wall" },
-            // 세 개의 말을 함께 보여 주는 pawns는 방패 하나가 아니라 수호자와 여러 동료의 관계를 표현합니다.
-            { GuardianCoverAlliesSkill, "KenneyBattleIcons/pawns" },
-            { GuardianCover, "KenneyBattleIcons/pawns" },
+            // 성벽 실루엣으로 기본 방어 및 가이아 웰과 구분합니다.
+            { GuardianIronWallSkill, "BattleItemIcons/Guardian_IronWall_v2_128_RGBA" },
+            { IronWall, "BattleItemIcons/Guardian_IronWall_v2_128_RGBA" },
+            // 수호의 맹세는 보호막 원화를 스킬과 상태 HUD에서 공유합니다.
+            { GuardianCoverAlliesSkill, "BattleItemIcons/Guardian_CoverAllies_v2_128_RGBA" },
+            { GuardianCover, "BattleItemIcons/Guardian_CoverAllies_v2_128_RGBA" },
             { HealerHealingLightSkill, "KenneyBattleIcons/suit_hearts" },
             // 버튼은 Radiant Heal의 가장 밝은 peak 한 장을 고정 그림으로 사용하고, 실제 전투에서는
             // 같은 계열의 전체 프레임을 별도로 재생합니다.

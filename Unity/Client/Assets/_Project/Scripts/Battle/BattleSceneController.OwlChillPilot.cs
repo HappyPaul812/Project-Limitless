@@ -14,6 +14,7 @@ namespace ProjectLimitless.Battle
         bool owlChillPilotArmed, owlChillPilotApplied;
         // 사용 기록은 전투 인스턴스에만 둡니다. 명중 실패나 부여 거절도 시도 1회로 끝냅니다.
         bool owlChillProductionEnabled, owlChillAttempted, owlChillImpactHandled;
+        int owlBasicAttacks;
         Combatant owlChillAttacker, owlChillTarget;
         // 기회 번호로 정상/차단 종료를 한 번만 처리합니다. 다른 인물의 완료가 보호를 소비하지 않습니다.
         bool opportunityOpen, activeOpportunityBlocked;
@@ -54,7 +55,7 @@ namespace ProjectLimitless.Battle
             while (!acknowledged && !battleEnded) yield return null;
             if (battleEnded) yield break;
             if (!actor.IsAlive || !target.IsAlive) { actionPlaying = false; FinishCurrentAction(); yield break; }
-            PlayBasicAttack(actor, target); // 명중/피해/방어/보호자 판정을 새로 만들지 않습니다.
+            PlayBasicAttack(actor, target, 90, "서리 깃털"); // 명중/피해/방어/보호자 판정을 새로 만들지 않습니다.
         }
         void ApplyOwlFirstChillAtImpact(Combatant actor, Combatant target, int damage)
         {

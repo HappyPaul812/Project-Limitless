@@ -48,6 +48,10 @@ namespace ProjectLimitless.Battle
 
         private static string ResolveStableEncounterId(FieldMonsterSpawnDefinition spawn)
         {
+            if (spawn != null && spawn.SceneName == Chapter3Main25Flow.SceneId &&
+                spawn.SpawnId == Chapter3Main25Flow.EncounterId) return spawn.SpawnId;
+            if (spawn != null && spawn.SceneName == Main24F2Traversal.SceneId &&
+                spawn.SpawnId == Main24FrostOwlCandidate.EncounterId) return spawn.SpawnId;
             if (spawn != null && spawn.SceneName == "Field_01" && spawn.SpawnId == ProjectLimitless.World.MainQuest02FieldFlow.QuestSpawnId)
                 return ProjectLimitless.World.MainQuest02FieldFlow.EncounterId;
             // 일반 몬스터 처치가 아니라 지정 보스의 승리만 Main11 목표에 전달합니다.

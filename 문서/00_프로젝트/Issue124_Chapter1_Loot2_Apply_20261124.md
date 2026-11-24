@@ -1,0 +1,7 @@
+# Issue #124 · Chapter1 잡템 오리지널화 격리 적용 마감 · 2026-11-24
+
+- **제품 PASS** · `codex/issue124-loot2-attack-icon-20261124`에 제품 `549549a1ff197dc74686c7042c50122b661aa0f2`. 숲거미 실·맹독뱀 비늘 승인 PNG 2개와 고유 메타 2개를 추가했습니다. 기존 두 ItemDefinition에서 icon 참조와 White Tint (1,1,1,1)만 수정했습니다. [최종 승인 및 적용 지시](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7122404185)
+- 다운로드 ZIP SHA256 `907f6a188cdc1eca792f2026ef2156b0696ae38d53b76b273a9555630d2d2f39`, 실 PNG `af0270104e6f9a18230fdfc12367c12b4b4068bd0e385b9f1e2151985802369a`, 비늘 PNG `ab5233986383622101e0b3b168cabf6050c6d1cb1b13a34606f7beb81e74eea2` 승인값 일치. ZIP CRC 통과.
+- **Unity 6000.6.5f1 호환 QA PASS** · 실제 마을 인벤토리에서 네 아이템 Sprite와 White Tint를 확인했습니다. 기본 50px 행을 30/40/50px로 렌더했습니다. 비늘의 흑갈색 바탕과 금색 무늬가 세 배율에서 보였고, 30px에서도 비늘과 실 묶음의 실루엣이 구별됐습니다. 앞선 녹색 Tint 문제를 이 경로에서 해소했습니다. 기존 침·젤 로드 유지. 전투 버튼 PASS 재실행 없음. 로그 `Temp/i124-loot-final/unity.log` 778–895행, 10 PASS / 종료 0. 실제 캡처 합성 `Inventory_30_40_50_Crop.png` SHA256 `56c37dd285a9e4fba5a4fdb18f5b3f6bbfaa387b94e759507436e65db5c4f529`.
+- **데이터 호환 PASS** · 기존 ID 네 개의 합성 인벤토리 저장 항목을 Import/Export해 ID·수량 유지를 확인했습니다. 변경 전후 정의 비교에서 드롭률과 판매가는 젤 50%/2, 침 45%/3, 실 40%/4, 비늘 35%/5로 동일합니다. 기존 정의 GUID, 최대 스택, 수치 및 저장 코드는 변경하지 않았습니다. 제품 클린 Import와 전체 Save 파일 왕복은 미검증입니다.
+- 제품 변경은 6파일입니다. 기존 침·젤, 승인 전투 버튼과 취소 제품 `f47a0908db0eaa7ef2c17e751b3556f783a30fc5`, 외부 원본·라이선스, 원본 main과 #85 후보를 보호했습니다. QA는 합성 Save·Settings 경로를 사용했습니다. LOCAL_COMMITTED / REMOTE_NOT_PUSHED.

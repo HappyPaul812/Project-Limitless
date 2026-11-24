@@ -949,3 +949,60 @@ MonoBehaviour:
   - id: main21_haren_haren_03
     clip: {fileID: 8300000, guid: 60f8d8bc334faa64f89cb5e2c574a672, type: 3}
     speakerId: story_haren
+  - id: main24_serin_001
+    clip: {fileID: 8300000, guid: e114a1688244467085eb40ee14ec836f, type: 3}
+    speakerId: companion_serin
+  - id: main24_miel_001
+    clip: {fileID: 8300000, guid: d494d3dbf2504c7ba18592cae7de1788, type: 3}
+    speakerId: companion_miel
+  - id: main24_serin_002
+    clip: {fileID: 8300000, guid: d116e348ab9d478683562b4491069014, type: 3}
+    speakerId: companion_serin
+  - id: main24_paul_001
+    clip: {fileID: 8300000, guid: e6c842d62d454c5085ee6f92297db51e, type: 3}
+    speakerId: companion_paul
+  - id: main24_serin_003
+    clip: {fileID: 8300000, guid: e15453f8e1ad422190b3d18dfdda6ac7, type: 3}
+    speakerId: companion_serin
+  - id: main24_haren_001
+    clip: {fileID: 8300000, guid: c95864bed7594ddead4c06df2be7cb95, type: 3}
+    speakerId: story_haren
+  - id: main24_taeon_001
+    clip: {fileID: 8300000, guid: 936518326ed54554a71d9a59db38e21d, type: 3}
+    speakerId: companion_taeon
+  - id: main24_haren_002
+    clip: {fileID: 8300000, guid: 31077e832e6f4edbacc05cceeaa1f49a, type: 3}
+    speakerId: story_haren
+  - id: main24_miel_002
+    clip: {fileID: 8300000, guid: 60521b5f4ff94a7eaceced27be10976b, type: 3}
+    speakerId: companion_miel
+  - id: main24_paul_002
+    clip: {fileID: 8300000, guid: df0e7d37b6814b1ca256cb782b686e11, type: 3}
+    speakerId: companion_paul
+  - id: main25_serin_001
+    clip: {fileID: 8300000, guid: a8723d44a9eb454ab9c501a49ce940f0, type: 3}
+    speakerId: companion_serin
+  - id: main25_paul_001
+    clip: {fileID: 8300000, guid: 1d174b5b1120432394c397a9d4a2b0e4, type: 3}
+    speakerId: companion_paul
+  - id: main25_paul_002
+    clip: {fileID: 8300000, guid: eb24607ee8a9415787a692e5eb7725a0, type: 3}
+    speakerId: companion_paul
+  - id: main25_taeon_001
+    clip: {fileID: 8300000, guid: e0d8683166a846d29cfafe1ca206a7c9, type: 3}
+    speakerId: companion_taeon
+  - id: main25_haren_001
+    clip: {fileID: 8300000, guid: 41c1cac8d5fa4334b4b11a611d191714, type: 3}
+    speakerId: story_haren
+  - id: main25_serin_002
+    clip: {fileID: 8300000, guid: 2a864146eab34f41869039d6534856a7, type: 3}
+    speakerId: companion_serin
+  - id: main25_taeon_002
+    clip: {fileID: 8300000, guid: 1a8195d4e09349c1a0060dc5bab69c25, type: 3}
+    speakerId: companion_taeon
+  - id: main25_miel_001
+    clip: {fileID: 8300000, guid: ba1b7ae79fb344bdb1327e7eab9ee7d5, type: 3}
+    speakerId: companion_miel
+  - id: main25_paul_003
+    clip: {fileID: 8300000, guid: 1c102de2e3c545d6885fadb84cbabc93, type: 3}
+    speakerId: companion_paul

@@ -284,8 +284,8 @@ namespace ProjectLimitless.Battle
             MonsterDefinition guardian = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_seal_guardian");
             MonsterDefinition warden = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_silent_warden");
             BattleEncounterSetup setup;
-            if (ProjectLimitless.World.Main24FrostOwlCandidate.IsEncounter)
-                setup = BattlePrototypeEncounterFactory.CreateMain24OwlCandidate(playerName,
+            if (Main24FrostOwlCandidate.IsEncounter || BattleEncounterContext.StableEncounterId == Chapter3Main25Flow.EncounterId)
+                setup = BattlePrototypeEncounterFactory.CreateNorthStoryEncounter(playerName,
                     GameSessionData.SelectedJobId,GameSessionData.SelectedPlayerPathId,
                     CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId,growth),playerAttack,agility,
                     BattleEncounterContext.Monster);
@@ -932,6 +932,7 @@ namespace ProjectLimitless.Battle
 
             currentActor = turnOrder.TakeNext(AllCombatants);
             if (currentActor == null) return;
+            statusEffects.ExpireIceShell(currentActor);
             opportunityOpen = true; activeOpportunityId++; activeOpportunityBlocked = false;
             currentActor.BeginTurn();
             skillCooldowns.BeginActorTurn(currentActor);
@@ -2438,9 +2439,28 @@ namespace ProjectLimitless.Battle
             StartCoroutine(ReturnAfterDelay(false));
         }
 
+        private int iceBeetleAction;
+
         private IEnumerator EnemyAction()
         {
             yield return new WaitForSeconds(.55f);
+            if (BattleEncounterContext.StableEncounterId == Chapter3Main25Flow.EncounterId)
+            {
+                if (iceBeetleAction++ % 4 == 1)
+                {
+                    statusEffects.CloseIceShell(currentActor);
+                    messageText.text = "얼음갑충이 갑각을 닫았습니다. 다음 직접 피해를 한 번 줄입니다.";
+                    RefreshCombatantViews(null);
+                    yield return new WaitForSeconds(.65f);
+                    FinishCurrentAction();
+                    yield break;
+                }
+                var victim = ChooseEnemyTarget(currentActor,
+                    TargetResolver.ResolveHostileTargets(currentActor, allies, currentActor.BasicRange));
+                if (victim != null) PlayBasicAttack(currentActor, victim, 110, "갑각 밀치기");
+                else FinishCurrentAction();
+                yield break;
+            }
             if (currentActor == main20Boss.Boss)
             { yield return PlayMain20Action(currentActor, main20Boss.TakeAction()); yield break; }
             if (participantSetups.TryGetValue(currentActor, out BattleParticipantSetup chapter2Setup)
@@ -3278,6 +3298,7 @@ namespace ProjectLimitless.Battle
             // HUD는 전투 값을 변경하지 않고 읽기 전용 ViewModel의 결과에 Sprite와 짧은 글자를 붙입니다.
             // 아이콘만으로 뜻을 전달하지 않도록 한글을 함께 두며, 상세 팝업은 기존 텍스트 중심 설명을 유지합니다.
             List<(string IconId, Sprite DirectIcon, string Label)> summaries = new List<(string, Sprite, string)>();
+            if (statusEffects.HasIceShell(combatant)) summaries.Add((BattleUiIconCatalog.Defend, null, "갑각 닫힘"));
             if (combatant == currentActor) summaries.Add((BattleUiIconCatalog.Acting, null, "행동 중"));
             foreach (BattleStatusMarker marker in statusModel.Markers)
             {

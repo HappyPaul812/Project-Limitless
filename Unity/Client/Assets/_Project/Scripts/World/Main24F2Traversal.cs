@@ -30,16 +30,21 @@ namespace ProjectLimitless.World
         public static void ChooseTravel(bool enterForest)
         {
             Main21ChoicePanel.Show(enterForest
-                ? "F2 첫눈의 숲 · 안전 길 탐험 / 임시 환경"
+                ? "F2 첫눈의 숲"
                 : "남쪽 출구 · 서릿길 마을 북문으로", new[] {
-                    enterForest ? "첫눈의 숲으로 / 선택형 전투 후보" : "마을 북문으로 돌아가기", "머무른다"
+                    enterForest ? "첫눈의 숲으로" : "마을 북문으로 돌아가기", "머무른다"
                 }, choice => {
                     if (choice != 0) return;
                     string scene = enterForest ? SceneId : Chapter3Main23Flow.Village;
                     string spawn = enterForest ? EntrySpawn : VillageSpawn;
                     // 취소/Scene 누락은 Quest를 바꾸지 않습니다. 도착 목표는 실제 Spawn 후에만 인정합니다.
-                    if (!SceneTransitionService.TryLoad(scene, spawn))
-                        QuestHudPresenter.Notify("격리 F2 Scene 연결을 확인할 수 없습니다. 현재 위치에서 다시 시도해 주세요.");
+                    void Travel()
+                    {
+                        if (!SceneTransitionService.TryLoad(scene, spawn))
+                            QuestHudPresenter.Notify("이동 경로를 확인할 수 없습니다. 다시 시도해 주세요.");
+                    }
+                    if (enterForest) Chapter3Main24Flow.ShowDeparture(Travel);
+                    else Travel();
                 });
         }
     }
