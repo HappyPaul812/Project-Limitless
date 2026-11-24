@@ -1,5 +1,13 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-24 Main25 Batch9 v1.1 — 공유 ledger 반환 형식 호환 수정
+
+- 사용자 실제 출력: Main24 SHA 10/10 일치, Main25 0/9, STAGING ONLY, 이후 `[SAFE STOP] Shared ledger count schema differs`. 이전 코드 usage()의 kc/gc dict-only 검사가 실제 엔진 반환형과 호환되지 않은 것으로 확인. 어느 반환형이 실제 사용되는지는 해당 콘솔만으로 미확정. API 승인/요청 단계 전에 중단. 신규 WAV0, 추가 API POST0.
+- TTS 담당 직접 수정 v1.1: 기존 엔진의 native key/group counter를 choose_key에 그대로 전달하고, 별도 정규화된 수치로 PT 장부 전체·그룹·슬롯 합계 및 대응을 검증. 알려진 Mapping/list/tuple 형식만 처리, positional group은 슬롯 대조를 요구. 합계·순서·형식 불일치 시 STOP, 진단에는 카운터 자료형·길이·시도수만 표시. 무료 확인/승인/lock/429 중단 및 기존 Main24 10 SHA 보호 유지.
+- 배포 `LIMITLESS_Main25_StageOnly_Batch9_LedgerFix_v1_1.zip` 13,937 bytes, SHA256 `ccff163c6052ac6d2a79677fe4fe7e9e556eac871b51bf1f737db6640f271a3b`; 수정 Python SHA256 `3832b85750accc02ab613c6679029e4981f1823e1bde488df973890bb92d3a17`. 이전 소스 파일만 교체 후 check, 실제 무료 확인 후 run 및 RUN_MAIN25_ALL_9. 오프라인 테스트 18/18 PASS, py_compile/ZIP CRC PASS. 사용자 실제 엔진 반환형 및 수정판 실PC 실행은 아직 미검증.
+- 기존 승인 WAV162·Main24 WAV10·공유 장부·원본 엔진·Unity/main/Save/#85 불변. 이번 작업에서 원격 TTS API 호출0. ZIP/소스는 대화 납품, GitHub에는 문서만 기록.
+
+
 ## 2026-11-24 Main25 9건 일괄 Stage-only 제작기 직접 작성 및 배포
 
 - 대표가 전날 10회 사용, 4개 프로젝트 각10회라는 운영 조건을 제시. 추가 외부 사용이 없고 실제 독립 Project/Model별 무료 한도가 유효하다면 **예상 잔량30회, Main25 예정9회, 예상 잔량21회**. 이는 Google 원격 실조회가 아님. 대표의 "어."는 직전 TTS 담당의 Main25 전용 일괄 Python 생성기 작성 제안에 대한 승인. 사용자의 로컬 실제 실행 승인 및 무과금 확인은 별도로 받음.
