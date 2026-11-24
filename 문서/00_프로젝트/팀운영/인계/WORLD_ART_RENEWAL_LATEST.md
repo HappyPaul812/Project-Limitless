@@ -1,3 +1,12 @@
+## 2026-11-24 / Issue #124 도망 버튼 v2 국소 보완 (최신)
+
+- Codex 댓글 7120230169 및 기획 7120275605 확인. v1 기능/표시 PASS, 포털 구분 PARTIAL, 보스전 제한 미실행. 기존 PASS 반복 금지.
+- v1 SHA256 b8bb8399c52ea6992810ce93eb1b56198817f789cae431a5313c855cd4bce054 바이트 보존. 신규 FleeButton_v2_128_RGBA.png SHA256 58d7f66283031737f65069df6fb281a818d8c32e6ae7a6230b2f5e53783f5d73, 128×128 RGBA. v1 은색 우향 화살촉·금색 기둥·문턱 재사용, 직선 상단 문틀 부분 합성, 청색 마법 원호/내부 광휘 제거. 발광 제거로 콘텐츠 bbox 축소, 기존 화살촉 위치 유지. 승인 공격·방어·스킬 참조 SHA 일치.
+- 실제 128/40/30px v1/v2 및 승인 3종+v2 동배율 비교판. v2 실제 Unity 포털 구분 미검증, 변경부 가독성 표적 QA 필요.
+- ZIP LIMITLESS_Issue124_FleeButton_v2_Targeted_20261124.zip, 354563B, SHA256 931274626db9230cdaeb63e191100c68a43af14e8b50969c0ed26608ecb74fed, CRC15/15, Manifest13/13, SUMS14/14 PASS. 대화 첨부용 실물, F: 자동 복사 아님.
+- [정식 보고](../../Renewal_20261124_Issue124_FleeButton_v2_Targeted_Delivery.md) commit 251f3639142dd67fb193aafe18169aa1f52696f2, docs/art-renewal.
+- Unity6000.6.5f1/#85, 기존 승인 자산/command.flee 로직/코드/GUID/meta/Save/UserData/Discord/main 보호. 미적용/병합·Push0. USER_ART_APPROVAL_PENDING / V2_TARGETED_QA_PENDING.
+
 ## 2026-11-24 / Issue #124 기본 도망 버튼 독립 원화 1종 (최신)
 
 - 기획 발주 댓글 7119305405 확인: command.flee / Kenney exitRight 대상 1종. 승인 공격·방어·스킬 원본 SHA256 일치 확인, 비교용 바이트 보호.
