@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-24 / Issue #123 — F4 최종 승인 및 F5 동토의 균열 북진 환경 구상
+
+- [F4 최종 원화 승인/F5 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7119304884) 확인. F3 승인3종/F4 승인2종 KEEP, F4 격리 Import PASS/배치 PARTIAL/정식 통행·제품 적용 HOLD. 실제 PNG5종 회수 및 기존 SHA 작업 전후 일치, 원본 수정0.
+- **F5 북진 환경 구상 1장**: 남쪽 F4 입구→북쪽 후속 보스 구역 방향 출구, 세로 주동선·북쪽 화살표 명시. 가로 풍설 방향 별도. 밝은 중앙 설면 및 4.5WU 목표(실측 아님), 외곽 균열/수목/암반. F3/F4 실제 승인5종 미리보기 축소 합성, 균열·지면 개념 도식, 배치 사각형의 개념 통행로 침범0. 실제 Scene/좌표/Collider/Sorting/도보·휠체어 실주행 NOT_VERIFIED. 눈보라 정령 단독→빙각 수호체 단독 별도 조우 구역 기획 보호, 입출구 조우/반복 길막 금지. 새로운 미끄럼·강제 이동·동결괴사 없음.
+- F4보다 낮은 수목 밀도·노출 동토·깊은 균열. 팔레트 F5 통행로 #D3E4EE/동토 #8CA4B7/균열 외측 #536E88/깊이 #24394F. 신규 후보 **P1 FrozenRift_Edge 384×256 RGBA 제안**(길 밖 단일 배치), **P2 Permafrost_LayeredRock 320×192 RGBA 제안**(기존 LowFrostRock 충분하면 생략). 별도 제작 승인 전 신규 게임용 PNG0.
+- ZIP `LIMITLESS_Issue123_F5_FrozenRift_Concept_20261124.zip`, 1,464,477 bytes/5 entries, SHA256 `d42e2c730ed622525fbf4ca065c9b9f027e0b313db077b1656599105696925ba`, CRC PASS, Manifest3/3, SUMS4/4 PASS. 구상도 `F5_Northbound_FrozenRift_Concept_OFFLINE.png` 1500×1440 SHA256 `5f06d3353a47a8955bf454cd1bb7e0843e24a054ee3a7fe79945efec35c03110`. Library `/LIMITLESS/Issue123_F5_FrozenRift_Concept_20261124/` ZIP·구상도·제안서 저장.
+- [구상 보고](../../Chapter3_F5_FrozenRift_Northbound_Concept_20261124.md) `docs/art-new` commit `754f159a29d796011529b7f7f516ee93279eacb8`. **F5_CONCEPT_ONLY / USER_CONCEPT_APPROVAL_PENDING / UNITY_NOT_APPLIED**. 원화 수정·신규 게임 PNG/맵/Scene/VFX/Unity6000.6.5f1 실행·본편 적용·새 Codex 발주0. #85 HOLD/Save/UserData/Discord/main 보호. main 직접 commit/Push/Merge0.
+
+
 ## 2026-11-24 / Issue #123 — F3 최종 승인 및 F4 백색 침엽림 환경 2종 납품
 
 - [F3 최종 승인 및 F4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7118370238) 확인. GroundTransition·LowFrostRock·FlushStone v2 **USER_ART_APPROVED / KEEP**, v1 보존. F3 본편/4.5WU 실제 통행·Collider/Sorting/v2 Import 미검증. 실제 F2 승인 그루터기와 F3 원본 3종+v1 SHA 작업 전후 일치.
