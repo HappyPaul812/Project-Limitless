@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-24 / Issue #123 — 마지막 온기의 화로 Flame8 파일럿 납품
+
+- [기획 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7126854316), [v3 Codex PASS](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7126793451) 확인. v3 PNG SHA 3a3094749ba49c6b7139b9638a61d543fa903d7ec214209f2b51a43985c1a5d2, master 및 기존 승인 보스/빙벽 바이트 보존. 신규 애니메이션만 미술 승인 대기.
+- 파생 고정 베이스 256 RGBA SHA ac19e6460e3565f97aa9a4b37fc7b487581df76145581af880e47fbc5a470c2b + Flame00..07 256 RGBA 각각, 4×2 1024×512 시트 SHA 55b41d6eb29db1d62b246982d9b00a0ad6737427251bfe93f317a7adb1bee7bb. normal source-over, 동일 캔버스/정렬점, 고정 베이스 단독 표시 및 기존 v3 위 중복 합성 금지. 8FPS/125ms/1초 무한 반복. 고정 59529픽셀×8 변경0, 알파 변경0, frame00 원본 전체 RGBA 동일, 8/8 개별 합성 및 시트 셀 일치, 금빛 소등0. GIF 120/130ms 교대, APNG 정확125ms. 기존 북진 배치도 그대로 유지, 실제 배율/Sorting/통행/전투 UI 미검증. P2 HOLD.
+- ZIP LIMITLESS_Issue123_LastWarmth_Flame8_20261124.zip, 5873898 bytes/29 entries, SHA256 5bb82e0a505314c8b30d05938399d0c899677eb481274ec89142801860ec9e78, CRC PASS, SUMS28/28. 실제 대화 다운로드 납품. [제작 보고](../../Chapter3_LastWarmth_Flame8_ArtPilot_20261124.md) commit f58ffd4464a384abdbef01845dc7e73f7572e103.
+- **ANIMATION_ART_REVIEW_PENDING / OFFLINE_QA_PASS / CODEX_TARGETED_QA_PENDING / UNITY_NOT_APPLIED**. 기존 v3 승인 유지. Unity 실행/적용/Scene/코드 변경0. #85/#131/Unity6000.6.5f1/main/Save/UserData/Discord 보호. 사용자 미술 확인 후 별도 Codex 표적 검수; 본편 적용 별도 승인.
+
+
 ## 2026-11-24 / Issue #123 — 마지막 온기의 화로 v3 원화 승인·검수 납품
 
 - [발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7123881584), 대표 원화 합격 및 Codex 검수 요청. 기존 화로 원본 미확보, 발견 시 재사용 우선/비교 후 채택. v3 강화된 황금 마력 핵, 제작자 식별 문양 금지, P2 HOLD.
