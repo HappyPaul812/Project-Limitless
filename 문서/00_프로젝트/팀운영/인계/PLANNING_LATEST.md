@@ -1,6 +1,6 @@
 # PLANNING / 2026-11-27 — Chapter4 하렌 눈 부상·바이저 수리와 폴의 가족 상담
 
-- 대표 요청으로 [Chapter4 초기방향 §5](../../../../03_스토리/Chapter4_폴의고향_부모의사랑과독립_초기방향_20261118.md) 보완: [정본 커밋 eebb858](https://github.com/HappyPaul812/Project-Limitless/commit/eebb858567dc06a33aabda1be23094ea81a76245), [동료 공통 정본 연동 4b06047](https://github.com/HappyPaul812/Project-Limitless/commit/4b06047aa11a361a00a76d6a31cbc0ced4ec3ac4).
+- 대표 요청으로 [Chapter4 초기방향 §5](../../../03_스토리/Chapter4_폴의고향_부모의사랑과독립_초기방향_20261118.md) 보완: [정본 커밋 eebb858](https://github.com/HappyPaul812/Project-Limitless/commit/eebb858567dc06a33aabda1be23094ea81a76245), [동료 공통 정본 연동 4b06047](https://github.com/HappyPaul812/Project-Limitless/commit/4b06047aa11a361a00a76d6a31cbc0ced4ec3ac4).
 - 기존 하렌의 태온 보호 중 눈 부상 및 마력 바이저 제한적 인식 보조 콘셉트는 확정되어 있었으나 Ch3 정식 대본에서 상세 사건/장치 설명이 빠짐. Ch3 설빙의 폭군 후 Main29 END와 “잘.했.어.” 보호, Ch4 도입부에서 바이저 경미 이상→폴의 고향 마법 공방 수리 제안→화로 제작자 발견. 고향 부모 갈등 후 폴이 연장자 하렌과 상담, 하렌의 경험을 통해 사랑·걱정과 자기결정권 연결. 공방에서 제한적 기능 설명 및 기존 기능 복구.
 - USER_CONFIRMED_STORY_DIRECTION / DIALOGUE_AND_INCIDENT_PROPOSAL: 어린 시절 마물 습격, 대사, 공방 수리 방식은 제안. 정확한 부상 시기/장애 정도/시력·장치 원리·Quest ID 미확정. Ch3 승인 대본·음성181·아트·3인 전투·Save·#85/#132 보호. 신규 Codex/아트/TTS/API/Unity 변경 및 main 병합/Push0. 기획 문서화만 완료.
 
