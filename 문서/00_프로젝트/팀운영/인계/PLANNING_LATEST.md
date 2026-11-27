@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-27 — 리뉴얼 투사체 우선 → 직업별 스킬 VFX
+
+- 대표 지시: 리뉴얼 투사체 오리지널화 먼저, 그 다음 스킬 VFX. [스킬 정본 추가](https://github.com/HappyPaul812/Project-Limitless/commit/d73aff743ebd486dbff6b169e79bd56952f2bc58). Polar_34 golden_arrow 8프레임 / fireball 7프레임 1차 대상, 최신 실제 참조/규격/기존 대체본 먼저 확인. 기존 승인15 스킬 아이콘 및 보스 전용 신규 VFX 보호. 직업별 VFX는 수호자→치유사→사수→투사→마도사 기획 제안, 실제 외부 참조만 교체. 지금은 투사체만 발주.
+- #124 마도사 적용 8PASS(제품 a4825b7c1913e4e845a6d873bdd9f7bfde4404c5), #30 보스 연결 14PASS(제품 6ac382729242bb9ab25cfe2b8c487b965a2f2c9c), 모두 원본 동기화/main/Push 미진행. Main28 정식 구현 미완, 보스 ColdVFX5 후보 표적 검수 대기. #85/#131/#132·Save 보호.
+
+---
+
 # PLANNING / 2026-11-27 — 사수 Skill2 기획 채택 및 공통 동료의 습격 / 투사 후속
 
 - [#124 Codex](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7207153640) 정조준·화살비 30/40px PASS, 24/20px PARTIAL 수용, 사용자 최종 미술 승인 대기. 치유사 3종은 사용자 승인 완료/적용 결과 미확인.
