@@ -1,3 +1,12 @@
+## 2026-11-27 / Issue #124 직업별 투사체 3계열 미술 파일럿 (최신)
+
+- 최신 기획 [7210570097](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7210570097) 확인. 직업 간 공용 투사체 금지: 사수 화살/마도사 불/치유사 기본 공격 빛. 이전 2종 발주 7210440043 및 기획 d73aff743ebd486dbff6b169e79bd56952f2bc58에서 golden_arrow 8프레임, fireball 7프레임, 정조준 이동0.42초, 화살비 장식 상승/낙하 및 대상당 피해1회, 파이어 볼 80×80 및 화상 틱 46×46 기록 확인. 최신 런타임 코드/실제 원본/기존 승인 대체본 검색은 결과 없음; 셀/배열/방향/PPU/Pivot/FPS/수명/기본 공격 표시 크기 및 실제 공유 경로 미확인. 읽기 전용 최소 감사 전 확정 제작 금지.
+- 이미 생성된 3개 시트의 미술 검수 파일럿만 패키징. 각 1536×1024 RGBA, 3열2행/512×512 셀/6프레임. 생성 원천 보존, alpha<=8 정리, 임시 기준점 정렬 및 공통 0.69배 축소, 화염구 원천 좌향을 미리보기 우향으로 반전. 8FPS는 검수 전용 임시 값이며 기존 타이밍 아님. 애니메이션 경계에서 꼬리 증가→초기 상태 반복으로 튈 가능성. 실제 원본과 비교는 미완료. 기존 계약에 맞춘 8/7프레임 정식 교체 시트 아님.
+- Art/Sharpshooter_Arrow_PILOT_6f_3x2_RGBA.png SHA256 fa904f60cde2e1422a81181599924790e36dc0ab9d190845f93f4766f6dcb674; Art/Mage_Fireball_PILOT_6f_3x2_RGBA.png SHA256 3b12c298916bb9d8449d31de04c220049012297e84f9f390462e208b69c81774; Art/Healer_Light_PILOT_6f_3x2_RGBA.png SHA256 6e09b0557dd04d1cfaeefda28006279eed1e96714cd20d29b565975294648350. 18개 RGBA 프레임, 키포즈 3종, 동일 프레임 기반 APNG 3종 및 밝고 어두운 GIF 6종, 합동 GIF 2종, 실제 픽셀 비교판 포함. 시트 셀과 프레임 바이트 일치, 프레임수와 열기 검증 PASS. 치유사 후보는 기본 공격용 광체로 검토하며 회복/정화 VFX는 변경하지 않음.
+- ZIP LIMITLESS_Issue124_ClassProjectile3_ArtPilot_20261127.zip, 8685964 bytes, SHA256 615258b3658a7987fce1423d2b3b89b07d8c95b4563f79d9a64cda7ebda354d8. CRC45/45, Manifest43/43 SHA+size, SUMS44/44 PASS. 대화 다운로드 실물. 기존 외부 자산과 신규 실물 비교는 원본 미확보로 미제공.
+- ART_PILOT_ONLY / RUNTIME_CONTRACT_HOLD / FILE_QA_PASS / NOT_UNITY_APPLIED. 후속: golden_arrow/fireball/치유사 기본 빛 실제 참조와 셀/배열/방향/PPU/Pivot/FPS/수명/표시 및 승인 대체본 여부 최소 감사 후 정식 규격 제작 및 실물 비교. 승인 15종 아이콘 및 야수 Run6, 기존 VFX/투사체/기능/수치/타이밍/코드/Unity/Save/UserData/#85/#131/#132/main 변경0. Unity 실행/적용, 병합/Push, Codex 직접 호출0. 스킬 VFX 후속 제작 착수0.
+- 정식 보고 커밋 0481ee9fd96fcc162cd36f3db88390774e18aed0
+
 ## 2026-11-27 / Issue #124 가이아 웰 v3 표적 보완 검수 납품 (최신)
 
 - 최신 Codex https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7209212544 (보고 92375fc4e9e20fbb55c5bbf22e4b2565bd49518f) 확인. v2 30px 무라벨 흑백 3종 핵심 윤곽 PASS, 가이아 단일 인물 PARTIAL, 두 버튼 표적 5PASS. 공용 배치 종료3은 후속 Defeat 관측 문제로 마도사 버튼 실패가 아님. 기존 PASS 반복0. 대표의 대지에서 벽이 솟아오르는 표현 요청 및 현재 대화 발주 기준 가이아 1종만 변경.
