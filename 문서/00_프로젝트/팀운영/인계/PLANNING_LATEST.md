@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-27 — 기본 투사체 3종 적용 및 Main28 보스전 격리 구현 접수
+
+- [#124 기본 투사체 적용](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7214673675): 제품 `308c160b9748161a46f34f9943b1e091bb5e552b`, 보고 `9b0f3e94cceac43542430f059dd395b096cb0757`, `codex/issue124-basic-projectiles-20261127`, LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 사수 기본 화살/치유사 기본 빛/마도사 기본 불 3종, 기존·신규 실제 Battle 각22 PASS/종료0, 피해량·타이밍·도착1회 일치. 어두운 배경 화살 대비 낮음 기록, 방향/비행 확인되어 기획상 즉시 재작화 불필요. 사용자 직접 미술 최종 승인 별도 미확인. 정조준/화살비/화상/파이어 볼/적 공유 경로 소스상 유지, 해당 스킬 실제 재생 회귀 미실행. 파이어 볼 전용 독립 원화는 후속 마도사 VFX 단계. 다음 리뉴얼은 수호자 스킬 VFX부터 실제 외부 참조만 교체(기존 고유/코드 연출 KEEP), 아직 신규 발주 없음.
+- [#30 Main28](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7211128828): 제품 `edcf208988c9d7e26834e0475c28c3f9f24b1358`, 보고 `df8781f081bfed39a232fca74415001326453dbb`, `codex/main28-frost-tyrant-20261127`, LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 실제 Battle/합성 선행 진행·테스트 현장 21 PASS/종료0. 2페이즈/승인 VFX/동결괴사/화로/승패·대사·보상 연결. Main26·27/F4·F5/화로 실제 현장 및 체크포인트/조우 배치/Main29 미구현으로 정식 북부 월드 PARTIAL. 실제 화로 대응 기회 및 3중첩 KO의 구현 경계는 기존 정본과 후속 통합 검증에서 확인. Editor Search 예외 재현 유지.
+- #124 마도사 8PASS 및 기존 승인9종 적용 12PASS, 수호자 기존 적용 기록 보호. 두 최신 제품 브랜치의 상호 포함/통합 여부 미확인. 원본 main 동기화/병합/원격 Push 및 복구 백업 갱신 미실행; 향후 승인된 안전 마감 시 ancestry/미커밋/기존 #132 설정 차이 확인 후 진행. #85/#131/#132·Save/UserData 보호. 대표 한도 소진 후 재개하여 투사체까지 마무리 보고. 이번 기획은 보고 접수/인계 문서만 갱신, Unity/로컬 변경 및 신규 Codex 작업 발주 없음.
+
+---
+
 # PLANNING / 2026-11-27 — 리뉴얼 투사체 우선 → 직업별 스킬 VFX
 
 - 대표 지시: 리뉴얼 투사체 오리지널화 먼저, 그 다음 스킬 VFX. [스킬 정본 추가](https://github.com/HappyPaul812/Project-Limitless/commit/d73aff743ebd486dbff6b169e79bd56952f2bc58). Polar_34 golden_arrow 8프레임 / fireball 7프레임 1차 대상, 최신 실제 참조/규격/기존 대체본 먼저 확인. 기존 승인15 스킬 아이콘 및 보스 전용 신규 VFX 보호. 직업별 VFX는 수호자→치유사→사수→투사→마도사 기획 제안, 실제 외부 참조만 교체. 지금은 투사체만 발주.
