@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-27 / 설빙의 폭군 전용 냉기 VFX5 v1 검수 후보
+
+- 대표 직접 발주, 발사/피격/한기/동상/동결괴사 5종. 기존 #30 보스 승인 5종 및 #88/#89 공용 상태 VFX3/아이콘3 KEEP, 교체 승인 아님.
+- 256×256 RGBA 40프레임, 1024×512 4×2 시트5, 8FPS 제안. 발사/피격/괴사 one-shot, 한기/동상 loop 미리보기 제안. 실제 PPU/Pivot/Sorting/트리거/수명 미확정. 원시 1774×887 소스 5종 보존, 분할/여백/알파/청회색 대비 조정. 셀 경계 및 밝은 설원 가독성/실제 캐릭터·휠체어/HUD 가림 별도 검수. 시트/셀40/40, APNG40/40, 외곽 alpha0, 비교판 실물, 배치 목업은 OFFLINE.
+- ZIP LIMITLESS_FrostTyrant_ColdVFX5_v1_REVIEW_20261127.zip 21870816 bytes/67 entries SHA256 35c653ef579d0a720606491b27548dcfce247ecb5f0cb9c9ef2305e46e094424, CRC67/67/SUMS66/66. [제작 보고](../../Chapter3_FrostTyrant_ColdVFX5_v1_Review_20261127.md) commit a190cf7a2ab13484432642c31c230be369ed86e8. 
+- **OFFLINE_FILE_QA_PASS / USER_ART_REVIEW_PENDING / TARGETED_CODEX_REVIEW_REQUESTED / RUNTIME_SPEC_PENDING / UNITY_NOT_APPLIED**. 기존 보스·화로·결빙·공용 냉기6종·전투 기능/수치·Unity6000.6.5f1/main 보호. 본편 적용 별도 승인.
+
+
 ## 2026-11-27 / Issue #30 — 설빙의 폭군 Defeat4 v1 최종 납품 정합성 마감
 
 - [기획 최종 발주](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7209730687), [Codex v1 검수](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7209211654) 확인. 신규 생성/재작화0. 기존 미술 연출/가시 RGB/실루엣/접지 유지. 이전 격리 336px 및 비반복 계약 PASS 보존, 이번 Unity 실행0.
