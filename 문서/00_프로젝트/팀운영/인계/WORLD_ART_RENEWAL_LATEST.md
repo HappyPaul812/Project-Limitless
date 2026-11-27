@@ -1,3 +1,14 @@
+## 2026-11-27 / Issue #124 마도사 v2 표적 보완 검수 납품 (최신)
+
+- Codex https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7208730453 및 기획 https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7208920162 확인. 기존 6PASS 및 적용12PASS 반복0. 파이어 볼 KEEP, 썬더볼트·가이아 웰만 구성 보완.
+- Art/Mage_FireBall_v1_KEEP_128_RGBA.png SHA256 5743937ce641fec1ecaefddaf7a85192c0af116e8cdb1181e58912a703cee67e: v1 바이트 동일.
+- Art/Mage_Thunderbolt_v2_128_RGBA.png SHA256 84d1b5407b30148eebc574af3b7a51b29d59f4b261b0091c3107d9c290db007e: 굵은 사방 분기 번개, 원형 금속 테두리 축소. Art/Mage_GaiaWell_v2_128_RGBA.png SHA256 87ca3a402c6874d404a879d008f58f1f9987efed5f0a11570b004d412e35b6e1: 단일 마도사와 마력 돔. 기존 생성 편집 원천2를 보존하고 alpha<=8 정리, 116px 이내 비율 유지 중앙 배치. 구성 보완 방식이며 v1 일부 픽셀만 수정한 것은 아님.
+- 128×128 RGBA 3/3, alpha 0..255, 투명 모서리, PNG verify PASS. v1 원본3 및 기존 승인 참조15의 이전 Manifest SHA256 일치, 바이트 복사만. 원본 수정0.
+- Review/V1_V2_Color_Actual.png, V1_V2_Grayscale_Actual.png: 실제 128/40/30/24/20px 동일 밝고 어두운 배경, 별도 4x 최근접 확대판. Blind_30px_Grayscale_Unlabeled.png와 별도 정답표, Gaia_vs_Defense_Actual_Grayscale.png, Gaia_vs_Defense_Color_4x.png, ApprovedStyle_40px.png 및 개별 실제 축소 PNG. 최종 PNG 직접 LANCZOS 축소, 흑백 alpha 유지. 자체 시각 확인에서 썬더볼트는 방사형 X자 실루엣이 더 명확해졌으나 가이아 웰의 30px 흑백 내부 인물은 여전히 약하고 20/24px 의미 판독 한계가 있음. 독립 무라벨 테스트 및 실제 Unity/HUD 미검증. 미술 승인 및 변경2종 표적 검수 대기.
+- ZIP LIMITLESS_Issue124_MageSkill3_v2_Targeted_20261127.zip, 5124581 bytes, SHA256 ea0d8ba5692674ea32eafbbc19a0408f027a2c6cc8bbe68723a68ee11b00032c. ZIP CRC84/84, Manifest82/82 SHA+size, SUMS83/83 PASS. 대화 다운로드 실물, Windows F: 자동복사 및 GitHub 바이너리 업로드 아님.
+- 파이어 볼/화상 및 가이아 웰/HUD 공유 계약과 감전 별도 계약 유지. 별도 상태 PNG 제작0. 기능·수치·VFX·투사체·코드·Unity·Save/UserData·#85/#131/#132·main 변경0. Unity 실행/적용·main 병합/Push·Codex 호출0. FIREBALL_V1_KEEP / FILE_QA_PASS / SEMANTIC_QA_PENDING / NOT_UNITY_APPLIED.
+- 정식 보고 커밋 e4818c5f2265b919045297a9c9ef047003d575b6
+
 ## 2026-11-27 / Issue #124 마도사 기본 스킬3종 납품 (최신)
 
 - 최신 기획 발주 https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7208145010 및 사수·투사 최종 승인 7208174629, Codex 승인9종 격리 적용 7208383967 확인. 마도사3종만 신규 후보.
