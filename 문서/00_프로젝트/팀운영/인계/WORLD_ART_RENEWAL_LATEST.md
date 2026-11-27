@@ -1,3 +1,12 @@
+## 2026-11-27 / Issue #124 사수 기본 스킬 2종 신규 납품 및 동료의 습격 KEEP (최신)
+
+- 최신 기획 발주 https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7206871646 및 치유사 사용자 최종 승인 대기 기록 7206930171 확인. 정조준(target)·화살비(bow)만 신규 제작. 동료의 습격은 기획 기록의 BeastCompanion 동적 Run index4 계약 기준 KEEP. 실제 최신 카탈로그 소스 검색 결과 없음, 야수별 런타임 아이콘 픽셀 및 고유 자산 여부 독립 확인은 NOT_VERIFIED. 고정 늑대 생성 시안과 생성 QA 포스터는 납품에서 제외. 동적 매핑 변경0.
+- Art/Sharpshooter_AimedShot_Original_128_RGBA.png SHA256 1312e3b8b7dc5772005227ac457f07010813fc3d9527a75c79cad0e9ccd857ba; Art/Sharpshooter_ArrowRain_Original_128_RGBA.png SHA256 0f022a455a1df51d7048f2a2503ce496b5362013ce3c8b5b11a522859d7d7f31. 두 생성 원화의 alpha<=8 정리, 비율 유지 116px 이내 배치, 128 RGBA 투명 모서리 확인. 정조준은 단일 화살과 조준점, 화살비는 다수 낙하 화살과 넓은 착탄 범위. 금은색 금속과 주황 동작 강조. 속성·효과 변경을 뜻하지 않음.
+- 승인 기본 명령3/수호자3 및 기획 채택 치유사3(사용자 최종 승인 대기) 참조9 파일 SHA256 일치 및 원본 바이트 보존. Review/Sharpshooter_Actual_Color.png 및 Sharpshooter_Actual_Grayscale.png 실제 128/40/30/24/20px 비교; 개별 투명 컬러/흑백 축소와 별도 4배 NEAREST 확대판, ApprovedStyle_Actual_Comparison.png 포함. 20px의 다중 화살 세부 및 밝은 효과 구분은 추가 검수 필요. 실제 Unity 화면 및 동료의 습격 비교 실물 미검증.
+- ZIP LIMITLESS_Issue124_SharpshooterSkill2_Original_20261127.zip, 3919054 bytes, SHA256 6d5a9dbfed242e0d28604b3011dc5f9954927407be9aad02caa03a5961192a60. ZIP CRC38/38, Manifest36/36 SHA256+size, SUMS37/37 PASS. 대화 다운로드용 실물이며 GitHub 바이너리 업로드나 Windows F: 자동복사 아님.
+- 기존 야수별 동적 아이콘 계약, 승인 원화, 투사체, VFX, 스킬 기능·수치, 코드, Unity, GUID/meta, #85/#131/#132, main, Save/UserData 변경0. Unity 실행/적용, 병합/Push, Codex 호출0. 신규2종 미술 승인/표적 QA 대기. COMPANION_KEEP_RUNTIME_NOT_VERIFIED / FILE_QA_PASS / NOT_UNITY_APPLIED.
+- 정식 보고 커밋 602923a4ffd5aef3cb03d21df93524285d4271a9
+
 ## 2026-11-27 / Issue #124 치유사 v2 검수 납품 (최신)
 
 - 최신 Codex https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7205411904 및 기획 https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7205701051 확인. v1 20 PASS 유지, 30/24/20px 치유의 빛·정화 구분 PARTIAL 대상만 보완.
