@@ -1,6 +1,6 @@
 # 2026-11-27 · #132 마감
 
-통합 제품 6d232addede55d249f7ea1856c89f19db462aa5b. Unity 6000.6.5f1 최소 스모크 9 PASS. 원본 FF HOLD, Main27 구현 확인 안 됨. [마감 기록](../../Issue132_EOD_20261127.md)
+통합 제품 6d232addede55d249f7ea1856c89f19db462aa5b. Unity 6000.6.5f1 최소 스모크 9 PASS. 원본 FF HOLD, Main27 구현 확인 안 됨. 원격 복구 451277700a96c7a10447ed321a8b9f791e24f850, 독립 checkout/fsck 및 SHA256 283/283 PASS. [마감 기록](../../Issue132_EOD_20261127.md)
 
 # 2026-11-27 · #125 Main26 승인 음성 연결
 
