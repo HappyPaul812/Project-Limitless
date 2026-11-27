@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-27 — 최종 개발 마감: 통합·로컬 동기화·원격 복구 모두 PASS
+
+- [#132 최종 동기화](https://github.com/HappyPaul812/Project-Limitless/issues/132#issuecomment-7217677386) 및 [최종 원격 복구](https://github.com/HappyPaul812/Project-Limitless/issues/132#issuecomment-7217817511) 확인. 통합 제품 `6d232addede55d249f7ea1856c89f19db462aa5b`, 원본 local main `dcc0a90ff037480a11f89a4ac73f08b3baceb864` FF 완료, 최종 원격 복구 `backup/2026-11-27-final-sync` SHA `e8aa097415bda2a0727ee701b2cffb837a1ddbaa`, 복구 보고 `e2257a2502a28166054287f1a6946a9bfd3d0cff`. 원본 local main 커밋 트리 일치, 별도 fetch/checkout/fsck/변경7 SHA/전체28 씬 GUID PASS. Unity6000.6.5f1 Resolve/컴파일/씬 등록 PASS 및 기존 AI Inference2.6.1/App UI2.2.4/#85 패키지 보존. F3/F4 신규 활성 등록. 원본 수정/미추적845건 보존, 사용자 파일/개인정보/키/Save는 복구 증분 제외. 원격 main 및 이전 복구 ref 보호. 마지막 복구는 Unity 재실행 없이 완료.
+- 다음 작업: Main27 F5 실제 구현(미완), Main28 정식 화로 현장 연결, Main29 엔딩. Main27~29 주요 인물 TTS14/8/9=31개 잔여, 기존41/72 연결 및 승인203 보호. 리뉴얼은 수호자 철벽·맹세 적용 포함 통합 완료 후 치유사 VFX부터, 이후 사수/투사/마도사, 전체 VFX 마감 뒤 잔여 외부 버프·디버프 HUD 오리지널화. 도발 상태 아이콘과 감전 외부 잔여, 도발 코드 VFX KEEP. Main26 임시 쉼터/주민 외형 및 Save/Continue 재시작, #85 Editor Search 예외, F4 BGM 출시 라이선스 보류 유지. 오늘 신규 작업/예약 발주 금지. 본 기획 기록은 최종 복구 스냅샷 이후 문서 갱신이며 기존 스냅샷을 변경하지 않음.
+
+---
+
 # PLANNING / 2026-11-27 — 마감 통합·복구 PASS / 로컬 동기화 3경로 제한 후속
 
 - [#132 최종 보고](https://github.com/HappyPaul812/Project-Limitless/issues/132#issuecomment-7217419665) 확인. 통합 제품 `6d232addede55d249f7ea1856c89f19db462aa5b`, 보고 `00b4dd8ea2e0549173d5fbc2ea17d06a41b64445`, `codex/eod-20261127-safe-checkpoint`, Unity6000.6.5f1 컴파일/최소 스모크9PASS/종료0. 원격 복구 `backup/2026-11-27-safe-checkpoint` `451277700a96c7a10447ed321a8b9f791e24f850`, 별도 fetch/checkout/fsck/283 SHA 일치 PASS. 원본 HEAD `65cceb2d6c3283d18abec6e27d8a6f1296411f17`, index/status/853경로 보호. Main27 미구현 보고, F4 대체 BGM 원곡·Master2 보존/출시 라이선스 HOLD. 기존 Editor Search 예외 미해결.
