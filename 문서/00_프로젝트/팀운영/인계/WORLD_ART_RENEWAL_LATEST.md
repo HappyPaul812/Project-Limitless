@@ -1,3 +1,13 @@
+## 2026-11-27 / Issue #124 동료의 습격 공통 및 투사3종 정정 납품 (최신)
+
+- 최신 기획 7207318682 및 Codex 사수 검수 7207153640 확인. 기존 정조준/화살비 재작화0. 동료의 습격은 종족 중립 공통 1종으로 신규 발주, 야수 Run6 및 기존 기능 보호. 투사 회심의 일격/기세 HUD 공유 계약 유지(별도 상태 원화0).
+- 사용자 지적: 생성 비교 포스터에서 발톱/발자국이 난도로 잘못 표기되고 이전 늑대 시안이 동료의 습격으로 삽입되었으며 실제 회심 원화 누락. 해당 포스터 폐기, ZIP 미포함. 실제 독립 원천4개를 시각 대조 후 정확히 배치하고 실제 PNG에서 비교판을 직접 합성. 추가 원화 재생성0.
+- 신규 128×128 투명 RGBA 4종: Art/Sharpshooter_CompanionAssault_Original_128_RGBA.png SHA256 aab77f422bbdd9f927e9478df8f67314a07440c2581456918b5b13e6b9c9b270 (발톱/발자국 돌진); Art/Fighter_Nando_Original_128_RGBA.png SHA256 f59f7e0413009991874ae8753a65f11014d2f007cd128845a6adaf7abca98a2a (단일 검격+상향 기세); Art/Fighter_CriticalStrike_Original_128_RGBA.png SHA256 b1e41c8b931fe80960e010792d6d617b86644d9e1ceab8ad981ecbdc8ec88b6d (단일 하향 결정타); Art/Fighter_Whirlwind_Original_128_RGBA.png SHA256 bd50c4ea5e3965ca1cc3706010f86cd9ba80bb1506701db42cb5ae1ea0adec7b (원형 참격). 원천 PNG4 바이트 보존, alpha<=8 제거 후 116px 내 중앙 배치.
+- Review/Color_Actual.png 및 Grayscale_Actual.png 실제 128/40/30/24/20px 동일 밝고 어두운 배경, Color_4x.png 및 Grayscale_4x.png 최근접 확대, 개별 실제 축소본 및 기존 참조11종 ApprovedStyle_40px.png. 참조는 기존 납품 원본 바이트 복사만. 난도/회심/기본 공격의 작은 크기 혼동 및 공통 붉은 광휘 과다 가능성은 후속 미술 검수 대상. 실제 Unity 화면과 최신 카탈로그 ID 독립 확인은 NOT_VERIFIED.
+- ZIP LIMITLESS_Issue124_FighterSkill3_Companion1_20261127.zip 7276069 bytes SHA256 fd7a2058b425795a85147643bd7d163ce77c2f8c484ae70133ee63d9460f3e42. CRC60/60, Manifest58/58, SUMS59/59 PASS. 대화 다운로드 실물, F: 자동복사/GitHub 바이너리 업로드 아님.
+- 기존 원화, 야수 애니메이션, VFX/투사체, 기능/수치/기세 공유 계약/코드/GUID/meta/Save/UserData/#85/#131/#132/main 변경0. Unity 실행/적용, 병합/Push, Codex 호출0. FILE_QA_PASS / USER_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED.
+- 보고 커밋 8bb48ad018593e37dce853402a1d9921c63531f9
+
 ## 2026-11-27 / Issue #124 사수 기본 스킬 2종 신규 납품 및 동료의 습격 KEEP (최신)
 
 - 최신 기획 발주 https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7206871646 및 치유사 사용자 최종 승인 대기 기록 7206930171 확인. 정조준(target)·화살비(bow)만 신규 제작. 동료의 습격은 기획 기록의 BeastCompanion 동적 Run index4 계약 기준 KEEP. 실제 최신 카탈로그 소스 검색 결과 없음, 야수별 런타임 아이콘 픽셀 및 고유 자산 여부 독립 확인은 NOT_VERIFIED. 고정 늑대 생성 시안과 생성 QA 포스터는 납품에서 제외. 동적 매핑 변경0.
