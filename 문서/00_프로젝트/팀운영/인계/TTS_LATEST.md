@@ -1,5 +1,15 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-27 Issue #125 — Main26 22개 전용 Stage-only 일괄 제작기 납품
+
+- [11/27 기획 발주](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7214916789), 11/19 기획 정본 및 72행 승인 큐(blob 93c6920ae7ea31312044333deae82a97375cc67a) 확인. Main26 22행의 정확 원문/순서/Voice: 폴2 Achird, 미엘7 Sulafat, 세린6 Erinome, 태온3 Algieba, 하렌4 Alnilam. 기획 원문과 22/22 일치, 큐 내부 동일 화자+동일 원문 중복0. 정본 대조 fingerprint 5f0f26f2. 주민/단역/플레이어 무음 자막 유지. 미엘006에 짧은 여백/절제된 회상, 하렌002 걱정 중심, 하렌003/004 자연스러운 평서 하강의 연기 지시만 추가; 승인 문장 불변.
+- **최신 Main25 상태 정정**: Issue #125의 [Codex 실제 연결 보고](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7123298974) 기준 AUDIO_CONNECTED 9/9, 27 PASS/0 FAIL, 실제 Stage↔Runtime ID 및 SHA 확보. 제품 로컬 commit 751c8458b203b55ad71355b5f7d267bd4bc7c4fd, 보고 2abf6dfe4002953c414f4ae3e782712df5b1583e, REMOTE_NOT_PUSHED로 당시 보고. 기존 Main24 10개+Main25 9개+승인162=181 KEEP. 새 Main26 제작기는 Stage19 해시를 실행 전후 검증하며 기존162 경로를 사용하지 않음(162개 파일 자체 재검증은 이번 세션에서 하지 않음).
+- [Main26 22행 고정 manifest](https://github.com/HappyPaul812/Project-Limitless/blob/docs/tts/Tools/TTS/MAIN26_STAGE22_FROZEN.json) commit 4ae323ba90217d0ed20a09fa344fc83051a5a844. Main24 10개 및 Main25 9개 보호 SHA 포함, Runtime null. 기존 승인 모델 gemini-3.8-flash-tts 유지. 162/590 기존 중복 감사 미완료는 숨기지 않음.
+- **TTS 담당 직접 제작/대화 ZIP 납품**: LIMITLESS_Main26_StageOnly_Batch22_20261127.zip (16441 bytes), SHA256 7175bd5c6c83b53933be64e3a5cd86d89137df5893c1f53122919c7efd66dcef. Python Chapter3_Main26_STAGING_ONLY.py SHA256 a42448f168d1eecf1548b89f42d4c8d7545953d996a7946fc4512c0ff4ad28e5, 동봉 MAIN26_STAGE22_FROZEN.json SHA256 c76f46f4e4b3831b6adf6e1705c342eb3e090ddbe17503d1ffa8bed59934a1f2. 기존 실사용 성공 Main25 v1.1 소스 재사용, 새 작업공간 Chapter3_StageOnly_72/Main26/<인물>/ch3stage_main26_*.wav, 기존 engine/ledger/HOLD/lock 재사용. 사용자 실제 PC 엔진 본체와 새 어댑터의 실제 결합은 미검증.
+- 실행: ZIP 안 Python/manifest를 F:\Downloads\Voice에 추가. `python .\Chapter3_Main26_STAGING_ONLY.py check` (POST0), 실제 PT날짜/동일 모델/4개 실제 프로젝트별 무료 잔량 및 외부 사용/유료 요청 불가를 확인한 뒤 `python .\Chapter3_Main26_STAGING_ONLY.py run`. 표시된 그룹 순서대로 실제 확인한 무료 잔량 정수 4개를 공백 구분 입력, 계산된 계획을 확인하고 `RUN_MAIN26_BATCH` 입력. 계획=min(미완료,공유 일일 잔량,그룹별 로컬/확인 무료 잔량의 교집합,선택 --max-calls 1..22). 한도 부족 시 분할 및 검증된 기존 성공본 skip. 현재 PT 실제 잔량은 미확인, 11/24 수치 재사용 금지. 로컬40/10은 제공자 quota 보장 아님. 실행 도중 공유 원장 불일치/429/오류/불명응답/날짜 변화 즉시 STOP, 자동 retry/failover0. 한 요청마다 선택 그룹 및 공유 장부 +1과 결과 PCM/sidecar 검사, 보호19 SHA 확인. 실패 잠금은 삭제 금지.
+- 오프라인 모의 테스트 26/26 PASS(22 연속/5+17 분할/중복 방지/미승인·0잔량/원장 그룹 오류/429 정지/보호19/잠금/manifest 변조/실제 사용량 형식 등), Python compile 및 ZIP CRC PASS. 실제 Google 합성 POST0, 유료0, 신규 실제 WAV0, Unity 변경0, Codex 신규 호출0. ZIP/소스는 대화 첨부; GitHub에는 manifest 및 기록을 커밋. Main26 0/22 준비완료, Chapter3 청취승인19/72. 사용자 실행 및 청취, 실제 Runtime ID 검증 전 Unity 적용 금지.
+
+
 ## 2026-11-24 Main25 Stage-only 9개 제작 및 사용자 청취 승인 완료
 
 - 사용자 직접 보고: "다 뽑았고 들었어 좋아." Main25 Batch9 v1.1의 9개 제작 및 전량 청취 PASS로 기록. 기존 Main24 10/10 청취 승인 유지. Chapter3 승인 주요 인물 큐 진행 19/72(잔여53).
