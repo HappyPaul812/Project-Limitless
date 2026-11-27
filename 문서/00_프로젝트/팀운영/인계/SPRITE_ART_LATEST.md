@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-27 / Issue #30 — 설빙의 폭군 Hit4 v1 승인 Idle 기반 편집 납품
+
+- [Attack4 v3 최종 승인](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7208175259), [제작 방식 변경](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7208484717) 확인. 신규 생성0, 기존 승인 KeyPose/Idle4/Attack4 v3 실물 SHA3/3 일치·불변. Attack v3 KEEP/복귀 PARTIAL 수용 기록 유지.
+- 승인 Idle00/01/02/00만 사용하여 상체 변위 (-7,0)/(-17,-5)/(-8,1)/(-2,0)px, y170~360 완만하게 감소, 하단152행 각 소스와 RGBA 동일. 접지 y490 exclusive, 외곽 alpha0. 512 RGBA4, 2048×512 시트 SHA 952e44855b7319c339a22b99fc35d8395d182f75b8d926be2de2f55b0e703713, 실제 336px 밝고 어두운 비교 및 Idle→Hit→Idle GIF/APNG. APNG4/12프레임 정확125ms 및 픽셀 일치, GIF120/130ms 평균8FPS. 미세 반동 판독 실제 게임 미검증.
+- ZIP LIMITLESS_Issue30_FrostTyrant_Hit4_v1_20261127.zip 18735238 bytes/17 entries SHA dfc12372ffcb5076eb2e1d4546e6407c00496b8d7080f9ffce23b9bc3a2eb29c CRC PASS/SUMS16/16. [보고](../../Chapter3_FrostTyrant_B_Hit4_IdleDerived_20261127.md) commit e939415f2e0bc4c9b72bd670025e89bb32f4706f.
+- **OFFLINE_FILE_QA_PASS / USER_HIT4_ART_REVIEW_REQUIRED / UNITY_NOT_APPLIED**. Defeat4 승인 후 별도 발주. 기존 보스/화로/결빙/#85/#131/#132/Unity6000.6.5f1/Save/main 보호.
+
+
 ## 2026-11-27 / Issue #30 — Attack4 복귀 편집 검토 / v3 KEEP·v4 HOLD
 
 - [기획](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7207776987), [Codex v3](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7207318417) 확인. v3 파일/매트/Idle 진입/체급/접지/우향/격리 배율 PASS, 앞팔 복귀 PARTIAL. v3 ZIP SHA 07de830f1e299c7545121d5669d19e55cf2a9db028ede02bc6d491530ef7ba32 CRC 18/18, 프레임4/시트/KeyPose/Idle4 7/7 수록 바이트 일치.
