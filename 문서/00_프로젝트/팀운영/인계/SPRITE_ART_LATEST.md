@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-27 / Issue #30 — 설빙의 폭군 Defeat4 v1 최종 납품 정합성 마감
+
+- [기획 최종 발주](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7209730687), [Codex v1 검수](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7209211654) 확인. 신규 생성/재작화0. 기존 미술 연출/가시 RGB/실루엣/접지 유지. 이전 격리 336px 및 비반복 계약 PASS 보존, 이번 Unity 실행0.
+- KeyPose/Idle4를 승인 실제 PNG 바이트로 교체, Attack4 v3/Hit4 v1 보호. 참조 SHA4/4. 하단 중복 source-over alpha 최대 +64를 원본 Idle 정확 RGBA(77824픽셀×4) 복원으로 정리, alpha=0 RGB 정규화 및 배열 직접 결합으로 시트/셀4/4 일치. 01 alpha>8 우측 경계 1px 감소, y490 접지 및 nonzero-alpha mask 유지. APNG 전체 프레임 SOURCE/NONE 재작성, 4/8프레임 실제 RGBA 일치, 125ms/cell 및 마지막 추가1000ms hold, plays1. GIF 반복 확장 없음, 120/130ms 교대 평균8FPS, 마지막 추가1000ms. 실제 동일 배율 336px 밝고 어두운 비교판.
+- ZIP LIMITLESS_Issue30_FrostTyrant_Defeat4_v1_FINAL_20261127.zip 18398074 bytes/18 entries SHA256 59e8854c0d1e50865e2bc51e49d189f773150c68f999009301c416bbca5a3d1e, CRC18/18/SUMS17/17(Manifest 포함). 시트 SHA256 feedd43f2f79486433f9e75b47ac5bc6af8f6626031178b3924e401b221adf16. 기존 v1 ZIP 보존, FINAL 검수용 사용. [보고](../../Chapter3_FrostTyrant_B_Defeat4_v1_FinalDelivery_20261127.md) commit 74b0f3ad3ca513602ff3e7028595c3a92f135518.
+- **FINAL_DELIVERY_OFFLINE_QA_PASS / USER_DEFEAT4_ART_APPROVAL_PENDING / CODEX_FINAL_PACKAGE_RECHECK_PENDING / UNITY_NOT_APPLIED**. 512 RGBA4/2048×512/8FPS/PPU512/Pivot(0.5,0)/Scale3/우향/one-shot 마지막 셀 유지 계약. 실제 보스 종료 트리거/퇴장 미검증. 승인 KeyPose/Idle4/Attack4 v3/Hit4 v1/화로/결빙 및 #85/#131/#132/Unity6000.6.5f1/main/Save 보호. Unity/Scene/코드/main 변경0.
+
+
 ## 2026-11-27 / Issue #30 — 설빙의 폭군 Hit4 v1 승인 Idle 기반 편집 납품
 
 - [Attack4 v3 최종 승인](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7208175259), [제작 방식 변경](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7208484717) 확인. 신규 생성0, 기존 승인 KeyPose/Idle4/Attack4 v3 실물 SHA3/3 일치·불변. Attack v3 KEEP/복귀 PARTIAL 수용 기록 유지.
