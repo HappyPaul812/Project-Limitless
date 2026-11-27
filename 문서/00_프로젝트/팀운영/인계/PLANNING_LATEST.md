@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-27 — 사수 Skill2 기획 채택 및 공통 동료의 습격 / 투사 후속
+
+- [#124 Codex](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7207153640) 정조준·화살비 30/40px PASS, 24/20px PARTIAL 수용, 사용자 최종 미술 승인 대기. 치유사 3종은 사용자 승인 완료/적용 결과 미확인.
+- 동료의 습격 현재 기본 늑대 Run index4 표시, 장착별 실제 변경 경로 미확인. 외부 ScratchIO CC0 아이콘 소스3 바이트 일치, 고유 전투 Run6 별도 보호. 펫별 신규 아이콘 대신 공통 고유 1종 방향을 [스킬 정본](https://github.com/HappyPaul812/Project-Limitless/commit/4539375aab8b39d9689d8af530d8d42d8a15c9c2)에 기록. 구현 전 별도 승인. 리뉴얼 다음: 공통1 + 투사 난도/회심의 일격/회오리 베기3, 기존 기세 HUD 공유 계약 보호. Unity/Save/main 변경 없음.
+
+---
+
 # PLANNING / 2026-11-27 — Chapter4 하렌 눈 부상·바이저 수리와 폴의 가족 상담
 
 - 대표 요청으로 [Chapter4 초기방향 §5](../../../03_스토리/Chapter4_폴의고향_부모의사랑과독립_초기방향_20261118.md) 보완: [정본 커밋 eebb858](https://github.com/HappyPaul812/Project-Limitless/commit/eebb858567dc06a33aabda1be23094ea81a76245), [동료 공통 정본 연동 4b06047](https://github.com/HappyPaul812/Project-Limitless/commit/4b06047aa11a361a00a76d6a31cbc0ced4ec3ac4).
