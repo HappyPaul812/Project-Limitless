@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-27 — Main26 승인 음성22 연결 완료
+
+- [#125 Codex 적용 보고](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7216948226) 확인. 제품 `0a2cead1270f758f0776444b908db3ac487a6dd4`, 보고 `4835a8a817e7565a3cfeb8c979ae1f36e95bbb55`, `codex/issue125-main26-voice-20261127`, LOCAL_COMMITTED / REMOTE_NOT_PUSHED. Main26 승인 WAV22/22 SHA/화자/원문/Voice/PCM 일치, 복사본 SHA22/22, 실제 F4 대화 순서22 재생 및 주민·플레이어 무음4 확인, AudioSource 샘플 진행/종료0. 기기 출력 청취 및 기존 Editor Search 예외 해결 미검증. 기존181+신규22=203 보호, Chapter3 제작/청취승인/격리 연결41/72. 재합성/API0. 제작 원본 및 기존 WAV/meta/GUID/카탈로그/퀘스트/Save 보호.
+- Main26 음성 브랜치와 Main27 진행 후보는 독립 작업, 향후 안전 통합 시 포함 관계/충돌 확인 필수. Main27 구현 및 수호의 맹세 VFX 배치 검수 보고는 현재 미접수. 원본 main 동기화/병합/Push 미실행. 다음 TTS Main27 14개는 실제 무료 quota 확인 및 별도 발주/승인 후만 제작; 현재 추가 합성 지시 없음. #85/#131/#132 보호.
+
+---
+
 # PLANNING / 2026-11-27 — 기본 투사체 3종 적용 및 Main28 보스전 격리 구현 접수
 
 - [#124 기본 투사체 적용](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7214673675): 제품 `308c160b9748161a46f34f9943b1e091bb5e552b`, 보고 `9b0f3e94cceac43542430f059dd395b096cb0757`, `codex/issue124-basic-projectiles-20261127`, LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 사수 기본 화살/치유사 기본 빛/마도사 기본 불 3종, 기존·신규 실제 Battle 각22 PASS/종료0, 피해량·타이밍·도착1회 일치. 어두운 배경 화살 대비 낮음 기록, 방향/비행 확인되어 기획상 즉시 재작화 불필요. 사용자 직접 미술 최종 승인 별도 미확인. 정조준/화살비/화상/파이어 볼/적 공유 경로 소스상 유지, 해당 스킬 실제 재생 회귀 미실행. 파이어 볼 전용 독립 원화는 후속 마도사 VFX 단계. 다음 리뉴얼은 수호자 스킬 VFX부터 실제 외부 참조만 교체(기존 고유/코드 연출 KEEP), 아직 신규 발주 없음.
