@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-27 / Issue #30 — 설빙의 폭군 Attack4 v3 국소 보완 납품
+
+- [기획 발주](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7207087008), [Codex v2 검수](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7206929072) 확인. 승인 KeyPose/Idle4/v2 시트 실물 SHA3/3 일치·원본 바이트 보존. 전면 재생성0.
+- 밝은 매트 연결 영역 알파 정리, 00 Idle00 하체 부분 합성, 01 발 하단 2px 국소 보간, 02 타격 위치/자세/배율 유지 및 남은 가시 RGB116984/116984 일치, 03 앞팔 국소 변위장 최대55px 설정·Idle00 지지부 합성·과잉 발 제거. 하단 y489~490 유지. 실제 서리 손실/국소 경계/모션 전환 검수 필요, 해결 확정 아님.
+- 512 RGBA4, 2048×512 시트 SHA 41bd76bf537e053cadc790939643259ba162d4bccb5653847fb47a770f42f132, 실제 336px 밝고 어두운 비교/512px 1:1/Idle→Attack→Idle GIF/APNG. 셀4/4, APNG 정확125ms, GIF120/130ms 평균8FPS. PPU512/Pivot(0.5,0)/VisualScale3/우향 유지 계약.
+- ZIP LIMITLESS_Issue30_FrostTyrant_Attack4_v3_Targeted_20261127.zip 24234785 bytes/18 entries SHA 07de830f1e299c7545121d5669d19e55cf2a9db028ede02bc6d491530ef7ba32 CRC PASS/SUMS17/17. [보고](../../Chapter3_FrostTyrant_B_Attack4_v3_Targeted_20261127.md) commit a3426e8011d879b3d8923386f58eb2bd43db6b8e.
+- **OFFLINE_FILE_QA_PASS / TARGETED_ART_REVIEW_REQUIRED / UNITY_NOT_APPLIED**. Hit/Defeat HOLD, 기존 보스/화로/결빙/Save/Unity6000.6.5f1/main 보호.
+
+
 ## 2026-11-27 / Issue #30 — 설빙의 폭군 Attack4 v2 검수용 후보
 
 - v1 체급 보완 요청 반영. 기존 KeyPose/Idle4 실물 SHA2/2 일치·바이트 보존. v2 배경 잔류 알파 정리, 공통0.88 비례 축소/하단 y490 정렬. 높이443/475/428/442px, Idle465~466px 대비 및 v1 개선. 뿔/하체/외곽/전환 미술 검수 필요.
