@@ -1,5 +1,12 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-27 Main26 Batch22 사용자 PC 사전 검사 통과 — 실제 합성 대기
+
+- 사용자 제출 check 로그: Main24 10/10 + Main25 9/9 SHA matched; existing162 isolated; Main26 0/22. Native key/group counts list(len=4) / dict(len=4), totals matched.
+- PT 2026-11-27, shared attempts=0/40, PROJECT_1~4 로컬 headroom 각각10, LOCAL MAX 22/22, split permitted. API POST0. 로컬 엔진 인터페이스 및 공유 장부 검사 통과. 실제 제공자 무료 잔량/외부 사용/과금 차단은 사용자 확인 필요. 22건 각 1 POST 및 다른 사용·실패 없음 가정 시 로컬 잔여18회.
+- 실제 무료 조건 확인 뒤 사용자 직접 run, 확인된 네 그룹 잔량 입력, RUN_MAIN26_BATCH 승인. 429 자동 재시도/키 전환 금지, 부족 시 분할. 기존181 KEEP, Main26 실제 Runtime ID 미확인, 기존162/590 중복 감사 미완료, STAGING ONLY. 실제 Main26 생성 및 청취 0/22, Unity 적용0. 추가 실제 API 요청은 이 세션에서 하지 않음.
+
+
 ## 2026-11-27 Issue #125 — Main26 22개 전용 Stage-only 일괄 제작기 납품
 
 - [11/27 기획 발주](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7214916789), 11/19 기획 정본 및 72행 승인 큐(blob 93c6920ae7ea31312044333deae82a97375cc67a) 확인. Main26 22행의 정확 원문/순서/Voice: 폴2 Achird, 미엘7 Sulafat, 세린6 Erinome, 태온3 Algieba, 하렌4 Alnilam. 기획 원문과 22/22 일치, 큐 내부 동일 화자+동일 원문 중복0. 정본 대조 fingerprint 5f0f26f2. 주민/단역/플레이어 무음 자막 유지. 미엘006에 짧은 여백/절제된 회상, 하렌002 걱정 중심, 하렌003/004 자연스러운 평서 하강의 연기 지시만 추가; 승인 문장 불변.
