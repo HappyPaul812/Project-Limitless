@@ -1,5 +1,12 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-27 / Issue #30 — 설빙의 폭군 B Attack4 v1 후보 / 연속성 PARTIAL
+
+- [발주](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7206496985), #123 화로 승인 보호. 기존 승인 Attack 미확보(검색 범위 한정), KeyPose/Idle4 실물 SHA 일치·불변. 신규 4×512 RGBA, 2048×512 시트, 실제 Idle→Attack→Idle GIF/APNG 및 1:1/128 비교.
+- ZIP LIMITLESS_Issue30_FrostTyrant_Attack4_v1_CANDIDATE_20261127.zip 14584583 bytes/15 entries SHA256 b0b184da628dee468d584a4075c530419623c742561ee2c461369d5a68af194b, CRC PASS/SUMS14/14. 시트 SHA 8304608b89072cf3c651408d50cafface59f96d92aba454cd3af9c5d290709b4. [보고](../../Chapter3_FrostTyrant_B_Attack4_ArtPilot_20261127.md) commit 769a825e65ec1e26faa7bceac236e2a14ad3cb56.
+- **OFFLINE_FILE_QA_PASS / ART_CONTINUITY_PARTIAL / USER_REVIEW_REQUIRED / UNITY_NOT_APPLIED**. Idle 높이465~466 vs Attack323~376px 및 다리 형태 차이, 체급/회복 연결 보완 필요. 승인 권장하지 않음. Hit/Defeat HOLD. 기존 승인 보스/화로/빙벽 수정0, Unity/Scene/main 변경0.
+
+
 ## 2026-11-24 / Issue #123 — 마지막 온기의 화로 Flame8 파일럿 납품
 
 - [기획 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7126854316), [v3 Codex PASS](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7126793451) 확인. v3 PNG SHA 3a3094749ba49c6b7139b9638a61d543fa903d7ec214209f2b51a43985c1a5d2, master 및 기존 승인 보스/빙벽 바이트 보존. 신규 애니메이션만 미술 승인 대기.
