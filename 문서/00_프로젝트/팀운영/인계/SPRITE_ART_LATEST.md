@@ -1,5 +1,12 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-27 / Issue #30 — Attack4 복귀 편집 검토 / v3 KEEP·v4 HOLD
+
+- [기획](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7207776987), [Codex v3](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7207318417) 확인. v3 파일/매트/Idle 진입/체급/접지/우향/격리 배율 PASS, 앞팔 복귀 PARTIAL. v3 ZIP SHA 07de830f1e299c7545121d5669d19e55cf2a9db028ede02bc6d491530ef7ba32 CRC 18/18, 프레임4/시트/KeyPose/Idle4 7/7 수록 바이트 일치.
+- Attack03 복사본만 수평 위치 보간 3강도 시험. bbox 유지했으나 앞팔/손목 서리 늘어짐·흉곽 압축·하체 경계 왜곡으로 미채택. 신규 이미지 생성0, 원본 변경0, v4 공식 납품0. [검토 보고](../../Chapter3_FrostTyrant_B_Attack4_Recovery_Hold_20261127.md) commit 1c5ae20f02b6805dde942c94548100c64c957550.
+- **V3_KEEP / RECOVERY_CONTINUITY_PARTIAL / V4_HOLD / NO_NEW_DELIVERY / UNITY_NOT_APPLIED**. 기존 v3 미술 최종 승인 HOLD, Hit/Defeat 제작0, 화로/결빙/KeyPose/Idle4/Unity6000.6.5f1/#85/#131/#132/Save/main 보호. 추가 생성/Unity 적용 금지.
+
+
 ## 2026-11-27 / Issue #30 — 설빙의 폭군 Attack4 v3 국소 보완 납품
 
 - [기획 발주](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7207087008), [Codex v2 검수](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7206929072) 확인. 승인 KeyPose/Idle4/v2 시트 실물 SHA3/3 일치·원본 바이트 보존. 전면 재생성0.
