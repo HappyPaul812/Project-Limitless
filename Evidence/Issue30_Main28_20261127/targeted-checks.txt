@@ -1,0 +1,22 @@
+I28 PASS production definition/party/quest
+I28 PASS approved VFX and hearth load
+I28 PASS phase one telegraphs one target
+I28 PASS phase boundary resolves pending zero-damage breath
+I28 PASS phase two begins at half HP and prioritizes stacked target
+I28 PASS third stack waits for an actual hearth opportunity
+I28 PASS independent cold states
+I28 PASS cancel keeps stacks and turn
+I28 PASS hearth clears only necrosis and commits one action
+I28 PASS third valid application immediate KO with VFX
+I28 PASS KO one-shot removed
+I28 PASS victory advances designated quest
+I28 PASS return to supplied encounter field preserves victory
+I28 PASS world debrief opens approved dialogue
+I28 PASS debrief completes Main28
+I28 PASS synthetic prereq allows retry fixture
+I28 PASS world to Battle entry
+I28 PASS phase one blizzard damages surviving party
+I28 PASS phase two snowfield targets one and applies chill under its guard
+I28 PASS defeat never satisfies quest
+I28 PASS defeat returns to registered safe scene and allows retry
+Unity 6000.6.5f1 / exit 0 / synthetic prerequisite and field

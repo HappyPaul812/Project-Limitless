@@ -124,6 +124,10 @@ namespace ProjectLimitless.Battle
 
             List<BattleStatusMarker> markers = new List<BattleStatusMarker>();
             // 위험 숫자를 앞에 배치해 여러 버프·쿨타임이 있어도 냉각 판단을 놓치지 않게 합니다.
+            int necrosis = statusEffects?.GetFrozenNecrosisStacks(combatant) ?? 0;
+            if (necrosis > 0) markers.Add(new BattleStatusMarker("cold.necrosis", "동결괴사", necrosis));
+            int frostbite = statusEffects?.GetFrostbiteRemaining(combatant) ?? 0;
+            if (frostbite > 0) markers.Add(new BattleStatusMarker("cold.frostbite", "동상", frostbite));
             int chill = statusEffects?.GetChillRemaining(combatant) ?? 0;
             if (chill > 0) markers.Add(new BattleStatusMarker("cold.chill", "한기", chill));
             int heat = statusEffects?.GetOverheatStacks(combatant) ?? 0;

@@ -68,6 +68,8 @@ namespace ProjectLimitless.Monster
         [SerializeField, Min(1)] private int attackFrameCount = 1;
         [SerializeField, Min(1f)] private float animationFramesPerSecond = 10f;
         [SerializeField, Min(.1f)] private float visualScale = 1f;
+        [SerializeField] private Vector2 sheetFramePivot = new Vector2(.5f, .5f);
+        [SerializeField] private bool useAttackForSkillAnimation;
         [SerializeField] private bool sourceFacesRight = true;
         [Header("명시적 Sprite Frame Animation")]
         [SerializeField] private Sprite[] explicitIdleFrames = System.Array.Empty<Sprite>();
@@ -140,6 +142,8 @@ namespace ProjectLimitless.Monster
         public int AttackFrameCount => Mathf.Max(1, attackFrameCount);
         public float AnimationFramesPerSecond => Mathf.Max(1f, animationFramesPerSecond);
         public float VisualScale => Mathf.Max(.1f, visualScale);
+        public Vector2 SheetFramePivot => sheetFramePivot;
+        public bool UseAttackForSkillAnimation => useAttackForSkillAnimation;
         public bool SourceFacesRight => sourceFacesRight;
         public Sprite[] ExplicitIdleFrames => explicitIdleFrames ?? System.Array.Empty<Sprite>();
         public Sprite[] ExplicitWalkFrames => explicitWalkFrames ?? System.Array.Empty<Sprite>();

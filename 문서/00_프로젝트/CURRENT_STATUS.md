@@ -1,6 +1,36 @@
+# 2026-11-27 · #132 마감
+
+통합 제품 6d232addede55d249f7ea1856c89f19db462aa5b. Unity 6000.6.5f1 최소 스모크 9 PASS. 원본 FF HOLD, Main27 구현 확인 안 됨. [마감 기록](Issue132_EOD_20261127.md)
+
+# 2026-11-27 · #125 Main26 승인 음성 연결
+
+제품 0a2cead1270f758f0776444b908db3ac487a6dd4. Unity 6000.6.5f1 F4에서 승인 음성 22개 순차 재생과 무음 4개 확인. 기기 출력 청취는 별도 미실시. [검수 보고](Issue125_Main26_ApprovedVoice_20261127.md) · LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
+
+# 2026-11-27 · #130 Main26 사라지는 피난처
+
+제품 `bbee953023f8b1d5f0f63ca918838aea8ed64593`. F4 왕복·정령·단회 보급·대사 완료 Unity 38 PASS. Main26 음성 HOLD, Main27 미구현. [구현 보고](Issue130_Main26_20261127.md)
+
+# 2026-11-27 · #30 Main28 설빙의 폭군 보스전
+
+- 제품 `edcf208988c9d7e26834e0475c28c3f9f24b1358`. Main28 2페이즈·화로·KO와 승패 연결, Unity 6000.6.5f1 격리 21 PASS. Main26·27 및 실제 북부 현장 씬 연결은 남아 있습니다. [구현 보고](Issue30_Main28_FrostTyrant_20261127.md)
+
+# 2026-11-27 · #30 설빙의 폭군 승인 원화 연결
+
+- #132 안전 후보와 #124 후속 기반. 승인 원화 5종을 별도 worktree의 Battle 외형으로 연결. 제품 `6ac382729242bb9ab25cfe2b8c487b965a2f2c9c`. Unity 6000.6.5f1 표적 14 PASS. Main28 진입·보스 패턴·화로·퀘스트 완료와 복귀는 미구현. [적용 보고](Issue30_FrostTyrant_Approved_Apply_20261127.md)
+
+# 2026-11-27 · #124 마도사 기본 스킬 승인 적용
+
+- 승인 9종 기반 별도 worktree에서 파이어 볼 v1·썬더볼트 v2·가이아 웰 v3 연결. 제품 a4825b7c1913e4e845a6d873bdd9f7fbde4404c5.
+- Unity 6000.6.5f1 Battle 표적 8 PASS, 실제 화상·가이아 HUD 공유·감전 별도 확인. 후속 worktree 클린 Import·실제 발동 미검증. 원본 동기화·main 병합은 별도 승인 대기. [적용 보고](Issue124_Mage_Approved_Apply_20261127.md)
+
+# 2026-11-27 · #124 승인 사수·투사·치유사 스킬 아이콘
+
+- #132 기반 별도 worktree에서 9종 버튼·상세 Sprite 및 회심/기세 HUD 공유 연결. 동료의 습격은 공통 Sprite, 야수별 연출 유지. 제품 7c05706ddbce17d3cc76299faf0d45f197276f34.
+- Unity 6000.6.5f1 제품 Battle 표적 12 PASS. 기세 HUD 실제 20/24px 확인. 전체 전투 및 펫 애니메이션 회귀 미실행. 원본 동기화 및 main 병합은 별도 승인 대기. [적용 보고](Issue124_ApprovedSkills_Apply_20261127.md)
+
 # 2026-11-24 · #132 개발 마감
 
-제품 `931325391a3f5ae1da8c4e7f0ceb7f98a64519d9` · Unity 6000.6.5f1 기존 통합 137 PASS 및 수호자 7 PASS 재사용. 원본 설정 충돌과 #85 Search 예외 기록, local main FF HOLD. [마감 보고](Issue132_EOD_SafeCheckpoint_20261124.md) · [복구 영수증](https://github.com/HappyPaul812/Project-Limitless/issues/132).
+제품 `931325391a3f5ae1da8c4e7f0ceb7f98a64519d9` · Unity 6000.6.5f1 기존 통합 137 PASS 및 수호자 7 PASS 재사용. 원본 설정 충돌로 local main FF HOLD, #85 Editor Search 미해결. 원격 복구 `cede8815dc0fdcf4d81e95031167365a8b2a2244` 독립 수신·무결성 PASS. [마감 보고](Issue132_EOD_SafeCheckpoint_20261124.md) · [복구 영수증](https://github.com/HappyPaul812/Project-Limitless/issues/132).
 
 # 2026-11-24 · #124 수호자 기본 스킬 승인 Sprite 연결
 

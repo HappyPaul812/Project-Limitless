@@ -1,0 +1,8 @@
+# LIMITLESS / Issue #124 / 2026-11-27 마도사 기본 스킬3종 납품
+
+- 최신 기획 발주 https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7208145010 및 사수·투사 최종 승인 7208174629, Codex 승인9종 격리 적용 7208383967 확인. 마도사3종만 신규 후보.
+- Art/Mage_FireBall_Original_128_RGBA.png SHA256 5743937ce641fec1ecaefddaf7a85192c0af116e8cdb1181e58912a703cee67e; Art/Mage_Thunderbolt_Original_128_RGBA.png SHA256 a0460b67ea10a4936d1bb22be774bc691277034a1cccdf47bfdcc90c581b37e8; Art/Mage_GaiaWell_Original_128_RGBA.png SHA256 f759b7fe413bef81531a2e0095f8ad3c8d1781e43062e2242f754f580351eeb7. 단일 화염구/분기 번개/마력 돔. 기존 생성 원천3 바이트 보존, alpha<=8 정리, 비율 유지 116px 내 중앙 배치. 128×128 RGBA 3/3, alpha 0..255, 모서리 투명, PNG verify PASS.
+- 기본 명령3 및 수호자/치유사/사수/투사 채택 원화12(총15) 기존 공인 SHA256 대조 일치 및 비교 전용 원본 복사. 기존 원화 수정0.
+- Review/Mage_Color_Actual.png, Mage_Grayscale_Actual.png 실제 128/40/30/24/20px 동일 밝고 어두운 배경, 4x 최근접 확대판, 30px 무라벨 흑백+별도 정답표, GaiaWell_vs_Defense_Grayscale_Actual.png, ApprovedStyle_Actual.png 및 개별 실제 축소 PNG. 생성 비교 포스터가 아닌 최종 PNG 직접 LANCZOS 축소. 자체 시각 관찰상 화염 꼬리/분기 번개/돔 구조 차이 존재하나 공통 금빛 원형 외곽과 작은 크기 디테일 때문에 30px 흑백에서 썬더볼트/가이아 웰 혼동 가능성 있음. 가이아 웰은 자기 대상 인물 없이 돔으로 표현해 자기 보호 의미의 추가 확인 필요. 독립 무라벨 테스트/실제 Unity/HUD 미검증.
+- ZIP LIMITLESS_Issue124_MageSkill3_Original_20261127.zip, 5615659 bytes, SHA256 3bb8ae16511970170e738ba43f1128b87ea58949747bb8fc5b310b3cb303ed96, CRC57/57 PASS, Manifest55/55 SHA+size PASS, SUMS56/56 PASS. 대화 다운로드 실물, GitHub 바이너리 업로드 및 Windows F: 자동 복사 아님.
+- 파이어 볼/화상 및 가이아 웰/상태 HUD 공유 계약, 감전 별도 계약 유지. 감전 신규 PNG0. 기능·수치·VFX·투사체·코드·GUID/meta·Scene/Prefab·Save/UserData·#85/#131/#132·main 변경0. Unity 실행/적용, main 병합/Push, Codex 요청0. 미술 승인 및 신규 표적 QA 대기. FILE_QA_PASS / SEMANTIC_QA_PENDING / NOT_UNITY_APPLIED.

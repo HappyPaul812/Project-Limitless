@@ -1,0 +1,345 @@
+{
+  "schema": "LIMITLESS_MAIN26_STAGE22_20261127",
+  "model": "gemini-3.8-flash-tts",
+  "source_git_blob_sha": "93c6920ae7ea31312044333deae82a97375cc67a",
+  "protected_main24": [
+    {
+      "stage_id": "ch3stage_main24_serin_001",
+      "speaker_id": "companion_serin",
+      "measured_sha256": "6bf00d66d0b230cb339d0a68079272a9fc2f1510f254a0cff365751b53f14464",
+      "chapter": "Main24"
+    },
+    {
+      "stage_id": "ch3stage_main24_miel_001",
+      "speaker_id": "companion_miel",
+      "measured_sha256": "1097dabc14a3958f51b97e2b7e72eef3751782725b018a9ef1e70806ef1ca7dd",
+      "chapter": "Main24"
+    },
+    {
+      "stage_id": "ch3stage_main24_serin_002",
+      "speaker_id": "companion_serin",
+      "measured_sha256": "20d863e8a6888ef25bc793c3aeba608b6f7d5dcc20053905f10191582ed3eeca",
+      "chapter": "Main24"
+    },
+    {
+      "stage_id": "ch3stage_main24_paul_001",
+      "speaker_id": "companion_paul",
+      "measured_sha256": "b004762334254582f2a773e1fb1a8a54557e230b2c5333e84106dd1d70037a71",
+      "chapter": "Main24"
+    },
+    {
+      "stage_id": "ch3stage_main24_serin_003",
+      "speaker_id": "companion_serin",
+      "measured_sha256": "468de099c712bce509325da740f7105f59e5bf91d67999501c8a7b2f8026dca5",
+      "chapter": "Main24"
+    },
+    {
+      "stage_id": "ch3stage_main24_haren_001",
+      "speaker_id": "story_haren",
+      "measured_sha256": "6dcb313bf20fcaa632785c2b881bd579433adf3bbb8f769548499342f3bf0dde",
+      "chapter": "Main24"
+    },
+    {
+      "stage_id": "ch3stage_main24_taeon_001",
+      "speaker_id": "companion_taeon",
+      "measured_sha256": "c770f38af11d76bc7223ff8e1809f3ece766eb25ea5bb9ed764b6299c1371751",
+      "chapter": "Main24"
+    },
+    {
+      "stage_id": "ch3stage_main24_haren_002",
+      "speaker_id": "story_haren",
+      "measured_sha256": "4ee62fb6e5c6d129d72b59e13c67fbaaf7bfbd268609a943aa1e36cf08348e04",
+      "chapter": "Main24"
+    },
+    {
+      "stage_id": "ch3stage_main24_miel_002",
+      "speaker_id": "companion_miel",
+      "measured_sha256": "4d9f1b5347784cdd4d213723d8de5529933a06160cf412513ea423e30b373648",
+      "chapter": "Main24"
+    },
+    {
+      "stage_id": "ch3stage_main24_paul_002",
+      "speaker_id": "companion_paul",
+      "measured_sha256": "c989e45a5139a50560eb0dd2b471d3b45eb13fba685a0cbaee5eae65276de1ec",
+      "chapter": "Main24"
+    }
+  ],
+  "rows": [
+    {
+      "order": 1,
+      "candidate_id": "main26_miel_001",
+      "proposed_stage_id": "ch3stage_main26_miel_001",
+      "speaker_id": "companion_miel",
+      "voice": "Sulafat",
+      "approved_text": "먼저 상태를 확인할게요. 서둘러 움직이지 마세요.",
+      "stage": "쉼터",
+      "runtime_id": null
+    },
+    {
+      "order": 2,
+      "candidate_id": "main26_serin_001",
+      "proposed_stage_id": "ch3stage_main26_serin_001",
+      "speaker_id": "companion_serin",
+      "voice": "Erinome",
+      "approved_text": "눈바람이 한곳에 모이고 있어요.",
+      "stage": "쉼터",
+      "runtime_id": null
+    },
+    {
+      "order": 3,
+      "candidate_id": "main26_paul_001",
+      "proposed_stage_id": "ch3stage_main26_paul_001",
+      "speaker_id": "companion_paul",
+      "voice": "Achird",
+      "approved_text": "마력이 응축되고 있습니다. 저 공격은 한기보다 위험할 수 있어요.",
+      "stage": "정령 예고",
+      "runtime_id": null
+    },
+    {
+      "order": 4,
+      "candidate_id": "main26_miel_002",
+      "proposed_stage_id": "ch3stage_main26_miel_002",
+      "speaker_id": "companion_miel",
+      "voice": "Sulafat",
+      "approved_text": "동상은 행동하지 못하는 동안 체력도 줄어듭니다. 연고를 준비해 주세요.",
+      "stage": "정령 예고",
+      "runtime_id": null
+    },
+    {
+      "order": 5,
+      "candidate_id": "main26_haren_001",
+      "proposed_stage_id": "ch3stage_main26_haren_001",
+      "speaker_id": "story_haren",
+      "voice": "Alnilam",
+      "approved_text": "위험하니까 넌 안에 있어. 내가 확인하고 올게.",
+      "stage": "갈등",
+      "runtime_id": null
+    },
+    {
+      "order": 6,
+      "candidate_id": "main26_taeon_001",
+      "proposed_stage_id": "ch3stage_main26_taeon_001",
+      "speaker_id": "companion_taeon",
+      "voice": "Algieba",
+      "approved_text": "형, 나 혼자 하겠다는 게 아니야. 우리가 어디로 갈지 같이 정하자는 거야.",
+      "stage": "갈등",
+      "runtime_id": null
+    },
+    {
+      "order": 7,
+      "candidate_id": "main26_haren_002",
+      "proposed_stage_id": "ch3stage_main26_haren_002",
+      "speaker_id": "story_haren",
+      "voice": "Alnilam",
+      "approved_text": "네가 다치면 어쩌려고!",
+      "stage": "갈등",
+      "runtime_id": null
+    },
+    {
+      "order": 8,
+      "candidate_id": "main26_taeon_002",
+      "proposed_stage_id": "ch3stage_main26_taeon_002",
+      "speaker_id": "companion_taeon",
+      "voice": "Algieba",
+      "approved_text": "나도 형이 다치는 건 싫어. 그래서 혼자 가게 두기 싫은 거야.",
+      "stage": "갈등",
+      "runtime_id": null
+    },
+    {
+      "order": 9,
+      "candidate_id": "main26_serin_002",
+      "proposed_stage_id": "ch3stage_main26_serin_002",
+      "speaker_id": "companion_serin",
+      "voice": "Erinome",
+      "approved_text": "저는 바람이 덜 부는 쪽을 볼게요.",
+      "stage": "갈등",
+      "runtime_id": null
+    },
+    {
+      "order": 10,
+      "candidate_id": "main26_paul_002",
+      "proposed_stage_id": "ch3stage_main26_paul_002",
+      "speaker_id": "companion_paul",
+      "voice": "Achird",
+      "approved_text": "바퀴와 짐수레가 지나갈 길을 확인하겠습니다.",
+      "stage": "갈등",
+      "runtime_id": null
+    },
+    {
+      "order": 11,
+      "candidate_id": "main26_miel_003",
+      "proposed_stage_id": "ch3stage_main26_miel_003",
+      "speaker_id": "companion_miel",
+      "voice": "Sulafat",
+      "approved_text": "저는 주민들의 상태를 살필게요.",
+      "stage": "갈등",
+      "runtime_id": null
+    },
+    {
+      "order": 12,
+      "candidate_id": "main26_haren_003",
+      "proposed_stage_id": "ch3stage_main26_haren_003",
+      "speaker_id": "story_haren",
+      "voice": "Alnilam",
+      "approved_text": "…알았어. 같이 가자.",
+      "stage": "갈등",
+      "runtime_id": null
+    },
+    {
+      "order": 13,
+      "candidate_id": "main26_serin_003",
+      "proposed_stage_id": "ch3stage_main26_serin_003",
+      "speaker_id": "companion_serin",
+      "voice": "Erinome",
+      "approved_text": "미엘 씨, 폴 씨가 요즘 미엘 씨 몫의 차부터 챙기던데요?",
+      "stage": "쉼터 수다",
+      "runtime_id": null
+    },
+    {
+      "order": 14,
+      "candidate_id": "main26_miel_004",
+      "proposed_stage_id": "ch3stage_main26_miel_004",
+      "speaker_id": "companion_miel",
+      "voice": "Sulafat",
+      "approved_text": "어머, 그런 것까지 보고 계셨어요?",
+      "stage": "쉼터 수다",
+      "runtime_id": null
+    },
+    {
+      "order": 15,
+      "candidate_id": "main26_serin_004",
+      "proposed_stage_id": "ch3stage_main26_serin_004",
+      "speaker_id": "companion_serin",
+      "voice": "Erinome",
+      "approved_text": "하하, 제가 사수잖아요. 놓치는 게 별로 없죠.",
+      "stage": "쉼터 수다",
+      "runtime_id": null
+    },
+    {
+      "order": 16,
+      "candidate_id": "main26_miel_005",
+      "proposed_stage_id": "ch3stage_main26_miel_005",
+      "speaker_id": "companion_miel",
+      "voice": "Sulafat",
+      "approved_text": "그럼 저도 조심해야겠네요.",
+      "stage": "쉼터 수다",
+      "runtime_id": null
+    },
+    {
+      "order": 17,
+      "candidate_id": "main26_serin_005",
+      "proposed_stage_id": "ch3stage_main26_serin_005",
+      "speaker_id": "companion_serin",
+      "voice": "Erinome",
+      "approved_text": "그런데 미엘 씨는 다른 분들 치료부터 하시면서, 정작 자기 손은 왜 늘 나중이에요?",
+      "stage": "쉼터 수다",
+      "runtime_id": null
+    },
+    {
+      "order": 18,
+      "candidate_id": "main26_miel_006",
+      "proposed_stage_id": "ch3stage_main26_miel_006",
+      "speaker_id": "companion_miel",
+      "voice": "Sulafat",
+      "approved_text": "……예전에도 저한테 먼저 치료받으라고 하던 사람이 있었어요.",
+      "stage": "쉼터 수다",
+      "runtime_id": null
+    },
+    {
+      "order": 19,
+      "candidate_id": "main26_serin_006",
+      "proposed_stage_id": "ch3stage_main26_serin_006",
+      "speaker_id": "companion_serin",
+      "voice": "Erinome",
+      "approved_text": "그럼 이번엔 제 말도 들어 주세요. 차 식기 전에 마셔요.",
+      "stage": "쉼터 수다",
+      "runtime_id": null
+    },
+    {
+      "order": 20,
+      "candidate_id": "main26_miel_007",
+      "proposed_stage_id": "ch3stage_main26_miel_007",
+      "speaker_id": "companion_miel",
+      "voice": "Sulafat",
+      "approved_text": "네. 이번엔 그럴게요.",
+      "stage": "쉼터 수다",
+      "runtime_id": null
+    },
+    {
+      "order": 21,
+      "candidate_id": "main26_taeon_003",
+      "proposed_stage_id": "ch3stage_main26_taeon_003",
+      "speaker_id": "companion_taeon",
+      "voice": "Algieba",
+      "approved_text": "이제 더 북쪽을 확인해 보죠.",
+      "stage": "마무리",
+      "runtime_id": null
+    },
+    {
+      "order": 22,
+      "candidate_id": "main26_haren_004",
+      "proposed_stage_id": "ch3stage_main26_haren_004",
+      "speaker_id": "story_haren",
+      "voice": "Alnilam",
+      "approved_text": "그래.",
+      "stage": "마무리",
+      "runtime_id": null
+    }
+  ],
+  "protected_main25": [
+    {
+      "stage_id": "ch3stage_main25_serin_001",
+      "speaker_id": "companion_serin",
+      "measured_sha256": "4c23155cfec976cd7d3259c649161aedf71fa02cea80bc87f245d69bea7fbc12",
+      "chapter": "Main25"
+    },
+    {
+      "stage_id": "ch3stage_main25_paul_001",
+      "speaker_id": "companion_paul",
+      "measured_sha256": "372aec106750c311b207949973780453986fdc3cc8610812831c5e71b03f583d",
+      "chapter": "Main25"
+    },
+    {
+      "stage_id": "ch3stage_main25_paul_002",
+      "speaker_id": "companion_paul",
+      "measured_sha256": "38edfc50c9ea63ed37187382639fc833ff8204c40ebf1804e94d0f93266497b4",
+      "chapter": "Main25"
+    },
+    {
+      "stage_id": "ch3stage_main25_taeon_001",
+      "speaker_id": "companion_taeon",
+      "measured_sha256": "a54acbce38c9ff66b67918ba8eaa4697faaab975c2ebf7a3b721d818bfa10fb2",
+      "chapter": "Main25"
+    },
+    {
+      "stage_id": "ch3stage_main25_haren_001",
+      "speaker_id": "story_haren",
+      "measured_sha256": "63a68cd199164d2f551bebe66e4411fdbbd1a6a8ff923f368b080239be9e237b",
+      "chapter": "Main25"
+    },
+    {
+      "stage_id": "ch3stage_main25_serin_002",
+      "speaker_id": "companion_serin",
+      "measured_sha256": "6b3f73baa7bb7aaf8fa3254971e2968615b40fe4f9a77306bc45527736f92939",
+      "chapter": "Main25"
+    },
+    {
+      "stage_id": "ch3stage_main25_taeon_002",
+      "speaker_id": "companion_taeon",
+      "measured_sha256": "11c69c74235027df6ef9cb2d52d51a79da9a27f9082307aab90296157c5b8829",
+      "chapter": "Main25"
+    },
+    {
+      "stage_id": "ch3stage_main25_miel_001",
+      "speaker_id": "companion_miel",
+      "measured_sha256": "dd66600832134a40f94cf4f02197f57e286d8c16192ea78993896b9e50cbb009",
+      "chapter": "Main25"
+    },
+    {
+      "stage_id": "ch3stage_main25_paul_003",
+      "speaker_id": "companion_paul",
+      "measured_sha256": "f5d5f13f4c18e920fd5c0ec8fcc134f37322ffaa0c3916ff40609708067b0bde",
+      "chapter": "Main25"
+    }
+  ]
+}

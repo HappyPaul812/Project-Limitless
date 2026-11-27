@@ -1,0 +1,39 @@
+I26 PASS F3 completed prerequisite
+I26 PASS actual approved mobility sprite Physical_Fighter_Female_Frame_00
+I26 PASS site F3North
+I26 PASS Mare grants exactly two once
+I26 PASS site F3North
+I26 PASS choice exists
+I26 PASS F4 checkpoint set
+I26 PASS approved F4 intro and loop
+I26 PASS wheelchair passes F4 south-to-north center route found
+I26 PASS wheelchair passes F4 south-to-north center body=(0.00, 6.40)
+I26 PASS wheelchair can return to shelter route found
+I26 PASS wheelchair can return to shelter body=(0.00, -3.44)
+I26 PASS site F4Shelter
+I26 PASS shelter scene advances
+I26 PASS site F4Wisp
+I26 PASS choice exists
+I26 PASS approved single wisp and party
+I26 PASS actual frostbite tell before damage
+I26 PASS one affected target / separate frostbite
+I26 PASS frostbite uses blocked opportunity and 4 percent
+I26 PASS ointment clears remaining frostbite and consumes one
+I26 PASS invalid remedy retains item
+I26 PASS defeat never progresses quest
+I26 PASS defeat returns to F4 checkpoint without regrant
+I26 PASS site F4Wisp
+I26 PASS choice exists
+I26 PASS designated victory advances
+I26 PASS site F4Evacuation
+I26 PASS conflict and safe evacuation completed
+I26 PASS site F4Shelter
+I26 PASS choice exists
+I26 PASS tea, optional female line and final completion
+I26 PASS site F4North
+I26 PASS north remains informational after completion
+I26 PASS site F4South
+I26 PASS choice exists
+I26 PASS site F3North
+I26 PASS F3 return and supply cannot repeat
+Unity 6000.6.5f1 / 38 PASS / exit 0 / isolated

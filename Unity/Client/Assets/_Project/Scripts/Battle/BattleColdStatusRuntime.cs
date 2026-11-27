@@ -17,14 +17,18 @@ namespace ProjectLimitless.Battle
     /// </summary>
     public sealed class ColdStatusCandidateRules
     {
-        public ColdStatusCandidateRules(ColdReapplicationRule reapplication, int? frostbiteDamage, bool frostbiteUsesDefending, bool protectNaturalChillRecovery = false)
+        public ColdStatusCandidateRules(ColdReapplicationRule reapplication, int? frostbiteDamage, bool frostbiteUsesDefending, bool protectNaturalChillRecovery = false, int? frostbiteMaxHpPercent = null)
         {
             if(!Enum.IsDefined(typeof(ColdReapplicationRule),reapplication))throw new ArgumentOutOfRangeException(nameof(reapplication));
             if(frostbiteDamage.HasValue&&frostbiteDamage.Value<=0)throw new ArgumentOutOfRangeException(nameof(frostbiteDamage));
+            if (frostbiteMaxHpPercent.HasValue && (frostbiteMaxHpPercent.Value <= 0 || frostbiteMaxHpPercent.Value > 100))
+                throw new ArgumentOutOfRangeException(nameof(frostbiteMaxHpPercent));
+            FrostbiteMaxHpPercent = frostbiteMaxHpPercent;
             Reapplication=reapplication;FrostbiteDamage=frostbiteDamage;FrostbiteUsesDefending=frostbiteUsesDefending;ProtectNaturalChillRecovery=protectNaturalChillRecovery;
         }
         public ColdReapplicationRule Reapplication { get; }
         public int? FrostbiteDamage { get; }
+        public int? FrostbiteMaxHpPercent { get; }
         public bool FrostbiteUsesDefending { get; }
         public bool ProtectNaturalChillRecovery { get; }
     }
@@ -67,7 +71,7 @@ namespace ProjectLimitless.Battle
         public int GetFrostbiteRemaining(Combatant target)=>Remaining(frostbites,target);
         public int GetFrozenNecrosisStacks(Combatant target)=>Remaining(necroses,target);
         public bool IsColdActionBlocked(Combatant actor)=>GetChillRemaining(actor)>0||GetFrostbiteRemaining(actor)>0;
-        public bool IsFrostbiteDamageOnHold=>coldRules?.FrostbiteDamage==null;
+        public bool IsFrostbiteDamageOnHold=>coldRules?.FrostbiteDamage==null && coldRules?.FrostbiteMaxHpPercent==null;
 
         public bool TryApplyChill(Combatant target)=>ApplyColdDuration(chills,target,ColdStatusKind.Chill);
         public bool TryApplyFrostbite(Combatant target)=>ApplyColdDuration(frostbites,target,ColdStatusKind.Frostbite);
@@ -89,8 +93,14 @@ namespace ProjectLimitless.Battle
             try
             {
                 // HP/표시 알림 콜백이 처리 중 재부여/완료를 요청해도 한 기회의 틱·횟수는 한 번만 적용합니다.
-                if(actor.IsAlive&&GetFrostbiteRemaining(actor)>0&&coldRules?.FrostbiteDamage!=null)
-                    ApplyFrostbiteDamage(actor,coldRules.FrostbiteDamage.Value,coldRules.FrostbiteUsesDefending);
+                if (actor.IsAlive && GetFrostbiteRemaining(actor) > 0 && coldRules != null)
+                {
+                    // F4의 승인 비율만 최대 HP로 계산합니다. 이전 감사의 고정 피해 옵션은 그대로 둡니다.
+                    int? damage = coldRules.FrostbiteMaxHpPercent is int percent
+                        ? (int)((actor.MaxHp * (long)percent + 99) / 100)
+                        : coldRules.FrostbiteDamage;
+                    if (damage.HasValue) ApplyFrostbiteDamage(actor, damage.Value, coldRules.FrostbiteUsesDefending);
+                }
                 SpendColdOpportunity(chills,actor,ColdStatusKind.Chill);
                 SpendColdOpportunity(frostbites,actor,ColdStatusKind.Frostbite);
                 RemoveInvalidColdStates();return true;

@@ -1,0 +1,22 @@
+ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+  at UnityEditor.Search.SearchDatabase+<EnumerateAll>d__78.MoveNext () [0x00089] in <60f2bd518b604435bcf930e6d229f684>:0
+  at UnityEditor.Search.SearchDatabase.GetDefaultSearchDatabase () [0x00005] in <60f2bd518b604435bcf930e6d229f684>:0
+GUARDIAN PASS Battle wheelchair / actual three visible allies
+GUARDIAN PASS 20 and 7 actual 96px frames
+GUARDIAN PASS Light_Existing_Iron size / offset / tint / aspect
+GUARDIAN PASS Light_Existing_Iron all frames / interval / single state at 9
+GUARDIAN PASS Light_Existing_Cover size / offset / tint / aspect
+GUARDIAN PASS Light_Existing_Cover all frames / interval / single state at 1
+GUARDIAN PASS Light_Candidate_Iron size / offset / tint / aspect
+GUARDIAN PASS Light_Candidate_Iron all frames / interval / single state at 9
+GUARDIAN PASS Light_Candidate_Cover size / offset / tint / aspect
+GUARDIAN PASS Light_Candidate_Cover all frames / interval / single state at 1
+GUARDIAN PASS Dark_Existing_Iron size / offset / tint / aspect
+GUARDIAN PASS Dark_Existing_Iron all frames / interval / single state at 9
+GUARDIAN PASS Dark_Existing_Cover size / offset / tint / aspect
+GUARDIAN PASS Dark_Existing_Cover all frames / interval / single state at 1
+GUARDIAN PASS Dark_Candidate_Iron size / offset / tint / aspect
+GUARDIAN PASS Dark_Candidate_Iron all frames / interval / single state at 9
+GUARDIAN PASS Dark_Candidate_Cover size / offset / tint / aspect
+GUARDIAN PASS Dark_Candidate_Cover all frames / interval / single state at 1
+GUARDIAN PASS existing protection intercepts both allies

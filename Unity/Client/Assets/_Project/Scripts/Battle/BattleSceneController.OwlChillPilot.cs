@@ -81,7 +81,10 @@ namespace ProjectLimitless.Battle
             if (!statusEffects.TryBeginColdBlockedOpportunity(currentActor)) return false;
             activeOpportunityBlocked = true;
             actionPlaying = true; SetCommandButtons(false); SetCancelButtonVisible(false);
-            messageText.text = $"{currentActor.DisplayName}: 한기 {statusEffects.GetChillRemaining(currentActor)}회 · 행동불가";
+            int frostbite = statusEffects.GetFrostbiteRemaining(currentActor);
+            messageText.text = frostbite > 0
+                ? $"{currentActor.DisplayName}: 동상 {frostbite}회 · 행동불가"
+                : $"{currentActor.DisplayName}: 한기 {statusEffects.GetChillRemaining(currentActor)}회 · 행동불가";
             UpdateTimeline(); RefreshCombatantViews(null);
             StartCoroutine(CompleteOwlChillOpportunity(currentActor)); return true;
         }

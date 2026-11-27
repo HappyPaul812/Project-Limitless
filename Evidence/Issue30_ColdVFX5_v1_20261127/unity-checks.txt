@@ -1,0 +1,6 @@
+I30 PASS Battle / 336 UI units / actual party / approved Snowroad
+I30 PASS Light direction False mouth=(-134.96, 79.63) target=(212.40, 53.46)
+I30 PASS Light direction True mouth=(134.96, 79.63) target=(-212.40, 53.46)
+I30 PASS Dark direction False mouth=(-134.96, 79.63) target=(212.40, 53.46)
+I30 PASS Dark direction True mouth=(134.96, 79.63) target=(-212.40, 53.46)
+Unity 6000.6.5f1 / exit 0 / review-only Battle

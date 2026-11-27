@@ -110,28 +110,21 @@ namespace ProjectLimitless.EditorTools
                 }
                 if (count != 15) throw new Exception($"15개 대신 {count}개 스킬 검증됨");
 
-                // Unity가 런타임 Sprite를 파괴했지만 정적 캐시 참조는 남은 상황을 재현합니다.
+                // 승인 PNG에서 읽은 에셋은 파괴하지 않고, 캐시의 null 항목만 재현합니다.
+                var cache = (Dictionary<string, Sprite>)typeof(BattleUiIconCatalog)
+                    .GetField("Cache", BindingFlags.NonPublic | BindingFlags.Static).GetValue(null);
                 foreach (string id in new[] { BattleUiIconCatalog.MageFireballSkill,
-                    BattleUiIconCatalog.MageThunderboltSkill, BattleUiIconCatalog.HealerCleanseSkill })
+                    BattleUiIconCatalog.MageThunderboltSkill, BattleUiIconCatalog.MageGaiaWallSkill })
                 {
-                    Sprite stale = BattleUiIconCatalog.LoadSkillButtonIcon(id);
-                    UnityEngine.Object.DestroyImmediate(stale);
-                    Sprite restored = BattleUiIconCatalog.LoadSkillButtonIcon(id);
-                    if (restored == null) throw new Exception(id + ": 파괴된 캐시 복구 실패");
-                    var cache = (Dictionary<string, Sprite>)typeof(BattleUiIconCatalog)
-                        .GetField("SkillButtonCache", BindingFlags.NonPublic | BindingFlags.Static).GetValue(null);
-                    UnityEngine.Object.DestroyImmediate(restored);
                     cache[id] = null;
-                    restored = BattleUiIconCatalog.LoadSkillButtonIcon(id);
-                    if (restored == null) throw new Exception(id + ": null 캐시 복구 실패");
                     Button recovered = (Button)makeButton.Invoke(controller, new object[] {
                         panel.transform, "Recovered", id, id, Vector2.one * .5f, (Action)(() => { }), null });
-                    Image recoveredIcon = recovered.transform.Find("SkillIcon")?.GetComponent<Image>();
-                    if (recoveredIcon == null || recoveredIcon.sprite != restored || !recoveredIcon.enabled ||
-                        !recoveredIcon.gameObject.activeSelf || recoveredIcon.color.a <= 0f)
-                        throw new Exception(id + ": 복구한 Sprite 버튼 할당 실패");
+                    Image icon = recovered.transform.Find("SkillIcon")?.GetComponent<Image>();
+                    if (icon == null || icon.sprite == null || !icon.enabled ||
+                        !icon.gameObject.activeSelf || icon.color.a <= 0f)
+                        throw new Exception(id + ": null 캐시 복구 후 Sprite 표시 실패");
                     UnityEngine.Object.DestroyImmediate(recovered.gameObject);
-                    Debug.Log("SKILL_BUTTON_AUDIT " + id + ": destroyed cache recovery PASS");
+                    Debug.Log("SKILL_BUTTON_AUDIT " + id + ": null cache recovery PASS");
                 }
             }
             finally

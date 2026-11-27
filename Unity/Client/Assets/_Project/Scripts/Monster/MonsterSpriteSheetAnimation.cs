@@ -40,6 +40,8 @@ namespace ProjectLimitless.Monster
         // 피해·독 부여 시점은 기존 Presenter가 유지하며, 다른 몬스터의 재생 계약은 바꾸지 않습니다.
         public bool IsTimedHitPlaying => reacting && !defeated && definition?.HitFrameSeconds?.Length > 0;
 
+        public float MeleeImpactSeconds => definition?.MeleeImpactSeconds ?? 0f;
+
         public bool UsesApprovedAttackTiming => definition != null && (definition.MeleeImpactSeconds > 0f || definition.MonsterId == "venom_bee" || definition.MonsterId == "forest_spider" || definition.MonsterId == "venom_snake");
 
         public bool IsAttackPlaying => isActiveAndEnabled && attacking && !defeated;
@@ -105,7 +107,7 @@ namespace ProjectLimitless.Monster
         public void PlaySkill()
         {
             if (defeated) return;
-            if (hitFrames.Length == 0) { PlayAttack(); return; }
+            if (definition?.UseAttackForSkillAnimation == true || hitFrames.Length == 0) { PlayAttack(); return; }
             usingSkill = true; attacking = false; shooting = false; reacting = false; elapsed = 0f;
             ShowFrame(hitFrames, 0);
         }
@@ -205,7 +207,7 @@ namespace ProjectLimitless.Monster
             if (battleImage != null) battleImage.sprite = frames[index];
         }
 
-        private static Sprite[] CreateFrames(Texture2D sheet, Vector2Int frameSize, int columns,
+        private Sprite[] CreateFrames(Texture2D sheet, Vector2Int frameSize, int columns,
             int frameCount, string prefix)
         {
             if (sheet == null || frameSize.x <= 0 || frameSize.y <= 0 || columns <= 0 || frameCount <= 0)
@@ -220,7 +222,7 @@ namespace ProjectLimitless.Monster
                 // 셀 너비를 PPU로 사용하면 Field에서 한 프레임 폭이 1월드 단위가 됩니다.
                 // 여기에 Definition의 0.85 Scale을 적용해 검증 Scene에서 확정한 상대 크기를 유지합니다.
                 frames[index] = Sprite.Create(sheet,
-                    new Rect(column * frameSize.x, y, frameSize.x, frameSize.y), new Vector2(.5f, .5f),
+                    new Rect(column * frameSize.x, y, frameSize.x, frameSize.y), definition.SheetFramePivot,
                     frameSize.x, 0, SpriteMeshType.FullRect);
                 frames[index].name = $"{prefix}_{index:00}";
             }

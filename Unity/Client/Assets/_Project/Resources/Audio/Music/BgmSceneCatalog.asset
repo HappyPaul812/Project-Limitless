@@ -53,6 +53,9 @@ MonoBehaviour:
   - sceneName: World_NorthF3
     clip: {fileID: 8300000, guid: ef4b230178164d0fb0f25ac62def65dc, type: 3}
     intro: {fileID: 8300000, guid: f7beb59b42fe44119f92939ea116d7e7, type: 3}
+  - sceneName: World_NorthF4
+    clip: {fileID: 8300000, guid: 77ebb7af66bd4a45aeee17914bb46fe5, type: 3}
+    intro: {fileID: 8300000, guid: efc2bc1ee3514e2bb1888993344d849b, type: 3}
   safeZoneClip: {fileID: 8300000, guid: bbb81dfc8750786489989a28098bbff6, type: 3}
   chapter1BattleClip: {fileID: 8300000, guid: 3d11958c811f4bf68fe4ce3e6fb1675a, type: 3}
   chapter2BattleClip: {fileID: 8300000, guid: 629fdad08236c394ea9623741bd7053f, type: 3}

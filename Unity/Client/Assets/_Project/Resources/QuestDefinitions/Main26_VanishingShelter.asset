@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c82de195ab08742b4c2ed83c2494f1, type: 3}
+  m_Name: Main26_VanishingShelter
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
+  questId: main_26_vanishing_shelter
+  displayName: 사라지는 피난처
+  description: 백색 침엽림의 피난 주민들이 안전하게 철수하도록 도우세요.
+  questType: 0
+  objectives:
+  - objectiveId: collect_ointment
+    description: 마레가 준비한 해빙 연고 두 개를 받으세요.
+    objectiveType: 3
+    targetId: main26_supply
+    requiredCount: 1
+  - objectiveId: enter_north_f4
+    description: 백색 침엽림에 들어가세요.
+    objectiveType: 1
+    targetId: north_f4_entry
+    requiredCount: 1
+  - objectiveId: inspect_frozen_shelter
+    description: 얼어붙은 원정 쉼터를 조사하세요.
+    objectiveType: 3
+    targetId: main26_shelter
+    requiredCount: 1
+  - objectiveId: defeat_wisp
+    description: 눈보라 정령과의 단독 전투에서 승리하세요.
+    objectiveType: 2
+    targetId: main26_first_blizzard_wisp
+    requiredCount: 1
+  - objectiveId: secure_evacuation
+    description: 주민과 안전한 철수 길을 확인하세요.
+    objectiveType: 3
+    targetId: main26_evacuation
+    requiredCount: 1
+  - objectiveId: finish_shelter_story
+    description: 안전한 쉼터에서 동료들과 대화를 마치세요.
+    objectiveType: 3
+    targetId: main26_debrief
+    requiredCount: 1
+  reward:
+    Experience: 150
+    Currency: 60
+    Items: []
+  prerequisiteQuestIds:
+  - main_25_broken_warmth_flow
+  nextMainQuestId:
+  startNpcId:
+  turnInNpcId:

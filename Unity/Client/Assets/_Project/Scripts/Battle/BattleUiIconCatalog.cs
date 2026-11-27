@@ -49,6 +49,11 @@ namespace ProjectLimitless.Battle
 
         // Resources 폴더 아래의 상대 경로만 보관합니다. 원본 압축과 라이선스는 ThirdParty에 그대로
         // 보존하고, 런타임에 필요한 PNG만 Resources에서 Sprite로 불러오는 구조입니다.
+        private const string CriticalStrikeIconPath = "BattleItemIcons/Fighter_CriticalStrike_v2_128_RGBA";
+
+        private const string FireballIconPath = "BattleItemIcons/Mage_FireBall_v1_KEEP_128_RGBA";
+        private const string GaiaWallIconPath = "BattleItemIcons/Mage_GaiaWell_v3_128_RGBA";
+
         private static readonly Dictionary<string, string> ResourcePaths = new Dictionary<string, string>
         {
             { Attack, "BattleItemIcons/AttackButton_Original_128_RGBA" },
@@ -75,90 +80,36 @@ namespace ProjectLimitless.Battle
             // 수호의 맹세는 보호막 원화를 스킬과 상태 HUD에서 공유합니다.
             { GuardianCoverAlliesSkill, "BattleItemIcons/Guardian_CoverAllies_v2_128_RGBA" },
             { GuardianCover, "BattleItemIcons/Guardian_CoverAllies_v2_128_RGBA" },
-            { HealerHealingLightSkill, "KenneyBattleIcons/suit_hearts" },
-            // 버튼은 Radiant Heal의 가장 밝은 peak 한 장을 고정 그림으로 사용하고, 실제 전투에서는
-            // 같은 계열의 전체 프레임을 별도로 재생합니다.
-            { HealerHealingWaveSkill, string.Empty },
-            // spectral-bloom Peak index 5는 버튼용 고정 그림입니다. 실제 정화는 별도의 16프레임 배열을 재생합니다.
-            { HealerCleanseSkill, string.Empty },
-            { SharpshooterAimSkill, "KenneyBattleIcons/target" },
-            { SharpshooterArrowRainSkill, "KenneyBattleIcons/bow" },
-            // 이 ID는 아래 Load에서 현재 기본 야수 정의가 고른 Run 프레임을 아이콘용 Sprite로 잘라 사용합니다.
-            // 정조준은 계속 Kenney target.png 경로를 사용하므로 두 스킬의 그림이 서로 영향을 주지 않습니다.
-            { SharpshooterCompanionAssaultSkill, string.Empty },
-            { FighterNandoSkill, "KenneyBattleIcons/cross" },
-            { FighterMomentum, "KenneyBattleIcons/skull" },
-            { FighterCriticalStrikeSkill, "KenneyBattleIcons/skull" },
-            { FighterWhirlwindSkill, "KenneyBattleIcons/spinner" },
-            // 파이어 볼 버튼과 화상 상태는 Warm Explosion의 가장 큰 index 4를 함께 사용합니다.
-            // 불꽃 그림과 한글 상태명을 같이 보여 주므로 색상만으로 화상을 구분하지 않습니다.
-            { MageFireballSkill, string.Empty },
-            { Burn, string.Empty },
-            // 스킬 그림은 electric-impact의 Peak를 런타임에 자른 고정 Sprite이고, 감전 상태는
-            // Kenney power.png를 사용합니다. 같은 번개 계열이라도 전투 Animation과 UI 표식을 분리합니다.
-            { MageThunderboltSkill, string.Empty },
+            { HealerHealingLightSkill, "BattleItemIcons/Healer_HealingLight_v2_128_RGBA" },
+            { HealerHealingWaveSkill, "BattleItemIcons/Healer_HealingWave_v1_KEEP_128_RGBA" },
+            { HealerCleanseSkill, "BattleItemIcons/Healer_Cleanse_v2_128_RGBA" },
+            { SharpshooterAimSkill, "BattleItemIcons/Sharpshooter_AimedShot_Original_128_RGBA" },
+            { SharpshooterArrowRainSkill, "BattleItemIcons/Sharpshooter_ArrowRain_Original_128_RGBA" },
+            // 동료의 습격은 장착 야수와 무관한 공통 버튼 그림입니다. 야수별 Run은 전투 연출에서 사용합니다.
+            { SharpshooterCompanionAssaultSkill, "BattleItemIcons/Sharpshooter_CompanionAssault_v2_128_RGBA" },
+            { FighterNandoSkill, "BattleItemIcons/Fighter_Nando_v2_128_RGBA" },
+            // 회심의 일격과 기세 HUD는 같은 Sprite를 참조해 기세의 사용처를 보여 줍니다.
+            { FighterMomentum, CriticalStrikeIconPath },
+            { FighterCriticalStrikeSkill, CriticalStrikeIconPath },
+            { FighterWhirlwindSkill, "BattleItemIcons/Fighter_Whirlwind_v1_KEEP_128_RGBA" },
+            // 파이어 볼과 화상, 가이아 웰과 방어 상태는 각각 같은 승인 Sprite를 공유합니다.
+            { MageFireballSkill, FireballIconPath },
+            { Burn, FireballIconPath },
+            { MageThunderboltSkill, "BattleItemIcons/Mage_Thunderbolt_v2_128_RGBA" },
             { Shock, "KenneyBattleIcons/power" },
-            // 기본 방어의 큰 외곽선 shield.png와 구분되는 실제 Board Game Icons의 dice_shield.png입니다.
-            { MageGaiaWallSkill, "KenneyBattleIcons/dice_shield" },
-            { GaiaWall, "KenneyBattleIcons/dice_shield" },
+            { MageGaiaWallSkill, GaiaWallIconPath },
+            { GaiaWall, GaiaWallIconPath },
             { Poison, string.Empty }
         };
 
         private static readonly Dictionary<string, Sprite> Cache = new Dictionary<string, Sprite>();
 
-        private static readonly Dictionary<string, Sprite> SkillButtonCache = new Dictionary<string, Sprite>();
-
-        /// <summary>
-        /// 세 Grid 아이콘은 버튼 전용 고정 Sprite로 만듭니다. 정적 배열에 남은 파괴된 프레임이나
-        /// 첫 로드 실패가 메뉴 재생성까지 전파되지 않도록 살아 있는 Sprite만 재사용합니다.
-        /// 나머지 버튼의 확정 매핑과 기존 상세/상태/VFX 로더는 그대로 유지합니다.
-        /// </summary>
+        /// <summary>스킬 버튼은 상세·상태와 같은 로더를 사용하며, Play 전환 뒤 무효화된 캐시만 복구합니다.</summary>
         public static Sprite LoadSkillButtonIcon(string iconId)
         {
-            string path;
-            int index;
-            switch (iconId)
-            {
-                case MageFireballSkill:
-                    path = "BattleSkillEffects/WarmExplosion/warm_explosion_sheet";
-                    index = 4;
-                    break;
-                case MageThunderboltSkill:
-                    path = "BattleSkillEffects/ElectricImpact/electric_impact_sheet";
-                    index = 1;
-                    break;
-                case HealerCleanseSkill:
-                    path = "BattleSkillEffects/SpectralBloom/spectral_bloom_sheet";
-                    index = 5;
-                    break;
-                default:
-                    // Wolf처럼 기존 로더에서 만든 런타임 Sprite도 Play 전환 후 파괴될 수 있습니다.
-                    // 정상 항목은 유지하고 무효 캐시만 지워 기존 매핑으로 다시 읽습니다.
-                    if (!string.IsNullOrEmpty(iconId) && Cache.TryGetValue(iconId, out Sprite existing) &&
-                        (existing == null || existing.texture == null)) Cache.Remove(iconId);
-                    return Load(iconId);
-            }
-
-            if (SkillButtonCache.TryGetValue(iconId, out Sprite cached) && cached != null && cached.texture != null)
-                return cached;
-            SkillButtonCache.Remove(iconId);
-
-            Texture2D sheet = Resources.Load<Texture2D>(path);
-            const int cellSize = 96;
-            const int columns = 5;
-            int x = index % columns * cellSize;
-            int y = sheet == null ? -1 : sheet.height - (index / columns + 1) * cellSize;
-            // 실패를 캐시하지 않아 Import가 끝난 뒤 다음 메뉴 생성에서 다시 시도할 수 있습니다.
-            if (sheet == null || y < 0 || x + cellSize > sheet.width) return null;
-
-            Sprite sprite = Sprite.Create(sheet, new Rect(x, y, cellSize, cellSize),
-                Vector2.one * .5f, cellSize, 0, SpriteMeshType.FullRect);
-            if (sprite != null)
-            {
-                sprite.name = $"{iconId}_Button_{index:00}";
-                SkillButtonCache[iconId] = sprite;
-            }
-            return sprite;
+            if (!string.IsNullOrEmpty(iconId) && Cache.TryGetValue(iconId, out Sprite existing) &&
+                (existing == null || existing.texture == null)) Cache.Remove(iconId);
+            return Load(iconId);
         }
 
         /// <summary>
@@ -180,42 +131,7 @@ namespace ProjectLimitless.Battle
             if (Cache.TryGetValue(iconId, out Sprite cached)) return cached;
 
             Sprite sprite;
-            if (iconId == SharpshooterCompanionAssaultSkill)
-            {
-                // ThirdParty 원본을 수정하거나 별도 PNG로 재생성하지 않습니다. 야수 정의가 제공하는 경로와
-                // 아이콘 프레임 번호를 읽어 런타임에 한 칸만 잘라 쓰므로 Bear/Fox도 같은 코드를 재사용합니다.
-                BeastCompanionDefinition beast = BeastCompanionCatalog.GetDefaultDefinition();
-                Texture2D runSheet = Resources.Load<Texture2D>(beast.IconResourcePath);
-                int frameCount = runSheet == null ? 0 : runSheet.width / beast.IconFrameWidth;
-                int frameIndex = Mathf.Clamp(beast.IconFrameIndex, 0, Mathf.Max(0, frameCount - 1));
-                sprite = runSheet == null || frameCount == 0 ? null : Sprite.Create(runSheet,
-                    new Rect(frameIndex * beast.IconFrameWidth, 0f, beast.IconFrameWidth, runSheet.height),
-                    new Vector2(.5f, .5f), beast.IconFrameWidth, 0, SpriteMeshType.FullRect);
-                if (sprite != null) sprite.name = $"{beast.DisplayName}_CompanionAssault_Icon";
-            }
-            else if (iconId == HealerHealingWaveSkill)
-            {
-                Sprite[] radiantFrames = Resources.LoadAll<Sprite>("BattleSkillEffects/RadiantHeal");
-                System.Array.Sort(radiantFrames, (left, right) => string.CompareOrdinal(left.name, right.name));
-                sprite = radiantFrames.Length == 0 ? null : radiantFrames[Mathf.Min(7, radiantFrames.Length - 1)];
-            }
-            else if (iconId == HealerCleanseSkill)
-            {
-                sprite = BattleCleanseVisuals.LoadSkillIcon();
-            }
-            else if (iconId == MageFireballSkill || iconId == Burn)
-            {
-                // 전체 15프레임 중 폭발이 가장 큰 한 장만 UI 아이콘으로 사용합니다. 전투 VFX는 별도로
-                // 15장을 순서대로 재생하므로 고정 버튼 그림과 실제 폭발 Animation이 서로 섞이지 않습니다.
-                sprite = BattleFireballVisuals.LoadSkillIcon();
-            }
-            else if (iconId == MageThunderboltSkill)
-            {
-                // 14장 전투 VFX 가운데 Peak index 1 한 장만 버튼에 고정합니다. 버튼 Sprite가 애니메이션
-                // 프레임 배열과 섞이지 않아 메뉴를 열었다고 전투용 프레임 재생 상태가 변하지 않습니다.
-                sprite = BattleThunderboltVisuals.LoadSkillIcon();
-            }
-            else if (iconId == Poison)
+            if (iconId == Poison)
             {
                 // Venom Ward 16장 중 녹색 고리가 가장 조밀한 index 6을 고정 아이콘으로 사용합니다.
                 // 독 틱의 Acid Splash 재생과 분리해 HUD가 애니메이션처럼 깜박이지 않게 합니다.

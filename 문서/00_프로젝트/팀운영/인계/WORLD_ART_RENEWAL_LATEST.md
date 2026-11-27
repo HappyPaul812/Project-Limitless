@@ -1,3 +1,281 @@
+## 2026-11-27 / Issue #124 직업별 상태 HUD 교체 준비 (최신)
+
+- 대표 최신 지시: 직업별 스킬 VFX 교체가 마감된 직업부터 해당 버프/디버프/상태 HUD 오리지널화 준비. 기존 고유 승인 자산은 KEEP, 외부 실사용 참조만 신규 제작. 기능·수치·타이밍·턴/중첩/해제·HUD 라벨·공유 계약 유지. 수호자 VFX2 납품(7215314368)은 현재 검수/승인 대기이며 교체 완료 아님. 이번은 읽기 전용 참조 조사 및 문서화만, 신규 PNG/ZIP/Unity 작업0.
+- main 실제 코드 Unity/Client/Assets/_Project/Scripts/Battle/BattleUiIconCatalog.cs blob 4cde68fc3958a2136db72eb6921f12292ed0125f, BattleSceneController.cs blob f1b1c02600617f5b721b6414fff57841a9220544 확인. 상태 marker -> catalog ID -> Load(Sprite) 경로, 고유 아이콘 연결은 로컬 Codex 보고와 대조. 최신 로컬 제품 파일 및 원본 PNG 직접 확보 불가(추정 Resources/KenneyBattleIcons/pawn_right.png 등 404); 실제 파일 위치/PNG/현행 제품 매핑은 다음 좁은 읽기 전용 감사로 확정. main 기준 구 경로를 최신 격리 제품의 현행 매핑으로 오인하지 않음.
+- 수호자: marker taunt -> status.taunt -> KenneyBattleIcons/pawn_right(도발 버튼 skill.guardian.taunt의 구 pawn_left와 별개). [Codex 연결 보고](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7129650829)에서 도발 상태 pawn_right 유지 확인. 신규 후보는 도발 상태 1종만, 실제 최신 참조/승인 대체본 없음 확인 및 VFX 마감 후 제작. 적에게 부여되는 강제 공격 대상 상태를 표현하고 수호자 자신의 스킬 버튼과 구분. 기존 도발 VFX 코드 KEEP과 별개.
+- marker iron_wall -> status.guardian.iron_wall / skill.guardian.iron_wall 구 structure_wall 공유, guardian_cover -> status.guardian.cover_allies / skill.guardian.cover_allies 구 pawns 공유. 동일 Codex 보고 제품 931325391a3f5ae1da8c4e7f0ceb7f98a64519d9에서 승인 철벽 v2 및 맹세 v2 각각 동일 Sprite 객체 검증 7 PASS, LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 두 상태 원화 KEEP. 맹세 20/24px 세부 보호 관계 PARTIAL 기획 수용 유지, 라벨 보존. defend -> command.defend 구 shield 공유, 기존 고유 방어 승인 원화 유지(제품 보고 1d8ec56059458b18a3344eb1753c9f63fc041ae2 및 7119017275); 최신 통합 후보에서 공유 경로 확인.
+- 후속 직업 사전 분류: 치유사 치유/정화는 현재 확인한 카탈로그에서 별도 전용 지속 상태 ID 없음, 실제 상태 모델/공유 참조 감사 후 판단, 새 상태를 만들지 않음. 사수도 확인한 카탈로그에서 전용 상태 ID 없음, 정조준/화살비/동료의 습격 실제 상태 참조 감사 후 판단. 투사 marker fighter.momentum -> status.fighter.momentum / skill.fighter.critical_strike 구 skull 공유, [7208383967](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7208383967) 제품 7c05706ddbce17d3cc76299faf0d45f197276f34에서 회심 v2와 실제 기세2 HUD 동일 Sprite 객체 및 20/24px 확인. KEEP.
+- 마도사 marker burn -> status.burn / skill.mage.fireball 구 WarmExplosion index4 공유, gaia -> status.gaia_wall / skill.mage.gaia_wall 구 dice_shield 공유. [7209977130](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7209977130) 제품 a4825b7c1913e4e845a6d873bdd9f7fbde4404c5에서 승인 파이어 볼 v1/가이아 웰 v3와 합성 상태 HUD 동일 Sprite 확인(실제 발동 미검증). KEEP. shock -> status.shock -> KenneyBattleIcons/power 별도 유지 확인, 마도사 VFX 마감 후 실사용 최신 감사 및 신규 후보 검토. 썬더볼트 스킬 아이콘과 임의 공유 금지.
+- 공용/기타 별도 감사 대기: status.acting arrowRight, cooldown 3단 hourglass_top/hourglass/hourglass_bottom, status.poison -> BattlePoisonVisuals.LoadStatusIcon() (Venom Ward index6, 독 틱 Acid Splash와 별도), overheat -> Main18/UI/Status_Overheat, path.* -> PathPresentationResolver.FindTraitIcon. 한기/동상 등 직접/텍스트 표시 여부는 상태 모델 추가 확인 전 미확정. 독/감전 등의 적·플레이어 공유 가능성 확인, 공용 항목 직업별 중복 제작 금지. 기존 길 Trait5/승인 상태 원화 보호.
+- 순서: 수호자 VFX 검수·승인·연결 마감 -> 도발 상태 1종 최신 참조/원본/기존 승인 대체본 확인 -> 외부 잔여만 제작. 이후 치유사→사수→투사→마도사 동일 절차(기존 직업 순서 유지). 신규 HUD 후보는 제안 규격 128×128 투명 RGBA, 실제 20/24px 중심 및 30/40px 밝고 어두운 배경 컬러/흑백, 기존 원본·승인 스킬과 비교, Manifest/SHA256/ZIP, 사용자 승인 후 Codex 표시 매핑만 별도 적용. 기존 PASS 전수 반복 금지. Unity6000.6.5f1 및 승인15 아이콘/기본3투사체/기존 VFX/코드/기능/수치/타이밍/Save/UserData/#85/#131/#132/main 보호. 상태: STATUS_REFERENCE_PREP / GUARDIAN_TAUNT_CANDIDATE_AFTER_VFX_CLOSE / SHARED_ICONS_KEEP / LOCAL_PRODUCT_RECHECK_PENDING.
+- 정식 보고 커밋 bf9c21bb1b986952c058a100a0fa27db59bacc9e
+
+## 2026-11-27 / Issue #124 수호자 VFX 2종 검수 후보 (최신)
+
+- 기획 발주 https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7214829342 및 기본 투사체3 격리 적용 7214673675 확인. 승인15 아이콘 및 기본3투사체 보호. 신규 VFX는 철벽과 수호의 맹세만.
+- main의 실제 외부 원본 EarthRupture/earth_rupture_sheet.png(480×384, Git blob 98319816b4bd52b2c3c417b5f8c1d40f38718e66), FrostNova/frost_nova_sheet.png(480×288, Git blob aea2b7dd12b7a86cb7ea5fb7d399db656307581c)를 GitHub fetch로 직접 시각 확인. BattleIronWallVisuals.cs, BattleGuardianCoverVisuals.cs, BattleActionPresenter.cs, BattleSceneController.cs 및 기존 import meta 확인. 최신 로컬 전용 제품 worktree는 독립 확인 불가. 외부 원본 전체 바이트는 로컬 ZIP으로 옮기지 못했으며 원본 대비 실제 배율 합성판 미완료.
+- Art/IronWall_96px_20f_5x4_RGBA.png SHA256 b83c79884917a065f76152df613be911ccc8686c2d32bbe77b7974be3af0c01a, 480×384 RGBA, 96셀 20장, 50ms/20FPS, 1회 1초, 상태 index9(프레임 진입 명목 .45초), 158×158 UI px, offset(0,-34), Tint(1,.82,.58,1). 생성 원천 4×5 구성을 5×4 행 우선 시트로 재배열, 낮은 알파/경계 정리 및 발밑 위치 조정. 장벽 상승/형성/소멸.
+- Art/GuardianCover_96px_7f_5x3_RGBA.png SHA256 a1593cd43d9d41f092192f9ddb52425b1ba09a0a36a4d398e444596f9dafda04, 480×288 RGBA, 96셀 7장, 실제 슬롯 4~10만 사용, 나머지 전체 투명. 45ms/약22.22FPS, 1회 .315초, 상태 적용 출력 index1/원본 index5(명목 .045초), 460×250 UI px, offset(-95,-20), Tint(1,.88,.52,.58). 생성 원천에서 하단·측면 파동 추출, 중앙 큰 방패 및 상부 안개 억제, 알파 감쇠. 전용 신규 리소스 후보이며 기존 공유 FrostNova 시트 덮어쓰기 금지.
+- 도발 KEEP: main에서 PlaySkillEmphasis로 캐릭터 색상 맥동/텍스트, .34초 중 .14초 효과 적용, 해당 호출의 별도 외부 VFX 참조 없음. 수호의 맹세 실제 피해 이전 시 기존 코드 금색 UI 연결선/섬광/텍스트 KEEP. 최신 로컬 제품에서 재검증 필요할 경우 Codex 표적 확인만.
+- 27개 독립 96×96 RGBA, 시트와 각 개별 프레임 바이트 일치, APNG 2종 프레임 픽셀·50/45ms 정확, GIF 4종 밝고 어두운 158×158/460×250 UI 표시. GIF 맹세는 포맷 10ms 단위 제약으로 40/50ms 교대 총310ms(정본 APNG315ms); GIF 반복은 검수용, 실제 1회 재생. Review/Native_Frames.png 및 IronWall_Actual_UI_LightDark.png, GuardianCover_Actual_UI_LightDark.png는 후보 실제 표시 크기 정적 Point 근사/Tint RGB 곱 합성, Unity GameView 아님. 철벽 높은 장벽의 실제 캐릭터 가림 여부와 맹세 밝은 배경 대비/캐릭터 및 HUD 중첩은 추가 검수 필요.
+- ZIP LIMITLESS_Issue124_GuardianVFX2_Original_20261127.zip, 5728639 bytes, SHA256 f0068ac50e6868e619af83bbe7c47c0bda893f04f7819f90f02192b1a78c2400. CRC46/46, Manifest44/44 SHA/size, SHA256SUMS45/45 PASS. 대화 다운로드 실물, GitHub PNG 바이너리 업로드/F: 자동복사 아님.
+- 기존 기능/수치/타이밍/상태 HUD 공유/원본 VFX 및 투사체/코드/GUID/meta/Unity/Save/UserData/#85/#131/#132/main 변경0. Unity 실행/적용 및 main 병합/Push0. FILE_QA_PASS / EXTERNAL_COMPARISON_PENDING / GAMEVIEW_NOT_VERIFIED / USER_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED.
+- 보고 커밋 fa9b8c3207dbd758cd4d0d24a30b507002fa96ca
+
+## 2026-11-27 / Issue #124 기본 공격 투사체 3종 정식 규격 납품 (최신)
+
+- Codex 감사 https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7210907911 및 3종 정정 https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7210987313 확인. 기본 공격 3종만. 파이어 볼 전용 원천은 이번 ZIP 제외, 후속 마도사 스킬 VFX 이관. 기존 파이어 볼/화상/정조준/화살비/적 공유 경로 임의 교체 금지.
+- Sharpshooter_Arrow_32px_8f_4x2_RGBA.png 128x64 SHA256 ea91f0f3e37687ce1d6626f98dcd9e4183e540a04a87929e9b3c6ff8026d9f3b, 80ms/12.5FPS/52 UI px.
+- Healer_Light_96px_5f_5x1_RGBA.png 480x96 SHA256 97f55488a23939fbb5a1074350d945dd3ab9aef986d4b810a58723c290616751, 50ms/20FPS/72 UI px.
+- Mage_BasicFire_32px_7f_4x2_RGBA.png 128x64 SHA256 758a768d2f42bf31717c22a3e2c85516a247423a2df8f97a2512f2bb471d8795, 60ms/약16.67FPS/52 UI px. 마지막 셀 전체 RGBA 0.
+- 우향, PPU32, 중앙 Pivot(.5,.5), 개별 Single/Full Rect/Point 계약을 Docs/QA.json에 명시(실제 Unity import 미실행). 독립 생성 원천3 보존, 셀 경계 alpha taper/밝은 핵심 정렬 및 시퀀스별 고정 배율 LANCZOS 축소. PNG 20개/시트3/동일 픽셀 APNG3/밝고 어두운 배경 GIF6. GIF는 3배 최근접 확대, 실제 80/50/60ms 및 프레임수 검증. 네 모서리 투명, 시트와 개별 프레임 일치, 미사용 셀 투명 검증. Review/Class3_Actual_UI_1x.png 및 3x.png는 감사 UI 표시 크기 Point 근사 정적 합성. 자체 시각 검토상 화살/빛/불 구분되나 치유사 밝은 배경 대비 약함, 기본 불 꼬리/크기 맥동과 프레임 연속성은 독립 검수 필요. 실제 게임 렌더/이동/타격 미검증.
+- 기존 GitHub Resources/BattleProjectiles/GoldenArrow, HealerMagicalProjectile, Fireball 폴더 존재 확인, 실제 원본 PNG 파일명/바이트 미확보. Codex 로컬 1:1 증빙 바이너리 접근 불가. 외부 원본과 신규 실물 비교 미완료; 이전 미술 파일럿 비교판은 명시적으로 NOT_External. 후속 Codex 실제 원본 동배율 대조 필요.
+- ZIP LIMITLESS_Issue124_BasicProjectile3_Original_20261127.zip 2157209 bytes SHA256 b36c33570075c0ac84a83082330f07d4dbf9a311659bb6a6fe353b9fe3ef6fc6. CRC42/42, Manifest40/40 SHA/size, SUMS41/41 PASS. 대화 다운로드 실물, GitHub PNG 업로드/F: 자동복사 아님.
+- 승인15 아이콘/기능/수치/타이밍/VFX/기존 투사체/코드/Unity/Save/UserData/#85/#131/#132/main 변경0. Unity 실행/적용·병합·Push0. BASIC3_CONTRACT_SIZED_CANDIDATE / FILE_QA_PASS / EXTERNAL_COMPARISON_PENDING / USER_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED.
+- 보고 커밋 a53751ac00287b663928d32c79c556f48325e426
+
+## 2026-11-27 / Issue #124 직업별 투사체 3계열 미술 파일럿 (최신)
+
+- 최신 기획 [7210570097](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7210570097) 확인. 직업 간 공용 투사체 금지: 사수 화살/마도사 불/치유사 기본 공격 빛. 이전 2종 발주 7210440043 및 기획 d73aff743ebd486dbff6b169e79bd56952f2bc58에서 golden_arrow 8프레임, fireball 7프레임, 정조준 이동0.42초, 화살비 장식 상승/낙하 및 대상당 피해1회, 파이어 볼 80×80 및 화상 틱 46×46 기록 확인. 최신 런타임 코드/실제 원본/기존 승인 대체본 검색은 결과 없음; 셀/배열/방향/PPU/Pivot/FPS/수명/기본 공격 표시 크기 및 실제 공유 경로 미확인. 읽기 전용 최소 감사 전 확정 제작 금지.
+- 이미 생성된 3개 시트의 미술 검수 파일럿만 패키징. 각 1536×1024 RGBA, 3열2행/512×512 셀/6프레임. 생성 원천 보존, alpha<=8 정리, 임시 기준점 정렬 및 공통 0.69배 축소, 화염구 원천 좌향을 미리보기 우향으로 반전. 8FPS는 검수 전용 임시 값이며 기존 타이밍 아님. 애니메이션 경계에서 꼬리 증가→초기 상태 반복으로 튈 가능성. 실제 원본과 비교는 미완료. 기존 계약에 맞춘 8/7프레임 정식 교체 시트 아님.
+- Art/Sharpshooter_Arrow_PILOT_6f_3x2_RGBA.png SHA256 fa904f60cde2e1422a81181599924790e36dc0ab9d190845f93f4766f6dcb674; Art/Mage_Fireball_PILOT_6f_3x2_RGBA.png SHA256 3b12c298916bb9d8449d31de04c220049012297e84f9f390462e208b69c81774; Art/Healer_Light_PILOT_6f_3x2_RGBA.png SHA256 6e09b0557dd04d1cfaeefda28006279eed1e96714cd20d29b565975294648350. 18개 RGBA 프레임, 키포즈 3종, 동일 프레임 기반 APNG 3종 및 밝고 어두운 GIF 6종, 합동 GIF 2종, 실제 픽셀 비교판 포함. 시트 셀과 프레임 바이트 일치, 프레임수와 열기 검증 PASS. 치유사 후보는 기본 공격용 광체로 검토하며 회복/정화 VFX는 변경하지 않음.
+- ZIP LIMITLESS_Issue124_ClassProjectile3_ArtPilot_20261127.zip, 8685964 bytes, SHA256 615258b3658a7987fce1423d2b3b89b07d8c95b4563f79d9a64cda7ebda354d8. CRC45/45, Manifest43/43 SHA+size, SUMS44/44 PASS. 대화 다운로드 실물. 기존 외부 자산과 신규 실물 비교는 원본 미확보로 미제공.
+- ART_PILOT_ONLY / RUNTIME_CONTRACT_HOLD / FILE_QA_PASS / NOT_UNITY_APPLIED. 후속: golden_arrow/fireball/치유사 기본 빛 실제 참조와 셀/배열/방향/PPU/Pivot/FPS/수명/표시 및 승인 대체본 여부 최소 감사 후 정식 규격 제작 및 실물 비교. 승인 15종 아이콘 및 야수 Run6, 기존 VFX/투사체/기능/수치/타이밍/코드/Unity/Save/UserData/#85/#131/#132/main 변경0. Unity 실행/적용, 병합/Push, Codex 직접 호출0. 스킬 VFX 후속 제작 착수0.
+- 정식 보고 커밋 0481ee9fd96fcc162cd36f3db88390774e18aed0
+
+## 2026-11-27 / Issue #124 가이아 웰 v3 표적 보완 검수 납품 (최신)
+
+- 최신 Codex https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7209212544 (보고 92375fc4e9e20fbb55c5bbf22e4b2565bd49518f) 확인. v2 30px 무라벨 흑백 3종 핵심 윤곽 PASS, 가이아 단일 인물 PARTIAL, 두 버튼 표적 5PASS. 공용 배치 종료3은 후속 Defeat 관측 문제로 마도사 버튼 실패가 아님. 기존 PASS 반복0. 대표의 대지에서 벽이 솟아오르는 표현 요청 및 현재 대화 발주 기준 가이아 1종만 변경.
+- Art/Mage_GaiaWell_v3_128_RGBA.png SHA256 04c838023f5863e124e76a4c10d42513636313d24f64ae6a922135db550e5f1f, 29819 bytes. 마도사 한 명 주위에 솟아오르는 반원형 불규칙 암석 장벽, 금빛 마력 균열 및 상부 돔 보조. 기존 v3 생성 원천을 보존하고 alpha<=8 제거, 116px 이내 비율 유지 및 128px 중앙 배치. 구성 표적 수정이며 일부 픽셀만 수정한 것은 아님.
+- Art/Mage_FireBall_v1_KEEP_128_RGBA.png SHA256 5743937ce641fec1ecaefddaf7a85192c0af116e8cdb1181e58912a703cee67e 및 Art/Mage_Thunderbolt_v2_128_RGBA.png SHA256 84d1b5407b30148eebc574af3b7a51b29d59f4b261b0091c3107d9c290db007e: 이전 v2 패키지 원본과 바이트 동일. 가이아 v2 SHA256 87ca3a402c6874d404a879d008f58f1f9987efed5f0a11570b004d412e35b6e1 비교용 보존. 이전 v2 ZIP SHA와 참조21 파일의 Manifest SHA 대조 일치, 원본 변경0.
+- 128×128 RGBA 3/3, alpha0..255, 모서리 투명, PNG verify PASS. Review/V2_V3_Color_Actual.png 및 V2_V3_Grayscale_Actual.png, Gaia_vs_Defense_Color_Actual.png 및 Gaia_vs_Defense_Grayscale_Actual.png: 실제 128/40/30/24/20px 동일 밝고 어두운 배경 비교. All_Color_4x.png 및 All_Grayscale_4x.png는 최근접 확대. Blind_30px_Grayscale_Unlabeled.png와 별도 정답표, 개별 투명 축소본 포함. 실제 PNG 직접 LANCZOS 축소, 흑백 alpha 보존. 자체 시각 관찰: 암석 하단의 묵직한 질량과 불규칙한 돌기 구조, 썬더볼트 X자 실루엣의 차이 확인. 30px 흑백에서 인물과 장벽 세부 판독은 여전히 약할 수 있으며 독립 무라벨 의미 테스트 및 실제 Unity/HUD NOT_VERIFIED. 20/24px 의미 판독 PASS 주장 금지.
+- ZIP LIMITLESS_Issue124_MageSkill3_v3_GaiaWell_Targeted_20261127.zip, 3538853 bytes, SHA256 2182c3352ad0d132c4dae9e7bac244a278f1902e25c202435783992769826c63. CRC93/93, Manifest91/91 SHA+size, SUMS92/92 PASS. 대화 다운로드 실물, Windows F: 자동복사/GitHub PNG 바이너리 업로드 아님. Art/의 가이아 v3만 신규 후보, 나머지 두 PNG KEEP; Reference/Source/Review 비교 전용.
+- 기존 기능·수치·VFX·투사체·파이어 볼/화상 및 가이아/HUD 공유 계약·감전 별도 계약·코드/GUID/meta/Unity/Save/UserData/#85/#131/#132/main 변경0. 별도 상태 PNG 제작0. Unity 실행/적용·main 병합/Push·Codex 호출0. 사용자 미술 승인 및 가이아 변경1종 표적 검수 대기. FIREBALL_V1_KEEP / THUNDERBOLT_V2_KEEP / GAIA_V3_CANDIDATE / FILE_QA_PASS / SEMANTIC_QA_PENDING / NOT_UNITY_APPLIED.
+- 정식 보고 커밋 793d67ef0a0a44e7844be5080cb4f8fadcb009da
+
+## 2026-11-27 / Issue #124 마도사 v2 표적 보완 검수 납품 (최신)
+
+- Codex https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7208730453 및 기획 https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7208920162 확인. 기존 6PASS 및 적용12PASS 반복0. 파이어 볼 KEEP, 썬더볼트·가이아 웰만 구성 보완.
+- Art/Mage_FireBall_v1_KEEP_128_RGBA.png SHA256 5743937ce641fec1ecaefddaf7a85192c0af116e8cdb1181e58912a703cee67e: v1 바이트 동일.
+- Art/Mage_Thunderbolt_v2_128_RGBA.png SHA256 84d1b5407b30148eebc574af3b7a51b29d59f4b261b0091c3107d9c290db007e: 굵은 사방 분기 번개, 원형 금속 테두리 축소. Art/Mage_GaiaWell_v2_128_RGBA.png SHA256 87ca3a402c6874d404a879d008f58f1f9987efed5f0a11570b004d412e35b6e1: 단일 마도사와 마력 돔. 기존 생성 편집 원천2를 보존하고 alpha<=8 정리, 116px 이내 비율 유지 중앙 배치. 구성 보완 방식이며 v1 일부 픽셀만 수정한 것은 아님.
+- 128×128 RGBA 3/3, alpha 0..255, 투명 모서리, PNG verify PASS. v1 원본3 및 기존 승인 참조15의 이전 Manifest SHA256 일치, 바이트 복사만. 원본 수정0.
+- Review/V1_V2_Color_Actual.png, V1_V2_Grayscale_Actual.png: 실제 128/40/30/24/20px 동일 밝고 어두운 배경, 별도 4x 최근접 확대판. Blind_30px_Grayscale_Unlabeled.png와 별도 정답표, Gaia_vs_Defense_Actual_Grayscale.png, Gaia_vs_Defense_Color_4x.png, ApprovedStyle_40px.png 및 개별 실제 축소 PNG. 최종 PNG 직접 LANCZOS 축소, 흑백 alpha 유지. 자체 시각 확인에서 썬더볼트는 방사형 X자 실루엣이 더 명확해졌으나 가이아 웰의 30px 흑백 내부 인물은 여전히 약하고 20/24px 의미 판독 한계가 있음. 독립 무라벨 테스트 및 실제 Unity/HUD 미검증. 미술 승인 및 변경2종 표적 검수 대기.
+- ZIP LIMITLESS_Issue124_MageSkill3_v2_Targeted_20261127.zip, 5124581 bytes, SHA256 ea0d8ba5692674ea32eafbbc19a0408f027a2c6cc8bbe68723a68ee11b00032c. ZIP CRC84/84, Manifest82/82 SHA+size, SUMS83/83 PASS. 대화 다운로드 실물, Windows F: 자동복사 및 GitHub 바이너리 업로드 아님.
+- 파이어 볼/화상 및 가이아 웰/HUD 공유 계약과 감전 별도 계약 유지. 별도 상태 PNG 제작0. 기능·수치·VFX·투사체·코드·Unity·Save/UserData·#85/#131/#132·main 변경0. Unity 실행/적용·main 병합/Push·Codex 호출0. FIREBALL_V1_KEEP / FILE_QA_PASS / SEMANTIC_QA_PENDING / NOT_UNITY_APPLIED.
+- 정식 보고 커밋 e4818c5f2265b919045297a9c9ef047003d575b6
+
+## 2026-11-27 / Issue #124 마도사 기본 스킬3종 납품 (최신)
+
+- 최신 기획 발주 https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7208145010 및 사수·투사 최종 승인 7208174629, Codex 승인9종 격리 적용 7208383967 확인. 마도사3종만 신규 후보.
+- Art/Mage_FireBall_Original_128_RGBA.png SHA256 5743937ce641fec1ecaefddaf7a85192c0af116e8cdb1181e58912a703cee67e; Art/Mage_Thunderbolt_Original_128_RGBA.png SHA256 a0460b67ea10a4936d1bb22be774bc691277034a1cccdf47bfdcc90c581b37e8; Art/Mage_GaiaWell_Original_128_RGBA.png SHA256 f759b7fe413bef81531a2e0095f8ad3c8d1781e43062e2242f754f580351eeb7. 단일 화염구/분기 번개/마력 돔. 기존 생성 원천3 바이트 보존, alpha<=8 정리, 비율 유지 116px 내 중앙 배치. 128×128 RGBA 3/3, alpha 0..255, 모서리 투명, PNG verify PASS.
+- 기본 명령3 및 수호자/치유사/사수/투사 채택 원화12(총15) 기존 공인 SHA256 대조 일치 및 비교 전용 원본 복사. 기존 원화 수정0.
+- Review/Mage_Color_Actual.png, Mage_Grayscale_Actual.png 실제 128/40/30/24/20px 동일 밝고 어두운 배경, 4x 최근접 확대판, 30px 무라벨 흑백+별도 정답표, GaiaWell_vs_Defense_Grayscale_Actual.png, ApprovedStyle_Actual.png 및 개별 실제 축소 PNG. 생성 비교 포스터가 아닌 최종 PNG 직접 LANCZOS 축소. 자체 시각 관찰상 화염 꼬리/분기 번개/돔 구조 차이 존재하나 공통 금빛 원형 외곽과 작은 크기 디테일 때문에 30px 흑백에서 썬더볼트/가이아 웰 혼동 가능성 있음. 가이아 웰은 자기 대상 인물 없이 돔으로 표현해 자기 보호 의미의 추가 확인 필요. 독립 무라벨 테스트/실제 Unity/HUD 미검증.
+- ZIP LIMITLESS_Issue124_MageSkill3_Original_20261127.zip, 5615659 bytes, SHA256 3bb8ae16511970170e738ba43f1128b87ea58949747bb8fc5b310b3cb303ed96, CRC57/57 PASS, Manifest55/55 SHA+size PASS, SUMS56/56 PASS. 대화 다운로드 실물, GitHub 바이너리 업로드 및 Windows F: 자동 복사 아님.
+- 파이어 볼/화상 및 가이아 웰/상태 HUD 공유 계약, 감전 별도 계약 유지. 감전 신규 PNG0. 기능·수치·VFX·투사체·코드·GUID/meta·Scene/Prefab·Save/UserData·#85/#131/#132·main 변경0. Unity 실행/적용, main 병합/Push, Codex 요청0. 미술 승인 및 신규 표적 QA 대기. FILE_QA_PASS / SEMANTIC_QA_PENDING / NOT_UNITY_APPLIED.
+- 정식 보고 커밋 50299820f52bcd6b8bfa25bcb6dcc3470184ad81
+
+## 2026-11-27 / Issue #124 투사 및 동료의 습격 v2 표적 보완 (최신)
+
+- 최신 Codex 7207723280 (https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7207723280) 및 기획 7207777459 (https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7207777459) 확인. 기존 7PASS 반복0. 회오리 30/40px PASS KEEP, 난도/회심/동료 30px PARTIAL만 보완.
+- Art/Fighter_Nando_v2_128_RGBA.png SHA256 d010dbde76ef9f9dad66f4234a265cc1e46826a6595090fb2decec2ee1f6fdfb: 상향 3단 기세 문양 중심, 작은 검과 참격 보조.
+- Art/Fighter_CriticalStrike_v2_128_RGBA.png SHA256 27552b554efa24a2ead170de2876af759359ef4cda106adaac4e0ad047b889d1: 수직 하향 단일 검과 집중 착탄, 원형 궤적 축소.
+- Art/Sharpshooter_CompanionAssault_v2_128_RGBA.png SHA256 4116525786bbb2fbf64e8c83b89c9866031818346d9877b1d41fcc2d6f00bdb1: 크게 읽히는 종족 중립 발자국, 발톱/돌진 보조.
+- Art/Fighter_Whirlwind_v1_KEEP_128_RGBA.png SHA256 bd50c4ea5e3965ca1cc3706010f86cd9ba80bb1506701db42cb5ae1ea0adec7b: v1 원본과 바이트 일치. 모든 v1 4종 및 이전 참조11종 SHA 확인·보존. v2 3종은 생성 편집 시안의 구성 표적 보완이며 일부 픽셀만 수정한 것은 아님. 생성 원천 시트 보존, 116px 이내 비율 유지 및 128 RGBA 중앙 배치.
+- Review/V1_V2_Color_Actual.png, V1_V2_Grayscale_Actual.png: 기본 공격 포함 v1/v2 128/40/30/24/20px 동일 밝고 어두운 배경, 별도 4x 비교판. Blind_30px_Grayscale_Unlabeled.png 실제 30px 무라벨 검사판 및 별도 정답표, Style_40px_Comparison.png와 개별 실축소 PNG 포함. 자체 오프라인 관찰에서 30px의 대각선 검/상향 문양/수직 검/발자국 형태 차이 확인. 독립 평가 및 실제 Unity 버튼/HUD는 미검증. 20/24px 세부 의미 판독 추가 검수 필요.
+- ZIP LIMITLESS_Issue124_FighterSkill3_Companion1_v2_Targeted_20261127.zip, 4279032 bytes, SHA256 c093b0caa73eb84338a4ef555edebe90c36e4c0c1e694893904948f93c565758. ZIP CRC96/96, Manifest94/94 SHA+size, SUMS95/95 PASS. PNG 4종 128 RGBA, 투명 모서리·alpha 0..255 확인. 대화 다운로드 실물, GitHub 바이너리 업로드 또는 F: 자동복사 아님.
+- 회심/기세 HUD 공유 계약 및 야수 Run6, 기존 기능/수치/VFX/코드/GUID/meta/Unity/Save/UserData/#85/#131/#132/main 변경0. 별도 기세 상태 원화 제작0. Unity 적용·실행, 병합·Push, Codex 호출0. 변경3종 표적 검수 및 사용자 미술 승인 대기. FILE_QA_PASS / WHIRLWIND_V1_KEEP / TARGETED_QA_PENDING / NOT_UNITY_APPLIED.
+- 정식 보고 커밋 c1133e046de63243b25995a3044a8cc2d8dc2379
+
+## 2026-11-27 / Issue #124 동료의 습격 공통 및 투사3종 정정 납품 (최신)
+
+- 최신 기획 7207318682 및 Codex 사수 검수 7207153640 확인. 기존 정조준/화살비 재작화0. 동료의 습격은 종족 중립 공통 1종으로 신규 발주, 야수 Run6 및 기존 기능 보호. 투사 회심의 일격/기세 HUD 공유 계약 유지(별도 상태 원화0).
+- 사용자 지적: 생성 비교 포스터에서 발톱/발자국이 난도로 잘못 표기되고 이전 늑대 시안이 동료의 습격으로 삽입되었으며 실제 회심 원화 누락. 해당 포스터 폐기, ZIP 미포함. 실제 독립 원천4개를 시각 대조 후 정확히 배치하고 실제 PNG에서 비교판을 직접 합성. 추가 원화 재생성0.
+- 신규 128×128 투명 RGBA 4종: Art/Sharpshooter_CompanionAssault_Original_128_RGBA.png SHA256 aab77f422bbdd9f927e9478df8f67314a07440c2581456918b5b13e6b9c9b270 (발톱/발자국 돌진); Art/Fighter_Nando_Original_128_RGBA.png SHA256 f59f7e0413009991874ae8753a65f11014d2f007cd128845a6adaf7abca98a2a (단일 검격+상향 기세); Art/Fighter_CriticalStrike_Original_128_RGBA.png SHA256 b1e41c8b931fe80960e010792d6d617b86644d9e1ceab8ad981ecbdc8ec88b6d (단일 하향 결정타); Art/Fighter_Whirlwind_Original_128_RGBA.png SHA256 bd50c4ea5e3965ca1cc3706010f86cd9ba80bb1506701db42cb5ae1ea0adec7b (원형 참격). 원천 PNG4 바이트 보존, alpha<=8 제거 후 116px 내 중앙 배치.
+- Review/Color_Actual.png 및 Grayscale_Actual.png 실제 128/40/30/24/20px 동일 밝고 어두운 배경, Color_4x.png 및 Grayscale_4x.png 최근접 확대, 개별 실제 축소본 및 기존 참조11종 ApprovedStyle_40px.png. 참조는 기존 납품 원본 바이트 복사만. 난도/회심/기본 공격의 작은 크기 혼동 및 공통 붉은 광휘 과다 가능성은 후속 미술 검수 대상. 실제 Unity 화면과 최신 카탈로그 ID 독립 확인은 NOT_VERIFIED.
+- ZIP LIMITLESS_Issue124_FighterSkill3_Companion1_20261127.zip 7276069 bytes SHA256 fd7a2058b425795a85147643bd7d163ce77c2f8c484ae70133ee63d9460f3e42. CRC60/60, Manifest58/58, SUMS59/59 PASS. 대화 다운로드 실물, F: 자동복사/GitHub 바이너리 업로드 아님.
+- 기존 원화, 야수 애니메이션, VFX/투사체, 기능/수치/기세 공유 계약/코드/GUID/meta/Save/UserData/#85/#131/#132/main 변경0. Unity 실행/적용, 병합/Push, Codex 호출0. FILE_QA_PASS / USER_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED.
+- 보고 커밋 8bb48ad018593e37dce853402a1d9921c63531f9
+
+## 2026-11-27 / Issue #124 사수 기본 스킬 2종 신규 납품 및 동료의 습격 KEEP (최신)
+
+- 최신 기획 발주 https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7206871646 및 치유사 사용자 최종 승인 대기 기록 7206930171 확인. 정조준(target)·화살비(bow)만 신규 제작. 동료의 습격은 기획 기록의 BeastCompanion 동적 Run index4 계약 기준 KEEP. 실제 최신 카탈로그 소스 검색 결과 없음, 야수별 런타임 아이콘 픽셀 및 고유 자산 여부 독립 확인은 NOT_VERIFIED. 고정 늑대 생성 시안과 생성 QA 포스터는 납품에서 제외. 동적 매핑 변경0.
+- Art/Sharpshooter_AimedShot_Original_128_RGBA.png SHA256 1312e3b8b7dc5772005227ac457f07010813fc3d9527a75c79cad0e9ccd857ba; Art/Sharpshooter_ArrowRain_Original_128_RGBA.png SHA256 0f022a455a1df51d7048f2a2503ce496b5362013ce3c8b5b11a522859d7d7f31. 두 생성 원화의 alpha<=8 정리, 비율 유지 116px 이내 배치, 128 RGBA 투명 모서리 확인. 정조준은 단일 화살과 조준점, 화살비는 다수 낙하 화살과 넓은 착탄 범위. 금은색 금속과 주황 동작 강조. 속성·효과 변경을 뜻하지 않음.
+- 승인 기본 명령3/수호자3 및 기획 채택 치유사3(사용자 최종 승인 대기) 참조9 파일 SHA256 일치 및 원본 바이트 보존. Review/Sharpshooter_Actual_Color.png 및 Sharpshooter_Actual_Grayscale.png 실제 128/40/30/24/20px 비교; 개별 투명 컬러/흑백 축소와 별도 4배 NEAREST 확대판, ApprovedStyle_Actual_Comparison.png 포함. 20px의 다중 화살 세부 및 밝은 효과 구분은 추가 검수 필요. 실제 Unity 화면 및 동료의 습격 비교 실물 미검증.
+- ZIP LIMITLESS_Issue124_SharpshooterSkill2_Original_20261127.zip, 3919054 bytes, SHA256 6d5a9dbfed242e0d28604b3011dc5f9954927407be9aad02caa03a5961192a60. ZIP CRC38/38, Manifest36/36 SHA256+size, SUMS37/37 PASS. 대화 다운로드용 실물이며 GitHub 바이너리 업로드나 Windows F: 자동복사 아님.
+- 기존 야수별 동적 아이콘 계약, 승인 원화, 투사체, VFX, 스킬 기능·수치, 코드, Unity, GUID/meta, #85/#131/#132, main, Save/UserData 변경0. Unity 실행/적용, 병합/Push, Codex 호출0. 신규2종 미술 승인/표적 QA 대기. COMPANION_KEEP_RUNTIME_NOT_VERIFIED / FILE_QA_PASS / NOT_UNITY_APPLIED.
+- 정식 보고 커밋 602923a4ffd5aef3cb03d21df93524285d4271a9
+
+## 2026-11-27 / Issue #124 치유사 v2 검수 납품 (최신)
+
+- 최신 Codex https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7205411904 및 기획 https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7205701051 확인. v1 20 PASS 유지, 30/24/20px 치유의 빛·정화 구분 PARTIAL 대상만 보완.
+- Art/Healer_HealingLight_v2_128_RGBA.png SHA256 80ba80300e069f9092de546f1333af750d9f7fcb51b85ff794a65f2b14fbeb01. 단일 인물 확대, 집중광 강조.
+- Art/Healer_Cleanse_v2_128_RGBA.png SHA256 850a23b528b0bebc8625829729a32991da671670e00ec82412ad0049ac70b731. 균열과 파편화된 상태 문양 확대.
+- Art/Healer_HealingWave_v1_KEEP_128_RGBA.png SHA256 fecfc5b86cd8d54c91bf5ac7fb2b13ee7dc604a0afe36d9ba5708925803b3593, v1 바이트 일치. v1 원본3종 SHA 확인 후 Reference에 보존. 승인 기본/수호자 참조6종은 기존 납품 파일에서 그대로 복사.
+- 두 v2는 생성 편집 원화를 정규화하고 외곽 장식 alpha를 감쇠한 구성 보완 후보이며, v1에서 일부 픽셀만 수정한 결과는 아님. 128×128 RGBA, 투명 모서리 및 실제 40/30/24/20px 축소본, v1/v2 색상·흑백 확대판, 승인 화풍 비교, v2 밝고 어두운 배경 비교 포함. v1/v2 색상 비교판은 행별 배경이 다르므로 동일 배경 정밀 비교는 별도 필요. 20px에서 잔여 공통 외곽·정화 세부 판독 한계 가능. 실제 Unity 및 상태 HUD 미검증.
+- ZIP LIMITLESS_Issue124_HealerSkill3_v2_Targeted_20261127.zip, 3159123 bytes, SHA256 3cd4ee38db090799ef9e1b1d8f9eb34abc338f7c4d8f8956ef28f3d17177c46d, ZIP CRC47/47, Manifest45/45 SHA/size, SUMS46/46 PASS. 채팅 다운로드 파일, GitHub 바이너리 업로드 또는 F: 자동복사 아님.
+- VFX·기존 원화·기능·수치·코드·Unity·#85/#131/#132·main 변경0. Codex 호출/검수 요청0. 미술 승인 대기 및 변경2종 표적 검수 대기. NOT_UNITY_APPLIED.
+- 보고 커밋 85db7891ff9770330b0b4e46ec9f5396f7e5679f
+
+## 2026-11-27 / Issue #124 치유사 기본 스킬 3종 납품 (최신)
+
+- 11/24 기획 발주 https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7129561043 및 수호자 적용 보고 7129650829 확인. healing_light 기존 suit_hearts, healing_wave RadiantHeal 고정 프레임, cleanse SpectralBloom peak5 매핑은 기획 기록 기준. 실제 VFX 프레임 직접 열람은 하지 않았음. 독립 기존 원화 검색 결과 없음, 저장소 전수 부재 확인은 아님.
+- 11/27 기존 생성 원화 3종을 게임용 128×128 RGBA로 정규화. 낮은 alpha<=8 제거, 116px 이내 비율 유지, 중앙 배치. 원천 PNG 바이트 보존.
+- skill.healer.healing_light: Art/Healer_HealingLight_Original_128_RGBA.png, SHA256 f7b40475ac18794c72803f5601830b9463c176990b29fe61585499ecfe94f28d
+- skill.healer.healing_wave: Art/Healer_HealingWave_Original_128_RGBA.png, SHA256 fecfc5b86cd8d54c91bf5ac7fb2b13ee7dc604a0afe36d9ba5708925803b3593
+- skill.healer.cleanse: Art/Healer_Cleanse_Original_128_RGBA.png, SHA256 a86dfcf1dd75a725ae679b1b1ed6b3785568a10218d5776348eeebc21c25d6f4
+- 치유의 빛 단일 인물+금빛, 회복의 파동 3인+녹색 원형 파동, 정화 보라색 상태 문양 파편화. 공통 금빛 별/금은색 장식으로 화풍 통일. 30px에서 색상/대상 수로 구분되나 공통 별과 테두리로 인해 특히 밝은 배경에서 세부 기능 판독이 약해질 수 있음. 미술 승인 및 실제 게임 가독성 미검증.
+- 승인 기본 명령 공격/방어/스킬 및 채택 수호자 도발v1/철벽v2/맹세v2 실제 PNG 6/6 이전 공인 SHA256 일치, Reference/ 비교 전용 바이트 복사. 기존 자산 수정0.
+- Review/HealerSkill3_Actual_128_40_30.png, HealerSkill3_ApprovedStyle_128_40_30.png, HealerSkill3_30_40_Actual_4xZoom.png, 개별 30/40px 투명 PNG. 실제 원화 LANCZOS 축소, 밝은/어두운 가상 배경, Unity GameView 아님.
+- ZIP LIMITLESS_Issue124_HealerSkill3_Original_20261127.zip, 4732317 bytes, SHA256 1f7bbfb01efbee2e0c7f37d2c12c6058c70fe581dbb56b843a6b6cf1976f4fe5; ZIP CRC25/25, Manifest23/23, SUMS24/24 검증 PASS. Docs/QA.json, README, Source/, Reference/, Review/ 포함. Art/만 신규 후보. 채팅 다운로드 실물, Windows F: 자동복사나 GitHub 바이너리 업로드 아님.
+- 기존 회복/정화 VFX, 스킬 기능/수치/발동 타이밍/코드/GUID/meta/Scene/Prefab/Save/UserData/#85/#131/main 보호. Unity 실행/적용, Codex 요청, main 병합/Push0. USER_ART_APPROVAL_PENDING / FILE_QA_PASS / GAMEVIEW_NOT_VERIFIED / NOT_UNITY_APPLIED.
+- [정식 보고](../../Renewal_20261127_Issue124_HealerSkill3_Original_Delivery.md) commit 2ae9bc309e6b8b67d4c90fec8cabd84d0a410323, docs/art-renewal.
+
+## 2026-11-24 / Issue #124 수호자 스킬 3종 표적 보완 v2 (최신)
+
+- Codex 검수 댓글 7127093770 확인. 기존 v1 파일·Unity 표시·공유 계약 PASS 유지, 작은 HUD 구분 PARTIAL만 개선. 기존 PASS 반복0.
+- 도발 원본 KEEP SHA256 960bd0a3b87eadae637a1e2243eb3eab848b28963651ba328b01e699dba5687b. 철벽 v2 SHA256 6bebeac7b03c6906b6f23adb822f6a05531c3fe49ea48b8452d44cf76ae5f08f: 요새/흉벽 강조, 중앙 방패 축소, 기존 화풍 유지한 구성 수정. 맹세 v2 SHA256 3b66adf62bff00d86056f29564e7a885d0987b58812624c4bb8de03ba6e49977: 기존 v1 좌우 아군 주변 RGB 1835픽셀 보완, alpha 전부 동일. 기존 v1 3종과 승인 기본 명령3종 SHA 일치 및 원본 보존.
+- 128 RGBA 및 실제 40/30/24/20px v1/v2 비교판, 기본 방어/철벽 직접 비교, HUD 확대. v2 Unity 실제 화면 NOT_VERIFIED.
+- ZIP LIMITLESS_Issue124_GuardianSkill3_v2_Targeted_20261124.zip, 2204204B, SHA256 9abaa07de47ee869f35570a7647aad70189eb660400a77c5332acdbb0d9dfb18; CRC41/41, Manifest39/39, SUMS40/40 PASS. 대화 다운로드 실물.
+- [정식 보고](../../Renewal_20261124_Issue124_GuardianSkill3_v2_Targeted_Delivery.md) commit edd73d714aceb69a7ad6ad2f26c757b5bb5c0112, docs/art-renewal.
+- 미술 승인 대기. 기존 원화/기능/공유 계약/수치/코드/GUID/meta/Save/UserData/#85/#131/main 보호. Codex 검수 요청·Unity 적용·병합/Push0.
+
+## 2026-11-24 / Issue #124 수호자 기본 스킬 3종 원화 납품 (최신)
+
+- 최신 기획 발주 댓글 7123880804 확인. 도발/철벽/수호의 맹세만 제작. Codex 휴식 중 검수 요청·Unity 적용0. 상태 아이콘 별도 제작0.
+- 신규 128×128 RGBA: Guardian_Taunt_Original_128_RGBA.png SHA256 960bd0a3b87eadae637a1e2243eb3eab848b28963651ba328b01e699dba5687b; Guardian_IronWall_Original_128_RGBA.png SHA256 76954eabf4557c6c4c44aacb8b6a0a9432d005373db159b5956d63c3d14a960e; Guardian_CoverAllies_Original_128_RGBA.png SHA256 e6dd2c2516c07e8d3a415b04cb60599fbc50a62cba64a603ced686a8d4593906. 기존 승인 공격·방어·스킬 SHA 일치/바이트 보존.
+- 실제 128/40/30/24/20px 비교판 및 30px 4배 확대 포함. 공통 방패 형상으로 작은 HUD 구분성 추가 확인 필요. 기존 Kenney 실제 PNG 픽셀 비교 및 Unity GameView NOT_VERIFIED.
+- ZIP LIMITLESS_Issue124_GuardianSkill3_Original_20261124.zip, 4991933B, SHA256 8526cfc6e041022e0b1019535bd0350f9de9b69f5fec1b98f17232fdde93c5eb; CRC27/27, Manifest25/25, SUMS26/26 PASS. 대화 다운로드 실물, F: 자동복사 아님.
+- [정식 보고](../../Renewal_20261124_Issue124_GuardianSkill3_Original_Delivery.md) commit e0cd9fab6b101b1a3feeb0b5f92a84fe27f32c02, docs/art-renewal.
+- 대표 미술 승인 대기 / CODEX_REST / NOT_UNITY_APPLIED. 기존 승인 자산·기능·수치·GUID/meta·코드·Save/UserData·#131·#85·main 보호. 병합·Push0.
+
+## 2026-11-24 / Issue #124 Chapter1 남은 잡템 2종 신규 원화 납품 (최신)
+
+- 기획 발주 댓글 7121604210 확인. ForestSpiderSilk/VenomSnakeScale 2종만 제작. 실제 승인 #90 숲거미 Attack00(승인 ZIP SHA 일치) 및 #97 실제 적용 뱀 Idle00(원본 SHA 일치), #43 승인 KeyArt 직접 열람. 기존 승인 독침벌 침·초원 슬라임 젤 SHA 일치·보존.
+- 신규 128×128 RGBA: ForestSpiderSilk_Original_128_RGBA.png SHA256 af0270104e6f9a18230fdfc12367c12b4b4068bd0e385b9f1e2151985802369a; VenomSnakeScale_Original_128_RGBA.png SHA256 ab5233986383622101e0b3b168cabf6050c6d1cb1b13a34606f7beb81e74eea2. 실타래 이끼색 국소 조정, 뱀은 최초 부적합 녹색안 폐기 후 실제 흑갈색/황금빛 무늬 반영. 실제 30/40/50px, 몬스터·승인 잡템 비교 및 원색/현재 Tint 검토판. 외부 기존 PNG 2종 직접 조회 및 32px 4-bit alpha 파생 비교(원본 파일 자체는 ZIP 미포함). Chapter2 실물 및 Unity GameView NOT_VERIFIED. White Tint 우선 검토, ItemDefinition 변경0.
+- ZIP LIMITLESS_Issue124_Chapter1_Loot2_Original_20261124.zip, 3143659B, SHA256 907f6a188cdc1eca792f2026ef2156b0696ae38d53b76b273a9555630d2d2f39; CRC29/29, Manifest27/27, SUMS28/28 PASS. 채팅 다운로드 실물, F: 자동복사 아님.
+- [정식 보고](../../Renewal_20261124_Issue124_Chapter1_Loot2_Original_Delivery.md) commit fcf7c675a1e2d94a9d1d06046e6ec70ae9452c66, docs/art-renewal.
+- Codex 표적 검수 및 대표 미술 승인 대기. 승인 원화·수치/드롭/가격/코드/Unity6000.6.5f1/#85/GUID/meta/Save/UserData/main 보호. Unity 적용·병합·Push0. 기존 승인 명령5종 재제작0.
+
+## 2026-11-24 / Issue #124 기본 취소 버튼 독립 원화 1종 (최신)
+
+- 기획 발주 댓글 7121163563 확인: command.cancel / Kenney arrowLeft 대상 1종. 공격·방어·스킬·도망 v2 최종 승인 원본 4종 SHA256 일치, 비교용 바이트 보존.
+- 신규 CancelButton_Original_128_RGBA.png SHA256 3eeb5e4090ec330c60cf45ee65ebf02b7bc008b1557e0a77a1a20c5b9ba47533, 128×128 투명 RGBA. 은색 좌향 화살표/금색 테두리, 문틀·마법광 없는 단순 실루엣으로 우향 도망과 구분. 승인 4종+취소 실제 128/40/30px 비교판. 실제 Kenney 원본 및 Unity GameView NOT_VERIFIED.
+- ZIP LIMITLESS_Issue124_CancelButton_Original_20261124.zip, 1149497B, SHA256 b879e2ce1768511d0f06ab07063dbd5ea9eead3dd4fcc7165c06baa6cf6e8ef0; CRC14/14, Manifest12/12, SUMS13/13 PASS. 대화 첨부 실물.
+- [정식 보고](../../Renewal_20261124_Issue124_CancelButton_Original_Pilot_Delivery.md) commit 33de0b13716311b206600549d1fc10d077bf1274, docs/art-renewal.
+- 대표 미술 승인 및 Codex 표적 QA 대기. 기존 승인 자산/Unity6000.6.5f1/#85/전투 기능/코드/GUID/meta/Save/UserData/Discord/main 보호. Unity 적용/병합/Push0.
+
+## 2026-11-24 / Issue #124 도망 버튼 v2 국소 보완 (최신)
+
+- Codex 댓글 7120230169 및 기획 7120275605 확인. v1 기능/표시 PASS, 포털 구분 PARTIAL, 보스전 제한 미실행. 기존 PASS 반복 금지.
+- v1 SHA256 b8bb8399c52ea6992810ce93eb1b56198817f789cae431a5313c855cd4bce054 바이트 보존. 신규 FleeButton_v2_128_RGBA.png SHA256 58d7f66283031737f65069df6fb281a818d8c32e6ae7a6230b2f5e53783f5d73, 128×128 RGBA. v1 은색 우향 화살촉·금색 기둥·문턱 재사용, 직선 상단 문틀 부분 합성, 청색 마법 원호/내부 광휘 제거. 발광 제거로 콘텐츠 bbox 축소, 기존 화살촉 위치 유지. 승인 공격·방어·스킬 참조 SHA 일치.
+- 실제 128/40/30px v1/v2 및 승인 3종+v2 동배율 비교판. v2 실제 Unity 포털 구분 미검증, 변경부 가독성 표적 QA 필요.
+- ZIP LIMITLESS_Issue124_FleeButton_v2_Targeted_20261124.zip, 354563B, SHA256 931274626db9230cdaeb63e191100c68a43af14e8b50969c0ed26608ecb74fed, CRC15/15, Manifest13/13, SUMS14/14 PASS. 대화 첨부용 실물, F: 자동 복사 아님.
+- [정식 보고](../../Renewal_20261124_Issue124_FleeButton_v2_Targeted_Delivery.md) commit 251f3639142dd67fb193aafe18169aa1f52696f2, docs/art-renewal.
+- Unity6000.6.5f1/#85, 기존 승인 자산/command.flee 로직/코드/GUID/meta/Save/UserData/Discord/main 보호. 미적용/병합·Push0. USER_ART_APPROVAL_PENDING / V2_TARGETED_QA_PENDING.
+
+## 2026-11-24 / Issue #124 기본 도망 버튼 독립 원화 1종 (최신)
+
+- 기획 발주 댓글 7119305405 확인: command.flee / Kenney exitRight 대상 1종. 승인 공격·방어·스킬 원본 SHA256 일치 확인, 비교용 바이트 보호.
+- 신규 FleeButton_Original_128_RGBA.png SHA256 b8bb8399c52ea6992810ce93eb1b56198817f789cae431a5313c855cd4bce054, 128×128 투명 RGBA. 금색 출구·우향 은색 화살표·청색 이동 강조. 4종 128/40/30px 실제 크기 비교판. 아치형·청색 광휘로 포털 혼동 가능성 PARTIAL. 기존 Kenney/포털/취소/뒤로가기 실제 PNG와 Unity GameView NOT_VERIFIED.
+- ZIP LIMITLESS_Issue124_FleeButton_Original_20261124.zip, 1383049B, SHA256 2d406c8556e2eef67b0b6d3cceab5868ee0804036490981a273eada238221f91; CRC12/12, Manifest10/10, SUMS11/11 PASS. 대화 다운로드 실물, Windows F: 자동 복사 아님.
+- [정식 보고](../../Renewal_20261124_Issue124_FleeButton_Original_Pilot_Delivery.md) commit a00917725d0f6365a5d82d82262e3371cf0e0a9c, docs/art-renewal.
+- 대표 도망 미술 승인 대기. 기존 승인 자산/Unity6000.6.5f1/#85/도망 로직/코드/GUID/meta/Save/UserData/Discord/main 보호. 제품 적용·병합·Push0.
+
+## 2026-11-24 / Issue #124 기본 스킬 버튼 독립 원화 1종 (최신)
+
+- 기획 발주 댓글 7118370936 확인: command.skill / Kenney star 대상 1종. 공격·방어 대표 최종 미술 승인 원본의 SHA256 일치 확인 및 비교용 바이트 보호.
+- 신규 SkillButton_Original_128_RGBA.png SHA256 dd9b8a971751d597d97c216ae83b44db68b0caabaf0ea32503e8b13100baab00, 128×128 투명 RGBA. 공용 스킬 메뉴 별 문양, 은금속 장식, 청색 동작 강조. 공격/방어/스킬 128·40·30px 실제 크기 다크/라이트 비교판. 실제 게임의 주문/길 능력 아이콘 및 기존 Kenney 실물 비교, Unity GameView NOT_VERIFIED.
+- ZIP LIMITLESS_Issue124_SkillButton_Original_20261124.zip, 1507469B, SHA256 b8d9a0076278cbb39656c0f3fbc3e7c188d35ae4bc38f7875cada4572ebee256; CRC11/11, Manifest9/9, SUMS10/10 PASS. 대화 다운로드 실물, Windows F: 자동 복사 아님.
+- [정식 보고](../../Renewal_20261124_Issue124_SkillButton_Original_Pilot_Delivery.md) commit 19ff0a90c126d5a4cf294933c461811e98250c0f, docs/art-renewal.
+- 대표 스킬 미술 승인 대기. 기존 승인 공격·방어·전리품·Trait5/공식 길 문장·게임 자산 보존. Unity6000.6.5f1, #85, 코드/GUID/meta/Save/UserData/Discord/main 변경0. 제품 적용·병합·Push0.
+
+## 2026-11-24 / Issue #124 기본 방어 버튼 독립 원화 1종 (최신)
+
+- 기획 발주 댓글 7116871218 확인: command.defend / Kenney shield 대상 1종. 공격 승인 원본 SHA256 cf775727e27be825809a6b3d9bd04b227abe3408055873f70616cc8a9ca19a32 그대로 비교용 보존. 공격 및 전리품2 대표 미술 승인 사실은 댓글 7116923432 / 7117133033 기준, 이번 방어 승인과 구분.
+- 신규 DefendButton_Original_128_RGBA.png SHA256 026574c506cf03db37eca4b57a24ba74251db4d6e48f5c868cf421ca69c43413, 128×128 투명 RGBA. 은색 방패/금색 장식/청색 동작, 기본 공격과 128·40·30px 실제 픽셀 비교판 제작. 스킬 실제 PNG/Kenney 원본 픽셀 비교 및 Unity GameView NOT_VERIFIED.
+- ZIP LIMITLESS_Issue124_DefendButton_Original_20261124.zip, 1368605B, SHA256 3cdfa248cd0fc2d363f3bcbc3345665da5aa72de24fd6aa46bdcde834ffb3a5a; CRC 10/10 PASS, Manifest 8/8 SHA·bytes PASS. 대화 다운로드 실물, Windows F: 자동 복사 아님.
+- [정식 보고](../../Renewal_20261124_Issue124_DefendButton_Original_Pilot_Delivery.md) commit c90831068b10802e6694153d26f300848bc6c231, docs/art-renewal.
+- 대표 방어 미술 승인 대기. 기존 공격·전리품·Trait5/공식 길 문장·몬스터·펫·기타 스킬 보호, Unity6000.6.5f1/#85/기존 게임 코드 및 Scene/Prefab/GUID/meta/Save/UserData/Discord/main 변경0. Unity 적용/병합/Push0.
+
+## 2026-11-24 / Issue #124 신규 공격 버튼 아이콘 오리지널 파일럿 1종
+
+- [최신 기획 발주](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7115939762) 따라 Kenney BattleUiIconCatalog의 Attack(sword) 기능을 참고하되 원본 이미지 재사용·트레이싱 없이 **1종 신규 그래픽 PNG** 제작. 은색 검날·금색 손잡이·붉은 참격의 LIMITLESS 화풍.
+- 게임 후보 `AttackButton_Original_128_RGBA.png` 128×128 투명 RGBA SHA256 `cf775727e27be825809a6b3d9bd04b227abe3408055873f70616cc8a9ca19a32`. 40px·30px 실축소 투명 Preview, 다크/라이트 버튼 실제 픽셀 보드 및 512 마스터 포함.
+- 검수 ZIP `LIMITLESS_Issue124_AttackButton_Original_20261124.zip` 1,659,563 bytes SHA256 `14aeea5420912bbfc4c996f108a96db36058f34433324e02321c5de32b1ba9c7`, CRC **10/10 PASS**, Manifest payload **8/8** hash/size PASS. 실물 파일은 현재 대화 다운로드 첨부, 대표 Windows F: 및 GitHub 아트 바이너리 자동 복사·등록 아님.
+- [제작·QA 보고서](../../Renewal_20261124_Issue124_AttackButton_Original_Pilot_Delivery.md), 최초 문서 commit `5f95aad00810b817eae70bdb0cf7ab59247973fa`, 브랜치 `docs/art-renewal`.
+- 기존 Kenney 원본 실제 PNG 및 Unity GameView 직접 실픽셀 대조 `NOT_VERIFIED`; 40/30 오프라인 가독성 검토일 뿐 제품 미술 승인 아님. **대표 최종 미술 승인 대기**, Codex 제품 연결 교체는 별도.
+- 기존 독침벌 침·초원 슬라임 젤·Trait5/PathSymbol5·기승인 몬스터/펫/NPC/환경/ItemDefinition/기존 Kenney 버튼/라이선스/Scene/Prefab/GUID/meta/Save/UserData/Discord/main 무변경. Unity 6000.6.5f1, Codex #85 HOLD. main 병합/Push0.
+- 상태 `NEW_ATTACK_PILOT_1 / FILE_TECH_PASS / USER_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED`.
+
+## 2026-11-23 / Issue #124 독침벌 Organic v2 + 초원 슬라임 젤 / Tint·30px 국소검토 (최신)
+
+- Codex 격리 검수 https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7096499843: 128/50/40 PASS, 30px 침끝·독방울 PARTIAL, Gold Tint·Ch2 스타일 PARTIAL.
+- 원본 Organic v2 SHA256 9b6d0b82f63b2e38813c9a0a979274b82729a970d84b8851456d22ea0179edd3, GrassSlimeGel SHA256 ca06a5384883e0c848c4a2e893f5f524ee0d81ef22a0420425f3c0c58a902a55 **둘 다 바이트 보존**.
+- ItemDefinition 기존 색: 독침 Gold(1,.72,.18,1), 젤 Green(.55,1,.38,1). 각각 White (1,1,1,1)와 실제 30/40/50px 오프라인 비교. **두 아이콘 모두 White Tint 격리 비교 우선 권고**; 본편 값 수정0.
+- 독침 **침끝/독방울 59픽셀만** 보완한 선택 후보 SHA256 d614ed5250e790efb1ed57268aba4cfe99f5ad9982e2eb6a53c7f82a669de233. 기존 v2 원화 덮어쓰기 금지, 대표 최종 승인 전 적용 금지.
+- ZIP LIMITLESS_Issue124_StingerGel_Tint_TipOnly_20261123.zip, SHA256 a62442885359d75abd556cca01f648e1c7d71058dcf44050391860eff9cb2a98, 418286 bytes, CRC26/26 PASS, Manifest24/24 PASS. 실물 PNG/보드/QA 포함, 이 ChatGPT 대화 첨부에만 저장됨.
+- Chapter1 기존 두 아이콘 자체 비교; Ch2 실제 PNG 파일 없으므로 Codex 화풍 PARTIAL 유지·실화소 QA 미완료.
+- [정식 보고](../../Renewal_20261123_Issue124_StingerGel_Tint_TipOnly_FinalReview.md), 문서 커밋 a101ea82a708b008e758436d55a1fbc8347a4665, 브랜치 docs/art-renewal.
+- 숲거미 실·맹독뱀 비늘 신규0; 기존 몬스터/펫/승인 길 Trait5/PathSymbol5, Unity6000.6.5f1, #85 HOLD, Scene/Prefab/GUID/meta/ItemDefinition/Save/UserData/Discord/main 변경0.
+- 상태: SOURCE_KEEP / OFFLINE_TINT_COMPARE_DONE / OPTIONAL_TIP_DELTA_59PX / USER_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED.
+
+## 2026-11-23 / 독침벌의 침 아이콘 v1 반려 → v2 신규 유기체형 직접 제작
+
+- 바울 대표 피드백: 기존 독침벌 침 시안이 우리 벌에서 나온 침처럼 안 보이고 무기 형태이므로 **v1 미술 반려**. 대표 승인으로 기록하거나 적용하지 말 것.
+- 실제 이전 `독침벌 리뉴얼 게임 아트 시트.png`를 확인하고 검황 키틴 배마디/자주색 배 끝 독침을 참고해 **새 오리지널 v2 독침 단독 PNG 128 RGBA 한 장** 제작. 40/30 실제 축소와 어두운/밝은 배경, 벌 원화 비교판 제작. 과거 시트는 현재 게임 최신 Sprite의 최종 원본 동등성 미확인.
+- 납품 ZIP `LIMITLESS_VenomBeeStinger_Organic_v2_20261123.zip` 454080 bytes, SHA256 `345017cf17c1a07eaad5dc866150a090b48ce16803bcecada3dcc43640945f53`, ZIP CRC8 PASS, Manifest payload6 SHA/size PASS. 현재 대화 첨부에서 직접 제공, F:로 자동복사/게임 적용하지 않음.
+- [보고서](../../Renewal_20261123_Issue124_VenomBeeStinger_Organic_v2_UserFeedback.md), 문서 최초 커밋 `8455a238296684768819af77bd1090a4245c59e7`, 브랜치 `docs/art-renewal`.
+- **초원 슬라임 젤 재제작0**, 나머지 전리품2 신규PNG0. Unity6000.6.5f1, Scene/Prefab/GUID/meta/ItemDefinition/승인 Path Symbol/몬스터/Save/UserData/Discord/main 변경0.
+- `V1_ART_REJECTED / V2_FILE_QA_PASS / V2_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED`.
+
+## 2026-11-23 / Issue #124 대표 재작업 지시 — Trait Icon 5종 직접 제작 (현 최신)
+
+- **대표 피드백:** 11/23 기존 후보의 귀/뇌형 직설적 표현 거부. 시각 포함 Trait5 전부 외부 게임 사용 아이콘의 추상적 구조를 더 가깝게 계승하되 직접 복제·트레이스 금지.
+- **신규 실물:** 128×128 RGBA5, 40px/30px 실제 축소10, 5종 밝은/어두운 UI 보드, 외부 원본 공식 CDN 이미지와 신규 이미지를 나란히 호출하는 HTML, Manifest/SHA256/QA. ZIP `LIMITLESS_Issue124_Trait5_Rework_20261123.zip` **2,478,785 bytes**, SHA256 `b2f468126e1880d39d2a487f347568b61d8cbbfaf460bcb44849dcda8923b5df`, ZIP CRC25/25 PASS, Manifest payload23/23 SHA/bytes PASS. **이 ChatGPT 대화 첨부 파일**이며 대표 F:\\Downloads/게임 Unity/원격 GitHub에 ZIP 바이너리 자동 복사·반영 없음.
+- **기술/미술 구분:** 생성 이미지 직접 분리·검증 `FILE_TECH_PASS`; 기존 5종 원본 PNG는 제작 환경에 저장하지 못해 원본 실픽셀 비교 PNG 미제작, **HTML 공식 URL 비교판**으로 대체. 대표 실물 미술 승인 `PENDING`, 실제 Unity GameView `NOT_VERIFIED`. 기존 오늘 후보 5종은 참고 이력으로 보존하되 이번 후보를 신규 검토 대상 취급.
+- **정식 보고:** [Trait5 전면 재작업 납품 보고](../../Renewal_20261123_Issue124_Trait5_Rework_OriginalIdentity_Report.md); 최초 문서 commit `7f7dc7df2c111901cc6e2ba179f65e0cce937890`, 브랜치 `docs/art-renewal`.
+- **보호:** 기존 `pathSymbol` 5종 절대 수정0. 외부 `traitIcon` 원본 GUID/meta/PathDefinitions, Unity6000.6.5f1, Scene/Prefab/Save/UserData, 공식 NPC/몬스터/펫/환경, #85 HOLD, main 직접 변경0. **최종 미술 승인 후 별도 Codex 최소 교체**.
+- **상태:** `ART_CANDIDATE_5_DELIVERED / FILE_TECH_PASS / ORIGINAL_PIXEL_COMPARE_PENDING / USER_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED`.
+
+## 2026-11-23 / Issue #124 후속 — 청각·지적·지체·마음의 상처 Trait4 신규 오리지널 PNG 납품
+
+- **바울 대표 최신 지시:** 시각 Trait v2 **30px 기획검수 통과** (기존 원화 KEEP, 실제 Unity 적용/대표 최종 게임 교체 승인 아님), 나머지 청각·지적·지체·마음의 상처 Trait 4종 각각 128×128 RGBA 새 미술 후보 제작. 기존 공식 PathSymbol5·경로 정의/GUID/meta·Unity 모두 변경0.
+- **신규 PNG4 (128², RGBA, 모든 구석 alpha 0) / SHA256:** 청각 `Hearing_Trait_Original_128_RGBA.png` **`fb429502cf62d063887e196ed878d402f0b575d0658a9e9de864440cfeb949bb`**, 지적 `Intellectual_Trait_Original_128_RGBA.png` **`9bbc023310f8210d6f7d7e17e2e089edb7e0352f4065dd76a2732b148106bb71`**, 지체 `Mobility_Trait_Original_128_RGBA.png` **`740f5c832799a471c6d83ede60b1b094756d7d5456d6a19e85cf930acec9709e`**, 마음 `EmotionalScar_Trait_Original_128_RGBA.png` **`9a4801e883eee89305c6835bce3038da9992832b6a44aa74e644cf23204285c5`**. 소리·사고 결절·이동 궤적·봉합/회복 중심 모티프를 시각 v2의 냉청색/흰색/네이비·방향점 스타일과 연결.
+- **실제 픽셀 128/40/30 비교판:** `Review/Trait4_vs_Vision_v2_128_40_30_Comparison.png` 승인 방향 Vision v2 SHA256 `6b4fcdc9897d712b2490dc14dbe8ea59abc30876738aa2f7443e5effc55aacb1` 원본 vs 신규4 시각 동일크기. `Review/Trait4_40_30_DarkLight_Readability.png` 밝은/어두운 UI 모의 슬롯. 생성 AI 2×2 원본은 RGB 체커 무늬 인쇄였으므로 진짜 투명 알파로 분리한 후보만 제공. **원본 PathSymbol 5 PNG 실물과 직접 1:1 픽셀 비교 및 실제 Unity GameView는 미검증**.
+- **검증 PASS/납품:** 128 RGBA4·알파·마진·고유 중심 문양 검수, 40/30 실축소 및 보드, 전체 ZIP `/mnt/data/LIMITLESS_Issue124_Trait4_OriginalArt_20261123.zip` **1,176,825 bytes SHA256 `0fa4db686a5886af004bddb0f4df15ed4557be8335019bef5a187c9e125de1c0`**, **23파일 ZIP CRC PASS / Manifest payload21/21 SHA256·bytes PASS**. PNG4 전용 ZIP `/mnt/data/LIMITLESS_Issue124_Trait4_128PNG_ONLY_20261123.zip` 85,152 bytes SHA `ed3772372fbcb49cff6866ed85723691b69fcadb9b23210d86f5e37e319a7789` CRC PASS. Library `/LIMITLESS_Art_Delivery/Issue124_Trait4_OriginalIcons_20261123/`에 ZIP2/PNG4/보드2 총8파일 실제 저장 PASS.
+- **정식 보고:** [`Renewal_20261123_Issue124_TraitFour_OriginalIcons_ArtPilot.md`](../../Renewal_20261123_Issue124_TraitFour_OriginalIcons_ArtPilot.md), `docs/art-renewal` commit **`5634c13d15596325a24eae3ee9e1cf8f7f6f4fda`**. `FILE_TECH_PASS / USER_ART_APPROVAL_PENDING_4 / PATHSYMBOL_PIXEL_COMPARISON_NOT_VERIFIED / NOT_UNITY_APPLIED`. 기존 외부 Game-icons.net 청각 Skoll/지적·마음 Delapouite/지체 Lorc CC BY 3.0 표기 유지; 전리품 3종/GrassSlimeGel 파일럿 별도 승인 상태 유지. 사용자 PC F:\Downloads 직접 복사/Unity 적용0.
+- **보호:** Unity6000.6.5f1 / #85 HOLD, 승인 Vision v2, 모든 공식 PathSymbol5, 기존 NPC·몬스터·펫·환경·물약·BG·아이템·Quest·Scene/Prefab/GUID/meta/Save/UserData/Discord/main 변경0. 차기 실제 게임 교체는 대표 미술 승인 후 Codex의 별도 최소 DeltaQA만. `main` 직접 Commit/Push/Merge0.
+
+## 2026-11-23 / Issue #124 후속 — 시각 Trait v2 최소 대비 보완·GrassSlimeGel 독립 아이콘1종 납품 (최신)
+
+- **이번 대표 직접 발주**: 최신 #124 Codex 비교 및 11/23 기획 최신 후속 접수. Vision v1 40px PASS, 30px 청색 동심원 약함, 24/26px 표적 우세 → v1 **원본 그대로 보존**하고 색·형상/투명도 **국소 보완** v2 후보 제작. 별도 신규 오리지널 GrassSlimeGel 128px PNG1 제작. 나머지 길 Trait4 및 전리품3 미제작.
+- **Vision v2 실물:** `VisionTrait_v2_128_RGBA.png` 128×128 투명 PNG SHA256 **`6b4fcdc9897d712b2490dc14dbe8ea59abc30876738aa2f7443e5effc55aacb1`**; `VisionTrait_v2_Master512_RGBA.png` SHA256 **`c86d5ab634d2a9bab855222335f2583275975ab070454a568cb53104915a4072`**. 정확한 v1 512 SHA `9a903a53dacc8190e35c2ae77cd034f4c92fef00c93a9e933639fc81cf024232` 확인 후 화소기반 대비 보완, 기존 원화의 눈·4방 구조 및 색감 유지. 512/128/40/30/26/24 v1-v2 직접 크기판과 512 변경픽셀 위치 Delta overlay 포함, 기존 v1 바이트 불변. 변경픽셀20.451%(많은 픽셀은 국소·저강도 투명도/음영 변화), 전면 재작화0. 30/26/24 원래 문제에 대한 **오프라인 후보**, 실제 Unity 30px GameView PASS 아님.
+- **GrassSlimeGel 신규 독립:** `GrassSlimeGel_Original_128_RGBA.png` 128×128 투명 SHA256 **`ca06a5384883e0c848c4a2e893f5f524ee0d81ef22a0420425f3c0c58a902a55`**; 512 마스터 SHA **`7d838c7005837e60178bbcdcaf5265fa309b67c88c78d6a25bb75dc6ce3e4816`**; 별도 원천 SVG 포함. **128/40/30 크기 + ItemDefinition 기존 iconTint=(.55,1,.38,1) 적용 미리보기**로 가독성 확인; 실제 Unity 인벤토리 아님. GrassSlimeGel.asset `itemId: material_grass_slime_gel` 외부 dripping-goo GUID `40b87c1443b1efa4f82e58cbfd197337`는 ItemDefinition·MonsterDefinition Loot·InventoryPresenter로 실참조 확인, 기존 GUID/원본은 변경0.
+- **대조 검증 한계**: Codex 공식 Vision Symbol/외부 eye-target 실제 비교 **이전 댓글 결과 재사용**, 로컬 미Push 실제 비교 PNG는 이번 환경에서 미보유. dripping-goo 원본 바이너리와 Ch2/3 공식 잡템 PNG는 이번 실행환경에 미보유이므로 **기존 이미지 화소/동배율 스타일 PASS 주장 불가**. 신규 PNG/자체 기획 원천 외 제3자 아이콘 이미지는 납품에 포함하지 않음. 시각/Ch2·3 스타일 최종 판정은 대표 미술 및 Codex 로컬 QA 대기.
+- **납품 ZIP** `/mnt/data/LIMITLESS_Issue124_VisionTrait_v2_GrassSlimeGel_Pilot_20261123.zip` **893138 bytes**, SHA256 **`9940b54a3fa4828d745470a580be4a952c5e0b3ab5431ddc4f322fa3a5560bff`**, **23 files CRC PASS / Manifest payload21/21 SHA256+bytes PASS**. PNG 2장만 ZIP `LIMITLESS_Issue124_2PNG_GameCandidates_20261123.zip` SHA256 **`8af188413faa53418ffe1bf073fda2d0e2891d6db0efd3482367eb9868a255d8`**, CRC PASS. ChatGPT Library `/LIMITLESS_Art_Delivery/Issue124_VisionTrait_v2_GrassSlimeGel_20261123/`에 ZIP2·PNG2·비교판3 **7파일 업로드 성공**. 사용자 F: 자동 복사 없음.
+- **[정식 보고](../../Renewal_20261123_Issue124_VisionTrait_v2_GrassSlimeGel_Pilot_Delivery.md)**, `docs/art-renewal` commit **`d8b6d773541ed6289ec34ec808c5d055dfdd6084`**. `FILE_TECH_PASS / OFFLINE_READABILITY_REVIEW_READY / USER_ART_APPROVAL_REQUIRED_BOTH / NOT_UNITY_APPLIED / GAMEVIEW_NOT_VERIFIED`. 대표 승인 후에만 Codex가 새 Sprite GUID 생성(구 원본 GUID/meta는 KEEP), 정확히 VisionPath.traitIcon과 GrassSlimeGel.icon 두 개만 별도 권한으로 최소 적용/PPU/Pivot/Tint/GameView 테스트.
+- **보호:** Unity **6000.6.5f1**, #85 HOLD, 기존 공식 PathSymbol5, v1/외부 GameIcons 원본, Ch2/3 승인 아이콘·NPC/몬스터/펫/환경·물약/BG, Scene/Prefab/PathDefinition/ItemDefinition/기존 GUID/meta/Save/UserData/Discord/main **변경0**. main 직접 commit/Push/Merge0.
+
+## 2026-11-23 / Issue #124 후속 — 길 특성5 대조·시각 신규 파일럿1종 납품
+
+- **대표 후속 발주:** Game-icons.net 직접 실참조9개 가운데 Path trait5 아이콘 교체 준비, 기존 공식 Path Symbol5와 전리품4 대조. 새 원화는 **시각 trait 1종만** 제작. [정식 보고서](../../Renewal_20261123_Issue124_PathTrait5_VisionPilot_Delivery.md) `docs/art-renewal` commit **`12295e303459f8f96750e28319ad801326c7bad0`**.
+- 11/19 복구 commit `f64082914e114096b6b9393263e7a36f7d829a55`의 PathDefinitions 5개 실물 텍스트에서 프로젝트 독자 `pathSymbol` 5 GUID와 외부 `traitIcon` 5 GUID가 **서로 다름**을 확인. 공식 문장 전체 **재사용/수정 금지 KEEP**. 시각 trait eye-target(Delapouite `c94e7ffd...`), 청각 sound-waves(Skoll `e54a40b3...`), 지적 mesh-network(Delapouite `b5ddb75c...`), 지체 cog(Lorc `765c9dee...`), 마음 heart-shield(Delapouite `ecc84d2d...`) 모두 기존 참조 유지. 신작 후보 시각 외4종 미제작.
+- **실제 신규 파일:** 시각 512×512 RGBA PNG `VisionTrait_Original_Pilot_512_RGBA.png` SHA256 **`9a903a53dacc8190e35c2ae77cd034f4c92fef00c93a9e933639fc81cf024232`**; 128×128 RGBA `VisionTrait_Original_Pilot_128_RGBA.png` SHA256 **`080cb11af9ccd93325a1aaed9c9e63df4bcc64d2ce93dace3434143f873e283a`**; 40px 실제 축소 1장. 기존 외부 PNG/Path Symbol 합성·직접 수정0. 40px UX 미술 검토 대기.
+- **비교/계획:** `Path5_GUID_Comparison_Board.png` SHA **`cdea9d133d29e6e2c80b40f62a00a1f4dd21f73845e5980547df5cbe65724c43`** (5종 실사용 GUID·역할 및 시각 신규 후보 텍스트+실물, **기존 5+5 PNG 원본 실물 미포함**), 시각 신규 512/128/40 실제 축소판 SHA **`715a44b476286a7881785b6dd85110fabb4f95f2cb4f97ba6bc6a860f5e31c1f`**. **`GUID_REFERENCE_COMPARE_COMPLETE / EXISTING_PNG_PIXEL_COMPARE_NOT_VERIFIED`**. 기존 외부 원화·공식 Path Symbol의 픽셀 자체 대비는 Codex 로컬 읽기 전용 후속, 합격 주장 금지.
+- 전리품 외부4: GrassSlimeGel=dripping-goo `40b87c14...`, VenomBeeStinger=wasp-sting `73b52f1f...`, ForestSpiderSilk=spider-web `fa189694...`, VenomSnakeScale=dorsal-scales `aeb1ca89...`; 기존 ItemDefinition 직접 GUID 확인·변경0, 신규 전리품 PNG0. Path5 이후 발주. Game-icons.net CC BY 3.0 기존 표기 유지.
+- **납품 ZIP:** `/mnt/data/LIMITLESS_Issue124_Trait5_VisionPilot_20261123.zip`, 512911bytes, SHA256 **`f8d0d09986131cf68d19d72a2b6546fe4324583758777e06a2c80b53d11e3a9c`**, 10파일 ZIP CRC PASS / Manifest payload8/8 HASH/BYTES PASS. Docs/Path_Trait5_Replacement_Plan.md, SourceDeclaration, QA, SHA256SUMS 포함. 사용자 F: 자동 복사/Unity 적용0.
+- **게이트:** `ART_PILOT_1_READY / TECH_FILE_PASS / GUID_COMPARISON_ONLY / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`. 실제 Unity6000.6.5f1/Issue85 HOLD/PathDefinition·ItemDefinition/GUID/meta/기존 승인 NPC·몬스터·펫/Save/UserData/Discord/main 변경0. 이후 대표 승인과 실제 기존 PNG 원화 비교를 거쳐 1개씩 진행, main 직접 Commit/Push/Merge0.
+
+## 2026-11-23 / Issue #124 — Ch1·2 잔여 실사용 비고유 전투 VFX·아이콘 집중 감사 (최신)
+
+- **정식 보고:** [`Renewal_20261123_Issue124_ActiveThirdParty_VFX_Icon_Audit.md`](../../Renewal_20261123_Issue124_ActiveThirdParty_VFX_Icon_Audit.md), `docs/art-renewal` commit **`2f0f6c747299217b3a2967e9d5d7af87bdb9fff3`**. 2026-11-23 #124 최신 지시, #57 기존 54행 정적 감사 재활용. 11/19 복구 ref **`f64082914e114096b6b9393263e7a36f7d829a55`** 트리 7,502 blob / truncated=false 기준. **사용자 최신 로컬·실제 Unity GameView 아님**.
+- **정적 실참조 증거 중대 정정:** 이전 #57에서 `GameIconsNet` 전체 Path10+Material4 “실사용 미확인” 처리했던 범위 중 **White Path trait icon 5 + Material 4 = 정확히 9 PNG가 원격 복구본에서 직접 GUID로 직렬화되어 있음**. PathDefinitions/01~05의 traitIcon 5개 → PathSelectionController 상세/카드 Image, ItemDefinitions/GrassSlimeGel·VenomBeeStinger·ForestSpiderSilk·VenomSnakeScale의 icon4 → MonsterDefinitions/01~04 loot 및 InventoryPresenter item.Icon 연결 확인. 원본 디렉터리만 있는 게 아닌 `ACTIVE_SERIALIZED_GUID_AND_UI_CODE_MAPPED`; GameView 실제 노출은 `NOT_VERIFIED`. Path/Black 5는 이 좁은 PathDefinitions 참조에는 불포함; 전역 미사용 확정 아님. 기존 프로젝트 고유 길 문장 `pathSymbol` 5 유지.
+- **권리:** 위 9종 Game-icons.net 개별 제작자는 Material4 Lorc; trait eye-target/mesh-network/heart-shield Delapouite, cog Lorc, sound-waves Skoll. 전부 **CC BY 3.0 상용 사용 허용·저작자 표시 필요** (패키지 license.txt 및 제작자 웹페이지 확인). 저작자 표시/라이선스 출처 정리 P1, 원본/크레딧 무단 삭제 금지.
+- **상위3군:** ① Game-icons.net **9종 직접 GUID 아이콘** (P1, 난이도 중간) ② PVFX `BattleSkillEffects/SpectralBloom` 정화 (CC0, `BattleCleanseVisuals` 96×96/5열/16장/20FPS, release7/버튼peak5, 난이도 중간) ③ Kenney BattleIcons **14+7=21PNG** (`BattleUiIconCatalog` Resources 매핑, 기본 전투 버튼 코드 직접 연결, CC0, 교체 난이도 중~높음). 모두 실제 play/render는 미검증이며 기술 참조 단계 구별.
+- **보관 vs 사용:** `Art/Effects/ThirdParty/PVFX_Foundry_0.3.0` 원본 보관, `_Project/Resources/BattleSkillEffects`가 별도 런타임 복사본. PVFX WarmExplosion/SolarShrapnelCharge/ElectricImpact/ArcaneParry/EarthRupture/FrostNova/RadiantHeal 후순위; ThirdParty Kenney RPGBase/Schwarnhild/Xariami 실사용 미증명, Xariami 권리미확인 HOLD. 완료 #96 HP/MP, #91 BG, 승인 NPC/몬스터/펫/불씨망령 재제작·재감사0.
+- **파일럿 게이트:** `PILOT_NOT_PRODUCED`. #124의 VFX 1개 제작 조건 중 `SpectralBloom` 정적 기술 사양은 확인됐으나 **현재 제품 GameView 기준 시각적 교체 필요성/이미 승인된 대체본 부재 최종 확인이 안 됨**. 새 PNG를 추측 생성하거나 Unity에 적용하지 않음. Codex 읽기 전용 좁은 정화 효과 GameView 캡처(peak5/release7) 및 승인 후보 여부 확인 후 실제 필요하면 1개 파일럿 별도 발주.
+- **안전:** `STATIC_REFERENCE_AUDIT_COMPLETE / GAMEVIEW_NOT_VERIFIED / 3_PRIORITY_GROUPS_IDENTIFIED / REPLACEMENT_USER_APPROVAL_REQUIRED / NOT_UNITY_APPLIED`. Unity **6000.6.5f1**, Issue #85 HOLD, Scene/Prefab/GUID/meta/Resources/ThirdParty 원본/전투 기능/Save/UserData/Discord/main 변경0. 11/19 기존 Unity PASS 숫자를 이번 새 검증으로 재기록 금지. `docs/art-renewal` 문서화만, main 직접 Commit/Push/Merge0.
+
 ## 2026-11-19 / Issue #120 — 승인 Idle4 보존 및 Attack4 국소 보완 납품
 
 - 대표 Idle4 최종 미술 승인: 전체 승인 Idle 시트 SHA256 `7b26e90652f9916faf5712647a2bf23c91a1ca2ea8bc266ca273a1de1dd58e70`. 기존 원본/승인 시트 파일 해시 불변. 이번 후보는 Attack04–07만 변경; 승인 Idle4 및 Hit/Defeat8 픽셀 차이0.

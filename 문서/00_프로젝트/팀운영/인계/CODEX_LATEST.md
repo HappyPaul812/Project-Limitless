@@ -1,6 +1,46 @@
+# 2026-11-27 · #132 마감
+
+통합 제품 6d232addede55d249f7ea1856c89f19db462aa5b. Unity 6000.6.5f1 최소 스모크 9 PASS. 원본 FF HOLD, Main27 구현 확인 안 됨. [마감 기록](../../Issue132_EOD_20261127.md)
+
+# 2026-11-27 · #125 Main26 승인 음성 연결
+
+제품 0a2cead1270f758f0776444b908db3ac487a6dd4. Unity 6000.6.5f1 F4에서 승인 음성 22개 순차 재생과 무음 4개 확인. 기기 출력 청취는 별도 미실시. [검수 보고](../../Issue125_Main26_ApprovedVoice_20261127.md) · LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
+
+# 2026-11-27 · #130 Main26 사라지는 피난처
+
+제품 `bbee953023f8b1d5f0f63ca918838aea8ed64593`. F4 왕복·정령·단회 보급·대사 완료 Unity 38 PASS. Main26 음성 HOLD, Main27 미구현. [구현 보고](../../Issue130_Main26_20261127.md)
+
+# 2026-11-27 · #30 Main28 설빙의 폭군 보스전
+
+- 제품 `edcf208988c9d7e26834e0475c28c3f9f24b1358`. Main28 2페이즈·화로·KO와 승패 연결, Unity 6000.6.5f1 격리 21 PASS. Main26·27 및 실제 북부 현장 씬 연결은 남아 있습니다. [구현 보고](../../Issue30_Main28_FrostTyrant_20261127.md)
+
+# 2026-11-27 · #30 ColdVFX5 배치 표적 보완
+
+피격 112px·무피해 접촉 92px·동결괴사 144px 후면 후보. Unity 실제 비교판, KO 표시 8셀 1회 재생 및 정리 확인. Main28 이벤트 미연결. [검수 보고](../../Issue30_ColdVFX5_Placement_20261127.md)
+
+# 2026-11-27 · #30 ColdVFX5 v1 검수
+
+BreathCast PASS, BreathHit·Cryonecrosis PARTIAL, Chill·Frostbite HOLD. 승인 공용 상태 VFX 유지. Unity 실제 Battle 비교판과 40프레임 검증, Main28 실전 발동 미검증. [검수 보고](../../Issue30_ColdVFX5_v1_Review_20261127.md) · LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
+
+# 2026-11-27 · #30 설빙의 폭군 VFX 구현 준비
+
+승인 냉기 HUD/정지 VFX 재사용, 브레스·공용 입자·피격·동결괴사 KO 발주 범위 및 전투 시점 정리. Main28 실전 연결은 후속. [계획](../../Issue30_FrostTyrant_VFX_Plan_20261127.md)
+
+# 2026-11-27 · #30 설빙의 폭군 승인 원화 연결
+
+제품 `6ac382729242bb9ab25cfe2b8c487b965a2f2c9c`. 승인 원화와 실제 Battle 공용 근접 공격 및 KO·승리 경로 14 PASS. Main28 전장/퀘스트·기믹·복귀 미구현. [적용 보고](../../Issue30_FrostTyrant_Approved_Apply_20261127.md) · LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
+
+# 2026-11-27 · #124 마도사 3종 적용
+
+제품 a4825b7c1913e4e845a6d873bdd9f7fbde4404c5. Unity6000.6.5f1 Battle 8 PASS·종료 0. 실제 버튼·상세 및 화상/가이아 HUD 공유, 감전 별도. [적용 보고](../../Issue124_Mage_Approved_Apply_20261127.md) · LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
+
+# 2026-11-27 · #124 사수·투사·치유사 승인 9종 적용
+
+제품 7c05706ddbce17d3cc76299faf0d45f197276f34. 제품 Unity6000.6.5f1 Battle 12 PASS, 회심/기세 HUD 공유 및 9종 버튼·상세 확인. 동료 공통 아이콘, 야수별 연출 유지. [적용 보고](../../Issue124_ApprovedSkills_Apply_20261127.md) · LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
+
 # 2026-11-24 · #132 개발 마감
 
-제품 `931325391a3f5ae1da8c4e7f0ceb7f98a64519d9` · Unity 6000.6.5f1 기존 통합 137 PASS 및 수호자 7 PASS 재사용. 원본 설정 충돌과 #85 Search 예외 기록, local main FF HOLD. [마감 보고](../../Issue132_EOD_SafeCheckpoint_20261124.md) · [복구 영수증](https://github.com/HappyPaul812/Project-Limitless/issues/132).
+제품 `931325391a3f5ae1da8c4e7f0ceb7f98a64519d9` · Unity 6000.6.5f1 기존 통합 137 PASS 및 수호자 7 PASS 재사용. 원본 설정 충돌로 local main FF HOLD, #85 Editor Search 미해결. 원격 복구 `cede8815dc0fdcf4d81e95031167365a8b2a2244` 독립 수신·무결성 PASS. [마감 보고](../../Issue132_EOD_SafeCheckpoint_20261124.md) · [복구 영수증](https://github.com/HappyPaul812/Project-Limitless/issues/132).
 
 # 2026-11-24 · #124 수호자 기본 스킬 승인 Sprite 연결
 

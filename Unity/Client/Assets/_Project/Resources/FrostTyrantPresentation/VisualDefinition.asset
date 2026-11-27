@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11bfa9e4e73d4ce5978021aa82a74fa2, type: 3}
+  m_Name: VisualDefinition
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Monster.MonsterDefinition
+  monsterId: frost_tyrant
+  fieldSprite: {fileID: 21300000, guid: fe010d55eecd4a11a7eef8e8849fb053, type: 3}
+  idleSpriteSheet: {fileID: 2800000, guid: e79248eba8254a0c8df431dc46592d60, type: 3}
+  idleFrameSize: {x: 512, y: 512}
+  idleColumns: 4
+  idleFrameCount: 4
+  attackSpriteSheet: {fileID: 2800000, guid: b118a9ed6d8a40ffaf4850859e9b1880, type: 3}
+  attackFrameSize: {x: 512, y: 512}
+  attackColumns: 4
+  attackFrameCount: 4
+  hitSpriteSheet: {fileID: 2800000, guid: cafceb4e4684428683273fff3cea0e06, type: 3}
+  defeatSpriteSheet: {fileID: 2800000, guid: 37bb238348174242bb5898709a30136b, type: 3}
+  animationFramesPerSecond: 8
+  visualScale: 3
+  sourceFacesRight: 1
+  sheetFramePivot: {x: 0.5, y: 0}
+  useAttackForSkillAnimation: 1
+  hitFrameSeconds: [0.125, 0.125, 0.125, 0.125]
+  meleeImpactSeconds: 0.25

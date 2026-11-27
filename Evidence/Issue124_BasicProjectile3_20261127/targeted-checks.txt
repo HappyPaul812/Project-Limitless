@@ -1,0 +1,22 @@
+BASIC3 PASS Unity version
+BASIC3 PASS sharpshooter actual command
+BASIC3 PASS sharpshooter imported count / rect / PPU / pivot / filter
+BASIC3 PASS sharpshooter intended asset and actual 52px
+BASIC3 PASS sharpshooter launch=0.217 flight=0.342 remaining=0.000
+BASIC3 PASS sharpshooter visual frame interval
+BASIC3 PASS sharpshooter exactly one hit with positive damage
+BASIC3 PASS sharpshooter projectile clears with no later damage
+BASIC3 PASS healer actual command
+BASIC3 PASS healer imported count / rect / PPU / pivot / filter
+BASIC3 PASS healer intended asset and actual 72px
+BASIC3 PASS healer launch=0.275 flight=0.233 remaining=0.000
+BASIC3 PASS healer visual frame interval
+BASIC3 PASS healer exactly one hit with positive damage
+BASIC3 PASS healer projectile clears with no later damage
+BASIC3 PASS mage actual command
+BASIC3 PASS mage imported count / rect / PPU / pivot / filter
+BASIC3 PASS mage intended asset and actual 52px
+BASIC3 PASS mage launch=0.275 flight=0.342 remaining=0.000
+BASIC3 PASS mage visual frame interval
+BASIC3 PASS mage exactly one hit with positive damage
+BASIC3 PASS mage projectile clears with no later damage

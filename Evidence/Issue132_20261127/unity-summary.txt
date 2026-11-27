@@ -1,0 +1,10 @@
+EOD27 PASS Battle wheelchair / actual three visible allies
+EOD27 PASS F4 scene registered
+EOD27 PASS Main26 voice loads
+EOD27 PASS Main28 boss and VFX references
+EOD27 PASS basic projectile sprite counts 8/5/7
+EOD27 PASS approved Guardian textures
+EOD27 PASS both real Battle target objects show unstretched foot waves underneath
+EOD27 PASS Oath state at index 1
+EOD27 PASS Iron Wall state at index 9
+Unity 6000.6.5f1 batch exit 0

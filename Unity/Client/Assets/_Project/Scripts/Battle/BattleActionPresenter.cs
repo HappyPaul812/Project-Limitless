@@ -730,10 +730,10 @@ namespace ProjectLimitless.Battle
         }
 
         /// <summary>
-        /// Frost Nova의 원형 중간 프레임을 금백색으로 낮게 재생해 파티 전체 보호 시작을 알립니다.
-        /// 넓은 그림은 즉시 제거하고 지속 상태는 HUD에 맡겨 인원이 늘어나도 전장을 계속 가리지 않습니다.
+        /// 보호 대상마다 금백색 파동을 발밑에서 동시에 재생합니다.
+        /// 짧은 파동은 즉시 제거하고 지속 상태는 HUD에 맡겨 인원이 늘어나도 전장을 계속 가리지 않습니다.
         /// </summary>
-        public IEnumerator PlayGuardianCover(RectTransform guardian, Font font, Sprite[] frames,
+        public IEnumerator PlayGuardianCover(RectTransform guardian, RectTransform[] protectedAllies, Font font, Sprite[] frames,
             Action applyEffect, Action onComplete)
         {
             if (guardian == null || frames == null || frames.Length == 0)
@@ -744,13 +744,23 @@ namespace ProjectLimitless.Battle
             }
 
             Text callout = CreateSkillCallout(guardian, font, $"{BattleSkillCatalog.GuardianOathDisplayName}!");
-            Image ring = CreateEffectImage(guardian, "GuardianCoverPartyRing", frames,
-                BattleGuardianCoverVisuals.PartyEffectSize, new Vector2(-95f, -20f),
-                BattleGuardianCoverVisuals.ProtectiveTint);
+            var rings = new Image[protectedAllies.Length];
+            for (int i = 0; i < protectedAllies.Length; i++)
+            {
+                Image ring = CreateEffectImage(protectedAllies[i], "GuardianOathAllyFootWave", frames,
+                    BattleGuardianCoverVisuals.AllyEffectSize, new Vector2(0f, -58f),
+                    BattleGuardianCoverVisuals.ProtectiveTint);
+                // 발밑 파동을 캐릭터 뒤에 두고 설원 대비를 위해 아래쪽에 얕은 그림자를 더합니다.
+                ring.rectTransform.SetAsFirstSibling();
+                var shadow = ring.gameObject.AddComponent<Shadow>();
+                shadow.effectColor = new Color(.24f, .15f, .06f, .82f);
+                shadow.effectDistance = new Vector2(0f, -2f);
+                rings[i] = ring;
+            }
             bool applied = false;
             for (int frameIndex = 0; frameIndex < frames.Length; frameIndex++)
             {
-                SetEffectSprite(ring, frames[frameIndex]);
+                foreach (Image ring in rings) SetEffectSprite(ring, frames[frameIndex]);
                 if (!applied && frameIndex >= BattleGuardianCoverVisuals.ApplyFrame)
                 {
                     applied = true;
@@ -759,7 +769,7 @@ namespace ProjectLimitless.Battle
                 yield return new WaitForSeconds(BattleGuardianCoverVisuals.FrameDuration);
             }
             if (!applied) applyEffect?.Invoke();
-            DestroyEffectImage(ring);
+            foreach (Image ring in rings) DestroyEffectImage(ring);
             if (callout != null) Destroy(callout.gameObject);
             onComplete?.Invoke();
         }

@@ -1,0 +1,21 @@
+I30 PASS Battle / 336 UI units / actual party / approved Snowroad
+I30 PASS Light Hit144
+I30 PASS Light Hit112
+I30 PASS Light Hit120
+I30 PASS Light Hit128
+I30 PASS Light Contact
+I30 PASS Light KO176
+I30 PASS Light KO136
+I30 PASS Light KO144
+I30 PASS Light KO152
+I30 PASS Dark Hit144
+I30 PASS Dark Hit112
+I30 PASS Dark Hit120
+I30 PASS Dark Hit128
+I30 PASS Dark Contact
+I30 PASS Dark KO176
+I30 PASS Dark KO136
+I30 PASS Dark KO144
+I30 PASS Dark KO152
+I30 PASS fixture KO plays 8 frames once and clears; HP unchanged
+Unity 6000.6.5f1 / exit 0 / review-only Battle

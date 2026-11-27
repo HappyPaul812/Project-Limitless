@@ -39,6 +39,9 @@ namespace ProjectLimitless.Battle
                     // 과열은 정화 목록과 독립적입니다. 실제 제거가 없는 경우 소비와 행동 성공을 반환하지 않습니다.
                     message = "제거할 과열이 없습니다.";
                     applied = statuses.RemoveOverheat(target) ? 1 : 0; break;
+                case ItemEffectType.RemoveFrostbite:
+                    message = "제거할 동상이 없습니다.";
+                    applied = statuses.RemoveFrostbite(target) ? 1 : 0; break;
                 case ItemEffectType.RemoveChill:
                     message = "제거할 한기가 없습니다.";
                     applied = statuses.RemoveChill(target) ? 1 : 0; break;

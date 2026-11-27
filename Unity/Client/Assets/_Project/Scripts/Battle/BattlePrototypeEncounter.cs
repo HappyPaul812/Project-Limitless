@@ -88,8 +88,18 @@ namespace ProjectLimitless.Battle
         {
             var party=CreateThreeVsThree(name,job,path,hp,attack,agility,null,null,monster);
             return new BattleEncounterSetup(party.Allies,new[]{CreateMonster(monster,monster.MonsterId,
-                monster.DisplayName,monster.MonsterId == "frost_owl" ? FormationRow.Rear : FormationRow.Front,0,monster.BattleAgility)});
+                monster.DisplayName,(monster.MonsterId == "frost_owl" || monster.MonsterId == "blizzard_wisp") ? FormationRow.Rear : FormationRow.Front,0,monster.BattleAgility)});
         }
+        internal static BattleEncounterSetup CreateMain28(string name, string job, string path,
+            int hp, int attack, int agility, MonsterDefinition boss)
+        {
+            var party = CreateThreeVsThree(name, job, path, hp, attack, agility, null, null, boss);
+            return new BattleEncounterSetup(party.Allies.Take(3).ToArray(), new[]
+            {
+                CreateMonster(boss, boss.MonsterId, boss.DisplayName, FormationRow.Front, 0, boss.BattleAgility, true)
+            });
+        }
+
         public const string GraveWightOneValidationId = "validation_grave_wight_one";
         public const string GraveWightTwoValidationId = "validation_grave_wight_two";
 
@@ -435,7 +445,7 @@ namespace ProjectLimitless.Battle
                 new FormationSlot(row, column), monster?.MaxHp ?? 60, attack,
                 monster != null && monster.UseDefinitionBattleAgility ? monster.BattleAgility : agility, 0,
                 (monster?.MonsterId == "heatwind_hawk" || monster?.MonsterId == "frost_owl") ? TargetRangeType.RangedPhysical
-                    : monster?.MonsterId == "ember_wraith" ? TargetRangeType.Magic
+                    : (monster?.MonsterId == "ember_wraith" || monster?.MonsterId == "blizzard_wisp") ? TargetRangeType.Magic
                     : TargetRangeType.MeleePhysical,
                 false, BattleParticipantVisualType.EncounterMonster,
                 monsterDefinition: monster, isBoss: isBoss);

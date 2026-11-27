@@ -16,6 +16,7 @@ namespace ProjectLimitless.World
 
         /// <summary>Scene Generator가 이 Spawn Point의 ID를 지정할 때 호출합니다.</summary>
         public void Configure(string id) => spawnPointId = id;
+        internal string SpawnPointId => spawnPointId;
 
         /// <summary>
         /// Scene의 첫 프레임부터 실행되며, 생성 순서 차이를 고려해 플레이어를 최대 10프레임 동안 찾습니다.

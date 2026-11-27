@@ -66,6 +66,8 @@ namespace ProjectLimitless.Battle
         private readonly BattleFighterResourceRuntime fighterResources = new BattleFighterResourceRuntime();
         // 승인된 F2 Owl 전투만 B 정책을 사용합니다. 다른 전투에는 냉기 부여 정책을 켜지 않습니다.
         private readonly BattleStatusEffectRuntime statusEffects = new BattleStatusEffectRuntime(
+            Main28Encounter ? new ColdStatusCandidateRules(ColdReapplicationRule.RejectWhileActive, null, false, true) :
+            Main26WispEncounter ? new ColdStatusCandidateRules(ColdReapplicationRule.RejectWhileActive, null, false, frostbiteMaxHpPercent: 4) :
             Main24FrostOwlCandidate.IsEncounter ? new ColdStatusCandidateRules(ColdReapplicationRule.RejectWhileActive, null, false, true) : null);
         private readonly BattleMonsterAbilityRuntime monsterAbilities = new BattleMonsterAbilityRuntime();
         private readonly BattleDungeonMonsterRuntime dungeonMonsters = new BattleDungeonMonsterRuntime();
@@ -146,6 +148,7 @@ namespace ProjectLimitless.Battle
             statusEffects.Chapter2Monsters = chapter2Monsters;
             CreateEventSystem();
             CreateInterface();
+            if (Main28Encounter) InitializeMain28();
             owlChillProductionEnabled = Main24FrostOwlCandidate.IsEncounter;
             statusEffects.GuardianInterceptionOccurred += OnGuardianInterceptionOccurred;
             turnOrder = new TurnOrderQueue();
@@ -157,6 +160,11 @@ namespace ProjectLimitless.Battle
 
         private void OnDestroy()
         {
+            if (Main28Encounter)
+            {
+                statusEffects.ColdStatusChanged -= HandleMain28ColdChange;
+                DestroyMain28Frames();
+            }
             statusEffects.ClearOverheat();
             statusEffects.ClearColdStatuses();
             ResetOwlFirstChillPattern();
@@ -284,7 +292,11 @@ namespace ProjectLimitless.Battle
             MonsterDefinition guardian = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_seal_guardian");
             MonsterDefinition warden = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_silent_warden");
             BattleEncounterSetup setup;
-            if (Main24FrostOwlCandidate.IsEncounter || BattleEncounterContext.StableEncounterId == Chapter3Main25Flow.EncounterId)
+            if (Main28Encounter)
+                setup = BattlePrototypeEncounterFactory.CreateMain28(playerName, GameSessionData.SelectedJobId,
+                    GameSessionData.SelectedPlayerPathId, CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth),
+                    playerAttack, agility, BattleEncounterContext.Monster);
+            else if (Main26WispEncounter || Main24FrostOwlCandidate.IsEncounter || BattleEncounterContext.StableEncounterId == Chapter3Main25Flow.EncounterId)
                 setup = BattlePrototypeEncounterFactory.CreateNorthStoryEncounter(playerName,
                     GameSessionData.SelectedJobId,GameSessionData.SelectedPlayerPathId,
                     CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId,growth),playerAttack,agility,
@@ -493,6 +505,7 @@ namespace ProjectLimitless.Battle
             Sprite chapter2Backdrop = chapter2 != null ? chapter2.Find(BattleEncounterContext.FieldSceneName, BattleEncounterContext.StableEncounterId) : null;
             Sprite backdrop = chapter3Backdrop != null ? chapter3Backdrop : chapter2Backdrop != null ? chapter2Backdrop : backgrounds != null ? backgrounds.Find(BattleEncounterContext.FieldSceneName,
                 BattleEncounterContext.StableEncounterId) : null;
+            if (Main28Encounter) backdrop = Resources.Load<Sprite>("Main28FrostTyrant/IceBackdrop");
             if (backdrop != null)
             {
                 // 얕은 전장 패널에 Fit하면 배경이 중앙에만 좁게 보입니다. 기존 전체 화면 Background에
@@ -543,9 +556,10 @@ namespace ProjectLimitless.Battle
             Image marker = MakeImage(hitObject.transform, "GroundMarker", Color.clear);
             SetRect(marker.rectTransform, new Vector2(.5f, .12f), new Vector2(104, 7));
             BattleParticipantSetup setup = participantSetups[combatant];
+            MonsterDefinition visualDefinition = BattleVisualResolver.ResolveMonsterPresentation(setup.MonsterDefinition);
             Sprite sprite = setup.VisualType == BattleParticipantVisualType.Player ? BattleEncounterContext.PlayerBattleSprite
                 : setup.VisualType == BattleParticipantVisualType.EncounterMonster
-                    ? BattleVisualResolver.ResolveMonsterIdleSprite(setup.MonsterDefinition, BattleEncounterContext.MonsterBattleSprite)
+                    ? BattleVisualResolver.ResolveMonsterIdleSprite(visualDefinition, BattleEncounterContext.MonsterBattleSprite)
                     : null;
             bool placeholder = setup.VisualType == BattleParticipantVisualType.PrototypeCompanion;
             if (setup.Id == ProjectLimitless.World.Chapter2IntroFlow.SerinId)
@@ -567,17 +581,17 @@ namespace ProjectLimitless.Battle
             // Sprite를 HitArea 중앙보다 조금 아래에 두어 위쪽 StatusAnchor와 시각적으로 분리합니다.
             Vector2 displaySize = characterAnimation != null ? new Vector2(145, 145) : placeholder ? new Vector2(82, 104) : combatant.Side == BattleSide.Allies
                 ? new Vector2(112, 126) : new Vector2(136, 112);
-            if (setup.MonsterDefinition != null && setup.MonsterDefinition.UsesSpriteSheetAnimation)
-                displaySize *= setup.MonsterDefinition.VisualScale;
+            if (visualDefinition != null && visualDefinition.UsesSpriteSheetAnimation)
+                displaySize *= visualDefinition.VisualScale;
             SetRect(spriteImage.rectTransform, new Vector2(.5f, .45f), displaySize);
             MonsterSpriteSheetAnimation monsterAnimation = null;
-            if (setup.MonsterDefinition != null && setup.MonsterDefinition.UsesSpriteSheetAnimation)
+            if (visualDefinition != null && visualDefinition.UsesSpriteSheetAnimation)
             {
                 monsterAnimation = spriteImage.gameObject.AddComponent<MonsterSpriteSheetAnimation>();
-                monsterAnimation.Configure(spriteImage, setup.MonsterDefinition);
+                monsterAnimation.Configure(spriteImage, visualDefinition);
                 // 적은 화면 왼쪽에서 오른쪽의 아군을 바라봅니다. Pilot Bee 원본이 우향이므로 그대로 두고,
                 // 반대 방향 원본인 새 몬스터만 X축을 런타임에 뒤집어 별도 PNG를 만들지 않습니다.
-                float direction = setup.MonsterDefinition.SourceFacesRight ? 1f : -1f;
+                float direction = visualDefinition.SourceFacesRight ? 1f : -1f;
                 spriteImage.rectTransform.localScale = new Vector3(direction, 1f, 1f);
             }
             if (placeholder)
@@ -889,7 +903,8 @@ namespace ProjectLimitless.Battle
             skillButton = MakeCommandButton(commandPanel.transform, "SkillButton", BattleUiIconCatalog.Skill, "스킬", font, new Vector2(.29f, .42f), ShowSkillMenu);
             itemButton = MakeCommandButton(commandPanel.transform, "ItemButton", BattleUiIconCatalog.Item, "아이템", font, new Vector2(.48f, .42f), ShowItemMenu);
             defendButton = MakeCommandButton(commandPanel.transform, "DefendButton", BattleUiIconCatalog.Defend, "방어", font, new Vector2(.67f, .42f), Defend);
-            fleeButton = MakeCommandButton(commandPanel.transform, "FleeButton", BattleUiIconCatalog.Flee, "도망", font, new Vector2(.86f, .42f), Flee);
+            fleeButton = MakeCommandButton(commandPanel.transform, "FleeButton", BattleUiIconCatalog.Flee, Main28Encounter ? "화로 사용" : "도망", font, new Vector2(.86f, .42f),
+                Main28Encounter ? (Action)BeginMain28Hearth : Flee);
             cancelButton = MakeAuxiliaryButton(commandPanel.transform, "CancelButton", "취소", font,
                 new Vector2(.92f, .42f), BattleUiIconCatalog.Cancel, CancelCurrentSelection);
             cancelButton.gameObject.SetActive(false);
@@ -946,6 +961,7 @@ namespace ProjectLimitless.Battle
             RefreshCombatantViews(null);
             if (currentActor.IsPlayerControlled)
             {
+                if (Main28Encounter) RecordMain28HearthOpportunity();
                 SetCancelButtonVisible(false);
                 messageText.text = $"{currentActor.DisplayName}의 행동을 선택하세요.";
                 SetCommandButtons(true);
@@ -2368,8 +2384,11 @@ namespace ProjectLimitless.Battle
             actorView.CharacterAnimation?.PlaySkill();
             if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
             bool executed = false;
+            RectTransform[] protectedAllyRoots = combatantViews
+                .Where(pair => pair.Key != actor && pair.Key.Side == actor.Side && pair.Key.IsAlive)
+                .Select(pair => pair.Value.ActionRoot).ToArray();
             StartCoroutine(actionPresenter.PlayGuardianCover(
-                actorView.ActionRoot, battleFont, BattleGuardianCoverVisuals.LoadProtectionFrames(),
+                actorView.ActionRoot, protectedAllyRoots, battleFont, BattleGuardianCoverVisuals.LoadProtectionFrames(),
                 () =>
                 {
                     executed = skillExecutor.ExecuteGuardianCover(actor, skill, out string result);
@@ -2444,6 +2463,16 @@ namespace ProjectLimitless.Battle
         private IEnumerator EnemyAction()
         {
             yield return new WaitForSeconds(.55f);
+            if (Main26WispEncounter)
+            {
+                PlayMain26WispAction(currentActor);
+                yield break;
+            }
+            if (Main28Encounter)
+            {
+                yield return PlayMain28Action(currentActor);
+                yield break;
+            }
             if (BattleEncounterContext.StableEncounterId == Chapter3Main25Flow.EncounterId)
             {
                 if (iceBeetleAction++ % 4 == 1)
@@ -2828,6 +2857,9 @@ namespace ProjectLimitless.Battle
                     }
                 }
                 ApplyOwlFirstChillAtImpact(actor, target, damage);
+                if (Main26WispEncounter) ApplyMain26FrostbiteAtImpact(actor, target);
+                if (Main28Encounter && actor.IsBoss && abilityName == "얼음 발톱" && damage > 0)
+                    ShowMain28DamageVfx(target);
                 if (inflictBurn && damage > 0 && target.IsAlive)
                     statusEffects.ApplyOrRefreshBurn(target,
                         (int)Math.Max(1L, ((long)actor.Attack * 30L + 99L) / 100L), 2);
@@ -2848,6 +2880,9 @@ namespace ProjectLimitless.Battle
             if (strongVisual) actorView.MonsterAnimation?.PlaySkill();
             else if (actorView.MonsterAnimation != null) actorView.MonsterAnimation.PlayAttack(actorView.MonsterAnimation.UsesApprovedAttackTiming);
 
+            // 직업 기본 공격만 고유 원화를 읽습니다. 적과 스킬의 공용 투사체 경로는 계속 사용합니다.
+            combatantJobs.TryGetValue(actor, out JobDefinition actorJob);
+            string allyJobId = actor.Side == BattleSide.Allies ? actorJob?.JobId : null;
             if (actor.BasicRange == TargetRangeType.RangedPhysical)
             {
                 StartCoroutine(actionPresenter.PlayProjectileAttack(
@@ -2855,7 +2890,8 @@ namespace ProjectLimitless.Battle
                     targetView.ActionRoot,
                     targetView.SpriteImage,
                     battleFont,
-                    LoadProjectileFrames("BattleProjectiles/GoldenArrow"),
+                    LoadProjectileFrames(allyJobId == "sharpshooter"
+                        ? "BattleProjectiles/Sharpshooter_Arrow" : "BattleProjectiles/GoldenArrow"),
                     .08f,
                     .35f,
                     new Vector2(52f, 52f),
@@ -2871,18 +2907,22 @@ namespace ProjectLimitless.Battle
 
             if (actor.BasicRange == TargetRangeType.Magic)
             {
-                bool healerAttack = combatantJobs.TryGetValue(actor, out JobDefinition actorJob) && actorJob.JobId == "healer";
+                bool wispAttack = Main26WispEncounter && actor.Side == BattleSide.Enemies;
+                bool healerAttack = actorJob?.JobId == "healer";
+                string projectilePath = allyJobId == "healer" ? "BattleProjectiles/Healer_Light"
+                    : allyJobId == "mage" ? "BattleProjectiles/Mage_BasicFire"
+                    : healerAttack ? "BattleProjectiles/HealerMagicalProjectile" : "BattleProjectiles/Fireball";
                 StartCoroutine(actionPresenter.PlayProjectileAttack(
                     actorView.ActionRoot,
                     targetView.ActionRoot,
                     targetView.SpriteImage,
                     battleFont,
-                    healerAttack ? LoadProjectileFrames("BattleProjectiles/HealerMagicalProjectile") : LoadProjectileFrames("BattleProjectiles/Fireball"),
+                    wispAttack ? Array.Empty<Sprite>() : LoadProjectileFrames(projectilePath),
                     healerAttack ? .05f : .06f,
                     healerAttack ? .24f : .35f,
                     healerAttack ? new Vector2(72f, 72f) : new Vector2(52f, 52f),
                     true,
-                    Color.white,
+                    wispAttack ? new Color(.62f, .82f, 1f, .92f) : Color.white,
                     BattleProjectileStyle.Orb,
                     .26f,
                     applyImpact,
@@ -2891,6 +2931,10 @@ namespace ProjectLimitless.Battle
                 return;
             }
 
+            // 타격 시점은 외형과 맞추고, 애니메이터가 없으면 기존 조우 설정을 사용합니다.
+            float impactSeconds = actorView.MonsterAnimation?.MeleeImpactSeconds
+                ?? (participantSetups.TryGetValue(actor, out BattleParticipantSetup meleeSetup)
+                    ? meleeSetup.MonsterDefinition?.MeleeImpactSeconds ?? 0f : 0f);
             StartCoroutine(actionPresenter.PlayMeleeAttack(
                 actorView.ActionRoot,
                 targetView.ActionRoot,
@@ -2900,8 +2944,7 @@ namespace ProjectLimitless.Battle
                 onImpact,
                 onComplete,
                 actorView.MonsterAnimation == null || !actorView.MonsterAnimation.UsesApprovedAttackTiming ? null : (Func<bool>)(() => actorView.MonsterAnimation.IsAttackPlaying),
-                !strongVisual && participantSetups.TryGetValue(actor, out BattleParticipantSetup meleeSetup)
-                    ? meleeSetup.MonsterDefinition?.MeleeImpactSeconds ?? 0f : 0f));
+                strongVisual ? 0f : impactSeconds));
         }
         /// <summary>파일명 순서로 추출된 Projectile 프레임을 불러와 공용 Presenter에 전달합니다.</summary>
         private static Sprite[] LoadProjectileFrames(string resourcesPath)
@@ -3130,6 +3173,8 @@ namespace ProjectLimitless.Battle
                 StartCoroutine(ReturnAfterDefeatDelay());
             }
             messageText.text = message;
+            if (Main28Encounter) RefreshMain28Presentation();
+            if (Main26WispEncounter) RefreshMain26WispDisplay();
         }
 
         private void RecordAllyResources()
@@ -3193,7 +3238,9 @@ namespace ProjectLimitless.Battle
                     combatant, statusJob, statusSetup, skillCooldowns, fighterResources, statusEffects, pathTraits);
                 RefreshHpRow(combatant, statusModel);
             }
-            if (bossTelegraphText != null)
+            if (Main28Encounter) RefreshMain28Presentation();
+            else if (Main26WispEncounter) RefreshMain26WispDisplay();
+            else if (bossTelegraphText != null)
             {
                 string protectedNames = string.Join(", ", enemies.LivingMembers
                     .Where(item => !item.IsBoss && dungeonMonsters.IsProtected(item))

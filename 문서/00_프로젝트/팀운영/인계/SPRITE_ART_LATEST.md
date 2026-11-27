@@ -1,5 +1,212 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-27 / 설빙의 폭군 전용 냉기 VFX5 v1 검수 후보
+
+- 대표 직접 발주, 발사/피격/한기/동상/동결괴사 5종. 기존 #30 보스 승인 5종 및 #88/#89 공용 상태 VFX3/아이콘3 KEEP, 교체 승인 아님.
+- 256×256 RGBA 40프레임, 1024×512 4×2 시트5, 8FPS 제안. 발사/피격/괴사 one-shot, 한기/동상 loop 미리보기 제안. 실제 PPU/Pivot/Sorting/트리거/수명 미확정. 원시 1774×887 소스 5종 보존, 분할/여백/알파/청회색 대비 조정. 셀 경계 및 밝은 설원 가독성/실제 캐릭터·휠체어/HUD 가림 별도 검수. 시트/셀40/40, APNG40/40, 외곽 alpha0, 비교판 실물, 배치 목업은 OFFLINE.
+- ZIP LIMITLESS_FrostTyrant_ColdVFX5_v1_REVIEW_20261127.zip 21870816 bytes/67 entries SHA256 35c653ef579d0a720606491b27548dcfce247ecb5f0cb9c9ef2305e46e094424, CRC67/67/SUMS66/66. [제작 보고](../../Chapter3_FrostTyrant_ColdVFX5_v1_Review_20261127.md) commit a190cf7a2ab13484432642c31c230be369ed86e8.
+- **OFFLINE_FILE_QA_PASS / USER_ART_REVIEW_PENDING / TARGETED_CODEX_REVIEW_REQUESTED / RUNTIME_SPEC_PENDING / UNITY_NOT_APPLIED**. 기존 보스·화로·결빙·공용 냉기6종·전투 기능/수치·Unity6000.6.5f1/main 보호. 본편 적용 별도 승인.
+
+
+## 2026-11-27 / Issue #30 — 설빙의 폭군 Defeat4 v1 최종 납품 정합성 마감
+
+- [기획 최종 발주](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7209730687), [Codex v1 검수](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7209211654) 확인. 신규 생성/재작화0. 기존 미술 연출/가시 RGB/실루엣/접지 유지. 이전 격리 336px 및 비반복 계약 PASS 보존, 이번 Unity 실행0.
+- KeyPose/Idle4를 승인 실제 PNG 바이트로 교체, Attack4 v3/Hit4 v1 보호. 참조 SHA4/4. 하단 중복 source-over alpha 최대 +64를 원본 Idle 정확 RGBA(77824픽셀×4) 복원으로 정리, alpha=0 RGB 정규화 및 배열 직접 결합으로 시트/셀4/4 일치. 01 alpha>8 우측 경계 1px 감소, y490 접지 및 nonzero-alpha mask 유지. APNG 전체 프레임 SOURCE/NONE 재작성, 4/8프레임 실제 RGBA 일치, 125ms/cell 및 마지막 추가1000ms hold, plays1. GIF 반복 확장 없음, 120/130ms 교대 평균8FPS, 마지막 추가1000ms. 실제 동일 배율 336px 밝고 어두운 비교판.
+- ZIP LIMITLESS_Issue30_FrostTyrant_Defeat4_v1_FINAL_20261127.zip 18398074 bytes/18 entries SHA256 59e8854c0d1e50865e2bc51e49d189f773150c68f999009301c416bbca5a3d1e, CRC18/18/SUMS17/17(Manifest 포함). 시트 SHA256 feedd43f2f79486433f9e75b47ac5bc6af8f6626031178b3924e401b221adf16. 기존 v1 ZIP 보존, FINAL 검수용 사용. [보고](../../Chapter3_FrostTyrant_B_Defeat4_v1_FinalDelivery_20261127.md) commit 74b0f3ad3ca513602ff3e7028595c3a92f135518.
+- **FINAL_DELIVERY_OFFLINE_QA_PASS / USER_DEFEAT4_ART_APPROVAL_PENDING / CODEX_FINAL_PACKAGE_RECHECK_PENDING / UNITY_NOT_APPLIED**. 512 RGBA4/2048×512/8FPS/PPU512/Pivot(0.5,0)/Scale3/우향/one-shot 마지막 셀 유지 계약. 실제 보스 종료 트리거/퇴장 미검증. 승인 KeyPose/Idle4/Attack4 v3/Hit4 v1/화로/결빙 및 #85/#131/#132/Unity6000.6.5f1/main/Save 보호. Unity/Scene/코드/main 변경0.
+
+
+## 2026-11-27 / Issue #30 — 설빙의 폭군 Hit4 v1 승인 Idle 기반 편집 납품
+
+- [Attack4 v3 최종 승인](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7208175259), [제작 방식 변경](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7208484717) 확인. 신규 생성0, 기존 승인 KeyPose/Idle4/Attack4 v3 실물 SHA3/3 일치·불변. Attack v3 KEEP/복귀 PARTIAL 수용 기록 유지.
+- 승인 Idle00/01/02/00만 사용하여 상체 변위 (-7,0)/(-17,-5)/(-8,1)/(-2,0)px, y170~360 완만하게 감소, 하단152행 각 소스와 RGBA 동일. 접지 y490 exclusive, 외곽 alpha0. 512 RGBA4, 2048×512 시트 SHA 952e44855b7319c339a22b99fc35d8395d182f75b8d926be2de2f55b0e703713, 실제 336px 밝고 어두운 비교 및 Idle→Hit→Idle GIF/APNG. APNG4/12프레임 정확125ms 및 픽셀 일치, GIF120/130ms 평균8FPS. 미세 반동 판독 실제 게임 미검증.
+- ZIP LIMITLESS_Issue30_FrostTyrant_Hit4_v1_20261127.zip 18735238 bytes/17 entries SHA dfc12372ffcb5076eb2e1d4546e6407c00496b8d7080f9ffce23b9bc3a2eb29c CRC PASS/SUMS16/16. [보고](../../Chapter3_FrostTyrant_B_Hit4_IdleDerived_20261127.md) commit e939415f2e0bc4c9b72bd670025e89bb32f4706f.
+- **OFFLINE_FILE_QA_PASS / USER_HIT4_ART_REVIEW_REQUIRED / UNITY_NOT_APPLIED**. Defeat4 승인 후 별도 발주. 기존 보스/화로/결빙/#85/#131/#132/Unity6000.6.5f1/Save/main 보호.
+
+
+## 2026-11-27 / Issue #30 — Attack4 복귀 편집 검토 / v3 KEEP·v4 HOLD
+
+- [기획](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7207776987), [Codex v3](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7207318417) 확인. v3 파일/매트/Idle 진입/체급/접지/우향/격리 배율 PASS, 앞팔 복귀 PARTIAL. v3 ZIP SHA 07de830f1e299c7545121d5669d19e55cf2a9db028ede02bc6d491530ef7ba32 CRC 18/18, 프레임4/시트/KeyPose/Idle4 7/7 수록 바이트 일치.
+- Attack03 복사본만 수평 위치 보간 3강도 시험. bbox 유지했으나 앞팔/손목 서리 늘어짐·흉곽 압축·하체 경계 왜곡으로 미채택. 신규 이미지 생성0, 원본 변경0, v4 공식 납품0. [검토 보고](../../Chapter3_FrostTyrant_B_Attack4_Recovery_Hold_20261127.md) commit 1c5ae20f02b6805dde942c94548100c64c957550.
+- **V3_KEEP / RECOVERY_CONTINUITY_PARTIAL / V4_HOLD / NO_NEW_DELIVERY / UNITY_NOT_APPLIED**. 기존 v3 미술 최종 승인 HOLD, Hit/Defeat 제작0, 화로/결빙/KeyPose/Idle4/Unity6000.6.5f1/#85/#131/#132/Save/main 보호. 추가 생성/Unity 적용 금지.
+
+
+## 2026-11-27 / Issue #30 — 설빙의 폭군 Attack4 v3 국소 보완 납품
+
+- [기획 발주](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7207087008), [Codex v2 검수](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7206929072) 확인. 승인 KeyPose/Idle4/v2 시트 실물 SHA3/3 일치·원본 바이트 보존. 전면 재생성0.
+- 밝은 매트 연결 영역 알파 정리, 00 Idle00 하체 부분 합성, 01 발 하단 2px 국소 보간, 02 타격 위치/자세/배율 유지 및 남은 가시 RGB116984/116984 일치, 03 앞팔 국소 변위장 최대55px 설정·Idle00 지지부 합성·과잉 발 제거. 하단 y489~490 유지. 실제 서리 손실/국소 경계/모션 전환 검수 필요, 해결 확정 아님.
+- 512 RGBA4, 2048×512 시트 SHA 41bd76bf537e053cadc790939643259ba162d4bccb5653847fb47a770f42f132, 실제 336px 밝고 어두운 비교/512px 1:1/Idle→Attack→Idle GIF/APNG. 셀4/4, APNG 정확125ms, GIF120/130ms 평균8FPS. PPU512/Pivot(0.5,0)/VisualScale3/우향 유지 계약.
+- ZIP LIMITLESS_Issue30_FrostTyrant_Attack4_v3_Targeted_20261127.zip 24234785 bytes/18 entries SHA 07de830f1e299c7545121d5669d19e55cf2a9db028ede02bc6d491530ef7ba32 CRC PASS/SUMS17/17. [보고](../../Chapter3_FrostTyrant_B_Attack4_v3_Targeted_20261127.md) commit a3426e8011d879b3d8923386f58eb2bd43db6b8e.
+- **OFFLINE_FILE_QA_PASS / TARGETED_ART_REVIEW_REQUIRED / UNITY_NOT_APPLIED**. Hit/Defeat HOLD, 기존 보스/화로/결빙/Save/Unity6000.6.5f1/main 보호.
+
+
+## 2026-11-27 / Issue #30 — 설빙의 폭군 Attack4 v2 검수용 후보
+
+- v1 체급 보완 요청 반영. 기존 KeyPose/Idle4 실물 SHA2/2 일치·바이트 보존. v2 배경 잔류 알파 정리, 공통0.88 비례 축소/하단 y490 정렬. 높이443/475/428/442px, Idle465~466px 대비 및 v1 개선. 뿔/하체/외곽/전환 미술 검수 필요.
+- 512 RGBA4, 2048×512 시트 SHA addd5627ed7c854a9a95b95b66845b836a466da1cff4972e007e53c426fd95e9, 실제 1:1/128 비교 및 Idle→Attack→Idle GIF/APNG. APNG125ms, GIF120/130ms 평균8FPS, 미리보기 반복만. PPU512/Pivot(0.5,0)/VisualScale3 계약 유지, Unity 미검증.
+- ZIP LIMITLESS_Issue30_FrostTyrant_Attack4_v2_CANDIDATE_20261127.zip 18343538 bytes/16 entries SHA f2b69aa8739b4d7dc1d9e61df9b51fc972cf4895cd6d12a549a7d38d6ad1a3d1, CRC PASS/SUMS15/15. [보고](../../Chapter3_FrostTyrant_B_Attack4_v2_ArtPilot_20261127.md) commit 87e167a0019cc848e1257060ead166b44e225721.
+- **OFFLINE_FILE_QA_PASS / USER_ART_REVIEW_REQUIRED / UNITY_NOT_APPLIED**. Hit/Defeat HOLD, 기존 보스/화로/결빙/Save/Unity6000.6.5f1/main 보호.
+
+
+## 2026-11-27 / Issue #30 — 설빙의 폭군 B Attack4 v1 후보 / 연속성 PARTIAL
+
+- [발주](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7206496985), #123 화로 승인 보호. 기존 승인 Attack 미확보(검색 범위 한정), KeyPose/Idle4 실물 SHA 일치·불변. 신규 4×512 RGBA, 2048×512 시트, 실제 Idle→Attack→Idle GIF/APNG 및 1:1/128 비교.
+- ZIP LIMITLESS_Issue30_FrostTyrant_Attack4_v1_CANDIDATE_20261127.zip 14584583 bytes/15 entries SHA256 b0b184da628dee468d584a4075c530419623c742561ee2c461369d5a68af194b, CRC PASS/SUMS14/14. 시트 SHA 8304608b89072cf3c651408d50cafface59f96d92aba454cd3af9c5d290709b4. [보고](../../Chapter3_FrostTyrant_B_Attack4_ArtPilot_20261127.md) commit 769a825e65ec1e26faa7bceac236e2a14ad3cb56.
+- **OFFLINE_FILE_QA_PASS / ART_CONTINUITY_PARTIAL / USER_REVIEW_REQUIRED / UNITY_NOT_APPLIED**. Idle 높이465~466 vs Attack323~376px 및 다리 형태 차이, 체급/회복 연결 보완 필요. 승인 권장하지 않음. Hit/Defeat HOLD. 기존 승인 보스/화로/빙벽 수정0, Unity/Scene/main 변경0.
+
+
+## 2026-11-24 / Issue #123 — 마지막 온기의 화로 Flame8 파일럿 납품
+
+- [기획 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7126854316), [v3 Codex PASS](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7126793451) 확인. v3 PNG SHA 3a3094749ba49c6b7139b9638a61d543fa903d7ec214209f2b51a43985c1a5d2, master 및 기존 승인 보스/빙벽 바이트 보존. 신규 애니메이션만 미술 승인 대기.
+- 파생 고정 베이스 256 RGBA SHA ac19e6460e3565f97aa9a4b37fc7b487581df76145581af880e47fbc5a470c2b + Flame00..07 256 RGBA 각각, 4×2 1024×512 시트 SHA 55b41d6eb29db1d62b246982d9b00a0ad6737427251bfe93f317a7adb1bee7bb. normal source-over, 동일 캔버스/정렬점, 고정 베이스 단독 표시 및 기존 v3 위 중복 합성 금지. 8FPS/125ms/1초 무한 반복. 고정 59529픽셀×8 변경0, 알파 변경0, frame00 원본 전체 RGBA 동일, 8/8 개별 합성 및 시트 셀 일치, 금빛 소등0. GIF 120/130ms 교대, APNG 정확125ms. 기존 북진 배치도 그대로 유지, 실제 배율/Sorting/통행/전투 UI 미검증. P2 HOLD.
+- ZIP LIMITLESS_Issue123_LastWarmth_Flame8_20261124.zip, 5873898 bytes/29 entries, SHA256 5bb82e0a505314c8b30d05938399d0c899677eb481274ec89142801860ec9e78, CRC PASS, SUMS28/28. 실제 대화 다운로드 납품. [제작 보고](../../Chapter3_LastWarmth_Flame8_ArtPilot_20261124.md) commit f58ffd4464a384abdbef01845dc7e73f7572e103.
+- **ANIMATION_ART_REVIEW_PENDING / OFFLINE_QA_PASS / CODEX_TARGETED_QA_PENDING / UNITY_NOT_APPLIED**. 기존 v3 승인 유지. Unity 실행/적용/Scene/코드 변경0. #85/#131/Unity6000.6.5f1/main/Save/UserData/Discord 보호. 사용자 미술 확인 후 별도 Codex 표적 검수; 본편 적용 별도 승인.
+
+
+## 2026-11-24 / Issue #123 — 마지막 온기의 화로 v3 원화 승인·검수 납품
+
+- [발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7123881584), 대표 원화 합격 및 Codex 검수 요청. 기존 화로 원본 미확보, 발견 시 재사용 우선/비교 후 채택. v3 강화된 황금 마력 핵, 제작자 식별 문양 금지, P2 HOLD.
+- 게임용 PNG 256×256 RGBA 97458 bytes, alpha bbox [10,8,245,248), 외곽 alpha0, SHA256 3a3094749ba49c6b7139b9638a61d543fa903d7ec214209f2b51a43985c1a5d2. Master 1254 RGBA 원본 보존, 비례 축소·alpha<=8 정리. 승인 보스 KeyPose/Idle4/결빙 실물 SHA3/3 일치·불변. 실제 PNG 1:1 및 128/40/30px 비교판, 기존 남→북 탐험 패널 유지 및 실제 화로 합성 전투 개념도. 4.5WU 목표 미실측, 실제 배율/Sorting/UI/통행 미검증.
+- ZIP LIMITLESS_Issue123_LastWarmth_Hearth_v3_20261124.zip 3806588 bytes/6 entries SHA256 1f4caab7cd712fc325450b8644e727dd6fc4719e876810d0c370fd5ffbc4e676, CRC PASS/SHA256SUMS5/5. 대화 다운로드 납품, GitHub 바이너리 미업로드. [보고](../../Chapter3_LastWarmth_Hearth_v3_ApprovedArt_20261124.md) commit 9b6f6ebcd0e01f62881ed7a998a08a46a20e8c2e.
+- **USER_ORIGINAL_ART_APPROVED / 256_EXPORT_OFFLINE_QA_PASS / CODEX_TARGETED_QA_PENDING / UNITY_NOT_APPLIED**. 대표 검수 요청만 승인, Unity 본편 적용·main 병합/Push 별도. #85/Unity6000.6.5f1/#131/Save/UserData/Discord 보호.
+
+
+## 2026-11-24 / Issue #123 — 결빙 배경 채택 승인·기존 화로 원본 회수 조사 PARTIAL
+
+- [최신 기획](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7122404848) 결빙 배경 승인 KEEP. 보스 KeyPose/Idle4와 결빙 원본 실물 SHA 3/3 일치, 작업 전후 불변. 재작화0.
+- SEARCHED_PATHS: GitHub 코드/커밋/Issue #30·#123·10/12·10/14·11/18 계약, Library 제목 및 이름순 15페이지 3000 항목(전체 미완료), 과거 보스 ZIP2개·결빙 ZIP1개 내부/CRC 검사. 화로 원화 파일명/경로/해시 미확보. 사용자 PC 로컬·모든 ZIP 전체 감사 미실행, 부재 확정 금지.
+- 신규 검토판 1장: 승인 실물 2종 1:1 및 화로 미확보 패널, 기획 참고색만. 기존 북진 개념도 바이트 그대로 재사용: 남쪽 F5 입구→북쪽 보스 목표/북쪽 화살표/4.5WU 미실측 목표, 화로 전투 명령·직접 이동 불필요. 실제 금빛 대비·가림·Sorting·통행 미검증.
+- 납품 LIMITLESS_Issue123_LastWarmth_FinalReview_PARTIAL_20261124.zip 1381133 bytes/5 entries SHA256 c29d950c0c93b440ad058230785205d4dd60bb921673f0b7273b6f5c7c0dac22, CRC PASS, 실제 대화 다운로드 납품·GitHub 바이너리 미업로드. [보고서](../../Chapter3_LastWarmth_Hearth_Source_Search_FinalReview_20261124.md) commit eb6867f6f47ff072a5e1b3b5d76d91d01a8536e9.
+- **ICE_BACKDROP_APPROVED_KEEP / HEARTH_SOURCE_NOT_RECOVERED / FINAL_THREE_ASSET_REVIEW_PARTIAL / NO_NEW_GAME_ART / UNITY_NOT_APPLIED**. 다음 Codex 로컬 읽기 전용 파일/ZIP/GUID·참조 검색을 다른 승인 작업에 묶어 최소 조사 후 확보 시 3종 최종 비교, 미제작 확인 시 별도 1종 승인 요청. P2 HOLD. #85/Unity6000.6.5f1/main/Save/UserData/Discord 보호. 신규 게임 PNG0/Scene/Unity 적용0/main 직접 commit·Push·Merge0.
+
+
+## 2026-11-24 / Issue #123 — 마지막 온기의 화로 결빙 배경 파일럿 납품
+
+- [최신 기획 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121661390) 및 [Codex 구상 검수](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121620530) 확인. 결빙 벽 독립 배경 소품 1종만 제작.
+- `Boss_EncasingIce_Backdrop_512x384_RGBA_CANDIDATE.png` 512×384 투명 RGBA, 205071 bytes, SHA256 `5abfe30fcb1a09579a7617fe1df08079c0b83eeb982677cf57ec2bfc5166b6d5`, alpha bbox [8,95,504,374), 외곽 alpha0. 제안 PPU128/Pivot(0.5,10/384), 북측 외곽·캐릭터 뒤 Sorting, 실제 Import/정식 배율 미검증.
+- 기존 F3~F5 승인 PNG6종 및 설빙의 폭군 1포즈/Idle4 실물 SHA256 8/8 일치·작업 전후 보존. 기존 보스 원본 ZIP 두 개 회수 및 CRC 정상. KeyPose SHA `f1a3c5f91a5fef69cd881e27b578c32253d0124d5d8628a8ca748f7479333830`, Idle4 SHA `9d9b8d05be1813c013a5d784d749ce2d8ef751541ac36ce90712f3255cb53f43`. 기존 화로 검색 후 원본 미확보, 존재 여부 단정 금지, 자리표시만. 화로 본체/온기 오버레이 신규 제작0, P2 HOLD.
+- 실물 보스·환경 1:1 픽셀 비교판 및 북진 개념 배치도. 남쪽 F5 입구→북쪽 보스 목표, 북쪽 화살표, 기존 자산 재사용, 중앙 통행로와 11개 배치 사각형 교차0. 4.5WU 실측/Scene/Collider/UI/턴큐 미검증. 화로는 전투 명령, 직접 이동 없음. 희미한 금빛은 도식 표현만.
+- ZIP `LIMITLESS_Issue123_LastWarmth_IceBackdrop_Pilot_20261124.zip` 2020468 bytes / 7 entries / SHA256 `ad909b7b54f51caf5f6d112f176a5db759505ef2e47ab8b6719ff39f7db460ab`. CRC PASS, Manifest5/5, SUMS6/6, 비순환. Library `/LIMITLESS/Issue123_LastWarmth_IceBackdrop_20261124/` 납품 대상.
+- [제작 보고](../../Chapter3_LastWarmth_EncasingIce_Backdrop_Pilot_20261124.md) 실제 커밋 `a3d5f401af8a318fe6bd43dd8abe4e12000ba406`. **ICE_BACKDROP_CANDIDATE / USER_ART_REVIEW_REQUIRED / OFFLINE_QA_PASS / BOSS_SOURCE_RECOVERED / HEARTH_SOURCE_NOT_RECOVERED / UNITY_NOT_APPLIED**. 기존 승인 아트/Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/main 보호, 전체 맵/Scene/Unity 적용0, main 직접 commit/Push/Merge0.
+
+
+## 2026-11-24 / Issue #123 — F5 최종 원화 채택 및 마지막 온기의 화로 보스 구역 구상
+
+- [최신 기획 지시](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121162958) 및 [Codex F5 검수](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121034099) 확인. F5 Edge 원화 채택 KEEP, 추가 암반 HOLD, 실제 제품 Import/Scene/Collider/실주행 HOLD 유지.
+- 마지막 온기의 화로: 남쪽 F5 입구→북쪽 설빙의 폭군 단독 대치 목표, 북쪽 화살표, 연속 평탄 통행로(4.5WU 목표·미실측). 후속 출구 TBD. 승인 환경 F3 3종/F4 2종/F5 1종의 실제 Library PNG SHA256 6/6 승인값 일치, 작업 전후 불변. 실물 축소 합성 13개 소품의 도식상 통행로 경계 교차0. 기존 Codex F3 로컬 참조 PARTIAL 기록 유지, 사용자 PC 재검증 아님.
+- 보스 전투 화면과 탐험 동선 구별. 화로 사용은 행동 가능한 아군 자기 차례의 명령→살아 있는 아군1명 동결괴사 전체 제거, 행동1회 소비·아이템/탈렌트0·회복/부활0·횟수 제한0. 기존 타깃/취소 규칙 및 3중첩 전 유효 대응 기회 유지. 실제 UI/턴큐/Collider/실주행 검증0. 전투 전 깊은 회청 결빙·희미한 금빛, 승리 후 눈발 감소·온기 회복. #30 보스 B 원화 및 Idle4 제작 기록 확인, 기존 보스 및 화로 원본 실물은 이번 검색 범위 내 미확보. 도식상 명시적 자리표시, 기존 원본 확인 전 중복 제작 금지.
+- 신규 제안 최대2종: P1 Boss_EncasingIce_Backdrop 512×384 (기존 F3/F5 암반·균열로 부족할 경우), P2 Hearth_WarmthGround_Overlay 256×256 (기존 화로/광원으로 부족할 경우). 신규 게임 PNG0, 원화 재제작0.
+- ZIP `LIMITLESS_Issue123_LastWarmth_Concept_20261124.zip` 502657 bytes/5entries SHA256 `2ad2122e697b92a4888963aa9878ab247b89c1ff5d48b8d8d5d0f7383a4900bd`, CRC PASS, Manifest3/3, SUMS4/4. 구상도 1680×1400 SHA256 `c4c37da6c8d868dfec16df242cd1c6cfb6f5c1dea3ac0adc9191e24a4447f624`. Library `/LIMITLESS/Issue123_LastWarmth_Concept_20261124/` ZIP·PNG·제안서 저장.
+- [제작 보고](../../Chapter3_LastWarmth_BossArena_Concept_20261124.md) `docs/art-new` commit `201fad4d229245f1eebc594c11f3a47238df8224`. **BOSS_ARENA_CONCEPT_ONLY / CONCEPT_REVIEW_PENDING / EXISTING_BOSS_HEARTH_BYTES_NOT_RECOVERED / UNITY_NOT_APPLIED**. 기존 승인 원화·Unity6000.6.5f1·#85 HOLD·main/Save/UserData/Discord 보호. 전체 맵/Scene/신규 스프라이트 제작/Unity 적용0, main 직접 commit/Push/Merge0.
+
+
+## 2026-11-24 / Issue #123 — F5 구상 승인 및 FrozenRift_Edge 파일럿 납품
+
+- [F5 구상 승인 및 1종 제작 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7120274835), [Codex 개념 PASS](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7120228919) 확인. 기존 F3/F4 승인 PNG5종 실제 SHA 작업 전후 일치, 원본 수정0.
+- 신규 `F5_FrozenRift_Edge_384x256_RGBA_CANDIDATE.png` 384×256 투명 RGBA, SHA256 `29d2eff4659aa3c4aad0b63cf8a7ae661409d111488f8e625042f1b6339dbd7c`, bbox [8,30,376,248), 외곽 alpha0. 신규 원화 광륜 알파 정리·비율 유지 축소. 제안 PPU128/Pivot(0.5,0.03125), 단일 외곽 배치 소품/오버레이, 반복 바닥·Collider·기믹 아님. P2 Permafrost_LayeredRock HOLD, 기존 암반 재사용.
+- 실제 F3/F4 PNG5종+신규1종 1:1 및 30/40px 폭 비교판, 실물 PNG 합성 북진 개념도. 남쪽 F4 입구→북쪽 출구, 북쪽 화살표, 풍설 별도. 도식상 중앙 통행로 bounds 침범0, 실제 4.5WU/Scene/Collider/Sorting/통행 NOT_VERIFIED. 생성 가상 비교판 미사용.
+- ZIP `LIMITLESS_Issue123_F5_FrozenRift_Edge_Pilot_20261124.zip` 1,367,602bytes/7entries SHA256 `1fc7e2c8edf4db21e445d1f20f6f7d2ec6e2be835a7b2dba44d096f4f5e4d96b`. CRC PASS, Manifest5/5, SUMS6/6, 비순환. Library `/LIMITLESS/Issue123_F5_FrozenRift_Edge_20261124/` ZIP·PNG·비교판·배치도 저장.
+- [제작 보고](../../Chapter3_F5_FrozenRift_Edge_Pilot_20261124.md) `docs/art-new` commit `bfb9d300e0afbce04455d99327937faaa2caca2f`. **F5_CONCEPT_PLANNING_APPROVED / FROZEN_RIFT_EDGE_USER_ART_REVIEW_PENDING / OFFLINE_QA_PASS / UNITY_NOT_APPLIED**. 기존 승인 원화/Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/main 보호. 전체 맵/Scene/VFX/추가 암반/Unity 적용0, main 직접 commit/Push/Merge0.
+
+
+## 2026-11-24 / Issue #123 — F4 최종 승인 및 F5 동토의 균열 북진 환경 구상
+
+- [F4 최종 원화 승인/F5 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7119304884) 확인. F3 승인3종/F4 승인2종 KEEP, F4 격리 Import PASS/배치 PARTIAL/정식 통행·제품 적용 HOLD. 실제 PNG5종 회수 및 기존 SHA 작업 전후 일치, 원본 수정0.
+- **F5 북진 환경 구상 1장**: 남쪽 F4 입구→북쪽 후속 보스 구역 방향 출구, 세로 주동선·북쪽 화살표 명시. 가로 풍설 방향 별도. 밝은 중앙 설면 및 4.5WU 목표(실측 아님), 외곽 균열/수목/암반. F3/F4 실제 승인5종 미리보기 축소 합성, 균열·지면 개념 도식, 배치 사각형의 개념 통행로 침범0. 실제 Scene/좌표/Collider/Sorting/도보·휠체어 실주행 NOT_VERIFIED. 눈보라 정령 단독→빙각 수호체 단독 별도 조우 구역 기획 보호, 입출구 조우/반복 길막 금지. 새로운 미끄럼·강제 이동·동결괴사 없음.
+- F4보다 낮은 수목 밀도·노출 동토·깊은 균열. 팔레트 F5 통행로 #D3E4EE/동토 #8CA4B7/균열 외측 #536E88/깊이 #24394F. 신규 후보 **P1 FrozenRift_Edge 384×256 RGBA 제안**(길 밖 단일 배치), **P2 Permafrost_LayeredRock 320×192 RGBA 제안**(기존 LowFrostRock 충분하면 생략). 별도 제작 승인 전 신규 게임용 PNG0.
+- ZIP `LIMITLESS_Issue123_F5_FrozenRift_Concept_20261124.zip`, 1,464,477 bytes/5 entries, SHA256 `d42e2c730ed622525fbf4ca065c9b9f027e0b313db077b1656599105696925ba`, CRC PASS, Manifest3/3, SUMS4/4 PASS. 구상도 `F5_Northbound_FrozenRift_Concept_OFFLINE.png` 1500×1440 SHA256 `5f06d3353a47a8955bf454cd1bb7e0843e24a054ee3a7fe79945efec35c03110`. Library `/LIMITLESS/Issue123_F5_FrozenRift_Concept_20261124/` ZIP·구상도·제안서 저장.
+- [구상 보고](../../Chapter3_F5_FrozenRift_Northbound_Concept_20261124.md) `docs/art-new` commit `754f159a29d796011529b7f7f516ee93279eacb8`. **F5_CONCEPT_ONLY / USER_CONCEPT_APPROVAL_PENDING / UNITY_NOT_APPLIED**. 원화 수정·신규 게임 PNG/맵/Scene/VFX/Unity6000.6.5f1 실행·본편 적용·새 Codex 발주0. #85 HOLD/Save/UserData/Discord/main 보호. main 직접 commit/Push/Merge0.
+
+
+## 2026-11-24 / Issue #123 — F3 최종 승인 및 F4 백색 침엽림 환경 2종 납품
+
+- [F3 최종 승인 및 F4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7118370238) 확인. GroundTransition·LowFrostRock·FlushStone v2 **USER_ART_APPROVED / KEEP**, v1 보존. F3 본편/4.5WU 실제 통행·Collider/Sorting/v2 Import 미검증. 실제 F2 승인 그루터기와 F3 원본 3종+v1 SHA 작업 전후 일치.
+- F4 신규 게임용 후보 2종만: `Art/F4_WhiteConifer_384x512_RGBA_CANDIDATE.png` 384×512 RGBA SHA256 `398b07335d84b0702a54e1bfae109bce75c60679f8e6a6fda6ccad6cd4386fad` (길 밖 수목, 제안 Pivot 0.5/0.01953125), `Art/F4_DirectionalSnowdrift_384x192_RGBA_CANDIDATE.png` 384×192 RGBA SHA256 `1ae4ae973495d7d5c09efa3c7b6604233e6d4e66e74ca4d2d0e275e3bef630b1` (최대 alpha168/255, 단일 배치 풍설, 제안 Pivot 0.5/0.5). 투명 알파 잡음 정리/비율 유지 축소; 기존 자산 재작화0.
+- 실제 F2/F3/신규 2종 1:1 픽셀 비교 및 실제 30/40px 폭 축소판, 실제 PNG 기반 접근성 고려 오프라인 배치 개념도(중앙 밝은 길, 수목·풍설 가장자리). 4.5WU는 목표만, 실제 통행 미검증. 생성된 가상 비교판은 최종 납품에 미사용.
+- ZIP `LIMITLESS_Issue123_F4_WhiteConifer_2Asset_Pilot_20261124.zip` 1,110,832 bytes / 8 entries / SHA256 `cc011d31e8af7bccccc4ea7379b78c58db62e72b8bfb3b4ab5b4cf5564ee4a54`, CRC PASS, Manifest6/6, SUMS7/7 PASS, 순환참조0. Library `/LIMITLESS/Issue123_F4_WhiteConifer_20261124/` ZIP·PNG2·비교판·개념도 저장.
+- [제작·검증 보고](../../Chapter3_F4_WhiteConifer_TwoAsset_Pilot_20261124.md) `docs/art-new` commit `31d6f706fadcae826e42ec79999b3c8d71aad203`. **F4_TWO_ASSET_CANDIDATE / USER_ART_APPROVAL_REQUIRED / UNITY_NOT_APPLIED**. Unity6000.6.5f1/#85 HOLD/기존 승인 아트/Save/UserData/Discord/main 보호. 전체 맵/추가 VFX/Scene/Unity 적용/새 Codex 발주/main 직접 commit·Push·Merge0.
+
+
+## 2026-11-24 / Issue #123 — FlushStone EdgeMarker v2 중앙색 국소 보완
+
+- [기획 미술 검토](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7116769430) 확인. GroundTransition·LowFrostRock PLANNING_ART_PASS, F4 PLANNING_CONCEPT_DIRECTION_PASS. 기존 3종 원본 보존. 대표 최종 미술 승인 별도.
+- 신규 후보 1종 `F3_FlushStone_EdgeMarker_v2_256x128_RGBA_CANDIDATE.png`, 256×128 RGBA, SHA256 `e4d6af0f3aa854eeeef591091312ae593e2c928ed31123f4ca83cfe049b704b3`. v1 원본 SHA256 `ccb99fa51dec1c33d07eaca3fd0fede994b65f0fd5776c98cda690b197ffedc0` 보존. 기존 3종 실제 원본 SHA 작업 전후 동일. 수동 ROI와 색상 가중치로 중앙 푸른 부분만 저채도 회청색 변환, 1613픽셀 변경, bbox [80,91,168,121) / 전체 alpha 동일 / ROI 밖 RGBA 동일. 기존 돌·눈 형태/크기/배치 보존. 생성 시안 최종 미사용.
+- 실제 30×15/40×20 RGBA 축소 비교판 및 원본 1:1·중앙 3배 확대. ZIP `LIMITLESS_Issue123_FlushStone_v2_Targeted_20261124.zip` 104505bytes/9entries, SHA256 `31bea127a99135cfe0965fedbf6d3a3547d4f571359ad43435202202e30b5ec4`, CRC PASS, Manifest7/7, SUMS8/8, 비순환. Library `/LIMITLESS/Issue123_FlushStone_v2_20261124/` ZIP·PNG·비교판 저장 성공.
+- [제작·검증 보고](../../Chapter3_F3_FlushStone_v2_Targeted_20261124.md) `docs/art-new` commit `6a395bf65f85f352050bb407f9e1eb42f2105f47`. **F3_V2_ART_REVIEW_PENDING / F4_CONCEPT_DIRECTION_PASS / UNITY_NOT_APPLIED**. v2 실제 배경 오독/Unity import/4.5WU 통행 미검증. F4 신규 PNG/Scene/VFX 제작0, Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/기존 승인 자산 보호. main 직접 commit/Push/Merge0.
+
+
+## 2026-11-24 / Issue #123 — F3 최종 미술 검토 동배율 보드·동선 개념도 / F4 백색 침엽림 기획
+
+- [#123 11/24 최신 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7115938974)·[#85 복구중 병렬 부서 정본](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261124_Parallel_Department_Orders_While_Issue85_Repair.md) 확인. **기존 F3 게임 PNG3 원본 재제작·수정0, 기술 QA 반복0**. 기존 Codex 파일3/3·격리 Unity Import3/3 PASS **재사용**, 대표 최종 미술 승인 별도 PENDING. 게임용 PNG SHA: GroundTransition `d63c8d5ae60921dc7007caf839b720d68dda8078f273b86f1404f6121475a4be`, LowFrostRock `ddbba749c8f60f3b207769c35883aa844e80e782e8dc512077608d2568f07bb1`, FlushStone `ccb99fa51dec1c33d07eaca3fd0fede994b65f0fd5776c98cda690b197ffedc0`. 11/23 ZIP SHA `5704d754355d7a4d353be8324c0c442e0b8672e623fe7492849e40c49c4e8be4` 동일/CRC PASS.
+- 신규 **검토 전용 PNG 2장**: `Review/F3_OriginalPixels_1to1_F2F3_FinalArtReview.png`(F2 승인 그루터기 320×384, 미승인 표지판/울타리, F3 원본 3PNG 실물 1px→1px, 자산 재스케일/재색칠0), `Review/F3_AccessibleRoute_OfflinePlacement_NotValidated.png`(F2→F3 주 경로 도식, F3 저상 암반 길 바깥/전환 단일 오버레이/바닥 경계 낮은 표식, 원본 PNG 무보정 합성). 검토 이미지는 **실제 Unity GameView·월드 좌표·Collider·휠체어 통행 PASS 근거 아님**. 실측 4.5WU/Scene/PPU/Pivot/Sorting/Collider/청색 경계 오독 **NOT_VERIFIED**.
+- **F4 백색 침엽림 기획 전용** `Review/F4_WhiteConifer_BlizzardPalette_ConceptOnly.png` + `Docs/F4_WhiteConifer_TransitionAndAssetCandidates_20261124.md`: F3 고갯길의 눈·회청색 암석 → F4 흰 침엽수 깊은 그늘·방향성 풍설로 전이. 후보 밝은 눈 `#DCEAF0`, 풍설 `#B9CFDC`, 중간 `#91AABB`, 깊은 실루엣 `#4A6A81`, 조건부 온기 `#D8C8A6`. **먼저 F2/F3 재사용 감사 → 추후 별도 승인 시 침엽수1·풍설지면1 소량 후보 → 설분VFX/낮은 경계 필요시 최소**. F4 정령 첫 단독/갑충+정령/해빙 수단 기존 기획 KEEP, F4 게임용 PNG/타일/Scene 생성0.
+- ZIP **`LIMITLESS_Issue123_F3_FinalArtReview_F4Concept_20261124.zip` 1,113,445bytes/8entries**, SHA256 **`191d9f52c6c4baba35cb1cd276ffa98573b9c64875baa5db1463320438520098`**, CRC PASS, Manifest6/6·SUMS7/7 PASS, 비순환. Library `/LIMITLESS/Issue123_F3Review_F4Concept_20261124/` ZIP+비교판/기획보드3+MD1 저장 성공.
+- [**2026-11-24 최종 검토·F4 기획 보고**](../../Chapter3_F3_FinalArtReview_F4_Concept_Issue123_20261124.md), `docs/art-new` commit **`3dd61fa921647b7c6f77dcbaf59e9c3b09505c18`**. **`F3_REVIEW_MEDIA_READY / TECH_IMPORT_3_PASS_ALREADY / USER_F3_ART_APPROVAL_REQUIRED / F4_CONCEPT_ONLY / NO_UNITY_CHANGE`**. 기존 승인 M1~M6/F1~F3/BattleBG/BGM/TTS, #85 Codex 단독, Unity6000.6.5f1·Save/UserData/Discord, 원격 main 보호. main 직접 commit/Push/Merge0. 후속 F3 대표 승인 후에도 실제 Scene 접지/통행/시각 대비는 별도 게이트.
+
+
+## 2026-11-23 / Issue #126 — Hit4 조건 충족 최종 승인 → 빙각 수호체 Defeat4 파일럿 납품
+
+- [#126 Hit4 Codex 격리 Unity 6000.6.5f1 PASS 및 대표 조건부 승인 발효](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7092168466) 확인. Hit4 실제 4프레임/610ms 및 112px 충격·접지 PASS, 40px 반동은 PARTIAL로 기록된 채 **사용자 최종 미술 승인**. 기존 **KeyPose·Idle4(260ms×4)·Attack4 v2(비루프660ms)·Hit4(비루프610ms)** 4종 모두 승인/원본 KEEP, 실제 기존 PNG 작업 전후 SHA256 일치: `c34ea53a95aa6a1fdba4f5e355715fbc25797d6d51e4d544cb9e4dab52f7073c`, `0757ebedd37f24e7939d26f38be2efbf9560906b832fae187c61273a314b753e`, `0649ef42da7aa628e471a49f4554ad150a0a5fc1b28235a5e9b42bf025030621`, `bd6d66be3b990d9bc7f33261f1d9835abd413c28b91a5842ac9800a5dec28496`. 기존 Hit4 '승인대기' 표기는 과거 제작 시점 이력.
+- 신규 **`Sprite/RimeSentinel_M6_Defeat4_2048x512_RGBA_CANDIDATE.png`**, **2048×512 투명 RGBA / 가로4셀×512² / 975,465bytes**, SHA256 **`a7d12a5a86495b59b2c7e0a96e658ff1cf743cdec3daafa9fb4e9ce9a8124d8d`**. 균형 상실→무릎·상체 내려앉음→쓰러짐→전투불능 유지. 신규 생성한 패배 4포즈의 흰 배경을 실루엣 분리/알파 정리해 **동일 축소율0.887574**·하단 y489로 정렬; 4개 셀 상이·외곽 alpha0·QA 분리 프레임 일치. 폭발·소멸·얼음 파편 추가0. **승인 원화 픽셀을 직접 변형한 모션이 아니라 신규 생성 패배 포즈이므로 얼굴/갑옷 일부 묘사 차이 가능: 사용자 미술 시각 승인 필요**. 승인 원본4종 수정0.
+- 실제 512/128/40 축소 비교판·승인 KeyPose 대비 보드, 비루프 GIF 4프레임 **180/220/250/1800ms = 2450ms**, 마지막 1.8초 정지; Unity Animator 최종 고정 포즈는 별도 상태 유지 계약 필요/미검증. ZIP **`LIMITLESS_Issue126_RimeSentinel_Defeat4_20261123.zip` 3,607,746bytes/14 entries**, SHA256 **`c7b840ce80815814be0a11269d29b636acfa0b2966981801fa19228bade296ef`**. CRC PASS, Manifest12/12, SUMS13/13, 순환참조0, SourceDeclaration/QA 포함. Library `/LIMITLESS/Issue126_RimeSentinel_Defeat4_20261123/` ZIP·PNG·비교판2·GIF 저장.
+- [**Defeat4 제작·검증 보고**](../../Chapter3_RimeSentinel_M6_Defeat4_ArtPilot_20261123.md), `docs/art-new` 실제 commit **`92c8eb67342756c88917df65ca063425839aa5ff`**. **`KEYPOSE_IDLE4_ATTACK4V2_HIT4_USER_APPROVED / DEFEAT4_ART_CANDIDATE / USER_DEFEAT4_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED`**. 실 Unity 임포트/Animator/GameView·PPU/Pivot·전투불능 자세 유지 QA NOT_RUN. 기존 승인 Unity 검증을 Defeat4에 승계 금지. Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/Codex#122/공식 M1~M5·F1~F3/BattleBG/설빙의 폭군 및 main 보호. 본편 Scene/Prefab/MonsterDefinition/Drop/Spawn 변경·main 직접 commit/Push/Merge0.
+
+
+## 2026-11-23 / Issue #126 — Attack4 v2 최종 승인 및 빙각 수호체 Hit4 신규 파일럿 납품
+
+- [#126 바울 대표 Attack4 v2 최종 승인 및 Hit4 파일럿 발주](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091428809) 확인. [Codex v2 격리 Unity 기술 검증](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091633547)과 구별: **KeyPose·Idle4·Attack4 v2 미술 승인 완료/원본 KEEP**, 이번 Hit4는 별도 승인·Unity 검증 필요. 기존 Attack4 v2 미술 승인 대기 기록은 과거 이력으로 남김.
+- 기존 실물 PNG 3종 제작 전후 SHA256 일치, 수정0: KeyPose `c34ea53a95aa6a1fdba4f5e355715fbc25797d6d51e4d544cb9e4dab52f7073c`, Idle4 `0757ebedd37f24e7939d26f38be2efbf9560906b832fae187c61273a314b753e`, Attack4 v2 `0649ef42da7aa628e471a49f4554ad150a0a5fc1b28235a5e9b42bf025030621`.
+- **신규 Hit4 한 시트** `Sprite/RimeSentinel_M6_Hit4_2048x512_RGBA_CANDIDATE.png`, **2048×512 투명 RGBA / 가로4×512셀 / 1,151,287 bytes**, SHA256 **`bd6d66be3b990d9bc7f33261f1d9835abd413c28b91a5842ac9800a5dec28496`**. 승인 KeyPose 파생 2D 국소 반동: 충격→어깨/상체 후방 반동→균형 회복→대기. Frame03 KeyPose 픽셀 동일, 4프레임 접지 y424..511 전RGBA 원본 동일, 4개 독립 셀·알파 외곽0·QA 프레임 일치. 앞서 생성된 다른 디자인의 2172×724 시안 최종 미사용. 국소 bilinear 보간이므로 완전 수작업 애니메이션 재작화/Unity 실측 아님.
+- 실제 512/128/40px 축소 비교판, 투명 128·40px 4프레임 스트립, 비루프 검토 GIF(**100/160/130/220ms = 총610ms**, Unity 정식 피격 애니메이션 타이밍 미확정). ZIP **`LIMITLESS_Issue126_RimeSentinel_Hit4_20261123.zip`**, 3,519,214bytes/13 entries, SHA256 **`4ceb3996d1d602dcdccbf5980b7cd3423a2c9b1e509615c4c450c7ab4c642ea2`**. CRC PASS/Manifest 11/11/SUMS 12/12, 비순환. Library `/LIMITLESS/Issue126_RimeSentinel_Hit4_20261123/` ZIP·PNG·비교판·GIF 저장.
+- [**Hit4 제작·검증 보고**](../../Chapter3_RimeSentinel_M6_Hit4_ArtPilot_20261123.md), `docs/art-new` 실제 commit **`92c42f831b0461b780644ad1b1614284dc50bd53`**. **`KEYPOSE_IDLE4_ATTACK4V2_USER_APPROVED / HIT4_ART_CANDIDATE / USER_HIT4_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / HIT4_UNITY_NOT_APPLIED`**. Hit4 미술 승인 전 Defeat4·기타 공격 예고/균열 강타 모션 미제작. Unity6000.6.5f1 / #85 HOLD / Save/UserData·Discord / Codex#122 / M1~M5·F1~F3/기존 공식 원본/main 보호. main 직접 commit/Push/Merge0.
+
+
+## 2026-11-23 / Issue #126 — Attack4 v2 주먹 타격 전진 국소 보완 납품
+
+- [#126 Attack4 v1 Codex 기술 검수](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7089964295): 40px 타격 분리 PARTIAL, v1 Unity 격리 비루프 Animator PASS. 대표 신규 피드백: 주먹의 전진·사거리감과 어깨 추종 부족 → **2·3프레임만 국소 보완**. 기존 KeyPose·Idle4 최종 미술 승인 잠금 및 Attack4 v1 보존.
+- 실제 읽기 전용 원본 SHA256 작업 전후 일치: KeyPose `c34ea53a95aa6a1fdba4f5e355715fbc25797d6d51e4d544cb9e4dab52f7073c`, Idle4 `0757ebedd37f24e7939d26f38be2efbf9560906b832fae187c61273a314b753e`, Attack4 v1 `7a44d60d540176d06c96ee3ff221db5ebbde40077977d8de8762a714ff480e62`. 기존 PNG 수정·덮어쓰기0.
+- 신규 **`RimeSentinel_M6_Attack4_v2_2048x512_RGBA_CANDIDATE.png`** 2048×512 투명RGBA/4×512px 셀, 1,137,770bytes, SHA256 **`0649ef42da7aa628e471a49f4554ad150a0a5fc1b28235a5e9b42bf025030621`**. 기존 v1의 0-based 프레임0·3 전체RGBA **픽셀 동일**, 프레임3 KeyPose 동일. 0-based 프레임1·2만 오른쪽 주먹의 화면 앞쪽 돌출·국소 원근확대·어깨/전완 소폭 추종. v1 대비 차이 픽셀 0/42,758/47,805/0, 실제 40px 축소에서 다른 픽셀 0/381/418/0(색상 리샘플링 포함). 모든 프레임 y424..511 승인 KeyPose 픽셀 동일, 셀 외곽 alpha0·프레임 상이·독립QA셀 일치. 일부 2D 역좌표 보간 사용, 완전 수작업 새 원화 아님.
+- 실제 512/128/40 축소 판독판, **v1/v2 전프레임 비교판**, 타격 확대판 및 최종 PNG 기반 검토GIF 2종 비루프 **170/120/150/220ms, 총660ms**. ZIP `LIMITLESS_Issue126_RimeSentinel_Attack4_v2_Targeted_20261123.zip`, 6,444,482bytes/16 entries, SHA256 **`04cdead8ccffc14350fe9cd7e666a1635dddd6214631c8dc8ae7831f8dfc8661`**. CRC PASS, Manifest14/14, SUMS15/15, 순환참조0. Library `/LIMITLESS/Issue126_RimeSentinel_Attack4_v2_20261123/` ZIP·PNG·비교판3·GIF2 저장.
+- [**Attack4 v2 수정 제작·검증 보고**](../../Chapter3_RimeSentinel_M6_Attack4_v2_Targeted_20261123.md), `docs/art-new` commit **`65bec1bbcbcf20b7aa56268d0647659339a910c8`**. **`KEYPOSE_IDLE4_USER_APPROVED / ATTACK4_V2_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED`**. v2 실 Unity Animator/GameView/타격판정·PPU·Collider QA NOT_RUN. Hit/Defeat/팔들어올리기 예고/균열강타 신규 제작0. Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/Codex#122/기존 M1~M5 및 최종 보스·F1~F3/BattleBG/main 보호. main 직접 commit·Push·Merge0.
+
+
+## 2026-11-23 / Issue #126 — Idle4 최종 승인 및 빙각 수호체 Attack4 단일 파일럿 납품
+
+- [#126 대표 Idle4 조건 충족 및 최종 승인](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7089455631) 확인. Codex Unity6000.6.5f1 격리 SpriteRenderer/전투 UI **260ms×4 = 1.04초** 실제 검증, 기존 8FPS 가정 대체 금지. **KeyPose+Idle4 모두 사용자 승인 KEEP**. 실물 원본 SHA256 `c34ea53a95aa6a1fdba4f5e355715fbc25797d6d51e4d544cb9e4dab52f7073c`, `0757ebedd37f24e7939d26f38be2efbf9560906b832fae187c61273a314b753e` 작업 전후 일치, 원본 변경0. 아래 Idle4 승인대기 문구는 과거 납품 시점 이력.
+- 신규 **`RimeSentinel_M6_Attack4_2048x512_RGBA_CANDIDATE.png`** 2048×512 투명 RGBA/가로4×512셀, 1,130,329 bytes, SHA256 **`7a44d60d540176d06c96ee3ff221db5ebbde40077977d8de8762a714ff480e62`**. 승인 KeyPose 기반 국소 2D 주먹 단일 근접 공격(준비 -9px→전진+11px→타격+26px/약14% 국소 원근→승인 KeyPose 복귀). Frame03 KeyPose 전RGBA 완전 동일, y424..511 하단 접지 영역 4/4 원본 동일, 4셀 서로 상이/외곽 알파0/QA 개별 프레임 일치. 앞서 생성된 2172×724 시안은 양주먹 교대 결함으로 **최종 미사용**. 본 파일럿은 수작업 신규 포즈가 아닌 국소 변형, 실제 공격 박력·깊이감 사용자 미술 검토 필요.
+- 실제 납품 셀 기반 **512/128/40px 비교판** 및 비루프 GIF(실제 디코드 **170/120/150/220ms = 660ms**, Unity Animator 정식 FPS/판정 미확정). ZIP **`LIMITLESS_Issue126_RimeSentinel_Attack4_20261123.zip`** 3,781,167 bytes/13 entries, SHA256 **`32bb44b25a8af81692bfa7f505d815236362be159cbbf2e0989af167a4ab5e1d`**, CRC PASS/Manifest11/11/SUMS12/12, 순환참조0. Library `/LIMITLESS/Issue126_RimeSentinel_Attack4_20261123/` ZIP·PNG·비교판·GIF 저장 성공.
+- [**Attack4 제작·검증 보고**](../../Chapter3_RimeSentinel_M6_Attack4_ArtPilot_20261123.md) `docs/art-new` commit **`b48dc47ad2ed3ef865f84c02ff5b26a6f36d9395`**. **`KEYPOSE_IDLE4_USER_APPROVED / ATTACK4_ART_CANDIDATE / USER_ATTACK4_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / ATTACK4_UNITY_NOT_APPLIED`**. 별도 예고 `팔 들어올리기`·`균열 강타`/Hit4/Defeat4 제작0, 실제 Unity 시트 Import/전투 시점 QA 미실행. Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/Codex#122/기존 승인 M1~M5·F1~F3·설빙의 폭군·BattleBG 원본 보호, main 직접 commit/Push/Merge0.
+
+
+## 2026-11-23 / Issue #126 — 빙각 수호체 KeyPose 최종 승인 → Idle4 게임용 후보 납품
+
+- [#126 바울 대표 KeyPose 원화 최종 승인·Idle4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7088805208) 확인. 기존 빙각 수호체 KeyPose **`USER_ART_APPROVED`**로 승격; 이전 1포즈 승인대기 기록은 납품 당시 이력. 원본 512×512 RGBA를 Library 실물 회수하여 SHA256 **`c34ea53a95aa6a1fdba4f5e355715fbc25797d6d51e4d544cb9e4dab52f7073c`** 일치, 원본 파일 재생성·수정0.
+- 신규 **`RimeSentinel_M6_Idle4_2048x512_RGBA_CANDIDATE.png`** 2048×512 투명 RGBA/가로4×512셀, 1,124,477 bytes, SHA256 **`0757ebedd37f24e7939d26f38be2efbf9560906b832fae187c61273a314b753e`**. Frame00 승인 KeyPose 전체512 RGBA 픽셀 동일. Frame01~03은 상부 몸통·얼음 어깨·거대 주먹의 느린 국소 무게 이동/반동/자세 회복(한 장 전체회전·이동 아님); **y425..511 발 접지 영역 4/4 원본 RGBA 동일**, 얼굴·갑옷·주먹·다리 디자인 보존. 각 셀 유일·가장자리 alpha0/분리 QA PNG와 시트 일치. 2D 비강체 remap 보간이므로 실제 픽셀 내부 변화 다수·정식 Unity 시각 승인 전 최종 아트 미확정.
+- 게임용 최종 시트 기반 **512/128/40px 실제 축소**·검토용 GIF. GIF 디코드 **260ms×4 = 1040ms/주기**, loop=0 반복 (실제 Animator 타이밍 미확정). ZIP **`LIMITLESS_Issue126_RimeSentinel_Idle4_20261123.zip`** 3,649,494 bytes/13 entries, SHA256 **`65520ee3b6fc5f1433489ba733ed40ea3256d4e50e977b9f67edd5fb19b2b0d2`**, ZIP CRC PASS/Manifest11/11/SUMS12/12, 자기·순환 해시참조0. SourceDeclaration/animation QA 포함. Library **`/LIMITLESS/Issue126_RimeSentinel_Idle4_20261123/`**에 ZIP·시트 PNG·비교판·GIF 저장.
+- [**Idle4 제작·검증 보고**](../../Chapter3_RimeSentinel_M6_Idle4_ArtPilot_20261123.md) `docs/art-new` commit **`18a746f574be4bd5086acd82dccaeb331ce4d819`**. **`KEYPOSE_USER_APPROVED / IDLE4_ART_CANDIDATE / USER_IDLE4_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED`**. Idle4 최종 승인 전 Attack4/Hit4/Defeat4 제작0. Unity6000.6.5f1/Issue85 HOLD/Save/UserData/Discord/Codex#122/기존 M1~M5·F1~F3 Issue123·설빙의 폭군·BattleBG 원본 보호. Unity 실행/Scene/Prefab/Collider/Animator/정식 몬스터/스탯·Drop 변경0, main 직접 commit·Push·Merge0.
+
+
+## 2026-11-23 / Issue #126 — 빙각 수호체 M6 엘리트 KeyPose 신규 1포즈 후보 납품
+
+- [Issue #126 중간보스 정식 기획 승인](https://github.com/HappyPaul812/Project-Limitless/issues/126): **F5 단회 엘리트/전열**의 존재·수치·전투 패턴 승인. **외형 1포즈 미술 승인은 별도**. 기획 Lv21/HP820/공격40/민첩9/EXP125/탈렌트32, 얼음 주먹→팔 들어올리기(0피해 예고)→균열 강타→반복, 도망 허용·리스폰 금지, 마력차단 결정 기획 보호. Codex #122 정식 몬스터 데이터 별도 작업과 충돌 금지.
+- **신규 후보 1포즈** `Candidate/RimeSentinel_M6_KeyPose_512_RGBA_CANDIDATE.png`, **512×512 투명 RGBA / 320,670bytes**, SHA256 **`c34ea53a95aa6a1fdba4f5e355715fbc25797d6d51e4d544cb9e4dab52f7073c`**. 원본 신규 생성 `빙결_거대_골렘_수호자.png` 1254² RGBA SHA256 `fb031eec459d864995fc31b30f5c17569906bebe9bae896a26b2ce385048463b`의 고립 알파 정리·비율 유지 축소·투명 512 캔버스 정규화. 이 대화의 예전 다른 시안을 최종 후보로 혼동 금지. 얼음·암석 인공 형태·육중한 양팔 주먹·금빛 균열·발 접지, M4 곤충/M5 부유 정령과 별도. 40px에서 가시 다소 복잡하며 최종 보스급 장식 과다 가능성은 사용자 검토 대상으로 명시.
+- 실제 최종 PNG 기반 **512/128/40px 실제 축소**와 M4 Ice Beetle/M5 Blizzard Wisp **승인 실물 512 캔버스 기준 비교판**. Unity 동일 PPU/world scale 비교가 아님. 공식 Frost Tyrant/Ch2 엘리트 실제 PNG 동배율 비교는 `NOT_VERIFIED`; 검증 없이 공식 비교 PASS로 표시 금지. Unity Import/PPU/Pivot/Animator/Collider/월드 시점·가독성 QA `NOT_RUN`.
+- ZIP **`LIMITLESS_Issue126_RimeSentinel_KeyPose_20261123.zip` 1,158,884bytes/9entries** SHA256 **`f2098a5e1affc13e3708eebf5d30f5c8e4fd9bdcfb0f72d41059e9178d34a46e`**, CRC PASS, Manifest7/7·SUMS8/8 PASS, 비순환. SourceDeclaration/QA 포함. ChatGPT Library `/LIMITLESS/Issue126_RimeSentinel_KeyPose_20261123/`에 ZIP/PNG/비교판2 저장.
+- [**M6 KeyPose 신규 제작 보고**](../../Chapter3_RimeSentinel_M6_Issue126_KeyPose_ArtPilot_20261123.md) `docs/art-new` commit **`e087e08caf13fee587531a0f74484db7b0877140`**. **`ELITE_EXISTENCE_APPROVED / KEYPOSE_ART_CANDIDATE / USER_ART_REVIEW_PENDING / OFFLINE_FILE_QA_PASS / UNITY_NOT_APPLIED`**. 사용자 KeyPose 미술 승인 전 Idle/Attack/Hit/Defeat 제작0. 승인된 M1~M5/F1~F2/F3 Issue123/최종 보스·BattleBG·Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord 보호, main 직접 commit/Push/Merge0. GitHub PNG/ZIP 바이너리 업로드 및 Windows F: 직접 복사 없음.
+
+
+## 2026-11-23 / Issue #123 — Chapter3 F3 눈 덮인 고갯길 신규 환경 아트 3종 파일럿 납품
+
+- [#123 11/23 최신 신규 작업 지시](https://github.com/HappyPaul812/Project-Limitless/issues/123) 및 [11/19 안전체크포인트](https://github.com/HappyPaul812/Project-Limitless/tree/backup/2026-11-19-safe-checkpoint) 확인. F2 실제 ZIP: `Limitless_F2_MinimalFollowup_20261103.zip` (표지판288×384·낮은 울타리256×192·그루터기320×384, 대안 미술 미승인), `Limitless_F2_Stump_Natural_Issue81_20261103.zip` (자연 그루터기 v4 승인), `LIMITLESS_Issue75_F2_BendSnow_ArtCandidate_20261110.zip` (F2 굽음 후보, C SnowEdge 미채택), `F2_P2_Targeted_Sign_Stump_20261029.zip` (과거 후보) 4개 실물 오프라인 참조. F2 표지판·울타리·그루터기·눈 경계 구자산 **중복 제작 금지** 준수.
+- **신규 원화 3개만** (모두 투명 RGBA):
+  - `F3_SnowRock_GroundTransition_256x256_RGBA_CANDIDATE.png` **256×256**, SHA256 `d63c8d5ae60921dc7007caf839b720d68dda8078f273b86f1404f6121475a4be` — 눈·암석 전환부 **single-placement overlay**. 반복용 Base/4면 타일 이음매 **NOT_VERIFIED**.
+  - `F3_LowFrostRock_Outcrop_320x192_RGBA_CANDIDATE.png` **320×192**, SHA256 `ddbba749c8f60f3b207769c35883aa844e80e782e8dc512077608d2568f07bb1` — 길 외곽 낮은 빙설 암반. Collider 미작성·중앙경로 배치 금지.
+  - `F3_FlushStone_EdgeMarker_256x128_RGBA_CANDIDATE.png` **256×128**, SHA256 `ccb99fa51dec1c33d07eaca3fd0fede994b65f0fd5776c98cda690b197ffedc0` — 표지판/울타리 아닌 바닥형 시각 경계, 낮은 돌+옅은 빙설. Collider 미작성.
+- 실제 최종 PNG를 직접 사용한 원크기/128/40px 비교판, 기존 F2 실물 원화(승인 그루터기와 미승인 울타리·눈길 후보의 상태 명시) 비교판, 중앙 통행로 비움 **오프라인 개념배치**(실제 Unity 화면·4.5WU 통행 QA 아님) 제출. F1 지면256²·F2 소품 기존 크기 참고, F2 FirstSnow 기록 PPU128을 F3 확정 계약으로 오인 금지. F3 **PPU/Pivot/Grid/Sorting/Collider 및 실제 연결·접근성 `SPEC_PENDING`**.
+- ZIP **`LIMITLESS_Issue123_F3_SnowPass_3Asset_ArtPilot_20261123.zip` 1,047,761bytes/10entries**, SHA256 **`5704d754355d7a4d353be8324c0c442e0b8672e623fe7492849e40c49c4e8be4`**. ZIP CRC PASS, Manifest 8/8 크기·SHA PASS, SHA256SUMS 9/9 PASS, 자기/순환 해시참조0. SourceDeclaration/QA 포함. ChatGPT Library `/LIMITLESS/Issue123_F3_SnowPass_Pilot_20261123/`에 ZIP+PNG3+비교판3 저장.
+- [**#123 공식 제작·검증 보고**](../../Chapter3_F3_SnowPass_Issue123_ArtPilot_20261123.md) `docs/art-new` commit **`961f910ae5a3ba8934f7badd6d229f4edea07f65`**. **`F3_ART_PILOT_3_READY / OFFLINE_QA_PASS / USER_ART_REVIEW_PENDING / TILE_SEAM_AND_PPU_SPEC_PENDING / UNITY_NOT_APPLIED`**. 기존 승인 F1·F2/B352/BattleBGv2/M1~M5/환경·모든 Scene/Collider/Quest/Spawn/Save/UserData/Discord/#85 HOLD 및 Unity6000.6.5f1 보호. 신규 F4/F5/맵 타일양산 없음, main 직접 commit/merge 없음. 원격 ZIP/PNG 바이너리 GitHub 업로드0.
+
+
 ## 2026-11-19 / Issue #112 — Hit4 최종 승인 및 눈보라 정령 Defeat4 후보 납품
 
 - [Hit4 최종 승인 및 Defeat4 발주](https://github.com/HappyPaul812/Project-Limitless/issues/112#issuecomment-7004512175) 확인. KeyPose·Idle8 v1/v2·Attack4·Hit4 PNG 5종 실제 SHA256 작업 전후 일치, 원본 수정0. Hit4 SHA256 `2e07e2178f48bf0dcd6367a73a9f9c4af5311073df2dc2c9a7e33e139b311de1`. 기존 Hit4 승인 대기 표기는 과거 이력.

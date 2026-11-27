@@ -1,3 +1,543 @@
+# PLANNING / 2026-11-27 — 대표 개발 종료 / 안전 통합·로컬 동기화·원격 복구 승인
+
+- 대표 요청: 오늘 여기까지, 5시간43%/주간16% 잔여(대표 보고), 지금까지 작업 모두 통합·로컬 동기화·고장 대비 Push. 신규 제작/구현/API 발주 중단. 사용량 내 완료 보장 없음. #124 [맹세 배치 PASS](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7217033405) `1522a65e5b33b5fb5b5583de5bb7691c83bdf953`, 철벽 v1 PASS `e1e6b801ea1aa6920a1bc7e6b359de9ebd61e30c`, 도발 KEEP. 통합 요청을 기술 PASS 철벽/맹세 및 기존 적용 기본3 투사체의 채택·격리 적용 승인으로 해석(실제 미술 비교 PNG 기획 미열람). 맹세 1:1 대상당172×172/ActionRoot(0,-58)/후면/금백색 및 낮은 어두운 그림자, 7셀45ms/index1 상태 적용 한 번, 철벽20셀50ms/index9, 원화 변경0. 승인 기존 FrostNova/기능/수치 보호. VFX 제품 연결 미완료이므로 별도 최소 연결 및 표적 QA 후에만 통합. 실패 시 후보 별도 보존.
+- 통합 대상: #132 11/24 제품931325391a3f5ae1da8c4e7f0ceb7f98a64519d9 기반 및 이후 실제 안전 후보, #124 승인 스킬 제품 a4825b7c1913e4e845a6d873bdd9f7bfde4404c5 (선행 9종 포함 여부 확인), 기본 투사체308c160b9748161a46f34f9943b1e091bb5e552b, #30 보스 edcf208988c9d7e26834e0475c28c3f9f24b1358(선행 원화6ac38272 포함 확인), #130 Main26 bbee953023f8b1d5f0f63ca918838aea8ed64593, #125 음성0a2cead1270f758f0776444b908db3ac487a6dd4. Main27 완료 보고 미접수: 실제 로컬 진행/검증 여부 확인, 미완은 별도 복구 후보 보존하고 새 구현 금지. 담당 문서·승인 미적용 원화/음성/BGM도 복구 대상으로 선별. 실제 로컬 ancestry/dirty/경로 충돌 확인 우선, 중복 cherry-pick 금지.
+- #132 기존 manifest/lock/BuildSettings 3경로 충돌 및 meta5, #85 Editor Search 예외 미해결. 사용자 원본 및 미커밋/미추적 바이트 백업, 별도 통합 worktree, Unity6000.6.5f1 클린 Import/컴파일 및 최소 통합 스모크(전수 반복 금지). 실제 충돌 안전 해소/검증/원본 변경 보존/FF 가능 및 기존 게이트 충족 시에만 local main FF-only/no-autostash; 미충족 HOLD, 강제 reset/clean/checkout 덮어쓰기 금지. 원격 main Push는 범위 제외(고장 대비 복구 브랜치만 승인). 이전 안전 원격 복구본 기반 별도 `backup/2026-11-27-safe-checkpoint` 생성 제안, 비밀/키/개인 이메일 이력/Save/UserData/Discord 개인 설정/납품 ZIP 및 캐시 제외, 승인 제품·문서·원본 음성/원화/BGM 중 필요한 파일 보존, 별도 fetch/checkout/fsck/SHA 대조 및 원격 ref 확인. 한도 부족이면 안전 커밋/복구 우선, 미완 보고. 실제 로컬 통합/동기화/Push는 Codex 실행 전이며 기획은 발주/문서만.
+
+---
+
+# PLANNING / 2026-11-27 — Main26 승인 음성22 연결 완료
+
+- [#125 Codex 적용 보고](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7216948226) 확인. 제품 `0a2cead1270f758f0776444b908db3ac487a6dd4`, 보고 `4835a8a817e7565a3cfeb8c979ae1f36e95bbb55`, `codex/issue125-main26-voice-20261127`, LOCAL_COMMITTED / REMOTE_NOT_PUSHED. Main26 승인 WAV22/22 SHA/화자/원문/Voice/PCM 일치, 복사본 SHA22/22, 실제 F4 대화 순서22 재생 및 주민·플레이어 무음4 확인, AudioSource 샘플 진행/종료0. 기기 출력 청취 및 기존 Editor Search 예외 해결 미검증. 기존181+신규22=203 보호, Chapter3 제작/청취승인/격리 연결41/72. 재합성/API0. 제작 원본 및 기존 WAV/meta/GUID/카탈로그/퀘스트/Save 보호.
+- Main26 음성 브랜치와 Main27 진행 후보는 독립 작업, 향후 안전 통합 시 포함 관계/충돌 확인 필수. Main27 구현 및 수호의 맹세 VFX 배치 검수 보고는 현재 미접수. 원본 main 동기화/병합/Push 미실행. 다음 TTS Main27 14개는 실제 무료 quota 확인 및 별도 발주/승인 후만 제작; 현재 추가 합성 지시 없음. #85/#131/#132 보호.
+
+---
+
+# PLANNING / 2026-11-27 — 기본 투사체 3종 적용 및 Main28 보스전 격리 구현 접수
+
+- [#124 기본 투사체 적용](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7214673675): 제품 `308c160b9748161a46f34f9943b1e091bb5e552b`, 보고 `9b0f3e94cceac43542430f059dd395b096cb0757`, `codex/issue124-basic-projectiles-20261127`, LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 사수 기본 화살/치유사 기본 빛/마도사 기본 불 3종, 기존·신규 실제 Battle 각22 PASS/종료0, 피해량·타이밍·도착1회 일치. 어두운 배경 화살 대비 낮음 기록, 방향/비행 확인되어 기획상 즉시 재작화 불필요. 사용자 직접 미술 최종 승인 별도 미확인. 정조준/화살비/화상/파이어 볼/적 공유 경로 소스상 유지, 해당 스킬 실제 재생 회귀 미실행. 파이어 볼 전용 독립 원화는 후속 마도사 VFX 단계. 다음 리뉴얼은 수호자 스킬 VFX부터 실제 외부 참조만 교체(기존 고유/코드 연출 KEEP), 아직 신규 발주 없음.
+- [#30 Main28](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7211128828): 제품 `edcf208988c9d7e26834e0475c28c3f9f24b1358`, 보고 `df8781f081bfed39a232fca74415001326453dbb`, `codex/main28-frost-tyrant-20261127`, LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 실제 Battle/합성 선행 진행·테스트 현장 21 PASS/종료0. 2페이즈/승인 VFX/동결괴사/화로/승패·대사·보상 연결. Main26·27/F4·F5/화로 실제 현장 및 체크포인트/조우 배치/Main29 미구현으로 정식 북부 월드 PARTIAL. 실제 화로 대응 기회 및 3중첩 KO의 구현 경계는 기존 정본과 후속 통합 검증에서 확인. Editor Search 예외 재현 유지.
+- #124 마도사 8PASS 및 기존 승인9종 적용 12PASS, 수호자 기존 적용 기록 보호. 두 최신 제품 브랜치의 상호 포함/통합 여부 미확인. 원본 main 동기화/병합/원격 Push 및 복구 백업 갱신 미실행; 향후 승인된 안전 마감 시 ancestry/미커밋/기존 #132 설정 차이 확인 후 진행. #85/#131/#132·Save/UserData 보호. 대표 한도 소진 후 재개하여 투사체까지 마무리 보고. 이번 기획은 보고 접수/인계 문서만 갱신, Unity/로컬 변경 및 신규 Codex 작업 발주 없음.
+
+---
+
+# PLANNING / 2026-11-27 — 리뉴얼 투사체 우선 → 직업별 스킬 VFX
+
+- 대표 지시: 리뉴얼 투사체 오리지널화 먼저, 그 다음 스킬 VFX. [스킬 정본 추가](https://github.com/HappyPaul812/Project-Limitless/commit/d73aff743ebd486dbff6b169e79bd56952f2bc58). Polar_34 golden_arrow 8프레임 / fireball 7프레임 1차 대상, 최신 실제 참조/규격/기존 대체본 먼저 확인. 기존 승인15 스킬 아이콘 및 보스 전용 신규 VFX 보호. 직업별 VFX는 수호자→치유사→사수→투사→마도사 기획 제안, 실제 외부 참조만 교체. 지금은 투사체만 발주.
+- #124 마도사 적용 8PASS(제품 a4825b7c1913e4e845a6d873bdd9f7bfde4404c5), #30 보스 연결 14PASS(제품 6ac382729242bb9ab25cfe2b8c487b965a2f2c9c), 모두 원본 동기화/main/Push 미진행. Main28 정식 구현 미완, 보스 ColdVFX5 후보 표적 검수 대기. #85/#131/#132·Save 보호.
+
+---
+
+# PLANNING / 2026-11-27 — 사수 Skill2 기획 채택 및 공통 동료의 습격 / 투사 후속
+
+- [#124 Codex](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7207153640) 정조준·화살비 30/40px PASS, 24/20px PARTIAL 수용, 사용자 최종 미술 승인 대기. 치유사 3종은 사용자 승인 완료/적용 결과 미확인.
+- 동료의 습격 현재 기본 늑대 Run index4 표시, 장착별 실제 변경 경로 미확인. 외부 ScratchIO CC0 아이콘 소스3 바이트 일치, 고유 전투 Run6 별도 보호. 펫별 신규 아이콘 대신 공통 고유 1종 방향을 [스킬 정본](https://github.com/HappyPaul812/Project-Limitless/commit/4539375aab8b39d9689d8af530d8d42d8a15c9c2)에 기록. 구현 전 별도 승인. 리뉴얼 다음: 공통1 + 투사 난도/회심의 일격/회오리 베기3, 기존 기세 HUD 공유 계약 보호. Unity/Save/main 변경 없음.
+
+---
+
+# PLANNING / 2026-11-27 — Chapter4 하렌 눈 부상·바이저 수리와 폴의 가족 상담
+
+- 대표 요청으로 [Chapter4 초기방향 §5](../../../03_스토리/Chapter4_폴의고향_부모의사랑과독립_초기방향_20261118.md) 보완: [정본 커밋 eebb858](https://github.com/HappyPaul812/Project-Limitless/commit/eebb858567dc06a33aabda1be23094ea81a76245), [동료 공통 정본 연동 4b06047](https://github.com/HappyPaul812/Project-Limitless/commit/4b06047aa11a361a00a76d6a31cbc0ced4ec3ac4).
+- 기존 하렌의 태온 보호 중 눈 부상 및 마력 바이저 제한적 인식 보조 콘셉트는 확정되어 있었으나 Ch3 정식 대본에서 상세 사건/장치 설명이 빠짐. Ch3 설빙의 폭군 후 Main29 END와 “잘.했.어.” 보호, Ch4 도입부에서 바이저 경미 이상→폴의 고향 마법 공방 수리 제안→화로 제작자 발견. 고향 부모 갈등 후 폴이 연장자 하렌과 상담, 하렌의 경험을 통해 사랑·걱정과 자기결정권 연결. 공방에서 제한적 기능 설명 및 기존 기능 복구.
+- USER_CONFIRMED_STORY_DIRECTION / DIALOGUE_AND_INCIDENT_PROPOSAL: 어린 시절 마물 습격, 대사, 공방 수리 방식은 제안. 정확한 부상 시기/장애 정도/시력·장치 원리·Quest ID 미확정. Ch3 승인 대본·음성181·아트·3인 전투·Save·#85/#132 보호. 신규 Codex/아트/TTS/API/Unity 변경 및 main 병합/Push0. 기획 문서화만 완료.
+
+---
+
+# PLANNING / 2026-11-24 — 개발 마감 / 원격 복구 PASS / 원본 로컬 동기화 HOLD
+
+- [Issue #132 최종 마감 보고](https://github.com/HappyPaul812/Project-Limitless/issues/132#issuecomment-7130080751) 확인. 통합 PASS / 원본 local main FF HOLD / 원격 복구 PASS. 최종 제품 `931325391a3f5ae1da8c4e7f0ceb7f98a64519d9`, 보고 `88a0214f395029b851dd930038516906d8bed590`, 로컬 마감 브랜치 `codex/eod-20261124-safe-checkpoint`. Unity6000.6.5f1, 기존 통합137PASS 및 수호자7PASS 재사용(새 전수 QA 아님).
+- [원격 복구 스냅샷](https://github.com/HappyPaul812/Project-Limitless/tree/backup/2026-11-24-safe-checkpoint) `cede8815dc0fdcf4d81e95031167365a8b2a2244`. 11/23 원격 복구본 기반 선별 스냅샷으로 승인 제품·WAV19·미적용 승인 원화 PNG16·담당 인계5종 보존. 독립 fetch/checkout, git fsck --full, SHA 대조 PASS. 원격 main 및 11/23 복구 ref 보존. Save/UserData/Discord/키/개인 파일/납품 ZIP 제외, F4 BGM Master ZIP은 로컬 별도 백업 대상. 이 기획 인계 갱신은 마감 복구 스냅샷 이후의 문서 기록이며 그 스냅샷을 변경하지 않음.
+- 원본 local main `65cceb2d6c3283d18abec6e27d8a6f1296411f17` 유지. 겹침8경로 중 치유사 meta5 줄바꿈 정규화 동일, manifest/lock/BuildSettings3은 사용자 AI Inference/App UI/패키지 세트와 승인 #85/F3 등록 차이 미해결. 사용자 파일 원본 백업 및 HEAD/index/status853경로·내용 해시866경로 사후 일치. #85 Editor Search 예외 미해결. 다음 개발 시 읽기 전용 3-way 비교 및 안전 동기화 우선, 기존 작업 재구현 금지. 사용자 변경 무단 덮어쓰기 금지.
+- 오늘 승인된 화로 v3/Flame8 원화는 KEEP, 실제 게임 배치 별도. 치유사 스킬3종은 발주 상태, 납품·검수 전. Main26 이후 신규 구현 금지. 대표가 오늘 개발 종료를 선언했으므로 새 Codex/아트/TTS 작업 및 예약 발주 없음. 다음 작업은 대표가 돌아와 재개를 요청할 때 진행.
+
+---
+
+# PLANNING / 2026-11-24 — #131 통합 후보 실행 PASS / 원본 동기화 HOLD
+
+- [Codex #131 최종 결과](https://github.com/HappyPaul812/Project-Limitless/issues/131#issuecomment-7123671090) 직접 확인. 통합 브랜치 `codex/integration-20261124-main25-safe`, 기준 `65cceb2d6c3283d18abec6e27d8a6f1296411f17`, 통합 제품 `5399c89b2be41c2c7ea0a0aedb36b16eb70f3120`, 보고 `9d155ca635143b217a9cdd68a0c3e8be54106cb4`. #85 승인7경로, #124 전투 버튼/Ch1 잡템4, #130 Main24/25 및 음성19 포함. Unity6000.6.5f1 새 Library 클린 Import/C# 컴파일 성공, 실제 Bootstrap 합성 슬롯→Main24/25 완료→Continue 및 대표 UI/음성/BGM **137 PASS / 0 FAIL**. 기존 223/27 전수 재실행0.
+- **원본 FF HOLD:** 사용자 미커밋 8경로 겹침. 치유사 .meta 5개는 정규화 텍스트 동일, manifest.json/packages-lock.json/BuildSettings 관련 파일은 후보와 다름. 클린 Import 직후 기존 UnityEditor.Search.SearchInit.IndexationOnStartup ArgumentOutOfRangeException 재현. 게임 실행 후보 PASS와 Editor 오류 해결은 별개. #85 OPEN/HOLD. 원본 main 기준 SHA 그대로, 미커밋303/미추적550/보호23 전후 보존, Save/UserData/Discord/Editor 원본 보호, 원격 Push0.
+- 대표가 전달한 한도 화면 기준 5시간 8% 남음, 주간60% 남음, 크레딧0, 초기화까지 2시간(캡처 당시). 기획 권고: 지금 추가 Codex 작업을 발주하지 않고 현재 후보/보고 커밋 보존. 다음 승인/작업 시 8경로의 원본 변경 의도·바이트·충돌을 읽기 전용 비교, 특히 실제 차이3경로만 별도 안전 병합안 검토. 사용자 변경 삭제/강제 FF/원본 설정 변경/Library 삭제/기존 전수 QA 금지. Search 예외 관련 원본 적용 게이트는 별도 기획 결정 전 유지. 아직 로컬 main 동기화 또는 원격 복구 완료 아님.
+
+---
+
+# PLANNING / 2026-11-24 — 안전 통합 및 로컬 동기화 승인 (5시간 잔여24%)
+
+- 대표 요청 “지금 안전한 통합해 5시간 한도가 24%라 안되나?” → [Issue #131 안전 통합 발주](https://github.com/HappyPaul812/Project-Limitless/issues/131). #85 검증 제품7파일, #124 전투 UI/Ch1 잡템4, #130 Main24·25 및 승인 음성19개를 최신 실제 local main 기반 별도 통합 worktree에서 선별 결합. 정확한 한도 사용량은 미확인, 24% 내 완료 보장 없음.
+- Unity6000.6.5f1 고정, 통합 후보 커밋 우선, 클린 Import/컴파일 및 최소 통합 스모크 1회. 기존 223/27 PASS 등 전수 반복 금지. #85 Search 예외 재현 또는 제품 검증 FAIL/충돌/한도 부족 시 후보 보존 후 원본 반영 HOLD.
+- 안전 검증 PASS 및 원본 보호/충돌0 확인 시에만 local main FF-only/no-autostash 동기화 승인. 사용자 미커밋/미추적·Save/UserData·Discord/키·11/23 복구 ref 보존. 원격 Push 별도 승인, Main26 이후 신규 작업 금지. 실제 실행 및 결과 대기, 통합 완료로 해석 금지.
+
+---
+
+# PLANNING / 2026-11-24 — Main25 승인 음성9 연결 완료 / 안전 통합 게이트
+
+- [#130](https://github.com/HappyPaul812/Project-Limitless/issues/130#issuecomment-7123300696) 및 [#125](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7123298974) Codex 최종 보고 직접 확인. Main25 기존 Runtime ID 9개에 승인 WAV9 연결, 원문/화자/Voice/SHA256/PCM24kHz16bit모노 일치. 실제 F3 표식1→표식2→갑충전 직전→정리 대화 Clip9/9 및 순서, 마지막 플레이어 무음 자막 유지. Unity6000.6.5f1 호환 QA 신규 27PASS/0FAIL, 기존 223PASS 재실행0. Main24 WAV10 및 기존 승인 음성 보존, 재합성/API0.
+- 브랜치 `codex/ch3-main24-main25-playable-20261124`, 제품 `751c8458b203b55ad71355b5f7d267bd4bc7c4fd`, 보고 `2abf6dfe4002953c414f4ae3e782712df5b1583e`. MAIN24_COMPLETE / MAIN25_COMPLETE / AUDIO_CONNECTED_19_OF_19 / LOCAL_COMMITTED / MAIN_NOT_APPLIED / REMOTE_NOT_PUSHED.
+- 다음 제안: #130 구현·음성 및 #124 전투 UI/Ch1 잡템4(제품 549549a1ff197dc74686c7042c50122b661aa0f2, 보고 7d14e4fa94c6b692cec5538c3c0049f23d05aa77)와 #85 검증 복구7경로(제품 6fc46b429159026adf99da686b0b87e909238e19, 보고 c5d9ed202a445ce3ef68c72f0b54cc47c1719b9c)의 관계·충돌·실제 로컬 HEAD를 확인해 별도 통합 후보에서 클린 Import/컴파일 및 최소 실플레이·합성 Save 검증. 이전 223/27 전수 반복 금지. #85 Search 오류의 미해결 상태를 자동 PASS로 바꾸지 않는다. 실제 출력 장치 청취 미검증 유지.
+- 원본 main 반영·원격 Push는 대표 별도 승인 후. 기존 11/23 복구 ref, 사용자 미커밋/미추적, Save/UserData/Discord/키 보호. Unity6000.6.5f1 고정. Main26 이후 신규 구현 별도. 이 인계는 통합 완료 또는 실제 Codex 실행을 뜻하지 않음.
+
+---
+
+# PLANNING / 2026-11-24 — Main24·25 정식 플레이 구현 완료 / Main25 음성 승인 누락 정정
+
+- [#130 Codex 실적](https://github.com/HappyPaul812/Project-Limitless/issues/130#issuecomment-7123142095): MAIN24 COMPLETE / MAIN25 COMPLETE, Unity6000.6.5f1 호환 QA 223 PASS/0 FAIL. Bootstrap 합성 Main23 완료 슬롯에서 보급·올빼미 한기·패배/안전복귀·재도전·F3 북진·갑충 갑각·Main25 완료·Save/Continue·도보/휠체어·단회 보상 검증. 실제 원본 클린 Import/Editor Search/출력 장치 청취 미검증.
+- 브랜치 codex/ch3-main24-main25-playable-20261124; Main24 `939f0d8239443155f8724bb2a33c508ffd2bed62`, Main25 `c1e7dbf1e2b2e2047fdcd1c2397e817fdcd90594`, Main24 음성 `2dc3ef008d38a8c28d2d1f850189c307d397a4c9`, 통합 보완 `e85835235b7ff8aa558a4e15568387bf5234f445`, 보고 `e16557881daea9843dfada6f7812e407be048f79`. LOCAL_COMMITTED / REMOTE_NOT_PUSHED / MAIN_NOT_APPLIED.
+- Main24 WAV10/10 실제 대사 연결 PASS. Main25 9개 로컬 WAV는 #130에서 AUDIO_HOLD. 하지만 당일 10:01 KST경 TTS 담당 세션의 Main25 9개 실행 직후 대표 발언 “다 뽑았고 들었어 좋아.” 및 해당 세션의 9/9 제작·청취 승인 기록 확인. [#125 승인 인계 정정](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7123232724), [#130 기존 WAV9 연결 발주](https://github.com/HappyPaul812/Project-Limitless/issues/130#issuecomment-7123233472). 실제 파일 SHA/화자/문장/Runtime ID 일치한 것만 연결, 재합성/API 호출0, 기존181개 보호. 223 PASS 반복 금지, Main25 음성 표적 QA만. 실제 연결 결과 대기.
+- #85 호환7경로는 QA 복제본에서만 사용, 원본 #85 HOLD 유지. #124 승인 자산/개인 Save/UserData/Discord/원본 main 보호. Main26 이후 신규 구현 및 main 병합/Push 금지. 향후 대표 승인으로 안전 통합 별도.
+
+---
+
+# PLANNING / 2026-11-24 — Main24·25 정식 플레이 구현 착수 승인
+
+- 대표 “메인25까지 구현 가능한거지?” → 기획 Main24 완료→F3 구현→Main25 완료→연속 플레이 검증 제안에 “그래 고~!” 승인. [신규 Issue #130 실제 구현 발주](https://github.com/HappyPaul812/Project-Limitless/issues/130). Unity6000.6.5f1 별도 worktree, 원본 main/원격 Push 금지.
+- 11/23 복구 정본의 Main24 QuestDefinition은 F2 안전 왕복 후보(완료/보상 없음), Main25 정식 Scene/Quest 신규 구현 필요. Main24 보급·서리올빼미 단독 한기 전투·완료, F3 승인 원화3 및 등록 BGM 연결·마력 표식2 조사·얼음갑충 단독 갑각 방어 전투·Main25 완료 목표. 남쪽 입구→북쪽 출구, 실제 도보/휠체어·Save·단회 지급/보상·연속 플레이 검증. 미확정 계약은 HOLD, Main26 이후 구현 금지.
+- Main24 TTS Stage10 승인/로컬 해시 일치 보고, Runtime 0/10; Main25 Stage9 준비 기록, 실제 WAV/청취 승인 여부 재확인. 증거 일치하는 음성만 연결, 나머지는 텍스트 진행 및 AUDIO_HOLD; 신규 API 호출/재합성 금지. #85 후보 및 기존 승인 자산 보호.
+- [#124 Chapter1 잡템4 격리 적용 마감](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7122478787): 제품 `549549a1ff197dc74686c7042c50122b661aa0f2`, 보고 `7d14e4fa94c6b692cec5538c3c0049f23d05aa77`, 호환 QA 10PASS/0FAIL, White Tint 개선·기존 ID/수량/드롭률/판매가 유지. 제품 클린 Import/전체 Save 미검증, main 미반영. 기본 명령 버튼6(아이템 기존 유지) 완료 보호.
+- #123 결빙 배경 채택/화로 실물 비교 PARTIAL은 기존 발주 유지; Main25 구현의 선행 조건 아님. 실제 Codex 실행 결과 대기, 목표 완료 선언 금지.
+
+---
+
+# PLANNING / 2026-11-24 — F5 균열 원화·도망 v2 승인 및 보스 구역/취소 버튼 후속
+
+- Codex 실제 표적 검수 보고 `8fe6e0eab4b16e2f43c37d40969cdb051e285d8c`, [#123](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121034099), [#124](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7121035060). F5 Edge 파일·개념 배치 PASS, F3 참조 실물2종 당시 PARTIAL. 기획에서 기존 11/23 Library ZIP CRC 정상, GroundTransition SHA `d63c8d5ae60921dc7007caf839b720d68dda8078f273b86f1404f6121475a4be`, LowFrostRock SHA `ddbba749c8f60f3b207769c35883aa844e80e782e8dc512077608d2568f07bb1` 승인값 일치 직접 확인. 사용자 PC의 실물 재검증을 뜻하지 않음.
+- 기존 대표의 Codex 이상 없으면 승인 방침에 따라 F5 Edge 원화 채택 및 Flee v2 최종 미술 승인. 실제 F5 Import/Scene/Collider/4.5WU 통행과 도보·휠체어 실주행 HOLD. F5 추가 암반 P2 보류. 도망 v2 파일/포털 구분/Unity 기능 PASS, 보스전 도망 제한 미실행.
+- [#123 승인·후속 발주](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7121162958): 마지막 온기의 화로(전장 가칭) 환경 구상, 기존 화로/보스/환경 자산 재사용 우선, 신규 후보 최대2종 제안만. 남쪽 F5 입구→북쪽 보스 구역 세로 주동선·북쪽 화살표·목표 표시. 신규 PNG 양산/Scene/기존 원화 변경 금지.
+- [#124 승인·후속 발주](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7121163563): Codex 도망 v2 command.flee 격리 적용, 기존 승인 자산·#85 후보 보호. 리뉴얼은 command.cancel 기본 취소/뒤로가기 128 RGBA 1종 제작. Unity6000.6.5f1 유지, 기존 PASS 반복 최소화, main 병합/Push 금지.
+- 기존 스킬 적용 제품 `5deda99eeeb5bb817a22dbee426f5d7d600704ed` / 보고 `1f086de2593991f76ff0d47dd37cc167702a2bdf` 보존. 제품 클린 Import/Save 미검증. 각 담당 실제 실행 결과 대기.
+
+---
+
+# PLANNING / 2026-11-24 — F4 원화·스킬 버튼 조건부 최종 승인 및 다음 발주
+
+- 대표 조건부 결정 “덱스씨가 별 문제 없다고 하면 나도 승인.” Codex 검수 보고 `a4de990615563214fc279936c50e3c1f88d6f2d6`, [#123 F4 검수](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7119159890), [#124 스킬 검수](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7119160974) 확인.
+- F4 백색 침엽수·방향성 풍설 오버레이 원화 채택 승인, 파일/Import PASS, 시험 배치 남→북 방향·4.5WU bounds 침범0. **배치 PARTIAL/실제 F3~F5 씬·Collider·도보·휠체어 실주행 HOLD**, 시험 배치를 실제 제품 검증으로 오인 금지. F5 동토의 균열 환경 구상 1장·신규 파일럿 후보 최대2종 제안 발주 [#123](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7119304884). 앞으로 Ch3 환경 개념도 **남쪽 입구→북쪽 출구/북쪽 화살표/세로 주동선** 명시.
+- 기본 스킬 버튼 최종 미술 승인, 실제 30/40px 및 메뉴 PASS. 30px 장식 흐림은 수용. Codex command.skill 적용 발주 및 리뉴얼 다음 command.flee 도망 버튼 1종 제작 발주 [#124](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7119305405). 기존 방어 적용 제품 `1d8ec56059458b18a3344eb1753c9f63fc041ae2`, 보고 `97bcc020aba378b5d57056e108f1a9efe2372df0` 보존. 실제 제품 클린 Import/Save 미검증.
+- Unity6000.6.5f1/#85 HOLD, 기존 승인 원화/원본 main/Save/UserData/Discord 보호. 승인 원화 재작화 금지, 새 적용 결과 및 부서 납품 대기.
+
+---
+
+# PLANNING / 2026-11-24 — F3 환경 최종 미술 승인 · 방어 버튼 승인 · F4/스킬 후속 발주
+
+- 대표 직접 결정 “나도 승인” → [#123 F3 환경 3종 최종 미술 승인](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7118370238), [#124 방어 버튼 최종 미술 승인](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7118370936). F3 GroundTransition·LowFrostRock 유지, FlushStone v2 SHA256 `e4d6af0f3aa854eeeef591091312ae593e2c928ed31123f4ca83cfe049b704b3` 채택. v1 보존. DefendButton PNG SHA256 `026574c506cf03db37eca4b57a24ba74251db4d6e48f5c868cf421ca69c43413` 채택. 재작화 금지. 실제 F3 Scene/통행·v2 Import 및 방어 버튼 적용은 미검증.
+- #124 기존 승인 독침·젤·공격 3종 격리 적용: 제품 `39fa4576e1ae984c09684ac14f56e48f1d541ca1`, 보고 `f96b732c78a82159b84d3c4acf24a757e39fa172`. 호환 QA 복제본 실제 UI/단회 타격 PASS, 30px 침끝 세부 PARTIAL 수용 권고, 클린 Import/Save 왕복 미실행, 원본 main 미통합.
+- Codex 다음: 위 3종 보존 후 방어 command.defend 경로만 신규 PNG에 연결, 50% 방어 감소 기능/버튼 표시 최소 검증. 기존 #85 후보 보호 및 원본 main 병합/Push 금지.
+- 메인 신규 아트 다음: F4 백색 침엽수 1종 + 방향성 풍설 지면 오버레이 1종 파일럿. 기존 자산 재사용 우선, 통행로 확보, 기존 승인 F2/F3 보존. 신규 맵 양산/Unity 금지.
+- 리뉴얼 다음: 공용 스킬 버튼(command.skill, Kenney star) 1종, 공격·방어 화풍 통일, 128 RGBA 및 30/40px 실축소 비교. 기존 원화/코드 보호. 각 부서 발주 기록 완료, 실제 실행/납품 대기.
+
+---
+
+# PLANNING / 2026-11-24 — 독침벌 침·초원 슬라임 젤 최종 미술 승인 및 공격 버튼 포함 3종 적용
+
+- 대표 직접 승인 “내가 승인 안했어? 미안..;; 승인..;” → 독침벌 Organic v2 원본과 초원 슬라임 젤 원본 `USER_ART_APPROVED`. White Tint 권고 채택, TipOnly 59px 후보 미채택 보존. 기존 원화 재제작 금지.
+- [#124 승인 및 Codex 적용 지시](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7117133033): 승인 전리품2 + 기존 승인 공격 버튼1만 별도 `codex/issue124-loot2-attack-icon-20261124`에 연결. 실제 PNG SHA 확인, ItemDefinition icon/White Tint와 command.attack 경로만 변경, 실제 Unity 6000.6.5f1 UI 최소 검증. 기존 itemId/드롭/Save/외부 원본·기존 GUID/meta 유지, 방어 버튼 제작 중으로 제외.
+- `ISOLATED_APPLICATION_AUTHORIZED / CODEX_EXECUTION_PENDING / MAIN_NOT_APPLIED`. #85 수정 후보 및 기존 원본 main·개인자료 보호, 패키지 임의 변경/병합·원격 Push 금지. 실제 적용 결과 및 제품/보고 SHA 별도 보고 필요.
+
+---
+
+# PLANNING / 2026-11-24 — 기본 공격 버튼 대표 최종 미술 승인 · 방어 버튼 후속 제작
+
+- 대표 직접 결정 “나도 봤는데 승인해도 돼.” → [#124 공격 버튼 최종 미술 승인](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7116923432). `AttackButton_Original_128_RGBA.png` SHA256 `cf775727e27be825809a6b3d9bd04b227abe3408055873f70616cc8a9ca19a32`, `USER_ART_APPROVED / UNITY_NOT_APPLIED`. 원본 보존, 재제작 금지.
+- [기본 방어 버튼 다음 발주](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7116871218): 기존 Kenney shield 대체 오리지널 방패 1종, 공격 버튼과 화풍 통일, 철벽/수호의 맹세/가이아 웰과 구분, 128 RGBA·30/40px 비교·ZIP/Manifest/SHA 제출. 미납품·미승인.
+- 공격 버튼의 실제 Unity 적용·기존 Kenney 대조·GameView QA는 별도 단계. #85 HOLD 및 main 보호. F3 또는 다른 리뉴얼 후보 승인을 의미하지 않음.
+
+---
+
+# PLANNING / 2026-11-24 — 바울 대표 #124 공격 버튼·#123 F3/F4 ZIP 실물 기획 검수
+
+- 바울 대표 로컬 납품 파일명 2개 전달. 기획에서 ChatGPT Library의 동일명 ZIP 실물 열람 및 Manifest·SHA256SUMS·CRC 검증 완료. [기획 실물 검수 정본](../../20261124_Issue123_Issue124_Art_Delivery_Review.md) 커밋 `a5ac0ff3f6d1e7417224b5e789ddab68915ff359`.
+- **#124 AttackButton** `LIMITLESS_Issue124_AttackButton_Original_20261124.zip` 1,659,563B SHA `14aeea5420912bbfc4c996f108a96db36058f34433324e02321c5de32b1ba9c7` CRC10/Manifest8/SUMS9 PASS. 128×128투명 아이콘(검 은색·손잡이 금색·붉은 참격) 실제 30/40px 오프라인 다크/라이트 검토 `PLANNING_ART_PASS / REDRAW_NOT_NEEDED`; 실제 Kenney 원본 1:1 및 GameView `NOT_VERIFIED`. 대표 최종 미술 승인·Unity 제품 교체 HOLD. [#124 검수 기록](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7116768391).
+- **#123 F3→F4** `LIMITLESS_Issue123_F3_FinalArtReview_F4Concept_20261124.zip` 1,113,445B SHA `191d9f52c6c4baba35cb1cd276ffa98573b9c64875baa5db1463320438520098` CRC8/Manifest6/SUMS7 PASS. 기존 11/23 F3 PNG3 원본 SHA 동일 확인, 원본수정0. GroundTransition(단일 오버레이), LowFrostRock(길 밖) **기획 시각 PASS**. FlushStone EdgeMarker 중앙 청색은 물웅덩이/위험 오독 우려로 **색상만 저채도 회청색 국소 v2 옵션 후보** 요청, v1 원본 보존/30·40px 비교/대표 별도 채택. F4 백색침엽림 풍설·수목 그늘·중앙 통행로 팔레트는 **기획 CONCEPT PASS**이며 신규 게임용 PNG/맵 승인 아님. [#123 검수·후속 기록](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7116769430). F3 Scene/4.5WU 실제 도보·휠체어/Collider/Sorting/GameView NOT_VERIFIED, 최종 대표 미술 승인·Unity 적용 HOLD.
+- 두 ZIP은 ChatGPT Library 동일명 자료를 확인한 것이며 사용자 PC F:의 바이너리 직접 실측은 아님. Codex #85 수정후보·Unity6000.6.5f1·기존 11/23 복구/원본 main, Save/UserData·Discord·기존 승인 PNG/WAV/meta/GUID 보호. 새 Codex QA·Unity 작업 발주하지 않음.
+
+---
+
+# PLANNING / 2026-11-24 — Issue #85 패키지·GUID 검증 수정 7파일 로컬 커밋 보존 완료
+
+- 바울 대표가 Codex 최종 보존 결과 전달. [Issue #85 Codex 실적 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-7116392287) 직접 확인.
+- 격리 브랜치 `codex/issue85-unity60006-package-guid-repair-20261124` **제품 commit `6fc46b429159026adf99da686b0b87e909238e19`**, 보고 commit `c5d9ed202a445ce3ef68c72f0b54cc47c1719b9c`. **LOCAL_COMMITTED / REMOTE_NOT_PUSHED / LOCAL_MAIN_NOT_APPLIED**.
+- 제품 변경 정확히 **7경로**: `Unity/Client/Packages/manifest.json`, `Unity/Client/Packages/packages-lock.json`, `Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_00..04.png.meta` 5개. 승인 PNG/개인 설정/자동 Import 생성물 미포함. `GoldenArrow/golden_arrow_00.png.meta` 기존 GUID 잠금 유지, Healer5는 원본에서 실존하던 고유 GUID 재사용. 16개 보호 파일 SHA/lock 변경20항목·diff 체크 통과.
+- **검증 PASS (선행 증거 재사용):** Unity6000.6.5f1 UPM Animation16.0.1/PSDImporter15.0.1/Tooling4.0.1 Resolve·C#오류0·Tooling Import예외0/UI33/33, 전체 Asset GUID 중복0, GoldenArrow8/Healer5 실제 Sprite 로더·공격 프레임, 빙각 KO/단회 피해·F2 BGM Intro→Loop 표적. 새 QA 강행·새 Unity 재실행 없음.
+- **잔여 HOLD:** `UnityEditor.Search.SearchInit.IndexationOnStartup` 예외가 즉시 Bootstrap Play에서는 1건, 5초 지연 Play에서는 0건. 두 테스트 시작화면 업데이트는 계속 됨. 정확한 원인/실제 일반 Editor Play·Standalone·시작화면 이후 게임 흐름 미검증. 캐시·실행순서 완전통제 없음. **ISSUE85_OPEN / SEARCH_EDITOR_FOLLOWUP / GENERAL_PRODUCT_QA_NOT_VERIFIED**. C# 컴파일 오류가 잔존한다고 쓰지 않는다.
+- **차기 게이트 제안:** 패키지·GUID 수정을 반복하지 말고 대표의 실제 게임 사용 또는 향후 단 1회 범위 제한된 정상 Play 검증으로 일반 플레이 영향 구분, 결과 보고 후 **별도 사용자 승인 하에서만** 로컬 main 적용·11/23 복구 체크포인트 후속 새 안전 백업/원격 Push 결정. 검색 인덱싱 옵션/Library 삭제/임의 패키지 업데이트로 오류를 감추지 말 것.
+- 원본 `main` `65cceb2d6c3283d18abec6e27d8a6f1296411f17`, Git 상태853 경로, 기존 11/23 복구 ref 및 승인 자산/Save/UserData·Discord·기밀 불변, `main` 병합·원격 Push/Issue 닫기 없음.
+
+---
+
+# PLANNING / 2026-11-24 — #85 Bootstrap Search 조건부 예외, 기술 복구7파일 안전 커밋 우선
+
+- 바울 대표가 Codex 11/24 Unity 6000.6.5f1 격리 Bootstrap 2회 결과를 전달. [원문](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-7116282657): 즉시 Play에서 `UnityEditor.Search.SearchInit.IndexationOnStartup` `ArgumentOutOfRangeException` 1건 발생하나 시작 메뉴는 6초 진행, Play 요청을 5초 지연하면 예외0·시작 메뉴 6초 진행. 모두 `IndexOnStartup=True`; 캐시/실행순서 통제 미완, 일반 인터랙티브 Editor·Standalone·타 화면 검증 미실행. Editor Search 초기화 타이밍 관련 **가능성만**, 원인·사용자 실제 게임 무해 확정 금지.
+- 유지된 기술 PASS: `Animation16.0.1 / PSDImporter15.0.1 / Tooling4.0.1` Unity UPM, C#0·Import0·ToolingUI33/33, Healer5 고유GUID+GoldenArrow 원GUID·중복0, GoldenArrow8/Healer5 런타임·빙각 KO·F2 BGM 최소 회귀.
+- [**기획 최종 지시: Codex 제품 후보 안전 보존·Search 분리**](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-7116338215). 현재 격리 worktree 미커밋 `Unity/Client/Packages/manifest.json` + `packages-lock.json` + `HealerMagicalProjectile/*00..04.png.meta` **7경로만** 별도 제품 커밋, 관련 결과/인계 문서 별도 보고 커밋하도록 지시. 이미 PASS한 Play/Import 반복 금지, 원본 main `65cceb2d6c3283d18abec6e27d8a6f1296411f17`, 11/23 원격 복구 SHA·사용자 미커밋/미추적·Save/UserData·Discord/Unity6000.6.5f1 유지. 이 지시로 로컬 실제 커밋 실행됐다고 선언하지 않는다.
+- Search 예외는 **EDITOR_SEARCH_FOLLOWUP**, 일반 Editor/실게임/Standalone 미검증. `#85 OPEN/HOLD` 유지, 대표의 제품 적용 승인 전 main FF·원격 Push·Issue Close 금지. 임의 패키지 버전업/Editor prefs/검색 DB 캐시 삭제 및 신규 회귀전수 금지.
+
+---
+
+# PLANNING / 2026-11-24 — 바울 대표 SFX 중단 · 영상 월간 1회 / #85 기술 PASS와 Search 에러 HOLD 분리
+
+- **바울 대표 운영정책 변경:** “sfx는 포기 상태, 영상은 한달에 한번만 하면 돼... ^^”. 이전 11/24 SFX #33 제작 지시는 **취소**, #33 `closed/not_planned` [공식 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/33#issuecomment-7116164370). 신규 SFX 제작·지시·도구·비용 투입0, 과거 자산 삭제0. 개발기록 영상은 **월1회**, 11/16 Raw 촬영/QA 존재하므로 이번 11/24 추가 비교편집 발주 **보류**, 12월 월간 작업에 대표 승인 따라 반영 [#98](https://github.com/HappyPaul812/Project-Limitless/issues/98#issuecomment-7116165098). 11월 영상 Final 업로드/승인을 추정하지 않음.
+- [병렬 발주 문서 정정](../../20261124_Parallel_Department_Orders_While_Issue85_Repair.md) `docs/planning` 커밋 `cd512078667175e251c77b8f2aff8b7c3a690f06`. 현재 실제 병렬 추진 부서는 **메인 신규 아트 #123, 리뉴얼 #124, TTS #125, BGM #129** 4개만. Codex와 Unity 파일 충돌없음.
+- **#85 Codex 11/24 실제 결과** [원문](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-7115971873): Unity 6000.6.5f1, UPM Animation16.0.1/PSD15.0.1/Tooling4.0.1 `PACKAGE_RESOLVE_PASS`; 클린 C#오류0/Tooling Import예외0/UI33/33, Assets meta GUID중복0/GoldenArrow8·Healer5 실사용 PASS, 빙각 단타·KO/F2 BGM Intro→Loop 표적 PASS. **전체 Unity QA는 Editor Search `SearchInit.IndexationOnStartup` `ArgumentOutOfRangeException` 1건으로 FAIL / #85 HOLD**. 예외가 사용자 일반 Play에 영향을 주는지는 아직 미확정. 후보 작업 격리 worktree에 **미커밋으로 보존**(제품·보고 commit SHA없음), 로컬 main `65cceb2d6c3283d18abec6e27d8a6f1296411f17` 원본 Git상태853 유지/Push0.
+- **기획 판단:** 패키지·컴파일/Import/GUID 해결 성공은 정확하게 기록하면서 Search Editor error **독립 재현·범위 제한**만 [#85 최소 후속 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-7116165847). 공식 Unity Search 환경설정에 시작시 인덱싱 옵션 존재; 오류 해결 확정 아님, 격리 환경 1~2회 비교만 허용, 원본 Library/Editor prefs/Packages 캐시 변경·대규모 QA 금지. 전부 PASS·대표 적용 승인 전 원본 main 반영/원격 Push/Issue 닫기 금지.
+- 현재 모든 역할 문서화는 기획 `docs/planning` 기록만이며 타 담당 실제 실행은 별도. Unity6000.6.5f1, 11/23 복구 ref, Save/UserData·Discord/개인 API·기존 승인 PNG/WAV·미커밋303/미추적550 유지.
+
+---
+
+# PLANNING / 2026-11-24 — Codex #85 복구 중 타 담당 6부서 병렬 지시
+
+- 바울 대표 직접 지시: “코덱스는 열심히 하고 있고, 딴 담당자들 일 하자.” → #85는 Codex 단독 복구 유지, 기획이 신규아트·리뉴얼·TTS·BGM·SFX·개발기록영상 작업 분리.
+- [**기획 실행 정본**](../../20261124_Parallel_Department_Orders_While_Issue85_Repair.md) `docs/planning` commit `d1672ee3bee5856bc6078d8024b6dc7a2e02fdfe`. GitHub 실제 발주: [#123 F3 최종 보드·F4 개념](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7115938974), [#124 Kenney 공격버튼 신규 오리지널 PNG 1파일럿](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7115939762), [#125 Main24 Stage10 실물 인계·Main25 9건 무호출 사전큐](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7115940550), [#129 F4 BGM1 브리프·Gemini 프롬프트](https://github.com/HappyPaul812/Project-Limitless/issues/129), [#33 북풍/걸음/온기 SFX 소량 파일럿](https://github.com/HappyPaul812/Project-Limitless/issues/33#issuecomment-7115941309), [#98 11/16 Raw 개발기록 비교편집 후보](https://github.com/HappyPaul812/Project-Limitless/issues/98#issuecomment-7115942073).
+- #123 기존 F3 원본3와 #126 빙각 5모션, #124 Trait5·Stinger/Gel, 기존 승인 BGM4/WAV8·TTS Stage10 및 기타 공식 Monster·NPC·맵 전부 보호. 신규 art1만 파일럿, F4 신규 영상/맵 PNG 양산 금지. TTS 신규 API0, BGM F4 프롬프트/브리프만, SFX 사용자 청취 승인 전 Unity0, video YouTube 공개0.
+- **이번에는 Unity/Package/GUID/meta/원본 main/원격 Push 작업을 어느 부서에도 배정하지 않음**, #85 Codex 격리 복구와 작업 파일 비충돌. 기준 복구 ref `backup/2026-11-23-safe-checkpoint` `65cceb2d6c3283d18abec6e27d8a6f1296411f17` 보존. 각 부서가 실제 사용자 ChatGPT 역할 세션에서 작업을 시작한 것으로 자동 해석하지 않는다. 사용자에게 복붙 지시문 제공. 결과 브랜치/커밋/SHA/검증/사용자승인·Unity 적용 여부 별도 보고.
+
+---
+
+# PLANNING / 2026-11-24 — Issue #85 2D 패키지 CS1061 · Tooling 경로 · 투사체 GUID 격리 복구 승인
+
+- 바울 대표 “기존 Animation 15.1.0 컴파일 오류로 #85 HOLD는 미해결 건 해결 할 수 있니? 니가 판단해보고 할 수 있겠으면 코덱스 시켜.” → 기획 검토 결과 **수정 가능성 높음**, Codex **격리 제품수정 파일럿**을 명시 발주. [정식 지시](../../20261124_Issue85_Animation_PSD_Tooling_GUID_IsolatedRepair_Order.md) 커밋 `ff35e095f950a201a5f781960dee74196b807dc6`, [Issue #85 업무 지시](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-7115654109).
+- 근거: 11/23 복구 `65cceb2d6c3283d18abec6e27d8a6f1296411f17`의 Unity6000.6.5f1 + Git `manifest/lock` Animation15.1.0/PSD14.0.3/Tooling3.0.1. 공식 Unity6000.6 권장 패키지 Animation16.0.1/PSD15.0.1/Tooling4.0.1. 11/12 격리 시험에서는 첫 두 업데이트로 C# CS1061 7개 소멸, Tooling3 USS/UXML 경로 예외8/12. 11/17 실 사용자 미커밋 working tree에 3업데이트·GoldenArrow+Healer GUID6고유 이미 있었으나 전체 UPM lock13/27차이·짧은 경로 영향과 Runtime 검증 미완료. 자동 복제/재설치 금지.
+- Codex는 오늘 최신로컬 안전 베이스 및 원본 미커밋303/미추적550/Save/UserData·Discord/키/TTS/BGM/승인아트/11-23 복구 ref 보호 후 짧은 경로의 별도 `codex/issue85-unity60006-package-guid-repair-20261124`에서만 **패키지 manifest/lock 3종 UPM 정합 해결 + GoldenArrow 정본 GUID 보존·Healer5 meta 충돌 수정**. 실제 clean checkout Unity6000.6.5f1 Batch C# 컴파일0·Tooling Import예외0·GUID0·GoldenArrow8/Healer5 Resources runtime PASS 및 최소 빙각/BGM 회귀 증거 요구. 패키지 추가 드리프트·GUID 참조 이상·검증오류 시 STOP/HOLD.
+- **`ISOLATED_REPAIR_ORDER_POSTED / CODEX_NOT_YET_RUN / ISSUE85_HOLD`**. 대표 원본 main 동기화·원격 Push/이슈 닫기는 **격리 전체 PASS 후 별도 기획 판단/승인**. 11/23 제품 11PASS/0FAIL 및 기존 복구원격 SHA 유지, 사용자 PC 직접 실행했다는 주장 금지.
+
+---
+
+# PLANNING / 2026-11-23 EOD — 13시간 작업 전체 안전 통합·로컬 동기화·복구 Push 사용자 승인
+
+- 바울 대표 명시 지시: **“오늘은 여기까지 하자, 거의 13시간 했으면 할만큼 한거지 뭐, 지금까지 한 작업들 다 합치고 로컬 동기화, 복구 푸시까지 해줘.”**. 신규 작업 배정은 중단, 당일 성과 안전통합·복구 작업 1회가 최우선.
+- Codex **현장 실행용 [EOD 지시 정본](../../EOD_20261123_SafeIntegration_LocalSync_RecoveryPush_Order.md)**를 `docs/planning` 커밋 `63ba8b8a0dc8f420116f5b05c5b3554b5900da74`로 작성. [GitHub Issue #128](https://github.com/HappyPaul812/Project-Limitless/issues/128) 발행. 기획 채팅/원격 문서 작성과 **실제 사용자 PC 로컬 Git/Unity 실행은 별개**: 현재 `EOD_ORDER_GITHUB_POSTED / LOCAL_MAIN_SYNC_NOT_VERIFIED / BACKUP_PUSH_NOT_VERIFIED`.
+- 필수 포함: #126 빙각 실제 격리 전투10PASS/0FAIL(제품 `a2faf0b02c960ddc795cc3054ad4beebbeb49d5f`, 보고 `b2580729ac6c57f22195bef83094b256e96dca60`), #31/#127 Chapter3 승인 BGM4 Intro+Loop WAV8 격리24PASS/0FAIL(제품 `c24f3bec02b0c4511032cfb26e7a7452efdaabea`, 보고 `0ad2d36907a2b7b5cbe3b7e63e0e2e7539e62fe2`), #122 서리들쥐 정의1/6 격리 등록 호환·승인 확인 후 조건부, 오늘 기획·TTS·BGM·리뉴얼·신규아트 문서 보존.
+- HOLD 보존: F5 공식 조우·AI·단회 Drop/Save·F3 정식 씬 배정, #124 독침/젤 대표 최종 미술 승인·ItemDefinition 교체, #125 Main24 Stage10 RuntimeID 0/10, #118 성장 EXP 안, #85 HOLD, 미검증 다른 북부 몬스터. 승인 전 후보 제품 강제 배포 금지.
+- 목표: 원본 미커밋/미추적/Save/UserData·Discord·기밀·승인 PNG/WAV·기존 Unity6000.6.5f1 보호 → 안전 통합 branch → 로컬 main FF-only 동기화 → **새 GitHub 복구 ref `backup/2026-11-23-safe-checkpoint` Push** → 원격 ref SHA/별도 clone/fsck 확인. 기존 `backup/2026-11-19-safe-checkpoint` `f64082914e114096b6b9393263e7a36f7d829a55`, 오래된 원격 main `bfd281545632877325f5d21e04cefb924042c465` **불변**. 비Git Stage WAV/ZIP/영상·개인 파일은 이 Push만으로 백업되지 않음을 명시.
+- Codex 실행 결과 수령 전에는 성공/완료라 주장하지 않음. 문제·충돌이면 안전중단 + 이유·커밋/서버SHA/비Git 미보호 항목 기록. 오늘 종료와 대표 휴식 우선.
+
+---
+
+# PLANNING / 2026-11-23 — 빙각 실전 애니메이션 10PASS 접수, BGM 4곡 Unity 연결 승인, 리뉴얼 ZIP 검수
+
+- **빙각 수호체 #126**: Codex 실제 [Issue 보고](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7098552079) 및 바울 대표 화면 접수. `codex/issue126-rime-sentinel-runtime-20261123`, 제품 `a2faf0b02c960ddc795cc3054ad4beebbeb49d5f`, 보고 `b2580729ac6c57f22195bef83094b256e96dca60` (**LOCAL_COMMITTED / REMOTE_NOT_PUSHED**). Unity6000.6.5f1 격리 Play **10PASS/0FAIL**, 공격 프레임2에서 피해44 단회, Idle/Hit/Attack 정상 복귀, HP0에서 Defeat4 최종 셀 유지, Ember 회귀 PASS, 승인 PNG5 SHA 일치. **F5 실제 Scene·정식 조우·유니크 AI/MonsterDefinition·보상 단회 Save·제품 승리전환은 미검증 HOLD**. 격리 Editor Search 예외1 별도 원인/기존 상태 구분 필요. 원본 main 병합·Push 없음.
+- **BGM 사용자 직접 지시** “bgm도 넣자.” → F1/서릿길 (#31), F2/F3 (#127) 승인 **곡4 Intro+Loop WAV8 Unity 실제 연결·격리 Play 검증 승인**. [BGM Codex 실행 정본](../../20261123_Chapter3_Approved4BGM_Unity_Integration_Order.md) 커밋 `48bd99d081625bd517e80ab14a3dea93a2131f6a`; [#31 발주](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7098787504), [#127 발주](https://github.com/HappyPaul812/Project-Limitless/issues/127#issuecomment-7098788475). 기존 Final WAV4+4/Importer PASS 반복 금지, 기존 단일곡 호환에 DSP Intro→Loop 예약/취소 최소 변경. F3 Scene 없으면 Catalog 등록만/배정 HOLD, 기존 Ch1·2 BGM/TTS/Mixer 보존. 출시 전 상업 라이선스 별도 확인 `COMMERCIAL_USE_EXPLICIT_LICENSE_PENDING`; **현재 Codex 실행 결과 보고 전/게임 적용 미확인**.
+- **리뉴얼 #124** 바울 대표 로컬 파일명 `LIMITLESS_Issue124_StingerGel_Tint_TipOnly_20261123.zip` 전달. 기획에서 정확한 동일명 Library ZIP 실제 복원·검수: 418,286bytes, SHA256 `a62442885359d75abd556cca01f648e1c7d71058dcf44050391860eff9cb2a98`, CRC PASS/Manifest24/24 SHA+bytes PASS. PNG 원본 독침 v2/초원 슬라임 젤 기존 SHA 일치, 선택 침끝 후보 실제 59px 변경 확인. [기획 실물 리뷰](../../20261123_Issue124_StingerGel_Tint_TipOnly_Planning_Review.md) 커밋 `6331ab294a1771da97aa74b039ce69f7816df8d3`, [Issue 리뷰](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7098789622). **White Tint 방향 PASS**(오프라인), 기본 독침 v2/젤 보존, 선택후보 자동 미술 승인 없음. 실제 30/40/50px Unity Inventory GameView 미검증·최종 대표 승인·제품 교체 HOLD.
+- 이 기록은 `docs/planning` 문서와 Issue 보고뿐. Unity6000.6.5f1, 기존 승인 원본/Save/UserData/Discord/#85 HOLD/main 보호. 서로 다른 Codex 브랜치 병합·원격 Push 별도 승인.
+
+---
+
+# PLANNING / 2026-11-23 — 빙각 수호체 실게임 연결·격리 전투 QA 착수 승인
+
+- 바울 대표: **“그래 하자.”** — 최종 미술 승인된 빙각 수호체 KeyPose·Idle4·Attack4 v2·Hit4·Defeat4의 **Unity 게임용 연결 및 전투/전투불능 최소 격리 QA** 착수 승인. GitHub [실행 지시 정본](../../20261123_RimeSentinel_ApprovedArt_Runtime_Integration_Order.md) 커밋 `ac79be00e7831c337b73389d07ad797cc422c88b`.
+- Codex 분리 worktree/브랜치 `codex/issue126-rime-sentinel-runtime-20261123` 권고. 실제 최신 로컬베이스·승인 PNG SHA를 먼저 대조, 기존 #122 몬스터/전리품 브랜치와 카탈로그 충돌 방지. Idle260ms×4, Attack660ms, Hit610ms, Defeat2450ms 마지막 셀 유지. 기존 #120 KO→Idle 덮어쓰기 방지 검증 결과 재사용. 실제 새 연결부만 Unity6000.6.5f1 Play 검증.
+- F5 Scene/단회 stable encounter/AI 예고 강타/드롭 및 Save 안전장치 미존재·미검증 시 해당 부분은 HOLD, 유사 자산/더미 구현으로 무리하게 통과시키지 않는다. **실제 원본 local main/remote main 병합·Push·신규 Scene·Save 구조 변경 불허**. 본편 통합 단계는 Codex 제품 QA 보고를 확인한 뒤 판단.
+- 기획에서 지시서만 GitHub 게시; Codex가 사용자 PC에서 실행했거나 게임에 이미 들어갔다고 보고하지 않는다. `#85 HOLD`, 기존 승인 아트, Unity6000.6.5f1, Save/UserData, Discord, TTS/BGM 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 바울 대표 빙각 수호체 Defeat4 최종 미술 승인 · 애니메이션 미술 라인 마감
+
+- **대표 직접 최종 결정:** “빙각이는 나도 좋아, 승인,”. 문맥상 2026-11-23 [#126 Defeat4 기획 미술 PASS·Codex 격리 Unity PASS 보고](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7097771461)에 대한 답변으로, **빙각 수호체(Rime Sentinel) Defeat4 최종 사용자 미술 승인**을 확정한다. 이전 Hit4 승인과 혼동하지 않는다.
+- **승인 납품:** `LIMITLESS_Issue126_RimeSentinel_Defeat4_20261123.zip` / SHA256 `c7b840ce80815814be0a11269d29b636acfa0b2966981801fa19228bade296ef`. 무거운 균형 상실→주저앉음→전투불능 정지, 2048×512 4셀. 기존 Codex 격리 Animator 비루프 2450ms(180/220/250/1800), 112px 모션·접지 PASS; 40px 세부 PARTIAL은 기존 검증 주의사항으로 유지. 기존 QA 재실행 요구 없음.
+- **미술 라인 마감:** KeyPose / Idle4(260ms·4프레임) / Attack4 v2(660ms·4프레임) / Hit4(610ms·4프레임) / Defeat4(2450ms·4프레임) 5개 납품 모두 **USER_ART_APPROVED / ART_LINE_COMPLETE**. 승인 원본과 GIF/PNG/Manifest/SHA 보호, 다시 그리거나 새 모션을 무단 양산하지 않는다.
+- **실제 Unity 제품 적용은 별도:** F5 실제 Scene, MonsterDefinition·조우/AI·피격/KO 후 Idle 덮어쓰기, 전리품/단회 Save, 전투/스폰·배포 적용 및 본편 QA **NOT_VERIFIED / PRODUCT_INTEGRATION_HOLD**. 본 승인만으로 `main` 병합, 로컬 원본 변경, 원격 Push를 지시·승인하지 않음. 후속 Codex 작업은 명시된 범위와 별도 승인에 따라 진행.
+- `docs/planning` 기획 기록. Unity 6000.6.5f1 / #85 HOLD / Save·UserData·Discord / 기존 승인 스프라이트 원본 및 `main` 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 빙각 수호체 Defeat4 · 독침벌 전리품 침 v2 합동 검수
+
+- 바울 대표 Codex 격리 Unity 합동 검수 결과 화면 제출. Codex `codex/issue126-124-defeat-stinger-20261123`, SHA `3c77498e09741649e2daa0ea2c9aef0c71ec5254`; Unity6000.6.5f1 유지, 본편/원본 main·Save/UserData/Discord/승인 아트/Push0.
+- **빙각 수호체 Defeat4** 납품 ZIP `LIMITLESS_Issue126_RimeSentinel_Defeat4_20261123.zip` SHA256 `c7b840ce80815814be0a11269d29b636acfa0b2966981801fa19228bade296ef`. Library 실제 KeyPose와 신규 4프레임 512/128/40 비교판 직접 확인. 112px 무너짐→주저앉음→정지 분명, 원형·접지 유지, 세부 갑옷 조금 차이나지만 **기획 미술 PASS**. Codex 실제 Animator 비루프2450ms(180/220/250/1800)·프레임3 최종 정지3.0초까지 PASS; 40px 미세 PARTIAL. **바울 대표 신규 Defeat4 최종 미술 승인 아직 별도**, 과거 Hit4 조건부 승인은 Defeat4 자동 확대 금지. 실제 F5 KO 후 Idle Sprite 교체 이슈/보스 실전 연동 미검증. [Issue #126](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7097771461). 미술 승인 후 빙각 수호체의 KeyPose/Idle4/Attack4v2/Hit4/Defeat4 미술 라인 마감 가능, 본편 배포 적용 별도.
+- **독침벌의 침 Organic v2** ZIP `LIMITLESS_VenomBeeStinger_Organic_v2_20261123.zip` SHA256 `345017cf17c1a07eaad5dc866150a090b48ce16803bcecada3dcc43640945f53`. Library 벌 원화 대비 128/40/30 직접 확인. 실제 벌에 맞춰 금색/검은색 키틴 뿌리·자주빛 침으로 v1 금속 무기형 문제 개선, 트레이스 인상 없음. Codex 실제 wasp-sting·Sting Sprite·Ch1/2 아이콘 비교: **128/50/40 PASS**, **30px 끝/독방울 PARTIAL** 및 틴트/화풍 PARTIAL. **기획 미술 방향 PASS, 대표 최종·제품 교체 HOLD**. 30px를 위해 전체 재제작하지 말고 기존 v2 보호 + white tint 40/50px / 30px 현재 tint 비교·국소 끝/방울 강조만 필요 시 파일럿. 기존 초원 슬라임 젤은 재생성 금지, white vs green tint 비교. [Issue #124](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7097772475).
+- 두 자산 모두 기술 검증 합격을 본편 적용/대표 최종 미술 승인으로 자동 승격하지 않음. 신규 숲거미 실/맹독뱀 비늘 양산 및 기존 완료 미술 재작업 보류, 보호 규정 유지.
+
+---
+
+# PLANNING / 2026-11-23 — 주요 인물 Chapter3 신규 TTS 72행 제작 큐 재개
+
+- 바울 대표 지시 **“tts는 안뽑니? 주요인물.”** → **주연5인 신규 음성72의 단계적 제작 준비·실행 착수 지시**. [Issue #125 TTS 공식 인계](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7092725116). 실제 Google POST/WAV 제작은 아직 수행되지 않았으며 유료 API·Cloud 계정/결제 승인으로 확대하지 않는다.
+- `docs/tts/문서/00_프로젝트/TTS_Issue125_Ch3_Main24_29_Side6_ApprovedDialogue_Preflight_20261123.csv`의 승인 원문101행 가운데 **주연72**: **Main24 10 / Main25 9 / Main26 22 / Main27 14 / Main28 8 / Main29 9**. 캐스팅: 폴 Achird15 / 미엘 Sulafat17 / 세린 Erinome15 / 태온 Algieba12 / 하렌 Alnilam13. 별도 성우 신규 디자인 금지. 기존 WAV162·Catalog312 ID/GUID/meta/기승인 음성 무재생성 KEEP.
+- **최우선 Main24 대사10건** 실PC Runtime stable DialogueID·Speaker/VoiceID와 기존162 WAV 중복여부 Codex 읽기전용 조사 → 실제 안정 ID가 확정된 신규분부터 Gemini 기존 승인 음색으로 **1건 시험/사용자 청취 → 작은 배치 제작**. Main25~29 미구현 ID를 임의 확정하지 않고 내용/음색 잠금된 manifest에 stage; 전체 장 구현 완료까지 기다리느라 72 전체 사전 준비를 멈추지 않음.
+- Gemini 실제 quota·프로젝트/모델·과금상태/상업 조건 사전 확인, 기존 API 사용량 ledger/HOLD/LOCK/429 중단을 유지. **기존 무료 범위 외 결제·유료 POST·Google Cloud TTS 계정 활성화/키 조회 승인 없음**. 실제 접근 불가 시 호출 없이 실행 가능한 TTS 제작기/명령과 검수표만 준비, 합성 완료 주장 금지.
+- NPC23은 기존 **21무음 + 마레2 예외 검토만** 유지, 자동 음성 생성 금지. 플레이어5/HUD1 무음. Main26 미엘 과거·Main27 차약속·Main29 하렌 `잘.했.어.` 지문/여백 보존.
+- TTS `docs/tts`, 기획 `docs/planning`만 작업 기록; Codex는 로컬 ID 검증/후일 별도 통합 담당. Unity6000.6.5f1, Save/UserData/Discord, #85 HOLD, 승인 아트/본편main 직접 수정·원격 Push/병합 금지.
+
+---
+
+# PLANNING / 2026-11-23 — 몬스터 명칭 사용자 직접 정정: 초원 슬라임
+
+- 바울 대표: **“초원 슬라임이다.”** → 기획의 과거 '풀슬라임' 표현을 잘못된 한국어 이름으로 정정. 공식 몬스터 호칭은 **초원 슬라임**.
+- 전리품 미술 작업은 **“초원 슬라임의 젤 전리품 아이콘”**으로 표기. 게임 데이터 식별자 `GrassSlimeGel`, `material_grass_slime_gel`, 원본 Game-icons `dripping-goo` GUID 등 기술식별자는 기존대로 유지; 몬스터 이름 정정을 빌미로 임의 Rename/ID 변경·Quest/Drop/Save 교체 금지.
+- 이미 존재하는 초원 슬라임 젤 원화 후보는 재제작하지 않고 색상 Tint 검토만. 리뉴얼 담당의 이번 신규 원화는 별도 **독침벌의 침 전리품 아이콘**1종.
+- 사용자에게는 **초원 슬라임**, **초원 슬라임 젤** 한국어 표기를 사용. 지난 지시의 `GrassSlimeGel`은 코드 식별자일 뿐 공식 표기 아님.
+
+---
+
+# PLANNING / 2026-11-23 — 리뉴얼 담당 신규 업무: Chapter1 독침벌 전리품 오리지널 미술
+
+- 바울 대표: **“리뉴얼 논다.”** → 이미 승인한 길 능력 아이콘5/몬스터/펫 등 다시 그리지 않고 **실사용 외부 Chapter1 전리품 아이콘**으로 작업 전환. [Issue #124 공식 발주 기록](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7092215322).
+- 감사 기준 현행 Game-icons.net/ItemDefinition **4개 외부 직접 GUID**: GrassSlimeGel `dripping-goo` (`40b87c14...`) / VenomBeeStinger `wasp-sting` (`73b52f1f...`) / ForestSpiderSilk `spider-web` (`fa189694...`) / VenomSnakeScale `dorsal-scales` (`aeb1ca89...`).
+- **이번 실제 원화 1종 발주:** 독침벌 침 `VenomBeeStinger` 128² RGBA 독립 아이콘 파일럿. 기존 `wasp-sting` 의미를 잇되 복제·트레이스/단순변형 금지. 128/40/30 인벤토리 축소·실사용 어두운 UI 보드/기존 Ch1·2 잡템 화풍 비교, SHA/Manifest/ZIP, 출처 증명. 담당 docs/art-renewal 실물+문서 SHA 보고, 대표 승인 대기.
+- **기존 풀슬라임 젤** `GrassSlimeGel_Original_128_RGBA.png` 후보 이미 보유, 새로 그리지 말 것. 기존 iconTint (.55,1,.38,1)가 새로운 원화 색 명암을 누른 Codex PARTIAL 상태를 **원본색(white tint) vs 기존 틴트 비교판**으로만 검토. Unity `ItemDefinition` Tint 변경은 승인 전 금지, 이미지 국소 수정은 필요성·승인 후.
+- 숲거미 실·맹독뱀 비늘의 오리지널 아이콘 **아직 미납품**, 단계적 후속 후보. 독침벌 파일럿 사용자 미술 승인 전 **두 PNG 동시 양산 금지**, 기존 GrassSlimeGel 승인도 별도.
+- 모든 승인 길 문장/길 능력 아이콘·몬스터/펫/Ch2·Ch3 전리품 유지, ItemDefinition/MonsterDefinition/GUID/meta/Scene/Unity 본편/Save/UserData/Discord/main 수정·원격 병합/Push 금지. CC BY3.0 출처/크레딧 유지, Unity6000.6.5f1, #85 HOLD.
+
+---
+
+# PLANNING / 2026-11-23 — 빙각 수호체 Hit4 조건부 승인 충족 → 사용자 미술 최종 승인
+
+- 바울 대표 선행 조건 **“코덱스 된다고 하면 나도 승인”**. 신규 Hit4 Codex 실제 Unity6000.6.5f1 격리 검증 **PASS** 접수, [Issue #126 확정 승인](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7092168466)에 기록. Codex `codex/issue126-hit4-delta-20261123`, 실제 SHA `0de6f31ef376e5fc19791810f3cd481228cd157d`.
+- 4프레임 **비반복610ms** (100/160/130/220ms), Hit0→1→2→3→Idle0→1, 시험 피격 플래시1회·해제 정상, 전투 112px 어깨/상체 반동·최하단 접지 및 승인 Idle4 정상 복귀 PASS. 40px 세부 반동 PARTIAL이나 실전 112px 정상 판독; 약점 보존 기록. **USER_HIT4_ART_APPROVED_CONDITION_FULFILLED**.
+- 승인 납품 `LIMITLESS_Issue126_RimeSentinel_Hit4_20261123.zip` SHA256 `4ceb3996d1d602dcdccbf5980b7cd3423a2c9b1e509615c4c450c7ab4c642ea2`, Hit4 PNG SHA `bd6d66be3b990d9bc7f33261f1d9835abd413c28b91a5842ac9800a5dec28496`. 기존 승인 KeyPose/Idle4(260ms)/Attack4v2(660ms)/Hit4(610ms) 원본 보호.
+- 이제 **메인 신규 아트 Defeat4 단독 파일럿** 허가: 무거운 균형 상실→주저앉음→안정된 전투불능, 4×512 셀 2048×512 투명 RGBA, 512/128/40 크기/비반복 GIF/ZIP/Manifest/SHA 제출. 새 충격/소멸 VFX 추가·기존 승인 원화 변경 금지. 대표 Defeat4 미술 승인 및 Unity 격리 QA는 다음 단계.
+- **격리 Hit4 QA PASS ≠ 실제 F5 조우/본편 피해·피격 VFX·AI/Save/Drop 적용 PASS**. 본편 적용/원격 main 병합/Push 미승인, #85 HOLD, Unity6000.6.5f1, Save/UserData/Discord·공식 아트 보호. Codex 기완료 QA 반복 금지.
+
+---
+
+# PLANNING / 2026-11-23 — 빙각 수호체 Hit4 Codex 검증 조건부 바울 대표 승인
+
+- 바울 대표 직접: **“코덱스 된다고 하면 나도 승인”** — Hit4 신규 애니메이션의 **Codex 실제 Unity 검증 PASS 시 최종 미술 승인 발효**. 현재까지는 기획 시각 방향 PASS, 신규 Hit4 실 Unity 검증 **미완료**. [Issue #126 조건부 승인 공식 기록](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091987076).
+- 승인 대상 고정: `LIMITLESS_Issue126_RimeSentinel_Hit4_20261123.zip` 3,519,214B SHA256 `4ceb3996d1d602dcdccbf5980b7cd3423a2c9b1e509615c4c450c7ab4c642ea2`, 비루프 4프레임100/160/130/220ms=610ms, 원본 승인 KeyPose/Idle4/Attack4v2 보호.
+- **PASS 조건**: Codex Unity6000.6.5f1 격리 재생, 112/40px 피격 반동·Tint/VFX 가독성, 타격 1회·Idle4 260ms 복귀·접지/중심축 안정성, 기존 승인 원본 무변경 검증. 이 조건 모두 PASS 보고되면 대표 Hit4 미술 승인 확정 → 메인 신규 아트 Defeat4 1파일럿 제작 발주 가능. PARTIAL/HOLD/FAIL 시 조건 불충족으로 보류.
+- 본편 Scene/F5 실전 연동·MonsterDefinition/Save/Drop·main 병합·Push는 본 조건에 포함되지 않으며 미승인 그대로. 기존 파일 QA/Attack4 v2 PASS 재시험0. Unity6000.6.5f1/#85 HOLD/Save/UserData·Discord 원본 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 빙각 수호체 Hit4 실물 검토 · 기획 미술 PASS
+
+- 바울 대표 `F:\\Downloads\\LIMITLESS_Issue126_RimeSentinel_Hit4_20261123.zip` 경로 제출. 기존 Library 동일명 ZIP 실제 컨테이너에서 확인: 3,519,214B SHA256 `4ceb3996d1d602dcdccbf5980b7cd3423a2c9b1e509615c4c450c7ab4c642ea2`, CRC PASS, Manifest 11/11 hash+bytes PASS, GIF 비루프100/160/130/220ms=610ms. 512/128/40 비교판 직접 시각 검토.
+- **기획 미술 PASS**: 상체·어깨 충격·후방 반동·복귀가 4프레임에 구현됨, 승인 KeyPose/Idle4/Attack4 v2 보존, 발접지 유지/마지막 프레임 KeyPose 일치(담당 기술 QA). **40px의 반동은 작음**; 실제 112px 전투·히트 Tint 결합 국소 검증 권고. 작업 자체를 다시 만들 필요 없이 보존.
+- **대표 Hit4 최종 승인 명시 아직 없음**: 이번 메시지는 ZIP 경로 전달이므로 품질 PASS를 USER_APPROVED로 적지 않음. 실제 Unity Hit4 신규 Animator/GameView/피격 효과 QA 미실시, 이전 Attack4v2 격리 PASS를 유용하되 Hit4로 이월하지 않음. Defeat4는 기존 'Hit4 승인 후' 순서에 따라 HOLD.
+- [Issue #126 기록](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091921272). 필요하면 Codex에게 Hit4 신규분만 610ms 비루프/Idle 복귀/112·40px 피격 효과 최소 검증, F5 실전/HIT 애니메이션 본편 적용·main 병합/Push 금지.
+- Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/승인 원본/원격 main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 승인 길 능력 아이콘5 / 빙각 수호체 Attack4 v2 실제 격리 Unity 검수 접수
+
+- 바울 대표 Codex 보고 화면 접수 + Issues #124/#126 실제 최종 Codex 댓글 교차 확인. Unity6000.6.5f1, local `codex/issue124-126-approved-art-delta-20261123` SHA `7d3127a3baa19b19af34c056c746ec2aafcf84c5`. 격리 검증, 원본 main/Save/UserData/Discord 적용·병합·Push0.
+- **길 능력 아이콘 5종 최신 리워크:** 실제 PathSelectionController 어두운 상세30px의 시각·청각 **2 PASS**, 지적·지체·마음 **3 PARTIAL**(선/중앙 기구/회복선 작음). 임시40px에서는 **5/5 PASS**, 공식 PathSymbol5 보존·전체 화면 아이콘 영역외 동일 **10/10 PASS**. [Issue #124 인계](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7091883119). 미술 원본 재제작 금지, 다음 Codex는 **40px 슬롯을 제품 레이아웃에 안전하게 배치 가능한지 한 번만 격리 UI 파일럿**으로 글자 겹침/여백/클릭·포커스·접근성 확인. 검증 전 본편 40px 확대·PathDefinition GUID 참조 교체·기존 외부 저작자 크레딧 삭제 금지.
+- **빙각 수호체 Attack4 v2:** 격리 Animator 비반복660ms, 3번째 타격 프레임 325ms 상대 캡처(이벤트 작성340ms), HP100→56, 피해숫자/-44/피격 Tint, 끝에 승인 Idle4 260ms 정상 복귀 **PASS**. **실제 F5 현장 전투/AI/정식 피해 연동 미검증**. [Issue #126 인계](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091883757). 동일 QA 반복0. 본편 연결/Encounter/Save/Drop 별도 승인 단계.
+- **Hit4 신규 미술 후보가 이미 실제 납품됨**: `LIMITLESS_Issue126_RimeSentinel_Hit4_20261123.zip` SHA `4ceb3996d1d602dcdccbf5980b7cd3423a2c9b1e509615c4c450c7ab4c642ea2`. 납품 비교판 512/128/40을 기획 직접 열어봄. 4단계 충격→반동→회복→승인 KeyPose 복귀, 40px 내부 모션 미세하므로 대표 미술 검토 대기. **새 Hit4 중복 발주 금지 / Defeat4 승인 전 HOLD.** 메인 신규 아트 담당 docs/art-new 기존 commit `92c42f831b0461b780644ad1b1614284dc50bd53`.
+- #85 HOLD, 본편 Scene/Prefab/PathDefinition/GUID/meta/Save/UserData/Discord/main 보호. 사용자 최종 미술 승인한 길5·Attack4 v2의 상태 유지.
+
+---
+
+# PLANNING / 2026-11-23 — 바울 대표 미술 승인: 길 능력 아이콘5 리워크 + 빙각 수호체 Attack4 v2
+
+- 바울 대표가 본 기획의 두 실물 비교/미술 방향 PASS 후 **“어. 그래”** 동의. 두 아트의 **대표 최종 미술 승인**으로 기록. 이후 **Unity 게임 적용/메인 병합 승인은 별개**. [길 능력 아이콘 승인](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7091428274) / [빙각 수호체 Attack4 v2 승인](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091428809).
+- **길 능력 아이콘**: 최신 리워크 `LIMITLESS_Issue124_Trait5_Rework_20261123.zip` SHA256 `b2f468126e1880d39d2a487f347568b61d8cbbfaf460bcb44849dcda8923b5df` **5종 USER_ART_APPROVED**. 이전 귀/뇌 중심 아이콘과 구분. 공식 `pathSymbol`5 불변. Codex는 오로지 새 후보5의 실제 길 선택 UI 30/40px·UI Tint/가독성/외부 Game-icons 원본 유사성 국소 격리 검증. 과거 후보에 대한 Codex PASS를 최신 리워크의 PASS로 혼동 금지. 외부 원본 CC BY3.0 크레딧 원본 유지, 제품 연결/PathDefinitions/원본 main 변경 금지.
+- **빙각 수호체**: `LIMITLESS_Issue126_RimeSentinel_Attack4_v2_Targeted_20261123.zip` SHA256 `04cdead8ccffc14350fe9cd7e666a1635dddd6214631c8dc8ae7831f8dfc8661` **Attack4 v2 USER_ART_APPROVED**. 4×512셀 / 170·120·150·220ms(총660ms) 비루프, 주먹 전진감 강화·기존 KeyPose/Idle4 보호. Codex 격리 Animator/전투UI/피해 VFX 타격 시점 290~440ms 최소 QA 허용, 실제 본편 적용/연동 승인 아직 없음. 메인 신규 아트 **Hit4 파일럿1종 제작 발주 허용**, 이후 미술 검토 후 Defeat4; 특수 공격 모션 혼합 금지.
+- 역할/범위: 기획은 승인 및 인계, 리뉴얼 담당 재교육 세션에서 길5 추가 재제작0, Codex는 격리 테스트, 메인 아트는 Hit4 신규 후보. 문서 기록만 `docs/planning`, Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/승인 원본/main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 길 능력 아이콘5 재작업 및 빙각 수호체 Attack4 v2 실물 검수
+
+바울 대표 제출 F:\\Downloads 동일명 Library ZIP 2개 실제 획득, 개봉·Manifest/hash·실물 비교판 직접 시각 평가. **기획 미술 방향 두 항목 PASS** (대표 최종 승인/제품 Unity 적용과 구분).
+
+- **길 능력 아이콘** — `LIMITLESS_Issue124_Trait5_Rework_20261123.zip` 2,478,785B SHA256 `b2f468126e1880d39d2a487f347568b61d8cbbfaf460bcb44849dcda8923b5df`. ZIP CRC PASS/Manifest23/23 PASS. 시각 초점·청각 공명·지적 결절망·지체 회전·마음 보호문장으로 직설적 귀/뇌 문제 해결, 청/은/심청/절제 금색 시리즈 통일. 128/40 판독 양호, **30px 세부 구분 일부 PARTIAL**. 동봉 HTML 기존 원본은 원격 URL이므로 **기존 Game-icons 원본 픽셀 직접 대조 미검증**. **기획 방향 PASS, 대표 최종 미술 승인 대기, 이번 재작업 PNG의 실제 Unity UI/GameView 미검증.** 공식 PathSymbol5 절대 수정 금지. [Issue #124 검토](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7091190320).
+- **빙각 수호체 Attack4 수정본** — `LIMITLESS_Issue126_RimeSentinel_Attack4_v2_Targeted_20261123.zip` 6,444,482B SHA256 `04cdead8ccffc14350fe9cd7e666a1635dddd6214631c8dc8ae7831f8dfc8661`. ZIP CRC PASS/Manifest14/14 PASS. v1 대비 **2·3프레임만 주먹 전방 돌출·원근감/어깨 추종 강화**한 것 직접 확인, 1·4프레임 원형, 전체 묵직함·접지·KeyPose 유지. 40px 변화는 소폭이지만 128/512에서 명확. 비루프170/120/150/220ms. **기획 미술 방향 PASS, 대표 최종 미술 승인 대기, v2 자체 Unity Animator/타격판정 미검증**. [Issue #126 검토](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7091190943).
+- 작업 중복 금지: 이미 제출된 PNG 재생성/전면 수정 요구0. Codex 새 후보 해당 슬롯의 읽기전용 국소 Unity UI/Attack 재생·전투 이벤트 검증은 대표 작품 승인 후 별도 진행. 승인 전 GUID/meta/PathDefinition/Scene/Prefab/공식 PathSymbol/Unity 게임 적용·main 병합 금지.
+- Unity6000.6.5f1, #85 HOLD, Save/UserData·Discord·승인 아트 및 main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 길 능력 오리지널 후보 5종 실제 비교판 직접 검토
+
+- 바울 대표가 “그래.”라고 응답해 기존에 제작된 5종 후보의 실물 비교판(현재 ChatGPT Library)을 재사용, 직접 시각 검토. **신규 제작/재생성 지시0**.
+- [Issue #124 실물 검토 기록](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7090472869). 열람: `Trait4_vs_Vision_v2_128_40_30_Comparison.png`, `Trait4_40_30_DarkLight_Readability.png`, `Vision_v1_v2_512_128_40_30_26_24_Board.png`.
+- **기획 디자인 방향 5종 PASS:** 시각=눈/표적, 청각=귀/파장, 지적=신경연결, 지체=바퀴/방향, 마음의 상처=균열/봉합. 일관된 냉청·백·네이비·방향점, 128px 분명하고 40px 중심 모티프 인식.
+- **30px PARTIAL:** 내부 도안 축소로 시리즈 내 구분성 실게임 확인 필요. 실물 Unity 제품 GameView/공식 PathSymbol5 직접 이미지 대비 미검증. **기획 방향 PASS는 사용자 최종 미술 승인이나 본편 교체/출시 승인이 아님.**
+- 현행 원격 main `PathDefinition.traitIcon`5는 Game-icons 외부 GUID, `pathSymbol`5는 기존 고유 GUID로 분리 확인. 이미 납품된 Trait5로 재그림 없이 진행, Codex 30/40px 실제 길 선택 UI 한 장 비교 캡처 최소QA 후 대표에게 검토. 승인 전 PathDefinition/Scene/Prefab/GUID/meta/main 변경 금지.
+- `GrassSlimeGel` 후보는 이번 5개 Trait 시각 판정과 독립, 신규 전리품 양산 자동 승인 아님. 리뉴얼 담당 재교육 경과 보존, 중복 제작0. Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 리뉴얼 담당 재교육 지시 수령·업무 범위 정정 (최신)
+
+- 바울 대표의 최신 통지: **“리뉴얼 교육 다시 시켰어.”** 이전 아래의 “리뉴얼 퇴사/추가 배정 금지”는 당시 상태 기록이며 **현재 운영 상태로 사용하지 말 것**. 신규/복귀 리뉴얼 담당의 **재교육 착수**로 기록. 교육 완료·실제 업무 착수·GitHub 갱신 완료는 아직 확인되지 않음.
+- 대표가 직전에 정정한 범위: **공식 길 문장(Path Symbol) 5종은 이미 자체 제작된 승인 자산으로 보존.** `PathDefinition.traitIcon`에 연결된 **별개의 능력(Trait) 아이콘 5종은 기존 Game-icons.net 외부 자산**이므로 오리지널화 후보. 정확한 경로, UI 크기 및 기존 재사용 가능성부터 확인하며 공식 문장을 다시 그리지 않음.
+- [기존 #124](https://github.com/HappyPaul812/Project-Limitless/issues/124) 산출물: 시각 Trait v2 1종 + 청각·지적·지체·마음 Trait 4종이 **이미 후보로 제작되어 납품**됨. 5종 전부 새로 만드는 지시 금지. `GrassSlimeGel` 오리지널 1종 후보도 이미 납품됨. 모든 후보의 대표 최종 미술 승인 및 제품 적용 여부는 별도, `UNITY_NOT_APPLIED`.
+- **재교육 후 첫 과제는 제작이 아니라 감사·중복방지 인계**: 담당 최신 문서/이슈 #124를 읽고 공식 Path Symbol5 ↔ 외부 Trait5 ↔ 새 후보 Trait5를 실제 UI 기능/사용 위치/규격 기준으로 비교해 '보존·재사용·채택 검토·미확정'만 분류. 필요한 화면·자산이 없으면 NOT_VERIFIED. 새 PNG 생성·기존 GUID/meta·PathDefinition 교체·Unity 적용/원격 main 변경은 승인 전 금지.
+- 후임 담당 문서 기록은 `docs/art-renewal`과 `WORLD_ART_RENEWAL_LATEST.md`/Issue #124, 실제 커밋 SHA 및 바울 대표 승인 게이트로 보고. 기획 담당은 별도 BGM Gemini 작업을 수행하지 않음.
+- Unity6000.6.5f1, #85 HOLD, 기존 승인 NPC·몬스터·펫·환경, 개인 Save/UserData·Discord 및 main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 길 공식 아이콘 중복 제작 지시 철회 / 리뉴얼 담당 퇴사
+
+- 바울 대표: “리뉴얼 퇴사 했는데, 근데 길 아이콘 원래 우리가 그린거 아냐? 왜 또 그려?” — 기획이 기존 자체 제작 `pathSymbol`과 외부 `traitIcon`을 혼동해 추가 4종 원화 제작을 서둘렀음을 인정하고 **추가 제작 지시 철회**.
+- [Issue #124 정정 기록](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7090270678): **길 공식 Path Symbol 5종은 이미 오리지널 제작/승인 자산**. `PathDefinition.pathSymbol`에 연결. 별도 `traitIcon` 슬롯은 복구본 정적 참조상 Game-icons.net CC BY3.0 **외부 5종**으로 남아 있음. 상업적 사용 자체는 가능하며 원저자 표시를 지켜야 함. 단, 두 슬롯을 반드시 서로 다른 신규 이미지로 유지해야 한다는 기획 결론은 없음.
+- 기존 자체 Path Symbol5를 UI의 traitIcon 위치에도 **재사용할 수 있는지 먼저 확인**해야 하므로, 추가 Trait 아이콘 제작/배치/교체/양산은 **중단**. 이미 제출된 Vision v2·청각/지적/지체/마음 신규 4종 후보는 기록·파일로만 보존하고 사용자 최종 승인·게임 적용으로 오인하지 않음.
+- **리뉴얼 담당 퇴사** 사용자 통지 접수, 이 세션에 추가 작업 지시하지 않음. 후속은 기획에서 필요성 판정 후 Codex의 최소 읽기전용 UI 역할 검토, 실물 제작 필요가 확정될 때만 별도 담당 지정.
+- `docs/art-renewal` 원본/Issue #124 기존 이력·승인 PathSymbol5/ItemDefinition/GUID/meta/Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord/main 보호. 당장 Codex 실행/게임 수정 지시 없음.
+
+---
+
+# PLANNING / 2026-11-23 — 리뉴얼 담당 재배정 (#124)
+
+- 바울 대표: “리뉴얼은 노는데?” — 타 부서 병렬 진행 중 리뉴얼 후속 배정 누락을 정정. [#124 후속 지시](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7089569833)에 2개 작은 실작업 지정.
+- **A 시각 Trait v2 국소 수정**: 기존 후보 40px PASS, 30px 동심원 약함, 24/26px에서 눈보다 표식 우세. 새 PNG 후보/실제 512·128·40·30·26·24 비교와 v1 대비 Delta 제출. 기존 5 PathSymbol/GUID 불변.
+- **B Chapter1 재료 아이콘 1종 파일럿**: `GrassSlimeGel` 기존 Game-icons `dripping-goo`을 대체할 128 RGBA 신규 독립 원화 1종 + 128/40/30 인벤토리 판독 비교. 나머지 외부 전리품3/길 특성4는 현재 파일럿 승인 전 신규 양산0. 기존 ItemDefinition/GUID/Runtime·기존 승인 Ch2/3 아트 보존.
+- 담당 `docs/art-renewal` 결과+실제 PNG ZIP/Manifest SHA 및 WORLD_ART_RENEWAL_LATEST/이슈 댓글 보고. 대표 최종 미술 승인 전 Unity 교체0, Codex QA 별도. 기획 세션은 담당에게 복사 가능한 지시문 전달; GitHub 기록 자체가 자동 실행 아님.
+- Unity6000.6.5f1, #85 HOLD, Save/UserData/Discord, main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 빙각 수호체 Idle4 선행 조건 충족 · 최종 미술 승인
+
+- 바울 대표 선행 조건: **“게임에서도gif처럼 되면 승인.”** Codex 실제 제품 전투 UI와 SpriteRenderer Animator 격리 Play Mode에서 GIF 동작 재현 보고 수령. local `codex/issue126-idle4-play-20261123` SHA `72da0d376f22c48175b4e7e3499c9165f771eada`.
+- Animator259.93ms/셀 · 전투UI260.02ms/셀 / 4프레임1.04초, 순서0→1→2→3, 112px 전투 렌더 하단18행 접지4/4 및 중심이동 가로0.009/세로0.347px, 40px 실루엣 판독. **#126 Idle4 최종 미술 승인** ([GitHub 기록](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7089455631)). 승인 원본 KeyPose/Idle4 SHA 잠금. **260ms 프레임 유지**: 기존 8fps(125ms) 사용하면 GIF 약1.04초보다 약2배 빠름.
+- 미검증·보류: F5 실제 Scene·조우/단회 Save·MonsterDefinition·Drop·전열 Sorting/Collider 본편 실측, main 병합/Push. Idle4 미술 승인 ≠ 본편 Unity 적용 승인.
+- 후속 메인 신규 아트 **Attack4 1파일럿** 제작 지시 가능. 승인된 Idle4 원본 보호. 기본 `얼음 주먹` 공격(110%)의 준비→타격→회복만 새 원화, 다음 행동 `팔 들어올리기` 예고 및 `균열 강타(180%)`와 합치지 않음. 2048×512/4×512 RGBA·512/128/40·GIF·ZIP/Manifest/SHA 제출, 사용자 미술 승인 전 Hit/Defeat·차기 모션 제작·게임 적용 금지.
+- 모든 작업 `docs/art-new`, Unity6000.6.5f1/#85 HOLD/승인 아트·Save/UserData/Discord/원본 main 보호. Codex의 기존 Idle4 QA 재실행0.
+
+---
+
+# PLANNING / 2026-11-23 — Issue #127 F2·F3 BGM B 루프 최종 승인
+
+- **대표 직접 승인 조건:** “루프도 들어봤어. 니가 안이상하면 승인,” — 기획에서 실제 ZIP의 기술 이상 여부 확인 후 최종 승인.
+- [Issue #127 공식 승인·기술 검증 기록](https://github.com/HappyPaul812/Project-Limitless/issues/127#issuecomment-7089411448).
+- 실제 Library `LIMITLESS_Issue127_LoopReview_20261123.zip` 1,168,179 bytes / SHA256 `71cd20113303053b74ed77230089d2e48bfd232f117e9c78c638555d85954b8e`, CRC PASS, 내부 파일 SHA **5/5 PASS**, A/B MP3 **4/4 디코딩 PASS**, 44.1kHz stereo. A의 긴 무음 F2~1.82s/F3~2.74s → B는 두 곡 모두 최장~0.02s. B 연결부의 특이 급격한 샘플변화 징후 없음. 기획 본인은 청각적으로 직접 듣지 않았으며, 대표가 직접 듣고 조건부 동의한 뒤 기술 확인으로 승인함.
+- **F2 `Beneath_the_Frozen_Boughs`** B Loop 13.560–62.775s, **F3 `Steps_on_Frozen_Stone`** B Loop 24.102–81.107s, xfade0.55s 각 **USER_APPROVED**. 원곡2 사용자 승인도 유지, 재생성·재편곡/원곡덮어쓰기 금지.
+- 이제 BGM 담당의 **최종 Intro+Loop WAV Master 제작 승인**. ZIP+Manifest/SHA와 소형 검증, docs/bgm·BGM_LATEST 및 #127 담당 브랜치 보고를 기다림. 배포 Master는 아직 미제작, Unity 적용/원격 main 병합 미승인. BGM Gemini 프롬프트·음원제작은 BGM 담당 전담(기획 업무 침범 금지).
+- **권리 표시:** 소비자 Gemini/Lyria의 유료 게임 내 사용을 명시한 근거는 아직 `COMMERCIAL_USE_EXPLICIT_LICENSE_PENDING`; 이는 출시 전 별도 확인사항이며 BGM 미술·기술 승인 취소가 아님.
+- Unity6000.6.5f1, #85 HOLD, 기존 승인 BGM/TTS/Mixer/Save/UserData·main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — #127 F2·F3 BGM 청취 승인 기록 정정
+
+- BGM 세션 대조 결과, 바울 대표가 2026-11-23 F2/F3 새 BGM 1차 데모를 듣고 **“나도 좋아.”**라고 직접 승인했음을 확인. **기획 담당의 "BGM 원곡 미승인" 안내가 잘못되었으며 정정**.
+- F2 `Beneath_the_Frozen_Boughs.mp3` = **USER_APPROVED**; F3 `Steps_on_Frozen_Stone.mp3` = **USER_APPROVED**. 승인 원곡 SHA/길이/내용 보존, 재생성·원곡 재청취 요청 금지.
+- [Issue #127 원곡 승인 기록](https://github.com/HappyPaul812/Project-Limitless/issues/127)에서 BGM 담당이 승인 상태 반영. 이어서 제출된 `LIMITLESS_Issue127_LoopReview_20261123.zip`은 B 경계 기술 QA PASS / **LOOP_USER_APPROVAL_PENDING**. 원곡 청취 승인이 A/B 루프 편집 청취 승인까지 자동으로 포함하지 않음.
+- F2 B 후보 구간 `13.560–62.775s`, F3 `24.102–81.107s`, 각각 0.55s crossfade. 배포 Master 제작/Unity 적용 아직 0. 신규 Gemini 생성/재생성은 BGM 담당만 관리. 상업적 사용권 표현은 `COMMERCIAL_USE_EXPLICIT_LICENSE_PENDING`(상업 사용 불가 판정 아님).
+- 대표께 추가 요청할 때는 **두 원곡이 아닌 LoopReview B 연결부만** 판단을 구할 것. Unity6000.6.5f1/#85 HOLD/Save/TTS·승인 원본 보호.
+
+---
+
+# PLANNING / 2026-11-23 — Codex #126·#31 격리 Unity 기술 검수 접수 및 Idle4 최신 납품 발견
+
+- Codex 작은 격리 `codex/issue126-31-import-delta-20261123` SHA `1ba99e0cb1e8ce70389df1633f6839fbf80348d5`, **총12 PASS/0 FAIL**; 기존 성과·ZIP CRC/SHA QA 재실행0, 원본 main/Unity6000.6.5f1/#85 HOLD 및 Save/TTS/Mixer 보호. 실제 게임 적용·Push·병합0.
+- [#126 기술 접수](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7088932121): Rime Sentinel 승인 KeyPose SHA 일치, 격리 Sprite Import3/3 PASS, PPU512/Point/Center Pivot, 40px 주먹·어깨 판독. 공식 F5 Scene·전열 크기/Sorting/접지 GameView NOT_VERIFIED. **현 메인 아트가 Idle4 후보 ZIP을 이미 납품**했고 Library 비교판과 GIF 확보: ZIP SHA `65520ee3b6fc5f1433489ba733ed40ea3256d4e50e977b9f67edd5fb19b2b0d2`. KeyPose 사용자 승인과 Idle4 신규 파일럿 승인 대기 분리, Attack/Hit/Defeat 자동 착수 금지.
+- [#31 기술 접수](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7088931615): Final WAV4 Unity Import 9PASS. BGM 서비스/Scene Catalog는 현재 Scene당 단일 AudioSource/AudioClip이며, F1·서릿길 배정0. 승인 Intro→Loop 구조 구현에 두 AudioSource DSP 스케줄링·전투/씬 전환 취소·기존 단일곡 호환 필요. 실제 루프·TTS/Mixer·Listener 검증0. 다음은 격리 설계/코드 최소변경 및 Delta QA와 사용자 최종 적용승인 **별도**. 음원 생성·리마스터 금지.
+- 기획 조율: #126 Idle4 비교 GIF는 바울 대표에게 직접 보여 승인 요청, #31 Codex 기술 확장은 사용자의 실제 별도 코드 지시 전까지 권고안. 이 보고만으로 본편 적용 승인 없음.
+
+---
+
+# PLANNING / 2026-11-23 — #126 빙각 KeyPose 사용자 외형 승인 및 #31 Final WAV 실물 접수
+
+- 바울 대표: `F:\Downloads\LIMITLESS_Issue31_FinalLoopMasters_20261123.zip`, `F:\Downloads\LIMITLESS_Issue126_RimeSentinel_KeyPose_20261123.zip` 납품 전달 및 “빙각이 묵직하니 중간보스하기 좋겠네..ㅋㅋ 승인”.
+- **#126 새 KeyPose 최종 미술 승인** ([Issue 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/126#issuecomment-7088805208)): 신규 M6 Rime Sentinel 512×512 투명 RGBA 1포즈. ZIP SHA256 `f2098a5e1affc13e3708eebf5d30f5c8e4fd9bdcfb0f72d41059e9178d34a46e`, 9entries·CRC PASS·SUMS8/8 PASS. PNG SHA256 `c34ea53a95aa6a1fdba4f5e355715fbc25797d6d51e4d544cb9e4dab52f7073c`. 실제 M4/M5 비교판·128/40 이미지 확인, 육중한 팔/흉곽·엘리트 실루엣 승인. **Idle4 1종 파일럿 착수 가능**; Attack/Hit/Defeat 이후 승인, 실제 Unity Import/GameView·F5 배치·Monster/Drop/Save 등록 불승인. 승인 원본 바이트 잠금.
+- **#31 BGM Master ZIP 실물 접수** ([Issue 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7088807352)): SHA256 `3c9810962e1a1db11117d5a3fe6ee8ce5caa4fcc62cc6889656aff7ac7d39c94` / 21,459,175bytes/7entries/CRC PASS/SUMS6/6 PASS. WAV PCM16/44.1kHz/stereo 4개, 길이 Grass Intro15.15s Loop52.95s; Hearth Intro4.90s Loop55.90s. 기존 원곡·B Loop 사용자 승인 유지, *추가 음악 생성 불필요/Unity 적용 별도 승인*. 신규 F2/F3 음악은 BGM 담당 #127 전담.
+- 다음 담당 전달: 메인 신규 아트는 **승인 KeyPose 기반 Idle4 소량 파일럿**, Codex는 **#126 KeyPose 격리 Unity 기술 QA + #31 Master Audio Import/루프 연동 계약 읽기전용 검토**(기존 #122 작업 및 QA 반복 금지). 타 담당 세션 자동 실행 아님; 복사할 메시지 대표에게 함께 제공.
+- 제품 실제 Unity6000.6.5f1, #85 HOLD, 개인 Save/UserData·Discord·기존 승인 자산 및 원격 main 불변.
+
+---
+
+# PLANNING / 2026-11-23 — BGM/Gemini 제작 역할을 BGM 담당으로 전면 위임
+
+- **대표 확정 지시:** “앞으로는 니가 제미나이 까지 하지 말고 bgm 넘겨”. 이후 기획 담당은 **BGM 사용 장면/감정/우선순위·승인 조율과 담당용 복붙 업무 지시문만** 작성하고, **Gemini용 음악 생성 프롬프트 작성·직접 실행·대표에게 프롬프트 작업 요청은 하지 않음**.
+- [BGM 공식 역할 분장·제작 흐름 정본](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/팀운영/BGM_WORKFLOW_ROLE_BOUNDARY_20261123.md) / 정책 커밋 `c118f51ccc5fa3269447f4284d09363d1196823c`. BGM 담당이 Gemini 프롬프트·제작·편집·QA·납품/해시/사용권·`docs/bgm` 인계 담당; Codex는 승인 음원만 Unity 적용.
+- #31 원곡2+최종 WAV4 완료 상태 KEEP / 신규 #127 F2·F3 각1차 데모 작업은 **BGM 담당 실행**. 기획이 전에 #127에 썼던 영문 Gemini 프롬프트는 과거 참고안으로만 취급하고 지금부터 추가 작성 금지. 구체 구현은 담당 직접 수행·요청하며 승인 없는 외부 유료 API/결제 없음.
+- **담당 세션은 GitHub 댓글만으로 자동 시작하지 않으므로 대표에게 BGM 담당 복붙 지시문을 반드시 함께 전달**. `docs/bgm` 수용 인계 및 Issue #127 결과를 기다리고, 기획에서 BGM 실행/청취 완료를 선행 주장하지 않음.
+- Unity6000.6.5f1/#85 HOLD, 원본 main, Save/UserData·TTS/Mixer·기존 승인 음원 보호.
+
+---
+
+# PLANNING / 2026-11-23 — BGM 신규 제작 전환 / #127
+
+- 사용자: `bgm는 또 안만들지? 제미나이 괜히 열었네....;;;;;` — 기존 BGM 루프 편집 외 **새 음악 제작 배정이 필요**하다는 지적으로 접수.
+- 최신 #31 [최종 루프 Master 납품 보고](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7088342969): F1·서릿길 2곡은 사용자 청취 승인, 11/23 WAV Intro+Loop 4개 최종 제작·QA PASS, ZIP `LIMITLESS_Issue31_FinalLoopMasters_20261123.zip`. 음악 생성0, Unity 적용0, main 미반영. 이 곡들 재생성·중복 루프QA 중지.
+- **신규 BGM 발주 [Issue #127](https://github.com/HappyPaul812/Project-Limitless/issues/127)**: F2 첫눈의 숲과 F3 눈 덮인 고갯길 탐험곡 **오리지널 1차 데모 각1곡**. 두 곡을 명확히 구분하고 Gemini에 붙여넣을 영문 프롬프트 제공. 실제 실행은 대표/BGM 담당이 명시적으로 진행; 자동 Gemini 호출, 과금, API 키조회는 없음. 인게임 연결·마스터·F4/F5/보스곡은 별도 승인.
+- Codex #122 최근 직접 보고: 서리들쥐 MonsterDefinition1/6 고립 브랜치 등록/Delta10PASS, 나머지5는 의존조건 미충족 HOLD. 기존 전리품6 및 미커밋/Save/Unity6000.6.5f1/#85 HOLD/원격main 보호.
+- **기획 Issue 작성 ≠ BGM 세션 자동 실행**. 실제 제작 프롬프트를 사용자에게 함께 전달한다.
+
+---
+
+# PLANNING / 2026-11-23 — 바울 대표 빙각 수호체 F5 엘리트 재승인
+
+- 대표 직접 답변: **“승인, 중간 보스는 챕터2에도 있었으니까.”** 10/14의 북부 일반5+단회 엘리트1+보스1과 11/18 승인 전투 계약에 포함된 **빙각 수호체**의 존재·중간보스 포지션을 재확인. 별도 몬스터 추가가 아님.
+- F5 동토의 균열 단회 엘리트, Lv21 HP820 ATK40 AGI9 EXP125/T32, `얼음주먹(110%)→팔들기(예고)→균열강타(180%)` 순환, 동결괴사·동상 없음, 잡템 마력차단 결정100% 1개·판매22. 기존 11/18 승인 설계 보존.
+- [#126 신규 아트 1포즈 파일럿](https://github.com/HappyPaul812/Project-Limitless/issues/126) 발행. 시안 착수만 가능, 최종 미술 판정/Idle·Attack·Hit·Defeat 양산/Unity 본편 적용은 추가 승인. 기존 Codex #122 MonsterDefinition 격리 등록/ID·조우·드롭·Save는 별도 진행.
+- [#122 승인 기록](https://github.com/HappyPaul812/Project-Limitless/issues/122#issuecomment-7088435901). Unity6000.6.5f1/#85 HOLD, main/기존 승인 자산/Save/UserData/Discord 보호.
+
+---
+
+# PLANNING / 2026-11-23 — #122 정식 조우·#124 시각 Trait 국소 감사 접수
+
+- Codex 로컬 격리 감사 브랜치 `codex/ch3-loot6-encounter-vision-audit-20261123`, 커밋 `0a5f253d2fde7a8aa2bfabaec70fa118ea72d5c1`. 미Push, 제품 원본 main 변경0, 기존 테스트32·56·39 재실행0.
+- [#122 총괄 검토](https://github.com/HappyPaul812/Project-Limitless/issues/122#issuecomment-7088337359): ItemDefinition/PNG 6종은 등록 브랜치에 준비됐으나 MonsterDefinition/공식 조우 각각 0/6. QA 올빼미/프로토타입 들쥐/정령 Visual Prefab은 정식 등록이 아니다. 다음은 **별도 대표 승인이 있을 경우** 승인 스탯·행동·ID 규격에 맞는 데이터-only 6 MonsterDefinition 최소 등록. F3~F5 Scene/Spawn/Drop 연결/단회 엘리트 Save/수령 장소·정식 보상/원본 main 병합은 승인 전 HOLD.
+- [#124 총괄 검토](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7088337969): Codex 로컬 실제 공식 Symbol5/외부 trait5 PNG 대조 PASS; Vision 새 후보 40px 양호, 30px 청색 동심원 약화, 24/26px 눈보다 조준 표식 우선. 해당 로컬 비교 이미지 자체는 현 기획 환경 미열람. 리뉴얼 담당에게 30/26/24px 대비/실루엣 **Vision 1종만 국소 보완 v2** 권고. 다른 4종 양산·Unity 적용/기존 GUID 수정 금지. 최종 대표 미술 승인 대기.
+- 기획 기록은 사용자 승인 자체가 아니다. Unity6000.6.5f1/#85 HOLD, Save/UserData/Discord 및 기존 승인 아트·원격 main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — BGM 두 곡 B 방식 루프 청취 승인
+
+- 바울 대표 직접 피드백: `일단 코덱스는 시켰고, bgm은 들었는데 좋네..` — 전달된 #31 A/B 비교본 청취 직후. 기획에서는 두 곡 `B_LOOP_PLAN_USER_APPROVED`로 접수.
+- [GitHub Issue #31 승인 기록](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7088290131): `Where_the_Grass_Bends` F1 Intro 0–14.60 / Loop 14.60–68.10 / crossfade0.55초, `Hearth_in_the_Low_Valley` 서릿길 Intro0–4.35 / Loop4.35–60.80 / crossfade0.55초. 원곡2 기존 승인과 소스 SHA 유지.
+- **후속 BGM 담당:** 원본 덮어쓰기 없이 배포용 Intro/Loop 마스터 새 파일로 만들고 작은 규모의 최종 음질/무음/클릭/박자 QA, SHA256 및 docs/bgm/BGM_LATEST.md/Issue31 보고. 새로운 음악 생성·유료 API 금지.
+- **아직 미완:** Master 파일 제작 및 제품 Unity 적용. 담당자가 실제 납품·검증하기 전 '완료' 표시 금지. 기존 Codex #122/#124 실행은 사용자 지시 전달 완료이므로 새 작업을 끼워넣지 않음.
+- Unity6000.6.5f1, Mixer/TTS/Save/UserData, #85 HOLD, 원격 main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — #122 등록·#31 BGM ZIP·#124 시각 Trait ZIP 실물 접수
+
+- 사용자 제공 #122 Codex 완료 보고 대조: 별도 `codex/ch3-loot6-registration-20261123` 제품 SHA `9588d75cfbe46e656ee6dcc4b5e8f85c4aa04cc0`, 보고 HEAD `01c8f197b27d30508b6517adb6b7d560da9df5e4`. 100% RNG 1줄, ItemDef6+승인PNG6+meta12 총25파일, Unity6000.6.5f1 Delta32 PASS/0FAIL. **정식 Item6 브랜치 등록 완료, 본편 original main 미동기화**, 대상 공식 Monster/Encounter ID/Drop 연결0/6. [#122 총괄 접수](https://github.com/HappyPaul812/Project-Limitless/issues/122#issuecomment-7088220386).
+- [#31 실물 ZIP](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7088219406) `LIMITLESS_Issue31_LoopReview_20261123.zip` = 2,199,087bytes, SHA256 `65a37dc8322a0eb5ed6e52527de1ac0754a5bd3252e108dd6dd56bd1406a3484`, 전체 CRC와 A/B4+README SHA PASS. 44.1kHz 2ch 비교프리뷰4, 실제 사람 청취 최종 승인 없음. B 방식 기술 PASS/원곡2 이미 승인, Master·Unity 아직0. ZIP 목록은 README/해시에서 절대경로 이름을 쓰지만 실물 매핑+바이트 검증 일치; 정상 ZIP.
+- [#124 실물 ZIP](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7088219907) `LIMITLESS_Issue124_Trait5_VisionPilot_20261123.zip` = 512,911bytes, SHA256 `f8d0d09986131cf68d19d72a2b6546fe4324583758777e06a2c80b53d11e3a9c`, CRC 및 payload+Manifest SHA PASS. 신규 시각 Trait 512/128/40 시각 확인에서 눈/중앙 표식 판독 가능·색채 일관 양호. **기존 공식 Symbol5+외부 Trait5 실물 화소 비교 및 실제 Unity 30/40px UI 미검증** → 최종 대표 미술승인/제품교체 HOLD. 동일 구조비교판에 기존 PNG 실물 없음. 다음은 Codex 로컬 읽기전용 5+5 실물 참조와 신규 Vision 후보 비교 1회, 중복제작/전체 QA 금지.
+- 모두 기존 승인 Unity6000.6.5f1/#85 HOLD/Save/UserData/Discord, 원격 main 보호. GitHub 담당 Issue 검토만 추가, 외부 Google API/신규 제품적용0.
+- 운영 권고: #124 실물 비교와 #122 미등록 몬스터6/조우 키 계약 확인을 Codex 한 번의 경량 읽기전용 작업으로 병렬화; BGM 최종 루프는 바울 대표 A/B 청취 뒤 결정.
+
+---
+
+# PLANNING / 2026-11-23 — TTS·BGM 최신 담당 보고 재확인
+
+- 사용자 지시: Codex #122/#123 지시문 전달 완료. TTS #125·BGM #31 최신 공식 보고 재검토.
+- [TTS #125 최신 보고](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7087447265) + `docs/tts` 정책·인계 실물 확인: 총101대사행(주요5인72/NPC23/무음6), 신규 NPC `TEXT_ONLY_DEFAULT` **21행**, 마레 Main24(84자)·Main26(66자) 2행은 `CONDITIONAL_REVIEW_ONLY`이지 제작 승인 아님. 기존 승인 WAV162 보존, 신규 Google Cloud 호출·계정·결제·WAV0. Cloud 월 무료 구간은 청구계정 활성화 필요/초과 과금 및 예산알림이 자동차단이 아님. 정확 Runtime IDs/주연72 신규제작 및 예외2의 필요성 별도 승인 대기. 문서 마지막 정책 커밋 `f25164697c249a9cdda153ceecc9295c3c82478a`.
+- [BGM #31 최신 보고](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7087496635) + `docs/bgm` QA/인계 실물 확인: F1 `Where_the_Grass_Bends`, 서릿길 `Hearth_in_the_Low_Valley` 원곡2개는 대표 과거 청취 승인 확정. 새 B LoopPlan(Grass intro14.60/body14.60-68.10, Hearth intro4.35/body4.35-60.80, xfade0.55)은 기계적 무음0·hardclick/beat PASS, 4 Preview decode PASS. **최종 사람 청취 승인 미확인**, 배포 Master 미제작, Unity 미적용. ZIP `LIMITLESS_Issue31_LoopReview_20261123.zip` 2,199,087 bytes SHA256 `65a37dc8322a0eb5ed6e52527de1ac0754a5bd3252e108dd6dd56bd1406a3484`. 담당 커밋 `d8a22436b3c67459fbf03eb34a0834df72e5de52`.
+- 본 기획 세션의 접근 가능한 Library 검색에서 Review ZIP 실물은 **NOT_ACCESSIBLE**, 따라서 청각 심사·최종 루프 승인이라고 주장하지 않음. 후속은 비교본 전달 및 바울 대표 청취, 승인 후에만 배포 Master 제작/Unity 연동 별도.
+- `REVIEW_COMPLETE / TTS_POLICY_COMPLIANT / BGM_LOOP_USER_LISTENING_PENDING / NO_PRODUCT_CHANGE`. Unity6000.6.5f1, 기존 Save·TTS·Mixer/Discord/#85 HOLD, 원격 main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — #122 승인 선택지·#123 기술 합격 최종 접수
+
+- Codex 최근 브랜치 `codex/ch3-loot6-contract-20261123` 로컬 HEAD `240c72ec39b3d539802b8c2729e3b6d2a98c95e4`, 문서만 갱신, 원격 Push·제품 적용0.
+- [#122 최종 기획 권고](https://github.com/HappyPaul812/Project-Limitless/issues/122#issuecomment-7087963907): 100% RNG 경계 최소 수정(기존56/제안56 PASS), 충돌 없는 6개 Stable ItemId를 정식 후보로 권고. 단회 엘리트는 실재하는 Stable Encounter ID/슬롯 저장 키를 확인한 뒤만 적용, 가방 만석 PendingReward와 완료 플래그를 같은 성공 스냅샷, 저장 실패 승리화면 재시도 우선. 합성 저장39 PASS지만 제품 Save/재접속 미검증. 사용자 실제 승인 전 본편/몬스터 등록/드롭 연결0/6.
+- [#123 최종 기술 접수](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7087964254): PNG 파일기술3/3·Unity격리 Import3/3 PASS, 단일 지면오버레이/길 밖 암반/바닥경계 표식 방향 유지, 반복 타일 금지, F3 본편 Scene·4.5WU·접지/Sorting/Collider·실제 Player Path NOT_VERIFIED. 별도 대표 최종 미술 승인 전 게임 배치0, 재작업 불필요.
+- **이 기록은 대표 승인 대체가 아님**. Unity6000.6.5f1·#85 HOLD, 기존 승인 원본·Save/UserData·Discord·원격 main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — #122·#123 합동 기술 검수 접수
+
+- Codex 실제 HEAD `2c13a60840c67c2220336f5d0f6fcfe1880fcc57`, 브랜치 `codex/ch3-loot6-contract-20261123`, LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+- [#123 접수](https://github.com/HappyPaul812/Project-Limitless/issues/123#issuecomment-7087857261): F3 PNG 3/3 격리 Unity Import PASS, 단일 눈·암석 데칼/길 바깥 암반/바닥 경계 소품으로 후보 유지. 반복 타일 seam FAIL(투명 간격), 실제 F3 Scene/4.5WU 통행·GameView·Sorting/접지 NOT_VERIFIED. 미술 최종 대표 승인 대기, 재작화 요청0, 본편 적용0.
+- [#122 접수](https://github.com/HappyPaul812/Project-Limitless/issues/122#issuecomment-7087856829): 실제 `BattleVictoryReward.Calculate`의 `Random.value >= DropChance`에서 RNG=1.0일 때 드롭100% 누락 재현. 최소 수정보정 격리 기존56/제안56 PASS, 단회 엘리트 보상 합성모델39PASS. 실제 Save/재접속·Unity 제품 미검증, Stable ItemId·MonsterDefinition 등록 0/6. 본편 RNG 수정 포함 사용자 별도 승인 필요, ID/조우키·만석 저장과 UX 확정 전 DROP_LINK_HOLD 유지.
+- 기획 지시는 이미 검증한 56/39/3 수치 재실행이 아니라 최소 diff·ItemId 후보·수령/실패 정책 옵션을 대표에게 제출하도록 조율. 기존 Unity6000.6.5f1/#85 HOLD/개인 Save/UserData·Discord·원격 main 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 총괄 부서 보고 접수 및 비용 절감 TTS 정책 확정
+
+- 바울 대표 결정: **주요 5인(폴·미엘·세린·태온·하렌) 기존 승인 음성 유지**, 나머지 NPC는 **기본 무음**, 반드시 필요한 경우에만 기존 Gemini와 별개인 공식 **Google Cloud Text-to-Speech 한국어 Standard/WaveNet 월 무료 범위** 검토. Cloud 청구 계정 설정/초과 자동과금이 있으므로 '완전 무료' 보장 없음. 새 API 호출·서비스 계정·키·결제 설정·음성 생성 **0**, 대표 추후 별도 승인 필요. 비공식 Google Translate gTTS 상업용 사용 금지. [#125 직접 전달](https://github.com/HappyPaul812/Project-Limitless/issues/125#issuecomment-7087343324).
+- [2026-11-23 종합 검토/정책 문서](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261123_TTS_CastingPolicy_And_Team_Results.md), 기획 정책 commit `ae2500bc4f896b15edd929be6ab6d3a8df56d925`.
+- #122 전리품6 승인 PNG는 준비됐으나 정식 ItemId·Monster 연결 **0/6**, 격리 .NET 60 PASS 및 난수100% 드롭 누락 재현. 등록·정식 ID/완료키·보상 소실 정책은 승인 전 HOLD.
+- #123 F3 소량 아트 ZIP 실제 Library SHA/CRC 및 비교판 확인. 시각 콘셉트는 긍정적이나 지면접합은 **단일 길가 overlay** 추천, 실제 TileSeam/PPU/Collider/4.5WU 동선 QA·사용자 시각 승인은 대기. 유니티 적용0.
+- #124 리뉴얼: 실사용 Game-icons 9종 CC BY3.0 귀속 필요, SpectralBloom/Kenney 21개 CC0 및 현장 확인 대기. 중복 NPC/Monster 리뉴얼 지시 금지.
+- #125 TTS: 승인 원문 101행(주요72, 기타NPC23, 무음6); 후보 VoiceID 충돌0, Runtime 미확인·음성 생성0. 신규 정책으로 NPC 23개 일괄합성 금지.
+- #31 BGM: F1/서릿길 원곡2개 사용자 과거 승인 누락 정정, 새 루프 A/B 수정만 청취 판정 대기. 새원곡 재승인·재생성 금지.
+- **PLANNING_POLICY_DOCUMENTED / ROLE_FOLLOWUP_NOT_YET_CONFIRMED / NO_UNITY_CHANGE / NO_REMOTE_MAIN_CHANGE**. 이번 인계 자체는 담당 세션 자동작업을 시작하지 않음. Unity6000.6.5f1·#85/Discord HOLD, Save/UserData/기존 승인자산 보호.
+
+---
+
+# PLANNING / 2026-11-23 — 부서별 병렬 작업 지시 발행
+
+- 바울 대표의 "각자 일 시켜줘" 요청에 따라 [11/23 공식 발주표](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261123_Parallel_Work_Order.md) 작성, `docs/planning` 문서 commit `eeec03c6f94c58a1f3234eae6841955d74a7f891`.
+- 신규 Issue [#122 Codex 전리품6](https://github.com/HappyPaul812/Project-Limitless/issues/122), [#123 F3 신규 아트](https://github.com/HappyPaul812/Project-Limitless/issues/123), [#124 Ch1·2 실사용 외부 VFX/아이콘 집중 감사](https://github.com/HappyPaul812/Project-Limitless/issues/124), [#125 TTS 대사 VoiceID 무호출 준비](https://github.com/HappyPaul812/Project-Limitless/issues/125) 4건 발행. 기존 [#31 BGM](https://github.com/HappyPaul812/Project-Limitless/issues/31#issuecomment-7086604560), [#33 SFX](https://github.com/HappyPaul812/Project-Limitless/issues/33#issuecomment-7086604972), [#98 영상](https://github.com/HappyPaul812/Project-Limitless/issues/98#issuecomment-7086605435), [#118 기획 성장](https://github.com/HappyPaul812/Project-Limitless/issues/118#issuecomment-7086605896) 후속 발주 댓글 기록.
+- 11/19 완료 원본 로컬 main `736df561`(당시 보고), 검증 복구 `f6408291`, 과거 원격 main `bfd28154` 구분. 기존 승인 보존, Unity6000.6.5f1, #85 HOLD 및 #66 Discord HOLD, 비Git 외부백업 미완료 유지.
+- **TASKS_ISSUED / REAL_ROLE_EXECUTION_NOT_VERIFIED / NO_PRODUCT_CHANGE / NO_REMOTE_MAIN_CHANGE**. 별도 세션 자동착수는 보장되지 않음. 대표가 각 담당에게 이슈 전달한 후 실제 결과를 기획에서 다시 접수/검수. 문서 commit SHA는 이번 인계 추가 commit에서 별도 갱신됨.
+
+---
+
 # PLANNING / 2026-11-19 — 이틀간 승인분 마감 발주
 
 - 대표 11/18~19 전 작업 통합·로컬 동기화·PC 장애 대비 push 요청. [마감 이슈](https://github.com/HappyPaul812/Project-Limitless/issues/121) / [작업 정본](https://github.com/HappyPaul812/Project-Limitless/commit/f15f04a135619049a60ea2327de678570d508eb1). WORK_ORDER_ONLY, 실제 로컬/원격 제품 복구 push 아직 미완료. 11/17 복구본 보존, 새 clean 복구 ref 및 fresh fetch/해시 검증, FF-only, Unity6000.6.5f1, #85 HOLD·Save/UserData/Discord·기존 dirty/untracked 보호. 비Git offsite 별도 확인.

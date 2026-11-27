@@ -9,6 +9,13 @@ namespace ProjectLimitless.Battle
     /// </summary>
     public static class BattleVisualResolver
     {
+        // 보스의 외형만 교체합니다. 스폰과 전투 수치는 조우가 전달한 정의에 남습니다.
+        internal static MonsterDefinition ResolveMonsterPresentation(MonsterDefinition monster)
+        {
+            if (monster?.MonsterId != "frost_tyrant") return monster;
+            return Resources.Load<MonsterDefinition>("FrostTyrantPresentation/VisualDefinition") ?? monster;
+        }
+
         public const string AllyIdleState = "Idle_Left";
         public const string EnemyIdleState = "Idle_Right";
 

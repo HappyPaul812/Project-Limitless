@@ -1,0 +1,9 @@
+GUARDIAN PASS Battle wheelchair / actual three visible allies
+GUARDIAN PASS two visible ally anchors and seven frames
+GUARDIAN PASS Light_Before seven frames 45ms state index 1
+GUARDIAN PASS Light_After two 172x172 aspect-preserved foot waves behind sprites
+GUARDIAN PASS Light_After seven frames 45ms state index 1
+GUARDIAN PASS Dark_Before seven frames 45ms state index 1
+GUARDIAN PASS Dark_After two 172x172 aspect-preserved foot waves behind sprites
+GUARDIAN PASS Dark_After seven frames 45ms state index 1
+Unity 6000.6.5f1 batch exit 0

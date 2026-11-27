@@ -1,0 +1,268 @@
+ZIP SHA, CRC42/42, SUMS41/41, Manifest40/40 PASS
+Frames/Sharpshooter_Arrow/Sharpshooter_Arrow_00.png 169efa0f5844662b48bb0a59d8aa23334f9cea224b6d0d8e042f699a5ce8bf1c
+Frames/Sharpshooter_Arrow/Sharpshooter_Arrow_01.png 9f550ccf2537654abeb0ea453859ae07a2a17a7ae90d7bd7d1c65fab661565c7
+Frames/Sharpshooter_Arrow/Sharpshooter_Arrow_02.png 31d202636adbd0f8d71b704adfa579f35aa708b897186289d9a7bb668150ba78
+Frames/Sharpshooter_Arrow/Sharpshooter_Arrow_03.png a2a6a0d3b7f550ba6913c2a55d24b53a76980f3be6047ac9231a169bce8438a3
+Frames/Sharpshooter_Arrow/Sharpshooter_Arrow_04.png c61811ff10129e34ba2618a0fbac50059214de8c98ea4060ea9d73d284e74e1a
+Frames/Sharpshooter_Arrow/Sharpshooter_Arrow_05.png 6f2ba956026530dab5ccc676db797ceb29440fffdbf999bed913243fbbf61fbe
+Frames/Sharpshooter_Arrow/Sharpshooter_Arrow_06.png 811e015b4d586300587bcdd03b3f0ab8982157d9672e4c708e0ffc0ee28afb69
+Frames/Sharpshooter_Arrow/Sharpshooter_Arrow_07.png 8a30a3c67fe9de61cd77541332c38ddda56f7281c2321a8203e59d3d5d0618eb
+sheet Art/Sharpshooter_Arrow_32px_8f_4x2_RGBA.png ea91f0f3e37687ce1d6626f98dcd9e4183e540a04a87929e9b3c6ff8026d9f3b
+Frames/Healer_Light/Healer_Light_00.png 0f989505c7b1b5f8f06851b72d0c0cb83ade62beec64fa725ab2e44497d77a0a
+Frames/Healer_Light/Healer_Light_01.png c144c9e7a54db5e80efac3ada789d14244af67ae71523db0d3956063ee8f2996
+Frames/Healer_Light/Healer_Light_02.png d655abead9178327b37b5b36d6a87ec7a186dd7808f3391bc7ae7047cb6aa463
+Frames/Healer_Light/Healer_Light_03.png 53517cfd2a3e1ff3fac57ea64d7e2f2a12e1d25fde55e74815dd55b2af048138
+Frames/Healer_Light/Healer_Light_04.png 2b7e9fe2a17893a64d61a299605c0c1dc9e7a21c0edec1c80c9193f725b37530
+sheet Art/Healer_Light_96px_5f_5x1_RGBA.png 97f55488a23939fbb5a1074350d945dd3ab9aef986d4b810a58723c290616751
+Frames/Mage_BasicFire/Mage_BasicFire_00.png 65e524e4bc8ee8b92ea84152f9a0e1f4acacd69b10559477dd7e7d678687b556
+Frames/Mage_BasicFire/Mage_BasicFire_01.png 925255c69f10f73903a7c16a310ede7e46a217f58bcc0d7dc430384f2d223fff
+Frames/Mage_BasicFire/Mage_BasicFire_02.png c324dd83d22959610557801f26d86589e131055242ba8014cbe39d49f725b7b9
+Frames/Mage_BasicFire/Mage_BasicFire_03.png 7086327fb4ccfdc33fdf8c5a1c1365af2f4f4b89d9d9978605a2b121b9aa4543
+Frames/Mage_BasicFire/Mage_BasicFire_04.png 8a3cbe39069d8dc24167859c3a87cc0fdf9dcbb0dd9c3c139761f91584025057
+Frames/Mage_BasicFire/Mage_BasicFire_05.png 60cf9ddf44748510910714a577f02a4b3e87d2dc1191c50b5880fc8b52a46c0c
+Frames/Mage_BasicFire/Mage_BasicFire_06.png 713edd5edcc076a0611d8d50f373163a6a0b5f0468bcb383ea477abb943324a9
+sheet Art/Mage_BasicFire_32px_7f_4x2_RGBA.png 758a768d2f42bf31717c22a3e2c85516a247423a2df8f97a2512f2bb471d8795
+{
+  "Sharpshooter_Arrow": {
+    "cell": [
+      32,
+      32
+    ],
+    "frames": 8,
+    "layout": [
+      4,
+      2
+    ],
+    "sheet": [
+      128,
+      64
+    ],
+    "frame_ms": 80,
+    "fps": 12.5,
+    "display_ui_px": 52,
+    "direction": "right",
+    "ppu": 32,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "import": "Single / Full Rect / Point per extracted frame",
+    "sha256": "ea91f0f3e37687ce1d6626f98dcd9e4183e540a04a87929e9b3c6ff8026d9f3b",
+    "source_sha256": "bd9596e6affefdecc52a2b11a09ab01f9b08df6930dadec16eeb3350ac05f4c2",
+    "frame_bbox": [
+      [
+        5,
+        13,
+        29,
+        19
+      ],
+      [
+        3,
+        12,
+        29,
+        20
+      ],
+      [
+        3,
+        12,
+        29,
+        20
+      ],
+      [
+        3,
+        11,
+        30,
+        21
+      ],
+      [
+        3,
+        11,
+        30,
+        20
+      ],
+      [
+        4,
+        13,
+        29,
+        19
+      ],
+      [
+        5,
+        13,
+        29,
+        19
+      ],
+      [
+        6,
+        13,
+        29,
+        19
+      ]
+    ],
+    "unused_cells_transparent": true,
+    "APNG_pixel_match": true,
+    "gif_frame_timing_pass": true,
+    "loop_mean_abs_rgba_delta": [
+      5.674,
+      3.93,
+      5.408,
+      3.031,
+      6.474,
+      3.146,
+      2.41,
+      1.064
+    ]
+  },
+  "Healer_Light": {
+    "cell": [
+      96,
+      96
+    ],
+    "frames": 5,
+    "layout": [
+      5,
+      1
+    ],
+    "sheet": [
+      480,
+      96
+    ],
+    "frame_ms": 50,
+    "fps": 20.0,
+    "display_ui_px": 72,
+    "direction": "right",
+    "ppu": 32,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "import": "Single / Full Rect / Point per extracted frame",
+    "sha256": "97f55488a23939fbb5a1074350d945dd3ab9aef986d4b810a58723c290616751",
+    "source_sha256": "2b121c5608f2bef6155aaa4786bcb92c5edf8560d2f1d75e62412f7898506a5e",
+    "frame_bbox": [
+      [
+        17,
+        27,
+        85,
+        67
+      ],
+      [
+        13,
+        23,
+        88,
+        70
+      ],
+      [
+        11,
+        19,
+        88,
+        73
+      ],
+      [
+        12,
+        19,
+        88,
+        75
+      ],
+      [
+        13,
+        23,
+        86,
+        69
+      ]
+    ],
+    "unused_cells_transparent": true,
+    "APNG_pixel_match": true,
+    "gif_frame_timing_pass": true,
+    "loop_mean_abs_rgba_delta": [
+      14.748,
+      16.788,
+      5.121,
+      16.594,
+      14.653
+    ]
+  },
+  "Mage_BasicFire": {
+    "cell": [
+      32,
+      32
+    ],
+    "frames": 7,
+    "layout": [
+      4,
+      2
+    ],
+    "sheet": [
+      128,
+      64
+    ],
+    "frame_ms": 60,
+    "fps": 16.666666666666668,
+    "display_ui_px": 52,
+    "direction": "right",
+    "ppu": 32,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "import": "Single / Full Rect / Point per extracted frame",
+    "sha256": "758a768d2f42bf31717c22a3e2c85516a247423a2df8f97a2512f2bb471d8795",
+    "source_sha256": "0dc04c5552891616686a77680162ecfa317fb2a558272d4be2f63ca971b9f07e",
+    "frame_bbox": [
+      [
+        10,
+        13,
+        27,
+        20
+      ],
+      [
+        8,
+        12,
+        27,
+        21
+      ],
+      [
+        7,
+        11,
+        28,
+        21
+      ],
+      [
+        5,
+        10,
+        29,
+        21
+      ],
+      [
+        4,
+        10,
+        28,
+        21
+      ],
+      [
+        9,
+        12,
+        27,
+        20
+      ],
+      [
+        10,
+        12,
+        26,
+        20
+      ]
+    ],
+    "unused_cells_transparent": true,
+    "APNG_pixel_match": true,
+    "gif_frame_timing_pass": true,
+    "loop_mean_abs_rgba_delta": [
+      3.625,
+      5.35,
+      6.267,
+      6.561,
+      8.879,
+      2.982,
+      3.655
+    ]
+  }
+}

@@ -28,42 +28,43 @@
 | 재사용 마지막 | Board Game Icons `PNG/Default (64px)/hourglass_bottom.png` | `status.cooldown.end` |
 | 방어 상태 | 공격 명령과 같은 Board Game Icons `shield.png` 재사용 | `command.defend` |
 | 수호자 도발 스킬 | Board Game Icons `PNG/Default (64px)/pawn_left.png` | `skill.guardian.taunt` |
-| 치유사 치유의 빛 | Board Game Icons `PNG/Default (64px)/suit_hearts.png` | `skill.healer.healing_light` |
-| 사수 정조준 | Game Icons `PNG/White/1x/target.png` | `skill.sharpshooter.aim` |
-| 사수 화살비 | Board Game Icons `PNG/Default (64px)/bow.png` | `skill.sharpshooter.arrow_rain` |
-| 사수 동료의 습격 | ScratchIO `Wolf_Run.png` 다섯 번째 64×40 프레임(index 4) 런타임 Sprite | `skill.sharpshooter.companion_assault` |
-| 투사 난도 스킬 | Game Icons `PNG/White/1x/cross.png` | `skill.fighter.nando` |
-| 투사 기세 상태 | Board Game Icons `PNG/Default (64px)/skull.png` | `status.fighter.momentum` |
-| 투사 회심의 일격 | Board Game Icons `PNG/Default (64px)/skull.png` | `skill.fighter.critical_strike` |
-| 투사 회오리 베기 | Board Game Icons `PNG/Default (64px)/spinner.png` | `skill.fighter.whirlwind` |
-| 마도사 파이어 볼 | PVFX Foundry `warm-explosion` peak index 4 런타임 Sprite | `skill.mage.fireball` |
-| 화상 상태 | 파이어 볼과 같은 `warm-explosion` peak index 4 | `status.burn` |
-| 마도사 썬더볼트 | PVFX Foundry `electric-impact` peak index 1 런타임 Sprite | `skill.mage.thunderbolt` |
+| 치유사 치유의 빛 | `Healer_HealingLight_v2_128_RGBA.png` | `skill.healer.healing_light` |
+| 사수 정조준 | `Sharpshooter_AimedShot_Original_128_RGBA.png` | `skill.sharpshooter.aim` |
+| 사수 화살비 | `Sharpshooter_ArrowRain_Original_128_RGBA.png` | `skill.sharpshooter.arrow_rain` |
+| 사수 동료의 습격 | `Sharpshooter_CompanionAssault_v2_128_RGBA.png` | `skill.sharpshooter.companion_assault` |
+| 투사 난도 스킬 | `Fighter_Nando_v2_128_RGBA.png` | `skill.fighter.nando` |
+| 투사 기세 상태 | 회심의 일격과 같은 `Fighter_CriticalStrike_v2_128_RGBA.png` | `status.fighter.momentum` |
+| 투사 회심의 일격 | `Fighter_CriticalStrike_v2_128_RGBA.png` | `skill.fighter.critical_strike` |
+| 투사 회오리 베기 | `Fighter_Whirlwind_v1_KEEP_128_RGBA.png` | `skill.fighter.whirlwind` |
+| 마도사 파이어 볼 | `Mage_FireBall_v1_KEEP_128_RGBA.png` | `skill.mage.fireball` |
+| 화상 상태 | 파이어 볼과 같은 `Mage_FireBall_v1_KEEP_128_RGBA.png` | `status.burn` |
+| 마도사 썬더볼트 | `Mage_Thunderbolt_v2_128_RGBA.png` | `skill.mage.thunderbolt` |
 | 감전 상태 | Kenney Game Icons `PNG/White/1x/power.png` | `status.shock` |
 | 독 상태 | PVFX Foundry `venom-ward` grid index 6 런타임 Sprite | `status.poison` |
-| 치유사 정화 | PVFX Foundry `spectral-bloom` grid peak index 5 런타임 Sprite | `skill.healer.cleanse` |
-| 마도사 가이아 웰 | Board Game Icons `PNG/Default (64px)/dice_shield.png` | `skill.mage.gaia_wall` |
-| 가이아 웰 상태 | 스킬과 같은 `dice_shield.png` | `status.gaia_wall` |
+| 치유사 회복의 파동 | `Healer_HealingWave_v1_KEEP_128_RGBA.png` | `skill.healer.healing_wave` |
+| 치유사 정화 | `Healer_Cleanse_v2_128_RGBA.png` | `skill.healer.cleanse` |
+| 마도사 가이아 웰 | `Mage_GaiaWell_v3_128_RGBA.png` | `skill.mage.gaia_wall` |
+| 가이아 웰 상태 | 스킬과 같은 `Mage_GaiaWell_v3_128_RGBA.png` | `status.gaia_wall` |
 | 수호자 철벽 | Board Game Icons `PNG/Default (64px)/structure_wall.png` | `skill.guardian.iron_wall` |
 | 철벽 상태 | 스킬과 같은 `structure_wall.png` | `status.guardian.iron_wall` |
 | 수호자 수호의 맹세 | Board Game Icons `PNG/Default (64px)/pawns.png` | `skill.guardian.cover_allies` |
 | 수호의 맹세 상태 | 스킬과 같은 `pawns.png` | `status.guardian.cover_allies` |
 
-파일명은 프로젝트에 보존한 압축 내부에서 실제 존재 여부를 확인한 뒤 선택했다. 적에게 남는 도발 **상태**는 `pawn_right.png`를 계속 사용하고, 수호자가 누르는 도발 **스킬 버튼**은 `pawn_left.png`를 사용한다. `target.png`는 도발 상태가 아니라 사수 정조준 버튼에 연결한다. 같은 전투 개념이라도 상태 요약과 실행 버튼의 역할 ID가 다르므로 서로의 아이콘이 바뀌지 않는다.
+파일명은 프로젝트에 보존한 압축 내부에서 실제 존재 여부를 확인한 뒤 선택했다. 적에게 남는 도발 **상태**는 `pawn_right.png`를 계속 사용하고, 수호자가 누르는 도발 **스킬 버튼**은 `pawn_left.png`를 사용한다. 같은 전투 개념이라도 상태 요약과 실행 버튼의 역할 ID가 다르므로 서로의 아이콘이 바뀌지 않는다.
 
-취소는 동작 의미가 더 분명한 `arrowLeft.png`를 유지한다. `bow.png`는 사수 `화살비`, `cross.png`는 투사 `난도`, `spinner.png`는 전열을 도는 `회오리 베기` 스킬에 사용하고, `skull.png`는 투사 개인 자원 `기세`와 이를 소비하는 `회심의 일격`에 사용한다. 상단 HUD는 아이콘과 `기세 n` 한글을 함께 보여 그림만으로 상태를 전달하지 않는다.
+회심의 일격 버튼과 기세 HUD는 같은 Sprite를 참조하며 HUD에는 아이콘과 `기세 n` 문구를 표시한다. #124 승인 PNG 9종은 `Assets/_Project/Resources/BattleItemIcons/`에 보관한다.
 
-동료의 습격은 전투 연출과 같은 원본 Texture에서 몸통·머리·꼬리·다리 간격이 작은 버튼에서도 비교적 잘 보이는 다섯 번째 Run 프레임(index 4)을 런타임에 잘라 실제 Wolf 아이콘으로 표시한다. 별도 PNG를 만들거나 원본 SpriteSheet를 수정하지 않는다. 리소스 경로·프레임 폭·아이콘 프레임 번호는 `BeastCompanionDefinition`이 제공하므로 UI와 `BattleSceneController`에 Wolf 경로를 하드코딩하지 않으며, 사수 정조준은 기존 Kenney `target.png` 연결을 그대로 유지한다.
+동료의 습격 버튼과 상세 팝업은 모든 펫에서 공통 승인 Sprite를 사용한다. 전투 연출의 야수별 Run·장착과 펫 시설의 아이콘 경로는 기존 자산을 사용한다.
 
-파이어 볼은 PVFX Foundry 0.3.0 CC0 `warm-explosion/grid/sprite-sheet.png`의 폭발 최대 프레임 index 4를 런타임에 잘라 버튼과 화상 상태 아이콘으로 사용한다. 버튼은 고정 한 장이고 실제 명중 연출은 15프레임 전체이므로 서로 섞이지 않는다. HUD에는 그림과 `화상 n` 한글을 함께 표시해 색상만으로 상태를 전달하지 않는다.
+파이어 볼 버튼·상세와 화상 HUD는 같은 승인 Sprite를 사용한다. 실제 명중 연출은 기존 Warm Explosion 15프레임을 사용한다. HUD는 `화상 n`을 함께 표시한다.
 
-썬더볼트 버튼은 PVFX Foundry 0.3.0 CC0 `electric-impact/grid/sprite-sheet.png`의 peak index 1을 고정 Sprite로 잘라 사용하고, 전투 연출은 같은 원본의 14프레임 전체를 별도로 순환한다. 감전 상태는 CC0 Kenney `power.png`를 사용하며 HUD와 상세 팝업에 `감전 1` 한글을 함께 표시한다. 원본 ThirdParty 파일은 수정하지 않고 Resources용 사본과 런타임 Sprite만 사용한다.
+썬더볼트 버튼과 상세는 승인 썬더볼트 Sprite를 사용한다. 전투 연출은 기존 Electric Impact 프레임을 사용하며 감전은 별도의 Kenney `power.png`와 `감전 1`을 표시한다.
 
 독 상태는 PVFX Foundry 0.3.0 CC0 `venom-ward/grid/sprite-sheet.png` 16프레임 중 녹색 고리가 가장 조밀한 index 6을 고정 아이콘으로 사용한다. HUD에는 `독 3/2/1` 한글을 함께 표시하고, 실제 행동 종료 틱은 별도 `acid-splash` index 3~8의 짧은 52×52 연출을 사용해 큰 방어막 모양이 반복되지 않게 한다.
 
-정화 버튼과 상세 팝업은 PVFX Foundry 0.3.0 CC0 `spectral-bloom/grid/sprite-sheet.png`의 peak index 5를 고정 Sprite로 사용한다. 실제 정화 연출은 같은 원본의 16프레임 전체를 20 FPS로 재생하고 release index 7에서 상태를 제거하므로, 고정 UI 아이콘과 재생용 Animation이 서로 영향을 주지 않는다. 원본 ZIP은 수정하지 않고 `Assets/_Project/Resources/BattleSkillEffects/SpectralBloom/`의 프로젝트용 사본을 런타임 분할한다.
+정화와 회복의 파동은 버튼과 상세 팝업에 각 승인 PNG를 사용한다. 정화의 Spectral Bloom 재생 및 상태 해제 타이밍과 회복의 파동의 Radiant Heal 재생은 기존 연출 경로를 사용한다.
 
-가이아 웰은 기본 방어 명령의 큰 외곽선 `shield.png`와 혼동을 줄이기 위해 같은 CC0 Board Game Icons 팩에 실제 존재하는 작은 채움형 방패 `dice_shield.png`를 사용한다. HUD에는 아이콘과 `가이아 2/1` 한글을 함께 표시해 모양이나 색상만으로 상태를 구분하지 않는다.
+가이아 웰 버튼·상세와 가이아 상태 HUD는 승인 암석 장벽 Sprite를 공유한다. HUD는 `가이아 2/1`을 함께 표시한다.
 
 철벽은 같은 CC0 Board Game Icons 팩의 실제 성벽 실루엣 `structure_wall.png`를 버튼과 상태 HUD에 함께 사용한다. 공용 방어 `shield.png`, 가이아 웰 `dice_shield.png`와 형태를 구분하고 `철벽 2/1` 한글을 함께 표시한다.
 
@@ -75,7 +76,9 @@
 
 ### 2026-09-07 스킬 버튼 아이콘 수명 수정 및 15개 감사
 
-스킬 메뉴 버튼만 `BattleSkillDefinition.IconId → BattleUiIconCatalog.LoadSkillButtonIcon → MakeSkillMenuButton → SkillIcon Image.sprite`를 사용한다. 상세 팝업·상태 HUD는 기존 `Load`를 유지한다.
+스킬 메뉴 버튼은 `LoadSkillButtonIcon`에서 무효 캐시를 정리한 뒤 상세 팝업·상태 HUD와 동일한 `Load`를 사용한다. 마도사 승인 파일도 `Assets/_Project/Resources/BattleItemIcons/`에 보관한다.
+
+### 승인 Sprite 적용 전 버튼 캐시 감사 기록
 
 파이어 볼·썬더볼트·정화의 기존 로더는 정적 프레임 배열의 Sprite를 정적 카탈로그에 보관했고, null/파괴된 Unity Object도 캐시 적중으로 반환했다. 이 경우 버튼 생성의 `hasIcon`이 false라서 자식 Image가 생성되지 않는다. 반복 Rebuild는 동일한 무효 캐시를 받아 복구되지 않는다. 파괴된 캐시 재현 검증에서 수정 전 실패를 확인했다. 현재 Editor 설정은 Domain Reload 비활성(`m_EnterPlayModeOptionsEnabled: 1`, `m_EnterPlayModeOptions: 1`)이다. 다만 사용자가 관찰한 세션에서 최초 파괴/로드 실패를 일으킨 정확한 이벤트는 확보하지 못했다.
 
