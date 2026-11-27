@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-27 / Issue #30 — 설빙의 폭군 Attack4 v2 검수용 후보
+
+- v1 체급 보완 요청 반영. 기존 KeyPose/Idle4 실물 SHA2/2 일치·바이트 보존. v2 배경 잔류 알파 정리, 공통0.88 비례 축소/하단 y490 정렬. 높이443/475/428/442px, Idle465~466px 대비 및 v1 개선. 뿔/하체/외곽/전환 미술 검수 필요.
+- 512 RGBA4, 2048×512 시트 SHA addd5627ed7c854a9a95b95b66845b836a466da1cff4972e007e53c426fd95e9, 실제 1:1/128 비교 및 Idle→Attack→Idle GIF/APNG. APNG125ms, GIF120/130ms 평균8FPS, 미리보기 반복만. PPU512/Pivot(0.5,0)/VisualScale3 계약 유지, Unity 미검증.
+- ZIP LIMITLESS_Issue30_FrostTyrant_Attack4_v2_CANDIDATE_20261127.zip 18343538 bytes/16 entries SHA f2b69aa8739b4d7dc1d9e61df9b51fc972cf4895cd6d12a549a7d38d6ad1a3d1, CRC PASS/SUMS15/15. [보고](../../Chapter3_FrostTyrant_B_Attack4_v2_ArtPilot_20261127.md) commit 87e167a0019cc848e1257060ead166b44e225721.
+- **OFFLINE_FILE_QA_PASS / USER_ART_REVIEW_REQUIRED / UNITY_NOT_APPLIED**. Hit/Defeat HOLD, 기존 보스/화로/결빙/Save/Unity6000.6.5f1/main 보호.
+
+
 ## 2026-11-27 / Issue #30 — 설빙의 폭군 B Attack4 v1 후보 / 연속성 PARTIAL
 
 - [발주](https://github.com/HappyPaul812/Project-Limitless/issues/30#issuecomment-7206496985), #123 화로 승인 보호. 기존 승인 Attack 미확보(검색 범위 한정), KeyPose/Idle4 실물 SHA 일치·불변. 신규 4×512 RGBA, 2048×512 시트, 실제 Idle→Attack→Idle GIF/APNG 및 1:1/128 비교.
