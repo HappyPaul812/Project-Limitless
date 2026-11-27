@@ -1,5 +1,12 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-11-27 Main26 Stage-only 22/22 제작 완료 — 청취 대기
+
+- 사용자 제출 실행 종료 로그: `[DONE] Main26 22/22 STAGING ONLY; 0 pending. Listen to each new WAV. No Unity apply.` 제작기 기준 22/22 완료, 미제작0. 사용자 청취 승인은 아직 없음. Main26 신규22 재합성/덮어쓰기 금지, 기존 승인181 KEEP. Chapter3 제작41/72, 청취 승인19/72, 신규 청취대기22, 미제작31.
+- 개별 실측 SHA/sidecar/완료 후 공유 원장 원본은 이번 제출 로그에 없으므로 별도 확인 필요. 직전 PT 2026-11-27 공유 attempts=0/40 기준, 각 대사 1 POST 및 추가 사용 없음 가정 시 예상22/40, 잔여18회(실제 제공자 무료 잔량 및 완료 후 장부 수치 미확인).
+- Main26 Runtime ID 미확인, STAGING ONLY 유지. 사용자 청취 승인 및 실제 Runtime 매핑 전 Unity 적용 금지. 추가 합성/API 요청 및 Codex 작업 없음. 기존162/590 중복 감사 미완 상태 유지.
+
+
 ## 2026-11-27 Main26 Batch22 사용자 PC 사전 검사 통과 — 실제 합성 대기
 
 - 사용자 제출 check 로그: Main24 10/10 + Main25 9/9 SHA matched; existing162 isolated; Main26 0/22. Native key/group counts list(len=4) / dict(len=4), totals matched.
