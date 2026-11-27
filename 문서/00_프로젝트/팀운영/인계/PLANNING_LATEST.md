@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-27 — 마감 통합·복구 PASS / 로컬 동기화 3경로 제한 후속
+
+- [#132 최종 보고](https://github.com/HappyPaul812/Project-Limitless/issues/132#issuecomment-7217419665) 확인. 통합 제품 `6d232addede55d249f7ea1856c89f19db462aa5b`, 보고 `00b4dd8ea2e0549173d5fbc2ea17d06a41b64445`, `codex/eod-20261127-safe-checkpoint`, Unity6000.6.5f1 컴파일/최소 스모크9PASS/종료0. 원격 복구 `backup/2026-11-27-safe-checkpoint` `451277700a96c7a10447ed321a8b9f791e24f850`, 별도 fetch/checkout/fsck/283 SHA 일치 PASS. 원본 HEAD `65cceb2d6c3283d18abec6e27d8a6f1296411f17`, index/status/853경로 보호. Main27 미구현 보고, F4 대체 BGM 원곡·Master2 보존/출시 라이선스 HOLD. 기존 Editor Search 예외 미해결.
+- 대표 후속 요청: 5시간 잔여25%로 미완 마감 처리. 로컬 동기화만 우선, 신규 Main27/아트/TTS/Editor Search 별도 조사 금지. 세 경로 manifest.json/packages-lock.json/EditorBuildSettings.asset의 실제 HEAD·원본 working/index·통합본 3-way 비교 및 기존 #85 복구 패키지 기준/사용자 AI Inference·App UI 의존성/F3·F4 씬 등록·기존 씬 순서/활성값을 보존하는 최소 조정. meta5 정규화 동일 재확인만. 사용자 변경의 의도 불명/패키지 호환 불가/새 오류/안전 동기화 불가 시 HOLD, 강제 처리 금지. 별도 worktree에서 Unity6000.6.5f1 resolve/컴파일 및 씬 등록 최소 확인 1회, 기존9PASS 전수 반복 금지. #85 기존 Editor Search 오류를 별도로 기록, 새 오류와 구별하며 기존 안전 게이트 유지. 원본 사전 백업, 무관 WIP/index/untracked/Save 보호, 실제 FF 가능 여부 및 경로별 복원·보존 계획 확인 후만 로컬 동기화; 사용자 WIP를 임의 커밋·전송·삭제하지 않음. 기존 검증된 복구 ref는 변경하지 않으며 새로 검증된 배포 가능한 프로젝트 변경이 있는 경우에만 비공개/개인정보 제외 선별 후 별도 후속 복구 ref로 보존(기존 승인 범위, 원격 main 금지). 한도 부족 시 안전 후보/실제 남은 충돌 보고. 기획은 로컬 접근/실행 불가, 발주만.
+
+---
+
 # PLANNING / 2026-11-27 — 대표 개발 종료 / 안전 통합·로컬 동기화·원격 복구 승인
 
 - 대표 요청: 오늘 여기까지, 5시간43%/주간16% 잔여(대표 보고), 지금까지 작업 모두 통합·로컬 동기화·고장 대비 Push. 신규 제작/구현/API 발주 중단. 사용량 내 완료 보장 없음. #124 [맹세 배치 PASS](https://github.com/HappyPaul812/Project-Limitless/issues/124#issuecomment-7217033405) `1522a65e5b33b5fb5b5583de5bb7691c83bdf953`, 철벽 v1 PASS `e1e6b801ea1aa6920a1bc7e6b359de9ebd61e30c`, 도발 KEEP. 통합 요청을 기술 PASS 철벽/맹세 및 기존 적용 기본3 투사체의 채택·격리 적용 승인으로 해석(실제 미술 비교 PNG 기획 미열람). 맹세 1:1 대상당172×172/ActionRoot(0,-58)/후면/금백색 및 낮은 어두운 그림자, 7셀45ms/index1 상태 적용 한 번, 철벽20셀50ms/index9, 원화 변경0. 승인 기존 FrostNova/기능/수치 보호. VFX 제품 연결 미완료이므로 별도 최소 연결 및 표적 QA 후에만 통합. 실패 시 후보 별도 보존.
