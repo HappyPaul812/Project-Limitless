@@ -26,7 +26,27 @@ internal static class TaskPolicy
         catch(FormatException){return false;}
         catch(OverflowException){return false;}
     }
-    internal static string Validate(TaskObservation task,TrialContract c,string sha,AdmissionBinding b)
+    internal static string ValidateRecovered(TaskObservation task,TrialContract c,string taskArgumentSha,AdmissionBinding b)
+    {
+        // 서명 시 별도 COM 읽기에서 확인한 Windows 생략 형태를 복원합니다.
+        // 복원 결과 전체는 서명된 fingerprint와 시작 전 및 직전에 일치해야 합니다.
+        using var input=XmlReader.Create(new StringReader(task.Xml),
+            new XmlReaderSettings{DtdProcessing=DtdProcessing.Prohibit,XmlResolver=null,MaxCharactersInDocument=65536});
+        var doc=XDocument.Load(input);
+        var principal=doc.Root?.Element(Ns+"Principals")?.Element(Ns+"Principal");
+        if(principal is not null && principal.Element(Ns+"RunLevel") is null)
+            principal.Add(new XElement(Ns+"RunLevel","LeastPrivilege"));
+        var settings=doc.Root?.Element(Ns+"Settings");
+        if(settings is not null)
+        {
+            foreach(var (name,value) in new (string,string)[]{
+                ("AllowHardTerminate","true"),("StartWhenAvailable","false"),("RunOnlyIfNetworkAvailable","false"),
+                ("AllowStartOnDemand","true"),("RunOnlyIfIdle","false"),("WakeToRun","false"),("Priority","7")})
+                if(settings.Element(Ns+name) is null)settings.Add(new XElement(Ns+name,value));
+        }
+        return Validate(task with{Xml=doc.ToString(SaveOptions.DisableFormatting)},c,taskArgumentSha,b,recovery:true);
+    }
+    internal static string Validate(TaskObservation task,TrialContract c,string sha,AdmissionBinding b,bool recovery=false)
     {
         AdmissionPolicy.Require(task.Instances.Length<=1 && task.Instances.All(id=>id!=Guid.Empty),"TASK_INSTANCE_LIMIT");
         AdmissionPolicy.Require(task.Instances.Length==0?task.State==(task.Enabled?3:1):task.State is 2 or 4,"TASK_STATE_OR_INSTANCE_UNKNOWN");
@@ -57,7 +77,21 @@ internal static class TaskPolicy
             AdmissionPolicy.Require(matches,"TASK_SETTING");
         }
         // Scheduler의 추가 기본값도 모르는 설정이면 거부합니다. 등록 후 readback 불명은 삭제/재등록하지 않습니다.
-        foreach(var e in observed.Elements())AdmissionPolicy.Require(expected.Element(e.Name) is not null,"TASK_SETTING_EXTRA_HOLD");
+        foreach(var e in observed.Elements())
+        {
+            if(expected.Element(e.Name) is not null)continue;
+            bool knownExtra=e.Name.Namespace==Ns && !e.HasAttributes && observed.Elements(e.Name).Count()==1 &&
+                (e.Name.LocalName switch
+                {
+                    "UseUnifiedSchedulingEngine"=>!e.HasElements && e.Value=="true",
+                    "IdleSettings"=>e.Elements().Count()==2 &&
+                        e.Elements(Ns+"StopOnIdleEnd").Count()==1 && e.Elements(Ns+"RestartOnIdle").Count()==1 &&
+                        e.Elements().All(child=>!child.HasAttributes && !child.HasElements) &&
+                        e.Element(Ns+"StopOnIdleEnd")?.Value=="true" && e.Element(Ns+"RestartOnIdle")?.Value=="false",
+                    _=>false
+                });
+            AdmissionPolicy.Require(recovery && knownExtra,"TASK_SETTING_EXTRA_HOLD");
+        }
         var sd=new RawSecurityDescriptor(task.Sddl);
         AdmissionPolicy.Require(AdmissionPolicy.TrustedOwner(sd.Owner?.Value??"") && (sd.ControlFlags&ControlFlags.DiscretionaryAclProtected)!=0 && sd.DiscretionaryAcl is not null,"TASK_SECURITY");
         var trustees=new HashSet<string>();

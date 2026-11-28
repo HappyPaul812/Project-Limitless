@@ -49,7 +49,7 @@ internal sealed class TaskMutationBoundary
     }
     private string Owned(TaskObservation observed)
     {
-        var registered=Receipt("registered");string fingerprint=TaskPolicy.Validate(observed,original,sha,binding);
+        var registered=Receipt("registered");string fingerprint=backend.TaskFingerprint(observed,original,sha,binding);
         AdmissionPolicy.Require(registered.Status=="REGISTERED_DISABLED"&&registered.Fingerprint==fingerprint,"MUTATION_TASK_CHANGED");return fingerprint;
     }
     private void Validate(TaskMutation mutation,Guid? instance,bool commit)

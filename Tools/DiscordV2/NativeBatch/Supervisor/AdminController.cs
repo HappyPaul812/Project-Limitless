@@ -48,6 +48,8 @@ internal interface IAdminBackend
     byte[] Approval(string operation,string trialId);
     byte[] CurrentContract()=>throw new InvalidOperationException("CURRENT_CONTRACT_REQUIRED");
     void BindMutationBoundary(TaskMutationBoundary boundary)=>throw new InvalidOperationException("MUTATION_BOUNDARY_REQUIRED");
+    string TaskFingerprint(TaskObservation task, TrialContract contract, string sha, AdmissionBinding binding)
+        => TaskPolicy.Validate(task,contract,sha,binding);
     AccountObservation Account();
     TaskObservation? Observe();
     ControlReceipt? Receipt(string name);
@@ -127,7 +129,7 @@ internal static class AdminController
                 try
                 {
                     var after=backend.Observe() ?? throw new InvalidOperationException("REGISTER_READBACK_MISSING");
-                    string fingerprint=TaskPolicy.Validate(after,contract,sha,binding);
+                    string fingerprint=backend.TaskFingerprint(after,contract,sha,binding);
                     AdmissionPolicy.Require(!after.Enabled && after.Instances.Length==0,"REGISTER_NOT_DISABLED_IDLE");
                     backend.Save(prefix+"registered",Make("REGISTERED_DISABLED",fingerprint));return 0;
                 }
@@ -135,7 +137,7 @@ internal static class AdminController
             }
             var owned=Read("registered");
             AdmissionPolicy.Require(owned.Status=="REGISTERED_DISABLED" && observation is not null,"REGISTER_OWNERSHIP_HOLD");
-            string current=TaskPolicy.Validate(observation!,contract,sha,binding);
+            string current=backend.TaskFingerprint(observation!,contract,sha,binding);
             AdmissionPolicy.Require(current==owned.Fingerprint,"TASK_FINGERPRINT_CHANGED");
             if(mode=="--start-once")
             {
@@ -153,7 +155,7 @@ internal static class AdminController
                 }
                 finally { backend.Enable(false); }
                 var after=backend.Observe() ?? throw new InvalidOperationException("START_READBACK_MISSING");
-                AdmissionPolicy.Require(!after.Enabled && TaskPolicy.Validate(after,contract,sha,binding)==current,"START_DISABLE_OR_BINDING_HOLD");
+                AdmissionPolicy.Require(!after.Enabled && backend.TaskFingerprint(after,contract,sha,binding)==current,"START_DISABLE_OR_BINDING_HOLD");
                 return 0;
             }
             if(mode=="--stop-owned-instance")
@@ -165,7 +167,7 @@ internal static class AdminController
                 cancellation.ThrowIfCancellationRequested();
                 backend.Stop(instance!.Value); // Task.Stop로 전체 instance를 중지하지 않습니다.
                 var after=backend.Observe() ?? throw new InvalidOperationException("STOP_READBACK_MISSING");
-                AdmissionPolicy.Require(!after.Enabled && after.Instances.Length==0 && TaskPolicy.Validate(after,contract,sha,binding)==current,"STOP_NOT_DRAINED");
+                AdmissionPolicy.Require(!after.Enabled && after.Instances.Length==0 && backend.TaskFingerprint(after,contract,sha,binding)==current,"STOP_NOT_DRAINED");
                 backend.Save(prefix+"stopped",Make("INSTANCE_STOPPED",current,started.Instance));return 0;
             }
             AdmissionPolicy.Require(!observation!.Enabled && observation.Instances.Length==0,"REMOVE_NOT_DISABLED_IDLE");

@@ -27,15 +27,15 @@ internal sealed class ReleaseAdmission : IDisposable
         try {admission.Prepare(contractPath,contractSha);return admission;}
         catch {admission.Dispose();throw;}
     }
-    private void Prepare(string contractPath,string contractSha)
+    private void Prepare(string contractPath,string taskArgumentSha)
     {
-        AdmissionPolicy.Require(AdmissionPolicy.Sha(contractSha),"CONTRACT_HASH_FORMAT");
+        AdmissionPolicy.Require(AdmissionPolicy.Sha(taskArgumentSha),"CONTRACT_HASH_FORMAT");
         Native.NoImpersonation();Identity=Native.Identity(Native.GetCurrentProcess());
         token=AdmissionWindows.Token(Native.GetCurrentProcess());AdmissionWindows.LimitedToken(token);
 
         PinDirectoryTree(Native.CodeRoot,false);PinDirectoryTree(Native.EvidenceRoot,true);
         var contract=PinFile(contractPath);byte[] raw=ReadSmall(contract,4096);
-        AdmissionPolicy.Require(Hash(raw)==contractSha,"CONTRACT_SHA");
+        string contractSha=Hash(raw);
         Contract=System.Text.Json.JsonSerializer.Deserialize(raw,ContractJson.Default.TrialContract) ?? throw new InvalidOperationException("CONTRACT_NULL");
         expectedContractSha=contractSha;
         AdmissionPolicy.Require(Contract.Scope?.Start == true,"SUPERVISOR_START_NOT_APPROVED");
@@ -45,6 +45,7 @@ internal sealed class ReleaseAdmission : IDisposable
         var supervisor=PinFile(Path.Combine(Native.CodeRoot,"Supervisor.exe"));
         var probe=PinFile(Path.Combine(Native.CodeRoot,"Probe.exe"));
         AdmissionPolicy.Require(Hash(supervisor)==Contract.SupervisorSha256 && Hash(probe)==Contract.ProbeSha256,"IMAGE_SHA");
+        ControlReceipt? recoveredRegistration=null;
         using (var signer = RSA.Create())
         {
             // 보호된 Code의 동일 HANDLE에서 해시와 실제 서명자를 확인하고, 그 공개키로 실행 계약을 검증합니다.
@@ -54,6 +55,10 @@ internal sealed class ReleaseAdmission : IDisposable
                 ProductAuthenticode.ApprovedCertificateSha, CurrentFakeOnlyContract.Signer);
 
             signer.ImportSubjectPublicKeyInfo(signerKey, out _);
+            if (taskArgumentSha != contractSha)
+                recoveredRegistration = ExistingTaskRecovery.Verify(ReadTrust(ExistingTaskRecovery.PayloadName,8192),
+                    ReadTrust(ExistingTaskRecovery.SignatureName,4096), signer, CurrentFakeOnlyContract.Signer,
+                    AdmissionBinding.Current, Contract, contractSha, taskArgumentSha, DateTimeOffset.UtcNow).Receipt;
             executionWindow = CurrentFakeOnlyContract.ExecutionWindow.Verify(ReadTrust("FakeOnlyExecution.v2.json",4096),
                 ReadTrust("FakeOnlyExecution.v2.sig",4096), signer, CurrentFakeOnlyContract.Signer,
                 AdmissionBinding.Current, DateTimeOffset.UtcNow, Contract.SupervisorSha256, Contract.ProbeSha256,
@@ -63,7 +68,7 @@ internal sealed class ReleaseAdmission : IDisposable
         NativeTrialPolicy.Shape(Contract,"--supervise",DateTimeOffset.UtcNow,executionWindow);
         var operation=OperationApproval.Validate(operationRaw,Contract.TrialId,contractSha,"--start-once",DateTimeOffset.UtcNow,false,executionWindow);
         startOperation=operation;
-        var registration=ControlRecord("registered");startIntent=ControlRecord("start-intent");
+        var registration=recoveredRegistration??ControlRecord("registered");startIntent=ControlRecord("start-intent");
         ReceiptPolicy.Start(registration,startIntent,operation,Contract.TrialId,contractSha);
         CheckScope(null);
         // 계약·이미지·신뢰 자료·실제 계정을 읽기 검증하기 전에는 DACL을 바꾸지 않습니다.

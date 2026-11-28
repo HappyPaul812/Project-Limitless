@@ -15,6 +15,7 @@ internal sealed class AdminWindows : IAdminBackend,IDisposable
     private AccountObservation? account;
     private TrialContract? preparedContract;
     private readonly string expectedSha;
+    private ExistingTaskRecovery.Verified? recovery;
     public CurrentFakeOnlyContract.ExecutionWindow? SignedOperationWindow { get; private set; }
     public DateTimeOffset Now=>DateTimeOffset.UtcNow;
     private TaskSchedulerNative Scheduler=>scheduler??=new(Native.TaskPath,()=>mutationBoundary??throw new InvalidOperationException("MUTATION_BOUNDARY_REQUIRED"));
@@ -55,6 +56,12 @@ internal sealed class AdminWindows : IAdminBackend,IDisposable
             ProductAuthenticode.ApprovedCertificateSha, CurrentFakeOnlyContract.Signer);
         using var rsa = RSA.Create();
         rsa.ImportSubjectPublicKeyInfo(key, out _);
+        if(mode=="--start-once" && Receipt(contract.TrialId+".admin.registered") is null)
+        {
+            recovery=ExistingTaskRecovery.Verify(IsolationEvidence(ExistingTaskRecovery.PayloadName,8192),
+                IsolationEvidence(ExistingTaskRecovery.SignatureName,4096),rsa,CurrentFakeOnlyContract.Signer,
+                AdmissionBinding.Current,contract,sha,null,Now);
+        }
         string name = mode == "--start-once" ? "FakeOnlyExecution.v2" : "FakeOnlyExecution.v2." + mode[2..];
         return CurrentFakeOnlyContract.ExecutionWindow.Verify(
             IsolationEvidence(name + ".json",4096), IsolationEvidence(name + ".sig",4096),
@@ -84,8 +91,12 @@ internal sealed class AdminWindows : IAdminBackend,IDisposable
     }
     public byte[] Approval(string operation,string trialId)=>Read(Path.Combine(Native.CodeRoot,OperationApproval.FileName(trialId,operation)),4096,false);
     public TaskObservation? Observe()=>Scheduler.Observe();
+    public string TaskFingerprint(TaskObservation task, TrialContract contract, string sha, AdmissionBinding binding)
+        => recovery is null ? TaskPolicy.Validate(task,contract,sha,binding) :
+            TaskPolicy.ValidateRecovered(task,contract,recovery.PriorTrialSha,binding);
     public ControlReceipt? Receipt(string name)
     {
+        if(recovery is not null && name==recovery.Receipt.TrialId+".admin.registered")return recovery.Receipt;
         string path=RecordPath(name);
         // File.Exists의 접근거부를 부재로 해석하지 않도록 Open의 정확한 not-found만 허용합니다.
         byte[] bytes;
