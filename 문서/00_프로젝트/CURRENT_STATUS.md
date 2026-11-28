@@ -1,5 +1,10 @@
 ## Discord V2 FAKE_ONLY 제품 계약 / 운영 HOLD
 
+## Discord V2 Task 등록 전 관리자 시계 확인 · 2026-11-28
+
+Trial/신뢰 13:50:31 KST 만료 확인. 전용 Task·실행 증거·잔류 프로세스 없음, Worker 비활성. 보호 갱신 구현과 별도 승인 대기. Unity 확인 대상 없음.
+
+
 ## Discord V2 전용 Task·FAKE_ONLY 준비 · 2026-11-28
 
 Windows UTC/Task 읽기 확인, 비활성 등록·배치 토큰·단발 시작/원복 및 검증 명령 준비. 보호 갱신은 별도 구현/승인 HOLD. 실제 발급·등록·활성화·실행 없음. Unity 확인 대상 없음.

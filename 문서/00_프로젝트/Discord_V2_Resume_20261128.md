@@ -143,3 +143,9 @@
 - TaskPrep의 TaskAndFakeOnlyRunbook.md 및 관리자 명령을 준비했습니다. 비활성 전용 등록, 실제 로컬 배치 토큰만 확인하고 Worker 비활성 원복, 별도 승인으로 시작 sidecar 및 단발 FAKE_ONLY 시작/Cleanup, Supervisor 0·Probe 125·Job drain·Evidence·잔류 프로세스 및 종료 상태 검증 범위를 구분했습니다. PowerShell 구문과 보호 sidecar 작성 및 Windows 배치 토큰 어댑터 컴파일 PASS. 운영 실행/발급 0, 기존 PASS 미반복.
 - 만료 시 보호 Code의 불변 Trial/신뢰 3파일과 기존 승인 증거만 보관하고, 동일 보호 이미지에 새 Trial 및 별도 서명 갱신 영수증을 결합해야 합니다. 현재 발급기는 배포 요청의 기존 SHA를 요구하므로 갱신 수용/승격 코드는 별도 구현 대상이며 운영 갱신 미실행입니다. 현재 보관된 실패 Evidence의 명시 ACE가 비활성 Worker에게 남아 있어, 실제 활성화 전에 보관본 유효 쓰기 권리를 확인해야 합니다.
 - Task 등록/활성화/토큰 검증/실행/AI 0. Worker 비활성·직접 LSA 권리와 병합 정책 차이·실제 토큰 및 11월 21일 원본 영수증 미확인 유지. Unity 확인 대상 없음. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 전용 Task 등록 전 관리자 조회
+
+- 대표 관리자 Windows UTC 04:52:02(13:52:02 KST), Trial 및 신뢰 기간 만료 04:50:31 UTC(13:50:31 KST), TrialAndTrustLive=false. Worker 비활성, 전용 Task 없음, 등록/시작/instance/감독·완료 증거 모두 없음, 제품 경로 잔류 및 경로 미확인 프로세스 0.
+- TaskPrep의 Worker 바인딩 조회 상대경로 오류 교정, 기존 DLL 및 조회 스크립트 SHA 핀 대조 후 관리자 재조회 성공. 실제 배치 토큰 미시험, Task 등록 및 실행 없음.
+- 만료된 보호 Trial·신뢰 파일과 이전 원장을 보존합니다. 기존 제품/서명/배치 경로를 재사용하려면 서명된 갱신 영수증과 새 Trial SHA를 승인하는 보호 경계를 먼저 구현해야 합니다. 현재 등록 및 FAKE_ONLY 실행 HOLD. NO_GO / MANUAL / EXECUTION_HOLD.
