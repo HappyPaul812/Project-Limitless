@@ -59,9 +59,14 @@ internal static class Program
                     return Supervise(admission, admission.Identity, wall);
                 });
         }
-        catch(InvalidOperationException error) when(error.Message=="REGISTER_PASSWORD_WINDOW_HOLD")
+        catch(TaskRegistrationFailure error)
         {
-            Console.Error.WriteLine("HOLD_REGISTER_PASSWORD_WINDOW_EXPIRED");
+            Console.Error.WriteLine(error.SafeStatus);
+            return 70;
+        }
+        catch(Exception error) when(args.Length>0 && args[0]=="--register-only")
+        {
+            Console.Error.WriteLine(TaskRegistrationFailure.From(RegistrationStage.Admission,error).SafeStatus);
             return 70;
         }
         catch { return 70; }

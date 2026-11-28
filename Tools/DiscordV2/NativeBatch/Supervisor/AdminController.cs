@@ -124,10 +124,14 @@ internal static class AdminController
                 cancellation.ThrowIfCancellationRequested();
                 backend.Register(TaskPolicy.Xml(contract,sha,binding),TaskPolicy.Sddl,cancellation);
                 cancellation.ThrowIfCancellationRequested();
-                var after=backend.Observe() ?? throw new InvalidOperationException("REGISTER_READBACK_MISSING");
-                string fingerprint=TaskPolicy.Validate(after,contract,sha,binding);
-                AdmissionPolicy.Require(!after.Enabled && after.Instances.Length==0,"REGISTER_NOT_DISABLED_IDLE");
-                backend.Save(prefix+"registered",Make("REGISTERED_DISABLED",fingerprint));return 0;
+                try
+                {
+                    var after=backend.Observe() ?? throw new InvalidOperationException("REGISTER_READBACK_MISSING");
+                    string fingerprint=TaskPolicy.Validate(after,contract,sha,binding);
+                    AdmissionPolicy.Require(!after.Enabled && after.Instances.Length==0,"REGISTER_NOT_DISABLED_IDLE");
+                    backend.Save(prefix+"registered",Make("REGISTERED_DISABLED",fingerprint));return 0;
+                }
+                catch(Exception error){throw TaskRegistrationFailure.From(RegistrationStage.Readback,error);}
             }
             var owned=Read("registered");
             AdmissionPolicy.Require(owned.Status=="REGISTERED_DISABLED" && observation is not null,"REGISTER_OWNERSHIP_HOLD");

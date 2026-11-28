@@ -1,6 +1,36 @@
 using System.Runtime.InteropServices;
 using System.Security;
 
+internal enum RegistrationStage { Admission, Console, Password, FinalAdmission, SchedulerNewTask, SchedulerXml, SchedulerRegister, Readback }
+
+// 예외 메시지에는 시스템 경로나 입력이 들어갈 수 있습니다. 승인된 단계와 숫자만 화면에 냅니다.
+internal sealed class TaskRegistrationFailure(RegistrationStage stage, string reason, int? nativeCode=null) : Exception
+{
+    internal string SafeStatus => nativeCode is int code
+        ? $"HOLD_REGISTER_{stage.ToString().ToUpperInvariant()}_{reason}_HRESULT_0x{unchecked((uint)code):X8}"
+        : $"HOLD_REGISTER_{stage.ToString().ToUpperInvariant()}_{reason}";
+
+    internal static TaskRegistrationFailure From(RegistrationStage stage,Exception error)
+    {
+        string reason=error switch
+        {
+            OperationCanceledException=>"CANCELLED",
+            InvalidOperationException {Message:"REGISTER_PASSWORD_WINDOW_HOLD" or "FAKE_V2_WINDOW_HOLD" or
+                "APPROVAL_EXPIRED_OR_DEADLINE" or "OPERATION_APPROVAL_EXPIRED" or "TRIAL_TIME_HOLD"}=>"APPROVAL_EXPIRED",
+            InvalidOperationException {Message:"PASSWORD_CONSOLE_REQUIRED"}=>"CONSOLE_REQUIRED",
+            InvalidOperationException {Message:"EMPTY_PASSWORD"}=>"EMPTY_PASSWORD",
+            InvalidOperationException {Message:"PASSWORD_LENGTH"}=>"PASSWORD_LENGTH",
+            _=>"REJECTED"
+        };
+        return new(stage,reason);
+    }
+
+    internal static void CheckSchedulerResult(RegistrationStage stage,int hr)
+    {
+        if(hr<0)throw new TaskRegistrationFailure(stage,"COM",hr);
+    }
+}
+
 // 설치된 Windows SDK taskschd.h의 IDispatch 기반 vtable을 명시적으로 호출합니다.
 // RCW/dynamic/내장 COM marshaller를 사용하지 않아 NativeAOT 경계가 드러납니다.
 // 이 어댑터는 이번 시험에서 실행하지 않으며 Program의 봉인이 유지됩니다.
@@ -96,9 +126,11 @@ internal sealed unsafe class TaskSchedulerNative : IDisposable
         nint existing=Task(true);bool exists=existing!=0;Release(ref existing);AdmissionPolicy.Require(!exists,"TASK_EXISTS_CREATE_ONLY");
         nint definition=0,registered=0,xmlBstr=0,name=0,user=0,security=0,password=0;
         using var secret=new SecureString();
+        RegistrationStage stage=RegistrationStage.Console;
         try
         {
             AdmissionPolicy.Require(!Console.IsInputRedirected,"PASSWORD_CONSOLE_REQUIRED");
+            stage=RegistrationStage.Password;
             var boundary=mutationBoundary();
             boundary.CheckPasswordWindow();
             Console.WriteLine("Worker 암호를 입력하고 Enter를 누르세요. 입력은 표시되지 않습니다. Esc로 취소할 수 있습니다.");
@@ -116,17 +148,27 @@ internal sealed unsafe class TaskSchedulerNative : IDisposable
                 if(!char.IsControl(key.KeyChar))secret.AppendChar(key.KeyChar);
             }
             AdmissionPolicy.Require(secret.Length>0,"EMPTY_PASSWORD");secret.MakeReadOnly();
+            stage=RegistrationStage.FinalAdmission;
             boundary.AfterPassword(); // 비밀값을 읽거나 기록하지 않고 승인 상태만 재검증합니다.
             password=Marshal.SecureStringToBSTR(secret);
-            H(((delegate* unmanaged[Stdcall]<nint,uint,nint*,int>)Slot(service,9))(service,0,&definition));
+            stage=RegistrationStage.SchedulerNewTask;
+            TaskRegistrationFailure.CheckSchedulerResult(stage,
+                ((delegate* unmanaged[Stdcall]<nint,uint,nint*,int>)Slot(service,9))(service,0,&definition));
             xmlBstr=Marshal.StringToBSTR(xml);
-            H(((delegate* unmanaged[Stdcall]<nint,nint,int>)Slot(definition,20))(definition,xmlBstr));
+            stage=RegistrationStage.SchedulerXml;
+            TaskRegistrationFailure.CheckSchedulerResult(stage,
+                ((delegate* unmanaged[Stdcall]<nint,nint,int>)Slot(definition,20))(definition,xmlBstr));
             name=Marshal.StringToBSTR(task);user=Marshal.StringToBSTR(Native.Worker);security=Marshal.StringToBSTR(sddl);
             cancellation.ThrowIfCancellationRequested();
+            stage=RegistrationStage.FinalAdmission;
             mutationBoundary().Check(TaskMutation.Register);
-            H(((delegate* unmanaged[Stdcall]<nint,nint,nint,int,Variant,Variant,int,Variant,nint*,int>)Slot(folder,17))
+            stage=RegistrationStage.SchedulerRegister;
+            TaskRegistrationFailure.CheckSchedulerResult(stage,
+                ((delegate* unmanaged[Stdcall]<nint,nint,nint,int,Variant,Variant,int,Variant,nint*,int>)Slot(folder,17))
                 (folder,name,definition,0x12,Variant.Bstr(user),Variant.Bstr(password),1,Variant.Bstr(security),&registered));
         }
+        catch(TaskRegistrationFailure){throw;}
+        catch(Exception error){throw TaskRegistrationFailure.From(stage,error);}
         finally
         {
             if(password!=0)Marshal.ZeroFreeBSTR(password);
