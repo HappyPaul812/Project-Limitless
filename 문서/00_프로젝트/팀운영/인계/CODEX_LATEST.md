@@ -1,5 +1,10 @@
 ## Discord V2 운영 시간 대조 / 기존 승인 만료
 
+## Discord V2 제품 빌드 선행 구현 · 2026-11-28
+
+서명된 배포 검토 및 Task 등록·정리 동작별 검증, 신규 격리 10 PASS. 제품용 Native 바인딩·보호 적용·승인 sidecar 설치 경계 HOLD. Worker LSA 직접 권리 확인, 병합 정책 불일치 및 실제 토큰 UNKNOWN. Unity 확인 대상 없음. 소스 afb371d7e3210f3952cdcda0463c0082c7422ad2. Issue #66 보고 완료.
+
+
 ## Discord V2 관리자 경계 · 2026-11-28
 
 Task 시작 서명 기간 및 배포 승인 교집합 검사, 격리 6 PASS 및 Probe 소스 ABI 일치. 배포/등록/NativeAOT HOLD. 기존 Worker 권한 결과 대기. Unity 확인 대상 없음. 소스 8f6e199e45c2b37bdb97eb0eaa0b0ad8d419b0ab. Issue #66 보고 완료.

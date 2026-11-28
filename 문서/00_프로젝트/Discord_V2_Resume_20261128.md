@@ -33,3 +33,12 @@
 - Task 시작 관리자는 동일 서명 V2를 진입, 승인 소비, Enable/Run 직전에 검사하며 다른 승인 바이트를 거부합니다. 등록/정리 cutoff 유지. DeploymentAdmin은 운영 HOLD 앞에 서명된 요청과 제품 승인 기간 교집합을 검사합니다. 기존 배포 cutoff 및 보호 매니페스트/이미지 제한 유지. 신규 격리 6 PASS, 기존 시험 재실행 없음.
 - Probe의 무인자·고정 경로·Job 조건이 Supervisor 호출과 정적으로 일치하고 NativeInterop/TokenPolicy 두 공유 입력은 기존 Probe 빌드 입력과 SHA 일치합니다. 실제 서명, 제품 전용 binding, 런타임 호환은 미검증입니다. 배포 운영 경계와 별도 등록 계약 완료 후 격리 NativeAOT를 진행할 수 있습니다.
 - [Issue #66 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7232411940). 소스 8f6e199e45c2b37bdb97eb0eaa0b0ad8d419b0ab. LOCAL_COMMITTED / REMOTE_NOT_PUSHED. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 제품 통합 빌드 선행 조건
+
+- DeploymentAdmin의 --review는 서명 요청에 결합된 제품 계약, 엄격한 매니페스트 5개 파일명, Trial 해시, 승인/제품/요청/계획 만료, 원장·관리자·도구 신원, 두 후보의 길이·SHA·AMD64 Native PE·보호 HANDLE Authenticode를 확인합니다. 기존 고정 이미지 해시·크기와 날짜를 사용하지 않는 검토 경로입니다. --apply는 명시 HOLD이며 보호 설치와 원장 소비는 연결 전입니다.
+- Task 관리자는 등록·시작·정리 각각의 승인 SHA를 서명 V2에 결합합니다. 보호 Trial과 개별 5분 이하 동작 승인이 모두 살아 있어야 하므로 작업 사이에 Trial 해시를 바꿀 필요가 없고, 만료된 입력은 새 서명만으로 되살릴 수 없습니다. 신규 등록은 비활성 Worker와 확인된 배치 권리, 기존 비활성/무트리거/LeastPrivilege/90초 조건을 요구합니다. 실제 Scheduler의 Password 등록 동작은 미확인입니다.
+- 신규 격리 10 PASS. 관리형 컴파일 경고·오류 0. 기존 75/14/1/7/6 시험 재실행 0. Probe 무인자 ABI 계약과 공유 TokenPolicy/NativeInterop는 유지됩니다. 운영 이미지 서명 및 실제 동작 미시험.
+- 실제 NativeBinding.cs 제작 전 관리자 로컬 기준의 보호 HANDLE 영수증·SHA와 비활성 전용 계정 SID를 재대조하고 Worker/TaskPath/CodeRoot/EvidenceRoot 네 값을 같은 비공개 입력으로 생성해야 합니다. Supervisor·Probe·DeploymentAdmin의 출처와 전체 빌드 입력 해시를 로컬에 기록합니다. 현재 세션에서는 보호 바인딩과 로컬 영수증에 접근하지 못했습니다. 테스트 바인딩을 후보 발행에 사용하지 않습니다.
+- NativeAOT는 위 기존 SDK 10.0.403·runtime 10.0.10·offline feed와 일반 Windows PowerShell 7 방법을 사용합니다. 별도 격리 출력에 3개 프로젝트 각각 발행, AMD64/CLR 부재 확인, 후보별 서명 전 SHA를 기록한 뒤 별도 승인으로 보호 staging에 새 파일 복사·서명·동일 HANDLE readback과 서명 후 SHA 기록 순서입니다. 서명 후 해시로 보호 manifest를 작성합니다. 실제 배포 경계에는 최종 만료 재검사·원장 단발 소비·CREATE_NEW 및 Code/Evidence 권한 readback이 필요합니다. 작업별 시한부 서명은 보호 Code에 승인별로 새 파일만 놓는 별도 경계가 필요하며, 제품 배포 시 실행 승인과 함께 복사하지 않습니다.
+- Worker는 DIRECT_LOCAL_LSA_CONFIRMED / MERGED_POLICY_MISMATCH / EFFECTIVE_BATCH_UNKNOWN. 11월 21일 원본 미확인 유지. 현재 발행 없음. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7232555407). 소스 afb371d7e3210f3952cdcda0463c0082c7422ad2. LOCAL_COMMITTED / REMOTE_NOT_PUSHED. NO_GO / MANUAL / EXECUTION_HOLD.
