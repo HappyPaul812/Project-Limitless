@@ -119,3 +119,8 @@
 - 대표 승인 A 이후 관리자 PowerShell 7에서 수정 DeploymentAdmin 한 파일의 SignTool sign/verify 및 FIXED_DEPLOYMENT_TOOL_SIGNED_VERIFIED를 확인했습니다. 기존 승인된 인증서 핀/DER/SPKI/EKU/유효기간과 Authenticode 판정 및 보호 manifest readback은 스크립트 PASS에 포함됩니다. 타임스탬프 없음. 이 기록의 근거는 대표 관리자 출력입니다.
 - 서명 후 SHA-256 f07e9b8f3c45faa123fba6482bc239fc497a287046a72cad3befcdb95a68d4b9. Manifest C:/ProgramData/LimitlessDiscordV2DeploymentAdminFixSigning20261128/ProductSigningManifest.json.
 - B 기존 도구 보관/교체, C 부분 상태/만료 승인 보호 보관, D 발급 및 apply는 별도 승인 대기. 운영 파일/원장/부분 파일 변경 및 재실행 0. Worker 비활성, Task·AI 실행 0. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 수정 DeploymentAdmin 보호 교체 B 완료
+
+- 대표 승인 B 후 관리자 출력 OLD_DEPLOYMENT_TOOL_ARCHIVED_AND_FIXED_TOOL_CREATED_HANDLE_VERIFIED_NO_EXECUTION 확인. 기존 도구를 동일 NTFS의 Control/DeploymentToolArchive20261128 보호 경로에 이동, 동일 HANDLE 경로·ID·SD·SHA 일치. 변경 대상 고정 경로에 수정 서명 도구만 CREATE_NEW, 동일 HANDLE 검증 및 flush 후 SHA 일치.
+- 수정 도구 소스 ccdb33ea 및 A 서명 기록 28400eeb. 근거는 관리자 실행 출력. 운영 도구 시작, 부분 Code/Evidence 및 소비 원장 변경 0. C 부분 상태 보호 복구와 D 새 발급/배포 별도 승인 대기. 수정 전후 합성 Rename 검증은 실제 파일에 대한 동일 HANDLE 새 경로, 덮어쓰기 차단, 데이터 보존을 확인했습니다. NO_GO / MANUAL / EXECUTION_HOLD.
