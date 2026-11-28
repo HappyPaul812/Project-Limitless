@@ -1,8 +1,13 @@
 ## Discord V2 FAKE_ONLY 제품 계약 / 운영 HOLD
 
+## Discord V2 통합 후속 · 2026-11-28
+
+Supervisor 서명 실행 기간 연결 및 격리 7 PASS. DeploymentAdmin/Task 고정 날짜와 Probe 런타임 확인이 남아 제품 발행 HOLD. Worker 관리자 조회·변경 미실행. Unity 확인 대상 없음. 소스 635442e80838414a96345cd1abfed8f7c0968652. Issue #66 보고 완료.
+
+
 ## Discord V2 · 2026-11-28
 
-Supervisor 제품 서명/계약 연결, 관리형 빌드 경고·오류 0, 격리 무서명 거부 1 PASS. 운영 서명 성공·만료 계약 전환·Worker 권리·배포·비활성 Task HOLD. Unity 확인 대상 없음. 다음은 배포/제품 만료 연결 및 별도 승인 범위 검토. 소스 $sha. [검증 및 후속 범위](Discord_V2_Resume_20261128.md)
+Supervisor 제품 서명/계약 연결, 관리형 빌드 경고·오류 0, 격리 무서명 거부 1 PASS. 운영 서명 성공·만료 계약 전환·Worker 권리·배포·비활성 Task HOLD. Unity 확인 대상 없음. 다음은 배포/제품 만료 연결 및 별도 승인 범위 검토. 소스 b6b5c466. [검증 및 후속 범위](Discord_V2_Resume_20261128.md)
 
 
 서명된 제품 계약의 이미지 해시·서명자·계정 SID·Task·고정 Code/Evidence·UTC 최대 5분·FAKE_ONLY 범위를 검증합니다. 독립 배포 진입점은 현행 바인딩과 제품 계약을 요구한 뒤 이미지 신뢰·실행 입구 연결 전까지 운영 배포를 거부합니다. 관리형 컴파일 경고·오류 0, 신규 표적 14 PASS. 기존 테스트·운영 자산 변경 없음. 실제 SID/Task, 후보 Authenticode 검증과 Supervisor 실행 승인 연결이 남았습니다. Unity 확인 사항 없음.
