@@ -80,7 +80,10 @@ internal sealed class TaskMutationBoundary
         var task=backend.Observe();
         string fingerprintForEnable="";
         if(mutation==TaskMutation.Register)
+        {
             AdmissionPolicy.Require(task is null&&!registerAttempted,"MUTATION_REGISTER_NOT_ABSENT");
+            AdmissionPolicy.Require(NativeTrialPolicy.AccountAllowed(account,current.ExpiresUtc),"MUTATION_REGISTER_ACCOUNT_HOLD");
+        }
         else
         {
             AdmissionPolicy.Require(task is not null,"MUTATION_TASK_MISSING");

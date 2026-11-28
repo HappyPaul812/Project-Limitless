@@ -47,11 +47,11 @@ internal static class NativeTrialPolicy
         // 정리는 기존 계약처럼 계정 비활성화 때문에 자기 객체를 남기지 않습니다.
         // 그래도 새 cleanup 승인/정확 소유 증표/현재 cutoff는 반드시 요구합니다.
         if (mode is not "--stop-owned-instance" and not "--remove-owned-task")
-            AdmissionPolicy.Require(AccountAllowed(account,c.ExpiresUtc,window is not null && mode == "--register-only"), "TRIAL_ACCOUNT_HOLD");
+            AdmissionPolicy.Require(AccountAllowed(account,c.ExpiresUtc), "TRIAL_ACCOUNT_HOLD");
     }
-    // 서명된 신규 등록은 비활성 계정의 비활성 Task만 대상으로 합니다. 시작은 활성 계정을 요구합니다.
-    internal static bool AccountAllowed(AccountObservation account, DateTimeOffset trialExpiry, bool disabledRegistration)
-        => account.Enabled != disabledRegistration && !account.Locked && account.ExpiresUtc >= trialExpiry
+    // Password 등록과 시작에는 활성 계정이 필요합니다. Task의 비활성 조건은 별도로 검사합니다.
+    internal static bool AccountAllowed(AccountObservation account, DateTimeOffset trialExpiry)
+        => account.Enabled && !account.Locked && account.ExpiresUtc >= trialExpiry
             && account.BatchKnown && account.BatchAllowed;
 
     internal static void AuthorizeThen(TrialContract c, string sha, string mode, OperationApproval approval,

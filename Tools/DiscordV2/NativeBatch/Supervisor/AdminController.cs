@@ -89,7 +89,7 @@ internal static class AdminController
         var account = backend.Account();
         AdmissionPolicy.Require(account.Sid == binding.WorkerSid, "ACCOUNT_SID_CHANGED");
         if (!cleanup)
-            AdmissionPolicy.Require(NativeTrialPolicy.AccountAllowed(account,contract.ExpiresUtc,window is not null && mode == "--register-only"), "ACCOUNT_OR_BATCH_HOLD");
+            AdmissionPolicy.Require(NativeTrialPolicy.AccountAllowed(account,contract.ExpiresUtc), "ACCOUNT_OR_BATCH_HOLD");
         var observation = backend.Observe();
         if (window is not null) NativeTrialPolicy.Authorize(contract,sha,mode,approval,account,backend.Now,binding,window);
         else authorize?.Invoke(contract,sha,mode,approval,account,backend.Now,binding);
