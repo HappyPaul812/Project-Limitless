@@ -18,6 +18,14 @@ internal static class TaskPolicy
             new XElement(Ns+"Actions",new XAttribute("Context","ProbeWorker"),new XElement(Ns+"Exec",new XElement(Ns+"Command",Path.Combine(b.CodeRoot,"Supervisor.exe")),new XElement(Ns+"Arguments",Arguments(sha,b)),new XElement(Ns+"WorkingDirectory",b.CodeRoot))));
         return task.ToString(SaveOptions.DisableFormatting);
     }
+    private static bool IsNinetySecondLimit(string value)
+    {
+        // Windows Scheduler가 PT90S를 PT1M30S로 반환할 수 있습니다.
+        if(!value.StartsWith("PT",StringComparison.Ordinal))return false;
+        try{return XmlConvert.ToTimeSpan(value)==TimeSpan.FromSeconds(90);}
+        catch(FormatException){return false;}
+        catch(OverflowException){return false;}
+    }
     internal static string Validate(TaskObservation task,TrialContract c,string sha,AdmissionBinding b)
     {
         AdmissionPolicy.Require(task.Instances.Length<=1 && task.Instances.All(id=>id!=Guid.Empty),"TASK_INSTANCE_LIMIT");
@@ -37,7 +45,17 @@ internal static class TaskPolicy
         AdmissionPolicy.Require(actions.Elements().Count()==1 && (string?)actions.Attribute("Context")=="ProbeWorker" && exec.Elements().Count()==3,"TASK_ACTION_COUNT");
         AdmissionPolicy.Require(One(exec,"Command").Value==Path.Combine(b.CodeRoot,"Supervisor.exe") && One(exec,"Arguments").Value==Arguments(sha,b) && One(exec,"WorkingDirectory").Value==b.CodeRoot,"TASK_ACTION_BINDING");
         var observed=One(root,"Settings");var expected=XElement.Parse(Xml(c,sha,b)).Element(Ns+"Settings")!;
-        foreach(var e in expected.Elements())AdmissionPolicy.Require(One(observed,e.Name.LocalName).Value==(e.Name.LocalName=="Enabled"?(task.Enabled?"true":"false"):e.Value),"TASK_SETTING");
+        foreach(var e in expected.Elements())
+        {
+            string value=One(observed,e.Name.LocalName).Value;
+            bool matches=e.Name.LocalName switch
+            {
+                "Enabled"=>value==(task.Enabled?"true":"false"),
+                "ExecutionTimeLimit"=>IsNinetySecondLimit(value),
+                _=>value==e.Value
+            };
+            AdmissionPolicy.Require(matches,"TASK_SETTING");
+        }
         // Scheduler의 추가 기본값도 모르는 설정이면 거부합니다. 등록 후 readback 불명은 삭제/재등록하지 않습니다.
         foreach(var e in observed.Elements())AdmissionPolicy.Require(expected.Element(e.Name) is not null,"TASK_SETTING_EXTRA_HOLD");
         var sd=new RawSecurityDescriptor(task.Sddl);
