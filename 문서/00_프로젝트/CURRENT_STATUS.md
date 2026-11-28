@@ -1,5 +1,10 @@
 ## Discord V2 FAKE_ONLY 제품 계약 / 운영 HOLD
 
+## Discord V2 NativeAOT 후보 발행 · 2026-11-28
+
+Supervisor/Probe/DeploymentAdmin 3개 빌드 PASS, AMD64 Native 및 서명 전 SHA 확인. 후보 실행·서명·배포 HOLD. 소스 579cbe43, 후보 해시 및 검증은 Discord_V2_Resume_20261128.md와 Issue #66. Unity 확인 사항 없음.
+
+
 ## Discord V2 보호 적용 연결 · 2026-11-28
 
 서명 배포 적용·동작별 승인 보호 설치 소스 연결, 신규 격리 6 PASS. 실제 제품용 바인딩 관리자 조회 결과 대기, NativeAOT HOLD. 운영 작업 없음. Unity 확인 대상 없음. 소스 579cbe43c799d336adc0f164187dfb8240fea90e. Issue #66 보고 완료.
