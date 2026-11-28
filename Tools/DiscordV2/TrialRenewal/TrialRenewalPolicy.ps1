@@ -41,10 +41,18 @@ function Read-VerifiedTrialRenewalReceipt(
         !$Verifier.VerifyData($ReceiptBytes,$Signature,[Security.Cryptography.HashAlgorithmName]::SHA256,
             [Security.Cryptography.RSASignaturePadding]::Pss)) { throw 'HOLD_RENEWAL_SIGNATURE' }
     $r=Read-TrialRenewalJson $ReceiptBytes
-    Assert-TrialRenewalFields $r @('Profile','Approved','RenewalId','PriorTrialSha256','PriorTrustSha256','PriorBasisSha256',
+    $expectedFields=@('Profile','Approved','RenewalId','PriorTrialSha256','PriorTrustSha256','PriorBasisSha256',
         'NextTrialSha256','NextTrustSha256','NextBasisSha256','SourceRequestSha256','TrialId','WorkerSid','TaskPath','CodeRoot',
         'EvidenceRoot','SupervisorSha256','ProbeSha256','IssuedUtc','PromoteBeforeUtc','TrialExpiresUtc')
-    if ($r.Profile -cne 'DISCORD_V2_TRIAL_RENEWAL_V1' -or $r.Approved -isnot [bool] -or !$r.Approved -or
+    $migration=$r.Profile -ceq 'DISCORD_V2_TRIAL_SUPERVISOR_MIGRATION_V1'
+    if($migration) {
+        $expectedFields+=@('NextSupervisorSha256','SigningManifestSha256','RegistrationArchiveSha256','SupervisorSourceCommit')
+        if($r.NextSupervisorSha256 -cnotmatch '^[0-9a-f]{64}$' -or $r.NextSupervisorSha256 -ceq $Identity.SupervisorSha256 -or
+            $r.SigningManifestSha256 -cnotmatch '^[0-9a-f]{64}$' -or $r.RegistrationArchiveSha256 -cnotmatch '^[0-9a-f]{64}$' -or
+            $r.SupervisorSourceCommit -cnotmatch '^[0-9a-f]{40}$'){throw 'HOLD_MIGRATION_PROOF_FIELDS'}
+    }
+    Assert-TrialRenewalFields $r $expectedFields
+    if ((!$migration -and $r.Profile -cne 'DISCORD_V2_TRIAL_RENEWAL_V1') -or $r.Approved -isnot [bool] -or !$r.Approved -or
         $r.RenewalId -cnotmatch '^(?!0{32}$)[0-9a-f]{32}$' -or $r.PriorTrialSha256 -cne $PriorSha -or
         $r.NextTrialSha256 -ceq $PriorSha) { throw 'HOLD_RENEWAL_PRIOR_OR_ID' }
     foreach ($field in 'PriorTrialSha256','PriorTrustSha256','PriorBasisSha256','NextTrialSha256','NextTrustSha256','NextBasisSha256') {
@@ -160,6 +168,24 @@ function Resolve-ProtectedTrialHead($Store,$Binding,[Security.Cryptography.RSA]$
         foreach($check in @(@('TrialContract.json',$tip),@($trustName,$expectedTrust),@($basisName,$expectedBasis))){
             $prior=Read-TrialRenewalStream ($Store.ReadCase($tip,('Prior-'+$check[0])))
             if((Get-TrialRenewalSha $prior) -cne $check[1]){throw 'HOLD_RENEWAL_ARCHIVE_HASH'}
+        }
+        if($r.Profile -ceq 'DISCORD_V2_TRIAL_SUPERVISOR_MIGRATION_V1') {
+            $oldImage=Read-TrialRenewalStream ($Store.ReadCase($tip,'Prior-Supervisor.exe')) 16777216
+            $signingRaw=Read-TrialRenewalStream ($Store.ReadCase($tip,'SupervisorSigningManifest.json'))
+            $registrationRaw=Read-TrialRenewalStream ($Store.ReadCase($tip,'FailedRegistrationEvidence.json'))
+            if((Get-TrialRenewalSha $oldImage) -cne $id.SupervisorSha256 -or
+                (Get-TrialRenewalSha $signingRaw) -cne $r.SigningManifestSha256 -or
+                (Get-TrialRenewalSha $registrationRaw) -cne $r.RegistrationArchiveSha256){throw 'HOLD_MIGRATION_ARCHIVE_SHA'}
+            $signing=Read-TrialRenewalJson $signingRaw
+            $signed=@($signing.Results)
+            $registration=Read-TrialRenewalJson $registrationRaw
+            if($signing.Schema -cne 'LIMITLESS_DISCORD_V2_PRODUCT_SIGNING_MANIFEST_V1' -or
+                $signing.SourceCommit -cne $r.SupervisorSourceCommit -or $signed.Count -ne 1 -or
+                $signed[0].Name -cne 'Supervisor.exe' -or $signed[0].Status -cne 'PASS' -or
+                $signed[0].SignedSha256 -cne $r.NextSupervisorSha256 -or
+                $registration.Profile -cne 'DISCORD_V2_FAILED_REGISTRATION_ARCHIVE_V1' -or
+                $registration.TrialSha256 -cne $tip){throw 'HOLD_MIGRATION_EVIDENCE_BINDING'}
+            $id.SupervisorSha256=$r.NextSupervisorSha256
         }
         $tip=$r.NextTrialSha256
         $expectedTrust=$r.NextTrustSha256

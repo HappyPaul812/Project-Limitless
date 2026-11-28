@@ -32,6 +32,8 @@ public static partial class LimitlessTrialRenewal20261128
         const string Code = Runtime + @"\Code";
         const string Control = Runtime + @"\Control";
         const string Approvals = Control + @"\Approvals";
+        const string RecoveryArchive = Control + @"\FailedRegistrationArchive20261128";
+        const string RegistrationSigning = @"C:\ProgramData\LimitlessDiscordV2SupervisorRegistrationSigning20261128";
         const string Renewals = Control + @"\TrialRenewals";
         const string DeploymentLedger = Control + @"\DeploymentLedger";
         const string TrialId = "deef7539de5b4efcb30e062f9b734342";
@@ -41,6 +43,7 @@ public static partial class LimitlessTrialRenewal20261128
         readonly ulong volume;
         readonly DateTimeOffset opened;
         string activeCase;
+        bool supervisorMigration;
 
         public Store(string actor, string worker)
         {
@@ -166,6 +169,22 @@ public static partial class LimitlessTrialRenewal20261128
                 "ProductDeploymentRequest.v2.json.sig" : "ProductDeploymentRequest.v2.json"), 0);
         }
 
+        public FileStream ReadRegistrationArtifact(bool manifest)
+        {
+            Check();
+            using (var directory=Pin(RegistrationSigning))
+                Identity(directory,RegistrationSigning,true,false,0);
+            return OpenRead(Path.Combine(RegistrationSigning,manifest?"ProductSigningManifest.json":"Supervisor.exe"),0);
+        }
+
+        public FileStream ReadFailedRegistrationEvidence()
+        {
+            Check();
+            using (var directory=Pin(RecoveryArchive))
+                Identity(directory,RecoveryArchive,true,false,0);
+            return OpenRead(Path.Combine(RecoveryArchive,"RegistrationEvidence.json"),0);
+        }
+
         public bool CaseExists(string prior)
         {
             Check();
@@ -178,16 +197,18 @@ public static partial class LimitlessTrialRenewal20261128
         public FileStream ReadCase(string prior, string name)
         {
             Check();
-            bool receipt = name == "Renewal.json" || name == "Renewal.sig" || name == "PromotionCommit.json";
+            bool receipt = name == "Renewal.json" || name == "Renewal.sig" || name == "PromotionCommit.json" ||
+                name == "SupervisorSigningManifest.json" || name == "FailedRegistrationEvidence.json";
             bool archive = name.StartsWith("Prior-", StringComparison.Ordinal) && TrialFile(name.Substring(6));
-            Need(receipt || archive, "HOLD_RENEWAL_RECEIPT_NAME");
+            bool image = name=="Prior-Supervisor.exe";
+            Need(receipt || archive || image, "HOLD_RENEWAL_RECEIPT_NAME");
             string path = CasePath(prior);
             using (var root = Pin(Renewals))
             using (var folder = Pin(path))
             {
                 Identity(root, Renewals, true, false, 0);
                 Identity(folder, path, true, false, 0);
-                return OpenRead(Path.Combine(path, name), archive ? 0x120089 : 0);
+                return OpenRead(Path.Combine(path, name), image ? 0x1200a9 : archive ? 0x120089 : 0);
             }
         }
 
@@ -229,6 +250,12 @@ public static partial class LimitlessTrialRenewal20261128
             activeCase = path;
         }
 
+        public void BeginSupervisorMigration(string prior, DateTimeOffset deadline)
+        {
+            Begin(prior,deadline);
+            supervisorMigration=true;
+        }
+
         static string Hash(Stream file)
         {
             file.Position = 0;
@@ -239,21 +266,22 @@ public static partial class LimitlessTrialRenewal20261128
         public void ArchiveTrialFile(string name, string expectedSha, DateTimeOffset deadline)
         {
             Check();
-            Need(activeCase != null && TrialFile(name),"HOLD_RENEWAL_ARCHIVE_SCOPE");
+            int mask=name=="Supervisor.exe" && supervisorMigration?0x1200a9:0x120089;
+            Need(activeCase != null && (TrialFile(name) || mask==0x1200a9),"HOLD_RENEWAL_ARCHIVE_SCOPE");
             string source = Path.Combine(Code, name);
             string destination = Path.Combine(activeCase, "Prior-" + name);
             Need(!Exists(destination), "HOLD_RENEWAL_ARCHIVE_EXISTS");
             using (var handle = CreateFileW(source, 0x130089, 0, IntPtr.Zero, 3, 0x02200000, IntPtr.Zero))
             {
                 Win(!handle.IsInvalid);
-                string identity = Identity(handle, source, false, false, 0x120089);
+                string identity = Identity(handle, source, false, false, mask);
                 using (var file = new FileStream(handle, FileAccess.Read))
                 {
                     Need(Hash(file) == expectedSha, "HOLD_RENEWAL_PRIOR_CHANGED");
                     Check();
                     Need(DateTimeOffset.UtcNow < deadline,"HOLD_RENEWAL_PROMOTION_TIME");
                     RenameWithoutReplacement(handle, destination);
-                    Need(Identity(handle, destination, false, false, 0x120089) == identity &&
+                    Need(Identity(handle, destination, false, false, mask) == identity &&
                         Hash(file) == expectedSha, "HOLD_RENEWAL_ARCHIVE_READBACK");
                 }
             }
@@ -262,7 +290,8 @@ public static partial class LimitlessTrialRenewal20261128
 
         public void WriteCase(string name, byte[] bytes, DateTimeOffset deadline)
         {
-            Need(activeCase != null && (name=="Renewal.json" || name=="Renewal.sig" || name=="PromotionCommit.json"),
+            Need(activeCase != null && (name=="Renewal.json" || name=="Renewal.sig" || name=="PromotionCommit.json" ||
+                supervisorMigration && (name=="SupervisorSigningManifest.json" || name=="FailedRegistrationEvidence.json")),
                 "HOLD_RENEWAL_WRITE_CASE_SCOPE");
             WriteNew(Path.Combine(activeCase,name), bytes, deadline, 0);
         }
@@ -273,12 +302,18 @@ public static partial class LimitlessTrialRenewal20261128
             WriteNew(Path.Combine(Code,name), bytes, deadline, 0x120089);
         }
 
+        public void WriteSupervisor(byte[] bytes, DateTimeOffset deadline)
+        {
+            Need(activeCase != null && supervisorMigration,"HOLD_RENEWAL_SUPERVISOR_SCOPE");
+            WriteNew(Path.Combine(Code,"Supervisor.exe"),bytes,deadline,0x1200a9);
+        }
+
         void WriteNew(string path, byte[] bytes, DateTimeOffset deadline, int mask)
         {
             Check();
-            Need(DateTimeOffset.UtcNow < deadline && bytes != null && bytes.Length > 0 && bytes.Length <= 16384,
+            Need(DateTimeOffset.UtcNow < deadline && bytes != null && bytes.Length > 0 && bytes.Length <= (mask==0x1200a9?16777216:16384),
                 "HOLD_RENEWAL_WRITE_WINDOW");
-            string sddl = mask == 0 ? InitialSddl : InitialSddl + "(A;;0x00120089;;;" + worker + ")";
+            string sddl = mask == 0 ? InitialSddl : InitialSddl + $"(A;;0x{mask:x8};;;{worker})";
             IntPtr sd; uint size;
             Win(ConvertStringSecurityDescriptorToSecurityDescriptorW(sddl, 1, out sd, out size));
             try
