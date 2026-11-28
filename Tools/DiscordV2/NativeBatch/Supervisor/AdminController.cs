@@ -42,7 +42,7 @@ internal sealed record AccountObservation(string Sid, bool Enabled, bool Locked,
 internal interface IAdminBackend
 {
     DateTimeOffset Now { get; }
-    CurrentFakeOnlyContract.ExecutionWindow? SignedStartWindow => null;
+    CurrentFakeOnlyContract.ExecutionWindow? SignedOperationWindow => null;
     void Preflight(TrialContract contract, bool cleanup);
     byte[] IsolationEvidence(string name,int limit)=>throw new InvalidOperationException("FAKE_TRUST_EVIDENCE_MISSING_HOLD");
     byte[] Approval(string operation,string trialId);
@@ -72,7 +72,7 @@ internal static class AdminController
         Action<TrialContract,string,DateTimeOffset>? shape,Action<TrialContract,string,string,OperationApproval,AccountObservation,DateTimeOffset,AdmissionBinding>? authorize)
     {
         AdmissionPolicy.Require(IsMode(mode), "ADMIN_MODE");
-        var window = mode == "--start-once" && authorize is not null ? backend.SignedStartWindow : null;
+        var window = authorize is not null ? backend.SignedOperationWindow : null;
         bool cleanup = mode is "--stop-owned-instance" or "--remove-owned-task";
         AdmissionPolicy.Require(AdmissionPolicy.Sha(sha) && Convert.ToHexString(SHA256.HashData(raw)).ToLowerInvariant() == sha, "CONTROL_CONTRACT_SHA");
         AdmissionPolicy.Contract(raw, backend.Now, binding, cleanup, window);
@@ -89,7 +89,7 @@ internal static class AdminController
         var account = backend.Account();
         AdmissionPolicy.Require(account.Sid == binding.WorkerSid, "ACCOUNT_SID_CHANGED");
         if (!cleanup)
-            AdmissionPolicy.Require(account.Enabled && !account.Locked && account.ExpiresUtc >= contract.ExpiresUtc && account.BatchKnown && account.BatchAllowed, "ACCOUNT_OR_BATCH_HOLD");
+            AdmissionPolicy.Require(NativeTrialPolicy.AccountAllowed(account,contract.ExpiresUtc,window is not null && mode == "--register-only"), "ACCOUNT_OR_BATCH_HOLD");
         var observation = backend.Observe();
         if (window is not null) NativeTrialPolicy.Authorize(contract,sha,mode,approval,account,backend.Now,binding,window);
         else authorize?.Invoke(contract,sha,mode,approval,account,backend.Now,binding);

@@ -42,7 +42,7 @@ internal static class FakeOnlyPolicy
         foreach(var pair in new Dictionary<string,string>{{"TrialId",c.TrialId},{"WorkerSid",s!.WorkerSid},{"TaskPath",s.TaskPath},{"CodeRoot",s.CodeRoot},{"EvidenceRoot",s.EvidenceRoot},{"SupervisorSha256",c.SupervisorSha256},{"ProbeSha256",c.ProbeSha256}})
             AdmissionPolicy.Require(root.GetProperty(pair.Key).GetString()==pair.Value,"FAKE_TRUST_BINDING");
         var observed=root.GetProperty("ObservedUtc").GetDateTimeOffset();var expiry=root.GetProperty("ExpiresUtc").GetDateTimeOffset();
-        AdmissionPolicy.Require(observed<=now&&observed<expiry&&expiry<=c.ExpiresUtc&&(window is null ? expiry<=AdmissionPolicy.Deadline : window.Allows(now, expiry))&&(cleanup||(expiry>now&&now-observed<=TimeSpan.FromMinutes(15))),"FAKE_TRUST_STALE_OR_EXPIRED");
+        AdmissionPolicy.Require(observed<=now&&observed<expiry&&expiry<=c.ExpiresUtc&&(window is null ? expiry<=AdmissionPolicy.Deadline : window.AllowsTrial(now, expiry))&&(cleanup||(expiry>now&&now-observed<=TimeSpan.FromMinutes(15))),"FAKE_TRUST_STALE_OR_EXPIRED");
         string basisSha=root.GetProperty("BasisSha256").GetString()??"";
         byte[] basis=read(c.TrialId+".fake-only-trust-basis.txt",16384);
         AdmissionPolicy.Require(AdmissionPolicy.Sha(basisSha)&&basis.Length is >=32 and <=16384&&Hash(basis)==basisSha,"FAKE_TRUST_BASIS");

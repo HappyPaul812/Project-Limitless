@@ -9,7 +9,7 @@ internal static class NativeTrialPolicy
         => throw new InvalidOperationException("HOLD_NATIVE_MUTATION_DEADLINE_REVIEW");
     internal static void Shape(TrialContract c, string mode, DateTimeOffset now, CurrentFakeOnlyContract.ExecutionWindow? window)
     {
-        AdmissionPolicy.Require(window is null ? now <= AdmissionPolicy.Deadline && c.ExpiresUtc > now && c.ExpiresUtc <= AdmissionPolicy.Deadline : window.Allows(now, c.ExpiresUtc), "TRIAL_TIME_HOLD");
+        AdmissionPolicy.Require(window is null ? now <= AdmissionPolicy.Deadline && c.ExpiresUtc > now && c.ExpiresUtc <= AdmissionPolicy.Deadline : window.AllowsTrial(now, c.ExpiresUtc), "TRIAL_TIME_HOLD");
         AdmissionPolicy.Require(c.Approved && c.TrialId == CandidateTrialId, "TRIAL_ID_NOT_ADMITTED");
         AdmissionPolicy.Require(c.FakeOnlyIsolation is { Profile: FakeOnlyPolicy.ProfileName, GlobalSidAbsence: FakeOnlyPolicy.GlobalState } f
             && AdmissionPolicy.Sha(f.TrustEvidenceSha256), "TRIAL_PROFILE_HOLD");
@@ -43,9 +43,13 @@ internal static class NativeTrialPolicy
         // 정리는 기존 계약처럼 계정 비활성화 때문에 자기 객체를 남기지 않습니다.
         // 그래도 새 cleanup 승인/정확 소유 증표/현재 cutoff는 반드시 요구합니다.
         if (mode is not "--stop-owned-instance" and not "--remove-owned-task")
-            AdmissionPolicy.Require(account.Enabled && !account.Locked && account.ExpiresUtc >= c.ExpiresUtc
-                && account.BatchKnown && account.BatchAllowed, "TRIAL_ACCOUNT_HOLD");
+            AdmissionPolicy.Require(AccountAllowed(account,c.ExpiresUtc,window is not null && mode == "--register-only"), "TRIAL_ACCOUNT_HOLD");
     }
+    // 서명된 신규 등록은 비활성 계정의 비활성 Task만 대상으로 합니다. 시작은 활성 계정을 요구합니다.
+    internal static bool AccountAllowed(AccountObservation account, DateTimeOffset trialExpiry, bool disabledRegistration)
+        => account.Enabled != disabledRegistration && !account.Locked && account.ExpiresUtc >= trialExpiry
+            && account.BatchKnown && account.BatchAllowed;
+
     internal static void AuthorizeThen(TrialContract c, string sha, string mode, OperationApproval approval,
         AccountObservation account, DateTimeOffset now, AdmissionBinding binding, Action action)
     { Authorize(c, sha, mode, approval, account, now, binding, null); action(); }

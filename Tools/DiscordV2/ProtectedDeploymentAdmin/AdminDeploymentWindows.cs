@@ -62,15 +62,40 @@ internal sealed class AdminDeploymentWindows : IDeploymentHost,IDisposable
         byte[] manifest=ReadProtected(scope.ManifestPath,16384);
         AdmissionPolicy.Require(ProtectedDeployment.Hash(contract)==scope.ProductContractSha256 &&
             ProtectedDeployment.Hash(manifest)==scope.ManifestSha256,"FAKE_V2_REQUEST_BINDING");
-        var plan=System.Text.Json.JsonSerializer.Deserialize(manifest,DeploymentJson.Default.DeploymentPlan)
-            ?? throw new InvalidOperationException("DEPLOY_PLAN_NULL");
+        var plan=ProtectedDeployment.ReadManifest(manifest,scope.ManifestSha256);
+        var images=DeploymentAdmission.ReviewSignedManifest(scope,plan,binding);
+        byte[] approvalRaw=ReadProtected(scope.ApprovalPath,4096);
+        var approval=DeploymentAdmission.Strict(approvalRaw,4096,DeploymentJson.Default.DeploymentApproval);
+        AdmissionPolicy.Require(approval.Approved && approval.Profile == "PROTECTED_DEPLOYMENT_V1" &&
+            approval.DeploymentId == scope.DeploymentId && approval.TrialId == scope.TrialId &&
+            approval.ManifestSha256 == scope.ManifestSha256 &&
+            ProtectedDeployment.Hash(approvalRaw) == scope.ApprovalSha256, "DEPLOY_REVIEW_APPROVAL_BINDING");
         using var signer=OpenApprovalSigner();
         var productExpiry = CurrentFakeOnlyContract.Validate(contract,signature,signer,CurrentFakeOnlyContract.Signer,binding,Now,
-            plan.Files.Single(file=>file.Name=="Supervisor.exe").Sha256,
-            plan.Files.Single(file=>file.Name=="Probe.exe").Sha256);
-        DeploymentAdmission.RequireSignedPeriods(Now, scope.ExpiresUtc, productExpiry);
-        // 제품의 Authenticode 및 기존 실행 경계 연결은 별도 승인 후 구현합니다.
-        throw new InvalidOperationException("FAKE_V2_PRODUCT_IMAGE_TRUST_AND_RUNTIME_HOLD");
+            images.Supervisor.Sha256,
+            images.Probe.Sha256);
+        foreach (var image in new[] { images.Supervisor, images.Probe })
+        {
+            byte[] bytes=ReadProtected(image.Source,268435456);
+            DeploymentSecurityPolicy.NativeImage(bytes);
+            PinSource(image);
+            ProductAuthenticode.VerifyAuthenticode(sources[image.Name],image.Source,
+                ProductAuthenticode.ApprovedCertificateSha,CurrentFakeOnlyContract.Signer);
+        }
+        byte[] trial=ReadProtected(scope.ContractPath,4096);
+        byte[] risk=ReadProtected(scope.RiskBasisPath,16384);
+        AdmissionPolicy.Require(ProtectedDeployment.Hash(trial) == scope.ContractSha256 &&
+            risk.Length >= 32 && ProtectedDeployment.Hash(risk) == scope.RiskBasisSha256,"DEPLOY_REVIEW_INPUT_SHA");
+        DeploymentLedgerPolicy.Root(scope.LedgerRoot,LedgerRoot,binding);
+        PinLedger();
+        var actor=ObserveActor();
+        AdmissionPolicy.Require(actor.ElevatedAdministrator && actor.NotImpersonating &&
+            actor.UserSid == scope.AdministratorSid && actor.ToolSha256 == scope.ToolSha256,"DEPLOY_REVIEW_ACTOR");
+        var now=Now;
+        DeploymentAdmission.RequireSignedPeriods(now, scope.ExpiresUtc, productExpiry);
+        AdmissionPolicy.Require(now < approval.ExpiresUtc && now < plan.ExpiresUtc &&
+            scope.ExpiresUtc <= approval.ExpiresUtc && approval.ExpiresUtc <= plan.ExpiresUtc,
+            "DEPLOY_REVIEW_APPROVAL_EXPIRED");
     }
 
     private RSA OpenApprovalSigner()

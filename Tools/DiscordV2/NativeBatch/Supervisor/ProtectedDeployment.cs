@@ -55,7 +55,7 @@ internal static class ProtectedDeployment
         AdmissionPolicy.Require(seen.Count==names.Length,"DEPLOY_FIELDS");
     }
     private static bool Inside(string path,string root)=>path.Equals(root,StringComparison.OrdinalIgnoreCase)||path.StartsWith(root+Path.DirectorySeparatorChar,StringComparison.OrdinalIgnoreCase);
-    internal static void Execute(byte[] manifest,string manifestSha,AdmissionBinding binding,IProtectedDeployment backend)
+    internal static DeploymentPlan ReadManifest(byte[] manifest,string manifestSha)
     {
         AdmissionPolicy.Require(manifest.Length is >0 and <=16384 && AdmissionPolicy.Sha(manifestSha)&&Hash(manifest)==manifestSha,"DEPLOY_MANIFEST_SHA");
         using(var doc=JsonDocument.Parse(manifest))
@@ -65,6 +65,11 @@ internal static class ProtectedDeployment
             foreach(var f in doc.RootElement.GetProperty("Files").EnumerateArray())Fields(f,"Name","Source","Sha256","Bytes");
         }
         var plan=JsonSerializer.Deserialize(manifest,DeploymentJson.Default.DeploymentPlan)!;
+        return plan;
+    }
+    internal static void Execute(byte[] manifest,string manifestSha,AdmissionBinding binding,IProtectedDeployment backend)
+    {
+        var plan=ReadManifest(manifest,manifestSha);
         AdmissionPolicy.Require(plan.TrialId==NativeTrialPolicy.CandidateTrialId && backend.Now<=AdmissionPolicy.Deadline
             && plan.ExpiresUtc>backend.Now && plan.ExpiresUtc<=AdmissionPolicy.Deadline,"DEPLOY_TRIAL_TIME");
         AdmissionPolicy.Require(plan.WorkerSid==binding.WorkerSid&&plan.CodeRoot==binding.CodeRoot&&plan.EvidenceRoot==binding.EvidenceRoot&&plan.TaskPath==binding.TaskPath,"DEPLOY_BINDING");

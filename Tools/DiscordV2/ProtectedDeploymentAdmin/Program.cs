@@ -17,8 +17,8 @@ internal static class AdminDeploymentProgram
             byte[] raw=host.ReadProtected(input.Path,8192);
             host.VerifyRequestSignature(raw);
             host.VerifyCurrentProductContract(raw,binding);
-            DeploymentController.Run(input.Mode,raw,input.Sha,binding,host);
-            Console.WriteLine(input.Mode=="--review"?"REVIEW_ONLY_NO_CHANGES":"DEPLOYMENT_COMPLETED_NO_EXECUTION");return 0;
+            AdmissionPolicy.Require(input.Mode=="--review","FAKE_V2_PRODUCT_APPLY_HOLD");
+            Console.WriteLine("SIGNED_PRODUCT_INPUTS_REVIEWED_NO_CHANGES");return 0;
         } catch {Console.Error.WriteLine("HOLD_DEPLOYMENT_NOT_COMPLETED_KEEP_EVIDENCE");return 70;}
     }
 }

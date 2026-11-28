@@ -62,6 +62,31 @@ internal sealed class DeploymentAdmission
         => AdmissionPolicy.Require(requestExpiry.Offset == TimeSpan.Zero && now < requestExpiry && now < productExpiry,
             "DEPLOY_SIGNED_PERIOD_EXPIRED");
 
+    internal static (DeploymentFile Supervisor, DeploymentFile Probe) ReviewSignedManifest(
+        DeploymentRequest request, DeploymentPlan plan, AdmissionBinding binding)
+    {
+        AdmissionPolicy.Require(request.Approved && request.Profile == "INDEPENDENT_ADMIN_DEPLOY_V2" &&
+            request.TrialId == NativeTrialPolicy.CandidateTrialId && request.TrialId == plan.TrialId &&
+            request.CreateRoots && request.CopyFiles && request.CredentialsReviewed && request.OtherLaunchPathsReviewed &&
+            request.ImageTrustReviewed && request.PrivilegedToolRiskAccepted, "DEPLOY_REVIEW_SCOPE");
+        AdmissionPolicy.Require(binding.CodeRoot == plan.CodeRoot && binding.EvidenceRoot == plan.EvidenceRoot &&
+            binding.TaskPath == plan.TaskPath && binding.WorkerSid == plan.WorkerSid, "DEPLOY_REVIEW_BINDING");
+        var names = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var allowed = new HashSet<string>(StringComparer.Ordinal) {
+            "Supervisor.exe", "Probe.exe", "TrialContract.json", plan.TrialId + ".fake-only-trust.json",
+            plan.TrialId + ".fake-only-trust-basis.txt"
+        };
+        AdmissionPolicy.Require(plan.Files.Length == allowed.Count, "DEPLOY_REVIEW_FILE_COUNT");
+        foreach (var file in plan.Files)
+            AdmissionPolicy.Require(allowed.Contains(file.Name) && names.Add(file.Name) &&
+                Path.IsPathFullyQualified(file.Source) && AdmissionPolicy.Sha(file.Sha256) &&
+                file.Bytes is > 0 and <= 268435456, "DEPLOY_REVIEW_FILE");
+        var trial = plan.Files.Single(file => file.Name == "TrialContract.json");
+        AdmissionPolicy.Require(trial.Source == request.ContractPath && trial.Sha256 == request.ContractSha256,
+            "DEPLOY_REVIEW_TRIAL");
+        return (plan.Files.Single(file => file.Name == "Supervisor.exe"), plan.Files.Single(file => file.Name == "Probe.exe"));
+    }
+
     internal static T Strict<T>(byte[] bytes,int limit,JsonTypeInfo<T> info)
     {
         AdmissionPolicy.Require(bytes.Length>0&&bytes.Length<=limit,"DEPLOY_INPUT_SIZE");

@@ -149,7 +149,7 @@ internal sealed class ReleaseAdmission : IDisposable
     internal void CheckIsolation(uint childPid)
     {CheckScope(childPid);HandleCensus.Check(watched);}
     private void RequireProductWindow() => AdmissionPolicy.Require(
-        executionWindow.Allows(DateTimeOffset.UtcNow, Contract.ExpiresUtc), "FAKE_V2_WINDOW_HOLD");
+        executionWindow.AllowsTrial(DateTimeOffset.UtcNow, Contract.ExpiresUtc), "FAKE_V2_WINDOW_HOLD");
     private void CheckScope(uint? childPid)=>FakeOnlyPolicy.Exclusivity(Contract,DateTimeOffset.UtcNow,
         ReadTrust,()=>HandleCensus.Exclusive(childPid),window:executionWindow);
     private byte[] ReadTrust(string name,int limit)

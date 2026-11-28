@@ -49,8 +49,12 @@ internal static class CurrentFakeOnlyContract
             => AdmissionPolicy.Require(trial == trialSha && ProtectedDeployment.Hash(operation) == operationSha,
                 "FAKE_V2_EXECUTION_INPUT_CHANGED");
 
+        // 서명된 승인 기간과 보호된 Trial 기간을 둘 다 검사합니다.
+        internal bool AllowsTrial(DateTimeOffset now, DateTimeOffset expiry)
+            => Starts <= now && now < Expires && now < expiry;
+
         internal bool Allows(DateTimeOffset now, DateTimeOffset expiry)
-            => Starts <= now && now < expiry && expiry <= Expires;
+            => AllowsTrial(now, expiry) && expiry <= Expires;
     }
 
     internal static DateTimeOffset Validate(byte[] raw, byte[] signature, RSA signer, string expectedSigner,

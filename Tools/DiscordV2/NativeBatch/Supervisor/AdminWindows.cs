@@ -15,7 +15,7 @@ internal sealed class AdminWindows : IAdminBackend,IDisposable
     private AccountObservation? account;
     private TrialContract? preparedContract;
     private readonly string expectedSha;
-    public CurrentFakeOnlyContract.ExecutionWindow? SignedStartWindow { get; private set; }
+    public CurrentFakeOnlyContract.ExecutionWindow? SignedOperationWindow { get; private set; }
     public DateTimeOffset Now=>DateTimeOffset.UtcNow;
     private TaskSchedulerNative Scheduler=>scheduler??=new(Native.TaskPath,()=>mutationBoundary??throw new InvalidOperationException("MUTATION_BOUNDARY_REQUIRED"));
     private AdminWindows(string sha){expectedSha=sha;}
@@ -35,14 +35,13 @@ internal sealed class AdminWindows : IAdminBackend,IDisposable
         using var backend=new AdminWindows(args[4]);
         backend.PinTree(Native.CodeRoot,false);backend.PinTree(Native.EvidenceRoot,true);
         byte[] raw=backend.Read(args[2],4096,false);
-        if (args[0] == "--start-once")
-            backend.SignedStartWindow = backend.ReadSignedStartWindow(raw, args[4]);
+        backend.SignedOperationWindow = backend.ReadSignedOperationWindow(args[0], raw, args[4]);
         using var cancel=new CancellationTokenSource();
         ConsoleCancelEventHandler handler=(_,e)=>{e.Cancel=true;cancel.Cancel();};Console.CancelKeyPress+=handler;
         try{return AdminController.ExecuteNative(args[0],raw,args[4],AdmissionBinding.Current,backend,instance,cancel.Token);}
         finally{Console.CancelKeyPress-=handler;}
     }
-    private CurrentFakeOnlyContract.ExecutionWindow ReadSignedStartWindow(byte[] raw, string sha)
+    private CurrentFakeOnlyContract.ExecutionWindow ReadSignedOperationWindow(string mode, byte[] raw, string sha)
     {
         AdmissionPolicy.Require(ProtectedDeployment.Hash(raw) == sha, "ADMIN_EXECUTION_TRIAL_SHA");
         var contract = System.Text.Json.JsonSerializer.Deserialize(raw, ContractJson.Default.TrialContract)
@@ -56,11 +55,12 @@ internal sealed class AdminWindows : IAdminBackend,IDisposable
             ProductAuthenticode.ApprovedCertificateSha, CurrentFakeOnlyContract.Signer);
         using var rsa = RSA.Create();
         rsa.ImportSubjectPublicKeyInfo(key, out _);
+        string name = mode == "--start-once" ? "FakeOnlyExecution.v2" : "FakeOnlyExecution.v2." + mode[2..];
         return CurrentFakeOnlyContract.ExecutionWindow.Verify(
-            IsolationEvidence("FakeOnlyExecution.v2.json",4096), IsolationEvidence("FakeOnlyExecution.v2.sig",4096),
+            IsolationEvidence(name + ".json",4096), IsolationEvidence(name + ".sig",4096),
             rsa, CurrentFakeOnlyContract.Signer, AdmissionBinding.Current, Now,
             contract.SupervisorSha256, contract.ProbeSha256, sha,
-            ProtectedDeployment.Hash(Approval("--start-once",contract.TrialId)));
+            ProtectedDeployment.Hash(Approval(mode,contract.TrialId)));
     }
     public void Preflight(TrialContract contract,bool cleanup)
     {

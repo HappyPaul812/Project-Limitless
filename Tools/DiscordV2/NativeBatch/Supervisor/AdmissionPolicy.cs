@@ -38,7 +38,7 @@ internal static class AdmissionPolicy
         Require(Guid.TryParseExact(id, "N", out var guid) && guid != Guid.Empty && id == guid.ToString("N"), "TRIAL_ID");
         Require(Sha(root.GetProperty("SupervisorSha256").GetString() ?? "") && Sha(root.GetProperty("ProbeSha256").GetString() ?? ""), "CONTRACT_IMAGE_SHA");
         var expiry = root.GetProperty("ExpiresUtc").GetDateTimeOffset();
-        Require(window is null ? expiry <= Deadline && (cleanup || expiry > now) : window.Allows(now, expiry), "APPROVAL_EXPIRED_OR_DEADLINE");
+        Require(window is null ? expiry <= Deadline && (cleanup || expiry > now) : window.AllowsTrial(now, expiry), "APPROVAL_EXPIRED_OR_DEADLINE");
         var scope = root.GetProperty("Scope");
         string[] scopeFields = ["WorkerSid", "TaskPath", "CodeRoot", "EvidenceRoot", "Mode", "NoIpc", "NoAi", "JobSeconds", "SupervisorCount", "ProbeCount", "Register", "Start", "Cleanup"];
         Require(scope.ValueKind == JsonValueKind.Object, "SCOPE_OBJECT");
