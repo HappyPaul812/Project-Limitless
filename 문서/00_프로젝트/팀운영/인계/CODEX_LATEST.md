@@ -1,5 +1,10 @@
 ## Discord V2 운영 시간 대조 / 기존 승인 만료
 
+## Discord V2 · 2026-11-28
+
+Supervisor 제품 서명/계약 연결, 관리형 빌드 경고·오류 0, 격리 무서명 거부 1 PASS. 운영 서명 성공·만료 계약 전환·Worker 권리·배포·비활성 Task HOLD. Unity 확인 대상 없음. 다음은 배포/제품 만료 연결 및 별도 승인 범위 검토. 소스 $sha. [검증 및 후속 범위](../../Discord_V2_Resume_20261128.md)
+
+
 Windows 지역시·UTC와 시각 조회 일치. 세션 날짜 표기는 운영 코드에 미사용. Windows UTC 기준 기존 발급 만료, 동기화 서비스 상태는 조회 권한 부족. 승인 보존·설치 미실행. [시간 근거와 별도 승인 순서](../../Discord_V2_Staging_Admission_20261121.md). NO_GO / MANUAL / EXECUTION_HOLD.
 
 ## Discord V2 신규 설치 승인 발급 PASS / 설치 HOLD
