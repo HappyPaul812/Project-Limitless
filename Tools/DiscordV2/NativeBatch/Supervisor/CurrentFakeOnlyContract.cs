@@ -25,7 +25,7 @@ internal static class CurrentFakeOnlyContract
         AdmissionPolicy.Require(sid.IsAccountSid() && sid.Value == binding.WorkerSid, "FAKE_V2_WORKER_SID");
     }
 
-    internal static void Validate(byte[] raw, byte[] signature, RSA signer, string expectedSigner,
+    internal static DateTimeOffset Validate(byte[] raw, byte[] signature, RSA signer, string expectedSigner,
         AdmissionBinding binding, DateTimeOffset now, string supervisorSha, string probeSha)
     {
         RequireBinding(binding);
@@ -56,5 +56,6 @@ internal static class CurrentFakeOnlyContract
         var expires = contract.GetProperty("ExpiresUtc").GetDateTimeOffset();
         AdmissionPolicy.Require(starts.Offset == TimeSpan.Zero && expires.Offset == TimeSpan.Zero &&
             starts <= now && now < expires && expires - starts <= TimeSpan.FromMinutes(5), "FAKE_V2_WINDOW_HOLD");
+        return expires;
     }
 }

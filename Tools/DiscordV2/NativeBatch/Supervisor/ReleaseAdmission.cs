@@ -13,6 +13,7 @@ internal sealed class ReleaseAdmission : IDisposable
     private IDisposable? consumption;
     private readonly Dictionary<string,byte[]> trustInputs=[];
     private nint token,process,thread,childToken;
+    private DateTimeOffset? productExpiresUtc;
     private OperationApproval startOperation=null!;
     private string expectedContractSha="";
     private ControlReceipt startIntent=null!;
@@ -49,11 +50,25 @@ internal sealed class ReleaseAdmission : IDisposable
         var supervisor=PinFile(Path.Combine(Native.CodeRoot,"Supervisor.exe"));
         var probe=PinFile(Path.Combine(Native.CodeRoot,"Probe.exe"));
         AdmissionPolicy.Require(Hash(supervisor)==Contract.SupervisorSha256 && Hash(probe)==Contract.ProbeSha256,"IMAGE_SHA");
+        if (Contract.FakeOnlyIsolation is not null)
+        {
+            // 보호된 Code의 동일 HANDLE에서 해시와 실제 서명자를 확인하고, 그 공개키로 실행 계약을 검증합니다.
+            byte[] signerKey = ProductAuthenticode.VerifyAuthenticode(supervisor, Path.Combine(Native.CodeRoot, "Supervisor.exe"),
+                ProductAuthenticode.ApprovedCertificateSha, CurrentFakeOnlyContract.Signer);
+            ProductAuthenticode.VerifyAuthenticode(probe, Path.Combine(Native.CodeRoot, "Probe.exe"),
+                ProductAuthenticode.ApprovedCertificateSha, CurrentFakeOnlyContract.Signer);
+            using var signer = RSA.Create();
+            signer.ImportSubjectPublicKeyInfo(signerKey, out _);
+            productExpiresUtc = CurrentFakeOnlyContract.Validate(ReadTrust("FakeOnlyProduct.v1.json",4096),
+                ReadTrust("FakeOnlyProduct.v1.sig",4096), signer, CurrentFakeOnlyContract.Signer,
+                AdmissionBinding.Current, DateTimeOffset.UtcNow, Contract.SupervisorSha256, Contract.ProbeSha256);
+        }
         CheckScope(null);
         // 계약·이미지·신뢰 자료·실제 계정을 읽기 검증하기 전에는 DACL을 바꾸지 않습니다.
         void ValidateEntry()=>TrialEntryGate.Validate(raw,contractSha,"--supervise",operationRaw,AdmissionBinding.Current,
             ()=>DateTimeOffset.UtcNow,ReadTrust,c=> {
                 AdmissionPolicy.Require(Hash(supervisor)==c.SupervisorSha256 && Hash(probe)==c.ProbeSha256,"IMAGE_SHA");
+                RequireProductWindow();
                 CheckScope(null);
             },()=>AccountNative.Read(DateTimeOffset.UtcNow,false));
         // 읽기 HANDLE만 복제하여 외부 위험 HANDLE을 먼저 검사합니다. 아직 DACL/영구 기록은 바꾸지 않습니다.
@@ -117,6 +132,7 @@ internal sealed class ReleaseAdmission : IDisposable
         foreach(var handle in watched.Keys)NonInherited(handle);
         CheckIsolation(child.Pid);
         // 파일/디렉터리 HANDLE은 계속 열려 있어 swap/rename/write 공유를 차단합니다.
+        RequireProductWindow();
         AdmissionPolicy.Require(Contract.ExpiresUtc>DateTimeOffset.UtcNow,"APPROVAL_EXPIRED_BEFORE_RESUME");
     }
     private ControlReceipt ControlRecord(string suffix)
@@ -130,6 +146,8 @@ internal sealed class ReleaseAdmission : IDisposable
     }
     internal void CheckIsolation(uint childPid)
     {CheckScope(childPid);HandleCensus.Check(watched);}
+    private void RequireProductWindow() => AdmissionPolicy.Require(
+        productExpiresUtc is null || DateTimeOffset.UtcNow < productExpiresUtc.Value, "FAKE_V2_WINDOW_HOLD");
     private void CheckScope(uint? childPid)=>FakeOnlyPolicy.Exclusivity(Contract,DateTimeOffset.UtcNow,
         ReadTrust,()=>HandleCensus.Exclusive(childPid));
     private byte[] ReadTrust(string name,int limit)
