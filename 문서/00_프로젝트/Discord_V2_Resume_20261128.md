@@ -85,3 +85,9 @@
 - 별도 도구 반영 모드는 기본값에서 꺼져 있습니다. 대상 부재와 명시 승인 후 기존 보호 어댑터를 사용해 CREATE_NEW, 같은 HANDLE 경로·파일 ID/SD·전체 SHA와 flush를 검증합니다. 기존 항목은 HOLD, 이동·교체·덮어쓰기 없음. 어댑터 컴파일 및 PowerShell 구문 검사 통과, 관리자 실행 대기.
 - 격리 DeploymentPrep의 ProtectedDeploymentRunbook.md에 ① 신규 도구 반영 ② 제품/배포 승인 발급·RSA-PSS 분리 서명 ③ 무변경 review와 별도 승인 apply의 경계, ④ Task 비활성 등록 명령을 기록했습니다. Code RX/Evidence 제한 생성/관리자 전용 Control ACL과 서명 이후 같은 SHA를 확인하는 조회 전용 readback 스크립트도 준비했습니다.
 - 보호 도구 반영, 시한부 승인 발급, 예고한 제품 배포, Task 등록 모두 0. 기존 시험·빌드·서명 반복 0, Worker 비활성 및 직접 권리/병합 불일치/실제 토큰 미검증, 11월 21일 원본 영수증 미확인 유지. 소스 579cbe43. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 독립 배포 도구 보호 반영 결과
+
+- 대표의 한 파일 승인 후 관리자 PowerShell 7에서 SIGNED_DEPLOYMENT_TOOL_MANIFEST_SHA_AND_CERTIFICATE_MATCH, TOOL_ABSENT;CODE_ABSENT;EVIDENCE_ABSENT 및 DEPLOYMENT_TOOL_CREATED_HANDLE_VERIFIED_NO_EXECUTION을 확인했습니다.
+- C:/ProgramData/Limitless/DiscordV2/Control/DeploymentTool/Limitless.DeploymentAdmin.exe 한 파일 CREATE_NEW, 동일 HANDLE 경로·파일 ID·소유자·DACL 및 flush 후 SHA-256 readback. 기본값 보호 관리자 전용 Control/Approvals/DeploymentLedger descriptor 일치. 관리자 실행 출력 근거이며 정상 파일 교체 또는 도구 실행은 없었습니다.
+- 다음 승인 발급 전 실제 신뢰 근거·위험 검토·Trial 및 보호 배포 매니페스트를 확정합니다. 격리 DeploymentPrep/ProtectedDeploymentRunbook.md 및 Invoke-ProductDeploymentReviewed.ps1에 승인 입력과 review/apply 명령 준비. 시한부 서명 발급, 실제 제품 적용, Task 등록은 각각 별도 승인입니다. Worker 비활성, 실제 토큰 및 11월 21일 원본 영수증 미확인. NO_GO / MANUAL / EXECUTION_HOLD.

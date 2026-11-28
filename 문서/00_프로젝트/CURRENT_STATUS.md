@@ -1,5 +1,10 @@
 ## Discord V2 FAKE_ONLY 제품 계약 / 운영 HOLD
 
+## Discord V2 독립 배포 도구 보호 반영 PASS · 2026-11-28
+
+관리자 확인으로 서명 배포 도구 한 파일 CREATE_NEW 및 동일 HANDLE readback 통과. 제품 승인 입력 확정·시한부 발급·review/apply·Task HOLD. Unity 확인 사항 없음. 제품 소스 579cbe43.
+
+
 ## Discord V2 보호 배포 통합 준비 · 2026-11-28
 
 서명 후보·Worker·보호 경로 관리자 조회와 독립 도구 CREATE_NEW, 배포 승인 및 검토 명령 준비. 실제 실행·발급 0. Unity 확인 대상 없음. 후보 소스 579cbe43.
