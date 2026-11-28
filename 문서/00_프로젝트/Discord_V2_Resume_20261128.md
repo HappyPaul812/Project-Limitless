@@ -183,3 +183,9 @@
 - 격리 DV2R20261128에 Supervisor 단발 보호 서명 실행본과 실패 등록 범위 읽기 전용 명령 준비. 기존 등록 의도/HOLD, Code/PendingOperations 사본 및 단발 소비 원장을 승인 ID와 SHA에 결합해 복구 대상을 확인합니다. 보호 이동 작업 자체 및 운영 교체 실행은 보류. 사본·기록 보호 보관과 원래 소비 원장 불변 절차, 서명된 이미지 전환/갱신 계약 요구를 RegistrationRecoveryRunbook.md에 정리했습니다.
 - 기존 Trial 갱신은 동일 Supervisor SHA를 요구합니다. 서명된 이전/신규 Supervisor 전환을 수용하는 코드와 운영 교체 실행본은 미완료이며 단순 파일 교체 금지. 암호 입력 준비 완료 뒤 발급, 별도 등록/배치 토큰/단발 FAKE_ONLY/비활성 원복 명령을 정리했습니다. 실제 서명·보호 이동·운영 교체·발급·등록·활성화·시험·AI 0. Worker 비활성, 실제 토큰 및 11월 21일 원본 영수증 미확인. Unity 확인 대상 없음. NO_GO / MANUAL / EXECUTION_HOLD.
 - 서명 전 후보 1aaff5b1bc17a04268e76c95265d142de852f894dcdbf82dfe7db2c91d3dff2a / 7862784 bytes.
+
+## 등록 진단 Supervisor A 보호 서명 PASS
+
+- 대표 관리자 출력 FAILED_REGISTRATION_EVIDENCE_AND_EXPIRED_SIDECARS_BOUND_LEDGER_READ_ONLY로 대상 결합 사전 확인 PASS. 별도 A 승인 및 등록 진단 Supervisor 한 파일 단발 SignTool sign/verify, REGISTRATION_SUPERVISOR_SIGNED_VERIFIED 확인. 해당 스크립트의 Authenticode, 지문/DER/SPKI/EKU/유효기간 및 보호 manifest 확인 포함. 타임스탬프 없음. 근거는 대표 관리자 출력입니다.
+- 서명 후 SHA-256 149043ab6da4f3891c60cc7230db77ec39eaad7291af6dea86135effeec620dc. 보호 서명 Manifest는 C:/ProgramData/LimitlessDiscordV2SupervisorRegistrationSigning20261128/ProductSigningManifest.json.
+- 운영 Supervisor, Trial, 등록 실패 기록 및 원장 변경 없음. B 해당 실패 기록 보호 보관, C 제품 교체/서명 해시 전환, D/P/F 별도 승인 대기. Worker 비활성 및 실제 배치 토큰 미시험, Task/실행/AI/API 0. Unity 확인 사항 없음. 후보 소스 95da64f8. NO_GO / MANUAL / EXECUTION_HOLD.

@@ -1,5 +1,10 @@
 ## Discord V2 운영 시간 대조 / 기존 승인 만료
 
+## Discord V2 등록 진단 Supervisor A 서명 PASS · 2026-11-28
+
+수정 Supervisor 단발 보호 서명 완료, 실패 기록 읽기 전용 결합 PASS, 운영 미변경. B 보호 보관/C 교체 및 해시 전환/D/P/F HOLD. Unity 확인 사항 없음. 소스 95da64f8.
+
+
 ## Discord V2 등록 진단 Supervisor 단독 발행 · 2026-11-28
 
 등록 원인 UNKNOWN, 단계/HRESULT 개인정보 없는 진단 격리 4 PASS 및 Supervisor NativeAOT 발행. 서명, 실패 증거 보관, 서명 이미지 전환 및 재등록 HOLD. Unity 확인 대상 없음. 소스 95da64f8ceaabd1b6884472ab444779ea56572f7.
