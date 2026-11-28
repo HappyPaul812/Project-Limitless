@@ -1,5 +1,10 @@
 ## Discord V2 FAKE_ONLY 제품 계약 / 운영 HOLD
 
+## Discord V2 세 후보 보호 서명 PASS · 2026-11-28
+
+대표 관리자 출력 3종 PASS 및 서명 후 SHA 기록. 타임스탬프 없음. 배포·Task·실행 HOLD. 후보 소스 579cbe43. Unity 확인 사항 없음.
+
+
 ## Discord V2 제품 일괄 서명 · 2026-11-28
 
 발행 댓글/Manifest/실물 SHA 3종 일치, 보호 서명 어댑터 컴파일 및 스크립트 구문 PASS. 관리자 실행 결과 대기. 보호 배포 준비 문서 작성. 후보 소스 579cbe43. Unity 확인 사항 없음.

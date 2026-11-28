@@ -68,3 +68,13 @@
 - 격리 로컬 SigningBatch/Invoke-ProductSigningBatch.ps1 준비. 기존 windows 상승 관리자와 인증서 핀·시간·EKU·개인키 존재를 확인합니다. ProgramData의 별도 제품 서명 작업 디렉터리에 최초 생성 보안 descriptor로 Tool·후보를 복사하며, 후보별 CREATE_NEW 마커 후 SignTool 1회, SignTool/Authenticode/Thumbprint/DER/SPKI/기간/서명 후 SHA 검사와 보호 통합 Manifest를 기록합니다. 실패 파일은 자동 재시도하지 않습니다.
 - 작업 환경은 비상승 상태여서 실제 보호 복사/서명/검증은 대표 관리자 PowerShell 7 실행 결과 대기입니다. 서명 작업 위치, 서명 후 Manifest, 제품/배포/Trial·위험 근거 연결과 임시 승인 발급 요건 및 검토·적용 명령은 격리 SigningBatch/ProtectedDeploymentPrerequisites.md에 준비했습니다. 배포·도구 교체와 Task, Worker 활성화 및 AI는 별도 승인입니다.
 - 후보 소스 579cbe43, 발행 기록 8b3ddde1. 기존 빌드/시험 반복 0. Worker 비활성, 11월 21일 원본 영수증 미확인, 실제 배치 토큰 미시험. LOCAL_COMMITTED / REMOTE_NOT_PUSHED. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 제품 보호 서명 결과
+
+- 대표 관리자 PowerShell 7 출력에서 보호 복사·후보별 1회 코드서명·SignTool 검증 및 PRODUCT_SIGNING_BATCH_VERIFIED를 확인했습니다. 배치 성공 상태는 Authenticode·인증서 지문·DER·SPKI·EKU·유효기간·서명 후 SHA와 보호 manifest readback 통과를 포함합니다. 타임스탬프 없음. 일반 세션에서는 보호 manifest를 독립적으로 읽지 못했습니다.
+- 보호 매니페스트 C:/ProgramData/LimitlessDiscordV2ProductSigning20261128/ProductSigningManifest.json. 다음 값은 대표 관리자 실행 JSON의 서명 후 SHA-256입니다.
+- Supervisor.exe · 5d906ac10caa5dd6c102091090ac623377d8bebe2775383d715749a87dcc4b7b
+- Probe.exe · 333d6840bd25f251019c3fca0b88f3ed7903910ea768f6576b0214ce789a7a5e
+- Limitless.DeploymentAdmin.exe · 78e0cf1e84e11ecca987d0fceb3409e58f891f00f809e680b39c1b9b69d9c985
+- 다음 별도 승인 범위는 서명된 배포 도구 보호 반영, 서명 후 SHA와 보호 manifest에 결합한 제품·배포 승인의 발급, 검토(읽기 전용) 후 실제 적용입니다. 실제 승인·도구 교체·배포·Task·AI 실행 없음.
+- 후보 소스 579cbe43, 서명 준비 662573e9. Worker 비활성, 11월 21일 원본 영수증 미확인, 실제 배치 토큰 미검증. NO_GO / MANUAL / EXECUTION_HOLD.
