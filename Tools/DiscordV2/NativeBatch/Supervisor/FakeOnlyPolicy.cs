@@ -25,7 +25,7 @@ internal static class FakeOnlyPolicy
         AdmissionPolicy.Require(root.GetProperty("Profile").GetString()==ProfileName&&root.GetProperty("GlobalSidAbsence").GetString()==GlobalState,"FAKE_PROFILE_SCOPE");
         AdmissionPolicy.Require(AdmissionPolicy.Sha(root.GetProperty("TrustEvidenceSha256").GetString()??""),"FAKE_TRUST_SHA");
     }
-    internal static void Evidence(TrialContract c,DateTimeOffset now,Func<string,int,byte[]> read,bool cleanup=false)
+    internal static void Evidence(TrialContract c,DateTimeOffset now,Func<string,int,byte[]> read,bool cleanup=false,CurrentFakeOnlyContract.ExecutionWindow? window=null)
     {
         if(c.FakeOnlyIsolation is null)return;
         var profile=c.FakeOnlyIsolation;var s=c.Scope;
@@ -42,15 +42,15 @@ internal static class FakeOnlyPolicy
         foreach(var pair in new Dictionary<string,string>{{"TrialId",c.TrialId},{"WorkerSid",s!.WorkerSid},{"TaskPath",s.TaskPath},{"CodeRoot",s.CodeRoot},{"EvidenceRoot",s.EvidenceRoot},{"SupervisorSha256",c.SupervisorSha256},{"ProbeSha256",c.ProbeSha256}})
             AdmissionPolicy.Require(root.GetProperty(pair.Key).GetString()==pair.Value,"FAKE_TRUST_BINDING");
         var observed=root.GetProperty("ObservedUtc").GetDateTimeOffset();var expiry=root.GetProperty("ExpiresUtc").GetDateTimeOffset();
-        AdmissionPolicy.Require(observed<=now&&observed<expiry&&expiry<=c.ExpiresUtc&&expiry<=AdmissionPolicy.Deadline&&(cleanup||(expiry>now&&now-observed<=TimeSpan.FromMinutes(15))),"FAKE_TRUST_STALE_OR_EXPIRED");
+        AdmissionPolicy.Require(observed<=now&&observed<expiry&&expiry<=c.ExpiresUtc&&(window is null ? expiry<=AdmissionPolicy.Deadline : window.Allows(now, expiry))&&(cleanup||(expiry>now&&now-observed<=TimeSpan.FromMinutes(15))),"FAKE_TRUST_STALE_OR_EXPIRED");
         string basisSha=root.GetProperty("BasisSha256").GetString()??"";
         byte[] basis=read(c.TrialId+".fake-only-trust-basis.txt",16384);
         AdmissionPolicy.Require(AdmissionPolicy.Sha(basisSha)&&basis.Length is >=32 and <=16384&&Hash(basis)==basisSha,"FAKE_TRUST_BASIS");
         // 해시는 자료의 결합/불변성만 확인합니다. 진술의 사실성은 보호된 관리자 검토의 신뢰 가정입니다.
     }
-    internal static void Exclusivity(TrialContract c,DateTimeOffset now,Func<string,int,byte[]> read,Action global,bool cleanup=false)
+    internal static void Exclusivity(TrialContract c,DateTimeOffset now,Func<string,int,byte[]> read,Action global,bool cleanup=false,CurrentFakeOnlyContract.ExecutionWindow? window=null)
     {
         if(c.FakeOnlyIsolation is null){global();return;}
-        Evidence(c,now,read,cleanup); // 전역 검사를 PASS로 바꾸지 않고 별도 계약/근거를 요구합니다.
+        Evidence(c,now,read,cleanup,window); // 전역 검사를 PASS로 바꾸지 않고 별도 계약/근거를 요구합니다.
     }
 }

@@ -23,20 +23,20 @@ internal static class TrialEntryGate
     // 고비용 읽기 뒤 시각과 신뢰를 다시 검사한 후에만 호출자가 최초 변경/영구 소비를 할 수 있습니다.
     internal static void Validate(byte[] raw,string sha,string mode,byte[] operationRaw,AdmissionBinding binding,
         Func<DateTimeOffset> now,Func<string,int,byte[]> trust,Action<TrialContract> verifyReadOnly,
-        Func<AccountObservation> account,CancellationToken cancellation=default)
+        Func<AccountObservation> account,CancellationToken cancellation=default, CurrentFakeOnlyContract.ExecutionWindow? window=null)
     {
         cancellation.ThrowIfCancellationRequested();
         AdmissionPolicy.Require(AdmissionPolicy.Sha(sha) && Convert.ToHexString(SHA256.HashData(raw)).ToLowerInvariant()==sha,"ENTRY_CONTRACT_SHA");
-        AdmissionPolicy.Contract(raw,now(),binding);
+        AdmissionPolicy.Contract(raw,now(),binding,window:window);
         var c=JsonSerializer.Deserialize(raw,ContractJson.Default.TrialContract)!;
-        NativeTrialPolicy.Shape(c,mode,now());
+        NativeTrialPolicy.Shape(c,mode,now(),window);
         string operation=mode=="--supervise"?"--start-once":mode;
-        var a=OperationApproval.Validate(operationRaw,c.TrialId,sha,operation,now(),false);
-        FakeOnlyPolicy.Evidence(c,now(),trust);
+        var a=OperationApproval.Validate(operationRaw,c.TrialId,sha,operation,now(),false,window);
+        FakeOnlyPolicy.Evidence(c,now(),trust,window:window);
         verifyReadOnly(c);
         var observed=account();
-        FakeOnlyPolicy.Evidence(c,now(),trust);
-        NativeTrialPolicy.Authorize(c,sha,mode,a,observed,now(),binding);
+        FakeOnlyPolicy.Evidence(c,now(),trust,window:window);
+        NativeTrialPolicy.Authorize(c,sha,mode,a,observed,now(),binding,window);
         cancellation.ThrowIfCancellationRequested();
     }
 }

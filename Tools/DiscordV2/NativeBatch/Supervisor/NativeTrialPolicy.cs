@@ -7,9 +7,9 @@ internal static class NativeTrialPolicy
     // 이 함수는 배포 전용이며 Main의 무조건 차단으로 사용하지 않습니다. NativeAOT/실행 검증은 별도입니다.
     internal static void RequireWindowsBoundary()
         => throw new InvalidOperationException("HOLD_NATIVE_MUTATION_DEADLINE_REVIEW");
-    internal static void Shape(TrialContract c, string mode, DateTimeOffset now)
+    internal static void Shape(TrialContract c, string mode, DateTimeOffset now, CurrentFakeOnlyContract.ExecutionWindow? window)
     {
-        AdmissionPolicy.Require(now <= AdmissionPolicy.Deadline && c.ExpiresUtc > now && c.ExpiresUtc <= AdmissionPolicy.Deadline, "TRIAL_TIME_HOLD");
+        AdmissionPolicy.Require(window is null ? now <= AdmissionPolicy.Deadline && c.ExpiresUtc > now && c.ExpiresUtc <= AdmissionPolicy.Deadline : window.Allows(now, c.ExpiresUtc), "TRIAL_TIME_HOLD");
         AdmissionPolicy.Require(c.Approved && c.TrialId == CandidateTrialId, "TRIAL_ID_NOT_ADMITTED");
         AdmissionPolicy.Require(c.FakeOnlyIsolation is { Profile: FakeOnlyPolicy.ProfileName, GlobalSidAbsence: FakeOnlyPolicy.GlobalState } f
             && AdmissionPolicy.Sha(f.TrustEvidenceSha256), "TRIAL_PROFILE_HOLD");
@@ -21,11 +21,16 @@ internal static class NativeTrialPolicy
             _ => false };
         AdmissionPolicy.Require(allowed, "TRIAL_MODE_HOLD");
     }
+    internal static void Shape(TrialContract c, string mode, DateTimeOffset now) => Shape(c, mode, now, null);
+    internal static void Authorize(TrialContract c, string sha, string mode, OperationApproval approval,
+        AccountObservation account, DateTimeOffset now, AdmissionBinding binding)
+        => Authorize(c, sha, mode, approval, account, now, binding, null);
+
     // 읽기 전용 검증 뒤, 최초 쓰기/보안 변경 바로 앞에서 재확인합니다.
     internal static void Authorize(TrialContract c, string sha, string mode, OperationApproval a,
-        AccountObservation account, DateTimeOffset now, AdmissionBinding binding)
+        AccountObservation account, DateTimeOffset now, AdmissionBinding binding, CurrentFakeOnlyContract.ExecutionWindow? window)
     {
-        Shape(c, mode, now);
+        Shape(c, mode, now, window);
         var s = c.Scope!;
         AdmissionPolicy.Require(s.WorkerSid == binding.WorkerSid && s.CodeRoot == binding.CodeRoot
             && s.EvidenceRoot == binding.EvidenceRoot && s.TaskPath == binding.TaskPath, "TRIAL_BINDING_HOLD");
@@ -43,5 +48,5 @@ internal static class NativeTrialPolicy
     }
     internal static void AuthorizeThen(TrialContract c, string sha, string mode, OperationApproval approval,
         AccountObservation account, DateTimeOffset now, AdmissionBinding binding, Action action)
-    { Authorize(c, sha, mode, approval, account, now, binding); action(); }
+    { Authorize(c, sha, mode, approval, account, now, binding, null); action(); }
 }

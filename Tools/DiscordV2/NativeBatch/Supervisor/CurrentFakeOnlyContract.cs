@@ -25,8 +25,35 @@ internal static class CurrentFakeOnlyContract
         AdmissionPolicy.Require(sid.IsAccountSid() && sid.Value == binding.WorkerSid, "FAKE_V2_WORKER_SID");
     }
 
+    // 서명된 제품 창이 실제 작업을 승인하려면 두 보호 입력의 해시도 서명에 포함되어야 합니다.
+    internal sealed class ExecutionWindow
+    {
+        internal DateTimeOffset Starts { get; }
+        internal DateTimeOffset Expires { get; }
+
+        private ExecutionWindow(DateTimeOffset starts, DateTimeOffset expires)
+        { Starts = starts; Expires = expires; }
+
+        internal static ExecutionWindow Verify(byte[] raw, byte[] signature, RSA signer, string expectedSigner,
+            AdmissionBinding binding, DateTimeOffset now, string supervisorSha, string probeSha,
+            string trialSha, string operationSha)
+        {
+            AdmissionPolicy.Require(AdmissionPolicy.Sha(trialSha) && AdmissionPolicy.Sha(operationSha), "FAKE_V2_EXECUTION_SHA");
+            var window = ValidateCore(raw, signature, signer, expectedSigner, binding, now,
+                supervisorSha, probeSha, trialSha, operationSha);
+            return new ExecutionWindow(window.Starts, window.Expires);
+        }
+
+        internal bool Allows(DateTimeOffset now, DateTimeOffset expiry)
+            => Starts <= now && now < expiry && expiry <= Expires;
+    }
+
     internal static DateTimeOffset Validate(byte[] raw, byte[] signature, RSA signer, string expectedSigner,
         AdmissionBinding binding, DateTimeOffset now, string supervisorSha, string probeSha)
+        => ValidateCore(raw, signature, signer, expectedSigner, binding, now, supervisorSha, probeSha, null, null).Expires;
+
+    private static (DateTimeOffset Starts, DateTimeOffset Expires) ValidateCore(byte[] raw, byte[] signature, RSA signer, string expectedSigner,
+        AdmissionBinding binding, DateTimeOffset now, string supervisorSha, string probeSha, string? trialSha, string? operationSha)
     {
         RequireBinding(binding);
         string observedSigner = ProtectedDeployment.Hash(signer.ExportSubjectPublicKeyInfo());
@@ -40,10 +67,15 @@ internal static class CurrentFakeOnlyContract
             "Profile","Approved","WorkerSid","TaskPath","CodeRoot","EvidenceRoot","SupervisorSha256","ProbeSha256",
             "ImageSignerSpkiSha256","NotBeforeUtc","ExpiresUtc","Mode","NoAi","NoIpc","JobSeconds","SupervisorCount","ProbeCount"
         };
+        if (trialSha is not null)
+        {
+            fields.Add("TrialContractSha256");
+            fields.Add("OperationApprovalSha256");
+        }
         AdmissionPolicy.Require(contract.ValueKind == JsonValueKind.Object &&
             contract.EnumerateObject().All(property => fields.Remove(property.Name)) && fields.Count == 0, "FAKE_V2_CONTRACT_FIELDS");
         string? Get(string name) => contract.GetProperty(name).GetString();
-        AdmissionPolicy.Require(Get("Profile") == "DISCORD_V2_FAKE_ONLY_PRODUCT_V1" && contract.GetProperty("Approved").GetBoolean() &&
+        AdmissionPolicy.Require(Get("Profile") == (trialSha is null ? "DISCORD_V2_FAKE_ONLY_PRODUCT_V1" : "DISCORD_V2_FAKE_ONLY_EXECUTION_V2") && contract.GetProperty("Approved").GetBoolean() &&
             Get("Mode") == "FAKE_ONLY" && contract.GetProperty("NoAi").GetBoolean() && contract.GetProperty("NoIpc").GetBoolean() &&
             contract.GetProperty("JobSeconds").GetInt32() == 90 && contract.GetProperty("SupervisorCount").GetInt32() == 1 &&
             contract.GetProperty("ProbeCount").GetInt32() == 1, "FAKE_V2_SCOPE_HOLD");
@@ -52,10 +84,13 @@ internal static class CurrentFakeOnlyContract
         AdmissionPolicy.Require(AdmissionPolicy.Sha(supervisorSha) && AdmissionPolicy.Sha(probeSha) &&
             Get("SupervisorSha256") == supervisorSha && Get("ProbeSha256") == probeSha &&
             Get("ImageSignerSpkiSha256") == expectedSigner, "FAKE_V2_IMAGE_BINDING");
+        if (trialSha is not null)
+            AdmissionPolicy.Require(Get("TrialContractSha256") == trialSha &&
+                Get("OperationApprovalSha256") == operationSha, "FAKE_V2_EXECUTION_BINDING");
         var starts = contract.GetProperty("NotBeforeUtc").GetDateTimeOffset();
         var expires = contract.GetProperty("ExpiresUtc").GetDateTimeOffset();
         AdmissionPolicy.Require(starts.Offset == TimeSpan.Zero && expires.Offset == TimeSpan.Zero &&
             starts <= now && now < expires && expires - starts <= TimeSpan.FromMinutes(5), "FAKE_V2_WINDOW_HOLD");
-        return expires;
+        return (starts, expires);
     }
 }

@@ -13,7 +13,7 @@ internal sealed class OperationApproval
     public DateTimeOffset ExpiresUtc { get; set; }
     internal static string FileName(string trial,string operation)
     {AdmissionPolicy.Require(AdminController.IsMode(operation),"APPROVAL_OPERATION");return trial+"."+operation[2..]+".approval.json";}
-    internal static OperationApproval Validate(byte[] raw,string trial,string sha,string operation,DateTimeOffset now,bool cleanup)
+    internal static OperationApproval Validate(byte[] raw,string trial,string sha,string operation,DateTimeOffset now,bool cleanup, CurrentFakeOnlyContract.ExecutionWindow? window=null)
     {
         AdmissionPolicy.Require(raw.Length is >0 and <=4096,"OPERATION_APPROVAL_SIZE");
         using var doc=JsonDocument.Parse(raw);AdmissionPolicy.Require(doc.RootElement.ValueKind==JsonValueKind.Object,"OPERATION_APPROVAL_OBJECT");
@@ -23,7 +23,7 @@ internal sealed class OperationApproval
         var approval=JsonSerializer.Deserialize(raw,ApprovalJson.Default.OperationApproval)??throw new InvalidOperationException("OPERATION_APPROVAL_NULL");
         AdmissionPolicy.Require(approval.Approved && Guid.TryParseExact(approval.ApprovalId,"N",out var id)&&id!=Guid.Empty,"OPERATION_NOT_APPROVED");
         AdmissionPolicy.Require(approval.TrialId==trial&&approval.ContractSha==sha&&approval.Operation==operation,"OPERATION_APPROVAL_BINDING");
-        AdmissionPolicy.Require(approval.ExpiresUtc<=AdmissionPolicy.Deadline&&(cleanup||approval.ExpiresUtc>now),"OPERATION_APPROVAL_EXPIRED");
+        AdmissionPolicy.Require(window is null ? approval.ExpiresUtc<=AdmissionPolicy.Deadline&&(cleanup||approval.ExpiresUtc>now) : window.Allows(now, approval.ExpiresUtc),"OPERATION_APPROVAL_EXPIRED");
         return approval;
     }
 }
