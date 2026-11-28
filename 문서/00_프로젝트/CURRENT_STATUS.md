@@ -1,5 +1,10 @@
 ## Discord V2 FAKE_ONLY 제품 계약 / 운영 HOLD
 
+## Discord V2 등록 진단 Supervisor 단독 발행 · 2026-11-28
+
+등록 원인 UNKNOWN, 단계/HRESULT 개인정보 없는 진단 격리 4 PASS 및 Supervisor NativeAOT 발행. 서명, 실패 증거 보관, 서명 이미지 전환 및 재등록 HOLD. Unity 확인 대상 없음. 소스 95da64f8ceaabd1b6884472ab444779ea56572f7.
+
+
 ## Discord V2 R 등록 HOLD · 2026-11-28
 
 전용 Task 없음, 등록 의도/HOLD 및 만료 승인 보존. 입력 안내·만료 대기 수정 0c432d51 신규 3 PASS, 운영 교체 없음. 복구 별도 승인 대기. Unity 확인 대상 없음.

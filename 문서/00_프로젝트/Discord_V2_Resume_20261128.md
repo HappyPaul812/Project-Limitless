@@ -175,3 +175,11 @@
 - 대표 승인 R 후 sidecar 이름 조합의 PowerShell 우선순위 오류를 교정하고 등록·시작 이름 배열 각각 검증. 등록 전용 승인 발급 및 설치 PASS 뒤 Supervisor 등록 호출 HOLD. 관리자 두 차례 동일 상태 조회에서 Worker 비활성, Task 없음, 등록 의도 있음, 등록 완료 영수증 없음, HOLD 1개, 설치 승인 14:20:43 KST 만료, 당시 Trial/신뢰 유효, 잔류/경로 미확인 제품 프로세스 0. 실제 토큰 미시험.
 - 운영 도구의 일반 실패 출력만으로 만료와 Scheduler 거부를 구분할 수 없습니다. 기존 소스의 무안내 암호 대기/입력 중 만료 미확인 결함을 수정했습니다. 입력 전에 안내하고 서명된 승인 만료 시 입력을 종료하며 이전 COM 직전 전체 검증은 유지합니다. 신규 격리 3 PASS (만료 직전/정확 만료/서명 기간 초과). 소스 0c432d51585959958299ce05079a4f440b33d613. 수정 바이너리 발행/서명/교체 없음.
 - 기존 등록 의도 및 승인 소비는 보존합니다. 재시도·재발급·정리 0. 승인 기록 및 Code/PendingOperations 서명 입력을 보존하고, Task 부재와 결합한 별도 보호 복구가 선행됩니다. 제품 경계, 해시 또는 기존 원장 임의 변경 금지. Worker 활성화·P/F/AI/API 0. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 등록 진단 Supervisor 수정 및 복구 준비
+
+- 0c432d51 기반 등록 오류 UNKNOWN 유지. Supervisor의 암호 콘솔/빈 입력·취소·승인 만료, 단계별 Scheduler COM HRESULT, 등록 readback 진단을 구분했습니다. 임의 예외 메시지/입력/경로를 출력하지 않습니다. 신규 격리 4 PASS, 기존 성공 시험 반복 0. 소스 95da64f8ceaabd1b6884472ab444779ea56572f7.
+- 변경 Supervisor 한 종만 일반 PowerShell 7 및 기존 SDK 10.0.403/10.0.10 로컬 오프라인 feed로 NativeAOT 발행했습니다. exit 0, 경고·오류 0, AMD64 PE32+ CLR 없음. 빌드 입력 25 해시 불변, Probe·DeploymentAdmin 발행/서명/운영 변경 없음.
+- 격리 DV2R20261128에 Supervisor 단발 보호 서명 실행본과 실패 등록 범위 읽기 전용 명령 준비. 기존 등록 의도/HOLD, Code/PendingOperations 사본 및 단발 소비 원장을 승인 ID와 SHA에 결합해 복구 대상을 확인합니다. 보호 이동 작업 자체 및 운영 교체 실행은 보류. 사본·기록 보호 보관과 원래 소비 원장 불변 절차, 서명된 이미지 전환/갱신 계약 요구를 RegistrationRecoveryRunbook.md에 정리했습니다.
+- 기존 Trial 갱신은 동일 Supervisor SHA를 요구합니다. 서명된 이전/신규 Supervisor 전환을 수용하는 코드와 운영 교체 실행본은 미완료이며 단순 파일 교체 금지. 암호 입력 준비 완료 뒤 발급, 별도 등록/배치 토큰/단발 FAKE_ONLY/비활성 원복 명령을 정리했습니다. 실제 서명·보호 이동·운영 교체·발급·등록·활성화·시험·AI 0. Worker 비활성, 실제 토큰 및 11월 21일 원본 영수증 미확인. Unity 확인 대상 없음. NO_GO / MANUAL / EXECUTION_HOLD.
+- 서명 전 후보 1aaff5b1bc17a04268e76c95265d142de852f894dcdbf82dfe7db2c91d3dff2a / 7862784 bytes.
