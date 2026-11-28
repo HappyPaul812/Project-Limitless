@@ -42,3 +42,10 @@
 - 실제 NativeBinding.cs 제작 전 관리자 로컬 기준의 보호 HANDLE 영수증·SHA와 비활성 전용 계정 SID를 재대조하고 Worker/TaskPath/CodeRoot/EvidenceRoot 네 값을 같은 비공개 입력으로 생성해야 합니다. Supervisor·Probe·DeploymentAdmin의 출처와 전체 빌드 입력 해시를 로컬에 기록합니다. 현재 세션에서는 보호 바인딩과 로컬 영수증에 접근하지 못했습니다. 테스트 바인딩을 후보 발행에 사용하지 않습니다.
 - NativeAOT는 위 기존 SDK 10.0.403·runtime 10.0.10·offline feed와 일반 Windows PowerShell 7 방법을 사용합니다. 별도 격리 출력에 3개 프로젝트 각각 발행, AMD64/CLR 부재 확인, 후보별 서명 전 SHA를 기록한 뒤 별도 승인으로 보호 staging에 새 파일 복사·서명·동일 HANDLE readback과 서명 후 SHA 기록 순서입니다. 서명 후 해시로 보호 manifest를 작성합니다. 실제 배포 경계에는 최종 만료 재검사·원장 단발 소비·CREATE_NEW 및 Code/Evidence 권한 readback이 필요합니다. 작업별 시한부 서명은 보호 Code에 승인별로 새 파일만 놓는 별도 경계가 필요하며, 제품 배포 시 실행 승인과 함께 복사하지 않습니다.
 - Worker는 DIRECT_LOCAL_LSA_CONFIRMED / MERGED_POLICY_MISMATCH / EFFECTIVE_BATCH_UNKNOWN. 11월 21일 원본 미확인 유지. 현재 발행 없음. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7232555407). 소스 afb371d7e3210f3952cdcda0463c0082c7422ad2. LOCAL_COMMITTED / REMOTE_NOT_PUSHED. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 보호 적용과 동작 승인 설치
+
+- DeploymentAdmin의 실제 진입점은 기존 적용 컨트롤러를 호출합니다. 서명 요청·제품 승인은 보호된 핸들에서 한 번 검증하며, 모든 쓰기 단계에서 기간·계획·계정/도구 신원·원장을 다시 검사합니다. 현대 서명 계약의 만료를 사용하고, 레거시 경로는 기존 고정 날짜를 유지합니다. 실제 운영 실행은 하지 않았습니다.
+- 동작별 --install-operation은 보호 Control/Approvals/PendingOperations 원본의 기존 operation JSON·서명 V2 JSON·SIG만 대상으로 합니다. 현재 보호 Trial과 두 이미지의 SHA 및 Authenticode, 동작·만료, 단발 원장, CREATE_NEW/DACL/경로·SHA readback을 요구합니다. 부분 실패는 자동 재시도/정리 없이 HOLD합니다. Windows 실기록 및 실제 서명 미시험.
+- 격리 신규 6 PASS. 실제 제품 소스 관리형 컴파일 경고·오류 0. 합성 테스트에서만 미사용 fixture 필드 경고. 새 로컬 관리자 읽기 명령 Read-ProductNativeBinding.ps1과 후보 확인 명령 Read-ProductCandidateEvidence.ps1 구문 PASS. 실제 보호 바인딩 값을 격리 빌드에 사용할 수 있도록 로컬 비공개 입력으로 확정하는 절차는 관리자 확인 후 진행합니다. 승인된 이전 PowerShell 7·SDK 10.0.403·10.0.10 오프라인 feed 사용, Supervisor/Probe/DeploymentAdmin 순후보 발행, Task 기능은 Supervisor에 포함합니다. 별도 관리자 바이너리는 없습니다.
+- 사용자 관리자 실행 결과 대기이며 NativeAOT·서명·운영 배포·동작 파일 설치 0. Worker 직접 LSA 권리 상태/병합 정책 불일치/토큰 미확인 유지. [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7232643530). 소스 579cbe43c799d336adc0f164187dfb8240fea90e. LOCAL_COMMITTED / REMOTE_NOT_PUSHED. NO_GO / MANUAL / EXECUTION_HOLD.

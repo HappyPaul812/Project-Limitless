@@ -1,5 +1,10 @@
 ## Discord V2 FAKE_ONLY 제품 계약 / 운영 HOLD
 
+## Discord V2 보호 적용 연결 · 2026-11-28
+
+서명 배포 적용·동작별 승인 보호 설치 소스 연결, 신규 격리 6 PASS. 실제 제품용 바인딩 관리자 조회 결과 대기, NativeAOT HOLD. 운영 작업 없음. Unity 확인 대상 없음. 소스 579cbe43c799d336adc0f164187dfb8240fea90e. Issue #66 보고 완료.
+
+
 ## Discord V2 제품 빌드 선행 구현 · 2026-11-28
 
 서명된 배포 검토 및 Task 등록·정리 동작별 검증, 신규 격리 10 PASS. 제품용 Native 바인딩·보호 적용·승인 sidecar 설치 경계 HOLD. Worker LSA 직접 권리 확인, 병합 정책 불일치 및 실제 토큰 UNKNOWN. Unity 확인 대상 없음. 소스 afb371d7e3210f3952cdcda0463c0082c7422ad2. Issue #66 보고 완료.
