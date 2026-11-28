@@ -1,5 +1,10 @@
 ## Discord V2 운영 시간 대조 / 기존 승인 만료
 
+## Discord V2 제품 배포 승인 발급 준비 · 2026-11-28
+
+보호 승인 발급기·RSA-PSS·review/apply 요청 SHA 연결 및 후속 명령 준비. 합성 검증 통과. 관리자 readiness·신뢰/위험 검토·별도 발급/배포 미실행. Unity 확인 사항 없음. 제품 소스 579cbe43.
+
+
 ## Discord V2 독립 배포 도구 보호 반영 PASS · 2026-11-28
 
 관리자 확인으로 서명 배포 도구 한 파일 CREATE_NEW 및 동일 HANDLE readback 통과. 제품 승인 입력 확정·시한부 발급·review/apply·Task HOLD. Unity 확인 사항 없음. 제품 소스 579cbe43.

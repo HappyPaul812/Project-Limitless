@@ -91,3 +91,10 @@
 - 대표의 한 파일 승인 후 관리자 PowerShell 7에서 SIGNED_DEPLOYMENT_TOOL_MANIFEST_SHA_AND_CERTIFICATE_MATCH, TOOL_ABSENT;CODE_ABSENT;EVIDENCE_ABSENT 및 DEPLOYMENT_TOOL_CREATED_HANDLE_VERIFIED_NO_EXECUTION을 확인했습니다.
 - C:/ProgramData/Limitless/DiscordV2/Control/DeploymentTool/Limitless.DeploymentAdmin.exe 한 파일 CREATE_NEW, 동일 HANDLE 경로·파일 ID·소유자·DACL 및 flush 후 SHA-256 readback. 기본값 보호 관리자 전용 Control/Approvals/DeploymentLedger descriptor 일치. 관리자 실행 출력 근거이며 정상 파일 교체 또는 도구 실행은 없었습니다.
 - 다음 승인 발급 전 실제 신뢰 근거·위험 검토·Trial 및 보호 배포 매니페스트를 확정합니다. 격리 DeploymentPrep/ProtectedDeploymentRunbook.md 및 Invoke-ProductDeploymentReviewed.ps1에 승인 입력과 review/apply 명령 준비. 시한부 서명 발급, 실제 제품 적용, Task 등록은 각각 별도 승인입니다. Worker 비활성, 실제 토큰 및 11월 21일 원본 영수증 미확인. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 제품 계약 발급 및 실행 준비
+
+- 격리 DeploymentPrep/Issue-ProductDeploymentApprovals.ps1 준비. 기본 실행은 관리자 읽기 전용 readiness, 별도 발급 승인 모드만 보호 CREATE_NEW로 원시 JSON·RSA-PSS 분리 서명 등을 씁니다. 기존 보호 WorkerBinding 및 서명 manifest·Issue 해시·실제 설치 도구 SHA를 확인합니다. 해시 수기 입력 없음.
+- Trial은 기존 승인 대상 ID·실제 Worker/Task·서명 Supervisor/Probe를 연결하고 FAKE_ONLY·NoAi·NoIpc·90초·각 이미지 1개를 고정합니다. 자격 증명 미공유, 대상 SID의 미신뢰 코드 및 다른 발사 경로 미관측, 관리자 잔여 위험 수용은 대표의 검토 근거 입력과 별도 승인 전까지 미확정입니다. 실제 Worker 토큰과 전역 SID 부재는 미확인.
+- 배포·제품 승인은 검토 승인 확인 후 5분, 보호 Trial/신뢰 근거는 15분입니다. 현재 Trial은 보호 Code에 고정되므로 15분 뒤 별도 등록이 필요하다면 승인된 갱신/정리 경계 없이는 진행하지 않아야 합니다. 임의 연장/덮어쓰기 없음.
+- review는 같은 세션에서 요청 SHA를 자동 캡처하며 apply는 별도 승인과 그 해시를 요구합니다. post-apply 읽기 검증, 별도 Task 등록 및 sidecar 명령을 ProtectedDeploymentRunbook.md에 정리. 신규 보호 어댑터 컴파일·PS 구문 통과, 합성 문서 결합 및 PSS 2종 검증 통과. 기존 시험 반복 0. 실제 발급·review·apply·Task·AI 0. Worker 비활성, 11월 21일 원본 영수증 미확인. NO_GO / MANUAL / EXECUTION_HOLD.
