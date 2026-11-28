@@ -1,0 +1,112 @@
+#Requires -Version 7.5
+param([switch]$PromoteAfterExplicitApproval)
+$ErrorActionPreference='Stop'
+$hostPath='C:\Program Files\PowerShell\7\pwsh.exe'
+if (![Environment]::Is64BitProcess -or (Get-Process -Id $PID).Path -ine $hostPath) {throw 'HOLD_RENEWAL_HOST'}
+$hostSig=Get-AuthenticodeSignature -LiteralPath $hostPath
+if($hostSig.Status -ne 'Valid' -or $hostSig.SignerCertificate.Subject -notmatch '(^|,\s*)O=Microsoft Corporation(,|$)'){throw 'HOLD_RENEWAL_HOST_SIGNER'}
+. (Join-Path $PSScriptRoot 'Load-TrialRenewalTools.ps1')
+$session=Open-ApprovedTrialRenewalStore
+$store=$session.Store
+try {
+    if(!$session.Binding.WorkerDisabled){throw 'HOLD_RENEWAL_WORKER_ENABLED'}
+    $taskInspect=Join-Path $PSScriptRoot '../TaskPrep/Invoke-V2TaskPrepared.ps1'
+    function Assert-RenewalIdle {
+        $state=(& $taskInspect -Mode Inspect)|ConvertFrom-Json
+        if($state.TaskPresent -or !$state.WorkerDisabled -or $state.RemainingProductProcesses -ne 0 -or
+            $state.UnresolvedProcessPaths -ne 0 -or @($state.Evidence.PSObject.Properties | Where-Object Value).Count -ne 0){
+            throw 'HOLD_RENEWAL_TASK_PROCESS_OR_EVIDENCE'
+        }
+    }
+    Assert-RenewalIdle
+    $store.EnsureNoOperationInputs()
+    $cert=Get-Item -LiteralPath "Cert:\LocalMachine\Root\$trialRenewalThumb"
+    try {
+        $public=[Security.Cryptography.X509Certificates.RSACertificateExtensions]::GetRSAPublicKey($cert)
+        try {
+            if(!$public -or (Get-TrialRenewalSha $cert.RawData) -cne $trialRenewalDer){throw 'HOLD_RENEWAL_CERT_PIN'}
+            $head=Resolve-ProtectedTrialHead $store $session.Binding $public $trialRenewalSpki ([DateTimeOffset]::UtcNow)
+            $oldExpiry=Read-TrialRenewalUtc $head.Trial.ExpiresUtc
+            if([DateTimeOffset]::UtcNow -lt $oldExpiry){throw 'HOLD_RENEWAL_PRIOR_STILL_LIVE'}
+            $supervisor=$store.ReadCode('Supervisor.exe')
+            try {
+                $probe=$store.ReadCode('Probe.exe')
+                try {
+                    function Hash-Stream($file) {
+                        $file.Position=0
+                        [Convert]::ToHexString([Security.Cryptography.SHA256]::HashData($file)).ToLowerInvariant()
+                    }
+                    if((Hash-Stream $supervisor) -cne $head.Identity.SupervisorSha256 -or
+                        (Hash-Stream $probe) -cne $head.Identity.ProbeSha256){throw 'HOLD_RENEWAL_PRODUCT_SHA'}
+                    if(!$PromoteAfterExplicitApproval){
+                        'TRIAL_RENEWAL_READINESS_VERIFIED_NO_SIGNING_NO_WRITES'
+                        return
+                    }
+                    $basis=Read-Host '새 확인 시각의 미공유·다른 실행 경로/미신뢰 코드 확인과 잔여 위험 수용 근거를 32~2000자로 입력. 비밀값 입력 금지'
+                    if($basis.Trim().Length -lt 32 -or $basis.Length -gt 2000){throw 'HOLD_RENEWAL_TRUST_BASIS'}
+                    if((Read-Host '사실 확인 및 별도 보호 갱신 승인 후 PROMOTE-SIGNED-V2-TRIAL 입력') -cne 'PROMOTE-SIGNED-V2-TRIAL'){
+                        throw 'HOLD_RENEWAL_CONFIRMATION'
+                    }
+                    Assert-RenewalIdle
+                    $store.EnsureNoOperationInputs()
+                    $privateCert=Get-Item -LiteralPath "Cert:\LocalMachine\My\$trialRenewalThumb"
+                    try {
+                        $private=[Security.Cryptography.X509Certificates.RSACertificateExtensions]::GetRSAPrivateKey($privateCert)
+                        try {
+                            if(!$private -or (Get-TrialRenewalSha $privateCert.RawData) -cne $trialRenewalDer){throw 'HOLD_RENEWAL_SIGNING_KEY'}
+                            $now=[DateTimeOffset]::UtcNow
+                            $deadline=$now.AddMinutes(5)
+                            $trialEnd=$now.AddMinutes(15)
+                            if($now.UtcDateTime -lt $privateCert.NotBefore.ToUniversalTime() -or $deadline.UtcDateTime -ge $privateCert.NotAfter.ToUniversalTime()){
+                                throw 'HOLD_RENEWAL_SIGNER_TIME'
+                            }
+                            $utf8=[Text.UTF8Encoding]::new($false,$true)
+                            function Encode($object){return ,$utf8.GetBytes(($object|ConvertTo-Json -Compress -Depth 12))}
+                            $nextBasis=$utf8.GetBytes($basis)
+                            $nextTrust=Read-TrialRenewalJson $head.TrustRaw
+                            $nextTrust.ObservedUtc=$now.ToString('o')
+                            $nextTrust.ExpiresUtc=$trialEnd.ToString('o')
+                            $nextTrust.BasisSha256=Get-TrialRenewalSha $nextBasis
+                            $nextTrustRaw=Encode $nextTrust
+                            $next=Read-TrialRenewalJson $head.TrialRaw
+                            $next.ExpiresUtc=$trialEnd.ToString('o')
+                            $next.FakeOnlyIsolation.TrustEvidenceSha256=Get-TrialRenewalSha $nextTrustRaw
+                            $nextRaw=Encode $next
+                            Assert-TrialRenewalDocuments $next $nextTrust $nextTrustRaw $nextBasis $head.Identity
+                            $receipt=[ordered]@{
+                                Profile='DISCORD_V2_TRIAL_RENEWAL_V1';Approved=$true;RenewalId=[Guid]::NewGuid().ToString('N')
+                                PriorTrialSha256=$head.TrialSha;PriorTrustSha256=$head.TrustSha;PriorBasisSha256=$head.BasisSha
+                                NextTrialSha256=(Get-TrialRenewalSha $nextRaw);NextTrustSha256=(Get-TrialRenewalSha $nextTrustRaw)
+                                NextBasisSha256=(Get-TrialRenewalSha $nextBasis);IssuedUtc=$now.ToString('o')
+                                PromoteBeforeUtc=$deadline.ToString('o');TrialExpiresUtc=$trialEnd.ToString('o')
+                            }
+                            foreach($name in $head.Identity.Keys){$receipt[$name]=$head.Identity[$name]}
+                            $receiptRaw=Encode $receipt
+                            $sig=$private.SignData($receiptRaw,[Security.Cryptography.HashAlgorithmName]::SHA256,[Security.Cryptography.RSASignaturePadding]::Pss)
+                            $proof=Read-VerifiedTrialRenewalReceipt $receiptRaw $sig $public $trialRenewalSpki $head.TrialSha $head.Identity
+                            Assert-TrialRenewalPromotion $proof ([DateTimeOffset]::UtcNow) $oldExpiry
+                            $store.Begin($head.TrialSha,$deadline)
+                            $store.WriteCase('Renewal.sig',$sig,$deadline)
+                            $store.WriteCase('Renewal.json',$receiptRaw,$deadline)
+                            $store.ArchiveTrialFile('TrialContract.json',$head.TrialSha,$deadline)
+                            $store.ArchiveTrialFile($head.TrustName,$head.TrustSha,$deadline)
+                            $store.ArchiveTrialFile($head.BasisName,$head.BasisSha,$deadline)
+                            $store.WriteCode($head.BasisName,$nextBasis,$deadline)
+                            $store.WriteCode($head.TrustName,$nextTrustRaw,$deadline)
+                            $store.WriteCode('TrialContract.json',$nextRaw,$deadline)
+                            $promoted=[DateTimeOffset]::UtcNow
+                            Assert-TrialRenewalPromotion $proof $promoted $oldExpiry
+                            $commit=Encode ([ordered]@{Profile='DISCORD_V2_TRIAL_RENEWAL_COMMIT_V1';ReceiptSha256=(Get-TrialRenewalSha $receiptRaw);PromotedUtc=$promoted.ToString('o')})
+                            $store.WriteCase('PromotionCommit.json',$commit,$deadline)
+                            $confirmed=Resolve-ProtectedTrialHead $store $session.Binding $public $trialRenewalSpki ([DateTimeOffset]::UtcNow)
+                            if($confirmed.TrialSha -cne $proof.NextTrialSha256 -or (Hash-Stream $supervisor) -cne $head.Identity.SupervisorSha256 -or
+                                (Hash-Stream $probe) -cne $head.Identity.ProbeSha256){throw 'HOLD_RENEWAL_FINAL_READBACK'}
+                            'TRIAL_RENEWAL_PROMOTED_SIGNED_CHAIN_VERIFIED_NO_TASK_EXECUTION'
+                            "TRIAL_EXPIRES_UTC=$($trialEnd.ToString('o'))"
+                        } finally {if($private){$private.Dispose()}}
+                    } finally {$privateCert.Dispose()}
+                } finally {$probe.Dispose()}
+            } finally {$supervisor.Dispose()}
+        } finally {if($public){$public.Dispose()}}
+    } finally {$cert.Dispose()}
+} finally {$store.Dispose()}
