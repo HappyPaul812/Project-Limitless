@@ -1,5 +1,10 @@
 ## Discord V2 운영 시간 대조 / 기존 승인 만료
 
+## Discord V2 제품 일괄 서명 · 2026-11-28
+
+발행 댓글/Manifest/실물 SHA 3종 일치, 보호 서명 어댑터 컴파일 및 스크립트 구문 PASS. 관리자 실행 결과 대기. 보호 배포 준비 문서 작성. 후보 소스 579cbe43. Unity 확인 사항 없음.
+
+
 ## Discord V2 NativeAOT 후보 발행 · 2026-11-28
 
 Supervisor/Probe/DeploymentAdmin 3개 빌드 PASS, AMD64 Native 및 서명 전 SHA 확인. 후보 실행·서명·배포 HOLD. 소스 579cbe43, 후보 해시 및 검증은 Discord_V2_Resume_20261128.md와 Issue #66. Unity 확인 사항 없음.

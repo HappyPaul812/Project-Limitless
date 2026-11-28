@@ -61,3 +61,10 @@
 - Limitless.DeploymentAdmin.exe · 3685376 bytes · efac1f951f57db45571670496c305f0fcbf8dda1b6af064212fb3ec6bd0266ac
 - 다음 승인 범위는 격리 후보의 보호 복사와 코드 서명, 서명 직후 동일 파일의 인증서 핀·SHA-256 및 출처 재검증, 서명 후 SHA를 사용한 배포 승인 서류 준비입니다. 운영 배치 및 도구 교체, Task 등록·실행·AI는 별도 승인입니다. Worker는 비활성 상태이며 권한 재부여하지 않았습니다.
 - [Issue #66 발행 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-7232698193). 소스 579cbe43c799d336adc0f164187dfb8240fea90e, 체크포인트 25bf04d0. LOCAL_COMMITTED / REMOTE_NOT_PUSHED. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 제품 세 후보 보호 서명
+
+- 승인 근거는 Issue #66 후보 발행 댓글과 대표의 세 후보 1회 보호 복사·코드서명 승인입니다. Issue 댓글의 3개 SHA/길이를 기계 추출해 로컬 CandidateEvidence.json 및 세 실제 파일과 대조했습니다. 기존 SignTool 파일 SHA와 공개 인증서 유효기간 확인, 기존 보호 workspace 어댑터의 후보별 마커 변형 컴파일과 PowerShell 구문 통과.
+- 격리 로컬 SigningBatch/Invoke-ProductSigningBatch.ps1 준비. 기존 windows 상승 관리자와 인증서 핀·시간·EKU·개인키 존재를 확인합니다. ProgramData의 별도 제품 서명 작업 디렉터리에 최초 생성 보안 descriptor로 Tool·후보를 복사하며, 후보별 CREATE_NEW 마커 후 SignTool 1회, SignTool/Authenticode/Thumbprint/DER/SPKI/기간/서명 후 SHA 검사와 보호 통합 Manifest를 기록합니다. 실패 파일은 자동 재시도하지 않습니다.
+- 작업 환경은 비상승 상태여서 실제 보호 복사/서명/검증은 대표 관리자 PowerShell 7 실행 결과 대기입니다. 서명 작업 위치, 서명 후 Manifest, 제품/배포/Trial·위험 근거 연결과 임시 승인 발급 요건 및 검토·적용 명령은 격리 SigningBatch/ProtectedDeploymentPrerequisites.md에 준비했습니다. 배포·도구 교체와 Task, Worker 활성화 및 AI는 별도 승인입니다.
+- 후보 소스 579cbe43, 발행 기록 8b3ddde1. 기존 빌드/시험 반복 0. Worker 비활성, 11월 21일 원본 영수증 미확인, 실제 배치 토큰 미시험. LOCAL_COMMITTED / REMOTE_NOT_PUSHED. NO_GO / MANUAL / EXECUTION_HOLD.
