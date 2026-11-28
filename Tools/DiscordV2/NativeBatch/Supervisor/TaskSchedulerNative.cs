@@ -99,11 +99,15 @@ internal sealed unsafe class TaskSchedulerNative : IDisposable
         try
         {
             AdmissionPolicy.Require(!Console.IsInputRedirected,"PASSWORD_CONSOLE_REQUIRED");
+            var boundary=mutationBoundary();
+            boundary.CheckPasswordWindow();
+            Console.WriteLine("Worker 암호를 입력하고 Enter를 누르세요. 입력은 표시되지 않습니다. Esc로 취소할 수 있습니다.");
             // 암호를 managed immutable string/인수/환경/로그로 만들지 않습니다.
             while(true)
             {
                 cancellation.ThrowIfCancellationRequested();
-                while(!Console.KeyAvailable){cancellation.ThrowIfCancellationRequested();Thread.Sleep(25);}
+                while(!Console.KeyAvailable){boundary.CheckPasswordWindow();Thread.Sleep(25);}
+                boundary.CheckPasswordWindow();
                 var key=Console.ReadKey(true);
                 if(key.Key==ConsoleKey.Escape)throw new OperationCanceledException("PASSWORD_CANCELLED");
                 if(key.Key==ConsoleKey.Enter)break;
@@ -112,7 +116,7 @@ internal sealed unsafe class TaskSchedulerNative : IDisposable
                 if(!char.IsControl(key.KeyChar))secret.AppendChar(key.KeyChar);
             }
             AdmissionPolicy.Require(secret.Length>0,"EMPTY_PASSWORD");secret.MakeReadOnly();
-            mutationBoundary().AfterPassword(); // 비밀값을 읽거나 기록하지 않고 승인 상태만 재검증합니다.
+            boundary.AfterPassword(); // 비밀값을 읽거나 기록하지 않고 승인 상태만 재검증합니다.
             password=Marshal.SecureStringToBSTR(secret);
             H(((delegate* unmanaged[Stdcall]<nint,uint,nint*,int>)Slot(service,9))(service,0,&definition));
             xmlBstr=Marshal.StringToBSTR(xml);

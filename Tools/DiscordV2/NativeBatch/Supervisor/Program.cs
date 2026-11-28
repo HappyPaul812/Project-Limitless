@@ -59,6 +59,11 @@ internal static class Program
                     return Supervise(admission, admission.Identity, wall);
                 });
         }
+        catch(InvalidOperationException error) when(error.Message=="REGISTER_PASSWORD_WINDOW_HOLD")
+        {
+            Console.Error.WriteLine("HOLD_REGISTER_PASSWORD_WINDOW_EXPIRED");
+            return 70;
+        }
         catch { return 70; }
     }
     private static void DurableNew(string path, byte[] bytes)

@@ -13,14 +13,33 @@ internal sealed class TaskMutationBoundary
     private readonly CancellationToken cancellation;
     private readonly TrialContract original;
     private readonly CurrentFakeOnlyContract.ExecutionWindow? window;
+    private readonly DateTimeOffset operationExpiry;
     private bool enableLease,runAttempted,registerAttempted;
     private string ownedFingerprint="";
     internal TaskMutationBoundary(string mode,string sha,byte[] raw,byte[] operationRaw,AdmissionBinding binding,IAdminBackend backend,CancellationToken cancellation,CurrentFakeOnlyContract.ExecutionWindow? window=null)
     {
         this.mode=mode;this.sha=sha;this.binding=binding;this.backend=backend;this.cancellation=cancellation;this.window=window;
         original=JsonSerializer.Deserialize(raw,ContractJson.Default.TrialContract)!;approvalSha=Hash(operationRaw);
+        operationExpiry=(JsonSerializer.Deserialize(operationRaw,ApprovalJson.Default.OperationApproval)
+            ?? throw new InvalidOperationException("OPERATION_APPROVAL_NULL")).ExpiresUtc;
     }
     private static string Hash(byte[] value)=>Convert.ToHexString(SHA256.HashData(value)).ToLowerInvariant();
+    // 암호를 기다리는 동안 고정된 승인 시간만 확인합니다. COM 호출 전 전체 재검증은 유지합니다.
+    internal void CheckPasswordWindow()
+    {
+        cancellation.ThrowIfCancellationRequested();
+        AdmissionPolicy.Require(mode=="--register-only","MUTATION_MODE_MISMATCH");
+        RequirePasswordWindow(backend.Now,original.ExpiresUtc,operationExpiry,window);
+    }
+    internal static void RequirePasswordWindow(DateTimeOffset now,DateTimeOffset trialExpiry,
+        DateTimeOffset approvalExpiry,CurrentFakeOnlyContract.ExecutionWindow? window)
+    {
+        bool valid=window is null
+            ? now<=AdmissionPolicy.Deadline && approvalExpiry<=AdmissionPolicy.Deadline
+            : window.Allows(now,approvalExpiry);
+        AdmissionPolicy.Require(valid && now<approvalExpiry && approvalExpiry<=trialExpiry,
+            "REGISTER_PASSWORD_WINDOW_HOLD");
+    }
     internal void AfterPassword()=>Validate(TaskMutation.Register,null,false);
     internal void Check(TaskMutation mutation,Guid? instance=null)=>Validate(mutation,instance,true);
     private ControlReceipt Receipt(string suffix)
