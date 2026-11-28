@@ -78,3 +78,10 @@
 - Limitless.DeploymentAdmin.exe · 78e0cf1e84e11ecca987d0fceb3409e58f891f00f809e680b39c1b9b69d9c985
 - 다음 별도 승인 범위는 서명된 배포 도구 보호 반영, 서명 후 SHA와 보호 manifest에 결합한 제품·배포 승인의 발급, 검토(읽기 전용) 후 실제 적용입니다. 실제 승인·도구 교체·배포·Task·AI 실행 없음.
 - 후보 소스 579cbe43, 서명 준비 662573e9. Worker 비활성, 11월 21일 원본 영수증 미확인, 실제 배치 토큰 미검증. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 제품 보호 배포 통합 준비
+
+- Issue #66 서명 결과 JSON에서 후보 3개 SHA를 자동 추출했습니다. 관리자 조회 전용 실행본은 보호 기준 WorkerBinding 및 보호 서명 매니페스트와 Issue 해시, 후보 파일·Authenticode·인증서 핀을 대조하고 Tool/Code/Evidence 존재 여부 및 Control/Approvals/DeploymentLedger 관리자 전용 DACL을 확인합니다. 현재 일반 세션의 도구 미발견은 권한 있는 확인을 대신하지 않습니다.
+- 별도 도구 반영 모드는 기본값에서 꺼져 있습니다. 대상 부재와 명시 승인 후 기존 보호 어댑터를 사용해 CREATE_NEW, 같은 HANDLE 경로·파일 ID/SD·전체 SHA와 flush를 검증합니다. 기존 항목은 HOLD, 이동·교체·덮어쓰기 없음. 어댑터 컴파일 및 PowerShell 구문 검사 통과, 관리자 실행 대기.
+- 격리 DeploymentPrep의 ProtectedDeploymentRunbook.md에 ① 신규 도구 반영 ② 제품/배포 승인 발급·RSA-PSS 분리 서명 ③ 무변경 review와 별도 승인 apply의 경계, ④ Task 비활성 등록 명령을 기록했습니다. Code RX/Evidence 제한 생성/관리자 전용 Control ACL과 서명 이후 같은 SHA를 확인하는 조회 전용 readback 스크립트도 준비했습니다.
+- 보호 도구 반영, 시한부 승인 발급, 예고한 제품 배포, Task 등록 모두 0. 기존 시험·빌드·서명 반복 0, Worker 비활성 및 직접 권리/병합 불일치/실제 토큰 미검증, 11월 21일 원본 영수증 미확인 유지. 소스 579cbe43. NO_GO / MANUAL / EXECUTION_HOLD.
