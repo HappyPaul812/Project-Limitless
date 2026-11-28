@@ -67,11 +67,12 @@ internal static class ProtectedDeployment
         var plan=JsonSerializer.Deserialize(manifest,DeploymentJson.Default.DeploymentPlan)!;
         return plan;
     }
-    internal static void Execute(byte[] manifest,string manifestSha,AdmissionBinding binding,IProtectedDeployment backend)
+    internal static void Execute(byte[] manifest,string manifestSha,AdmissionBinding binding,IProtectedDeployment backend,DateTimeOffset? signedProductExpiry=null)
     {
         var plan=ReadManifest(manifest,manifestSha);
-        AdmissionPolicy.Require(plan.TrialId==NativeTrialPolicy.CandidateTrialId && backend.Now<=AdmissionPolicy.Deadline
-            && plan.ExpiresUtc>backend.Now && plan.ExpiresUtc<=AdmissionPolicy.Deadline,"DEPLOY_TRIAL_TIME");
+        bool CurrentPlan(DateTimeOffset now) => now < plan.ExpiresUtc && (signedProductExpiry is { } productEnd
+            ? now < productEnd : now <= AdmissionPolicy.Deadline && plan.ExpiresUtc <= AdmissionPolicy.Deadline);
+        AdmissionPolicy.Require(plan.TrialId==NativeTrialPolicy.CandidateTrialId && CurrentPlan(backend.Now),"DEPLOY_TRIAL_TIME");
         AdmissionPolicy.Require(plan.WorkerSid==binding.WorkerSid&&plan.CodeRoot==binding.CodeRoot&&plan.EvidenceRoot==binding.EvidenceRoot&&plan.TaskPath==binding.TaskPath,"DEPLOY_BINDING");
         string code=Path.GetFullPath(plan.CodeRoot),evidence=Path.GetFullPath(plan.EvidenceRoot);
         AdmissionPolicy.Require(Path.IsPathFullyQualified(plan.CodeRoot)&&Path.IsPathFullyQualified(plan.EvidenceRoot)
@@ -109,12 +110,12 @@ internal static class ProtectedDeployment
         }
         foreach(var file in plan.Files)backend.PinSource(file);
         // 시간 초과나 사전검사 실패를 승인된 적용으로 바꾸지 않습니다.
-        AdmissionPolicy.Require(backend.Now<approval.ExpiresUtc&&backend.Now<plan.ExpiresUtc&&backend.Now<=AdmissionPolicy.Deadline,"DEPLOY_EXPIRED_BEFORE_WRITE");
+        AdmissionPolicy.Require(backend.Now<approval.ExpiresUtc&&CurrentPlan(backend.Now),"DEPLOY_EXPIRED_BEFORE_WRITE");
         backend.ConsumeApproval(approval.DeploymentId,manifestSha);
         foreach(var directory in directories)
-        { AdmissionPolicy.Require(backend.Now<approval.ExpiresUtc,"DEPLOY_EXPIRED_DURING_WRITE");backend.CreateDirectoryNew(directory.Path,directory.Evidence); }
+        { AdmissionPolicy.Require(backend.Now<approval.ExpiresUtc&&CurrentPlan(backend.Now),"DEPLOY_EXPIRED_DURING_WRITE");backend.CreateDirectoryNew(directory.Path,directory.Evidence); }
         foreach(var file in plan.Files)
-        { AdmissionPolicy.Require(backend.Now<approval.ExpiresUtc,"DEPLOY_EXPIRED_DURING_WRITE");backend.CopyNew(code,file); }
+        { AdmissionPolicy.Require(backend.Now<approval.ExpiresUtc&&CurrentPlan(backend.Now),"DEPLOY_EXPIRED_DURING_WRITE");backend.CopyNew(code,file); }
         // 실패 항목을 자동 삭제/권한 복구하지 않습니다. 정확한 별도 정리 승인 전 증거를 보존합니다.
     }
 }

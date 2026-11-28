@@ -40,6 +40,7 @@ internal interface IDeploymentHost:IProtectedDeployment
 {
     byte[] ReadProtected(string path,int limit);
     void VerifyRequestSignature(byte[] raw);
+    DateTimeOffset? VerifyCurrentProductContract(byte[] raw,AdmissionBinding binding) => null;
     DeploymentActor ObserveActor();
     void BindBoundary(DeploymentWriteBoundary boundary);
     string LedgerRoot { get; }
@@ -57,6 +58,7 @@ internal sealed class DeploymentAdmission
     private readonly string rawSha;
     private readonly AdmissionBinding binding;
     private readonly IDeploymentHost host;
+    internal DateTimeOffset? SignedProductExpiry { get; }
     // 서명된 요청과 제품 기간 중 하나라도 닫혔으면 보호 배포 승인으로 사용할 수 없습니다.
     internal static void RequireSignedPeriods(DateTimeOffset now, DateTimeOffset requestExpiry, DateTimeOffset productExpiry)
         => AdmissionPolicy.Require(requestExpiry.Offset == TimeSpan.Zero && now < requestExpiry && now < productExpiry,
@@ -102,6 +104,7 @@ internal sealed class DeploymentAdmission
         this.raw=(byte[])raw.Clone();rawSha=sha;this.binding=binding;this.host=host;
         AdmissionPolicy.Require(AdmissionPolicy.Sha(sha)&&ProtectedDeployment.Hash(raw)==sha,"DEPLOY_REQUEST_SHA");
         host.VerifyRequestSignature(this.raw);
+        SignedProductExpiry=host.VerifyCurrentProductContract(this.raw,binding);
         Request=Strict(this.raw,8192,DeploymentRequestJson.Default.DeploymentRequest);
         // 보호된 읽기만 수행하며 backend는 원본 HANDLE을 계속 보유하여 교체를 막습니다.
         foreach(string p in new[]{Request.ManifestPath,Request.ApprovalPath,Request.ContractPath,Request.RiskBasisPath})
@@ -126,38 +129,39 @@ internal sealed class DeploymentAdmission
         var a=Strict(Approval,4096,DeploymentJson.Default.DeploymentApproval);
         AdmissionPolicy.Require(a.DeploymentId==r.DeploymentId&&a.TrialId==r.TrialId&&a.ManifestSha256==r.ManifestSha256
             &&a.Approved&&a.Profile=="PROTECTED_DEPLOYMENT_V1","DEPLOY_APPROVAL_BINDING");
-        AdmissionPolicy.Contract(contract,host.Now,binding);
+        AdmissionPolicy.Contract(contract,host.Now,binding,signedDeploymentExpiry:SignedProductExpiry);
         var c=JsonSerializer.Deserialize(contract,ContractJson.Default.TrialContract)!;
-        NativeTrialPolicy.Shape(c,"--supervise",host.Now);
-        AdmissionPolicy.Require(c.SupervisorSha256==SupervisorSha&&c.ProbeSha256==ProbeSha&&c.TrialId==r.TrialId,"DEPLOY_IMAGES_BINDING");
+        if (SignedProductExpiry is null) NativeTrialPolicy.Shape(c,"--supervise",host.Now);
+        else NativeTrialPolicy.ShapeScope(c,"--supervise");
+        AdmissionPolicy.Require(c.TrialId==r.TrialId&&(SignedProductExpiry is not null || (c.SupervisorSha256==SupervisorSha&&c.ProbeSha256==ProbeSha)),"DEPLOY_IMAGES_BINDING");
         AdmissionPolicy.Require(Plan.TrialId==r.TrialId&&Plan.WorkerSid==binding.WorkerSid&&Plan.CodeRoot==binding.CodeRoot
             &&Plan.EvidenceRoot==binding.EvidenceRoot&&Plan.TaskPath==binding.TaskPath,"DEPLOY_PLAN_BINDING");
         // 배포 승인과 실행 승인은 분리합니다. 파일 hash가 승인돼도 임의 계약이나 추가 실행 파일을 넣지 않습니다.
         foreach(var f in Plan.Files)
         {
-            if(f.Name=="Supervisor.exe")AdmissionPolicy.Require(f.Sha256==SupervisorSha&&f.Bytes==7559680,"DEPLOY_SUPERVISOR_IMAGE");
-            if(f.Name=="Probe.exe")AdmissionPolicy.Require(f.Sha256==ProbeSha&&f.Bytes==1892352,"DEPLOY_PROBE_IMAGE");
+            if(f.Name=="Supervisor.exe")AdmissionPolicy.Require(f.Sha256==c.SupervisorSha256&&(SignedProductExpiry is not null || f.Bytes==7559680),"DEPLOY_SUPERVISOR_IMAGE");
+            if(f.Name=="Probe.exe")AdmissionPolicy.Require(f.Sha256==c.ProbeSha256&&(SignedProductExpiry is not null || f.Bytes==1892352),"DEPLOY_PROBE_IMAGE");
             if(f.Name=="TrialContract.json")AdmissionPolicy.Require(f.Sha256==r.ContractSha256&&f.Source==r.ContractPath,"DEPLOY_CONTRACT_FILE");
         }
         AdmissionPolicy.Require(Plan.Files.Count(f=>f.Name=="TrialContract.json")==1,"DEPLOY_CONTRACT_REQUIRED");
         FakeOnlyPolicy.Evidence(c,host.Now,(name,limit)=> {
             var f=Plan.Files.SingleOrDefault(f=>f.Name==name)??throw new InvalidOperationException("DEPLOY_TRUST_MISSING");
             byte[] bytes=host.ReadProtected(f.Source,limit);AdmissionPolicy.Require(ProtectedDeployment.Hash(bytes)==f.Sha256&&bytes.Length==f.Bytes,"DEPLOY_TRUST_SHA");return bytes;
-        });
+        },signedDeploymentExpiry:SignedProductExpiry);
         var actor=host.ObserveActor();
         AdmissionPolicy.Require(actor.ElevatedAdministrator&&actor.NotImpersonating&&actor.ToolSha256==r.ToolSha256 && !string.IsNullOrWhiteSpace(r.AdministratorSid) && actor.UserSid==r.AdministratorSid,"DEPLOY_ACTOR_HOLD");
         // 신뢰 조회와 관리자/자기 이미지 확인 뒤 현재 시각을 다시 검사합니다.
         var now=host.Now;
-        AdmissionPolicy.Require(now<=AdmissionPolicy.Deadline&&now<r.ExpiresUtc&&r.ExpiresUtc<=a.ExpiresUtc
+        AdmissionPolicy.Require((SignedProductExpiry is { } productEnd ? now < productEnd : now<=AdmissionPolicy.Deadline)&&now<r.ExpiresUtc&&r.ExpiresUtc<=a.ExpiresUtc
             &&a.ExpiresUtc<=Plan.ExpiresUtc&&Plan.ExpiresUtc<=c.ExpiresUtc&&now<c.ExpiresUtc,"DEPLOY_CURRENT_TIME_HOLD");
-        FakeOnlyPolicy.Evidence(c,now,(name,limit)=>host.ReadProtected(Plan.Files.Single(f=>f.Name==name).Source,limit));
+        FakeOnlyPolicy.Evidence(c,now,(name,limit)=>host.ReadProtected(Plan.Files.Single(f=>f.Name==name).Source,limit),signedDeploymentExpiry:SignedProductExpiry);
         now=host.Now;
-        AdmissionPolicy.Require(now<=AdmissionPolicy.Deadline&&now<r.ExpiresUtc&&now<a.ExpiresUtc&&now<Plan.ExpiresUtc&&now<c.ExpiresUtc,"DEPLOY_FINAL_TIME_HOLD");
+        AdmissionPolicy.Require((SignedProductExpiry is { } productEndFinal ? now < productEndFinal : now<=AdmissionPolicy.Deadline)&&now<r.ExpiresUtc&&now<a.ExpiresUtc&&now<Plan.ExpiresUtc&&now<c.ExpiresUtc,"DEPLOY_FINAL_TIME_HOLD");
     }
 }
 
 // 단순 bool/임의 callback으로 Windows backend를 여는 대신 검증된 계획의 현재 단계만 증명합니다.
-internal sealed class DeploymentWriteBoundary(DeploymentAdmission admission,IReadOnlyList<DeploymentStep> steps)
+internal sealed class DeploymentWriteBoundary(Action validate,IReadOnlyList<DeploymentStep> steps)
 {
     private int index;
     private DeploymentStep? active;
@@ -165,12 +169,12 @@ internal sealed class DeploymentWriteBoundary(DeploymentAdmission admission,IRea
     internal void Begin(DeploymentStep step)
     {
         AdmissionPolicy.Require(!failed&&active is null&&index<steps.Count&&step==steps[index],"DEPLOY_STEP_ORDER");
-        admission.Validate();active=step;
+        validate();active=step;
     }
     internal void Check(DeploymentStep step)
     {
         AdmissionPolicy.Require(!failed&&active is not null&&step==active,"DEPLOY_OUT_OF_PLAN");
-        admission.Validate();
+        validate();
     }
     internal void End(bool success){active=null;if(success)index++;else failed=true;}
 }
@@ -184,13 +188,13 @@ internal static class DeploymentController
         AdmissionPolicy.Require(mode is "--review" or "--apply","DEPLOY_MODE_HOLD");
         var admission=new DeploymentAdmission(request,sha,binding,host);
         var plan=new PlanningBackend(host,admission);
-        ProtectedDeployment.Execute(admission.Manifest,admission.Request.ManifestSha256,binding,plan);
+        ProtectedDeployment.Execute(admission.Manifest,admission.Request.ManifestSha256,binding,plan,admission.SignedProductExpiry);
         admission.Validate();
         if(mode=="--review")return plan.Steps.Count;
         // 소비 직전 대상이 생겼으면 기존 폴더를 채택하지 않습니다. 실제 생성도 CREATE_NEW입니다.
         foreach(string root in new[]{binding.CodeRoot,binding.EvidenceRoot})
             AdmissionPolicy.Require(!host.DirectoryExists(root)&&!host.FileExists(root),"DEPLOY_ROOT_EXISTS");
-        var boundary=new DeploymentWriteBoundary(admission,plan.Steps.ToArray());
+        var boundary=new DeploymentWriteBoundary(admission.Validate,plan.Steps.ToArray());
         host.BindBoundary(boundary);
         foreach(var step in plan.Steps)
         {

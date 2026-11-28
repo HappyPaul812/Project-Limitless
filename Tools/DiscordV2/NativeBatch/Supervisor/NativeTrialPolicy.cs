@@ -10,6 +10,10 @@ internal static class NativeTrialPolicy
     internal static void Shape(TrialContract c, string mode, DateTimeOffset now, CurrentFakeOnlyContract.ExecutionWindow? window)
     {
         AdmissionPolicy.Require(window is null ? now <= AdmissionPolicy.Deadline && c.ExpiresUtc > now && c.ExpiresUtc <= AdmissionPolicy.Deadline : window.AllowsTrial(now, c.ExpiresUtc), "TRIAL_TIME_HOLD");
+        ShapeScope(c, mode);
+    }
+    internal static void ShapeScope(TrialContract c, string mode)
+    {
         AdmissionPolicy.Require(c.Approved && c.TrialId == CandidateTrialId, "TRIAL_ID_NOT_ADMITTED");
         AdmissionPolicy.Require(c.FakeOnlyIsolation is { Profile: FakeOnlyPolicy.ProfileName, GlobalSidAbsence: FakeOnlyPolicy.GlobalState } f
             && AdmissionPolicy.Sha(f.TrustEvidenceSha256), "TRIAL_PROFILE_HOLD");

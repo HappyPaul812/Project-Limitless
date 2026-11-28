@@ -19,7 +19,7 @@ internal static class AdmissionPolicy
     { if (!condition) throw new InvalidOperationException(tag); }
     internal static bool Sha(string value) => value.Length == 64 && value.All(c => c is >= '0' and <= '9' or >= 'a' and <= 'f');
 
-    internal static void Contract(byte[] raw, DateTimeOffset now, AdmissionBinding binding, bool cleanup = false, CurrentFakeOnlyContract.ExecutionWindow? window = null)
+    internal static void Contract(byte[] raw, DateTimeOffset now, AdmissionBinding binding, bool cleanup = false, CurrentFakeOnlyContract.ExecutionWindow? window = null, DateTimeOffset? signedDeploymentExpiry = null)
     {
         Require(raw.Length is > 0 and <= 4096, "CONTRACT_SIZE");
         using var doc = JsonDocument.Parse(raw);
@@ -38,7 +38,7 @@ internal static class AdmissionPolicy
         Require(Guid.TryParseExact(id, "N", out var guid) && guid != Guid.Empty && id == guid.ToString("N"), "TRIAL_ID");
         Require(Sha(root.GetProperty("SupervisorSha256").GetString() ?? "") && Sha(root.GetProperty("ProbeSha256").GetString() ?? ""), "CONTRACT_IMAGE_SHA");
         var expiry = root.GetProperty("ExpiresUtc").GetDateTimeOffset();
-        Require(window is null ? expiry <= Deadline && (cleanup || expiry > now) : window.AllowsTrial(now, expiry), "APPROVAL_EXPIRED_OR_DEADLINE");
+        Require(window is null ? (signedDeploymentExpiry is { } deploymentEnd ? now < deploymentEnd && now < expiry : expiry <= Deadline && (cleanup || expiry > now)) : window.AllowsTrial(now, expiry), "APPROVAL_EXPIRED_OR_DEADLINE");
         var scope = root.GetProperty("Scope");
         string[] scopeFields = ["WorkerSid", "TaskPath", "CodeRoot", "EvidenceRoot", "Mode", "NoIpc", "NoAi", "JobSeconds", "SupervisorCount", "ProbeCount", "Register", "Start", "Cleanup"];
         Require(scope.ValueKind == JsonValueKind.Object, "SCOPE_OBJECT");

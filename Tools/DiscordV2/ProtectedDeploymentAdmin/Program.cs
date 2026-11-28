@@ -10,15 +10,22 @@ internal static class AdminDeploymentProgram
     static int Main(string[] args)
     {
         try {
+            if(args.Length==2 && args[0]=="--install-operation" && AdminController.IsMode(args[1]))
+            {
+                var scope=AdmissionBinding.Current;
+                CurrentFakeOnlyContract.RequireBinding(scope);
+                using var installer=new AdminDeploymentWindows(Path.Combine(CurrentFakeOnlyContract.Approvals,"PendingOperations"),"");
+                installer.InstallOperationSidecars(args[1],scope);
+                Console.WriteLine("SIGNED_OPERATION_INPUTS_INSTALLED_NO_EXECUTION");
+                return 0;
+            }
             var input=Arguments(args);
             using var host=new AdminDeploymentWindows(input.Path,input.Sha);
             var binding=AdmissionBinding.Current;
             CurrentFakeOnlyContract.RequireBinding(binding);
             byte[] raw=host.ReadProtected(input.Path,8192);
-            host.VerifyRequestSignature(raw);
-            host.VerifyCurrentProductContract(raw,binding);
-            AdmissionPolicy.Require(input.Mode=="--review","FAKE_V2_PRODUCT_APPLY_HOLD");
-            Console.WriteLine("SIGNED_PRODUCT_INPUTS_REVIEWED_NO_CHANGES");return 0;
+            DeploymentController.Run(input.Mode,raw,input.Sha,binding,host);
+            Console.WriteLine(input.Mode=="--review"?"SIGNED_PRODUCT_INPUTS_REVIEWED_NO_CHANGES":"DEPLOYMENT_COMPLETED_NO_EXECUTION");return 0;
         } catch {Console.Error.WriteLine("HOLD_DEPLOYMENT_NOT_COMPLETED_KEEP_EVIDENCE");return 70;}
     }
 }

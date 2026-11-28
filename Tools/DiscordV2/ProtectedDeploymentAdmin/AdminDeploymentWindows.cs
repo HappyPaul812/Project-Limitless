@@ -53,7 +53,7 @@ internal sealed class AdminDeploymentWindows : IDeploymentHost,IDisposable
             "DEPLOY_APPROVAL_SIGNATURE_HOLD");
     }
 
-    public void VerifyCurrentProductContract(byte[] request,AdmissionBinding binding)
+    public DateTimeOffset? VerifyCurrentProductContract(byte[] request,AdmissionBinding binding)
     {
         var scope=DeploymentAdmission.Strict(request,8192,DeploymentRequestJson.Default.DeploymentRequest);
         string path=Path.Combine(CurrentFakeOnlyContract.Approvals,"FakeOnlyProduct.json");
@@ -96,6 +96,79 @@ internal sealed class AdminDeploymentWindows : IDeploymentHost,IDisposable
         AdmissionPolicy.Require(now < approval.ExpiresUtc && now < plan.ExpiresUtc &&
             scope.ExpiresUtc <= approval.ExpiresUtc && approval.ExpiresUtc <= plan.ExpiresUtc,
             "DEPLOY_REVIEW_APPROVAL_EXPIRED");
+        return productExpiry;
+    }
+
+    // 작업 승인은 배포와 별개의 서명·소비 기록을 사용합니다.
+    internal void InstallOperationSidecars(string mode, AdmissionBinding binding)
+    {
+        EnsureAdmin();
+        AdmissionPolicy.Require(AdminController.IsMode(mode),"SIDECAR_OPERATION");
+        _=ObserveActor();
+        PinLedger();
+        var trialPath=Path.Combine(binding.CodeRoot,"TrialContract.json");
+        var trial=ReadProtected(trialPath,4096);
+        string trialSha=ProtectedDeployment.Hash(trial);
+        var contract=System.Text.Json.JsonSerializer.Deserialize(trial,ContractJson.Default.TrialContract)
+            ?? throw new InvalidOperationException("SIDECAR_TRIAL_NULL");
+        AdmissionPolicy.Require(contract.TrialId==NativeTrialPolicy.CandidateTrialId,"SIDECAR_TRIAL_ID");
+
+        string supervisorPath=Path.Combine(binding.CodeRoot,"Supervisor.exe");
+        string probePath=Path.Combine(binding.CodeRoot,"Probe.exe");
+        foreach (var image in new[] { (supervisorPath,contract.SupervisorSha256),(probePath,contract.ProbeSha256) })
+        {
+            byte[] bytes=ReadProtected(image.Item1,268435456);
+            AdmissionPolicy.Require(ProtectedDeployment.Hash(bytes)==image.Item2,"SIDECAR_IMAGE_SHA");
+            DeploymentSecurityPolicy.NativeImage(bytes);
+            var handle=AdmissionWindows.Pin(image.Item1,false);pins.Add(handle);
+            ProductAuthenticode.VerifyAuthenticode(handle,image.Item1,
+                ProductAuthenticode.ApprovedCertificateSha,CurrentFakeOnlyContract.Signer);
+        }
+
+        string name=mode=="--start-once"?"FakeOnlyExecution.v2":"FakeOnlyExecution.v2."+mode[2..];
+        string basePath=Path.Combine(CurrentFakeOnlyContract.Approvals,"PendingOperations");
+        var names=new[] { OperationApproval.FileName(contract.TrialId,mode),name+".json",name+".sig" };
+        var files=new List<DeploymentFile>();
+        var bytesByName=new List<byte[]>();
+        foreach (string fileName in names)
+        {
+            string source=Path.Combine(basePath,fileName);
+            byte[] bytes=ReadProtected(source,4096);
+            var file=new DeploymentFile { Name=fileName,Source=source,Bytes=bytes.Length,Sha256=ProtectedDeployment.Hash(bytes) };
+            AdmissionPolicy.Require(!FileExists(Path.Combine(binding.CodeRoot,fileName)),"SIDECAR_TARGET_EXISTS");
+            PinSource(file);
+            files.Add(file);
+            bytesByName.Add(bytes);
+        }
+        using var signer=OpenApprovalSigner();
+        var window=CurrentFakeOnlyContract.ExecutionWindow.Verify(bytesByName[1],bytesByName[2],signer,
+            CurrentFakeOnlyContract.Signer,binding,Now,contract.SupervisorSha256,contract.ProbeSha256,trialSha,files[0].Sha256);
+        OperationApproval CheckApproval()
+        {
+            var now=Now;
+            AdmissionPolicy.Contract(trial,now,binding,window:window);
+            NativeTrialPolicy.Shape(contract,mode,now,window);
+            var approval=OperationApproval.Validate(bytesByName[0],contract.TrialId,trialSha,mode,now,false,window);
+            AdmissionPolicy.Require(approval.ExpiresUtc<=contract.ExpiresUtc,"SIDECAR_OPERATION_TRIAL_EXPIRY");
+            return approval;
+        }
+        var operation=CheckApproval();
+        var steps=new List<DeploymentStep> { new(DeploymentStepKind.Consume,operation.ApprovalId,Sha:files[1].Sha256) };
+        steps.AddRange(files.Select(file=>new DeploymentStep(DeploymentStepKind.Copy,Path.Combine(binding.CodeRoot,file.Name),File:file)));
+        var guard=new DeploymentWriteBoundary(()=>{ _=CheckApproval(); },steps);
+        BindBoundary(guard);
+        foreach (var step in steps)
+        {
+            guard.Begin(step);
+            bool success=false;
+            try
+            {
+                if(step.Kind==DeploymentStepKind.Consume)ConsumeApproval(step.Target,step.Sha);
+                else CopyNew(binding.CodeRoot,step.File!);
+                success=true;
+            }
+            finally { guard.End(success); }
+        }
     }
 
     private RSA OpenApprovalSigner()
@@ -166,6 +239,12 @@ internal sealed class AdminDeploymentWindows : IDeploymentHost,IDisposable
     }
     public void PinSource(DeploymentFile source)
     {
+        if (sources.TryGetValue(source.Name,out var existing))
+        {
+            AdmissionPolicy.Require(RandomAccess.GetLength(existing)==source.Bytes && Hash(existing)==source.Sha256,
+                "DEPLOY_SOURCE_CHANGED");
+            return;
+        }
         var file=AdmissionWindows.Pin(source.Source,false);pins.Add(file);
         AdmissionPolicy.Require(RandomAccess.GetLength(file)==source.Bytes,"DEPLOY_SOURCE_SIZE");
         string hash=Hash(file);
@@ -222,6 +301,7 @@ internal sealed class AdminDeploymentWindows : IDeploymentHost,IDisposable
         if(handle.IsInvalid){int error=Marshal.GetLastWin32Error();handle.Dispose();throw new Win32Exception(error);}
         using(handle)
         {
+            VerifyNewPath(handle,path);
             Verify(handle,security.Text,false);
             using var target=new FileStream(handle,FileAccess.ReadWrite,65536,false);var input=sources[source.Name];
             byte[] buffer=new byte[65536];long offset=0;
@@ -232,6 +312,13 @@ internal sealed class AdminDeploymentWindows : IDeploymentHost,IDisposable
         }
         var pinned=AdmissionWindows.Pin(path,false);pins.Add(pinned);Verify(pinned,security.Text,false);
         AdmissionPolicy.Require(RandomAccess.GetLength(pinned)==source.Bytes&&Hash(pinned)==source.Sha256,"DEPLOY_FINAL_SHA");
+    }
+    private static void VerifyNewPath(SafeFileHandle handle,string path)
+    {
+        var final=new StringBuilder(32768);
+        uint length=GetFinalPathNameByHandleW(handle,final,(uint)final.Capacity,0);
+        AdmissionPolicy.Require(length>0 && length<final.Capacity &&
+            final.ToString().Equals(@"\?"+path,StringComparison.OrdinalIgnoreCase),"DEPLOY_NEW_PATH");
     }
     private static string Hash(SafeFileHandle file)
     {
