@@ -149,3 +149,11 @@
 - 대표 관리자 Windows UTC 04:52:02(13:52:02 KST), Trial 및 신뢰 기간 만료 04:50:31 UTC(13:50:31 KST), TrialAndTrustLive=false. Worker 비활성, 전용 Task 없음, 등록/시작/instance/감독·완료 증거 모두 없음, 제품 경로 잔류 및 경로 미확인 프로세스 0.
 - TaskPrep의 Worker 바인딩 조회 상대경로 오류 교정, 기존 DLL 및 조회 스크립트 SHA 핀 대조 후 관리자 재조회 성공. 실제 배치 토큰 미시험, Task 등록 및 실행 없음.
 - 만료된 보호 Trial·신뢰 파일과 이전 원장을 보존합니다. 기존 제품/서명/배치 경로를 재사용하려면 서명된 갱신 영수증과 새 Trial SHA를 승인하는 보호 경계를 먼저 구현해야 합니다. 현재 등록 및 FAKE_ONLY 실행 HOLD. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 보호 Trial 갱신 구현
+
+- 별도 PowerShell/C# 보호 관리 경계 구현. 원래 서명 배포 요청·manifest 및 소비 원장을 읽어 기준을 확정하고, 이전/신규 Trial·신뢰·근거 SHA와 동일 Worker/Task/이미지를 RSA-PSS 영수증에 연결합니다. 승격 최대 5분, 신규 Trial/신뢰 최대 15분. 이전 살아 있는 Trial, 변조·다른 바인딩·만료·중복/부분 경로를 HOLD합니다.
+- 이전 SHA별 CREATE_NEW 보호 위치, 기존 3개 계약의 동일 HANDLE 경로·ID·SD·SHA 보관, 새 3개 제한 경로 CREATE_NEW 및 전체 SHA, 마지막 승격 완료 영수증. 중간 실패는 증거를 보존하며 새 head를 인정하지 않습니다. 원래 EXE, 서명, 배포/실패 원장을 그대로 보존하는 별도 스크립트이며 이번 제품 빌드/서명/배포 없음.
+- 합성 격리 6개 PASS (만료/살아 있는 이전 계약 거부, 변조/다른 head 재생 거부, 점유/부분 경로 불승격과 증거 보존, 정상 서명 승격, 이미지 및 원장 불변, 새 보호 입력 변조 거부). 보호 어댑터 Add-Type 및 연동 스크립트 구문 통과. 실제 운영 갱신은 미검증/미실행.
+- 로컬 TrialRenewal/TrialRenewalAndRunbook.md에 T 보호 갱신, R 등록, P 배치 토큰 확인, F 단발 실행·원복·사후 판정을 별도 승인으로 준비했습니다. 등록/시작 sidecar 발급은 새 서명 head의 확인을 요구합니다. 기존 보관 Evidence에서 Worker/미신뢰 쓰기 ACE가 확인되면 활성화와 배치 토큰/시험을 HOLD합니다. 읽기 전용 관리자 확인 명령 별도. Worker 비활성, 실제 토큰 및 11월 21일 원본 미확인, Task·AI·API 실행 0. Unity 확인 사항 없음. NO_GO / MANUAL / EXECUTION_HOLD.
+- 갱신 소스 4d2d4bb142f444b2eca20ace08fe9347111bdd34.
