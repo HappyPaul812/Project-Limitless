@@ -31,8 +31,9 @@ internal static class CurrentFakeOnlyContract
         internal DateTimeOffset Starts { get; }
         internal DateTimeOffset Expires { get; }
 
-        private ExecutionWindow(DateTimeOffset starts, DateTimeOffset expires)
-        { Starts = starts; Expires = expires; }
+        private readonly string trialSha, operationSha;
+        private ExecutionWindow(DateTimeOffset starts, DateTimeOffset expires, string trialSha, string operationSha)
+        { Starts = starts; Expires = expires; this.trialSha = trialSha; this.operationSha = operationSha; }
 
         internal static ExecutionWindow Verify(byte[] raw, byte[] signature, RSA signer, string expectedSigner,
             AdmissionBinding binding, DateTimeOffset now, string supervisorSha, string probeSha,
@@ -41,8 +42,12 @@ internal static class CurrentFakeOnlyContract
             AdmissionPolicy.Require(AdmissionPolicy.Sha(trialSha) && AdmissionPolicy.Sha(operationSha), "FAKE_V2_EXECUTION_SHA");
             var window = ValidateCore(raw, signature, signer, expectedSigner, binding, now,
                 supervisorSha, probeSha, trialSha, operationSha);
-            return new ExecutionWindow(window.Starts, window.Expires);
+            return new ExecutionWindow(window.Starts, window.Expires, trialSha, operationSha);
         }
+
+        internal void RequireInputs(string trial, byte[] operation)
+            => AdmissionPolicy.Require(trial == trialSha && ProtectedDeployment.Hash(operation) == operationSha,
+                "FAKE_V2_EXECUTION_INPUT_CHANGED");
 
         internal bool Allows(DateTimeOffset now, DateTimeOffset expiry)
             => Starts <= now && now < expiry && expiry <= Expires;

@@ -65,9 +65,10 @@ internal sealed class AdminDeploymentWindows : IDeploymentHost,IDisposable
         var plan=System.Text.Json.JsonSerializer.Deserialize(manifest,DeploymentJson.Default.DeploymentPlan)
             ?? throw new InvalidOperationException("DEPLOY_PLAN_NULL");
         using var signer=OpenApprovalSigner();
-        CurrentFakeOnlyContract.Validate(contract,signature,signer,CurrentFakeOnlyContract.Signer,binding,Now,
+        var productExpiry = CurrentFakeOnlyContract.Validate(contract,signature,signer,CurrentFakeOnlyContract.Signer,binding,Now,
             plan.Files.Single(file=>file.Name=="Supervisor.exe").Sha256,
             plan.Files.Single(file=>file.Name=="Probe.exe").Sha256);
+        DeploymentAdmission.RequireSignedPeriods(Now, scope.ExpiresUtc, productExpiry);
         // 제품의 Authenticode 및 기존 실행 경계 연결은 별도 승인 후 구현합니다.
         throw new InvalidOperationException("FAKE_V2_PRODUCT_IMAGE_TRUST_AND_RUNTIME_HOLD");
     }

@@ -42,6 +42,7 @@ internal sealed record AccountObservation(string Sid, bool Enabled, bool Locked,
 internal interface IAdminBackend
 {
     DateTimeOffset Now { get; }
+    CurrentFakeOnlyContract.ExecutionWindow? SignedStartWindow => null;
     void Preflight(TrialContract contract, bool cleanup);
     byte[] IsolationEvidence(string name,int limit)=>throw new InvalidOperationException("FAKE_TRUST_EVIDENCE_MISSING_HOLD");
     byte[] Approval(string operation,string trialId);
@@ -71,25 +72,28 @@ internal static class AdminController
         Action<TrialContract,string,DateTimeOffset>? shape,Action<TrialContract,string,string,OperationApproval,AccountObservation,DateTimeOffset,AdmissionBinding>? authorize)
     {
         AdmissionPolicy.Require(IsMode(mode), "ADMIN_MODE");
+        var window = mode == "--start-once" && authorize is not null ? backend.SignedStartWindow : null;
         bool cleanup = mode is "--stop-owned-instance" or "--remove-owned-task";
         AdmissionPolicy.Require(AdmissionPolicy.Sha(sha) && Convert.ToHexString(SHA256.HashData(raw)).ToLowerInvariant() == sha, "CONTROL_CONTRACT_SHA");
-        AdmissionPolicy.Contract(raw, backend.Now, binding, cleanup);
+        AdmissionPolicy.Contract(raw, backend.Now, binding, cleanup, window);
         var contract = System.Text.Json.JsonSerializer.Deserialize(raw, ContractJson.Default.TrialContract)!;
         var scope = contract.Scope!;
-        shape?.Invoke(contract,mode,backend.Now);
+        if (window is not null) NativeTrialPolicy.Shape(contract,mode,backend.Now,window);
+        else shape?.Invoke(contract,mode,backend.Now);
         AdmissionPolicy.Require(mode == "--register-only" ? scope.Register : mode == "--start-once" ? scope.Start : scope.Cleanup, "OPERATION_NOT_APPROVED");
         cancellation.ThrowIfCancellationRequested();
-        FakeOnlyPolicy.Evidence(contract,backend.Now,backend.IsolationEvidence,cleanup);
+        FakeOnlyPolicy.Evidence(contract,backend.Now,backend.IsolationEvidence,cleanup,window);
         backend.Preflight(contract, cleanup);
         byte[] operationRaw=backend.Approval(mode,contract.TrialId);
-        var approval=OperationApproval.Validate(operationRaw,contract.TrialId,sha,mode,backend.Now,cleanup);
+        var approval=OperationApproval.Validate(operationRaw,contract.TrialId,sha,mode,backend.Now,cleanup,window);
         var account = backend.Account();
         AdmissionPolicy.Require(account.Sid == binding.WorkerSid, "ACCOUNT_SID_CHANGED");
         if (!cleanup)
             AdmissionPolicy.Require(account.Enabled && !account.Locked && account.ExpiresUtc >= contract.ExpiresUtc && account.BatchKnown && account.BatchAllowed, "ACCOUNT_OR_BATCH_HOLD");
         var observation = backend.Observe();
-        authorize?.Invoke(contract,sha,mode,approval,account,backend.Now,binding);
-        if(authorize is not null)backend.BindMutationBoundary(new TaskMutationBoundary(mode,sha,raw,operationRaw,binding,backend,cancellation));
+        if (window is not null) NativeTrialPolicy.Authorize(contract,sha,mode,approval,account,backend.Now,binding,window);
+        else authorize?.Invoke(contract,sha,mode,approval,account,backend.Now,binding);
+        if(authorize is not null)backend.BindMutationBoundary(new TaskMutationBoundary(mode,sha,raw,operationRaw,binding,backend,cancellation,window));
         bool intentWritten=false;
         void SaveIntent(string name,ControlReceipt receipt)
         {
@@ -99,7 +103,7 @@ internal static class AdminController
                 byte[] latestApproval=backend.Approval(mode,contract.TrialId);
                 AdmissionPolicy.Require(SHA256.HashData(latestApproval).SequenceEqual(SHA256.HashData(operationRaw)),"ENTRY_APPROVAL_CHANGED");
                 TrialEntryGate.Validate(backend.CurrentContract(),sha,mode,latestApproval,binding,
-                    ()=>backend.Now,backend.IsolationEvidence,c=>backend.Preflight(c,cleanup),backend.Account,cancellation);
+                    ()=>backend.Now,backend.IsolationEvidence,c=>backend.Preflight(c,cleanup),backend.Account,cancellation,window);
             }
             cancellation.ThrowIfCancellationRequested();
             backend.Save(name,receipt);intentWritten=true;

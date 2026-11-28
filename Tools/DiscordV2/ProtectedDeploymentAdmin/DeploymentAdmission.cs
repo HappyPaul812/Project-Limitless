@@ -57,6 +57,11 @@ internal sealed class DeploymentAdmission
     private readonly string rawSha;
     private readonly AdmissionBinding binding;
     private readonly IDeploymentHost host;
+    // 서명된 요청과 제품 기간 중 하나라도 닫혔으면 보호 배포 승인으로 사용할 수 없습니다.
+    internal static void RequireSignedPeriods(DateTimeOffset now, DateTimeOffset requestExpiry, DateTimeOffset productExpiry)
+        => AdmissionPolicy.Require(requestExpiry.Offset == TimeSpan.Zero && now < requestExpiry && now < productExpiry,
+            "DEPLOY_SIGNED_PERIOD_EXPIRED");
+
     internal static T Strict<T>(byte[] bytes,int limit,JsonTypeInfo<T> info)
     {
         AdmissionPolicy.Require(bytes.Length>0&&bytes.Length<=limit,"DEPLOY_INPUT_SIZE");

@@ -16,6 +16,7 @@ internal sealed class OperationApproval
     internal static OperationApproval Validate(byte[] raw,string trial,string sha,string operation,DateTimeOffset now,bool cleanup, CurrentFakeOnlyContract.ExecutionWindow? window=null)
     {
         AdmissionPolicy.Require(raw.Length is >0 and <=4096,"OPERATION_APPROVAL_SIZE");
+        window?.RequireInputs(sha,raw);
         using var doc=JsonDocument.Parse(raw);AdmissionPolicy.Require(doc.RootElement.ValueKind==JsonValueKind.Object,"OPERATION_APPROVAL_OBJECT");
         string[] fields=["Approved","ApprovalId","TrialId","ContractSha","Operation","ExpiresUtc"];var seen=new HashSet<string>();
         foreach(var property in doc.RootElement.EnumerateObject())AdmissionPolicy.Require(fields.Contains(property.Name,StringComparer.Ordinal)&&seen.Add(property.Name),"OPERATION_APPROVAL_DUPLICATE_OR_UNKNOWN");

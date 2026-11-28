@@ -12,11 +12,12 @@ internal sealed class TaskMutationBoundary
     private readonly IAdminBackend backend;
     private readonly CancellationToken cancellation;
     private readonly TrialContract original;
+    private readonly CurrentFakeOnlyContract.ExecutionWindow? window;
     private bool enableLease,runAttempted,registerAttempted;
     private string ownedFingerprint="";
-    internal TaskMutationBoundary(string mode,string sha,byte[] raw,byte[] operationRaw,AdmissionBinding binding,IAdminBackend backend,CancellationToken cancellation)
+    internal TaskMutationBoundary(string mode,string sha,byte[] raw,byte[] operationRaw,AdmissionBinding binding,IAdminBackend backend,CancellationToken cancellation,CurrentFakeOnlyContract.ExecutionWindow? window=null)
     {
-        this.mode=mode;this.sha=sha;this.binding=binding;this.backend=backend;this.cancellation=cancellation;
+        this.mode=mode;this.sha=sha;this.binding=binding;this.backend=backend;this.cancellation=cancellation;this.window=window;
         original=JsonSerializer.Deserialize(raw,ContractJson.Default.TrialContract)!;approvalSha=Hash(operationRaw);
     }
     private static string Hash(byte[] value)=>Convert.ToHexString(SHA256.HashData(value)).ToLowerInvariant();
@@ -47,14 +48,14 @@ internal sealed class TaskMutationBoundary
         AdmissionPolicy.Require(mode==expected,"MUTATION_MODE_MISMATCH");
         byte[] raw=backend.CurrentContract();
         AdmissionPolicy.Require(Hash(raw)==sha,"MUTATION_CONTRACT_CHANGED");
-        AdmissionPolicy.Contract(raw,backend.Now,binding); // cleanup도 새 관리자 변경은 현재 만료/cutoff를 검사합니다.
+        AdmissionPolicy.Contract(raw,backend.Now,binding,window:window); // cleanup도 새 관리자 변경은 현재 만료/cutoff를 검사합니다.
         var current=JsonSerializer.Deserialize(raw,ContractJson.Default.TrialContract)!;
         AdmissionPolicy.Require(current.TrialId==original.TrialId,"MUTATION_TRIAL_CHANGED");
-        NativeTrialPolicy.Shape(current,mode,backend.Now);
+        NativeTrialPolicy.Shape(current,mode,backend.Now,window);
         byte[] operationRaw=backend.Approval(mode,current.TrialId);
         AdmissionPolicy.Require(Hash(operationRaw)==approvalSha,"MUTATION_APPROVAL_CHANGED");
-        var operation=OperationApproval.Validate(operationRaw,current.TrialId,sha,mode,backend.Now,false);
-        FakeOnlyPolicy.Evidence(current,backend.Now,backend.IsolationEvidence);
+        var operation=OperationApproval.Validate(operationRaw,current.TrialId,sha,mode,backend.Now,false,window);
+        FakeOnlyPolicy.Evidence(current,backend.Now,backend.IsolationEvidence,window:window);
         backend.Preflight(current,mode is "--stop-owned-instance" or "--remove-owned-task"); // 경로·두 이미지 SHA·실제 계정 재조회
         var account=backend.Account();
         var task=backend.Observe();
@@ -86,8 +87,8 @@ internal sealed class TaskMutationBoundary
             }
         }
         // 고비용 읽기/대기 뒤 시각을 다시 취합니다. 이 검사 실패 시 아래 실제 변경 호출은 하지 않습니다.
-        FakeOnlyPolicy.Evidence(current,backend.Now,backend.IsolationEvidence);
-        NativeTrialPolicy.Authorize(current,sha,mode,operation,account,backend.Now,binding);
+        FakeOnlyPolicy.Evidence(current,backend.Now,backend.IsolationEvidence,window:window);
+        NativeTrialPolicy.Authorize(current,sha,mode,operation,account,backend.Now,binding,window);
         cancellation.ThrowIfCancellationRequested();
         if(!commit)return;
         if(mutation==TaskMutation.Enable){enableLease=true;ownedFingerprint=fingerprintForEnable;}
