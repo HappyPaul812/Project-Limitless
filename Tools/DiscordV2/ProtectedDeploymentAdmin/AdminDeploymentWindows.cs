@@ -301,7 +301,7 @@ internal sealed class AdminDeploymentWindows : IDeploymentHost,IDisposable
         if(handle.IsInvalid){int error=Marshal.GetLastWin32Error();handle.Dispose();throw new Win32Exception(error);}
         using(handle)
         {
-            VerifyNewPath(handle,path);
+            AdmissionWindows.RequireFinalPath(handle,path,"DEPLOY_NEW_PATH");
             Verify(handle,security.Text,false);
             using var target=new FileStream(handle,FileAccess.ReadWrite,65536,false);var input=sources[source.Name];
             byte[] buffer=new byte[65536];long offset=0;
@@ -312,13 +312,6 @@ internal sealed class AdminDeploymentWindows : IDeploymentHost,IDisposable
         }
         var pinned=AdmissionWindows.Pin(path,false);pins.Add(pinned);Verify(pinned,security.Text,false);
         AdmissionPolicy.Require(RandomAccess.GetLength(pinned)==source.Bytes&&Hash(pinned)==source.Sha256,"DEPLOY_FINAL_SHA");
-    }
-    private static void VerifyNewPath(SafeFileHandle handle,string path)
-    {
-        var final=new StringBuilder(32768);
-        uint length=GetFinalPathNameByHandleW(handle,final,(uint)final.Capacity,0);
-        AdmissionPolicy.Require(length>0 && length<final.Capacity &&
-            final.ToString().Equals(@"\?"+path,StringComparison.OrdinalIgnoreCase),"DEPLOY_NEW_PATH");
     }
     private static string Hash(SafeFileHandle file)
     {

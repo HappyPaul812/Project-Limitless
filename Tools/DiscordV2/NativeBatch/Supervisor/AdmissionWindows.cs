@@ -101,12 +101,18 @@ internal static class AdmissionWindows
         {
             Check(GetFileInformationByHandleEx(file,9,out var info,8));
             AdmissionPolicy.Require((info.Attributes&0x400)==0 && ((info.Attributes&0x10)!=0)==directory,"REPARSE_OR_FILE_KIND");
-            var final=new StringBuilder(32768); uint length=GetFinalPathNameByHandleW(file,final,(uint)final.Capacity,0);
-            AdmissionPolicy.Require(length>0 && length<final.Capacity && string.Equals(final.ToString(),"\\\\?\\"+Path.GetFullPath(path),StringComparison.OrdinalIgnoreCase),"FINAL_PATH_CHANGED");
+            RequireFinalPath(file,path,"FINAL_PATH_CHANGED");
             Check(Native.GetHandleInformation(file.DangerousGetHandle(),out uint flags));
             AdmissionPolicy.Require((flags&1)==0,"FILE_HANDLE_INHERIT"); return file;
         }
         catch { file.Dispose(); throw; }
+    }
+
+    // 기존 경로와 CREATE_NEW 결과에 같은 Windows HANDLE 경로 규칙을 적용합니다.
+    internal static void RequireFinalPath(SafeFileHandle handle,string path,string failure)
+    {
+        var final=new StringBuilder(32768); uint length=GetFinalPathNameByHandleW(handle,final,(uint)final.Capacity,0);
+        AdmissionPolicy.Require(length>0 && length<final.Capacity && string.Equals(final.ToString(),"\\\\?\\"+Path.GetFullPath(path),StringComparison.OrdinalIgnoreCase),failure);
     }
 
     internal sealed class KernelSecurity : IDisposable
