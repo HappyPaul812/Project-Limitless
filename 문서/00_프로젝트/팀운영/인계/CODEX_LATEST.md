@@ -1,5 +1,10 @@
 ## Discord V2 운영 시간 대조 / 기존 승인 만료
 
+## Discord V2 관리자 경계 · 2026-11-28
+
+Task 시작 서명 기간 및 배포 승인 교집합 검사, 격리 6 PASS 및 Probe 소스 ABI 일치. 배포/등록/NativeAOT HOLD. 기존 Worker 권한 결과 대기. Unity 확인 대상 없음. 소스 8f6e199e45c2b37bdb97eb0eaa0b0ad8d419b0ab. Issue #66 보고 완료.
+
+
 ## Discord V2 통합 후속 · 2026-11-28
 
 Supervisor 서명 실행 기간 연결 및 격리 7 PASS. DeploymentAdmin/Task 고정 날짜와 Probe 런타임 확인이 남아 제품 발행 HOLD. Worker 관리자 조회·변경 미실행. Unity 확인 대상 없음. 소스 635442e80838414a96345cd1abfed8f7c0968652. Issue #66 보고 완료.
