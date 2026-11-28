@@ -1,5 +1,10 @@
 ## Discord V2 운영 시간 대조 / 기존 승인 만료
 
+## Discord V2 제품 보호 배포 부분 실패 · 2026-11-28
+
+원장 소비, Code/Evidence와 Supervisor 0바이트 보존. 신규 HANDLE 경로 검사 결함 소스 수정 ccdb33ea, 신규 2 PASS. 수정 도구 빌드/서명/교체, 복구 및 재승인 HOLD. Unity 확인 사항 없음.
+
+
 ## Discord V2 제품 배포 승인 발급 준비 · 2026-11-28
 
 보호 승인 발급기·RSA-PSS·review/apply 요청 SHA 연결 및 후속 명령 준비. 합성 검증 통과. 관리자 readiness·신뢰/위험 검토·별도 발급/배포 미실행. Unity 확인 사항 없음. 제품 소스 579cbe43.

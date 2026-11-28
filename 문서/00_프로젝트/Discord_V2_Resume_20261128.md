@@ -98,3 +98,9 @@
 - Trial은 기존 승인 대상 ID·실제 Worker/Task·서명 Supervisor/Probe를 연결하고 FAKE_ONLY·NoAi·NoIpc·90초·각 이미지 1개를 고정합니다. 자격 증명 미공유, 대상 SID의 미신뢰 코드 및 다른 발사 경로 미관측, 관리자 잔여 위험 수용은 대표의 검토 근거 입력과 별도 승인 전까지 미확정입니다. 실제 Worker 토큰과 전역 SID 부재는 미확인.
 - 배포·제품 승인은 검토 승인 확인 후 5분, 보호 Trial/신뢰 근거는 15분입니다. 현재 Trial은 보호 Code에 고정되므로 15분 뒤 별도 등록이 필요하다면 승인된 갱신/정리 경계 없이는 진행하지 않아야 합니다. 임의 연장/덮어쓰기 없음.
 - review는 같은 세션에서 요청 SHA를 자동 캡처하며 apply는 별도 승인과 그 해시를 요구합니다. post-apply 읽기 검증, 별도 Task 등록 및 sidecar 명령을 ProtectedDeploymentRunbook.md에 정리. 신규 보호 어댑터 컴파일·PS 구문 통과, 합성 문서 결합 및 PSS 2종 검증 통과. 기존 시험 반복 0. 실제 발급·review·apply·Task·AI 0. Worker 비활성, 11월 21일 원본 영수증 미확인. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 제품 적용 부분 실패와 경로 비교 수정
+
+- 관리자 승인 발급 및 review 무변경 PASS 뒤 apply 1회 HOLD. 승인 원장 소비 12:42:27 KST, 승인 만료 12:43:50 KST. Code/Evidence 존재, 순서상 첫 Supervisor 파일 0바이트, 생성 12:42:27.074 KST 및 마지막 쓰기 시각 동일, 보호 DACL/소유자/그룹 읽기 확인. Probe 및 나머지 계약 파일 세 개 부재.
+- 서명된 도구의 CREATE_NEW 직후 경로 검사에서 잘못된 Windows 경로 접두어를 확인했습니다. 해당 검사는 첫 쓰기 전에 호출되며 0바이트 현상과 일치합니다. 기존 정상 HANDLE 경로 검증을 신규 복사에도 공유하도록 수정했습니다. 실제 격리 exclusive CREATE_NEW 핸들의 일치 경로 통과 및 다른 경로 거부 2 PASS. 소스 ccdb33ea7a1deabf9da4d757360eecff8ba428bd.
+- 원장/승인 기록/부분 파일과 폴더 보존, 수정 도구 빌드·서명·교체·정리·재실행·Task·AI 0. 만료와 원장 소비 상태이므로 기존 요청 재사용 불가. 수정 도구 발행과 보호 상태 복구는 별도 승인 필요. Unity 확인 대상 없음. NO_GO / MANUAL / EXECUTION_HOLD.
