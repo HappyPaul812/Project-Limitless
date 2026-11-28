@@ -1,5 +1,10 @@
 ## Discord V2 FAKE_ONLY 제품 계약 / 운영 HOLD
 
+## Discord V2 부분 상태 보호 복구 C 완료 · 2026-11-28
+
+부분 Code/Evidence와 해당 만료 승인 10개 보호 보관, 소비 원장 보존 확인. D 신규 승인 사전 조회·발급/배포 별도 승인 대기. Unity 확인 사항 없음. 도구 소스 ccdb33ea.
+
+
 ## Discord V2 수정 도구 보호 교체 B 완료 · 2026-11-28
 
 기존 도구 보호 보관 및 서명 수정 도구 고정 경로 CREATE_NEW PASS. 부분 Code/Evidence·소비 원장 보존. C/D 별도 승인 대기. Unity 확인 사항 없음. 도구 소스 ccdb33ea.

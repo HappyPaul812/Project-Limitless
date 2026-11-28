@@ -124,3 +124,9 @@
 
 - 대표 승인 B 후 관리자 출력 OLD_DEPLOYMENT_TOOL_ARCHIVED_AND_FIXED_TOOL_CREATED_HANDLE_VERIFIED_NO_EXECUTION 확인. 기존 도구를 동일 NTFS의 Control/DeploymentToolArchive20261128 보호 경로에 이동, 동일 HANDLE 경로·ID·SD·SHA 일치. 변경 대상 고정 경로에 수정 서명 도구만 CREATE_NEW, 동일 HANDLE 검증 및 flush 후 SHA 일치.
 - 수정 도구 소스 ccdb33ea 및 A 서명 기록 28400eeb. 근거는 관리자 실행 출력. 운영 도구 시작, 부분 Code/Evidence 및 소비 원장 변경 0. C 부분 상태 보호 복구와 D 새 발급/배포 별도 승인 대기. 수정 전후 합성 Rename 검증은 실제 파일에 대한 동일 HANDLE 새 경로, 덮어쓰기 차단, 데이터 보존을 확인했습니다. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## C 부분 배포 증거 보호 보관 완료
+
+- 대표 승인 C 후 관리자 출력 PARTIAL_CODE_EVIDENCE_AND_EXPIRED_APPROVALS_ARCHIVED_LEDGER_UNCHANGED 확인. 최초 실패 요청의 정확한 서명·해시 연결, 비활성 Worker, 보호 DACL/파일 ID 및 원장 본문을 대조한 뒤 해당 0바이트 Supervisor가 남은 Code, 빈 Evidence, 만료 승인 파일 10개만 동일 NTFS의 Control/FailedProductDeploymentArchive20261128 보관소로 이동했습니다.
+- 기존 경로 부재 및 보관물 동일 HANDLE ID/SD/SHA, 소비 원장 SHA 불변 검증이 성공 상태에 포함됩니다. 관리자 출력 근거. 실제 이동 전 격리 디렉터리 HANDLE 이름 변경 및 0바이트 자식 보존 검증 PASS. 파일 삭제/덮어쓰기 없음.
+- D의 첫 단계는 수정 도구 보호 서명 매니페스트를 사용하는 Issue-RecoveryProductDeploymentApprovals.ps1 기본 읽기 전용 사전 확인입니다. 별도 승인 전 발급 및 apply 0, Worker 비활성, Task·AI 0. NO_GO / MANUAL / EXECUTION_HOLD.
