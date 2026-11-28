@@ -163,3 +163,9 @@
 - 대표 관리자 읽기에서 Trial 갱신 사전 확인 PASS, 보관된 실패 Evidence의 기존 Worker 쓰기 ACE 확인. 별도 승인 후 ARCHIVED_EVIDENCE_ORIGINAL_DACL_PRESERVED_WORKER_ACE_REMOVED_HANDLE_VERIFIED 성공 상태를 확인했습니다.
 - 보호 보관소 내 Evidence 한 폴더만 대상으로 원래 보안 설명자를 보호 CREATE_NEW로 보존하고, 같은 HANDLE에서 정확한 Worker ACE 한 항목 제거 및 보호 DACL/파일 ID 재검증. 관리자 출력 근거. 운영 Evidence, 배포 원장, Worker 계정은 수정하지 않았습니다.
 - 다음은 실제 시험 진행자가 확보된 시점에 T 보호 Trial 갱신 별도 승인입니다. 갱신에서 기존 제품/원장 보존 및 운영 작업 미발생 유지. 실제 배치 토큰 미검증, Worker 비활성, 등록/실행/AI 0. Unity 확인 대상 없음. 갱신 소스 4d2d4bb1. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 보호 Trial 갱신 T 완료
+
+- 대표 별도 승인 T 후 관리자 출력 TRIAL_RENEWAL_PROMOTED_SIGNED_CHAIN_VERIFIED_NO_TASK_EXECUTION 확인. 이전 보호 Trial·신뢰·근거의 보관과 새 SHA 결합 RSA-PSS 갱신 영수증/완료 기록 및 기존 이미지 SHA 재대조 성공 상태입니다.
+- 갱신 Trial 만료 2026-11-28 05:27:07 UTC(14:27:07 KST). 실제 운영 명령의 결과는 대표 관리자 출력에서 확인했습니다. 기존 제품·서명·배포 원장 및 실패 증거는 보존했습니다.
+- 다음 R 등록 전용 서명 파일 발급 및 비활성 Task 등록 별도 승인. Worker 비활성, P 실제 배치 토큰·F 단발 실행·AI/API 미실행, 11월 21일 원본 영수증 미확인. Unity 확인 사항 없음. 갱신 소스 4d2d4bb1. NO_GO / MANUAL / EXECUTION_HOLD.

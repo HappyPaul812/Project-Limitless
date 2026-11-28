@@ -1,5 +1,10 @@
 ## Discord V2 FAKE_ONLY 제품 계약 / 운영 HOLD
 
+## Discord V2 보호 Trial 갱신 T PASS · 2026-11-28
+
+서명 Trial 갱신 및 보호 보관 PASS, 14:27:07 KST 만료. 제품/원장 유지. R/P/F 실제 승인 대기. Worker 비활성 및 토큰 미시험. Unity 확인 사항 없음.
+
+
 ## Discord V2 보관 Evidence ACE 정리 PASS · 2026-11-28
 
 원래 설명자 보호 보존 및 보관본 Worker 단일 ACE 제거 확인. Trial 갱신 사전 PASS, T/R/P/F 실제 승인 대기. Worker 비활성 및 토큰 미시험. Unity 확인 대상 없음.
