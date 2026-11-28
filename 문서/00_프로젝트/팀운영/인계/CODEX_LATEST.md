@@ -1,5 +1,10 @@
 ## Discord V2 운영 시간 대조 / 기존 승인 만료
 
+## Discord V2 전용 Task·FAKE_ONLY 준비 · 2026-11-28
+
+Windows UTC/Task 읽기 확인, 비활성 등록·배치 토큰·단발 시작/원복 및 검증 명령 준비. 보호 갱신은 별도 구현/승인 HOLD. 실제 발급·등록·활성화·실행 없음. Unity 확인 대상 없음.
+
+
 ## Discord V2 수정 도구 제품 보호 재배포 PASS · 2026-11-28
 
 Supervisor/Probe 및 승인 제어 파일 5개 보호 배포·SHA·서명·DACL·두 원장 읽기 검증 PASS. Worker 비활성, 실제 토큰 미시험, Task·AI·제품 실행 0. Unity 확인 대상 없음. 도구 소스 ccdb33ea.

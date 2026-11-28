@@ -136,3 +136,10 @@
 - 대표 승인 D-1 후 새 제품/배포 승인 발급 및 SIGNED_PRODUCT_INPUTS_REVIEWED_NO_CHANGES 확인. 발급 유효기간 13:40:31 KST, Trial 만료 13:50:31 KST. 새 요청 검토 SHA로 별도 D-2 승인, 수정 도구 apply 1회 DEPLOYMENT_COMPLETED_NO_EXECUTION.
 - 대표 관리자 독립 읽기 POST_DEPLOYMENT_FILES_SIGNATURES_DACL_AND_BOTH_LEDGER_RECORDS_VERIFIED_TOKEN_NOT_TESTED 확인. 제품 파일 5개 길이/SHA, Supervisor/Probe Authenticode 및 Code/Evidence/Control/Approvals/Ledger DACL 검증. 새 소비 기록은 요청과 일치, 이전 실패 소비 기록은 보호 보관 증거 SHA와 동일. 기존 실패 증거 보존.
 - 운영 제품 경로 보호 배치 완료. Worker 비활성, 실제 배치 토큰 미시험, 직접 LSA 권리/병합 정책 불일치 및 11월 21일 원본 영수증 미확인 유지. Task 등록, Worker 활성화, 제품 실행·AI 없음. 현재 Trial 만료 뒤 등록은 별도 보호 갱신/정리 계약과 승인 전 HOLD. Unity 확인 대상 없음. 도구 소스 ccdb33ea. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 전용 Task 및 FAKE_ONLY 시험 준비
+
+- Windows UTC 04:47:52 기준 기록상 Trial은 04:50:31 UTC(13:50:31 KST) 만료입니다. 실제 Code의 SHA/신뢰 시각/전용 Task/Worker/Evidence를 출력하는 관리자 읽기 전용 Inspect 준비. 일반 세션은 보호 Trial에 접근할 수 없으므로 보호 파일 조회 결과 대기.
+- TaskPrep의 TaskAndFakeOnlyRunbook.md 및 관리자 명령을 준비했습니다. 비활성 전용 등록, 실제 로컬 배치 토큰만 확인하고 Worker 비활성 원복, 별도 승인으로 시작 sidecar 및 단발 FAKE_ONLY 시작/Cleanup, Supervisor 0·Probe 125·Job drain·Evidence·잔류 프로세스 및 종료 상태 검증 범위를 구분했습니다. PowerShell 구문과 보호 sidecar 작성 및 Windows 배치 토큰 어댑터 컴파일 PASS. 운영 실행/발급 0, 기존 PASS 미반복.
+- 만료 시 보호 Code의 불변 Trial/신뢰 3파일과 기존 승인 증거만 보관하고, 동일 보호 이미지에 새 Trial 및 별도 서명 갱신 영수증을 결합해야 합니다. 현재 발급기는 배포 요청의 기존 SHA를 요구하므로 갱신 수용/승격 코드는 별도 구현 대상이며 운영 갱신 미실행입니다. 현재 보관된 실패 Evidence의 명시 ACE가 비활성 Worker에게 남아 있어, 실제 활성화 전에 보관본 유효 쓰기 권리를 확인해야 합니다.
+- Task 등록/활성화/토큰 검증/실행/AI 0. Worker 비활성·직접 LSA 권리와 병합 정책 차이·실제 토큰 및 11월 21일 원본 영수증 미확인 유지. Unity 확인 대상 없음. NO_GO / MANUAL / EXECUTION_HOLD.
