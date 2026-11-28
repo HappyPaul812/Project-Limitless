@@ -1,5 +1,10 @@
 ## Discord V2 FAKE_ONLY 제품 계약 / 운영 HOLD
 
+## Discord V2 수정 도구 서명 A PASS · 2026-11-28
+
+대표 관리자 확인으로 수정 DeploymentAdmin 단발 보호 서명 및 직후 검증 PASS. 타임스탬프 없음. 기존 운영 도구·부분 파일·원장 보존, B/C/D 별도 승인 대기. Unity 확인 사항 없음. 소스 ccdb33ea.
+
+
 ## Discord V2 수정 도구 발행 및 복구 준비 · 2026-11-28
 
 ccdb33ea 기반 DeploymentAdmin NativeAOT PASS, 전체 쓰기/Readback/CREATE_NEW Windows 격리 3 PASS. A 서명/B 교체/C 증거 보관 복구/D 신규 발급과 배포 각 승인 대기. 운영 미변경, Unity 확인 대상 없음.

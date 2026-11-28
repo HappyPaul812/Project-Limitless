@@ -113,3 +113,9 @@
 - 복구 절차 Temp/DV2Fix20261128/ProtectedDeploymentRecovery.md. A 수정 후보 1회 서명, B 기존 도구 보호 보관 및 교체, C 부분 Code/Evidence 및 해당 만료 승인 파일의 보호 보관, D 새 승인 및 배포를 독립 승인으로 둡니다. 원장은 보존하고 고정 경로를 안전하게 비우는 방식입니다. B/C 운영 명령은 아직 실행하지 않았으며 서명 후 식별값/상태 확인이 선행됩니다.
 - 실제 서명·도구 교체·부분 상태 변경·발급·배포·Task·AI 0. Worker 비활성. NO_GO / MANUAL / EXECUTION_HOLD.
 - 수정 DeploymentAdmin 서명 전 SHA-256 b31a88c607e8c9ef59a033b95df4e913132d85e5e6ce6706e80cf2731dc307b3 · 3684864 bytes.
+
+## 수정 도구 A 승인 및 보호 서명 결과
+
+- 대표 승인 A 이후 관리자 PowerShell 7에서 수정 DeploymentAdmin 한 파일의 SignTool sign/verify 및 FIXED_DEPLOYMENT_TOOL_SIGNED_VERIFIED를 확인했습니다. 기존 승인된 인증서 핀/DER/SPKI/EKU/유효기간과 Authenticode 판정 및 보호 manifest readback은 스크립트 PASS에 포함됩니다. 타임스탬프 없음. 이 기록의 근거는 대표 관리자 출력입니다.
+- 서명 후 SHA-256 f07e9b8f3c45faa123fba6482bc239fc497a287046a72cad3befcdb95a68d4b9. Manifest C:/ProgramData/LimitlessDiscordV2DeploymentAdminFixSigning20261128/ProductSigningManifest.json.
+- B 기존 도구 보관/교체, C 부분 상태/만료 승인 보호 보관, D 발급 및 apply는 별도 승인 대기. 운영 파일/원장/부분 파일 변경 및 재실행 0. Worker 비활성, Task·AI 실행 0. NO_GO / MANUAL / EXECUTION_HOLD.
