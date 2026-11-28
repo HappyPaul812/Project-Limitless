@@ -196,3 +196,5 @@
 - RSA-PSS Supervisor 전환 영수증과 보호 보관/승격 경계를 구현했습니다. 기존/신규 Supervisor SHA, 새 Trial·Trust·Basis, 보호 새 서명 Manifest와 등록 실패 보관 영수증을 결합합니다. 기존 Supervisor만 보호 보관, 해당 EXE와 3 계약만 CREATE_NEW, Probe·DeploymentAdmin·기존 제품 서명/원장 보존, 마지막 commit 없으면 새 상태 거부. 기존 등록/시작 발급기가 새 서명 head를 검증합니다.
 - 신규 합성 격리 4 PASS (부분 전환 불승격, 정상 Supervisor와 Trial 결합, 보관 이미지/실패 증거 변조 거부, 같은 서명으로도 Probe 변경 금지). 관리 보호 어댑터 컴파일 및 PowerShell 구문 통과. 신규 제품 빌드·운영 교체·서명·발급 0.
 - 격리 DV2R20261128/Migration/Invoke-SupervisorTrialMigration.ps1 기본 실행은 관리자 읽기 전용. 실제 C 교체 및 갱신은 별도 승인 및 관리자 readiness 결과 필요. 승인 직후 5분 쓰기 창, 새 Trial 15분. D/P/F 실제 작업 미실행, Worker 비활성 유지. Unity 확인 사항 없음. 소스 779acc40f50c961581ada6ba3f9b2b93b555df5a. NO_GO / MANUAL / EXECUTION_HOLD.
+
+- 등록 화면에서 암호 입력마다 `-` 표시, Backspace 입력 시 표시 제거를 적용했습니다. 로컬 진단 래퍼는 표시 이벤트를 중계하고 로그에는 저장하지 않습니다. 격리 오프라인 Supervisor NativeAOT 발행 성공. 운영 콘솔 입력 동작 및 실제 등록 미검증, 서명·교체·승인 발급 미실행. 이전 등록 실패는 빈 입력 가능성이 있으나 세부 진단이 없어 UNKNOWN. NO_GO / MANUAL / EXECUTION_HOLD.

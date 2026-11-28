@@ -133,7 +133,7 @@ internal sealed unsafe class TaskSchedulerNative : IDisposable
             stage=RegistrationStage.Password;
             var boundary=mutationBoundary();
             boundary.CheckPasswordWindow();
-            Console.WriteLine("Worker 암호를 입력하고 Enter를 누르세요. 입력은 표시되지 않습니다. Esc로 취소할 수 있습니다.");
+            Console.WriteLine("Worker 암호를 입력하고 Enter를 누르세요. 입력은 -로 표시됩니다. Esc로 취소할 수 있습니다.");
             // 암호를 managed immutable string/인수/환경/로그로 만들지 않습니다.
             while(true)
             {
@@ -143,10 +143,25 @@ internal sealed unsafe class TaskSchedulerNative : IDisposable
                 var key=Console.ReadKey(true);
                 if(key.Key==ConsoleKey.Escape)throw new OperationCanceledException("PASSWORD_CANCELLED");
                 if(key.Key==ConsoleKey.Enter)break;
-                if(key.Key==ConsoleKey.Backspace){if(secret.Length>0)secret.RemoveAt(secret.Length-1);continue;}
+                if(key.Key==ConsoleKey.Backspace)
+                {
+                    if(secret.Length>0)
+                    {
+                        secret.RemoveAt(secret.Length-1);
+                        if(Console.IsOutputRedirected)Console.WriteLine("PASSWORD_MASK_ERASE");
+                        else Console.Write("\b \b");
+                    }
+                    continue;
+                }
                 AdmissionPolicy.Require(secret.Length<256,"PASSWORD_LENGTH");
-                if(!char.IsControl(key.KeyChar))secret.AppendChar(key.KeyChar);
+                if(!char.IsControl(key.KeyChar))
+                {
+                    secret.AppendChar(key.KeyChar);
+                    if(Console.IsOutputRedirected)Console.WriteLine("PASSWORD_MASK_ADD");
+                    else Console.Write('-');
+                }
             }
+            if(!Console.IsOutputRedirected)Console.WriteLine();
             AdmissionPolicy.Require(secret.Length>0,"EMPTY_PASSWORD");secret.MakeReadOnly();
             stage=RegistrationStage.FinalAdmission;
             boundary.AfterPassword(); // 비밀값을 읽거나 기록하지 않고 승인 상태만 재검증합니다.
