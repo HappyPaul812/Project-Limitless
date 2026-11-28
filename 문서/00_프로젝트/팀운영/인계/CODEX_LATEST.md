@@ -1,5 +1,10 @@
 ## Discord V2 운영 시간 대조 / 기존 승인 만료
 
+## Discord V2 수정 도구 제품 보호 재배포 PASS · 2026-11-28
+
+Supervisor/Probe 및 승인 제어 파일 5개 보호 배포·SHA·서명·DACL·두 원장 읽기 검증 PASS. Worker 비활성, 실제 토큰 미시험, Task·AI·제품 실행 0. Unity 확인 대상 없음. 도구 소스 ccdb33ea.
+
+
 ## Discord V2 부분 상태 보호 복구 C 완료 · 2026-11-28
 
 부분 Code/Evidence와 해당 만료 승인 10개 보호 보관, 소비 원장 보존 확인. D 신규 승인 사전 조회·발급/배포 별도 승인 대기. Unity 확인 사항 없음. 도구 소스 ccdb33ea.

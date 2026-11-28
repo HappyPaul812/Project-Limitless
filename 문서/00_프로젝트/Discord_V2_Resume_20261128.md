@@ -130,3 +130,9 @@
 - 대표 승인 C 후 관리자 출력 PARTIAL_CODE_EVIDENCE_AND_EXPIRED_APPROVALS_ARCHIVED_LEDGER_UNCHANGED 확인. 최초 실패 요청의 정확한 서명·해시 연결, 비활성 Worker, 보호 DACL/파일 ID 및 원장 본문을 대조한 뒤 해당 0바이트 Supervisor가 남은 Code, 빈 Evidence, 만료 승인 파일 10개만 동일 NTFS의 Control/FailedProductDeploymentArchive20261128 보관소로 이동했습니다.
 - 기존 경로 부재 및 보관물 동일 HANDLE ID/SD/SHA, 소비 원장 SHA 불변 검증이 성공 상태에 포함됩니다. 관리자 출력 근거. 실제 이동 전 격리 디렉터리 HANDLE 이름 변경 및 0바이트 자식 보존 검증 PASS. 파일 삭제/덮어쓰기 없음.
 - D의 첫 단계는 수정 도구 보호 서명 매니페스트를 사용하는 Issue-RecoveryProductDeploymentApprovals.ps1 기본 읽기 전용 사전 확인입니다. 별도 승인 전 발급 및 apply 0, Worker 비활성, Task·AI 0. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 수정 도구 제품 보호 재배포 완료
+
+- 대표 승인 D-1 후 새 제품/배포 승인 발급 및 SIGNED_PRODUCT_INPUTS_REVIEWED_NO_CHANGES 확인. 발급 유효기간 13:40:31 KST, Trial 만료 13:50:31 KST. 새 요청 검토 SHA로 별도 D-2 승인, 수정 도구 apply 1회 DEPLOYMENT_COMPLETED_NO_EXECUTION.
+- 대표 관리자 독립 읽기 POST_DEPLOYMENT_FILES_SIGNATURES_DACL_AND_BOTH_LEDGER_RECORDS_VERIFIED_TOKEN_NOT_TESTED 확인. 제품 파일 5개 길이/SHA, Supervisor/Probe Authenticode 및 Code/Evidence/Control/Approvals/Ledger DACL 검증. 새 소비 기록은 요청과 일치, 이전 실패 소비 기록은 보호 보관 증거 SHA와 동일. 기존 실패 증거 보존.
+- 운영 제품 경로 보호 배치 완료. Worker 비활성, 실제 배치 토큰 미시험, 직접 LSA 권리/병합 정책 불일치 및 11월 21일 원본 영수증 미확인 유지. Task 등록, Worker 활성화, 제품 실행·AI 없음. 현재 Trial 만료 뒤 등록은 별도 보호 갱신/정리 계약과 승인 전 HOLD. Unity 확인 대상 없음. 도구 소스 ccdb33ea. NO_GO / MANUAL / EXECUTION_HOLD.
