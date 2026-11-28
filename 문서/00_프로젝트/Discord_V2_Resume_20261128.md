@@ -189,3 +189,10 @@
 - 대표 관리자 출력 FAILED_REGISTRATION_EVIDENCE_AND_EXPIRED_SIDECARS_BOUND_LEDGER_READ_ONLY로 대상 결합 사전 확인 PASS. 별도 A 승인 및 등록 진단 Supervisor 한 파일 단발 SignTool sign/verify, REGISTRATION_SUPERVISOR_SIGNED_VERIFIED 확인. 해당 스크립트의 Authenticode, 지문/DER/SPKI/EKU/유효기간 및 보호 manifest 확인 포함. 타임스탬프 없음. 근거는 대표 관리자 출력입니다.
 - 서명 후 SHA-256 149043ab6da4f3891c60cc7230db77ec39eaad7291af6dea86135effeec620dc. 보호 서명 Manifest는 C:/ProgramData/LimitlessDiscordV2SupervisorRegistrationSigning20261128/ProductSigningManifest.json.
 - 운영 Supervisor, Trial, 등록 실패 기록 및 원장 변경 없음. B 해당 실패 기록 보호 보관, C 제품 교체/서명 해시 전환, D/P/F 별도 승인 대기. Worker 비활성 및 실제 배치 토큰 미시험, Task/실행/AI/API 0. Unity 확인 사항 없음. 후보 소스 95da64f8. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 실패 등록 B 보호 보관 및 Supervisor 전환 준비
+
+- 대표 승인 B 후 FAILED_REGISTRATION_EVIDENCE_AND_SIDECARS_ARCHIVED_LEDGER_UNCHANGED 확인. 해당 등록 승인 Code/PendingOperations 각 3개와 Evidence 등록 의도·HOLD 2개만 보호 보관. 동일 HANDLE ID·DACL·SHA 및 기존 소비 원장 불변 확인. Worker/Task/제품·경로 상태는 변경하지 않았습니다.
+- RSA-PSS Supervisor 전환 영수증과 보호 보관/승격 경계를 구현했습니다. 기존/신규 Supervisor SHA, 새 Trial·Trust·Basis, 보호 새 서명 Manifest와 등록 실패 보관 영수증을 결합합니다. 기존 Supervisor만 보호 보관, 해당 EXE와 3 계약만 CREATE_NEW, Probe·DeploymentAdmin·기존 제품 서명/원장 보존, 마지막 commit 없으면 새 상태 거부. 기존 등록/시작 발급기가 새 서명 head를 검증합니다.
+- 신규 합성 격리 4 PASS (부분 전환 불승격, 정상 Supervisor와 Trial 결합, 보관 이미지/실패 증거 변조 거부, 같은 서명으로도 Probe 변경 금지). 관리 보호 어댑터 컴파일 및 PowerShell 구문 통과. 신규 제품 빌드·운영 교체·서명·발급 0.
+- 격리 DV2R20261128/Migration/Invoke-SupervisorTrialMigration.ps1 기본 실행은 관리자 읽기 전용. 실제 C 교체 및 갱신은 별도 승인 및 관리자 readiness 결과 필요. 승인 직후 5분 쓰기 창, 새 Trial 15분. D/P/F 실제 작업 미실행, Worker 비활성 유지. Unity 확인 사항 없음. 소스 779acc40f50c961581ada6ba3f9b2b93b555df5a. NO_GO / MANUAL / EXECUTION_HOLD.

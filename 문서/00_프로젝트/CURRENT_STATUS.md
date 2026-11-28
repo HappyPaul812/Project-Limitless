@@ -1,5 +1,10 @@
 ## Discord V2 FAKE_ONLY 제품 계약 / 운영 HOLD
 
+## Discord V2 등록 실패 B 보관 및 C 전환 준비 · 2026-11-28
+
+실패 기록 8개 보호 보관·소비 원장 불변 확인. 새 Supervisor/Trial 서명 전환 4 격리 PASS, 관리자 읽기/실제 C 승인 대기. Worker 비활성. Unity 확인 사항 없음. 소스 779acc40.
+
+
 ## Discord V2 등록 진단 Supervisor A 서명 PASS · 2026-11-28
 
 수정 Supervisor 단발 보호 서명 완료, 실패 기록 읽기 전용 결합 PASS, 운영 미변경. B 보호 보관/C 교체 및 해시 전환/D/P/F HOLD. Unity 확인 사항 없음. 소스 95da64f8.
