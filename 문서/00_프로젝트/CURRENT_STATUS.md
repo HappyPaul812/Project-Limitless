@@ -1,5 +1,10 @@
 ## Discord V2 FAKE_ONLY 제품 계약 / 운영 HOLD
 
+## Discord V2 R 등록 HOLD · 2026-11-28
+
+전용 Task 없음, 등록 의도/HOLD 및 만료 승인 보존. 입력 안내·만료 대기 수정 0c432d51 신규 3 PASS, 운영 교체 없음. 복구 별도 승인 대기. Unity 확인 대상 없음.
+
+
 ## Discord V2 보호 Trial 갱신 T PASS · 2026-11-28
 
 서명 Trial 갱신 및 보호 보관 PASS, 14:27:07 KST 만료. 제품/원장 유지. R/P/F 실제 승인 대기. Worker 비활성 및 토큰 미시험. Unity 확인 사항 없음.
