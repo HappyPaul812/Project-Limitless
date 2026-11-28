@@ -1,5 +1,10 @@
 ## Discord V2 운영 시간 대조 / 기존 승인 만료
 
+## Discord V2 보관 Evidence ACE 정리 PASS · 2026-11-28
+
+원래 설명자 보호 보존 및 보관본 Worker 단일 ACE 제거 확인. Trial 갱신 사전 PASS, T/R/P/F 실제 승인 대기. Worker 비활성 및 토큰 미시험. Unity 확인 대상 없음.
+
+
 ## Discord V2 보호 Trial 갱신 구현 · 2026-11-28
 
 서명된 Trial 갱신, 기존 증거 보존 및 신규 6 격리 검증 PASS. 기존 제품/원장 유지. 운영 갱신·등록·활성화·FAKE_ONLY 시험 별도 승인 대기. Unity 확인 대상 없음. 소스 4d2d4bb142f444b2eca20ace08fe9347111bdd34.

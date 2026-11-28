@@ -157,3 +157,9 @@
 - 합성 격리 6개 PASS (만료/살아 있는 이전 계약 거부, 변조/다른 head 재생 거부, 점유/부분 경로 불승격과 증거 보존, 정상 서명 승격, 이미지 및 원장 불변, 새 보호 입력 변조 거부). 보호 어댑터 Add-Type 및 연동 스크립트 구문 통과. 실제 운영 갱신은 미검증/미실행.
 - 로컬 TrialRenewal/TrialRenewalAndRunbook.md에 T 보호 갱신, R 등록, P 배치 토큰 확인, F 단발 실행·원복·사후 판정을 별도 승인으로 준비했습니다. 등록/시작 sidecar 발급은 새 서명 head의 확인을 요구합니다. 기존 보관 Evidence에서 Worker/미신뢰 쓰기 ACE가 확인되면 활성화와 배치 토큰/시험을 HOLD합니다. 읽기 전용 관리자 확인 명령 별도. Worker 비활성, 실제 토큰 및 11월 21일 원본 미확인, Task·AI·API 실행 0. Unity 확인 사항 없음. NO_GO / MANUAL / EXECUTION_HOLD.
 - 갱신 소스 4d2d4bb142f444b2eca20ace08fe9347111bdd34.
+
+## 보관 Evidence Worker 쓰기 경계 처리
+
+- 대표 관리자 읽기에서 Trial 갱신 사전 확인 PASS, 보관된 실패 Evidence의 기존 Worker 쓰기 ACE 확인. 별도 승인 후 ARCHIVED_EVIDENCE_ORIGINAL_DACL_PRESERVED_WORKER_ACE_REMOVED_HANDLE_VERIFIED 성공 상태를 확인했습니다.
+- 보호 보관소 내 Evidence 한 폴더만 대상으로 원래 보안 설명자를 보호 CREATE_NEW로 보존하고, 같은 HANDLE에서 정확한 Worker ACE 한 항목 제거 및 보호 DACL/파일 ID 재검증. 관리자 출력 근거. 운영 Evidence, 배포 원장, Worker 계정은 수정하지 않았습니다.
+- 다음은 실제 시험 진행자가 확보된 시점에 T 보호 Trial 갱신 별도 승인입니다. 갱신에서 기존 제품/원장 보존 및 운영 작업 미발생 유지. 실제 배치 토큰 미검증, Worker 비활성, 등록/실행/AI 0. Unity 확인 대상 없음. 갱신 소스 4d2d4bb1. NO_GO / MANUAL / EXECUTION_HOLD.
