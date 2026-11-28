@@ -104,3 +104,12 @@
 - 관리자 승인 발급 및 review 무변경 PASS 뒤 apply 1회 HOLD. 승인 원장 소비 12:42:27 KST, 승인 만료 12:43:50 KST. Code/Evidence 존재, 순서상 첫 Supervisor 파일 0바이트, 생성 12:42:27.074 KST 및 마지막 쓰기 시각 동일, 보호 DACL/소유자/그룹 읽기 확인. Probe 및 나머지 계약 파일 세 개 부재.
 - 서명된 도구의 CREATE_NEW 직후 경로 검사에서 잘못된 Windows 경로 접두어를 확인했습니다. 해당 검사는 첫 쓰기 전에 호출되며 0바이트 현상과 일치합니다. 기존 정상 HANDLE 경로 검증을 신규 복사에도 공유하도록 수정했습니다. 실제 격리 exclusive CREATE_NEW 핸들의 일치 경로 통과 및 다른 경로 거부 2 PASS. 소스 ccdb33ea7a1deabf9da4d757360eecff8ba428bd.
 - 원장/승인 기록/부분 파일과 폴더 보존, 수정 도구 빌드·서명·교체·정리·재실행·Task·AI 0. 만료와 원장 소비 상태이므로 기존 요청 재사용 불가. 수정 도구 발행과 보호 상태 복구는 별도 승인 필요. Unity 확인 대상 없음. NO_GO / MANUAL / EXECUTION_HOLD.
+
+## 보호 배포 수정 도구 발행과 복구 준비
+
+- ccdb33ea7a1deabf9da4d757360eecff8ba428bd의 DeploymentAdmin만 일반 Windows PowerShell 7·SDK 10.0.403·승인된 10.0.10 오프라인 입력으로 NativeAOT 발행했습니다. exit 0, 경고·오류 0, AMD64 PE32+ CLR 없음, 비공개 포함 입력 해시 30개 동일. 기존 Supervisor/Probe 재빌드·서명 및 운영 후보 접근 없음.
+- 실제 Windows CREATE_NEW 독점 HANDLE에서 프로덕션 복사 루프를 발췌해 실제 부분 파일의 원본 크기와 같은 합성 7,856,960바이트 파일을 썼습니다. 쓰기/flush 후 동일 HANDLE SHA, 다시 연 파일 SHA, 기존 파일 CREATE_NEW 거부 3 PASS. 운영 경로·원장·ACL·관리자 back end 및 실승인은 사용하지 않았습니다. 기존 시험 반복 0.
+- 후보는 Temp/DV2Fix20261128/artifacts 및 CandidateEvidence.json에 있습니다. 서명 준비 스크립트와 보호 어댑터 컴파일/구문, 복구용 발급기 및 동일 review/apply SHA 래퍼 구문 통과. 새 최종 도구 SHA는 보호 서명 Manifest에서 자동 연결합니다.
+- 복구 절차 Temp/DV2Fix20261128/ProtectedDeploymentRecovery.md. A 수정 후보 1회 서명, B 기존 도구 보호 보관 및 교체, C 부분 Code/Evidence 및 해당 만료 승인 파일의 보호 보관, D 새 승인 및 배포를 독립 승인으로 둡니다. 원장은 보존하고 고정 경로를 안전하게 비우는 방식입니다. B/C 운영 명령은 아직 실행하지 않았으며 서명 후 식별값/상태 확인이 선행됩니다.
+- 실제 서명·도구 교체·부분 상태 변경·발급·배포·Task·AI 0. Worker 비활성. NO_GO / MANUAL / EXECUTION_HOLD.
+- 수정 DeploymentAdmin 서명 전 SHA-256 b31a88c607e8c9ef59a033b95df4e913132d85e5e6ce6706e80cf2731dc307b3 · 3684864 bytes.

@@ -1,5 +1,10 @@
 ## Discord V2 운영 시간 대조 / 기존 승인 만료
 
+## Discord V2 수정 도구 발행 및 복구 준비 · 2026-11-28
+
+ccdb33ea 기반 DeploymentAdmin NativeAOT PASS, 전체 쓰기/Readback/CREATE_NEW Windows 격리 3 PASS. A 서명/B 교체/C 증거 보관 복구/D 신규 발급과 배포 각 승인 대기. 운영 미변경, Unity 확인 대상 없음.
+
+
 ## Discord V2 제품 보호 배포 부분 실패 · 2026-11-28
 
 원장 소비, Code/Evidence와 Supervisor 0바이트 보존. 신규 HANDLE 경로 검사 결함 소스 수정 ccdb33ea, 신규 2 PASS. 수정 도구 빌드/서명/교체, 복구 및 재승인 HOLD. Unity 확인 사항 없음.
